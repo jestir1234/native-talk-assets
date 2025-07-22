@@ -1,4 +1,34 @@
 {
+    "1": {
+        "reading": "いち",
+        "meaning": "一",
+        "type": "数詞"
+    },
+    "2": {
+        "reading": "２",
+        "meaning": "２",
+        "type": "数詞"
+    },
+    "3": {
+        "reading": "さん",
+        "meaning": "三",
+        "type": "数詞"
+    },
+    "4": {
+        "reading": "４",
+        "meaning": "４",
+        "type": "数詞"
+    },
+    "5": {
+        "reading": "５",
+        "meaning": "５",
+        "type": "数詞"
+    },
+    "6": {
+        "reading": "６",
+        "meaning": "６",
+        "type": "数詞"
+    },
     "Bucky": {
         "reading": "バッキー",
         "meaning": "バッキー（ビーバーの名前）",
@@ -620,8 +650,8 @@
         "type": "動詞"
     },
     "threat": {
-        "reading": "きけん",
-        "meaning": "危険",
+        "reading": "脅威",
+        "meaning": "脅威",
         "type": "名詞"
     },
     "reluctant": {
@@ -812,6 +842,2581 @@
     "pride": {
         "reading": "プライド",
         "meaning": "プライド",
+        "type": "名詞"
+    },
+    "chapter": {
+        "reading": "しょう",
+        "meaning": "章",
+        "type": "名詞"
+    },
+    "on": {
+        "reading": "〜のうえ",
+        "meaning": "〜の上",
+        "type": "前置詞"
+    },
+    "the": {
+        "reading": "ざ",
+        "meaning": "（英語の定冠詞）",
+        "type": "冠詞"
+    },
+    "was": {
+        "reading": "だった",
+        "meaning": "〜だった",
+        "type": "助動詞"
+    },
+    "a": {
+        "reading": "えー",
+        "meaning": "（英語の不定冠詞）",
+        "type": "冠詞"
+    },
+    "he": {
+        "reading": "ひー",
+        "meaning": "彼",
+        "type": "代名詞"
+    },
+    "lived": {
+        "reading": "くらした",
+        "meaning": "暮らした",
+        "type": "動詞"
+    },
+    "loved": {
+        "reading": "あいした",
+        "meaning": "愛した",
+        "type": "動詞"
+    },
+    "to": {
+        "reading": "〜に",
+        "meaning": "〜に",
+        "type": "前置詞"
+    },
+    "made": {
+        "reading": "つくった",
+        "meaning": "作った",
+        "type": "動詞"
+    },
+    "them": {
+        "reading": "ぜんいん",
+        "meaning": "彼らを／彼女らを",
+        "type": "代名詞"
+    },
+    "and": {
+        "reading": "と",
+        "meaning": "〜と",
+        "type": "接続詞"
+    },
+    "along": {
+        "reading": "〜にそって",
+        "meaning": "〜に沿って",
+        "type": "前置詞"
+    },
+    "admired": {
+        "reading": "あこがれた",
+        "meaning": "憧れた、称賛した",
+        "type": "動詞"
+    },
+    "buckys": {
+        "reading": "バッキーの",
+        "meaning": "バッキーの",
+        "type": "所有格"
+    },
+    "but": {
+        "reading": "しかし",
+        "meaning": "しかし",
+        "type": "接続詞"
+    },
+    "had": {
+        "reading": "もっていた",
+        "meaning": "持っていた",
+        "type": "動詞"
+    },
+    "one": {
+        "reading": "いち",
+        "meaning": "一つ",
+        "type": "数詞"
+    },
+    "of": {
+        "reading": "〜の",
+        "meaning": "〜の",
+        "type": "前置詞"
+    },
+    "another": {
+        "reading": "べつの",
+        "meaning": "別の",
+        "type": "代名詞"
+    },
+    "named": {
+        "reading": "なづけられた",
+        "meaning": "〜という名前の",
+        "type": "動詞"
+    },
+    "also": {
+        "reading": "また",
+        "meaning": "また",
+        "type": "副詞"
+    },
+    "building": {
+        "reading": "たてもの",
+        "meaning": "建物",
+        "type": "名詞"
+    },
+    "his": {
+        "reading": "かれの",
+        "meaning": "彼の",
+        "type": "代名詞"
+    },
+    "very": {
+        "reading": "とても",
+        "meaning": "とても",
+        "type": "副詞"
+    },
+    "differently": {
+        "reading": "ちがって",
+        "meaning": "違って",
+        "type": "副詞"
+    },
+    "choppers": {
+        "reading": "チョッパーの",
+        "meaning": "チョッパーの",
+        "type": "所有格"
+    },
+    "were": {
+        "reading": "だった",
+        "meaning": "〜だった",
+        "type": "助動詞"
+    },
+    "they": {
+        "reading": "ぜんいん",
+        "meaning": "彼らは／彼女らは",
+        "type": "代名詞"
+    },
+    "looked": {
+        "reading": "みえた",
+        "meaning": "見えた、見た",
+        "type": "動詞"
+    },
+    "nice": {
+        "reading": "すてき",
+        "meaning": "素敵な",
+        "type": "形容詞"
+    },
+    "sometimes": {
+        "reading": "ときどき",
+        "meaning": "時々",
+        "type": "副詞"
+    },
+    "leaked": {
+        "reading": "もれた",
+        "meaning": "漏れた",
+        "type": "動詞"
+    },
+    "or": {
+        "reading": "または",
+        "meaning": "または",
+        "type": "接続詞"
+    },
+    "easily": {
+        "reading": "かんたんに",
+        "meaning": "簡単に",
+        "type": "副詞"
+    },
+    "did": {
+        "reading": "した",
+        "meaning": "した",
+        "type": "助動詞"
+    },
+    "not": {
+        "reading": "〜ない",
+        "meaning": "〜ない",
+        "type": "副詞"
+    },
+    "each": {
+        "reading": "それぞれ",
+        "meaning": "それぞれ",
+        "type": "代名詞"
+    },
+    "wanted": {
+        "reading": "ほしかった",
+        "meaning": "望んだ",
+        "type": "動詞"
+    },
+    "have": {
+        "reading": "もっている",
+        "meaning": "持っている",
+        "type": "動詞"
+    },
+    "spent": {
+        "reading": "すごした",
+        "meaning": "過ごした",
+        "type": "動詞"
+    },
+    "their": {
+        "reading": "かれらの",
+        "meaning": "彼らの",
+        "type": "代名詞"
+    },
+    "days": {
+        "reading": "ひび",
+        "meaning": "日々",
+        "type": "名詞"
+    },
+    "working": {
+        "reading": "はたらいている",
+        "meaning": "働いている",
+        "type": "動詞"
+    },
+    "hard": {
+        "reading": "いっしょうけんめい",
+        "meaning": "一生懸命",
+        "type": "副詞"
+    },
+    "trying": {
+        "reading": "ためしている",
+        "meaning": "試している、努力している",
+        "type": "動詞"
+    },
+    "if": {
+        "reading": "もし",
+        "meaning": "もし",
+        "type": "接続詞"
+    },
+    "bigger": {
+        "reading": "もっとおおきい",
+        "meaning": "もっと大きい",
+        "type": "形容詞"
+    },
+    "even": {
+        "reading": "〜さえ",
+        "meaning": "〜さえ、〜でも",
+        "type": "副詞"
+    },
+    "would": {
+        "reading": "～だろう",
+        "meaning": "～だろう",
+        "type": "助動詞"
+    },
+    "more": {
+        "reading": "もっと",
+        "meaning": "もっと",
+        "type": "副詞"
+    },
+    "own": {
+        "reading": "自身の",
+        "meaning": "自身の",
+        "type": "形容詞"
+    },
+    "thought": {
+        "reading": "思った",
+        "meaning": "思った",
+        "type": "動詞"
+    },
+    "it": {
+        "reading": "それ",
+        "meaning": "それ",
+        "type": "代名詞"
+    },
+    "caused": {
+        "reading": "引き起こした",
+        "meaning": "引き起こした",
+        "type": "動詞"
+    },
+    "problems": {
+        "reading": "問題",
+        "meaning": "問題",
+        "type": "名詞"
+    },
+    "got": {
+        "reading": "得た",
+        "meaning": "得た",
+        "type": "動詞"
+    },
+    "blocked": {
+        "reading": "塞がれた",
+        "meaning": "塞がれた",
+        "type": "動詞"
+    },
+    "couldnt": {
+        "reading": "できなかった",
+        "meaning": "できなかった",
+        "type": "助動詞"
+    },
+    "animals": {
+        "reading": "動物たち",
+        "meaning": "動物たち",
+        "type": "名詞"
+    },
+    "too": {
+        "reading": "〜も",
+        "meaning": "〜も",
+        "type": "副詞"
+    },
+    "woke": {
+        "reading": "目覚めた",
+        "meaning": "目覚めた",
+        "type": "動詞"
+    },
+    "up": {
+        "reading": "上に",
+        "meaning": "上に",
+        "type": "副詞"
+    },
+    "coming": {
+        "reading": "来る",
+        "meaning": "来る",
+        "type": "動詞"
+    },
+    "from": {
+        "reading": "〜から",
+        "meaning": "〜から",
+        "type": "前置詞"
+    },
+    "near": {
+        "reading": "近くの",
+        "meaning": "近くの",
+        "type": "前置詞"
+    },
+    "went": {
+        "reading": "行った",
+        "meaning": "行った",
+        "type": "動詞"
+    },
+    "when": {
+        "reading": "〜のとき",
+        "meaning": "〜のとき",
+        "type": "接続詞"
+    },
+    "saw": {
+        "reading": "見た",
+        "meaning": "見た",
+        "type": "動詞"
+    },
+    "there": {
+        "reading": "そこ",
+        "meaning": "そこ",
+        "type": "副詞"
+    },
+    "looking": {
+        "reading": "見ている",
+        "meaning": "見ている",
+        "type": "動詞"
+    },
+    "you": {
+        "reading": "あなた",
+        "meaning": "あなた",
+        "type": "代名詞"
+    },
+    "do": {
+        "reading": "する",
+        "meaning": "する",
+        "type": "動詞"
+    },
+    "this": {
+        "reading": "これ",
+        "meaning": "これ",
+        "type": "代名詞"
+    },
+    "asked": {
+        "reading": "尋ねた",
+        "meaning": "尋ねた",
+        "type": "動詞"
+    },
+    "no": {
+        "reading": "いいえ",
+        "meaning": "いいえ",
+        "type": "感動詞"
+    },
+    "i": {
+        "reading": "私",
+        "meaning": "私",
+        "type": "代名詞"
+    },
+    "just": {
+        "reading": "ちょうど",
+        "meaning": "ちょうど",
+        "type": "副詞"
+    },
+    "as": {
+        "reading": "〜のように",
+        "meaning": "〜のように",
+        "type": "接続詞"
+    },
+    "angry": {
+        "reading": "怒っている",
+        "meaning": "怒っている",
+        "type": "形容詞"
+    },
+    "both": {
+        "reading": "両方",
+        "meaning": "両方",
+        "type": "代名詞"
+    },
+    "beavers": {
+        "reading": "ビーバーたち",
+        "meaning": "ビーバーたち",
+        "type": "名詞"
+    },
+    "at": {
+        "reading": "～で",
+        "meaning": "～で",
+        "type": "前置詞"
+    },
+    "by": {
+        "reading": "〜によって",
+        "meaning": "〜によって",
+        "type": "前置詞"
+    },
+    "look": {
+        "reading": "見る",
+        "meaning": "見る",
+        "type": "動詞"
+    },
+    "something": {
+        "reading": "何か",
+        "meaning": "何か",
+        "type": "代名詞"
+    },
+    "neither": {
+        "reading": "どちらも〜ない",
+        "meaning": "どちらも〜ない",
+        "type": "代名詞"
+    },
+    "knew": {
+        "reading": "知っていた",
+        "meaning": "知っていた",
+        "type": "動詞"
+    },
+    "what": {
+        "reading": "何",
+        "meaning": "何",
+        "type": "代名詞"
+    },
+    "mysterious": {
+        "reading": "不思議な",
+        "meaning": "不思議な",
+        "type": "形容詞"
+    },
+    "third": {
+        "reading": "三番目の",
+        "meaning": "三番目の",
+        "type": "形容詞"
+    },
+    "morning": {
+        "reading": "朝",
+        "meaning": "朝",
+        "type": "名詞"
+    },
+    "appeared": {
+        "reading": "現れた",
+        "meaning": "現れた",
+        "type": "動詞"
+    },
+    "overnight": {
+        "reading": "一晩で",
+        "meaning": "一晩で",
+        "type": "副詞"
+    },
+    "nothing": {
+        "reading": "何も〜ない",
+        "meaning": "何も〜ない",
+        "type": "代名詞"
+    },
+    "investigate": {
+        "reading": "調査する",
+        "meaning": "調査する",
+        "type": "動詞"
+    },
+    "carefully": {
+        "reading": "注意深く",
+        "meaning": "注意深く",
+        "type": "副詞"
+    },
+    "inspected": {
+        "reading": "検査した",
+        "meaning": "検査した",
+        "type": "動詞"
+    },
+    "perfectly": {
+        "reading": "かんぜんに",
+        "meaning": "完全に",
+        "type": "副詞"
+    },
+    "straight": {
+        "reading": "まっすぐ",
+        "meaning": "まっすぐな",
+        "type": "形容詞"
+    },
+    "with": {
+        "reading": "〜と",
+        "meaning": "〜と一緒に",
+        "type": "前置詞"
+    },
+    "pieces": {
+        "reading": "かけら",
+        "meaning": "かけら、部分",
+        "type": "名詞"
+    },
+    "didn't": {
+        "reading": "〜しなかった",
+        "meaning": "〜しなかった（did notの短縮形）",
+        "type": "助動詞"
+    },
+    "same": {
+        "reading": "おなじ",
+        "meaning": "同じ",
+        "type": "形容詞"
+    },
+    "time": {
+        "reading": "じかん",
+        "meaning": "時間",
+        "type": "名詞"
+    },
+    "noticed": {
+        "reading": "きづいた",
+        "meaning": "気づいた",
+        "type": "動詞"
+    },
+    "came": {
+        "reading": "きた",
+        "meaning": "来た",
+        "type": "動詞"
+    },
+    "running": {
+        "reading": "はしっている",
+        "meaning": "走っている",
+        "type": "動詞"
+    },
+    "annoy": {
+        "reading": "いらだたせる",
+        "meaning": "いらだたせる",
+        "type": "動詞"
+    },
+    "me": {
+        "reading": "わたし",
+        "meaning": "私を",
+        "type": "代名詞"
+    },
+    "shouted": {
+        "reading": "さけんだ",
+        "meaning": "叫んだ",
+        "type": "動詞"
+    },
+    "didnt": {
+        "reading": "〜しなかった",
+        "meaning": "〜しなかった（did notの短縮形）",
+        "type": "助動詞"
+    },
+    "back": {
+        "reading": "うしろ",
+        "meaning": "後ろ",
+        "type": "名詞"
+    },
+    "trick": {
+        "reading": "だます",
+        "meaning": "だます、策略",
+        "type": "名詞"
+    },
+    "argued": {
+        "reading": "けんかした",
+        "meaning": "言い争った",
+        "type": "動詞"
+    },
+    "for": {
+        "reading": "〜のために",
+        "meaning": "〜のために",
+        "type": "前置詞"
+    },
+    "few": {
+        "reading": "すくない",
+        "meaning": "少数の",
+        "type": "形容詞"
+    },
+    "minutes": {
+        "reading": "ふん",
+        "meaning": "分",
+        "type": "名詞"
+    },
+    "blaming": {
+        "reading": "せいにする",
+        "meaning": "責めること",
+        "type": "動詞"
+    },
+    "could": {
+        "reading": "〜できた",
+        "meaning": "〜できた",
+        "type": "助動詞"
+    },
+    "telling": {
+        "reading": "つたえる",
+        "meaning": "伝えること",
+        "type": "動詞"
+    },
+    "truth": {
+        "reading": "しんじつ",
+        "meaning": "真実",
+        "type": "名詞"
+    },
+    "said": {
+        "reading": "いった",
+        "meaning": "言った",
+        "type": "動詞"
+    },
+    "maybe": {
+        "reading": "たぶん",
+        "meaning": "たぶん",
+        "type": "副詞"
+    },
+    "there's": {
+        "reading": "ある",
+        "meaning": "〜がある（there isの短縮形）",
+        "type": "表現"
+    },
+    "take": {
+        "reading": "とる",
+        "meaning": "取る",
+        "type": "動詞"
+    },
+    "our": {
+        "reading": "わたしたちの",
+        "meaning": "私たちの",
+        "type": "代名詞"
+    },
+    "nodded": {
+        "reading": "うなずいた",
+        "meaning": "うなずいた",
+        "type": "動詞"
+    },
+    "slowly": {
+        "reading": "ゆっくり",
+        "meaning": "ゆっくりと",
+        "type": "副詞"
+    },
+    "that": {
+        "reading": "その",
+        "meaning": "その",
+        "type": "指示詞"
+    },
+    "be": {
+        "reading": "〜である",
+        "meaning": "〜である",
+        "type": "動詞"
+    },
+    "true": {
+        "reading": "ほんとう",
+        "meaning": "本当",
+        "type": "形容詞"
+    },
+    "i've": {
+        "reading": "わたしは〜した",
+        "meaning": "〜した（I haveの短縮形）",
+        "type": "表現"
+    },
+    "never": {
+        "reading": "けっして〜ない",
+        "meaning": "決して〜ない",
+        "type": "副詞"
+    },
+    "seen": {
+        "reading": "みた",
+        "meaning": "見た",
+        "type": "動詞"
+    },
+    "before": {
+        "reading": "まえに",
+        "meaning": "以前に",
+        "type": "副詞"
+    },
+    "two": {
+        "reading": "ふたつ",
+        "meaning": "二つ",
+        "type": "数詞"
+    },
+    "rivals": {
+        "reading": "ライバル",
+        "meaning": "ライバルたち",
+        "type": "名詞"
+    },
+    "quietly": {
+        "reading": "しずかに",
+        "meaning": "静かに",
+        "type": "副詞"
+    },
+    "wooden": {
+        "reading": "きの",
+        "meaning": "木の",
+        "type": "形容詞"
+    },
+    "felt": {
+        "reading": "かんじた",
+        "meaning": "感じた",
+        "type": "動詞"
+    },
+    "worried": {
+        "reading": "しんぱいした",
+        "meaning": "心配した",
+        "type": "動詞"
+    },
+    "happening": {
+        "reading": "おこっている",
+        "meaning": "起こっていること",
+        "type": "動詞"
+    },
+    "disappearances": {
+        "reading": "しっそう",
+        "meaning": "失踪、いなくなること",
+        "type": "名詞"
+    },
+    "passed": {
+        "reading": "すぎた",
+        "meaning": "過ぎた",
+        "type": "動詞"
+    },
+    "started": {
+        "reading": "はじまった",
+        "meaning": "始まった",
+        "type": "動詞"
+    },
+    "change": {
+        "reading": "へんか",
+        "meaning": "変化",
+        "type": "名詞"
+    },
+    "nobody": {
+        "reading": "誰も",
+        "meaning": "誰もいない、だれも～ない",
+        "type": "代名詞"
+    },
+    "busy": {
+        "reading": "忙しい",
+        "meaning": "忙しい",
+        "type": "形容詞"
+    },
+    "watching": {
+        "reading": "見ている",
+        "meaning": "見ている、監視している",
+        "type": "動詞"
+    },
+    "between": {
+        "reading": "間に",
+        "meaning": "～の間に",
+        "type": "前置詞"
+    },
+    "began": {
+        "reading": "始まった",
+        "meaning": "始まった（beginの過去形）",
+        "type": "動詞"
+    },
+    "disappearing": {
+        "reading": "姿を消している",
+        "meaning": "姿を消している",
+        "type": "動詞"
+    },
+    "daily": {
+        "reading": "毎日の",
+        "meaning": "毎日の、日々の",
+        "type": "形容詞"
+    },
+    "meetings": {
+        "reading": "集まり",
+        "meaning": "会議、集まり",
+        "type": "名詞"
+    },
+    "usually": {
+        "reading": "通常は",
+        "meaning": "通常は、普段は",
+        "type": "副詞"
+    },
+    "many": {
+        "reading": "多くの",
+        "meaning": "多くの",
+        "type": "形容詞"
+    },
+    "playing": {
+        "reading": "遊んでいる",
+        "meaning": "遊んでいる",
+        "type": "動詞"
+    },
+    "sharing": {
+        "reading": "共有している",
+        "meaning": "共有している",
+        "type": "動詞"
+    },
+    "news": {
+        "reading": "ニュース",
+        "meaning": "ニュース、知らせ",
+        "type": "名詞"
+    },
+    "now": {
+        "reading": "今",
+        "meaning": "今",
+        "type": "副詞"
+    },
+    "only": {
+        "reading": "唯一",
+        "meaning": "唯一、～だけ",
+        "type": "副詞"
+    },
+    "wondered": {
+        "reading": "不思議に思った",
+        "meaning": "不思議に思った（wonderの過去形）",
+        "type": "動詞"
+    },
+    "where": {
+        "reading": "どこに",
+        "meaning": "どこに",
+        "type": "副詞"
+    },
+    "everyone": {
+        "reading": "みんな",
+        "meaning": "みんな、全員",
+        "type": "代名詞"
+    },
+    "friend": {
+        "reading": "友達",
+        "meaning": "友達",
+        "type": "名詞"
+    },
+    "willow": {
+        "reading": "ウィロー",
+        "meaning": "ウィロー（固有名詞、通常はヤナギの木を指すがここでは名前）",
+        "type": "固有名詞"
+    },
+    "gentle": {
+        "reading": "優しい",
+        "meaning": "優しい",
+        "type": "形容詞"
+    },
+    "rabbit": {
+        "reading": "ウサギ",
+        "meaning": "ウサギ",
+        "type": "名詞"
+    },
+    "she": {
+        "reading": "彼女",
+        "meaning": "彼女",
+        "type": "代名詞"
+    },
+    "missing": {
+        "reading": "行方不明の",
+        "meaning": "行方不明の、欠けている",
+        "type": "形容詞"
+    },
+    "shook": {
+        "reading": "振った",
+        "meaning": "振った（shakeの過去形）",
+        "type": "動詞"
+    },
+    "her": {
+        "reading": "彼女の",
+        "meaning": "彼女の",
+        "type": "代名詞"
+    },
+    "head": {
+        "reading": "頭",
+        "meaning": "頭",
+        "type": "名詞"
+    },
+    "sadly": {
+        "reading": "悲しそうに",
+        "meaning": "悲しそうに",
+        "type": "副詞"
+    },
+    "i'm": {
+        "reading": "私は～です",
+        "meaning": "私は～です（I amの短縮形）",
+        "type": "代名詞+動詞"
+    },
+    "starting": {
+        "reading": "始めている",
+        "meaning": "始めている",
+        "type": "動詞"
+    },
+    "get": {
+        "reading": "なる",
+        "meaning": "得る、なる",
+        "type": "動詞"
+    },
+    "soon": {
+        "reading": "すぐに",
+        "meaning": "すぐに",
+        "type": "副詞"
+    },
+    "became": {
+        "reading": "なった",
+        "meaning": "なった（becomeの過去形）",
+        "type": "動詞"
+    },
+    "scared": {
+        "reading": "怖がっている",
+        "meaning": "怖がっている",
+        "type": "形容詞"
+    },
+    "whispered": {
+        "reading": "ささやいた",
+        "meaning": "ささやいた（whisperの過去形）",
+        "type": "動詞"
+    },
+    "about": {
+        "reading": "～について",
+        "meaning": "～について",
+        "type": "前置詞"
+    },
+    "hunting": {
+        "reading": "狩り",
+        "meaning": "狩り",
+        "type": "名詞"
+    },
+    "in": {
+        "reading": "中に",
+        "meaning": "～の中に",
+        "type": "前置詞"
+    },
+    "forest": {
+        "reading": "森",
+        "meaning": "森",
+        "type": "名詞"
+    },
+    "some": {
+        "reading": "いくつか",
+        "meaning": "いくつか、一部の",
+        "type": "代名詞"
+    },
+    "moved": {
+        "reading": "引っ越した",
+        "meaning": "引っ越した、動いた（moveの過去形）",
+        "type": "動詞"
+    },
+    "away": {
+        "reading": "離れて",
+        "meaning": "離れて",
+        "type": "副詞"
+    },
+    "safer": {
+        "reading": "より安全な",
+        "meaning": "より安全な（safeの比較級）",
+        "type": "形容詞"
+    },
+    "homes": {
+        "reading": "家々",
+        "meaning": "家々（homeの複数形）",
+        "type": "名詞"
+    },
+    "tried": {
+        "reading": "試した",
+        "meaning": "試した、努力した（tryの過去形）",
+        "type": "動詞"
+    },
+    "warning": {
+        "reading": "警告する",
+        "meaning": "警告する",
+        "type": "動詞"
+    },
+    "neighbors": {
+        "reading": "隣人たち",
+        "meaning": "隣人たち",
+        "type": "名詞"
+    },
+    "listened": {
+        "reading": "耳を傾けた",
+        "meaning": "耳を傾けた（listenの過去形）",
+        "type": "動詞"
+    },
+    "you're": {
+        "reading": "あなたは～です",
+        "meaning": "あなたは～です（you areの短縮形）",
+        "type": "代名詞+動詞"
+    },
+    "scare": {
+        "reading": "怖がらせる",
+        "meaning": "怖がらせる、おびえさせる",
+        "type": "動詞"
+    },
+    "us": {
+        "reading": "私たちを",
+        "meaning": "私たちを、私たちに",
+        "type": "代名詞"
+    },
+    "because": {
+        "reading": "なぜなら",
+        "meaning": "なぜなら～だから",
+        "type": "接続詞"
+    },
+    "want": {
+        "reading": "欲しい",
+        "meaning": "欲しい、～したい",
+        "type": "動詞"
+    },
+    "your": {
+        "reading": "あなたの",
+        "meaning": "あなたの",
+        "type": "代名詞"
+    },
+    "helpless": {
+        "reading": "無力な",
+        "meaning": "無力な、どうすることもできない",
+        "type": "形容詞"
+    },
+    "alone": {
+        "reading": "一人で",
+        "meaning": "一人で、単独で",
+        "type": "副詞"
+    },
+    "believed": {
+        "reading": "信じた",
+        "meaning": "信じた（believeの過去形）",
+        "type": "動詞"
+    },
+    "him": {
+        "reading": "彼を",
+        "meaning": "彼を、彼に",
+        "type": "代名詞"
+    },
+    "figure": {
+        "reading": "理解する",
+        "meaning": "数字、姿、理解する",
+        "type": "名詞/動詞"
+    },
+    "out": {
+        "reading": "外に",
+        "meaning": "外に、～から",
+        "type": "副詞/前置詞"
+    },
+    "going": {
+        "reading": "行くこと",
+        "meaning": "行くこと、進行中",
+        "type": "動詞"
+    },
+    "meant": {
+        "reading": "意味した",
+        "meaning": "意味した（meanの過去形）",
+        "type": "動詞"
+    },
+    "doing": {
+        "reading": "していること",
+        "meaning": "していること、実行",
+        "type": "動詞"
+    },
+    "hunter's": {
+        "reading": "狩人の",
+        "meaning": "狩人の（hunterの所有格）",
+        "type": "名詞"
+    },
+    "lodge": {
+        "reading": "小屋",
+        "meaning": "小屋、ロッジ",
+        "type": "名詞"
+    },
+    "quiet": {
+        "reading": "静かな",
+        "meaning": "静かな",
+        "type": "形容詞"
+    },
+    "evening": {
+        "reading": "夜",
+        "meaning": "夜、夕方",
+        "type": "名詞"
+    },
+    "find": {
+        "reading": "見つける",
+        "meaning": "見つける",
+        "type": "動詞"
+    },
+    "answers": {
+        "reading": "答え",
+        "meaning": "答え（answerの複数形）",
+        "type": "名詞"
+    },
+    "swam": {
+        "reading": "泳いだ",
+        "meaning": "泳いだ（swimの過去形）",
+        "type": "動詞"
+    },
+    "through": {
+        "reading": "～を通り抜けて",
+        "meaning": "～を通り抜けて",
+        "type": "前置詞"
+    },
+    "staying": {
+        "reading": "留まっている",
+        "meaning": "留まっている、滞在している",
+        "type": "動詞"
+    },
+    "hidden": {
+        "reading": "隠れた",
+        "meaning": "隠れた、秘密の",
+        "type": "形容詞"
+    },
+    "grass": {
+        "reading": "草",
+        "meaning": "草",
+        "type": "名詞"
+    },
+    "heart": {
+        "reading": "心臓",
+        "meaning": "心臓、心",
+        "type": "名詞"
+    },
+    "closer": {
+        "reading": "より近くに",
+        "meaning": "より近くに（closeの比較級）",
+        "type": "副詞"
+    },
+    "voices": {
+        "reading": "声",
+        "meaning": "声（voiceの複数形）",
+        "type": "名詞"
+    },
+    "filled": {
+        "reading": "満たされた",
+        "meaning": "満たされた（fillの過去形）",
+        "type": "動詞"
+    },
+    "air": {
+        "reading": "空気",
+        "meaning": "空気",
+        "type": "名詞"
+    },
+    "louder": {
+        "reading": "より大きな声で",
+        "meaning": "より大きな声で（loudの比較級）",
+        "type": "形容詞"
+    },
+    "than": {
+        "reading": "～よりも",
+        "meaning": "～よりも",
+        "type": "接続詞"
+    },
+    "silently": {
+        "reading": "静かに",
+        "meaning": "静かに",
+        "type": "副詞"
+    },
+    "climbed": {
+        "reading": "登った",
+        "meaning": "登った（climbの過去形）",
+        "type": "動詞"
+    },
+    "onto": {
+        "reading": "～の上に",
+        "meaning": "～の上に",
+        "type": "前置詞"
+    },
+    "peeked": {
+        "reading": "のぞいた",
+        "meaning": "のぞいた（peekの過去形）",
+        "type": "動詞"
+    },
+    "behind": {
+        "reading": "～の後ろに",
+        "meaning": "～の後ろに",
+        "type": "前置詞"
+    },
+    "thick": {
+        "reading": "厚い",
+        "meaning": "厚い、密な",
+        "type": "形容詞"
+    },
+    "bush": {
+        "reading": "茂み",
+        "meaning": "茂み、ブッシュ",
+        "type": "名詞"
+    },
+    "bright": {
+        "reading": "明るい",
+        "meaning": "明るい",
+        "type": "形容詞"
+    },
+    "lights": {
+        "reading": "明かり",
+        "meaning": "明かり、光（lightの複数形）",
+        "type": "名詞"
+    },
+    "figures": {
+        "reading": "姿",
+        "meaning": "姿、形、数字（figureの複数形）",
+        "type": "名詞"
+    },
+    "around": {
+        "reading": "周りに",
+        "meaning": "周りに、～のあたりに",
+        "type": "前置詞/副詞"
+    },
+    "shock": {
+        "reading": "衝撃",
+        "meaning": "衝撃、ショック",
+        "type": "名詞"
+    },
+    "laughing": {
+        "reading": "笑っている",
+        "meaning": "笑っている",
+        "type": "動詞"
+    },
+    "talking": {
+        "reading": "話している",
+        "meaning": "話している",
+        "type": "動詞"
+    },
+    "way": {
+        "reading": "方法",
+        "meaning": "方法、道",
+        "type": "名詞"
+    },
+    "understand": {
+        "reading": "理解する",
+        "meaning": "理解する",
+        "type": "動詞"
+    },
+    "shiny": {
+        "reading": "光る",
+        "meaning": "光る、輝く",
+        "type": "形容詞"
+    },
+    "objects": {
+        "reading": "物",
+        "meaning": "物、物体（objectの複数形）",
+        "type": "名詞"
+    },
+    "suddenly": {
+        "reading": "突然",
+        "meaning": "突然",
+        "type": "副詞"
+    },
+    "hopping": {
+        "reading": "飛び跳ねている",
+        "meaning": "飛び跳ねている",
+        "type": "動詞"
+    },
+    "move": {
+        "reading": "動く",
+        "meaning": "動く",
+        "type": "動詞"
+    },
+    "echoed": {
+        "reading": "響いた",
+        "meaning": "響いた（echoの過去形）",
+        "type": "動詞"
+    },
+    "fell": {
+        "reading": "落ちた",
+        "meaning": "落ちた（fallの過去形）",
+        "type": "動詞"
+    },
+    "ground": {
+        "reading": "地面",
+        "meaning": "地面",
+        "type": "名詞"
+    },
+    "again": {
+        "reading": "再び",
+        "meaning": "再び",
+        "type": "副詞"
+    },
+    "stopped": {
+        "reading": "止まった",
+        "meaning": "止まった（stopの過去形）",
+        "type": "動詞"
+    },
+    "tears": {
+        "reading": "涙",
+        "meaning": "涙（tearの複数形）",
+        "type": "名詞"
+    },
+    "eyes": {
+        "reading": "目",
+        "meaning": "目（eyeの複数形）",
+        "type": "名詞"
+    },
+    "sense": {
+        "reading": "感覚",
+        "meaning": "感覚、意味",
+        "type": "名詞"
+    },
+    "sadness": {
+        "reading": "悲しみ",
+        "meaning": "悲しみ",
+        "type": "名詞"
+    },
+    "guilt": {
+        "reading": "罪悪感",
+        "meaning": "罪悪感",
+        "type": "名詞"
+    },
+    "wasted": {
+        "reading": "無駄にした",
+        "meaning": "無駄にした（wasteの過去形）",
+        "type": "動詞"
+    },
+    "so": {
+        "reading": "とても",
+        "meaning": "とても、だから",
+        "type": "副詞"
+    },
+    "much": {
+        "reading": "多くの",
+        "meaning": "多くの",
+        "type": "形容詞/副詞"
+    },
+    "competing": {
+        "reading": "競争している",
+        "meaning": "競争している",
+        "type": "動詞"
+    },
+    "fighting": {
+        "reading": "戦っている",
+        "meaning": "戦っている",
+        "type": "動詞"
+    },
+    "arguing": {
+        "reading": "口論している",
+        "meaning": "口論している",
+        "type": "動詞"
+    },
+    "petty": {
+        "reading": "些細な",
+        "meaning": "些細な、取るに足らない",
+        "type": "形容詞"
+    },
+    "contest": {
+        "reading": "競争",
+        "meaning": "競争、コンテスト",
+        "type": "名詞"
+    },
+    "seemed": {
+        "reading": "思えた",
+        "meaning": "思えた、～のようだった（seemの過去形）",
+        "type": "動詞"
+    },
+    "foolish": {
+        "reading": "愚かな",
+        "meaning": "愚かな",
+        "type": "形容詞"
+    },
+    "compared": {
+        "reading": "比較して",
+        "meaning": "比較して、～と比べて",
+        "type": "動詞"
+    },
+    "heavy": {
+        "reading": "重い",
+        "meaning": "重い",
+        "type": "形容詞"
+    },
+    "regret": {
+        "reading": "後悔",
+        "meaning": "後悔",
+        "type": "名詞"
+    },
+    "realizing": {
+        "reading": "気づいている",
+        "meaning": "気づいている",
+        "type": "動詞"
+    },
+    "needed": {
+        "reading": "必要だった",
+        "meaning": "必要だった（needの過去形）",
+        "type": "動詞"
+    },
+    "stop": {
+        "reading": "止める",
+        "meaning": "止める",
+        "type": "動詞"
+    },
+    "start": {
+        "reading": "始める",
+        "meaning": "始める",
+        "type": "動詞"
+    },
+    "together": {
+        "reading": "一緒に",
+        "meaning": "一緒に",
+        "type": "副詞"
+    },
+    "lives": {
+        "reading": "命",
+        "meaning": "命、生活（lifeの複数形）",
+        "type": "名詞"
+    },
+    "depended": {
+        "reading": "依存していた",
+        "meaning": "依存していた、頼っていた（dependの過去形）",
+        "type": "動詞"
+    },
+    "sun": {
+        "reading": "太陽",
+        "meaning": "太陽",
+        "type": "名詞"
+    },
+    "setting": {
+        "reading": "沈んでいる",
+        "meaning": "沈んでいる、設定",
+        "type": "動詞"
+    },
+    "casting": {
+        "reading": "投げかけている",
+        "meaning": "投げかけている、役を割り当てる",
+        "type": "動詞"
+    },
+    "an": {
+        "reading": "一つの",
+        "meaning": "一つの（不定冠詞）",
+        "type": "冠詞"
+    },
+    "orange": {
+        "reading": "オレンジ色の",
+        "meaning": "オレンジ色、オレンジ",
+        "type": "形容詞/名詞"
+    },
+    "glow": {
+        "reading": "輝き",
+        "meaning": "輝き",
+        "type": "名詞"
+    },
+    "across": {
+        "reading": "～を横切って",
+        "meaning": "～を横切って",
+        "type": "前置詞"
+    },
+    "decided": {
+        "reading": "決めた",
+        "meaning": "決めた（decideの過去形）",
+        "type": "動詞"
+    },
+    "nervous": {
+        "reading": "緊張した",
+        "meaning": "緊張した、神経質な",
+        "type": "形容詞"
+    },
+    "choice": {
+        "reading": "選択",
+        "meaning": "選択",
+        "type": "名詞"
+    },
+    "deep": {
+        "reading": "深い",
+        "meaning": "深い",
+        "type": "形容詞"
+    },
+    "breath": {
+        "reading": "息",
+        "meaning": "息",
+        "type": "名詞"
+    },
+    "toward": {
+        "reading": "～の方へ",
+        "meaning": "～の方へ",
+        "type": "前置詞"
+    },
+    "ready": {
+        "reading": "準備ができた",
+        "meaning": "準備ができた",
+        "type": "形容詞"
+    },
+    "are": {
+        "reading": "～です",
+        "meaning": "～です（be動詞の現在形）",
+        "type": "動詞"
+    },
+    "here": {
+        "reading": "ここに",
+        "meaning": "ここに",
+        "type": "副詞"
+    },
+    "snapped": {
+        "reading": "パチンと音を立てた",
+        "meaning": "パチンと音を立てた、折れた、怒鳴った（snapの過去形）",
+        "type": "動詞"
+    },
+    "planning": {
+        "reading": "計画している",
+        "meaning": "計画している",
+        "type": "動詞"
+    },
+    "ruin": {
+        "reading": "台無しにする",
+        "meaning": "台無しにする、破滅させる",
+        "type": "動詞"
+    },
+    "my": {
+        "reading": "私の",
+        "meaning": "私の",
+        "type": "代名詞"
+    },
+    "voice": {
+        "reading": "声",
+        "meaning": "声",
+        "type": "名詞"
+    },
+    "firm": {
+        "reading": "固い",
+        "meaning": "固い、断固とした",
+        "type": "形容詞"
+    },
+    "calm": {
+        "reading": "落ち着いた",
+        "meaning": "落ち着いた、穏やかな",
+        "type": "形容詞"
+    },
+    "we": {
+        "reading": "私たち",
+        "meaning": "私たち",
+        "type": "代名詞"
+    },
+    "it's": {
+        "reading": "それは～です",
+        "meaning": "それは～です（it isの短縮形）",
+        "type": "代名詞+動詞"
+    },
+    "hunters": {
+        "reading": "狩人たち",
+        "meaning": "狩人たち（hunterの複数形）",
+        "type": "名詞"
+    },
+    "theyre": {
+        "reading": "彼らは～です",
+        "meaning": "彼らは～です（they areの短縮形）",
+        "type": "代名詞+動詞"
+    },
+    "yesterday": {
+        "reading": "昨日",
+        "meaning": "昨日",
+        "type": "名詞"
+    },
+    "froze": {
+        "reading": "凍った",
+        "meaning": "凍った（freezeの過去形）",
+        "type": "動詞"
+    },
+    "stared": {
+        "reading": "じっと見つめた",
+        "meaning": "じっと見つめた（stareの過去形）",
+        "type": "動詞"
+    },
+    "wanting": {
+        "reading": "欲している",
+        "meaning": "欲している",
+        "type": "動詞"
+    },
+    "making": {
+        "reading": "作っている",
+        "meaning": "作っている",
+        "type": "動詞"
+    },
+    "its": {
+        "reading": "その",
+        "meaning": "その（itの所有格）",
+        "type": "代名詞"
+    },
+    "games": {
+        "reading": "ゲーム",
+        "meaning": "ゲーム（gameの複数形）",
+        "type": "名詞"
+    },
+    "right": {
+        "reading": "正しい",
+        "meaning": "正しい、右",
+        "type": "形容詞/名詞"
+    },
+    "frustrated": {
+        "reading": "イライラした",
+        "meaning": "イライラした、不満を抱いた",
+        "type": "形容詞"
+    },
+    "why": {
+        "reading": "なぜ",
+        "meaning": "なぜ",
+        "type": "副詞"
+    },
+    "lie": {
+        "reading": "嘘をつく",
+        "meaning": "嘘をつく、横になる",
+        "type": "動詞"
+    },
+    "serious": {
+        "reading": "真剣な",
+        "meaning": "真剣な、重大な",
+        "type": "形容詞"
+    },
+    "is": {
+        "reading": "～です",
+        "meaning": "～です（be動詞の現在形）",
+        "type": "動詞"
+    },
+    "disappeared": {
+        "reading": "姿を消した",
+        "meaning": "姿を消した（disappearの過去形）",
+        "type": "動詞"
+    },
+    "face": {
+        "reading": "顔",
+        "meaning": "顔",
+        "type": "名詞"
+    },
+    "will": {
+        "reading": "～だろう",
+        "meaning": "～だろう（助動詞）",
+        "type": "助動詞"
+    },
+    "all": {
+        "reading": "全ての",
+        "meaning": "全ての",
+        "type": "形容詞/代名詞"
+    },
+    "hesitated": {
+        "reading": "ためらった",
+        "meaning": "ためらった（hesitateの過去形）",
+        "type": "動詞"
+    },
+    "times": {
+        "reading": "回",
+        "meaning": "時間、回（timeの複数形）",
+        "type": "名詞"
+    },
+    "fought": {
+        "reading": "戦った",
+        "meaning": "戦った（fightの過去形）",
+        "type": "動詞"
+    },
+    "say": {
+        "reading": "言う",
+        "meaning": "言う",
+        "type": "動詞"
+    },
+    "possibly": {
+        "reading": "もしかしたら",
+        "meaning": "もしかしたら、おそらく",
+        "type": "副詞"
+    },
+    "against": {
+        "reading": "～に反対して",
+        "meaning": "～に反対して",
+        "type": "前置詞"
+    },
+    "took": {
+        "reading": "取った",
+        "meaning": "取った（takeの過去形）",
+        "type": "動詞"
+    },
+    "step": {
+        "reading": "一歩",
+        "meaning": "一歩、段階",
+        "type": "名詞"
+    },
+    "plan": {
+        "reading": "計画",
+        "meaning": "計画",
+        "type": "名詞"
+    },
+    "need": {
+        "reading": "必要とする",
+        "meaning": "必要とする",
+        "type": "動詞"
+    },
+    "work": {
+        "reading": "働く",
+        "meaning": "働く、仕事",
+        "type": "動詞/名詞"
+    },
+    "low": {
+        "reading": "低い",
+        "meaning": "低い",
+        "type": "形容詞"
+    },
+    "break": {
+        "reading": "壊す",
+        "meaning": "壊す、休憩",
+        "type": "動詞/名詞"
+    },
+    "can": {
+        "reading": "～できる",
+        "meaning": "～できる（助動詞）",
+        "type": "助動詞"
+    },
+    "cause": {
+        "reading": "原因",
+        "meaning": "原因、～を引き起こす",
+        "type": "名詞/動詞"
+    },
+    "enough": {
+        "reading": "十分な",
+        "meaning": "十分な",
+        "type": "形容詞/副詞"
+    },
+    "destroy": {
+        "reading": "破壊する",
+        "meaning": "破壊する",
+        "type": "動詞"
+    },
+    "chopper's": {
+        "reading": "チョッパーの",
+        "meaning": "チョッパーの（Chopperの所有格）",
+        "type": "固有名詞"
+    },
+    "widened": {
+        "reading": "広げた",
+        "meaning": "広げた（widenの過去形）",
+        "type": "動詞"
+    },
+    "know": {
+        "reading": "知っている",
+        "meaning": "知っている",
+        "type": "動詞"
+    },
+    "how": {
+        "reading": "どのように",
+        "meaning": "どのように",
+        "type": "副詞"
+    },
+    "we've": {
+        "reading": "私たちは～した",
+        "meaning": "私たちは～した（we haveの短縮形）",
+        "type": "代名詞+動詞"
+    },
+    "worked": {
+        "reading": "働いた",
+        "meaning": "働いた、機能した（workの過去形）",
+        "type": "動詞"
+    },
+    "seriously": {
+        "reading": "真剣に",
+        "meaning": "真剣に",
+        "type": "副詞"
+    },
+    "good": {
+        "reading": "良い",
+        "meaning": "良い",
+        "type": "形容詞"
+    },
+    "left": {
+        "reading": "残された",
+        "meaning": "残された、去った（leaveの過去形）",
+        "type": "動詞"
+    },
+    "see": {
+        "reading": "見る",
+        "meaning": "見る",
+        "type": "動詞"
+    },
+    "important": {
+        "reading": "重要な",
+        "meaning": "重要な",
+        "type": "形容詞"
+    },
+    "thinking": {
+        "reading": "考えている",
+        "meaning": "考えている",
+        "type": "動詞"
+    },
+    "deeply": {
+        "reading": "深く",
+        "meaning": "深く",
+        "type": "副詞"
+    },
+    "let": {
+        "reading": "～させる",
+        "meaning": "～させる",
+        "type": "動詞"
+    },
+    "sigh": {
+        "reading": "ため息",
+        "meaning": "ため息",
+        "type": "名詞"
+    },
+    "alright": {
+        "reading": "大丈夫",
+        "meaning": "大丈夫、よし",
+        "type": "形容詞/副詞"
+    },
+    "once": {
+        "reading": "一度",
+        "meaning": "一度、かつて",
+        "type": "副詞"
+    },
+    "youre": {
+        "reading": "あなたは～です",
+        "meaning": "あなたは～です（you areの短縮形）",
+        "type": "代名詞+動詞"
+    },
+    "lying": {
+        "reading": "嘘をついている",
+        "meaning": "嘘をついている、横たわっている",
+        "type": "動詞"
+    },
+    "im": {
+        "reading": "私は～です",
+        "meaning": "私は～です（I amの短縮形）",
+        "type": "代名詞+動詞"
+    },
+    "interrupted": {
+        "reading": "遮った",
+        "meaning": "遮った、中断した（interruptの過去形）",
+        "type": "動詞"
+    },
+    "youll": {
+        "reading": "あなたは～だろう",
+        "meaning": "あなたは～だろう（you willの短縮形）",
+        "type": "代名詞+助動詞"
+    },
+    "save": {
+        "reading": "救う",
+        "meaning": "救う、貯める",
+        "type": "動詞"
+    },
+    "home": {
+        "reading": "家",
+        "meaning": "家",
+        "type": "名詞"
+    },
+    "join": {
+        "reading": "参加する",
+        "meaning": "参加する、結合する",
+        "type": "動詞"
+    },
+    "forces": {
+        "reading": "力",
+        "meaning": "力、軍隊（forceの複数形）",
+        "type": "名詞"
+    },
+    "end": {
+        "reading": "終わり",
+        "meaning": "終わり、終わる",
+        "type": "名詞/動詞"
+    },
+    "least": {
+        "reading": "少なくとも",
+        "meaning": "少なくとも",
+        "type": "副詞"
+    },
+    "night": {
+        "reading": "夜",
+        "meaning": "夜",
+        "type": "名詞"
+    },
+    "over": {
+        "reading": "終わって",
+        "meaning": "終わって、～の上に",
+        "type": "前置詞/副詞"
+    },
+    "stars": {
+        "reading": "星",
+        "meaning": "星（starの複数形）",
+        "type": "名詞"
+    },
+    "glittering": {
+        "reading": "きらめく",
+        "meaning": "きらめく",
+        "type": "動詞"
+    },
+    "dark": {
+        "reading": "暗い",
+        "meaning": "暗い",
+        "type": "形容詞"
+    },
+    "sky": {
+        "reading": "空",
+        "meaning": "空",
+        "type": "名詞"
+    },
+    "hearts": {
+        "reading": "心臓",
+        "meaning": "心臓、心（heartの複数形）",
+        "type": "名詞"
+    },
+    "beating": {
+        "reading": "鼓動している",
+        "meaning": "鼓動している",
+        "type": "動詞"
+    },
+    "sound": {
+        "reading": "音",
+        "meaning": "音",
+        "type": "名詞"
+    },
+    "rushing": {
+        "reading": "勢いよく流れる",
+        "meaning": "勢いよく流れる、急ぐ",
+        "type": "動詞"
+    },
+    "ears": {
+        "reading": "耳",
+        "meaning": "耳（earの複数形）",
+        "type": "名詞"
+    },
+    "moment": {
+        "reading": "瞬間",
+        "meaning": "瞬間",
+        "type": "名詞"
+    },
+    "they'd": {
+        "reading": "彼らは～した",
+        "meaning": "彼らは～した（they had/wouldの短縮形）",
+        "type": "代名詞+助動詞"
+    },
+    "been": {
+        "reading": "～だった",
+        "meaning": "～だった（be動詞の過去分詞）",
+        "type": "動詞"
+    },
+    "preparing": {
+        "reading": "準備している",
+        "meaning": "準備している",
+        "type": "動詞"
+    },
+    "i'll": {
+        "reading": "私は～だろう",
+        "meaning": "私は～だろう（I willの短縮形）",
+        "type": "代名詞+助動詞"
+    },
+    "ever": {
+        "reading": "これまでに",
+        "meaning": "これまでに、かつて",
+        "type": "副詞"
+    },
+    "determination": {
+        "reading": "決意",
+        "meaning": "決意",
+        "type": "名詞"
+    },
+    "let's": {
+        "reading": "～しよう",
+        "meaning": "～しよう（let usの短縮形）",
+        "type": "動詞"
+    },
+    "under": {
+        "reading": "～の下に",
+        "meaning": "～の下に",
+        "type": "前置詞"
+    },
+    "pale": {
+        "reading": "青白い",
+        "meaning": "青白い、薄い",
+        "type": "形容詞"
+    },
+    "moonlight": {
+        "reading": "月光",
+        "meaning": "月光",
+        "type": "名詞"
+    },
+    "pulling": {
+        "reading": "引っ張っている",
+        "meaning": "引っ張っている",
+        "type": "動詞"
+    },
+    "logs": {
+        "reading": "丸太",
+        "meaning": "丸太（logの複数形）",
+        "type": "名詞"
+    },
+    "he'd": {
+        "reading": "彼は～した",
+        "meaning": "彼は～した（he had/wouldの短縮形）",
+        "type": "代名詞+助動詞"
+    },
+    "placed": {
+        "reading": "置いた",
+        "meaning": "置いた（placeの過去形）",
+        "type": "動詞"
+    },
+    "ached": {
+        "reading": "痛んだ",
+        "meaning": "痛んだ（acheの過去形）",
+        "type": "動詞"
+    },
+    "dismantled": {
+        "reading": "解体した",
+        "meaning": "解体した（dismantleの過去形）",
+        "type": "動詞"
+    },
+    "proudly": {
+        "reading": "誇らしげに",
+        "meaning": "誇らしげに",
+        "type": "副詞"
+    },
+    "necessary": {
+        "reading": "必要な",
+        "meaning": "必要な",
+        "type": "形容詞"
+    },
+    "nearby": {
+        "reading": "近くの",
+        "meaning": "近くの",
+        "type": "副詞/形容詞"
+    },
+    "tore": {
+        "reading": "引き裂いた",
+        "meaning": "引き裂いた（tearの過去形）",
+        "type": "動詞"
+    },
+    "apart": {
+        "reading": "バラバラに",
+        "meaning": "バラバラに、離れて",
+        "type": "副詞"
+    },
+    "removing": {
+        "reading": "取り除いている",
+        "meaning": "取り除いている",
+        "type": "動詞"
+    },
+    "sticks": {
+        "reading": "棒",
+        "meaning": "棒、小枝（stickの複数形）",
+        "type": "名詞"
+    },
+    "destroying": {
+        "reading": "破壊している",
+        "meaning": "破壊している",
+        "type": "動詞"
+    },
+    "months": {
+        "reading": "数ヶ月",
+        "meaning": "数ヶ月（monthの複数形）",
+        "type": "名詞"
+    },
+    "moments": {
+        "reading": "瞬間",
+        "meaning": "瞬間（momentの複数形）",
+        "type": "名詞"
+    },
+    "weakened": {
+        "reading": "弱まった",
+        "meaning": "弱まった（weakenの過去形）",
+        "type": "動詞"
+    },
+    "trickling": {
+        "reading": "ちょろちょろと流れる",
+        "meaning": "ちょろちょろと流れる",
+        "type": "動詞"
+    },
+    "then": {
+        "reading": "それから",
+        "meaning": "それから",
+        "type": "副詞"
+    },
+    "streaming": {
+        "reading": "流れ出している",
+        "meaning": "流れ出している",
+        "type": "動詞"
+    },
+    "faster": {
+        "reading": "より速く",
+        "meaning": "より速く（fastの比較級）",
+        "type": "副詞"
+    },
+    "powerful": {
+        "reading": "強力な",
+        "meaning": "強力な",
+        "type": "形容詞"
+    },
+    "waves": {
+        "reading": "波",
+        "meaning": "波（waveの複数形）",
+        "type": "名詞"
+    },
+    "crashed": {
+        "reading": "砕け散った",
+        "meaning": "砕け散った、衝突した（crashの過去形）",
+        "type": "動詞"
+    },
+    "broken": {
+        "reading": "壊れた",
+        "meaning": "壊れた（breakの過去分詞）",
+        "type": "形容詞"
+    },
+    "roaring": {
+        "reading": "轟音を立てる",
+        "meaning": "轟音を立てる",
+        "type": "動詞"
+    },
+    "surged": {
+        "reading": "急増した",
+        "meaning": "急増した、押し寄せた（surgeの過去形）",
+        "type": "動詞"
+    },
+    "growing": {
+        "reading": "成長している",
+        "meaning": "成長している",
+        "type": "動詞"
+    },
+    "into": {
+        "reading": "～の中に",
+        "meaning": "～の中に",
+        "type": "前置詞"
+    },
+    "fierce": {
+        "reading": "激しい",
+        "meaning": "激しい、獰猛な",
+        "type": "形容詞"
+    },
+    "raced": {
+        "reading": "競争した",
+        "meaning": "競争した、急いで行った（raceの過去形）",
+        "type": "動詞"
+    },
+    "late": {
+        "reading": "遅い",
+        "meaning": "遅い",
+        "type": "形容詞/副詞"
+    },
+    "ran": {
+        "reading": "走った",
+        "meaning": "走った（runの過去形）",
+        "type": "動詞"
+    },
+    "shouting": {
+        "reading": "叫んでいる",
+        "meaning": "叫んでいる",
+        "type": "動詞"
+    },
+    "panic": {
+        "reading": "パニック",
+        "meaning": "パニック",
+        "type": "名詞"
+    },
+    "hit": {
+        "reading": "襲った",
+        "meaning": "襲った、打った",
+        "type": "動詞"
+    },
+    "unstoppable": {
+        "reading": "止められない",
+        "meaning": "止められない",
+        "type": "形容詞"
+    },
+    "force": {
+        "reading": "力",
+        "meaning": "力、強制する",
+        "type": "名詞/動詞"
+    },
+    "cracked": {
+        "reading": "ひびが入った",
+        "meaning": "ひびが入った、割れた（crackの過去形）",
+        "type": "動詞"
+    },
+    "walls": {
+        "reading": "壁",
+        "meaning": "壁（wallの複数形）",
+        "type": "名詞"
+    },
+    "splintered": {
+        "reading": "粉々になった",
+        "meaning": "粉々になった（splinterの過去形）",
+        "type": "動詞"
+    },
+    "swallowed": {
+        "reading": "飲み込まれた",
+        "meaning": "飲み込まれた（swallowの過去形）",
+        "type": "動詞"
+    },
+    "within": {
+        "reading": "～以内に",
+        "meaning": "～以内に",
+        "type": "前置詞"
+    },
+    "swept": {
+        "reading": "押し流された",
+        "meaning": "押し流された、掃かれた（sweepの過去形）",
+        "type": "動詞"
+    },
+    "watched": {
+        "reading": "見た",
+        "meaning": "見た（watchの過去形）",
+        "type": "動詞"
+    },
+    "safety": {
+        "reading": "安全",
+        "meaning": "安全",
+        "type": "名詞"
+    },
+    "higher": {
+        "reading": "より高い",
+        "meaning": "より高い（highの比較級）",
+        "type": "形容詞"
+    },
+    "fur": {
+        "reading": "毛皮",
+        "meaning": "毛皮",
+        "type": "名詞"
+    },
+    "wet": {
+        "reading": "濡れた",
+        "meaning": "濡れた",
+        "type": "形容詞"
+    },
+    "breathing": {
+        "reading": "呼吸している",
+        "meaning": "呼吸している",
+        "type": "動詞"
+    },
+    "heavily": {
+        "reading": "重く",
+        "meaning": "重く、激しく",
+        "type": "副詞"
+    },
+    "gathered": {
+        "reading": "集まった",
+        "meaning": "集まった（gatherの過去形）",
+        "type": "動詞"
+    },
+    "cheering": {
+        "reading": "歓声を上げている",
+        "meaning": "歓声を上げている",
+        "type": "動詞"
+    },
+    "jumping": {
+        "reading": "跳ねている",
+        "meaning": "跳ねている",
+        "type": "動詞"
+    },
+    "joy": {
+        "reading": "喜び",
+        "meaning": "喜び",
+        "type": "名詞"
+    },
+    "turned": {
+        "reading": "向きを変えた",
+        "meaning": "向きを変えた（turnの過去形）",
+        "type": "動詞"
+    },
+    "smiling": {
+        "reading": "微笑んでいる",
+        "meaning": "微笑んでいる",
+        "type": "動詞"
+    },
+    "gratefully": {
+        "reading": "感謝して",
+        "meaning": "感謝して",
+        "type": "副詞"
+    },
+    "saved": {
+        "reading": "救った",
+        "meaning": "救った（saveの過去形）",
+        "type": "動詞"
+    },
+    "things": {
+        "reading": "物事",
+        "meaning": "物事（thingの複数形）",
+        "type": "名詞"
+    },
+    "protecting": {
+        "reading": "守っている",
+        "meaning": "守っている",
+        "type": "動詞"
+    },
+    "great": {
+        "reading": "素晴らしい",
+        "meaning": "素晴らしい、偉大な",
+        "type": "形容詞"
+    },
+    "washed": {
+        "reading": "洗い流した",
+        "meaning": "洗い流した（washの過去形）",
+        "type": "動詞"
+    },
+    "human": {
+        "reading": "人間の",
+        "meaning": "人間の",
+        "type": "形容詞"
+    },
+    "replacing": {
+        "reading": "置き換えている",
+        "meaning": "置き換えている",
+        "type": "動詞"
+    },
+    "stronger": {
+        "reading": "より強い",
+        "meaning": "より強い（strongの比較級）",
+        "type": "形容詞"
+    },
+    "any": {
+        "reading": "任意の",
+        "meaning": "任意の、どんな～でも",
+        "type": "形容詞"
+    },
+    "epilogue": {
+        "reading": "エピローグ",
+        "meaning": "エピローグ、終章",
+        "type": "名詞"
+    },
+    "weeks": {
+        "reading": "数週間",
+        "meaning": "数週間（weekの複数形）",
+        "type": "名詞"
+    },
+    "returned": {
+        "reading": "戻った",
+        "meaning": "戻った（returnの過去形）",
+        "type": "動詞"
+    },
+    "normal": {
+        "reading": "普通の",
+        "meaning": "普通の、正常な",
+        "type": "形容詞"
+    },
+    "floodwaters": {
+        "reading": "洪水",
+        "meaning": "洪水（floodwaterの複数形）",
+        "type": "名詞"
+    },
+    "receded": {
+        "reading": "引いた",
+        "meaning": "引いた、後退した（recedeの過去形）",
+        "type": "動詞"
+    },
+    "leaving": {
+        "reading": "残している",
+        "meaning": "残している",
+        "type": "動詞"
+    },
+    "fertile": {
+        "reading": "肥沃な",
+        "meaning": "肥沃な",
+        "type": "形容詞"
+    },
+    "soil": {
+        "reading": "土壌",
+        "meaning": "土壌",
+        "type": "名詞"
+    },
+    "flowers": {
+        "reading": "花",
+        "meaning": "花（flowerの複数形）",
+        "type": "名詞"
+    },
+    "bloomed": {
+        "reading": "咲いた",
+        "meaning": "咲いた（bloomの過去形）",
+        "type": "動詞"
+    },
+    "brightly": {
+        "reading": "明るく",
+        "meaning": "明るく",
+        "type": "副詞"
+    },
+    "remember": {
+        "reading": "覚えている",
+        "meaning": "覚えている",
+        "type": "動詞"
+    },
+    "holding": {
+        "reading": "開催している",
+        "meaning": "開催している、持っている",
+        "type": "動詞"
+    },
+    "ceremonies": {
+        "reading": "儀式",
+        "meaning": "儀式（ceremonyの複数形）",
+        "type": "名詞"
+    },
+    "placing": {
+        "reading": "置いている",
+        "meaning": "置いている",
+        "type": "動詞"
+    },
+    "beautiful": {
+        "reading": "美しい",
+        "meaning": "美しい",
+        "type": "形容詞"
+    },
+    "wasn't": {
+        "reading": "～ではなかった",
+        "meaning": "～ではなかった（was notの短縮形）",
+        "type": "動詞"
+    },
+    "outdo": {
+        "reading": "～に勝る",
+        "meaning": "～に勝る、凌駕する",
+        "type": "動詞"
+    },
+    "large": {
+        "reading": "大きい",
+        "meaning": "大きい",
+        "type": "形容詞"
+    },
+    "sturdy": {
+        "reading": "頑丈な",
+        "meaning": "頑丈な",
+        "type": "形容詞"
+    },
+    "planned": {
+        "reading": "計画された",
+        "meaning": "計画された（planの過去形）",
+        "type": "動詞"
+    },
+    "symbol": {
+        "reading": "象徴",
+        "meaning": "象徴",
+        "type": "名詞"
+    },
+    "among": {
+        "reading": "～の中で",
+        "meaning": "～の中で",
+        "type": "前置詞"
+    },
+    "final": {
+        "reading": "最終の",
+        "meaning": "最終の",
+        "type": "形容詞"
+    },
+    "branch": {
+        "reading": "枝",
+        "meaning": "枝",
+        "type": "名詞"
+    },
+    "smile": {
+        "reading": "笑顔",
+        "meaning": "笑顔",
+        "type": "名詞"
+    },
+    "isn't": {
+        "reading": "～ではない",
+        "meaning": "～ではない（is notの短縮形）",
+        "type": "動詞"
+    },
+    "thoughtfully": {
+        "reading": "思慮深く",
+        "meaning": "思慮深く",
+        "type": "副詞"
+    },
+    "yes": {
+        "reading": "はい",
+        "meaning": "はい",
+        "type": "間投詞"
+    },
+    "who": {
+        "reading": "誰",
+        "meaning": "誰",
+        "type": "代名詞"
+    },
+    "really": {
+        "reading": "本当に",
+        "meaning": "本当に",
+        "type": "副詞"
+    },
+    "matters": {
+        "reading": "重要である",
+        "meaning": "重要である（matterの動詞形）",
+        "type": "動詞"
+    },
+    "keeping": {
+        "reading": "保つこと",
+        "meaning": "保つこと、維持すること",
+        "type": "動詞"
+    },
+    "laughed": {
+        "reading": "笑った",
+        "meaning": "笑った（laughの過去形）",
+        "type": "動詞"
+    },
+    "softly": {
+        "reading": "優しく",
+        "meaning": "優しく、柔らかく",
+        "type": "副詞"
+    },
+    "i'd": {
+        "reading": "私は～したい",
+        "meaning": "私は～したい（I would/hadの短縮形）",
+        "type": "代名詞+助動詞"
+    },
+    "glad": {
+        "reading": "嬉しい",
+        "meaning": "嬉しい",
+        "type": "形容詞"
+    },
+    "agreed": {
+        "reading": "同意した",
+        "meaning": "同意した（agreeの過去形）",
+        "type": "動詞"
+    },
+    "warmly": {
+        "reading": "暖かく",
+        "meaning": "暖かく",
+        "type": "副詞"
+    },
+    "played": {
+        "reading": "遊んだ",
+        "meaning": "遊んだ（playの過去形）",
+        "type": "動詞"
+    },
+    "happily": {
+        "reading": "幸せそうに",
+        "meaning": "幸せそうに",
+        "type": "副詞"
+    },
+    "birds": {
+        "reading": "鳥",
+        "meaning": "鳥（birdの複数形）",
+        "type": "名詞"
+    },
+    "sang": {
+        "reading": "歌った",
+        "meaning": "歌った（singの過去形）",
+        "type": "動詞"
+    },
+    "cheerfully": {
+        "reading": "陽気に",
+        "meaning": "陽気に",
+        "type": "副詞"
+    },
+    "flowed": {
+        "reading": "流れた",
+        "meaning": "流れた（flowの過去形）",
+        "type": "動詞"
+    },
+    "bound": {
+        "reading": "結びついた",
+        "meaning": "結びついた、飛び跳ねた",
+        "type": "動詞"
+    },
+    "shared": {
+        "reading": "共有された",
+        "meaning": "共有された（shareの過去形）",
+        "type": "動詞"
+    },
+    "memories": {
+        "reading": "思い出",
+        "meaning": "思い出（memoryの複数形）",
+        "type": "名詞"
+    },
+    "those": {
+        "reading": "それらの",
+        "meaning": "それらの",
+        "type": "代名詞/形容詞"
+    },
+    "distant": {
+        "reading": "遠い",
+        "meaning": "遠い",
+        "type": "形容詞"
+    },
+    "memory": {
+        "reading": "記憶",
+        "meaning": "記憶",
+        "type": "名詞"
+    },
+    "replaced": {
+        "reading": "置き換えられた",
+        "meaning": "置き換えられた（replaceの過去形）",
+        "type": "動詞"
+    },
+    "lasting": {
+        "reading": "永続的な",
+        "meaning": "永続的な",
+        "type": "形容詞"
+    },
+    "understanding": {
+        "reading": "理解",
+        "meaning": "理解",
+        "type": "名詞"
+    },
+    "strength": {
+        "reading": "強さ",
+        "meaning": "強さ",
+        "type": "名詞"
+    },
+    "comes": {
+        "reading": "来る",
+        "meaning": "来る（comeの三人称単数現在形）",
+        "type": "動詞"
+    },
+    "competition": {
+        "reading": "競争",
+        "meaning": "競争",
         "type": "名詞"
     }
 }
