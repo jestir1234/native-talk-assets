@@ -40,8 +40,8 @@
         "type": "形容詞"
     },
     "peaceful": {
-        "reading": "おだやか",
-        "meaning": "穏やか",
+        "reading": "へいわな",
+        "meaning": "平和な",
         "type": "形容詞"
     },
     "build": {
@@ -400,9 +400,9 @@
         "type": "形容詞"
     },
     "dangerous": {
-        "reading": "きけん",
-        "meaning": "危険",
-        "type": "名詞"
+        "reading": "きけんな",
+        "meaning": "危険な",
+        "type": "形容詞"
     },
     "help": {
         "reading": "たすけ",
@@ -412,6 +412,406 @@
     "rival": {
         "reading": "ライバル",
         "meaning": "ライバル",
+        "type": "名詞"
+    },
+    "vanishing": {
+        "reading": "きえていく",
+        "meaning": "消えていく",
+        "type": "動詞"
+    },
+    "unnoticed": {
+        "reading": "きづかれずに",
+        "meaning": "気づかれずに",
+        "type": "副詞"
+    },
+    "alarming": {
+        "reading": "しんぱいさせる",
+        "meaning": "心配させる",
+        "type": "動詞"
+    },
+    "gathering": {
+        "reading": "しゅうごう",
+        "meaning": "集会・集まり",
+        "type": "名詞"
+    },
+    "fewer": {
+        "reading": "すくなくなった",
+        "meaning": "少なくなった",
+        "type": "形容詞"
+    },
+    "familiar": {
+        "reading": "なじみのある",
+        "meaning": "なじみのある",
+        "type": "形容詞"
+    },
+    "faces": {
+        "reading": "かお",
+        "meaning": "顔",
+        "type": "名詞"
+    },
+    "community": {
+        "reading": "きょうどうたい",
+        "meaning": "共同体",
+        "type": "名詞"
+    },
+    "fearful": {
+        "reading": "おびえた",
+        "meaning": "怯えた",
+        "type": "形容詞"
+    },
+    "whispers": {
+        "reading": "ひそひそばなし",
+        "meaning": "ひそひそ話",
+        "type": "名詞"
+    },
+    "predator": {
+        "reading": "ほしょくしゃ",
+        "meaning": "捕食者",
+        "type": "名詞"
+    },
+    "warn": {
+        "reading": "ちゅういする",
+        "meaning": "注意する・警告する",
+        "type": "動詞"
+    },
+    "others": {
+        "reading": "ほかのひとたち",
+        "meaning": "他の人たち",
+        "type": "名詞"
+    },
+    "believe": {
+        "reading": "しんじる",
+        "meaning": "信じる",
+        "type": "動詞"
+    },
+    "distracted": {
+        "reading": "きがちっている",
+        "meaning": "気が散っている",
+        "type": "動詞"
+    },
+    "ongoing": {
+        "reading": "つづいている",
+        "meaning": "続いている",
+        "type": "形容詞"
+    },
+    "rivalry": {
+        "reading": "はんもく",
+        "meaning": "反目",
+        "type": "名詞"
+    },
+    "secretly": {
+        "reading": "こっそり",
+        "meaning": "こっそり",
+        "type": "副詞"
+    },
+    "investigates": {
+        "reading": "ちょうさする",
+        "meaning": "調査する",
+        "type": "動詞"
+    },
+    "sees": {
+        "reading": "みる",
+        "meaning": "見る",
+        "type": "動詞"
+    },
+    "humans": {
+        "reading": "にんげん",
+        "meaning": "人間",
+        "type": "名詞"
+    },
+    "inside": {
+        "reading": "なか",
+        "meaning": "中",
+        "type": "名詞"
+    },
+    "hunter's lodge": {
+        "reading": "りょうしのいえ",
+        "meaning": "猟師の家・ロッジ",
+        "type": "名詞"
+    },
+    "horrified": {
+        "reading": "ぞっとした",
+        "meaning": "ゾッとした",
+        "type": "形容詞"
+    },
+    "witnesses": {
+        "reading": "もくげきする",
+        "meaning": "目撃する",
+        "type": "動詞"
+    },
+    "close friend": {
+        "reading": "しんゆう",
+        "meaning": "親友",
+        "type": "名詞"
+    },
+    "shot": {
+        "reading": "うたれる",
+        "meaning": "撃たれる",
+        "type": "動詞"
+    },
+    "killed": {
+        "reading": "ころされる",
+        "meaning": "殺される",
+        "type": "動詞"
+    },
+    "grief-stricken": {
+        "reading": "ひどくかなしんでいる",
+        "meaning": "ひどく悲しんでいる",
+        "type": "形容詞"
+    },
+    "guilt-ridden": {
+        "reading": "ざいあくかんでいっぱい",
+        "meaning": "罪悪感でいっぱい",
+        "type": "形容詞"
+    },
+    "meaningless": {
+        "reading": "むいみ",
+        "meaning": "無意味",
+        "type": "形容動詞"
+    },
+    "greater threat": {
+        "reading": "もっとおおきなきけん",
+        "meaning": "もっと大きな危険",
+        "type": "名詞"
+    },
+    "truce": {
+        "reading": "きゅうせん",
+        "meaning": "休戦",
+        "type": "名詞"
+    },
+    "teamwork": {
+        "reading": "きょうりょく",
+        "meaning": "協力",
+        "type": "名詞"
+    },
+    "swallows pride": {
+        "reading": "プライドをすてる",
+        "meaning": "プライドを捨てる",
+        "type": "表現"
+    },
+    "reaches out": {
+        "reading": "はなしかける",
+        "meaning": "話しかける",
+        "type": "動詞"
+    },
+    "initial": {
+        "reading": "さいしょの",
+        "meaning": "最初の",
+        "type": "形容詞"
+    },
+    "tension": {
+        "reading": "きんちょう",
+        "meaning": "緊張",
+        "type": "名詞"
+    },
+    "argument": {
+        "reading": "けんか",
+        "meaning": "喧嘩・言い合い",
+        "type": "名詞"
+    },
+    "accusations": {
+        "reading": "ひなん",
+        "meaning": "非難",
+        "type": "名詞"
+    },
+    "realizes": {
+        "reading": "りかいする",
+        "meaning": "理解する",
+        "type": "動詞"
+    },
+    "threat": {
+        "reading": "きけん",
+        "meaning": "危険",
+        "type": "名詞"
+    },
+    "reluctant": {
+        "reading": "しぶしぶの",
+        "meaning": "渋々の",
+        "type": "形容詞"
+    },
+    "alliance": {
+        "reading": "どうめい",
+        "meaning": "同盟",
+        "type": "名詞"
+    },
+    "strategize": {
+        "reading": "さくせんをたてる",
+        "meaning": "作戦を立てる",
+        "type": "動詞"
+    },
+    "vulnerable": {
+        "reading": "もろい",
+        "meaning": "脆い",
+        "type": "形容詞"
+    },
+    "floodplain": {
+        "reading": "ひんすいち",
+        "meaning": "氾濫原",
+        "type": "名詞"
+    },
+    "perfect": {
+        "reading": "かんぺきな",
+        "meaning": "完璧な",
+        "type": "形容詞"
+    },
+    "sabotage": {
+        "reading": "ぼうがい",
+        "meaning": "妨害",
+        "type": "名詞"
+    },
+    "flood": {
+        "reading": "こうずい",
+        "meaning": "洪水",
+        "type": "名詞"
+    },
+    "freedom": {
+        "reading": "じゆう",
+        "meaning": "自由",
+        "type": "名詞"
+    },
+    "deliberately": {
+        "reading": "わざと",
+        "meaning": "わざと",
+        "type": "副詞"
+    },
+    "dismantling": {
+        "reading": "かいたいする",
+        "meaning": "解体する",
+        "type": "動詞"
+    },
+    "key structures": {
+        "reading": "じゅうようなこうぞうぶ",
+        "meaning": "重要な構造部",
+        "type": "名詞"
+    },
+    "rushes": {
+        "reading": "ながれこむ",
+        "meaning": "流れ込む",
+        "type": "動詞"
+    },
+    "powerfully": {
+        "reading": "ちからづよく",
+        "meaning": "力強く",
+        "type": "副詞"
+    },
+    "downstream": {
+        "reading": "かりゅう",
+        "meaning": "下流",
+        "type": "名詞"
+    },
+    "basin": {
+        "reading": "たに",
+        "meaning": "谷・流域",
+        "type": "名詞"
+    },
+    "destroyed": {
+        "reading": "はかいされる",
+        "meaning": "破壊される",
+        "type": "動詞"
+    },
+    "driven away": {
+        "reading": "おいはらわれる",
+        "meaning": "追い払われる",
+        "type": "動詞"
+    },
+    "triumph": {
+        "reading": "しょうり",
+        "meaning": "勝利",
+        "type": "名詞"
+    },
+    "saving": {
+        "reading": "すくう",
+        "meaning": "救う",
+        "type": "動詞"
+    },
+    "humbled": {
+        "reading": "けんきょになった",
+        "meaning": "謙虚になった",
+        "type": "形容詞"
+    },
+    "experience": {
+        "reading": "けいけん",
+        "meaning": "経験",
+        "type": "名詞"
+    },
+    "resolve": {
+        "reading": "かいけつする",
+        "meaning": "解決する",
+        "type": "動詞"
+    },
+    "friendship": {
+        "reading": "ゆうじょう",
+        "meaning": "友情",
+        "type": "名詞"
+    },
+    "cooperation": {
+        "reading": "きょうりょく",
+        "meaning": "協力",
+        "type": "名詞"
+    },
+    "unified": {
+        "reading": "とういつされた",
+        "meaning": "統一された",
+        "type": "形容詞"
+    },
+    "life": {
+        "reading": "せいかつ",
+        "meaning": "生活",
+        "type": "名詞"
+    },
+    "returns": {
+        "reading": "もどる",
+        "meaning": "戻る",
+        "type": "動詞"
+    },
+    "normalcy": {
+        "reading": "ふだんのせいかつ",
+        "meaning": "普段の生活",
+        "type": "名詞"
+    },
+    "memorialize": {
+        "reading": "ついとうする",
+        "meaning": "追悼する",
+        "type": "動詞"
+    },
+    "lost": {
+        "reading": "うしなわれた",
+        "meaning": "失われた",
+        "type": "形容詞"
+    },
+    "collaborative": {
+        "reading": "きょうどうの",
+        "meaning": "共同の",
+        "type": "形容詞"
+    },
+    "symbolizing": {
+        "reading": "しょうちょうする",
+        "meaning": "象徴する",
+        "type": "動詞"
+    },
+    "unity": {
+        "reading": "だんけつ",
+        "meaning": "団結",
+        "type": "名詞"
+    },
+    "reflect": {
+        "reading": "かんがえなおす",
+        "meaning": "考え直す",
+        "type": "動詞"
+    },
+    "lesson": {
+        "reading": "きょうくん",
+        "meaning": "教訓",
+        "type": "名詞"
+    },
+    "learned": {
+        "reading": "まなばれた",
+        "meaning": "学ばれた",
+        "type": "動詞"
+    },
+    "pride": {
+        "reading": "プライド",
+        "meaning": "プライド",
         "type": "名詞"
     }
 }
