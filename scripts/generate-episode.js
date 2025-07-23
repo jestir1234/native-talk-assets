@@ -99,7 +99,8 @@ Keep the tone witty, dark, and a little sad. Format it as JSON like:
 
     const finalPrompt = `${basePrompt}
 Please write a new standalone episode titled "${metadata.title}" where ${metadata.hook}
-Keep the tone dry, witty, and a little sad.`;
+Keep the tone dry, witty, and a little sad.
+Do not include the episode title in the story.`;
 
     console.log('🧠 Generating episode...');
     const story = await callGemini(finalPrompt);
@@ -148,6 +149,10 @@ Keep the tone dry, witty, and a little sad.`;
         console.log('🔮 Generating episode image...');
         execSync(`node scripts/generate-episode-image.js`, { stdio: 'inherit' });
 
+        // Process and convert image to WebP
+        console.log('🖼️ Processing episode image...');
+        execSync(`node scripts/process-episode-image.js`, { stdio: 'inherit' });
+
         // Tokenize episode
         console.log('🔮 Tokenizing episode...');
         execSync(`node scripts/tokenize-episode.js ${episodeFilePath} ${TOKENIZED_EPISODE_PATH}`, { stdio: 'inherit' });
@@ -162,7 +167,7 @@ Keep the tone dry, witty, and a little sad.`;
         const newChapter = {
             id: `ch${episodeNum}`,
             content: tokenizedEpisode.content,
-            headerImage: `https://cdn.native-talk.com/stories/still-dead-still-bored/${episodeNum}.png`
+            headerImage: `https://cdn.native-talk.com/stories/still-dead-still-bored/${episodeNum}.webp`
         };
         
         structure.chapters.push(newChapter);
