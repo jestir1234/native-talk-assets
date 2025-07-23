@@ -11,7 +11,6 @@ const MASTER_DICT_PATH = path.resolve(__dirname, '../dictionaries/english/ja-v1.
 const MISSING_WORDS_PATH = path.resolve(__dirname, './missing_words.txt');
 const NEW_DICT_PATH = path.resolve(__dirname, './dictionary_entries_output_ja.json');
 const IMAGE_META_PATH = path.resolve(__dirname, './episode_meta.json');
-const TOKENIZED_EPISODE_PATH = path.resolve(__dirname, './tokenized_episode.json');
 
 
 
@@ -153,20 +152,14 @@ Do not include the episode title in the story.`;
         console.log('🖼️ Processing episode image...');
         execSync(`node scripts/process-episode-image.js`, { stdio: 'inherit' });
 
-        // Tokenize episode
-        console.log('🔮 Tokenizing episode...');
-        execSync(`node scripts/tokenize-episode.js ${episodeFilePath} ${TOKENIZED_EPISODE_PATH}`, { stdio: 'inherit' });
-
         // Update structure.json with new chapter
         console.log('📝 Updating structure.json...');
         const structurePath = path.resolve(__dirname, '../stories/still-dead-still-bored/structure.json');
         const structure = JSON.parse(fs.readFileSync(structurePath, 'utf-8'));
-        const tokenizedEpisode = JSON.parse(fs.readFileSync(TOKENIZED_EPISODE_PATH, 'utf-8'));
         
-        // Add new chapter to chapters array
+        // Add new chapter to chapters array (without content)
         const newChapter = {
             id: `ch${episodeNum}`,
-            content: tokenizedEpisode.content,
             headerImage: `https://cdn.native-talk.com/stories/still-dead-still-bored/${episodeNum}.webp`
         };
         
@@ -183,14 +176,12 @@ Do not include the episode title in the story.`;
             fs.unlinkSync(MISSING_WORDS_PATH);
             fs.unlinkSync(NEW_DICT_PATH);
             fs.unlinkSync(IMAGE_META_PATH);
-            fs.unlinkSync(TOKENIZED_EPISODE_PATH);
             console.log('🧹 Cleaned up temporary files.');
         } catch (err) {
             console.warn('⚠️ Failed to delete temporary files:', err.message);
             fs.unlinkSync(MISSING_WORDS_PATH);
             fs.unlinkSync(NEW_DICT_PATH);
             fs.unlinkSync(IMAGE_META_PATH);
-            fs.unlinkSync(TOKENIZED_EPISODE_PATH);
         }
     } else {
         console.log('⚠️ No episode content returned.');
