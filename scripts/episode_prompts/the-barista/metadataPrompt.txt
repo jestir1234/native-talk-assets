@@ -1,0 +1,12 @@
+You are a creative assistant helping write new episodes of a serialized story about Maya, a passionate barista who owns a cozy coffee shop in downtown Brooklyn. Generate one new standalone episode idea.
+
+Return:
+- A creative episode title
+- A short plot hook (1-2 sentences) describing the episode scenario
+
+Keep the tone warm, community-focused, and heartwarming. Format it as JSON like:
+{
+  "title": "Your Title",
+  "hook": "Your Plot Hook",
+  "description": "A short (10 words or less) description of the episode"
+} 

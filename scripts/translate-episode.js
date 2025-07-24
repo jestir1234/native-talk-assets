@@ -3,6 +3,11 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
+// Get story name from command line argument or use default
+const STORY_NAME = process.argv[2] || 'still-dead-still-bored';
+
+// Command: node scripts/translate-episode.js [story-name]
+
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 async function callGemini(prompt) {
@@ -73,7 +78,7 @@ Return only the JSON object, no additional text or explanations. Format like thi
 }
 
 async function updateJapaneseLanguageFile(episodeNum, title, description, translations) {
-    const jaLangPath = path.resolve(__dirname, '../stories/still-dead-still-bored/lang/ja.json');
+    const jaLangPath = path.resolve(__dirname, `../stories/${STORY_NAME}/lang/ja.json`);
     
     // Read current Japanese language file
     const jaLang = JSON.parse(fs.readFileSync(jaLangPath, 'utf-8'));
@@ -95,13 +100,15 @@ async function updateJapaneseLanguageFile(episodeNum, title, description, transl
 }
 
 async function main() {
+    console.log(`🌐 Translating episode for story: ${STORY_NAME}`);
+    
     // Get episode number from meta file
-    const metaPath = path.resolve(__dirname, '../stories/still-dead-still-bored/meta.json');
+    const metaPath = path.resolve(__dirname, `../stories/${STORY_NAME}/meta.json`);
     const meta = JSON.parse(fs.readFileSync(metaPath, 'utf-8'));
     const episodeNum = meta.current_episode;
     
     // Get episode file path
-    const episodeFilePath = path.resolve(__dirname, `../stories/still-dead-still-bored/episodes/episode_${episodeNum}.txt`);
+    const episodeFilePath = path.resolve(__dirname, `../stories/${STORY_NAME}/episodes/episode_${episodeNum}.txt`);
     
     // Get image metadata for title and description
     const imageMetaPath = path.resolve(__dirname, './episode_meta.json');

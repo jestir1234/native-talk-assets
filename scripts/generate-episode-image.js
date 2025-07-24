@@ -2,22 +2,46 @@ require('dotenv').config();
 const fs = require('fs');
 const path = require('path');
 
+// Get story name from command line argument or use default
+const STORY_NAME = process.argv[2] || 'still-dead-still-bored';
+
 const IMAGE_META_PATH = path.resolve(__dirname, './episode_meta.json');
-const OUTPUT_DIR = path.resolve(__dirname, '../stories/still-dead-still-bored');
+const OUTPUT_DIR = path.resolve(__dirname, `../stories/${STORY_NAME}`);
+
+// Configuration for the current story
+const PROMPTS_DIR = path.resolve(__dirname, `./episode_prompts/${STORY_NAME}`);
 
 if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 }
 
+/**
+ * Reads a prompt file and interpolates variables
+ * @param {string} promptName - Name of the prompt file (without extension)
+ * @param {Object} variables - Variables to interpolate into the prompt
+ * @returns {string} The interpolated prompt
+ */
+function readPrompt(promptName, variables = {}) {
+    const promptPath = path.join(PROMPTS_DIR, `${promptName}.txt`);
+    
+    if (!fs.existsSync(promptPath)) {
+        throw new Error(`Prompt file not found: ${promptPath}`);
+    }
+    
+    let prompt = fs.readFileSync(promptPath, 'utf-8');
+    
+    // Interpolate variables
+    Object.entries(variables).forEach(([key, value]) => {
+        const placeholder = `\${${key}}`;
+        prompt = prompt.replace(new RegExp(placeholder.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), value);
+    });
+    
+    return prompt;
+}
+
 const { title, hook, description, current_episode } = JSON.parse(fs.readFileSync(IMAGE_META_PATH, 'utf-8'));
 
-const prompt = `
-Create a detailed illustration of Zoey Yamashita, a cute Japanese woman in her 20s who is also a zombie. Illustrate her in the following scene: 
-
-${description}.
-
-Use a slightly stylized, anime-realism look. No gore. Background should reflect Tokyo environment unless otherwise implied.
-`;
+const prompt = readPrompt('imagePrompt', { description });
 
 async function generateImage() {
     console.log("🎨 Sending image prompt to Gemini...");

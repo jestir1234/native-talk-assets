@@ -4,31 +4,62 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
+// Get story name from command line argument or use default
+const STORY_NAME = process.argv[2] || 'still-dead-still-bored';
+
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const OUTPUT_FILE_PATH = path.resolve(__dirname, '../stories/still-dead-still-bored/episodes/episode_');
-const META_PATH = path.resolve(__dirname, '../stories/still-dead-still-bored/meta.json');
+const OUTPUT_FILE_PATH = path.resolve(__dirname, `../stories/${STORY_NAME}/episodes/episode_`);
+const META_PATH = path.resolve(__dirname, `../stories/${STORY_NAME}/meta.json`);
 const MASTER_DICT_PATH = path.resolve(__dirname, '../dictionaries/english/ja-v1.json');
 const MISSING_WORDS_PATH = path.resolve(__dirname, './missing_words.txt');
 const NEW_DICT_PATH = path.resolve(__dirname, './dictionary_entries_output_ja.json');
 const IMAGE_META_PATH = path.resolve(__dirname, './episode_meta.json');
 
+// Configuration for the current story
+const PROMPTS_DIR = path.resolve(__dirname, `./episode_prompts/${STORY_NAME}`);
 
+// Validate that the story exists
+if (!fs.existsSync(path.resolve(__dirname, `../stories/${STORY_NAME}`))) {
+    console.error(`❌ Story directory not found: ${STORY_NAME}`);
+    console.error('Available stories:');
+    const storiesDir = path.resolve(__dirname, '../stories');
+    const stories = fs.readdirSync(storiesDir, { withFileTypes: true })
+        .filter(dirent => dirent.isDirectory())
+        .map(dirent => dirent.name);
+    stories.forEach(story => console.error(`  - ${story}`));
+    process.exit(1);
+}
 
-const basePrompt = `
-You are writing a standalone episode in a serialized short story about **Zoey Yamashita**, a sarcastic and emotionally distant woman in her 20s who is secretly a 400-year-old zombie living in modern Tokyo. She looks human but must eat raw meat to maintain her appearance. She is fluent in many languages, highly intelligent, and has lived many lives across different historical eras.
-The story is meant to be read by non-english speakers, so please write in a way that is easy to understand for them.
+// Validate that prompts exist for this story
+if (!fs.existsSync(PROMPTS_DIR)) {
+    console.error(`❌ Prompts directory not found: ${PROMPTS_DIR}`);
+    console.error('Please create prompt files for this story first.');
+    process.exit(1);
+}
 
-Zoey’s inner world is melancholic, witty, and full of dry humor. She hides her condition from most people, and constantly struggles with boredom, isolation, and existential dread.
-
-Recurring characters include:
-- **Haruka**: Zoey’s upbeat best friend who doesn’t know her secret.
-- **Kenji**: A butcher who secretly helps her get meat.
-- **Lex**: Another immortal zombie who enjoys being undead.
-- **Takashi**: A bookstore owner Zoey is quietly attracted to.
-- **Detective Kuroda**: A cop who’s suspicious of Zoey’s odd behavior.
-
-Each chapter is a self-contained “slice of life” day in Zoey’s world, showing her navigating awkward, funny, or dark situations related to being an undead person hiding in plain sight.
-`;
+/**
+ * Reads a prompt file and interpolates variables
+ * @param {string} promptName - Name of the prompt file (without extension)
+ * @param {Object} variables - Variables to interpolate into the prompt
+ * @returns {string} The interpolated prompt
+ */
+function readPrompt(promptName, variables = {}) {
+    const promptPath = path.join(PROMPTS_DIR, `${promptName}.txt`);
+    
+    if (!fs.existsSync(promptPath)) {
+        throw new Error(`Prompt file not found: ${promptPath}`);
+    }
+    
+    let prompt = fs.readFileSync(promptPath, 'utf-8');
+    
+    // Interpolate variables
+    Object.entries(variables).forEach(([key, value]) => {
+        const placeholder = `\${${key}}`;
+        prompt = prompt.replace(new RegExp(placeholder.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), value);
+    });
+    
+    return prompt;
+}
 
 async function callGemini(prompt) {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
@@ -49,18 +80,7 @@ async function callGemini(prompt) {
 }
 
 async function generateEpisodeMetadata() {
-    const metadataPrompt = `You are a creative assistant helping write new episodes of a serialized story about Zoey, a sarcastic zombie girl in Tokyo. Generate one new standalone episode idea.
-
-Return:
-- A creative episode title
-- A short plot hook (1-2 sentences) describing the episode scenario
-
-Keep the tone witty, dark, and a little sad. Format it as JSON like:
-{
-  "title": "Your Title",
-  "hook": "Your Plot Hook",
-  "description": "A short (10 words or less) description of the episode"
-}`;
+    const metadataPrompt = readPrompt('metadataPrompt');
 
     const raw = await callGemini(metadataPrompt);
 
@@ -82,6 +102,8 @@ Keep the tone witty, dark, and a little sad. Format it as JSON like:
 }
 
 (async () => {
+    console.log(`📚 Generating episode for story: ${STORY_NAME}`);
+    
     const meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8'));
 
     console.log('🔮 Generating title and hook...');
@@ -96,9 +118,9 @@ Keep the tone witty, dark, and a little sad. Format it as JSON like:
     console.log('🔮 Hook:', metadata.hook);
     console.log('🔮 Description:', metadata.description);
 
+    const basePrompt = readPrompt('basePrompt');
     const finalPrompt = `${basePrompt}
 Please write a new standalone episode titled "${metadata.title}" where ${metadata.hook}
-Keep the tone dry, witty, and a little sad.
 Do not include the episode title in the story.`;
 
     console.log('🧠 Generating episode...');
@@ -146,21 +168,21 @@ Do not include the episode title in the story.`;
 
         // Generate episode image
         console.log('🔮 Generating episode image...');
-        execSync(`node scripts/generate-episode-image.js`, { stdio: 'inherit' });
+        execSync(`node scripts/generate-episode-image.js ${STORY_NAME}`, { stdio: 'inherit' });
 
         // Process and convert image to WebP
         console.log('🖼️ Processing episode image...');
-        execSync(`node scripts/process-episode-image.js`, { stdio: 'inherit' });
+        execSync(`node scripts/process-episode-image.js ${STORY_NAME}`, { stdio: 'inherit' });
 
         // Update structure.json with new chapter
         console.log('📝 Updating structure.json...');
-        const structurePath = path.resolve(__dirname, '../stories/still-dead-still-bored/structure.json');
+        const structurePath = path.resolve(__dirname, `../stories/${STORY_NAME}/structure.json`);
         const structure = JSON.parse(fs.readFileSync(structurePath, 'utf-8'));
         
         // Add new chapter to chapters array (without content)
         const newChapter = {
             id: `ch${episodeNum}`,
-            headerImage: `https://cdn.native-talk.com/stories/still-dead-still-bored/${episodeNum}.webp`
+            headerImage: `https://cdn.native-talk.com/stories/${STORY_NAME}/${episodeNum}.webp`
         };
         
         structure.chapters.push(newChapter);
@@ -169,7 +191,7 @@ Do not include the episode title in the story.`;
 
         // Translate episode to Japanese
         console.log('🌐 Translating episode to Japanese...');
-        execSync(`node scripts/translate-episode.js`, { stdio: 'inherit' });
+        execSync(`node scripts/translate-episode.js ${STORY_NAME}`, { stdio: 'inherit' });
 
         // ✅ Cleanup temp files
         try {

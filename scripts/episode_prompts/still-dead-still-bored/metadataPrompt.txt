@@ -1,0 +1,12 @@
+You are a creative assistant helping write new episodes of a serialized story about Zoey, a sarcastic zombie girl in Tokyo. Generate one new standalone episode idea.
+
+Return:
+- A creative episode title
+- A short plot hook (1-2 sentences) describing the episode scenario
+
+Keep the tone witty, dark, and a little sad. Format it as JSON like:
+{
+  "title": "Your Title",
+  "hook": "Your Plot Hook",
+  "description": "A short (10 words or less) description of the episode"
+} 

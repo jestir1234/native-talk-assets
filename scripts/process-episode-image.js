@@ -3,8 +3,11 @@ const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
 
+// Get story name from command line argument or use default
+const STORY_NAME = process.argv[2] || 'still-dead-still-bored';
+
 const IMAGE_META_PATH = path.resolve(__dirname, './episode_meta.json');
-const OUTPUT_DIR = path.resolve(__dirname, '../stories/still-dead-still-bored');
+const OUTPUT_DIR = path.resolve(__dirname, `../stories/${STORY_NAME}`);
 
 async function processEpisodeImage() {
     try {
@@ -21,7 +24,7 @@ async function processEpisodeImage() {
             return;
         }
         
-        console.log(`🖼️ Processing episode image ${current_episode}...`);
+        console.log(`🖼️ Processing episode image ${current_episode} for story: ${STORY_NAME}...`);
         console.log(`📁 Input: ${inputPath}`);
         console.log(`📁 Output: ${outputPath}`);
         
