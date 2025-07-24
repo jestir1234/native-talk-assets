@@ -1,0 +1,1764 @@
+{
+    "台所": {
+        "reading": "だいどころ",
+        "meaning": "부엌",
+        "type": "noun"
+    },
+    "だ": {
+        "meaning": "~이다",
+        "form": "plain form, present affirmative",
+        "reading": "だ",
+        "type": "copula"
+    },
+    "だった": {
+        "meaning": "~이었다",
+        "form": "plain form, past affirmative",
+        "reading": "だった",
+        "type": "copula"
+    },
+    "私": {
+        "reading": "わたし",
+        "meaning": "나, 저",
+        "type": "pronoun"
+    },
+    "は": {
+        "reading": "は",
+        "meaning": "~은/는",
+        "type": "particle"
+    },
+    "学生": {
+        "reading": "がくせい",
+        "meaning": "학생",
+        "type": "noun"
+    },
+    "です": {
+        "meaning": "~입니다",
+        "form": "polite form, present affirmative",
+        "reading": "です",
+        "type": "copula"
+    },
+    "今日": {
+        "reading": "きょう",
+        "meaning": "오늘",
+        "type": "noun"
+    },
+    "天気": {
+        "reading": "てんき",
+        "meaning": "날씨",
+        "type": "noun"
+    },
+    "が": {
+        "reading": "が",
+        "meaning": "~이/가",
+        "type": "particle"
+    },
+    "いい": {
+        "reading": "いい",
+        "meaning": "좋다",
+        "type": "い-adjective",
+        "form": "present affirmative"
+    },
+    "とても": {
+        "reading": "とても",
+        "meaning": "매우, 아주",
+        "type": "adverb"
+    },
+    "美しい": {
+        "reading": "うつくしい",
+        "meaning": "아름답다",
+        "type": "い-adjective",
+        "form": "present affirmative"
+    },
+    "日": {
+        "reading": "ひ",
+        "meaning": "날, 요일",
+        "type": "noun"
+    },
+    "朝": {
+        "reading": "あさ",
+        "meaning": "아침",
+        "type": "noun"
+    },
+    "起きました": {
+        "reading": "おきました",
+        "meaning": "일어났습니다",
+        "type": "verb",
+        "form": "polite form, past affirmative"
+    },
+    "食べます": {
+        "reading": "たべます",
+        "meaning": "먹습니다",
+        "type": "verb",
+        "form": "polite form, present affirmative"
+    },
+    "パン": {
+        "reading": "パン",
+        "meaning": "빵",
+        "type": "noun"
+    },
+    "を": {
+        "reading": "を",
+        "meaning": "~을/를",
+        "type": "particle"
+    },
+    "飲みます": {
+        "reading": "のみます",
+        "meaning": "마십니다",
+        "type": "verb",
+        "form": "polite form, present affirmative"
+    },
+    "コーヒー": {
+        "reading": "コーヒー",
+        "meaning": "커피",
+        "type": "noun"
+    },
+    "行きます": {
+        "reading": "いきます",
+        "meaning": "갑니다",
+        "type": "verb",
+        "form": "polite form, present affirmative"
+    },
+    "学校": {
+        "reading": "がっこう",
+        "meaning": "학교",
+        "type": "noun"
+    },
+    "に": {
+        "reading": "に",
+        "meaning": "~에",
+        "type": "particle"
+    },
+    "友達": {
+        "reading": "ともだち",
+        "meaning": "친구",
+        "type": "noun"
+    },
+    "と": {
+        "reading": "と",
+        "meaning": "~와/과, ~하고",
+        "type": "particle"
+    },
+    "話します": {
+        "reading": "はなします",
+        "meaning": "이야기합니다, 말합니다",
+        "type": "verb",
+        "form": "polite form, present affirmative"
+    },
+    "楽しい": {
+        "reading": "たのしい",
+        "meaning": "즐겁다",
+        "type": "い-adjective",
+        "form": "present affirmative"
+    },
+    "時間": {
+        "reading": "じかん",
+        "meaning": "시간",
+        "type": "noun"
+    },
+    "過ごしました": {
+        "reading": "すごしました",
+        "meaning": "보냈습니다",
+        "type": "verb",
+        "form": "polite form, past affirmative"
+    },
+    "ゆうた": {
+        "reading": "ゆうた",
+        "meaning": "유타 (이름)",
+        "type": "proper noun"
+    },
+    "サボり": {
+        "reading": "サボり",
+        "meaning": "게으름 피우기, 빼먹기",
+        "type": "noun",
+        "form": "ren'yōkei noun (ます-stem noun)"
+    },
+    "テスト": {
+        "reading": "テスト",
+        "meaning": "시험",
+        "type": "noun"
+    },
+    "算数": {
+        "reading": "さんすう",
+        "meaning": "산수, 수학",
+        "type": "noun"
+    },
+    "小学": {
+        "reading": "しょうがく",
+        "meaning": "초등",
+        "type": "noun"
+    },
+    "五年生": {
+        "reading": "ごねんせい",
+        "meaning": "5학년",
+        "type": "noun"
+    },
+    "ふとん": {
+        "reading": "ふとん",
+        "meaning": "이불",
+        "type": "noun"
+    },
+    "中": {
+        "reading": "なか",
+        "meaning": "안, 속",
+        "type": "noun"
+    },
+    "つぶやいた": {
+        "reading": "つぶやいた",
+        "meaning": "중얼거렸다",
+        "type": "verb",
+        "form": "plain form, past affirmative"
+    },
+    "また": {
+        "reading": "また",
+        "meaning": "또",
+        "type": "adverb"
+    },
+    "かよ": {
+        "reading": "かよ",
+        "meaning": "~인가 (강한 의문 또는 놀람)",
+        "type": "sentence-final particle"
+    },
+    "ある": {
+        "reading": "ある",
+        "meaning": "있다 (무생물)",
+        "type": "verb",
+        "form": "plain form, present affirmative"
+    },
+    "昨日": {
+        "reading": "きのう",
+        "meaning": "어제",
+        "type": "noun"
+    },
+    "夜": {
+        "reading": "よる",
+        "meaning": "밤",
+        "type": "noun"
+    },
+    "ゲーム": {
+        "reading": "ゲーム",
+        "meaning": "게임",
+        "type": "noun"
+    },
+    "ばかり": {
+        "reading": "ばかり",
+        "meaning": "~만, ~뿐",
+        "type": "particle"
+    },
+    "まったく": {
+        "reading": "まったく",
+        "meaning": "전혀, 완전히",
+        "type": "adverb"
+    },
+    "勉強": {
+        "reading": "べんきょう",
+        "meaning": "공부",
+        "type": "noun"
+    },
+    "行きたくない": {
+        "reading": "いきたくない",
+        "meaning": "가고 싶지 않다",
+        "type": "い-adjective",
+        "form": "negative, plain form"
+    },
+    "なぁ": {
+        "reading": "なぁ",
+        "meaning": "~구나, ~네",
+        "type": "sentence-final particle"
+    },
+    "ぜったい": {
+        "reading": "ぜったい",
+        "meaning": "절대, 절대로",
+        "type": "Adverb"
+    },
+    "できない": {
+        "reading": "できない",
+        "meaning": "할 수 없다",
+        "type": "Verb",
+        "form": "Negative potential form"
+    },
+    "よ": {
+        "reading": "よ",
+        "meaning": "~야 (확신, 강조, 정보 전달)",
+        "type": "Particle",
+        "form": "Sentence-ending particle"
+    },
+    "お母さん": {
+        "reading": "おかあさん",
+        "meaning": "어머니",
+        "type": "Noun"
+    },
+    "朝ごはん": {
+        "reading": "あさごはん",
+        "meaning": "아침밥",
+        "type": "Noun"
+    },
+    "作って": {
+        "reading": "つくって",
+        "meaning": "만들고, 만들어서",
+        "type": "Verb",
+        "form": "Te-form"
+    },
+    "いる": {
+        "reading": "いる",
+        "meaning": "있다 (존재), ~하고 있다 (진행)",
+        "type": "Verb",
+        "form": "Dictionary form"
+    },
+    "あいだ": {
+        "reading": "あいだ",
+        "meaning": "동안, 사이",
+        "type": "Noun"
+    },
+    "そっと": {
+        "reading": "そっと",
+        "meaning": "살며시, 가만히",
+        "type": "Adverb"
+    },
+    "おなか": {
+        "reading": "おなか",
+        "meaning": "배",
+        "type": "Noun"
+    },
+    "おさえた": {
+        "reading": "おさえた",
+        "meaning": "눌렀다, 억눌렀다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "少し": {
+        "reading": "すこし",
+        "meaning": "조금",
+        "type": "Adverb"
+    },
+    "だけ": {
+        "reading": "だけ",
+        "meaning": "~만",
+        "type": "Particle"
+    },
+    "苦しそう": {
+        "reading": "くるしそう",
+        "meaning": "괴로워 보인다, 힘들어 보인다",
+        "type": "Adjective",
+        "form": "So-form"
+    },
+    "な": {
+        "reading": "な",
+        "meaning": "~인 (명사 수식), ~구나 (감탄), ~하지 마 (금지)",
+        "type": "Particle",
+        "form": "Connective particle / Sentence-ending particle"
+    },
+    "声": {
+        "reading": "こえ",
+        "meaning": "목소리",
+        "type": "Noun"
+    },
+    "出して": {
+        "reading": "だして",
+        "meaning": "내고, 내어서",
+        "type": "Verb",
+        "form": "Te-form"
+    },
+    "みた": {
+        "reading": "みた",
+        "meaning": "해봤다, 보았다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "なんか": {
+        "reading": "なんか",
+        "meaning": "뭔가, 뭐랄까",
+        "type": "Adverb/Particle",
+        "form": "Colloquial"
+    },
+    "いたい": {
+        "reading": "いたい",
+        "meaning": "아프다",
+        "type": "Adjective",
+        "form": "Dictionary form"
+    },
+    "心配そう": {
+        "reading": "しんぱいそう",
+        "meaning": "걱정스러워 보인다",
+        "type": "Adjective",
+        "form": "So-form"
+    },
+    "ほう": {
+        "reading": "ほう",
+        "meaning": "~쪽, ~방면",
+        "type": "Noun"
+    },
+    "え": {
+        "reading": "え",
+        "meaning": "어?, 예? (놀람, 의문)",
+        "type": "Interjection"
+    },
+    "大丈夫": {
+        "reading": "だいじょうぶ",
+        "meaning": "괜찮다, 문제없다",
+        "type": "Na-adjective/Noun"
+    },
+    "何か": {
+        "reading": "なにか",
+        "meaning": "뭔가, 무엇인가",
+        "type": "Pronoun/Adverb"
+    },
+    "変な": {
+        "reading": "へんな",
+        "meaning": "이상한",
+        "type": "Na-adjective",
+        "form": "Attributive form"
+    },
+    "もの": {
+        "reading": "もの",
+        "meaning": "것, 물건",
+        "type": "Noun"
+    },
+    "食べた": {
+        "reading": "たべた",
+        "meaning": "먹었다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "ううん": {
+        "reading": "ううん",
+        "meaning": "아니, 아니요",
+        "type": "Interjection"
+    },
+    "わかんない": {
+        "reading": "わかんない",
+        "meaning": "모르겠어, 알 수 없어",
+        "type": "Verb",
+        "form": "Colloquial negative form"
+    },
+    "じゃあ": {
+        "reading": "じゃあ",
+        "meaning": "그럼, 그러면",
+        "type": "Conjunction"
+    },
+    "休もう": {
+        "reading": "やすもう",
+        "meaning": "쉬자",
+        "type": "Verb",
+        "form": "Volitional form"
+    },
+    "か": {
+        "reading": "か",
+        "meaning": "~까?, ~인가? (의문), ~일까? (제안)",
+        "type": "Particle",
+        "form": "Sentence-ending particle"
+    },
+    "無理": {
+        "reading": "むり",
+        "meaning": "무리, 불가능",
+        "type": "Noun/Na-adjective"
+    },
+    "しないで": {
+        "reading": "しないで",
+        "meaning": "하지 말고",
+        "type": "Verb",
+        "form": "Te-form of negative form"
+    },
+    "ね": {
+        "reading": "ね",
+        "meaning": "~네요, ~죠? (동의, 확인)",
+        "type": "Particle",
+        "form": "Sentence-ending particle"
+    },
+    "作戦": {
+        "reading": "さくせん",
+        "meaning": "작전",
+        "type": "Noun"
+    },
+    "成功": {
+        "reading": "せいこう",
+        "meaning": "성공",
+        "type": "Noun/Suru-verb"
+    },
+    "もぐりこみ": {
+        "reading": "もぐりこみ",
+        "meaning": "기어 들어가기, 잠입",
+        "type": "Noun",
+        "form": "Masu-stem noun"
+    },
+    "にやり": {
+        "reading": "にやり",
+        "meaning": "히죽, 씨익 (웃는 모양)",
+        "type": "Adverb (Onomatopoeia)"
+    },
+    "笑った": {
+        "reading": "わらった",
+        "meaning": "웃었다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "でも": {
+        "reading": "でも",
+        "meaning": "하지만, 그래도",
+        "type": "Conjunction"
+    },
+    "心": {
+        "reading": "こころ",
+        "meaning": "마음",
+        "type": "Noun"
+    },
+    "どこか": {
+        "reading": "どこか",
+        "meaning": "어딘가, 어딘지",
+        "type": "Adverb/Pronoun"
+    },
+    "で": {
+        "reading": "で",
+        "meaning": "~에서 (장소), ~로 (수단), ~으로 (원인)",
+        "type": "Particle",
+        "form": "Case particle"
+    },
+    "ちょっと": {
+        "reading": "ちょっと",
+        "meaning": "잠깐, 좀, 조금",
+        "type": "Adverb"
+    },
+    "罪悪感": {
+        "reading": "ざいあくかん",
+        "meaning": "죄책감",
+        "type": "Noun"
+    },
+    "も": {
+        "reading": "も",
+        "meaning": "~도",
+        "type": "Particle",
+        "form": "Emphatic particle"
+    },
+    "あった": {
+        "reading": "あった",
+        "meaning": "있었다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "して": {
+        "reading": "して",
+        "meaning": "하고, 해서",
+        "type": "Verb",
+        "form": "Te-form"
+    },
+    "仕事": {
+        "reading": "しごと",
+        "meaning": "일",
+        "type": "noun"
+    },
+    "出かけた": {
+        "reading": "でかけた",
+        "meaning": "외출했다, 나갔다",
+        "type": "verb",
+        "form": "past tense (ta-form)"
+    },
+    "やった": {
+        "reading": "やった",
+        "meaning": "했다, 해냈다",
+        "type": "verb",
+        "form": "past tense (ta-form)"
+    },
+    "ぼうけん": {
+        "reading": "ぼうけん",
+        "meaning": "모험",
+        "type": "noun"
+    },
+    "ランドセル": {
+        "reading": "ランドセル",
+        "meaning": "란도셀 (일본 초등학생용 가방)",
+        "type": "noun"
+    },
+    "ではなく": {
+        "reading": "ではなく",
+        "meaning": "~이(가) 아니라",
+        "type": "particle combination"
+    },
+    "小さな": {
+        "reading": "ちいさな",
+        "meaning": "작은",
+        "type": "adnominal adjective"
+    },
+    "かばん": {
+        "reading": "かばん",
+        "meaning": "가방",
+        "type": "noun"
+    },
+    "持って": {
+        "reading": "もって",
+        "meaning": "가지고",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "家": {
+        "reading": "いえ",
+        "meaning": "집",
+        "type": "noun"
+    },
+    "出た": {
+        "reading": "でた",
+        "meaning": "나갔다, 나왔다",
+        "type": "verb",
+        "form": "past tense (ta-form)"
+    },
+    "には": {
+        "reading": "には",
+        "meaning": "~에는, ~으로는",
+        "type": "particle combination"
+    },
+    "行かず": {
+        "reading": "いかず",
+        "meaning": "가지 않고",
+        "type": "verb",
+        "form": "negative conjunctive (zu-form)"
+    },
+    "自由": {
+        "reading": "じゆう",
+        "meaning": "자유",
+        "type": "noun"
+    },
+    "楽しむ": {
+        "reading": "たのしむ",
+        "meaning": "즐기다",
+        "type": "verb",
+        "form": "dictionary form"
+    },
+    "つもり": {
+        "reading": "つもり",
+        "meaning": "~할 작정이다, ~할 생각이다",
+        "type": "auxiliary noun"
+    },
+    "うろうろ": {
+        "reading": "うろうろ",
+        "meaning": "어슬렁어슬렁, 우왕좌왕",
+        "type": "adverb"
+    },
+    "知らない": {
+        "reading": "しらない",
+        "meaning": "모르는",
+        "type": "verb",
+        "form": "negative form"
+    },
+    "お兄さん": {
+        "reading": "おにいさん",
+        "meaning": "형, 오빠",
+        "type": "noun"
+    },
+    "近づいて": {
+        "reading": "ちかづいて",
+        "meaning": "다가와서, 가까이 와서",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "きた": {
+        "reading": "きた",
+        "meaning": "왔다",
+        "type": "verb",
+        "form": "past tense (ta-form)"
+    },
+    "黒い": {
+        "reading": "くろい",
+        "meaning": "검은",
+        "type": "i-adjective",
+        "form": "dictionary form"
+    },
+    "服": {
+        "reading": "ふく",
+        "meaning": "옷",
+        "type": "noun"
+    },
+    "着て": {
+        "reading": "きて",
+        "meaning": "입고",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "顔": {
+        "reading": "かお",
+        "meaning": "얼굴",
+        "type": "noun"
+    },
+    "こわい": {
+        "reading": "こわい",
+        "meaning": "무서운, 두려운",
+        "type": "i-adjective",
+        "form": "dictionary form"
+    },
+    "心臓": {
+        "reading": "しんぞう",
+        "meaning": "심장",
+        "type": "noun"
+    },
+    "ドキドキ": {
+        "reading": "ドキドキ",
+        "meaning": "두근두근",
+        "type": "adverb"
+    },
+    "足": {
+        "reading": "あし",
+        "meaning": "다리, 발",
+        "type": "noun"
+    },
+    "ふるえた": {
+        "reading": "ふるえた",
+        "meaning": "떨렸다",
+        "type": "verb",
+        "form": "past tense (ta-form)"
+    },
+    "くれて": {
+        "reading": "くれて",
+        "meaning": "~해주고, ~주어서",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "空": {
+        "reading": "そら",
+        "meaning": "하늘",
+        "type": "noun"
+    },
+    "オレンジ色": {
+        "reading": "オレンジいろ",
+        "meaning": "주황색, 오렌지색",
+        "type": "noun"
+    },
+    "風": {
+        "reading": "かぜ",
+        "meaning": "바람",
+        "type": "noun"
+    },
+    "寒く": {
+        "reading": "さむく",
+        "meaning": "춥게, 추워서",
+        "type": "i-adjective",
+        "form": "adverbial form"
+    },
+    "帰りたい": {
+        "reading": "かえりたい",
+        "meaning": "돌아가고 싶다",
+        "type": "verb",
+        "form": "desire form"
+    },
+    "道": {
+        "reading": "みち",
+        "meaning": "길",
+        "type": "noun"
+    },
+    "わからない": {
+        "reading": "わからない",
+        "meaning": "모른다, 알 수 없다",
+        "type": "verb",
+        "form": "negative form"
+    },
+    "電話": {
+        "reading": "でんわ",
+        "meaning": "전화",
+        "type": "noun"
+    },
+    "したく": {
+        "reading": "したく",
+        "meaning": "~하고 싶어, ~하려고",
+        "type": "verb",
+        "form": "desire form adverbial"
+    },
+    "ても": {
+        "reading": "ても",
+        "meaning": "~해도, ~하더라도",
+        "type": "particle"
+    },
+    "スマホ": {
+        "reading": "スマホ",
+        "meaning": "스마트폰",
+        "type": "noun"
+    },
+    "まいご": {
+        "reading": "まいご",
+        "meaning": "미아, 길 잃은 아이",
+        "type": "noun"
+    },
+    "店": {
+        "reading": "みせ",
+        "meaning": "가게, 상점",
+        "type": "noun"
+    },
+    "わっと": {
+        "reading": "わっと",
+        "meaning": "와락, 갑자기",
+        "type": "adverb"
+    },
+    "泣きだした": {
+        "reading": "なきだした",
+        "meaning": "울기 시작했다, 울음을 터뜨렸다",
+        "type": "verb",
+        "form": "past tense (ta-form)"
+    },
+    "ごめんなさい": {
+        "reading": "ごめんなさい",
+        "meaning": "죄송합니다, 미안합니다",
+        "type": "interjection",
+        "form": "polite form"
+    },
+    "行きたく": {
+        "reading": "いきたく",
+        "meaning": "가고 싶지 않아, 가고 싶지 않아서",
+        "type": "verb",
+        "form": "desire form adverbial"
+    },
+    "なかった": {
+        "reading": "なかった",
+        "meaning": "없었다, ~하지 않았다",
+        "type": "auxiliary verb",
+        "form": "past negative form"
+    },
+    "きびしい": {
+        "reading": "きびしい",
+        "meaning": "엄격한, 혹독한",
+        "type": "i-adjective",
+        "form": "dictionary form"
+    },
+    "しながら": {
+        "reading": "しながら",
+        "meaning": "~하면서 (동시에)",
+        "type": "Auxiliary verb suffix",
+        "form": "Continuative form connection"
+    },
+    "やさしく": {
+        "reading": "やさしく",
+        "meaning": "상냥하게, 부드럽게",
+        "type": "Adverb",
+        "form": "Adverbial form"
+    },
+    "抱きしめた": {
+        "reading": "だきしめた",
+        "meaning": "껴안았다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "次": {
+        "reading": "つぎ",
+        "meaning": "다음",
+        "type": "Noun"
+    },
+    "行った": {
+        "reading": "いった",
+        "meaning": "갔다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "久しぶり": {
+        "reading": "ひさしぶり",
+        "meaning": "오랜만",
+        "type": "Na-adjective/Noun"
+    },
+    "友だち": {
+        "reading": "ともだち",
+        "meaning": "친구",
+        "type": "Noun"
+    },
+    "会えて": {
+        "reading": "あえて",
+        "meaning": "만날 수 있어서",
+        "type": "Verb",
+        "form": "Te-form (Potential verb)"
+    },
+    "うれしかった": {
+        "reading": "うれしかった",
+        "meaning": "기뻤다",
+        "type": "I-adjective",
+        "form": "Past tense"
+    },
+    "まあまあ": {
+        "reading": "まあまあ",
+        "meaning": "그럭저럭",
+        "type": "Adverb"
+    },
+    "思えば": {
+        "reading": "おもえば",
+        "meaning": "생각해보면",
+        "type": "Verb",
+        "form": "Conditional form"
+    },
+    "まじめ": {
+        "reading": "まじめ",
+        "meaning": "성실함, 진지함",
+        "type": "Na-adjective/Noun"
+    },
+    "受けた": {
+        "reading": "うけた",
+        "meaning": "받았다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "がんばった": {
+        "reading": "がんばった",
+        "meaning": "노력했다, 열심히 했다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "思った": {
+        "reading": "おもった",
+        "meaning": "생각했다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "行きたくないなぁ": {
+        "reading": "いきたくないなぁ",
+        "meaning": "가고 싶지 않네",
+        "type": "Phrase",
+        "form": "Negative desire form + Final particle"
+    },
+    "ぜったいに": {
+        "reading": "ぜったいに",
+        "meaning": "절대로, 반드시",
+        "type": "Adverb"
+    },
+    "できないよ": {
+        "reading": "できないよ",
+        "meaning": "할 수 없어",
+        "type": "Phrase",
+        "form": "Negative potential form + Final particle"
+    },
+    "作っている": {
+        "reading": "つくっている",
+        "meaning": "만들고 있다",
+        "type": "Verb",
+        "form": "Progressive form"
+    },
+    "出してみた": {
+        "reading": "だしてみた",
+        "meaning": "내봤다, 시도해봤다",
+        "type": "Verb",
+        "form": "Trial form (Past tense)"
+    },
+    "しばらくして": {
+        "reading": "しばらくして",
+        "meaning": "잠시 후에, 잠시 지나서",
+        "type": "Phrase",
+        "form": "Te-form"
+    },
+    "！": {
+        "reading": "",
+        "meaning": "느낌표",
+        "type": "Punctuation"
+    },
+    "学校には": {
+        "reading": "がっこうには",
+        "meaning": "학교에는",
+        "type": "Noun phrase"
+    },
+    "つもりだった": {
+        "reading": "つもりだった",
+        "meaning": "~할 작정이었다, ~할 예정이었다",
+        "type": "Auxiliary noun",
+        "form": "Past tense"
+    },
+    "……": {
+        "reading": "",
+        "meaning": "말줄임표",
+        "type": "Punctuation"
+    },
+    "そして": {
+        "reading": "そして",
+        "meaning": "그리고",
+        "type": "Conjunction"
+    },
+    "？": {
+        "reading": "",
+        "meaning": "물음표",
+        "type": "Punctuation"
+    },
+    "商店街": {
+        "reading": "しょうてんがい",
+        "meaning": "상점가, 상가",
+        "type": "Noun"
+    },
+    "気持ちよくて": {
+        "reading": "きもちよくて",
+        "meaning": "기분 좋아서",
+        "type": "I-adjective",
+        "form": "Te-form"
+    },
+    "気分": {
+        "reading": "きぶん",
+        "meaning": "기분",
+        "type": "Noun"
+    },
+    "心をおどらせる": {
+        "reading": "こころをおどらせる",
+        "meaning": "마음을 들뜨게 하다",
+        "type": "Verb",
+        "form": "Causative form"
+    },
+    "たい焼き": {
+        "reading": "たいやき",
+        "meaning": "붕어빵 (Taiyaki)",
+        "type": "Noun"
+    },
+    "おこづかい": {
+        "reading": "おこづかい",
+        "meaning": "용돈",
+        "type": "Noun"
+    },
+    "あんこ": {
+        "reading": "あんこ",
+        "meaning": "팥앙금",
+        "type": "Noun"
+    },
+    "カリカリ": {
+        "reading": "カリカリ",
+        "meaning": "바삭바삭 (소리)",
+        "type": "Onomatopoeia"
+    },
+    "ゲームセンター": {
+        "reading": "ゲームセンター",
+        "meaning": "오락실",
+        "type": "Noun"
+    },
+    "早くて": {
+        "reading": "はやくて",
+        "meaning": "빨라서",
+        "type": "I-adjective",
+        "form": "Te-form"
+    },
+    "クレーンゲーム": {
+        "reading": "クレーンゲーム",
+        "meaning": "인형 뽑기 (크레인 게임)",
+        "type": "Noun"
+    },
+    "チャレンジ": {
+        "reading": "チャレンジ",
+        "meaning": "도전",
+        "type": "Noun"
+    },
+    "ぬいぐるみ": {
+        "reading": "ぬいぐるみ",
+        "meaning": "봉제 인형",
+        "type": "Noun"
+    },
+    "結局": {
+        "reading": "けっきょく",
+        "meaning": "결국",
+        "type": "Adverb"
+    },
+    "取れなかった": {
+        "reading": "とれなかった",
+        "meaning": "잡지 못했다, 뽑지 못했다",
+        "type": "Verb",
+        "form": "Negative potential past tense"
+    },
+    "楽しかった": {
+        "reading": "たのしかった",
+        "meaning": "즐거웠다",
+        "type": "I-adjective",
+        "form": "Past tense"
+    },
+    "見たことのない": {
+        "reading": "みたことのない",
+        "meaning": "본 적 없는",
+        "type": "Phrase",
+        "form": "Past tense + ことのない"
+    },
+    "歩いてみる": {
+        "reading": "あるいてみる",
+        "meaning": "걸어보다",
+        "type": "Verb",
+        "form": "Trial form"
+    },
+    "探検家": {
+        "reading": "たんけんか",
+        "meaning": "탐험가",
+        "type": "Noun"
+    },
+    "だんだんと": {
+        "reading": "だんだんと",
+        "meaning": "점점, 차츰차츰",
+        "type": "Adverb"
+    },
+    "風景": {
+        "reading": "ふうけい",
+        "meaning": "풍경",
+        "type": "Noun"
+    },
+    "神社": {
+        "reading": "じんじゃ",
+        "meaning": "신사",
+        "type": "Noun"
+    },
+    "見つけたり": {
+        "reading": "みつけたり",
+        "meaning": "발견하거나",
+        "type": "Verb",
+        "form": "Tari-form"
+    },
+    "猫": {
+        "reading": "ねこ",
+        "meaning": "고양이",
+        "type": "명사"
+    },
+    "昼寝": {
+        "reading": "ひるね",
+        "meaning": "낮잠",
+        "type": "명사"
+    },
+    "している": {
+        "reading": "している",
+        "meaning": "하고 있다",
+        "type": "동사",
+        "form": "현재 진행형"
+    },
+    "わくわく": {
+        "reading": "わくわく",
+        "meaning": "두근두근, 설렘 (의성어)",
+        "type": "부사"
+    },
+    "していた": {
+        "reading": "していた",
+        "meaning": "하고 있었다",
+        "type": "동사",
+        "form": "과거 진행형"
+    },
+    "しばらくすると": {
+        "reading": "しばらくすると",
+        "meaning": "잠시 후, 얼마 지나지 않아",
+        "type": "접속 부사"
+    },
+    "わからなくなってしまった": {
+        "reading": "わからなくなってしまった",
+        "meaning": "알 수 없게 되어버렸다",
+        "type": "동사 구",
+        "form": "부정 가능형 + 상태 변화 + 완료/유감"
+    },
+    "どこだろう": {
+        "reading": "どこだろう",
+        "meaning": "어디일까",
+        "type": "의문사 + 조동사",
+        "form": "추측형"
+    },
+    "なんとなく": {
+        "reading": "なんとなく",
+        "meaning": "왠지 모르게, 어쩐지",
+        "type": "부사"
+    },
+    "近く": {
+        "reading": "ちかく",
+        "meaning": "가까이, 근처",
+        "type": "명사 / 부사"
+    },
+    "向かった": {
+        "reading": "むかった",
+        "meaning": "향했다",
+        "type": "동사",
+        "form": "과거형"
+    },
+    "光": {
+        "reading": "ひかり",
+        "meaning": "빛",
+        "type": "명사"
+    },
+    "おどらせる": {
+        "reading": "おどらせる",
+        "meaning": "춤추게 하다",
+        "type": "동사",
+        "form": "사역형"
+    },
+    "まずは": {
+        "reading": "まずは",
+        "meaning": "우선은, 첫째로",
+        "type": "부사"
+    },
+    "いつも": {
+        "reading": "いつも",
+        "meaning": "항상, 언제나",
+        "type": "부사"
+    },
+    "帰り": {
+        "reading": "かえり",
+        "meaning": "돌아옴, 귀가",
+        "type": "명사"
+    },
+    "気に": {
+        "reading": "きに",
+        "meaning": "~에 신경 쓰다 (구문의 일부)",
+        "type": "동사구의 일부",
+        "form": "연용형"
+    },
+    "なって": {
+        "reading": "なって",
+        "meaning": "되어서",
+        "type": "동사",
+        "form": "te형"
+    },
+    "いた": {
+        "reading": "いた",
+        "meaning": "있었다",
+        "type": "보조 동사",
+        "form": "과거형"
+    },
+    "たい焼き屋さん": {
+        "reading": "たいやきやさん",
+        "meaning": "타이야키 가게",
+        "type": "명사"
+    },
+    "入って": {
+        "reading": "はいって",
+        "meaning": "들어가서",
+        "type": "동사",
+        "form": "te형"
+    },
+    "買った": {
+        "reading": "かった",
+        "meaning": "샀다",
+        "type": "동사",
+        "form": "과거형"
+    },
+    "ずっと": {
+        "reading": "ずっと",
+        "meaning": "계속, 훨씬",
+        "type": "부사"
+    },
+    "少なかった": {
+        "reading": "すくなかった",
+        "meaning": "적었다",
+        "type": "형용사",
+        "form": "과거형"
+    },
+    "あと": {
+        "reading": "あと",
+        "meaning": "나중에, 나머지, 뒤",
+        "type": "명사 / 부사"
+    },
+    "一回": {
+        "reading": "いっかい",
+        "meaning": "한 번",
+        "type": "명사"
+    },
+    "何回": {
+        "reading": "なんかい",
+        "meaning": "몇 번",
+        "type": "명사"
+    },
+    "やって": {
+        "reading": "やって",
+        "meaning": "해서, 해봐서",
+        "type": "동사",
+        "form": "te형"
+    },
+    "けど": {
+        "reading": "けど",
+        "meaning": "~지만, ~인데",
+        "type": "접속 조사"
+    },
+    "それから": {
+        "reading": "それから",
+        "meaning": "그리고 나서, 그 후로",
+        "type": "접속 부사"
+    },
+    "の": {
+        "reading": "の",
+        "meaning": "~의, ~것",
+        "type": "조사"
+    },
+    "ない": {
+        "reading": "ない",
+        "meaning": "없다, ~않다",
+        "type": "형용사 / 보조 형용사",
+        "form": "부정형"
+    },
+    "こと": {
+        "reading": "こと",
+        "meaning": "것, 일",
+        "type": "명사"
+    },
+    "今": {
+        "reading": "いま",
+        "meaning": "지금",
+        "type": "명사 / 부사"
+    },
+    "いく": {
+        "reading": "いく",
+        "meaning": "가다",
+        "type": "동사",
+        "form": "기본형"
+    },
+    "する": {
+        "reading": "する",
+        "meaning": "하다",
+        "type": "동사",
+        "form": "기본형"
+    },
+    "わからなく": {
+        "reading": "わからなく",
+        "meaning": "알 수 없게",
+        "type": "형용사",
+        "form": "연용형 (부사적 용법)"
+    },
+    "しまった": {
+        "reading": "しまった",
+        "meaning": "~해버렸다 (완료/유감)",
+        "type": "보조 동사",
+        "form": "과거형"
+    },
+    "してきた": {
+        "reading": "してきた",
+        "meaning": "해왔다, 하고 왔다",
+        "type": "동사",
+        "form": "te형 + 과거형"
+    },
+    "着ていて": {
+        "reading": "きていて",
+        "meaning": "입고 있어서",
+        "type": "동사",
+        "form": "te형 (진행/상태)"
+    },
+    "なあ": {
+        "reading": "なあ",
+        "meaning": "~구나, ~네",
+        "type": "종조사"
+    },
+    "金": {
+        "reading": "かね",
+        "meaning": "돈, 금",
+        "type": "명사"
+    },
+    "あ": {
+        "reading": "あ",
+        "meaning": "아!, 어!",
+        "type": "감탄사"
+    },
+    "うそ": {
+        "reading": "うそ",
+        "meaning": "거짓말",
+        "type": "명사"
+    },
+    "だろ": {
+        "reading": "だろ",
+        "meaning": "~겠지?, ~이지?",
+        "type": "조동사",
+        "form": "추측/확인 (구어체)"
+    },
+    "その": {
+        "reading": "その",
+        "meaning": "그",
+        "type": "연체사"
+    },
+    "見せて": {
+        "reading": "みせて",
+        "meaning": "보여줘서, 보이게 해서",
+        "type": "동사",
+        "form": "te형"
+    },
+    "み": {
+        "reading": "み",
+        "meaning": "열매, 맛, 몸, (동사의) ~함 (명사화 접미사)",
+        "type": "명사 / 접미사"
+    },
+    "こわく": {
+        "reading": "こわく",
+        "meaning": "무섭게",
+        "type": "형용사",
+        "form": "연용형 (부사적 용법)"
+    },
+    "ふいに": {
+        "reading": "ふいに",
+        "meaning": "갑자기, 불현듯",
+        "type": "부사"
+    },
+    "走り出した": {
+        "reading": "はしりだした",
+        "meaning": "뛰쳐나왔다, 달리기 시작했다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "うわああああああっ": {
+        "reading": "うわああああああっ",
+        "meaning": "으아아아아아악!",
+        "type": "Interjection"
+    },
+    "全力": {
+        "reading": "ぜんりょく",
+        "meaning": "전력, 온 힘",
+        "type": "Noun"
+    },
+    "走って": {
+        "reading": "はしって",
+        "meaning": "달려서, 뛰어서",
+        "type": "Verb",
+        "form": "Te-form"
+    },
+    "公園": {
+        "reading": "こうえん",
+        "meaning": "공원",
+        "type": "Noun"
+    },
+    "逃げ込んだ": {
+        "reading": "にげこんだ",
+        "meaning": "도망쳐 들어갔다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "はぁ": {
+        "reading": "はぁ",
+        "meaning": "하아 (한숨)",
+        "type": "Interjection"
+    },
+    "こわかった": {
+        "reading": "こわかった",
+        "meaning": "무서웠다",
+        "type": "Adjective",
+        "form": "Past tense"
+    },
+    "ポケット": {
+        "reading": "ポケット",
+        "meaning": "주머니, 포켓",
+        "type": "Noun"
+    },
+    "さわって": {
+        "reading": "さわって",
+        "meaning": "만져서, 만지고",
+        "type": "Verb",
+        "form": "Te-form"
+    },
+    "気がついた": {
+        "reading": "きがついた",
+        "meaning": "깨달았다, 알아차렸다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "財布": {
+        "reading": "さいふ",
+        "meaning": "지갑",
+        "type": "Noun"
+    },
+    "落とした": {
+        "reading": "おとした",
+        "meaning": "떨어뜨렸다, 잃어버렸다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "のか": {
+        "reading": "のか",
+        "meaning": "~인가?, ~인 것인가?",
+        "type": "Sentence-ending particle"
+    },
+    "走っている": {
+        "reading": "はしっている",
+        "meaning": "달리고 있다",
+        "type": "Verb",
+        "form": "Te-iru form (progressive/state)"
+    },
+    "途中": {
+        "reading": "とちゅう",
+        "meaning": "도중, 중간",
+        "type": "Noun"
+    },
+    "全部": {
+        "reading": "ぜんぶ",
+        "meaning": "전부, 모두",
+        "type": "Noun"
+    },
+    "入ってた": {
+        "reading": "はいってた",
+        "meaning": "들어있었다",
+        "type": "Verb",
+        "form": "Colloquial past progressive/state"
+    },
+    "のに": {
+        "reading": "のに",
+        "meaning": "~인데도, ~인데",
+        "type": "Particle"
+    },
+    "涙": {
+        "reading": "なみだ",
+        "meaning": "눈물",
+        "type": "Noun"
+    },
+    "出てきた": {
+        "reading": "でてきた",
+        "meaning": "나왔다, 나타났다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "もう": {
+        "reading": "もう",
+        "meaning": "이제, 이미, 더 이상",
+        "type": "Adverb"
+    },
+    "したくても": {
+        "reading": "したくても",
+        "meaning": "하고 싶어도",
+        "type": "Verb conjugation",
+        "form": "Tai-form + Temo"
+    },
+    "いない": {
+        "reading": "いない",
+        "meaning": "없다 (존재하지 않다, 부재)",
+        "type": "Verb",
+        "form": "Negative form"
+    },
+    "ベンチ": {
+        "reading": "ベンチ",
+        "meaning": "벤치",
+        "type": "Noun"
+    },
+    "座って": {
+        "reading": "すわって",
+        "meaning": "앉아서, 앉고",
+        "type": "Verb",
+        "form": "Te-form"
+    },
+    "ぽろぽろ": {
+        "reading": "ぽろぽろ",
+        "meaning": "주르륵, 뚝뚝 (눈물 등이 흘러내리는 모양)",
+        "type": "Onomatopoeia"
+    },
+    "泣き出した": {
+        "reading": "なきだした",
+        "meaning": "울기 시작했다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "とき": {
+        "reading": "とき",
+        "meaning": "~때, ~시",
+        "type": "Noun"
+    },
+    "花屋さん": {
+        "reading": "はなやさん",
+        "meaning": "꽃집 (주인)",
+        "type": "Noun"
+    },
+    "から": {
+        "reading": "から",
+        "meaning": "~부터, ~로부터, ~때문에",
+        "type": "Particle"
+    },
+    "おばあさん": {
+        "reading": "おばあさん",
+        "meaning": "할머니, 아주머니",
+        "type": "Noun"
+    },
+    "かけて": {
+        "reading": "かけて",
+        "meaning": "걸어서 (말을 걸거나, 전화를 걸거나)",
+        "type": "Verb",
+        "form": "Te-form"
+    },
+    "くれた": {
+        "reading": "くれた",
+        "meaning": "~해 주었다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "どうした": {
+        "reading": "どうした",
+        "meaning": "무슨 일이야?, 어떻게 된 거야?",
+        "type": "Expression",
+        "form": "Past tense"
+    },
+    "ぼうや": {
+        "reading": "ぼうや",
+        "meaning": "꼬마, 얘야 (어린 남자아이 호칭)",
+        "type": "Noun"
+    },
+    "やさしい": {
+        "reading": "やさしい",
+        "meaning": "상냥한, 친절한, 쉬운",
+        "type": "Adjective"
+    },
+    "目": {
+        "reading": "め",
+        "meaning": "눈",
+        "type": "Noun"
+    },
+    "あたたかい": {
+        "reading": "あたたかい",
+        "meaning": "따뜻한",
+        "type": "Adjective"
+    },
+    "お茶": {
+        "reading": "おちゃ",
+        "meaning": "차 (음료)",
+        "type": "Noun"
+    },
+    "お店": {
+        "reading": "おみせ",
+        "meaning": "가게, 상점",
+        "type": "Noun"
+    },
+    "入れて": {
+        "reading": "いれて",
+        "meaning": "넣어서, 넣어주고",
+        "type": "Verb",
+        "form": "Te-form"
+    },
+    "電話番号": {
+        "reading": "でんわばんごう",
+        "meaning": "전화번호",
+        "type": "Noun"
+    },
+    "わかる": {
+        "reading": "わかる",
+        "meaning": "알다, 이해하다",
+        "type": "Verb",
+        "form": "Dictionary form"
+    },
+    "うん": {
+        "reading": "うん",
+        "meaning": "응, 네 (비격식)",
+        "type": "Interjection"
+    },
+    "貸して": {
+        "reading": "かして",
+        "meaning": "빌려줘서, 빌려주고",
+        "type": "Verb",
+        "form": "Te-form"
+    },
+    "かけた": {
+        "reading": "かけた",
+        "meaning": "걸었다 (전화 등을)",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "まで": {
+        "reading": "まで",
+        "meaning": "~까지",
+        "type": "Particle"
+    },
+    "来た": {
+        "reading": "きた",
+        "meaning": "왔다",
+        "type": "Verb",
+        "form": "Past tense"
+    },
+    "帰る": {
+        "reading": "かえる",
+        "meaning": "돌아가다, 돌아오다",
+        "type": "Verb",
+        "form": "Dictionary form"
+    },
+    "お姉ちゃん": {
+        "reading": "おねえちゃん",
+        "meaning": "언니 / 누나",
+        "type": "명사",
+        "form": "친근한 호칭"
+    },
+    "玄関": {
+        "reading": "げんかん",
+        "meaning": "현관",
+        "type": "명사"
+    },
+    "待っていた": {
+        "reading": "まっていた",
+        "meaning": "기다리고 있었다",
+        "type": "동사",
+        "form": "과거 진행형"
+    },
+    "ばかだね〜": {
+        "reading": "ばかだね〜",
+        "meaning": "바보 같네~",
+        "type": "감탄사 / 형용동사",
+        "form": "감탄형"
+    },
+    "サボらない": {
+        "reading": "サボらない",
+        "meaning": "꾀부리지 않다 / 게을리 하지 않다",
+        "type": "동사",
+        "form": "부정형"
+    },
+    "お風呂": {
+        "reading": "おふろ",
+        "meaning": "목욕 / 욕실",
+        "type": "명사"
+    },
+    "ごはん": {
+        "reading": "ごはん",
+        "meaning": "밥 / 식사",
+        "type": "명사"
+    },
+    "食べて": {
+        "reading": "たべて",
+        "meaning": "먹어",
+        "type": "동사",
+        "form": "て형 / 명령형"
+    },
+    "早め": {
+        "reading": "はやめ",
+        "meaning": "일찍 / 좀 일찍",
+        "type": "명사 / 부사"
+    },
+    "寝た": {
+        "reading": "ねた",
+        "meaning": "잤다",
+        "type": "동사",
+        "form": "과거형"
+    },
+    "明日": {
+        "reading": "あした",
+        "meaning": "내일",
+        "type": "명사"
+    },
+    "ちゃんと学校行こう": {
+        "reading": "ちゃんとがっこういこう",
+        "meaning": "제대로 학교 가자",
+        "type": "문장",
+        "form": "의지/권유형"
+    },
+    "先生": {
+        "reading": "せんせい",
+        "meaning": "선생님",
+        "type": "명사"
+    },
+    "言った": {
+        "reading": "いった",
+        "meaning": "말했다",
+        "type": "동사",
+        "form": "과거형"
+    },
+    "よく": {
+        "reading": "よく",
+        "meaning": "잘 / 자주",
+        "type": "부사"
+    },
+    "ゆうたくん": {
+        "reading": "ゆうたくん",
+        "meaning": "유타 군",
+        "type": "고유명사",
+        "form": "애칭/호칭"
+    },
+    "うなずいた": {
+        "reading": "うなずいた",
+        "meaning": "고개를 끄덕였다",
+        "type": "동사",
+        "form": "과거형"
+    },
+    "つぎ": {
+        "reading": "つぎ",
+        "meaning": "다음",
+        "type": "명사"
+    },
+    "もっと": {
+        "reading": "もっと",
+        "meaning": "더",
+        "type": "부사"
+    },
+    "がんばる": {
+        "reading": "がんばる",
+        "meaning": "노력하다 / 힘내다",
+        "type": "동사",
+        "form": "기본형"
+    },
+    "青く": {
+        "reading": "あおく",
+        "meaning": "파랗게",
+        "type": "형용사",
+        "form": "연용형"
+    },
+    "気持ち": {
+        "reading": "きもち",
+        "meaning": "기분 / 느낌",
+        "type": "명사"
+    },
+    "よい": {
+        "reading": "よい",
+        "meaning": "좋다",
+        "type": "형용사",
+        "form": "기본형"
+    }
+}
