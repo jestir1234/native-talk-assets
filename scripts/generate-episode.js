@@ -123,7 +123,7 @@ Do not include the episode title in the story.`;
 
         // Run generate-dictionary.js
         console.log('📚 Generating new dictionary entries...');
-        execSync(`node scripts/generate-dictionary-ja.js`, { stdio: 'inherit' });
+        execSync(`node scripts/generate-dictionary.js en ja`, { stdio: 'inherit' });
 
         // Merge with existing dictionary
         console.log('🧩 Merging new dictionary entries...');

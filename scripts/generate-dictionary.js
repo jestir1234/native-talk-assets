@@ -3,21 +3,77 @@ const path = require('path');
 const fs = require('fs');
 const axios = require('axios');
 
+// Get command line arguments
+const args = process.argv.slice(2);
+if (args.length !== 2) {
+    console.error('Usage: node generate-dictionary.js <source_language> <target_language>');
+    console.error('Example: node generate-dictionary.js en ja');
+    console.error('Example: node generate-dictionary.js ja en');
+    process.exit(1);
+}
+
+const sourceLang = args[0];
+const targetLang = args[1];
+
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const INPUT_FILE = path.resolve(__dirname, './missing_words.txt');
-const OUTPUT_FILE = path.resolve(__dirname, './dictionary_entries_output_ja.json');
+const OUTPUT_FILE = path.resolve(__dirname, `./dictionary_entries_output_${targetLang}.json`);
 const BATCH_SIZE = 50;
 
-console.log('GEMINI_API_KEY',GEMINI_API_KEY);
+console.log(`🔄 Generating dictionary from ${sourceLang} to ${targetLang}`);
+console.log('GEMINI_API_KEY', GEMINI_API_KEY);
+
+// Language-specific configurations
+const languageConfigs = {
+    'en': {
+        name: 'English',
+        readingField: 'reading',
+        meaningField: 'meaning',
+        typeField: 'type'
+    },
+    'ja': {
+        name: 'Japanese',
+        readingField: 'reading',
+        meaningField: 'meaning', 
+        typeField: 'type'
+    },
+    'ko': {
+        name: 'Korean',
+        readingField: 'reading',
+        meaningField: 'meaning',
+        typeField: 'type'
+    },
+    'zh': {
+        name: 'Chinese',
+        readingField: 'reading',
+        meaningField: 'meaning',
+        typeField: 'type'
+    },
+    'es': {
+        name: 'Spanish',
+        readingField: 'reading',
+        meaningField: 'meaning',
+        typeField: 'type'
+    }
+};
+
+const sourceConfig = languageConfigs[sourceLang];
+const targetConfig = languageConfigs[targetLang];
+
+if (!sourceConfig || !targetConfig) {
+    console.error(`❌ Unsupported language pair: ${sourceLang} to ${targetLang}`);
+    console.error('Supported languages:', Object.keys(languageConfigs).join(', '));
+    process.exit(1);
+}
 
 const promptTemplate = (words) => `
-You're a multilingual dictionary assistant. For each English word below, generate a Japanese dictionary entry in this format:
+You're a multilingual dictionary assistant. For each ${sourceConfig.name} word below, generate a ${targetConfig.name} dictionary entry in this format:
 
 {
   "word": {
-    "reading": "カタカナ",
-    "meaning": "Japanese translation or short explanation",
-    "type": "品詞 (like 名詞, 動詞, etc.)"
+    "${targetConfig.readingField}": "${targetLang === 'ja' ? 'カタカナ' : 'pronunciation'}",
+    "${targetConfig.meaningField}": "${targetConfig.name} translation or short explanation",
+    "${targetConfig.typeField}": "${targetLang === 'ja' ? '品詞 (like 名詞, 動詞, etc.)' : 'part of speech'}"
   }
 }
 
