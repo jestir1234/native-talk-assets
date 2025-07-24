@@ -4,7 +4,7 @@ Return:
 - A creative episode title
 - A short plot hook (1-2 sentences) describing the episode scenario
 
-Keep the tone warm, community-focused, and heartwarming. Format it as JSON like:
+Randomly decide on the tone of the episode. It can be warm, sad, action-packed, emotional, comedic. Anything you like. Format it as JSON like:
 {
   "title": "Your Title",
   "hook": "Your Plot Hook",
