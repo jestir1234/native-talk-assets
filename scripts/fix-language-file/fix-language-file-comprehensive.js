@@ -1,6 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
+// Example how to use: 
+// 1. node scripts/fix-language-file/fix-language-file-comprehensive.js taipei-blues
+// 2. node scripts/fix-language-file/test-fixed-language-file.js taipei-blues
+// 3. node scripts/fix-language-file/check-fixed-language-file.js
+
 function fixLanguageFileComprehensive(storyId) {
   // Read the structure file to get tokenized content
   const structurePath = path.join(__dirname, '..', 'stories', storyId, 'structure.json');
