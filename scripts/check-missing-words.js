@@ -1,35 +1,174 @@
-// Usage: node scripts/check-missing-words.js <dictionary.json> <chapters.txt> [missing_words.txt]
+// Usage: node scripts/check-missing-words.js <dictionary.json> <chapters.txt> [missing_words.txt] [language]
 
 const fs = require("fs");
 const path = require("path");
+const kuromoji = require("kuromoji");
 
 // Validate arguments
 if (process.argv.length < 4) {
-    console.error("Usage: node check-missing-words.js <dictionary.json> <chapters.txt> [missing_words.txt]");
+    console.error("Usage: node check-missing-words.js <dictionary.json> <chapters.txt> [missing_words.txt] [language]");
+    console.error("Supported languages: en, ja, ko, zh, es, vi");
     process.exit(1);
 }
 
 const dictionaryPath = path.resolve(process.argv[2]);
 const chapterTextPath = path.resolve(process.argv[3]);
 const outputPath = path.resolve(process.argv[4] || "missing_words.txt");
+const language = process.argv[5] || "en";
 
-// Load files
-const dictionary = JSON.parse(fs.readFileSync(dictionaryPath, "utf-8"));
-const text = fs.readFileSync(chapterTextPath, "utf-8");
+// Also save tokenized text to a temporary file
+const tokenizedOutputPath = path.resolve(__dirname, './tokenized_text.txt');
 
-// Tokenize and normalize
-const words = text
-    .toLowerCase()
-    .replace(/[^a-zA-Z0-9\s']/g, "") // Remove punctuation except apostrophes
-    .split(/\s+/)
-    .filter(Boolean);
+// Language-specific tokenization functions
+function tokenizeEnglish(text) {
+    return text
+        .toLowerCase()
+        .replace(/[^a-zA-Z0-9\s']/g, "") // Remove punctuation except apostrophes
+        .split(/\s+/)
+        .filter(Boolean);
+}
 
-const dictKeys = Object.keys(dictionary).map((w) => w.toLowerCase());
+function tokenizeJapanese(text) {
+    return new Promise((resolve, reject) => {
+        kuromoji.builder({ dicPath: "node_modules/kuromoji/dict" }).build((err, tokenizer) => {
+            if (err) {
+                console.warn("⚠️  Kuromoji failed, falling back to simple tokenization");
+                // Fallback to simple tokenization
+                const simpleTokens = text
+                    .replace(/[、。！？「」『』【】（）]/g, " ")
+                    .split(/\s+/)
+                    .flatMap(phrase => {
+                        const words = [];
+                        let currentWord = "";
+                        
+                        for (let i = 0; i < phrase.length; i++) {
+                            const char = phrase[i];
+                            const nextChar = phrase[i + 1];
+                            
+                            const isJapanese = /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]/.test(char);
+                            
+                            if (isJapanese) {
+                                if (currentWord && (
+                                    (/[\u3040-\u309F]/.test(char) && /[\u4E00-\u9FAF]/.test(nextChar)) ||
+                                    (/[\u4E00-\u9FAF]/.test(char) && /[\u3040-\u309F]/.test(nextChar))
+                                )) {
+                                    words.push(currentWord);
+                                    currentWord = char;
+                                } else {
+                                    currentWord += char;
+                                }
+                            } else {
+                                currentWord += char;
+                            }
+                        }
+                        
+                        if (currentWord) {
+                            words.push(currentWord);
+                        }
+                        
+                        return words.filter(word => word.length > 0 && /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]/.test(word));
+                    });
+                resolve(simpleTokens);
+                return;
+            }
+            
+            // Use kuromoji for proper Japanese tokenization
+            const tokens = tokenizer.tokenize(text);
+            const words = tokens
+                .map(token => token.surface_form) // Get the surface form (original text)
+                .filter(word => word.length > 0 && /[\u3040-\u309F\u30A0-\u30FF\u4E00-\u9FAF]/.test(word));
+            
+            resolve(words);
+        });
+    });
+}
 
-// Check for missing
-const uniqueWords = [...new Set(words)];
-const missingWords = uniqueWords.filter((word) => !dictKeys.includes(word));
+function tokenizeKorean(text) {
+    // Korean uses spaces between words, but we need to preserve Korean characters
+    return text
+        .replace(/[。！？，]/g, " ") // Replace Korean punctuation with spaces
+        .split(/\s+/)
+        .filter(word => word.length > 0 && /[\uAC00-\uD7AF]/.test(word)); // Keep only Korean characters
+}
 
-// Write to file
-fs.writeFileSync(outputPath, missingWords.join("\n"), "utf-8");
-console.log(`✅ Missing words written to: ${outputPath}`);
+function tokenizeChinese(text) {
+    // Chinese doesn't use spaces, so we'll split on punctuation and keep characters
+    return text
+        .replace(/[。！？，；：""''（）【】]/g, " ") // Replace Chinese punctuation with spaces
+        .split(/\s+/)
+        .filter(word => word.length > 0 && /[\u4E00-\u9FAF]/.test(word)); // Keep only Chinese characters
+}
+
+function tokenizeSpanish(text) {
+    return text
+        .toLowerCase()
+        .replace(/[^a-zA-ZÀ-ÿ0-9\s']/g, "") // Remove punctuation but keep accented characters
+        .split(/\s+/)
+        .filter(Boolean);
+}
+
+function tokenizeVietnamese(text) {
+    return text
+        .toLowerCase()
+        .replace(/[^a-zA-ZÀ-ÿ0-9\s']/g, "") // Remove punctuation but keep accented characters
+        .split(/\s+/)
+        .filter(Boolean);
+}
+
+// Language detection and tokenization
+async function tokenizeText(text, lang) {
+    switch (lang.toLowerCase()) {
+        case "en":
+            return tokenizeEnglish(text);
+        case "ja":
+            return await tokenizeJapanese(text);
+        case "ko":
+            return tokenizeKorean(text);
+        case "zh":
+            return tokenizeChinese(text);
+        case "es":
+            return tokenizeSpanish(text);
+        case "vi":
+            return tokenizeVietnamese(text);
+        default:
+            console.warn(`⚠️  Unknown language '${lang}', using English tokenization`);
+            return tokenizeEnglish(text);
+    }
+}
+
+// Main function
+async function main() {
+    // Load files
+    const dictionary = JSON.parse(fs.readFileSync(dictionaryPath, "utf-8"));
+    const text = fs.readFileSync(chapterTextPath, "utf-8");
+
+    // Tokenize based on language
+    const words = await tokenizeText(text, language);
+
+    // Normalize dictionary keys based on language
+    let dictKeys;
+    if (language.toLowerCase() === "en") {
+        dictKeys = Object.keys(dictionary).map((w) => w.toLowerCase());
+    } else {
+        // For non-English languages, keep original case as some languages are case-sensitive
+        dictKeys = Object.keys(dictionary);
+    }
+
+    // Check for missing
+    const uniqueWords = [...new Set(words)];
+    const missingWords = uniqueWords.filter((word) => !dictKeys.includes(word));
+
+    // Write missing words to file
+    fs.writeFileSync(outputPath, missingWords.join("\n"), "utf-8");
+    console.log(`✅ Missing words written to: ${outputPath}`);
+    console.log(`📊 Language: ${language}`);
+    console.log(`📊 Total unique words: ${uniqueWords.length}`);
+    console.log(`📊 Missing words: ${missingWords.length}`);
+
+    // Save tokenized text to temporary file
+    fs.writeFileSync(tokenizedOutputPath, words.join("|"), "utf-8");
+    console.log(`✅ Tokenized text saved to: ${tokenizedOutputPath}`);
+}
+
+// Run the main function
+main().catch(console.error);

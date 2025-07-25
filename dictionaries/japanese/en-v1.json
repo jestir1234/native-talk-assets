@@ -1,1624 +1,3059 @@
 {
-    "台所": {
-        "reading": "だいどころ",
-        "meaning": "kitchen",
-        "type": "noun"
-    },
-    "だ": {
-        "meaning": "to be (informal of desu)",
-        "form": "copula"
-    },
-    "だった": {
-        "meaning": "past form of だ",
-        "form": "past"
-    },
-    "私": {
-        "reading": "わたし",
-        "meaning": "I, me",
-        "type": "pronoun"
-    },
-    "は": {
-        "reading": "は",
-        "meaning": "topic particle",
-        "type": "particle"
-    },
-    "学生": {
-        "reading": "がくせい",
-        "meaning": "student",
-        "type": "noun"
-    },
-    "です": {
-        "meaning": "to be (polite)",
-        "form": "copula"
-    },
-    "今日": {
-        "reading": "きょう",
-        "meaning": "today",
-        "type": "noun"
-    },
-    "天気": {
-        "reading": "てんき",
-        "meaning": "weather",
-        "type": "noun"
-    },
-    "が": {
-        "reading": "が",
-        "meaning": "subject particle",
-        "type": "particle"
-    },
-    "いい": {
-        "reading": "いい",
-        "meaning": "good",
-        "type": "i-adjective"
-    },
-    "とても": {
-        "reading": "とても",
-        "meaning": "very",
-        "type": "adverb"
-    },
-    "美しい": {
-        "reading": "うつくしい",
-        "meaning": "beautiful",
-        "type": "i-adjective"
-    },
-    "日": {
-        "reading": "ひ",
-        "meaning": "day",
-        "type": "noun"
-    },
-    "朝": {
-        "reading": "あさ",
-        "meaning": "morning",
-        "type": "noun"
-    },
-    "起きました": {
-        "reading": "おきました",
-        "meaning": "woke up (past polite)",
-        "type": "verb"
-    },
-    "食べます": {
-        "reading": "たべます",
-        "meaning": "to eat (polite)",
-        "type": "verb"
-    },
-    "パン": {
-        "reading": "パン",
-        "meaning": "bread",
-        "type": "noun"
-    },
-    "を": {
-        "reading": "を",
-        "meaning": "object particle",
-        "type": "particle"
-    },
-    "飲みます": {
-        "reading": "のみます",
-        "meaning": "to drink (polite)",
-        "type": "verb"
-    },
-    "コーヒー": {
-        "reading": "コーヒー",
-        "meaning": "coffee",
-        "type": "noun"
-    },
-    "行きます": {
-        "reading": "いきます",
-        "meaning": "to go (polite)",
-        "type": "verb"
-    },
-    "学校": {
-        "reading": "がっこう",
-        "meaning": "school",
-        "type": "noun"
-    },
-    "に": {
-        "reading": "に",
-        "meaning": "direction/time particle",
-        "type": "particle"
-    },
-    "友達": {
-        "reading": "ともだち",
-        "meaning": "friend",
-        "type": "noun"
-    },
-    "と": {
-        "reading": "と",
-        "meaning": "with/and particle",
-        "type": "particle"
-    },
-    "話します": {
-        "reading": "はなします",
-        "meaning": "to talk/speak (polite)",
-        "type": "verb"
-    },
-    "楽しい": {
-        "reading": "たのしい",
-        "meaning": "fun, enjoyable",
-        "type": "i-adjective"
-    },
-    "時間": {
-        "reading": "じかん",
-        "meaning": "time",
-        "type": "noun"
-    },
-    "過ごしました": {
-        "reading": "すごしました",
-        "meaning": "spent (time) (past polite)",
-        "type": "verb"
-    },
-    "ゆうた": {
-        "reading": "ゆうた",
-        "meaning": "Yūta (name)",
-        "type": "proper noun"
-    },
-    "サボり": {
-        "reading": "サボり",
-        "meaning": "skipping (school)",
-        "type": "noun"
-    },
-    "テスト": {
-        "reading": "テスト",
-        "meaning": "test",
-        "type": "noun"
-    },
-    "算数": {
-        "reading": "さんすう",
-        "meaning": "arithmetic, math",
-        "type": "noun"
-    },
-    "小学": {
-        "reading": "しょうがく",
-        "meaning": "elementary school",
-        "type": "noun"
-    },
-    "五年生": {
-        "reading": "ごねんせい",
-        "meaning": "5th grader",
-        "type": "noun"
-    },
-    "ふとん": {
-        "reading": "ふとん",
-        "meaning": "futon, bedding",
-        "type": "noun"
-    },
-    "中": {
-        "reading": "なか",
-        "meaning": "inside, in",
-        "type": "noun"
-    },
-    "つぶやいた": {
-        "reading": "つぶやいた",
-        "meaning": "murmured, muttered",
-        "type": "verb"
-    },
-    "また": {
-        "reading": "また",
-        "meaning": "again",
-        "type": "adverb"
-    },
-    "かよ": {
-        "reading": "かよ",
-        "meaning": "geez (casual particle)",
-        "type": "particle"
-    },
-    "ある": {
-        "reading": "ある",
-        "meaning": "to be, to exist",
-        "type": "verb"
-    },
-    "昨日": {
-        "reading": "きのう",
-        "meaning": "yesterday",
-        "type": "noun"
-    },
-    "夜": {
-        "reading": "よる",
-        "meaning": "night",
-        "type": "noun"
-    },
-    "ゲーム": {
-        "reading": "ゲーム",
-        "meaning": "game",
-        "type": "noun"
-    },
-    "ばかり": {
-        "reading": "ばかり",
-        "meaning": "only, just",
-        "type": "particle"
-    },
-    "まったく": {
-        "reading": "まったく",
-        "meaning": "completely, not at all",
-        "type": "adverb"
-    },
-    "勉強": {
-        "reading": "べんきょう",
-        "meaning": "study",
-        "type": "noun"
-    },
-    "行きたくない": {
-        "reading": "いきたくない",
-        "meaning": "don't want to go",
-        "type": "expression"
-    },
-    "なぁ": {
-        "reading": "なぁ",
-        "meaning": "casual ending particle",
-        "type": "particle"
-    },
-    "ぜったい": {
-        "reading": "ぜったい",
-        "meaning": "absolutely",
-        "type": "adverb"
-    },
-    "できない": {
-        "reading": "できない",
-        "meaning": "cannot do",
-        "type": "verb"
-    },
-    "よ": {
-        "reading": "よ",
-        "meaning": "emphasis particle",
-        "type": "particle"
-    },
-    "お母さん": {
-        "reading": "おかあさん",
-        "meaning": "mother",
-        "type": "noun"
-    },
-    "朝ごはん": {
-        "reading": "あさごはん",
-        "meaning": "breakfast",
-        "type": "noun"
-    },
-    "作って": {
-        "reading": "つくって",
-        "meaning": "making",
-        "type": "verb"
-    },
-    "いる": {
-        "reading": "いる",
-        "meaning": "to be (animate)",
-        "type": "verb"
-    },
-    "あいだ": {
-        "reading": "あいだ",
-        "meaning": "while, during",
-        "type": "noun"
-    },
-    "そっと": {
-        "reading": "そっと",
-        "meaning": "quietly, gently",
-        "type": "adverb"
-    },
-    "おなか": {
-        "reading": "おなか",
-        "meaning": "stomach",
-        "type": "noun"
-    },
-    "おさえた": {
-        "reading": "おさえた",
-        "meaning": "pressed, held",
-        "type": "verb"
-    },
-    "少し": {
-        "reading": "すこし",
-        "meaning": "a little",
-        "type": "adverb"
-    },
-    "だけ": {
-        "reading": "だけ",
-        "meaning": "only",
-        "type": "particle"
-    },
-    "苦しそう": {
-        "reading": "くるしそう",
-        "meaning": "seeming painful",
-        "type": "na-adjective"
-    },
-    "な": {
-        "reading": "な",
-        "meaning": "attributive particle",
-        "type": "particle"
-    },
-    "声": {
-        "reading": "こえ",
-        "meaning": "voice",
-        "type": "noun"
-    },
-    "出して": {
-        "reading": "だして",
-        "meaning": "putting out",
-        "type": "verb"
-    },
-    "みた": {
-        "reading": "みた",
-        "meaning": "tried",
-        "type": "verb"
-    },
-    "なんか": {
-        "reading": "なんか",
-        "meaning": "somehow, like",
-        "type": "adverb"
-    },
-    "いたい": {
-        "reading": "いたい",
-        "meaning": "painful, hurts",
-        "type": "i-adjective"
-    },
-    "心配そう": {
-        "reading": "しんぱいそう",
-        "meaning": "worriedly",
-        "type": "na-adjective"
-    },
-    "ほう": {
-        "reading": "ほう",
-        "meaning": "direction",
-        "type": "noun"
-    },
-    "え": {
-        "reading": "え",
-        "meaning": "eh? (surprise)",
-        "type": "interjection"
-    },
-    "大丈夫": {
-        "reading": "だいじょうぶ",
-        "meaning": "okay, alright",
-        "type": "na-adjective"
-    },
-    "何か": {
-        "reading": "なにか",
-        "meaning": "something",
-        "type": "pronoun"
-    },
-    "変な": {
-        "reading": "へんな",
-        "meaning": "strange",
-        "type": "na-adjective"
-    },
-    "もの": {
-        "reading": "もの",
-        "meaning": "thing",
-        "type": "noun"
-    },
-    "食べた": {
-        "reading": "たべた",
-        "meaning": "ate",
-        "type": "verb"
-    },
-    "ううん": {
-        "reading": "ううん",
-        "meaning": "no (casual)",
-        "type": "interjection"
-    },
-    "わかんない": {
-        "reading": "わかんない",
-        "meaning": "don't know (casual)",
-        "type": "verb"
-    },
-    "じゃあ": {
-        "reading": "じゃあ",
-        "meaning": "then, well",
-        "type": "conjunction"
-    },
-    "休もう": {
-        "reading": "やすもう",
-        "meaning": "let's rest",
-        "type": "verb"
-    },
-    "か": {
-        "reading": "か",
-        "meaning": "question particle",
-        "type": "particle"
-    },
-    "無理": {
-        "reading": "むり",
-        "meaning": "overdo, impossible",
-        "type": "noun"
-    },
-    "しないで": {
-        "reading": "しないで",
-        "meaning": "don't do",
-        "type": "verb"
-    },
-    "ね": {
-        "reading": "ね",
-        "meaning": "sentence ending particle",
-        "type": "particle"
-    },
-    "作戦": {
-        "reading": "さくせん",
-        "meaning": "strategy, plan",
-        "type": "noun"
-    },
-    "成功": {
-        "reading": "せいこう",
-        "meaning": "success",
-        "type": "noun"
-    },
-    "もぐりこみ": {
-        "reading": "もぐりこみ",
-        "meaning": "crawled into",
-        "type": "verb"
-    },
-    "にやり": {
-        "reading": "にやり",
-        "meaning": "grin",
-        "type": "adverb"
-    },
-    "笑った": {
-        "reading": "わらった",
-        "meaning": "smiled, laughed",
-        "type": "verb"
-    },
-    "でも": {
-        "reading": "でも",
-        "meaning": "but",
-        "type": "conjunction"
-    },
-    "心": {
-        "reading": "こころ",
-        "meaning": "heart, mind",
-        "type": "noun"
-    },
-    "どこか": {
-        "reading": "どこか",
-        "meaning": "somewhere",
-        "type": "pronoun"
-    },
-    "で": {
-        "reading": "で",
-        "meaning": "at, in (particle)",
-        "type": "particle"
-    },
-    "ちょっと": {
-        "reading": "ちょっと",
-        "meaning": "a bit",
-        "type": "adverb"
-    },
-    "罪悪感": {
-        "reading": "ざいあくかん",
-        "meaning": "guilt",
-        "type": "noun"
-    },
-    "も": {
-        "reading": "も",
-        "meaning": "also, too",
-        "type": "particle"
-    },
-    "あった": {
-        "reading": "あった",
-        "meaning": "there was",
-        "type": "verb"
-    },
-    "して": {
-        "reading": "して",
-        "meaning": "and, doing",
-        "type": "verb"
-    },
-    "仕事": {
-        "reading": "しごと",
-        "meaning": "work, job",
-        "type": "noun"
-    },
-    "出かけた": {
-        "reading": "でかけた",
-        "meaning": "went out",
-        "type": "verb"
-    },
-    "やった": {
-        "reading": "やった",
-        "meaning": "hooray! did it!",
-        "type": "interjection"
-    },
-    "ぼうけん": {
-        "reading": "ぼうけん",
-        "meaning": "adventure",
-        "type": "noun"
-    },
-    "ランドセル": {
-        "reading": "ランドセル",
-        "meaning": "school bag",
-        "type": "noun"
-    },
-    "ではなく": {
-        "reading": "ではなく",
-        "meaning": "not...but",
-        "type": "expression"
-    },
-    "小さな": {
-        "reading": "ちいさな",
-        "meaning": "small",
-        "type": "adjective"
-    },
-    "かばん": {
-        "reading": "かばん",
-        "meaning": "bag",
-        "type": "noun"
-    },
-    "持って": {
-        "reading": "もって",
-        "meaning": "carrying, holding",
-        "type": "verb"
-    },
-    "家": {
-        "reading": "いえ",
-        "meaning": "house, home",
-        "type": "noun"
-    },
-    "出た": {
-        "reading": "でた",
-        "meaning": "left, went out",
-        "type": "verb"
-    },
-    "には": {
-        "reading": "には",
-        "meaning": "to (emphatic)",
-        "type": "particle"
-    },
-    "行かず": {
-        "reading": "いかず",
-        "meaning": "not going",
-        "type": "verb"
-    },
-    "自由": {
-        "reading": "じゆう",
-        "meaning": "freedom",
-        "type": "noun"
-    },
-    "楽しむ": {
-        "reading": "たのしむ",
-        "meaning": "to enjoy",
-        "type": "verb"
-    },
-    "つもり": {
-        "reading": "つもり",
-        "meaning": "intention, plan",
-        "type": "noun"
-    },
-    "うろうろ": {
-        "reading": "うろうろ",
-        "meaning": "wandering around",
-        "type": "adverb"
-    },
-    "知らない": {
-        "reading": "しらない",
-        "meaning": "unknown, don't know",
-        "type": "verb"
-    },
-    "お兄さん": {
-        "reading": "おにいさん",
-        "meaning": "older brother, young man",
-        "type": "noun"
-    },
-    "近づいて": {
-        "reading": "ちかづいて",
-        "meaning": "approaching",
-        "type": "verb"
-    },
-    "きた": {
-        "reading": "きた",
-        "meaning": "came",
-        "type": "verb"
-    },
-    "黒い": {
-        "reading": "くろい",
-        "meaning": "black",
-        "type": "i-adjective"
-    },
-    "服": {
-        "reading": "ふく",
-        "meaning": "clothes",
-        "type": "noun"
-    },
-    "着て": {
-        "reading": "きて",
-        "meaning": "wearing",
-        "type": "verb"
-    },
-    "顔": {
-        "reading": "かお",
-        "meaning": "face",
-        "type": "noun"
-    },
-    "こわい": {
-        "reading": "こわい",
-        "meaning": "scary, frightening",
-        "type": "i-adjective"
-    },
-    "心臓": {
-        "reading": "しんぞう",
-        "meaning": "heart",
-        "type": "noun"
-    },
-    "ドキドキ": {
-        "reading": "ドキドキ",
-        "meaning": "pounding (heart sound)",
-        "type": "adverb"
-    },
-    "足": {
-        "reading": "あし",
-        "meaning": "leg, foot",
-        "type": "noun"
-    },
-    "ふるえた": {
-        "reading": "ふるえた",
-        "meaning": "trembled",
-        "type": "verb"
-    },
-    "くれて": {
-        "reading": "くれて",
-        "meaning": "setting (sun)",
-        "type": "verb"
-    },
-    "空": {
-        "reading": "そら",
-        "meaning": "sky",
-        "type": "noun"
-    },
-    "オレンジ色": {
-        "reading": "オレンジいろ",
-        "meaning": "orange color",
-        "type": "noun"
-    },
-    "風": {
-        "reading": "かぜ",
-        "meaning": "wind",
-        "type": "noun"
-    },
-    "寒く": {
-        "reading": "さむく",
-        "meaning": "cold",
-        "type": "i-adjective"
-    },
-    "帰りたい": {
-        "reading": "かえりたい",
-        "meaning": "want to go home",
-        "type": "expression"
-    },
-    "道": {
-        "reading": "みち",
-        "meaning": "road, way",
-        "type": "noun"
-    },
-    "わからない": {
-        "reading": "わからない",
-        "meaning": "don't understand",
-        "type": "verb"
-    },
-    "電話": {
-        "reading": "でんわ",
-        "meaning": "telephone",
-        "type": "noun"
-    },
-    "したく": {
-        "reading": "したく",
-        "meaning": "want to do",
-        "type": "verb"
-    },
-    "ても": {
-        "reading": "ても",
-        "meaning": "even if",
-        "type": "particle"
-    },
-    "スマホ": {
-        "reading": "スマホ",
-        "meaning": "smartphone",
-        "type": "noun"
-    },
-    "まいご": {
-        "reading": "まいご",
-        "meaning": "lost",
-        "type": "noun"
-    },
-    "店": {
-        "reading": "みせ",
-        "meaning": "shop, store",
-        "type": "noun"
-    },
-    "わっと": {
-        "reading": "わっと",
-        "meaning": "burst into (tears)",
-        "type": "adverb"
-    },
-    "泣きだした": {
-        "reading": "なきだした",
-        "meaning": "started crying",
-        "type": "verb"
-    },
-    "ごめんなさい": {
-        "reading": "ごめんなさい",
-        "meaning": "I'm sorry",
-        "type": "expression"
-    },
-    "行きたく": {
-        "reading": "いきたく",
-        "meaning": "want to go",
-        "type": "verb"
-    },
-    "なかった": {
-        "reading": "なかった",
-        "meaning": "there wasn't",
-        "type": "verb"
-    },
-    "きびしい": {
-        "reading": "きびしい",
-        "meaning": "strict, stern",
-        "type": "i-adjective"
-    },
-    "しながら": {
-        "reading": "しながら",
-        "meaning": "while doing",
-        "type": "particle"
-    },
-    "やさしく": {
-        "reading": "やさしく",
-        "meaning": "gently, kindly",
-        "type": "adverb"
-    },
-    "抱きしめた": {
-        "reading": "だきしめた",
-        "meaning": "hugged tightly",
-        "type": "verb"
-    },
-    "次": {
-        "reading": "つぎ",
-        "meaning": "next",
-        "type": "noun"
-    },
-    "行った": {
-        "reading": "いった",
-        "meaning": "went",
-        "type": "verb"
-    },
-    "久しぶり": {
-        "reading": "ひさしぶり",
-        "meaning": "after a long time",
-        "type": "expression"
-    },
-    "友だち": {
-        "reading": "ともだち",
-        "meaning": "friend",
-        "type": "noun"
-    },
-    "会えて": {
-        "reading": "あえて",
-        "meaning": "could meet",
-        "type": "verb"
-    },
-    "うれしかった": {
-        "reading": "うれしかった",
-        "meaning": "was happy",
-        "type": "i-adjective"
-    },
-    "まあまあ": {
-        "reading": "まあまあ",
-        "meaning": "so-so, okay",
-        "type": "adverb"
-    },
-    "思えば": {
-        "reading": "おもえば",
-        "meaning": "if you think",
-        "type": "expression"
-    },
-    "まじめ": {
-        "reading": "まじめ",
-        "meaning": "serious",
-        "type": "na-adjective"
-    },
-    "受けた": {
-        "reading": "うけた",
-        "meaning": "took, received",
-        "type": "verb"
-    },
-    "がんばった": {
-        "reading": "がんばった",
-        "meaning": "tried hard",
-        "type": "verb"
-    },
-    "思った": {
-        "reading": "おもった",
-        "meaning": "thought",
-        "type": "verb"
-    },
-    "行きたくないなぁ": {
-        "reading": "いきたくないなぁ",
-        "meaning": "I don't want to go (with feeling)",
-        "type": "expression"
-    },
-    "ぜったいに": {
-        "reading": "ぜったいに",
-        "meaning": "absolutely, definitely",
-        "type": "adverb"
-    },
-    "できないよ": {
-        "reading": "できないよ",
-        "meaning": "can't do it (casual)",
-        "type": "expression"
-    },
-    "作っている": {
-        "reading": "つくっている",
-        "meaning": "is making",
-        "type": "verb"
-    },
-    "出してみた": {
-        "reading": "だしてみた",
-        "meaning": "tried putting out",
-        "type": "verb"
-    },
-    "しばらくして": {
-        "reading": "しばらくして",
-        "meaning": "after a while",
-        "type": "expression"
-    },
-    "！": {
-        "reading": "！",
-        "meaning": "! (exclamation mark)",
-        "type": "punctuation"
-    },
-    "学校には": {
-        "reading": "がっこうには",
-        "meaning": "to school (emphatic)",
-        "type": "expression"
-    },
-    "つもりだった": {
-        "reading": "つもりだった",
-        "meaning": "was planning to",
-        "type": "expression"
-    },
-    "……": {
-        "reading": "……",
-        "meaning": "... (ellipsis)",
-        "type": "punctuation"
-    },
-    "そして": {
-        "reading": "そして",
-        "meaning": "and then",
-        "type": "conjunction"
-    },
-    "？": {
-        "reading": "？",
-        "meaning": "? (question mark)",
-        "type": "punctuation"
-    },
-    "商店街": {
-        "reading": "しょうてんがい",
-        "meaning": "shopping street",
-        "type": "noun"
-    },
-    "気持ちよくて": {
-        "reading": "きもちよくて",
-        "meaning": "feeling good and",
-        "type": "expression"
-    },
-    "気分": {
-        "reading": "きぶん",
-        "meaning": "mood, feeling",
-        "type": "noun"
-    },
-    "心をおどらせる": {
-        "reading": "こころをおどらせる",
-        "meaning": "to make the heart dance (to be excited)",
-        "type": "expression"
-    },
-    "たい焼き": {
-        "reading": "たいやき",
-        "meaning": "taiyaki (fish-shaped cake)",
-        "type": "noun"
-    },
-    "おこづかい": {
-        "reading": "おこづかい",
-        "meaning": "allowance",
-        "type": "noun"
-    },
-    "あんこ": {
-        "reading": "あんこ",
-        "meaning": "red bean paste",
-        "type": "noun"
-    },
-    "カリカリ": {
-        "reading": "カリカリ",
-        "meaning": "crispy",
-        "type": "onomatopoeia"
-    },
-    "ゲームセンター": {
-        "reading": "ゲームセンター",
-        "meaning": "arcade",
-        "type": "noun"
-    },
-    "早くて": {
-        "reading": "はやくて",
-        "meaning": "early and",
-        "type": "expression"
-    },
-    "クレーンゲーム": {
-        "reading": "クレーンゲーム",
-        "meaning": "crane game",
-        "type": "noun"
-    },
-    "チャレンジ": {
-        "reading": "チャレンジ",
-        "meaning": "challenge",
-        "type": "noun"
-    },
-    "ぬいぐるみ": {
-        "reading": "ぬいぐるみ",
-        "meaning": "stuffed animal, plush toy",
-        "type": "noun"
-    },
-    "結局": {
-        "reading": "けっきょく",
-        "meaning": "in the end, after all",
-        "type": "adverb"
-    },
-    "取れなかった": {
-        "reading": "とれなかった",
-        "meaning": "couldn't get",
-        "type": "verb"
-    },
-    "楽しかった": {
-        "reading": "たのしかった",
-        "meaning": "was fun",
-        "type": "i-adjective"
-    },
-    "見たことのない": {
-        "reading": "みたことのない",
-        "meaning": "never seen before",
-        "type": "expression"
-    },
-    "歩いてみる": {
-        "reading": "あるいてみる",
-        "meaning": "try walking",
-        "type": "verb"
-    },
-    "探検家": {
-        "reading": "たんけんか",
-        "meaning": "explorer",
-        "type": "noun"
-    },
-    "だんだんと": {
-        "reading": "だんだんと",
-        "meaning": "gradually",
-        "type": "adverb"
-    },
-    "風景": {
-        "reading": "ふうけい",
-        "meaning": "scenery",
-        "type": "noun"
-    },
-    "神社": {
-        "reading": "じんじゃ",
-        "meaning": "Shinto shrine",
-        "type": "noun"
-    },
-    "見つけたり": {
-        "reading": "みつけたり",
-        "meaning": "found and (among other things)",
-        "type": "verb"
-    },
-    "猫": {
-        "reading": "ねこ",
-        "meaning": "cat",
-        "type": "noun"
-    },
-    "昼寝": {
-        "reading": "ひるね",
-        "meaning": "nap",
-        "type": "noun"
-    },
-    "している": {
-        "reading": "している",
-        "meaning": "is doing",
-        "type": "verb"
-    },
-    "わくわく": {
-        "reading": "わくわく",
-        "meaning": "excited, thrilled",
-        "type": "onomatopoeia"
-    },
-    "していた": {
-        "reading": "していた",
-        "meaning": "was doing",
-        "type": "verb"
-    },
-    "しばらくすると": {
-        "reading": "しばらくすると",
-        "meaning": "after a little while",
-        "type": "expression"
-    },
-    "わからなくなってしまった": {
-        "reading": "わからなくなってしまった",
-        "meaning": "ended up not knowing (got lost)",
-        "type": "expression"
-    },
-    "どこだろう": {
-        "reading": "どこだろう",
-        "meaning": "I wonder where",
-        "type": "expression"
-    },
-    "なんとなく": {
-        "reading": "なんとなく",
-        "meaning": "somehow, vaguely",
-        "type": "adverb"
-    },
-    "近く": {
-        "reading": "ちかく",
-        "meaning": "nearby",
-        "type": "noun"
-    },
-    "向かった": {
-        "reading": "むかった",
-        "meaning": "headed toward",
-        "type": "verb"
-    },
-    "光": {
-        "reading": "ひかり",
-        "meaning": "light",
-        "type": "noun"
-    },
-    "おどらせる": {
-        "reading": "おどらせる",
-        "meaning": "to cause to dance",
-        "type": "verb"
-    },
-    "まずは": {
-        "reading": "まずは",
-        "meaning": "first of all",
-        "type": "adverb"
-    },
-    "いつも": {
-        "reading": "いつも",
-        "meaning": "always",
-        "type": "adverb"
-    },
-    "帰り": {
-        "reading": "かえり",
-        "meaning": "return, way back",
-        "type": "noun"
-    },
-    "気に": {
-        "reading": "きに",
-        "meaning": "to care about (stem)",
-        "type": "expression"
-    },
-    "なって": {
-        "reading": "なって",
-        "meaning": "became",
-        "type": "verb"
-    },
-    "いた": {
-        "reading": "いた",
-        "meaning": "was (animate)",
-        "type": "verb"
-    },
-    "たい焼き屋さん": {
-        "reading": "たいやきやさん",
-        "meaning": "taiyaki shop",
-        "type": "noun"
-    },
-    "入って": {
-        "reading": "はいって",
-        "meaning": "entered",
-        "type": "verb"
-    },
-    "買った": {
-        "reading": "かった",
-        "meaning": "bought",
-        "type": "verb"
-    },
-    "ずっと": {
-        "reading": "ずっと",
-        "meaning": "much more",
-        "type": "adverb"
-    },
-    "少なかった": {
-        "reading": "すくなかった",
-        "meaning": "were few",
-        "type": "i-adjective"
-    },
-    "あと": {
-        "reading": "あと",
-        "meaning": "after, later, almost",
-        "type": "noun"
-    },
-    "一回": {
-        "reading": "いっかい",
-        "meaning": "once, one time",
-        "type": "noun"
-    },
-    "何回": {
-        "reading": "なんかい",
-        "meaning": "how many times",
-        "type": "noun"
-    },
-    "やって": {
-        "reading": "やって",
-        "meaning": "did, tried",
-        "type": "verb"
-    },
-    "けど": {
-        "reading": "けど",
-        "meaning": "but (casual)",
-        "type": "conjunction"
-    },
-    "それから": {
-        "reading": "それから",
-        "meaning": "after that",
-        "type": "conjunction"
-    },
-    "の": {
-        "reading": "の",
-        "meaning": "possessive/nominalizer particle",
-        "type": "particle"
-    },
-    "ない": {
-        "reading": "ない",
-        "meaning": "not (negative auxiliary)",
-        "type": "auxiliary"
-    },
-    "こと": {
-        "reading": "こと",
-        "meaning": "thing (abstract)",
-        "type": "noun"
-    },
-    "今": {
-        "reading": "いま",
-        "meaning": "now",
-        "type": "noun"
-    },
-    "いく": {
-        "reading": "いく",
-        "meaning": "to go",
-        "type": "verb"
-    },
-    "する": {
-        "reading": "する",
-        "meaning": "to do",
-        "type": "verb"
-    },
-    "わからなく": {
-        "reading": "わからなく",
-        "meaning": "don't understand (stem)",
-        "type": "verb"
-    },
-    "しまった": {
-        "reading": "しまった",
-        "meaning": "ended up (negative nuance)",
-        "type": "auxiliary"
-    },
-    "してきた": {
-        "reading": "してきた",
-        "meaning": "started to do",
-        "type": "verb"
-    },
-    "着ていて": {
-        "reading": "きていて",
-        "meaning": "wearing (and)",
-        "type": "verb"
-    },
-    "なあ": {
-        "reading": "なあ",
-        "meaning": "casual interjection / attention getter",
-        "type": "particle"
-    },
-    "金": {
-        "reading": "かね",
-        "meaning": "money",
-        "type": "noun"
-    },
-    "あ": {
-        "reading": "あ",
-        "meaning": "ah",
-        "type": "interjection"
-    },
-    "うそ": {
-        "reading": "うそ",
-        "meaning": "lie",
-        "type": "noun"
-    },
-    "だろ": {
-        "reading": "だろ",
-        "meaning": "right? (casual)",
-        "type": "particle"
-    },
-    "その": {
-        "reading": "その",
-        "meaning": "that (near listener)",
-        "type": "determiner"
-    },
-    "見せて": {
-        "reading": "みせて",
-        "meaning": "show (te-form)",
-        "type": "verb"
-    },
-    "み": {
-        "reading": "み",
-        "meaning": "try (stem of みる)",
-        "type": "verb"
-    },
-    "こわく": {
-        "reading": "こわく",
-        "meaning": "scared (adverbial form)",
-        "type": "i-adjective"
-    },
-    "ふいに": {
-        "reading": "ふいに",
-        "meaning": "suddenly, unexpectedly",
-        "type": "adverb"
-    },
-    "走り出した": {
-        "reading": "はしりだした",
-        "meaning": "started running",
-        "type": "verb"
-    },
-    "うわああああああっ": {
-        "reading": "うわああああああっ",
-        "meaning": "Aaaaaaah! (scream)",
-        "type": "interjection"
-    },
-    "全力": {
-        "reading": "ぜんりょく",
-        "meaning": "full power, all one's strength",
-        "type": "noun"
-    },
-    "走って": {
-        "reading": "はしって",
-        "meaning": "ran (te-form)",
-        "type": "verb"
-    },
-    "公園": {
-        "reading": "こうえん",
-        "meaning": "park",
-        "type": "noun"
-    },
-    "逃げ込んだ": {
-        "reading": "にげこんだ",
-        "meaning": "ran into (to escape)",
-        "type": "verb"
-    },
-    "はぁ": {
-        "reading": "はぁ",
-        "meaning": "panting, sigh",
-        "type": "interjection"
-    },
-    "こわかった": {
-        "reading": "こわかった",
-        "meaning": "was scary",
-        "type": "i-adjective"
-    },
-    "ポケット": {
-        "reading": "ポケット",
-        "meaning": "pocket",
-        "type": "noun"
-    },
-    "さわって": {
-        "reading": "さわって",
-        "meaning": "touched",
-        "type": "verb"
-    },
-    "気がついた": {
-        "reading": "きがついた",
-        "meaning": "realized",
-        "type": "verb"
-    },
-    "財布": {
-        "reading": "さいふ",
-        "meaning": "wallet",
-        "type": "noun"
-    },
-    "落とした": {
-        "reading": "おとした",
-        "meaning": "dropped",
-        "type": "verb"
-    },
-    "のか": {
-        "reading": "のか",
-        "meaning": "whether (question nuance)",
-        "type": "particle"
-    },
-    "走っている": {
-        "reading": "はしっている",
-        "meaning": "is running",
-        "type": "verb"
-    },
-    "途中": {
-        "reading": "とちゅう",
-        "meaning": "in the middle of / along the way",
-        "type": "noun"
-    },
-    "全部": {
-        "reading": "ぜんぶ",
-        "meaning": "everything, all",
-        "type": "noun"
-    },
-    "入ってた": {
-        "reading": "はいってた",
-        "meaning": "was inside",
-        "type": "verb"
-    },
-    "のに": {
-        "reading": "のに",
-        "meaning": "even though, but",
-        "type": "particle"
-    },
-    "涙": {
-        "reading": "なみだ",
-        "meaning": "tears",
-        "type": "noun"
-    },
-    "出てきた": {
-        "reading": "でてきた",
-        "meaning": "came out, started to appear",
-        "type": "verb"
-    },
-    "もう": {
-        "reading": "もう",
-        "meaning": "already, soon",
-        "type": "adverb"
-    },
-    "したくても": {
-        "reading": "したくても",
-        "meaning": "even if I want to do (phone)",
-        "type": "expression"
-    },
-    "いない": {
-        "reading": "いない",
-        "meaning": "not there (for animate objects)",
-        "type": "verb"
-    },
-    "ベンチ": {
-        "reading": "ベンチ",
-        "meaning": "bench",
-        "type": "noun"
-    },
-    "座って": {
-        "reading": "すわって",
-        "meaning": "sat",
-        "type": "verb"
-    },
-    "ぽろぽろ": {
-        "reading": "ぽろぽろ",
-        "meaning": "falling (tears), dripping",
-        "type": "onomatopoeia"
-    },
-    "泣き出した": {
-        "reading": "なきだした",
-        "meaning": "started to cry",
-        "type": "verb"
-    },
-    "とき": {
-        "reading": "とき",
-        "meaning": "time, when",
-        "type": "noun"
-    },
-    "花屋さん": {
-        "reading": "はなやさん",
-        "meaning": "flower shop",
-        "type": "noun"
-    },
-    "から": {
-        "reading": "から",
-        "meaning": "from",
-        "type": "particle"
-    },
-    "おばあさん": {
-        "reading": "おばあさん",
-        "meaning": "old woman",
-        "type": "noun"
-    },
-    "かけて": {
-        "reading": "かけて",
-        "meaning": "called out, spoke",
-        "type": "verb"
-    },
-    "くれた": {
-        "reading": "くれた",
-        "meaning": "gave (to me/us)",
-        "type": "verb"
-    },
-    "どうした": {
-        "reading": "どうした",
-        "meaning": "what happened",
-        "type": "expression"
-    },
-    "ぼうや": {
-        "reading": "ぼうや",
-        "meaning": "boy (little boy)",
-        "type": "noun"
-    },
-    "やさしい": {
-        "reading": "やさしい",
-        "meaning": "kind",
-        "type": "i-adjective"
-    },
-    "目": {
-        "reading": "め",
-        "meaning": "eye",
-        "type": "noun"
-    },
-    "あたたかい": {
-        "reading": "あたたかい",
-        "meaning": "warm",
-        "type": "i-adjective"
-    },
-    "お茶": {
-        "reading": "おちゃ",
-        "meaning": "tea",
-        "type": "noun"
-    },
-    "お店": {
-        "reading": "おみせ",
-        "meaning": "shop, store",
-        "type": "noun"
-    },
-    "入れて": {
-        "reading": "いれて",
-        "meaning": "let in, put in",
-        "type": "verb"
-    },
-    "電話番号": {
-        "reading": "でんわばんごう",
-        "meaning": "phone number",
-        "type": "noun"
-    },
-    "わかる": {
-        "reading": "わかる",
-        "meaning": "to understand / to know",
-        "type": "verb"
-    },
-    "うん": {
-        "reading": "うん",
-        "meaning": "yes (casual)",
-        "type": "interjection"
-    },
-    "貸して": {
-        "reading": "かして",
-        "meaning": "to lend",
-        "type": "verb"
-    },
-    "かけた": {
-        "reading": "かけた",
-        "meaning": "made (a call), dialed",
-        "type": "verb"
-    },
-    "まで": {
-        "reading": "まで",
-        "meaning": "until, up to",
-        "type": "particle"
-    },
-    "来た": {
-        "reading": "きた",
-        "meaning": "came",
-        "type": "verb"
-    },
-    "帰る": {
-        "reading": "かえる",
-        "meaning": "to return (home)",
-        "type": "verb"
-    },
-    "お姉ちゃん": {
-        "reading": "おねえちゃん",
-        "meaning": "older sister",
-        "type": "noun"
-    },
-    "玄関": {
-        "reading": "げんかん",
-        "meaning": "entrance, front door",
-        "type": "noun"
-    },
-    "待っていた": {
-        "reading": "まっていた",
-        "meaning": "was waiting",
-        "type": "verb"
-    },
-    "ばかだね〜": {
-        "reading": "ばかだね〜",
-        "meaning": "you're so silly (casual/friendly)",
-        "type": "expression"
-    },
-    "サボらない": {
-        "reading": "さぼらない",
-        "meaning": "won't skip (class/work)",
-        "type": "verb"
-    },
-    "お風呂": {
-        "reading": "おふろ",
-        "meaning": "bath",
-        "type": "noun"
-    },
-    "ごはん": {
-        "reading": "ごはん",
-        "meaning": "meal, cooked rice",
-        "type": "noun"
-    },
-    "食べて": {
-        "reading": "たべて",
-        "meaning": "ate (te-form)",
-        "type": "verb"
-    },
-    "早め": {
-        "reading": "はやめ",
-        "meaning": "a bit early",
-        "type": "adverb"
-    },
-    "寝た": {
-        "reading": "ねた",
-        "meaning": "slept",
-        "type": "verb"
-    },
-    "明日": {
-        "reading": "あした",
-        "meaning": "tomorrow",
-        "type": "noun"
-    },
-    "ちゃんと学校行こう": {
-        "reading": "ちゃんとがっこういこう",
-        "meaning": "let's go to school properly",
-        "type": "expression"
-    },
-    "先生": {
-        "reading": "せんせい",
-        "meaning": "teacher",
-        "type": "noun"
-    },
-    "言った": {
-        "reading": "いった",
-        "meaning": "said",
-        "type": "verb"
-    },
-    "よく": {
-        "reading": "よく",
-        "meaning": "well, nicely",
-        "type": "adverb"
-    },
-    "ゆうたくん": {
-        "reading": "ゆうたくん",
-        "meaning": "Yūta (with honorific -kun)",
-        "type": "proper noun"
-    },
-    "うなずいた": {
-        "reading": "うなずいた",
-        "meaning": "nodded",
-        "type": "verb"
-    },
-    "つぎ": {
-        "reading": "つぎ",
-        "meaning": "next",
-        "type": "noun"
-    },
-    "もっと": {
-        "reading": "もっと",
-        "meaning": "more",
-        "type": "adverb"
-    },
-    "がんばる": {
-        "reading": "がんばる",
-        "meaning": "to try hard, to do one's best",
-        "type": "verb"
-    },
-    "青く": {
-        "reading": "あおく",
-        "meaning": "blue (adverbial form)",
-        "type": "i-adjective"
-    },
-    "気持ち": {
-        "reading": "きもち",
-        "meaning": "feeling",
-        "type": "noun"
-    },
-    "よい": {
-        "reading": "よい",
-        "meaning": "good",
-        "type": "i-adjective"
-    },
-    "しなかった": {
-        "reading": "しなかった",
-        "meaning": "didn't do",
-        "type": "verb"
-    },
-    "おおきい": {
-        "reading": "おおきい",
-        "meaning": "big",
-        "type": "i-adjective"
-    }
+  "台所": {
+    "reading": "だいどころ",
+    "meaning": "kitchen",
+    "type": "noun"
+  },
+  "だ": {
+    "meaning": "to be (informal of desu)",
+    "form": "copula"
+  },
+  "だった": {
+    "meaning": "past form of だ",
+    "form": "past"
+  },
+  "私": {
+    "reading": "わたし",
+    "meaning": "I, me",
+    "type": "pronoun"
+  },
+  "は": {
+    "reading": "は",
+    "meaning": "topic particle",
+    "type": "particle"
+  },
+  "学生": {
+    "reading": "がくせい",
+    "meaning": "student",
+    "type": "noun"
+  },
+  "です": {
+    "meaning": "to be (polite)",
+    "form": "copula"
+  },
+  "今日": {
+    "reading": "きょう",
+    "meaning": "today",
+    "type": "noun"
+  },
+  "天気": {
+    "reading": "てんき",
+    "meaning": "weather",
+    "type": "noun"
+  },
+  "が": {
+    "reading": "が",
+    "meaning": "subject particle",
+    "type": "particle"
+  },
+  "いい": {
+    "reading": "いい",
+    "meaning": "good",
+    "type": "i-adjective"
+  },
+  "とても": {
+    "reading": "とても",
+    "meaning": "very",
+    "type": "adverb"
+  },
+  "美しい": {
+    "reading": "うつくしい",
+    "meaning": "beautiful",
+    "type": "i-adjective"
+  },
+  "日": {
+    "reading": "ひ",
+    "meaning": "day",
+    "type": "noun"
+  },
+  "朝": {
+    "reading": "あさ",
+    "meaning": "morning",
+    "type": "noun"
+  },
+  "起きました": {
+    "reading": "おきました",
+    "meaning": "woke up (past polite)",
+    "type": "verb"
+  },
+  "食べます": {
+    "reading": "たべます",
+    "meaning": "to eat (polite)",
+    "type": "verb"
+  },
+  "パン": {
+    "reading": "パン",
+    "meaning": "bread",
+    "type": "noun"
+  },
+  "を": {
+    "reading": "を",
+    "meaning": "object particle",
+    "type": "particle"
+  },
+  "飲みます": {
+    "reading": "のみます",
+    "meaning": "to drink (polite)",
+    "type": "verb"
+  },
+  "コーヒー": {
+    "reading": "コーヒー",
+    "meaning": "coffee",
+    "type": "noun"
+  },
+  "行きます": {
+    "reading": "いきます",
+    "meaning": "to go (polite)",
+    "type": "verb"
+  },
+  "学校": {
+    "reading": "がっこう",
+    "meaning": "school",
+    "type": "noun"
+  },
+  "に": {
+    "reading": "に",
+    "meaning": "direction/time particle",
+    "type": "particle"
+  },
+  "友達": {
+    "reading": "ともだち",
+    "meaning": "friend",
+    "type": "noun"
+  },
+  "と": {
+    "reading": "と",
+    "meaning": "with/and particle",
+    "type": "particle"
+  },
+  "話します": {
+    "reading": "はなします",
+    "meaning": "to talk/speak (polite)",
+    "type": "verb"
+  },
+  "楽しい": {
+    "reading": "たのしい",
+    "meaning": "fun, enjoyable",
+    "type": "i-adjective"
+  },
+  "時間": {
+    "reading": "じかん",
+    "meaning": "time",
+    "type": "noun"
+  },
+  "過ごしました": {
+    "reading": "すごしました",
+    "meaning": "spent (time) (past polite)",
+    "type": "verb"
+  },
+  "ゆうた": {
+    "reading": "ゆうた",
+    "meaning": "Yūta (name)",
+    "type": "proper noun"
+  },
+  "サボり": {
+    "reading": "サボり",
+    "meaning": "skipping (school)",
+    "type": "noun"
+  },
+  "テスト": {
+    "reading": "テスト",
+    "meaning": "test",
+    "type": "noun"
+  },
+  "算数": {
+    "reading": "さんすう",
+    "meaning": "arithmetic, math",
+    "type": "noun"
+  },
+  "小学": {
+    "reading": "しょうがく",
+    "meaning": "elementary school",
+    "type": "noun"
+  },
+  "五年生": {
+    "reading": "ごねんせい",
+    "meaning": "5th grader",
+    "type": "noun"
+  },
+  "ふとん": {
+    "reading": "ふとん",
+    "meaning": "futon, bedding",
+    "type": "noun"
+  },
+  "中": {
+    "reading": "なか",
+    "meaning": "inside, in",
+    "type": "noun"
+  },
+  "つぶやいた": {
+    "reading": "つぶやいた",
+    "meaning": "murmured, muttered",
+    "type": "verb"
+  },
+  "また": {
+    "reading": "また",
+    "meaning": "again",
+    "type": "adverb"
+  },
+  "かよ": {
+    "reading": "かよ",
+    "meaning": "geez (casual particle)",
+    "type": "particle"
+  },
+  "ある": {
+    "reading": "ある",
+    "meaning": "to be, to exist",
+    "type": "verb"
+  },
+  "昨日": {
+    "reading": "きのう",
+    "meaning": "yesterday",
+    "type": "noun"
+  },
+  "夜": {
+    "reading": "よる",
+    "meaning": "night",
+    "type": "noun"
+  },
+  "ゲーム": {
+    "reading": "ゲーム",
+    "meaning": "game",
+    "type": "noun"
+  },
+  "ばかり": {
+    "reading": "ばかり",
+    "meaning": "only, just",
+    "type": "particle"
+  },
+  "まったく": {
+    "reading": "まったく",
+    "meaning": "completely, not at all",
+    "type": "adverb"
+  },
+  "勉強": {
+    "reading": "べんきょう",
+    "meaning": "study",
+    "type": "noun"
+  },
+  "行きたくない": {
+    "reading": "いきたくない",
+    "meaning": "don't want to go",
+    "type": "expression"
+  },
+  "なぁ": {
+    "reading": "なぁ",
+    "meaning": "casual ending particle",
+    "type": "particle"
+  },
+  "ぜったい": {
+    "reading": "ぜったい",
+    "meaning": "absolutely",
+    "type": "adverb"
+  },
+  "できない": {
+    "reading": "できない",
+    "meaning": "cannot do",
+    "type": "verb"
+  },
+  "よ": {
+    "reading": "よ",
+    "meaning": "emphasis particle",
+    "type": "particle"
+  },
+  "お母さん": {
+    "reading": "おかあさん",
+    "meaning": "mother",
+    "type": "noun"
+  },
+  "朝ごはん": {
+    "reading": "あさごはん",
+    "meaning": "breakfast",
+    "type": "noun"
+  },
+  "作って": {
+    "reading": "つくって",
+    "meaning": "making",
+    "type": "verb"
+  },
+  "いる": {
+    "reading": "いる",
+    "meaning": "to be (animate)",
+    "type": "verb"
+  },
+  "あいだ": {
+    "reading": "あいだ",
+    "meaning": "while, during",
+    "type": "noun"
+  },
+  "そっと": {
+    "reading": "そっと",
+    "meaning": "quietly, gently",
+    "type": "adverb"
+  },
+  "おなか": {
+    "reading": "おなか",
+    "meaning": "stomach",
+    "type": "noun"
+  },
+  "おさえた": {
+    "reading": "おさえた",
+    "meaning": "pressed, held",
+    "type": "verb"
+  },
+  "少し": {
+    "reading": "すこし",
+    "meaning": "a little",
+    "type": "adverb"
+  },
+  "だけ": {
+    "reading": "だけ",
+    "meaning": "only",
+    "type": "particle"
+  },
+  "苦しそう": {
+    "reading": "くるしそう",
+    "meaning": "seeming painful",
+    "type": "na-adjective"
+  },
+  "な": {
+    "reading": "な",
+    "meaning": "attributive particle",
+    "type": "particle"
+  },
+  "声": {
+    "reading": "こえ",
+    "meaning": "voice",
+    "type": "noun"
+  },
+  "出して": {
+    "reading": "だして",
+    "meaning": "putting out",
+    "type": "verb"
+  },
+  "みた": {
+    "reading": "みた",
+    "meaning": "tried",
+    "type": "verb"
+  },
+  "なんか": {
+    "reading": "なんか",
+    "meaning": "somehow, like",
+    "type": "adverb"
+  },
+  "いたい": {
+    "reading": "いたい",
+    "meaning": "painful, hurts",
+    "type": "i-adjective"
+  },
+  "心配そう": {
+    "reading": "しんぱいそう",
+    "meaning": "worriedly",
+    "type": "na-adjective"
+  },
+  "ほう": {
+    "reading": "ほう",
+    "meaning": "direction",
+    "type": "noun"
+  },
+  "え": {
+    "reading": "え",
+    "meaning": "eh? (surprise)",
+    "type": "interjection"
+  },
+  "大丈夫": {
+    "reading": "だいじょうぶ",
+    "meaning": "okay, alright",
+    "type": "na-adjective"
+  },
+  "何か": {
+    "reading": "なにか",
+    "meaning": "something",
+    "type": "pronoun"
+  },
+  "変な": {
+    "reading": "へんな",
+    "meaning": "strange",
+    "type": "na-adjective"
+  },
+  "もの": {
+    "reading": "もの",
+    "meaning": "thing",
+    "type": "noun"
+  },
+  "食べた": {
+    "reading": "たべた",
+    "meaning": "ate",
+    "type": "verb"
+  },
+  "ううん": {
+    "reading": "ううん",
+    "meaning": "no (casual)",
+    "type": "interjection"
+  },
+  "わかんない": {
+    "reading": "わかんない",
+    "meaning": "don't know (casual)",
+    "type": "verb"
+  },
+  "じゃあ": {
+    "reading": "じゃあ",
+    "meaning": "then, well",
+    "type": "conjunction"
+  },
+  "休もう": {
+    "reading": "やすもう",
+    "meaning": "let's rest",
+    "type": "verb"
+  },
+  "か": {
+    "reading": "か",
+    "meaning": "question particle",
+    "type": "particle"
+  },
+  "無理": {
+    "reading": "むり",
+    "meaning": "overdo, impossible",
+    "type": "noun"
+  },
+  "しないで": {
+    "reading": "しないで",
+    "meaning": "don't do",
+    "type": "verb"
+  },
+  "ね": {
+    "reading": "ね",
+    "meaning": "sentence ending particle",
+    "type": "particle"
+  },
+  "作戦": {
+    "reading": "さくせん",
+    "meaning": "strategy, plan",
+    "type": "noun"
+  },
+  "成功": {
+    "reading": "せいこう",
+    "meaning": "success",
+    "type": "noun"
+  },
+  "もぐりこみ": {
+    "reading": "もぐりこみ",
+    "meaning": "crawled into",
+    "type": "verb"
+  },
+  "にやり": {
+    "reading": "にやり",
+    "meaning": "grin",
+    "type": "adverb"
+  },
+  "笑った": {
+    "reading": "わらった",
+    "meaning": "smiled, laughed",
+    "type": "verb"
+  },
+  "でも": {
+    "reading": "でも",
+    "meaning": "but",
+    "type": "conjunction"
+  },
+  "心": {
+    "reading": "こころ",
+    "meaning": "heart, mind",
+    "type": "noun"
+  },
+  "どこか": {
+    "reading": "どこか",
+    "meaning": "somewhere",
+    "type": "pronoun"
+  },
+  "で": {
+    "reading": "で",
+    "meaning": "at, in (particle)",
+    "type": "particle"
+  },
+  "ちょっと": {
+    "reading": "ちょっと",
+    "meaning": "a bit",
+    "type": "adverb"
+  },
+  "罪悪感": {
+    "reading": "ざいあくかん",
+    "meaning": "guilt",
+    "type": "noun"
+  },
+  "も": {
+    "reading": "も",
+    "meaning": "also, too",
+    "type": "particle"
+  },
+  "あった": {
+    "reading": "あった",
+    "meaning": "there was",
+    "type": "verb"
+  },
+  "して": {
+    "reading": "して",
+    "meaning": "and, doing",
+    "type": "verb"
+  },
+  "仕事": {
+    "reading": "しごと",
+    "meaning": "work, job",
+    "type": "noun"
+  },
+  "出かけた": {
+    "reading": "でかけた",
+    "meaning": "went out",
+    "type": "verb"
+  },
+  "やった": {
+    "reading": "やった",
+    "meaning": "hooray! did it!",
+    "type": "interjection"
+  },
+  "ぼうけん": {
+    "reading": "ぼうけん",
+    "meaning": "adventure",
+    "type": "noun"
+  },
+  "ランドセル": {
+    "reading": "ランドセル",
+    "meaning": "school bag",
+    "type": "noun"
+  },
+  "ではなく": {
+    "reading": "ではなく",
+    "meaning": "not...but",
+    "type": "expression"
+  },
+  "小さな": {
+    "reading": "ちいさな",
+    "meaning": "small",
+    "type": "adjective"
+  },
+  "かばん": {
+    "reading": "かばん",
+    "meaning": "bag",
+    "type": "noun"
+  },
+  "持って": {
+    "reading": "もって",
+    "meaning": "carrying, holding",
+    "type": "verb"
+  },
+  "家": {
+    "reading": "いえ",
+    "meaning": "house, home",
+    "type": "noun"
+  },
+  "出た": {
+    "reading": "でた",
+    "meaning": "left, went out",
+    "type": "verb"
+  },
+  "には": {
+    "reading": "には",
+    "meaning": "to (emphatic)",
+    "type": "particle"
+  },
+  "行かず": {
+    "reading": "いかず",
+    "meaning": "not going",
+    "type": "verb"
+  },
+  "自由": {
+    "reading": "じゆう",
+    "meaning": "freedom",
+    "type": "noun"
+  },
+  "楽しむ": {
+    "reading": "たのしむ",
+    "meaning": "to enjoy",
+    "type": "verb"
+  },
+  "つもり": {
+    "reading": "つもり",
+    "meaning": "intention, plan",
+    "type": "noun"
+  },
+  "うろうろ": {
+    "reading": "うろうろ",
+    "meaning": "wandering around",
+    "type": "adverb"
+  },
+  "知らない": {
+    "reading": "しらない",
+    "meaning": "unknown, don't know",
+    "type": "verb"
+  },
+  "お兄さん": {
+    "reading": "おにいさん",
+    "meaning": "older brother, young man",
+    "type": "noun"
+  },
+  "近づいて": {
+    "reading": "ちかづいて",
+    "meaning": "approaching",
+    "type": "verb"
+  },
+  "きた": {
+    "reading": "きた",
+    "meaning": "came",
+    "type": "verb"
+  },
+  "黒い": {
+    "reading": "くろい",
+    "meaning": "black",
+    "type": "i-adjective"
+  },
+  "服": {
+    "reading": "ふく",
+    "meaning": "clothes",
+    "type": "noun"
+  },
+  "着て": {
+    "reading": "きて",
+    "meaning": "wearing",
+    "type": "verb"
+  },
+  "顔": {
+    "reading": "かお",
+    "meaning": "face",
+    "type": "noun"
+  },
+  "こわい": {
+    "reading": "こわい",
+    "meaning": "scary, frightening",
+    "type": "i-adjective"
+  },
+  "心臓": {
+    "reading": "しんぞう",
+    "meaning": "heart",
+    "type": "noun"
+  },
+  "ドキドキ": {
+    "reading": "ドキドキ",
+    "meaning": "pounding (heart sound)",
+    "type": "adverb"
+  },
+  "足": {
+    "reading": "あし",
+    "meaning": "leg, foot",
+    "type": "noun"
+  },
+  "ふるえた": {
+    "reading": "ふるえた",
+    "meaning": "trembled",
+    "type": "verb"
+  },
+  "くれて": {
+    "reading": "くれて",
+    "meaning": "setting (sun)",
+    "type": "verb"
+  },
+  "空": {
+    "reading": "そら",
+    "meaning": "sky",
+    "type": "noun"
+  },
+  "オレンジ色": {
+    "reading": "オレンジいろ",
+    "meaning": "orange color",
+    "type": "noun"
+  },
+  "風": {
+    "reading": "かぜ",
+    "meaning": "wind",
+    "type": "noun"
+  },
+  "寒く": {
+    "reading": "さむく",
+    "meaning": "cold",
+    "type": "i-adjective"
+  },
+  "帰りたい": {
+    "reading": "かえりたい",
+    "meaning": "want to go home",
+    "type": "expression"
+  },
+  "道": {
+    "reading": "みち",
+    "meaning": "road, way",
+    "type": "noun"
+  },
+  "わからない": {
+    "reading": "わからない",
+    "meaning": "don't understand",
+    "type": "verb"
+  },
+  "電話": {
+    "reading": "でんわ",
+    "meaning": "telephone",
+    "type": "noun"
+  },
+  "したく": {
+    "reading": "したく",
+    "meaning": "want to do",
+    "type": "verb"
+  },
+  "ても": {
+    "reading": "ても",
+    "meaning": "even if",
+    "type": "particle"
+  },
+  "スマホ": {
+    "reading": "スマホ",
+    "meaning": "smartphone",
+    "type": "noun"
+  },
+  "まいご": {
+    "reading": "まいご",
+    "meaning": "lost",
+    "type": "noun"
+  },
+  "店": {
+    "reading": "みせ",
+    "meaning": "shop, store",
+    "type": "noun"
+  },
+  "わっと": {
+    "reading": "わっと",
+    "meaning": "burst into (tears)",
+    "type": "adverb"
+  },
+  "泣きだした": {
+    "reading": "なきだした",
+    "meaning": "started crying",
+    "type": "verb"
+  },
+  "ごめんなさい": {
+    "reading": "ごめんなさい",
+    "meaning": "I'm sorry",
+    "type": "expression"
+  },
+  "行きたく": {
+    "reading": "いきたく",
+    "meaning": "want to go",
+    "type": "verb"
+  },
+  "なかった": {
+    "reading": "なかった",
+    "meaning": "there wasn't",
+    "type": "verb"
+  },
+  "きびしい": {
+    "reading": "きびしい",
+    "meaning": "strict, stern",
+    "type": "i-adjective"
+  },
+  "しながら": {
+    "reading": "しながら",
+    "meaning": "while doing",
+    "type": "particle"
+  },
+  "やさしく": {
+    "reading": "やさしく",
+    "meaning": "gently, kindly",
+    "type": "adverb"
+  },
+  "抱きしめた": {
+    "reading": "だきしめた",
+    "meaning": "hugged tightly",
+    "type": "verb"
+  },
+  "次": {
+    "reading": "つぎ",
+    "meaning": "next",
+    "type": "noun"
+  },
+  "行った": {
+    "reading": "いった",
+    "meaning": "went",
+    "type": "verb"
+  },
+  "久しぶり": {
+    "reading": "ひさしぶり",
+    "meaning": "after a long time",
+    "type": "expression"
+  },
+  "友だち": {
+    "reading": "ともだち",
+    "meaning": "friend",
+    "type": "noun"
+  },
+  "会えて": {
+    "reading": "あえて",
+    "meaning": "could meet",
+    "type": "verb"
+  },
+  "うれしかった": {
+    "reading": "うれしかった",
+    "meaning": "was happy",
+    "type": "i-adjective"
+  },
+  "まあまあ": {
+    "reading": "まあまあ",
+    "meaning": "so-so, okay",
+    "type": "adverb"
+  },
+  "思えば": {
+    "reading": "おもえば",
+    "meaning": "if you think",
+    "type": "expression"
+  },
+  "まじめ": {
+    "reading": "まじめ",
+    "meaning": "serious",
+    "type": "na-adjective"
+  },
+  "受けた": {
+    "reading": "うけた",
+    "meaning": "took, received",
+    "type": "verb"
+  },
+  "がんばった": {
+    "reading": "がんばった",
+    "meaning": "tried hard",
+    "type": "verb"
+  },
+  "思った": {
+    "reading": "おもった",
+    "meaning": "thought",
+    "type": "verb"
+  },
+  "行きたくないなぁ": {
+    "reading": "いきたくないなぁ",
+    "meaning": "I don't want to go (with feeling)",
+    "type": "expression"
+  },
+  "ぜったいに": {
+    "reading": "ぜったいに",
+    "meaning": "absolutely, definitely",
+    "type": "adverb"
+  },
+  "できないよ": {
+    "reading": "できないよ",
+    "meaning": "can't do it (casual)",
+    "type": "expression"
+  },
+  "作っている": {
+    "reading": "つくっている",
+    "meaning": "is making",
+    "type": "verb"
+  },
+  "出してみた": {
+    "reading": "だしてみた",
+    "meaning": "tried putting out",
+    "type": "verb"
+  },
+  "しばらくして": {
+    "reading": "しばらくして",
+    "meaning": "after a while",
+    "type": "expression"
+  },
+  "！": {
+    "reading": "！",
+    "meaning": "! (exclamation mark)",
+    "type": "punctuation"
+  },
+  "学校には": {
+    "reading": "がっこうには",
+    "meaning": "to school (emphatic)",
+    "type": "expression"
+  },
+  "つもりだった": {
+    "reading": "つもりだった",
+    "meaning": "was planning to",
+    "type": "expression"
+  },
+  "……": {
+    "reading": "……",
+    "meaning": "... (ellipsis)",
+    "type": "punctuation"
+  },
+  "そして": {
+    "reading": "そして",
+    "meaning": "and then",
+    "type": "conjunction"
+  },
+  "？": {
+    "reading": "？",
+    "meaning": "? (question mark)",
+    "type": "punctuation"
+  },
+  "商店街": {
+    "reading": "しょうてんがい",
+    "meaning": "shopping street",
+    "type": "noun"
+  },
+  "気持ちよくて": {
+    "reading": "きもちよくて",
+    "meaning": "feeling good and",
+    "type": "expression"
+  },
+  "気分": {
+    "reading": "きぶん",
+    "meaning": "mood, feeling",
+    "type": "noun"
+  },
+  "心をおどらせる": {
+    "reading": "こころをおどらせる",
+    "meaning": "to make the heart dance (to be excited)",
+    "type": "expression"
+  },
+  "たい焼き": {
+    "reading": "たいやき",
+    "meaning": "taiyaki (fish-shaped cake)",
+    "type": "noun"
+  },
+  "おこづかい": {
+    "reading": "おこづかい",
+    "meaning": "allowance",
+    "type": "noun"
+  },
+  "あんこ": {
+    "reading": "あんこ",
+    "meaning": "red bean paste",
+    "type": "noun"
+  },
+  "カリカリ": {
+    "reading": "カリカリ",
+    "meaning": "crispy",
+    "type": "onomatopoeia"
+  },
+  "ゲームセンター": {
+    "reading": "ゲームセンター",
+    "meaning": "arcade",
+    "type": "noun"
+  },
+  "早くて": {
+    "reading": "はやくて",
+    "meaning": "early and",
+    "type": "expression"
+  },
+  "クレーンゲーム": {
+    "reading": "クレーンゲーム",
+    "meaning": "crane game",
+    "type": "noun"
+  },
+  "チャレンジ": {
+    "reading": "チャレンジ",
+    "meaning": "challenge",
+    "type": "noun"
+  },
+  "ぬいぐるみ": {
+    "reading": "ぬいぐるみ",
+    "meaning": "stuffed animal, plush toy",
+    "type": "noun"
+  },
+  "結局": {
+    "reading": "けっきょく",
+    "meaning": "in the end, after all",
+    "type": "adverb"
+  },
+  "取れなかった": {
+    "reading": "とれなかった",
+    "meaning": "couldn't get",
+    "type": "verb"
+  },
+  "楽しかった": {
+    "reading": "たのしかった",
+    "meaning": "was fun",
+    "type": "i-adjective"
+  },
+  "見たことのない": {
+    "reading": "みたことのない",
+    "meaning": "never seen before",
+    "type": "expression"
+  },
+  "歩いてみる": {
+    "reading": "あるいてみる",
+    "meaning": "try walking",
+    "type": "verb"
+  },
+  "探検家": {
+    "reading": "たんけんか",
+    "meaning": "explorer",
+    "type": "noun"
+  },
+  "だんだんと": {
+    "reading": "だんだんと",
+    "meaning": "gradually",
+    "type": "adverb"
+  },
+  "風景": {
+    "reading": "ふうけい",
+    "meaning": "scenery",
+    "type": "noun"
+  },
+  "神社": {
+    "reading": "じんじゃ",
+    "meaning": "Shinto shrine",
+    "type": "noun"
+  },
+  "見つけたり": {
+    "reading": "みつけたり",
+    "meaning": "found and (among other things)",
+    "type": "verb"
+  },
+  "猫": {
+    "reading": "ねこ",
+    "meaning": "cat",
+    "type": "noun"
+  },
+  "昼寝": {
+    "reading": "ひるね",
+    "meaning": "nap",
+    "type": "noun"
+  },
+  "している": {
+    "reading": "している",
+    "meaning": "is doing",
+    "type": "verb"
+  },
+  "わくわく": {
+    "reading": "わくわく",
+    "meaning": "excited, thrilled",
+    "type": "onomatopoeia"
+  },
+  "していた": {
+    "reading": "していた",
+    "meaning": "was doing",
+    "type": "verb"
+  },
+  "しばらくすると": {
+    "reading": "しばらくすると",
+    "meaning": "after a little while",
+    "type": "expression"
+  },
+  "わからなくなってしまった": {
+    "reading": "わからなくなってしまった",
+    "meaning": "ended up not knowing (got lost)",
+    "type": "expression"
+  },
+  "どこだろう": {
+    "reading": "どこだろう",
+    "meaning": "I wonder where",
+    "type": "expression"
+  },
+  "なんとなく": {
+    "reading": "なんとなく",
+    "meaning": "somehow, vaguely",
+    "type": "adverb"
+  },
+  "近く": {
+    "reading": "ちかく",
+    "meaning": "nearby",
+    "type": "noun"
+  },
+  "向かった": {
+    "reading": "むかった",
+    "meaning": "headed toward",
+    "type": "verb"
+  },
+  "光": {
+    "reading": "ひかり",
+    "meaning": "light",
+    "type": "noun"
+  },
+  "おどらせる": {
+    "reading": "おどらせる",
+    "meaning": "to cause to dance",
+    "type": "verb"
+  },
+  "まずは": {
+    "reading": "まずは",
+    "meaning": "first of all",
+    "type": "adverb"
+  },
+  "いつも": {
+    "reading": "いつも",
+    "meaning": "always",
+    "type": "adverb"
+  },
+  "帰り": {
+    "reading": "かえり",
+    "meaning": "return, way back",
+    "type": "noun"
+  },
+  "気に": {
+    "reading": "きに",
+    "meaning": "to care about (stem)",
+    "type": "expression"
+  },
+  "なって": {
+    "reading": "なって",
+    "meaning": "became",
+    "type": "verb"
+  },
+  "いた": {
+    "reading": "いた",
+    "meaning": "was (animate)",
+    "type": "verb"
+  },
+  "たい焼き屋さん": {
+    "reading": "たいやきやさん",
+    "meaning": "taiyaki shop",
+    "type": "noun"
+  },
+  "入って": {
+    "reading": "はいって",
+    "meaning": "entered",
+    "type": "verb"
+  },
+  "買った": {
+    "reading": "かった",
+    "meaning": "bought",
+    "type": "verb"
+  },
+  "ずっと": {
+    "reading": "ずっと",
+    "meaning": "much more",
+    "type": "adverb"
+  },
+  "少なかった": {
+    "reading": "すくなかった",
+    "meaning": "were few",
+    "type": "i-adjective"
+  },
+  "あと": {
+    "reading": "あと",
+    "meaning": "after, later, almost",
+    "type": "noun"
+  },
+  "一回": {
+    "reading": "いっかい",
+    "meaning": "once, one time",
+    "type": "noun"
+  },
+  "何回": {
+    "reading": "なんかい",
+    "meaning": "how many times",
+    "type": "noun"
+  },
+  "やって": {
+    "reading": "やって",
+    "meaning": "did, tried",
+    "type": "verb"
+  },
+  "けど": {
+    "reading": "けど",
+    "meaning": "but (casual)",
+    "type": "conjunction"
+  },
+  "それから": {
+    "reading": "それから",
+    "meaning": "after that",
+    "type": "conjunction"
+  },
+  "の": {
+    "reading": "の",
+    "meaning": "possessive/nominalizer particle",
+    "type": "particle"
+  },
+  "ない": {
+    "reading": "ない",
+    "meaning": "not (negative auxiliary)",
+    "type": "auxiliary"
+  },
+  "こと": {
+    "reading": "こと",
+    "meaning": "thing (abstract)",
+    "type": "noun"
+  },
+  "今": {
+    "reading": "いま",
+    "meaning": "now",
+    "type": "noun"
+  },
+  "いく": {
+    "reading": "いく",
+    "meaning": "to go",
+    "type": "verb"
+  },
+  "する": {
+    "reading": "する",
+    "meaning": "to do",
+    "type": "verb"
+  },
+  "わからなく": {
+    "reading": "わからなく",
+    "meaning": "don't understand (stem)",
+    "type": "verb"
+  },
+  "しまった": {
+    "reading": "しまった",
+    "meaning": "ended up (negative nuance)",
+    "type": "auxiliary"
+  },
+  "してきた": {
+    "reading": "してきた",
+    "meaning": "started to do",
+    "type": "verb"
+  },
+  "着ていて": {
+    "reading": "きていて",
+    "meaning": "wearing (and)",
+    "type": "verb"
+  },
+  "なあ": {
+    "reading": "なあ",
+    "meaning": "casual interjection / attention getter",
+    "type": "particle"
+  },
+  "金": {
+    "reading": "かね",
+    "meaning": "money",
+    "type": "noun"
+  },
+  "あ": {
+    "reading": "あ",
+    "meaning": "ah",
+    "type": "interjection"
+  },
+  "うそ": {
+    "reading": "うそ",
+    "meaning": "lie",
+    "type": "noun"
+  },
+  "だろ": {
+    "reading": "だろ",
+    "meaning": "right? (casual)",
+    "type": "particle"
+  },
+  "その": {
+    "reading": "その",
+    "meaning": "that (near listener)",
+    "type": "determiner"
+  },
+  "見せて": {
+    "reading": "みせて",
+    "meaning": "show (te-form)",
+    "type": "verb"
+  },
+  "み": {
+    "reading": "み",
+    "meaning": "try (stem of みる)",
+    "type": "verb"
+  },
+  "こわく": {
+    "reading": "こわく",
+    "meaning": "scared (adverbial form)",
+    "type": "i-adjective"
+  },
+  "ふいに": {
+    "reading": "ふいに",
+    "meaning": "suddenly, unexpectedly",
+    "type": "adverb"
+  },
+  "走り出した": {
+    "reading": "はしりだした",
+    "meaning": "started running",
+    "type": "verb"
+  },
+  "うわああああああっ": {
+    "reading": "うわああああああっ",
+    "meaning": "Aaaaaaah! (scream)",
+    "type": "interjection"
+  },
+  "全力": {
+    "reading": "ぜんりょく",
+    "meaning": "full power, all one's strength",
+    "type": "noun"
+  },
+  "走って": {
+    "reading": "はしって",
+    "meaning": "ran (te-form)",
+    "type": "verb"
+  },
+  "公園": {
+    "reading": "こうえん",
+    "meaning": "park",
+    "type": "noun"
+  },
+  "逃げ込んだ": {
+    "reading": "にげこんだ",
+    "meaning": "ran into (to escape)",
+    "type": "verb"
+  },
+  "はぁ": {
+    "reading": "はぁ",
+    "meaning": "panting, sigh",
+    "type": "interjection"
+  },
+  "こわかった": {
+    "reading": "こわかった",
+    "meaning": "was scary",
+    "type": "i-adjective"
+  },
+  "ポケット": {
+    "reading": "ポケット",
+    "meaning": "pocket",
+    "type": "noun"
+  },
+  "さわって": {
+    "reading": "さわって",
+    "meaning": "touched",
+    "type": "verb"
+  },
+  "気がついた": {
+    "reading": "きがついた",
+    "meaning": "realized",
+    "type": "verb"
+  },
+  "財布": {
+    "reading": "さいふ",
+    "meaning": "wallet",
+    "type": "noun"
+  },
+  "落とした": {
+    "reading": "おとした",
+    "meaning": "dropped",
+    "type": "verb"
+  },
+  "のか": {
+    "reading": "のか",
+    "meaning": "whether (question nuance)",
+    "type": "particle"
+  },
+  "走っている": {
+    "reading": "はしっている",
+    "meaning": "is running",
+    "type": "verb"
+  },
+  "途中": {
+    "reading": "とちゅう",
+    "meaning": "in the middle of / along the way",
+    "type": "noun"
+  },
+  "全部": {
+    "reading": "ぜんぶ",
+    "meaning": "everything, all",
+    "type": "noun"
+  },
+  "入ってた": {
+    "reading": "はいってた",
+    "meaning": "was inside",
+    "type": "verb"
+  },
+  "のに": {
+    "reading": "のに",
+    "meaning": "even though, but",
+    "type": "particle"
+  },
+  "涙": {
+    "reading": "なみだ",
+    "meaning": "tears",
+    "type": "noun"
+  },
+  "出てきた": {
+    "reading": "でてきた",
+    "meaning": "came out, started to appear",
+    "type": "verb"
+  },
+  "もう": {
+    "reading": "もう",
+    "meaning": "already, soon",
+    "type": "adverb"
+  },
+  "したくても": {
+    "reading": "したくても",
+    "meaning": "even if I want to do (phone)",
+    "type": "expression"
+  },
+  "いない": {
+    "reading": "いない",
+    "meaning": "not there (for animate objects)",
+    "type": "verb"
+  },
+  "ベンチ": {
+    "reading": "ベンチ",
+    "meaning": "bench",
+    "type": "noun"
+  },
+  "座って": {
+    "reading": "すわって",
+    "meaning": "sat",
+    "type": "verb"
+  },
+  "ぽろぽろ": {
+    "reading": "ぽろぽろ",
+    "meaning": "falling (tears), dripping",
+    "type": "onomatopoeia"
+  },
+  "泣き出した": {
+    "reading": "なきだした",
+    "meaning": "started to cry",
+    "type": "verb"
+  },
+  "とき": {
+    "reading": "とき",
+    "meaning": "time, when",
+    "type": "noun"
+  },
+  "花屋さん": {
+    "reading": "はなやさん",
+    "meaning": "flower shop",
+    "type": "noun"
+  },
+  "から": {
+    "reading": "から",
+    "meaning": "from",
+    "type": "particle"
+  },
+  "おばあさん": {
+    "reading": "おばあさん",
+    "meaning": "old woman",
+    "type": "noun"
+  },
+  "かけて": {
+    "reading": "かけて",
+    "meaning": "called out, spoke",
+    "type": "verb"
+  },
+  "くれた": {
+    "reading": "くれた",
+    "meaning": "gave (to me/us)",
+    "type": "verb"
+  },
+  "どうした": {
+    "reading": "どうした",
+    "meaning": "what happened",
+    "type": "expression"
+  },
+  "ぼうや": {
+    "reading": "ぼうや",
+    "meaning": "boy (little boy)",
+    "type": "noun"
+  },
+  "やさしい": {
+    "reading": "やさしい",
+    "meaning": "kind",
+    "type": "i-adjective"
+  },
+  "目": {
+    "reading": "め",
+    "meaning": "eye",
+    "type": "noun"
+  },
+  "あたたかい": {
+    "reading": "あたたかい",
+    "meaning": "warm",
+    "type": "i-adjective"
+  },
+  "お茶": {
+    "reading": "おちゃ",
+    "meaning": "tea",
+    "type": "noun"
+  },
+  "お店": {
+    "reading": "おみせ",
+    "meaning": "shop, store",
+    "type": "noun"
+  },
+  "入れて": {
+    "reading": "いれて",
+    "meaning": "let in, put in",
+    "type": "verb"
+  },
+  "電話番号": {
+    "reading": "でんわばんごう",
+    "meaning": "phone number",
+    "type": "noun"
+  },
+  "わかる": {
+    "reading": "わかる",
+    "meaning": "to understand / to know",
+    "type": "verb"
+  },
+  "うん": {
+    "reading": "うん",
+    "meaning": "yes (casual)",
+    "type": "interjection"
+  },
+  "貸して": {
+    "reading": "かして",
+    "meaning": "to lend",
+    "type": "verb"
+  },
+  "かけた": {
+    "reading": "かけた",
+    "meaning": "made (a call), dialed",
+    "type": "verb"
+  },
+  "まで": {
+    "reading": "まで",
+    "meaning": "until, up to",
+    "type": "particle"
+  },
+  "来た": {
+    "reading": "きた",
+    "meaning": "came",
+    "type": "verb"
+  },
+  "帰る": {
+    "reading": "かえる",
+    "meaning": "to return (home)",
+    "type": "verb"
+  },
+  "お姉ちゃん": {
+    "reading": "おねえちゃん",
+    "meaning": "older sister",
+    "type": "noun"
+  },
+  "玄関": {
+    "reading": "げんかん",
+    "meaning": "entrance, front door",
+    "type": "noun"
+  },
+  "待っていた": {
+    "reading": "まっていた",
+    "meaning": "was waiting",
+    "type": "verb"
+  },
+  "ばかだね〜": {
+    "reading": "ばかだね〜",
+    "meaning": "you're so silly (casual/friendly)",
+    "type": "expression"
+  },
+  "サボらない": {
+    "reading": "さぼらない",
+    "meaning": "won't skip (class/work)",
+    "type": "verb"
+  },
+  "お風呂": {
+    "reading": "おふろ",
+    "meaning": "bath",
+    "type": "noun"
+  },
+  "ごはん": {
+    "reading": "ごはん",
+    "meaning": "meal, cooked rice",
+    "type": "noun"
+  },
+  "食べて": {
+    "reading": "たべて",
+    "meaning": "ate (te-form)",
+    "type": "verb"
+  },
+  "早め": {
+    "reading": "はやめ",
+    "meaning": "a bit early",
+    "type": "adverb"
+  },
+  "寝た": {
+    "reading": "ねた",
+    "meaning": "slept",
+    "type": "verb"
+  },
+  "明日": {
+    "reading": "あした",
+    "meaning": "tomorrow",
+    "type": "noun"
+  },
+  "ちゃんと学校行こう": {
+    "reading": "ちゃんとがっこういこう",
+    "meaning": "let's go to school properly",
+    "type": "expression"
+  },
+  "先生": {
+    "reading": "せんせい",
+    "meaning": "teacher",
+    "type": "noun"
+  },
+  "言った": {
+    "reading": "いった",
+    "meaning": "said",
+    "type": "verb"
+  },
+  "よく": {
+    "reading": "よく",
+    "meaning": "well, nicely",
+    "type": "adverb"
+  },
+  "ゆうたくん": {
+    "reading": "ゆうたくん",
+    "meaning": "Yūta (with honorific -kun)",
+    "type": "proper noun"
+  },
+  "うなずいた": {
+    "reading": "うなずいた",
+    "meaning": "nodded",
+    "type": "verb"
+  },
+  "つぎ": {
+    "reading": "つぎ",
+    "meaning": "next",
+    "type": "noun"
+  },
+  "もっと": {
+    "reading": "もっと",
+    "meaning": "more",
+    "type": "adverb"
+  },
+  "がんばる": {
+    "reading": "がんばる",
+    "meaning": "to try hard, to do one's best",
+    "type": "verb"
+  },
+  "青く": {
+    "reading": "あおく",
+    "meaning": "blue (adverbial form)",
+    "type": "i-adjective"
+  },
+  "気持ち": {
+    "reading": "きもち",
+    "meaning": "feeling",
+    "type": "noun"
+  },
+  "よい": {
+    "reading": "よい",
+    "meaning": "good",
+    "type": "i-adjective"
+  },
+  "しなかった": {
+    "reading": "しなかった",
+    "meaning": "didn't do",
+    "type": "verb"
+  },
+  "おおきい": {
+    "reading": "おおきい",
+    "meaning": "big",
+    "type": "i-adjective"
+  },
+  "依頼": {
+    "reading": "irai",
+    "meaning": "request; commission; order",
+    "type": "noun"
+  },
+  "高校": {
+    "reading": "kōkō",
+    "meaning": "high school",
+    "type": "noun"
+  },
+  "同窓会": {
+    "reading": "dōsōkai",
+    "meaning": "reunion; alumni association",
+    "type": "noun"
+  },
+  "友人": {
+    "reading": "yūjin",
+    "meaning": "friend",
+    "type": "noun"
+  },
+  "代行": {
+    "reading": "daikō",
+    "meaning": "acting for; agency; proxy; substitution",
+    "type": "noun"
+  },
+  "って": {
+    "reading": "tte",
+    "meaning": "sentence-ending particle indicating quotation or explanation",
+    "type": "particle"
+  },
+  "一体": {
+    "reading": "itttai",
+    "meaning": "exactly; what on earth; in the world",
+    "type": "adverb"
+  },
+  "何": {
+    "reading": "nani",
+    "meaning": "what",
+    "type": "pronoun"
+  },
+  "ん": {
+    "reading": "n",
+    "meaning": "sentence-ending particle expressing emphasis or uncertainty",
+    "type": "particle"
+  },
+  "う": {
+    "reading": "u",
+    "meaning": "A phonetic component in various words, often representing a vowel sound.",
+    "type": "particle/phonetic"
+  },
+  "待ち合わせ": {
+    "reading": "machi awase",
+    "meaning": "appointment; meeting",
+    "type": "noun"
+  },
+  "場所": {
+    "reading": "basho",
+    "meaning": "place; location",
+    "type": "noun"
+  },
+  "ホテル": {
+    "reading": "hoteru",
+    "meaning": "hotel",
+    "type": "noun"
+  },
+  "着く": {
+    "reading": "tsuku",
+    "meaning": "to arrive; to reach",
+    "type": "verb"
+  },
+  "主": {
+    "reading": "shu",
+    "meaning": "master; lord; main; principal",
+    "type": "noun"
+  },
+  "由紀": {
+    "reading": "Yuki",
+    "meaning": "Yuki (a Japanese given name)",
+    "type": "proper noun"
+  },
+  "さん": {
+    "reading": "san",
+    "meaning": "honorific suffix (Mr., Mrs., Ms.)",
+    "type": "particle"
+  },
+  "案の定": {
+    "reading": "an no jō",
+    "meaning": "as expected; sure enough",
+    "type": "adverbial phrase"
+  },
+  "壁際": {
+    "reading": "kabekizai",
+    "meaning": "edge of a wall; wall side",
+    "type": "noun"
+  },
+  "張り付い": {
+    "reading": "hari tsu",
+    "meaning": "stuck to; clinging to (stem of verb)",
+    "type": "verb (stem)"
+  },
+  "て": {
+    "reading": "te",
+    "meaning": "sentence-ending particle indicating a continuous action or state",
+    "type": "particle"
+  },
+  "い": {
+    "reading": "i",
+    "meaning": "A phonetic component, often part of verb conjugation",
+    "type": "particle/phonetic"
+  },
+  "た": {
+    "reading": "ta",
+    "meaning": "past tense marker",
+    "type": "particle"
+  },
+  "彼女": {
+    "reading": "kanojo",
+    "meaning": "she; her; girlfriend",
+    "type": "pronoun"
+  },
+  "緊張": {
+    "reading": "kinchō",
+    "meaning": "tension; nervousness",
+    "type": "noun"
+  },
+  "空気": {
+    "reading": "kūki",
+    "meaning": "air; atmosphere",
+    "type": "noun"
+  },
+  "を通して": {
+    "reading": "o tōshite",
+    "meaning": "through; by means of",
+    "type": "particle"
+  },
+  "伝わっ": {
+    "reading": "tsutawat",
+    "meaning": "to be conveyed; to be transmitted (stem)",
+    "type": "verb (stem)"
+  },
+  "くる": {
+    "reading": "kuru",
+    "meaning": "to come",
+    "type": "verb"
+  },
+  "田中": {
+    "reading": "Tanaka",
+    "meaning": "Tanaka (a Japanese surname)",
+    "type": "proper noun"
+  },
+  "助け": {
+    "reading": "tasuke",
+    "meaning": "help; assistance",
+    "type": "noun"
+  },
+  "ください": {
+    "reading": "kudasai",
+    "meaning": "please (give me/do this)",
+    "type": "verb"
+  },
+  "なら": {
+    "reading": "nara",
+    "meaning": "if; in that case",
+    "type": "conjunction"
+  },
+  "呟く": {
+    "reading": "tsubuyaku",
+    "meaning": "to mutter; to murmur",
+    "type": "verb"
+  },
+  "横": {
+    "reading": "yoko",
+    "meaning": "side; sideways",
+    "type": "noun"
+  },
+  "愛想": {
+    "reading": "aisō",
+    "meaning": "affability; friendliness",
+    "type": "noun"
+  },
+  "笑い": {
+    "reading": "warai",
+    "meaning": "laughter; smile",
+    "type": "noun"
+  },
+  "浮かべ": {
+    "reading": "ukab",
+    "meaning": "to float; to show (stem)",
+    "type": "verb (stem)"
+  },
+  "卒業": {
+    "reading": "sotsugyō",
+    "meaning": "graduation",
+    "type": "noun"
+  },
+  "し": {
+    "reading": "shi",
+    "meaning": "and; and then; therefore",
+    "type": "particle/conjunction"
+  },
+  "年": {
+    "reading": "toshi",
+    "meaning": "year",
+    "type": "noun"
+  },
+  "いや": {
+    "reading": "iya",
+    "meaning": "no; well; I say",
+    "type": "interjection/adverb"
+  },
+  "そもそも": {
+    "reading": "somo somo",
+    "meaning": "in the first place; to begin with",
+    "type": "adverbial phrase"
+  },
+  "すら": {
+    "reading": "sura",
+    "meaning": "even; not even",
+    "type": "particle"
+  },
+  "だっ": {
+    "reading": "dat",
+    "meaning": "was; were (stem of da)",
+    "type": "verb (stem)"
+  },
+  "周り": {
+    "reading": "mawari",
+    "meaning": "around; surroundings",
+    "type": "noun"
+  },
+  "ー": {
+    "reading": "ー",
+    "meaning": "prolonged sound",
+    "type": "phonetic"
+  },
+  "全然": {
+    "reading": "zenzen",
+    "meaning": "not at all; completely",
+    "type": "adverb"
+  },
+  "変わっ": {
+    "reading": "kawat",
+    "meaning": "to change (stem)",
+    "type": "verb (stem)"
+  },
+  "なんて": {
+    "reading": "nante",
+    "meaning": "such a thing as; what a...",
+    "type": "particle"
+  },
+  "嘘": {
+    "reading": "uso",
+    "meaning": "lie; falsehood",
+    "type": "noun"
+  },
+  "くさい": {
+    "reading": "kusai",
+    "meaning": "smelly; fishy (suspicious)",
+    "type": "adjective"
+  },
+  "会話": {
+    "reading": "kaiwa",
+    "meaning": "conversation; dialogue",
+    "type": "noun"
+  },
+  "飛び交う": {
+    "reading": "tobikau",
+    "meaning": "to fly about; to flit about; to be exchanged rapidly",
+    "type": "verb"
+  },
+  "皆": {
+    "reading": "mina",
+    "meaning": "everyone; everybody; all",
+    "type": "pronoun"
+  },
+  "本当に": {
+    "reading": "hontouni",
+    "meaning": "really; truly; indeed",
+    "type": "adverb"
+  },
+  "楽し": {
+    "reading": "tanoshi",
+    "meaning": "enjoyable; fun",
+    "type": "adjective (i-adjective stem)"
+  },
+  "そう": {
+    "reading": "sou",
+    "meaning": "like that; it seems; apparently",
+    "type": "particle/adverb"
+  },
+  "見える": {
+    "reading": "mieru",
+    "meaning": "to be seen; to appear; to seem",
+    "type": "verb"
+  },
+  "孤独": {
+    "reading": "kodoku",
+    "meaning": "loneliness; solitude",
+    "type": "noun"
+  },
+  "傍観": {
+    "reading": "boukan",
+    "meaning": "passive observation; looking on",
+    "type": "noun"
+  },
+  "者": {
+    "reading": "mono/sha",
+    "meaning": "person; one who...",
+    "type": "suffix"
+  },
+  "昔": {
+    "reading": "mukashi",
+    "meaning": "former times; the past; old days",
+    "type": "noun"
+  },
+  "再会": {
+    "reading": "saikai",
+    "meaning": "reunion; reuniting",
+    "type": "noun"
+  },
+  "話す": {
+    "reading": "hanasu",
+    "meaning": "to speak; to talk; to tell",
+    "type": "verb"
+  },
+  "こうして": {
+    "reading": "koushite",
+    "meaning": "in this way; like this; thus",
+    "type": "adverb"
+  },
+  "切り売り": {
+    "reading": "kiriuri",
+    "meaning": "selling in small quantities; piecemeal sale",
+    "type": "noun"
+  },
+  "相手": {
+    "reading": "aite",
+    "meaning": "partner; opponent; counterpart",
+    "type": "noun"
+  },
+  "この": {
+    "reading": "kono",
+    "meaning": "this",
+    "type": "demonstrative adjective"
+  },
+  "先": {
+    "reading": "saki",
+    "meaning": "future; ahead; tip (of something)",
+    "type": "noun"
+  },
+  "呼ば": {
+    "reading": "yoba",
+    "meaning": "to be called (stem of よばれる)",
+    "type": "verb (stem)"
+  },
+  "れる": {
+    "reading": "reru",
+    "meaning": "passive/potential suffix",
+    "type": "verbal suffix"
+  },
+  "きっと": {
+    "reading": "kitto",
+    "meaning": "certainly; surely; definitely",
+    "type": "adverb"
+  },
+  "時代": {
+    "reading": "jidai",
+    "meaning": "era; age; times",
+    "type": "noun"
+  },
+  "っけ": {
+    "reading": "kke",
+    "meaning": "particle indicating a question about something previously mentioned",
+    "type": "particle"
+  },
+  "そんな": {
+    "reading": "sonna",
+    "meaning": "such; that kind of; like that",
+    "type": "pronoun/adverb"
+  },
+  "自嘲": {
+    "reading": "jichou",
+    "meaning": "self-mockery; self-derision",
+    "type": "noun"
+  },
+  "的": {
+    "reading": "teki",
+    "meaning": "suffix indicating nature or style",
+    "type": "suffix"
+  },
+  "思い": {
+    "reading": "omoi",
+    "meaning": "thought; feeling; impression",
+    "type": "noun"
+  },
+  "胸": {
+    "reading": "mune",
+    "meaning": "chest; breast",
+    "type": "noun"
+  },
+  "奥": {
+    "reading": "oku",
+    "meaning": "inside; depth; back",
+    "type": "noun"
+  },
+  "ひっそり": {
+    "reading": "hissori",
+    "meaning": "quietly; secretly; silently",
+    "type": "adverb"
+  },
+  "渦巻い": {
+    "reading": "umamakai",
+    "meaning": "swirling; whirling (stem of 渦巻く)",
+    "type": "verb (stem)"
+  },
+  "グラス": {
+    "reading": "guras",
+    "meaning": "glass (drinking glass)",
+    "type": "noun"
+  },
+  "なっ": {
+    "reading": "nat",
+    "meaning": "became (contracted form of なった)",
+    "type": "verb (contracted form)"
+  },
+  "ので": {
+    "reading": "node",
+    "meaning": "because; since; therefore",
+    "type": "particle"
+  },
+  "一": {
+    "reading": "ichi",
+    "meaning": "one",
+    "type": "numeral"
+  },
+  "杯": {
+    "reading": "hai",
+    "meaning": "cup; glass",
+    "type": "counter"
+  },
+  "持っ": {
+    "reading": "mot",
+    "meaning": "to hold; to have (stem of もつ)",
+    "type": "verb (stem)"
+  },
+  "き": {
+    "reading": "ki",
+    "meaning": "volitional form marker (informal)",
+    "type": "particle"
+  },
+  "あげよ": {
+    "reading": "ageyo",
+    "meaning": "let's raise (give, offer)",
+    "type": "verb (volitional)"
+  },
+  "これ": {
+    "reading": "kore",
+    "meaning": "this",
+    "type": "pronoun"
+  },
+  "うち": {
+    "reading": "uchi",
+    "meaning": "home; house; inside; among",
+    "type": "noun"
+  },
+  "寂れ": {
+    "reading": "sabire",
+    "meaning": "desolate; deserted; lonely; dilapidated",
+    "type": "adjective (i)"
+  },
+  "ジャズ": {
+    "reading": "jazu",
+    "meaning": "jazz",
+    "type": "noun"
+  },
+  "喫茶": {
+    "reading": "kissa",
+    "meaning": "coffee shop; cafe",
+    "type": "noun"
+  },
+  "整理": {
+    "reading": "seiri",
+    "meaning": "tidying; arrangement; organization; sorting",
+    "type": "noun/verb"
+  },
+  "随分": {
+    "reading": "zuibun",
+    "meaning": "quite a lot; considerably; quite; very",
+    "type": "adverb"
+  },
+  "骨": {
+    "reading": "hone",
+    "meaning": "bone",
+    "type": "noun"
+  },
+  "折れ": {
+    "reading": "ore",
+    "meaning": "to break; to bend; to fold",
+    "type": "verb"
+  },
+  "来": {
+    "reading": "rai",
+    "meaning": "coming; arrival",
+    "type": "noun/verb"
+  },
+  "もん": {
+    "reading": "mon",
+    "meaning": "thing; stuff (informal)",
+    "type": "noun"
+  },
+  "恵美子": {
+    "reading": "Emiko",
+    "meaning": "Emiko (female given name)",
+    "type": "proper noun"
+  },
+  "思っ": {
+    "reading": "omot-",
+    "meaning": "thought (past tense, informal)",
+    "type": "verb"
+  },
+  "アプリ": {
+    "reading": "apuri",
+    "meaning": "app (abbreviation of application)",
+    "type": "noun"
+  },
+  "開く": {
+    "reading": "hiraku",
+    "meaning": "to open",
+    "type": "verb"
+  },
+  "たび": {
+    "reading": "tabi",
+    "meaning": "journey; trip; occasion; time",
+    "type": "noun"
+  },
+  "奇妙": {
+    "reading": "kimyou",
+    "meaning": "strange; peculiar; odd",
+    "type": "adjective (i)"
+  },
+  "舞い込む": {
+    "reading": "maikomu",
+    "meaning": "to come flying in; to pour in; to be overwhelmed by",
+    "type": "verb"
+  },
+  "それ": {
+    "reading": "sore",
+    "meaning": "that; it; those",
+    "type": "pronoun"
+  },
+  "屋": {
+    "reading": "ya",
+    "meaning": "shop; house (suffix)",
+    "type": "suffix"
+  },
+  "醍醐味": {
+    "reading": "daigo-mi",
+    "meaning": "the best part; the essence; the cream of the crop",
+    "type": "noun"
+  },
+  "けれど": {
+    "reading": "keredo",
+    "meaning": "but; however; yet",
+    "type": "conjunction"
+  },
+  "約束": {
+    "reading": "yakusoku",
+    "meaning": "promise; appointment",
+    "type": "noun"
+  },
+  "訪れ": {
+    "reading": "otozure",
+    "meaning": "visit; arrival",
+    "type": "noun/verb"
+  },
+  "薄暗く": {
+    "reading": "usuguraku",
+    "meaning": "dimly lit; dusky",
+    "type": "adverb"
+  },
+  "埃": {
+    "reading": "hokori",
+    "meaning": "dust",
+    "type": "noun"
+  },
+  "混じっ": {
+    "reading": "majit-",
+    "meaning": "mixed (past tense, informal)",
+    "type": "verb"
+  },
+  "匂い": {
+    "reading": "nioi",
+    "meaning": "smell; scent; odor",
+    "type": "noun"
+  },
+  "充満": {
+    "reading": "jumman",
+    "meaning": "to be filled with; to be full of",
+    "type": "verb"
+  },
+  "無口": {
+    "reading": "muguchi",
+    "meaning": "taciturn; uncommunicative; silent",
+    "type": "adjective (na)"
+  },
+  "店主": {
+    "reading": "tenshu",
+    "meaning": "shopkeeper; owner",
+    "type": "noun"
+  },
+  "老眼鏡": {
+    "reading": "rougankyou",
+    "meaning": "reading glasses",
+    "type": "noun"
+  },
+  "越し": {
+    "reading": "goshi",
+    "meaning": "over; beyond; across (suffix)",
+    "type": "suffix"
+  },
+  "こちら": {
+    "reading": "kochira",
+    "meaning": "this way; here; this",
+    "type": "pronoun/adverb"
+  },
+  "ちらりと": {
+    "reading": "chirarito",
+    "meaning": "glancingly; briefly",
+    "type": "adverb"
+  },
+  "見": {
+    "reading": "mi",
+    "meaning": "seeing; sight",
+    "type": "noun/verb"
+  },
+  "すぐ": {
+    "reading": "sugu",
+    "meaning": "immediately; soon; right away",
+    "type": "adverb"
+  },
+  "カウンター": {
+    "reading": "kauntaa",
+    "meaning": "counter",
+    "type": "noun"
+  },
+  "引っ込ん": {
+    "reading": "hikkom-",
+    "meaning": "withdrew; pulled back (past tense, informal)",
+    "type": "verb"
+  },
+  "しまっ": {
+    "reading": "shima-",
+    "meaning": "put away; closed; finished (past tense, informal)",
+    "type": "verb"
+  },
+  "まさに": {
+    "reading": "masani",
+    "meaning": "indeed; truly; precisely",
+    "type": "adverb"
+  },
+  "絵": {
+    "reading": "e",
+    "meaning": "picture; painting; drawing",
+    "type": "noun"
+  },
+  "描い": {
+    "reading": "kai-",
+    "meaning": "drew; painted (past tense, informal)",
+    "type": "verb"
+  },
+  "よう": {
+    "reading": "you",
+    "meaning": "like; as if; seem",
+    "type": "particle"
+  },
+  "職人": {
+    "reading": "shokunin",
+    "meaning": "craftsman; artisan",
+    "type": "noun"
+  },
+  "気質": {
+    "reading": "kishitsu",
+    "meaning": "temperament; disposition; nature",
+    "type": "noun"
+  },
+  "単に": {
+    "reading": "tani",
+    "meaning": "simply; merely; only",
+    "type": "adverb"
+  },
+  "人見知り": {
+    "reading": "hitomishiri",
+    "meaning": "shy; reserved (around strangers)",
+    "type": "noun/adjective"
+  },
+  "店内": {
+    "reading": "tennai",
+    "meaning": "inside the shop; shop interior",
+    "type": "noun"
+  },
+  "山積み": {
+    "reading": "yamazumi",
+    "meaning": "piled high; stacked up",
+    "type": "noun/verb"
+  },
+  "さ": {
+    "reading": "sa",
+    "meaning": "well; then; now; emphasis particle",
+    "type": "particle"
+  },
+  "れ": {
+    "reading": "re",
+    "meaning": "passive/potential suffix",
+    "type": "suffix"
+  },
+  "レコード": {
+    "reading": "rekoodo",
+    "meaning": "record (vinyl record)",
+    "type": "noun"
+  },
+  "や": {
+    "reading": "ya",
+    "meaning": "and; or (used to list items)",
+    "type": "particle"
+  },
+  "忘れ去ら": {
+    "reading": "wasurezara",
+    "meaning": "forgotten; left behind",
+    "type": "verb (stem)"
+  },
+  "オブジェ": {
+    "reading": "obue",
+    "meaning": "objet d'art; decorative object",
+    "type": "noun"
+  },
+  "っぽい": {
+    "reading": "ppoi",
+    "meaning": "like; -ish; -esque (suffix)",
+    "type": "suffix"
+  },
+  "ジャケット": {
+    "reading": "jaketto",
+    "meaning": "jacket; album cover",
+    "type": "noun"
+  },
+  "手": {
+    "reading": "te",
+    "meaning": "hand",
+    "type": "noun"
+  },
+  "取り": {
+    "reading": "tori",
+    "meaning": "taking; picking up (verb stem)",
+    "type": "verb (stem)"
+  },
+  "タイトル": {
+    "reading": "taitoru",
+    "meaning": "title",
+    "type": "noun"
+  },
+  "読み上げる": {
+    "reading": "yomiageru",
+    "meaning": "to read aloud",
+    "type": "verb"
+  },
+  "ああ": {
+    "reading": "aa",
+    "meaning": "ah; oh",
+    "type": "interjection"
+  },
+  "そこ": {
+    "reading": "soko",
+    "meaning": "there",
+    "type": "adverb"
+  },
+  "機械": {
+    "reading": "kikai",
+    "meaning": "machine; mechanism",
+    "type": "noun"
+  },
+  "やり取り": {
+    "reading": "yaritori",
+    "meaning": "exchange; interaction",
+    "type": "noun"
+  },
+  "続く": {
+    "reading": "tsuzuku",
+    "meaning": "to continue; to last",
+    "type": "verb"
+  },
+  "棚": {
+    "reading": "tana",
+    "meaning": "shelf",
+    "type": "noun"
+  },
+  "古び": {
+    "reading": "furubi",
+    "meaning": "oldness; antiquity",
+    "type": "noun"
+  },
+  "トランペット": {
+    "reading": "toranpetto",
+    "meaning": "trumpet",
+    "type": "noun"
+  },
+  "ケース": {
+    "reading": "keesu",
+    "meaning": "case",
+    "type": "noun"
+  },
+  "見つけ": {
+    "reading": "mitsuke",
+    "meaning": "finding (verb stem)",
+    "type": "verb (stem)"
+  },
+  "無意識": {
+    "reading": "muishiki",
+    "meaning": "unconscious; subconscious",
+    "type": "noun/adjective"
+  },
+  "蓋": {
+    "reading": "futa",
+    "meaning": "lid; cover",
+    "type": "noun"
+  },
+  "開ける": {
+    "reading": "akeru",
+    "meaning": "to open",
+    "type": "verb"
+  },
+  "年季": {
+    "reading": "toshi",
+    "meaning": "years of experience; age (showing wear)",
+    "type": "noun"
+  },
+  "入っ": {
+    "reading": "hait",
+    "meaning": "entered; contained (verb stem)",
+    "type": "verb (stem)"
+  },
+  "楽器": {
+    "reading": "gakki",
+    "meaning": "musical instrument",
+    "type": "noun"
+  },
+  "古ぼけ": {
+    "reading": "furuboke",
+    "meaning": "aged; worn out",
+    "type": "adjective"
+  },
+  "楽譜": {
+    "reading": "gakufu",
+    "meaning": "musical score; sheet music",
+    "type": "noun"
+  },
+  "束": {
+    "reading": "taba",
+    "meaning": "bundle; bunch",
+    "type": "noun"
+  },
+  "枚": {
+    "reading": "mai",
+    "meaning": "counter for flat objects (sheets, pictures)",
+    "type": "counter"
+  },
+  "写真": {
+    "reading": "shashin",
+    "meaning": "photograph; picture",
+    "type": "noun"
+  },
+  "挟まっ": {
+    "reading": "hasama",
+    "meaning": "stuck; jammed (verb stem)",
+    "type": "verb (stem)"
+  },
+  "若き": {
+    "reading": "wakaki",
+    "meaning": "young (adjective, archaic/literary)",
+    "type": "adjective"
+  },
+  "眩しい": {
+    "reading": "mabushii",
+    "meaning": "dazzling; dazzlingly bright",
+    "type": "adjective"
+  },
+  "笑顔": {
+    "reading": "egao",
+    "meaning": "smile",
+    "type": "noun"
+  },
+  "吹い": {
+    "reading": "fui",
+    "meaning": "blowing; playing (wind instrument) (verb stem)",
+    "type": "verb (stem)"
+  },
+  "姿": {
+    "reading": "sugata",
+    "meaning": "figure; appearance; form",
+    "type": "noun"
+  },
+  "裏": {
+    "reading": "ura",
+    "meaning": "back; reverse side",
+    "type": "noun"
+  },
+  "走り書き": {
+    "reading": "hashirigaki",
+    "meaning": "scribble; hastily written note",
+    "type": "noun"
+  },
+  "日付": {
+    "reading": "hizuke",
+    "meaning": "date",
+    "type": "noun"
+  },
+  "初": {
+    "reading": "hatsu",
+    "meaning": "first",
+    "type": "noun/adjective"
+  },
+  "ステージ": {
+    "reading": "suteeji",
+    "meaning": "stage",
+    "type": "noun"
+  },
+  "文字": {
+    "reading": "moji",
+    "meaning": "character; letter; word",
+    "type": "noun"
+  },
+  "静か": {
+    "reading": "shizuka",
+    "meaning": "quiet; still; silent",
+    "type": "adjective"
+  },
+  "閉じ": {
+    "reading": "toji",
+    "meaning": "closing (verb stem)",
+    "type": "verb (stem)"
+  },
+  "向こう": {
+    "reading": "mukou",
+    "meaning": "over there; yonder; the other side",
+    "type": "noun/adverb"
+  },
+  "豆": {
+    "reading": "mame",
+    "meaning": "bean",
+    "type": "noun"
+  },
+  "挽く": {
+    "reading": "hiku",
+    "meaning": "to grind; to pull",
+    "type": "verb"
+  },
+  "背中": {
+    "reading": "senaka",
+    "meaning": "back (of the body)",
+    "type": "noun"
+  },
+  "ほんの": {
+    "reading": "honno",
+    "meaning": "only; just; merely",
+    "type": "adverb"
+  },
+  "より": {
+    "reading": "yori",
+    "meaning": "than, from, more than, by, since",
+    "type": "particle"
+  },
+  "長く": {
+    "reading": "nagaku",
+    "meaning": "for a long time, long",
+    "type": "adverb"
+  },
+  "見つめ": {
+    "reading": "mitsume",
+    "meaning": "gaze, stare, to look intently at",
+    "type": "noun/verb stem"
+  },
+  "微か": {
+    "reading": "kasuka",
+    "meaning": "faint, slight, subtle, barely perceptible",
+    "type": "adjective (i)"
+  },
+  "メロディ": {
+    "reading": "merodi",
+    "meaning": "melody",
+    "type": "noun (loanword)"
+  },
+  "聞こえる": {
+    "reading": "kikoeru",
+    "meaning": "to be heard, to be audible",
+    "type": "verb (u)"
+  },
+  "気": {
+    "reading": "ki",
+    "meaning": "mind, feeling, spirit, atmosphere, mood, air, gas",
+    "type": "noun"
+  },
+  "せい": {
+    "reading": "sei",
+    "meaning": "because of, due to, owing to, fault, sake, nature, quality",
+    "type": "noun/suffix"
+  },
+  "弔い": {
+    "reading": "とむらい",
+    "meaning": "condolences; mourning; funeral rites",
+    "type": "noun"
+  },
+  "代役": {
+    "reading": "だいたい",
+    "meaning": "substitute; replacement",
+    "type": "noun"
+  },
+  "通知": {
+    "reading": "つうち",
+    "meaning": "notification; notice; announcement",
+    "type": "noun"
+  },
+  "指定": {
+    "reading": "してい",
+    "meaning": "designation; specification; appointment",
+    "type": "noun/verb"
+  },
+  "都心": {
+    "reading": "としん",
+    "meaning": "city center; downtown",
+    "type": "noun"
+  },
+  "佇む": {
+    "reading": "たたずむ",
+    "meaning": "to stand; to wait; to linger",
+    "type": "verb"
+  },
+  "斎場": {
+    "reading": "さいじょう",
+    "meaning": "funeral hall; crematorium",
+    "type": "noun"
+  },
+  "故人": {
+    "reading": "こじん",
+    "meaning": "deceased person; the late...",
+    "type": "noun"
+  },
+  "身寄り": {
+    "reading": "みより",
+    "meaning": "relatives; family; dependants",
+    "type": "noun"
+  },
+  "少ない": {
+    "reading": "すくない",
+    "meaning": "few; little; small number",
+    "type": "adjective"
+  },
+  "老婆": {
+    "reading": "ろうば",
+    "meaning": "old woman",
+    "type": "noun"
+  },
+  "参列": {
+    "reading": "さんれつ",
+    "meaning": "attendance (at a funeral, etc.)",
+    "type": "noun/verb"
+  },
+  "甥": {
+    "reading": "おい",
+    "meaning": "nephew",
+    "type": "noun"
+  },
+  "娘": {
+    "reading": "むすめ",
+    "meaning": "daughter",
+    "type": "noun"
+  },
+  "らしき": {
+    "reading": "らしい",
+    "meaning": "seemingly; likely; apparently",
+    "type": "adjective/suffix"
+  },
+  "二": {
+    "reading": "に",
+    "meaning": "two",
+    "type": "numeral"
+  },
+  "人": {
+    "reading": "ひと",
+    "meaning": "person; people",
+    "type": "noun"
+  },
+  "悲しん": {
+    "reading": "かなしん",
+    "meaning": "to grieve; to mourn",
+    "type": "verb"
+  },
+  "でる": {
+    "reading": "でる",
+    "meaning": "to go out; to leave; to appear",
+    "type": "verb"
+  },
+  "見えれ": {
+    "reading": "みえれ",
+    "meaning": "could see (past tense, less common form)",
+    "type": "verb"
+  },
+  "ば": {
+    "reading": "ば",
+    "meaning": "if; in case; when",
+    "type": "particle"
+  },
+  "言っ": {
+    "reading": "い",
+    "meaning": "said (past tense, abbreviated form of 言った)",
+    "type": "verb"
+  },
+  "がらん": {
+    "reading": "がらん",
+    "meaning": "empty; desolate; bare",
+    "type": "adjective/adverb"
+  },
+  "空間": {
+    "reading": "くうかん",
+    "meaning": "space; room",
+    "type": "noun"
+  },
+  "不在": {
+    "reading": "ふざい",
+    "meaning": "absence; not present",
+    "type": "noun"
+  },
+  "悲しみ": {
+    "reading": "かなしみ",
+    "meaning": "sadness; sorrow; grief",
+    "type": "noun"
+  },
+  "際立た": {
+    "reading": "きわだた",
+    "meaning": "to stand out; to be prominent",
+    "type": "verb"
+  },
+  "せる": {
+    "reading": "せる",
+    "meaning": "to cause (to do); to make (something happen)",
+    "type": "auxiliary verb"
+  },
+  "皮肉": {
+    "reading": "ひにく",
+    "meaning": "irony; sarcasm",
+    "type": "noun"
+  },
+  "演目": {
+    "reading": "えんもく",
+    "meaning": "program; performance; item on a program",
+    "type": "noun"
+  },
+  "遺影": {
+    "reading": "いえい",
+    "meaning": "photograph of the deceased",
+    "type": "noun"
+  },
+  "柔和": {
+    "reading": "じゅうわ",
+    "meaning": "gentle; mild; soft",
+    "type": "adjective/noun"
+  },
+  "微笑む": {
+    "reading": "ほほえむ",
+    "meaning": "to smile gently",
+    "type": "verb"
+  },
+  "瞳": {
+    "reading": "ひとみ",
+    "meaning": "pupil (of the eye); eyes",
+    "type": "noun"
+  },
+  "合う": {
+    "reading": "あう",
+    "meaning": "to meet; to fit; to suit",
+    "type": "verb"
+  },
+  "ざわつく": {
+    "reading": "ざわつく",
+    "meaning": "to be restless; to be noisy; to buzz",
+    "type": "verb"
+  },
+  "隠れ": {
+    "reading": "かくれ",
+    "meaning": "hiding; concealment",
+    "type": "noun/verb"
+  },
+  "操作": {
+    "reading": "そうさ",
+    "meaning": "operation; manipulation; control",
+    "type": "noun/verb"
+  },
+  "息子": {
+    "reading": "むすこ",
+    "meaning": "son",
+    "type": "noun"
+  },
+  "終始": {
+    "reading": "しゅうし",
+    "meaning": "from beginning to end; throughout",
+    "type": "adverb"
+  },
+  "腕組み": {
+    "reading": "うでくみ",
+    "meaning": "folded arms",
+    "type": "noun"
+  },
+  "時折": {
+    "reading": "ときおり",
+    "meaning": "occasionally; sometimes; at times",
+    "type": "adverb"
+  },
+  "遺骨": {
+    "reading": "いこつ",
+    "meaning": "remains; ashes (of the deceased)",
+    "type": "noun"
+  },
+  "視線": {
+    "reading": "しせん",
+    "meaning": "gaze; glance; line of sight",
+    "type": "noun"
+  },
+  "落とし": {
+    "reading": "おとし",
+    "meaning": "dropping; fall",
+    "type": "noun/verb"
+  },
+  "口元": {
+    "reading": "くちもと",
+    "meaning": "mouth; the area around the mouth",
+    "type": "noun"
+  },
+  "歪め": {
+    "reading": "ゆがめ",
+    "meaning": "distortion; twist",
+    "type": "noun/verb"
+  },
+  "誰": {
+    "reading": "だれ",
+    "meaning": "who; whom",
+    "type": "pronoun"
+  },
+  "見せ": {
+    "reading": "みせ",
+    "meaning": "showing",
+    "type": "noun/verb"
+  },
+  "ただ": {
+    "reading": "ただ",
+    "meaning": "only; merely; just",
+    "type": "adverb"
+  },
+  "俯き": {
+    "reading": "futashi",
+    "meaning": "bowing one's head; looking down",
+    "type": "noun"
+  },
+  "ハンカチ": {
+    "reading": "hankachi",
+    "meaning": "handkerchief",
+    "type": "noun"
+  },
+  "目元": {
+    "reading": "memoto",
+    "meaning": "area around the eyes",
+    "type": "noun"
+  },
+  "当てる": {
+    "reading": "ateru",
+    "meaning": "to hit; to apply; to guess correctly; to shine (light)",
+    "type": "verb"
+  },
+  "プロ": {
+    "reading": "puro",
+    "meaning": "professional",
+    "type": "noun"
+  },
+  "ふと": {
+    "reading": "futo",
+    "meaning": "suddenly; unintentionally; without thinking",
+    "type": "adverb"
+  },
+  "祭壇": {
+    "reading": "saidan",
+    "meaning": "altar",
+    "type": "noun"
+  },
+  "片隅": {
+    "reading": "katasumi",
+    "meaning": "corner; nook",
+    "type": "noun"
+  },
+  "色褪せ": {
+    "reading": "iroase",
+    "meaning": "fading (of color)",
+    "type": "noun"
+  },
+  "立て": {
+    "reading": "tate",
+    "meaning": "building; erecting; standing up",
+    "type": "noun/verb stem"
+  },
+  "幼い": {
+    "reading": "osonai",
+    "meaning": "childish; young; immature",
+    "type": "adjective"
+  },
+  "写っ": {
+    "reading": "utsut-ta",
+    "meaning": "was reflected; was photographed",
+    "type": "verb (past tense)"
+  },
+  "瞬間": {
+    "reading": "shunkan",
+    "meaning": "moment; instant",
+    "type": "noun"
+  },
+  "得体": {
+    "reading": "tokutai",
+    "meaning": "form; shape; nature; appearance (often suggesting something mysterious or unsettling)",
+    "type": "noun"
+  },
+  "知れ": {
+    "reading": "shire",
+    "meaning": "to be known; to be aware of",
+    "type": "verb (passive/potential)"
+  },
+  "重み": {
+    "reading": "omomi",
+    "meaning": "weight; importance; seriousness",
+    "type": "noun"
+  },
+  "広がる": {
+    "reading": "hirogaru",
+    "meaning": "to spread; to expand; to widen",
+    "type": "verb"
+  },
+  "確か": {
+    "reading": "tashika",
+    "meaning": "certain; sure; reliable",
+    "type": "adjective/adverb"
+  },
+  "存在": {
+    "reading": "sonzai",
+    "meaning": "existence; being",
+    "type": "noun"
+  },
+  "お": {
+    "reading": "o",
+    "meaning": "honorific prefix (used before verbs and nouns)",
+    "type": "particle"
+  },
+  "役目": {
+    "reading": "yakume",
+    "meaning": "role; duty; function",
+    "type": "noun"
+  },
+  "ご苦労": {
+    "reading": "gokuroo",
+    "meaning": "hardship; trouble; (expression of sympathy)",
+    "type": "noun"
+  },
+  "様": {
+    "reading": "sama",
+    "meaning": "Mr./Ms./Mrs. (honorific suffix)",
+    "type": "suffix"
+  },
+  "でし": {
+    "reading": "deshi",
+    "meaning": "was; were (archaic/literary form)",
+    "type": "verb (past tense)"
+  },
+  "曖昧": {
+    "reading": "aimai",
+    "meaning": "ambiguous; vague; unclear",
+    "type": "adjective"
+  },
+  "頷き": {
+    "reading": "unazuki",
+    "meaning": "nodding (one's head)",
+    "type": "noun"
+  },
+  "後": {
+    "reading": "ato",
+    "meaning": "after; later; behind",
+    "type": "noun/adverb"
+  },
+  "ギャラ": {
+    "reading": "gyara",
+    "meaning": "fee; payment (especially for entertainers)",
+    "type": "noun"
+  },
+  "贅沢": {
+    "reading": "zeitaku",
+    "meaning": "luxury; extravagance",
+    "type": "noun/adjective"
+  },
+  "夕食": {
+    "reading": "yūshoku",
+    "meaning": "dinner; evening meal",
+    "type": "noun"
+  },
+  "食べよ": {
+    "reading": "tabeyo",
+    "meaning": "let's eat; eat!",
+    "type": "verb (imperative)"
+  },
+  "思考": {
+    "reading": "shikou",
+    "meaning": "thinking; thought; consideration",
+    "type": "noun"
+  },
+  "切り替え": {
+    "reading": "kirigae",
+    "meaning": "switching; changeover",
+    "type": "noun"
+  },
+  "感情": {
+    "reading": "kanjou",
+    "meaning": "emotion; feeling",
+    "type": "noun"
+  },
+  "波": {
+    "reading": "nami",
+    "meaning": "wave",
+    "type": "noun"
+  },
+  "押し込め": {
+    "reading": "oshikome",
+    "meaning": "to suppress; to cram; to confine",
+    "type": "verb stem"
+  }
 }

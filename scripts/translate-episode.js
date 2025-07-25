@@ -3,12 +3,49 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-// Get story name from command line argument or use default
+// Get arguments: story name, source language, target language
 const STORY_NAME = process.argv[2] || 'still-dead-still-bored';
+const SOURCE_LANG = process.argv[3] || 'en';
+const TARGET_LANG = process.argv[4] || 'ja';
 
-// Command: node scripts/translate-episode.js [story-name]
+// Validate arguments
+if (process.argv.length < 3) {
+    console.error('Usage: node scripts/translate-episode.js <story-name> [source-language] [target-language]');
+    console.error('Example: node scripts/translate-episode.js still-dead-still-bored en ja');
+    console.error('Example: node scripts/translate-episode.js the-barista ja en');
+    console.error('Supported languages: en, ja, ko, zh, es, vi');
+    process.exit(1);
+}
+
+// Validate languages
+const SUPPORTED_LANGUAGES = ['en', 'ja', 'ko', 'zh', 'es', 'vi'];
+if (!SUPPORTED_LANGUAGES.includes(SOURCE_LANG)) {
+    console.error(`❌ Unsupported source language: ${SOURCE_LANG}`);
+    console.error('Supported languages:', SUPPORTED_LANGUAGES.join(', '));
+    process.exit(1);
+}
+if (!SUPPORTED_LANGUAGES.includes(TARGET_LANG)) {
+    console.error(`❌ Unsupported target language: ${TARGET_LANG}`);
+    console.error('Supported languages:', SUPPORTED_LANGUAGES.join(', '));
+    process.exit(1);
+}
+
+// Command: node scripts/translate-episode.js [story-name] [source-language] [target-language]
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+
+// Language configurations
+const LANGUAGE_CONFIGS = {
+    'en': { name: 'English', code: 'en' },
+    'ja': { name: 'Japanese', code: 'ja' },
+    'ko': { name: 'Korean', code: 'ko' },
+    'zh': { name: 'Chinese', code: 'zh' },
+    'es': { name: 'Spanish', code: 'es' },
+    'vi': { name: 'Vietnamese', code: 'vi' }
+};
+
+const sourceConfig = LANGUAGE_CONFIGS[SOURCE_LANG];
+const targetConfig = LANGUAGE_CONFIGS[TARGET_LANG];
 
 async function callGemini(prompt) {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
@@ -45,17 +82,17 @@ function parseSentences(text) {
 async function translateSentences(sentences, episodeNum, title, description) {
     const sentencesList = sentences.map(sentence => `"${sentence}"`).join(',\n');
     
-    const prompt = `You are a professional translator. Translate the following English sentences into natural Japanese.
+    const prompt = `You are a professional translator. Translate the following ${sourceConfig.name} sentences into natural ${targetConfig.name}.
 
-Please translate each sentence into natural, fluent Japanese. Return the result as a JSON object where the keys are the original English sentences and the values are the Japanese translations.
+Please translate each sentence into natural, fluent ${targetConfig.name}. Return the result as a JSON object where the keys are the original ${sourceConfig.name} sentences and the values are the ${targetConfig.name} translations.
 
 Sentences to translate:
 ${sentencesList}
 
 Return only the JSON object, no additional text or explanations. Format like this:
 {
-  "English sentence 1": "Japanese translation 1",
-  "English sentence 2": "Japanese translation 2"
+  "${sourceConfig.name} sentence 1": "${targetConfig.name} translation 1",
+  "${sourceConfig.name} sentence 2": "${targetConfig.name} translation 2"
 }`;
 
     const raw = await callGemini(prompt);
@@ -77,11 +114,21 @@ Return only the JSON object, no additional text or explanations. Format like thi
     }
 }
 
-async function updateJapaneseLanguageFile(episodeNum, title, description, translations) {
-    const jaLangPath = path.resolve(__dirname, `../stories/${STORY_NAME}/lang/ja.json`);
+async function updateLanguageFile(episodeNum, title, description, translations) {
+    const langPath = path.resolve(__dirname, `../stories/${STORY_NAME}/lang/${TARGET_LANG}.json`);
     
-    // Read current Japanese language file
-    const jaLang = JSON.parse(fs.readFileSync(jaLangPath, 'utf-8'));
+    // Check if language file exists, create if it doesn't
+    let langData;
+    if (fs.existsSync(langPath)) {
+        langData = JSON.parse(fs.readFileSync(langPath, 'utf-8'));
+    } else {
+        // Create new language file structure
+        langData = {
+            title: "Story Title", // This will be updated when we have the story title
+            description: "Story description",
+            chapters: []
+        };
+    }
     
     // Create new chapter object
     const newChapter = {
@@ -92,15 +139,16 @@ async function updateJapaneseLanguageFile(episodeNum, title, description, transl
     };
     
     // Add to chapters array
-    jaLang.chapters.push(newChapter);
+    langData.chapters.push(newChapter);
     
     // Write back to file
-    fs.writeFileSync(jaLangPath, JSON.stringify(jaLang, null, 2), 'utf-8');
-    console.log(`✅ Added chapter ch${episodeNum} to Japanese language file`);
+    fs.writeFileSync(langPath, JSON.stringify(langData, null, 2), 'utf-8');
+    console.log(`✅ Added chapter ch${episodeNum} to ${targetConfig.name} language file`);
 }
 
 async function main() {
     console.log(`🌐 Translating episode for story: ${STORY_NAME}`);
+    console.log(`🌐 Language pair: ${sourceConfig.name} → ${targetConfig.name}`);
     
     // Get episode number from meta file
     const metaPath = path.resolve(__dirname, `../stories/${STORY_NAME}/meta.json`);
@@ -126,7 +174,7 @@ async function main() {
     console.log(`✅ Found ${sentences.length} sentences`);
     
     // Translate sentences
-    console.log('🌐 Translating sentences...');
+    console.log(`🌐 Translating sentences from ${sourceConfig.name} to ${targetConfig.name}...`);
     const translations = await translateSentences(sentences, episodeNum, title, description);
     
     if (!translations) {
@@ -136,9 +184,9 @@ async function main() {
     
     console.log(`✅ Translated ${Object.keys(translations).length} sentences`);
     
-    // Update Japanese language file
-    console.log('📝 Updating Japanese language file...');
-    await updateJapaneseLanguageFile(episodeNum, title, description, translations);
+    // Update target language file
+    console.log(`📝 Updating ${targetConfig.name} language file...`);
+    await updateLanguageFile(episodeNum, title, description, translations);
     
     console.log('✅ Episode translation complete!');
 }
@@ -147,4 +195,4 @@ if (require.main === module) {
     main().catch(console.error);
 }
 
-module.exports = { parseSentences, translateSentences, updateJapaneseLanguageFile }; 
+module.exports = { parseSentences, translateSentences, updateLanguageFile }; 

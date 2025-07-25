@@ -4,15 +4,59 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-// Get story name from command line argument or use default
+// Get arguments: story name, source language, target language
 const STORY_NAME = process.argv[2] || 'still-dead-still-bored';
+const SOURCE_LANG = process.argv[3] || 'en';
+const TARGET_LANG = process.argv[4] || 'ja';
+
+const sourceLangToDictMap = {
+    'en': 'english',
+    'ja': 'japanese',
+    'ko': 'korean',
+    'zh': 'chinese',
+    'es': 'spanish',
+    'vi': 'vietnamese'
+}
+
+// Validate arguments
+if (process.argv.length < 3) {
+    console.error('Usage: node scripts/generate-episode.js <story-name> [source-language] [target-language]');
+    console.error('Example: node scripts/generate-episode.js still-dead-still-bored en ja');
+    console.error('Example: node scripts/generate-episode.js the-barista ja en');
+    console.error('Supported languages: en, ja, ko, zh, es, vi');
+    process.exit(1);
+}
+
+// Validate languages
+const SUPPORTED_LANGUAGES = ['en', 'ja', 'ko', 'zh', 'es', 'vi'];
+if (!SUPPORTED_LANGUAGES.includes(SOURCE_LANG)) {
+    console.error(`❌ Unsupported source language: ${SOURCE_LANG}`);
+    console.error('Supported languages:', SUPPORTED_LANGUAGES.join(', '));
+    process.exit(1);
+}
+if (!SUPPORTED_LANGUAGES.includes(TARGET_LANG)) {
+    console.error(`❌ Unsupported target language: ${TARGET_LANG}`);
+    console.error('Supported languages:', SUPPORTED_LANGUAGES.join(', '));
+    process.exit(1);
+}
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const OUTPUT_FILE_PATH = path.resolve(__dirname, `../stories/${STORY_NAME}/episodes/episode_`);
 const META_PATH = path.resolve(__dirname, `../stories/${STORY_NAME}/meta.json`);
-const MASTER_DICT_PATH = path.resolve(__dirname, '../dictionaries/english/ja-v1.json');
+
+// Dynamic dictionary paths based on languages
+const LANGUAGE_DIRS = {
+    'en': 'english',
+    'ja': 'japanese', 
+    'ko': 'korean',
+    'zh': 'chinese',
+    'es': 'spanish',
+    'vi': 'vietnamese'
+};
+
+const MASTER_DICT_PATH = path.resolve(__dirname, `../dictionaries/${LANGUAGE_DIRS[SOURCE_LANG]}/${TARGET_LANG}-v1.json`);
 const MISSING_WORDS_PATH = path.resolve(__dirname, './missing_words.txt');
-const NEW_DICT_PATH = path.resolve(__dirname, './dictionary_entries_output_ja.json');
+const NEW_DICT_PATH = path.resolve(__dirname, `./dictionary_entries_output_${TARGET_LANG}.json`);
 const IMAGE_META_PATH = path.resolve(__dirname, './episode_meta.json');
 
 // Configuration for the current story
@@ -34,6 +78,13 @@ if (!fs.existsSync(path.resolve(__dirname, `../stories/${STORY_NAME}`))) {
 if (!fs.existsSync(PROMPTS_DIR)) {
     console.error(`❌ Prompts directory not found: ${PROMPTS_DIR}`);
     console.error('Please create prompt files for this story first.');
+    process.exit(1);
+}
+
+// Validate that source dictionary exists
+if (!fs.existsSync(MASTER_DICT_PATH)) {
+    console.error(`❌ Source dictionary not found: ${MASTER_DICT_PATH}`);
+    console.error('Please ensure the source dictionary exists for the specified language pair.');
     process.exit(1);
 }
 
@@ -103,6 +154,7 @@ async function generateEpisodeMetadata() {
 
 (async () => {
     console.log(`📚 Generating episode for story: ${STORY_NAME}`);
+    console.log(`🌐 Language pair: ${SOURCE_LANG} → ${TARGET_LANG}`);
     
     const meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8'));
 
@@ -120,7 +172,7 @@ async function generateEpisodeMetadata() {
 
     const basePrompt = readPrompt('basePrompt');
     const finalPrompt = `${basePrompt}
-Please write a new standalone episode titled "${metadata.title}" where ${metadata.hook}
+Please write a new episode titled "${metadata.title}" where ${metadata.hook}
 Do not include the episode title in the story.`;
 
     console.log('🧠 Generating episode...');
@@ -140,12 +192,13 @@ Do not include the episode title in the story.`;
         fs.writeFileSync(episodeFilePath, story, 'utf-8');
         console.log(`✅ Episode written to ${episodeFilePath}`);
 
-        // Check for missing words
-        execSync(`node scripts/check-missing-words.js ${MASTER_DICT_PATH} ${episodeFilePath} ${MISSING_WORDS_PATH}`, { stdio: 'inherit' });
+        // Check for missing words using the updated check-missing-words.js
+        console.log(`🔍 Checking for missing ${SOURCE_LANG} words...`);
+        execSync(`node scripts/check-missing-words.js ${MASTER_DICT_PATH} ${episodeFilePath} ${MISSING_WORDS_PATH} ${SOURCE_LANG}`, { stdio: 'inherit' });
 
-        // Run generate-dictionary.js
-        console.log('📚 Generating new dictionary entries...');
-        execSync(`node scripts/generate-dictionary.js en ja`, { stdio: 'inherit' });
+        // Run generate-dictionary.js with the correct language pair
+        console.log(`📚 Generating new dictionary entries (${SOURCE_LANG} → ${TARGET_LANG})...`);
+        execSync(`node scripts/generate-dictionary.js ${SOURCE_LANG} ${TARGET_LANG}`, { stdio: 'inherit' });
 
         // Merge with existing dictionary
         console.log('🧩 Merging new dictionary entries...');
@@ -179,31 +232,48 @@ Do not include the episode title in the story.`;
         const structurePath = path.resolve(__dirname, `../stories/${STORY_NAME}/structure.json`);
         const structure = JSON.parse(fs.readFileSync(structurePath, 'utf-8'));
         
-        // Add new chapter to chapters array (without content)
+        // Read tokenized text from temporary file
+        const tokenizedTextPath = path.resolve(__dirname, './tokenized_text.txt');
+        let tokenizedContent = '';
+        if (fs.existsSync(tokenizedTextPath)) {
+            tokenizedContent = fs.readFileSync(tokenizedTextPath, 'utf-8');
+            console.log(`✅ Read tokenized content (${tokenizedContent.split('|').length} tokens)`);
+        } else {
+            console.warn('⚠️  Tokenized text file not found, content will be empty');
+        }
+        
+        // Add new chapter to chapters array (with content)
         const newChapter = {
             id: `ch${episodeNum}`,
-            headerImage: `https://cdn.native-talk.com/stories/${STORY_NAME}/${episodeNum}.webp`
+            headerImage: `https://cdn.native-talk.com/stories/${STORY_NAME}/${episodeNum}.webp`,
+            content: tokenizedContent
         };
         
         structure.chapters.push(newChapter);
         fs.writeFileSync(structurePath, JSON.stringify(structure, null, 2), 'utf-8');
         console.log(`✅ Added chapter ch${episodeNum} to structure.json`);
 
-        // Translate episode to Japanese
-        console.log('🌐 Translating episode to Japanese...');
-        execSync(`node scripts/translate-episode.js ${STORY_NAME}`, { stdio: 'inherit' });
+        // Translate episode to target language
+        console.log(`🌐 Translating episode to ${TARGET_LANG}...`);
+        execSync(`node scripts/translate-episode.js ${STORY_NAME} ${SOURCE_LANG} ${TARGET_LANG}`, { stdio: 'inherit' });
 
         // ✅ Cleanup temp files
         try {
             fs.unlinkSync(MISSING_WORDS_PATH);
             fs.unlinkSync(NEW_DICT_PATH);
             fs.unlinkSync(IMAGE_META_PATH);
+            fs.unlinkSync(tokenizedTextPath);
             console.log('🧹 Cleaned up temporary files.');
         } catch (err) {
             console.warn('⚠️ Failed to delete temporary files:', err.message);
-            fs.unlinkSync(MISSING_WORDS_PATH);
-            fs.unlinkSync(NEW_DICT_PATH);
-            fs.unlinkSync(IMAGE_META_PATH);
+            try {
+                fs.unlinkSync(MISSING_WORDS_PATH);
+                fs.unlinkSync(NEW_DICT_PATH);
+                fs.unlinkSync(IMAGE_META_PATH);
+                fs.unlinkSync(tokenizedTextPath);
+            } catch (cleanupErr) {
+                console.warn('⚠️ Cleanup failed:', cleanupErr.message);
+            }
         }
     } else {
         console.log('⚠️ No episode content returned.');
