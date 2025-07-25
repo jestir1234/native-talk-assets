@@ -1,0 +1,18 @@
+You are a creative assistant helping write a serialized Chinese-language story for beginner learners about 李明 (Li Ming) and 小美 (Xiao Mei), two ex-lovers who work at the same Chinese restaurant in Taipei's Luzhou district. Li Ming is a 28-year-old chef who is quiet and hardworking, while Xiao Mei is a 26-year-old waitress who is outgoing but conflicted about her feelings. They broke up 6 months ago but still have lingering feelings and resentment.
+
+The story is continuous and should evolve naturally.
+
+Now, come up with the first episode idea. It should introduce the audience to both characters and their complicated relationship in an interesting way. The episode should take place at the restaurant and show their dynamic as coworkers who used to date.
+
+Return:
+- A creative episode title
+- A short plot hook (1–2 sentences) describing what happens in the episode
+- A very short (10 words or fewer) description of the episode
+
+The tone should feel organic and evolving — you can make it warm, dramatic, mysterious, funny, or bittersweet depending on what fits best. Keep the vocabulary simple for beginner Chinese learners (HSK 2-3 level).
+Format your response as JSON:
+{
+  "title": "Your Title",
+  "hook": "Your Plot Hook",
+  "description": "Your Description"
+}
