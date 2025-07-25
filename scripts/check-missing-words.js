@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const kuromoji = require("kuromoji");
+const nodejieba = require("nodejieba");
 
 // Validate arguments
 if (process.argv.length < 4) {
@@ -92,11 +93,18 @@ function tokenizeKorean(text) {
 }
 
 function tokenizeChinese(text) {
-    // Chinese doesn't use spaces, so we'll split on punctuation and keep characters
-    return text
-        .replace(/[。！？，；：""''（）【】]/g, " ") // Replace Chinese punctuation with spaces
-        .split(/\s+/)
-        .filter(word => word.length > 0 && /[\u4E00-\u9FAF]/.test(word)); // Keep only Chinese characters
+    // Use nodejieba for Chinese word segmentation
+    try {
+        const tokens = nodejieba.cut(text);
+        return tokens.filter(token => token.length > 0 && /[\u4E00-\u9FAF]/.test(token)); // Keep only Chinese characters
+    } catch (err) {
+        console.warn("⚠️  Nodejieba failed, falling back to simple tokenization");
+        // Fallback to simple tokenization
+        return text
+            .replace(/[。！？，；：""''（）【】]/g, " ") // Replace Chinese punctuation with spaces
+            .split(/\s+/)
+            .filter(word => word.length > 0 && /[\u4E00-\u9FAF]/.test(word)); // Keep only Chinese characters
+    }
 }
 
 function tokenizeSpanish(text) {
@@ -146,7 +154,7 @@ async function tokenizeTextWithPunctuation(text, lang) {
         case "ko":
             return tokenizeKoreanWithPunctuation(text);
         case "zh":
-            return tokenizeChineseWithPunctuation(text);
+            return await tokenizeChineseWithPunctuation(text);
         case "es":
             return tokenizeSpanishWithPunctuation(text);
         case "vi":
@@ -207,12 +215,30 @@ function tokenizeKoreanWithPunctuation(text) {
 
 // Chinese tokenization with punctuation preserved
 function tokenizeChineseWithPunctuation(text) {
-    return text
-        .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
-        .split(/([。！？、，；：""''（）【】\s]+)/)
-        .filter(word => word.length > 0)
-        .map(word => word.trim())
-        .filter(word => word.length > 0);
+    return new Promise((resolve, reject) => {
+        try {
+            // Use nodejieba for Chinese word segmentation
+            const tokens = nodejieba.cut(text.replace(/\r?\n/g, ' '));
+            
+            // Filter out empty tokens and preserve punctuation
+            const result = tokens
+                .filter(token => token.length > 0)
+                .map(token => token.trim())
+                .filter(token => token.length > 0);
+            
+            resolve(result);
+        } catch (err) {
+            console.warn("⚠️  Nodejieba failed, falling back to simple tokenization");
+            // Fallback to simple tokenization that preserves punctuation
+            const words = text
+                .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
+                .split(/([。！？、，；：""''（）【】\s]+)/)
+                .filter(word => word.length > 0)
+                .map(word => word.trim())
+                .filter(word => word.length > 0);
+            resolve(words);
+        }
+    });
 }
 
 // Spanish tokenization with punctuation preserved

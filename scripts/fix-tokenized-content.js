@@ -1,6 +1,8 @@
-const fs = require('fs');
+require('dotenv').config();
 const path = require('path');
+const fs = require('fs');
 const kuromoji = require('kuromoji');
+const nodejieba = require('nodejieba');
 
 // Language detection and tokenization with punctuation preserved
 async function tokenizeTextWithPunctuation(text, lang) {
@@ -12,7 +14,7 @@ async function tokenizeTextWithPunctuation(text, lang) {
         case "ko":
             return tokenizeKoreanWithPunctuation(text);
         case "zh":
-            return tokenizeChineseWithPunctuation(text);
+            return await tokenizeChineseWithPunctuation(text);
         case "es":
             return tokenizeSpanishWithPunctuation(text);
         case "vi":
@@ -73,12 +75,30 @@ function tokenizeKoreanWithPunctuation(text) {
 
 // Chinese tokenization with punctuation preserved
 function tokenizeChineseWithPunctuation(text) {
-    return text
-        .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
-        .split(/([。！？、，；：""''（）【】\s]+)/)
-        .filter(word => word.length > 0)
-        .map(word => word.trim())
-        .filter(word => word.length > 0);
+    return new Promise((resolve, reject) => {
+        try {
+            // Use nodejieba for Chinese word segmentation
+            const tokens = nodejieba.cut(text.replace(/\r?\n/g, ' '));
+            
+            // Filter out empty tokens and preserve punctuation
+            const result = tokens
+                .filter(token => token.length > 0)
+                .map(token => token.trim())
+                .filter(token => token.length > 0);
+            
+            resolve(result);
+        } catch (err) {
+            console.warn("⚠️  Nodejieba failed, falling back to simple tokenization");
+            // Fallback to simple tokenization that preserves punctuation
+            const words = text
+                .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
+                .split(/([。！？、，；：""''（）【】\s]+)/)
+                .filter(word => word.length > 0)
+                .map(word => word.trim())
+                .filter(word => word.length > 0);
+            resolve(words);
+        }
+    });
 }
 
 // Spanish tokenization with punctuation preserved
