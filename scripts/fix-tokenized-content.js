@@ -26,6 +26,7 @@ async function tokenizeTextWithPunctuation(text, lang) {
 // English tokenization with punctuation preserved
 function tokenizeEnglishWithPunctuation(text) {
     return text
+        .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
         .toLowerCase()
         .split(/([.!?,;:""''()\s]+)/)
         .filter(word => word.length > 0)
@@ -41,6 +42,7 @@ function tokenizeJapaneseWithPunctuation(text) {
                 console.warn("⚠️  Kuromoji failed, falling back to simple tokenization");
                 // Fallback to simple tokenization that preserves punctuation
                 const words = text
+                    .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
                     .split(/([。！？、，；：""''（）【】\s]+)/)
                     .filter(word => word.length > 0)
                     .map(word => word.trim())
@@ -49,7 +51,7 @@ function tokenizeJapaneseWithPunctuation(text) {
                 return;
             }
             
-            const tokens = tokenizer.tokenize(text);
+            const tokens = tokenizer.tokenize(text.replace(/\r?\n/g, ' ')); // Replace line breaks before tokenizing
             const words = tokens
                 .map(token => token.surface_form) // Get the surface form (original text)
                 .filter(word => word.length > 0);
@@ -62,6 +64,7 @@ function tokenizeJapaneseWithPunctuation(text) {
 // Korean tokenization with punctuation preserved
 function tokenizeKoreanWithPunctuation(text) {
     return text
+        .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
         .split(/([。！？、，；：""''（）【】\s]+)/)
         .filter(word => word.length > 0)
         .map(word => word.trim())
@@ -71,6 +74,7 @@ function tokenizeKoreanWithPunctuation(text) {
 // Chinese tokenization with punctuation preserved
 function tokenizeChineseWithPunctuation(text) {
     return text
+        .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
         .split(/([。！？、，；：""''（）【】\s]+)/)
         .filter(word => word.length > 0)
         .map(word => word.trim())
@@ -80,6 +84,7 @@ function tokenizeChineseWithPunctuation(text) {
 // Spanish tokenization with punctuation preserved
 function tokenizeSpanishWithPunctuation(text) {
     return text
+        .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
         .toLowerCase()
         .split(/([.!?,;:""''()\s]+)/)
         .filter(word => word.length > 0)
@@ -90,6 +95,7 @@ function tokenizeSpanishWithPunctuation(text) {
 // Vietnamese tokenization with punctuation preserved
 function tokenizeVietnameseWithPunctuation(text) {
     return text
+        .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
         .toLowerCase()
         .split(/([.!?,;:""''()\s]+)/)
         .filter(word => word.length > 0)
