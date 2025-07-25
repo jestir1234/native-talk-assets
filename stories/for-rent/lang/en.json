@@ -2,6 +2,73 @@
   "title": "For Rent",
   "description": "A story about a rent-a-friend service in Tokyo",
   "chapters": [
-
+    {
+      "id": "ch1",
+      "title": "渋谷の迷子犬とビラの山",
+      "description": "Flyering job unexpectedly becomes a heartwarming lost puppy rescue mission.",
+      "sentences": {
+        "午前11時、渋谷スクランブル交差点。": "11 AM, Shibuya Scramble Crossing.",
+        "レンタル田中、今日の任務はビラ配り。": "Rental Tanaka's mission today is distributing flyers.",
+        "千円の時給で、人の視線を避けるプロになった気分だ。": "For 1,000 yen an hour, I feel like I've become a professional at avoiding people's gaze.",
+        "皆、まるで幽霊でも見るかのように私を避ける。": "Everyone avoids me as if I were a ghost.",
+        "あと百枚。": "A hundred more to go.",
+        "退屈なノルマにうんざりしながら、足元に目をやった。": "Feeling fed up with the dull quota, I glanced down at my feet.",
+        "茶色い毛玉が、小さく震えている。": "A brown furball was trembling slightly.",
+        "子犬だ。": "It's a puppy.",
+        "首輪なし。": "No collar.",
+        "こんな喧騒の中で、よくまあ生きているものだ。": "It's amazing it's alive in such chaos.",
+        "私と一緒で、ここが居場所じゃないのに、ここにいる。": "Just like me, it's here even though this isn't where it belongs.",
+        "手にはまだビラがずっしり。": "The flyers in my hand still felt heavy.",
+        "しかし、このまま放っておくのも寝覚めが悪い。": "But leaving it like this would weigh on my conscience.",
+        "結局、ため息一つ、ビラの束を脇に抱え、子犬を拾い上げた。": "In the end, with a sigh, I tucked the bundle of flyers under my arm and picked up the puppy.",
+        "掌の上の小さな命。": "A tiny life in my palm.",
+        "全く、余計な仕事が増えた。": "Oh great, more unnecessary work.",
+        "ポケットでスマホが震える。": "My smartphone vibrates in my pocket.",
+        "次の依頼か。": "Is that the next assignment?",
+        "まずはこの毛玉だ。": "First, this furball."
+      }
+    },
+    {
+      "id": "ch2",
+      "title": "小さな命、大きな依頼",
+      "description": "Puppy complicates new formal stand-in gig.",
+      "sentences": {
+        "渋谷の雑踏を抜け、子犬を抱えながらスマホを覗く。": "Pushing through the Shibuya crowds, I peered at my smartphone, a puppy cradled in my arms.",
+        "新しい依頼は「代理出席」。": "My new assignment: 'proxy attendance'.",
+        "「…は？": "...Huh?",
+        "」思わず声が出た。": "I blurted out without thinking.",
+        "場所は都内の高級ホテル、ドレスコードは『フォーマル』。": "The location was a luxury hotel in Tokyo, and the dress code was 'formal'.",
+        "私のいつものレンタル衣装じゃ無理だし、そもそも、この子が…。": "My usual rented outfits wouldn't work for this, and then there's *him*...",
+        "抱きかかえた子犬が、クンクン鼻を鳴らし、私のTシャツの裾を甘噛みする。": "The puppy in my arms whimpered softly and gently nipped the hem of my T-shirt.",
+        "さっきまでの大人しさはどこへやら、元気いっぱいの『営業妨害』だ。": "Gone was the quiet demeanor it had just moments ago; it was now a lively 'business obstruction'.",
+        "「まさか犬同伴で披露宴に出るわけにもいかないしね。": "I can't possibly attend a wedding reception with a dog, can I?",
+        "」  エミコはため息をついた。": "Emiko sighed.",
+        "この小さな命をどうするか。": "What to do with this small life?",
+        "依頼まであと3時間。": "Only three hours until the assignment.",
+        "とりあえず、最寄りのペットホテルを検索する指が、妙に震えていた。": "My finger, as I searched for the nearest pet hotel, was strangely trembling."
+      }
+    },
+    {
+      "id": "ch3",
+      "title": "迷子の足跡と不思議な縁",
+      "description": "エミコ、風変わりな店で子犬の意外な解決策を見つける。",
+      "sentences": {
+        "迫り来る３時間のタイムリミットに、エミコは焦っていた。": "Emiko was frantic as the three-hour deadline loomed.",
+        "スマホで検索したペットホテルは、どこも「本日満室」か「予約必須」の表示ばかり。": "Every pet hotel she searched for on her smartphone showed either \"No Vacancy Today\" or \"Reservations Required.\"",
+        "抱きかかえた子犬は、時折小さな声で鳴き、エミコの焦燥感をさらに煽る。": "The puppy she held in her arms occasionally whimpered, further fueling Emiko's growing anxiety.",
+        "渋谷の裏通りをさまよっていると、場末のスナックとコインランドリーの間に、奇妙な看板を見つけた。": "Wandering through the back streets of Shibuya, she spotted a strange sign nestled between a rundown snack bar and a laundromat.",
+        "「何でも相談所 兼 骨董品 兼 猫カフェ（仮）」と手書きされたそれは、まさしく多目的ショップの様相を呈していた。": "Hand-written with \"Anything Consultation Office & Antiques & Cat Cafe (Provisional),\" it truly presented itself as a multi-purpose shop.",
+        "「あの…すみません」エミコが引き戸を開けると、中には埃っぽい骨董品と、気まぐれに店を闊歩する猫が数匹。": "\"Excuse me...\" Emiko said as she slid open the door. Inside were dusty antiques and several cats whimsically strolling through the shop.",
+        "奥から現れたのは、色褪せたアロハシャツを着た白髪の男性だった。": "From the back emerged a white-haired man wearing a faded Aloha shirt.",
+        "「おや、珍しいお客さんだね。": "\"Well, well, a rare customer,\"",
+        "その子犬、どうしたんだい？": "\"What about that puppy?\"",
+        "」店主はエミコが口を開く前に、子犬に目を向けた。": "the proprietor said, looking at the puppy before Emiko could speak.",
+        "エミコは事情を簡潔に説明した。": "Emiko briefly explained the situation.",
+        "「仕事の間だけ預かってくれる所を探していて…」  すると店主はニヤリと笑った。": "\"I'm looking for a place that can look after it just while I'm at work...\" The proprietor then grinned.",
+        "「なるほどねぇ。": "\"Oh, I see.\"",
+        "うちはペットホテルじゃないが、その子、しばらく見ててあげてもいいよ。": "\"We're not a pet hotel, but I can look after the little one for a while.",
+        "タダとはいかないが、面白いものがあるからね…」": "It won't be free, but I have something interesting in mind...\""
+      }
+    }
   ]
 }

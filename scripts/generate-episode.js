@@ -4,10 +4,12 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-// Get arguments: story name, source language, target language
+// Get arguments: story name, source language, target language, serialized flag, init flag
 const STORY_NAME = process.argv[2] || 'still-dead-still-bored';
 const SOURCE_LANG = process.argv[3] || 'en';
 const TARGET_LANG = process.argv[4] || 'ja';
+const IS_SERIALIZED = process.argv.includes('--serialized');
+const IS_INIT = process.argv.includes('--init');
 
 const sourceLangToDictMap = {
     'en': 'english',
@@ -20,10 +22,13 @@ const sourceLangToDictMap = {
 
 // Validate arguments
 if (process.argv.length < 3) {
-    console.error('Usage: node scripts/generate-episode.js <story-name> [source-language] [target-language]');
+    console.error('Usage: node scripts/generate-episode.js <story-name> [source-language] [target-language] [--serialized] [--init]');
     console.error('Example: node scripts/generate-episode.js still-dead-still-bored en ja');
-    console.error('Example: node scripts/generate-episode.js the-barista ja en');
+    console.error('Example: node scripts/generate-episode.js for-rent ja en --serialized');
+    console.error('Example: node scripts/generate-episode.js for-rent en ja --init');
     console.error('Supported languages: en, ja, ko, zh, es, vi');
+    console.error('Use --serialized flag for stories that maintain continuity across episodes');
+    console.error('Use --init flag to use initialization prompts for new stories');
     process.exit(1);
 }
 
@@ -60,7 +65,7 @@ const NEW_DICT_PATH = path.resolve(__dirname, `./dictionary_entries_output_${TAR
 const IMAGE_META_PATH = path.resolve(__dirname, './episode_meta.json');
 
 // Configuration for the current story
-const PROMPTS_DIR = path.resolve(__dirname, `./episode_prompts/${STORY_NAME}`);
+const PROMPTS_DIR = path.resolve(__dirname, `./episode_prompts/${STORY_NAME}${IS_INIT ? '/init' : ''}`);
 
 // Validate that the story exists
 if (!fs.existsSync(path.resolve(__dirname, `../stories/${STORY_NAME}`))) {
@@ -77,7 +82,12 @@ if (!fs.existsSync(path.resolve(__dirname, `../stories/${STORY_NAME}`))) {
 // Validate that prompts exist for this story
 if (!fs.existsSync(PROMPTS_DIR)) {
     console.error(`❌ Prompts directory not found: ${PROMPTS_DIR}`);
-    console.error('Please create prompt files for this story first.');
+    if (IS_INIT) {
+        console.error('Please create init prompt files for this story first.');
+        console.error('Expected location: scripts/episode_prompts/{story-name}/init/');
+    } else {
+        console.error('Please create prompt files for this story first.');
+    }
     process.exit(1);
 }
 
@@ -103,7 +113,48 @@ function readPrompt(promptName, variables = {}) {
     
     let prompt = fs.readFileSync(promptPath, 'utf-8');
     
-    // Interpolate variables
+    // For serialized stories, add continuity data from meta.json
+    if (IS_SERIALIZED) {
+        const meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8'));
+        
+        // Build past summary from plot summaries
+        let pastSummary = '';
+        if (meta.plot_summary && meta.plot_summary.length > 0) {
+            pastSummary += 'Previous episodes:\n';
+            meta.plot_summary.forEach((summary, index) => {
+                pastSummary += `Episode ${index + 1}: ${summary}\n`;
+            });
+            pastSummary += '\n';
+        }
+        
+        // Add supporting characters
+        if (meta.support_characters && Object.keys(meta.support_characters).length > 0) {
+            pastSummary += 'Supporting characters:\n';
+            Object.entries(meta.support_characters).forEach(([name, description]) => {
+                pastSummary += `- ${name}: ${description}\n`;
+            });
+            pastSummary += '\n';
+        }
+        
+        // Add open threads
+        if (meta.open_threads && meta.open_threads.length > 0) {
+            pastSummary += 'Ongoing plot threads:\n';
+            meta.open_threads.forEach(thread => {
+                pastSummary += `- ${thread}\n`;
+            });
+            pastSummary += '\n';
+        }
+        
+        // Add protagonist state if available
+        if (meta.protagonist && meta.protagonist.current_state) {
+            pastSummary += `Emiko's current state: ${meta.protagonist.current_state}\n\n`;
+        }
+        
+        // Replace the placeholder with the actual summary
+        prompt = prompt.replace(/\${PAST_SUMMARY}/g, pastSummary);
+    }
+    
+    // Interpolate other variables
     Object.entries(variables).forEach(([key, value]) => {
         const placeholder = `\${${key}}`;
         prompt = prompt.replace(new RegExp(placeholder.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), value);
@@ -155,6 +206,12 @@ async function generateEpisodeMetadata() {
 (async () => {
     console.log(`📚 Generating episode for story: ${STORY_NAME}`);
     console.log(`🌐 Language pair: ${SOURCE_LANG} → ${TARGET_LANG}`);
+    if (IS_INIT) {
+        console.log(`🚀 Using initialization prompts from: ${PROMPTS_DIR}`);
+    }
+    if (IS_SERIALIZED) {
+        console.log(`📚 Serialized story mode enabled`);
+    }
     
     const meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8'));
 
@@ -256,6 +313,12 @@ Do not include the episode title in the story.`;
         // Translate episode to target language
         console.log(`🌐 Translating episode to ${TARGET_LANG}...`);
         execSync(`node scripts/translate-episode.js ${STORY_NAME} ${SOURCE_LANG} ${TARGET_LANG}`, { stdio: 'inherit' });
+
+        // Process serialized story if flag is set
+        if (IS_SERIALIZED) {
+            console.log('📚 Processing serialized story continuity...');
+            execSync(`node scripts/summarize-episode.js ${STORY_NAME} ${episodeNum}`, { stdio: 'inherit' });
+        }
 
         // ✅ Cleanup temp files
         try {

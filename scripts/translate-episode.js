@@ -65,18 +65,61 @@ async function callGemini(prompt) {
     }
 }
 
-function parseSentences(text) {
-    // Split text into sentences using regex
-    // This handles periods, exclamation marks, question marks, and ellipses
-    const sentences = text
-        .replace(/\r?\n/g, ' ')  // Replace newlines with spaces
-        .replace(/([.!?…]+)\s+/g, '$1|')  // Add separator after sentence endings
-        .split('|')
-        .map(sentence => sentence.trim())
-        .filter(sentence => sentence.length > 0)
-        .filter(sentence => !/^\s*$/.test(sentence));  // Remove empty sentences
-    
-    return sentences;
+function parseSentences(text, language) {
+    // Language-specific sentence parsing
+    switch (language.toLowerCase()) {
+        case "en":
+        case "es":
+        case "vi":
+            // English, Spanish, Vietnamese use similar punctuation
+            return text
+                .replace(/\r?\n/g, ' ')  // Replace newlines with spaces
+                .replace(/([.!?…]+)\s+/g, '$1|')  // Add separator after sentence endings
+                .split('|')
+                .map(sentence => sentence.trim())
+                .filter(sentence => sentence.length > 0)
+                .filter(sentence => !/^\s*$/.test(sentence));
+        
+        case "ja":
+            // Japanese uses different punctuation: 。！？、 etc.
+            return text
+                .replace(/\r?\n/g, ' ')  // Replace newlines with spaces
+                .replace(/([。！？]+)\s*/g, '$1|')  // Add separator after Japanese sentence endings
+                .split('|')
+                .map(sentence => sentence.trim())
+                .filter(sentence => sentence.length > 0)
+                .filter(sentence => !/^\s*$/.test(sentence));
+        
+        case "ko":
+            // Korean uses similar punctuation to Japanese
+            return text
+                .replace(/\r?\n/g, ' ')  // Replace newlines with spaces
+                .replace(/([。！？]+)\s*/g, '$1|')  // Add separator after Korean sentence endings
+                .split('|')
+                .map(sentence => sentence.trim())
+                .filter(sentence => sentence.length > 0)
+                .filter(sentence => !/^\s*$/.test(sentence));
+        
+        case "zh":
+            // Chinese uses similar punctuation to Japanese
+            return text
+                .replace(/\r?\n/g, ' ')  // Replace newlines with spaces
+                .replace(/([。！？]+)\s*/g, '$1|')  // Add separator after Chinese sentence endings
+                .split('|')
+                .map(sentence => sentence.trim())
+                .filter(sentence => sentence.length > 0)
+                .filter(sentence => !/^\s*$/.test(sentence));
+        
+        default:
+            // Fallback to English pattern
+            return text
+                .replace(/\r?\n/g, ' ')
+                .replace(/([.!?…]+)\s+/g, '$1|')
+                .split('|')
+                .map(sentence => sentence.trim())
+                .filter(sentence => sentence.length > 0)
+                .filter(sentence => !/^\s*$/.test(sentence));
+    }
 }
 
 async function translateSentences(sentences, episodeNum, title, description) {
@@ -170,7 +213,7 @@ async function main() {
     
     // Parse into sentences
     console.log('📝 Parsing episode into sentences...');
-    const sentences = parseSentences(episodeContent);
+    const sentences = parseSentences(episodeContent, SOURCE_LANG);
     console.log(`✅ Found ${sentences.length} sentences`);
     
     // Translate sentences
