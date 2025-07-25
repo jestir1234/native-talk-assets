@@ -136,14 +136,111 @@ async function tokenizeText(text, lang) {
     }
 }
 
+// Tokenize text while preserving punctuation for content field
+async function tokenizeTextWithPunctuation(text, lang) {
+    switch (lang.toLowerCase()) {
+        case "en":
+            return tokenizeEnglishWithPunctuation(text);
+        case "ja":
+            return await tokenizeJapaneseWithPunctuation(text);
+        case "ko":
+            return tokenizeKoreanWithPunctuation(text);
+        case "zh":
+            return tokenizeChineseWithPunctuation(text);
+        case "es":
+            return tokenizeSpanishWithPunctuation(text);
+        case "vi":
+            return tokenizeVietnameseWithPunctuation(text);
+        default:
+            console.warn(`⚠️  Unknown language '${lang}', using English tokenization`);
+            return tokenizeEnglishWithPunctuation(text);
+    }
+}
+
+// English tokenization with punctuation preserved
+function tokenizeEnglishWithPunctuation(text) {
+    return text
+        .toLowerCase()
+        .split(/\s+/)
+        .map(word => word.replace(/[^a-zA-Z0-9']/g, ""))
+        .filter(Boolean);
+}
+
+// Japanese tokenization with punctuation preserved
+function tokenizeJapaneseWithPunctuation(text) {
+    return new Promise((resolve, reject) => {
+        kuromoji.builder({ dicPath: "node_modules/kuromoji/dict" }).build((err, tokenizer) => {
+            if (err) {
+                console.warn("⚠️  Kuromoji failed, falling back to simple tokenization");
+                // Fallback to simple tokenization that preserves punctuation
+                const words = text
+                    .split(/([。！？、，；：""''（）【】\s]+)/)
+                    .filter(word => word.length > 0)
+                    .map(word => word.trim())
+                    .filter(word => word.length > 0);
+                resolve(words);
+                return;
+            }
+            
+            const tokens = tokenizer.tokenize(text);
+            const words = tokens
+                .map(token => token.surface_form) // Get the surface form (original text)
+                .filter(word => word.length > 0);
+            
+            resolve(words);
+        });
+    });
+}
+
+// Korean tokenization with punctuation preserved
+function tokenizeKoreanWithPunctuation(text) {
+    return text
+        .split(/([。！？、，；：""''（）【】\s]+)/)
+        .filter(word => word.length > 0)
+        .map(word => word.trim())
+        .filter(word => word.length > 0);
+}
+
+// Chinese tokenization with punctuation preserved
+function tokenizeChineseWithPunctuation(text) {
+    return text
+        .split(/([。！？、，；：""''（）【】\s]+)/)
+        .filter(word => word.length > 0)
+        .map(word => word.trim())
+        .filter(word => word.length > 0);
+}
+
+// Spanish tokenization with punctuation preserved
+function tokenizeSpanishWithPunctuation(text) {
+    return text
+        .toLowerCase()
+        .split(/([.!?,;:""''()\s]+)/)
+        .filter(word => word.length > 0)
+        .map(word => word.trim())
+        .filter(word => word.length > 0);
+}
+
+// Vietnamese tokenization with punctuation preserved
+function tokenizeVietnameseWithPunctuation(text) {
+    return text
+        .toLowerCase()
+        .split(/([.!?,;:""''()\s]+)/)
+        .filter(word => word.length > 0)
+        .map(word => word.trim())
+        .filter(word => word.length > 0);
+}
+
 // Main function
 async function main() {
     // Load files
     const dictionary = JSON.parse(fs.readFileSync(dictionaryPath, "utf-8"));
     const text = fs.readFileSync(chapterTextPath, "utf-8");
 
-    // Tokenize based on language
+    // Tokenize for missing words check (without punctuation)
     const words = await tokenizeText(text, language);
+
+    // Tokenize for content preservation (with punctuation)
+    const wordsWithPunctuation = await tokenizeTextWithPunctuation(text, language);
 
     // Normalize dictionary keys based on language
     let dictKeys;
@@ -154,7 +251,7 @@ async function main() {
         dictKeys = Object.keys(dictionary);
     }
 
-    // Check for missing
+    // Check for missing words (using words without punctuation)
     const uniqueWords = [...new Set(words)];
     const missingWords = uniqueWords.filter((word) => !dictKeys.includes(word));
 
@@ -165,8 +262,8 @@ async function main() {
     console.log(`📊 Total unique words: ${uniqueWords.length}`);
     console.log(`📊 Missing words: ${missingWords.length}`);
 
-    // Save tokenized text to temporary file
-    fs.writeFileSync(tokenizedOutputPath, words.join("|"), "utf-8");
+    // Save tokenized text with punctuation to temporary file
+    fs.writeFileSync(tokenizedOutputPath, wordsWithPunctuation.join("|"), "utf-8");
     console.log(`✅ Tokenized text saved to: ${tokenizedOutputPath}`);
 }
 

@@ -4316,146 +4316,871 @@
     "meaning": "rare; unusual; uncommon",
     "type": "adjective"
   },
+  "さて": {
+    "reading": "sate",
+    "meaning": "Well, now; Let's see; Well then",
+    "type": "interjection/adverb"
+  },
+  "預かり": {
+    "reading": "azukari",
+    "meaning": "custody; keeping; receiving (something for safekeeping)",
+    "type": "noun"
+  },
+  "件": {
+    "reading": "ken",
+    "meaning": "matter; affair; case; item",
+    "type": "noun"
+  },
+  "言い": {
+    "reading": "ii",
+    "meaning": "saying; statement; expression",
+    "type": "noun"
+  },
+  "かけ": {
+    "reading": "kake",
+    "meaning": "act of; attempt; in the process of; dash; stroke",
+    "type": "noun/suffix"
+  },
+  "にこやか": {
+    "reading": "niko yaka",
+    "meaning": "cheerful; pleasant; smiling",
+    "type": "adjective"
+  },
+  "首": {
+    "reading": "kubi",
+    "meaning": "neck; head",
+    "type": "noun"
+  },
+  "振る": {
+    "reading": "furu",
+    "meaning": "to shake; to wave; to wield",
+    "type": "verb"
+  },
+  "お金": {
+    "reading": "okane",
+    "meaning": "money",
+    "type": "noun"
+  },
+  "要り": {
+    "reading": "yori",
+    "meaning": "need; requirement",
+    "type": "noun"
+  },
+  "ませ": {
+    "reading": "mase",
+    "meaning": "polite negative ending (humble)",
+    "type": "suffix"
+  },
+  "お願い": {
+    "reading": "onegai",
+    "meaning": "request; favor; please",
+    "type": "noun/expression"
+  },
+  "眉": {
+    "reading": "mayu",
+    "meaning": "eyebrow",
+    "type": "noun"
+  },
+  "ひそめ": {
+    "reading": "hisome",
+    "meaning": "to lower (one's voice, eyebrows)",
+    "type": "verb"
+  },
+  "男": {
+    "reading": "otoko",
+    "meaning": "man; male",
+    "type": "noun"
+  },
+  "読め": {
+    "reading": "yome",
+    "meaning": "can read; be able to read",
+    "type": "verb"
+  },
+  "ええ": {
+    "reading": "ee",
+    "meaning": "yes; all right; good",
+    "type": "interjection/adverb"
+  },
+  "出番": {
+    "reading": "deban",
+    "meaning": "turn; one's turn; time to appear",
+    "type": "noun"
+  },
+  "薄暗い": {
+    "reading": "usugurai",
+    "meaning": "dimly lit; dusky; shadowy",
+    "type": "adjective"
+  },
+  "一角": {
+    "reading": "ikaku",
+    "meaning": "one corner; a section; a part",
+    "type": "noun"
+  },
+  "差し": {
+    "reading": "sashi",
+    "meaning": "offering; presenting; inserting",
+    "type": "noun/verb"
+  },
+  "あそこ": {
+    "reading": "asoko",
+    "meaning": "over there; there",
+    "type": "adverb"
+  },
+  "いらっしゃる": {
+    "reading": "irassharu",
+    "meaning": "to be; to come (honorific)",
+    "type": "verb"
+  },
+  "お客様": {
+    "reading": "okyaku sama",
+    "meaning": "customer; guest (honorific)",
+    "type": "noun"
+  },
+  "付き合い": {
+    "reading": "tsuki ai",
+    "meaning": "association; relationship; dealings",
+    "type": "noun"
+  },
+  "願い": {
+    "reading": "negai",
+    "meaning": "wish; request; prayer",
+    "type": "noun"
+  },
+  "豪華": {
+    "reading": "gouka",
+    "meaning": "luxurious; splendid; gorgeous",
+    "type": "adjective"
+  },
+  "着物": {
+    "reading": "kimono",
+    "meaning": "kimono (traditional Japanese clothing)",
+    "type": "noun"
+  },
+  "古い": {
+    "reading": "furui",
+    "meaning": "old",
+    "type": "adjective"
+  },
+  "日本人": {
+    "reading": "nihonjin",
+    "meaning": "Japanese person",
+    "type": "noun"
+  },
+  "形": {
+    "reading": "katachi",
+    "meaning": "shape; form; figure",
+    "type": "noun"
+  },
+  "鎮座": {
+    "reading": "chinza",
+    "meaning": "to be enshrined; to be seated (majestically)",
+    "type": "verb"
+  },
+  "あれ": {
+    "reading": "are",
+    "meaning": "that; that thing",
+    "type": "pronoun"
+  },
+  "人形": {
+    "reading": "ningyou",
+    "meaning": "doll; puppet",
+    "type": "noun"
+  },
+  "話し相手": {
+    "reading": "hanashi aite",
+    "meaning": "conversation partner; someone to talk to",
+    "type": "noun"
+  },
+  "困惑": {
+    "reading": "konwaku",
+    "meaning": "confusion; perplexity",
+    "type": "noun"
+  },
+  "浮かぶ": {
+    "reading": "ukabu",
+    "meaning": "to float; to come to mind",
+    "type": "verb"
+  },
+  "それと": {
+    "reading": "soreto",
+    "meaning": "and that; besides that",
+    "type": "conjunction/adverb"
+  },
+  "どうせ": {
+    "reading": "douse",
+    "meaning": "anyway; in any case; anyhow",
+    "type": "adverb"
+  },
+  "格好": {
+    "reading": "kakko",
+    "meaning": "appearance; style; manner",
+    "type": "noun"
+  },
+  "良く": {
+    "reading": "yoku",
+    "meaning": "well; often; usually",
+    "type": "adverb"
+  },
+  "決め": {
+    "reading": "kime",
+    "meaning": "decision; determination",
+    "type": "noun"
+  },
+  "いただき": {
+    "reading": "itadaki",
+    "meaning": "to receive; to accept (humble)",
+    "type": "verb"
+  },
+  "ニヤリ": {
+    "reading": "niyari",
+    "meaning": "to smirk; to grin slyly",
+    "type": "verb/onomatopoeia"
+  },
+  "桐": {
+    "reading": "kiri",
+    "meaning": "paulownia (tree)",
+    "type": "noun"
+  },
+  "箪笥": {
+    "reading": "tansu",
+    "meaning": "chest of drawers; wardrobe",
+    "type": "noun"
+  },
+  "引っ張り": {
+    "reading": "hippari",
+    "meaning": "pulling; dragging",
+    "type": "noun"
+  },
+  "出し": {
+    "reading": "dashi",
+    "meaning": "taking out; putting out; producing",
+    "type": "noun"
+  },
+  "かぶっ": {
+    "reading": "kabut",
+    "meaning": "to put on (a hat); to cover (one's head)",
+    "type": "verb"
+  },
+  "ものの": {
+    "reading": "mono no",
+    "meaning": "although; even though; however",
+    "type": "conjunction"
+  },
   "entries": [
     {
       "word": {
-        "reading": "okyaku",
-        "meaning": "customer; guest",
-        "type": "noun"
-      }
-    },
-    {
-      "word": {
-        "reading": "dai",
-        "meaning": "counter (used with certain nouns, like tables or dishes)",
-        "type": "counter"
-      }
-    },
-    {
-      "word": {
-        "reading": "kuchi",
-        "meaning": "mouth; opening; entrance",
-        "type": "noun"
+        "reading": "eto",
+        "meaning": "Well, uhm... (used as a filler word)",
+        "type": "interjection"
       }
     },
     {
       "word": {
         "reading": "mae",
-        "meaning": "front; before; in front of",
+        "meaning": "front; before; previous",
         "type": "noun/adverb"
       }
     },
     {
       "word": {
-        "reading": "muke",
-        "meaning": "oriented; directed; intended for",
-        "type": "suffix"
+        "reading": "tsutsuma",
+        "meaning": "to wrap; to enclose; to contain",
+        "type": "verb"
       }
     },
     {
       "word": {
-        "reading": "jijou",
-        "meaning": "circumstances; situation; the facts of the case",
-        "type": "noun"
-      }
-    },
-    {
-      "word": {
-        "reading": "kansetsu",
-        "meaning": "concise; brief; succinct",
+        "reading": "nagai",
+        "meaning": "long",
         "type": "adjective"
       }
     },
     {
       "word": {
-        "reading": "setsumei",
-        "meaning": "explanation; description",
+        "reading": "saigetsu",
+        "meaning": "years; time; long period",
         "type": "noun"
       }
     },
     {
       "word": {
-        "reading": "azukatt",
-        "meaning": "to have been entrusted with; to have received in one's care (past tense)",
+        "reading": "kei",
+        "meaning": "to pass; to elapse; to experience",
         "type": "verb"
       }
     },
     {
       "word": {
-        "reading": "kureru",
-        "meaning": "to give (to me/us); to do something for someone (humble)",
+        "reading": "urayami",
+        "meaning": "sorrow; worry; anxiety",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "obi",
+        "meaning": "to have (a characteristic); to be tinged with",
         "type": "verb"
       }
     },
     {
       "word": {
-        "reading": "sagashi",
-        "meaning": "search; looking for",
-        "type": "noun/verb stem"
+        "reading": "toshite",
+        "meaning": "as; in the capacity of",
+        "type": "particle"
       }
     },
     {
       "word": {
-        "reading": "suru to",
-        "meaning": "when/if...then; upon doing...",
-        "type": "conjunction"
+        "reading": "amata",
+        "meaning": "many; numerous; countless",
+        "type": "adjective/noun"
       }
     },
     {
       "word": {
-        "reading": "niyari",
-        "meaning": "(onomatopoeia) a smirk; a sly smile",
-        "type": "noun/adverb"
-      }
-    },
-    {
-      "word": {
-        "reading": "waratt",
-        "meaning": "laughed (past tense)",
+        "reading": "uke",
+        "meaning": "to receive; to accept",
         "type": "verb"
       }
     },
     {
       "word": {
-        "reading": "naruhodo",
-        "meaning": "I see; that makes sense; understandable",
-        "type": "interjection"
+        "reading": "kokoromiru",
+        "meaning": "to attempt; to try; to endeavor",
+        "type": "verb"
       }
     },
     {
       "word": {
-        "reading": "nee",
-        "meaning": "hey; listen; right?",
-        "type": "interjection"
-      }
-    },
-    {
-      "word": {
-        "reading": "shibaraku",
-        "meaning": "for a while; a little while",
+        "reading": "hajimete",
+        "meaning": "for the first time",
         "type": "adverb"
       }
     },
     {
       "word": {
-        "reading": "age",
-        "meaning": "to offer; to give; to raise (something)",
+        "reading": "shin kokyuu",
+        "meaning": "deep breath",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "kuraianto",
+        "meaning": "client",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "shotaimen",
+        "meaning": "first meeting",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "atari障り",
+        "meaning": "offensive; inappropriate; problematic",
+        "type": "adjective"
+      }
+    },
+    {
+      "word": {
+        "reading": "aisatsu",
+        "meaning": "greeting",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "hairu",
+        "meaning": "to enter; to go in",
         "type": "verb"
       }
     },
     {
       "word": {
-        "reading": "tada",
-        "meaning": "free; gratis; for nothing",
-        "type": "adverb/adjective"
+        "reading": "konnichiwa",
+        "meaning": "hello",
+        "type": "greeting"
       }
     },
     {
       "word": {
-        "reading": "omoshiroi",
-        "meaning": "interesting; funny; amusing",
+        "reading": "ojousan",
+        "meaning": "young lady; miss",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "yoi",
+        "meaning": "good",
         "type": "adjective"
       }
+    },
+    {
+      "word": {
+        "reading": "kuchi",
+        "meaning": "mouth",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "kotoba",
+        "meaning": "word; language",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "karimonono",
+        "meaning": "borrowed item",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "gikochi nakatta",
+        "meaning": "was awkward; felt stiff",
+        "type": "adjective (past tense)"
+      }
+    },
+    {
+      "word": {
+        "reading": "touzen",
+        "meaning": "naturally; of course",
+        "type": "adverb"
+      }
+    },
+    {
+      "word": {
+        "reading": "hanou",
+        "meaning": "reaction; response",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "shimesa",
+        "meaning": "to show; to indicate",
+        "type": "verb"
+      }
+    },
+    {
+      "word": {
+        "reading": "chinmoku",
+        "meaning": "silence",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "kaette",
+        "meaning": "on the contrary; instead",
+        "type": "adverb"
+      }
+    },
+    {
+      "word": {
+        "reading": "zawatsuka",
+        "meaning": "to be in an uproar; to become noisy",
+        "type": "verb"
+      }
+    },
+    {
+      "word": {
+        "reading": "se",
+        "meaning": "to do; to make",
+        "type": "verb"
+      }
+    },
+    {
+      "word": {
+        "reading": "kouki",
+        "meaning": "curiosity",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "michi",
+        "meaning": "to be filled; to be full",
+        "type": "verb"
+      }
+    },
+    {
+      "word": {
+        "reading": "jitto",
+        "meaning": "fixedly; intently",
+        "type": "adverb"
+      }
+    },
+    {
+      "word": {
+        "reading": "tama",
+        "meaning": "soul; spirit",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "nukitora",
+        "meaning": "to extract; to take out",
+        "type": "verb"
+      }
+    },
+    {
+      "word": {
+        "reading": "naishin",
+        "meaning": "inner heart; inner feelings",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "shitauchi",
+        "meaning": "to click one's tongue",
+        "type": "noun/verb"
+      }
+    },
+    {
+      "word": {
+        "reading": "baka ge",
+        "meaning": "absurd; ridiculous",
+        "type": "adjective"
+      }
+    },
+    {
+      "word": {
+        "reading": "daga",
+        "meaning": "but",
+        "type": "conjunction"
+      }
+    },
+    {
+      "word": {
+        "reading": "koinu",
+        "meaning": "puppy",
+        "type": "noun"
+      }
+    },
+    {
+      "word": {
+        "reading": "tame",
+        "meaning": "for the sake of; in order to",
+        "type": "particle"
+      }
+    },
+    {
+      "word": {
+        "reading": "jibun",
+        "meaning": "oneself; self",
+        "type": "pronoun"
+      }
+    },
+    {
+      "word": {
+        "reading": "iikikase",
+        "meaning": "to tell oneself; to persuade oneself",
+        "type": "verb"
+      }
+    },
+    {
+      "word": {
+        "reading": "futatabi",
+        "meaning": "again; once more",
+        "type": "adverb"
+      }
+    },
+    {
+      "word": {
+        "reading": "akai",
+        "meaning": "to open",
+        "type": "verb"
+      }
+    },
+    {
+      "word": {
+        "reading": "damarikond",
+        "meaning": "to fall silent; to become speechless",
+        "type": "verb"
+      }
+    },
+    {
+      "word": {
+        "reading": "shimai",
+        "meaning": "to finish; to end",
+        "type": "verb"
+      }
     }
-  ]
+  ],
+  "まし": {
+    "reading": "mashi",
+    "meaning": "better; preferable; more desirable",
+    "type": "adjective/adverb"
+  },
+  "悩み": {
+    "reading": "nayami",
+    "meaning": "worry; trouble; concern; anxiety; problem",
+    "type": "noun"
+  },
+  "みこ": {
+    "reading": "miko",
+    "meaning": "shrine maiden; priestess",
+    "type": "noun"
+  },
+  "再び": {
+    "reading": "futabi",
+    "meaning": "again; once more",
+    "type": "adverb"
+  },
+  "前": {
+    "reading": "mae",
+    "meaning": "front; before; in front of",
+    "type": "noun/adverb"
+  },
+  "向け": {
+    "reading": "muke",
+    "meaning": "for; toward; facing",
+    "type": "suffix"
+  },
+  "話せ": {
+    "reading": "hanase",
+    "meaning": "speak; talk; be able to talk",
+    "type": "verb"
+  },
+  "さっぱり": {
+    "reading": "sappari",
+    "meaning": "completely; entirely; refreshingly",
+    "type": "adverb"
+  },
+  "見当": {
+    "reading": "kendō",
+    "meaning": "estimate; guess; idea",
+    "type": "noun"
+  },
+  "つか": {
+    "reading": "tsuka",
+    "meaning": "handle; grip; catch",
+    "type": "noun/verb"
+  },
+  "えーと": {
+    "reading": "ēto",
+    "meaning": "um; well; let me see",
+    "type": "interjection"
+  },
+  "お天気": {
+    "reading": "otenki",
+    "meaning": "weather",
+    "type": "noun"
+  },
+  "自分": {
+    "reading": "jibun",
+    "meaning": "oneself; self",
+    "type": "pronoun"
+  },
+  "馬鹿らしく": {
+    "reading": "bakarashiku",
+    "meaning": "foolishly; ridiculously",
+    "type": "adverb"
+  },
+  "引き下がる": {
+    "reading": "hikika garu",
+    "meaning": "withdraw; retreat; give up",
+    "type": "verb"
+  },
+  "仔犬": {
+    "reading": "koinu",
+    "meaning": "puppy",
+    "type": "noun"
+  },
+  "ため": {
+    "reading": "tame",
+    "meaning": "for; in order to; because",
+    "type": "particle/noun"
+  },
+  "っていう": {
+    "reading": "tte iu",
+    "meaning": "that is to say; namely; which is",
+    "type": "quotative particle"
+  },
+  "名前": {
+    "reading": "namae",
+    "meaning": "name",
+    "type": "noun"
+  },
+  "てる": {
+    "reading": "teru",
+    "meaning": "is/are doing (progressive form suffix)",
+    "type": "verbal suffix"
+  },
+  "色々": {
+    "reading": "iroiro",
+    "meaning": "various; many; several",
+    "type": "pronoun/adverb"
+  },
+  "例えば": {
+    "reading": "tatoeba",
+    "meaning": "for example; for instance",
+    "type": "adverb/conjunction"
+  },
+  "話": {
+    "reading": "hanashi",
+    "meaning": "story; talk; conversation",
+    "type": "noun"
+  },
+  "聞く": {
+    "reading": "kiku",
+    "meaning": "to hear; to listen; to ask",
+    "type": "verb"
+  },
+  "とか": {
+    "reading": "toka",
+    "meaning": "and so on; such as; et cetera",
+    "type": "particle"
+  },
+  "時には": {
+    "reading": "tokiniha",
+    "meaning": "sometimes; occasionally",
+    "type": "adverb"
+  },
+  "恋人": {
+    "reading": "koibito",
+    "meaning": "lover; sweetheart",
+    "type": "noun"
+  },
+  "フリ": {
+    "reading": "furi",
+    "meaning": "pretense; act; feigning",
+    "type": "noun"
+  },
+  "たり": {
+    "reading": "tari",
+    "meaning": "sometimes...sometimes (used with ...たり...たり)",
+    "type": "verbal suffix"
+  },
+  "言葉": {
+    "reading": "kotoba",
+    "meaning": "word; language; expression",
+    "type": "noun"
+  },
+  "滑らか": {
+    "reading": "nameraka",
+    "meaning": "smooth; slippery",
+    "type": "adjective"
+  },
+  "始め": {
+    "reading": "hajime",
+    "meaning": "beginning; start",
+    "type": "noun"
+  },
+  "いわ": {
+    "reading": "iwa",
+    "meaning": "say; tell (past tense of iu)",
+    "type": "verb"
+  },
+  "当然": {
+    "reading": "tōzen",
+    "meaning": "natural; of course; naturally",
+    "type": "adjective/adverb"
+  },
+  "相変わらず": {
+    "reading": "aika warazu",
+    "meaning": "as usual; still; unchanged",
+    "type": "adverb"
+  },
+  "黙っ": {
+    "reading": "damat",
+    "meaning": "silent; keeping silent (stem form of damaru)",
+    "type": "verb (stem)"
+  },
+  "評価": {
+    "reading": "hyōka",
+    "meaning": "evaluation; assessment; appraisal",
+    "type": "noun"
+  },
+  "面白い": {
+    "reading": "omoshiroi",
+    "meaning": "interesting; funny; amusing",
+    "type": "adjective"
+  },
+  "判別": {
+    "reading": "hanbetsu",
+    "meaning": "discrimination; distinction; identification",
+    "type": "noun/verb"
+  },
+  "入れ": {
+    "reading": "ire",
+    "meaning": "put; insert; place (stem form of ireru)",
+    "type": "verb (stem)"
+  },
+  "なけれ": {
+    "reading": "nakere",
+    "meaning": "if not; unless (conditional form of nai)",
+    "type": "verb (conditional)"
+  },
+  "案外": {
+    "reading": "angai",
+    "meaning": "unexpectedly; surprisingly",
+    "type": "adverb"
+  },
+  "楽": {
+    "reading": "raku",
+    "meaning": "easy; comfortable; pleasant",
+    "type": "adjective/noun"
+  },
+  "だって": {
+    "reading": "datte",
+    "meaning": "because; you see; I mean",
+    "type": "particle"
+  },
+  "だけど": {
+    "reading": "kedo",
+    "meaning": "but; however; yet",
+    "type": "conjunction"
+  },
+  "ほど": {
+    "reading": "hodo",
+    "meaning": "about; approximately; degree; extent",
+    "type": "particle"
+  },
+  "抱き上げ": {
+    "reading": "dakiage",
+    "meaning": "lift up; embrace and lift",
+    "type": "verb"
+  },
+  "温かい": {
+    "reading": "atatakai",
+    "meaning": "warm; kind; gentle",
+    "type": "adjective"
+  },
+  "思い出し": {
+    "reading": "omoidashi",
+    "meaning": "remembering; recalling (stem form of omoidasu)",
+    "type": "verb (stem)"
+  },
+  "どうして": {
+    "reading": "dōshite",
+    "meaning": "why; how come?",
+    "type": "adverb"
+  },
+  "でしょ": {
+    "reading": "desho",
+    "meaning": "right?; isn't it?; I guess so",
+    "type": "sentence ending particle"
+  },
+  "呟い": {
+    "reading": "tsubuyai",
+    "meaning": "murmured; muttered (past tense of tsubuyaku)",
+    "type": "verb"
+  },
+  "涼しい": {
+    "reading": "suzushii",
+    "meaning": "cool; refreshing; pleasantly cool",
+    "type": "adjective (i-adjective)"
+  }
 }
