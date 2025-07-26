@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Command: node scripts/copy-dictionary.js ./dictionaries/english/en-v1.json ./dictionaries/english/zh-v1.json en zh
+// Command: node scripts/copy/copy-dictionary.js ./dictionaries/english/en-v1.json ./dictionaries/english/zh-v1.json en zh
 
 const fs = require('fs');
 const path = require('path');

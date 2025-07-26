@@ -115,6 +115,23 @@ async function copyStory(sourcePath, targetPath, targetLanguage) {
         const sourceData = fs.readFileSync(sourcePath, 'utf8');
         const story = JSON.parse(sourceData);
 
+        // Check if target file exists and load existing translations
+        let existingTranslations = null;
+        let translatedStory = null;
+        
+        if (fs.existsSync(targetPath)) {
+            try {
+                const targetData = fs.readFileSync(targetPath, 'utf8');
+                existingTranslations = JSON.parse(targetData);
+                console.log(`📁 Found existing translations at: ${targetPath}`);
+                console.log(`📊 Existing translations: ${existingTranslations.chapters?.length || 0} chapters`);
+            } catch (error) {
+                console.log(`⚠️  Found target file but couldn't parse it, starting fresh: ${targetPath}`);
+            }
+        } else {
+            console.log(`📁 No existing translations found, creating new file: ${targetPath}`);
+        }
+
         // Extract title and description
         const title = story.title;
         const description = story.description;
@@ -123,25 +140,35 @@ async function copyStory(sourcePath, targetPath, targetLanguage) {
         console.log(`Title: "${title}"`);
         console.log(`Description: "${description}"`);
 
-        // Translate title and description
-        console.log(`\n🌐 Translating to ${targetLanguage}...`);
+        // Check if title and description need translation
+        let translatedTitle = existingTranslations?.title;
+        let translatedDescription = existingTranslations?.description;
         
-        const translatedTitle = await translateWithGemini(title, targetLanguage);
-        const translatedDescription = await translateWithGemini(description, targetLanguage);
-        
-        if (translatedTitle) {
-            console.log(`✅ Title translated: "${title}" → "${translatedTitle}"`);
+        if (!translatedTitle || translatedTitle === title) {
+            console.log(`\n🌐 Translating title to ${targetLanguage}...`);
+            translatedTitle = await translateWithGemini(title, targetLanguage);
+            if (translatedTitle) {
+                console.log(`✅ Title translated: "${title}" → "${translatedTitle}"`);
+            }
+        } else {
+            console.log(`✅ Title already translated: "${translatedTitle}"`);
         }
         
-        if (translatedDescription) {
-            console.log(`✅ Description translated: "${description}" → "${translatedDescription}"`);
+        if (!translatedDescription || translatedDescription === description) {
+            console.log(`\n🌐 Translating description to ${targetLanguage}...`);
+            translatedDescription = await translateWithGemini(description, targetLanguage);
+            if (translatedDescription) {
+                console.log(`✅ Description translated: "${description}" → "${translatedDescription}"`);
+            }
+        } else {
+            console.log(`✅ Description already translated: "${translatedDescription}"`);
         }
 
         // Create the translated story structure
-        const translatedStory = {
+        translatedStory = {
             title: translatedTitle || story.title,
             description: translatedDescription || story.description,
-            chapters: []
+            chapters: existingTranslations?.chapters || []
         };
         
         // Loop through chapters and translate their titles and descriptions
@@ -151,6 +178,31 @@ async function copyStory(sourcePath, targetPath, targetLanguage) {
             const chapter = story.chapters[i];
             console.log(`\n📝 Chapter ${i + 1}/${story.chapters.length}: "${chapter.title}"`);
             
+            // Check if this chapter already exists in translations
+            const existingChapter = existingTranslations?.chapters?.find(c => c.id === chapter.id);
+            
+            if (existingChapter) {
+                // Check if the chapter content has changed
+                const sourceSentenceKeys = Object.keys(chapter.sentences);
+                const existingSentenceKeys = Object.keys(existingChapter.sentences);
+                
+                // Check if all sentences exist and match
+                const allSentencesExist = sourceSentenceKeys.every(key => 
+                    existingChapter.sentences[key] && 
+                    existingChapter.sentences[key] !== key // Make sure it's actually translated, not just the original
+                );
+                
+                if (allSentencesExist && 
+                    existingChapter.title !== chapter.title && 
+                    existingChapter.description !== chapter.description) {
+                    console.log(`  ✅ Chapter already fully translated, skipping...`);
+                    translatedStory.chapters[i] = existingChapter;
+                    continue;
+                } else {
+                    console.log(`  🔄 Chapter exists but needs updates, re-translating...`);
+                }
+            }
+            
             // Extract chapter title and description
             const chapterTitle = chapter.title;
             const chapterDescription = chapter.description;
@@ -158,16 +210,28 @@ async function copyStory(sourcePath, targetPath, targetLanguage) {
             console.log(`  Title: "${chapterTitle}"`);
             console.log(`  Description: "${chapterDescription}"`);
             
-            // Translate chapter title and description
-            const translatedChapterTitle = await translateWithGemini(chapterTitle, targetLanguage);
-            const translatedChapterDescription = await translateWithGemini(chapterDescription, targetLanguage);
+            // Check if title and description need translation
+            let translatedChapterTitle = existingChapter?.title;
+            let translatedChapterDescription = existingChapter?.description;
             
-            if (translatedChapterTitle) {
-                console.log(`  ✅ Chapter Title translated: "${chapterTitle}" → "${translatedChapterTitle}"`);
+            if (!translatedChapterTitle || translatedChapterTitle === chapterTitle) {
+                const newTranslatedTitle = await translateWithGemini(chapterTitle, targetLanguage);
+                if (newTranslatedTitle) {
+                    translatedChapterTitle = newTranslatedTitle;
+                    console.log(`  ✅ Chapter Title translated: "${chapterTitle}" → "${translatedChapterTitle}"`);
+                }
+            } else {
+                console.log(`  ✅ Chapter Title already translated: "${translatedChapterTitle}"`);
             }
             
-            if (translatedChapterDescription) {
-                console.log(`  ✅ Chapter Description translated: "${chapterDescription}" → "${translatedChapterDescription}"`);
+            if (!translatedChapterDescription || translatedChapterDescription === chapterDescription) {
+                const newTranslatedDescription = await translateWithGemini(chapterDescription, targetLanguage);
+                if (newTranslatedDescription) {
+                    translatedChapterDescription = newTranslatedDescription;
+                    console.log(`  ✅ Chapter Description translated: "${chapterDescription}" → "${translatedChapterDescription}"`);
+                }
+            } else {
+                console.log(`  ✅ Chapter Description already translated: "${translatedChapterDescription}"`);
             }
             
             // Create translated chapter structure
@@ -175,7 +239,7 @@ async function copyStory(sourcePath, targetPath, targetLanguage) {
                 id: chapter.id,
                 title: translatedChapterTitle || chapter.title,
                 description: translatedChapterDescription || chapter.description,
-                sentences: {}
+                sentences: existingChapter?.sentences || {}
             };
             
             // Add delay between chapters
@@ -188,53 +252,65 @@ async function copyStory(sourcePath, targetPath, targetLanguage) {
             const sentenceKeys = Object.keys(chapter.sentences);
             console.log(`  📝 Processing ${sentenceKeys.length} sentences in batches of 50...`);
             
-            for (let j = 0; j < sentenceKeys.length; j += 50) {
-                const batch = sentenceKeys.slice(j, j + 50);
-                const batchNumber = Math.floor(j / 50) + 1;
-                const totalBatches = Math.ceil(sentenceKeys.length / 50);
+            // Filter out sentences that are already translated
+            const untranslatedSentences = sentenceKeys.filter(key => {
+                const existingTranslation = existingChapter?.sentences?.[key];
+                return !existingTranslation || existingTranslation === key;
+            });
+            
+            if (untranslatedSentences.length === 0) {
+                console.log(`  ✅ All sentences already translated, skipping sentence translation`);
+            } else {
+                console.log(`  📝 Found ${untranslatedSentences.length} untranslated sentences out of ${sentenceKeys.length} total`);
                 
-                console.log(`    Processing batch ${batchNumber}/${totalBatches} (${batch.length} sentences)...`);
-                
-                // Create batch object for translation
-                const batchObject = {};
-                batch.forEach(key => {
-                    batchObject[key] = key; // Use the key as the text to translate
-                });
-                
-                const translations = await translateSentencesBatch(batchObject, targetLanguage);
-                
-                if (translations) {
-                    console.log(`    ✅ Batch ${batchNumber} translated successfully`);
-                    // Log a few examples
-                    const examples = Object.entries(translations).slice(0, 3);
-                    examples.forEach(([original, translated]) => {
-                        console.log(`      "${original}" → "${translated}"`);
+                for (let j = 0; j < untranslatedSentences.length; j += 50) {
+                    const batch = untranslatedSentences.slice(j, j + 50);
+                    const batchNumber = Math.floor(j / 50) + 1;
+                    const totalBatches = Math.ceil(untranslatedSentences.length / 50);
+                    
+                    console.log(`    Processing batch ${batchNumber}/${totalBatches} (${batch.length} sentences)...`);
+                    
+                    // Create batch object for translation
+                    const batchObject = {};
+                    batch.forEach(key => {
+                        batchObject[key] = key; // Use the key as the text to translate
                     });
-                    if (Object.keys(translations).length > 3) {
-                        console.log(`      ... and ${Object.keys(translations).length - 3} more`);
+                    
+                    const translations = await translateSentencesBatch(batchObject, targetLanguage);
+                    
+                    if (translations) {
+                        console.log(`    ✅ Batch ${batchNumber} translated successfully`);
+                        // Log a few examples
+                        const examples = Object.entries(translations).slice(0, 3);
+                        examples.forEach(([original, translated]) => {
+                            console.log(`      "${original}" → "${translated}"`);
+                        });
+                        if (Object.keys(translations).length > 3) {
+                            console.log(`      ... and ${Object.keys(translations).length - 3} more`);
+                        }
+                        
+                        // Apply translations to the chapter sentences
+                        for (const [original, translated] of Object.entries(translations)) {
+                            translatedChapter.sentences[original] = translated;
+                        }
+                    } else {
+                        console.log(`    ❌ Failed to translate batch ${batchNumber}`);
+                        // Keep original sentences if translation fails
+                        batch.forEach(key => {
+                            translatedChapter.sentences[key] = chapter.sentences[key];
+                        });
                     }
                     
-                    // Apply translations to the chapter sentences
-                    for (const [original, translated] of Object.entries(translations)) {
-                        translatedChapter.sentences[original] = translated;
+                    // Add delay between batches
+                    if (j + 50 < untranslatedSentences.length) {
+                        console.log(`    ⏳ Waiting ${DELAY_BETWEEN_BATCHES}ms before next batch...`);
+                        await sleep(DELAY_BETWEEN_BATCHES);
                     }
-                } else {
-                    console.log(`    ❌ Failed to translate batch ${batchNumber}`);
-                    // Keep original sentences if translation fails
-                    batch.forEach(key => {
-                        translatedChapter.sentences[key] = chapter.sentences[key];
-                    });
-                }
-                
-                // Add delay between batches
-                if (j + 50 < sentenceKeys.length) {
-                    console.log(`    ⏳ Waiting ${DELAY_BETWEEN_BATCHES}ms before next batch...`);
-                    await sleep(DELAY_BETWEEN_BATCHES);
                 }
             }
             
             // Add the translated chapter to the story
-            translatedStory.chapters.push(translatedChapter);
+            translatedStory.chapters[i] = translatedChapter;
         }
 
         // Ensure target directory exists
@@ -246,7 +322,7 @@ async function copyStory(sourcePath, targetPath, targetLanguage) {
         // Write the translated story to target file
         fs.writeFileSync(targetPath, JSON.stringify(translatedStory, null, 2), 'utf8');
         
-        console.log(`\n✅ Successfully created translated story:`);
+        console.log(`\n✅ Successfully created/updated translated story:`);
         console.log(`Source: ${sourcePath}`);
         console.log(`Target: ${targetPath}`);
         console.log(`Target Language: ${targetLanguage}`);
