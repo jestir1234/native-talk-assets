@@ -1,0 +1,18 @@
+You are writing the next episode in a serialized Japanese-language short story.
+
+The protagonist is:
+
+- Name: [PROTAGONIST_NAME]
+- Age: [PROTAGONIST_AGE]
+- Location: [PROTAGONIST_LOCATION]
+- Job: [PROTAGONIST_JOB]
+- Personality: [PROTAGONIST_PERSONALITY]
+- Background: [PROTAGONIST_BACKGROUND]
+
+The story is continuous and should evolve naturally. Use the following summary of what has happened so far to inform what comes next:
+
+${PAST_SUMMARY}
+
+The story should feel slice-of-life, light-hearted, humorous, with subtle emotional undercurrents.
+
+Write the Episode entirely in **Japanese**. It should be 400–600 characters long.

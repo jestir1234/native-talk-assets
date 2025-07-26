@@ -4,12 +4,13 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-// Get arguments: story name, source language, target language, serialized flag, init flag
+// Get arguments: story name, source language, target language, serialized flag, init flag, episodes flag
 const STORY_NAME = process.argv[2] || 'still-dead-still-bored';
 const SOURCE_LANG = process.argv[3] || 'en';
 const TARGET_LANG = process.argv[4] || 'ja';
 const IS_SERIALIZED = process.argv.includes('--serialized');
 const IS_INIT = process.argv.includes('--init');
+const IS_EPISODES = process.argv.includes('--episodes');
 
 const sourceLangToDictMap = {
     'en': 'english',
@@ -22,13 +23,15 @@ const sourceLangToDictMap = {
 
 // Validate arguments
 if (process.argv.length < 3) {
-    console.error('Usage: node scripts/generate-episode.js <story-name> [source-language] [target-language] [--serialized] [--init]');
+    console.error('Usage: node scripts/generate-episode.js <story-name> [source-language] [target-language] [--serialized] [--init] [--episodes]');
     console.error('Example: node scripts/generate-episode.js still-dead-still-bored en ja');
     console.error('Example: node scripts/generate-episode.js for-rent ja en --serialized');
     console.error('Example: node scripts/generate-episode.js for-rent en ja --init');
+    console.error('Example: node scripts/generate-episode.js waves-and-hoops en ja --episodes');
     console.error('Supported languages: en, ja, ko, zh, es, vi');
     console.error('Use --serialized flag for stories that maintain continuity across episodes');
     console.error('Use --init flag to use initialization prompts for new stories');
+    console.error('Use --episodes flag to use episode-specific prompts from /episodes/ directory');
     process.exit(1);
 }
 
@@ -65,7 +68,7 @@ const NEW_DICT_PATH = path.resolve(__dirname, `./dictionary_entries_output_${TAR
 const IMAGE_META_PATH = path.resolve(__dirname, './episode_meta.json');
 
 // Configuration for the current story
-const PROMPTS_DIR = path.resolve(__dirname, `./episode_prompts/${STORY_NAME}${IS_INIT ? '/init' : ''}`);
+const PROMPTS_DIR = path.resolve(__dirname, `./episode_prompts/${STORY_NAME}${IS_INIT ? '/init' : ''}${IS_EPISODES ? '/episodes' : ''}`);
 
 // Validate that the story exists
 if (!fs.existsSync(path.resolve(__dirname, `../stories/${STORY_NAME}`))) {
@@ -105,7 +108,13 @@ if (!fs.existsSync(MASTER_DICT_PATH)) {
  * @returns {string} The interpolated prompt
  */
 function readPrompt(promptName, variables = {}) {
-    const promptPath = path.join(PROMPTS_DIR, `${promptName}.txt`);
+    // For episodes mode, use {episodeNum}prompt.txt format, otherwise use .txt
+    let promptPath;
+    if (IS_EPISODES) {
+        promptPath = path.join(PROMPTS_DIR, `${promptName}prompt.txt`);
+    } else {
+        promptPath = path.join(PROMPTS_DIR, `${promptName}.txt`);
+    }
     
     if (!fs.existsSync(promptPath)) {
         throw new Error(`Prompt file not found: ${promptPath}`);
@@ -113,8 +122,8 @@ function readPrompt(promptName, variables = {}) {
     
     let prompt = fs.readFileSync(promptPath, 'utf-8');
     
-    // For serialized stories, add continuity data from meta.json
-    if (IS_SERIALIZED) {
+    // For serialized stories or episodes mode, add continuity data from meta.json
+    if (IS_SERIALIZED || IS_EPISODES) {
         const meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8'));
         
         // Build past summary from plot summaries
@@ -147,7 +156,7 @@ function readPrompt(promptName, variables = {}) {
         
         // Add protagonist state if available
         if (meta.protagonist && meta.protagonist.current_state) {
-            pastSummary += `Emiko's current state: ${meta.protagonist.current_state}\n\n`;
+            pastSummary += `Kaito's current state: ${meta.protagonist.current_state}\n\n`;
         }
         
         // Replace the placeholder with the actual summary
@@ -212,25 +221,60 @@ async function generateEpisodeMetadata() {
     if (IS_SERIALIZED) {
         console.log(`📚 Serialized story mode enabled`);
     }
+    if (IS_EPISODES) {
+        console.log(`📺 Using episode-specific prompts from: ${PROMPTS_DIR}`);
+    }
     
     const meta = JSON.parse(fs.readFileSync(META_PATH, 'utf-8'));
 
-    console.log('🔮 Generating title and hook...');
-    const metadata = await generateEpisodeMetadata();
+    let metadata, finalPrompt;
 
-    if (!metadata) {
-        console.log('⚠️ Episode metadata generation failed. Exiting.');
-        return;
-    }
+    if (IS_EPISODES) {
+        // For episodes mode, we need to determine which episode to generate
+        const episodeNum = meta.current_episode + 1;
+        const episodePromptPath = path.join(PROMPTS_DIR, `${episodeNum}prompt.txt`);
+        const episodesMetadataPath = path.join(PROMPTS_DIR, 'episodes_metadata.json');
+        
+        if (!fs.existsSync(episodePromptPath)) {
+            console.error(`❌ Episode prompt not found: ${episodePromptPath}`);
+            console.error(`Available episodes: ${fs.readdirSync(PROMPTS_DIR).filter(f => f.endsWith('prompt.txt')).join(', ')}`);
+            process.exit(1);
+        }
+        
+        if (!fs.existsSync(episodesMetadataPath)) {
+            console.error(`❌ Episodes metadata not found: ${episodesMetadataPath}`);
+            process.exit(1);
+        }
+        
+        console.log(`📺 Generating episode ${episodeNum} using specific prompt...`);
+        finalPrompt = readPrompt(`${episodeNum}`, {});
+        
+        // Read metadata from episodes_metadata.json
+        const episodesMetadata = JSON.parse(fs.readFileSync(episodesMetadataPath, 'utf-8'));
+        metadata = episodesMetadata[episodeNum.toString()];
+        
+        if (!metadata) {
+            console.error(`❌ Metadata not found for episode ${episodeNum}`);
+            process.exit(1);
+        }
+    } else {
+        console.log('🔮 Generating title and hook...');
+        metadata = await generateEpisodeMetadata();
 
-    console.log('🔮 Title:', metadata.title);
-    console.log('🔮 Hook:', metadata.hook);
-    console.log('🔮 Description:', metadata.description);
+        if (!metadata) {
+            console.log('⚠️ Episode metadata generation failed. Exiting.');
+            return;
+        }
 
-    const basePrompt = readPrompt('basePrompt');
-    const finalPrompt = `${basePrompt}
+        console.log('🔮 Title:', metadata.title);
+        console.log('🔮 Hook:', metadata.hook);
+        console.log('🔮 Description:', metadata.description);
+
+        const basePrompt = readPrompt('basePrompt');
+        finalPrompt = `${basePrompt}
 Please write a new episode titled "${metadata.title}" where ${metadata.hook}
 Do not include the episode title in the story.`;
+    }
 
     console.log('🧠 Generating episode...');
     const story = await callGemini(finalPrompt);
@@ -315,7 +359,7 @@ Do not include the episode title in the story.`;
         execSync(`node scripts/translate-episode.js ${STORY_NAME} ${SOURCE_LANG} ${TARGET_LANG}`, { stdio: 'inherit' });
 
         // Process serialized story if flag is set
-        if (IS_SERIALIZED) {
+        if (IS_SERIALIZED || IS_EPISODES) {
             console.log('📚 Processing serialized story continuity...');
             execSync(`node scripts/summarize-episode.js ${STORY_NAME} ${episodeNum}`, { stdio: 'inherit' });
         }
