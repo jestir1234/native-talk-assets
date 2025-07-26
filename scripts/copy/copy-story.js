@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Command: node scripts/copy-story.js ./stories/yuta-skipping-day/lang/en.json ./stories/yuta-skipping-day/lang/zh.json zh
+// Command: node scripts/copy/copy-story.js ./stories/yuta-skipping-day/lang/en.json ./stories/yuta-skipping-day/lang/zh.json zh
 
 const fs = require('fs');
 const path = require('path');
