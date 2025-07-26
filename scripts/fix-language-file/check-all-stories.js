@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 function checkAllStories() {
-  const storiesDir = path.join(__dirname, '..', 'stories');
+  const storiesDir = path.join(__dirname, '..', '..', 'stories');
   const stories = fs.readdirSync(storiesDir).filter(dir => 
     fs.statSync(path.join(storiesDir, dir)).isDirectory()
   );

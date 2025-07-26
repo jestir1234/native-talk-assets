@@ -8,11 +8,11 @@ const path = require('path');
 
 function fixLanguageFileComprehensive(storyId) {
   // Read the structure file to get tokenized content
-  const structurePath = path.join(__dirname, '..', 'stories', storyId, 'structure.json');
+  const structurePath = path.join(__dirname, '..', '..', 'stories', storyId, 'structure.json');
   const structure = JSON.parse(fs.readFileSync(structurePath, 'utf8'));
   
   // Read the language file to get sentence keys
-  const langPath = path.join(__dirname, '..', 'stories', storyId, 'lang', 'en.json');
+  const langPath = path.join(__dirname, '..', '..', 'stories', storyId, 'lang', 'en.json');
   const langData = JSON.parse(fs.readFileSync(langPath, 'utf8'));
   
   console.log(`\n=== Comprehensive fix for story: ${storyId} ===\n`);
