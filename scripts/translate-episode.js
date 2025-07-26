@@ -122,6 +122,31 @@ function parseSentences(text, language) {
     }
 }
 
+async function translateText(text, context = '') {
+    const prompt = `You are a professional translator. Translate the following ${sourceConfig.name} text into natural ${targetConfig.name}.
+
+Context: ${context}
+
+Text to translate: "${text}"
+
+Please provide only the ${targetConfig.name} translation, no additional text or explanations.`;
+
+    const translation = await callGemini(prompt);
+    
+    if (!translation) {
+        console.error(`❌ Failed to translate: ${text}`);
+        return text; // Return original text if translation fails
+    }
+    
+    // Clean up the response
+    const cleaned = translation
+        .replace(/```json\s*/i, '')
+        .replace(/```/g, '')
+        .trim();
+    
+    return cleaned;
+}
+
 async function translateSentences(sentences, episodeNum, title, description) {
     const sentencesList = sentences.map(sentence => `"${sentence}"`).join(',\n');
     
@@ -173,11 +198,16 @@ async function updateLanguageFile(episodeNum, title, description, translations) 
         };
     }
     
-    // Create new chapter object
+    // Translate title and description to target language
+    console.log(`🌐 Translating chapter title and description to ${targetConfig.name}...`);
+    const translatedTitle = await translateText(title, 'Chapter title');
+    const translatedDescription = await translateText(description, 'Chapter description');
+    
+    // Create new chapter object with translated title and description
     const newChapter = {
         id: `ch${episodeNum}`,
-        title: title,
-        description: description,
+        title: translatedTitle,
+        description: translatedDescription,
         sentences: translations
     };
     
