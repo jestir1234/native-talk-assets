@@ -1,0 +1,682 @@
+<div class="lesson-container">
+
+    <h1 class="chapter-title">Chapter 1: The Japanese Writing System</h1>
+<div class="lesson-header">
+    <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+</div>
+
+
+    <p class="intro-paragraph">
+        Welcome to your first step into the amazing world of Japanese! Before we start speaking, let's unlock the secrets of how Japanese is written. It might look complex at first glance, but we'll break it down into easy, bite-sized pieces. Ready? Let's go!
+    </p>
+
+    <section class="lesson-section">
+        <h2 class="section-title">The Three Musketeers of Japanese Scripts</h2>
+        <p>
+            Unlike English, which uses one alphabet, Japanese uses <strong>three</strong> main scripts! Think of them as three different tools in a craftsman's toolkit, each with a special job.
+        </p>
+
+        <div class="script-info-box">
+            <h3 class="subsection-title">1. Hiragana (ひらがな)</h3>
+            <p>
+                <img src="https://via.placeholder.com/60x60?text=あ" alt="Hiragana character 'a'" class="script-icon">
+                <strong>Hiragana</strong> is the foundational script for native Japanese words and grammatical elements. It’s phonetic, meaning each character represents a specific sound.
+            </p>
+            <p>
+                <strong>Think of it as:</strong> The "soft, flowing script" – like a welcoming embrace. It's often the first script learners master.
+            </p>
+            <div class="example-box">
+                <p>Example: <span class="japanese-text">ありがとう</span> (<span class="romaji-pronunciation">arigatou</span>)</p>
+                <p class="translation">"Thank you"</p>
+            </div>
+            <p>You'll see Hiragana *everywhere* for Japanese words, particles (like prepositions), and verb endings.</p>
+        </div>
+
+        <div class="script-info-box">
+            <h3 class="subsection-title">2. Katakana (カタカナ)</h3>
+            <p>
+                <img src="https://via.placeholder.com/60x60?text=カ" alt="Katakana character 'ka'" class="script-icon">
+                <strong>Katakana</strong> is also a phonetic script, just like Hiragana. The big difference? It's primarily used for words borrowed from other languages (loanwords)!
+            </p>
+            <p>
+                <strong>Think of it as:</strong> The "sharp, angular script" – the cool, foreign cousin. It also appears for emphasis (like bolding in English) or onomatopoeia (sound effects!).
+            </p>
+            <div class="example-box">
+                <p>Example: <span class="japanese-text">コーヒー</span> (<span class="romaji-pronunciation">koohii</span>)</p>
+                <p class="translation">"Coffee"</p>
+            </div>
+            <p>Got a new English word appearing in Japanese? It's probably written in Katakana!</p>
+        </div>
+
+        <div class="script-info-box">
+            <h3 class="subsection-title">3. Kanji (漢字)</h3>
+            <p>
+                <img src="https://via.placeholder.com/60x60?text=日" alt="Kanji character 'day/sun'" class="script-icon">
+                <strong>Kanji</strong> are characters borrowed from Chinese. Unlike Hiragana and Katakana which represent sounds, Kanji primarily represent <em>ideas</em> or <em>meanings</em>.
+            </p>
+            <p>
+                <strong>Think of it as:</strong> The "wise, ancient script" – a single character can often convey a whole word or concept.
+            </p>
+            <div class="example-box">
+                <p>Example: <span class="japanese-text">日本</span> (<span class="romaji-pronunciation">Nihon</span>)</p>
+                <p class="translation">"Japan" (literally "sun origin")</p>
+            </div>
+            <p>Learning Kanji helps immensely with understanding meaning and reading quickly, as they condense information.</p>
+        </div>
+
+        <div class="practice-section" id="script-id-practice">
+            <h3 class="subsection-title">💡 Quick Practice: Script Spotter!</h3>
+            <p>Look at the characters below. Can you guess which script they belong to?</p>
+            <ul class="quiz-list">
+                <li class="quiz-item">
+                    <span class="quiz-question">1. <span class="japanese-text">カメラ</span></span>
+                    <div class="quiz-options">
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Katakana')">Hiragana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Katakana')">Katakana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Katakana')">Kanji</button>
+                        <span class="correct-answer-hint">(Katakana - camera, a loanword!)</span>
+                    </div>
+                </li>
+                <li class="quiz-item">
+                    <span class="quiz-question">2. <span class="japanese-text">たべる</span></span>
+                    <div class="quiz-options">
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Hiragana')">Hiragana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Hiragana')">Katakana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Hiragana')">Kanji</button>
+                        <span class="correct-answer-hint">(Hiragana - taberu, 'to eat')</span>
+                    </div>
+                </li>
+                 <li class="quiz-item">
+                    <span class="quiz-question">3. <span class="japanese-text">学校</span></span>
+                    <div class="quiz-options">
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Kanji')">Hiragana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Kanji')">Katakana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Kanji')">Kanji</button>
+                        <span class="correct-answer-hint">(Kanji - gakkou, 'school')</span>
+                    </div>
+                </li>
+            </ul>
+            <p class="practice-note"><em>(In a real app, these buttons would give instant feedback!)</em></p>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2 class="section-title">Why So Many? The Power of Three!</h2>
+        <p>
+            You might be thinking, "Why make it so complicated?" Great question! Using all three scripts actually makes Japanese easier to read and understand.
+        </p>
+        <ul class="bullet-list">
+            <li>
+                <strong>Clarity:</strong> Kanji provides meaning at a glance, helping to distinguish between homophones (words that sound the same but have different meanings). Imagine if "know" and "no" looked completely different!
+            </li>
+            <li>
+                <strong>Grammatical Flow:</strong> Hiragana connects Kanji, handling verb endings, particles, and other grammatical functions. It smooths out the flow of sentences.
+            </li>
+            <li>
+                <strong>New Words:</strong> Katakana immediately signals that a word is a foreign import or a sound effect. No guesswork needed!
+            </li>
+        </ul>
+        <div class="cultural-note">
+            <h3 class="subsection-title">📜 Cultural Note: A Long History</h3>
+            <p>
+                This multi-script system evolved over centuries! Kanji came first from China, then Hiragana and Katakana were developed to adapt Chinese writing to the Japanese language's unique grammar and sounds. It's a testament to the language's rich history and adaptability.
+            </p>
+        </div>
+        <div class="example-box">
+            <p>Let's look at a common sentence:</p>
+            <p><span class="japanese-text">私は日本語を勉強します。</span> (<span class="romaji-pronunciation">Watashi wa Nihongo o benkyou shimasu.</span>)</p>
+            <p class="translation">"I study Japanese."</p>
+            <ul class="script-breakdown">
+                <li><span class="japanese-text">私</span> (<span class="romaji-pronunciation">watashi</span>) - <strong>Kanji</strong> for "I" (meaning)</li>
+                <li><span class="japanese-text">は</span> (<span class="romaji-pronunciation">wa</span>) - <strong>Hiragana</strong> for a grammatical particle</li>
+                <li><span class="japanese-text">日本</span> (<span class="romaji-pronunciation">Nihon</span>) - <strong>Kanji</strong> for "Japan" (meaning)</li>
+                <li><span class="japanese-text">語</span> (<span class="romaji-pronunciation">go</span>) - <strong>Kanji</strong> for "language" (meaning)</li>
+                <li><span class="japanese-text">を</span> (<span class="romaji-pronunciation">o</span>) - <strong>Hiragana</strong> for a grammatical particle</li>
+                <li><span class="japanese-text">勉強</span> (<span class="romaji-pronunciation">benkyou</span>) - <strong>Kanji</strong> for "study" (meaning)</li>
+                <li><span class="japanese-text">します</span> (<span class="romaji-pronunciation">shimasu</span>) - <strong>Hiragana</strong> for verb ending/conjugation</li>
+            </ul>
+            <p>See? Each script plays its part beautifully!</p>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2 class="section-title">Reading Flow: Where Do My Eyes Go?</h2>
+        <p>
+            When you pick up a Japanese book or look at a website, how do you read it?
+        </p>
+        <ul class="bullet-list">
+            <li>
+                <strong>Horizontal Reading (Left-to-Right, Top-to-Bottom):</strong> This is the most common way you'll encounter Japanese today, especially online, in textbooks, and in most modern media. It's just like reading English!
+                <div class="example-box">
+                    <p class="reading-flow-example">
+                        これは<br>
+                        日本語です。<br>
+                        (This is Japanese.)
+                    </p>
+                </div>
+            </li>
+            <li>
+                <strong>Vertical Reading (Top-to-Bottom, Right-to-Left Columns):</strong> Traditionally, Japanese was written in vertical columns, starting from the top right and moving downwards, then moving to the next column to the left. You'll still see this in traditional books, manga, and some newspapers.
+                <div class="cultural-note">
+                    <p>
+                        Don't worry too much about vertical reading for now! For the purpose of this app and most beginner materials, we'll focus on horizontal reading.
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="lesson-section">
+        <h2 class="section-title">Syllables & Phonetic Fun</h2>
+        <p>
+            Good news! Japanese is incredibly phonetic. This means that once you learn the sound of each Hiragana (or Katakana) character, you can pretty much read anything!
+        </p>
+        <ul class="bullet-list">
+            <li>
+                <strong>One Character, One Sound:</strong> Each Hiragana or Katakana character generally represents one syllable (or more accurately, a "mora," but "syllable" is a great starting point!).
+            </li>
+            <li>
+                <strong>Vowel Power:</strong> Most syllables end in a vowel. The five basic vowel sounds are super important:
+                <ul class="inline-list">
+                    <li><span class="japanese-text">あ</span> (<span class="romaji-pronunciation">a</span>) - like "ah" in "father"</li>
+                    <li><span class="japanese-text">い</span> (<span class="romaji-pronunciation">i</span>) - like "ee" in "see"</li>
+                    <li><span class="japanese-text">う</span> (<span class="romaji-pronunciation">u</span>) - like "oo" in "moon" (but with less lip rounding)</li>
+                    <li><span class="japanese-text">え</span> (<span class="romaji-pronunciation">e</span>) - like "eh" in "bed"</li>
+                    <li><span class="japanese-text">お</span> (<span class="romaji-pronunciation">o</span>) - like "oh" in "go"</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Romaji as a Bridge:</strong> We're using <span class="highlight">Romaji</span> (Roman alphabet) to help you pronounce Japanese words right now. It's a great tool for beginners, but our goal is to get you reading Hiragana and Katakana directly!
+            </li>
+        </ul>
+        <div class="example-box">
+            <p>Practice these core vowel sounds:</p>
+            <p class="japanese-text big-text">あ い う え お</p>
+            <p class="romaji-pronunciation big-text">a i u e o</p>
+        </div>
+        <p>You're already starting to speak Japanese!</p>
+    </section>
+
+    <section class="lesson-section">
+        <h2 class="section-title">Practice Time: What Script Is That?!</h2>
+        <p>Let's solidify your understanding. For each word, identify the primary script used.</p>
+        <div class="practice-section" id="script-quiz-2">
+            <ul class="quiz-list">
+                <li class="quiz-item">
+                    <span class="quiz-question">1. <span class="japanese-text">ありがとう</span> (<span class="romaji-pronunciation">arigatou</span> - thank you)</span>
+                    <div class="quiz-options">
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Hiragana')">Hiragana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Hiragana')">Katakana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Hiragana')">Kanji</button>
+                        <span class="correct-answer-hint">(Correct: Hiragana)</span>
+                    </div>
+                </li>
+                <li class="quiz-item">
+                    <span class="quiz-question">2. <span class="japanese-text">テレビ</span> (<span class="romaji-pronunciation">terebi</span> - television)</span>
+                    <div class="quiz-options">
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Katakana')">Hiragana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Katakana')">Katakana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Katakana')">Kanji</button>
+                        <span class="correct-answer-hint">(Correct: Katakana)</span>
+                    </div>
+                </li>
+                <li class="quiz-item">
+                    <span class="quiz-question">3. <span class="japanese-text">東京</span> (<span class="romaji-pronunciation">Toukyou</span> - Tokyo)</span>
+                    <div class="quiz-options">
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Kanji')">Hiragana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Kanji')">Katakana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Kanji')">Kanji</button>
+                        <span class="correct-answer-hint">(Correct: Kanji)</span>
+                    </div>
+                </li>
+                <li class="quiz-item">
+                    <span class="quiz-question">4. <span class="japanese-text">きれい</span> (<span class="romaji-pronunciation">kirei</span> - beautiful)</span>
+                    <div class="quiz-options">
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Hiragana')">Hiragana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Hiragana')">Katakana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Hiragana')">Kanji</button>
+                        <span class="correct-answer-hint">(Correct: Hiragana)</span>
+                    </div>
+                </li>
+                 <li class="quiz-item">
+                    <span class="quiz-question">5. <span class="japanese-text">アメリカ</span> (<span class="romaji-pronunciation">Amerika</span> - America)</span>
+                    <div class="quiz-options">
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Katakana')">Hiragana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Katakana')">Katakana</button>
+                        <button class="quiz-button" onclick="checkAnswer(this, 'Katakana')">Kanji</button>
+                        <span class="correct-answer-hint">(Correct: Katakana)</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="lesson-section summary-section">
+        <h2 class="section-title">🌟 Chapter 1 Summary: Your Writing System Snapshot!</h2>
+        <ul class="summary-list">
+            <li>
+                Japanese uses <strong>three scripts</strong>:
+                <ul>
+                    <li><strong>Hiragana:</strong> For native Japanese words and grammar (soft, flowing).</li>
+                    <li><strong>Katakana:</strong> For foreign loanwords, emphasis, and onomatopoeia (sharp, angular).</li>
+                    <li><strong>Kanji:</strong> For meaning-based words, borrowed from Chinese (wise, ancient).</li>
+                </ul>
+            </li>
+            <li>
+                These three scripts work together to provide <strong>clarity and efficiency</strong> in written Japanese.
+            </li>
+            <li>
+                Modern Japanese is primarily read <strong>horizontally (left-to-right, top-to-bottom)</strong>, just like English.
+            </li>
+            <li>
+                Japanese is a <strong>phonetic language</strong> where each Hiragana/Katakana character generally represents one syllable/sound. Mastering the sounds of the characters is key!
+            </li>
+        </ul>
+    </section>
+
+    <section class="next-steps-section">
+        <h2 class="section-title">What's Next?</h2>
+        <p>
+            You've successfully completed Chapter 1! You now have a solid foundation for understanding the Japanese writing system.
+        </p>
+        <p>
+            In the next chapter, we'll dive deeper and start learning your very first Hiragana characters! Get ready to write!
+        </p>
+        <div class="call-to-action">
+            <button class="next-chapter-button">Continue to Chapter 2: Meet Hiragana!</button>
+        </div>
+    </section>
+
+</div>
+
+<!-- Basic CSS for demonstration - in a real app, this would be in a separate .css file -->
+<style>
+    /* General Body and Container Styles */
+    body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+
+    .lesson-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Titles and Paragraphs */
+    .chapter-title {
+        font-size: 2.2em;
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 15px;
+    }
+
+    .intro-paragraph {
+        font-size: 1.1em;
+        margin-bottom: 25px;
+        text-align: center;
+        color: #555;
+    }
+
+    .lesson-section {
+        margin-bottom: 40px;
+        padding: 20px;
+        background-color: #fcfcfc;
+        border-radius: 8px;
+        border: 1px solid #eee;
+    }
+
+    .section-title {
+        font-size: 1.8em;
+        color: #3498db;
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .subsection-title {
+        font-size: 1.4em;
+        color: #2980b9;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        border-left: 5px solid #3498db;
+        padding-left: 10px;
+    }
+
+    p {
+        margin-bottom: 15px;
+    }
+
+    /* Emphasis and Highlights */
+    strong {
+        color: #e74c3c; /* Red for strong words */
+    }
+
+    em {
+        color: #2ecc71; /* Green for emphasis */
+        font-style: normal;
+    }
+
+    .highlight {
+        background-color: #ffeaa7; /* Soft yellow highlight */
+        padding: 2px 5px;
+        border-radius: 3px;
+    }
+
+    /* Script Info Boxes */
+    .script-info-box {
+        background-color: #f8f8f8;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    .script-icon {
+        float: right;
+        margin-left: 15px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+
+    .script-info-box p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Examples and Language Specifics */
+    .example-box {
+        background-color: #ecf0f1;
+        border-left: 4px solid #3498db;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 5px;
+    }
+
+    .japanese-text {
+        font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; /* Japanese fonts */
+        font-size: 1.2em;
+        color: #c0392b; /* Dark red for Japanese */
+        font-weight: bold;
+    }
+
+    .romaji-pronunciation {
+        font-family: 'Roboto Mono', monospace; /* Monospace for Romaji */
+        font-size: 0.9em;
+        color: #666;
+    }
+
+    .translation {
+        font-style: italic;
+        color: #7f8c8d;
+        margin-top: 5px;
+    }
+
+    .big-text {
+        font-size: 2em;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* Lists */
+    .bullet-list {
+        list-style: disc;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    .bullet-list li {
+        margin-bottom: 8px;
+    }
+
+    .inline-list {
+        list-style: none;
+        padding: 0;
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .inline-list li {
+        display: inline-block;
+        margin: 0 10px 5px 0;
+        padding: 5px 10px;
+        background-color: #eef;
+        border-radius: 5px;
+        white-space: nowrap;
+    }
+
+    .script-breakdown {
+        list-style: none;
+        padding: 0;
+        margin-top: 15px;
+        border-top: 1px dashed #ddd;
+        padding-top: 15px;
+    }
+
+    .script-breakdown li {
+        margin-bottom: 10px;
+        font-size: 0.95em;
+    }
+
+    /* Reading Flow Example */
+    .reading-flow-example {
+        background-color: #e8f6f3;
+        border: 1px solid #1abc9c;
+        padding: 20px;
+        text-align: center;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 1.5em;
+        line-height: 1.8;
+        border-radius: 5px;
+        white-space: pre-line;
+    }
+
+    /* Cultural Note */
+    .cultural-note {
+        background-color: #fef7e0;
+        border-left: 5px solid #f39c12;
+        padding: 15px;
+        margin: 25px 0;
+        border-radius: 5px;
+    }
+    .cultural-note .subsection-title {
+        color: #f39c12;
+        border-color: #f39c12;
+    }
+
+    /* Practice Section */
+    .practice-section {
+        background-color: #eaf4fa;
+        border: 2px dashed #aed6f1;
+        padding: 25px;
+        margin: 30px 0;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .practice-section .subsection-title {
+        color: #3498db;
+        border-color: #3498db;
+        text-align: left;
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        font-size: 1.6em;
+    }
+
+    .quiz-list {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+    }
+
+    .quiz-item {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .quiz-question {
+        display: block;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .quiz-options {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .quiz-button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s ease;
+    }
+
+    .quiz-button:hover {
+        background-color: #2980b9;
+    }
+
+    .quiz-button:active {
+        background-color: #1a5276;
+    }
+
+    .correct-answer-hint {
+        display: none; /* Hidden by default, would be revealed by JS */
+        margin-left: 15px;
+        font-size: 0.9em;
+        color: #27ae60;
+        font-weight: bold;
+        align-self: center;
+    }
+
+    .practice-note {
+        font-size: 0.9em;
+        color: #777;
+        margin-top: 20px;
+    }
+
+    /* Summary Section */
+    .summary-section {
+        background-color: #e8f6f3;
+        border: 2px solid #1abc9c;
+        padding: 25px;
+        margin-top: 40px;
+        border-radius: 10px;
+    }
+    .summary-section .section-title {
+        color: #1abc9c;
+    }
+
+    .summary-list {
+        list-style: disc;
+        margin-left: 20px;
+    }
+    .summary-list li {
+        margin-bottom: 10px;
+    }
+    .summary-list li ul {
+        list-style: circle;
+        margin-left: 20px;
+        margin-top: 5px;
+    }
+
+    /* Next Steps / Call to Action */
+    .next-steps-section {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+    }
+
+    .next-chapter-button {
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin-top: 20px;
+    }
+
+    .next-chapter-button:hover {
+        background-color: #2ecc71;
+        transform: translateY(-2px);
+    }
+
+    /* Placeholder for JavaScript interactivity feedback */
+    /* These would be applied by actual JavaScript in a real app */
+    .quiz-button.correct {
+        background-color: #27ae60; /* Green for correct */
+    }
+    .quiz-button.incorrect {
+        background-color: #e74c3c; /* Red for incorrect */
+    }
+    .quiz-options button.selected + .correct-answer-hint {
+        display: inline-block; /* Show hint if a button is "selected" (simulated click) */
+    }
+</style>
+
+<script>
+    // This JavaScript is for demonstration purposes only.
+    // In a real mobile app, this interactivity would likely be handled by the app's framework
+    // (e.g., React Native, Flutter, Swift, Kotlin, etc.) and provide richer feedback
+    // (e.g., changing button colors, showing a correct/incorrect message, preventing multiple clicks).
+
+    function checkAnswer(button, correctAnswer) {
+        // Find the parent quiz options container
+        const parentOptions = button.closest('.quiz-options');
+
+        // Reset previous feedback on all buttons in this quiz item
+        const buttonsInItem = parentOptions.querySelectorAll('.quiz-button');
+        buttonsInItem.forEach(btn => {
+            btn.classList.remove('correct', 'incorrect', 'selected');
+        });
+
+        // Hide any previously shown hint for this item
+        const hint = parentOptions.querySelector('.correct-answer-hint');
+        if (hint) {
+            hint.style.display = 'none';
+        }
+
+        // Mark the currently clicked button as selected
+        button.classList.add('selected');
+
+        // Apply feedback based on correctness
+        if (button.textContent === correctAnswer) {
+            button.classList.add('correct');
+        } else {
+            button.classList.add('incorrect');
+        }
+
+        // Show the correct answer hint
+        if (hint) {
+            hint.style.display = 'inline-block';
+        }
+    }
+</script>

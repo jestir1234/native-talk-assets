@@ -3,12 +3,13 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-// Get language and chapter number from command line arguments
-const LANGUAGE = process.argv[2] || 'ja';
-const CHAPTER_NUMBER = parseInt(process.argv[3]) || 1;
+// Get language and target language from command line arguments
+const LANGUAGE_LEARN = process.argv[2] || 'ja'; // Language being learned
+const TARGET_LANGUAGE = process.argv[3] || 'en'; // Language to generate lesson in
+const CHAPTER_NUMBER = parseInt(process.argv[4]) || 1;
 
-const CHAPTERS_OUTLINE_PATH = path.resolve(__dirname, `./lessons/${LANGUAGE}/chapters_outline_basic.txt`);
-const LESSONS_DIR = path.resolve(__dirname, `../lessons/${LANGUAGE}`);
+const CHAPTERS_OUTLINE_PATH = path.resolve(__dirname, `./${LANGUAGE_LEARN}/chapters_outline_basic.txt`);
+const LESSONS_DIR = path.resolve(__dirname, `../../lessons/${LANGUAGE_LEARN}`);
 
 // Ensure lessons directory exists
 if (!fs.existsSync(LESSONS_DIR)) {
@@ -72,14 +73,24 @@ async function callGemini(prompt) {
 /**
  * Generate lesson content for a chapter
  * @param {Object} chapter - Chapter object with title and content
- * @param {string} language - Language code (ja/en)
+ * @param {string} languageLearn - Language being learned
+ * @param {string} targetLanguage - Language to generate lesson in
  * @returns {string} Generated HTML content
  */
-async function generateLessonContent(chapter, language) {
-    const isJapanese = language === 'ja';
-    const languageName = isJapanese ? 'Japanese' : 'English';
+async function generateLessonContent(chapter, languageLearn, targetLanguage) {
+    const languageNames = {
+        'ja': 'Japanese',
+        'en': 'English',
+        'ko': 'Korean',
+        'zh': 'Chinese',
+        'es': 'Spanish',
+        'vi': 'Vietnamese'
+    };
     
-    const prompt = `You are an expert ${languageName} language teacher creating engaging, app-friendly lessons.
+    const languageLearnName = languageNames[languageLearn] || languageLearn.toUpperCase();
+    const targetLanguageName = languageNames[targetLanguage] || targetLanguage.toUpperCase();
+    
+    const prompt = `You are an expert ${languageLearnName} language teacher creating engaging, app-friendly lessons in ${targetLanguageName}.
 
 Create a lesson for Chapter ${chapter.number}: ${chapter.title}
 
@@ -89,20 +100,22 @@ ${chapter.content}
 Requirements:
 1. Create engaging, digestible content suitable for mobile app users (not too heavy like a textbook)
 2. Include practical examples and exercises
-3. Use clear, friendly language
+3. Use clear, friendly language in ${targetLanguageName}
 4. Structure the content with proper HTML tags
 5. Include interactive elements like practice sections
 6. Make it visually appealing with proper formatting
 7. Keep it concise but comprehensive
 8. Include cultural notes where relevant
-9. Add pronunciation guides for ${isJapanese ? 'Japanese' : 'English'} words
+9. Add pronunciation guides for ${languageLearnName} words
 10. Include a summary section at the end
+11. All explanations should be in ${targetLanguageName}
+12. Include ${languageLearnName} examples with ${targetLanguageName} translations
 
 Return the content in clean HTML format that can be directly rendered in a web browser. Use semantic HTML tags like <section>, <h2>, <h3>, <p>, <ul>, <li>, <div>, <span>, <strong>, <em>, etc. Include CSS classes for styling if needed.
 
-The lesson should be engaging, practical, and help users actually learn and practice the language concepts.`;
+The lesson should be engaging, practical, and help users actually learn and practice the ${languageLearnName} language concepts. All explanations and instructions should be in ${targetLanguageName}.`;
 
-    console.log(`📚 Generating lesson content for Chapter ${chapter.number}...`);
+    console.log(`📚 Generating lesson content for Chapter ${chapter.number} in ${targetLanguageName}...`);
     const content = await callGemini(prompt);
     
     if (!content) {
@@ -115,14 +128,22 @@ The lesson should be engaging, practical, and help users actually learn and prac
 /**
  * Generate image prompt for a chapter
  * @param {Object} chapter - Chapter object with title and content
- * @param {string} language - Language code (ja/en)
+ * @param {string} languageLearn - Language being learned
  * @returns {string} Generated image prompt
  */
-async function generateImagePrompt(chapter, language) {
-    const isJapanese = language === 'ja';
-    const languageName = isJapanese ? 'Japanese' : 'English';
+async function generateImagePrompt(chapter, languageLearn) {
+    const languageNames = {
+        'ja': 'Japanese',
+        'en': 'English',
+        'ko': 'Korean',
+        'zh': 'Chinese',
+        'es': 'Spanish',
+        'vi': 'Vietnamese'
+    };
     
-    const prompt = `You are creating an image prompt for a ${languageName} language learning app.
+    const languageLearnName = languageNames[languageLearn] || languageLearn.toUpperCase();
+    
+    const prompt = `You are creating an image prompt for a ${languageLearnName} language learning app.
 
 Chapter: ${chapter.title}
 Content: ${chapter.content}
@@ -198,7 +219,7 @@ async function generateImage(imagePrompt, outputPath) {
  * @returns {string} Updated HTML content with image
  */
 function updateHtmlWithImage(htmlContent, imagePath, chapterNumber) {
-    const imageUrl = `./chapter_${chapterNumber}/header.webp`;
+    const imageUrl = `../header.webp`;
     
     // Add image at the top of the content
     const imageHtml = `
@@ -219,46 +240,58 @@ function updateHtmlWithImage(htmlContent, imagePath, chapterNumber) {
 /**
  * Process a single chapter
  * @param {Object} chapter - Chapter object
- * @param {string} language - Language code
+ * @param {string} languageLearn - Language being learned
+ * @param {string} targetLanguage - Language to generate lesson in
  */
-async function processChapter(chapter, language) {
+async function processChapter(chapter, languageLearn, targetLanguage) {
     const chapterDir = path.join(LESSONS_DIR, `chapter_${chapter.number}`);
+    const targetLangDir = path.join(chapterDir, targetLanguage);
     
-    // Create chapter directory
+    // Create chapter directory and target language subdirectory
     if (!fs.existsSync(chapterDir)) {
         fs.mkdirSync(chapterDir, { recursive: true });
     }
+    if (!fs.existsSync(targetLangDir)) {
+        fs.mkdirSync(targetLangDir, { recursive: true });
+    }
     
     try {
+        // Check if header image already exists (only generate once per chapter)
+        const headerImagePath = path.join(chapterDir, 'header.webp');
+        if (!fs.existsSync(headerImagePath)) {
+            // Generate image prompt
+            const imagePrompt = await generateImagePrompt(chapter, languageLearn);
+            
+            // Generate image
+            const imagePath = path.join(chapterDir, 'header.png');
+            await generateImage(imagePrompt, imagePath);
+            
+            // Convert PNG to WebP using Sharp
+            const sharp = require('sharp');
+            await sharp(imagePath)
+                .webp({ quality: 85, effort: 6 })
+                .toFile(headerImagePath);
+            
+            // Remove original PNG
+            fs.unlinkSync(imagePath);
+            
+            console.log(`✅ Header image generated for Chapter ${chapter.number}`);
+        } else {
+            console.log(`✅ Header image already exists for Chapter ${chapter.number}`);
+        }
+        
         // Generate lesson content
-        const lessonContent = await generateLessonContent(chapter, language);
-        
-        // Generate image prompt
-        const imagePrompt = await generateImagePrompt(chapter, language);
-        
-        // Generate image
-        const imagePath = path.join(chapterDir, 'header.png');
-        await generateImage(imagePrompt, imagePath);
-        
-        // Convert PNG to WebP using Sharp
-        const sharp = require('sharp');
-        const webpPath = path.join(chapterDir, 'header.webp');
-        await sharp(imagePath)
-            .webp({ quality: 85, effort: 6 })
-            .toFile(webpPath);
-        
-        // Remove original PNG
-        fs.unlinkSync(imagePath);
+        const lessonContent = await generateLessonContent(chapter, languageLearn, targetLanguage);
         
         // Update HTML content with image
-        const updatedContent = updateHtmlWithImage(lessonContent, webpPath, chapter.number);
+        const updatedContent = updateHtmlWithImage(lessonContent, headerImagePath, chapter.number);
         
         // Save HTML content
-        const htmlPath = path.join(chapterDir, 'index.html');
+        const htmlPath = path.join(targetLangDir, 'index.html');
         fs.writeFileSync(htmlPath, updatedContent);
         
-        console.log(`✅ Chapter ${chapter.number} completed successfully!`);
-        console.log(`📁 Files saved to: ${chapterDir}`);
+        console.log(`✅ Chapter ${chapter.number} completed successfully in ${targetLanguage}!`);
+        console.log(`📁 Files saved to: ${targetLangDir}`);
         
     } catch (error) {
         console.error(`❌ Error processing Chapter ${chapter.number}:`, error.message);
@@ -270,7 +303,7 @@ async function processChapter(chapter, language) {
  */
 async function generateSingleLesson() {
     try {
-        console.log(`📚 Generating lesson for Chapter ${CHAPTER_NUMBER} in ${LANGUAGE.toUpperCase()}...`);
+        console.log(`📚 Generating lesson for Chapter ${CHAPTER_NUMBER} in ${LANGUAGE_LEARN.toUpperCase()} → ${TARGET_LANGUAGE.toUpperCase()}...`);
         
         // Check if chapters outline file exists
         if (!fs.existsSync(CHAPTERS_OUTLINE_PATH)) {
@@ -283,9 +316,14 @@ async function generateSingleLesson() {
         console.log(`📖 Processing Chapter ${chapter.number}: ${chapter.title}`);
         
         // Process the chapter
-        await processChapter(chapter, LANGUAGE);
+        await processChapter(chapter, LANGUAGE_LEARN, TARGET_LANGUAGE);
         
         console.log(`\n🎉 Lesson generated successfully for Chapter ${CHAPTER_NUMBER}!`);
+        
+        // Update meta.json file
+        console.log('📋 Updating meta.json...');
+        const { generateMetaJson } = require('./generate-lessons-meta.js');
+        generateMetaJson();
         
     } catch (error) {
         console.error('❌ Error generating lesson:', error.message);

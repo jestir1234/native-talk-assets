@@ -1,0 +1,768 @@
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: The English Alphabet and Sounds - 英語学習アプリ</title>
+    <style>
+        /* 基本的なスタイル */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .lesson-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        /* ヘッダー */
+        .lesson-header {
+            background-color: #2c3e50; /* Dark blue */
+            color: #fff;
+            padding: 25px 30px;
+            border-bottom: 5px solid #3498db; /* Bright blue accent */
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .lesson-header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2em;
+            letter-spacing: 1px;
+        }
+
+        .lesson-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* セクション */
+        .lesson-section {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .lesson-section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #34495e; /* Muted blue-grey */
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1; /* Light grey */
+            padding-bottom: 5px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: #e74c3c; /* Red accent for emphasis */
+            font-weight: bold;
+        }
+
+        em {
+            font-style: normal;
+            background-color: #f9f9da; /* Light yellow for highlighted text */
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        ul li {
+            background-color: #ecf0f1;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        ul li::before {
+            content: '✓';
+            color: #2ecc71; /* Green checkmark */
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* アルファベットグリッド */
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .alphabet-item {
+            background-color: #f7f9fb;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .alphabet-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .alphabet-item strong {
+            display: block;
+            font-size: 2em;
+            color: #3498db;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .alphabet-item span.pronunciation {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .alphabet-item span.example {
+            font-size: 0.9em;
+            color: #555;
+            display: block;
+        }
+
+        /* 母音・子音の詳細 */
+        .vowel-details, .consonant-details {
+            margin-top: 20px;
+        }
+
+        .vowel-sound, .consonant-sound {
+            background-color: #fefcf5;
+            border: 1px solid #fcebb6;
+            border-left: 5px solid #f39c12; /* Orange accent */
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+        }
+
+        .vowel-sound h4, .consonant-sound h4 {
+            margin-top: 0;
+            color: #f39c12;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .vowel-sound p, .consonant-sound p {
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .vowel-sound ul, .consonant-sound ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .vowel-sound ul li, .consonant-sound ul li {
+            background-color: transparent;
+            padding: 5px 0;
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        .vowel-sound ul li::before, .consonant-sound ul li::before {
+            content: '';
+            margin-right: 0;
+        }
+
+        /* 練習問題セクション */
+        .practice-section {
+            background-color: #e8f7fa; /* Light blue background */
+            border: 2px dashed #aed6f1; /* Dotted blue border */
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: #2980b9; /* Darker blue */
+            border-bottom: none;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .practice-section .instruction {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .practice-button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .practice-button:hover {
+            background-color: #2980b9;
+            transform: translateY(-1px);
+        }
+
+        /* フォニックスと単語読み */
+        .phonics-example-item, .reading-example-item {
+            background-color: #f7fcf7;
+            border: 1px solid #d4edda;
+            border-left: 5px solid #2ecc71; /* Green accent */
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .phonics-example-item .word-breakdown, .reading-example-item .word-display {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #27ae60;
+        }
+
+        .phonics-example-item .pronunciation-guide, .reading-example-item .pronunciation-guide {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .phonics-example-item .japanese-translation, .reading-example-item .japanese-translation {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* まとめ */
+        .lesson-summary {
+            background-color: #f8f8f8;
+            padding: 30px;
+            border-top: 2px solid #ddd;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .lesson-summary h2 {
+            color: #34495e;
+            border-left-color: #2ecc71; /* Green for summary */
+        }
+
+        .lesson-summary ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lesson-summary ul li {
+            background-color: #e8f9ed; /* Light green for summary points */
+            margin-bottom: 10px;
+            padding: 15px;
+            border-left: 4px solid #2ecc71;
+            border-radius: 8px;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .lesson-summary ul li::before {
+            content: '💡'; /* Lightbulb emoji */
+            margin-right: 10px;
+            color: #2ecc71;
+        }
+
+        /* フッター */
+        .lesson-footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #888;
+            background-color: #f0f2f5;
+            border-top: 1px solid #eee;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <header class="lesson-header">
+            <h1>Chapter 1: The English Alphabet and Sounds</h1>
+<div class="lesson-header">
+    <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+</div>
+
+            <p>第1章：英語のアルファベットと音</p>
+        </header>
+
+        <section class="lesson-section">
+            <h2>はじめに：英語学習の第一歩！</h2>
+            <p>皆さん、こんにちは！英語学習アプリへようこそ！</p>
+            <p>英語を学ぶ上で、最も基本となるのが<strong>アルファベット</strong>とそれぞれの<strong>文字が持つ音</strong>です。日本語の「あいうえお」や「かきくけこ」のように、英語にも独自の音のルールがあります。</p>
+            <p>この章では、英語の26文字を一つひとつ丁寧に見ていき、それぞれの文字がどのように発音されるのか、そしてそれらが組み合わさってどのように単語が読めるようになるのかを学んでいきます。まるで新しい言語のパズルを解くように、一緒に楽しみながら進めていきましょう！</p>
+            <p>さあ、英語の世界への扉を開きましょう！</p>
+        </section>
+
+        <section class="lesson-section" id="section-alphabet">
+            <h2>1. 英語の26文字を知ろう！</h2>
+            <p>英語には全部で26のアルファベットがあります。大文字と小文字があり、それぞれに名前と発音があります。</p>
+            <p>まずは、それぞれのアルファベットの「名前」と、その文字から始まる単語でよく使われる「代表的な音」を学んでいきましょう。<strong>アプリの音声アイコン（🔈）をタップして、正しい発音を聞いてみてくださいね！</strong></p>
+
+            <div class="alphabet-grid">
+                <div class="alphabet-item">
+                    <strong>A a</strong>
+                    <span class="pronunciation">（エイ）</span>
+                    <span class="example">Apple (アップル)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>B b</strong>
+                    <span class="pronunciation">（ビー）</span>
+                    <span class="example">Ball (ボール)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>C c</strong>
+                    <span class="pronunciation">（シー）</span>
+                    <span class="example">Cat (キャット)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>D d</strong>
+                    <span class="pronunciation">（ディー）</span>
+                    <span class="example">Dog (ドッグ)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>E e</strong>
+                    <span class="pronunciation">（イー）</span>
+                    <span class="example">Egg (エッグ)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>F f</strong>
+                    <span class="pronunciation">（エフ）</span>
+                    <span class="example">Fish (フィッシュ)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>G g</strong>
+                    <span class="pronunciation">（ジー）</span>
+                    <span class="example">Goat (ゴート)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>H h</strong>
+                    <span class="pronunciation">（エイチ）</span>
+                    <span class="example">Hat (ハット)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>I i</strong>
+                    <span class="pronunciation">（アイ）</span>
+                    <span class="example">Igloo (イグルー)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>J j</strong>
+                    <span class="pronunciation">（ジェイ）</span>
+                    <span class="example">Jam (ジャム)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>K k</strong>
+                    <span class="pronunciation">（ケイ）</span>
+                    <span class="example">King (キング)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>L l</strong>
+                    <span class="pronunciation">（エル）</span>
+                    <span class="example">Lion (ライオン)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>M m</strong>
+                    <span class="pronunciation">（エム）</span>
+                    <span class="example">Monkey (モンキー)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>N n</strong>
+                    <span class="pronunciation">（エヌ）</span>
+                    <span class="example">Nest (ネスト)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>O o</strong>
+                    <span class="pronunciation">（オー）</span>
+                    <span class="example">Orange (オレンジ)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>P p</strong>
+                    <span class="pronunciation">（ピー）</span>
+                    <span class="example">Pig (ピッグ)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>Q q</strong>
+                    <span class="pronunciation">（キュー）</span>
+                    <span class="example">Queen (クイーン)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>R r</strong>
+                    <span class="pronunciation">（アー）</span>
+                    <span class="example">Rabbit (ラビット)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>S s</strong>
+                    <span class="pronunciation">（エス）</span>
+                    <span class="example">Sun (サン)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>T t</strong>
+                    <span class="pronunciation">（ティー）</span>
+                    <span class="example">Tiger (タイガー)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>U u</strong>
+                    <span class="pronunciation">（ユー）</span>
+                    <span class="example">Umbrella (アンブレラ)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>V v</strong>
+                    <span class="pronunciation">（ヴィー）</span>
+                    <span class="example">Van (ヴァン)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>W w</strong>
+                    <span class="pronunciation">（ダブリュー）</span>
+                    <span class="example">Wolf (ウルフ)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>X x</strong>
+                    <span class="pronunciation">（エックス）</span>
+                    <span class="example">X-ray (エックスレイ)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>Y y</strong>
+                    <span class="pronunciation">（ワイ）</span>
+                    <span class="example">Yak (ヤック)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="alphabet-item">
+                    <strong>Z z</strong>
+                    <span class="pronunciation">（ズィー / ゼット）</span>
+                    <span class="example">Zebra (ゼブラ)</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h3>練習タイム！アルファベットを覚えよう</h3>
+                <p class="instruction"><strong>アプリの機能を使った練習です。</strong></p>
+                <p>次の問題を解いて、アルファベットの名前と形をしっかり覚えましょう！</p>
+                <p><strong>例1：</strong>画面に表示されるアルファベットを正しい順番に並び替えてみましょう！<br>
+                <strong>例2：</strong>音声で流れるアルファベットの名前を聞いて、正しい文字をタップで選びましょう！</p>
+                <a href="#" class="practice-button">練習を開始！</a>
+            </div>
+        </section>
+
+        <section class="lesson-section" id="section-vowels">
+            <h2>2. 母音の音：A, E, I, O, U</h2>
+            <p>英語のアルファベットのうち、<strong>A, E, I, O, U</strong>の5つは「母音 (vowels)」と呼ばれます。これらは単語の音の「核」となる非常に重要な音です。</p>
+            <p>母音には大きく分けて「短い音 (short vowels)」と「長い音 (long vowels)」があります。最初は少し複雑に感じるかもしれませんが、繰り返し練習することで耳と口が慣れてきますよ！</p>
+
+            <div class="vowel-details">
+                <div class="vowel-sound">
+                    <h4>🅰️ 「A」の音</h4>
+                    <ul>
+                        <li><strong>短い音: /æ/</strong> （アとエの中間音、口を大きく開けて「アッ」と発音）<br>
+                            例: <strong class="english-word">Cat</strong> (キャット) - 猫<span class="audio-icon">🔈</span><br>
+                            例: <strong class="english-word">Apple</strong> (アップル) - りんご<span class="audio-icon">🔈</span></li>
+                        <li><strong>長い音: /eɪ/</strong> （アルファベットの名前と同じ「エイ」）<br>
+                            例: <strong class="english-word">Name</strong> (ネイム) - 名前<span class="audio-icon">🔈</span><br>
+                            例: <strong class="english-word">Cake</strong> (ケイク) - ケーキ<span class="audio-icon">🔈</span></li>
+                    </ul>
+                </div>
+                <div class="vowel-sound">
+                    <h4>🅔 「E」の音</h4>
+                    <ul>
+                        <li><strong>短い音: /e/</strong> （「エッ」と短く、軽く発音）<br>
+                            例: <strong class="english-word">Bed</strong> (ベッド) - ベッド<span class="audio-icon">🔈</span><br>
+                            例: <strong class="english-word">Egg</strong> (エッグ) - 卵<span class="audio-icon">🔈</span></li>
+                        <li><strong>長い音: /iː/</strong> （アルファベットの名前と同じ「イー」）<br>
+                            例: <strong class="english-word">Tree</strong> (トゥリー) - 木<span class="audio-icon">🔈</span><br>
+                            例: <strong class="english-word">Green</strong> (グリーン) - 緑<span class="audio-icon">🔈</span></li>
+                    </ul>
+                </div>
+                <div class="vowel-sound">
+                    <h4>🅘 「I」の音</h4>
+                    <ul>
+                        <li><strong>短い音: /ɪ/</strong> （「イッ」と短く、力を抜いて発音）<br>
+                            例: <strong class="english-word">Pig</strong> (ピッグ) - 豚<span class="audio-icon">🔈</span><br>
+                            例: <strong class="english-word">Fish</strong> (フィッシュ) - 魚<span class="audio-icon">🔈</span></li>
+                        <li><strong>長い音: /aɪ/</strong> （アルファベットの名前と同じ「アイ」）<br>
+                            例: <strong class="english-word">Bike</strong> (バイク) - 自転車<span class="audio-icon">🔈</span><br>
+                            例: <strong class="english-word">Light</strong> (ライト) - 光<span class="audio-icon">🔈</span></li>
+                    </ul>
+                </div>
+                <div class="vowel-sound">
+                    <h4>🅾️ 「O」の音</h4>
+                    <ul>
+                        <li><strong>短い音: /ɒ/ (主に米語では /ɑː/)</strong> （口を丸く開けて「オッ」と発音）<br>
+                            例: <strong class="english-word">Hot</strong> (ホット) - 暑い<span class="audio-icon">🔈</span><br>
+                            例: <strong class="english-word">Dog</strong> (ドッグ) - 犬<span class="audio-icon">🔈</span></li>
+                        <li><strong>長い音: /oʊ/ (主に米語では /əʊ/)</strong> （アルファベットの名前と同じ「オウ」）<br>
+                            例: <strong class="english-word">Boat</strong> (ボート) - ボート<span class="audio-icon">🔈</span><br>
+                            例: <strong class="english-word">Go</strong> (ゴウ) - 行く<span class="audio-icon">🔈</span></li>
+                    </ul>
+                </div>
+                <div class="vowel-sound">
+                    <h4>🇺 「U」の音</h4>
+                    <ul>
+                        <li><strong>短い音: /ʌ/</strong> （「アッ」と力を抜いて発音、日本語の「ア」より少し詰まった音）<br>
+                            例: <strong class="english-word">Cup</strong> (カップ) - カップ<span class="audio-icon">🔈</span><br>
+                            例: <strong class="english-word">Sun</strong> (サン) - 太陽<span class="audio-icon">🔈</span></li>
+                        <li><strong>長い音: /juː/ (または /uː/)</strong> （アルファベットの名前と同じ「ユー」、または「ウー」）<br>
+                            例: <strong class="english-word">Blue</strong> (ブルー) - 青<span class="audio-icon">🔈</span><br>
+                            例: <strong class="english-word">Music</strong> (ミュージック) - 音楽<span class="audio-icon">🔈</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h3>練習タイム！母音の音を聞き分けよう</h3>
+                <p class="instruction"><strong>アプリの機能を使った練習です。</strong></p>
+                <p>提示された単語の母音の音に注目して、正しい母音を選んでみましょう！</p>
+                <p><strong>例：</strong>「bed」という音声が流れたら、それが短い「e」の音であることを認識して選択します。</p>
+                <a href="#" class="practice-button">練習を開始！</a>
+            </div>
+        </section>
+
+        <section class="lesson-section" id="section-consonants">
+            <h2>3. 子音の音と発音</h2>
+            <p>母音以外のアルファベットは「子音 (consonants)」と呼ばれます。子音は、母音と組み合わさって単語の形を作ります。子音の音は日本語にはないものも多いので、口の形や舌の位置に注意して練習しましょう！</p>
+            <p>ここでは、いくつかの代表的な子音の音とその発音のポイントを紹介します。</p>
+
+            <div class="consonant-details">
+                <div class="consonant-sound">
+                    <h4>「B」の音: /b/ （ブッ）</h4>
+                    <p>唇を閉じて一気に開く破裂音です。日本語の「バ行」よりも息を破裂させるイメージ。</p>
+                    <ul>
+                        <li>例: <strong class="english-word">Ball</strong> (ボール) - ボール<span class="audio-icon">🔈</span></li>
+                        <li>例: <strong class="english-word">Book</strong> (ブック) - 本<span class="audio-icon">🔈</span></li>
+                    </ul>
+                </div>
+                <div class="consonant-sound">
+                    <h4>「F」の音: /f/ （フッ）</h4>
+                    <p>上の歯を下唇に軽く当て、息を「フー」と吹き出す摩擦音です。日本語の「フ」とは異なり、唇を丸めません。</p>
+                    <ul>
+                        <li>例: <strong class="english-word">Fish</strong> (フィッシュ) - 魚<span class="audio-icon">🔈</span></li>
+                        <li>例: <strong class="english-word">Fan</strong> (ファン) - 扇風機<span class="audio-icon">🔈</span></li>
+                    </ul>
+                </div>
+                <div class="consonant-sound">
+                    <h4>「L」と「R」の音: /l/, /r/ （エル, アー）</h4>
+                    <p>この2つは日本語にはない、英語学習者がつまずきやすい音です。</p>
+                    <ul>
+                        <li><strong>L /l/:</strong> 舌先を上の歯の裏（歯茎の付け根あたり）につけて、「ルッ」と発音します。舌をしっかり使います。<br>
+                            例: <strong class="english-word">Lion</strong> (ライオン) - ライオン<span class="audio-icon">🔈</span></li>
+                        <li><strong>R /r/:</strong> 舌を口の中で丸めるようにして、舌先をどこにもつけずに「ウー」と発音する準備をしてから「ル」と言います。日本語のラ行とは全く異なります。<br>
+                            例: <strong class="english-word">Rabbit</strong> (ラビット) - うさぎ<span class="audio-icon">🔈</span></li>
+                    </ul>
+                </div>
+                <div class="consonant-sound">
+                    <h4>「S」と「Z」の音: /s/, /z/ （エス, ズィー）</h4>
+                    <p>この2つは口の形は同じですが、声帯を震わせるかどうかが違います。</p>
+                    <ul>
+                        <li><strong>S /s/:</strong> 歯の間から息を漏らすように「スッ」と発音します（無声音）。<br>
+                            例: <strong class="english-word">Sun</strong> (サン) - 太陽<span class="audio-icon">🔈</span></li>
+                        <li><strong>Z /z/:</strong> Sと同じ口の形で、声帯を震わせて「ズッ」と発音します（有声音）。<br>
+                            例: <strong class="english-word">Zebra</strong> (ゼブラ) - シマウマ<span class="audio-icon">🔈</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h3>練習タイム！子音の発音に挑戦！</h3>
+                <p class="instruction"><strong>アプリの機能を使った練習です。</strong></p>
+                <p>音声を聞いて、発音を真似てみましょう。自分の声を録音して、アプリの模範発音と聞き比べてみてくださいね！</p>
+                <p><strong>例：</strong>「Fish」という単語の音声を聞き、自分でも発音して録音。その後、アプリがあなたの発音を評価してくれます。</p>
+                <a href="#" class="practice-button">練習を開始！</a>
+            </div>
+        </section>
+
+        <section class="lesson-section" id="section-phonics">
+            <h2>4. 基本フォニックス：音の組み合わせ</h2>
+            <p>英語の単語は、アルファベットの「音」が組み合わさってできています。この「音と文字のルール」を学ぶのが<strong>フォニックス</strong>です。フォニックスを学ぶと、初めて見る単語でも自分で音読できるようになります。</p>
+            <p>まずは、最も基本的な「子音＋母音＋子音 (CVC)」の形から見ていきましょう。</p>
+
+            <div class="phonics-examples">
+                <h3>CVC単語の例：</h3>
+                <div class="phonics-example-item">
+                    <span class="word-breakdown">c-a-t → <strong class="english-word">Cat</strong></span>
+                    <span class="pronunciation-guide">（クッ-アッ-トゥ → キャット）</span>
+                    <span class="japanese-translation">猫</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="phonics-example-item">
+                    <span class="word-breakdown">h-e-n → <strong class="english-word">Hen</strong></span>
+                    <span class="pronunciation-guide">（フッ-エッ-ン → ヘン）</span>
+                    <span class="japanese-translation">めんどり</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="phonics-example-item">
+                    <span class="word-breakdown">p-i-g → <strong class="english-word">Pig</strong></span>
+                    <span class="pronunciation-guide">（プッ-イッ-グッ → ピッグ）</span>
+                    <span class="audio-icon">🔈</span>
+                    <span class="japanese-translation">豚</span>
+                </div>
+                <div class="phonics-example-item">
+                    <span class="word-breakdown">d-o-g → <strong class="english-word">Dog</strong></span>
+                    <span class="pronunciation-guide">（ドッ-オッ-グッ → ドッグ）</span>
+                    <span class="audio-icon">🔈</span>
+                    <span class="japanese-translation">犬</span>
+                </div>
+                <div class="phonics-example-item">
+                    <span class="word-breakdown">s-u-n → <strong class="english-word">Sun</strong></span>
+                    <span class="pronunciation-guide">（スッ-アッ-ン → サン）</span>
+                    <span class="audio-icon">🔈</span>
+                    <span class="japanese-translation">太陽</span>
+                </div>
+            </div>
+
+            <p>このように、一つ一つの音を繋げていくことで単語が読めるようになります。日本語の「音読み」と「訓読み」のように、英語にもいくつかの読み方がありますが、まずはこの基本ルールからマスターしましょう。</p>
+
+            <div class="practice-section">
+                <h3>練習タイム！音を繋げてみよう</h3>
+                <p class="instruction"><strong>アプリの機能を使った練習です。</strong></p>
+                <p>バラバラになった文字の音を組み合わせて、正しい単語を作ってみましょう！</p>
+                <p><strong>例：</strong>画面に「c」「a」「t」の音と文字が表示されます。これらをドラッグ＆ドロップで並べ替えて「cat」という単語を完成させます。</p>
+                <a href="#" class="practice-button">練習を開始！</a>
+            </div>
+        </section>
+
+        <section class="lesson-section" id="section-reading">
+            <h2>5. 簡単な単語を読んでみよう！</h2>
+            <p>さあ、これまでに学んだアルファベットの音とフォニックスのルールを使って、実際に簡単な単語を読んでみましょう！</p>
+            <p>まずは、音を一つずつ確認しながら、ゆっくりと発音してみてください。その後、スムーズに読めるように練習を重ねましょう。<strong>「🔈」アイコンをタップして、お手本の発音を聞いてから繰り返してくださいね。</strong></p>
+
+            <div class="reading-examples">
+                <div class="reading-example-item">
+                    <span class="word-display"><strong class="english-word">Red</strong></span>
+                    <span class="pronunciation-guide">（レッド）</span>
+                    <span class="japanese-translation">赤い</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="reading-example-item">
+                    <span class="word-display"><strong class="english-word">Pen</strong></span>
+                    <span class="pronunciation-guide">（ペン）</span>
+                    <span class="japanese-translation">ペン</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="reading-example-item">
+                    <span class="word-display"><strong class="english-word">Map</strong></span>
+                    <span class="pronunciation-guide">（マップ）</span>
+                    <span class="japanese-translation">地図</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="reading-example-item">
+                    <span class="word-display"><strong class="english-word">Run</strong></span>
+                    <span class="pronunciation-guide">（ラン）</span>
+                    <span class="japanese-translation">走る</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+                <div class="reading-example-item">
+                    <span class="word-display"><strong class="english-word">Sit</strong></span>
+                    <span class="pronunciation-guide">（スィット）</span>
+                    <span class="japanese-translation">座る</span>
+                    <span class="audio-icon">🔈</span>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h3>練習タイム！単語読みチャレンジ</h3>
+                <p class="instruction"><strong>アプリの機能を使った練習です。</strong></p>
+                <p>表示される単語を声に出して読んでみましょう。読み終わったら答え合わせ！</p>
+                <p><strong>例：</strong>画面に「BED」という文字が表示されます。あなたが「ベッド」と発音し、アプリが認識したら正解です。間違えた場合は、正しい発音のヒントが表示されます。</p>
+                <a href="#" class="practice-button">練習を開始！</a>
+            </div>
+        </section>
+
+        <section class="lesson-section" id="section-cultural-note">
+            <h2>文化ノート：英語と世界</h2>
+            <p>英語は世界中で最も広く使われている言語の一つです。インターネット上の情報の多くが英語で書かれており、国際的なビジネス、科学、文化交流の場でも英語が共通語として使われています。</p>
+            <p>この26のアルファベットとその音をマスターすることは、世界中の人々とコミュニケーションを取るための第一歩であり、無限の知識と機会への扉を開くことになります。今日の学びは、あなたのグローバルな未来への投資です！</p>
+        </section>
+
+        <section class="lesson-summary">
+            <h2>まとめ：今日の学び</h2>
+            <p>第1章では、英語学習の最も基本的な土台を築きました。今日の重要なポイントを振り返ってみましょう。</p>
+            <ul>
+                <li>英語には<strong>26のアルファベット</strong>（大文字と小文字）があり、それぞれに名前と代表的な音があることを学びました。</li>
+                <li><strong>母音 (A, E, I, O, U)</strong>には「短い音」と「長い音」があることを理解し、それぞれの発音に触れました。</li>
+                <li><strong>子音</strong>には様々な発音があり、日本語にはない音（例: F, L, R, S, Z）があることを学び、練習しました。</li>
+                <li><strong>フォニックス</strong>の基本的な考え方、特にCVC（子音＋母音＋子音）のパターンで単語が読めるようになることを体験しました。</li>
+                <li>学んだ知識を使って、実際に<strong>簡単な英単語を音読する練習</strong>をしました。</li>
+            </ul>
+            <p>今日の学習は、あなたの英語の基礎をしっかりと固めるものです。焦らず、繰り返し練習して、音と文字の関係を身体で覚えましょう。きっと、英語がもっと楽しくなりますよ！</p>
+            <p>次回のチャプターもお楽しみに！</p>
+        </section>
+
+        <footer class="lesson-footer">
+            <p>&copy; English Learning App. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
+```

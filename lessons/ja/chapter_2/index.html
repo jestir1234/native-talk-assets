@@ -1,0 +1,391 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Hiragana – The Vowel Sounds</title>
+    <style>
+        /* Basic styling to make it look app-friendly in a browser */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .lesson-container {
+            max-width: 800px;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            margin: 20px;
+            overflow: hidden;
+        }
+        .lesson-header {
+            background-color: #6a0dad; /* Deep Purple */
+            color: #ffffff;
+            padding: 30px 25px;
+            text-align: center;
+            border-radius: 12px 12px 0 0;
+        }
+        .lesson-header h1 {
+            margin: 0 0 10px;
+            font-size: 2.2em;
+        }
+        .lesson-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .lesson-section {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+        }
+        .lesson-section:last-of-type {
+            border-bottom: none;
+        }
+        h2 {
+            color: #4a0082; /* Slightly lighter purple */
+            margin-top: 0;
+            font-size: 1.8em;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #6a0dad;
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .character-card {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+            margin-bottom: 20px;
+        }
+        .character-display {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .hiragana-char {
+            font-size: 4em;
+            color: #6a0dad;
+            font-weight: bold;
+            line-height: 1;
+        }
+        .pronunciation-guide {
+            font-size: 1.2em;
+            color: #555;
+            background-color: #e6e6fa; /* Lavender */
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-style: italic;
+        }
+        .stroke-order h4 {
+            color: #4a0082;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .stroke-order ol {
+            padding-left: 20px;
+            margin-top: 0;
+        }
+        .stroke-order li {
+            margin-bottom: 5px;
+        }
+        .stroke-order em {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .cultural-note {
+            background-color: #fffacd; /* Lemon Chiffon */
+            border-left: 5px solid #ffcc00;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        .cultural-note strong {
+            color: #b8860b; /* Dark Goldenrod */
+        }
+        .practice-item {
+            background-color: #e0f2f7; /* Light Blue */
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #b3e5fc;
+        }
+        .practice-item p {
+            margin-top: 0;
+            font-size: 1.1em;
+            color: #263238;
+        }
+        .practice-item ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .practice-item li {
+            background-color: #a7d9ed;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .word-card {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background-color: #e6ffe6; /* Light Green */
+            border-left: 4px solid #4caf50;
+            border-radius: 5px;
+        }
+        .hiragana-word {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2e7d32; /* Dark Green */
+        }
+        .word-meaning {
+            font-style: italic;
+            color: #555;
+            font-size: 1.1em;
+        }
+        .lesson-summary {
+            background-color: #f0f0ff; /* Light Lavender */
+            padding: 25px;
+            border-radius: 0 0 12px 12px;
+        }
+        .lesson-summary h2 {
+            color: #4a0082;
+            border-bottom: none;
+            margin-bottom: 15px;
+        }
+        .lesson-summary ul {
+            list-style: disc;
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        .lesson-summary li {
+            margin-bottom: 8px;
+        }
+        .next-chapter-button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto 0;
+            padding: 15px 30px;
+            background-color: #6a0dad;
+            color: #ffffff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+        .next-chapter-button:hover {
+            background-color: #4a0082;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <header class="lesson-header">
+            <h1>Chapter 2: Hiragana – The Vowel Sounds</h1>
+<div class="lesson-header">
+    <img src="./chapter_2/header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+</div>
+
+            <p>Konnichiwa, language learner! 👋 Ready to unlock the very first sounds of Japanese? Let's dive into the five foundational Hiragana vowels. Mastering these is your first big step!</p>
+        </header>
+
+        <section class="lesson-section intro-vowels">
+            <h2>Meet the Japanese Vowels: あ, い, う, え, お</h2>
+            <p>Just like in English, vowels are the building blocks of sound. In Japanese, there are five core vowels, and they form the basis of almost every other sound you'll learn. They are pronounced clearly and consistently, which makes them super easy to pick up!</p>
+            <p>Unlike English vowels which can have many different sounds (think 'a' in 'cat', 'car', 'call'), Japanese vowels each have just *one* sound. Simple, right?</p>
+        </section>
+
+        <section class="lesson-section vowel-detail">
+            <h3>1. あ (<span class="pronunciation-guide">[a]</span>) – Ahh, so Simple!</h3>
+            <div class="character-card">
+                <div class="character-display">
+                    <span class="hiragana-char">あ</span>
+                    <span class="pronunciation-guide">[ah] as in "father" or "car"</span>
+                </div>
+                <div class="stroke-order">
+                    <h4>Stroke Order & Tips:</h4>
+                    <ol>
+                        <li>A horizontal line from left to right.</li>
+                        <li>A vertical line from top to bottom, with a slight hook.</li>
+                        <li>A curvy loop starting from the top right, sweeping down and around.</li>
+                    </ol>
+                    <p><em>Imagine someone letting out a relaxed "ahh" sound. It's the most common vowel sound!</em></p>
+                </div>
+            </div>
+            <div class="cultural-note">
+                <p><strong>Cultural Note:</strong> This sound is crucial! Think of <strong>あい (ai)</strong>, which means "love" – a beautiful first word to learn! ❤️</p>
+            </div>
+        </section>
+
+        <section class="lesson-section vowel-detail">
+            <h3>2. い (<span class="pronunciation-guide">[i]</span>) – Easy Peasy!</h3>
+            <div class="character-card">
+                <div class="character-display">
+                    <span class="hiragana-char">い</span>
+                    <span class="pronunciation-guide">[ee] as in "see" or "machine"</span>
+                </div>
+                <div class="stroke-order">
+                    <h4>Stroke Order & Tips:</h4>
+                    <ol>
+                        <li>A short, slightly curved stroke from top to bottom, with a small hook.</li>
+                        <li>A similar, slightly shorter stroke to the right of the first one.</li>
+                    </ol>
+                    <p><em>It looks a bit like two parallel lines. Just remember "eee!"</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section vowel-detail">
+            <h3>3. う (<span class="pronunciation-guide">[u]</span>) – Ooh, So Cool!</h3>
+            <div class="character-card">
+                <div class="character-display">
+                    <span class="hiragana-char">う</span>
+                    <span class="pronunciation-guide">[oo] as in "moon" or "flute"</span>
+                </div>
+                <div class="stroke-order">
+                    <h4>Stroke Order & Tips:</h4>
+                    <ol>
+                        <li>A short, upward sloping stroke from left to right.</li>
+                        <li>A longer, curved stroke starting from the middle top, sweeping down and slightly right.</li>
+                    </ol>
+                    <p><em>Imagine someone saying "ooh" in surprise. The second stroke kinda forms an ear!</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section vowel-detail">
+            <h3>4. え (<span class="pronunciation-guide">[e]</span>) – Eh, Why Not?</h3>
+            <div class="character-card">
+                <div class="character-display">
+                    <span class="hiragana-char">え</span>
+                    <span class="pronunciation-guide">[eh] as in "egg" or "bed"</span>
+                </div>
+                <div class="stroke-order">
+                    <h4>Stroke Order & Tips:</h4>
+                    <ol>
+                        <li>A short horizontal line from left to right.</li>
+                        <li>A longer, curvy stroke that starts high, loops down, and extends to the right.</li>
+                    </ol>
+                    <p><em>Looks a bit like a "Z" with a fancy tail. Or a running person!</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section vowel-detail">
+            <h3>5. お (<span class="pronunciation-guide">[o]</span>) – Oh, That's Right!</h3>
+            <div class="character-card">
+                <div class="character-display">
+                    <span class="hiragana-char">お</span>
+                    <span class="pronunciation-guide">[oh] as in "old" or "boat"</span>
+                </div>
+                <div class="stroke-order">
+                    <h4>Stroke Order & Tips:</h4>
+                    <ol>
+                        <li>A horizontal line from left to right.</li>
+                        <li>A vertical stroke down with a hook, then a loop around.</li>
+                        <li>A small, diagonal dash in the top right.</li>
+                    </ol>
+                    <p><em>It's like あ but with a little "hat" on top! Remember the hat for "oh!"</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section interactive-practice">
+            <h2>Practice Time: Hear It, Say It! 🎧</h2>
+            <p>Ready to put your new knowledge to the test? Listen to these sounds and try to say them aloud. You can also try writing them!</p>
+            <div class="practice-item">
+                <p><strong>Listen & Repeat:</strong></p>
+                <ul>
+                    <li>あ <span class="pronunciation-guide">[ah]</span></li>
+                    <li>い <span class="pronunciation-guide">[ee]</span></li>
+                    <li>う <span class="pronunciation-guide">[oo]</span></li>
+                    <li>え <span class="pronunciation-guide">[eh]</span></li>
+                    <li>お <span class="pronunciation-guide">[oh]</span></li>
+                </ul>
+                <p><em>(Imagine tapping these characters to hear their pronunciation!)</em></p>
+            </div>
+            <div class="practice-item">
+                <p><strong>Writing Challenge:</strong> Grab a pen and paper (or use your finger on screen if the app allows!). Practice writing each character at least 5 times. Focus on stroke order!</p>
+                <p style="font-size: 2em; text-align: center; letter-spacing: 15px;">あ　い　う　え　お</p>
+            </div>
+        </section>
+
+        <section class="lesson-section basic-words">
+            <h2>Your First Full Hiragana Words! 🎉</h2>
+            <p>This is where it gets exciting! By combining these vowels, you can already form real Japanese words. Amazing, right?</p>
+
+            <div class="word-card">
+                <span class="hiragana-word">あい</span>
+                <span class="pronunciation-guide">[ai]</span>
+                <span class="word-meaning">love</span>
+            </div>
+            <div class="word-card">
+                <span class="hiragana-word">いえ</span>
+                <span class="pronunciation-guide">[ie]</span>
+                <span class="word-meaning">house / home</span>
+            </div>
+            <div class="word-card">
+                <span class="hiragana-word">あお</span>
+                <span class="pronunciation-guide">[ao]</span>
+                <span class="word-meaning">blue</span>
+            </div>
+            <div class="word-card">
+                <span class="hiragana-word">うえ</span>
+                <span class="pronunciation-guide">[ue]</span>
+                <span class="word-meaning">up / above</span>
+            </div>
+            <div class="word-card">
+                <span class="hiragana-word">いいえ</span>
+                <span class="pronunciation-guide">[iie]</span>
+                <span class="word-meaning">no (pronounced "ee-eh")</span>
+            </div>
+
+            <div class="practice-item">
+                <p><strong>Word Practice:</strong> Say these words aloud. Try to recognize the individual vowel sounds you just learned within each word! Don't forget to tap them to hear the native pronunciation!</p>
+            </div>
+        </section>
+
+        <section class="lesson-summary">
+            <h2>Chapter 2 Summary: Vowel Victory! ✨</h2>
+            <ul>
+                <li>You've learned the 5 fundamental Hiragana vowels: <strong>あ (a), い (i), う (u), え (e), お (o)</strong>.</li>
+                <li>You practiced their clear and consistent pronunciation.</li>
+                <li>You discovered the correct stroke order for writing each character.</li>
+                <li>You even read your very first Japanese words like <strong>あい (love)</strong> and <strong>いえ (house)</strong>!</li>
+            </ul>
+            <p>Great job! You've just unlocked the core sounds of Japanese. Keep practicing these, and you'll be amazed at how quickly you pick up more characters. You're building a strong foundation! 💪</p>
+            <button class="next-chapter-button" onclick="alert('Proceeding to Chapter 3!')">Next Chapter: Hiragana K-Row (か, き, く, け, こ)</button>
+        </section>
+    </div>
+</body>
+</html>
+```

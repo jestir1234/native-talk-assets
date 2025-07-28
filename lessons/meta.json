@@ -1,0 +1,288 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-07-28T22:31:45.456Z",
+  "totalLanguages": 2,
+  "totalChapters": 20,
+  "totalAvailableChapters": 2,
+  "languages": {
+    "en": {
+      "code": "en",
+      "name": "English",
+      "flag": "🇺🇸",
+      "totalChapters": 10,
+      "availableChapters": 1,
+      "chapters": [
+        {
+          "number": 1,
+          "title": "The English Alphabet and Sounds",
+          "keyPoints": [
+            "The 26 letters of the English alphabet",
+            "Vowel sounds: A, E, I, O, U",
+            "Consonant sounds and pronunciation",
+            "Basic phonics and sound combinations",
+            "Introduction to reading simple words"
+          ],
+          "availableLanguages": [
+            "ja"
+          ],
+          "totalLanguages": 1
+        },
+        {
+          "number": 2,
+          "title": "Basic Greetings and Introductions",
+          "keyPoints": [
+            "Hello, Hi, Good morning, Good afternoon, Good evening",
+            "How are you? I'm fine, thank you. And you?",
+            "My name is... / I'm...",
+            "Nice to meet you",
+            "Basic conversation starters"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 3,
+          "title": "Numbers and Counting",
+          "keyPoints": [
+            "Numbers 1-20",
+            "Counting objects",
+            "Age: How old are you? I'm ___ years old",
+            "Phone numbers and addresses",
+            "Basic math vocabulary: plus, minus, equals"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 4,
+          "title": "Colors and Descriptions",
+          "keyPoints": [
+            "Basic colors: red, blue, green, yellow, etc.",
+            "Describing objects: big, small, tall, short",
+            "This is... / That is...",
+            "What color is it? It's...",
+            "Adjectives and basic descriptions"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 5,
+          "title": "Family and Relationships",
+          "keyPoints": [
+            "Family members: mother, father, sister, brother, etc.",
+            "Possessive pronouns: my, your, his, her, their",
+            "This is my... / These are my...",
+            "Family vocabulary and relationships",
+            "Talking about family members"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 6,
+          "title": "Daily Activities and Routines",
+          "keyPoints": [
+            "Common verbs: eat, drink, sleep, work, study, play",
+            "Present simple tense basics",
+            "I eat... / I don't eat...",
+            "Daily routine vocabulary",
+            "Time expressions: in the morning, afternoon, evening"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 7,
+          "title": "Food and Drinks",
+          "keyPoints": [
+            "Common food items: bread, rice, meat, vegetables",
+            "Drinks: water, coffee, tea, juice, milk",
+            "I like... / I don't like...",
+            "What do you like to eat?",
+            "Restaurant vocabulary basics"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 8,
+          "title": "Places and Directions",
+          "keyPoints": [
+            "Common places: school, home, work, store, park",
+            "Prepositions: in, on, at, near, far from",
+            "Where is...? It's...",
+            "Basic directions: left, right, straight, turn",
+            "Location vocabulary"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 9,
+          "title": "Weather and Seasons",
+          "keyPoints": [
+            "Weather vocabulary: sunny, rainy, cloudy, snowy",
+            "Seasons: spring, summer, fall, winter",
+            "What's the weather like? It's...",
+            "Temperature: hot, cold, warm, cool",
+            "Weather-related activities"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 10,
+          "title": "Time and Schedules",
+          "keyPoints": [
+            "Telling time: What time is it? It's...",
+            "Days of the week: Monday, Tuesday, etc.",
+            "Months of the year",
+            "When is...? It's on...",
+            "Making appointments and schedules"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        }
+      ]
+    },
+    "ja": {
+      "code": "ja",
+      "name": "Japanese",
+      "flag": "🇯🇵",
+      "totalChapters": 10,
+      "availableChapters": 1,
+      "chapters": [
+        {
+          "number": 1,
+          "title": "The Japanese Writing System",
+          "keyPoints": [
+            "The three scripts: Hiragana, Katakana, Kanji",
+            "Why Japanese uses all three",
+            "Reading flow (left-to-right, top-to-bottom)",
+            "Intro to syllables and phonetic writing"
+          ],
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
+        },
+        {
+          "number": 2,
+          "title": "Hiragana – The Vowel Sounds",
+          "keyPoints": [
+            "あ, い, う, え, お",
+            "Pronunciation guide and stroke order",
+            "Basic words: あい (love), いえ (house), うみ (sea), etc.",
+            "Your first full hiragana words"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 3,
+          "title": "Basic Greetings & Introductions",
+          "keyPoints": [
+            "Greetings: こんにちは, おはよう, こんばんは, さようなら",
+            "Introducing yourself:",
+            "わたしは〇〇です。",
+            "はじめまして。よろしくおねがいします。",
+            "Grammar: Particle は, copula です"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 4,
+          "title": "Katakana – Borrowed Words",
+          "keyPoints": [
+            "カ, キ, ク, ケ, コ (start of katakana)",
+            "Foreign words: コーヒー, パン, コンピューター",
+            "Onomatopoeia: ピカピカ, ドキドキ",
+            "Grammar: Using の to show possession",
+            "わたしの なまえは 〇〇です。"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 5,
+          "title": "Simple Sentence Structure",
+          "keyPoints": [
+            "Japanese word order: Subject–Object–Verb",
+            "Particles: を (object), が (subject focus)",
+            "Sample patterns:",
+            "わたしはりんごをたべます。",
+            "ジョンさんがきます。"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 6,
+          "title": "Numbers, Time, and Counters",
+          "keyPoints": [
+            "Numbers 1–10, じかん (time), and basic counters (～つ)",
+            "Asking the time: いま なんじですか？",
+            "Days of the week: 月曜日, 火曜日...",
+            "Grammar: に for time and location"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 7,
+          "title": "Essential Verbs & Conjugation Basics",
+          "keyPoints": [
+            "Verbs: いく (to go), たべる (to eat), する (to do), くる (to come)",
+            "Conjugation: Present/future, negative",
+            "Basic sentence drills:",
+            "わたしはがっこうにいきます。",
+            "パンをたべません。"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 8,
+          "title": "Adjectives and Description",
+          "keyPoints": [
+            "い-adjectives vs. な-adjectives",
+            "Examples: たかい (expensive), しずか (quiet)",
+            "Sentence structure:",
+            "この みせは たかいです。",
+            "しずかな まちです。"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 9,
+          "title": "Daily Life Vocabulary & Polite Requests",
+          "keyPoints": [
+            "Vocabulary: food, places, transport, daily routine",
+            "Making requests: ～ください, ～をおねがいします",
+            "Example:",
+            "みずをください。",
+            "コーヒーをいっつつ おねがいします。"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 10,
+          "title": "Your First Japanese Paragraph",
+          "keyPoints": [
+            "Combining learned grammar and vocabulary",
+            "Writing about your routine or family:",
+            "わたしはまいにち６じにおきます。",
+            "あさごはんをたべて、がっこうにいきます。",
+            "Reflection: You’ve come a long way!"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        }
+      ]
+    }
+  }
+}
