@@ -117,8 +117,7 @@ function tokenizeSpanish(text) {
 
 function tokenizeVietnamese(text) {
     return text
-        .toLowerCase()
-        .replace(/[^a-zA-ZÀ-ÿ0-9\s']/g, "") // Remove punctuation but keep accented characters
+        .replace(/[^\p{L}\p{N}\s']/gu, "") // Remove punctuation but keep all letters and numbers using Unicode properties
         .split(/\s+/)
         .filter(Boolean);
 }
@@ -256,7 +255,6 @@ function tokenizeSpanishWithPunctuation(text) {
 function tokenizeVietnameseWithPunctuation(text) {
     return text
         .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
-        .toLowerCase()
         .split(/([.!?,;:""''()\s]+)/)
         .filter(word => word.length > 0)
         .map(word => word.trim())
