@@ -131,18 +131,13 @@ const metaJsonTemplate = {
   "current_episode": 1,
   "protagonist": {
     "traits": [
-      "[TRAIT_1]",
-      "[TRAIT_2]",
-      "[TRAIT_3]"
     ],
-    "current_state": "[CURRENT_STATE]"
+    "current_state": ""
   },
   "plot_summary": [
-    "[FIRST_EPISODE_SUMMARY]"
   ],
   "support_characters": [],
   "open_threads": [
-    "[FIRST_OPEN_THREAD]"
   ]
 };
 
@@ -150,6 +145,13 @@ const metaJsonTemplate = {
 const structureJsonTemplate = {
   "id": seriesId,
   "coverImage": `https://cdn.native-talk.com/stories/${seriesId}/cover.webp`,
+  "chapters": []
+};
+
+// Template for en.json
+const enJsonTemplate = {
+  "title": seriesId,
+  "description": "[FILL IN]",
   "chapters": []
 };
 
@@ -182,6 +184,10 @@ const files = [
   {
     path: `stories/${seriesId}/structure.json`,
     content: JSON.stringify(structureJsonTemplate, null, 2)
+  },
+  {
+    path: `stories/${seriesId}/lang/en.json`,
+    content: JSON.stringify(enJsonTemplate, null, 2)
   }
 ];
 

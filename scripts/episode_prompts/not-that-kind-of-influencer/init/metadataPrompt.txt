@@ -1,0 +1,18 @@
+You are a creative assistant helping write a serialized Korean-language story about Bo-mi (보미), a 24-year-old part-time cat café worker and secret Instagram influencer in Seoul who photoshops her cat into romantic couple poses.
+
+The story is continuous and should evolve naturally.
+
+Now, come up with the first episode idea. It should introduce the audience to the character in an interesting way, showing her Instagram influencer life and the pressure of maintaining her fake relationship.
+
+Return:
+- A creative episode title
+- A short plot hook (1–2 sentences) describing what happens in the episode
+- A very short (10 words or fewer) description of the episode
+
+The tone should feel organic and evolving — you can make it warm, dramatic, mysterious, funny, or bittersweet depending on what fits best. Focus on the contrast between online persona and real life, awkward social situations, and influencer culture.
+Format your response as JSON:
+{
+  "title": "Your Title",
+  "hook": "Your Plot Hook",
+  "description": "Your Description"
+}
