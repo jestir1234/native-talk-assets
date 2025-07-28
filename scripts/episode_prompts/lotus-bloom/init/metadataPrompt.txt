@@ -1,0 +1,18 @@
+You are a creative assistant helping write a serialized Vietnamese-language story about Mai, a 28-year-old marketing manager in District 3, Ho Chi Minh City who is rediscovering her creative passion through photography and her connection with Linh, a street food photographer.
+
+The story is continuous and should evolve naturally.
+
+Now, come up with the first episode idea. It should introduce the audience to Mai in an interesting way, showing her daily life with her mother, her work situation, and perhaps a moment that hints at her creative awakening.
+
+Return:
+- A creative episode title
+- A short plot hook (1–2 sentences) describing what happens in the episode
+- A very short (10 words or fewer) description of the episode
+
+The tone should feel organic and evolving — you can make it warm, contemplative, culturally rich, or bittersweet depending on what fits best.  
+Format your response as JSON:
+{
+  "title": "Your Title",
+  "hook": "Your Plot Hook",
+  "description": "Your Description"
+}

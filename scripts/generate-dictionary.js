@@ -54,6 +54,12 @@ const languageConfigs = {
         readingField: 'reading',
         meaningField: 'meaning',
         typeField: 'type'
+    },
+    'vi': {
+        name: 'Vietnamese',
+        readingField: 'reading',
+        meaningField: 'meaning',
+        typeField: 'type'
     }
 };
 

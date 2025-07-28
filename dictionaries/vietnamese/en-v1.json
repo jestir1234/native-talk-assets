@@ -1,0 +1,772 @@
+{
+  "Mai": {
+    "reading": "Mai",
+    "meaning": "Mai (tên nhân vật chính)",
+    "type": "固有名詞"
+  },
+  "Linh": {
+    "reading": "Linh",
+    "meaning": "Linh (tên nhân vật phụ)",
+    "type": "固有名詞"
+  },
+  "mother": {
+    "reading": "mẹ",
+    "meaning": "mẹ",
+    "type": "名詞"
+  },
+  "marketing": {
+    "reading": "tiếp thị",
+    "meaning": "tiếp thị",
+    "type": "名詞"
+  },
+  "manager": {
+    "reading": "quản lý",
+    "meaning": "quản lý",
+    "type": "名詞"
+  },
+  "photography": {
+    "reading": "nhiếp ảnh",
+    "meaning": "nhiếp ảnh",
+    "type": "名詞"
+  },
+  "photographer": {
+    "reading": "nhiếp ảnh gia",
+    "meaning": "nhiếp ảnh gia",
+    "type": "名詞"
+  },
+  "café": {
+    "reading": "quán cà phê",
+    "meaning": "quán cà phê",
+    "type": "名詞"
+  },
+  "street": {
+    "reading": "đường phố",
+    "meaning": "đường phố",
+    "type": "名詞"
+  },
+  "food": {
+    "reading": "thức ăn",
+    "meaning": "thức ăn",
+    "type": "名詞"
+  },
+  "apartment": {
+    "reading": "căn hộ",
+    "meaning": "căn hộ",
+    "type": "名詞"
+  },
+  "creative": {
+    "reading": "sáng tạo",
+    "meaning": "sáng tạo",
+    "type": "形容詞"
+  },
+  "thoughtful": {
+    "reading": "suy nghĩ",
+    "meaning": "suy nghĩ",
+    "type": "形容詞"
+  },
+  "calm": {
+    "reading": "bình tĩnh",
+    "meaning": "bình tĩnh",
+    "type": "形容詞"
+  },
+  "respectful": {
+    "reading": "tôn trọng",
+    "meaning": "tôn trọng",
+    "type": "形容詞"
+  },
+  "dementia": {
+    "reading": "sa sút trí tuệ",
+    "meaning": "sa sút trí tuệ",
+    "type": "名詞"
+  },
+  "work": {
+    "reading": "làm việc",
+    "meaning": "làm việc",
+    "type": "動詞"
+  },
+  "lives": {
+    "reading": "sống",
+    "meaning": "sống",
+    "type": "動詞"
+  },
+  "meets": {
+    "reading": "gặp",
+    "meaning": "gặp",
+    "type": "動詞"
+  },
+  "finds": {
+    "reading": "tìm thấy",
+    "meaning": "tìm thấy",
+    "type": "動詞"
+  },
+  "inspires": {
+    "reading": "truyền cảm hứng",
+    "meaning": "truyền cảm hứng",
+    "type": "動詞"
+  },
+  "reconnect": {
+    "reading": "kết nối lại",
+    "meaning": "kết nối lại",
+    "type": "動詞"
+  },
+  "roots": {
+    "reading": "cội nguồn",
+    "meaning": "cội nguồn",
+    "type": "名詞"
+  },
+  "sáng": {
+    "reading": "saang",
+    "meaning": "bright, light; morning",
+    "type": "adjective, noun"
+  },
+  "tinh": {
+    "reading": "ting",
+    "meaning": "essence, spirit; smart, intelligent",
+    "type": "noun, adjective"
+  },
+  "m": {
+    "reading": "maa",
+    "meaning": "but, however; which, that (relative pronoun) - (Assumed 'mà' due to context of single-syllable words)",
+    "type": "conjunction, particle"
+  },
+  "mai": {
+    "reading": "mai",
+    "meaning": "tomorrow; apricot flower",
+    "type": "noun"
+  },
+  "theo": {
+    "reading": "theo",
+    "meaning": "to follow, according to",
+    "type": "verb, preposition"
+  },
+  "linh": {
+    "reading": "linh",
+    "meaning": "spirit, soul; agile, quick",
+    "type": "noun, adjective"
+  },
+  "vào": {
+    "reading": "vao",
+    "meaning": "to enter, into",
+    "type": "verb, preposition"
+  },
+  "ch": {
+    "reading": "cho",
+    "meaning": "to give, for, to allow - (Assumed 'cho' due to context of single-syllable words)",
+    "type": "verb, preposition"
+  },
+  "c": {
+    "reading": "co",
+    "meaning": "to have, there is/are; yes - (Assumed 'có' due to context of single-syllable words)",
+    "type": "verb, adverb"
+  },
+  "mùi": {
+    "reading": "mui",
+    "meaning": "smell, odor",
+    "type": "noun"
+  },
+  "thc": {
+    "reading": "thuc",
+    "meaning": "to wake up; food, meal - (Assumed 'thức')",
+    "type": "verb, noun"
+  },
+  "n": {
+    "reading": "no",
+    "meaning": "it, he, she (informal) - (Assumed 'nó')",
+    "type": "pronoun"
+  },
+  "ng": {
+    "reading": "nguoi",
+    "meaning": "person, human - (Assumed 'người')",
+    "type": "noun"
+  },
+  "ph": {
+    "reading": "phai",
+    "meaning": "must, have to; right; correct - (Assumed 'phải')",
+    "type": "verb, adjective, adverb"
+  },
+  "thm": {
+    "reading": "them",
+    "meaning": "more, to add - (Assumed 'thêm')",
+    "type": "adverb, verb"
+  },
+  "lng": {
+    "reading": "long",
+    "meaning": "heart, mind, inside; broth - (Assumed 'lòng')",
+    "type": "noun"
+  },
+  "say": {
+    "reading": "say",
+    "meaning": "drunk, intoxicated; to spin",
+    "type": "adjective, verb"
+  },
+  "sa": {
+    "reading": "sa",
+    "meaning": "to fall down, to sink; desert",
+    "type": "verb, noun"
+  },
+  "chp": {
+    "reading": "chop",
+    "meaning": "lightning; to flash, to blink - (Assumed 'chớp')",
+    "type": "noun, verb"
+  },
+  "tng": {
+    "reading": "tung",
+    "meaning": "each, every; once - (Assumed 'từng')",
+    "type": "adjective, adverb"
+  },
+  "gánh": {
+    "reading": "ganh",
+    "meaning": "burden, load carried on a shoulder pole; to carry",
+    "type": "noun, verb"
+  },
+  "hàng": {
+    "reading": "hang",
+    "meaning": "goods, merchandise; row, line",
+    "type": "noun"
+  },
+  "rong": {
+    "reading": "rong",
+    "meaning": "seaweed; to wander, to roam",
+    "type": "noun, verb"
+  },
+  "tô": {
+    "reading": "to",
+    "meaning": "bowl (large); to color, to paint",
+    "type": "noun, verb"
+  },
+  "bún": {
+    "reading": "bun",
+    "meaning": "rice vermicelli",
+    "type": "noun"
+  },
+  "mm": {
+    "reading": "mam",
+    "meaning": "fermented fish/shrimp paste/sauce - (Assumed 'mắm')",
+    "type": "noun"
+  },
+  "khói": {
+    "reading": "khoi",
+    "meaning": "smoke",
+    "type": "noun"
+  },
+  "ci": {
+    "reading": "cai",
+    "meaning": "classifier (for inanimate objects); thing - (Assumed 'cái')",
+    "type": "classifier, noun"
+  },
+  "ngi": {
+    "reading": "ngoi",
+    "meaning": "to sit - (Assumed 'ngồi')",
+    "type": "verb"
+  },
+  "bán": {
+    "reading": "ban",
+    "meaning": "to sell",
+    "type": "verb"
+  },
+  "ban": {
+    "reading": "ban",
+    "meaning": "board, panel; to issue, to promulgate",
+    "type": "noun, verb"
+  },
+  "u": {
+    "reading": "u",
+    "meaning": "swelling, tumor; old woman (informal)",
+    "type": "noun"
+  },
+  "ngp": {
+    "reading": "ngap",
+    "meaning": "flooded, immersed, full of - (Assumed 'ngập')",
+    "type": "adjective, verb"
+  },
+  "ngng": {
+    "reading": "ngung",
+    "meaning": "to stop, to cease - (Assumed 'ngừng')",
+    "type": "verb"
+  },
+  "máy": {
+    "reading": "may",
+    "meaning": "machine, engine; camera",
+    "type": "noun"
+  },
+  "nh": {
+    "reading": "nha",
+    "meaning": "house, home - (Assumed 'nhà')",
+    "type": "noun"
+  },
+  "cm": {
+    "reading": "com",
+    "meaning": "cooked rice; meal - (Assumed 'cơm')",
+    "type": "noun"
+  },
+  "cht": {
+    "reading": "chat",
+    "meaning": "substance, material; quality - (Assumed 'chất')",
+    "type": "noun"
+  },
+  "th": {
+    "reading": "thu",
+    "meaning": "thing, item; day of the week - (Assumed 'thứ')",
+    "type": "noun, prefix"
+  },
+  "i": {
+    "reading": "di",
+    "meaning": "to go - (Assumed 'đi')",
+    "type": "verb"
+  },
+  "kh": {
+    "reading": "khong",
+    "meaning": "no, not; empty - (Assumed 'không')",
+    "type": "adverb, noun"
+  },
+  "viên": {
+    "reading": "vien",
+    "meaning": "pill, tablet; member, employee; (classifier for round objects)",
+    "type": "noun, classifier"
+  },
+  "dè": {
+    "reading": "de",
+    "meaning": "to be wary, to hesitate",
+    "type": "verb"
+  },
+  "dt": {
+    "reading": "dat",
+    "meaning": "cautious, reserved (often in 'dè dặt') - (Assumed 'dặt')",
+    "type": "adjective"
+  },
+  "gi": {
+    "reading": "gi",
+    "meaning": "what - (Assumed 'gì')",
+    "type": "interrogative pronoun"
+  },
+  "bt": {
+    "reading": "bat",
+    "meaning": "to turn on; to bounce; sudden - (Assumed 'bật')",
+    "type": "verb, adjective"
+  },
+  "ly": {
+    "reading": "ly",
+    "meaning": "glass, cup; reason",
+    "type": "noun"
+  },
+  "ánh": {
+    "reading": "anh",
+    "meaning": "light, gleam, reflection",
+    "type": "noun"
+  },
+  "nng": {
+    "reading": "nang",
+    "meaning": "sun, sunshine - (Assumed 'nắng')",
+    "type": "noun"
+  },
+  "ri": {
+    "reading": "roi",
+    "meaning": "to fall, to drop - (Assumed 'rơi')",
+    "type": "verb"
+  },
+  "chic": {
+    "reading": "sheek",
+    "meaning": "Stylish, elegant, fashionable",
+    "type": "adjective"
+  },
+  "bánh": {
+    "reading": "banh (like 'bun' with a soft 'nh' sound)",
+    "meaning": "Cake, pastry, bread; a general term for various food items often made from flour or rice flour (e.g., bánh mì, bánh cuốn)",
+    "type": "noun"
+  },
+  "xèo": {
+    "reading": "seo (like 'say-oh')",
+    "meaning": "Sizzling sound (often used in 'bánh xèo', a sizzling savory pancake)",
+    "type": "onomatopoeia, part of compound noun"
+  },
+  "cú": {
+    "reading": "koo",
+    "meaning": "A blow, a punch, a kick (as a classifier for strikes); an owl",
+    "type": "noun, classifier"
+  },
+  "bm": {
+    "reading": "bom",
+    "meaning": "(Interpreted as 'bơm') To pump; to inflate",
+    "type": "verb"
+  },
+  "là": {
+    "reading": "lah",
+    "meaning": "To be (is, am, are); marks a predicate or topic",
+    "type": "verb (copula)"
+  },
+  "khám": {
+    "reading": "kham",
+    "meaning": "To examine, to inspect, to explore",
+    "type": "verb"
+  },
+  "phá": {
+    "reading": "fah",
+    "meaning": "To break, to destroy, to disrupt; to discover (often in 'khám phá')",
+    "type": "verb"
+  },
+  "dòng": {
+    "reading": "zong",
+    "meaning": "River, stream; line, flow, current",
+    "type": "noun, classifier"
+  },
+  "chy": {
+    "reading": "chai (like 'chay' in chai tea)",
+    "meaning": "(Interpreted as 'chảy') To flow, to run (liquid)",
+    "type": "verb"
+  },
+  "to": {
+    "reading": "taw",
+    "meaning": "Big, large, great",
+    "type": "adjective"
+  },
+  "ùa": {
+    "reading": "oo-ah",
+    "meaning": "To rush, to pour (in/out), to flock (in/out)",
+    "type": "verb"
+  },
+  "v": {
+    "reading": "vao (like 'vow' with an open 'a')",
+    "meaning": "(Interpreted as 'vào') Into, in, to enter",
+    "type": "preposition, verb"
+  },
+  "nhn": {
+    "reading": "nyun",
+    "meaning": "(Interpreted as 'nhận') To receive, to recognize, to accept",
+    "type": "verb"
+  },
+  "ra": {
+    "reading": "rah",
+    "meaning": "To exit, to go out; (marks an outward direction or result)",
+    "type": "verb, particle"
+  },
+  "ây": {
+    "reading": "uhy (like 'uh' followed by 'y' in 'sky')",
+    "meaning": "(Interpreted as 'ấy') That, those (demonstrative pronoun/adjective); (often used as a filler or intensifier)",
+    "type": "pronoun, adjective, particle"
+  },
+  "cách": {
+    "reading": "kaik (like 'kike' with 'ai' as in 'aisle')",
+    "meaning": "Way, manner, method; to separate, to be apart",
+    "type": "noun, verb"
+  },
+  "cô": {
+    "reading": "koh",
+    "meaning": "Aunt (father's sister); unmarried woman, young woman; (honorific for a woman); to condense, to concentrate",
+    "type": "noun, verb"
+  },
+  "kt": {
+    "reading": "ket",
+    "meaning": "(Interpreted as 'kết') To conclude, to finish; to unite, to form",
+    "type": "verb"
+  },
+  "ni": {
+    "reading": "noy (like 'boy')",
+    "meaning": "(Interpreted as 'nối') To connect, to join, to link",
+    "type": "verb"
+  },
+  "tâm": {
+    "reading": "tum (like 'tomb' without the 'b')",
+    "meaning": "Heart, mind, center, core",
+    "type": "noun"
+  },
+  "hn": {
+    "reading": "hon (like 'haw-n')",
+    "meaning": "(Interpreted as 'hồn') Soul, spirit",
+    "type": "noun"
+  },
+  "thoát": {
+    "reading": "tho-at",
+    "meaning": "To escape, to get out of, to break free",
+    "type": "verb"
+  },
+  "khi": {
+    "reading": "khoy (like 'khoi' in Khoisan)",
+    "meaning": "(Interpreted as 'khỏi') Out of, from (used with verbs of escaping, recovering); to be rid of",
+    "type": "preposition"
+  },
+  "s": {
+    "reading": "suh",
+    "meaning": "(Interpreted as 'sự') Thing, matter, affair; (nominalizer for abstract nouns)",
+    "type": "noun, particle"
+  },
+  "liu": {
+    "reading": "leeyow",
+    "meaning": "(Interpreted as 'liệu') Material, ingredient; to estimate, to consider",
+    "type": "noun, verb"
+  },
+  "khô": {
+    "reading": "kho",
+    "meaning": "Dry, dried; arid",
+    "type": "adjective"
+  },
+  "khan": {
+    "reading": "khan (like 'khan' in Genghis Khan)",
+    "meaning": "Hoarse, dry (voice, throat); scarce, lacking",
+    "type": "adjective"
+  },
+  "tim": {
+    "reading": "tim (like 'team')",
+    "meaning": "(Interpreted as 'tìm') To search, to find, to look for",
+    "type": "verb"
+  },
+  "by": {
+    "reading": "bay (like 'bay' in bay window)",
+    "meaning": "(Interpreted as 'bấy') So much, that much (often used with 'lâu' for 'so long')",
+    "type": "adverb"
+  },
+  "lâu": {
+    "reading": "lau (like 'lau' in 'launder')",
+    "meaning": "Long (time); old (of things)",
+    "type": "adjective, adverb"
+  },
+  "sm": {
+    "reading": "/sɜːm/",
+    "meaning": "early (abbreviation for 'sớm')",
+    "type": "adverb"
+  },
+  "bò": {
+    "reading": "/bɔː/",
+    "meaning": "cow; beef; to crawl",
+    "type": "noun, verb"
+  },
+  "thoang": {
+    "reading": "/tʰɔɐŋ/",
+    "meaning": "airy; spacious; fleeting (abbreviation for 'thoáng')",
+    "type": "adjective"
+  },
+  "thong": {
+    "reading": "/tʰɔŋ/",
+    "meaning": "pine (tree); leisurely; relaxed",
+    "type": "noun, adjective"
+  },
+  "t": {
+    "reading": "/tɔɪ/",
+    "meaning": "I; me (abbreviation for 'tôi')",
+    "type": "pronoun"
+  },
+  "quán": {
+    "reading": "/kwan/",
+    "meaning": "eatery; shop; establishment",
+    "type": "noun"
+  },
+  "quen": {
+    "reading": "/kwɛn/",
+    "meaning": "familiar; accustomed; to know (a person)",
+    "type": "adjective, verb"
+  },
+  "hm": {
+    "reading": "/hom/",
+    "meaning": "day (in date or time references) (abbreviation for 'hôm')",
+    "type": "noun"
+  },
+  "ã": {
+    "reading": "/aː/",
+    "meaning": "exclamation of surprise or regret; to stir (rare usage)",
+    "type": "interjection, verb"
+  },
+  "bàn": {
+    "reading": "/baːn/",
+    "meaning": "table; to discuss",
+    "type": "noun, verb"
+  },
+  "ôi": {
+    "reading": "/ɔɪ/",
+    "meaning": "oh! (exclamation of surprise or dismay); guava",
+    "type": "interjection, noun"
+  },
+  "mt": {
+    "reading": "/mɔt/",
+    "meaning": "one; a; an (abbreviation for 'một')",
+    "type": "numeral, article"
+  },
+  "còn": {
+    "reading": "/kɔn/",
+    "meaning": "still; remaining; yet",
+    "type": "adverb"
+  },
+  "vng": {
+    "reading": "/vɐŋ/",
+    "meaning": "yes; alright (polite affirmation) (abbreviation for 'vâng')",
+    "type": "interjection"
+  },
+  "h": {
+    "reading": "/haː/",
+    "meaning": "(interrogative particle); really? (abbreviation for 'hả')",
+    "type": "particle"
+  },
+  "nhng": {
+    "reading": "/ɲɯŋ/",
+    "meaning": "plural marker; some; many (abbreviation for 'những')",
+    "type": "determiner"
+  },
+  "bát": {
+    "reading": "/baːt/",
+    "meaning": "bowl; eight",
+    "type": "noun, numeral"
+  },
+  "nóng": {
+    "reading": "/nɔŋ/",
+    "meaning": "hot; warm",
+    "type": "adjective"
+  },
+  "hi": {
+    "reading": "/hɔɪ/",
+    "meaning": "a little; slightly; rather (abbreviation for 'hơi')",
+    "type": "adverb"
+  },
+  "trc": {
+    "reading": "/tʃɯək/",
+    "meaning": "before; front; previously (abbreviation for 'trước')",
+    "type": "adverb, preposition"
+  },
+  "vn": {
+    "reading": "/vɛn/",
+    "meaning": "still; yet; nevertheless (abbreviation for 'vẫn')",
+    "type": "adverb"
+  },
+  "áp": {
+    "reading": "/aːp/",
+    "meaning": "to press; to apply; pressure",
+    "type": "verb, noun"
+  },
+  "ngon": {
+    "reading": "/ŋɔn/",
+    "meaning": "delicious; tasty",
+    "type": "adjective"
+  },
+  "nhé": {
+    "reading": "/ɲɛ/",
+    "meaning": "(particle for urging, asking for confirmation)",
+    "type": "particle"
+  },
+  "nói": {
+    "reading": "/nɔɪ/",
+    "meaning": "to speak; to say",
+    "type": "verb"
+  },
+  "lòng": {
+    "reading": "/lɔŋ/",
+    "meaning": "heart; mind; inner part",
+    "type": "noun"
+  },
+  "chùng": {
+    "reading": "/tʃʊŋ/",
+    "meaning": "loose; slack; to sag",
+    "type": "adjective, verb"
+  },
+  "xung": {
+    "reading": "/sʊŋ/",
+    "meaning": "to rush; conflict; around (as in 'xung quanh')",
+    "type": "verb, noun, adverb"
+  },
+  "khonh": {
+    "reading": "/kʰɔɐŋ/",
+    "meaning": "to circle; to round (abbreviation for 'khoanh')",
+    "type": "verb"
+  },
+  "khc": {
+    "reading": "/kʰaːk/",
+    "meaning": "other; different (abbreviation for 'khác')",
+    "type": "adjective"
+  },
+  "bình": {
+    "reading": "/bɪn/",
+    "meaning": "peaceful; calm; vase; jar",
+    "type": "adjective, noun"
+  },
+  "yên": {
+    "reading": "/ɪn/",
+    "meaning": "peaceful; quiet; saddle",
+    "type": "adjective, noun"
+  },
+  "bên": {
+    "reading": "/bɛn/",
+    "meaning": "side; next to; at",
+    "type": "noun, preposition"
+  },
+  "này": {
+    "reading": "/naɪ/",
+    "meaning": "this; here (interjection)",
+    "type": "demonstrative, interjection"
+  },
+  "dù": {
+    "reading": "/zʊ/",
+    "meaning": "although; even though; umbrella",
+    "type": "conjunction, noun"
+  },
+  "ngn": {
+    "reading": "/ŋan/",
+    "meaning": "short (abbreviation for 'ngắn')",
+    "type": "adjective"
+  },
+  "li": {
+    "reading": "/laɪ/",
+    "meaning": "again; back; return (abbreviation for 'lại')",
+    "type": "adverb, verb"
+  },
+  "thuc": {
+    "reading": "/tʰuək/",
+    "meaning": "medicine; drug; tobacco (abbreviation for 'thuốc')",
+    "type": "noun"
+  },
+  "xoa": {
+    "reading": "/sɔa/",
+    "meaning": "to rub; to apply (cream, lotion)",
+    "type": "verb"
+  },
+  "du": {
+    "reading": "/zəʊ/",
+    "meaning": "oil; petroleum (abbreviation for 'dầu')",
+    "type": "noun"
+  },
+  "a": {
+    "reading": "/aː/",
+    "meaning": "(interjection of surprise or realization); to pass (an exam)",
+    "type": "interjection, verb"
+  },
+  "nhà": {
+    "reading": "/ɲaː/",
+    "meaning": "house; home; family",
+    "type": "noun"
+  },
+  "hòa": {
+    "reading": "/hwaː/",
+    "meaning": "to harmonize; to blend; peaceful",
+    "type": "verb, adjective"
+  },
+  "mình": {
+    "reading": "/mɪn/",
+    "meaning": "self; body; oneself; you (informal)",
+    "type": "pronoun, noun"
+  },
+  "xe": {
+    "reading": "/sɛ/",
+    "meaning": "vehicle; car; bicycle",
+    "type": "noun"
+  },
+  "sài": {
+    "reading": "/saɪ/",
+    "meaning": "to use; to spend (money)",
+    "type": "verb"
+  },
+  "gòn": {
+    "reading": "/gɔn/",
+    "meaning": "cotton",
+    "type": "noun"
+  },
+  "phòng": {
+    "reading": "/fɔŋ/",
+    "meaning": "room; to prevent",
+    "type": "noun, verb"
+  },
+  "lnh": {
+    "reading": "/lan/",
+    "meaning": "cold; cool (abbreviation for 'lạnh')",
+    "type": "adjective"
+  },
+  "qun": {
+    "reading": "/kwɛn/",
+    "meaning": "to forget (abbreviation for 'quên')",
+    "type": "verb"
+  }
+}
