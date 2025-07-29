@@ -129,6 +129,19 @@ IMPORTANT CSS REQUIREMENTS:
 - .lesson-header should have margin: 20px 0; text-align: center;
 - .lesson-header-image should have width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow; display: block; margin: 0 auto;
 
+COLOR SCHEME (MUST USE THESE COLORS):
+- Primary: #8B5FBF (Purple) - for buttons, links, and accents
+- Secondary: #FDF9E5 (Cream background) - for section backgrounds
+- Text: #2C3E50 (Dark blue) - for headings (h1, h2, h3)
+- Body Text: #666666 (Medium gray) - for paragraph text
+- Borders: #E0E0E0 (Light gray) - for borders and dividers
+
+AUDIO INTERACTION REQUIREMENTS:
+- Always use class "audio-icon" for any clickable elements that should play audio
+- Audio icons should be clearly visible and touch-friendly (min 44px)
+- Use appropriate emoji or icon for audio elements (🔊, 🎵, etc.)
+- Make audio elements interactive with hover effects
+
 Return the content in clean HTML format with embedded CSS that can be directly rendered in a mobile web browser. Use semantic HTML tags like <section>, <h2>, <h3>, <p>, <ul>, <li>, <div>, <span>, <strong>, <em>, <button>, etc. Include responsive CSS classes and styles for mobile-first design.
 
 The lesson should be engaging, practical, and help users actually learn and practice the ${languageLearnName} language concepts. All explanations and instructions should be in ${targetLanguageName}. The design should feel like a native mobile app experience.`;
