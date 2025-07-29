@@ -3,824 +3,606 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>英語学習：チャプター1 - 英語のアルファベットと音</title>
-    <!-- Google Fonts for Noto Sans JP (Japanese) and Poppins (English/Headings) -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>英語学習：第1章 - アルファベットと音</title>
+    <!-- Google Fonts: Noto Sans JP (for Japanese) and Roboto (for English/general) -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles & Variables */
-        :root {
-            --primary-color: #6a0dad; /* Dark Purple */
-            --secondary-color: #f0e6fa; /* Light Purple */
-            --accent-color: #ffb700; /* Yellow */
-            --text-color: #333;
-            --light-bg: #ffffff;
-            --dark-bg: #f8f8f8;
-            --border-color: #ddd;
-            --shadow-light: 0 4px 8px rgba(0,0,0,0.1);
-            --shadow-medium: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
+        /* 基本スタイル */
         body {
-            font-family: 'Noto Sans JP', 'Poppins', sans-serif;
+            font-family: 'Noto Sans JP', 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--dark-bg);
-            color: var(--text-color);
+            background-color: #f8fcfb; /* やや緑がかった白 */
+            color: #333;
             line-height: 1.6;
-            min-height: 100vh; /* Ensure full viewport height for mobile scroll */
-            display: flex;
-            flex-direction: column;
+            font-size: 16px; /* モバイルでの最小フォントサイズ */
         }
 
-        main {
-            flex-grow: 1; /* Allow main content to expand */
+        /* コンテンツ全体を中央に配置し、最大幅を設定 */
+        .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            box-sizing: border-box; /* Include padding in width */
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-            color: var(--primary-color);
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-        }
-
-        h1 { font-size: 2em; text-align: center; margin-top: 1em; }
-        h2 { font-size: 1.7em; }
-        h3 { font-size: 1.4em; }
-        p { font-size: 1em; margin-bottom: 1em; } /* Ensures minimum 16px (1em of default 16px) */
-
-        /* Header */
-        header {
-            background-color: var(--primary-color);
-            color: var(--light-bg);
-            padding: 20px 15px;
+        /* レッスンヘッダー */
+        .lesson-header {
+            margin: 20px 0;
             text-align: center;
-            box-shadow: var(--shadow-medium);
-        }
-
-        /* Section Styling */
-        section {
-            background-color: var(--light-bg);
-            padding: 25px 20px;
-            margin-bottom: 20px;
-            border-radius: 12px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid var(--border-color);
-        }
-
-        /* Buttons */
-        .button {
-            display: inline-flex; /* Use flex for easy centering of text */
-            align-items: center;
-            justify-content: center;
-            background-color: var(--primary-color);
-            color: var(--light-bg);
-            padding: 12px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            cursor: pointer;
-            border: none;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            min-height: 44px; /* Touch target */
-            box-sizing: border-box;
-            width: auto; /* Adjust width dynamically */
-        }
-        .button:hover {
-            background-color: #8a2be2; /* Lighter purple */
-            transform: translateY(-2px);
-        }
-        .button:active {
-            transform: translateY(0);
-        }
-
-        .button-secondary {
-            background-color: var(--accent-color);
-            color: var(--text-color);
-        }
-        .button-secondary:hover {
-            background-color: #ffd740;
-        }
-
-        /* Examples and Cards */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid for small items */
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .card {
-            background-color: var(--dark-bg);
-            padding: 15px;
+            background-color: #e0f2f7; /* 薄い青緑 */
+            padding: 25px 15px;
             border-radius: 10px;
-            border: 1px solid var(--border-color);
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        .card:hover {
-            transform: translateY(-3px);
-        }
-        .card .letter {
-            font-family: 'Poppins', sans-serif; /* For English letters */
-            font-size: 2.5em;
-            font-weight: bold;
-            color: var(--primary-color);
-            margin-bottom: 5px;
-            line-height: 1;
-        }
-        .card .name {
-            font-size: 0.9em;
-            color: #666;
+
+        .lesson-header h1 {
+            font-size: 2.2em; /* モバイルでのサイズ */
+            color: #00796b; /* 濃い緑 */
             margin-bottom: 10px;
         }
-        .card .example-word {
-            font-weight: bold;
-            color: var(--text-color);
-        }
-        .card .jp-hint {
-            font-size: 0.8em;
-            color: #999;
-        }
 
-        /* Sound Examples (Vowels/Consonants) */
-        .sound-example {
-            background-color: var(--secondary-color);
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            display: flex;
-            flex-direction: column; /* Stack on mobile */
-            gap: 10px;
-            align-items: flex-start; /* Align text to start */
-            box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
-        }
-
-        .sound-example strong {
+        .lesson-header p {
             font-size: 1.1em;
-            color: var(--primary-color);
-            align-self: center; /* Center the "strong" title */
-            margin-bottom: 5px;
-        }
-        .sound-example .word {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.2em;
-            font-weight: bold;
-            display: inline-block; /* For spacing with icon */
-            margin-right: 5px;
-        }
-        .sound-example .pronunciation-icon {
-            font-size: 1.5em;
-            cursor: pointer;
-            color: var(--primary-color);
-            min-width: 44px; /* Touch target */
-            min-height: 44px; /* Touch target */
-            display: inline-flex; /* Use inline-flex to align with text */
-            align-items: center;
-            justify-content: center;
-            background-color: rgba(255,255,255,0.7);
-            border-radius: 50%;
-            padding: 5px;
-            transition: background-color 0.2s ease;
-            vertical-align: middle; /* Align with text baseline */
-        }
-        .sound-example .pronunciation-icon:hover {
-            background-color: var(--accent-color);
-            color: var(--light-bg);
-        }
-        .sound-example .description {
-            font-size: 0.95em;
-            color: #555;
-            margin-top: 5px;
-        }
-        .sound-example .jp-hint {
-            font-size: 0.85em;
-            color: #777;
+            color: #004d40; /* さらに濃い緑 */
         }
 
-
-        .hint {
-            background-color: #fef5e7;
-            border-left: 5px solid var(--accent-color);
-            padding: 15px;
-            margin-top: 15px;
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
             border-radius: 8px;
-            font-size: 0.95em;
-            color: #555;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin: 20px auto 0 auto;
         }
 
-        /* Exercise Styling */
-        .exercise-card {
-            background-color: var(--dark-bg);
+        /* 各レッスンセクション */
+        section {
+            background-color: #ffffff;
+            margin-bottom: 25px;
             padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #4db6ac; /* アクセントカラー */
+        }
+
+        section h2 {
+            color: #00796b;
+            font-size: 1.9em; /* モバイルでのサイズ */
+            margin-top: 0;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0f2f7;
+        }
+
+        h3 {
+            color: #00695c;
+            font-size: 1.5em; /* モバイルでのサイズ */
+            margin-top: 25px;
             margin-bottom: 15px;
-            border: 1px solid var(--border-color);
+            padding-left: 10px;
+            border-left: 4px solid #80cbc4; /* 薄いアクセント */
         }
-        .exercise-options {
-            display: flex;
-            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-            gap: 10px;
-            margin-top: 15px;
-            justify-content: center; /* Center buttons horizontally */
+
+        p {
+            margin-bottom: 1em;
         }
-        .exercise-options button {
-            background-color: var(--secondary-color);
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-            padding: 10px 15px;
+
+        /* アルファベットグリッド */
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* モバイル向けに調整 */
+            gap: 12px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .alphabet-item {
+            background-color: #f0fdfc;
+            border: 1px solid #b2dfdb;
             border-radius: 8px;
+            padding: 10px 5px; /* パディングを調整 */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .alphabet-item strong {
+            font-size: 2.2em; /* 文字サイズ */
+            color: #004d40;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .alphabet-item span {
+            font-size: 0.9em; /* 読み仮名サイズ */
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* 音声再生ボタンのスタイル */
+        .pronunciation-button {
+            background-color: #26a69a; /* 明るい緑 */
+            color: white;
+            border: none;
+            padding: 10px 12px;
+            border-radius: 20px; /* 丸いボタン */
+            cursor: pointer;
+            font-size: 0.8em;
+            margin-top: 5px;
+            min-width: 48px; /* タッチターゲットの確保 */
+            min-height: 48px; /* タッチターゲットの確保 */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+
+        .pronunciation-button:hover {
+            background-color: #00796b;
+            transform: translateY(-2px);
+        }
+
+        /* 発音例のアイテム */
+        .pronunciation-item {
+            display: flex;
+            flex-direction: column; /* モバイルで縦に並べる */
+            gap: 10px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #e8f5e9; /* 薄い緑の背景 */
+            border-left: 6px solid #4caf50; /* 緑のボーダー */
+            border-radius: 8px;
+        }
+        .pronunciation-item .label {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #004d40;
+        }
+        .pronunciation-item .examples {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .pronunciation-item .example {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .pronunciation-item .example span {
+            font-size: 1.1em;
+            color: #333;
+        }
+        .pronunciation-item audio {
+            display: none; /* デフォルトのオーディオプレイヤーは非表示 */
+        }
+        .pronunciation-item p { /* コツのテキスト用 */
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+            margin-bottom: 0; /* 連続するpタグのマージン調整 */
+            padding-left: 10px;
+            border-left: 2px dashed #b2dfdb;
+        }
+
+        /* エクササイズセクション */
+        .exercise {
+            background-color: #f3e5f5; /* 薄い紫 */
+            border: 1px solid #ce93d8;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+        }
+        .exercise h3 {
+            color: #8e24aa; /* 濃い紫 */
+            margin-bottom: 15px;
+            border-left-color: #e1bee7;
+        }
+        .exercise-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+        .exercise-item label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #6a1b9a;
+        }
+        .exercise-item input[type="text"] {
+            width: calc(100% - 24px); /* パディングとボーダーを考慮 */
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            box-sizing: border-box; /* パディングをwidthに含める */
+            margin-top: 10px;
+        }
+        .exercise-item button {
+            background-color: #8e24aa;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
             cursor: pointer;
             font-size: 1em;
-            min-height: 44px; /* Touch target */
-            min-width: 100px; /* Ensure sufficient width for touch */
-            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-            flex-grow: 1; /* Allow buttons to grow and fill space */
-            box-sizing: border-box;
+            margin-top: 15px;
+            min-width: 48px; /* タッチターゲットの確保 */
+            min-height: 48px; /* タッチターゲットの確保 */
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
-        .exercise-options button:hover:not([disabled]) {
-            background-color: var(--primary-color);
-            color: var(--light-bg);
+        .exercise-item button:hover {
+            background-color: #6a1b9a;
         }
-        .exercise-options button.correct {
-            background-color: #4CAF50; /* Green */
-            color: white;
-            border-color: #4CAF50;
-        }
-        .exercise-options button.incorrect {
-            background-color: #f44336; /* Red */
-            color: white;
-            border-color: #f44336;
-        }
-        .exercise-options button:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-        .feedback-message {
+        .exercise-feedback {
             margin-top: 10px;
             font-weight: bold;
-            font-size: 1.1em;
-            text-align: center;
+            padding: 8px 12px;
+            border-radius: 5px;
         }
-        .feedback-message.correct { color: #4CAF50; }
-        .feedback-message.incorrect { color: #f44336; }
+        .exercise-feedback.correct {
+            color: #2e7d32;
+            background-color: #e8f5e9;
+        }
+        .exercise-feedback.incorrect {
+            color: #c62828;
+            background-color: #ffebee;
+        }
 
-        /* Footer */
+        /* フッター */
         footer {
-            background-color: var(--primary-color);
-            color: var(--light-bg);
             text-align: center;
-            padding: 15px;
-            margin-top: 30px;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #e0f2f7;
+            color: #004d40;
+            border-top: 1px solid #b2dfdb;
+            border-radius: 8px;
             font-size: 0.9em;
         }
 
-        /* Responsive adjustments */
-        @media (min-width: 480px) {
-            .sound-example {
-                flex-direction: row; /* Row on larger mobile */
-                align-items: center; /* Vertically align items */
-                justify-content: flex-start; /* Align items to start */
-                flex-wrap: wrap; /* Allow wrapping */
-                gap: 15px 20px; /* Row and column gap */
+        /* レスポンシブデザイン - メディアクエリ */
+        @media (min-width: 600px) {
+            .alphabet-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             }
-            .sound-example strong {
-                align-self: flex-start; /* Align "strong" to start in row layout */
-                flex-basis: 100%; /* Take full width on a new line */
-                text-align: left;
+            .alphabet-item strong {
+                font-size: 2.8em;
             }
-            .sound-example .description {
-                flex-basis: 100%; /* Ensure description takes full width */
-                margin-top: 0; /* Adjust margin */
+            .alphabet-item span {
+                font-size: 1em;
             }
-            .exercise-options button {
-                flex-grow: 0; /* Don't grow too much */
-                width: auto; /* Allow buttons to size to content */
+            .pronunciation-item {
+                flex-direction: row; /* デスクトップでは横に並べる */
+                align-items: center;
+            }
+            .pronunciation-item .label {
+                flex-basis: 25%;
+            }
+            .pronunciation-item .examples {
+                flex-basis: 75%;
+                flex-direction: row; /* デスクトップでは横に並べる */
+                flex-wrap: wrap; /* 必要に応じて折り返す */
+                justify-content: flex-start;
+            }
+            .pronunciation-item .example {
+                margin-right: 15px; /* 例間のスペース */
+            }
+            .lesson-header h1 {
+                font-size: 2.8em;
+            }
+            section h2 {
+                font-size: 2.2em;
+            }
+            h3 {
+                font-size: 1.7em;
             }
         }
 
         @media (min-width: 768px) {
-            main {
-                padding: 30px;
+            body {
+                font-size: 17px;
             }
-            h1 { font-size: 2.5em; }
-            h2 { font-size: 2em; }
-            h3 { font-size: 1.6em; }
-            p { font-size: 1.05em; }
-
-            .card-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* More columns on desktop */
-                gap: 20px;
+            .alphabet-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             }
-            .sound-example {
-                gap: 20px; /* Increase gap for larger screens */
-            }
-            .exercise-options {
-                justify-content: flex-start; /* Align buttons to start on larger screens */
+            .alphabet-item strong {
+                font-size: 3.2em;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>チャプター1: 英語のアルファベットと音 🎶</h1>
-    </header>
+    <div class="container">
+        <header class="lesson-header">
+            <h1>第1章: 英語のアルファベットと音</h1>
+            <p>英語学習の旅を始めましょう！この章では、英語の基本的な「音」を学びます。</p>
+            <img src="../header.webp" alt="Chapter Header" class="lesson-header-image">
+        </header>
 
-    <main>
-        <section id="intro">
-            <h2>英語の学習を始めましょう！</h2>
-            <p>英語の旅へようこそ！🚀 このチャプターでは、英語の基本となるアルファベット26文字と、それぞれの音を学びます。日本語にはない音もたくさんありますが、ご安心ください。一つずつ丁寧に解説していきますよ！</p>
-            <p>英語の発音は、日本語の発音とは大きく異なります。最初は難しく感じるかもしれませんが、繰り返し練習することが大切です。一緒に頑張りましょう！</p>
-        </section>
+        <main>
+            <section id="alphabet">
+                <h2>1. 英語の26文字</h2>
+                <p>英語には、アルファベットと呼ばれる26の文字があります。日本語のひらがなやカタカナのように、それぞれに大文字と小文字があり、単語を構成する基本的な要素です。まずは、これらの文字の形と名前を覚えましょう。</p>
+                <div class="alphabet-grid">
+                    <!-- アルファベットの各アイテム -->
+                    <div class="alphabet-item"><strong>A a</strong><span>(エイ)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_a.mp3')">♪</button><audio id="audio-alphabet_a" src="https://s3.amazonaws.com/english-alphabet-pronunciation/A.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>B b</strong><span>(ビー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_b.mp3')">♪</button><audio id="audio-alphabet_b" src="https://s3.amazonaws.com/english-alphabet-pronunciation/B.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>C c</strong><span>(シー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_c.mp3')">♪</button><audio id="audio-alphabet_c" src="https://s3.amazonaws.com/english-alphabet-pronunciation/C.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>D d</strong><span>(ディー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_d.mp3')">♪</button><audio id="audio-alphabet_d" src="https://s3.amazonaws.com/english-alphabet-pronunciation/D.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>E e</strong><span>(イー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_e.mp3')">♪</button><audio id="audio-alphabet_e" src="https://s3.amazonaws.com/english-alphabet-pronunciation/E.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>F f</strong><span>(エフ)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_f.mp3')">♪</button><audio id="audio-alphabet_f" src="https://s3.amazonaws.com/english-alphabet-pronunciation/F.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>G g</strong><span>(ジー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_g.mp3')">♪</button><audio id="audio-alphabet_g" src="https://s3.amazonaws.com/english-alphabet-pronunciation/G.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>H h</strong><span>(エイチ)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_h.mp3')">♪</button><audio id="audio-alphabet_h" src="https://s3.amazonaws.com/english-alphabet-pronunciation/H.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>I i</strong><span>(アイ)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_i.mp3')">♪</button><audio id="audio-alphabet_i" src="https://s3.amazonaws.com/english-alphabet-pronunciation/I.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>J j</strong><span>(ジェイ)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_j.mp3')">♪</button><audio id="audio-alphabet_j" src="https://s3.amazonaws.com/english-alphabet-pronunciation/J.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>K k</strong><span>(ケイ)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_k.mp3')">♪</button><audio id="audio-alphabet_k" src="https://s3.amazonaws.com/english-alphabet-pronunciation/K.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>L l</strong><span>(エル)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_l.mp3')">♪</button><audio id="audio-alphabet_l" src="https://s3.amazonaws.com/english-alphabet-pronunciation/L.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>M m</strong><span>(エム)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_m.mp3')">♪</button><audio id="audio-alphabet_m" src="https://s3.amazonaws.com/english-alphabet-pronunciation/M.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>N n</strong><span>(エヌ)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_n.mp3')">♪</button><audio id="audio-alphabet_n" src="https://s3.amazonaws.com/english-alphabet-pronunciation/N.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>O o</strong><span>(オー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_o.mp3')">♪</button><audio id="audio-alphabet_o" src="https://s3.amazonaws.com/english-alphabet-pronunciation/O.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>P p</strong><span>(ピー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_p.mp3')">♪</button><audio id="audio-alphabet_p" src="https://s3.amazonaws.com/english-alphabet-pronunciation/P.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>Q q</strong><span>(キュー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_q.mp3')">♪</button><audio id="audio-alphabet_q" src="https://s3.amazonaws.com/english-alphabet-pronunciation/Q.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>R r</strong><span>(アー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_r.mp3')">♪</button><audio id="audio-alphabet_r" src="https://s3.amazonaws.com/english-alphabet-pronunciation/R.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>S s</strong><span>(エス)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_s.mp3')">♪</button><audio id="audio-alphabet_s" src="https://s3.amazonaws.com/english-alphabet-pronunciation/S.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>T t</strong><span>(ティー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_t.mp3')">♪</button><audio id="audio-alphabet_t" src="https://s3.amazonaws.com/english-alphabet-pronunciation/T.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>U u</strong><span>(ユー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_u.mp3')">♪</button><audio id="audio-alphabet_u" src="https://s3.amazonaws.com/english-alphabet-pronunciation/U.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>V v</strong><span>(ヴィー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_v.mp3')">♪</button><audio id="audio-alphabet_v" src="https://s3.amazonaws.com/english-alphabet-pronunciation/V.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>W w</strong><span>(ダブルユー)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_w.mp3')">♪</button><audio id="audio-alphabet_w" src="https://s3.amazonaws.com/english-alphabet-pronunciation/W.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>X x</strong><span>(エックス)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_x.mp3')">♪</button><audio id="audio-alphabet_x" src="https://s3.amazonaws.com/english-alphabet-pronunciation/X.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>Y y</strong><span>(ワイ)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_y.mp3')">♪</button><audio id="audio-alphabet_y" src="https://s3.amazonaws.com/english-alphabet-pronunciation/Y.mp3" preload="auto"></audio></div>
+                    <div class="alphabet-item"><strong>Z z</strong><span>(ズィー / ゼット)</span><button class="pronunciation-button" onclick="playAudio('audio/alphabet_z.mp3')">♪</button><audio id="audio-alphabet_z" src="https://s3.amazonaws.com/english-alphabet-pronunciation/Z.mp3" preload="auto"></audio></div>
+                </div>
+                <p style="margin-top: 25px;"><strong>💡 文化メモ:</strong> 日本語の「カタカナ語」は英語由来のものが多いですが、発音が異なることがよくあります。例えば、「F」や「V」は日本語にはない音なので、意識して練習しましょう。「L」と「R」の区別も非常に重要です！</p>
+            </section>
 
-        <section id="alphabet">
-            <h2>1. 英語のアルファベット26文字</h2>
-            <p>英語には、全部で26のアルファベットがあります。大文字 (Capital letters) と小文字 (Lowercase letters) の両方があります。</p>
-            <p class="hint">💡 <b>豆知識：</b> 日本語のひらがなやカタカナのように、英語の文字にはそれぞれ名前（例: Aは「エイ」）と、単語の中で出す音（例: Appleの「ア」）があります。まずは文字と名前を覚えましょう。</p>
+            <section id="vowel-sounds">
+                <h2>2. 母音の音 (Vowel Sounds: A, E, I, O, U)</h2>
+                <p>英語の母音は、日本語の「あ、い、う、え、お」のように常に同じ音ではなく、単語によって様々な音に変化します。ここでは、それぞれの母音の最も一般的な「短い音 (Short Vowel Sound)」と「長い音 (Long Vowel Sound)」を学びます。</p>
 
-            <div class="card-grid">
-                <div class="card">
-                    <div class="letter">Aa</div>
-                    <div class="name">エイ</div>
-                    <div class="example-word">Apple <span class="jp-hint">（アップル）</span></div>
+                <h3>短い母音の音 (Short Vowel Sounds)</h3>
+                <div class="pronunciation-item">
+                    <span class="label">A (ア)</span>
+                    <div class="examples">
+                        <div class="example"><span>cat (キャット)</span><button class="pronunciation-button" onclick="playAudio('audio/short_a_cat.mp3')">♪</button><audio id="audio-short_a_cat" src="https://s3.amazonaws.com/english-alphabet-pronunciation/short_a_cat.mp3" preload="auto"></audio></div>
+                        <div class="example"><span>apple (アップル)</span><button class="pronunciation-button" onclick="playAudio('audio/short_a_apple.mp3')">♪</button><audio id="audio-short_a_apple" src="https://s3.amazonaws.com/english-alphabet-pronunciation/short_a_apple.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="letter">Bb</div>
-                    <div class="name">ビー</div>
-                    <div class="example-word">Ball <span class="jp-hint">（ボール）</span></div>
+                <div class="pronunciation-item">
+                    <span class="label">E (エ)</span>
+                    <div class="examples">
+                        <div class="example"><span>bed (ベッド)</span><button class="pronunciation-button" onclick="playAudio('audio/short_e_bed.mp3')">♪</button><audio id="audio-short_e_bed" src="https://s3.amazonaws.com/english-alphabet-pronunciation/short_e_bed.mp3" preload="auto"></audio></div>
+                        <div class="example"><span>egg (エッグ)</span><button class="pronunciation-button" onclick="playAudio('audio/short_e_egg.mp3')">♪</button><audio id="audio-short_e_egg" src="https://s3.amazonaws.com/english-alphabet-pronunciation/short_e_egg.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="letter">Cc</div>
-                    <div class="name">シー</div>
-                    <div class="example-word">Cat <span class="jp-hint">（キャット）</span></div>
+                <div class="pronunciation-item">
+                    <span class="label">I (イ)</span>
+                    <div class="examples">
+                        <div class="example"><span>pig (ピッグ)</span><button class="pronunciation-button" onclick="playAudio('audio/short_i_pig.mp3')">♪</button><audio id="audio-short_i_pig" src="https://s3.amazonaws.com/english-alphabet-pronunciation/short_i_pig.mp3" preload="auto"></audio></div>
+                        <div class="example"><span>fish (フィッシュ)</span><button class="pronunciation-button" onclick="playAudio('audio/short_i_fish.mp3')">♪</button><audio id="audio-short_i_fish" src="https://s3.amazonaws.com/english-alphabet-pronunciation/short_i_fish.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="letter">Dd</div>
-                    <div class="name">ディー</div>
-                    <div class="example-word">Dog <span class="jp-hint">（ドッグ）</span></div>
+                <div class="pronunciation-item">
+                    <span class="label">O (オ)</span>
+                    <div class="examples">
+                        <div class="example"><span>dog (ドッグ)</span><button class="pronunciation-button" onclick="playAudio('audio/short_o_dog.mp3')">♪</button><audio id="audio-short_o_dog" src="https://s3.amazonaws.com/english-alphabet-pronunciation/short_o_dog.mp3" preload="auto"></audio></div>
+                        <div class="example"><span>hot (ホット)</span><button class="pronunciation-button" onclick="playAudio('audio/short_o_hot.mp3')">♪</button><audio id="audio-short_o_hot" src="https://s3.amazonaws.com/english-alphabet-pronunciation/short_o_hot.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="letter">Ee</div>
-                    <div class="name">イー</div>
-                    <div class="example-word">Egg <span class="jp-hint">（エッグ）</span></div>
+                <div class="pronunciation-item">
+                    <span class="label">U (ア)</span>
+                    <div class="examples">
+                        <div class="example"><span>sun (サン)</span><button class="pronunciation-button" onclick="playAudio('audio/short_u_sun.mp3')">♪</button><audio id="audio-short_u_sun" src="https://s3.amazonaws.com/english-alphabet-pronunciation/short_u_sun.mp3" preload="auto"></audio></div>
+                        <div class="example"><span>cup (カップ)</span><button class="pronunciation-button" onclick="playAudio('audio/short_u_cup.mp3')">♪</button><audio id="audio-short_u_cup" src="https://s3.amazonaws.com/english-alphabet-pronunciation/short_u_cup.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="letter">Ff</div>
-                    <div class="name">エフ</div>
-                    <div class="example-word">Fish <span class="jp-hint">（フィッシュ）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Gg</div>
-                    <div class="name">ジー</div>
-                    <div class="example-word">Grape <span class="jp-hint">（グレープ）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Hh</div>
-                    <div class="name">エイチ</div>
-                    <div class="example-word">Hat <span class="jp-hint">（ハット）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Ii</div>
-                    <div class="name">アイ</div>
-                    <div class="example-word">Igloo <span class="jp-hint">（イグルー）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Jj</div>
-                    <div class="name">ジェイ</div>
-                    <div class="example-word">Jet <span class="jp-hint">（ジェット）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Kk</div>
-                    <div class="name">ケイ</div>
-                    <div class="example-word">King <span class="jp-hint">（キング）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Ll</div>
-                    <div class="name">エル</div>
-                    <div class="example-word">Lion <span class="jp-hint">（ライオン）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Mm</div>
-                    <div class="name">エム</div>
-                    <div class="example-word">Moon <span class="jp-hint">（ムーン）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Nn</div>
-                    <div class="name">エヌ</div>
-                    <div class="example-word">Net <span class="jp-hint">（ネット）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Oo</div>
-                    <div class="name">オウ</div>
-                    <div class="example-word">Orange <span class="jp-hint">（オレンジ）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Pp</div>
-                    <div class="name">ピー</div>
-                    <div class="example-word">Pig <span class="jp-hint">（ピッグ）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Qq</div>
-                    <div class="name">キュー</div>
-                    <div class="example-word">Queen <span class="jp-hint">（クイーン）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Rr</div>
-                    <div class="name">アー</div>
-                    <div class="example-word">Rabbit <span class="jp-hint">（ラビット）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Ss</div>
-                    <div class="name">エス</div>
-                    <div class="example-word">Sun <span class="jp-hint">（サン）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Tt</div>
-                    <div class="name">ティー</div>
-                    <div class="example-word">Tree <span class="jp-hint">（ツリー）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Uu</div>
-                    <div class="name">ユー</div>
-                    <div class="example-word">Umbrella <span class="jp-hint">（アンブレラ）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Vv</div>
-                    <div class="name">ヴィー</div>
-                    <div class="example-word">Van <span class="jp-hint">（バン）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Ww</div>
-                    <div class="name">ダブルユー</div>
-                    <div class="example-word">Watch <span class="jp-hint">（ウォッチ）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Xx</div>
-                    <div class="name">エックス</div>
-                    <div class="example-word">X-ray <span class="jp-hint">（エックスレイ）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Yy</div>
-                    <div class="name">ワイ</div>
-                    <div class="example-word">Yoyo <span class="jp-hint">（ヨーヨー）</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">Zz</div>
-                    <div class="name">ズィー</div>
-                    <div class="example-word">Zebra <span class="jp-hint">（ゼブラ）</span></div>
-                </div>
-            </div>
-        </section>
 
-        <section id="vowels">
-            <h2>2. 母音の音 (Vowel Sounds): A, E, I, O, U</h2>
-            <p>英語の母音は、日本語の「あ、い、う、え、お」とは異なり、短母音 (Short Vowels) と長母音 (Long Vowels) など、複数の音を持ちます。これが英語の発音の大きなポイントです！</p>
-            <p class="hint">💡 <b>文化ノート：</b> 日本語の母音は口の形や舌の位置があまり変わらない「単一母音」が多いですが、英語では口の形や舌の動きで音が大きく変わります。特に、口を大きく開けたり、動かしたりする意識が大切です。</p>
-
-            <h3><span class="letter">A</span>の音</h3>
-            <div class="sound-example">
-                <strong>短母音: 「ア」と「エ」の中間の音</strong>
-                <span class="word">cat</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（キャット）</span>
-                <span class="word">apple</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（アップル）</span>
-                <p class="description">口を横に大きく開き、日本語の「ア」よりも少し「エ」寄りの音を出します。喉の奥から出すイメージです。</p>
-            </div>
-            <div class="sound-example">
-                <strong>長母音: 「エイ」の音</strong>
-                <span class="word">name</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（ネイム）</span>
-                <span class="word">cake</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（ケイク）</span>
-                <p class="description">アルファベットの名前と同じ「エイ」と発音します。</p>
-            </div>
-
-            <h3><span class="letter">E</span>の音</h3>
-            <div class="sound-example">
-                <strong>短母音: 「エ」の音</strong>
-                <span class="word">egg</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（エッグ）</span>
-                <span class="word">red</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（レッド）</span>
-                <p class="description">日本語の「エ」よりも少し口を横に引いて、顎を少し下げて発音します。</p>
-            </div>
-            <div class="sound-example">
-                <strong>長母音: 「イー」の音</strong>
-                <span class="word">feet</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（フィート）</span>
-                <span class="word">green</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（グリーン）</span>
-                <p class="description">日本語の「イー」よりも口を横に引いて、長く伸ばします。</p>
-            </div>
-
-            <h3><span class="letter">I</span>の音</h3>
-            <div class="sound-example">
-                <strong>短母音: 「イ」と「エ」の中間の音</strong>
-                <span class="word">sit</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（スィット）</span>
-                <span class="word">pig</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（ピッグ）</span>
-                <p class="description">日本語の「イ」よりも顎を少し下げ、リラックスした口で発音します。曖昧な「イ」のイメージです。</p>
-            </div>
-            <div class="sound-example">
-                <strong>長母音: 「アイ」の音</strong>
-                <span class="word">bike</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（バイク）</span>
-                <span class="word">five</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（ファイブ）</span>
-                <p class="description">アルファベットの名前と同じ「アイ」と発音します。</p>
-            </div>
-
-            <h3><span class="letter">O</span>の音</h3>
-            <div class="sound-example">
-                <strong>短母音: 「ア」と「オ」の中間の音</strong>
-                <span class="word">hot</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（ハット）</span>
-                <span class="word">dog</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（ドッグ）</span>
-                <p class="description">口を大きく開けて丸くし、日本語の「ア」に近い「オ」の音を出します。</p>
-            </div>
-            <div class="sound-example">
-                <strong>長母音: 「オウ」の音</strong>
-                <span class="word">boat</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（ボウト）</span>
-                <span class="word">go</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（ゴウ）</span>
-                <p class="description">アルファベットの名前と同じ「オウ」と発音します。</p>
-            </div>
-
-            <h3><span class="letter">U</span>の音</h3>
-            <div class="sound-example">
-                <strong>短母音: 「ア」の音 (口をあまり開けない)</strong>
-                <span class="word">sun</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（サン）</span>
-                <span class="word">cup</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（カップ））</span>
-                <p class="description">日本語の「ア」よりも口をあまり開けず、喉の奥から出すような「ア」の音です。</p>
-            </div>
-            <div class="sound-example">
-                <strong>長母音: 「ユー」または「ウー」の音</strong>
-                <span class="word">blue</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（ブルー）</span>
-                <span class="word">flute</span> <span class="pronunciation-icon" aria-label="発音を聞く">🔊</span> <span class="jp-hint">（フルート）</span>
-                <p class="description">アルファベットの名前と同じ「ユー」または「ウー」と発音します。</p>
-            </div>
-        </section>
-
-        <section id="consonants">
-            <h2>3. 子音の音と発音 (Consonant Sounds)</h2>
-            <p>子音は、息の流れを舌、歯、唇などでさえぎって出す音です。日本語にはない音や、日本語に似ていても微妙に違う音があるので注意しましょう。</p>
-
-            <h3>特に注意すべき子音</h3>
-            <div class="hint">
-                <p>💡 <b>文化ノート：</b> 日本語の「ラリルレロ」は舌が口のどこにも触れないことが多いですが、英語の「R」や「L」は舌の使い方が全く異なります。練習あるのみ！</p>
-            </div>
-
-            <div class="sound-example">
-                <strong><span class="letter">R</span>の音 vs <span class="letter">L</span>の音</strong>
-                <p class="description">
-                    <strong>R (アール):</strong> 舌を丸めて、口の中のどこにも触れないようにして「ル」に近い音を出します。<br>
-                    例: <span class="word">red</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（レッド）</span>, <span class="word">river</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（リヴァー）</span>
-                </p>
-                <p class="description">
-                    <strong>L (エル):</strong> 舌の先を上の前歯の裏（歯茎のあたり）につけて「ル」の音を出します。<br>
-                    例: <span class="word">light</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ライト）</span>, <span class="word">leaf</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（リーフ）</span>
-                </p>
-            </div>
-
-            <div class="sound-example">
-                <strong><span class="letter">V</span>の音 vs <span class="letter">B</span>の音</strong>
-                <p class="description">
-                    <strong>V (ヴィー):</strong> 上の前歯で下唇を軽く噛んで、息を出すように「ヴ」と発音します。<br>
-                    例: <span class="word">very</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ヴェリィ）</span>, <span class="word">vote</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ヴォウト）</span>
-                </p>
-                <p class="description">
-                    <strong>B (ビー):</strong> 口を閉じてから開いて、息を破裂させるように「ブ」と発音します。<br>
-                    例: <span class="word">big</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ビッグ）</span>, <span class="word">ball</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ボール）</span>
-                </p>
-            </div>
-
-            <div class="sound-example">
-                <strong><span class="letter">Th</span>の音 (無声 / 有声)</strong>
-                <p class="description">
-                    <strong>無声 Th:</strong> 舌の先を上下の歯の間に軽く挟んで、息を「ス」と出す音。<br>
-                    例: <span class="word">think</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（スィンク）</span>, <span class="word">three</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（スリー）</span>
-                </p>
-                <p class="description">
-                    <strong>有声 Th:</strong> 舌の先を上下の歯の間に軽く挟んで、声を出しながら「ズ」と出す音。<br>
-                    例: <span class="word">this</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ディス）</span>, <span class="word">that</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ザット）</span>
-                </p>
-            </div>
-
-            <div class="sound-example">
-                <strong><span class="letter">F</span>の音</strong>
-                <p class="description">
-                    上の前歯で下唇を軽く噛んで、息を「フ」と出します。<br>
-                    例: <span class="word">fish</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（フィッシュ）</span>, <span class="word">fun</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ファン）</span>
-                </p>
-            </div>
-
-            <h3>その他の主要な子音</h3>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="letter">Pp</div>
-                    <div class="name">ピー</div>
-                    <div class="example-word">Pen <span class="jp-hint">（ペン）</span></div>
+                <h3>長い母音の音 (Long Vowel Sounds)</h3>
+                <p>長い母音は、たいていその文字の名前と同じ発音になります。</p>
+                <div class="pronunciation-item">
+                    <span class="label">A (エイ)</span>
+                    <div class="examples">
+                        <div class="example"><span>name (ネーム)</span><button class="pronunciation-button" onclick="playAudio('audio/long_a_name.mp3')">♪</button><audio id="audio-long_a_name" src="https://s3.amazonaws.com/english-alphabet-pronunciation/long_a_name.mp3" preload="auto"></audio></div>
+                        <div class="example"><span>cake (ケイク)</span><button class="pronunciation-button" onclick="playAudio('audio/long_a_cake.mp3')">♪</button><audio id="audio-long_a_cake" src="https://s3.amazonaws.com/english-alphabet-pronunciation/long_a_cake.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="letter">Dd</div>
-                    <div class="name">ディー</div>
-                    <div class="example-word">Desk <span class="jp-hint">（デスク）</span></div>
+                <div class="pronunciation-item">
+                    <span class="label">E (イー)</span>
+                    <div class="examples">
+                        <div class="example"><span>me (ミー)</span><button class="pronunciation-button" onclick="playAudio('audio/long_e_me.mp3')">♪</button><audio id="audio-long_e_me" src="https://s3.amazonaws.com/english-alphabet-pronunciation/long_e_me.mp3" preload="auto"></audio></div>
+                        <div class="example"><span>tree (ツリー)</span><button class="pronunciation-button" onclick="playAudio('audio/long_e_tree.mp3')">♪</button><audio id="audio-long_e_tree" src="https://s3.amazonaws.com/english-alphabet-pronunciation/long_e_tree.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="letter">Ss</div>
-                    <div class="name">エス</div>
-                    <div class="example-word">Snake <span class="jp-hint">（スネイク）</span></div>
+                <div class="pronunciation-item">
+                    <span class="label">I (アイ)</span>
+                    <div class="examples">
+                        <div class="example"><span>bike (バイク)</span><button class="pronunciation-button" onclick="playAudio('audio/long_i_bike.mp3')">♪</button><audio id="audio-long_i_bike" src="https://s3.amazonaws.com/english-alphabet-pronunciation/long_i_bike.mp3" preload="auto"></audio></div>
+                        <div class="example"><span>light (ライト)</span><button class="pronunciation-button" onclick="playAudio('audio/long_i_light.mp3')">♪</button><audio id="audio-long_i_light" src="https://s3.amazonaws.com/english-alphabet-pronunciation/long_i_light.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="letter">Mm</div>
-                    <div class="name">エム</div>
-                    <div class="example-word">Mom <span class="jp-hint">（マム）</span></div>
+                <div class="pronunciation-item">
+                    <span class="label">O (オー)</span>
+                    <div class="examples">
+                        <div class="example"><span>go (ゴー)</span><button class="pronunciation-button" onclick="playAudio('audio/long_o_go.mp3')">♪</button><audio id="audio-long_o_go" src="https://s3.amazonaws.com/english-alphabet-pronunciation/long_o_go.mp3" preload="auto"></audio></div>
+                        <div class="example"><span>boat (ボート)</span><button class="pronunciation-button" onclick="playAudio('audio/long_o_boat.mp3')">♪</button><audio id="audio-long_o_boat" src="https://s3.amazonaws.com/english-alphabet-pronunciation/long_o_boat.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="letter">Nn</div>
-                    <div class="name">エヌ</div>
-                    <div class="example-word">Nose <span class="jp-hint">（ノーズ）</span></div>
+                <div class="pronunciation-item">
+                    <span class="label">U (ユー)</span>
+                    <div class="examples">
+                        <div class="example"><span>blue (ブルー)</span><button class="pronunciation-button" onclick="playAudio('audio/long_u_blue.mp3')">♪</button><audio id="audio-long_u_blue" src="https://s3.amazonaws.com/english-alphabet-pronunciation/long_u_blue.mp3" preload="auto"></audio></div>
+                        <div class="example"><span>cute (キュート)</span><button class="pronunciation-button" onclick="playAudio('audio/long_u_cute.mp3')">♪</button><audio id="audio-long_u_cute" src="https://s3.amazonaws.com/english-alphabet-pronunciation/long_u_cute.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="letter">Hh</div>
-                    <div class="name">エイチ</div>
-                    <div class="example-word">House <span class="jp-hint">（ハウス）</span></div>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="phonics">
-            <h2>4. 基本フォニックスと音の組み合わせ</h2>
-            <p>フォニックスとは、文字と音のつながりを学ぶ学習法です。簡単な単語を読むための基本ルールを学びましょう。</p>
+            <section id="consonant-sounds">
+                <h2>3. 子音の音と発音 (Consonant Sounds and Pronunciation)</h2>
+                <p>子音は、口や舌、唇を使って空気の流れを妨げて出す音です。日本語にはない音や、似ているようで異なる音に注意しましょう。</p>
 
-            <h3>CVC (子音-母音-子音) の単語</h3>
-            <p>最も基本的な単語の形です。それぞれの音をつなげて読みます。</p>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="letter">C-A-T</div>
-                    <div class="example-word">Cat <span class="pronunciation-icon">🔊</span></div>
-                    <div class="jp-hint">（ク-ア-トゥ → キャット）</div>
+                <h3>特に注意すべき子音の音</h3>
+                <p>日本語話者が特に間違えやすい子音に焦点を当てます。</p>
+                <div class="pronunciation-item">
+                    <span class="label">R / L</span>
+                    <div class="examples">
+                        <div class="example"><span><strong style="color: #00796b;">R</strong>ight (正しい)</span><button class="pronunciation-button" onclick="playAudio('audio/R_right.mp3')">♪</button><audio id="audio-R_right" src="https://s3.amazonaws.com/english-alphabet-pronunciation/R_right.mp3" preload="auto"></audio></div>
+                        <div class="example"><span><strong style="color: #d32f2f;">L</strong>ight (光)</span><button class="pronunciation-button" onclick="playAudio('audio/L_light.mp3')">♪</button><audio id="audio-L_light" src="https://s3.amazonaws.com/english-alphabet-pronunciation/L_light.mp3" preload="auto"></audio></div>
+                    </div>
+                    <p><strong>💡 発音のコツ:</strong> Rは舌を丸めて口のどこにも触れさせずに発音します。Lは舌先を上前歯の裏につけて発音します。</p>
                 </div>
-                <div class="card">
-                    <div class="letter">D-O-G</div>
-                    <div class="example-word">Dog <span class="pronunciation-icon">🔊</span></div>
-                    <div class="jp-hint">（ドゥ-オ-グ → ドッグ）</div>
+                <div class="pronunciation-item">
+                    <span class="label">V / B</span>
+                    <div class="examples">
+                        <div class="example"><span><strong style="color: #00796b;">V</strong>an (バン)</span><button class="pronunciation-button" onclick="playAudio('audio/V_van.mp3')">♪</button><audio id="audio-V_van" src="https://s3.amazonaws.com/english-alphabet-pronunciation/V_van.mp3" preload="auto"></audio></div>
+                        <div class="example"><span><strong style="color: #d32f2f;">B</strong>an (禁止する)</span><button class="pronunciation-button" onclick="playAudio('audio/B_ban.mp3')">♪</button><audio id="audio-B_ban" src="https://s3.amazonaws.com/english-alphabet-pronunciation/B_ban.mp3" preload="auto"></audio></div>
+                    </div>
+                    <p><strong>💡 発音のコツ:</strong> Vは下唇を上前歯で軽く噛むようにして息を振動させます。Bは唇を閉じて破裂させる音です。</p>
                 </div>
-                <div class="card">
-                    <div class="letter">S-U-N</div>
-                    <div class="example-word">Sun <span class="pronunciation-icon">🔊</span></div>
-                    <div class="jp-hint">（ス-ア-ン → サン）</div>
+                <div class="pronunciation-item">
+                    <span class="label">Th (無声音/有声音)</span>
+                    <div class="examples">
+                        <div class="example"><span><strong style="color: #00796b;">Th</strong>ink (シンク)</span><button class="pronunciation-button" onclick="playAudio('audio/Th_think.mp3')">♪</button><audio id="audio-Th_think" src="https://s3.amazonaws.com/english-alphabet-pronunciation/Th_think.mp3" preload="auto"></audio></div>
+                        <div class="example"><span><strong style="color: #d32f2f;">Th</strong>is (ディス)</span><button class="pronunciation-button" onclick="playAudio('audio/Th_this.mp3')">♪</button><audio id="audio-Th_this" src="https://s3.amazonaws.com/english-alphabet-pronunciation/Th_this.mp3" preload="auto"></audio></div>
+                    </div>
+                    <p><strong>💡 発音のコツ:</strong> 舌先を上下の歯の間に軽く挟んで息を出すと無声音、声帯を震わせると有声音になります。</p>
                 </div>
-                <div class="card">
-                    <div class="letter">B-E-D</div>
-                    <div class="example-word">Bed <span class="pronunciation-icon">🔊</span></div>
-                    <div class="jp-hint">（ブ-エ-ドゥ → ベッド）</div>
-                </div>
-            </div>
+                <p>他の子音も個別に練習が必要です。音声を聞いて真似てみましょう。</p>
+            </section>
 
-            <h3>二重子音 (Digraphs) と子音連結 (Blends)</h3>
-            <p>二つの子音が組み合わさって、一つの新しい音を作ったり、それぞれの音が混じり合って聞こえたりします。</p>
-            <div class="sound-example">
-                <strong>ch</strong>: 「チ」の音
-                <span class="word">chair</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（チェアー）</span>
-                <span class="word">watch</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ウォッチ）</span>
-            </div>
-            <div class="sound-example">
-                <strong>sh</strong>: 「シュ」の音
-                <span class="word">ship</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（シップ）</span>
-                <span class="word">fish</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（フィッシュ）</span>
-            </div>
-            <div class="sound-example">
-                <strong>wh</strong>: 「ホワ」や「ワ」の音 (hは発音しないことが多い)
-                <span class="word">what</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ホワット/ワット）</span>
-                <span class="word">why</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ホワイ/ワイ）</span>
-            </div>
-            <div class="sound-example">
-                <strong>bl</strong>: 「ブル」の音
-                <span class="word">blue</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ブルー）</span>
-                <span class="word">black</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ブラック）</span>
-            </div>
-            <div class="sound-example">
-                <strong>st</strong>: 「スト」の音
-                <span class="word">stop</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（ストップ）</span>
-                <span class="word">star</span> <span class="pronunciation-icon">🔊</span> <span class="jp-hint">（スター）</span>
-            </div>
-        </section>
+            <section id="phonics">
+                <h2>4. 基本的なフォニックスと音の組み合わせ</h2>
+                <p>フォニックスとは、文字と音の関係を学ぶ学習法です。いくつかの文字が組み合わさることで、新しい音を作ることもあります。</p>
 
-        <section id="reading">
-            <h2>5. 簡単な単語を読んでみよう！</h2>
-            <p>これまでに学んだ音を使って、簡単な単語を読んでみましょう。一文字ずつ音を出し、それらを繋げて発音する練習です。</p>
+                <h3>子音字の組み合わせ (Consonant Digraphs)</h3>
+                <p>2つの子音字が合わさって1つの音になるものです。</p>
+                <div class="pronunciation-item">
+                    <span class="label">Sh (シュ)</span>
+                    <div class="examples">
+                        <div class="example"><span><strong style="color: #00796b;">sh</strong>ip (シップ)</span><button class="pronunciation-button" onclick="playAudio('audio/sh_ship.mp3')">♪</button><audio id="audio-sh_ship" src="https://s3.amazonaws.com/english-alphabet-pronunciation/sh_ship.mp3" preload="auto"></audio></div>
+                    </div>
+                </div>
+                <div class="pronunciation-item">
+                    <span class="label">Ch (チュ)</span>
+                    <div class="examples">
+                        <div class="example"><span><strong style="color: #00796b;">ch</strong>air (チェアー)</span><button class="pronunciation-button" onclick="playAudio('audio/ch_chair.mp3')">♪</button><audio id="audio-ch_chair" src="https://s3.amazonaws.com/english-alphabet-pronunciation/ch_chair.mp3" preload="auto"></audio></div>
+                    </div>
+                </div>
+                <div class="pronunciation-item">
+                    <span class="label">Wh (フワ / ホ)</span>
+                    <div class="examples">
+                        <div class="example"><span><strong style="color: #00796b;">wh</strong>at (ワット)</span><button class="pronunciation-button" onclick="playAudio('audio/wh_what.mp3')">♪</button><audio id="audio-wh_what" src="https://s3.amazonaws.com/english-alphabet-pronunciation/wh_what.mp3" preload="auto"></audio></div>
+                    </div>
+                </div>
 
-            <h3>練習問題：単語を読んでみよう</h3>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="letter">M-A-P</div>
-                    <div class="example-word">Map <span class="pronunciation-icon">🔊</span></div>
+                <h3>子音字の連続 (Consonant Blends)</h3>
+                <p>2つ以上の子音字が並び、それぞれの音が少しずつ聞こえるものです。</p>
+                <div class="pronunciation-item">
+                    <span class="label">Bl (ブル)</span>
+                    <div class="examples">
+                        <div class="example"><span><strong style="color: #00796b;">bl</strong>ue (ブルー)</span><button class="pronunciation-button" onclick="playAudio('audio/bl_blue.mp3')">♪</button><audio id="audio-bl_blue" src="https://s3.amazonaws.com/english-alphabet-pronunciation/bl_blue.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="letter">R-U-N</div>
-                    <div class="example-word">Run <span class="pronunciation-icon">🔊</span></div>
+                <div class="pronunciation-item">
+                    <span class="label">Tr (トル)</span>
+                    <div class="examples">
+                        <div class="example"><span><strong style="color: #00796b;">tr</strong>ee (ツリー)</span><button class="pronunciation-button" onclick="playAudio('audio/tr_tree.mp3')">♪</button><audio id="audio-tr_tree" src="https://s3.amazonaws.com/english-alphabet-pronunciation/tr_tree.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div class="card">
-                    <div class="letter">B-A-G</div>
-                    <div class="example-word">Bag <span class="pronunciation-icon">🔊</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">H-E-N</div>
-                    <div class="example-word">Hen <span class="pronunciation-icon">🔊</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">P-I-N</div>
-                    <div class="example-word">Pin <span class="pronunciation-icon">🔊</span></div>
-                </div>
-                <div class="card">
-                    <div class="letter">T-O-P</div>
-                    <div class="example-word">Top <span class="pronunciation-icon">🔊</span></div>
-                </div>
-            </div>
+            </section>
 
-            <p>さらに挑戦！簡単な文章を読んでみましょう。</p>
-            <div class="sound-example" style="flex-direction: column; align-items: flex-start;">
-                <p><span class="word">This is a cat.</span> <span class="pronunciation-icon">🔊</span></p>
-                <p><span class="word">I like red apples.</span> <span class="pronunciation-icon">🔊</span></p>
-                <p><span class="word">The sun is hot.</span> <span class="pronunciation-icon">🔊</span></p>
-            </div>
-        </section>
+            <section id="reading-simple-words">
+                <h2>5. 簡単な単語を読んでみよう</h2>
+                <p>ここまで学んだ知識を使って、実際に簡単な単語を読んでみましょう。まずは「子音＋母音＋子音 (CVC)」の単語から。</p>
 
-        <section id="exercise">
-            <h2>理解度チェック！簡単なクイズ</h2>
-            <p>これまでの学習内容を復習する簡単なクイズです。正しい選択肢を選んでみましょう！</p>
-
-            <div class="exercise-card">
-                <h3>問題1: 「短母音のA」の音を持つ単語はどれ？</h3>
-                <div class="exercise-options">
-                    <button onclick="checkAnswer(this, 'apple', 'q1')">name</button>
-                    <button onclick="checkAnswer(this, 'apple', 'q1')">cake</button>
-                    <button onclick="checkAnswer(this, 'apple', 'q1')">apple</button>
-                    <button onclick="checkAnswer(this, 'apple', 'q1')">train</button>
+                <h3>CVC単語の練習</h3>
+                <div class="pronunciation-item">
+                    <span class="label">c + a + t</span>
+                    <div class="examples">
+                        <div class="example"><span>cat (キャット)</span><button class="pronunciation-button" onclick="playAudio('audio/word_cat.mp3')">♪</button><audio id="audio-word_cat" src="https://s3.amazonaws.com/english-alphabet-pronunciation/word_cat.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div id="feedback-q1" class="feedback-message"></div>
-            </div>
-
-            <div class="exercise-card">
-                <h3>問題2: 舌を上の前歯の裏につけて発音する子音は？</h3>
-                <div class="exercise-options">
-                    <button onclick="checkAnswer(this, 'L', 'q2')">R</button>
-                    <button onclick="checkAnswer(this, 'L', 'q2')">L</button>
-                    <button onclick="checkAnswer(this, 'L', 'q2')">V</button>
-                    <button onclick="checkAnswer(this, 'L', 'q2')">B</button>
+                <div class="pronunciation-item">
+                    <span class="label">d + o + g</span>
+                    <div class="examples">
+                        <div class="example"><span>dog (ドッグ)</span><button class="pronunciation-button" onclick="playAudio('audio/word_dog.mp3')">♪</button><audio id="audio-word_dog" src="https://s3.amazonaws.com/english-alphabet-pronunciation/word_dog.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div id="feedback-q2" class="feedback-message"></div>
-            </div>
-
-            <div class="exercise-card">
-                <h3>問題3: 「sh」の音を持つ単語はどれ？</h3>
-                <div class="exercise-options">
-                    <button onclick="checkAnswer(this, 'fish', 'q3')">chair</button>
-                    <button onclick="checkAnswer(this, 'fish', 'q3')">watch</button>
-                    <button onclick="checkAnswer(this, 'fish', 'q3')">fish</button>
-                    <button onclick="checkAnswer(this, 'fish', 'q3')">star</button>
+                <div class="pronunciation-item">
+                    <span class="label">s + u + n</span>
+                    <div class="examples">
+                        <div class="example"><span>sun (サン)</span><button class="pronunciation-button" onclick="playAudio('audio/word_sun.mp3')">♪</button><audio id="audio-word_sun" src="https://s3.amazonaws.com/english-alphabet-pronunciation/word_sun.mp3" preload="auto"></audio></div>
+                    </div>
                 </div>
-                <div id="feedback-q3" class="feedback-message"></div>
-            </div>
 
-            <p style="text-align: center; margin-top: 30px;">
-                <a href="#" class="button button-secondary" onclick="alert('次のチャプターはまだ準備中です！お楽しみに！'); return false;">次のチャプターへ進む →</a>
-            </p>
-        </section>
-    </main>
+                <div class="exercise">
+                    <h3>エクササイズ: 聞き取りとタイピング</h3>
+                    <p>再生される音を聞いて、正しい単語をタイプしてみましょう。</p>
+                    <div class="exercise-item">
+                        <label for="q1">1. この音は何の単語？</label>
+                        <button class="pronunciation-button" onclick="playAudio('audio/ex_hat.mp3')">音を再生</button>
+                        <audio id="audio-ex_hat" src="https://s3.amazonaws.com/english-alphabet-pronunciation/ex_hat.mp3" preload="auto"></audio>
+                        <input type="text" id="q1" placeholder="ここにタイプ...">
+                        <button onclick="checkAnswer('q1', 'hat')">答えを確認</button>
+                        <div id="feedback-q1" class="exercise-feedback"></div>
+                    </div>
+                    <div class="exercise-item">
+                        <label for="q2">2. この音は何の単語？</label>
+                        <button class="pronunciation-button" onclick="playAudio('audio/ex_pen.mp3')">音を再生</button>
+                        <audio id="audio-ex_pen" src="https://s3.amazonaws.com/english-alphabet-pronunciation/ex_pen.mp3" preload="auto"></audio>
+                        <input type="text" id="q2" placeholder="ここにタイプ...">
+                        <button onclick="checkAnswer('q2', 'pen')">答えを確認</button>
+                        <div id="feedback-q2" class="exercise-feedback"></div>
+                    </div>
+                    <div class="exercise-item">
+                        <label for="q3">3. この音は何の単語？</label>
+                        <button class="pronunciation-button" onclick="playAudio('audio/ex_box.mp3')">音を再生</button>
+                        <audio id="audio-ex_box" src="https://s3.amazonaws.com/english-alphabet-pronunciation/ex_box.mp3" preload="auto"></audio>
+                        <input type="text" id="q3" placeholder="ここにタイプ...">
+                        <button onclick="checkAnswer('q3', 'box')">答えを確認</button>
+                        <div id="feedback-q3" class="exercise-feedback"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-    <footer>
-        <p>&copy; 2023 英語学習アプリ. 無断転載を禁じます。</p>
-    </footer>
+        <footer>
+            <p>&copy; 2023 英語学習アプリ. 全てのコンテンツは学習目的で作成されています。</p>
+        </footer>
+    </div>
 
     <script>
-        // Simple placeholder for pronunciation (no actual audio files)
-        document.querySelectorAll('.pronunciation-icon').forEach(icon => {
-            icon.addEventListener('click', () => {
-                alert('💡 ここに発音の音声が流れます！🎧\n（実際は音声ファイルが再生されます）');
-            });
-        });
+        // 音声再生のための共有Audioオブジェクト
+        // これにより、複数のAudioオブジェクトを作成せずに済み、リソースを節約できます。
+        let sharedAudio = new Audio();
+        function playAudio(audioSrc) {
+            sharedAudio.src = audioSrc; // 新しい音声ソースを設定
+            sharedAudio.load(); // ソースをプリロード（任意だが推奨）
+            sharedAudio.play().catch(e => console.error("音声再生に失敗しました:", e)); // 再生開始、エラーハンドリング
+        }
 
-        // Simple quiz logic for interactive buttons
-        function checkAnswer(button, correctAnswer, questionId) {
-            const options = document.querySelectorAll(`#${questionId} .exercise-options button`);
-            const feedbackDiv = document.getElementById(`feedback-${questionId}`);
+        // エクササイズの回答チェックロジック
+        function checkAnswer(questionId, correctAnswer) {
+            const inputElement = document.getElementById(questionId);
+            const feedbackElement = document.getElementById('feedback-' + questionId);
+            const userAnswer = inputElement.value.trim().toLowerCase(); // 前後の空白を削除し、小文字に変換
 
-            // Disable all buttons to prevent multiple clicks and reset styles
-            options.forEach(btn => {
-                btn.disabled = true;
-                btn.classList.remove('correct', 'incorrect'); // Clear previous styling
-            });
-            feedbackDiv.textContent = ''; // Clear previous feedback
-
-            // Check if the clicked button's text (case-insensitive) matches the correct answer
-            if (button.textContent.toLowerCase().includes(correctAnswer.toLowerCase())) {
-                button.classList.add('correct');
-                feedbackDiv.textContent = '✅ 正解です！素晴らしい！';
-                feedbackDiv.classList.add('correct');
+            if (userAnswer === correctAnswer.toLowerCase()) {
+                feedbackElement.textContent = '✅ 正解です！';
+                feedbackElement.className = 'exercise-feedback correct'; // 正解時のスタイルを適用
             } else {
-                button.classList.add('incorrect');
-                feedbackDiv.textContent = '❌ 残念！もう一度挑戦してみましょう。';
-                feedbackDiv.classList.add('incorrect');
-                // Optionally highlight the correct answer
-                options.forEach(btn => {
-                    if (btn.textContent.toLowerCase().includes(correctAnswer.toLowerCase())) {
-                        btn.classList.add('correct'); // Highlight the correct one
-                    }
-                });
+                feedbackElement.textContent = `❌ 不正解です。正解は「${correctAnswer}」でした。`;
+                feedbackElement.className = 'exercise-feedback incorrect'; // 不正解時のスタイルを適用
             }
         }
     </script>

@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
+// How to run: node generate-single-lesson.js ja en 1
+
 // Get language and target language from command line arguments
 const LANGUAGE_LEARN = process.argv[2] || 'ja'; // Language being learned
 const TARGET_LANGUAGE = process.argv[3] || 'en'; // Language to generate lesson in
@@ -121,6 +123,11 @@ MOBILE-FIRST DESIGN REQUIREMENTS:
 - Include CSS that works well on both portrait and landscape orientations
 - Ensure images scale properly on mobile devices
 - Use a clean, modern design that feels native to mobile apps
+
+IMPORTANT CSS REQUIREMENTS:
+- Include CSS for .lesson-header and .lesson-header-image classes
+- .lesson-header should have margin: 20px 0; text-align: center;
+- .lesson-header-image should have width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow; display: block; margin: 0 auto;
 
 Return the content in clean HTML format with embedded CSS that can be directly rendered in a mobile web browser. Use semantic HTML tags like <section>, <h2>, <h3>, <p>, <ul>, <li>, <div>, <span>, <strong>, <em>, <button>, etc. Include responsive CSS classes and styles for mobile-first design.
 
@@ -268,13 +275,13 @@ function updateHtmlWithImage(htmlContent, imagePath, chapterNumber) {
 </div>
 `;
     
-    // Insert the image HTML after the first <h1> or at the beginning if no h1
-    const h1Match = cleanedHtml.match(/<h1[^>]*>.*?<\/h1>/i);
-    if (h1Match) {
-        return cleanedHtml.replace(h1Match[0], h1Match[0] + imageHtml);
-    } else {
-        return imageHtml + cleanedHtml;
-    }
+    // Replace any existing image in the lesson-header with our generated image
+    const updatedHtml = cleanedHtml.replace(
+        /<img[^>]*class="[^"]*lesson-header-image[^"]*"[^>]*>/g,
+        `<img src="${imageUrl}" alt="Chapter ${chapterNumber} Header" class="lesson-header-image">`
+    );
+    
+    return updatedHtml;
 }
 
 /**

@@ -155,6 +155,11 @@ MOBILE-FIRST DESIGN REQUIREMENTS:
 - Include proper viewport meta tag
 - Optimize for vertical scrolling on mobile devices
 
+IMPORTANT CSS REQUIREMENTS:
+- Include CSS for .lesson-header and .lesson-header-image classes
+- .lesson-header should have margin: 20px 0; text-align: center;
+- .lesson-header-image should have width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow; display: block; margin: 0 auto;
+
 Generate the complete HTML content:`;
 
     console.log(`📝 Generating lesson content for Chapter ${chapter.number} in ${targetLanguage}...`);
@@ -236,11 +241,10 @@ function updateHtmlWithImage(htmlContent, imagePath) {
     // Find the lesson-header section and add the image
     const imageUrl = '../header.webp'; // Relative path from target language subdirectory
     
-    // Add the image to the lesson header
+    // Replace any existing image in the lesson-header with our generated image
     const updatedHtml = cleanedHtml.replace(
-        /<div class="lesson-header">/,
-        `<div class="lesson-header">
-            <img src="${imageUrl}" alt="Chapter Header" class="chapter-header-image" style="width: 100%; max-width: 600px; height: auto; border-radius: 8px; margin-bottom: 20px;">`
+        /<img[^>]*class="[^"]*lesson-header-image[^"]*"[^>]*>/g,
+        `<img src="${imageUrl}" alt="Chapter Header" class="lesson-header-image">`
     );
     
     return updatedHtml;
