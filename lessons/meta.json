@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-29T16:38:48.779Z",
+  "lastUpdated": "2025-07-29T16:49:35.677Z",
   "totalLanguages": 2,
   "totalChapters": 20,
-  "totalAvailableChapters": 3,
+  "totalAvailableChapters": 4,
   "totalTargetLanguages": 2,
   "languages": {
     "en": {
@@ -11,7 +11,7 @@
       "name": "English",
       "flag": "🇺🇸",
       "totalChapters": 10,
-      "availableChapters": 1,
+      "availableChapters": 2,
       "availableTargetLanguages": [
         "ja"
       ],
@@ -41,8 +41,10 @@
             "Nice to meet you",
             "Basic conversation starters"
           ],
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "ja"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 3,
@@ -305,6 +307,12 @@
           "languageLearnName": "English",
           "chapterNumber": 1,
           "chapterTitle": "The English Alphabet and Sounds"
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 2,
+          "chapterTitle": "Basic Greetings and Introductions"
         }
       ]
     },

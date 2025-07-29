@@ -223,6 +223,32 @@ async function generateImage(imagePrompt, outputPath) {
 }
 
 /**
+ * Clean HTML content by removing any text before the actual HTML starts
+ * @param {string} htmlContent - Original HTML content
+ * @returns {string} Cleaned HTML content
+ */
+function cleanHtmlContent(htmlContent) {
+    // Remove any text before the actual HTML starts
+    // Look for the first occurrence of <!DOCTYPE html> or <html
+    const doctypeIndex = htmlContent.indexOf('<!DOCTYPE html>');
+    const htmlIndex = htmlContent.indexOf('<html');
+    
+    let startIndex = 0;
+    if (doctypeIndex !== -1) {
+        startIndex = doctypeIndex;
+    } else if (htmlIndex !== -1) {
+        startIndex = htmlIndex;
+    }
+    
+    // If we found HTML content, return everything from that point
+    if (startIndex > 0) {
+        return htmlContent.substring(startIndex);
+    }
+    
+    return htmlContent;
+}
+
+/**
  * Update HTML content to include the generated image
  * @param {string} htmlContent - Original HTML content
  * @param {string} imagePath - Path to the generated image
@@ -230,6 +256,9 @@ async function generateImage(imagePrompt, outputPath) {
  * @returns {string} Updated HTML content with image
  */
 function updateHtmlWithImage(htmlContent, imagePath, chapterNumber) {
+    // Clean the HTML content first
+    const cleanedHtml = cleanHtmlContent(htmlContent);
+    
     const imageUrl = `../header.webp`;
     
     // Add image at the top of the content
@@ -240,11 +269,11 @@ function updateHtmlWithImage(htmlContent, imagePath, chapterNumber) {
 `;
     
     // Insert the image HTML after the first <h1> or at the beginning if no h1
-    const h1Match = htmlContent.match(/<h1[^>]*>.*?<\/h1>/i);
+    const h1Match = cleanedHtml.match(/<h1[^>]*>.*?<\/h1>/i);
     if (h1Match) {
-        return htmlContent.replace(h1Match[0], h1Match[0] + imageHtml);
+        return cleanedHtml.replace(h1Match[0], h1Match[0] + imageHtml);
     } else {
-        return imageHtml + htmlContent;
+        return imageHtml + cleanedHtml;
     }
 }
 

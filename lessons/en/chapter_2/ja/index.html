@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: 基本の挨拶と自己紹介</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* グローバルスタイルとモバイルファーストの基本設定 */
+        :root {
+            --primary-blue: #007bff;
+            --light-blue: #e9f5ff;
+            --accent-green: #28a745;
+            --text-dark: #333;
+            --text-light: #555;
+            --background-light: #f8f8f8;
+            --card-background: #fff;
+            --border-color: #eee;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            font-size: 16px; /* モバイルでの読みやすさのため16pxを最低フォントサイズに */
+            -webkit-text-size-adjust: 100%; /* iOSの自動文字サイズ調整をオフに */
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 800px; /* 大画面での最大幅 */
+            margin: 0 auto;
+            padding: 20px 15px; /* 左右に適切な余白を確保 */
+            box-sizing: border-box; /* paddingがwidthに含まれるように */
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-blue);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-weight: 700;
+        }
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-blue);
+        }
+        h2 { font-size: 1.6em; }
+        h3 { font-size: 1.3em; }
+
+        p {
+            margin-bottom: 1em;
+            text-align: justify; /* モバイルでの読みやすさを向上 */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+        li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+
+        strong {
+            color: var(--primary-blue); /* キーワードを強調 */
+        }
+        em {
+            font-style: normal; /* デフォルトのイタリックを無効にし、発音記号用に使用 */
+            color: var(--text-light);
+            font-size: 0.9em;
+            display: inline-block; /* スペースを確保 */
+            margin-left: 5px;
+        }
+
+        .lesson-card {
+            background-color: var(--card-background);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px var(--shadow-light);
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .example-box {
+            background-color: var(--light-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .example-box p {
+            margin: 0;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+        .example-box .english {
+            font-weight: bold;
+            color: #0056b3;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .example-box .japanese {
+            color: var(--text-light);
+            font-size: 0.9em;
+            display: block;
+        }
+
+        .practice-section {
+            background-color: #f0f8ff; /* 練習問題用の明るい青 */
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .practice-section h3 {
+            color: var(--primary-blue);
+            margin-top: 0;
+        }
+
+        /* 詳細/解答表示用 */
+        details {
+            background-color: #f2f2f2;
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 15px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px 0;
+            color: var(--primary-blue);
+            outline: none; /* デフォルトのフォーカスアウトラインを削除 */
+            list-style: none; /* デフォルトの矢印マーカーを削除 */
+            position: relative;
+            padding-left: 25px; /* カスタム矢印のためのスペース */
+            min-height: 24px; /* タップしやすさ */
+            display: flex; /* 垂直中央揃え用 */
+            align-items: center;
+        }
+        summary::before {
+            content: '▶'; /* カスタム矢印 */
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            transition: transform 0.2s;
+            line-height: 1; /* 垂直中央揃え */
+        }
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        .details-content {
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+            margin-top: 10px;
+            text-align: left;
+        }
+        .details-content p {
+            margin-bottom: 5px;
+        }
+
+        .cultural-note {
+            background-color: #fff3cd; /* 文化ノート用の黄色 */
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #856404;
+        }
+        .cultural-note strong {
+            color: #856404;
+        }
+
+        .summary-section {
+            background-color: #e6f7ff; /* まとめセクション用の薄い青 */
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        .summary-section h2 {
+            color: var(--primary-blue);
+            margin-top: 0;
+        }
+        .summary-section ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+        .summary-section li {
+            border-bottom: none;
+            padding: 5px 0;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.8em;
+            color: var(--text-light);
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* レスポンシブ調整（タブレット以上） */
+        @media (min-width: 600px) {
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 2em; }
+            h3 { font-size: 1.5em; }
+            body { font-size: 17px; }
+            .lesson-card { padding: 30px; }
+            .container { padding: 30px; }
+        }
+
+        /* 大きな画面（PCなど）での調整 */
+        @media (min-width: 900px) {
+            body { font-size: 18px; }
+            h1 { font-size: 3em; }
+            h2 { font-size: 2.2em; }
+            h3 { font-size: 1.7em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Chapter 2: 基本の挨拶と自己紹介</h1>
+<div class="lesson-header">
+    <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+</div>
+
+            <p>このチャプターでは、英語での基本的な挨拶と自己紹介の方法を学びます。日常生活でよく使うフレーズばかりなので、しっかり身につけて自信を持って話せるようになりましょう！</p>
+        </header>
+
+        <section class="lesson-card">
+            <h2>1. 日常の挨拶 (Daily Greetings)</h2>
+            <p>時間帯に合わせて使える挨拶から始めましょう。</p>
+
+            <h3>Hello / Hi</h3>
+            <p>「こんにちは」という意味で、最も一般的な挨拶です。</p>
+            <ul>
+                <li><strong>Hello</strong> <em>(ハロー)</em>: どんな場面でも使える丁寧な挨拶です。</li>
+                <li><strong>Hi</strong> <em>(ハイ)</em>: よりカジュアルな挨拶。友人や同僚によく使います。</li>
+            </ul>
+            <div class="example-box">
+                <p><span class="english">Hello! How are you?</span></p>
+                <p class="japanese">（こんにちは！お元気ですか？）</p>
+            </div>
+            <div class="example-box">
+                <p><span class="english">Hi, Ken!</span></p>
+                <p class="japanese">（やあ、ケン！）</p>
+            </div>
+
+            <h3>Good morning / Good afternoon / Good evening</h3>
+            <p>時間帯によって使い分ける挨拶です。丁寧な印象を与えます。</p>
+            <ul>
+                <li><strong>Good morning</strong> <em>(グッド モーニング)</em>: 午前中（だいたいお昼まで）</li>
+                <li><strong>Good afternoon</strong> <em>(グッド アフタヌーン)</em>: 午後（だいたい夕方まで）</li>
+                <li><strong>Good evening</strong> <em>(グッド イブニング)</em>: 夕方から夜にかけて</li>
+            </ul>
+            <div class="example-box">
+                <p><span class="english">Good morning, Ms. Smith!</span></p>
+                <p class="japanese">（おはようございます、スミスさん！）</p>
+            </div>
+            <div class="example-box">
+                <p><span class="english">Good evening, everyone.</span></p>
+                <p class="japanese">（皆さん、こんばんは。）</p>
+            </div>
+            <div class="cultural-note">
+                <strong>💡 文化ノート: "Good night" とは？</strong>
+                <p>「Good night」<em>(グッド ナイト)</em> は、「おやすみなさい」という意味で、<strong>別れの挨拶</strong>として使われます。夜に会う時の「こんばんは」には使いません。</p>
+            </div>
+        </section>
+
+        <section class="lesson-card">
+            <h2>2. 相手の調子を尋ねる (Asking How Someone Is)</h2>
+            <p>挨拶の次に、相手の調子を尋ねるのが一般的です。</p>
+
+            <h3>How are you?</h3>
+            <p>「お元気ですか？」という定番の質問です。</p>
+            <ul>
+                <li><strong>How are you?</strong> <em>(ハウ アー ユー？)</em>: 最も一般的で丁寧な表現です。</li>
+                <li><strong>How are you doing?</strong> <em>(ハウ アー ユー ドゥーイング？)</em>: 「How are you?」と同じ意味で、こちらもよく使われます。</li>
+            </ul>
+            <div class="example-box">
+                <p><span class="english">A: How are you?</span></p>
+                <p><span class="english">B: I'm fine, thank you. And you?</span></p>
+                <p class="japanese">（A: お元気ですか？ B: 元気です、ありがとう。あなたは？）</p>
+            </div>
+
+            <h3>I'm fine, thank you. And you?</h3>
+            <p>「How are you?」と聞かれたら、こう答えるのが基本です。</p>
+            <ul>
+                <li><strong>I'm fine, thank you.</strong> <em>(アイム ファイン、サンキュー)</em>: 「元気です、ありがとう」という返答。</li>
+                <li><strong>And you?</strong> <em>(アンド ユー？)</em>: 相手に聞き返す表現です。これを付け加えることで、会話が続きます。</li>
+            </ul>
+            <p>他にも様々な返答があります。</p>
+            <ul>
+                <li><strong>I'm good.</strong> <em>(アイム グッド)</em>: カジュアルでよく使われます。</li>
+                <li><strong>I'm great!</strong> <em>(アイム グレイト！)</em>: とても元気な時。</li>
+                <li><strong>Not bad.</strong> <em>(ナット バッド)</em>: まあまあかな。</li>
+            </ul>
+            <div class="cultural-note">
+                <strong>💡 文化ノート: 「How are you?」への返答</strong>
+                <p>英語圏では「How are you?」と聞かれた場合、たとえ体調が悪くても「I'm fine」や「I'm good」と答えるのが一般的です。深く立ち入った話はしない、社交辞令として使われることが多いです。</p>
+            </div>
+        </section>
+
+        <section class="lesson-card">
+            <h2>3. 自己紹介 (Self-Introductions)</h2>
+            <p>自分の名前を伝える方法を学びましょう。</p>
+
+            <h3>My name is... / I'm...</h3>
+            <p>自分の名前を伝える基本的な表現です。</p>
+            <ul>
+                <li><strong>My name is [名前].</strong> <em>(マイ ネーム イズ [名前])</em>: 丁寧な言い方です。</li>
+                <li><strong>I'm [名前].</strong> <em>(アイム [名前])</em>: よりカジュアルで、日常会話で頻繁に使われます。</li>
+            </ul>
+            <div class="example-box">
+                <p><span class="english">My name is Emily. Nice to meet you.</span></p>
+                <p class="japanese">（私の名前はエミリーです。はじめまして。）</p>
+            </div>
+            <div class="example-box">
+                <p><span class="english">Hi, I'm Takeshi.</span></p>
+                <p class="japanese">（こんにちは、タケシです。）</p>
+            </div>
+
+            <h3>Nice to meet you.</h3>
+            <p>初めて会う人に対して使う定番フレーズです。</p>
+            <ul>
+                <li><strong>Nice to meet you.</strong> <em>(ナイス トゥー ミート ユー)</em>: 「はじめまして」という意味。</li>
+                <li>相手が「Nice to meet you」と言ったら、こちらも「<strong>Nice to meet you, too.</strong>」<em>(ナイス トゥー ミート ユー、トゥー)</em> と返しましょう。（「私もはじめまして」）</li>
+            </ul>
+            <div class="example-box">
+                <p><span class="english">A: My name is Alex. Nice to meet you.</span></p>
+                <p><span class="english">B: Nice to meet you, too. I'm Sakura.</span></p>
+                <p class="japanese">（A: 私の名前はアレックスです。はじめまして。 B: こちらこそはじめまして。私はサクラです。）</p>
+            </div>
+        </section>
+
+        <section class="lesson-card">
+            <h2>4. 簡単な会話のきっかけ (Basic Conversation Starters)</h2>
+            <p>自己紹介の後に使える簡単な質問で、会話を広げてみましょう。</p>
+
+            <h3>Where are you from?</h3>
+            <p>「どこから来ましたか？」出身地を尋ねる質問です。</p>
+            <ul>
+                <li><strong>Where are you from?</strong> <em>(ウェア アー ユー フロム？)</em></li>
+                <li>答え方: <strong>I'm from [国名/都市名].</strong> <em>(アイム フロム [国名/都市名])</em></li>
+            </ul>
+            <div class="example-box">
+                <p><span class="english">A: Where are you from?</span></p>
+                <p><span class="english">B: I'm from Japan.</span></p>
+                <p class="japanese">（A: どこから来ましたか？ B: 日本からです。）</p>
+            </div>
+            <div class="example-box">
+                <p><span class="english">A: Where are you from?</span></p>
+                <p><span class="english">B: I'm from Tokyo.</span></p>
+                <p class="japanese">（A: どこから来ましたか？ B: 東京からです。）</p>
+            </div>
+
+            <h3>What do you do?</h3>
+            <p>「お仕事は何ですか？」相手の職業を尋ねる質問です。</p>
+            <ul>
+                <li><strong>What do you do?</strong> <em>(ワット ドゥー ユー ドゥー？)</em></li>
+                <li>答え方: <strong>I'm a [職業].</strong> <em>(アイム ア [職業])</em> / <strong>I work at [会社名].</strong> <em>(アイ ワーク アット [会社名])</em></li>
+            </ul>
+            <div class="example-box">
+                <p><span class="english">A: What do you do?</span></p>
+                <p><span class="english">B: I'm a student. / I'm a teacher.</span></p>
+                <p class="japanese">（A: お仕事は何ですか？ B: 学生です。 / 先生です。）</p>
+            </div>
+            <div class="cultural-note">
+                <strong>💡 文化ノート: 職業を尋ねる</strong>
+                <p>欧米では初対面で職業を尋ねるのはごく自然な会話の始まりです。日本のように「失礼にあたるかも」と心配する必要はあまりありません。</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>練習問題 (Practice Time!)</h2>
+            <p>学んだフレーズを使って、会話を完成させましょう！</p>
+
+            <h3>問題1: 挨拶の使い分け</h3>
+            <p>（）に適切な挨拶を入れてみましょう。</p>
+            <p>1. 朝、先生に会った時: （　　　　　）, Mr. Tanaka!</p>
+            <p>2. 友達に会った時: （　　　　　）, Sarah!</p>
+            <p>3. 夜、初めて会う人に: （　　　　　）, my name is Ken.</p>
+            <details>
+                <summary>解答を見る</summary>
+                <div class="details-content">
+                    <p>1. <strong>Good morning</strong></p>
+                    <p>2. <strong>Hi</strong></p>
+                    <p>3. <strong>Good evening</strong></p>
+                </div>
+            </details>
+
+            <h3>問題2: 自己紹介と応答</h3>
+            <p>会話を完成させましょう。</p>
+            <p>A: Hello! My name is Lisa. (　　　　　) meet you.</p>
+            <p>B: Nice to meet you, (　　　　　). I'm Daiki.</p>
+            <details>
+                <summary>解答を見る</summary>
+                <div class="details-content">
+                    <p>A: Hello! My name is Lisa. <strong>Nice to</strong> meet you.</p>
+                    <p>B: Nice to meet you, <strong>too</strong>. I'm Daiki.</p>
+                </div>
+            </details>
+
+            <h3>問題3: 会話の練習</h3>
+            <p>以下の会話に、あなたが答えるとしたらどうなりますか？</p>
+            <div class="example-box">
+                <p><span class="english">A: Good morning! How are you doing?</span></p>
+                <p><span class="english">B: (あなたならどう答える？)</span></p>
+            </div>
+            <details>
+                <summary>ヒントと例の答え</summary>
+                <div class="details-content">
+                    <p>例: <strong>I'm good, thank you. And you?</strong></p>
+                    <p>または <strong>I'm fine, thank you. And you?</strong> など</p>
+                </div>
+            </details>
+            <div class="example-box">
+                <p><span class="english">A: Hi, I'm Ken. What do you do?</span></p>
+                <p><span class="english">B: (あなたならどう答える？)</span></p>
+            </div>
+            <details>
+                <summary>ヒントと例の答え</summary>
+                <div class="details-content">
+                    <p>例: (もし学生なら) <strong>I'm a student.</strong></p>
+                    <p>(もし会社員なら) <strong>I'm an office worker.</strong></p>
+                    <p>(もし先生なら) <strong>I'm a teacher.</strong> など</p>
+                </div>
+            </details>
+        </section>
+
+        <section class="summary-section">
+            <h2>まとめ (Summary)</h2>
+            <p>Chapter 2で学んだ重要なポイントを復習しましょう。</p>
+            <ul>
+                <li><strong>時間帯ごとの挨拶:</strong> Good morning / Good afternoon / Good evening</li>
+                <li><strong>一般的な挨拶:</strong> Hello (丁寧), Hi (カジュアル)</li>
+                <li><strong>相手の調子を尋ねる:</strong> How are you? / How are you doing?</li>
+                <li><strong>返答と聞き返し:</strong> I'm fine, thank you. And you? / I'm good.</li>
+                <li><strong>名前を伝える:</strong> My name is... / I'm...</li>
+                <li><strong>初対面の挨拶:</strong> Nice to meet you. / Nice to meet you, too.</li>
+                <li><strong>会話のきっかけ:</strong> Where are you from? (出身地), What do you do? (職業)</li>
+            </ul>
+            <p>これらのフレーズを使って、ぜひ身近な人やオンラインで英語を話す機会を見つけて練習してみてください！</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 English Language Teacher. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
+```
