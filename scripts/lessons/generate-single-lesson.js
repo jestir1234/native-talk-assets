@@ -90,7 +90,7 @@ async function generateLessonContent(chapter, languageLearn, targetLanguage) {
     const languageLearnName = languageNames[languageLearn] || languageLearn.toUpperCase();
     const targetLanguageName = languageNames[targetLanguage] || targetLanguage.toUpperCase();
     
-    const prompt = `You are an expert ${languageLearnName} language teacher creating engaging, app-friendly lessons in ${targetLanguageName}.
+    const prompt = `You are an expert ${languageLearnName} language teacher creating engaging, mobile-first lessons in ${targetLanguageName}.
 
 Create a lesson for Chapter ${chapter.number}: ${chapter.title}
 
@@ -101,9 +101,9 @@ Requirements:
 1. Create engaging, digestible content suitable for mobile app users (not too heavy like a textbook)
 2. Include practical examples and exercises
 3. Use clear, friendly language in ${targetLanguageName}
-4. Structure the content with proper HTML tags
+4. Structure the content with responsive, mobile-first HTML and CSS
 5. Include interactive elements like practice sections
-6. Make it visually appealing with proper formatting
+6. Make it visually appealing with proper formatting optimized for mobile screens
 7. Keep it concise but comprehensive
 8. Include cultural notes where relevant
 9. Add pronunciation guides for ${languageLearnName} words
@@ -111,9 +111,20 @@ Requirements:
 11. All explanations should be in ${targetLanguageName}
 12. Include ${languageLearnName} examples with ${targetLanguageName} translations
 
-Return the content in clean HTML format that can be directly rendered in a web browser. Use semantic HTML tags like <section>, <h2>, <h3>, <p>, <ul>, <li>, <div>, <span>, <strong>, <em>, etc. Include CSS classes for styling if needed.
+MOBILE-FIRST DESIGN REQUIREMENTS:
+- Use responsive CSS with mobile-first approach
+- Ensure all content is easily readable on small screens (320px+ width)
+- Use appropriate font sizes (minimum 16px for body text)
+- Include proper spacing and padding for touch interfaces
+- Make buttons and interactive elements at least 44px tall for easy tapping
+- Use semantic HTML5 tags for accessibility
+- Include CSS that works well on both portrait and landscape orientations
+- Ensure images scale properly on mobile devices
+- Use a clean, modern design that feels native to mobile apps
 
-The lesson should be engaging, practical, and help users actually learn and practice the ${languageLearnName} language concepts. All explanations and instructions should be in ${targetLanguageName}.`;
+Return the content in clean HTML format with embedded CSS that can be directly rendered in a mobile web browser. Use semantic HTML tags like <section>, <h2>, <h3>, <p>, <ul>, <li>, <div>, <span>, <strong>, <em>, <button>, etc. Include responsive CSS classes and styles for mobile-first design.
+
+The lesson should be engaging, practical, and help users actually learn and practice the ${languageLearnName} language concepts. All explanations and instructions should be in ${targetLanguageName}. The design should feel like a native mobile app experience.`;
 
     console.log(`📚 Generating lesson content for Chapter ${chapter.number} in ${targetLanguageName}...`);
     const content = await callGemini(prompt);

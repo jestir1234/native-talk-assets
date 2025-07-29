@@ -1,0 +1,623 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Hiragana Vowels - Learn Japanese</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles & Mobile-First Approach */
+        :root {
+            --primary-color: #007bff; /* A nice blue for accents */
+            --primary-dark: #0056b3;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --white-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --padding-base: 16px;
+            --border-radius-base: 8px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            padding: var(--padding-base); /* Overall padding for the entire page */
+            font-size: 16px; /* Minimum body font size */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Container for the lesson content */
+        .lesson-container {
+            max-width: 600px; /* Max width for comfortable reading on larger screens */
+            margin: 0 auto; /* Center the container */
+            background-color: var(--white-bg);
+            border-radius: var(--border-radius-base);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: calc(var(--padding-base) * 1.5); /* More padding inside the main container */
+        }
+
+        /* Headings */
+        h1, h2, h3, h4 {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--primary-dark);
+            margin-bottom: var(--padding-base);
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: calc(var(--padding-base) * 2);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: calc(var(--padding-base) * 2);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-top: calc(var(--padding-base) * 1.5);
+            margin-bottom: var(--padding-base);
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: var(--padding-base);
+            font-size: 1rem;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: var(--padding-base);
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 25px; /* Space for custom bullet */
+            margin-bottom: 8px;
+        }
+
+        ul li::before {
+            content: '👉'; /* Custom bullet */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Strong emphasis */
+        strong {
+            color: var(--primary-dark);
+        }
+
+        /* Sections */
+        section {
+            padding: var(--padding-base) 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* Character Display */
+        .char-display {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 6rem; /* Large size for characters */
+            text-align: center;
+            color: var(--primary-dark);
+            padding: var(--padding-base);
+            background-color: var(--light-bg);
+            border-radius: var(--border-radius-base);
+            margin-bottom: var(--padding-base);
+            line-height: 1; /* Prevent extra space around large char */
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation-guide p {
+            background-color: #e6f2ff; /* Light blue background */
+            padding: 12px;
+            border-radius: var(--border-radius-base);
+            border-left: 4px solid var(--primary-color);
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: var(--padding-base);
+        }
+        .pronunciation-guide span {
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+
+
+        /* Stroke Order (placeholder for image) */
+        .stroke-order {
+            background-color: #fff0e6; /* Light orange background */
+            padding: 12px;
+            border-radius: var(--border-radius-base);
+            border-left: 4px solid #ff9933;
+            margin-bottom: var(--padding-base);
+        }
+        .stroke-order p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+        .stroke-order img { /* Placeholder style for stroke order images */
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 10px;
+            border: 1px dashed var(--border-color);
+        }
+
+        /* Example Words */
+        .example-words .word-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--white-bg);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-base);
+            padding: 12px;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        .example-words .word-item strong {
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            flex-basis: 30%; /* Give kana some space */
+            min-width: 60px; /* Ensure it doesn't get too squished */
+        }
+        .example-words .word-item span {
+            flex-grow: 1; /* Romaji and translation take remaining space */
+            text-align: right;
+            color: var(--text-color);
+        }
+        .example-words .word-item .romaji {
+            font-style: italic;
+            margin-right: 8px;
+            color: #666;
+            flex-basis: 100%; /* Romaji on new line if too long */
+            text-align: left;
+            margin-top: 4px;
+            font-size: 0.9rem;
+        }
+        @media (min-width: 480px) { /* Adjust for slightly larger phones/landscape */
+            .example-words .word-item .romaji {
+                flex-basis: auto; /* Allow romaji to sit next to kana */
+                text-align: left;
+                margin-top: 0;
+            }
+        }
+
+
+        /* Interactive Elements - Buttons */
+        .btn {
+            display: block; /* Full width button */
+            width: 100%;
+            padding: 12px 20px;
+            min-height: 44px; /* Ensure tap target size */
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            border-radius: var(--border-radius-base);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: var(--padding-base);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white-bg);
+        }
+
+        .btn-primary:hover, .btn-primary:active {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: var(--white-bg);
+        }
+        .btn-secondary:hover, .btn-secondary:active {
+            background-color: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #e9f7ef; /* Light green background for practice */
+            border-radius: var(--border-radius-base);
+            padding: var(--padding-base);
+            margin-bottom: calc(var(--padding-base) * 1.5);
+            border: 1px solid var(--success-color);
+        }
+        .practice-section h3 {
+            color: var(--success-color);
+            margin-top: 0;
+            margin-bottom: var(--padding-base);
+            border-bottom: none;
+        }
+
+        /* Tap to Reveal / Details element for interactive practice */
+        details {
+            background-color: #f0f8ff; /* Light blue for interactive elements */
+            border: 1px solid #cceeff;
+            border-radius: var(--border-radius-base);
+            margin-bottom: 10px;
+            overflow: hidden; /* For smooth animation */
+        }
+
+        summary {
+            font-weight: bold;
+            padding: 12px 15px;
+            cursor: pointer;
+            outline: none;
+            list-style: none; /* Hide default triangle */
+            position: relative;
+            background-color: #e6f2ff;
+            color: var(--primary-dark);
+            min-height: 44px; /* Ensure tap target size */
+            display: flex;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none; /* Hide default marker for webkit */
+        }
+
+        summary::after {
+            content: '▼'; /* Custom arrow */
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.2s ease;
+        }
+
+        details[open] summary::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .reveal-content {
+            padding: 10px 15px 15px;
+            border-top: 1px solid #cceeff;
+            color: var(--text-color);
+        }
+
+        /* Summary section */
+        .summary-section {
+            background-color: #fffacd; /* Light yellow for summary */
+            border-radius: var(--border-radius-base);
+            padding: var(--padding-base);
+            margin-top: calc(var(--padding-base) * 2);
+            border: 1px solid #ffc107;
+        }
+        .summary-section h2 {
+            color: #ffc107;
+            border-bottom: 2px solid #ffc107;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #f7e6ff; /* Light purple */
+            border-left: 4px solid #8a2be2;
+            padding: 12px;
+            border-radius: var(--border-radius-base);
+            font-size: 0.9rem;
+            margin-bottom: var(--padding-base);
+            color: #6a0dad;
+        }
+        .cultural-note strong {
+            color: #8a2be2;
+        }
+
+
+        /* Responsive Adjustments (for slightly larger mobile devices, landscape, tablets) */
+        @media (min-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
+            h3 {
+                font-size: 1.35rem;
+            }
+            .char-display {
+                font-size: 7rem;
+            }
+            .btn {
+                padding: 15px 25px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: calc(var(--padding-base) * 2);
+            }
+            .lesson-container {
+                padding: calc(var(--padding-base) * 2);
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            h3 {
+                font-size: 1.5rem;
+            }
+            .char-display {
+                font-size: 8rem;
+            }
+            .example-words .word-item {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <header>
+            <h1>Chapter 2: Hiragana – The Vowel Sounds</h1>
+<div class="lesson-header">
+    <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+</div>
+
+        </header>
+
+        <main>
+            <section class="lesson-intro">
+                <h2>Hello, Language Adventurer!</h2>
+                <p>Welcome to Chapter 2! Get ready to unlock your first major milestone in Japanese: mastering the five fundamental Hiragana vowel sounds!</p>
+                <p>These aren't just sounds; they're the building blocks of nearly every Japanese word. Learn them well, and you'll be amazed at how quickly you can start reading simple words.</p>
+                <p>Let's dive in!</p>
+            </section>
+
+            <section class="cultural-note">
+                <p><strong>Cultural Note: Vowels are King!</strong> In Japanese, every syllable (with very few exceptions) ends in a vowel sound. This makes mastering these five sounds incredibly important – they're the rhythm and backbone of the language!</p>
+            </section>
+
+            <!-- Vowel: A (あ) -->
+            <section class="hiragana-vowel">
+                <h2>1. あ (a)</h2>
+                <div class="char-display">あ</div>
+                <div class="pronunciation-guide">
+                    <p>Pronunciation: Sounds like the 'a' in <span>"father"</span> or <span>"car"</span>. Open your mouth wide!</p>
+                </div>
+                <div class="stroke-order">
+                    <h3>Stroke Order Guide</h3>
+                    <p><em>(Imagine a diagram showing the strokes here)</em></p>
+                    <img src="placeholder_stroke_order_a.png" alt="Stroke order for Hiragana 'a'" style="display:none;">
+                    <ul>
+                        <li><strong>Stroke 1:</strong> A horizontal line, slightly upward slant.</li>
+                        <li><strong>Stroke 2:</strong> A vertical line that curves slightly left at the bottom.</li>
+                        <li><strong>Stroke 3:</strong> A loop that starts on the right, swoops down, crosses the second stroke, and finishes with a flourish.</li>
+                    </ul>
+                </div>
+                <div class="practice-writing">
+                    <h3>Practice Time: Write あ</h3>
+                    <p>Grab a pen and paper (or use your finger on a screen!) and practice writing あ a few times. Focus on the stroke order and flow.</p>
+                </div>
+                <div class="example-words">
+                    <h3>Words with あ</h3>
+                    <div class="word-item">
+                        <strong>あ</strong><span><span class="romaji">(a)</span> - Ah! / Oh! (interjection)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vowel: I (い) -->
+            <section class="hiragana-vowel">
+                <h2>2. い (i)</h2>
+                <div class="char-display">い</div>
+                <div class="pronunciation-guide">
+                    <p>Pronunciation: Sounds like the 'ee' in <span>"bee"</span> or <span>"ski"</span>. Keep your mouth relaxed.</p>
+                </div>
+                <div class="stroke-order">
+                    <h3>Stroke Order Guide</h3>
+                    <p><em>(Imagine a diagram showing the strokes here)</em></p>
+                    <img src="placeholder_stroke_order_i.png" alt="Stroke order for Hiragana 'i'" style="display:none;">
+                    <ul>
+                        <li><strong>Stroke 1:</strong> A short, slightly curved stroke starting top-left, going down and slightly right.</li>
+                        <li><strong>Stroke 2:</strong> A similar, slightly shorter stroke to the right of the first, also curving.</li>
+                    </ul>
+                </div>
+                <div class="practice-writing">
+                    <h3>Practice Time: Write い</h3>
+                    <p>This one's simpler! Practice writing い. It's like two graceful falling lines.</p>
+                </div>
+                <div class="example-words">
+                    <h3>Words with い</h3>
+                    <div class="word-item">
+                        <strong>い</strong><span><span class="romaji">(i)</span> - Stomach / Gut</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vowel: U (う) -->
+            <section class="hiragana-vowel">
+                <h2>3. う (u)</h2>
+                <div class="char-display">う</div>
+                <div class="pronunciation-guide">
+                    <p>Pronunciation: Sounds like the 'oo' in <span>"moon"</span> or <span>"flute"</span>. Your lips should be slightly rounded.</p>
+                </div>
+                <div class="stroke-order">
+                    <h3>Stroke Order Guide</h3>
+                    <p><em>(Imagine a diagram showing the strokes here)</em></p>
+                    <img src="placeholder_stroke_order_u.png" alt="Stroke order for Hiragana 'u'" style="display:none;">
+                    <ul>
+                        <li><strong>Stroke 1:</strong> A tiny diagonal dash.</li>
+                        <li><strong>Stroke 2:</strong> A long, curved stroke starting below the first, looping downwards and to the left, then back up.</li>
+                    </ul>
+                </div>
+                <div class="practice-writing">
+                    <h3>Practice Time: Write う</h3>
+                    <p>Pay attention to the little dash and then the smooth curve of う. Keep practicing!</p>
+                </div>
+                <div class="example-words">
+                    <h3>Words with う</h3>
+                    <div class="word-item">
+                        <strong>う</strong><span><span class="romaji">(u)</span> - Cormorant (a type of bird)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vowel: E (え) -->
+            <section class="hiragana-vowel">
+                <h2>4. え (e)</h2>
+                <div class="char-display">え</div>
+                <div class="pronunciation-guide">
+                    <p>Pronunciation: Sounds like the 'e' in <span>"egg"</span> or <span>"get"</span>. It's a short, crisp sound.</p>
+                </div>
+                <div class="stroke-order">
+                    <h3>Stroke Order Guide</h3>
+                    <p><em>(Imagine a diagram showing the strokes here)</em></p>
+                    <img src="placeholder_stroke_order_e.png" alt="Stroke order for Hiragana 'e'" style="display:none;">
+                    <ul>
+                        <li><strong>Stroke 1:</strong> A horizontal line.</li>
+                        <li><strong>Stroke 2:</strong> A vertical stroke that crosses the first, then curves sharply right and makes a loop, finishing with a small flick.</li>
+                    </ul>
+                </div>
+                <div class="practice-writing">
+                    <h3>Practice Time: Write え</h3>
+                    <p>This one has a unique loop! Practice the two strokes of え until it feels natural.</p>
+                </div>
+                <div class="example-words">
+                    <h3>Words with え</h3>
+                    <div class="word-item">
+                        <strong>え</strong><span><span class="romaji">(e)</span> - Picture / Drawing</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Vowel: O (お) -->
+            <section class="hiragana-vowel">
+                <h2>5. お (o)</h2>
+                <div class="char-display">お</div>
+                <div class="pronunciation-guide">
+                    <p>Pronunciation: Sounds like the 'o' in <span>"oh"</span> or <span>"boat"</span>. Similar to the 'o' in 'go'.</p>
+                </div>
+                <div class="stroke-order">
+                    <h3>Stroke Order Guide</h3>
+                    <p><em>(Imagine a diagram showing the strokes here)</em></p>
+                    <img src="placeholder_stroke_order_o.png" alt="Stroke order for Hiragana 'o'" style="display:none;">
+                    <ul>
+                        <li><strong>Stroke 1:</strong> A horizontal line.</li>
+                        <li><strong>Stroke 2:</strong> A vertical line that crosses the first, then curves left.</li>
+                        <li><strong>Stroke 3:</strong> A small diagonal flick/dot on the top right.</li>
+                    </ul>
+                </div>
+                <div class="practice-writing">
+                    <h3>Practice Time: Write お</h3>
+                    <p>Don't forget the little flick! Practice writing お until it's smooth.</p>
+                </div>
+                <div class="example-words">
+                    <h3>Words with お</h3>
+                    <div class="word-item">
+                        <strong>お</strong><span><span class="romaji">(o)</span> - Tail</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Your First Full Hiragana Words -->
+            <section class="practice-section">
+                <h2>Your First Full Hiragana Words!</h2>
+                <p>Amazing! You now know all five Hiragana vowels. The coolest part? You can already read and write some simple Japanese words! Let's try them out.</p>
+
+                <h3>Practice: Tap to Reveal</h3>
+                <p>Try to read the Hiragana word first, then tap to reveal its Romaji pronunciation and English meaning!</p>
+
+                <details>
+                    <summary>あい</summary>
+                    <div class="reveal-content">
+                        <p>Romaji: <strong>ai</strong></p>
+                        <p>Meaning: <strong>Love</strong></p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>いえ</summary>
+                    <div class="reveal-content">
+                        <p>Romaji: <strong>ie</strong></p>
+                        <p>Meaning: <strong>House / Home</strong></p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>あお</summary>
+                    <div class="reveal-content">
+                        <p>Romaji: <strong>ao</strong></p>
+                        <p>Meaning: <strong>Blue</strong></p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>うえ</summary>
+                    <div class="reveal-content">
+                        <p>Romaji: <strong>ue</strong></p>
+                        <p>Meaning: <strong>Above / Up</strong></p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>いう</summary>
+                    <div class="reveal-content">
+                        <p>Romaji: <strong>iu</strong></p>
+                        <p>Meaning: <strong>To say</strong></p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>えい</summary>
+                    <div class="reveal-content">
+                        <p>Romaji: <strong>ei</strong></p>
+                        <p>Meaning: <strong>Ray (as in, a fish)</strong></p>
+                    </div>
+                </details>
+
+                <p>How did you do? Give yourself a pat on the back! You've just taken a huge step in your Japanese journey!</p>
+            </section>
+
+            <section class="lesson-summary">
+                <h2>Chapter Summary</h2>
+                <p>You've crushed Chapter 2! Here's a quick recap of what you've achieved:</p>
+                <ul>
+                    <li>You learned the <strong>five fundamental Hiragana vowel sounds:</strong> あ (a), い (i), う (u), え (e), お (o).</li>
+                    <li>You practiced their <strong>pronunciation</strong> and <strong>stroke order.</strong></li>
+                    <li>You read and understood your <strong>very first Japanese words!</strong></li>
+                </ul>
+                <p>These vowels are the core of Japanese pronunciation. Keep practicing them regularly until they feel completely natural!</p>
+            </section>
+
+            <section class="call-to-action">
+                <p>Feeling confident? Ready for more?</p>
+                <button class="btn btn-primary" onclick="alert('Great job! Get ready for the K-column: か、き、く、け、こ!');">Continue to Chapter 3</button>
+                <button class="btn btn-secondary" onclick="alert('No problem! You can always review this chapter or retry the practice exercises!');">Review this Chapter</button>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+```

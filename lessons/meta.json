@@ -1,9 +1,10 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-28T22:31:45.456Z",
+  "lastUpdated": "2025-07-29T16:06:49.218Z",
   "totalLanguages": 2,
   "totalChapters": 20,
-  "totalAvailableChapters": 2,
+  "totalAvailableChapters": 3,
+  "totalTargetLanguages": 2,
   "languages": {
     "en": {
       "code": "en",
@@ -11,6 +12,9 @@
       "flag": "🇺🇸",
       "totalChapters": 10,
       "availableChapters": 1,
+      "availableTargetLanguages": [
+        "ja"
+      ],
       "chapters": [
         {
           "number": 1,
@@ -151,7 +155,10 @@
       "name": "Japanese",
       "flag": "🇯🇵",
       "totalChapters": 10,
-      "availableChapters": 1,
+      "availableChapters": 2,
+      "availableTargetLanguages": [
+        "en"
+      ],
       "chapters": [
         {
           "number": 1,
@@ -176,8 +183,10 @@
             "Basic words: あい (love), いえ (house), うみ (sea), etc.",
             "Your first full hiragana words"
           ],
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 3,
@@ -281,6 +290,40 @@
           ],
           "availableLanguages": [],
           "totalLanguages": 0
+        }
+      ]
+    }
+  },
+  "userLanguageSupport": {
+    "ja": {
+      "code": "ja",
+      "name": "Japanese",
+      "flag": "🇯🇵",
+      "availableLessons": [
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 1,
+          "chapterTitle": "The English Alphabet and Sounds"
+        }
+      ]
+    },
+    "en": {
+      "code": "en",
+      "name": "English",
+      "flag": "🇺🇸",
+      "availableLessons": [
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 1,
+          "chapterTitle": "The Japanese Writing System"
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 2,
+          "chapterTitle": "Hiragana – The Vowel Sounds"
         }
       ]
     }
