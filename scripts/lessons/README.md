@@ -15,6 +15,7 @@ The lessons feature generates interactive, app-friendly language learning conten
 ### Scripts
 - `generate-lessons.js` - Generate all lessons for a language
 - `generate-single-lesson.js` - Generate a single lesson for testing
+- `regenerate-lesson.js` - Regenerate a specific lesson and update meta.json
 - `generate-lessons-meta.js` - Generate meta.json file for mobile app
 - `update-lessons-meta.js` - Update meta.json file only
 - `test-lessons.js` - Validate generated lesson content
@@ -61,6 +62,23 @@ node scripts/lessons/generate-single-lesson.js ja en 1
 # Generate Chapter 3 for English in Japanese
 node scripts/lessons/generate-single-lesson.js en ja 3
 ```
+
+### Regenerate Specific Lesson
+
+Regenerate a specific lesson and automatically update meta.json:
+```bash
+# Regenerate Chapter 1 for Japanese in English
+node scripts/lessons/regenerate-lesson.js ja 1 en
+
+# Regenerate Chapter 2 for English in Japanese
+node scripts/lessons/regenerate-lesson.js en 2 ja
+```
+
+This is useful when you need to:
+- Fix issues in existing lessons
+- Update lesson content
+- Regenerate after deleting files
+- Improve lesson quality
 
 ### Update Meta File Only
 ```bash
