@@ -172,6 +172,8 @@ AUDIO INTERACTION REQUIREMENTS:
 - Audio icons should be clearly visible and touch-friendly (min 44px)
 - Use appropriate emoji or icon for audio elements (🔊, 🎵, etc.)
 - Make audio elements interactive with hover effects
+- DO NOT include any onclick handlers or JavaScript event listeners on audio-icon buttons
+- We will inject the click handlers ourselves using react-native-tts on the mobile frontend
 
 Generate the complete HTML content:`;
 
@@ -239,12 +241,20 @@ function cleanHtmlContent(htmlContent) {
         startIndex = htmlIndex;
     }
     
-    // If we found HTML content, return everything from that point
+    // If we found HTML content, get everything from that point
+    let cleanedContent = htmlContent;
     if (startIndex > 0) {
-        return htmlContent.substring(startIndex);
+        cleanedContent = htmlContent.substring(startIndex);
     }
     
-    return htmlContent;
+    // Remove any text after the HTML ends
+    // Look for the last occurrence of </html>
+    const endHtmlIndex = cleanedContent.lastIndexOf('</html>');
+    if (endHtmlIndex !== -1) {
+        cleanedContent = cleanedContent.substring(0, endHtmlIndex + 7); // +7 for '</html>'
+    }
+    
+    return cleanedContent;
 }
 
 function updateHtmlWithImage(htmlContent, imagePath) {
