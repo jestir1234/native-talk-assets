@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-30T16:08:12.797Z",
+  "lastUpdated": "2025-07-30T17:59:40.878Z",
   "totalLanguages": 2,
   "totalChapters": 20,
-  "totalAvailableChapters": 5,
+  "totalAvailableChapters": 6,
   "totalTargetLanguages": 2,
   "languages": {
     "en": {
@@ -159,7 +159,7 @@
       "name": "Japanese",
       "flag": "🇯🇵",
       "totalChapters": 10,
-      "availableChapters": 2,
+      "availableChapters": 3,
       "availableTargetLanguages": [
         "en"
       ],
@@ -202,8 +202,10 @@
             "はじめまして。よろしくおねがいします。",
             "Grammar: Particle は, copula です"
           ],
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 4,
@@ -340,6 +342,12 @@
           "languageLearnName": "Japanese",
           "chapterNumber": 2,
           "chapterTitle": "Hiragana – The Vowel Sounds"
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 3,
+          "chapterTitle": "Basic Greetings & Introductions"
         }
       ]
     }
