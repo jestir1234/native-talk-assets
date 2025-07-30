@@ -262,20 +262,35 @@ function cleanHtmlContent(htmlContent) {
     return cleanedContent;
 }
 
-function updateHtmlWithImage(htmlContent, imagePath) {
+function updateHtmlWithImage(htmlContent, imagePath, chapterNumber) {
     // Clean the HTML content first
     const cleanedHtml = cleanHtmlContent(htmlContent);
     
-    // Find the lesson-header section and add the image
     const imageUrl = '../header.webp'; // Relative path from target language subdirectory
     
-    // Replace any existing image in the lesson-header with our generated image
-    const updatedHtml = cleanedHtml.replace(
-        /<img[^>]*class="[^"]*lesson-header-image[^"]*"[^>]*>/g,
-        `<img src="${imageUrl}" alt="Chapter Header" class="lesson-header-image">`
-    );
+    // Add image at the top of the content if it doesn't exist
+    const imageHtml = `
+<div class="lesson-header">
+    <img src="${imageUrl}" alt="Chapter ${chapterNumber} Header" class="lesson-header-image">
+</div>
+`;
     
-    return updatedHtml;
+    // Check if there's already a lesson-header section
+    if (cleanedHtml.includes('<div class="lesson-header">')) {
+        // Replace any existing image in the lesson-header with our generated image
+        const updatedHtml = cleanedHtml.replace(
+            /<img[^>]*class="[^"]*lesson-header-image[^"]*"[^>]*>/g,
+            `<img src="${imageUrl}" alt="Chapter ${chapterNumber} Header" class="lesson-header-image">`
+        );
+        return updatedHtml;
+    } else {
+        // Insert the image HTML after the opening body tag
+        const updatedHtml = cleanedHtml.replace(
+            /<body[^>]*>/,
+            `$&${imageHtml}`
+        );
+        return updatedHtml;
+    }
 }
 
 async function regenerateLesson() {
@@ -334,7 +349,7 @@ async function regenerateLesson() {
         }
         
         // Update HTML with image reference
-        const finalHtml = updateHtmlWithImage(lessonContent, HEADER_IMAGE);
+        const finalHtml = updateHtmlWithImage(lessonContent, HEADER_IMAGE, CHAPTER_NUMBER);
         
         // Save the HTML file
         fs.writeFileSync(HTML_FILE, finalHtml);
