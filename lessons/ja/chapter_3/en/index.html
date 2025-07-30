@@ -3,65 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 3: Basic Japanese Greetings & Introductions</title>
+    <title>Chapter 3: Basic Greetings & Introductions - Japanese Language</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@404&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Global Styles & Reset */
-        *, *::before, *::after {
+        /* General Styles & Reset */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-background: #FDF9E5;
+            --heading-text-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #FDF9E5; /* Secondary: Cream background */
-            color: #666666; /* Body Text: Medium gray */
+            font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+            background-color: var(--secondary-background);
+            color: var(--body-text-color);
             line-height: 1.6;
-            padding: 16px; /* Overall padding for mobile */
-            font-size: 16px;
+            padding: 0 15px; /* Added horizontal padding for mobile */
+            min-height: 100vh; /* Ensure full height for background */
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Typography */
+        main {
+            flex-grow: 1; /* Allows main content to grow */
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+            padding-bottom: 30px; /* Space at the bottom */
+        }
+
         h1, h2, h3 {
-            color: #2C3E50; /* Text: Dark blue */
-            margin-bottom: 12px;
-            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-bottom: 15px;
+            line-height: 1.3;
         }
 
         h1 {
-            font-size: 28px;
-            margin-top: 0;
+            font-size: 1.8em; /* Adjusted for mobile */
+            margin-bottom: 0; /* Handled by lesson-header margin */
         }
 
         h2 {
-            font-size: 24px;
-            margin-top: 24px;
-            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            font-size: 1.5em; /* Adjusted for mobile */
             padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-color);
         }
 
         h3 {
-            font-size: 20px;
+            font-size: 1.2em; /* Adjusted for mobile */
             margin-top: 20px;
-            color: #8B5FBF; /* Primary: Purple for subheadings */
+            margin-bottom: 10px;
         }
 
         p {
-            margin-bottom: 12px;
+            font-size: 16px; /* Minimum font size for body text */
+            margin-bottom: 15px;
         }
 
-        strong {
-            color: #2C3E50; /* Darker for emphasis */
-        }
-
-        /* Layout & Spacing */
-        .container {
-            max-width: 600px; /* Max width for content on larger screens */
-            margin: 0 auto; /* Center content */
-            background-color: #FDF9E5;
-            padding: 0; /* Already has body padding */
-        }
-
+        /* Lesson Header */
         .lesson-header {
             margin: 20px 0;
             text-align: center;
@@ -69,352 +76,407 @@
 
         .lesson-header-image {
             width: 100%;
-            max-width: 600px; /* Ensures it doesn't get too big */
-            height: auto;
+            max-width: 600px;
+            height: 120px; /* Fixed height for the visual element */
+            background-color: var(--primary-color);
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: block;
-            margin: 0 auto; /* Center the image */
+            display: flex; /* Use flex to center content */
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            font-size: 3em;
+            color: white;
+            padding: 20px;
         }
 
+        /* Section Styling */
         .lesson-section {
-            background-color: #FDF9E5; /* Cream background */
-            padding: 16px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
         }
 
-        .example-box {
-            background-color: rgba(139, 95, 191, 0.08); /* Light purple tint */
-            border-left: 4px solid #8B5FBF; /* Primary: Purple accent */
-            padding: 12px;
-            margin: 16px 0;
-            border-radius: 4px;
-            font-style: italic;
+        .lesson-card {
+            background-color: var(--secondary-background);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
-        .example-box p {
-            margin-bottom: 4px;
-        }
-        .example-box p:last-child {
+
+        .lesson-card:last-child {
             margin-bottom: 0;
         }
 
-        /* Interactive Elements */
+        .japanese-phrase {
+            font-size: 1.3em;
+            color: var(--primary-color);
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #888;
+            font-style: italic;
+        }
+
+        .english-meaning {
+            font-size: 1em;
+            color: var(--body-text-color);
+        }
+
+        /* Audio Icon */
         .audio-icon {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-width: 44px; /* Touch target size */
-            min-height: 44px; /* Touch target size */
-            background-color: #8B5FBF; /* Primary: Purple */
+            width: 48px; /* Ensure minimum touch target */
+            height: 48px; /* Ensure minimum touch target */
+            background-color: var(--primary-color);
             color: white;
-            border: none;
-            border-radius: 50%; /* Circle shape */
-            font-size: 22px;
+            border-radius: 50%;
             cursor: pointer;
-            margin-left: 8px;
-            vertical-align: middle;
+            font-size: 24px; /* Emoji size */
+            border: none;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.2s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent icon from shrinking */
         }
 
         .audio-icon:hover {
-            background-color: #6C489C; /* Darker purple on hover */
+            background-color: #6a4491; /* Slightly darker purple on hover */
             transform: scale(1.05);
         }
 
-        .audio-icon:active {
-            background-color: #553B7F; /* Even darker on active */
-            transform: scale(0.95);
+        .audio-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
         }
 
-        .button {
-            display: block;
-            width: 100%;
-            padding: 14px 20px;
-            background-color: #8B5FBF; /* Primary: Purple */
-            color: white;
-            border: none;
+        .highlight-text {
+            background-color: rgba(139, 95, 191, 0.1);
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: var(--heading-text-color);
+        }
+
+        /* Exercises */
+        .exercise-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: var(--secondary-background);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
-            font-size: 18px;
-            cursor: pointer;
-            text-align: center;
-            margin-top: 20px;
-            min-height: 44px; /* Ensure touch friendliness */
-            transition: background-color 0.2s ease, transform 0.2s ease;
-            text-decoration: none; /* For links styled as buttons */
         }
 
-        .button:hover {
-            background-color: #6C489C; /* Darker purple on hover */
+        .exercise-prompt {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .exercise-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .exercise-option {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            min-width: 80px; /* Ensure decent width for touch */
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            min-height: 44px; /* Ensure minimum touch target */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+        }
+
+        .exercise-option:hover {
+            background-color: #6a4491;
             transform: translateY(-2px);
         }
 
-        .button:active {
-            background-color: #553B7F; /* Even darker on active */
-            transform: translateY(0);
+        .exercise-fill-in-blank {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 5px;
+            font-size: 1.1em;
+            margin-top: 10px;
         }
 
-        .pronunciation-guide {
-            color: #8B5FBF; /* Primary: Purple */
+        .blank-placeholder {
+            display: inline-block;
+            width: 80px; /* Adjust as needed */
+            height: 30px;
+            border-bottom: 2px solid var(--primary-color);
+            text-align: center;
+            line-height: 30px;
             font-weight: bold;
-            display: block;
-            margin-bottom: 4px;
         }
 
-        .japanese-phrase {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #2C3E50; /* Dark blue for Japanese text */
-        }
-
-        .practice-question {
-            background-color: rgba(139, 95, 191, 0.05);
-            border-radius: 8px;
-            padding: 16px;
-            margin-bottom: 16px;
-            border: 1px dashed #8B5FBF;
-        }
-        .practice-question p {
-            margin-bottom: 8px;
-        }
-        .practice-question strong {
-            color: #8B5FBF;
-        }
-
-        .summary-list li {
-            margin-bottom: 8px;
-            list-style-type: none; /* Remove default bullet */
-            position: relative;
-            padding-left: 20px; /* Space for custom bullet */
-        }
-        .summary-list li::before {
-            content: "✨"; /* Custom bullet icon */
-            position: absolute;
-            left: 0;
-            color: #8B5FBF;
-        }
-
-        /* Responsive Adjustments (Optional, as mobile-first applies base styles to mobile) */
+        /* Responsive Design */
         @media (min-width: 768px) {
-            body {
-                padding: 30px;
+            h1 {
+                font-size: 2.5em;
             }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            h3 {
+                font-size: 1.5em;
+            }
+
+            body {
+                padding: 0 30px;
+            }
+
+            .lesson-header {
+                margin: 40px 0;
+            }
+
             .lesson-section {
-                padding: 24px;
+                padding: 30px;
+                margin-bottom: 30px;
+            }
+
+            .lesson-card {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .japanese-phrase {
+                font-size: 1.5em;
+            }
+
+            .english-meaning {
+                font-size: 1.1em;
+            }
+
+            .exercise-options {
+                justify-content: flex-start;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="lesson-header">
-            <h1>Chapter 3: Basic Greetings & Introductions</h1>
-            <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
-        </header>
+    <header class="lesson-header">
+        <h1>Chapter 3: Basic Greetings & Introductions</h1>
+        <div class="lesson-header-image">
+            👋 Konnichiwa! 🌸
+        </div>
+    </header>
 
-        <main>
-            <section class="lesson-section">
-                <h2>👋 Daily Greetings (あいさつ - aisatsu)</h2>
-                <p>Let's start by learning some essential phrases you'll hear and use every day in Japan!</p>
+    <main>
+        <section id="greetings" class="lesson-section">
+            <h2>👋 Greetings (あいさつ - aisatsu)</h2>
+            <p>Let's start with the most common ways to say hello and goodbye in Japanese!</p>
 
-                <h3>Good Morning!</h3>
-                <p>
-                    <span class="japanese-phrase">おはようございます</span>
-                    <span class="pronunciation-guide">(Ohayou Gozaimasu)</span>
-                    <span class="audio-icon" data-audio-text="Ohayou Gozaimasu">🔊</span>
-                </p>
-                <p>This is the standard, polite way to say "Good morning." You can use it with anyone.</p>
-                <p>
-                    <span class="japanese-phrase">おはよう</span>
-                    <span class="pronunciation-guide">(Ohayou)</span>
-                    <span class="audio-icon" data-audio-text="Ohayou">🔊</span>
-                </p>
-                <p>This is the casual version, typically used among close friends and family, or colleagues you're very familiar with.</p>
-
-                <h3>Hello / Good Afternoon!</h3>
-                <p>
-                    <span class="japanese-phrase">こんにちは</span>
-                    <span class="pronunciation-guide">(Konnichiwa)</span>
-                    <span class="audio-icon" data-audio-text="Konnichiwa">🔊</span>
-                </p>
-                <p>The most common all-purpose greeting during the daytime (roughly 11 AM to 5 PM). It literally means "today is..." or "this day..." and evolved into a greeting.</p>
-
-                <h3>Good Evening!</h3>
-                <p>
-                    <span class="japanese-phrase">こんばんは</span>
-                    <span class="pronunciation-guide">(Konbanwa)</span>
-                    <span class="audio-icon" data-audio-text="Konbanwa">🔊</span>
-                </p>
-                <p>Used after sunset. Similar to "Konnichiwa," it means "tonight is..." or "this evening..."</p>
-
-                <h3>Goodbye!</h3>
-                <p>
-                    <span class="japanese-phrase">さようなら</span>
-                    <span class="pronunciation-guide">(Sayounara)</span>
-                    <span class="audio-icon" data-audio-text="Sayounara">🔊</span>
-                </p>
-                <p>This means "Goodbye." While useful, in modern Japan, it often carries a sense of finality (like "farewell"). For daily departures (e.g., leaving work, school), people often use shorter phrases like <strong class="japanese-phrase">またね</strong> (Matane - See you later) or <strong class="japanese-phrase">お先に失礼します</strong> (Osaki ni shitsurei shimasu - Excuse me for leaving first).</p>
-
-                <div class="example-box">
-                    <p><strong>Example Dialogue:</strong></p>
-                    <p><span class="japanese-phrase">A: おはようございます！</span> <span class="pronunciation-guide">(Ohayou Gozaimasu!)</span></p>
-                    <p><em>(A: Good morning!)</em></p>
-                    <p><span class="japanese-phrase">B: おはようございます。</span> <span class="pronunciation-guide">(Ohayou Gozaimasu.)</span></p>
-                    <p><em>(B: Good morning.)</em></p>
+            <div class="lesson-card">
+                <div class="text-content">
+                    <div class="japanese-phrase">こんにちは</div>
+                    <div class="pronunciation">(Konnichiwa)</div>
+                    <div class="english-meaning">Hello / Good day</div>
                 </div>
-            </section>
+                <button class="audio-icon" data-audio-text="こんにちは" aria-label="Play audio for こんにちは">🔊</button>
+            </div>
 
-            <section class="lesson-section">
-                <h2>🗣️ Introducing Yourself (じこしょうかい - jikoshoukai)</h2>
-                <p>Now that you can greet people, let's learn how to tell them your name!</p>
-
-                <h3>I am [Name].</h3>
-                <p>
-                    <span class="japanese-phrase">わたしは 〇〇です。</span>
-                    <span class="pronunciation-guide">(Watashi wa OO desu.)</span>
-                    <span class="audio-icon" data-audio-text="Watashi wa desu">🔊</span>
-                </p>
-                <p>This is the fundamental way to introduce yourself in Japanese.</p>
-                <ul>
-                    <li><strong class="japanese-phrase">わたし (watashi)</strong>: I / Me</li>
-                    <li><strong class="japanese-phrase">は (wa)</strong>: Topic particle (more on this below!)</li>
-                    <li><strong class="japanese-phrase">〇〇 (OO)</strong>: Your name!</li>
-                    <li><strong class="japanese-phrase">です (desu)</strong>: Copula, meaning "is/am/are" (more on this below!)</li>
-                </ul>
-
-                <div class="example-box">
-                    <p><span class="japanese-phrase">わたしは ジョン です。</span> <span class="pronunciation-guide">(Watashi wa Jon desu.)</span></p>
-                    <p><em>(I am John.)</em></p>
-                    <p><span class="japanese-phrase">わたしは エミリー です。</span> <span class="pronunciation-guide">(Watashi wa Emirii desu.)</span></p>
-                    <p><em>(I am Emily.)</em></p>
+            <div class="lesson-card">
+                <div class="text-content">
+                    <div class="japanese-phrase">おはよう</div>
+                    <div class="pronunciation">(Ohayou)</div>
+                    <div class="english-meaning">Good morning (casual)</div>
                 </div>
+                <button class="audio-icon" data-audio-text="おはよう" aria-label="Play audio for おはよう">🔊</button>
+            </div>
 
-                <h3>Nice to meet you. (First time meeting)</h3>
-                <p>
-                    <span class="japanese-phrase">はじめまして。</span>
-                    <span class="pronunciation-guide">(Hajimemashite.)</span>
-                    <span class="audio-icon" data-audio-text="Hajimemashite">🔊</span>
-                </p>
-                <p>This phrase is used specifically when meeting someone for the first time. It literally means "it's the first time."</p>
-
-                <h3>Please treat me well. / Nice to work with you.</h3>
-                <p>
-                    <span class="japanese-phrase">よろしくおねがいします。</span>
-                    <span class="pronunciation-guide">(Yoroshiku Onegaishimasu.)</span>
-                    <span class="audio-icon" data-audio-text="Yoroshiku Onegaishimasu">🔊</span>
-                </p>
-                <p>This phrase is a bit tricky to translate directly, but it's essential. It expresses a desire for a good relationship or cooperation. You say this after introducing yourself to someone new, asking for a favor, or starting a new endeavor together.</p>
-
-                <div class="example-box">
-                    <p><strong>Full Introduction Example:</strong></p>
-                    <p><span class="japanese-phrase">はじめまして。</span> <span class="pronunciation-guide">(Hajimemashite.)</span></p>
-                    <p><em>(Nice to meet you.)</em></p>
-                    <p><span class="japanese-phrase">わたしは アナ です。</span> <span class="pronunciation-guide">(Watashi wa Ana desu.)</span></p>
-                    <p><em>(I am Ana.)</em></p>
-                    <p><span class="japanese-phrase">よろしくおねがいします。</span> <span class="pronunciation-guide">(Yoroshiku Onegaishimasu.)</span></p>
-                    <p><em>(Please treat me well / Nice to work with you.)</em></p>
+            <div class="lesson-card">
+                <div class="text-content">
+                    <div class="japanese-phrase">こんばんは</div>
+                    <div class="pronunciation">(Konbanwa)</div>
+                    <div class="english-meaning">Good evening</div>
                 </div>
-            </section>
+                <button class="audio-icon" data-audio-text="こんばんは" aria-label="Play audio for こんばんは">🔊</button>
+            </div>
 
-            <section class="lesson-section">
-                <h2>✨ Grammar Spotlight</h2>
-
-                <h3>Particle は (wa) - The Topic Marker</h3>
-                <p>In Japanese, particles are like prepositions in English, but they come AFTER the word they modify. The particle <strong class="japanese-phrase">は (wa)</strong> marks the topic of the sentence.</p>
-                <p>Even though it's written with the hiragana for "ha" (は), when used as a particle, it's always pronounced "wa."</p>
-                <div class="example-box">
-                    <p><span class="japanese-phrase">わたし<strong>は</strong> アナです。</span></p>
-                    <p><em>(<strong>As for me</strong>, I am Ana.)</em></p>
-                    <p>Here, <strong class="japanese-phrase">わたし (I)</strong> is the topic of the sentence.</p>
+            <div class="lesson-card">
+                <div class="text-content">
+                    <div class="japanese-phrase">さようなら</div>
+                    <div class="pronunciation">(Sayounara)</div>
+                    <div class="english-meaning">Goodbye</div>
                 </div>
+                <button class="audio-icon" data-audio-text="さようなら" aria-label="Play audio for さようなら">🔊</button>
+            </div>
+        </section>
 
-                <h3>です (desu) - The Copula</h3>
-                <p><strong class="japanese-phrase">です (desu)</strong> is the polite form of the Japanese copula, which means "to be" (is/am/are). It is always placed at the end of a sentence.</p>
-                <p>It acts like a period, indicating the end of a sentence, and also makes the sentence polite.</p>
-                <div class="example-box">
-                    <p><span class="japanese-phrase">わたしは ジョン<strong>です</strong>。</span></p>
-                    <p><em>(I <strong>am</strong> John.)</em></p>
-                    <p><span class="japanese-phrase">これは えんぴつ<strong>です</strong>。</span> <span class="pronunciation-guide">(Kore wa enpitsu desu.)</span></p>
-                    <p><em>(This <strong>is</strong> a pencil.)</em></p>
+        <section id="introductions" class="lesson-section">
+            <h2>🤝 Introducing Yourself (自己紹介 - Jiko Shōkai)</h2>
+            <p>Now that you can greet someone, let's learn how to tell them your name!</p>
+
+            <h3>わたしは〇〇です。 (Watashi wa OO desu.) - I am OO.</h3>
+            <p>This is the most fundamental way to introduce yourself. You simply replace 〇〇 with your name.</p>
+            <div class="lesson-card">
+                <div class="text-content">
+                    <div class="japanese-phrase">わたしはジョンです。</div>
+                    <div class="pronunciation">(Watashi wa Jon desu.)</div>
+                    <div class="english-meaning">I am John.</div>
                 </div>
-            </section>
-
-            <section class="lesson-section">
-                <h2>🌸 Cultural Note: Politeness in Japanese</h2>
-                <p>Japanese society places a high value on politeness and respect. This is deeply embedded in the language itself through different speech levels.</p>
-                <p>The <strong class="japanese-phrase">です (desu)</strong> form you just learned is part of the "polite speech" (丁寧語 - teineigo), which is the standard for most everyday conversations with people you don't know well, elders, or superiors.</p>
-                <p>You saw an example with "Good morning":</p>
-                <ul>
-                    <li><strong class="japanese-phrase">おはようございます (Ohayou Gozaimasu)</strong>: Polite, used universally.</li>
-                    <li><strong class="japanese-phrase">おはよう (Ohayou)</strong>: Casual, used with close friends/family.</li>
-                </ul>
-                <p>Learning the polite forms first is always a good strategy! It ensures you're always speaking respectfully, even if you make other mistakes.</p>
-            </section>
-
-            <section class="lesson-section">
-                <h2>📝 Practice Time!</h2>
-                <p>Let's try putting what you've learned into practice!</p>
-
-                <div class="practice-question">
-                    <p><strong>1. Listen and Repeat:</strong></p>
-                    <p>Practice saying these phrases out loud:</p>
-                    <p>こんにちは <span class="audio-icon" data-audio-text="Konnichiwa">🔊</span></p>
-                    <p>おはようございます <span class="audio-icon" data-audio-text="Ohayou Gozaimasu">🔊</span></p>
-                    <p>さようなら <span class="audio-icon" data-audio-text="Sayounara">🔊</span></p>
+                <button class="audio-icon" data-audio-text="わたしはジョンです。" aria-label="Play audio for わたしはジョンです。">🔊</button>
+            </div>
+            <div class="lesson-card">
+                <div class="text-content">
+                    <div class="japanese-phrase">わたしはメアリーです。</div>
+                    <div class="pronunciation">(Watashi wa Mearī desu.)</div>
+                    <div class="english-meaning">I am Mary.</div>
                 </div>
+                <button class="audio-icon" data-audio-text="わたしはメアリーです。" aria-label="Play audio for わたしはメアリーです。">🔊</button>
+            </div>
 
-                <div class="practice-question">
-                    <p><strong>2. Introduce Yourself:</strong></p>
-                    <p>Imagine you're meeting someone new. How would you introduce yourself using your name?</p>
-                    <p>Start with <strong class="japanese-phrase">はじめまして。</strong></p>
-                    <p>Then, <strong class="japanese-phrase">わたしは [Your Name] です。</strong></p>
-                    <p>Finish with <strong class="japanese-phrase">よろしくおねがいします。</strong></p>
-                    <button class="button" aria-label="Practice Introduction" data-audio-text="Hajimemashite. Watashi wa [Your Name] desu. Yoroshiku Onegaishimasu.">Say My Introduction</button>
-                    <p style="font-size: 0.9em; margin-top: 8px;">(Remember to mentally replace [Your Name] with your actual name!)</p>
+            <h3>はじめまして。よろしくおねがいします。</h3>
+            <p>This phrase is essential for first introductions. It's a bit long, but very common!</p>
+            <div class="lesson-card">
+                <div class="text-content">
+                    <div class="japanese-phrase">はじめまして。</div>
+                    <div class="pronunciation">(Hajimemashite.)</div>
+                    <div class="english-meaning">Nice to meet you. (Literally: "It's the first time.")</div>
                 </div>
-
-                <div class="practice-question">
-                    <p><strong>3. Translate It!</strong></p>
-                    <p>How would you say "Good evening" in Japanese?</p>
-                    <p style="margin-top: 10px; font-weight: bold; color: #8B5FBF;">Answer: こんばんは (Konbanwa)</p>
-                    <p>How would you say "I am Maria" in Japanese?</p>
-                    <p style="margin-top: 10px; font-weight: bold; color: #8B5FBF;">Answer: わたしは マリア です。(Watashi wa Maria desu.)</p>
+                <button class="audio-icon" data-audio-text="はじめまして。" aria-label="Play audio for はじめまして。">🔊</button>
+            </div>
+            <div class="lesson-card">
+                <div class="text-content">
+                    <div class="japanese-phrase">よろしくおねがいします。</div>
+                    <div class="pronunciation">(Yoroshiku onegaishimasu.)</div>
+                    <div class="english-meaning">Please treat me well. / I look forward to working with you. / Please be nice to me. (A very versatile and polite closing for an introduction).</div>
                 </div>
-            </section>
+                <button class="audio-icon" data-audio-text="よろしくおねがいします。" aria-label="Play audio for よろしくおねがいします。">🔊</button>
+            </div>
+            <p>When introducing yourself, you'd typically say:</p>
+            <div class="audio-container">
+                <span class="japanese-phrase">はじめまして。わたしは [Your Name] です。よろしくおねがいします。</span>
+                <button class="audio-icon" data-audio-text="はじめまして。わたしは〇〇です。よろしくおねがいします。" aria-label="Play full introduction audio">🔊</button>
+            </div>
+        </section>
 
-            <section class="lesson-section">
-                <h2>🎯 Chapter 3 Summary</h2>
-                <p>You've learned some fundamental building blocks of Japanese! Here's a quick recap:</p>
-                <ul class="summary-list">
-                    <li><strong>Greetings:</strong>
-                        <ul>
-                            <li>✨ <strong class="japanese-phrase">おはようございます</strong> (Ohayou Gozaimasu) - Good morning (polite)</li>
-                            <li>✨ <strong class="japanese-phrase">こんにちは</strong> (Konnichiwa) - Hello / Good afternoon</li>
-                            <li>✨ <strong class="japanese-phrase">こんばんは</strong> (Konbanwa) - Good evening</li>
-                            <li>✨ <strong class="japanese-phrase">さようなら</strong> (Sayounara) - Goodbye (often final)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Introductions:</strong>
-                        <ul>
-                            <li>✨ <strong class="japanese-phrase">わたしは 〇〇です。</strong> (Watashi wa OO desu.) - I am OO.</li>
-                            <li>✨ <strong class="japanese-phrase">はじめまして。</strong> (Hajimemashite.) - Nice to meet you. (First time meeting)</li>
-                            <li>✨ <strong class="japanese-phrase">よろしくおねがいします。</strong> (Yoroshiku Onegaishimasu.) - Please treat me well.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Key Grammar:</strong>
-                        <ul>
-                            <li>✨ The particle <strong class="japanese-phrase">は (wa)</strong> marks the topic of a sentence.</li>
-                            <li>✨ The copula <strong class="japanese-phrase">です (desu)</strong> means "is/am/are" and makes sentences polite.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Cultural Tip:</strong> Politeness is key! Start with polite forms like <strong class="japanese-phrase">です</strong>.</li>
-                </ul>
-                <p>Great job! You can now greet people and introduce yourself in Japanese. Keep practicing these phrases until they feel natural!</p>
-                <a href="#" class="button">Continue to Chapter 4</a>
-            </section>
-        </main>
-    </div>
+        <section id="grammar" class="lesson-section">
+            <h2>📚 Grammar Focus: Particle は & Copula です</h2>
+            <p>These two elements are foundational in Japanese sentences!</p>
+
+            <h3>Particle は (<span class="pronunciation">wa</span>): The Topic Marker</h3>
+            <p>
+                The particle <span class="highlight-text">は</span> (<span class="pronunciation">wa</span>) is used to mark the topic of a sentence. It indicates "what we are talking about."
+                Even though it's written with the hiragana for "ha" (は), when used as a particle, it is always pronounced "wa".
+            </p>
+            <p>
+                In "わたし<span class="highlight-text">は</span>〇〇です。", わたし (I) is the topic. So, the sentence is about "I".
+            </p>
+            <div class="lesson-card">
+                <div class="text-content">
+                    <p>わたし <span class="highlight-text">は</span></p>
+                    <p>I (topic)</p>
+                </div>
+                <button class="audio-icon" data-audio-text="わたしは" aria-label="Play audio for わたしは">🔊</button>
+            </div>
+
+            <h3>Copula です (<span class="pronunciation">desu</span>): "To Be" (Polite Form)</h3>
+            <p>
+                The word <span class="highlight-text">です</span> (<span class="pronunciation">desu</span>) is a polite form of the verb "to be" (is, am, are).
+                It's used to state facts or make polite assertions. In basic sentences, it often comes at the end.
+            </p>
+            <p>
+                For example, in "わたしはジョン<span class="highlight-text">です</span>。", <span class="highlight-text">です</span> means "am" and makes the statement polite.
+            </p>
+            <div class="lesson-card">
+                <div class="text-content">
+                    <p>〇〇 <span class="highlight-text">です</span></p>
+                    <p>is / am / are (polite)</p>
+                </div>
+                <button class="audio-icon" data-audio-text="です" aria-label="Play audio for です">🔊</button>
+            </div>
+        </section>
+
+        <section id="cultural-note" class="lesson-section">
+            <h2>🌸 Cultural Note: Politeness in Japanese</h2>
+            <p>
+                Politeness is a cornerstone of Japanese communication. Using polite forms like <span class="highlight-text">です</span> is crucial, especially when speaking to people you don't know well, elders, or those in a higher social position.
+            </p>
+            <ul>
+                <li><strong>Context is Key:</strong> While <span class="highlight-text">おはよう</span> is "Good morning," adding <span class="highlight-text">ございます</span> makes it "Ohayou Gozaimasu" (おはようございます), which is more formal and polite. For beginners, using the slightly shorter forms is fine, but be aware of the more formal options.</li>
+                <li><strong>Respectful Greetings:</strong> Japanese greetings are often tied to the time of day because different greetings are used for different contexts.</li>
+                <li><strong>The Importance of よろしくおねがいします:</strong> This phrase encapsulates a desire for a good relationship and mutual respect. It's not easily translated directly but conveys goodwill.</li>
+            </ul>
+        </section>
+
+        <section id="practice" class="lesson-section">
+            <h2>✏️ Practice Time!</h2>
+
+            <h3>Exercise 1: Match the Greeting!</h3>
+            <p>Match the Japanese greeting with the correct English meaning or time of day.</p>
+            <div class="exercise-item">
+                <p class="exercise-prompt">1. Konnichiwa (こんにちは)</p>
+                <div class="exercise-options">
+                    <button class="exercise-option" data-answer="Goodbye">Goodbye</button>
+                    <button class="exercise-option" data-answer="Good morning">Good morning</button>
+                    <button class="exercise-option" data-answer="Hello / Good day">Hello / Good day</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <p class="exercise-prompt">2. Ohayou (おはよう)</p>
+                <div class="exercise-options">
+                    <button class="exercise-option" data-answer="Good evening">Good evening</button>
+                    <button class="exercise-option" data-answer="Good morning">Good morning</button>
+                    <button class="exercise-option" data-answer="Nice to meet you">Nice to meet you</button>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <p class="exercise-prompt">3. Sayounara (さようなら)</p>
+                <div class="exercise-options">
+                    <button class="exercise-option" data-answer="Please treat me well">Please treat me well</button>
+                    <button class="exercise-option" data-answer="Goodbye">Goodbye</button>
+                    <button class="exercise-option" data-answer="Hello">Hello</button>
+                </div>
+            </div>
+
+            <h3>Exercise 2: Complete the Introduction!</h3>
+            <p>Fill in the blanks to complete these basic Japanese introductions. Choose between <span class="highlight-text">は</span> and <span class="highlight-text">です</span>.</p>
+            <div class="exercise-item">
+                <p class="exercise-prompt">1. わたし<span class="blank-placeholder">____</span>アリス<span class="blank-placeholder">____</span>。</p>
+                <div class="exercise-options">
+                    <button class="exercise-option" data-choice="は">は</button>
+                    <button class="exercise-option" data-choice="です">です</button>
+                </div>
+                <p class="exercise-prompt">Translation: I am Alice.</p>
+            </div>
+            <div class="exercise-item">
+                <p class="exercise-prompt">2. はじめまして。わたし<span class="blank-placeholder">____</span>トム<span class="blank-placeholder">____</span>。よろしくおねがいします。</p>
+                <div class="exercise-options">
+                    <button class="exercise-option" data-choice="は">は</button>
+                    <button class="exercise-option" data-choice="です">です</button>
+                </div>
+                <p class="exercise-prompt">Translation: Nice to meet you. I am Tom. Please treat me well.</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

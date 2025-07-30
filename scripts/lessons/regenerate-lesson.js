@@ -172,7 +172,8 @@ COLOR SCHEME (MUST USE THESE COLORS):
 
 AUDIO INTERACTION REQUIREMENTS:
 - Always use class "audio-icon" for any clickable elements that should play audio
-- ALWAYS include data-audio-text attribute with the exact text to be spoken (e.g., data-audio-text="zebra")
+- ALWAYS include data-audio-text attribute with the exact text to be spoken
+- Use native ${LANGUAGE_LEARN} text in data-audio-text (e.g., for Japanese use "こんにちは", for English use "hello")
 - Audio icons should be clearly visible and touch-friendly (min 44px)
 - Use appropriate emoji or icon for audio elements (🔊, 🎵, etc.)
 - Make audio elements interactive with hover effects
