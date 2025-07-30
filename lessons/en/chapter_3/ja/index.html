@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Numbers and Counting</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white-color: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px; /* Minimum 16px for body text */
+        }
+
+        /* Basic elements styling */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5em; /* ~24px */
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5em;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.2em; /* ~19.2px */
+            margin-top: 1.5em;
+        }
+
+        p {
+            margin-bottom: 1em;
+            padding: 0 16px; /* Padding for paragraph text */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0 16px 0 32px; /* Indent lists a bit */
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        /* Layout and Spacing */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 16px; /* Global padding for content */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+            background-color: var(--white-color);
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .lesson-section {
+            background-color: var(--white-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .example-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .example-box p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #888;
+            margin-left: 5px;
+        }
+
+        .note {
+            background-color: #f0f8ff; /* Light blue for notes */
+            border-left: 4px solid #ADD8E6; /* Complementary blue */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        /* Interactive Elements */
+        .audio-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px 0;
+        }
+
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 50%;
+            width: 44px; /* Minimum 44px for touch */
+            height: 44px; /* Minimum 44px for touch */
+            font-size: 1.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C4999; /* Darker primary on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-text {
+            margin-left: 10px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--heading-color);
+        }
+
+        .practice-section {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px dashed var(--border-color);
+        }
+
+        .practice-section h3 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+        }
+
+        .practice-question label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .practice-input {
+            width: calc(100% - 20px); /* Adjust for padding */
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box; /* Include padding in width */
+            margin-bottom: 10px;
+        }
+
+        .practice-button {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 10px;
+            height: 48px; /* Ensure minimum tap target size */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .practice-button:hover {
+            background-color: #6C4999;
+            transform: translateY(-2px);
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: var(--white-color);
+            border-bottom-color: rgba(255,255,255,0.5);
+            margin-top: 0;
+            padding-bottom: 0.8em;
+            font-size: 1.8em;
+        }
+
+        .summary-section ul {
+            list-style: disc;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .summary-section li {
+            margin-bottom: 0.8em;
+        }
+
+        /* Responsive Adjustments (Mobile-first, so this mostly handles larger screens) */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            .lesson-section {
+                padding: 30px;
+            }
+            p, ul, li {
+                padding: 0; /* Remove specific padding for larger screens if container has it */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="lesson-header">
+        <h1>第3章：数字と数え方</h1>
+        <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+    </header>
+
+    <main class="container">
+
+        <section class="lesson-section">
+            <h2>1. 数字 1-20</h2>
+            <p>英語で基本的な数字を学びましょう。発音を聞いて繰り返してみてくださいね！</p>
+
+            <h3>数字 1-10</h3>
+            <ul>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="one">🔊</button>
+                    <span class="audio-text">One <span class="pronunciation">（ワン）</span></span>
+                    <span>: 1</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="two">🔊</button>
+                    <span class="audio-text">Two <span class="pronunciation">（トゥー）</span></span>
+                    <span>: 2</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="three">🔊</button>
+                    <span class="audio-text">Three <span class="pronunciation">（スリー）</span></span>
+                    <span>: 3</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="four">🔊</button>
+                    <span class="audio-text">Four <span class="pronunciation">（フォー）</span></span>
+                    <span>: 4</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="five">🔊</button>
+                    <span class="audio-text">Five <span class="pronunciation">（ファイブ）</span></span>
+                    <span>: 5</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="six">🔊</button>
+                    <span class="audio-text">Six <span class="pronunciation">（シックス）</span></span>
+                    <span>: 6</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="seven">🔊</button>
+                    <span class="audio-text">Seven <span class="pronunciation">（セブン）</span></span>
+                    <span>: 7</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="eight">🔊</button>
+                    <span class="audio-text">Eight <span class="pronunciation">（エイト）</span></span>
+                    <span>: 8</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="nine">🔊</button>
+                    <span class="audio-text">Nine <span class="pronunciation">（ナイン）</span></span>
+                    <span>: 9</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="ten">🔊</button>
+                    <span class="audio-text">Ten <span class="pronunciation">（テン）</span></span>
+                    <span>: 10</span>
+                </li>
+            </ul>
+
+            <h3>数字 11-20</h3>
+            <ul>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="eleven">🔊</button>
+                    <span class="audio-text">Eleven <span class="pronunciation">（イレブン）</span></span>
+                    <span>: 11</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="twelve">🔊</button>
+                    <span class="audio-text">Twelve <span class="pronunciation">（トゥエルブ）</span></span>
+                    <span>: 12</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="thirteen">🔊</button>
+                    <span class="audio-text">Thirteen <span class="pronunciation">（サーティーン）</span></span>
+                    <span>: 13</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="fourteen">🔊</button>
+                    <span class="audio-text">Fourteen <span class="pronunciation">（フォーティーン）</span></span>
+                    <span>: 14</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="fifteen">🔊</button>
+                    <span class="audio-text">Fifteen <span class="pronunciation">（フィフティーン）</span></span>
+                    <span>: 15</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="sixteen">🔊</button>
+                    <span class="audio-text">Sixteen <span class="pronunciation">（シックスティーン）</span></span>
+                    <span>: 16</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="seventeen">🔊</button>
+                    <span class="audio-text">Seventeen <span class="pronunciation">（セブンティーン）</span></span>
+                    <span>: 17</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="eighteen">🔊</button>
+                    <span class="audio-text">Eighteen <span class="pronunciation">（エイティーン）</span></span>
+                    <span>: 18</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="nineteen">🔊</button>
+                    <span class="audio-text">Nineteen <span class="pronunciation">（ナインティーン）</span></span>
+                    <span>: 19</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="twenty">🔊</button>
+                    <span class="audio-text">Twenty <span class="pronunciation">（トゥエンティー）</span></span>
+                    <span>: 20</span>
+                </li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>練習問題：数字の並び替え</h3>
+                <p>以下の数字を正しい順に並べ替えてみましょう。（アプリではドラッグ＆ドロップで操作できます。）</p>
+                <div class="practice-question">
+                    <p><strong>1.</strong> Three, One, Two</p>
+                    <div class="example-box"><p><em>正しい順: One, Two, Three</em></p></div>
+                </div>
+                <div class="practice-question">
+                    <p><strong>2.</strong> Fifteen, Thirteen, Fourteen</p>
+                    <div class="example-box"><p><em>正しい順: Thirteen, Fourteen, Fifteen</em></p></div>
+                </div>
+                <div class="practice-question">
+                    <p><strong>3.</strong> Nine, Seven, Eight</p>
+                    <div class="example-box"><p><em>正しい順: Seven, Eight, Nine</em></p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>2. モノを数える</h2>
+            <p>「いくつありますか？」と尋ねたり、答えるフレーズを学びましょう。</p>
+
+            <div class="example-box">
+                <p><strong>質問:</strong> <button class="audio-icon" data-audio-text="How many apples?">🔊</button> <span class="audio-text">How many apples?</span> <span class="pronunciation">（ハウ メニー アップルズ?）</span></p>
+                <p>りんごはいくつありますか？</p>
+            </div>
+
+            <div class="example-box">
+                <p><strong>答え方:</strong> <button class="audio-icon" data-audio-text="There are two apples.">🔊</button> <span class="audio-text">There are two apples.</span> <span class="pronunciation">（ゼア アー トゥー アップルズ）</span></p>
+                <p>りんごが2つあります。</p>
+            </div>
+            <p>※ 名詞が複数の場合は、名詞の最後に <strong>-s</strong> をつけます (例: apple → apples)。</p>
+
+            <div class="practice-section">
+                <h3>練習問題：数えてみよう</h3>
+                <p>絵を見て、英語で答えを完成させましょう。</p>
+                <div class="practice-question">
+                    <div class="image-container">
+                        <img src="https://via.placeholder.com/150x100?text=🍎🍎🍎🍎🍎" alt="Five apples">
+                    </div>
+                    <label>How many apples?</label>
+                    <div class="audio-container">
+                        <span class="audio-text">There are <input type="text" class="practice-input" placeholder="数" value="five" readonly> apples.</span>
+                        <button class="audio-icon" data-audio-text="There are five apples.">🔊</button>
+                    </div>
+                </div>
+                <div class="practice-question">
+                    <div class="image-container">
+                        <img src="https://via.placeholder.com/150x100?text=✏️✏️✏️" alt="Three pencils">
+                    </div>
+                    <label>How many pencils?</label>
+                    <div class="audio-container">
+                        <span class="audio-text">There are <input type="text" class="practice-input" placeholder="数" value="three" readonly> pencils.</span>
+                        <button class="audio-icon" data-audio-text="There are three pencils.">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3. 年齢を尋ねる・答える</h2>
+            <p>年齢を尋ねるときは "How old are you?" を使います。</p>
+
+            <div class="example-box">
+                <p><strong>質問:</strong> <button class="audio-icon" data-audio-text="How old are you?">🔊</button> <span class="audio-text">How old are you?</span> <span class="pronunciation">（ハウ オールド アー ユー?）</span></p>
+                <p>おいくつですか？／何歳ですか？</p>
+            </div>
+
+            <div class="example-box">
+                <p><strong>答え方:</strong> <button class="audio-icon" data-audio-text="I'm ten years old.">🔊</button> <span class="audio-text">I'm ten years old.</span> <span class="pronunciation">（アイム テン イヤーズ オールド）</span></p>
+                <p>私は10歳です。</p>
+            </div>
+            <p>「〜歳」は "years old" と言います。「私は10歳です」は "I am ten years old." を短縮して "I'm ten years old." と言います。</p>
+
+            <div class="practice-section">
+                <h3>練習問題：年齢について</h3>
+                <div class="practice-question">
+                    <label>質問に答えましょう。</label>
+                    <p><strong>質問:</strong> How old are you?</p>
+                    <div class="audio-container">
+                        <span class="audio-text"><strong>答え:</strong> I'm <input type="text" class="practice-input" placeholder="あなたの年齢" value="twenty" readonly> years old.</span>
+                        <button class="audio-icon" data-audio-text="I'm twenty years old.">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>4. 電話番号と住所</h2>
+            <p>英語では、電話番号は一桁ずつ読み上げます。「ゼロ」は "zero" または "oh" と発音します。</p>
+
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="My phone number is five five five, one two three four.">🔊</button> <span class="audio-text">My phone number is <strong>555-1234</strong>.</span></p>
+                <p>私の電話番号は555-1234です。</p>
+                <p class="pronunciation">（マイ フォン ナンバー イズ ファイブ ファイブ ファイブ, ワン トゥー スリー フォー）</p>
+            </div>
+
+            <div class="note">
+                <p><strong>文化ノート：</strong></p>
+                <p>アメリカやカナダの電話番号では、ゼロは「オー」(oh) と発音されることが多いです。例: 0 → "oh" (<span class="pronunciation">オー</span>)</p>
+                <p>住所の書き順は、日本語とは逆になります。小さい単位から大きい単位へ書きます。</p>
+                <p>例: <strong>123 Main Street, Anytown, CA 90210, USA</strong></p>
+                <p>（番地・通り名、市、州、郵便番号、国）</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>練習問題：電話番号を読んでみよう</h3>
+                <p>以下の電話番号を英語で読んでみましょう。</p>
+                <div class="practice-question">
+                    <label>電話番号: <strong>789-0123</strong></label>
+                    <div class="audio-container">
+                        <span class="audio-text">Seven eight nine, oh one two three.</span>
+                        <button class="audio-icon" data-audio-text="Seven eight nine, oh one two three.">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>5. 基本的な算数用語</h2>
+            <p>簡単な計算に使われる英語の用語を学びましょう。</p>
+
+            <h3>単語</h3>
+            <ul>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="plus">🔊</button>
+                    <span class="audio-text"><strong>plus</strong> <span class="pronunciation">（プラス）</span></span>
+                    <span>: + (足す)</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="minus">🔊</button>
+                    <span class="audio-text"><strong>minus</strong> <span class="pronunciation">（マイナス）</span></span>
+                    <span>: - (引く)</span>
+                </li>
+                <li class="audio-container">
+                    <button class="audio-icon" data-audio-text="equals">🔊</button>
+                    <span class="audio-text"><strong>equals</strong> <span class="pronunciation">（イコールズ）</span></span>
+                    <span>: = (等しい)</span>
+                </li>
+            </ul>
+
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="One plus one equals two.">🔊</button> <span class="audio-text"><strong>1 + 1 = 2</strong>: One plus one equals two.</span></p>
+                <p>1足す1は2に等しい。</p>
+            </div>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="Five minus two equals three.">🔊</button> <span class="audio-text"><strong>5 - 2 = 3</strong>: Five minus two equals three.</span></p>
+                <p>5引く2は3に等しい。</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>練習問題：計算をしてみよう</h3>
+                <p>以下の計算を英語で答えてみましょう。</p>
+                <div class="practice-question">
+                    <label>3 + 4 = ?</label>
+                    <div class="audio-container">
+                        <span class="audio-text">Three plus four equals <input type="text" class="practice-input" placeholder="答え" value="seven" readonly>.</span>
+                        <button class="audio-icon" data-audio-text="Three plus four equals seven.">🔊</button>
+                    </div>
+                </div>
+                <div class="practice-question">
+                    <label>10 - 6 = ?</label>
+                    <div class="audio-container">
+                        <span class="audio-text">Ten minus six equals <input type="text" class="practice-input" placeholder="答え" value="four" readonly>.</span>
+                        <button class="audio-icon" data-audio-text="Ten minus six equals four.">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>今回のまとめ</h2>
+            <p>第3章では、日常生活で役立つ数字と数え方について学びました。</p>
+            <ul>
+                <li><strong>数字 1-20:</strong> 基本的な数字の発音とスペルを覚えました。</li>
+                <li><strong>モノを数える:</strong> "How many...?" と "There are..." を使って数を尋ねたり答えたりできるようになりました。</li>
+                <li><strong>年齢:</strong> "How old are you?" と "I'm ___ years old." を使って年齢を尋ねたり答えたりできるようになりました。</li>
+                <li><strong>電話番号と住所:</strong> 電話番号は一桁ずつ読み上げること、住所の書き順が逆になることを学びました。</li>
+                <li><strong>基本的な算数用語:</strong> "plus", "minus", "equals" を使って簡単な計算を表現できるようになりました。</li>
+            </ul>
+            <p>これで、数字に関する基本的な英語の表現が身につきましたね！次の章も頑張りましょう！</p>
+        </section>
+
+    </main>
+</body>
+</html>

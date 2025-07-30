@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-30T15:43:00.769Z",
+  "lastUpdated": "2025-07-30T16:08:12.797Z",
   "totalLanguages": 2,
   "totalChapters": 20,
-  "totalAvailableChapters": 4,
+  "totalAvailableChapters": 5,
   "totalTargetLanguages": 2,
   "languages": {
     "en": {
@@ -11,7 +11,7 @@
       "name": "English",
       "flag": "🇺🇸",
       "totalChapters": 10,
-      "availableChapters": 2,
+      "availableChapters": 3,
       "availableTargetLanguages": [
         "ja"
       ],
@@ -56,8 +56,10 @@
             "Phone numbers and addresses",
             "Basic math vocabulary: plus, minus, equals"
           ],
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "ja"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 4,
@@ -313,6 +315,12 @@
           "languageLearnName": "English",
           "chapterNumber": 2,
           "chapterTitle": "Basic Greetings and Introductions"
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 3,
+          "chapterTitle": "Numbers and Counting"
         }
       ]
     },
