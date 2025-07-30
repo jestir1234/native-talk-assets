@@ -154,6 +154,9 @@ MOBILE-FIRST DESIGN REQUIREMENTS:
 - Use flexbox or grid for layouts
 - Include proper viewport meta tag
 - Optimize for vertical scrolling on mobile devices
+- DO NOT use external image URLs or placeholder images
+- Use emojis, Unicode symbols, or text-based visual elements instead of images
+- Avoid any @https://via.placeholder.com or similar external image URLs
 
 IMPORTANT CSS REQUIREMENTS:
 - Include CSS for .lesson-header and .lesson-header-image classes
