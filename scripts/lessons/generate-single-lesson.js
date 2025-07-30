@@ -121,7 +121,7 @@ MOBILE-FIRST DESIGN REQUIREMENTS:
 - Make buttons and interactive elements at least 44px tall for easy tapping
 - Use semantic HTML5 tags for accessibility
 - Include CSS that works well on both portrait and landscape orientations
-- DO NOT use placeholder images
+- DO NOT use external image URLs or placeholder images.
 - Use emojis, Unicode symbols, or text-based visual elements instead of images
 - Avoid any @https://via.placeholder.com or similar external image URLs
 - Use a clean, modern design that feels native to mobile apps
@@ -130,6 +130,14 @@ IMPORTANT CSS REQUIREMENTS:
 - Include CSS for .lesson-header and .lesson-header-image classes
 - .lesson-header should have margin: 20px 0; text-align: center;
 - .lesson-header-image should have width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow; display: block; margin: 0 auto;
+
+HEADER STRUCTURE REQUIREMENT:
+- Start the lesson content with this exact structure:
+  <h1 class="chapter-title">Chapter X: [Chapter Title]</h1>
+  <div class="lesson-header">
+      <img src="../header.webp" alt="Chapter X Header" class="lesson-header-image">
+  </div>
+- Replace "X" with the actual chapter number and "[Chapter Title]" with the actual title
 
 COLOR SCHEME (MUST USE THESE COLORS):
 - Primary: #8B5FBF (Purple) - for buttons, links, and accents

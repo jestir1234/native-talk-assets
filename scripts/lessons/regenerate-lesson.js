@@ -163,6 +163,14 @@ IMPORTANT CSS REQUIREMENTS:
 - .lesson-header should have margin: 20px 0; text-align: center;
 - .lesson-header-image should have width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow; display: block; margin: 0 auto;
 
+HEADER STRUCTURE REQUIREMENT:
+- Start the lesson content with this exact structure:
+  <h1 class="chapter-title">Chapter X: [Chapter Title]</h1>
+  <div class="lesson-header">
+      <img src="../header.webp" alt="Chapter X Header" class="lesson-header-image">
+  </div>
+- Replace "X" with the actual chapter number and "[Chapter Title]" with the actual title
+
 COLOR SCHEME (MUST USE THESE COLORS):
 - Primary: #8B5FBF (Purple) - for buttons, links, and accents
 - Secondary: #FDF9E5 (Cream background) - for section backgrounds
@@ -268,29 +276,13 @@ function updateHtmlWithImage(htmlContent, imagePath, chapterNumber) {
     
     const imageUrl = '../header.webp'; // Relative path from target language subdirectory
     
-    // Add image at the top of the content if it doesn't exist
-    const imageHtml = `
-<div class="lesson-header">
-    <img src="${imageUrl}" alt="Chapter ${chapterNumber} Header" class="lesson-header-image">
-</div>
-`;
+    // Replace any existing image in the lesson-header with our generated image
+    const updatedHtml = cleanedHtml.replace(
+        /<img[^>]*class="[^"]*lesson-header-image[^"]*"[^>]*>/g,
+        `<img src="${imageUrl}" alt="Chapter ${chapterNumber} Header" class="lesson-header-image">`
+    );
     
-    // Check if there's already a lesson-header section
-    if (cleanedHtml.includes('<div class="lesson-header">')) {
-        // Replace any existing image in the lesson-header with our generated image
-        const updatedHtml = cleanedHtml.replace(
-            /<img[^>]*class="[^"]*lesson-header-image[^"]*"[^>]*>/g,
-            `<img src="${imageUrl}" alt="Chapter ${chapterNumber} Header" class="lesson-header-image">`
-        );
-        return updatedHtml;
-    } else {
-        // Insert the image HTML after the opening body tag
-        const updatedHtml = cleanedHtml.replace(
-            /<body[^>]*>/,
-            `$&${imageHtml}`
-        );
-        return updatedHtml;
-    }
+    return updatedHtml;
 }
 
 async function regenerateLesson() {
