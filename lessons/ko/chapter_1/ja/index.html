@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: ハングル - 韓国語の基本</title>
+    <style>
+        /* Base Styles & Mobile-First */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --text-heading-color: #2C3E50; /* Dark blue */
+            --text-body-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        body {
+            font-family: 'Helvetica Neue', 'Arial', 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* White background for the overall page */
+            color: var(--text-body-color);
+            font-size: 16px; /* Minimum font size for body text */
+            line-height: 1.6;
+        }
+
+        /* General Layout */
+        .container {
+            padding: 20px;
+            max-width: 800px; /* Max width for content on larger screens */
+            margin: 0 auto;
+        }
+
+        /* Headers */
+        h1, h2, h3 {
+            color: var(--text-heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 1.5em; /* ~24px */
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.2em; /* ~19.2px */
+            color: var(--primary-color);
+            margin-bottom: 1em;
+        }
+
+        /* Lesson Header specific styles as per requirements */
+        .chapter-title {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 0;
+            color: var(--text-heading-color);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        section {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Paragraphs & Lists */
+        p {
+            margin-bottom: 1em;
+            color: var(--text-body-color);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        ul li {
+            padding-left: 1.5em;
+            position: relative;
+            margin-bottom: 0.5em;
+        }
+
+        ul li::before {
+            content: '✨'; /* Using Unicode symbol for list bullet */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Buttons & Interactive Elements */
+        .btn {
+            display: block;
+            width: fit-content;
+            padding: 12px 20px;
+            margin: 20px auto;
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            text-align: center;
+            min-height: 44px; /* Ensure touch-friendly size */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #6C429B; /* Slightly darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Audio Icon Specifics */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 1.8em; /* Large enough for tapping */
+            color: var(--primary-color);
+            cursor: pointer;
+            padding: 8px; /* Padding for tap target */
+            min-width: 44px; /* Ensure minimum width for tap */
+            min-height: 44px; /* Ensure minimum height for tap */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; /* Make it circular */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            vertical-align: middle;
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple background on hover */
+            transform: scale(1.1);
+        }
+
+        .korean-word {
+            display: inline-flex;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--text-heading-color);
+            margin: 5px 0;
+            gap: 8px;
+        }
+
+        .korean-word span:first-child {
+            /* Korean text */
+        }
+
+        .korean-word span:nth-child(2) {
+            font-size: 0.8em;
+            font-weight: normal;
+            color: var(--text-body-color);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FFFFFF; /* White background for practice */
+            border: 1px dashed var(--primary-color);
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .practice-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .practice-item input[type="text"] {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 1em;
+            width: 120px;
+        }
+
+        .pronunciation-guide {
+            background-color: rgba(139, 95, 191, 0.08);
+            border-left: 4px solid var(--primary-color);
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: var(--text-heading-color);
+        }
+
+        /* Grid for characters (optional, but good for readability) */
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .char-item {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .char-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .char-item strong {
+            display: block;
+            font-size: 2.2em;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .char-item span {
+            display: block;
+            font-size: 0.9em;
+            color: var(--text-body-color);
+        }
+
+        /* Responsive adjustments for larger screens */
+        @media (min-width: 600px) {
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2.5em; /* ~40px */
+            }
+
+            h2 {
+                font-size: 1.8em; /* ~28.8px */
+            }
+
+            h3 {
+                font-size: 1.4em; /* ~22.4px */
+            }
+
+            .btn {
+                padding: 15px 25px;
+                font-size: 1.2em;
+            }
+        }
+
+        /* Footer / Summary */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .summary-section h2 {
+            color: #FFFFFF;
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+        }
+        .summary-section ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            display: inline-block; /* Center the ul */
+        }
+        .summary-section ul li {
+            position: relative;
+            padding-left: 1.8em;
+            margin-bottom: 0.8em;
+            color: #FFFFFF;
+        }
+        .summary-section ul li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 1: ハングル (Hangul) - 韓国語の基本</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>✨ ハングルって何だろう？</h2>
+            <p>皆さん、こんにちは！韓国語学習の旅へようこそ。このチャプターでは、韓国語の文字である「ハングル」について学びます。ハングルは、世界で最も科学的で覚えやすい文字の一つと言われていますよ。</p>
+            <p>💡 <strong>ハングルの誕生秘話：</strong><br>
+            ハングルは、約600年前に朝鮮王朝の第4代王「世宗（セジョン）大王」によって、当時の中国の漢字が難しく、民が文字を学ぶのが困難だったため、誰もが簡単に読み書きできるよう作られました。まさに、民のための愛の結晶なんです！</p>
+            <p>ハングルは、口の形や発音器官の動きを象って作られているため、とても論理的です。さあ、一緒にハングルの世界を探検しましょう！</p>
+        </section>
+
+        <section>
+            <h2>🔡 基本母音を学ぼう</h2>
+            <p>ハングルは、いくつかのパーツが組み合わさって文字になります。まずは、音の核となる「母音（ぼいん）」から見ていきましょう。基本母音はたった6つです。</p>
+
+            <div class="char-grid">
+                <div class="char-item">
+                    <strong>ㅏ</strong>
+                    <span>ア (a)</span>
+                    <button class="audio-icon" data-audio-text="ㅏ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅓ</strong>
+                    <span>オ (eo)</span>
+                    <button class="audio-icon" data-audio-text="ㅓ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅗ</strong>
+                    <span>オ (o)</span>
+                    <button class="audio-icon" data-audio-text="ㅗ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅜ</strong>
+                    <span>ウ (u)</span>
+                    <button class="audio-icon" data-audio-text="ㅜ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅡ</strong>
+                    <span>ウ (eu)</span>
+                    <button class="audio-icon" data-audio-text="ㅡ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅣ</strong>
+                    <span>イ (i)</span>
+                    <button class="audio-icon" data-audio-text="ㅣ">🔊</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-guide">
+                <p><strong>💡 発音のヒント：</strong></p>
+                <ul>
+                    <li>「ㅏ (ア)」は、口を大きく開けて「ア」と発音します。日本語の「あ」に近いです。</li>
+                    <li>「ㅓ (オ)」は、口を縦に開けて「オ」と発音します。日本語の「お」よりも少し開いた感じです。</li>
+                    <li>「ㅗ (オ)」は、唇を丸めて「オ」と発音します。日本語の「お」に近いです。</li>
+                    <li>「ㅜ (ウ)」は、唇を突き出して「ウ」と発音します。日本語の「う」に近いです。</li>
+                    <li>「ㅡ (ウ)」は、唇を横に引き、「イー」と発音するときの口の形で「ウ」と発音します。日本語にはない音です。</li>
+                    <li>「ㅣ (イ)」は、口を横に引いて「イ」と発音します。日本語の「い」に近いです。</li>
+                </ul>
+            </div>
+
+            <h3>✍️ 練習問題：正しい発音を選びましょう</h3>
+            <div class="practice-section">
+                <p>以下のハングルの母音を聴いて、対応するカタカナを選んでみましょう！</p>
+                <div class="practice-item">
+                    <button class="audio-icon" data-audio-text="ㅗ">🔊</button>
+                    <span>これは何？</span>
+                    <select>
+                        <option value="">選択してください</option>
+                        <option value="a">ア (a)</option>
+                        <option value="o">オ (o)</option>
+                        <option value="u">ウ (u)</option>
+                    </select>
+                </div>
+                <div class="practice-item">
+                    <button class="audio-icon" data-audio-text="ㅡ">🔊</button>
+                    <span>これは何？</span>
+                    <select>
+                        <option value="">選択してください</option>
+                        <option value="eu">ウ (eu)</option>
+                        <option value="i">イ (i)</option>
+                        <option value="e">エ (e)</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🗣️ 基本子音を学ぼう</h2>
+            <p>次に、母音と組み合わせて音を作る「子音（しいん）」を学びましょう。基本子音は14個ありますが、まずはよく使うものから覚えましょう。</p>
+
+            <div class="char-grid">
+                <div class="char-item">
+                    <strong>ㄱ</strong>
+                    <span>k/g</span>
+                    <button class="audio-icon" data-audio-text="ㄱ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㄴ</strong>
+                    <span>n</span>
+                    <button class="audio-icon" data-audio-text="ㄴ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㄷ</strong>
+                    <span>t/d</span>
+                    <button class="audio-icon" data-audio-text="ㄷ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㄹ</strong>
+                    <span>r/l</span>
+                    <button class="audio-icon" data-audio-text="ㄹ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅁ</strong>
+                    <span>m</span>
+                    <button class="audio-icon" data-audio-text="ㅁ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅂ</strong>
+                    <span>p/b</span>
+                    <button class="audio-icon" data-audio-text="ㅂ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅅ</strong>
+                    <span>s</span>
+                    <button class="audio-icon" data-audio-text="ㅅ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅇ</strong>
+                    <span>(無音/ng)</span>
+                    <button class="audio-icon" data-audio-text="ㅇ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅈ</strong>
+                    <span>j</span>
+                    <button class="audio-icon" data-audio-text="ㅈ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅊ</strong>
+                    <span>ch</span>
+                    <button class="audio-icon" data-audio-text="ㅊ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅋ</strong>
+                    <span>k (強)</span>
+                    <button class="audio-icon" data-audio-text="ㅋ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅌ</strong>
+                    <span>t (強)</span>
+                    <button class="audio-icon" data-audio-text="ㅌ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅍ</strong>
+                    <span>p (強)</span>
+                    <button class="audio-icon" data-audio-text="ㅍ">🔊</button>
+                </div>
+                <div class="char-item">
+                    <strong>ㅎ</strong>
+                    <span>h</span>
+                    <button class="audio-icon" data-audio-text="ㅎ">🔊</button>
+                </div>
+            </div>
+
+            <div class="pronunciation-guide">
+                <p><strong>💡 発音のヒント：</strong></p>
+                <ul>
+                    <li>子音は単独では発音せず、母音と組み合わせて音になります。</li>
+                    <li>「<strong>ㅇ</strong>」は、母音の前に来る場合は発音しません（無音）。しかし、単語の最後に来る場合は「ン/ng」と発音します。例: 아 (a) - 〇, 강 (gang) - ン</li>
+                    <li>「ㄱ, ㄷ, ㅂ, ㅅ, ㅈ」は、単語の頭に来ると濁らず、途中や後ろに来ると濁る傾向があります。</li>
+                    <li>「ㅋ, ㅌ, ㅍ, ㅊ」は、息を強く出す「激音」です。日本語にはない音なので、慣れるまで練習が必要です。</li>
+                    <li>「ㄹ」は、母音の間にある場合は「ラ行」のように、単語の最後や子音の前にある場合は「ル」のように発音します。</li>
+                </ul>
+            </div>
+
+            <h3>✍️ 練習問題：子音を覚えよう</h3>
+            <div class="practice-section">
+                <p>以下のハングルの子音を見て、対応するアルファベット（ローマ字）を記入してみましょう！</p>
+                <div class="practice-item">
+                    <span>ㄱ</span> <input type="text" placeholder="例: k/g">
+                </div>
+                <div class="practice-item">
+                    <span>ㄴ</span> <input type="text" placeholder="例: n">
+                </div>
+                <div class="practice-item">
+                    <span>ㅁ</span> <input type="text" placeholder="例: m">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🏗️ 簡単な音節の形成</h2>
+            <p>ハングルは「子音」と「母音」が組み合わさって一つの「音節ブロック」を形成します。まるで積み木みたいですね！</p>
+            <p>一番基本的な形は「子音 + 母音」です。</p>
+
+            <h3>子音 + 母音 の組み合わせ方</h3>
+            <p>子音「ㅇ」は、母音が単独で音節を作る際に、形を整えるために使われます。この場合、「ㅇ」は発音しません。</p>
+            <ul>
+                <li><strong>ㅏ (ア)</strong> → <span class="korean-word">아 <span>(ア)</span><button class="audio-icon" data-audio-text="아">🔊</button></span></li>
+                <li><strong>ㅗ (オ)</strong> → <span class="korean-word">오 <span>(オ)</span><button class="audio-icon" data-audio-text="오">🔊</button></span></li>
+                <li><strong>ㅣ (イ)</strong> → <span class="korean-word">이 <span>(イ)</span><button class="audio-icon" data-audio-text="이">🔊</button></span></li>
+            </ul>
+
+            <p>他の子音を置いてみましょう。</p>
+            <ul>
+                <li><strong>ㄱ (k/g) + ㅏ (a)</strong> → <span class="korean-word">가 <span>(ガ/カ)</span><button class="audio-icon" data-audio-text="가">🔊</button></span></li>
+                <li><strong>ㄴ (n) + ㅗ (o)</strong> → <span class="korean-word">노 <span>(ノ)</span><button class="audio-icon" data-audio-text="노">🔊</button></span></li>
+                <li><strong>ㄷ (t/d) + ㅜ (u)</strong> → <span class="korean-word">두 <span>(ドゥ/トゥ)</span><button class="audio-icon" data-audio-text="두">🔊</button></span></li>
+                <li><strong>ㅁ (m) + ㅣ (i)</strong> → <span class="korean-word">미 <span>(ミ)</span><button class="audio-icon" data-audio-text="미">🔊</button></span></li>
+            </ul>
+
+            <div class="pronunciation-guide">
+                <p><strong>💡 ポイント：</strong></p>
+                <p>ハングルの文字は、常に子音と母音を組み合わせて「ブロック」の形になります。例えば「가」は「ㄱ」と「ㅏ」が合わさって一つの文字として認識されます。</p>
+            </div>
+
+            <h3>✍️ 練習問題：音節を作ろう</h3>
+            <div class="practice-section">
+                <p>子音と母音を組み合わせて、指定された音節を書いてみましょう！</p>
+                <div class="practice-item">
+                    <span>「ナ」の音節： ㄴ + ㅏ → </span> <input type="text" placeholder="例: 나">
+                </div>
+                <div class="practice-item">
+                    <span>「ム」の音節： ㅁ + ㅜ → </span> <input type="text" placeholder="例: 무">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📖 読みの練習：簡単な単語</h2>
+            <p>さて、学んだ母音と子音、そして音節の作り方を使って、いくつかの簡単な韓国語の単語を読んでみましょう！</p>
+            <p>各単語には、韓国語、その発音（カタカナ）、日本語訳、そして音声再生ボタンが付いています。</p>
+
+            <ul>
+                <li><span class="korean-word">아 <span>(ア)</span><button class="audio-icon" data-audio-text="아">🔊</button></span> - ああ (感嘆詞)</li>
+                <li><span class="korean-word">오이 <span>(オイ)</span><button class="audio-icon" data-audio-text="오이">🔊</button></span> - きゅうり</li>
+                <li><span class="korean-word">아이 <span>(アイ)</span><button class="audio-icon" data-audio-text="아이">🔊</button></span> - 子供</li>
+                <li><span class="korean-word">나무 <span>(ナム)</span><button class="audio-icon" data-audio-text="나무">🔊</button></span> - 木</li>
+                <li><span class="korean-word">바다 <span>(パダ/バダ)</span><button class="audio-icon" data-audio-text="바다">🔊</button></span> - 海</li>
+                <li><span class="korean-word">가다 <span>(カダ/ガダ)</span><button class="audio-icon" data-audio-text="가다">🔊</button></span> - 行く</li>
+            </ul>
+
+            <p>たくさん声に出して練習してみましょう！完璧でなくても大丈夫。少しずつ慣れていくことが大切です。</p>
+        </section>
+
+        <div class="summary-section">
+            <h2>🎉 まとめ</h2>
+            <p>Chapter 1、お疲れ様でした！このチャプターでは、ハングルの基礎の基礎を学びました。</p>
+            <ul>
+                <li>ハングルは世宗大王が作った、科学的な文字であること。</li>
+                <li>基本母音6つ (ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, ㅣ) の形と発音。</li>
+                <li>基本子音14つ (ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ) の形と発音。</li>
+                <li>子音と母音を組み合わせて音節ブロックを作る基本的なルール。</li>
+                <li>簡単な単語の読み方。</li>
+            </ul>
+            <p>これでハングルの基本的な仕組みはバッチリです！次章では、さらに多くの母音や子音、そして複雑な音節の形成について学んでいきます。この調子で頑張りましょう！</p>
+            <button class="btn">次のチャプターへ進む</button>
+        </div>
+    </div>
+</body>
+</html>

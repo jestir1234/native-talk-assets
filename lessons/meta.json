@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-30T19:08:42.105Z",
-  "totalLanguages": 3,
-  "totalChapters": 30,
-  "totalAvailableChapters": 7,
+  "lastUpdated": "2025-07-30T19:22:55.741Z",
+  "totalLanguages": 4,
+  "totalChapters": 40,
+  "totalAvailableChapters": 8,
   "totalTargetLanguages": 2,
   "languages": {
     "en": {
@@ -306,7 +306,8 @@
       "totalChapters": 10,
       "availableChapters": 1,
       "availableTargetLanguages": [
-        "en"
+        "en",
+        "ja"
       ],
       "chapters": [
         {
@@ -320,9 +321,10 @@
             "Reading practice with basic words"
           ],
           "availableLanguages": [
-            "en"
+            "en",
+            "ja"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 2,
@@ -442,6 +444,150 @@
           "totalLanguages": 0
         }
       ]
+    },
+    "vi": {
+      "code": "vi",
+      "name": "Vietnamese",
+      "flag": "🇻🇳",
+      "totalChapters": 10,
+      "availableChapters": 1,
+      "availableTargetLanguages": [
+        "en"
+      ],
+      "chapters": [
+        {
+          "number": 1,
+          "title": "Bảng chữ cái tiếng Việt (Vietnamese Alphabet)",
+          "keyPoints": [
+            "Introduction to Vietnamese alphabet and pronunciation",
+            "Vowels (a, ă, â, e, ê, i, o, ô, ơ, u, ư, y)",
+            "Consonants (b, c, d, đ, g, h, k, l, m, n, p, q, r, s, t, v, x)",
+            "Tones (ngang, huyền, hỏi, ngã, sắc, nặng)",
+            "Basic pronunciation rules and tone marks"
+          ],
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
+        },
+        {
+          "number": 2,
+          "title": "Chào hỏi và giới thiệu (Greetings and Introductions)",
+          "keyPoints": [
+            "Xin chào (Hello)",
+            "Tạm biệt (Goodbye)",
+            "Rất vui được gặp bạn (Nice to meet you)",
+            "Tôi tên là... (My name is...)",
+            "Bạn khỏe không? (How are you?)"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 3,
+          "title": "Số đếm và đếm số (Numbers and Counting)",
+          "keyPoints": [
+            "Vietnamese numbers (một, hai, ba, bốn, năm, sáu, bảy, tám, chín, mười)",
+            "Counting objects and people",
+            "Age and asking age",
+            "Phone numbers and addresses",
+            "Basic math vocabulary (cộng, trừ, nhân, chia)"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 4,
+          "title": "Màu sắc và mô tả (Colors and Descriptions)",
+          "keyPoints": [
+            "Basic colors (đỏ, xanh, vàng, xanh lá, đen, trắng, tím, cam)",
+            "To/lớn (big/small)",
+            "Cao/thấp (tall/short)",
+            "Đẹp/xấu (beautiful/ugly)",
+            "Tốt/xấu (good/bad)"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 5,
+          "title": "Gia đình và mối quan hệ (Family and Relationships)",
+          "keyPoints": [
+            "Family members (bố, mẹ, anh, chị, em, ông, bà)",
+            "Bạn (friend)",
+            "Thầy/cô giáo (teacher)",
+            "Đồng nghiệp (colleague)",
+            "Honorifics and polite speech"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 6,
+          "title": "Hoạt động hàng ngày (Daily Activities and Routines)",
+          "keyPoints": [
+            "Thức dậy (to wake up)",
+            "Ăn (to eat)",
+            "Uống (to drink)",
+            "Học (to study)",
+            "Làm việc (to work)"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 7,
+          "title": "Thức ăn và đồ uống (Food and Drinks)",
+          "keyPoints": [
+            "Cơm (rice/meal)",
+            "Phở (pho)",
+            "Bánh mì (bread)",
+            "Nước mắm (fish sauce)",
+            "Cà phê (coffee)"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 8,
+          "title": "Địa điểm và phương hướng (Places and Directions)",
+          "keyPoints": [
+            "Nhà (house/home)",
+            "Trường học (school)",
+            "Công ty (company/office)",
+            "Bệnh viện (hospital)",
+            "Ngân hàng (bank)"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 9,
+          "title": "Thời tiết và mùa (Weather and Seasons)",
+          "keyPoints": [
+            "Thời tiết (weather)",
+            "Nắng/mưa (sunny/rainy)",
+            "Nóng/lạnh (hot/cold)",
+            "Mùa xuân, mùa hè, mùa thu, mùa đông (spring, summer, fall, winter)",
+            "Temperature expressions"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 10,
+          "title": "Thời gian và lịch trình (Time and Schedules)",
+          "keyPoints": [
+            "Thời gian (time)",
+            "Phút (minute)",
+            "Giờ (hour)",
+            "Ngày trong tuần (days of the week)",
+            "Thứ hai, thứ ba, thứ tư, thứ năm, thứ sáu, thứ bảy, chủ nhật"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        }
+      ]
     }
   },
   "userLanguageSupport": {
@@ -467,6 +613,12 @@
           "languageLearnName": "English",
           "chapterNumber": 3,
           "chapterTitle": "Numbers and Counting"
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 1,
+          "chapterTitle": "한글 (Hangul) - The Korean Alphabet"
         }
       ]
     },
@@ -498,6 +650,12 @@
           "languageLearnName": "Korean",
           "chapterNumber": 1,
           "chapterTitle": "한글 (Hangul) - The Korean Alphabet"
+        },
+        {
+          "languageLearn": "vi",
+          "languageLearnName": "Vietnamese",
+          "chapterNumber": 1,
+          "chapterTitle": "Bảng chữ cái tiếng Việt (Vietnamese Alphabet)"
         }
       ]
     }

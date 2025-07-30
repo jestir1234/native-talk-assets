@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: Bảng chữ cái tiếng Việt</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 16px; /* Minimum body text font size */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-bottom: 15px;
+            text-align: left; /* Default alignment */
+        }
+
+        h1 { font-size: 1.8em; } /* Responsive font sizes */
+        h2 { font-size: 1.5em; }
+        h3 { font-size: 1.2em; }
+
+        strong { color: #2C3E50; } /* Make strong text stand out */
+
+        a {
+            color: #8B5FBF; /* Primary: Purple */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout Container */
+        .container {
+            padding: 15px;
+            max-width: 800px; /* Limit width for readability on larger screens */
+            margin: 0 auto;
+        }
+
+        /* Header Specific Styles */
+        .chapter-title {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 2em; /* Larger for title */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #FFFFFF; /* White background for sections */
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        /* Note Box */
+        .note {
+            background-color: #F8F8F8;
+            border-left: 5px solid #8B5FBF; /* Primary color accent */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            color: #2C3E50; /* Darker text for notes */
+            font-size: 0.95em;
+        }
+        .note strong {
+            color: #8B5FBF;
+        }
+
+        /* Example/Practice Boxes */
+        .example-box, .practice-box {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .example-item, .practice-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            padding: 5px 0;
+            border-bottom: 1px dashed #e0e0e0;
+        }
+        .example-item:last-child, .practice-item:last-child {
+            border-bottom: none;
+        }
+
+        .example-item span, .practice-item span {
+            margin-right: 10px;
+            flex-grow: 1; /* Allow text to take available space */
+        }
+
+        .pronunciation-guide {
+            color: #8B5FBF; /* Primary: Purple */
+            font-style: italic;
+            font-size: 0.9em;
+            margin-left: 5px;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        /* Audio Icon Button */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Circular button */
+            width: 44px; /* Minimum tap target size */
+            height: 44px; /* Minimum tap target size */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            margin-left: 10px;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+            background-color: #6a449e; /* Darker purple on active */
+        }
+        /* Hover effect for larger screens, ignored on touch devices */
+        @media (min-width: 768px) {
+            .audio-icon:hover {
+                background-color: #6a449e;
+            }
+        }
+
+        /* Alphabet Grid Layout */
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Responsive columns */
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .alphabet-item {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 90px; /* Ensure consistent height */
+        }
+
+        .alphabet-item strong {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            color: #2C3E50;
+        }
+        .alphabet-item span {
+             font-size: 0.85em;
+             color: #666666;
+             flex-grow: 1; /* Allow description to take space */
+             display: block; /* Ensure it takes full width */
+             margin-bottom: 5px;
+        }
+
+        .alphabet-item .audio-icon {
+            margin-top: auto; /* Push to bottom */
+            margin-left: 0; /* Center audio icon below letter */
+        }
+
+        /* List Styling (for rules, summary) */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Summary Section Styling */
+        .summary {
+            background-color: #F8F8F8;
+            border: 1px solid #E0E0E0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .summary ul {
+            list-style-type: none; /* Remove default bullet */
+            padding: 0;
+        }
+
+        .summary ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px; /* Space for custom bullet */
+            color: #2C3E50; /* Darker text for summary points */
+        }
+
+        .summary ul li::before {
+            content: "✨"; /* Unicode sparkle */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary color for sparkle */
+            font-size: 1.1em;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            .chapter-title {
+                font-size: 1.6em;
+            }
+            h1 { font-size: 1.6em; }
+            h2 { font-size: 1.3em; }
+            h3 { font-size: 1.1em; }
+
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1em;
+            }
+            .alphabet-item strong {
+                font-size: 1.3em;
+            }
+            .alphabet-grid {
+                grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <h1 class="chapter-title">Chapter 1: Bảng chữ cái tiếng Việt</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+        </div>
+
+        <!-- Introduction Section -->
+        <section>
+            <h2>Chào mừng bạn đến với Tiếng Việt! 👋</h2>
+            <p>Welcome to Vietnamese! In this first chapter, we're diving into the very foundation of the language: the Vietnamese alphabet and its unique sounds.</p>
+            <p>Unlike some Asian languages, Vietnamese uses the Latin script, just like English! This is great news, as it means you don't need to learn a whole new writing system. However, many letters sound different, and you'll encounter some special characters and, most importantly, <strong>tones</strong>!</p>
+            <p>Mastering these basics will set you up for success. Let's get started!</p>
+        </section>
+
+        <!-- Vowels Section -->
+        <section>
+            <h2>1. Nguyên âm (Vowels) 🎵</h2>
+            <p>Vietnamese has 12 monophthong (single) vowels. Pay close attention to the unique sounds and the diacritics (marks above/below letters) that change their pronunciation.</p>
+            <div class="alphabet-grid">
+                <div class="alphabet-item">
+                    <strong>A</strong>
+                    <span>(like 'a' in 'father')</span>
+                    <button class="audio-icon" data-audio-text="A">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>Ă</strong>
+                    <span>(like 'a' in 'cat')</span>
+                    <button class="audio-icon" data-audio-text="Ă">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>Â</strong>
+                    <span>(like 'uh' in 'cup')</span>
+                    <button class="audio-icon" data-audio-text="Â">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>E</strong>
+                    <span>(like 'e' in 'bed')</span>
+                    <button class="audio-icon" data-audio-text="E">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>Ê</strong>
+                    <span>(like 'ai' in 'rain')</span>
+                    <button class="audio-icon" data-audio-text="Ê">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>I</strong>
+                    <span>(like 'ee' in 'see')</span>
+                    <button class="audio-icon" data-audio-text="I">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>O</strong>
+                    <span>(like 'o' in 'go')</span>
+                    <button class="audio-icon" data-audio-text="O">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>Ô</strong>
+                    <span>(like 'oa' in 'boat')</span>
+                    <button class="audio-icon" data-audio-text="Ô">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>Ơ</strong>
+                    <span>(like 'ur' in 'fur')</span>
+                    <button class="audio-icon" data-audio-text="Ơ">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>U</strong>
+                    <span>(like 'oo' in 'moon')</span>
+                    <button class="audio-icon" data-audio-text="U">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>Ư</strong>
+                    <span>(like 'uh' in 'fur' but rounded lips)</span>
+                    <button class="audio-icon" data-audio-text="Ư">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>Y</strong>
+                    <span>(same as I, usually at end of words)</span>
+                    <button class="audio-icon" data-audio-text="Y">🔊</button>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Cultural Note:</strong> The Vietnamese alphabet is called "chữ Quốc ngữ" (national language script). It was developed by Portuguese missionaries in the 17th century to help spread Christianity, but it eventually became the official script for Vietnamese, replacing older Chinese-based writing systems.
+            </div>
+        </section>
+
+        <!-- Consonants Section -->
+        <section>
+            <h2>2. Phụ âm (Consonants) 🔊</h2>
+            <p>Many Vietnamese consonants sound similar to English, but some have subtle differences or are unique. Practice them carefully!</p>
+            <div class="alphabet-grid">
+                <div class="alphabet-item">
+                    <strong>B</strong>
+                    <span>(like 'b' in 'ball')</span>
+                    <button class="audio-icon" data-audio-text="B">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>C</strong>
+                    <span>(like 'k' in 'cat')</span>
+                    <button class="audio-icon" data-audio-text="C">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>D</strong>
+                    <span>(like 'z' in 'zebra' in the South; 'y' in 'yes' in the North)</span>
+                    <button class="audio-icon" data-audio-text="D">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>Đ</strong>
+                    <span>(like 'd' in 'dog')</span>
+                    <button class="audio-icon" data-audio-text="Đ">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>G</strong>
+                    <span>(like 'g' in 'go')</span>
+                    <button class="audio-icon" data-audio-text="G">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>H</strong>
+                    <span>(like 'h' in 'hat')</span>
+                    <button class="audio-icon" data-audio-text="H">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>K</strong>
+                    <span>(like 'k' in 'kite')</span>
+                    <button class="audio-icon" data-audio-text="K">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>L</strong>
+                    <span>(like 'l' in 'love')</span>
+                    <button class="audio-icon" data-audio-text="L">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>M</strong>
+                    <span>(like 'm' in 'mom')</span>
+                    <button class="audio-icon" data-audio-text="M">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>N</strong>
+                    <span>(like 'n' in 'nose')</span>
+                    <button class="audio-icon" data-audio-text="N">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>P</strong>
+                    <span>(like 'p' in 'pen', mostly in loanwords)</span>
+                    <button class="audio-icon" data-audio-text="P">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>Q</strong>
+                    <span>(always followed by 'u', sounds like 'kw' in 'queen')</span>
+                    <button class="audio-icon" data-audio-text="Q">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>R</strong>
+                    <span>(like 'r' in 'red' in the South; 'z' in 'zebra' or rolled 'r' in the North)</span>
+                    <button class="audio-icon" data-audio-text="R">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>S</strong>
+                    <span>(like 's' in 'see' in the North; 'sh' in 'she' in the South, or 's')</span>
+                    <button class="audio-icon" data-audio-text="S">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>T</strong>
+                    <span>(like 't' in 'top')</span>
+                    <button class="audio-icon" data-audio-text="T">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>V</strong>
+                    <span>(like 'v' in 'van' in the South; 'w' in 'win' in the North)</span>
+                    <button class="audio-icon" data-audio-text="V">🔊</button>
+                </div>
+                <div class="alphabet-item">
+                    <strong>X</strong>
+                    <span>(like 's' in 'see')</span>
+                    <button class="audio-icon" data-audio-text="X">🔊</button>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Regional Dialects:</strong> Vietnamese has significant regional accents, especially between Northern (Hanoi) and Southern (Ho Chi Minh City) dialects. The pronunciations given here are common, but you'll hear variations!
+            </div>
+        </section>
+
+        <!-- Tones Section -->
+        <section>
+            <h2>3. Thanh điệu (Tones) 🎶</h2>
+            <p>This is where Vietnamese gets really interesting! Tones are crucial. The same word can have six different meanings depending on the tone you use.</p>
+            <p>Think of it like singing: your voice goes up, down, or stays flat. Each tone has a specific mark (diacritic) above or below the main vowel of a word.</p>
+
+            <div class="example-box">
+                <h3>The Six Tones:</h3>
+                <div class="example-item">
+                    <span>1. <strong>Ngang (Flat/Level)</strong>: No mark. High and flat sound.</span>
+                    <span class="pronunciation-guide">[ngahng]</span>
+                    <button class="audio-icon" data-audio-text="ngang">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span>2. <strong>Huyền (Falling/Low-falling)</strong>: Grave accent (<span style="font-size:1.2em;"> ` </span>). Low, slightly falling sound.</span>
+                    <span class="pronunciation-guide">[hwin]</span>
+                    <button class="audio-icon" data-audio-text="huyền">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span>3. <strong>Hỏi (Rising-falling)</strong>: Hook above (<span style="font-size:1.2em;"> ̉ </span>). Dips down then rises.</span>
+                    <span class="pronunciation-guide">[hoj]</span>
+                    <button class="audio-icon" data-audio-text="hỏi">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span>4. <strong>Ngã (Glottalized rising)</strong>: Tilde (<span style="font-size:1.2em;"> ̃ </span>). High, broken, then rising.</span>
+                    <span class="pronunciation-guide">[ngah]</span>
+                    <button class="audio-icon" data-audio-text="ngã">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span>5. <strong>Sắc (Rising/High-rising)</strong>: Acute accent (<span style="font-size:1.2em;"> ´ </span>). High and rising sound.</span>
+                    <span class="pronunciation-guide">[sak]</span>
+                    <button class="audio-icon" data-audio-text="sắc">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span>6. <strong>Nặng (Glottalized low-falling)</strong>: Dot below (<span style="font-size:1.2em;"> . </span>). Low, short, and abrupt with a glottal stop.</span>
+                    <span class="pronunciation-guide">[nang]</span>
+                    <button class="audio-icon" data-audio-text="nặng">🔊</button>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Key to Understanding:</strong> Tones are EVERYTHING in Vietnamese. A slight change can make "ma" (ghost) sound like "má" (mother), "mã" (horse), or "mạ" (rice seedling)! Don't skip practicing these!
+            </div>
+        </section>
+
+        <!-- Basic Pronunciation Rules & Tone Marks Section -->
+        <section>
+            <h2>4. Quy tắc phát âm cơ bản (Basic Pronunciation Rules)</h2>
+            <p>Here are a few essential rules to keep in mind:</p>
+            <ul>
+                <li><strong>One syllable, one tone:</strong> Every syllable in Vietnamese carries a tone. The tone mark always goes on the main vowel of a word.</li>
+                <li><strong>Vowel placement:</strong> If a word has multiple vowels (like a diphthong or triphthong), the tone mark usually goes on the primary vowel or the vowel that stands out most. For example, in "biển" (sea), the tone mark is on 'ê', not 'i'.</li>
+                <li><strong>Compound consonants:</strong> Vietnamese has several consonant clusters that act as single sounds, like "Ch", "Gi", "Kh", "Ng", "Ngh", "Nh", "Ph", "Th", "Tr". We'll dive deeper into these later!</li>
+            </ul>
+
+            <h3>Thực hành với các dấu thanh (Practice with Tone Marks):</h3>
+            <div class="example-box">
+                <div class="example-item">
+                    <span><strong>Ma</strong> (ghost - ngang tone)</span>
+                    <button class="audio-icon" data-audio-text="Ma">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span><strong>Mà</strong> (but - huyền tone)</span>
+                    <button class="audio-icon" data-audio-text="Mà">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span><strong>Mả</strong> (tomb - hỏi tone)</span>
+                    <button class="audio-icon" data-audio-text="Mả">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span><strong>Mã</strong> (horse/code - ngã tone)</span>
+                    <button class="audio-icon" data-audio-text="Mã">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span><strong>Má</strong> (mother/cheek - sắc tone)</span>
+                    <button class="audio-icon" data-audio-text="Má">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span><strong>Mạ</strong> (rice seedling - nặng tone)</span>
+                    <button class="audio-icon" data-audio-text="Mạ">🔊</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reading Practice Section -->
+        <section>
+            <h2>5. Thực hành đọc (Reading Practice) 📚</h2>
+            <p>Let's put it all together! Listen and repeat these simple words. Focus on the vowel, consonant, and especially the tone!</p>
+            <div class="practice-box">
+                <div class="practice-item">
+                    <span><strong>Ba</strong> (father)</span>
+                    <button class="audio-icon" data-audio-text="Ba">🔊</button>
+                </div>
+                <div class="practice-item">
+                    <span><strong>Bà</strong> (grandmother)</span>
+                    <button class="audio-icon" data-audio-text="Bà">🔊</button>
+                </div>
+                <div class="practice-item">
+                    <span><strong>Bát</strong> (bowl)</span>
+                    <button class="audio-icon" data-audio-text="Bát">🔊</button>
+                </div>
+                <div class="practice-item">
+                    <span><strong>Bé</strong> (small/baby)</span>
+                    <button class="audio-icon" data-audio-text="Bé">🔊</button>
+                </div>
+                <div class="practice-item">
+                    <span><strong>Cá</strong> (fish)</span>
+                    <button class="audio-icon" data-audio-text="Cá">🔊</button>
+                </div>
+                <div class="practice-item">
+                    <span><strong>Chó</strong> (dog)</span>
+                    <button class="audio-icon" data-audio-text="Chó">🔊</button>
+                </div>
+                <div class="practice-item">
+                    <span><strong>Đi</strong> (to go)</span>
+                    <button class="audio-icon" data-audio-text="Đi">🔊</button>
+                </div>
+                <div class="practice-item">
+                    <span><strong>Năm</strong> (five)</span>
+                    <button class="audio-icon" data-audio-text="Năm">🔊</button>
+                </div>
+                <div class="practice-item">
+                    <span><strong>Sữa</strong> (milk)</span>
+                    <button class="audio-icon" data-audio-text="Sữa">🔊</button>
+                </div>
+                <div class="practice-item">
+                    <span><strong>Vui</strong> (happy)</span>
+                    <button class="audio-icon" data-audio-text="Vui">🔊</button>
+                </div>
+            </div>
+            <div class="note">
+                <strong>Practice Tip:</strong> Use a mirror to watch your mouth as you practice the vowels. For tones, try singing them first! Exaggeration helps at the beginning. Consistent practice is key!
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="summary">
+            <h2>Tóm tắt Chương 1 (Chapter 1 Summary) ✨</h2>
+            <p>You've just completed your first step into Vietnamese pronunciation! Here's a quick recap:</p>
+            <ul>
+                <li>✨ Vietnamese uses the <strong>Latin alphabet</strong>, but sounds are unique.</li>
+                <li>✨ There are <strong>12 vowels</strong> (Nguyên âm) with special diacritics.</li>
+                <li>✨ There are <strong>17 main consonants</strong> (Phụ âm), some with regional variations.</li>
+                <li>✨ Vietnamese is a <strong>tonal language</strong> with <strong>6 distinct tones</strong> (Thanh điệu). Mastering these is vital for meaning!</li>
+                <li>✨ Every syllable has <strong>one tone mark</strong>, placed on the main vowel.</li>
+            </ul>
+            <p>Keep practicing these sounds and tones regularly. They are the building blocks for speaking clearly and being understood in Vietnamese!</p>
+            <p><strong>Chúc mừng bạn!</strong> (Congratulations!) You're on your way!</p>
+        </section>
+
+    </div>
+</body>
+</html>
