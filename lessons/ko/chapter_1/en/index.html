@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: 한글 (Hangul) - The Korean Alphabet</title>
+    <style>
+        /* General mobile-first reset and base styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+            -webkit-text-size-adjust: 100%; /* Prevent text scaling on iOS */
+        }
+
+        .lesson-container {
+            max-width: 800px; /* Max width for larger screens, centered */
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        h2 {
+            font-size: 1.8em;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #E0E0E0; /* Borders: Light gray */
+            text-align: center; /* Center section titles */
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-top: 1.2em;
+            color: #8B5FBF; /* Primary color for subheadings */
+        }
+
+        /* Specific Header Requirements */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Max width for the image */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Lesson Sections */
+        .lesson-section {
+            background-color: #FFFFFF; /* White background for sections */
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none; /* No default bullets */
+            padding: 0;
+            margin: 0 0 1em 0;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em; /* Space for custom bullet */
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary color */
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        /* Highlighted text for Korean characters/examples */
+        .korean-char, .korean-example {
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue */
+            font-size: 1.2em; /* Slightly larger for emphasis */
+        }
+
+        .pronunciation-guide {
+            font-style: italic;
+            color: #8B5FBF; /* Primary color */
+            font-size: 0.9em;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary color */
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%; /* Make it round */
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            font-size: 1.2em;
+            display: inline-flex; /* For centering content */
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            vertical-align: middle; /* Align with text */
+            margin-left: 8px;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+            line-height: 1; /* Ensure emoji fits in button */
+        }
+
+        .audio-icon:hover {
+            background-color: #6A459B; /* Slightly darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Example boxes for characters/syllables */
+        .example-box {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            justify-content: center; /* Center items when they wrap */
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            gap: 15px; /* Space between items in flexbox */
+        }
+
+        .example-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            min-width: 120px; /* Minimum width for each item */
+            flex-basis: calc(33% - 20px); /* Roughly 3 items per row on wider screens */
+            max-width: 150px; /* Max width to keep them compact */
+            box-sizing: border-box; /* Include padding and border in width */
+            text-align: center;
+        }
+
+        .example-item .korean-char {
+            font-size: 2.8em; /* Larger for individual characters */
+            margin-bottom: 5px;
+            line-height: 1; /* Prevent extra space */
+        }
+
+        .example-item .pronunciation-guide {
+            font-size: 0.9em;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .example-item .english-meaning {
+            font-size: 0.85em;
+            color: #666666;
+            margin-top: 5px;
+        }
+
+        /* Practice Section Styling */
+        .practice-exercise {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .practice-question {
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue */
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .practice-answer-key {
+            background-color: #eaf6ff; /* A light blue for answers, for contrast */
+            border-left: 5px solid #8B5FBF; /* Primary color border */
+            padding: 10px 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            color: #2C3E50;
+        }
+
+        .important-note {
+            background-color: #fff9e6; /* Light yellow background */
+            border-left: 4px solid #f0ad4e; /* Orange border */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: #333333;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 480px) {
+            .lesson-container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            .example-item {
+                flex-basis: calc(50% - 15px); /* 2 items per row on small screens */
+                min-width: unset; /* Remove min-width constraint */
+            }
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+
+        <h1 class="chapter-title">Chapter 1: 한글 (Hangul) - The Korean Alphabet</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+        </div>
+
+        <!-- Section 1: Introduction to Hangul -->
+        <section class="lesson-section introduction">
+            <h2>🎉 Welcome to Korean! 🎉</h2>
+            <p>Ready to unlock a new world? Our journey begins with <strong class="korean-char">한글 (Hangul)</strong> <button class="audio-icon" data-audio-text="한글">🔊</button>, the incredible Korean alphabet! Unlike many languages with complex writing systems, Hangul is praised for being one of the most logical and easiest alphabets to learn.</p>
+
+            <h3>Why is Hangul so special? 🤔</h3>
+            <ul>
+                <li><strong>Created for Everyone:</strong> Hangul was invented in the 15th century (1443) by <strong class="korean-char">King Sejong the Great</strong> <button class="audio-icon" data-audio-text="세종대왕">🔊</button>. His goal? To create an alphabet so simple that even common people could learn to read and write easily, promoting literacy across all classes.</li>
+                <li><strong>Scientific & Logical:</strong> The shapes of Hangul letters are designed to mimic the shape of your mouth when you make the sound, or the position of your tongue! How cool is that?</li>
+                <li><strong>Phonetic Powerhouse:</strong> Once you learn the letters and their sounds, you can read almost any Korean word, even if you don't know what it means. It's truly phonetic!</li>
+            </ul>
+            <p>Let's dive in and see how quickly you can master the basics!</p>
+        </section>
+
+        <!-- Section 2: Basic Vowels -->
+        <section class="lesson-section vowels">
+            <h2> básicas (Basic Vowels) ✍️</h2>
+            <p>Hangul characters are built in blocks. First, let's learn the building blocks that are the "heart" of every syllable: the vowels!</p>
+            <p>Korean vowels are often formed using three basic elements:</p>
+            <ul>
+                <li>A vertical line (representing a person standing): <strong class="korean-char">ㅣ</strong></li>
+                <li>A horizontal line (representing the earth): <strong class="korean-char">ㅡ</strong></li>
+                <li>A dot (representing the sky/heaven): <strong class="korean-char">・</strong> (this dot evolved into short strokes)</li>
+            </ul>
+            <p>From these, the primary vowels are formed. Let's start with 6 fundamental vowels:</p>
+
+            <div class="example-box">
+                <div class="example-item">
+                    <span class="korean-char">ㅏ</span>
+                    <span class="pronunciation-guide">ah (like 'a' in father)</span>
+                    <button class="audio-icon" data-audio-text="아">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅓ</span>
+                    <span class="pronunciation-guide">aw (like 'o' in caught)</span>
+                    <button class="audio-icon" data-audio-text="어">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅗ</span>
+                    <span class="pronunciation-guide">oh (like 'o' in go)</span>
+                    <button class="audio-icon" data-audio-text="오">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅜ</span>
+                    <span class="pronunciation-guide">oo (like 'oo' in moon)</span>
+                    <button class="audio-icon" data-audio-text="우">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅡ</span>
+                    <span class="pronunciation-guide">eu (like 'oo' in good, but flatter)</span>
+                    <button class="audio-icon" data-audio-text="으">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅣ</span>
+                    <span class="pronunciation-guide">ee (like 'ee' in see)</span>
+                    <button class="audio-icon" data-audio-text="이">🔊</button>
+                </div>
+            </div>
+
+            <div class="important-note">
+                <strong>💡 Quick Tip:</strong> Notice how ㅏ and ㅓ are vertical vowels, while ㅗ and ㅜ are horizontal. This will be important when we combine them with consonants!
+            </div>
+
+            <div class="practice-exercise">
+                <h3 class="practice-question">Practice Time: Match the Vowel! 🤔</h3>
+                <p>Can you guess which vowel is which? Say them out loud!</p>
+                <ol>
+                    <li>Which vowel sounds like "ee" as in "see"?</li>
+                    <li>Which vowel sounds like "oh" as in "go"?</li>
+                    <li>Which vowel sounds like "ah" as in "father"?</li>
+                </ol>
+                <div class="practice-answer-key">
+                    <strong>Answer Key:</strong>
+                    <ol>
+                        <li>ㅣ (ee)</li>
+                        <li>ㅗ (oh)</li>
+                        <li>ㅏ (ah)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Basic Consonants -->
+        <section class="lesson-section consonants">
+            <h2>자음 (Basic Consonants) 🗣️</h2>
+            <p>Now that you know the vowels, let's meet the consonants! Many of them are simpler than you think.</p>
+            <p>There are 14 basic consonants. Remember, their shapes sometimes hint at the way your mouth forms the sound!</p>
+
+            <div class="example-box">
+                <div class="example-item">
+                    <span class="korean-char">ㄱ</span>
+                    <span class="pronunciation-guide">g/k (like 'g' in 'go' or 'k' in 'skill')</span>
+                    <button class="audio-icon" data-audio-text="기역">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㄴ</span>
+                    <span class="pronunciation-guide">n (like 'n' in 'no')</span>
+                    <button class="audio-icon" data-audio-text="니은">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㄷ</span>
+                    <span class="pronunciation-guide">d/t (like 'd' in 'do' or 't' in 'stop')</span>
+                    <button class="audio-icon" data-audio-text="디귿">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㄹ</span>
+                    <span class="pronunciation-guide">r/l (a tricky mix! like 'r' in 'very' or 'l' in 'bell')</span>
+                    <button class="audio-icon" data-audio-text="리을">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅁ</span>
+                    <span class="pronunciation-guide">m (like 'm' in 'mom')</span>
+                    <button class="audio-icon" data-audio-text="미음">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅂ</span>
+                    <span class="pronunciation-guide">b/p (like 'b' in 'boy' or 'p' in 'spot')</span>
+                    <button class="audio-icon" data-audio-text="비읍">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅅ</span>
+                    <span class="pronunciation-guide">s (like 's' in 'sit', can be 't' at end of syllable)</span>
+                    <button class="audio-icon" data-audio-text="시옷">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅇ</span>
+                    <span class="pronunciation-guide">silent (at start of syllable), ng (at end of syllable)</span>
+                    <button class="audio-icon" data-audio-text="이응">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅈ</span>
+                    <span class="pronunciation-guide">j/ch (like 'j' in 'jam' or 'ch' in 'church')</span>
+                    <button class="audio-icon" data-audio-text="지읒">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅊ</span>
+                    <span class="pronunciation-guide">ch (stronger 'ch' than ㅈ, like 'ch' in 'chip')</span>
+                    <button class="audio-icon" data-audio-text="치읓">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅋ</span>
+                    <span class="pronunciation-guide">k (stronger 'k' than ㄱ, like 'k' in 'kite')</span>
+                    <button class="audio-icon" data-audio-text="키읔">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅌ</span>
+                    <span class="pronunciation-guide">t (stronger 't' than ㄷ, like 't' in 'top')</span>
+                    <button class="audio-icon" data-audio-text="티읕">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅍ</span>
+                    <span class="pronunciation-guide">p (stronger 'p' than ㅂ, like 'p' in 'pot')</span>
+                    <button class="audio-icon" data-audio-text="피읖">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">ㅎ</span>
+                    <span class="pronunciation-guide">h (like 'h' in 'hat')</span>
+                    <button class="audio-icon" data-audio-text="히읗">🔊</button>
+                </div>
+            </div>
+
+            <div class="important-note">
+                <strong>🌟 Special Consonant: ㅇ (ieung)</strong><br>
+                This character <strong class="korean-char">ㅇ</strong> is a bit unique!
+                <ul>
+                    <li>When it's at the <strong>start</strong> of a syllable, it's <strong>silent</strong>. It simply acts as a placeholder to allow the vowel to be the initial sound. For example, if you want to write the vowel '아' (ah), you need the silent 'ㅇ' in front: <span class="korean-char">아</span>.</li>
+                    <li>When it's at the <strong>end</strong> of a syllable, it makes an "ng" sound, like in the English word "sing".</li>
+                </ul>
+            </div>
+
+            <div class="practice-exercise">
+                <h3 class="practice-question">Practice Time: Identify the Consonant! 🧩</h3>
+                <p>Which consonant matches the description?</p>
+                <ol>
+                    <li>The consonant that sounds like 'n'.</li>
+                    <li>The consonant that is silent at the beginning of a syllable.</li>
+                    <li>The consonant that sounds like a strong 'k'.</li>
+                </ol>
+                <div class="practice-answer-key">
+                    <strong>Answer Key:</strong>
+                    <ol>
+                        <li>ㄴ (nieun)</li>
+                        <li>ㅇ (ieung)</li>
+                        <li>ㅋ (kieuk)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Simple Syllable Formation -->
+        <section class="lesson-section syllables">
+            <h2>음절 형성 (Syllable Formation) 🧱</h2>
+            <p>Now for the fun part: putting consonants and vowels together to form syllables! This is where Hangul really shines.</p>
+            <p>Every Hangul syllable is written in a square block. It always starts with a consonant, followed by a vowel. The key is how they are arranged:</p>
+            <ul>
+                <li><strong>Vertical Vowels (ㅏ, ㅓ, ㅣ):</strong> The vowel goes to the <strong>right</strong> of the consonant.
+                    <br>Example: <span class="korean-char">ㄱ + ㅏ = 가</span> <button class="audio-icon" data-audio-text="가">🔊</button> (ga)</li>
+                <li><strong>Horizontal Vowels (ㅗ, ㅜ, ㅡ):</strong> The vowel goes <strong>below</strong> the consonant.
+                    <br>Example: <span class="korean-char">ㄱ + ㅗ = 고</span> <button class="audio-icon" data-audio-text="고">🔊</button> (go)</li>
+            </ul>
+
+            <h3>Let's form some simple syllables! 🤩</h3>
+            <p>We'll use the silent consonant <strong class="korean-char">ㅇ</strong> at the beginning so you can hear the vowel sound clearly.</p>
+
+            <div class="example-box">
+                <div class="example-item">
+                    <span class="korean-char">아</span>
+                    <span class="pronunciation-guide">a (ah)</span>
+                    <button class="audio-icon" data-audio-text="아">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">어</span>
+                    <span class="pronunciation-guide">eo (aw)</span>
+                    <button class="audio-icon" data-audio-text="어">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">오</span>
+                    <span class="pronunciation-guide">o (oh)</span>
+                    <button class="audio-icon" data-audio-text="오">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">우</span>
+                    <span class="pronunciation-guide">u (oo)</span>
+                    <button class="audio-icon" data-audio-text="우">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">으</span>
+                    <span class="pronunciation-guide">eu (flat oo)</span>
+                    <button class="audio-icon" data-audio-text="으">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">이</span>
+                    <span class="pronunciation-guide">i (ee)</span>
+                    <button class="audio-icon" data-audio-text="이">🔊</button>
+                </div>
+            </div>
+
+            <p>Now, try with other consonants!</p>
+            <div class="example-box">
+                <div class="example-item">
+                    <span class="korean-char">나</span>
+                    <span class="pronunciation-guide">na</span>
+                    <button class="audio-icon" data-audio-text="나">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">너</span>
+                    <span class="pronunciation-guide">neo</span>
+                    <button class="audio-icon" data-audio-text="너">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">노</span>
+                    <span class="pronunciation-guide">no</span>
+                    <button class="audio-icon" data-audio-text="노">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">누</span>
+                    <span class="pronunciation-guide">nu</span>
+                    <button class="audio-icon" data-audio-text="누">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">느</span>
+                    <span class="pronunciation-guide">neu</span>
+                    <button class="audio-icon" data-audio-text="느">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">니</span>
+                    <span class="pronunciation-guide">ni</span>
+                    <button class="audio-icon" data-audio-text="니">🔊</button>
+                </div>
+            </div>
+
+            <div class="practice-exercise">
+                <h3 class="practice-question">Practice Time: Build a Syllable! 🏗️</h3>
+                <p>How would you write these combinations?</p>
+                <ol>
+                    <li><strong class="korean-char">ㄷ</strong> + <strong class="korean-char">ㅏ</strong> = ?</li>
+                    <li><strong class="korean-char">ㅁ</strong> + <strong class="korean-char">ㅜ</strong> = ?</li>
+                    <li><strong class="korean-char">ㅂ</strong> + <strong class="korean-char">ㅗ</strong> = ?</li>
+                </ol>
+                <div class="practice-answer-key">
+                    <strong>Answer Key:</strong>
+                    <ol>
+                        <li>다 (da) <button class="audio-icon" data-audio-text="다">🔊</button></li>
+                        <li>무 (mu) <button class="audio-icon" data-audio-text="무">🔊</button></li>
+                        <li>보 (bo) <button class="audio-icon" data-audio-text="보">🔊</button></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Reading Practice with Basic Words -->
+        <section class="lesson-section practice">
+            <h2>읽기 연습 (Reading Practice) 📖</h2>
+            <p>You've learned the building blocks! Now, let's read some simple Korean words. Remember to read them syllable by syllable.</p>
+
+            <div class="example-box">
+                <div class="example-item">
+                    <span class="korean-char">아</span>
+                    <span class="pronunciation-guide">a</span>
+                    <span class="english-meaning">child</span>
+                    <button class="audio-icon" data-audio-text="아">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">오이</span>
+                    <span class="pronunciation-guide">o-i</span>
+                    <span class="english-meaning">cucumber</span>
+                    <button class="audio-icon" data-audio-text="오이">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">우유</span>
+                    <span class="pronunciation-guide">u-yu</span>
+                    <span class="english-meaning">milk</span>
+                    <button class="audio-icon" data-audio-text="우유">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">이</span>
+                    <span class="pronunciation-guide">i</span>
+                    <span class="english-meaning">two / teeth</span>
+                    <button class="audio-icon" data-audio-text="이">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">코</span>
+                    <span class="pronunciation-guide">ko</span>
+                    <span class="english-meaning">nose</span>
+                    <button class="audio-icon" data-audio-text="코">🔊</button>
+                </div>
+                <div class="example-item">
+                    <span class="korean-char">나비</span>
+                    <span class="pronunciation-guide">na-bi</span>
+                    <span class="english-meaning">butterfly</span>
+                    <button class="audio-icon" data-audio-text="나비">🔊</button>
+                </div>
+            </div>
+
+            <div class="practice-exercise">
+                <h3 class="practice-question">Your Turn! Read and Translate 🗣️</h3>
+                <p>Try reading these words and see if you can guess their meaning (or just practice reading!):</p>
+                <ol>
+                    <li><span class="korean-char">누나</span> <button class="audio-icon" data-audio-text="누나">🔊</button></li>
+                    <li><span class="korean-char">가수</span> <button class="audio-icon" data-audio-text="가수">🔊</button></li>
+                    <li><span class="korean-char">다리</span> <button class="audio-icon" data-audio-text="다리">🔊</button></li>
+                </ol>
+                <div class="practice-answer-key">
+                    <strong>Answer Key:</strong>
+                    <ol>
+                        <li>누나 (nu-na): older sister (for a male)</li>
+                        <li>가수 (ga-su): singer</li>
+                        <li>다리 (da-ri): leg / bridge</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Summary -->
+        <section class="lesson-section summary">
+            <h2>✨ Chapter 1 Summary ✨</h2>
+            <p>You've just completed your first step into the amazing world of Korean!</p>
+            <ul>
+                <li>You learned about <strong class="korean-char">한글 (Hangul)</strong>, its creation by King Sejong, and its logical design.</li>
+                <li>You mastered the 6 basic vowels: <strong class="korean-char">ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, ㅣ</strong>.</li>
+                <li>You got familiar with the 14 basic consonants, including the special silent/’ng’ <strong class="korean-char">ㅇ</strong>.</li>
+                <li>You understood how to form simple syllables by combining consonants and vowels (vertical vowels to the right, horizontal vowels below).</li>
+                <li>And you even read your first Korean words! 🎉</li>
+            </ul>
+            <p>Keep practicing those sounds and combinations. The more you read, the more natural it will become. You're doing great!</p>
+            <p>Next up: We'll explore more complex vowels and consonants!</p>
+        </section>
+
+    </div>
+</body>
+</html>

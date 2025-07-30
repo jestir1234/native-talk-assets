@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-30T18:52:32.643Z",
-  "totalLanguages": 2,
-  "totalChapters": 20,
-  "totalAvailableChapters": 6,
+  "lastUpdated": "2025-07-30T19:08:42.105Z",
+  "totalLanguages": 3,
+  "totalChapters": 30,
+  "totalAvailableChapters": 7,
   "totalTargetLanguages": 2,
   "languages": {
     "en": {
@@ -298,6 +298,150 @@
           "totalLanguages": 0
         }
       ]
+    },
+    "ko": {
+      "code": "ko",
+      "name": "Korean",
+      "flag": "🇰🇷",
+      "totalChapters": 10,
+      "availableChapters": 1,
+      "availableTargetLanguages": [
+        "en"
+      ],
+      "chapters": [
+        {
+          "number": 1,
+          "title": "한글 (Hangul) - The Korean Alphabet",
+          "keyPoints": [
+            "Introduction to Hangul and its creation",
+            "Basic vowels (ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, ㅣ)",
+            "Basic consonants (ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ)",
+            "Simple syllable formation",
+            "Reading practice with basic words"
+          ],
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
+        },
+        {
+          "number": 2,
+          "title": "Basic Greetings and Introductions",
+          "keyPoints": [
+            "안녕하세요 (Hello/Goodbye)",
+            "안녕히 가세요 / 안녕히 계세요 (Goodbye)",
+            "만나서 반갑습니다 (Nice to meet you)",
+            "저는 [이름]입니다 (My name is...)",
+            "Basic polite expressions"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 3,
+          "title": "Numbers and Counting",
+          "keyPoints": [
+            "Korean numbers (일, 이, 삼, 사, 오, 육, 칠, 팔, 구, 십)",
+            "Sino-Korean numbers for dates, money, phone numbers",
+            "Pure Korean numbers for counting objects",
+            "Age and counting people",
+            "Basic math vocabulary (더하기, 빼기, 곱하기, 나누기)"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 4,
+          "title": "Colors and Descriptions",
+          "keyPoints": [
+            "Basic colors (빨간색, 파란색, 노란색, 초록색, 검은색, 흰색)",
+            "크다/작다 (big/small)",
+            "길다/짧다 (long/short)",
+            "예쁘다/못생기다 (pretty/ugly)",
+            "좋다/나쁘다 (good/bad)"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 5,
+          "title": "Family and Relationships",
+          "keyPoints": [
+            "Family members (아버지, 어머니, 형, 누나, 동생)",
+            "친구 (friend)",
+            "선생님 (teacher)",
+            "직장동료 (colleague)",
+            "Honorifics and polite speech levels"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 6,
+          "title": "Daily Activities and Routines",
+          "keyPoints": [
+            "일어나다 (to wake up)",
+            "먹다 (to eat)",
+            "마시다 (to drink)",
+            "공부하다 (to study)",
+            "일하다 (to work)"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 7,
+          "title": "Food and Drinks",
+          "keyPoints": [
+            "밥 (rice/meal)",
+            "김치 (kimchi)",
+            "불고기 (bulgogi)",
+            "비빔밥 (bibimbap)",
+            "커피 (coffee)"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 8,
+          "title": "Places and Directions",
+          "keyPoints": [
+            "집 (house/home)",
+            "학교 (school)",
+            "회사 (company/office)",
+            "병원 (hospital)",
+            "은행 (bank)"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 9,
+          "title": "Weather and Seasons",
+          "keyPoints": [
+            "날씨 (weather)",
+            "맑다/흐리다 (clear/cloudy)",
+            "덥다/춥다 (hot/cold)",
+            "비가 오다/눈이 오다 (to rain/to snow)",
+            "봄, 여름, 가을, 겨울 (spring, summer, fall, winter)"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 10,
+          "title": "Time and Schedules",
+          "keyPoints": [
+            "시간 (time)",
+            "분 (minute)",
+            "시 (hour)",
+            "요일 (days of the week)",
+            "월, 화, 수, 목, 금, 토, 일"
+          ],
+          "availableLanguages": [],
+          "totalLanguages": 0
+        }
+      ]
     }
   },
   "userLanguageSupport": {
@@ -348,6 +492,12 @@
           "languageLearnName": "Japanese",
           "chapterNumber": 3,
           "chapterTitle": "Basic Greetings & Introductions"
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 1,
+          "chapterTitle": "한글 (Hangul) - The Korean Alphabet"
         }
       ]
     }
