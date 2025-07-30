@@ -18,14 +18,42 @@
       "chapters": [
         {
           "number": 1,
-          "title": "The English Alphabet and Sounds",
-          "keyPoints": [
-            "The 26 letters of the English alphabet",
-            "Vowel sounds: A, E, I, O, U",
-            "Consonant sounds and pronunciation",
-            "Basic phonics and sound combinations",
-            "Introduction to reading simple words"
-          ],
+          "title": {
+            "en": "The English Alphabet and Sounds",
+            "ja": "英語のアルファベットと音",
+            "ko": "영어 알파벳과 발음",
+            "vi": "Bảng chữ cái tiếng Anh và âm"
+          },
+          "keyPoints": {
+            "en": [
+              "The 26 letters of the English alphabet",
+              "Vowel sounds: A, E, I, O, U",
+              "Consonant sounds and pronunciation",
+              "Basic phonics and sound combinations",
+              "Introduction to reading simple words"
+            ],
+            "ja": [
+              "英語のアルファベットと音",
+              "母音: A, E, I, O, U",
+              "子音の発音と発音の組み合わせ",
+              "基本的なフォニックスと音の組み合わせ",
+              "簡単な単語の読み方の紹介"
+            ],
+            "ko": [
+              "영어 알파벳과 발음",
+              "모음: A, E, I, O, U",
+              "자음의 발음과 발음의 조합",
+              "기본 포닉스와 발음의 조합",
+              "간단한 단어의 읽기 소개"
+            ],
+            "vi": [
+              "Bảng chữ cái tiếng Anh và âm",
+              "Nguyên âm: A, E, I, O, U",
+              "Âm thanh của các phụ âm và cách phát âm",
+              "Cơ bản về phụ âm và âm thanh",
+              "Giới thiệu về đọc các từ đơn giản"
+            ]
+          },
           "availableLanguages": [
             "ja"
           ],
@@ -33,14 +61,42 @@
         },
         {
           "number": 2,
-          "title": "Basic Greetings and Introductions",
-          "keyPoints": [
-            "Hello, Hi, Good morning, Good afternoon, Good evening",
-            "How are you? I'm fine, thank you. And you?",
-            "My name is... / I'm...",
-            "Nice to meet you",
-            "Basic conversation starters"
-          ],
+          "title": {
+            "en": "Basic Greetings and Introductions",
+            "ja": "基本的な挨拶と自己紹介",
+            "ko": "기본적인 인사와 자기소개",
+            "vi": "Chào hỏi và giới thiệu cơ bản"
+          },
+          "keyPoints": {
+            "en": [
+              "Hello, Hi, Good morning, Good afternoon, Good evening",
+              "How are you? I'm fine, thank you. And you?",
+              "My name is... / I'm...",
+              "Nice to meet you",
+              "Basic conversation starters"
+            ],
+            "ja": [
+              "こんにちは, おはよう, こんばんは, さようなら",
+              "あなたはどうですか？ 私は元気です。あなたは？",
+              "私の名前は... / 私は...",
+              "はじめまして",
+              "基本的な会話の始め方"
+            ],
+            "ko": [ 
+              "안녕하세요, 안녕, 좋은 아침, 좋은 오후, 좋은 저녁",
+              "너는 어때? 나는 괜찮아. 너는?",
+              "내 이름은... / 나는...",
+              "좋은 만남을 하게 돼서 기분이 좋아요",
+              "기본적인 대화 시작 방법"
+            ],
+            "vi": [
+              "Xin chào, Chào buổi sáng, Chào buổi chiều, Chào buổi tối",
+              "Bạn thế nào? Tôi khỏe. Bạn thế nào?",
+              "Tôi tên là... / Tôi là...",
+              "Rất vui được gặp bạn",
+              "Cách bắt đầu các cuộc trò chuyện"
+            ]
+          },
           "availableLanguages": [
             "ja"
           ],
@@ -48,14 +104,42 @@
         },
         {
           "number": 3,
-          "title": "Numbers and Counting",
-          "keyPoints": [
-            "Numbers 1-20",
-            "Counting objects",
-            "Age: How old are you? I'm ___ years old",
-            "Phone numbers and addresses",
-            "Basic math vocabulary: plus, minus, equals"
-          ],
+          "title": {
+            "en": "Numbers and Counting",
+            "ja": "数字と数え方",
+            "ko": "숫자와 세기",
+            "vi": "Số đếm và đếm số"
+          },
+          "keyPoints": {
+            "en": [
+              "Numbers 1-20",
+              "Counting objects",
+              "Age: How old are you? I'm ___ years old",
+              "Phone numbers and addresses",
+              "Basic math vocabulary: plus, minus, equals"
+            ],
+            "ja": [
+              "数字1-20",
+              "物の数え方",
+              "年齢: 何歳ですか？ 私は___歳です",
+              "電話番号と住所",
+              "基本的な数学の語彙: プラス, マイナス, イコール"
+            ],
+            "ko": [
+              "숫자 1-20",
+              "물건 세기",
+              "나이: 몇 살이에요? 저는 ___살이에요",
+              "전화번호와 주소",
+              "기본 수학 어휘: 더하기, 빼기, 같다"
+            ],
+            "vi": [
+              "Số từ 1-20",
+              "Đếm đồ vật",
+              "Tuổi: Bạn bao nhiêu tuổi? Tôi ___ tuổi",
+              "Số điện thoại và địa chỉ",
+              "Từ vựng toán cơ bản: cộng, trừ, bằng"
+            ]
+          },
           "availableLanguages": [
             "ja"
           ],
@@ -63,92 +147,288 @@
         },
         {
           "number": 4,
-          "title": "Colors and Descriptions",
-          "keyPoints": [
-            "Basic colors: red, blue, green, yellow, etc.",
-            "Describing objects: big, small, tall, short",
-            "This is... / That is...",
-            "What color is it? It's...",
-            "Adjectives and basic descriptions"
-          ],
+          "title": {
+            "en": "Colors and Descriptions",
+            "ja": "色と説明",
+            "ko": "색깔과 설명",
+            "vi": "Màu sắc và mô tả"
+          },
+          "keyPoints": {
+            "en": [
+              "Basic colors: red, blue, green, yellow, etc.",
+              "Describing objects: big, small, tall, short",
+              "This is... / That is...",
+              "What color is it? It's...",
+              "Adjectives and basic descriptions"
+            ],
+            "ja": [
+              "基本的な色: 赤, 青, 緑, 黄など",
+              "物の説明: 大きい, 小さい, 高い, 低い",
+              "これは... / それは...",
+              "何色ですか？ それは...です",
+              "形容詞と基本的な説明"
+            ],
+            "ko": [
+              "기본 색깔: 빨간색, 파란색, 초록색, 노란색 등",
+              "물건 설명: 크다, 작다, 높다, 낮다",
+              "이것은... / 그것은...",
+              "무슨 색이에요? 그것은...이에요",
+              "형용사와 기본 설명"
+            ],
+            "vi": [
+              "Màu cơ bản: đỏ, xanh, xanh lá, vàng, v.v.",
+              "Mô tả đồ vật: to, nhỏ, cao, thấp",
+              "Đây là... / Đó là...",
+              "Nó màu gì? Nó màu...",
+              "Tính từ và mô tả cơ bản"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 5,
-          "title": "Family and Relationships",
-          "keyPoints": [
-            "Family members: mother, father, sister, brother, etc.",
-            "Possessive pronouns: my, your, his, her, their",
-            "This is my... / These are my...",
-            "Family vocabulary and relationships",
-            "Talking about family members"
-          ],
+          "title": {
+            "en": "Family and Relationships",
+            "ja": "家族と関係",
+            "ko": "가족과 관계",
+            "vi": "Gia đình và mối quan hệ"
+          },
+          "keyPoints": {
+            "en": [
+              "Family members: mother, father, sister, brother, etc.",
+              "Possessive pronouns: my, your, his, her, their",
+              "This is my... / These are my...",
+              "Family vocabulary and relationships",
+              "Talking about family members"
+            ],
+            "ja": [
+              "家族のメンバー: 母, 父, 姉, 兄など",
+              "所有代名詞: 私の, あなたの, 彼の, 彼女の, 彼らの",
+              "これは私の... / これらは私の...",
+              "家族の語彙と関係",
+              "家族のメンバーについて話す"
+            ],
+            "ko": [
+              "가족 구성원: 어머니, 아버지, 언니, 오빠 등",
+              "소유 대명사: 내, 네, 그의, 그녀의, 그들의",
+              "이것은 내... / 이것들은 내...",
+              "가족 어휘와 관계",
+              "가족 구성원에 대해 이야기하기"
+            ],
+            "vi": [
+              "Thành viên gia đình: mẹ, bố, chị, anh, v.v.",
+              "Đại từ sở hữu: của tôi, của bạn, của anh ấy, của cô ấy, của họ",
+              "Đây là... của tôi / Đây là những... của tôi",
+              "Từ vựng gia đình và mối quan hệ",
+              "Nói về thành viên gia đình"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 6,
-          "title": "Daily Activities and Routines",
-          "keyPoints": [
-            "Common verbs: eat, drink, sleep, work, study, play",
-            "Present simple tense basics",
-            "I eat... / I don't eat...",
-            "Daily routine vocabulary",
-            "Time expressions: in the morning, afternoon, evening"
-          ],
+          "title": {
+            "en": "Daily Activities and Routines",
+            "ja": "日常活動とルーティン",
+            "ko": "일상 활동과 루틴",
+            "vi": "Hoạt động hàng ngày và thói quen"
+          },
+          "keyPoints": {
+            "en": [
+              "Common verbs: eat, drink, sleep, work, study, play",
+              "Present simple tense basics",
+              "I eat... / I don't eat...",
+              "Daily routine vocabulary",
+              "Time expressions: in the morning, afternoon, evening"
+            ],
+            "ja": [
+              "一般的な動詞: 食べる, 飲む, 寝る, 働く, 勉強する, 遊ぶ",
+              "現在形の基本",
+              "私は...を食べます / 私は...を食べません",
+              "日常ルーティンの語彙",
+              "時間表現: 朝, 午後, 夕方"
+            ],
+            "ko": [
+              "일반적인 동사: 먹다, 마시다, 자다, 일하다, 공부하다, 놀다",
+              "현재형 기본",
+              "나는...을 먹어요 / 나는...을 안 먹어요",
+              "일상 루틴 어휘",
+              "시간 표현: 아침, 오후, 저녁"
+            ],
+            "vi": [
+              "Động từ thường dùng: ăn, uống, ngủ, làm việc, học, chơi",
+              "Thì hiện tại đơn cơ bản",
+              "Tôi ăn... / Tôi không ăn...",
+              "Từ vựng thói quen hàng ngày",
+              "Cách diễn đạt thời gian: buổi sáng, buổi chiều, buổi tối"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 7,
-          "title": "Food and Drinks",
-          "keyPoints": [
-            "Common food items: bread, rice, meat, vegetables",
-            "Drinks: water, coffee, tea, juice, milk",
-            "I like... / I don't like...",
-            "What do you like to eat?",
-            "Restaurant vocabulary basics"
-          ],
+          "title": {
+            "en": "Food and Drinks",
+            "ja": "食べ物と飲み物",
+            "ko": "음식과 음료",
+            "vi": "Thức ăn và đồ uống"
+          },
+          "keyPoints": {
+            "en": [
+              "Common food items: bread, rice, meat, vegetables",
+              "Drinks: water, coffee, tea, juice, milk",
+              "I like... / I don't like...",
+              "What do you like to eat?",
+              "Restaurant vocabulary basics"
+            ],
+            "ja": [
+              "一般的な食べ物: パン, ご飯, 肉, 野菜",
+              "飲み物: 水, コーヒー, お茶, ジュース, 牛乳",
+              "私は...が好きです / 私は...が嫌いです",
+              "何を食べるのが好きですか？",
+              "レストランの語彙の基本"
+            ],
+            "ko": [
+              "일반적인 음식: 빵, 밥, 고기, 채소",
+              "음료: 물, 커피, 차, 주스, 우유",
+              "나는...을 좋아해요 / 나는...을 싫어해요",
+              "무엇을 먹는 것을 좋아하세요?",
+              "레스토랑 어휘 기본"
+            ],
+            "vi": [
+              "Thức ăn thường dùng: bánh mì, cơm, thịt, rau",
+              "Đồ uống: nước, cà phê, trà, nước ép, sữa",
+              "Tôi thích... / Tôi không thích...",
+              "Bạn thích ăn gì?",
+              "Từ vựng nhà hàng cơ bản"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 8,
-          "title": "Places and Directions",
-          "keyPoints": [
-            "Common places: school, home, work, store, park",
-            "Prepositions: in, on, at, near, far from",
-            "Where is...? It's...",
-            "Basic directions: left, right, straight, turn",
-            "Location vocabulary"
-          ],
+          "title": {
+            "en": "Places and Directions",
+            "ja": "場所と方向",
+            "ko": "장소와 방향",
+            "vi": "Địa điểm và phương hướng"
+          },
+          "keyPoints": {
+            "en": [
+              "Common places: school, home, work, store, park",
+              "Prepositions: in, on, at, near, far from",
+              "Where is...? It's...",
+              "Basic directions: left, right, straight, turn",
+              "Location vocabulary"
+            ],
+            "ja": [
+              "一般的な場所: 学校, 家, 仕事, 店, 公園",
+              "前置詞: に, で, で, 近く, 遠く",
+              "...はどこですか？ それは...です",
+              "基本的な方向: 左, 右, まっすぐ, 曲がる",
+              "場所の語彙"
+            ],
+            "ko": [
+              "일반적인 장소: 학교, 집, 직장, 가게, 공원",
+              "전치사: 에, 에서, 에, 가까이, 멀리",
+              "...는 어디에 있어요? 그것은...이에요",
+              "기본 방향: 왼쪽, 오른쪽, 똑바로, 돌다",
+              "장소 어휘"
+            ],
+            "vi": [
+              "Địa điểm thường gặp: trường học, nhà, nơi làm việc, cửa hàng, công viên",
+              "Giới từ: ở, trên, tại, gần, xa",
+              "...ở đâu? Nó ở...",
+              "Hướng cơ bản: trái, phải, thẳng, rẽ",
+              "Từ vựng địa điểm"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 9,
-          "title": "Weather and Seasons",
-          "keyPoints": [
-            "Weather vocabulary: sunny, rainy, cloudy, snowy",
-            "Seasons: spring, summer, fall, winter",
-            "What's the weather like? It's...",
-            "Temperature: hot, cold, warm, cool",
-            "Weather-related activities"
-          ],
+          "title": {
+            "en": "Weather and Seasons",
+            "ja": "天気と季節",
+            "ko": "날씨와 계절",
+            "vi": "Thời tiết và mùa"
+          },
+          "keyPoints": {
+            "en": [
+              "Weather vocabulary: sunny, rainy, cloudy, snowy",
+              "Seasons: spring, summer, fall, winter",
+              "What's the weather like? It's...",
+              "Temperature: hot, cold, warm, cool",
+              "Weather-related activities"
+            ],
+            "ja": [
+              "天気の語彙: 晴れ, 雨, 曇り, 雪",
+              "季節: 春, 夏, 秋, 冬",
+              "天気はどうですか？ それは...です",
+              "温度: 暑い, 寒い, 暖かい, 涼しい",
+              "天気に関連する活動"
+            ],
+            "ko": [
+              "날씨 어휘: 맑다, 비가 오다, 흐리다, 눈이 오다",
+              "계절: 봄, 여름, 가을, 겨울",
+              "날씨가 어때요? 그것은...이에요",
+              "온도: 덥다, 춥다, 따뜻하다, 시원하다",
+              "날씨와 관련된 활동"
+            ],
+            "vi": [
+              "Từ vựng thời tiết: nắng, mưa, nhiều mây, tuyết",
+              "Mùa: xuân, hè, thu, đông",
+              "Thời tiết thế nào? Trời...",
+              "Nhiệt độ: nóng, lạnh, ấm, mát",
+              "Hoạt động liên quan đến thời tiết"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 10,
-          "title": "Time and Schedules",
-          "keyPoints": [
-            "Telling time: What time is it? It's...",
-            "Days of the week: Monday, Tuesday, etc.",
-            "Months of the year",
-            "When is...? It's on...",
-            "Making appointments and schedules"
-          ],
+          "title": {
+            "en": "Time and Schedules",
+            "ja": "時間とスケジュール",
+            "ko": "시간과 일정",
+            "vi": "Thời gian và lịch trình"
+          },
+          "keyPoints": {
+            "en": [
+              "Telling time: What time is it? It's...",
+              "Days of the week: Monday, Tuesday, etc.",
+              "Months of the year",
+              "When is...? It's on...",
+              "Making appointments and schedules"
+            ],
+            "ja": [
+              "時間を言う: 何時ですか？ それは...です",
+              "曜日: 月曜日, 火曜日など",
+              "月",
+              "...はいつですか？ それは...です",
+              "約束とスケジュールを作る"
+            ],
+            "ko": [
+              "시간 말하기: 몇 시예요? 그것은...이에요",
+              "요일: 월요일, 화요일 등",
+              "월",
+              "...는 언제예요? 그것은...이에요",
+              "약속과 일정 잡기"
+            ],
+            "vi": [
+              "Nói giờ: Mấy giờ rồi? Bây giờ là...",
+              "Các ngày trong tuần: thứ hai, thứ ba, v.v.",
+              "Các tháng trong năm",
+              "...khi nào? Vào...",
+              "Đặt lịch hẹn và lịch trình"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         }
@@ -166,13 +446,38 @@
       "chapters": [
         {
           "number": 1,
-          "title": "The Japanese Writing System",
-          "keyPoints": [
-            "The three scripts: Hiragana, Katakana, Kanji",
-            "Why Japanese uses all three",
-            "Reading flow (left-to-right, top-to-bottom)",
-            "Intro to syllables and phonetic writing"
-          ],
+          "title": {
+            "en": "The Japanese Writing System",
+            "ja": "日本語の文字体系",
+            "ko": "일본어 문자 체계",
+            "vi": "Hệ thống chữ viết tiếng Nhật"
+          },
+          "keyPoints": {
+            "en": [
+              "The three scripts: Hiragana, Katakana, Kanji",
+              "Why Japanese uses all three",
+              "Reading flow (left-to-right, top-to-bottom)",
+              "Intro to syllables and phonetic writing"
+            ],
+            "ja": [
+              "三つの文字体系: ひらがな, カタカナ, 漢字",
+              "なぜ日本語は三つを使うのか",
+              "読み方の流れ (左から右, 上から下)",
+              "音節と表音文字の紹介"
+            ],
+            "ko": [
+              "세 가지 문자 체계: 히라가나, 가타카나, 한자",
+              "왜 일본어는 세 가지를 사용하는가",
+              "읽기 흐름 (왼쪽에서 오른쪽, 위에서 아래)",
+              "음절과 표음 문자 소개"
+            ],
+            "vi": [
+              "Ba hệ thống chữ viết: Hiragana, Katakana, Kanji",
+              "Tại sao tiếng Nhật sử dụng cả ba",
+              "Luồng đọc (trái sang phải, trên xuống dưới)",
+              "Giới thiệu về âm tiết và chữ viết ngữ âm"
+            ]
+          },
           "availableLanguages": [
             "en"
           ],
@@ -180,13 +485,38 @@
         },
         {
           "number": 2,
-          "title": "Hiragana – The Vowel Sounds",
-          "keyPoints": [
-            "あ, い, う, え, お",
-            "Pronunciation guide and stroke order",
-            "Basic words: あい (love), いえ (house), うみ (sea), etc.",
-            "Your first full hiragana words"
-          ],
+          "title": {
+            "en": "Hiragana – The Vowel Sounds",
+            "ja": "ひらがな – 母音",
+            "ko": "히라가나 – 모음",
+            "vi": "Hiragana – Nguyên âm"
+          },
+          "keyPoints": {
+            "en": [
+              "あ, い, う, え, お",
+              "Pronunciation guide and stroke order",
+              "Basic words: あい (love), いえ (house), うみ (sea), etc.",
+              "Your first full hiragana words"
+            ],
+            "ja": [
+              "あ, い, う, え, お",
+              "発音ガイドと書き順",
+              "基本的な単語: あい (愛), いえ (家), うみ (海)など",
+              "あなたの最初のひらがなの単語"
+            ],
+            "ko": [
+              "あ, い, う, え, お",
+              "발음 가이드와 획순",
+              "기본 단어: あい (사랑), いえ (집), うみ (바다) 등",
+              "당신의 첫 번째 히라가나 단어"
+            ],
+            "vi": [
+              "あ, い, う, え, お",
+              "Hướng dẫn phát âm và thứ tự nét",
+              "Từ cơ bản: あい (tình yêu), いえ (nhà), うみ (biển), v.v.",
+              "Những từ hiragana đầu tiên của bạn"
+            ]
+          },
           "availableLanguages": [
             "en"
           ],
@@ -194,14 +524,42 @@
         },
         {
           "number": 3,
-          "title": "Basic Greetings & Introductions",
-          "keyPoints": [
-            "Greetings: こんにちは, おはよう, こんばんは, さようなら",
-            "Introducing yourself:",
-            "わたしは〇〇です。",
-            "はじめまして。よろしくおねがいします。",
-            "Grammar: Particle は, copula です"
-          ],
+          "title": {
+            "en": "Basic Greetings & Introductions",
+            "ja": "基本的な挨拶と自己紹介",
+            "ko": "기본적인 인사와 자기소개",
+            "vi": "Chào hỏi và giới thiệu cơ bản"
+          },
+          "keyPoints": {
+            "en": [
+              "Greetings: こんにちは, おはよう, こんばんは, さようなら",
+              "Introducing yourself:",
+              "わたしは〇〇です。",
+              "はじめまして。よろしくおねがいします。",
+              "Grammar: Particle は, copula です"
+            ],
+            "ja": [
+              "挨拶: こんにちは, おはよう, こんばんは, さようなら",
+              "自己紹介:",
+              "わたしは〇〇です。",
+              "はじめまして。よろしくおねがいします。",
+              "文法: 助詞 は, 助動詞 です"
+            ],
+            "ko": [
+              "인사: こんにちは, おはよう, こんばんは, さようなら",
+              "자기소개:",
+              "わたしは〇〇です。",
+              "はじめまして。よろしくおねがいします。",
+              "문법: 조사 は, 조동사 です"
+            ],
+            "vi": [
+              "Chào hỏi: こんにちは, おはよう, こんばんは, さようなら",
+              "Tự giới thiệu:",
+              "わたしは〇〇です。",
+              "はじめまして。よろしくおねがいします。",
+              "Ngữ pháp: Trợ từ は, động từ liên kết です"
+            ]
+          },
           "availableLanguages": [
             "en"
           ],
@@ -209,78 +567,243 @@
         },
         {
           "number": 4,
-          "title": "Katakana – Borrowed Words",
-          "keyPoints": [
-            "カ, キ, ク, ケ, コ (start of katakana)",
-            "Foreign words: コーヒー, パン, コンピューター",
-            "Onomatopoeia: ピカピカ, ドキドキ",
-            "Grammar: Using の to show possession",
-            "わたしの なまえは 〇〇です。"
-          ],
+          "title": {
+            "en": "Katakana – Borrowed Words",
+            "ja": "カタカナ – 外来語",
+            "ko": "가타카나 – 외래어",
+            "vi": "Katakana – Từ mượn"
+          },
+          "keyPoints": {
+            "en": [
+              "カ, キ, ク, ケ, コ (start of katakana)",
+              "Foreign words: コーヒー, パン, コンピューター",
+              "Onomatopoeia: ピカピカ, ドキドキ",
+              "Grammar: Using の to show possession",
+              "わたしの なまえは 〇〇です。"
+            ],
+            "ja": [
+              "カ, キ, ク, ケ, コ (カタカナの始まり)",
+              "外来語: コーヒー, パン, コンピューター",
+              "擬音語: ピカピカ, ドキドキ",
+              "文法: 所有を表す の の使用",
+              "わたしの なまえは 〇〇です。"
+            ],
+            "ko": [
+              "カ, キ, ク, ケ, コ (가타카나의 시작)",
+              "외래어: コーヒー, パン, コンピューター",
+              "의태어: ピカピカ, ドキドキ",
+              "문법: 소유를 나타내는 の 사용",
+              "わたしの なまえは 〇〇です。"
+            ],
+            "vi": [
+              "カ, キ, ク, ケ, コ (bắt đầu katakana)",
+              "Từ nước ngoài: コーヒー, パン, コンピューター",
+              "Từ tượng thanh: ピカピカ, ドキドキ",
+              "Ngữ pháp: Sử dụng の để chỉ sở hữu",
+              "わたしの なまえは 〇〇です。"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 5,
-          "title": "Simple Sentence Structure",
-          "keyPoints": [
-            "Japanese word order: Subject–Object–Verb",
-            "Particles: を (object), が (subject focus)",
-            "Sample patterns:",
-            "わたしはりんごをたべます。",
-            "ジョンさんがきます。"
-          ],
+          "title": {
+            "en": "Simple Sentence Structure",
+            "ja": "簡単な文の構造",
+            "ko": "간단한 문장 구조",
+            "vi": "Cấu trúc câu đơn giản"
+          },
+          "keyPoints": {
+            "en": [
+              "Japanese word order: Subject–Object–Verb",
+              "Particles: を (object), が (subject focus)",
+              "Sample patterns:",
+              "わたしはりんごをたべます。",
+              "ジョンさんがきます。"
+            ],
+            "ja": [
+              "日本語の語順: 主語–目的語–動詞",
+              "助詞: を (目的語), が (主語の焦点)",
+              "例文パターン:",
+              "わたしはりんごをたべます。",
+              "ジョンさんがきます。"
+            ],
+            "ko": [
+              "일본어 어순: 주어–목적어–동사",
+              "조사: を (목적어), が (주어 초점)",
+              "예문 패턴:",
+              "わたしはりんごをたべます。",
+              "ジョンさんがきます。"
+            ],
+            "vi": [
+              "Thứ tự từ tiếng Nhật: Chủ ngữ–Tân ngữ–Động từ",
+              "Trợ từ: を (tân ngữ), が (trọng tâm chủ ngữ)",
+              "Mẫu câu ví dụ:",
+              "わたしはりんごをたべます。",
+              "ジョンさんがきます。"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 6,
-          "title": "Numbers, Time, and Counters",
-          "keyPoints": [
-            "Numbers 1–10, じかん (time), and basic counters (～つ)",
-            "Asking the time: いま なんじですか？",
-            "Days of the week: 月曜日, 火曜日...",
-            "Grammar: に for time and location"
-          ],
+          "title": {
+            "en": "Numbers, Time, and Counters",
+            "ja": "数字、時間、助数詞",
+            "ko": "숫자, 시간, 수량사",
+            "vi": "Số, thời gian và từ chỉ số lượng"
+          },
+          "keyPoints": {
+            "en": [
+              "Numbers 1–10, じかん (time), and basic counters (～つ)",
+              "Asking the time: いま なんじですか？",
+              "Days of the week: 月曜日, 火曜日...",
+              "Grammar: に for time and location"
+            ],
+            "ja": [
+              "数字1–10, じかん (時間), 基本的な助数詞 (～つ)",
+              "時間を聞く: いま なんじですか？",
+              "曜日: 月曜日, 火曜日...",
+              "文法: 時間と場所の に"
+            ],
+            "ko": [
+              "숫자 1–10, じかん (시간), 기본 수량사 (～つ)",
+              "시간 묻기: いま なんじですか？",
+              "요일: 月曜日, 火曜日...",
+              "문법: 시간과 장소의 に"
+            ],
+            "vi": [
+              "Số 1–10, じかん (thời gian), từ chỉ số lượng cơ bản (～つ)",
+              "Hỏi giờ: いま なんじですか？",
+              "Các ngày trong tuần: 月曜日, 火曜日...",
+              "Ngữ pháp: に cho thời gian và địa điểm"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 7,
-          "title": "Essential Verbs & Conjugation Basics",
-          "keyPoints": [
-            "Verbs: いく (to go), たべる (to eat), する (to do), くる (to come)",
-            "Conjugation: Present/future, negative",
-            "Basic sentence drills:",
-            "わたしはがっこうにいきます。",
-            "パンをたべません。"
-          ],
+          "title": {
+            "en": "Essential Verbs & Conjugation Basics",
+            "ja": "重要な動詞と活用の基本",
+            "ko": "중요한 동사와 활용 기본",
+            "vi": "Động từ cần thiết và cơ bản về chia động từ"
+          },
+          "keyPoints": {
+            "en": [
+              "Verbs: いく (to go), たべる (to eat), する (to do), くる (to come)",
+              "Conjugation: Present/future, negative",
+              "Basic sentence drills:",
+              "わたしはがっこうにいきます。",
+              "パンをたべません。"
+            ],
+            "ja": [
+              "動詞: いく (行く), たべる (食べる), する (する), くる (来る)",
+              "活用: 現在/未来, 否定",
+              "基本的な文の練習:",
+              "わたしはがっこうにいきます。",
+              "パンをたべません。"
+            ],
+            "ko": [
+              "동사: いく (가다), たべる (먹다), する (하다), くる (오다)",
+              "활용: 현재/미래, 부정",
+              "기본 문장 연습:",
+              "わたしはがっこうにいきます。",
+              "パンをたべません。"
+            ],
+            "vi": [
+              "Động từ: いく (đi), たべる (ăn), する (làm), くる (đến)",
+              "Chia động từ: Hiện tại/tương lai, phủ định",
+              "Bài tập câu cơ bản:",
+              "わたしはがっこうにいきます。",
+              "パンをたべません。"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 8,
-          "title": "Adjectives and Description",
-          "keyPoints": [
-            "い-adjectives vs. な-adjectives",
-            "Examples: たかい (expensive), しずか (quiet)",
-            "Sentence structure:",
-            "この みせは たかいです。",
-            "しずかな まちです。"
-          ],
+          "title": {
+            "en": "Adjectives and Description",
+            "ja": "形容詞と説明",
+            "ko": "형용사와 설명",
+            "vi": "Tính từ và mô tả"
+          },
+          "keyPoints": {
+            "en": [
+              "い-adjectives vs. な-adjectives",
+              "Examples: たかい (expensive), しずか (quiet)",
+              "Sentence structure:",
+              "この みせは たかいです。",
+              "しずかな まちです。"
+            ],
+            "ja": [
+              "い形容詞 vs な形容詞",
+              "例: たかい (高い), しずか (静か)",
+              "文の構造:",
+              "この みせは たかいです。",
+              "しずかな まちです。"
+            ],
+            "ko": [
+              "い형용사 vs な형용사",
+              "예: たかい (비싸다), しずか (조용하다)",
+              "문장 구조:",
+              "この みせは たかいです。",
+              "しずかな まちです。"
+            ],
+            "vi": [
+              "い-tính từ vs な-tính từ",
+              "Ví dụ: たかい (đắt), しずか (yên tĩnh)",
+              "Cấu trúc câu:",
+              "この みせは たかいです。",
+              "しずかな まちです。"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 9,
-          "title": "Daily Life Vocabulary & Polite Requests",
-          "keyPoints": [
-            "Vocabulary: food, places, transport, daily routine",
-            "Making requests: ～ください, ～をおねがいします",
-            "Example:",
-            "みずをください。",
-            "コーヒーをいっつつ おねがいします。"
-          ],
+          "title": {
+            "en": "Daily Life Vocabulary & Polite Requests",
+            "ja": "日常生活の語彙と丁寧な依頼",
+            "ko": "일상생활 어휘와 정중한 요청",
+            "vi": "Từ vựng cuộc sống hàng ngày và yêu cầu lịch sự"
+          },
+          "keyPoints": {
+            "en": [
+              "Vocabulary: food, places, transport, daily routine",
+              "Making requests: ～ください, ～をおねがいします",
+              "Example:",
+              "みずをください。",
+              "コーヒーをいっつつ おねがいします。"
+            ],
+            "ja": [
+              "語彙: 食べ物, 場所, 交通, 日常ルーティン",
+              "依頼の作り方: ～ください, ～をおねがいします",
+              "例:",
+              "みずをください。",
+              "コーヒーをいっつつ おねがいします。"
+            ],
+            "ko": [
+              "어휘: 음식, 장소, 교통, 일상 루틴",
+              "요청 만들기: ～ください, ～をおねがいします",
+              "예:",
+              "みずをください。",
+              "コーヒーをいっつつ おねがいします。"
+            ],
+            "vi": [
+              "Từ vựng: thức ăn, địa điểm, giao thông, thói quen hàng ngày",
+              "Cách đưa ra yêu cầu: ～ください, ～をおねがいします",
+              "Ví dụ:",
+              "みずをください。",
+              "コーヒーをいっつつ おねがい합니다。"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
@@ -312,14 +835,42 @@
       "chapters": [
         {
           "number": 1,
-          "title": "한글 (Hangul) - The Korean Alphabet",
-          "keyPoints": [
-            "Introduction to Hangul and its creation",
-            "Basic vowels (ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, ㅣ)",
-            "Basic consonants (ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ)",
-            "Simple syllable formation",
-            "Reading practice with basic words"
-          ],
+          "title": {
+            "en": "한글 (Hangul) - The Korean Alphabet",
+            "ja": "한글 (ハングル) - 韓国語のアルファベット",
+            "ko": "한글 (Hangul) - 한국어 알파벳",
+            "vi": "한글 (Hangul) - Bảng chữ cái tiếng Hàn"
+          },
+          "keyPoints": {
+            "en": [
+              "Introduction to Hangul and its creation",
+              "Basic vowels (ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, ㅣ)",
+              "Basic consonants (ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ)",
+              "Simple syllable formation",
+              "Reading practice with basic words"
+            ],
+            "ja": [
+              "ハングルの紹介とその創成",
+              "基本母音 (ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, ㅣ)",
+              "基本子音 (ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ)",
+              "簡単な音節形成",
+              "基本単語での読解練習"
+            ],
+            "ko": [
+              "한글과 그 창제에 대한 소개",
+              "기본 모음 (ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, ㅣ)",
+              "기본 자음 (ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ)",
+              "간단한 음절 형성",
+              "기본 단어로 읽기 연습"
+            ],
+            "vi": [
+              "Giới thiệu về Hangul và sự sáng tạo",
+              "Nguyên âm cơ bản (ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, ㅣ)",
+              "Phụ âm cơ bản (ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ)",
+              "Hình thành âm tiết đơn giản",
+              "Luyện đọc với từ cơ bản"
+            ]
+          },
           "availableLanguages": [
             "en",
             "ja"
@@ -328,118 +879,381 @@
         },
         {
           "number": 2,
-          "title": "Basic Greetings and Introductions",
-          "keyPoints": [
-            "안녕하세요 (Hello/Goodbye)",
-            "안녕히 가세요 / 안녕히 계세요 (Goodbye)",
-            "만나서 반갑습니다 (Nice to meet you)",
-            "저는 [이름]입니다 (My name is...)",
-            "Basic polite expressions"
-          ],
+          "title": {
+            "en": "Basic Greetings and Introductions",
+            "ja": "基本的な挨拶と自己紹介",
+            "ko": "기본적인 인사와 자기소개",
+            "vi": "Chào hỏi và giới thiệu cơ bản"
+          },
+          "keyPoints": {
+            "en": [
+              "안녕하세요 (Hello/Goodbye)",
+              "안녕히 가세요 / 안녕히 계세요 (Goodbye)",
+              "만나서 반갑습니다 (Nice to meet you)",
+              "저는 [이름]입니다 (My name is...)",
+              "Basic polite expressions"
+            ],
+            "ja": [
+              "안녕하세요 (こんにちは/さようなら)",
+              "안녕히 가세요 / 안녕히 계세요 (さようなら)",
+              "만나서 반갑습니다 (はじめまして)",
+              "저는 [이름]입니다 (私の名前は...です)",
+              "基本的な丁寧な表現"
+            ],
+            "ko": [
+              "안녕하세요 (안녕/안녕히 가세요)",
+              "안녕히 가세요 / 안녕히 계세요 (안녕히 가세요)",
+              "만나서 반갑습니다 (만나서 반갑습니다)",
+              "저는 [이름]입니다 (저는 [이름]입니다)",
+              "기본적인 정중한 표현"
+            ],
+            "vi": [
+              "안녕하세요 (Xin chào/Tạm biệt)",
+              "안녕히 가세요 / 안녕히 계세요 (Tạm biệt)",
+              "만나서 반갑습니다 (Rất vui được gặp bạn)",
+              "저는 [이름]입니다 (Tôi tên là...)",
+              "Cách diễn đạt lịch sự cơ bản"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 3,
-          "title": "Numbers and Counting",
-          "keyPoints": [
-            "Korean numbers (일, 이, 삼, 사, 오, 육, 칠, 팔, 구, 십)",
-            "Sino-Korean numbers for dates, money, phone numbers",
-            "Pure Korean numbers for counting objects",
-            "Age and counting people",
-            "Basic math vocabulary (더하기, 빼기, 곱하기, 나누기)"
-          ],
+          "title": {
+            "en": "Numbers and Counting",
+            "ja": "数字と数え方",
+            "ko": "숫자와 세는 방법",
+            "vi": "Số và đếm"
+          },
+          "keyPoints": {
+            "en": [
+              "Korean numbers (일, 이, 삼, 사, 오, 육, 칠, 팔, 구, 십)",
+              "Sino-Korean numbers for dates, money, phone numbers",
+              "Pure Korean numbers for counting objects",
+              "Age and counting people",
+              "Basic math vocabulary (더하기, 빼기, 곱하기, 나누기)"
+            ],
+            "ja": [
+              "数字と数え方",
+              "日付、金額、電話番号のための中国語数字",
+              "オブジェクトを数えるための純粋な韓国語数字",
+              "年齢と人数の数え方",
+              "基本的な数学用語 (足し算, 引き算, 掛け算, 割り算)"
+            ],
+            "ko": [ 
+              "숫자와 세는 방법",
+              "날짜, 돈, 전화번호를 위한 중국어 숫자",
+              "물건을 세는 순수한 한국어 숫자",
+              "나이와 사람을 세는 방법",
+              "기본 수학 용어 (더하기, 빼기, 곱하기, 나누기)"
+            ],
+            "vi": [ 
+              "Số và đếm",
+              "Số đếm cho ngày, tiền, số điện thoại",
+              "Số đếm thuần khiết cho đếm vật",
+              "Tuổi và đếm người",
+              "Từ vựng toán học cơ bản (cộng, trừ, nhân, chia)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 4,
-          "title": "Colors and Descriptions",
-          "keyPoints": [
-            "Basic colors (빨간색, 파란색, 노란색, 초록색, 검은색, 흰색)",
-            "크다/작다 (big/small)",
-            "길다/짧다 (long/short)",
-            "예쁘다/못생기다 (pretty/ugly)",
-            "좋다/나쁘다 (good/bad)"
-          ],
+          "title": {
+            "en": "Colors and Descriptions",
+            "ja": "色と説明",
+            "ko": "색깔과 설명",
+            "vi": "Màu sắc và mô tả"
+          },
+          "keyPoints": {
+            "en": [
+              "Basic colors (빨간색, 파란색, 노란색, 초록색, 검은색, 흰색)",
+              "크다/작다 (big/small)",
+              "길다/짧다 (long/short)",
+              "예쁘다/못생기다 (pretty/ugly)",
+              "좋다/나쁘다 (good/bad)"
+            ],
+            "ja": [
+              "色と説明",
+              "大きい/小さい (big/small)",
+              "長い/短い (long/short)",
+              "美しい/醜い (pretty/ugly)",
+              "良い/悪い (good/bad)"
+            ],
+            "ko": [
+              "색깔과 설명",
+              "크다/작다 (big/small)",
+              "길다/짧다 (long/short)",
+              "예쁘다/못생기다 (pretty/ugly)",
+              "좋다/나쁘다 (good/bad)"
+            ],
+            "vi": [
+              "Màu sắc và mô tả",
+              "To/lớn (big/small)",
+              "Cao/thấp (tall/short)",
+              "Đẹp/xấu (beautiful/ugly)",
+              "Tốt/xấu (good/bad)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 5,
-          "title": "Family and Relationships",
-          "keyPoints": [
-            "Family members (아버지, 어머니, 형, 누나, 동생)",
-            "친구 (friend)",
-            "선생님 (teacher)",
-            "직장동료 (colleague)",
-            "Honorifics and polite speech levels"
-          ],
+          "title": {
+            "en": "Family and Relationships", 
+            "ja": "家族と関係",
+            "ko": "가족과 관계",
+            "vi": "Gia đình và mối quan hệ"
+          },
+          "keyPoints": {
+            "en": [
+              "Family members (아버지, 어머니, 형, 누나, 동생)",
+              "친구 (friend)",
+              "직장동료 (colleague)",
+              "Honorifics and polite speech levels"
+            ],
+            "ja": [
+              "家族と関係",
+              "友達 (friend)",
+              "同僚 (colleague)",
+              "敬語と丁寧な表現"
+            ],
+            "ko": [
+              "가족과 관계",
+              "친구 (friend)",
+              "직장동료 (colleague)",
+              "존댓말과 예의"
+            ],
+            "vi": [
+              "Gia đình và mối quan hệ",
+              "Bạn (friend)",
+              "Đồng nghiệp (colleague)",
+              "Cách diễn đạt lịch sự cơ bản"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 6,
-          "title": "Daily Activities and Routines",
-          "keyPoints": [
-            "일어나다 (to wake up)",
-            "먹다 (to eat)",
-            "마시다 (to drink)",
-            "공부하다 (to study)",
-            "일하다 (to work)"
-          ],
+          "title": {
+            "en": "Daily Activities and Routines",
+            "ja": "日常活動とルーティン",
+            "ko": "일상 활동과 루틴",
+            "vi": "Hoạt động hàng ngày và thói quen"
+          },
+          "keyPoints": {
+            "en": [
+              "일어나다 (to wake up)",
+              "먹다 (to eat)",
+              "마시다 (to drink)",
+              "공부하다 (to study)",
+              "일하다 (to work)"
+            ],
+            "ja": [
+              "日常活動とルーティン",
+              "起きる (to wake up)",
+              "食べる (to eat)",
+              "飲む (to drink)",
+              "勉強する (to study)",
+              "働く (to work)"
+            ],
+            "ko": [
+              "일상 활동과 루틴",
+              "일어나다 (to wake up)",
+              "먹다 (to eat)",
+              "마시다 (to drink)",
+              "공부하다 (to study)",
+              "일하다 (to work)"
+            ],
+            "vi": [
+              "Hoạt động hàng ngày và thói quen",
+              "Thức dậy (to wake up)",
+              "Ăn (to eat)",
+              "Uống (to drink)",
+              "Học (to study)",
+              "Làm việc (to work)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 7,
-          "title": "Food and Drinks",
-          "keyPoints": [
-            "밥 (rice/meal)",
-            "김치 (kimchi)",
-            "불고기 (bulgogi)",
-            "비빔밥 (bibimbap)",
-            "커피 (coffee)"
-          ],
+          "title": {
+            "en": "Food and Drinks",
+            "ja": "食べ物と飲み物",
+            "ko": "음식과 음료",
+            "vi": "Thức ăn và đồ uống"
+          },
+          "keyPoints": {
+            "en": [
+              "밥 (rice/meal)",
+              "김치 (kimchi)",
+              "불고기 (bulgogi)",
+              "비빔밥 (bibimbap)",
+              "커피 (coffee)"
+            ],
+            "ja": [
+              "食べ物と飲み物",
+              "ごはん (rice/meal)",
+              "キムチ (kimchi)",
+              "ブルゴジ (bulgogi)",
+              "ビビンバ (bibimbap)",
+              "コーヒー (coffee)"
+            ],
+            "ko": [
+              "음식과 음료",
+              "밥 (rice/meal)",
+              "김치 (kimchi)",
+              "불고기 (bulgogi)",
+              "비빔밥 (bibimbap)",
+              "커피 (coffee)"
+            ],
+            "vi": [
+              "Thức ăn và đồ uống",
+              "Cơm (rice/meal)",
+              "Kim chi (kimchi)",
+              "Bulgogi (bulgogi)",
+              "Bibimbap (bibimbap)",
+              "Cà phê (coffee)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 8,
-          "title": "Places and Directions",
-          "keyPoints": [
-            "집 (house/home)",
-            "학교 (school)",
-            "회사 (company/office)",
-            "병원 (hospital)",
-            "은행 (bank)"
-          ],
+          "title": {
+            "en": "Places and Directions",
+            "ja": "場所と方向",
+            "ko": "장소와 방향",
+            "vi": "Địa điểm và phương hướng"
+          },
+          "keyPoints": {
+            "en": [
+              "집 (house/home)",
+              "학교 (school)",
+              "회사 (company/office)",
+              "병원 (hospital)",
+              "은행 (bank)"
+            ],
+            "ja": [
+              "場所と方向",
+              "家 (house/home)",
+              "学校 (school)",
+              "会社 (company/office)",
+              "病院 (hospital)",
+              "銀行 (bank)"
+            ],
+            "ko": [
+              "장소와 방향",
+              "집 (house/home)",
+              "학교 (school)",
+              "회사 (company/office)",  
+              "병원 (hospital)",
+              "은행 (bank)"
+            ],
+            "vi": [
+              "Địa điểm và phương hướng",
+              "Nhà (house/home)", 
+              "Trường học (school)",
+              "Công ty (company/office)",
+              "Bệnh viện (hospital)",
+              "Ngân hàng (bank)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 9,
-          "title": "Weather and Seasons",
-          "keyPoints": [
-            "날씨 (weather)",
-            "맑다/흐리다 (clear/cloudy)",
-            "덥다/춥다 (hot/cold)",
-            "비가 오다/눈이 오다 (to rain/to snow)",
-            "봄, 여름, 가을, 겨울 (spring, summer, fall, winter)"
-          ],
+          "title": {
+            "en": "Weather and Seasons",
+            "ja": "天気と季節",
+            "ko": "날씨와 계절",
+            "vi": "Thời tiết và mùa"
+          },
+          "keyPoints": {
+            "en": [
+              "날씨 (weather)",
+              "맑다/흐리다 (clear/cloudy)",
+              "덥다/춥다 (hot/cold)",
+              "비가 오다/눈이 오다 (to rain/to snow)",
+              "봄, 여름, 가을, 겨울 (spring, summer, fall, winter)"
+            ],
+            "ja": [
+              "天気と季節",
+              "天気 (weather)",
+              "晴れ/曇り (clear/cloudy)",
+              "暑い/寒い (hot/cold)",
+              "雨が降る/雪が降る (to rain/to snow)",
+              "春/夏/秋/冬 (spring, summer, fall, winter)"
+            ],
+            "ko": [
+              "날씨와 계절",
+              "날씨 (weather)",
+              "맑다/흐리다 (clear/cloudy)",
+              "덥다/춥다 (hot/cold)",
+              "비가 오다/눈이 오다 (to rain/to snow)",
+              "봄, 여름, 가을, 겨울 (spring, summer, fall, winter)"
+            ],
+            "vi": [
+              "Thời tiết và mùa",
+              "Thời tiết (weather)",
+              "Mây/Nhiều mây (cloudy/cloudy)",
+              "Nóng/Lạnh (hot/cold)",
+              "Mưa/Nắng (to rain/to snow)",
+              "Xuân/Hạ/Thu/Đông (spring, summer, fall, winter)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 10,
-          "title": "Time and Schedules",
-          "keyPoints": [
-            "시간 (time)",
+          "title": {
+            "en": "Time and Schedules",
+            "ja": "時間とスケジュール",
+            "ko": "시간과 일정",
+            "vi": "Thời gian và lịch trình"
+          },
+          "keyPoints": {
+            "en": [
+              "시간 (time)",
             "분 (minute)",
             "시 (hour)",
-            "요일 (days of the week)",
-            "월, 화, 수, 목, 금, 토, 일"
-          ],
+              "요일 (days of the week)",
+              "월, 화, 수, 목, 금, 토, 일"
+            ],
+            "ja": [
+              "時間とスケジュール",
+              "時間 (time)",
+              "分 (minute)",
+              "時 (hour)",
+              "曜日 (days of the week)",
+              "月/火/水/木/金/土/日 (Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday)"
+            ],
+            "ko": [
+              "시간과 일정",
+              "시간 (time)",
+              "분 (minute)",
+              "시 (hour)",
+              "요일 (days of the week)",
+              "월/화/수/목/금/토/일 (Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday)"
+            ],
+            "vi": [
+              "Thời gian và lịch trình",
+              "Thời gian (time)",
+              "Phút (minute)",
+              "Giờ (hour)",
+              "Ngày trong tuần (days of the week)",
+              "Thứ hai/Thứ ba/Thứ tư/Thứ năm/Thứ sáu/Thứ bảy/Chủ nhật (Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         }
@@ -457,14 +1271,45 @@
       "chapters": [
         {
           "number": 1,
-          "title": "Bảng chữ cái tiếng Việt (Vietnamese Alphabet)",
-          "keyPoints": [
-            "Introduction to Vietnamese alphabet and pronunciation",
+          "title": {
+            "en": "Bảng chữ cái tiếng Việt (Vietnamese Alphabet)",
+            "ja": "ベトナム語のアルファベット",
+            "ko": "베트남어 알파벳",
+            "vi": "Bảng chữ cái tiếng Việt (Vietnamese Alphabet)"
+          },
+          "keyPoints": {
+            "en": [
+              "Introduction to Vietnamese alphabet and pronunciation",
             "Vowels (a, ă, â, e, ê, i, o, ô, ơ, u, ư, y)",
             "Consonants (b, c, d, đ, g, h, k, l, m, n, p, q, r, s, t, v, x)",
             "Tones (ngang, huyền, hỏi, ngã, sắc, nặng)",
             "Basic pronunciation rules and tone marks"
-          ],
+            ],
+            "ja": [
+              "ベトナム語のアルファベット",
+              "ベトナム語のアルファベットと発音",
+              "母音 (a, ă, â, e, ê, i, o, ô, ơ, u, ư, y)",
+              "子音 (b, c, d, đ, g, h, k, l, m, n, p, q, r, s, t, v, x)",
+              "声調 (ngang, huyền, hỏi, ngã, sắc, nặng)",
+              "基本的な発音ルールと声調記号"
+            ],
+            "ko": [
+              "베트남어 알파벳",
+              "베트남어 알파벳과 발음",
+              "모음 (a, ă, â, e, ê, i, o, ô, ơ, u, ư, y)",
+              "자음 (b, c, d, đ, g, h, k, l, m, n, p, q, r, s, t, v, x)",
+              "음절 (ngang, huyền, hỏi, ngã, sắc, nặng)",
+              "기본 발음 규칙과 음절 기호"
+            ],
+            "vi": [
+              "Bảng chữ cái tiếng Việt (Vietnamese Alphabet)",
+              "Giới thiệu về bảng chữ cái tiếng Việt và phát âm",
+              "Nguyên âm (a, ă, â, e, ê, i, o, ô, ơ, u, ư, y)",
+              "Phụ âm (b, c, d, đ, g, h, k, l, m, n, p, q, r, s, t, v, x)",
+              "Dấu thanh (ngang, huyền, hỏi, ngã, sắc, nặng)",
+              "Quy tắc phát âm cơ bản và dấu thanh"
+            ]
+          },
           "availableLanguages": [
             "en"
           ],
@@ -472,118 +1317,402 @@
         },
         {
           "number": 2,
-          "title": "Chào hỏi và giới thiệu (Greetings and Introductions)",
-          "keyPoints": [
-            "Xin chào (Hello)",
+          "title": {
+            "en": "Chào hỏi và giới thiệu (Greetings and Introductions)",
+            "ja": "挨拶と自己紹介",
+            "ko": "인사와 자기소개",
+            "vi": "Chào hỏi và giới thiệu"
+          },
+          "keyPoints": {
+            "en": [
+              "Xin chào (Hello)",
             "Tạm biệt (Goodbye)",
             "Rất vui được gặp bạn (Nice to meet you)",
             "Tôi tên là... (My name is...)",
             "Bạn khỏe không? (How are you?)"
-          ],
+            ],
+            "ja": [
+              "挨拶と自己紹介",
+              "こんにちは (Hello)",
+              "さようなら (Goodbye)",
+              "お会いしました (Nice to meet you)",
+              "私の名前は... (My name is...)",
+              "お元気ですか？ (How are you?)"
+            ],
+            "ko": [
+              "인사와 자기소개",
+              "안녕하세요 (Hello)",
+              "잘 지내세요 (How are you?)",
+              "저는...입니다 (My name is...)",
+              "너 건강하니? (How are you?)"
+            ],
+            "vi": [
+              "Chào hỏi và giới thiệu",
+              "Xin chào (Hello)",
+              "Tạm biệt (Goodbye)",
+              "Rất vui được gặp bạn (Nice to meet you)",
+              "Tôi tên là... (My name is...)",
+              "Bạn khỏe không? (How are you?)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 3,
-          "title": "Số đếm và đếm số (Numbers and Counting)",
-          "keyPoints": [
-            "Vietnamese numbers (một, hai, ba, bốn, năm, sáu, bảy, tám, chín, mười)",
-            "Counting objects and people",
-            "Age and asking age",
-            "Phone numbers and addresses",
-            "Basic math vocabulary (cộng, trừ, nhân, chia)"
-          ],
+          "title": {
+            "en": "Số đếm và đếm số (Numbers and Counting)",
+            "ja": "数字と数え方",
+            "ko": "숫자와 세는 방법",
+            "vi": "Số đếm và đếm số"
+          },
+          "keyPoints": {
+            "en": [
+              "Vietnamese numbers (một, hai, ba, bốn, năm, sáu, bảy, tám, chín, mười)",
+              "Counting objects and people",
+              "Age and asking age",
+              "Phone numbers and addresses",
+              "Basic math vocabulary (cộng, trừ, nhân, chia)"
+            ],
+            "ja": [
+              "数字と数え方",
+              "数字 (numbers)",
+              "数え方 (counting)",
+              "年齢 (age)",
+              "電話番号と住所",
+              "基本的な数学用語 (足し算, 引き算, 掛け算, 割り算)"
+            ],
+            "ko": [
+              "숫자와 세는 방법",
+              "숫자 (numbers)",
+              "세는 방법 (counting)",
+              "나이 (age)",
+              "전화번호와 주소",
+              "기본 수학 용어 (더하기, 빼기, 곱하기, 나누기)"
+            ],
+            "vi": [
+              "Số đếm và đếm số",
+              "Số (numbers)",
+              "Đếm số (counting)",
+              "Tuổi (age)",
+              "Số điện thoại và địa chỉ",
+              "Từ vựng toán học cơ bản (cộng, trừ, nhân, chia)" 
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 4,
-          "title": "Màu sắc và mô tả (Colors and Descriptions)",
-          "keyPoints": [
-            "Basic colors (đỏ, xanh, vàng, xanh lá, đen, trắng, tím, cam)",
+          "title": {
+            "en": "Màu sắc và mô tả (Colors and Descriptions)",
+            "ja": "色と説明",
+            "ko": "색깔과 설명",
+            "vi": "Màu sắc và mô tả"
+          },
+          "keyPoints": {
+            "en": [
+              "Basic colors (đỏ, xanh, vàng, xanh lá, đen, trắng, tím, cam)",
             "To/lớn (big/small)",
             "Cao/thấp (tall/short)",
             "Đẹp/xấu (beautiful/ugly)",
             "Tốt/xấu (good/bad)"
-          ],
+            ],
+            "ja": [
+              "色と説明",
+              "色 (colors)",
+              "説明 (descriptions)",
+              "赤/青/黄/緑/黒/白/紫/オレンジ (red/blue/yellow/green/black/white/purple/orange)",
+              "大きい/小さい (big/small)",
+              "高い/低い (tall/short)",
+              "美しい/醜い (beautiful/ugly)",
+              "良い/悪い (good/bad)"
+            ],
+            "ko": [ 
+              "색깔과 설명",
+              "색깔 (colors)",
+              "설명 (descriptions)",
+              "빨간색/파란색/노란색/초록색/검은색/흰색/자홍색/주황색 (red/blue/yellow/green/black/white/purple/orange)",
+              "크다/작다 (big/small)",
+              "높다/낮다 (tall/short)"
+              ],
+              "vi": [
+                "Màu sắc và mô tả",
+                "Màu sắc (colors)",
+                "Mô tả (descriptions)",
+                "Đỏ/Xanh/Vàng/Xanh lá/Đen/Trắng/Tím/Cam (red/blue/yellow/green/black/white/purple/orange)",
+                "To/lớn (big/small)",
+                "Cao/thấp (tall/short)"
+              ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 5,
-          "title": "Gia đình và mối quan hệ (Family and Relationships)",
-          "keyPoints": [
-            "Family members (bố, mẹ, anh, chị, em, ông, bà)",
+          "title": {
+            "en": "Gia đình và mối quan hệ (Family and Relationships)",
+            "ja": "家族と関係",
+            "ko": "가족과 관係",
+            "vi": "Gia đình và mối quan hệ"
+          },
+          "keyPoints": {
+            "en": [
+              "Family members (bố, mẹ, anh, chị, em, ông, bà)",
             "Bạn (friend)",
             "Thầy/cô giáo (teacher)",
             "Đồng nghiệp (colleague)",
             "Honorifics and polite speech"
-          ],
+            ],
+            "ja": [
+              "家族と関係",
+              "家族 (family)",
+              "関係 (relationships)",
+              "親戚 (relatives)",
+              "友達 (friends)",
+              "尊敬語と丁寧な表現"
+            ],
+            "ko": [
+              "가족과 관係",
+              "가족 (family)",
+              "관係 (relationships)",
+              "친척 (relatives)",
+              "친구 (friends)",
+              "존댓말과 예의"
+            ],
+            "vi": [
+              "Gia đình và mối quan hệ",
+              "Gia đình (family)",
+              "Quan hệ (relationships)",
+              "Người thân (relatives)",
+              "Bạn (friend)",
+              "Cách diễn đạt lịch sự cơ bản"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 6,
-          "title": "Hoạt động hàng ngày (Daily Activities and Routines)",
-          "keyPoints": [
-            "Thức dậy (to wake up)",
+          "title": {
+            "en": "Hoạt động hàng ngày (Daily Activities and Routines)",
+            "ja": "日常活動とルーティン",
+            "ko": "일상 활동과 루틴",
+            "vi": "Hoạt động hàng ngày (Daily Activities and Routines)"
+          },
+          "keyPoints": {
+            "en": [
+              "Thức dậy (to wake up)",
             "Ăn (to eat)",
             "Uống (to drink)",
             "Học (to study)",
             "Làm việc (to work)"
-          ],
+            ],
+            "ja": [
+              "日常活動とルーティン",
+              "起きる (to wake up)",
+              "食べる (to eat)",
+              "飲む (to drink)",
+              "勉強する (to study)",
+              "働く (to work)"
+            ],
+            "ko": [
+              "일상 활동과 루틴",
+              "일어나다 (to wake up)",
+              "먹다 (to eat)",
+              "마시다 (to drink)",
+              "공부하다 (to study)",
+              "일하다 (to work)"
+            ],
+            "vi": [ 
+              "Hoạt động hàng ngày (Daily Activities and Routines)",
+              "Thức dậy (to wake up)",
+              "Ăn (to eat)",
+              "Uống (to drink)",
+              "Học (to study)",
+              "Làm việc (to work)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 7,
-          "title": "Thức ăn và đồ uống (Food and Drinks)",
-          "keyPoints": [
-            "Cơm (rice/meal)",
+          "title": {
+            "en": "Thức ăn và đồ uống (Food and Drinks)",
+            "ja": "食べ物と飲み物",
+            "ko": "음식과 음료",
+            "vi": "Thức ăn và đồ uống (Food and Drinks)"
+          },
+          "keyPoints": {
+            "en": [
+              "Cơm (rice/meal)",
             "Phở (pho)",
             "Bánh mì (bread)",
             "Nước mắm (fish sauce)",
             "Cà phê (coffee)"
-          ],
+            ],
+            "ja": [
+              "食べ物と飲み物",
+              "食べ物 (food)",
+              "飲み物 (drinks)",
+              "ごはん (rice/meal)",
+              "フォー (pho)",
+              "パン (bread)",
+              "魚のたれ (fish sauce)",
+              "コーヒー (coffee)"
+            ],
+            "ko": [
+              "음식과 음료",
+              "음식 (food)",
+              "음료 (drinks)",
+              "밥 (rice/meal)",
+              "포 (pho)",
+              "빵 (bread)",
+              "물엿 (fish sauce)",
+              "커피 (coffee)"
+            ],
+            "vi": [
+              "Thức ăn và đồ uống (Food and Drinks)",
+              "Thức ăn (food)",
+              "Đồ uống (drinks)",
+              "Cơm (rice/meal)",
+              "Phở (pho)",
+              "Bánh mì (bread)",
+              "Nước mắm (fish sauce)",
+              "Cà phê (coffee)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 8,
-          "title": "Địa điểm và phương hướng (Places and Directions)",
-          "keyPoints": [
-            "Nhà (house/home)",
+          "title": {
+            "en": "Địa điểm và phương hướng (Places and Directions)",
+            "ja": "場所と方向",
+            "ko": "장소와 방향",
+            "vi": "Địa điểm và phương hướng (Places and Directions)"
+          },
+          "keyPoints": {
+            "en": [
+              "Nhà (house/home)",
             "Trường học (school)",
             "Công ty (company/office)",
             "Bệnh viện (hospital)",
             "Ngân hàng (bank)"
-          ],
+            ],
+            "ja": [
+              "場所と方向",
+              "家 (house/home)",
+              "学校 (school)",
+              "会社 (company/office)",
+              "病院 (hospital)",
+              "銀行 (bank)"
+            ],
+            "ko": [
+              "장소와 방향",
+              "집 (house/home)",
+              "학교 (school)",
+              "회사 (company/office)",
+              "병원 (hospital)",
+              "은행 (bank)"
+            ],
+            "vi": [
+              "Địa điểm và phương hướng (Places and Directions)",
+              "Nhà (house/home)",
+              "Trường học (school)",
+              "Công ty (company/office)",
+              "Bệnh viện (hospital)",
+              "Ngân hàng (bank)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 9,
-          "title": "Thời tiết và mùa (Weather and Seasons)",
-          "keyPoints": [
-            "Thời tiết (weather)",
+          "title": {
+            "en": "Thời tiết và mùa (Weather and Seasons)",
+            "ja": "天気と季節",
+            "ko": "날씨와 계절",
+            "vi": "Thời tiết và mùa (Weather and Seasons)"
+          },
+          "keyPoints": {
+            "en": [
+              "Thời tiết (weather)",
             "Nắng/mưa (sunny/rainy)",
             "Nóng/lạnh (hot/cold)",
             "Mùa xuân, mùa hè, mùa thu, mùa đông (spring, summer, fall, winter)",
             "Temperature expressions"
-          ],
+            ],
+            "ja": [
+              "天気と季節",
+              "天気 (weather)",
+              "季節 (seasons)",
+              "春/夏/秋/冬 (spring, summer, fall, winter)",
+              "温度の表現 (temperature expressions)"
+            ],
+            "ko": [
+              "날씨와 계절",
+              "날씨 (weather)",
+              "계절 (seasons)",
+              "봄/여름/가을/겨울 (spring, summer, fall, winter)",
+              "온도 표현 (temperature expressions)"
+            ],
+            "vi": [
+              "Thời tiết và mùa (Weather and Seasons)",
+              "Thời tiết (weather)",
+              "Nắng/mưa (sunny/rainy)",
+              "Nóng/lạnh (hot/cold)",
+              "Mùa xuân, mùa hè, mùa thu, mùa đông (spring, summer, fall, winter)",
+              "Biểu hiện nhiệt độ (temperature expressions)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         },
         {
           "number": 10,
-          "title": "Thời gian và lịch trình (Time and Schedules)",
-          "keyPoints": [
-            "Thời gian (time)",
+          "title": {
+            "en": "Thời gian và lịch trình (Time and Schedules)",
+            "ja": "時間とスケジュール",
+            "ko": "시간과 일정",
+            "vi": "Thời gian và lịch trình (Time and Schedules)"
+          },
+          "keyPoints": {
+            "en": [
+              "Thời gian (time)",
             "Phút (minute)",
             "Giờ (hour)",
             "Ngày trong tuần (days of the week)",
             "Thứ hai, thứ ba, thứ tư, thứ năm, thứ sáu, thứ bảy, chủ nhật"
-          ],
+            ],
+            "ja": [
+              "時間とスケジュール",
+              "時間 (time)",
+              "分 (minute)",
+              "時 (hour)",
+              "曜日 (days of the week)",
+              "月曜日/火曜日/水曜日/木曜日/金曜日/土曜日/日曜日 (Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday)"
+            ],
+            "ko": [
+              "시간과 일정",
+              "시간 (time)",
+              "분 (minute)",
+              "시 (hour)",
+              "요일 (days of the week)",
+              "월요일/화요일/수요일/목요일/금요일/토요일/일요일 (Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday)"
+            ],
+            "vi": [
+              "Thời gian và lịch trình (Time and Schedules)",
+              "Thời gian (time)",
+              "Phút (minute)",
+              "Giờ (hour)",
+              "Ngày trong tuần (days of the week)",
+              "Thứ hai/Thứ ba/Thứ tư/Thứ năm/Thứ sáu/Thứ bảy/Chủ nhật (Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday)"
+            ]
+          },
           "availableLanguages": [],
           "totalLanguages": 0
         }

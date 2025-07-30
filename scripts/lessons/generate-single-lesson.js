@@ -109,7 +109,7 @@ Requirements:
 7. Keep it concise but comprehensive
 8. Include cultural notes where relevant
 9. Add pronunciation guides for ${languageLearnName} words
-10. Include a summary section at the end
+10. Include a summary section at the end, however DO NOT include a button to go to the next chapter
 11. All explanations should be in ${targetLanguageName}
 12. Include ${languageLearnName} examples with ${targetLanguageName} translations
 
