@@ -171,18 +171,40 @@
             display: none; /* Hidden by default */
         }
 
-        /* Pseudo-class for hover reveal (for exercises, if desired) */
-        .reveal-answer {
+        /* Reveal Answer Button Styles */
+        .reveal-answer-btn {
+            background-color: #F0B323; /* A warm orange for "Reveal Answer" */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-size: 16px;
             cursor: pointer;
-            text-decoration: underline;
-            color: var(--primary-color);
+            width: 100%;
+            min-height: 44px;
+            margin-top: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            outline: none;
         }
 
-        /* This is a simple hover reveal. For mobile, a tap-to-reveal (with JS) would be better. */
-        /* For this example, we adhere to no JS event handlers. */
-        /* A mobile app would inject JS to handle the reveal on tap. */
-        .reveal-answer:hover + .exercise-answer {
-            display: block;
+        .reveal-answer-btn:hover {
+            background-color: #DDAA11;
+            transform: translateY(-1px);
+        }
+
+        .reveal-answer-btn:active {
+            transform: translateY(0);
+        }
+
+        .answer-box {
+            background-color: #d4edda; /* Light green background */
+            color: #28a745; /* Dark green text */
+            border: 1px solid #28a745;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+            display: none; /* Hidden by default */
         }
 
         /* Header specific styles (as per requirements) */
@@ -417,63 +439,83 @@
             <h3>Exercise 1: Numbers 🔢</h3>
             <div class="exercise-item">
                 <p class="exercise-question">How do you say "3" in Japanese?</p>
-                <p class="reveal-answer">Show Answer</p>
-                <p class="exercise-answer"><span class="word-with-audio">さん <button class="audio-icon" data-audio-text="さん">🔊</button></span> (san)</p>
+                <button class="reveal-answer-btn" data-target="answer1">Reveal Answer</button>
+                <div class="answer-box" id="answer1">
+                    <p><span class="word-with-audio">さん <button class="audio-icon" data-audio-text="さん">🔊</button></span> (san)</p>
+                </div>
             </div>
             <div class="exercise-item">
                 <p class="exercise-question">How do you say "7" (the more common way) in Japanese?</p>
-                <p class="reveal-answer">Show Answer</p>
-                <p class="exercise-answer"><span class="word-with-audio">なな <button class="audio-icon" data-audio-text="なな">🔊</button></span> (nana)</p>
+                <button class="reveal-answer-btn" data-target="answer2">Reveal Answer</button>
+                <div class="answer-box" id="answer2">
+                    <p><span class="word-with-audio">なな <button class="audio-icon" data-audio-text="なな">🔊</button></span> (nana)</p>
+                </div>
             </div>
 
             <h3>Exercise 2: Time ⏰</h3>
             <div class="exercise-item">
                 <p class="exercise-question">How do you ask "What time is it now?"</p>
-                <p class="reveal-answer">Show Answer</p>
-                <p class="exercise-answer"><span class="word-with-audio">いま なんじですか？ <button class="audio-icon" data-audio-text="いま なんじですか？">🔊</button></span> (Ima nan-ji desu ka?)</p>
+                <button class="reveal-answer-btn" data-target="answer3">Reveal Answer</button>
+                <div class="answer-box" id="answer3">
+                    <p><span class="word-with-audio">いま なんじですか？ <button class="audio-icon" data-audio-text="いま なんじですか？">🔊</button></span> (Ima nan-ji desu ka?)</p>
+                </div>
             </div>
             <div class="exercise-item">
                 <p class="exercise-question">How do you say "4 o'clock" in Japanese?</p>
-                <p class="reveal-answer">Show Answer</p>
-                <p class="exercise-answer"><span class="word-with-audio">よじ <button class="audio-icon" data-audio-text="よじ">🔊</button></span> (yo-ji) <br> <small><em>(Note: For 4 o'clock, よじ is used, not よんじ.)</em></small></p>
+                <button class="reveal-answer-btn" data-target="answer4">Reveal Answer</button>
+                <div class="answer-box" id="answer4">
+                    <p><span class="word-with-audio">よじ <button class="audio-icon" data-audio-text="よじ">🔊</button></span> (yo-ji) <br> <small><em>(Note: For 4 o'clock, よじ is used, not よんじ.)</em></small></p>
+                </div>
             </div>
 
             <h3>Exercise 3: Basic Counters (～つ) 🍎</h3>
             <div class="exercise-item">
                 <p class="exercise-question">How do you say "5 items" (using the ～つ counter)?</p>
-                <p class="reveal-answer">Show Answer</p>
-                <p class="exercise-answer"><span class="word-with-audio">いつつ <button class="audio-icon" data-audio-text="いつつ">🔊</button></span> (itsutsu)</p>
+                <button class="reveal-answer-btn" data-target="answer5">Reveal Answer</button>
+                <div class="answer-box" id="answer5">
+                    <p><span class="word-with-audio">いつつ <button class="audio-icon" data-audio-text="いつつ">🔊</button></span> (itsutsu)</p>
+                </div>
             </div>
             <div class="exercise-item">
                 <p class="exercise-question">How do you say "2 items" (using the ～つ counter)?</p>
-                <p class="reveal-answer">Show Answer</p>
-                <p class="exercise-answer"><span class="word-with-audio">ふたつ <button class="audio-icon" data-audio-text="ふたつ">🔊</button></span> (futatsu)</p>
+                <button class="reveal-answer-btn" data-target="answer6">Reveal Answer</button>
+                <div class="answer-box" id="answer6">
+                    <p><span class="word-with-audio">ふたつ <button class="audio-icon" data-audio-text="ふたつ">🔊</button></span> (futatsu)</p>
+                </div>
             </div>
 
             <h3>Exercise 4: Days of the Week 📅</h3>
             <div class="exercise-item">
                 <p class="exercise-question">What is "Tuesday" in Japanese?</p>
-                <p class="reveal-answer">Show Answer</p>
-                <p class="exercise-answer"><span class="word-with-audio">火曜日 <button class="audio-icon" data-audio-text="かようび">🔊</button></span> (kayōbi)</p>
+                <button class="reveal-answer-btn" data-target="answer7">Reveal Answer</button>
+                <div class="answer-box" id="answer7">
+                    <p><span class="word-with-audio">火曜日 <button class="audio-icon" data-audio-text="かようび">🔊</button></span> (kayōbi)</p>
+                </div>
             </div>
             <div class="exercise-item">
                 <p class="exercise-question">What is "Sunday" in Japanese?</p>
-                <p class="reveal-answer">Show Answer</p>
-                <p class="exercise-answer"><span class="word-with-audio">日曜日 <button class="audio-icon" data-audio-text="にちようび">🔊</button></span> (nichiyōbi)</p>
+                <button class="reveal-answer-btn" data-target="answer8">Reveal Answer</button>
+                <div class="answer-box" id="answer8">
+                    <p><span class="word-with-audio">日曜日 <button class="audio-icon" data-audio-text="にちようび">🔊</button></span> (nichiyōbi)</p>
+                </div>
             </div>
 
             <h3>Exercise 5: Particle に (ni) 📍⏰</h3>
             <div class="exercise-item">
                 <p class="exercise-question">Translate: "I go to the library on Friday."</p>
-                <p class="reveal-answer">Show Answer</p>
-                <p class="exercise-answer">わたしは <span class="word-with-audio">きんようび に <button class="audio-icon" data-audio-text="きんようび に">🔊</button></span> としょかんへ いきます。</p>
-                <p class="pronunciation">(Watashi wa kin'yōbi ni toshokan e ikimasu.)</p>
+                <button class="reveal-answer-btn" data-target="answer9">Reveal Answer</button>
+                <div class="answer-box" id="answer9">
+                    <p>わたしは <span class="word-with-audio">きんようび に <button class="audio-icon" data-audio-text="きんようび に">🔊</button></span> としょかんへ いきます。</p>
+                    <p class="pronunciation">(Watashi wa kin'yōbi ni toshokan e ikimasu.)</p>
+                </div>
             </div>
             <div class="exercise-item">
                 <p class="exercise-question">Translate: "There is a cat at the park."</p>
-                <p class="reveal-answer">Show Answer</p>
-                <p class="exercise-answer">こうえん <span class="word-with-audio">に <button class="audio-icon" data-audio-text="に">🔊</button></span> ねこが います。</p>
-                <p class="pronunciation">(Kōen ni neko ga imasu.)</p>
+                <button class="reveal-answer-btn" data-target="answer10">Reveal Answer</button>
+                <div class="answer-box" id="answer10">
+                    <p>こうえん <span class="word-with-audio">に <button class="audio-icon" data-audio-text="に">🔊</button></span> ねこが います。</p>
+                    <p class="pronunciation">(Kōen ni neko ga imasu.)</p>
+                </div>
             </div>
         </section>
 
@@ -484,5 +526,21 @@
             <p>おつかれさまでした！ (Otsukaresama deshita!) - Good work!</p>
         </section>
     </div>
+
+    <!-- Simple JS for "Reveal Answer" to show/hide boxes -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.reveal-answer-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.dataset.target;
+                    const answerBox = document.getElementById(targetId);
+                    if (answerBox) {
+                        answerBox.style.display = answerBox.style.display === 'block' ? 'none' : 'block';
+                        this.textContent = answerBox.style.display === 'block' ? 'Hide Answer' : 'Reveal Answer';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
