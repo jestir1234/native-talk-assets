@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Basic Greetings and Introductions</title>
+    <!-- Using a common system font for native feel, with a robust fallback -->
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic Resets & Global Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        /* Container for the lesson content */
+        .lesson-container {
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto; /* Center the container */
+            padding: 15px; /* Padding for mobile screens */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2; /* Tighter line height for headings */
+        }
+
+        h1.chapter-title {
+            text-align: center;
+            font-size: 2em; /* Larger for chapter title */
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 0.3em;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            color: #8B5FBF; /* Primary: Purple for sub-headings for accent */
+        }
+
+        /* Specific header requirements */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1em;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: none; /* Remove default bullet points */
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 0.8em;
+            padding-left: 25px; /* More space for the custom bullet */
+            position: relative;
+        }
+
+        li::before {
+            content: '✨'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary: Purple */
+            font-size: 0.9em; /* Smaller emoji */
+        }
+
+        /* Interactive elements: Buttons and Audio Icons */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            min-height: 44px; /* Ensure touch-friendly size */
+            box-sizing: border-box;
+            line-height: 1; /* Ensure text sits nicely within the button height */
+            display: flex; /* For centering content vertically */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            background-color: #6C4A9D; /* Darker purple on hover */
+        }
+
+        .audio-icon {
+            display: inline-flex; /* Use flexbox for centering icon and text */
+            align-items: center; /* Vertically center content */
+            justify-content: center; /* Horizontally center content */
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            color: #8B5FBF; /* Primary: Purple */
+            border-radius: 8px;
+            padding: 8px 12px; /* Adjusted padding for better fit */
+            font-size: 1em; /* Slightly smaller font for inline elements */
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            margin-left: 8px; /* Space from preceding text */
+            vertical-align: middle; /* Align with text baseline */
+            min-width: 44px; /* Ensure touch-friendly size */
+            min-height: 44px; /* Ensure touch-friendly size */
+            box-sizing: border-box;
+            font-weight: bold;
+            line-height: 1; /* Important for vertical centering of content */
+        }
+
+        .audio-icon span.audio-emoji {
+            margin-right: 6px; /* Space between icon and text */
+            font-size: 1.2em; /* Make emoji slightly larger */
+        }
+
+        .audio-icon:hover {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        .audio-text {
+            font-weight: normal; /* Make the actual text less bold than the icon */
+            color: #2C3E50; /* Dark blue for the text itself */
+            white-space: nowrap; /* Prevent text from wrapping inside the button */
+        }
+        
+        /* Specific styling for the audio-text when inside a .audio-icon that is hovered */
+        .audio-icon:hover .audio-text {
+            color: white;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-section h3 {
+            text-align: center;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-top: 0;
+            margin-bottom: 1em;
+            border-bottom: 1px solid #E0E0E0;
+            padding-bottom: 10px;
+        }
+
+        .example-pair {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            align-items: center; /* Align items vertically in a row */
+            padding: 12px 0;
+            border-bottom: 1px dashed #E0E0E0;
+        }
+
+        .example-pair:last-child {
+            border-bottom: none;
+        }
+
+        .example-chinese-group {
+            display: flex;
+            align-items: baseline; /* Align Pinyin to the Chinese text baseline */
+            flex-grow: 1; /* Allow it to take available space */
+            margin-right: 10px; /* Space from audio icon when not wrapped */
+        }
+
+        .chinese-text {
+            font-size: 1.1em;
+            color: #2C3E50; /* Dark blue */
+            font-weight: bold;
+        }
+
+        .pinyin-text {
+            font-size: 0.9em;
+            color: #8B5FBF; /* Primary: Purple */
+            font-style: italic;
+            margin-left: 8px; /* Space from Chinese characters */
+        }
+        
+        .example-pair .audio-icon {
+            margin-left: auto; /* Push audio icon to the right */
+            flex-shrink: 0; /* Don't shrink the audio icon */
+        }
+
+        .english-translation {
+            font-size: 0.95em;
+            color: #666666; /* Medium gray */
+            width: 100%; /* Take full width on small screens below the main line */
+            padding-left: 0; /* No indent for translation */
+            margin-top: 5px; /* Space from the line above */
+            margin-bottom: 0; /* Remove default paragraph margin */
+        }
+
+        /* Adjustments for wrapping example pairs on very small screens */
+        @media (max-width: 480px) {
+            .example-pair {
+                flex-direction: column; /* Stack items vertically */
+                align-items: flex-start; /* Align all to the left */
+            }
+            .example-chinese-group {
+                width: 100%; /* Take full width */
+                margin-bottom: 8px; /* Space between the Chinese group and the button below it */
+                margin-right: 0; /* No right margin if stacked */
+            }
+            .example-pair .audio-icon {
+                margin-left: 0; /* Remove auto margin when stacked */
+                width: auto; /* Allow button to size to content */
+                margin-bottom: 8px; /* Space below the button */
+            }
+            .english-translation {
+                 margin-top: 0; /* Adjust margin as it's directly below the button */
+            }
+        }
+
+        .cultural-note {
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple tint */
+            border-left: 5px solid #8B5FBF;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-style: italic;
+            color: #2C3E50;
+        }
+
+        .cultural-note strong {
+            color: #8B5FBF;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #8B5FBF; /* Primary color border for emphasis */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-top: 0;
+            border-bottom: none; /* No border for summary title */
+            margin-bottom: 1em;
+        }
+
+        .summary-section ul {
+            list-style-type: '✅ '; /* Custom checkmark bullet */
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            margin-bottom: 0.8em;
+            color: #2C3E50;
+            padding-left: 5px; /* Adjust spacing for custom bullet */
+        }
+        
+        /* Small utility class for text display with audio */
+        .text-display {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap; /* Allow wrapping */
+        }
+        .text-display strong {
+            margin-right: 10px;
+            flex-shrink: 0; /* Don't shrink the Chinese text */
+        }
+        .text-display .pinyin-text {
+            margin-right: 10px; /* Space between pinyin and button */
+            flex-shrink: 0;
+        }
+        .text-display .audio-icon {
+            margin-left: auto; /* Push to right */
+            flex-shrink: 0;
+        }
+        /* Adjust for very small screens where text display might wrap */
+        @media (max-width: 380px) {
+            .text-display {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .text-display strong, .text-display .pinyin-text {
+                margin-right: 0;
+                margin-bottom: 5px;
+            }
+            .text-display .audio-icon {
+                margin-left: 0;
+                width: auto;
+            }
+        }
+
+
+        /* Responsive adjustments for larger screens (tablets, desktops) */
+        @media (min-width: 600px) {
+            .lesson-container {
+                padding: 30px;
+            }
+
+            h1.chapter-title {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1.4em;
+            }
+
+            .btn {
+                width: 70%; /* Make buttons narrower on larger screens */
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .audio-icon {
+                font-size: 1.1em; /* Adjust font for larger screens */
+            }
+            .audio-icon span.audio-emoji {
+                font-size: 1.3em;
+            }
+            .example-pair {
+                flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+            }
+            .english-translation {
+                width: auto; /* Don't force full width */
+                margin-top: 0;
+                padding-left: 0;
+                margin-left: 15px; /* Space from Chinese/Pinyin */
+            }
+            .example-chinese-group {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+
+        <h1 class="chapter-title">Chapter 2: Basic Greetings and Introductions</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+        </div>
+
+        <p>Welcome to Chapter 2! In this lesson, you'll learn essential Chinese phrases for saying hello, goodbye, thank you, and how to introduce yourself. Mastering these will give you a great start to interacting in Chinese!</p>
+
+        <section>
+            <h2>👋 Greeting Someone</h2>
+            <p>Let's start with the most common way to say hello in Chinese!</p>
+
+            <h3>Hello: 你好 (nǐ hǎo)</h3>
+            <div class="text-display">
+                <strong class="chinese-text">你好</strong> <span class="pinyin-text">(nǐ hǎo)</span>
+                <button class="audio-icon" data-audio-text="你好">
+                    <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                </button>
+            </div>
+            <p>This literally means "you good" and is the standard, polite way to say "hello" to one person. It's versatile and can be used in almost any situation!</p>
+
+            <h3>Time-Specific Greetings</h3>
+            <p>Just like in English, you can also use greetings specific to the time of day.</p>
+            <ul>
+                <li>
+                    <div class="text-display">
+                        <strong class="chinese-text">早上好</strong> <span class="pinyin-text">(zǎo shang hǎo)</span>
+                        <button class="audio-icon" data-audio-text="早上好">
+                            <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                        </button>
+                    </div>
+                    <p>Good morning!</p>
+                </li>
+                <li>
+                    <div class="text-display">
+                        <strong class="chinese-text">下午好</strong> <span class="pinyin-text">(xià wǔ hǎo)</span>
+                        <button class="audio-icon" data-audio-text="下午好">
+                            <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                        </button>
+                    </div>
+                    <p>Good afternoon!</p>
+                </li>
+                <li>
+                    <div class="text-display">
+                        <strong class="chinese-text">晚上好</strong> <span class="pinyin-text">(wǎn shang hǎo)</span>
+                        <button class="audio-icon" data-audio-text="晚上好">
+                            <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                        </button>
+                    </div>
+                    <p>Good evening! (Can also be used as 'Good night' in some contexts)</p>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>Cultural Tip:</strong> While time-specific greetings are common, "你好 (nǐ hǎo)" is often used as an all-purpose greeting. In very informal settings or with close friends, Chinese people might just say someone's name, or skip a formal greeting altogether!
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>Practice Time! 👋</h3>
+            <p>Listen and repeat these greetings. Try to match the tones!</p>
+            <div class="example-pair">
+                <div class="example-chinese-group">
+                    <span class="chinese-text">你好</span>
+                    <span class="pinyin-text">(nǐ hǎo)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="你好">
+                    <span class="audio-emoji">🔊</span>
+                </button>
+                <p class="english-translation">Hello</p>
+            </div>
+            <div class="example-pair">
+                <div class="example-chinese-group">
+                    <span class="chinese-text">早上好</span>
+                    <span class="pinyin-text">(zǎo shang hǎo)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="早上好">
+                    <span class="audio-emoji">🔊</span>
+                </button>
+                <p class="english-translation">Good morning</p>
+            </div>
+            <div class="example-pair">
+                <div class="example-chinese-group">
+                    <span class="chinese-text">晚上好</span>
+                    <span class="pinyin-text">(wǎn shang hǎo)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="晚上好">
+                    <span class="audio-emoji">🔊</span>
+                </button>
+                <p class="english-translation">Good evening</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>👋 Saying Goodbye, Thank You, and You're Welcome</h2>
+            <p>These are super important for polite interactions!</p>
+
+            <h3>Goodbye: 再见 (zài jiàn)</h3>
+            <div class="text-display">
+                <strong class="chinese-text">再见</strong> <span class="pinyin-text">(zài jiàn)</span>
+                <button class="audio-icon" data-audio-text="再见">
+                    <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                </button>
+            </div>
+            <p>This literally means "again see" or "see you again". It's the standard way to say goodbye.</p>
+
+            <h3>Thank you: 谢谢 (xiè xie)</h3>
+            <div class="text-display">
+                <strong class="chinese-text">谢谢</strong> <span class="pinyin-text">(xiè xie)</span>
+                <button class="audio-icon" data-audio-text="谢谢">
+                    <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                </button>
+            </div>
+            <p>You'll hear this one all the time! The second character is often pronounced very lightly (neutral tone).</p>
+
+            <h3>You're Welcome: 不客气 (bù kè qi) / 不用谢 (bú yòng xiè)</h3>
+            <div class="text-display">
+                <strong class="chinese-text">不客气</strong> <span class="pinyin-text">(bù kè qi)</span>
+                <button class="audio-icon" data-audio-text="不客气">
+                    <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                </button>
+            </div>
+            <p>"You're welcome" or "no need to be polite." This is very common.</p>
+            <div class="text-display">
+                <strong class="chinese-text">不用谢</strong> <span class="pinyin-text">(bú yòng xiè)</span>
+                <button class="audio-icon" data-audio-text="不用谢">
+                    <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                </button>
+            </div>
+            <p>Literally "no need thank you." Also commonly used, especially among friends or family.</p>
+
+            <div class="cultural-note">
+                <strong>Cultural Tip:</strong> While saying "谢谢" is good, sometimes Chinese people (especially family or close friends) might find it a bit too formal for small favors, implying a distance. However, it's always safe to use with strangers or in formal situations.
+            </div>
+        </section>
+
+        <section>
+            <h2>🗣️ Introducing Yourself</h2>
+            <p>Time to tell people who you are!</p>
+
+            <h3>My name is... / I'm...</h3>
+            <p>There are two main ways to introduce your name:</p>
+            <ul>
+                <li>
+                    <div class="text-display">
+                        <strong class="chinese-text">我叫 [Your Name]</strong> <span class="pinyin-text">(wǒ jiào [Your Name])</span>
+                        <button class="audio-icon" data-audio-text="我叫">
+                            <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                        </button>
+                    </div>
+                    <p>This means "I am called [Your Name]". It's the most common and natural way.</p>
+                    <p>Example: <strong class="chinese-text">我叫 大卫</strong> (wǒ jiào Dàwèi) <br> "My name is David."</p>
+                </li>
+                <li>
+                    <div class="text-display">
+                        <strong class="chinese-text">我是 [Your Name]</strong> <span class="pinyin-text">(wǒ shì [Your Name])</span>
+                        <button class="audio-icon" data-audio-text="我是">
+                            <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                        </button>
+                    </div>
+                    <p>This means "I am [Your Name]". It's also acceptable, especially if you're stating your identity (e.g., "I am a student"). For simply introducing your name, 我叫 (wǒ jiào) is often preferred.</p>
+                </li>
+            </ul>
+
+            <h3>Nice to meet you: 很高兴认识你 (hěn gāo xìng rèn shi nǐ)</h3>
+            <div class="text-display">
+                <strong class="chinese-text">很高兴认识你</strong> <span class="pinyin-text">(hěn gāo xìng rèn shi nǐ)</span>
+                <button class="audio-icon" data-audio-text="很高兴认识你">
+                    <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                </button>
+            </div>
+            <p>This phrase means "Very happy to know you." It's a standard polite expression after an introduction.</p>
+
+            <div class="cultural-note">
+                <strong>Pronunciation Tip:</strong> The 'h' in Pinyin (like 'hǎo' or 'hěn') is a strong, aspirated 'h' sound, similar to the 'h' in "house" in English. Make sure to breathe out!
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>Practice Time! 💬 Introductions</h3>
+            <p>Imagine introducing yourself. Listen and say your name!</p>
+            <div class="example-pair">
+                <div class="example-chinese-group">
+                    <span class="chinese-text">我叫 李明</span>
+                    <span class="pinyin-text">(wǒ jiào Lǐ Míng)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="我叫李明">
+                    <span class="audio-emoji">🔊</span>
+                </button>
+                <p class="english-translation">My name is Li Ming.</p>
+            </div>
+            <div class="example-pair">
+                <div class="example-chinese-group">
+                    <span class="chinese-text">很高兴认识你</span>
+                    <span class="pinyin-text">(hěn gāo xìng rèn shi nǐ)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="很高兴认识你">
+                    <span class="audio-emoji">🔊</span>
+                </button>
+                <p class="english-translation">Nice to meet you.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>💖 Basic Polite Expressions</h2>
+            <p>These phrases are crucial for showing respect and politeness.</p>
+            <ul>
+                <li>
+                    <div class="text-display">
+                        <strong class="chinese-text">请</strong> <span class="pinyin-text">(qǐng)</span>
+                        <button class="audio-icon" data-audio-text="请">
+                            <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                        </button>
+                    </div>
+                    <p>Please / May I ask...</p>
+                    <p>Use it when asking for something, like <strong class="chinese-text">请问</strong> (qǐng wèn - "May I ask?").</p>
+                </li>
+                <li>
+                    <div class="text-display">
+                        <strong class="chinese-text">对不起</strong> <span class="pinyin-text">(duì bu qǐ)</span>
+                        <button class="audio-icon" data-audio-text="对不起">
+                            <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                        </button>
+                    </div>
+                    <p>Sorry / I apologize</p>
+                    <p>Used for more serious apologies.</p>
+                </li>
+                <li>
+                    <div class="text-display">
+                        <strong class="chinese-text">不好意思</strong> <span class="pinyin-text">(bù hǎo yì si)</span>
+                        <button class="audio-icon" data-audio-text="不好意思">
+                            <span class="audio-emoji">🔊</span> <span class="audio-text">Play</span>
+                        </button>
+                    </div>
+                    <p>Excuse me / I'm sorry (for a minor inconvenience)</p>
+                    <p>Often used for small things like bumping into someone, or getting someone's attention. More casual than 对不起.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="summary-section">
+            <h2>Summary: Your First Steps in Chinese!</h2>
+            <p>You've learned some fundamental phrases. Keep practicing to make them natural!</p>
+            <ul>
+                <li><strong>Greetings:</strong> <span class="chinese-text">你好</span> (nǐ hǎo) for "hello", and time-specific greetings like <span class="chinese-text">早上好</span> (zǎo shang hǎo).</li>
+                <li><strong>Farewells:</strong> <span class="chinese-text">再见</span> (zài jiàn) is the standard "goodbye".</li>
+                <li><strong>Politeness:</strong> <span class="chinese-text">谢谢</span> (xiè xie) for "thank you", and <span class="chinese-text">不客气</span> (bù kè qi) or <span class="chinese-text">不用谢</span> (bú yòng xiè) for "you're welcome".</li>
+                <li><strong>Introductions:</strong> Use <span class="chinese-text">我叫...</span> (wǒ jiào...) to say "My name is...".</li>
+                <li><strong>Meeting new people:</strong> Say <span class="chinese-text">很高兴认识你</span> (hěn gāo xìng rèn shi nǐ) for "nice to meet you".</li>
+                <li><strong>Other polite phrases:</strong> <span class="chinese-text">请</span> (qǐng) for "please", <span class="chinese-text">对不起</span> (duì bu qǐ) for "sorry", and <span class="chinese-text">不好意思</span> (bù hǎo yì si) for "excuse me".</li>
+            </ul>
+            <p>Great job! You now have the building blocks for basic conversations in Chinese. Keep reviewing these phrases!</p>
+        </section>
+
+    </div>
+</body>
+</html>

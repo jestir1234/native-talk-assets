@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 1: The English Alphabet and Sounds</title>
+    <style>
+        /* Global Reset and Box Sizing */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Color Variables */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-bg-color: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white: #FFFFFF;
+        }
+
+        /* Base Body Styles - Mobile First */
+        body {
+            font-family: 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            font-size: 16px; /* Minimum body text size */
+            line-height: 1.6;
+            color: var(--body-text-color);
+            background-color: var(--white);
+            padding: 15px;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Responsive Container for main content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden; /* Contains potential floating elements */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-bottom: 15px;
+            text-align: center; /* Center align headings */
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 30px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 15px;
+            padding: 0 10px;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        section:nth-child(even) {
+            background-color: #F8F4DF; /* Slightly different cream for alternation */
+        }
+
+        /* List Styling */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding: 0 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode bullet point */
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        /* Special text formatting */
+        strong {
+            color: var(--primary-color);
+        }
+
+        em {
+            font-style: normal;
+            background-color: rgba(139, 95, 191, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* Buttons and Interactive Elements */
+        .btn {
+            display: block;
+            width: fit-content;
+            min-height: 44px; /* Minimum height for touch target */
+            padding: 12px 25px;
+            margin: 20px auto;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background-color: #7A4EAB; /* Darker primary */
+            transform: translateY(-2px);
+        }
+
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px; /* Minimum size for touch target */
+            min-height: 44px;
+            width: 44px;
+            height: 44px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-icon:hover {
+            background-color: #7A4EAB;
+            transform: scale(1.05);
+        }
+
+        .audio-text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            background-color: var(--white);
+            padding: 10px 15px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+        }
+
+        .audio-text span {
+            font-weight: bold;
+            color: var(--heading-text-color);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--white);
+            border: 2px dashed var(--primary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .practice-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 15px;
+        }
+
+        .practice-item span {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--heading-text-color);
+        }
+
+        /* Specific Header Requirement */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: rgba(139, 95, 191, 0.08); /* Light purple background */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: var(--body-text-color);
+        }
+
+        .cultural-note strong {
+            color: var(--primary-color);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-section h2 {
+            color: var(--white);
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .summary-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left;
+            margin-top: 15px;
+        }
+
+        .summary-section li {
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .summary-section li::before {
+            content: ''; /* Remove default bullet for ul in summary */
+        }
+        .summary-section li:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* Responsive Adjustments for larger screens */
+        @media (min-width: 600px) {
+            body {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            section {
+                padding: 30px;
+            }
+
+            .btn {
+                min-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 1: The English Alphabet and Sounds</h1>
+        <div class="lesson-header">
+            <!-- IMPORTANT: The src path "../header.webp" is a placeholder as per instructions. No actual image will be loaded from an external URL. -->
+            <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>🎉 欢迎来到英语字母与发音的世界！</h2>
+            <p>你好呀！很高兴你选择开始学习英语。在这一章，我们将一起探索英语最基础的部分：<strong>26个英文字母</strong>和它们发出的各种<strong>声音</strong>。这就像学习中文的拼音一样重要，是英语学习的基石！</p>
+            <p>准备好了吗？让我们开始吧！</p>
+        </section>
+
+        <section>
+            <h2>🔠 26个英文字母 (The 26 Letters)</h2>
+            <p>英语字母表由26个字母组成，每个字母都有大写和小写两种形式。它们是：</p>
+            <ul>
+                <li class="audio-text"><span>A a</span><span class="audio-icon" data-audio-text="A">🔊</span></li>
+                <li class="audio-text"><span>B b</span><span class="audio-icon" data-audio-text="B">🔊</span></li>
+                <li class="audio-text"><span>C c</span><span class="audio-icon" data-audio-text="C">🔊</span></li>
+                <li class="audio-text"><span>D d</span><span class="audio-icon" data-audio-text="D">🔊</span></li>
+                <li class="audio-text"><span>E e</span><span class="audio-icon" data-audio-text="E">🔊</span></li>
+                <li class="audio-text"><span>F f</span><span class="audio-icon" data-audio-text="F">🔊</span></li>
+                <li class="audio-text"><span>G g</span><span class="audio-icon" data-audio-text="G">🔊</span></li>
+                <li class="audio-text"><span>H h</span><span class="audio-icon" data-audio-text="H">🔊</span></li>
+                <li class="audio-text"><span>I i</span><span class="audio-icon" data-audio-text="I">🔊</span></li>
+                <li class="audio-text"><span>J j</span><span class="audio-icon" data-audio-text="J">🔊</span></li>
+                <li class="audio-text"><span>K k</span><span class="audio-icon" data-audio-text="K">🔊</span></li>
+                <li class="audio-text"><span>L l</span><span class="audio-icon" data-audio-text="L">🔊</span></li>
+                <li class="audio-text"><span>M m</span><span class="audio-icon" data-audio-text="M">🔊</span></li>
+                <li class="audio-text"><span>N n</span><span class="audio-icon" data-audio-text="N">🔊</span></li>
+                <li class="audio-text"><span>O o</span><span class="audio-icon" data-audio-text="O">🔊</span></li>
+                <li class="audio-text"><span>P p</span><span class="audio-icon" data-audio-text="P">🔊</span></li>
+                <li class="audio-text"><span>Q q</span><span class="audio-icon" data-audio-text="Q">🔊</span></li>
+                <li class="audio-text"><span>R r</span><span class="audio-icon" data-audio-text="R">🔊</span></li>
+                <li class="audio-text"><span>S s</span><span class="audio-icon" data-audio-text="S">🔊</span></li>
+                <li class="audio-text"><span>T t</span><span class="audio-icon" data-audio-text="T">🔊</span></li>
+                <li class="audio-text"><span>U u</span><span class="audio-icon" data-audio-text="U">🔊</span></li>
+                <li class="audio-text"><span>V v</span><span class="audio-icon" data-audio-text="V">🔊</span></li>
+                <li class="audio-text"><span>W w</span><span class="audio-icon" data-audio-text="W">🔊</span></li>
+                <li class="audio-text"><span>X x</span><span class="audio-icon" data-audio-text="X">🔊</span></li>
+                <li class="audio-text"><span>Y y</span><span class="audio-icon" data-audio-text="Y">🔊</span></li>
+                <li class="audio-text"><span>Z z</span><span class="audio-icon" data-audio-text="Z">🔊</span></li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>📢 跟我读：练习字母表！</h3>
+                <p>点击下面的按钮，听一听26个字母的完整发音，然后跟着一起说哦！</p>
+                <button class="btn audio-icon" data-audio-text="A B C D E F G H I J K L M N O P Q R S T U V W X Y Z">
+                    播放整个字母表 🎵
+                </button>
+            </div>
+        </section>
+
+        <section>
+            <h2>🎶 元音字母和发音 (Vowel Sounds: A, E, I, O, U)</h2>
+            <p>英语中有5个特殊的字母，我们称它们为<strong>元音字母 (Vowels)</strong>：A, E, I, O, U。它们是单词的“骨架”，发音时气流通常不受阻碍。每个元音字母通常有“长音”和“短音”两种基本发音。</p>
+
+            <h3>🅰️ 元音 A</h3>
+            <div class="audio-text">
+                <span>短音 A：像“哎”的音</span>
+                <span class="audio-icon" data-audio-text="apple">🔊</span> Apple (苹果)
+            </div>
+            <div class="audio-text">
+                <span>长音 A：像字母本身的音</span>
+                <span class="audio-icon" data-audio-text="ape">🔊</span> Ape (猿)
+            </div>
+
+            <h3>B️ 元音 E</h3>
+            <div class="audio-text">
+                <span>短音 E：像“呃”的音</span>
+                <span class="audio-icon" data-audio-text="egg">🔊</span> Egg (鸡蛋)
+            </div>
+            <div class="audio-text">
+                <span>长音 E：像字母本身的音</span>
+                <span class="audio-icon" data-audio-text="bee">🔊</span> Bee (蜜蜂)
+            </div>
+
+            <h3>C️ 元音 I</h3>
+            <div class="audio-text">
+                <span>短音 I：像“衣”的短促音</span>
+                <span class="audio-icon" data-audio-text="pig">🔊</span> Pig (猪)
+            </div>
+            <div class="audio-text">
+                <span>长音 I：像字母本身的音</span>
+                <span class="audio-icon" data-audio-text="ice">🔊</span> Ice (冰)
+            </div>
+
+            <h3>D️ 元音 O</h3>
+            <div class="audio-text">
+                <span>短音 O：像“奥”的短促音</span>
+                <span class="audio-icon" data-audio-text="octopus">🔊</span> Octopus (章鱼)
+            </div>
+            <div class="audio-text">
+                <span>长音 O：像字母本身的音</span>
+                <span class="audio-icon" data-audio-text="boat">🔊</span> Boat (船)
+            </div>
+
+            <h3>E️ 元音 U</h3>
+            <div class="audio-text">
+                <span>短音 U：像“啊”的音</span>
+                <span class="audio-icon" data-audio-text="umbrella">🔊</span> Umbrella (伞)
+            </div>
+            <div class="audio-text">
+                <span>长音 U：像字母本身的音</span>
+                <span class="audio-icon" data-audio-text="cute">🔊</span> Cute (可爱)
+            </div>
+
+            <div class="practice-section">
+                <h3>👂 听一听，分辨元音！</h3>
+                <p>点击每个单词，听一听其中的元音发音是长音还是短音。</p>
+                <div class="practice-item">
+                    <span>Cat</span><span class="audio-icon" data-audio-text="cat">🔊</span> (短A)
+                </div>
+                <div class="practice-item">
+                    <span>Name</span><span class="audio-icon" data-audio-text="name">🔊</span> (长A)
+                </div>
+                <div class="practice-item">
+                    <span>Bed</span><span class="audio-icon" data-audio-text="bed">🔊</span> (短E)
+                </div>
+                <div class="practice-item">
+                    <span>Green</span><span class="audio-icon" data-audio-text="green">🔊</span> (长E)
+                </div>
+            </div>
+            <div class="cultural-note">
+                <strong>💡 文化小贴士：</strong> 英语的发音没有中文拼音那么“规矩”，同一个字母在不同单词里可能有不同的发音。元音尤其如此！所以多听、多模仿很重要。别担心，你会慢慢掌握的！
+            </div>
+        </section>
+
+        <section>
+            <h2>🗣️ 辅音字母和发音 (Consonant Sounds and Pronunciation)</h2>
+            <p>除了A, E, I, O, U，剩下的21个字母都是<strong>辅音字母 (Consonants)</strong>。它们发音时气流会受到阻碍（比如嘴唇、牙齿、舌头）。</p>
+            <p>我们来听几个常见的辅音发音和例子：</p>
+
+            <h3>辅音 B, C, D</h3>
+            <ul>
+                <li class="audio-text"><span>B - /b/</span> <span class="audio-icon" data-audio-text="Ball">🔊</span> Ball (球)</li>
+                <li class="audio-text"><span>C - /k/ 或 /s/</span> <span class="audio-icon" data-audio-text="Cat">🔊</span> Cat (猫) / <span class="audio-icon" data-audio-text="City">🔊</span> City (城市)</li>
+                <li class="audio-text"><span>D - /d/</span> <span class="audio-icon" data-audio-text="Dog">🔊</span> Dog (狗)</li>
+            </ul>
+
+            <h3>辅音 F, G, H</h3>
+            <ul>
+                <li class="audio-text"><span>F - /f/</span> <span class="audio-icon" data-audio-text="Fish">🔊</span> Fish (鱼)</li>
+                <li class="audio-text"><span>G - /g/ 或 /dʒ/</span> <span class="audio-icon" data-audio-text="Goat">🔊</span> Goat (山羊) / <span class="audio-icon" data-audio-text="Giraffe">🔊</span> Giraffe (长颈鹿)</li>
+                <li class="audio-text"><span>H - /h/</span> <span class="audio-icon" data-audio-text="Hat">🔊</span> Hat (帽子)</li>
+            </ul>
+            <p>...以及其他辅音。</p>
+
+            <div class="practice-section">
+                <h3>🎤 练一练辅音！</h3>
+                <p>听并模仿这些辅音字母开头的单词：</p>
+                <div class="practice-item">
+                    <span>Pen</span><span class="audio-icon" data-audio-text="pen">🔊</span> (钢笔)
+                </div>
+                <div class="practice-item">
+                    <span>Sun</span><span class="audio-icon" data-audio-text="sun">🔊</span> (太阳)
+                </div>
+                <div class="practice-item">
+                    <span>Table</span><span class="audio-icon" data-audio-text="table">🔊</span> (桌子)
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧱 基础拼读和发音组合 (Basic Phonics and Sound Combinations)</h2>
+            <p>当我们把元音和辅音组合在一起时，就能组成单词了！最简单的单词结构是“辅音-元音-辅音” (CVC) 单词。</p>
+            <p>让我们看看如何通过字母发音来拼读简单的单词：</p>
+
+            <h3>✨ 字母组合的声音</h3>
+            <ul>
+                <li class="audio-text">
+                    <em>c-a-t</em>
+                    <span>= cat (猫)</span>
+                    <span class="audio-icon" data-audio-text="cat">🔊</span>
+                </li>
+                <li class="audio-text">
+                    <em>d-o-g</em>
+                    <span>= dog (狗)</span>
+                    <span class="audio-icon" data-audio-text="dog">🔊</span>
+                </li>
+                <li class="audio-text">
+                    <em>s-u-n</em>
+                    <span>= sun (太阳)</span>
+                    <span class="audio-icon" data-audio-text="sun">🔊</span>
+                </li>
+                <li class="audio-text">
+                    <em>h-e-n</em>
+                    <span>= hen (母鸡)</span>
+                    <span class="audio-icon" data-audio-text="hen">🔊</span>
+                </li>
+                <li class="audio-text">
+                    <em>p-i-g</em>
+                    <span>= pig (猪)</span>
+                    <span class="audio-icon" data-audio-text="pig">🔊</span>
+                </li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>🧩 拼读小挑战！</h3>
+                <p>试着自己拼读出这些单词，然后点击按钮听听你读得对不对！</p>
+                <div class="practice-item">
+                    <span>Run</span><span class="audio-icon" data-audio-text="run">🔊</span> (跑)
+                </div>
+                <div class="practice-item">
+                    <span>Cup</span><span class="audio-icon" data-audio-text="cup">🔊</span> (杯子)
+                </div>
+                <div class="practice-item">
+                    <span>Bed</span><span class="audio-icon" data-audio-text="bed">🔊</span> (床)
+                </div>
+                <div class="practice-item">
+                    <span>Mop</span><span class="audio-icon" data-audio-text="mop">🔊</span> (拖把)
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📖 单词初读 (Introduction to Reading Simple Words)</h2>
+            <p>现在你已经了解了字母和它们的基本发音，是时候尝试读一些简单的单词了！还记得吗？多听、多模仿是学习发音的秘诀。</p>
+            <h3>简单词汇练习：</h3>
+            <ul>
+                <li class="audio-text"><span>It</span> <span class="audio-icon" data-audio-text="It">🔊</span> (它)</li>
+                <li class="audio-text"><span>Is</span> <span class="audio-icon" data-audio-text="Is">🔊</span> (是)</li>
+                <li class="audio-text"><span>A</span> <span class="audio-icon" data-audio-text="A">🔊</span> (一个)</li>
+                <li class="audio-text"><span>The</span> <span class="audio-icon" data-audio-text="The">🔊</span> (定冠词，特指)</li>
+                <li class="audio-text"><span>Red</span> <span class="audio-icon" data-audio-text="Red">🔊</span> (红色)</li>
+                <li class="audio-text"><span>Big</span> <span class="audio-icon" data-audio-text="Big">🔊</span> (大)</li>
+                <li class="audio-text"><span>Small</span> <span class="audio-icon" data-audio-text="Small">🔊</span> (小)</li>
+            </ul>
+
+            <h3>尝试阅读简单句子：</h3>
+            <ul>
+                <li class="audio-text"><span>It is a cat.</span> <span class="audio-icon" data-audio-text="It is a cat.">🔊</span> (它是一只猫。)</li>
+                <li class="audio-text"><span>A red cup.</span> <span class="audio-icon" data-audio-text="A red cup.">🔊</span> (一个红色的杯子。)</li>
+                <li class="audio-text"><span>The big dog.</span> <span class="audio-icon" data-audio-text="The big dog.">🔊</span> (这只大狗。)</li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>🌟 恭喜你！开始阅读！</h3>
+                <p>你已经迈出了英语阅读的第一步！坚持练习，你会越来越棒的！</p>
+                <p>点击下方按钮，我们会为你随机生成一个简单的单词，试试看你能读出来吗？</p>
+                <button class="btn audio-icon" data-audio-text="Tap to generate new word for practice">
+                    生成练习单词 💡
+                </button>
+                <p><em>(请注意：此功能需App端支持，此处为模拟互动按钮)</em></p>
+            </div>
+        </section>
+
+        <div class="summary-section">
+            <h2>🎯 本章总结</h2>
+            <p>恭喜你完成第一章的学习！我们一起学习了：</p>
+            <ul>
+                <li><strong>26个英文字母：</strong> 大写和小写形式。</li>
+                <li><strong>5个元音字母 (A, E, I, O, U)：</strong> 它们通常有长音和短音两种发音。</li>
+                <li><strong>辅音字母：</strong> 除了元音之外的字母，发音时气流受阻。</li>
+                <li><strong>基础拼读：</strong> 将字母声音组合起来读单词，特别是CVC单词。</li>
+                <li><strong>简单阅读：</strong> 尝试阅读简单的单词和短语。</li>
+            </ul>
+            <p>记住：<strong>发音</strong>是学习英语的关键第一步。多听、多说、多练习，你会越来越自信！</p>
+        </div>
+    </div>
+</body>
+</html>
