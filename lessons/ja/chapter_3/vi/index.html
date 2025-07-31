@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 3: Chào Hỏi & Giới Thiệu Bản Thân</title>
+    <style>
+        /* Global Styles & Color Scheme */
+        :root {
+            --primary-color: #8B5FBF;       /* Purple - for buttons, links, and accents */
+            --secondary-background: #FDF9E5; /* Cream background - for section backgrounds */
+            --heading-color: #2C3E50;       /* Dark blue - for headings (h1, h2, h3) */
+            --body-text-color: #666666;     /* Medium gray - for paragraph text */
+            --border-color: #E0E0E0;        /* Light gray - for borders and dividers */
+        }
+
+        /* Responsive Box Model */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /* Base Body Styles */
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Default background */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+        }
+
+        /* Container for content centering and padding */
+        .container {
+            max-width: 600px; /* Max width for mobile-first content, ensures readability */
+            margin: 0 auto;
+            padding: 20px 15px; /* Generous padding for small screens and touch interfaces */
+        }
+
+        /* Headings Typography */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h1.chapter-title {
+            font-size: 28px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+            font-weight: 600; /* Semi-bold */
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 25px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Paragraph and List Styles */
+        p {
+            margin-bottom: 15px;
+            color: var(--body-text-color);
+        }
+
+        ul {
+            list-style: none; /* Remove default list style */
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 25px; /* Space for custom bullet */
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow as bullet point */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 16px;
+            top: 0;
+        }
+
+        /* Section Cards - Cream background for content sections */
+        .section-card {
+            background-color: var(--secondary-background);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Specific Header Structure Styling */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Audio Icon Styling - Interactive Elements */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum 44px for easy tapping */
+            height: 44px; /* Minimum 44px for easy tapping */
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%; /* Circle shape */
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 10px;
+            vertical-align: middle;
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border: none;
+            outline: none;
+            padding: 0;
+            line-height: 1; /* Ensure emoji/icon is centered */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a429b; /* Slightly darker purple on hover */
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation {
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: bold;
+            display: block; /* To place on a new line */
+            margin-top: 5px;
+        }
+
+        /* Example Boxes */
+        .example-box {
+            background-color: #f7f3e8; /* Lighter cream for examples */
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid var(--primary-color); /* Accent border */
+            border-radius: 8px;
+        }
+
+        .example-box p {
+            margin: 0;
+            color: var(--heading-color); /* Darker text for examples */
+        }
+
+        .example-box .translation {
+            color: var(--body-text-color);
+            font-size: 15px;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* Grammar Point Highlight */
+        .grammar-point {
+            background-color: #f7f3e8;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .grammar-point strong {
+            color: var(--primary-color); /* Highlight grammar terms */
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--secondary-background);
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .practice-section .button-group {
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically on mobile */
+            gap: 10px; /* Space between buttons */
+            margin-top: 20px;
+        }
+
+        .practice-section .button-group .audio-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 17px;
+            min-height: 44px; /* Ensure touch-friendly height */
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            width: 100%; /* Full width for mobile buttons */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Specific styling for audio icon within an audio button */
+        .practice-section .button-group .audio-button .audio-icon {
+            margin-left: 10px; /* Space between text and icon */
+            background-color: transparent; /* Make icon background transparent when inside button */
+            box-shadow: none; /* No shadow for nested icon */
+            border: none; /* No border for nested icon */
+            flex-shrink: 0; /* Prevent icon from shrinking */
+        }
+
+        .practice-section .button-group .audio-button:hover {
+            background-color: #6a429b; /* Darker purple on hover */
+        }
+
+        /* Summary Section Styling */
+        .summary-list li {
+            list-style-type: '🌟 '; /* Custom bullet point for summary */
+            padding-left: 10px; /* Adjust padding for new bullet */
+            margin-bottom: 8px;
+        }
+        /* Override default ::before for custom list-style-type bullets */
+        .summary-list li::before {
+             content: none;
+        }
+        .summary-list strong {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Adjustments (for slightly larger mobile screens/landscape) */
+        @media (min-width: 480px) {
+            .container {
+                padding: 20px 25px; /* More padding for slightly larger screens */
+            }
+            .practice-section .button-group {
+                flex-direction: row; /* Can switch to row for wider screens if desired, or keep column */
+                flex-wrap: wrap; /* Allow wrapping */
+                justify-content: center;
+            }
+            .practice-section .button-group .audio-button {
+                width: auto; /* Buttons can have natural width */
+                flex-grow: 1; /* Allow them to grow */
+                max-width: calc(50% - 5px); /* Two columns layout if space allows */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Chapter Header -->
+        <h1 class="chapter-title">Chương 3: Chào Hỏi & Giới Thiệu Bản Thân</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+        </div>
+
+        <!-- Section 1: Basic Greetings -->
+        <section class="section-card">
+            <h2>1. Chào Hỏi Cơ Bản 👋</h2>
+            <p>Trong tiếng Nhật, có nhiều cách để chào hỏi tùy thuộc vào thời điểm trong ngày và mức độ thân mật. Hãy cùng học những câu chào cơ bản nhất nhé!</p>
+
+            <h3>☀️ Chào buổi sáng: おはようございます</h3>
+            <div class="example-box">
+                <p><strong>おはようございます</strong> <button class="audio-icon" data-audio-text="おはようございます">🔊</button></p>
+                <span class="pronunciation">(Ohayō gozaimasu)</span>
+                <p class="translation">Chào buổi sáng (cách nói lịch sự)</p>
+                <p>💬 Dùng từ sáng sớm đến khoảng 11 giờ trưa. Có thể dùng "おはよう" (Ohayō) với bạn bè thân thiết hoặc người ít tuổi hơn.</p>
+            </div>
+
+            <h3>🌤️ Chào buổi trưa/chiều: こんにちは</h3>
+            <div class="example-box">
+                <p><strong>こんにちは</strong> <button class="audio-icon" data-audio-text="こんにちは">🔊</button></p>
+                <span class="pronunciation">(Konnichiwa)</span>
+                <p class="translation">Chào buổi trưa/chiều</p>
+                <p>💬 Dùng từ khoảng 11 giờ trưa đến chiều tối.</p>
+            </div>
+
+            <h3>🌙 Chào buổi tối: こんばんは</h3>
+            <div class="example-box">
+                <p><strong>こんばんは</strong> <button class="audio-icon" data-audio-text="こんばんは">🔊</button></p>
+                <span class="pronunciation">(Konbanwa)</span>
+                <p class="translation">Chào buổi tối</p>
+                <p>💬 Dùng từ tối đến đêm.</p>
+            </div>
+
+            <h3>👋 Tạm biệt: さようなら</h3>
+            <div class="example-box">
+                <p><strong>さようなら</strong> <button class="audio-icon" data-audio-text="さようなら">🔊</button></p>
+                <span class="pronunciation">(Sayounara)</span>
+                <p class="translation">Tạm biệt</p>
+                <p>💬 Dùng khi chia tay trong thời gian dài hoặc không chắc khi nào gặp lại. Trong giao tiếp hàng ngày, người Nhật thường dùng các cách khác như "またね" (Hẹn gặp lại nhé) hoặc "じゃあね" (Tạm biệt) thân mật hơn.</p>
+            </div>
+        </section>
+
+        <!-- Section 2: Self-Introduction -->
+        <section class="section-card">
+            <h2>2. Giới Thiệu Bản Thân 🙋‍♀️🙋‍♂️</h2>
+            <p>Khi gặp ai đó lần đầu, cách giới thiệu bản thân là rất quan trọng để tạo ấn tượng tốt. Hãy ghi nhớ 3 cụm từ này nhé!</p>
+
+            <h3>はじめまして (Rất vui được gặp bạn)</h3>
+            <div class="example-box">
+                <p><strong>はじめまして</strong> <button class="audio-icon" data-audio-text="はじめまして">🔊</button></p>
+                <span class="pronunciation">(Hajimemashite)</span>
+                <p class="translation">Rất vui được gặp bạn.</p>
+                <p>💬 Luôn nói câu này khi bạn gặp một người nào đó lần đầu tiên. Đây là câu mở đầu cho phần giới thiệu.</p>
+            </div>
+
+            <h3>わたしは 〇〇 です。(Tôi là 〇〇)</h3>
+            <div class="example-box">
+                <p><strong>わたしは アン です。</strong> <button class="audio-icon" data-audio-text="わたしは アン です">🔊</button></p>
+                <span class="pronunciation">(Watashi wa An desu.)</span>
+                <p class="translation">Tôi là An.</p>
+                <p>💬 Thay 〇〇 bằng tên của bạn. "わたし" (watashi) nghĩa là "tôi".</p>
+            </div>
+
+            <h3>よろしくおねがいします (Rất mong được giúp đỡ/Mong được chiếu cố)</h3>
+            <div class="example-box">
+                <p><strong>よろしくおねがいします</strong> <button class="audio-icon" data-audio-text="よろしくおねがいします">🔊</button></p>
+                <span class="pronunciation">(Yoroshiku onegaishimasu)</span>
+                <p class="translation">Rất mong được giúp đỡ./Mong được chiếu cố.</p>
+                <p>💬 Đây là câu nói kết thúc khi giới thiệu bản thân, thể hiện mong muốn được hợp tác hoặc có mối quan hệ tốt đẹp trong tương lai.</p>
+            </div>
+
+            <h3>Ví dụ Giới Thiệu Bản Thân Hoàn Chỉnh:</h3>
+            <div class="example-box">
+                <p><strong>はじめまして。わたしは アン です。よろしくおねがいします。</strong> <button class="audio-icon" data-audio-text="はじめまして。わたしは アン です。よろしくおねがいします。">🔊</button></p>
+                <span class="pronunciation">(Hajimemashite. Watashi wa An desu. Yoroshiku onegaishimasu.)</span>
+                <p class="translation">Rất vui được gặp bạn. Tôi là An. Rất mong được giúp đỡ.</p>
+            </div>
+        </section>
+
+        <!-- Section 3: Grammar -->
+        <section class="section-card">
+            <h2>3. Ngữ Pháp Trọng Tâm 📖</h2>
+            <p>Hôm nay chúng ta sẽ làm quen với hai thành phần ngữ pháp cơ bản và quan trọng nhất trong tiếng Nhật!</p>
+
+            <h3>Trợ từ は (wa) - Chủ đề của câu</h3>
+            <div class="grammar-point">
+                <p>Trợ từ <strong>は</strong> (được viết bằng chữ Hiragana "ha" nhưng đọc là "wa" khi làm trợ từ) đứng sau danh từ hoặc cụm danh từ để chỉ ra rằng đó là <strong>chủ đề của câu</strong>.</p>
+                <p>Nó giống như "là về", "đối với", hoặc chỉ ra đối tượng mà câu nói đang tập trung vào.</p>
+                <div class="example-box">
+                    <p><strong>わたし<span style="color: var(--primary-color);">は</span> アン です。</strong> <button class="audio-icon" data-audio-text="わたしは アン です">🔊</button></p>
+                    <span class="pronunciation">(Watashi wa An desu.)</span>
+                    <p class="translation">Tôi <strong>là</strong> An. (Chủ đề của câu là "tôi")</p>
+                </div>
+            </div>
+
+            <h3>Trợ động từ です (desu) - "Là" và Sự lịch sự</h3>
+            <div class="grammar-point">
+                <p><strong>です</strong> (desu) có nghĩa là "là" và được dùng để <strong>kết thúc câu khẳng định</strong> trong tiếng Nhật. Âm 'u' cuối cùng thường được đọc rất nhẹ hoặc bỏ qua hoàn toàn, nghe như "des".</p>
+                <p>Điều quan trọng là <strong>です</strong> còn thể hiện <strong>sự lịch sự</strong> (thể ます - masukei) của người nói. Hầu hết các cuộc hội thoại hàng ngày đều sử dụng thể lịch sự này.</p>
+                <div class="example-box">
+                    <p><strong>わたしは アン <span style="color: var(--primary-color);">です</span>。</strong> <button class="audio-icon" data-audio-text="わたしは アン です">🔊</button></p>
+                    <span class="pronunciation">(Watashi wa An desu.)</span>
+                    <p class="translation">Tôi là An. ("desu" khẳng định "là An" và thể hiện sự lịch sự)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Cultural Note -->
+        <section class="section-card">
+            <h2>4. Góc Văn Hóa: Sự Lịch Sự trong Tiếng Nhật 🎎</h2>
+            <p>Văn hóa Nhật Bản rất coi trọng sự lịch sự, tôn trọng và hòa hợp. Điều này được thể hiện rõ trong cách sử dụng ngôn ngữ.</p>
+            <ul>
+                <li>Ngay cả những câu chào đơn giản như <strong>"おはようございます"</strong> (chào buổi sáng lịch sự) cũng dài hơn "おはよう" (chào buổi sáng thân mật) để thể hiện sự tôn trọng đối với người nghe.</li>
+                <li>Việc sử dụng <strong>"です"</strong> và <strong>"ます"</strong> ở cuối câu (gọi là thể ます - masukei) là cách cơ bản để thể hiện sự lịch sự trong giao tiếp hàng ngày với hầu hết mọi người, trừ những người rất thân thiết.</li>
+                <li>Khi lần đầu gặp gỡ, việc nói đầy đủ <strong>"はじめまして"</strong> và <strong>"よろしくおねがいします"</strong> sau khi giới thiệu tên là một nghi thức quan trọng, thể hiện sự khiêm tốn và mong muốn xây dựng mối quan hệ tốt đẹp.</li>
+                <li>Cúi đầu (<strong>お辞儀 - ojigi</strong>) là một phần không thể thiếu của việc chào hỏi và thể hiện sự tôn trọng trong văn hóa Nhật Bản. Độ sâu của cúi đầu có thể khác nhau tùy thuộc vào mối quan hệ và tình huống.</li>
+            </ul>
+            <p>Hãy luôn nhớ thể hiện sự lịch sự khi giao tiếp bằng tiếng Nhật nhé! Đó là chìa khóa để tạo ấn tượng tốt.</p>
+        </section>
+
+        <!-- Section 5: Practice -->
+        <section class="practice-section">
+            <h2>5. Thực Hành 🎯</h2>
+            <p>Cùng luyện tập để ghi nhớ những kiến thức đã học nào!</p>
+
+            <h3>Luyện Phát Âm 🗣️</h3>
+            <p>Nhấn vào biểu tượng loa để nghe và luyện tập theo. Cố gắng bắt chước ngữ điệu nhé!</p>
+            <div class="button-group">
+                <button class="audio-button" data-audio-text="おはようございます">
+                    おはようございます <span class="audio-icon" data-audio-text="おはようございます">🔊</span>
+                </button>
+                <button class="audio-button" data-audio-text="こんにちは">
+                    こんにちは <span class="audio-icon" data-audio-text="こんにちは">🔊</span>
+                </button>
+                <button class="audio-button" data-audio-text="こんばんは">
+                    こんばんは <span class="audio-icon" data-audio-text="こんばんは">🔊</span>
+                </button>
+                <button class="audio-button" data-audio-text="さようなら">
+                    さようなら <span class="audio-icon" data-audio-text="さようなら">🔊</span>
+                </button>
+                <button class="audio-button" data-audio-text="はじめまして">
+                    はじめまして <span class="audio-icon" data-audio-text="はじめまして">🔊</span>
+                </button>
+                <button class="audio-button" data-audio-text="わたしは">
+                    わたしは <span class="audio-icon" data-audio-text="わたしは">🔊</span>
+                </button>
+                <button class="audio-button" data-audio-text="です">
+                    です <span class="audio-icon" data-audio-text="です">🔊</span>
+                </button>
+                <button class="audio-button" data-audio-text="よろしくおねがいします">
+                    よろしくおねがいします <span class="audio-icon" data-audio-text="よろしくおねがいします">🔊</span>
+                </button>
+            </div>
+
+            <h3>Giới Thiệu Bản Thân Bạn! ✍️</h3>
+            <p>Hãy hoàn thành câu sau với tên của bạn và thử đọc to lên nhé!</p>
+            <div class="example-box">
+                <p>はじめまして。わたしは <span style="color: var(--primary-color); font-weight: bold;">[TÊN CỦA BẠN]</span> です。よろしくおねがいします。</p>
+                <p class="translation"><i>(Ví dụ: わたしは ホアン です.)</i></p>
+            </div>
+
+            <h3>Tình Huống Giao Tiếp 💬</h3>
+            <p>Bạn sẽ nói gì trong các tình huống sau? Hãy chọn câu trả lời đúng nhất!</p>
+            <div class="example-box">
+                <p>1. Bạn gặp một người bạn mới vào buổi trưa:</p>
+                <p>👉 <strong>こんにちは</strong></p>
+            </div>
+            <div class="example-box">
+                <p>2. Bạn đến lớp học tiếng Nhật vào buổi tối:</p>
+                <p>👉 <strong>こんばんは</strong></p>
+            </div>
+            <div class="example-box">
+                <p>3. Bạn vừa được giới thiệu với một người lạ và đây là lần đầu tiên bạn gặp họ:</p>
+                <p>👉 <strong>はじめまして。わたしは [Tên của bạn] です。よろしくおねがいします。</strong></p>
+            </div>
+        </section>
+
+        <!-- Section 6: Summary -->
+        <section class="section-card">
+            <h2>6. Tóm Tắt Bài Học 📚</h2>
+            <p>Tuyệt vời! Bạn đã hoàn thành Chương 3. Dưới đây là những gì bạn đã học được:</p>
+            <ul class="summary-list">
+                <li><strong>Các câu chào hỏi cơ bản:</strong>
+                    <ul>
+                        <li>☀️ <strong>おはようございます</strong> (Chào buổi sáng)</li>
+                        <li>🌤️ <strong>こんにちは</strong> (Chào buổi trưa/chiều)</li>
+                        <li>🌙 <strong>こんばんは</strong> (Chào buổi tối)</li>
+                        <li>👋 <strong>さようなら</strong> (Tạm biệt)</li>
+                    </ul>
+                </li>
+                <li><strong>Cách giới thiệu bản thân:</strong>
+                    <ul>
+                        <li><strong>はじめまして</strong> (Rất vui được gặp bạn)</li>
+                        <li><strong>わたしは 〇〇 です。</strong> (Tôi là 〇〇.)</li>
+                        <li><strong>よろしくおねがいします。</strong> (Rất mong được giúp đỡ/Mong được chiếu cố.)</li>
+                    </ul>
+                </li>
+                <li><strong>Ngữ pháp trọng tâm:</strong>
+                    <ul>
+                        <li>Trợ từ <strong>は (wa)</strong>: Chỉ chủ đề của câu.</li>
+                        <li>Trợ động từ <strong>です (desu)</strong>: Nghĩa là "là", dùng để kết thúc câu khẳng định và thể hiện sự lịch sự.</li>
+                    </ul>
+                </li>
+                <li><strong>Góc Văn hóa:</strong> Tiếng Nhật rất chú trọng sự lịch sự. Sử dụng thể lịch sự (ví dụ: です/ます) và các cụm từ giới thiệu đầy đủ là điều cần thiết để thể hiện sự tôn trọng.</li>
+            </ul>
+            <p>Bạn đã làm rất tốt! Hãy tiếp tục luyện tập để thành thạo những câu chào hỏi và cách giới thiệu bản thân nhé. Gặp lại bạn ở chương tiếp theo!</p>
+        </section>
+    </div>
+</body>
+</html>

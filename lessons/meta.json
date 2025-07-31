@@ -1,10 +1,10 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-31T06:31:27.756Z",
+  "lastUpdated": "2025-07-31T06:49:24.158Z",
   "totalLanguages": 5,
   "totalChapters": 50,
   "totalAvailableChapters": 25,
-  "totalTargetLanguages": 3,
+  "totalTargetLanguages": 4,
   "languages": {
     "en": {
       "code": "en",
@@ -298,6 +298,7 @@
       "availableChapters": 10,
       "availableTargetLanguages": [
         "en",
+        "vi",
         "zh"
       ],
       "chapters": [
@@ -305,6 +306,7 @@
           "number": 1,
           "title": {
             "en": "The Japanese Writing System",
+            "vi": "Bảng chữ cái tiếng Nhật (Hiragana)",
             "zh": "The Japanese Writing System"
           },
           "keyPoints": {
@@ -314,6 +316,13 @@
               "Reading flow (left-to-right, top-to-bottom)",
               "Intro to syllables and phonetic writing"
             ],
+            "vi": [
+              "Giới thiệu về bảng chữ cái Hiragana",
+              "Các nguyên âm cơ bản: あ, い, う, え, お",
+              "Các phụ âm cơ bản: か, き, く, け, こ",
+              "Cách ghép âm và đọc từ đơn giản",
+              "Thực hành đọc và viết Hiragana"
+            ],
             "zh": [
               "The three scripts: Hiragana, Katakana, Kanji",
               "Why Japanese uses all three",
@@ -323,14 +332,16 @@
           },
           "availableLanguages": [
             "en",
+            "vi",
             "zh"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         },
         {
           "number": 2,
           "title": {
             "en": "Hiragana – The Vowel Sounds",
+            "vi": "Chào hỏi và giới thiệu cơ bản",
             "zh": "Hiragana – The Vowel Sounds"
           },
           "keyPoints": {
@@ -339,6 +350,13 @@
               "Pronunciation guide and stroke order",
               "Basic words: あい (love), いえ (house), うみ (sea), etc.",
               "Your first full hiragana words"
+            ],
+            "vi": [
+              "Xin chào, Chào buổi sáng, Chào buổi chiều, Chào buổi tối",
+              "Tạm biệt, Cảm ơn, Không có gì",
+              "Tôi tên là... / Tôi là...",
+              "Rất vui được gặp bạn",
+              "Các cách nói lịch sự cơ bản"
             ],
             "zh": [
               "あ, い, う, え, お",
@@ -349,14 +367,16 @@
           },
           "availableLanguages": [
             "en",
+            "vi",
             "zh"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         },
         {
           "number": 3,
           "title": {
             "en": "Basic Greetings & Introductions",
+            "vi": "Số đếm và đếm số",
             "zh": "Basic Greetings & Introductions"
           },
           "keyPoints": {
@@ -367,6 +387,13 @@
               "はじめまして。よろしくおねがいします。",
               "Grammar: Particle は, copula です"
             ],
+            "vi": [
+              "Số từ 1-20",
+              "Đếm và biểu đạt số lượng",
+              "Tuổi: Bạn bao nhiêu tuổi? Tôi... tuổi",
+              "Số điện thoại và địa chỉ",
+              "Từ vựng toán học cơ bản: cộng, trừ, bằng"
+            ],
             "zh": [
               "Greetings: こんにちは, おはよう, こんばんは, さようなら",
               "Introducing yourself:",
@@ -377,14 +404,16 @@
           },
           "availableLanguages": [
             "en",
+            "vi",
             "zh"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         },
         {
           "number": 4,
           "title": {
             "en": "Katakana – Borrowed Words",
+            "vi": "Màu sắc và mô tả",
             "zh": "Katakana – Borrowed Words"
           },
           "keyPoints": {
@@ -395,6 +424,13 @@
               "Grammar: Using の to show possession",
               "わたしの なまえは 〇〇です。"
             ],
+            "vi": [
+              "Màu cơ bản: đỏ, xanh, xanh lá, vàng, v.v.",
+              "Mô tả đồ vật: to, nhỏ, cao, thấp",
+              "Đây là... / Đó là...",
+              "Màu gì vậy? Là...",
+              "Tính từ và mô tả cơ bản"
+            ],
             "zh": [
               "カ, キ, ク, ケ, コ (start of katakana)",
               "Foreign words: コーヒー, パン, コンピューター",
@@ -404,14 +440,16 @@
             ]
           },
           "availableLanguages": [
-            "en"
+            "en",
+            "vi"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 5,
           "title": {
             "en": "Simple Sentence Structure",
+            "vi": "Gia đình và mối quan hệ",
             "zh": "Simple Sentence Structure"
           },
           "keyPoints": {
@@ -422,6 +460,13 @@
               "わたしはりんごをたべます。",
               "ジョンさんがきます。"
             ],
+            "vi": [
+              "Thành viên gia đình: bố, mẹ, anh trai, chị gái, em trai, em gái",
+              "Đại từ sở hữu: của tôi, của bạn, của anh ấy, của cô ấy, của họ",
+              "Đây là... của tôi / Đây là những... của tôi",
+              "Từ vựng gia đình và mối quan hệ",
+              "Nói về thành viên gia đình"
+            ],
             "zh": [
               "Japanese word order: Subject–Object–Verb",
               "Particles: を (object), が (subject focus)",
@@ -431,14 +476,16 @@
             ]
           },
           "availableLanguages": [
-            "en"
+            "en",
+            "vi"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 6,
           "title": {
             "en": "Numbers, Time, and Counters",
+            "vi": "Hoạt động hàng ngày và thói quen",
             "zh": "Numbers, Time, and Counters"
           },
           "keyPoints": {
@@ -448,6 +495,13 @@
               "Days of the week: 月曜日, 火曜日...",
               "Grammar: に for time and location"
             ],
+            "vi": [
+              "Động từ thường dùng: ăn, uống, ngủ, làm việc, học, chơi",
+              "Thì hiện tại cơ bản",
+              "Tôi ăn... / Tôi không ăn...",
+              "Từ vựng thói quen hàng ngày",
+              "Biểu đạt thời gian: sáng, chiều, tối"
+            ],
             "zh": [
               "Numbers 1–10, じかん (time), and basic counters (～つ)",
               "Asking the time: いま なんじですか？",
@@ -456,14 +510,16 @@
             ]
           },
           "availableLanguages": [
-            "en"
+            "en",
+            "vi"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 7,
           "title": {
             "en": "Essential Verbs & Conjugation Basics",
+            "vi": "Thức ăn và đồ uống",
             "zh": "Essential Verbs & Conjugation Basics"
           },
           "keyPoints": {
@@ -474,6 +530,13 @@
               "わたしはがっこうにいきます。",
               "パンをたべません。"
             ],
+            "vi": [
+              "Thức ăn thường dùng: cơm, mì, thịt, rau",
+              "Đồ uống: nước, cà phê, trà, nước ép, sữa",
+              "Tôi thích... / Tôi không thích...",
+              "Bạn thích ăn gì?",
+              "Từ vựng nhà hàng cơ bản"
+            ],
             "zh": [
               "Verbs: いく (to go), たべる (to eat), する (to do), くる (to come)",
               "Conjugation: Present/future, negative",
@@ -483,14 +546,16 @@
             ]
           },
           "availableLanguages": [
-            "en"
+            "en",
+            "vi"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 8,
           "title": {
             "en": "Adjectives and Description",
+            "vi": "Địa điểm và phương hướng",
             "zh": "Adjectives and Description"
           },
           "keyPoints": {
@@ -501,6 +566,13 @@
               "この みせは たかいです。",
               "しずかな まちです。"
             ],
+            "vi": [
+              "Địa điểm thường dùng: trường học, nhà, nơi làm việc, cửa hàng, công viên",
+              "Giới từ: ở, đến, từ, gần, xa",
+              "... ở đâu? Ở...",
+              "Phương hướng cơ bản: trái, phải, thẳng, rẽ",
+              "Từ vựng địa điểm"
+            ],
             "zh": [
               "い-adjectives vs. な-adjectives",
               "Examples: たかい (expensive), しずか (quiet)",
@@ -510,14 +582,16 @@
             ]
           },
           "availableLanguages": [
-            "en"
+            "en",
+            "vi"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 9,
           "title": {
             "en": "Daily Life Vocabulary & Polite Requests",
+            "vi": "Thời tiết và mùa",
             "zh": "Daily Life Vocabulary & Polite Requests"
           },
           "keyPoints": {
@@ -528,6 +602,13 @@
               "みずをください。",
               "コーヒーをいっつつ おねがいします。"
             ],
+            "vi": [
+              "Từ vựng thời tiết: nắng, mưa, âm u, tuyết",
+              "Các mùa: xuân, hè, thu, đông",
+              "Thời tiết thế nào? Là...",
+              "Nhiệt độ: nóng, lạnh, ấm, mát",
+              "Hoạt động liên quan đến thời tiết"
+            ],
             "zh": [
               "Vocabulary: food, places, transport, daily routine",
               "Making requests: ～ください, ～をおねがいします",
@@ -537,14 +618,16 @@
             ]
           },
           "availableLanguages": [
-            "en"
+            "en",
+            "vi"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 10,
           "title": {
             "en": "Your First Japanese Paragraph",
+            "vi": "Thời gian và lịch trình",
             "zh": "Your First Japanese Paragraph"
           },
           "keyPoints": {
@@ -555,6 +638,13 @@
               "あさごはんをたべて、がっこうにいきます。",
               "Reflection: You've come a long way!"
             ],
+            "vi": [
+              "Nói giờ: Mấy giờ rồi? Là...",
+              "Các ngày trong tuần: Thứ Hai, Thứ Ba, v.v.",
+              "Các tháng trong năm",
+              "Khi nào? Vào...",
+              "Đặt lịch hẹn và lịch trình"
+            ],
             "zh": [
               "Combining learned grammar and vocabulary",
               "Writing about your routine or family:",
@@ -564,9 +654,10 @@
             ]
           },
           "availableLanguages": [
-            "en"
+            "en",
+            "vi"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         }
       ]
     },
@@ -1346,6 +1437,7 @@
           "chapterNumber": 1,
           "chapterTitle": {
             "en": "The Japanese Writing System",
+            "vi": "Bảng chữ cái tiếng Nhật (Hiragana)",
             "zh": "The Japanese Writing System"
           }
         },
@@ -1355,6 +1447,7 @@
           "chapterNumber": 2,
           "chapterTitle": {
             "en": "Hiragana – The Vowel Sounds",
+            "vi": "Chào hỏi và giới thiệu cơ bản",
             "zh": "Hiragana – The Vowel Sounds"
           }
         },
@@ -1364,6 +1457,7 @@
           "chapterNumber": 3,
           "chapterTitle": {
             "en": "Basic Greetings & Introductions",
+            "vi": "Số đếm và đếm số",
             "zh": "Basic Greetings & Introductions"
           }
         }
@@ -1380,6 +1474,7 @@
           "chapterNumber": 1,
           "chapterTitle": {
             "en": "The Japanese Writing System",
+            "vi": "Bảng chữ cái tiếng Nhật (Hiragana)",
             "zh": "The Japanese Writing System"
           }
         },
@@ -1389,6 +1484,7 @@
           "chapterNumber": 2,
           "chapterTitle": {
             "en": "Hiragana – The Vowel Sounds",
+            "vi": "Chào hỏi và giới thiệu cơ bản",
             "zh": "Hiragana – The Vowel Sounds"
           }
         },
@@ -1398,6 +1494,7 @@
           "chapterNumber": 3,
           "chapterTitle": {
             "en": "Basic Greetings & Introductions",
+            "vi": "Số đếm và đếm số",
             "zh": "Basic Greetings & Introductions"
           }
         },
@@ -1407,6 +1504,7 @@
           "chapterNumber": 4,
           "chapterTitle": {
             "en": "Katakana – Borrowed Words",
+            "vi": "Màu sắc và mô tả",
             "zh": "Katakana – Borrowed Words"
           }
         },
@@ -1416,6 +1514,7 @@
           "chapterNumber": 5,
           "chapterTitle": {
             "en": "Simple Sentence Structure",
+            "vi": "Gia đình và mối quan hệ",
             "zh": "Simple Sentence Structure"
           }
         },
@@ -1425,6 +1524,7 @@
           "chapterNumber": 6,
           "chapterTitle": {
             "en": "Numbers, Time, and Counters",
+            "vi": "Hoạt động hàng ngày và thói quen",
             "zh": "Numbers, Time, and Counters"
           }
         },
@@ -1434,6 +1534,7 @@
           "chapterNumber": 7,
           "chapterTitle": {
             "en": "Essential Verbs & Conjugation Basics",
+            "vi": "Thức ăn và đồ uống",
             "zh": "Essential Verbs & Conjugation Basics"
           }
         },
@@ -1443,6 +1544,7 @@
           "chapterNumber": 8,
           "chapterTitle": {
             "en": "Adjectives and Description",
+            "vi": "Địa điểm và phương hướng",
             "zh": "Adjectives and Description"
           }
         },
@@ -1452,6 +1554,7 @@
           "chapterNumber": 9,
           "chapterTitle": {
             "en": "Daily Life Vocabulary & Polite Requests",
+            "vi": "Thời tiết và mùa",
             "zh": "Daily Life Vocabulary & Polite Requests"
           }
         },
@@ -1461,6 +1564,7 @@
           "chapterNumber": 10,
           "chapterTitle": {
             "en": "Your First Japanese Paragraph",
+            "vi": "Thời gian và lịch trình",
             "zh": "Your First Japanese Paragraph"
           }
         },
@@ -1504,6 +1608,113 @@
           "chapterNumber": 2,
           "chapterTitle": {
             "en": "Basic Greetings and Introductions"
+          }
+        }
+      ]
+    },
+    "vi": {
+      "code": "vi",
+      "name": "Vietnamese",
+      "flag": "🇻🇳",
+      "availableLessons": [
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 1,
+          "chapterTitle": {
+            "en": "The Japanese Writing System",
+            "vi": "Bảng chữ cái tiếng Nhật (Hiragana)",
+            "zh": "The Japanese Writing System"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 2,
+          "chapterTitle": {
+            "en": "Hiragana – The Vowel Sounds",
+            "vi": "Chào hỏi và giới thiệu cơ bản",
+            "zh": "Hiragana – The Vowel Sounds"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 3,
+          "chapterTitle": {
+            "en": "Basic Greetings & Introductions",
+            "vi": "Số đếm và đếm số",
+            "zh": "Basic Greetings & Introductions"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 4,
+          "chapterTitle": {
+            "en": "Katakana – Borrowed Words",
+            "vi": "Màu sắc và mô tả",
+            "zh": "Katakana – Borrowed Words"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 5,
+          "chapterTitle": {
+            "en": "Simple Sentence Structure",
+            "vi": "Gia đình và mối quan hệ",
+            "zh": "Simple Sentence Structure"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 6,
+          "chapterTitle": {
+            "en": "Numbers, Time, and Counters",
+            "vi": "Hoạt động hàng ngày và thói quen",
+            "zh": "Numbers, Time, and Counters"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 7,
+          "chapterTitle": {
+            "en": "Essential Verbs & Conjugation Basics",
+            "vi": "Thức ăn và đồ uống",
+            "zh": "Essential Verbs & Conjugation Basics"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 8,
+          "chapterTitle": {
+            "en": "Adjectives and Description",
+            "vi": "Địa điểm và phương hướng",
+            "zh": "Adjectives and Description"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 9,
+          "chapterTitle": {
+            "en": "Daily Life Vocabulary & Polite Requests",
+            "vi": "Thời tiết và mùa",
+            "zh": "Daily Life Vocabulary & Polite Requests"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 10,
+          "chapterTitle": {
+            "en": "Your First Japanese Paragraph",
+            "vi": "Thời gian và lịch trình",
+            "zh": "Your First Japanese Paragraph"
           }
         }
       ]

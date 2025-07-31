@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chương 5: Cấu trúc câu đơn giản</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Basic Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-background: #FDF9E5;
+            --heading-text-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #FFFFFF; /* White background for the overall page */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            min-width: 320px; /* Ensure readability on smallest screens */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Container for content, ensuring mobile-first spacing */
+        .container {
+            max-width: 600px; /* Max width for readability on larger screens */
+            margin: 0 auto;
+            padding: 16px; /* Default padding for mobile */
+            padding-bottom: 80px; /* Extra padding for bottom content not being cut off by any UI elements */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            padding-left: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        ul li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '👉';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: italic;
+            color: var(--primary-color);
+        }
+
+        /* Section Styling */
+        .section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Chapter Header */
+        .chapter-title {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            color: var(--heading-text-color);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Using a subtle gradient as a fallback if image doesn't load */
+            background: linear-gradient(135deg, var(--primary-color), #A77AC2);
+        }
+
+        /* Example Boxes */
+        .example-box {
+            background-color: #EFEFEF;
+            border-left: 5px solid var(--primary-color);
+            padding: 12px 16px;
+            margin: 15px 0;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .example-box p {
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+
+        .example-box .jp-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+            color: var(--heading-text-color);
+            font-size: 17px;
+        }
+
+        .example-box .vn-text {
+            color: var(--body-text-color);
+            font-style: italic;
+        }
+
+        /* Particle Highlight */
+        .particle-highlight {
+            color: var(--primary-color);
+            font-weight: 700;
+            background-color: rgba(139, 95, 191, 0.1);
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #888;
+            font-style: italic;
+            margin-left: 5px;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            min-width: 44px;
+            height: 44px;
+            min-height: 44px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, background-color 0.2s;
+            vertical-align: middle;
+            margin-left: 8px;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.05);
+            background-color: #A77AC2; /* Lighter shade of primary */
+        }
+
+        .jp-with-audio {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .jp-with-audio .jp-text {
+            flex-grow: 1; /* Allow text to take up available space */
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-section h3 {
+            text-align: center;
+            color: var(--heading-text-color);
+            margin-bottom: 20px;
+        }
+
+        .practice-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-question {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--heading-text-color);
+            margin-bottom: 12px;
+        }
+
+        .practice-question .jp-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            margin-right: 5px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-button {
+            background-color: #F8F8F8;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 16px;
+            color: var(--body-text-color);
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+            min-height: 44px; /* Ensure tap target size */
+            display: flex;
+            align-items: center;
+        }
+
+        .option-button:hover {
+            background-color: #EAEAEA;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Summary Section */
+        .summary-box {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 20px; /* Adjust for footer spacing */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .summary-box h2 {
+            color: white;
+            border-left-color: white;
+            margin-bottom: 15px;
+        }
+
+        .summary-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .summary-box ul li {
+            color: white;
+            margin-bottom: 10px;
+            padding-left: 0; /* Override default list style */
+        }
+
+        .summary-box ul li::before {
+            content: '✅';
+            margin-right: 8px;
+            color: white;
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 600px) {
+            .container {
+                padding: 24px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            ul li {
+                font-size: 17px;
+            }
+
+            .section, .practice-section, .summary-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 5: Cấu trúc câu đơn giản</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section">
+            <h2>Chào mừng đến với Chương 5! 🎉</h2>
+            <p>Trong chương này, chúng ta sẽ cùng khám phá cách xây dựng những câu tiếng Nhật đơn giản nhưng vô cùng quan trọng. Nắm vững cấu trúc câu là chìa khóa để bạn giao tiếp hiệu quả hơn đấy!</p>
+            <p>Chúng ta sẽ học về:</p>
+            <ul>
+                <li>Trật tự từ trong câu tiếng Nhật.</li>
+                <li>Hai trợ từ <span class="particle-highlight">を</span> (wo) và <span class="particle-highlight">が</span> (ga).</li>
+                <li>Các mẫu câu cơ bản.</li>
+                <li>Cách đặt câu hỏi với <span class="particle-highlight">か</span> (ka).</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>1. Trật tự từ tiếng Nhật: Chủ ngữ – Tân ngữ – Động từ (SOV) 🇯🇵</h2>
+            <p>Không giống tiếng Việt (Chủ ngữ – Động từ – Tân ngữ - SVO), tiếng Nhật có trật tự từ hơi khác một chút: <strong>Chủ ngữ – Tân ngữ – Động từ (SOV)</strong>.</p>
+            <p>Điều này có nghĩa là động từ (hành động) luôn nằm ở cuối câu.</p>
+            <div class="example-box">
+                <p>Tiếng Việt: Tôi ăn táo.</p>
+                <p>Cấu trúc: Chủ ngữ (Tôi) - Động từ (ăn) - Tân ngữ (táo)</p>
+            </div>
+            <div class="example-box">
+                <p>Tiếng Nhật: わたしは りんごを たべます。</p>
+                <p class="jp-with-audio">
+                    <span class="jp-text">わたしは りんごを たべます。</span>
+                    <span class="audio-icon" data-audio-text="わたしはりんごをたべます。">🔊</span>
+                </p>
+                <p>Cấu trúc: Chủ ngữ (わたし) - Tân ngữ (りんご) - Động từ (たべます)</p>
+                <p><span class="vn-text">Tôi ăn táo.</span></p>
+            </div>
+            <p>Hãy nhớ quy tắc này nhé: Động từ luôn là thành phần cuối cùng! ✨</p>
+        </section>
+
+        <section class="section">
+            <h2>2. Trợ từ quan trọng: を (wo) và が (ga) 🎯</h2>
+            <p>Trong tiếng Nhật, các "trợ từ" (particle) đóng vai trò như những dấu hiệu, cho chúng ta biết vai trò của các từ trong câu. Hôm nay, chúng ta sẽ tập trung vào hai trợ từ cơ bản:</p>
+
+            <h3>2.1. Trợ từ を (wo)</h3>
+            <p>Trợ từ <span class="particle-highlight">を</span> (đọc là "ô" dù viết là wo) được đặt sau danh từ để đánh dấu nó là <strong>tân ngữ trực tiếp</strong> của động từ. Tức là, vật/đối tượng chịu tác động của hành động.</p>
+            <div class="example-box">
+                <p><span class="jp-with-audio">
+                    <span class="jp-text">パン<span class="particle-highlight">を</span> 食べます。</span>
+                    <span class="pronunciation">(Pan <span class="particle-highlight">o</span> tabemasu)</span>
+                    <span class="audio-icon" data-audio-text="パンを食べます">🔊</span>
+                </span></p>
+                <p><span class="vn-text">Ăn bánh mì.</span> (Bánh mì là tân ngữ, chịu hành động ăn)</p>
+            </div>
+            <div class="example-box">
+                <p><span class="jp-with-audio">
+                    <span class="jp-text">水を<span class="particle-highlight">を</span> 飲みます。</span>
+                    <span class="pronunciation">(Mizu <span class="particle-highlight">o</span> nomimasu)</span>
+                    <span class="audio-icon" data-audio-text="水を飲みます">🔊</span>
+                </span></p>
+                <p><span class="vn-text">Uống nước.</span> (Nước là tân ngữ, chịu hành động uống)</p>
+            </div>
+
+            <h3>2.2. Trợ từ が (ga)</h3>
+            <p>Trợ từ <span class="particle-highlight">が</span> được đặt sau danh từ để đánh dấu <strong>chủ ngữ của câu</strong>, đặc biệt khi chủ ngữ là thông tin mới hoặc muốn nhấn mạnh chủ ngữ.</p>
+            <div class="example-box">
+                <p><span class="jp-with-audio">
+                    <span class="jp-text">雨<span class="particle-highlight">が</span> 降ります。</span>
+                    <span class="pronunciation">(Ame <span class="particle-highlight">ga</span> furimasu)</span>
+                    <span class="audio-icon" data-audio-text="雨が降ります">🔊</span>
+                </span></p>
+                <p><span class="vn-text">Trời mưa.</span> (Mưa là thông tin mới/chủ ngữ)</p>
+            </div>
+            <div class="example-box">
+                <p><span class="jp-with-audio">
+                    <span class="jp-text">ジョンさん<span class="particle-highlight">が</span> 来ます。</span>
+                    <span class="pronunciation">(Jon-san <span class="particle-highlight">ga</span> kimasu)</span>
+                    <span class="audio-icon" data-audio-text="ジョンさんが来ます">🔊</span>
+                </span></p>
+                <p><span class="vn-text">Anh John đến.</span> (Nhấn mạnh John là người đến)</p>
+            </div>
+            <p>Trong nhiều trường hợp, <span class="particle-highlight">が</span> được dùng khi bạn muốn giới thiệu một chủ ngữ mới hoặc có một sự việc tự nhiên xảy ra (như mưa rơi, hoa nở...).</p>
+        </section>
+
+        <section class="section">
+            <h2>3. Các mẫu câu cơ bản 📝</h2>
+
+            <h3>3.1. Mẫu câu: Chủ ngữ + Tân ngữ + Động từ (S O V)</h3>
+            <p>Đây là cấu trúc phổ biến nhất khi bạn muốn nói ai đó làm gì với cái gì.</p>
+            <div class="pattern-box">
+                <p><strong>[Danh từ (Chủ ngữ)] は [Danh từ (Tân ngữ)] を [Động từ].</strong></p>
+            </div>
+            <p>Ví dụ:</p>
+            <div class="example-box">
+                <p><span class="jp-with-audio">
+                    <span class="jp-text">わたし<span class="particle-highlight">は</span> りんご<span class="particle-highlight">を</span> たべます。</span>
+                    <span class="pronunciation">(Watashi <span class="particle-highlight">wa</span> ringo <span class="particle-highlight">o</span> tabemasu)</span>
+                    <span class="audio-icon" data-audio-text="わたしはりんごをたべます">🔊</span>
+                </span></p>
+                <p><span class="vn-text">Tôi ăn táo.</span></p>
+            </div>
+            <div class="example-box">
+                <p><span class="jp-with-audio">
+                    <span class="jp-text">彼<span class="particle-highlight">は</span> テレビ<span class="particle-highlight">を</span> 見ます。</span>
+                    <span class="pronunciation">(Kare <span class="particle-highlight">wa</span> terebi <span class="particle-highlight">o</span> mimasu)</span>
+                    <span class="audio-icon" data-audio-text="彼はテレビを見ます">🔊</span>
+                </span></p>
+                <p><span class="vn-text">Anh ấy xem TV.</span></p>
+            </div>
+
+            <h3>3.2. Mẫu câu: Chủ ngữ + Động từ (S V)</h3>
+            <p>Khi động từ không cần tân ngữ (động từ nội động từ) hoặc bạn muốn nhấn mạnh chủ ngữ, bạn có thể dùng mẫu câu này.</p>
+            <div class="pattern-box">
+                <p><strong>[Danh từ (Chủ ngữ)] が [Động từ].</strong></p>
+            </div>
+            <p>Ví dụ:</p>
+            <div class="example-box">
+                <p><span class="jp-with-audio">
+                    <span class="jp-text">ジョンさん<span class="particle-highlight">が</span> 来ます。</span>
+                    <span class="pronunciation">(Jon-san <span class="particle-highlight">ga</span> kimasu)</span>
+                    <span class="audio-icon" data-audio-text="ジョンさんが来ます">🔊</span>
+                </span></p>
+                <p><span class="vn-text">Anh John đến.</span></p>
+            </div>
+            <div class="example-box">
+                <p><span class="jp-with-audio">
+                    <span class="jp-text">花<span class="particle-highlight">が</span> 咲きます。</span>
+                    <span class="pronunciation">(Hana <span class="particle-highlight">ga</span> sakimasu)</span>
+                    <span class="audio-icon" data-audio-text="花が咲きます">🔊</span>
+                </span></p>
+                <p><span class="vn-text">Hoa nở.</span></p>
+            </div>
+            <p class="culture-note"><strong>💡 Ghi chú văn hóa:</strong> Trong tiếng Nhật, chủ ngữ thường có thể bị lược bỏ nếu ngữ cảnh đã rõ ràng. Ví dụ, nếu bạn đang nói về bản thân, bạn có thể chỉ cần nói "りんごをたべます" (Ăn táo) mà không cần "わたしは" (Tôi).</p>
+        </section>
+
+        <section class="section">
+            <h2>4. Trợ từ nghi vấn か (ka) 🤔</h2>
+            <p>Để biến một câu khẳng định thành câu hỏi, bạn chỉ cần thêm trợ từ <span class="particle-highlight">か</span> vào cuối câu. Rất đơn giản phải không?</p>
+            <div class="pattern-box">
+                <p><strong>[Câu khẳng định] か。</strong></p>
+            </div>
+            <p>Ví dụ:</p>
+            <div class="example-box">
+                <p><span class="jp-with-audio">
+                    <span class="jp-text">これは 本です。</span>
+                    <span class="pronunciation">(Kore wa hon desu)</span>
+                    <span class="audio-icon" data-audio-text="これは本です">🔊</span>
+                </span></p>
+                <p><span class="vn-text">Đây là sách.</span> (Câu khẳng định)</p>
+            </div>
+            <div class="example-box">
+                <p><span class="jp-with-audio">
+                    <span class="jp-text">これは 本です<span class="particle-highlight">か</span>。</span>
+                    <span class="pronunciation">(Kore wa hon desu <span class="particle-highlight">ka</span>?)</span>
+                    <span class="audio-icon" data-audio-text="これは本ですか">🔊</span>
+                </span></p>
+                <p><span class="vn-text">Đây có phải là sách không?</span> (Câu hỏi)</p>
+            </div>
+            <div class="example-box">
+                <p><span class="jp-with-audio">
+                    <span class="jp-text">ジョンさん<span class="particle-highlight">が</span> 来ます<span class="particle-highlight">か</span>。</span>
+                    <span class="pronunciation">(Jon-san <span class="particle-highlight">ga</span> kimasu <span class="particle-highlight">ka</span>?)</span>
+                    <span class="audio-icon" data-audio-text="ジョンさんが来ますか">🔊</span>
+                </span></p>
+                <p><span class="vn-text">Anh John có đến không?</span></p>
+            </div>
+            <p>Khi trả lời câu hỏi, bạn thường bỏ <span class="particle-highlight">か</span> đi và kết thúc câu bằng <span class="particle-highlight">です</span> hoặc động từ.</p>
+        </section>
+
+        <section class="practice-section">
+            <h3>Luyện tập ✍️</h3>
+            <div class="practice-item">
+                <p class="practice-question">1. Chọn trợ từ thích hợp để hoàn thành câu: Tôi uống trà.</p>
+                <div class="jp-with-audio">
+                    <span class="jp-text">わたしは お茶 (___) 飲みます。</span>
+                    <span class="audio-icon" data-audio-text="わたしはおちゃのみます">🔊</span>
+                </div>
+                <div class="options">
+                    <div class="option-button">a) が</div>
+                    <div class="option-button">b) を</div>
+                    <div class="option-button">c) は</div>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">2. Chọn trợ từ thích hợp để hoàn thành câu: Mưa rơi.</p>
+                <div class="jp-with-audio">
+                    <span class="jp-text">雨 (___) 降ります。</span>
+                    <span class="audio-icon" data-audio-text="あめふります">🔊</span>
+                </div>
+                <div class="options">
+                    <div class="option-button">a) を</div>
+                    <div class="option-button">b) が</div>
+                    <div class="option-button">c) は</div>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">3. Biến câu sau thành câu hỏi: これは本です。</p>
+                <div class="options">
+                    <div class="option-button">a) これは本ですか。</div>
+                    <div class="option-button">b) これは本が。</div>
+                    <div class="option-button">c) これは本を。</div>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">4. Dịch câu sau sang tiếng Việt: 彼はご飯を食べます。</p>
+                <div class="jp-with-audio">
+                    <span class="jp-text">彼はご飯を食べます。</span>
+                    <span class="pronunciation">(Kare wa gohan o tabemasu)</span>
+                    <span class="audio-icon" data-audio-text="かれはごはんをたべます">🔊</span>
+                </div>
+                <div class="options">
+                    <div class="option-button">a) Anh ấy ăn cơm.</div>
+                    <div class="option-button">b) Anh ấy đi cơm.</div>
+                    <div class="option-button">c) Anh ấy có cơm không?</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-box">
+            <h2>Tóm tắt Chương 5 ✨</h2>
+            <ul>
+                <li>✅  <strong>Trật tự từ:</strong> Tiếng Nhật theo cấu trúc <strong>Chủ ngữ – Tân ngữ – Động từ (SOV)</strong>. Động từ luôn ở cuối câu.</li>
+                <li>✅  <strong>Trợ từ を (wo):</strong> Đánh dấu <strong>tân ngữ trực tiếp</strong> (đối tượng chịu tác động của hành động).</li>
+                <li>✅  <strong>Trợ từ が (ga):</strong> Đánh dấu <strong>chủ ngữ</strong>, đặc biệt khi chủ ngữ là thông tin mới hoặc được nhấn mạnh.</li>
+                <li>✅  <strong>Mẫu câu S O V:</strong> Chủ ngữ は Tân ngữ を Động từ. (e.g., わたしは りんごを たべます。)</li>
+                <li>✅  <strong>Mẫu câu S V:</strong> Chủ ngữ が Động từ. (e.g., ジョンさんが きます。)</li>
+                <li>✅  <strong>Trợ từ nghi vấn か (ka):</strong> Đặt ở cuối câu để biến câu khẳng định thành <strong>câu hỏi</strong>. (e.g., 本ですか？)</li>
+            </ul>
+            <p style="text-align: center; color: white; margin-top: 20px;">Bạn đã nắm được những kiến thức cơ bản nhất về cấu trúc câu tiếng Nhật rồi đấy! Chúc mừng bạn! 🎉</p>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Học Tiếng Nhật - Tính từ và Miêu tả</title>
+    <style>
+        /* Base Styles & Mobile-First */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-background: #FDF9E5;
+            --heading-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+            --white: #FFFFFF;
+            --dark-gray: #333333;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--body-text-color);
+            background-color: var(--white);
+            padding: 15px; /* Base padding for mobile */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 1.8em; /* Adjusted for mobile readability */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 30px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-top: 25px;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 1em; /* Minimum 16px */
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Layout & Spacing */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 10px; /* Ensures content doesn't touch screen edges */
+        }
+
+        .section-bg {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Examples */
+        .example-block {
+            background-color: var(--white);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            line-height: 1.5;
+        }
+
+        .example-block .japanese {
+            font-weight: bold;
+            color: var(--heading-color);
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .example-block .vietnamese {
+            color: var(--body-text-color);
+            font-size: 0.95em;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1em;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        ul li::before {
+            content: '✨'; /* Unicode bullet point */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* Interactive Elements */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 1.4em;
+            cursor: pointer;
+            margin-left: 8px;
+            vertical-align: middle;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            border: none;
+            padding: 0; /* Important for button sizing */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4896; /* Slightly darker purple */
+            transform: scale(1.05);
+        }
+
+        .practice-section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-question {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .practice-question:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 14px 20px;
+            margin-top: 15px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-height: 44px; /* Ensure tap target size */
+        }
+
+        .button:hover {
+            background-color: #6a4896;
+            transform: translateY(-2px);
+        }
+
+        .feedback-box {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feedback-correct {
+            background-color: #e6ffe6;
+            color: #28a745;
+            border: 1px solid #28a745;
+        }
+
+        .feedback-incorrect {
+            background-color: #ffe6e6;
+            color: #dc3545;
+            border: 1px solid #dc3545;
+        }
+
+        .summary-section {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-section ul {
+            padding-left: 20px;
+            list-style: disc;
+        }
+
+        .summary-section ul li {
+            padding-left: 0;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .summary-section ul li::before {
+            content: none; /* Remove custom bullet for summary list */
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 600px) {
+            body {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1.4em;
+            }
+
+            p {
+                font-size: 1.05em;
+            }
+
+            .section-bg, .practice-section, .summary-section {
+                padding: 30px;
+            }
+
+            .example-block {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 8: Adjectives and Description</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-bg">
+            <h2>Chào mừng bạn đến với Bài 8: Tính từ và Miêu tả! 🌟</h2>
+            <p>Trong tiếng Nhật, tính từ đóng vai trò cực kỳ quan trọng giúp chúng ta miêu tả mọi thứ xung quanh, từ con người, đồ vật đến cảm xúc hay địa điểm. Hãy cùng khám phá hai loại tính từ chính và cách sử dụng chúng nhé!</p>
+            <p>Sẵn sàng chưa? Bắt đầu nào! 🚀</p>
+        </section>
+
+        <section class="section-bg">
+            <h2>💡 Phân loại: Tính từ い (i-adjectives) và Tính từ な (na-adjectives)</h2>
+            <p>Trong tiếng Nhật, các tính từ được chia làm hai loại chính dựa vào cách chúng kết thúc và cách chúng được sử dụng.</p>
+
+            <h3>1. Tính từ い (i-adjectives)</h3>
+            <ul>
+                <li><strong>Đặc điểm:</strong> Luôn kết thúc bằng chữ <strong style="color: #E67E22;">い</strong> (i).</li>
+                <li><strong>Ví dụ:</strong>
+                    <ul>
+                        <li><strong style="color: var(--heading-color);">たかい</strong> <button class="audio-icon" data-audio-text="たかい">🔊</button> (takai - phát âm: ta-kai): cao, đắt</li>
+                        <li><strong style="color: var(--heading-color);">あたらしい</strong> <button class="audio-icon" data-audio-text="あたらしい">🔊</button> (atarashii - phát âm: a-ta-ra-shii): mới</li>
+                        <li><strong style="color: var(--heading-color);">おいしい</strong> <button class="audio-icon" data-audio-text="おいしい">🔊</button> (oishii - phát âm: o-i-shii): ngon</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>2. Tính từ な (na-adjectives)</h3>
+            <ul>
+                <li><strong>Đặc điểm:</strong> Không kết thúc bằng い (ngoại lệ: きれい - kirei, nổi tiếng là tính từ な dù kết thúc bằng い). Khi tính từ な bổ nghĩa cho danh từ, chúng ta cần thêm chữ <strong style="color: #E67E22;">な</strong> (na) vào sau nó.</li>
+                <li><strong>Ví dụ:</strong>
+                    <ul>
+                        <li><strong style="color: var(--heading-color);">しずか</strong> <button class="audio-icon" data-audio-text="しずか">🔊</button> (shizuka - phát âm: shi-zu-ka): yên tĩnh</li>
+                        <li><strong style="color: var(--heading-color);">げんき</strong> <button class="audio-icon" data-audio-text="げんき">🔊</button> (genki - phát âm: gen-ki): khỏe mạnh, năng động</li>
+                        <li><strong style="color: var(--heading-color);">きれい</strong> <button class="audio-icon" data-audio-text="きれい">🔊</button> (kirei - phát âm: ki-re-i): đẹp, sạch sẽ (là ngoại lệ, kết thúc bằng い nhưng là tính từ な)</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Cách phân biệt đơn giản nhất là nhìn vào chữ cuối cùng. Nếu là い (trừ きれい), thì đó là tính từ い. Còn lại, rất có thể là tính từ な!</p>
+        </section>
+
+        <section class="section-bg">
+            <h2>📚 Cấu trúc câu với tính từ</h2>
+            <p>Tính từ có thể được sử dụng để miêu tả một danh từ hoặc để làm vị ngữ trong câu.</p>
+
+            <h3>1. Tính từ làm vị ngữ (kết thúc bằng です。)</h3>
+            <p>Khi tính từ đứng cuối câu và miêu tả chủ ngữ, chúng ta thêm <strong style="color: var(--primary-color);">です</strong> (desu) vào sau nó.</p>
+            <ul>
+                <li><strong>Với tính từ い:</strong> giữ nguyên tính từ い + です
+                    <div class="example-block">
+                        <span class="japanese">この みせは たかいです。 <button class="audio-icon" data-audio-text="この みせは たかいです。">🔊</button></span>
+                        <span class="vietnamese">(Kono mise wa takai desu.) - Cửa hàng này đắt.</span>
+                    </div>
+                    <div class="example-block">
+                        <span class="japanese">あの くるまは あたらしいです。 <button class="audio-icon" data-audio-text="あの くるまは あたらしいです。">🔊</button></span>
+                        <span class="vietnamese">(Ano kuruma wa atarashii desu.) - Chiếc xe kia mới.</span>
+                    </div>
+                </li>
+                <li><strong>Với tính từ な:</strong> giữ nguyên tính từ な + です
+                    <div class="example-block">
+                        <span class="japanese">この まちは しずかです。 <button class="audio-icon" data-audio-text="この まちは しずかです。">🔊</button></span>
+                        <span class="vietnamese">(Kono machi wa shizuka desu.) - Thành phố này yên tĩnh.</span>
+                    </div>
+                    <div class="example-block">
+                        <span class="japanese">かれは げんきです。 <button class="audio-icon" data-audio-text="かれは げんきです。">🔊</button></span>
+                        <span class="vietnamese">(Kare wa genki desu.) - Anh ấy khỏe mạnh.</span>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>2. Tính từ bổ nghĩa cho danh từ</h3>
+            <p>Khi tính từ đứng trước danh từ để bổ nghĩa cho danh từ đó.</p>
+            <ul>
+                <li><strong>Với tính từ い:</strong> giữ nguyên tính từ い + Danh từ
+                    <div class="example-block">
+                        <span class="japanese">たかい みせ <button class="audio-icon" data-audio-text="たかい みせ">🔊</button></span>
+                        <span class="vietnamese">(takai mise) - cửa hàng đắt</span>
+                    </div>
+                    <div class="example-block">
+                        <span class="japanese">おいしい たべもの <button class="audio-icon" data-audio-text="おいしい たべもの">🔊</button></span>
+                        <span class="vietnamese">(oishii tabemono) - món ăn ngon</span>
+                    </div>
+                </li>
+                <li><strong>Với tính từ な:</strong> tính từ な + な + Danh từ
+                    <div class="example-block">
+                        <span class="japanese">しずかな まち <button class="audio-icon" data-audio-text="しずかな まち">🔊</button></span>
+                        <span class="vietnamese">(shizukana machi) - thành phố yên tĩnh</span>
+                    </div>
+                    <div class="example-block">
+                        <span class="japanese">きれいな はな <button class="audio-icon" data-audio-text="きれいな はな">🔊</button></span>
+                        <span class="vietnamese">(kireina hana) - bông hoa đẹp/sạch</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section-bg">
+            <h2>🔗 Ngữ pháp: Nối các tính từ</h2>
+            <p>Để nối hai hoặc nhiều tính từ cùng miêu tả một danh từ hoặc một tình huống, chúng ta có cách biến đổi riêng.</p>
+
+            <h3>1. Nối tính từ い: Bỏ い thêm くて</h3>
+            <p><strong>Cấu trúc:</strong> [Tính từ い 1] <strong style="color: var(--primary-color);">くて</strong> [Tính từ い 2] です。</p>
+            <div class="example-block">
+                <span class="japanese">この レストランは おいしいくて やすいです。 <button class="audio-icon" data-audio-text="この レストランは おいしいくて やすいです。">🔊</button></span>
+                <span class="vietnamese">(Kono resutoran wa oishiikute yasui desu.) - Nhà hàng này ngon và rẻ.</span>
+            </div>
+            <div class="example-block">
+                <span class="japanese">ふゆは さむい<strong>くて</strong> ながいですね。 <button class="audio-icon" data-audio-text="ふゆは さむいくて ながいですね。">🔊</button></span>
+                <span class="vietnamese">(Fuyu wa samuikute nagai desu ne.) - Mùa đông vừa lạnh vừa dài nhỉ.</span>
+            </div>
+
+            <h3>2. Nối tính từ な: Thêm で</h3>
+            <p><strong>Cấu trúc:</strong> [Tính từ な 1] <strong style="color: var(--primary-color);">で</strong> [Tính từ な 2] です。</p>
+            <div class="example-block">
+                <span class="japanese">この まちは きれいで べんりです。 <button class="audio-icon" data-audio-text="この まちは きれいで べんりです。">🔊</button></span>
+                <span class="vietnamese">(Kono machi wa kirei de benri desu.) - Thành phố này đẹp và tiện lợi.</span>
+            </div>
+            <div class="example-block">
+                <span class="japanese">かれは ハンサムで しんせつな ひとです。 <button class="audio-icon" data-audio-text="かれは ハンサムで しんせつな ひとです。">🔊</button></span>
+                <span class="vietnamese">(Kare wa hansamu de shinsetsu na hito desu.) - Anh ấy là người đẹp trai và tốt bụng.</span>
+            </div>
+            <p><strong>Lưu ý văn hóa:</strong> Người Nhật thường thích sử dụng cách nối tính từ để làm cho câu văn tự nhiên và mềm mại hơn, thay vì dùng nhiều câu ngắn riêng biệt. Điều này thể hiện sự tinh tế trong giao tiếp của họ.</p>
+        </section>
+
+        <section class="practice-section">
+            <h2>📝 Luyện tập: Điền từ thích hợp!</h2>
+            <p>Hãy chọn hoặc điền từ/dạng đúng của tính từ vào chỗ trống để hoàn thành câu nhé!</p>
+
+            <div class="practice-question">
+                <p>1. この 本(ほん)は (dễ dàng) ____ です。</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <button class="button small-button" data-correct="true">やさしい</button>
+                    <button class="button small-button" data-correct="false">やさしいな</button>
+                    <button class="button small-button" data-correct="false">やさしく</button>
+                </div>
+                <div id="q1-feedback" class="feedback-box" style="display:none;"></div>
+            </div>
+
+            <div class="practice-question">
+                <p>2. あれは (tiện lợi) ____ な コンピューターです。</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <button class="button small-button" data-correct="false">べんり</button>
+                    <button class="button small-button" data-correct="true">べんりな</button>
+                    <button class="button small-button" data-correct="false">べんりいです</button>
+                </div>
+                <div id="q2-feedback" class="feedback-box" style="display:none;"></div>
+            </div>
+
+            <div class="practice-question">
+                <p>3. 北海道(ほっかいどう)は (rộng lớn) ____ て (đẹp) ____ い 場所(ばしょ)です。</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <button class="button small-button" data-correct="true">ひろい・きれいで</button>
+                    <button class="button small-button" data-correct="false">ひろくて・きれいな</button>
+                    <button class="button small-button" data-correct="false">ひろくて・きれいだ</button>
+                </div>
+                <div id="q3-feedback" class="feedback-box" style="display:none;"></div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✅ Tóm tắt Bài học</h2>
+            <p>Chúc mừng! Bạn đã hoàn thành Bài 8 về Tính từ và Miêu tả. Hãy cùng nhìn lại những điểm chính nhé:</p>
+            <ul>
+                <li><strong>Phân loại tính từ:</strong>
+                    <ul>
+                        <li><strong style="color: var(--primary-color);">Tính từ い</strong> kết thúc bằng い (VD: たかい, おいしい).</li>
+                        <li><strong style="color: var(--primary-color);">Tính từ な</strong> không kết thúc bằng い (trừ きれい) và cần な khi bổ nghĩa cho danh từ (VD: しずかな まち, べんりな えき).</li>
+                    </ul>
+                </li>
+                <li><strong>Cấu trúc câu:</strong>
+                    <ul>
+                        <li>Khi làm vị ngữ: [Tính từ い] です / [Tính từ な] です。</li>
+                        <li>Khi bổ nghĩa danh từ: [Tính từ い] Danh từ / [Tính từ な] な Danh từ。</li>
+                    </ul>
+                </li>
+                <li><strong>Nối các tính từ:</strong>
+                    <ul>
+                        <li>Tính từ い: Bỏ い thêm <strong style="color: var(--primary-color);">くて</strong>. (VD: おいしいくて やすい)</li>
+                        <li>Tính từ な: Thêm <strong style="color: var(--primary-color);">で</strong>. (VD: きれいで べんり)</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Với những kiến thức này, bạn đã có thể bắt đầu miêu tả thế giới quanh mình bằng tiếng Nhật rồi đấy! Tiếp tục luyện tập để thành thạo hơn nhé! Ganbatte! 💪</p>
+        </section>
+    </div>
+
+    <!-- Script for simulated practice feedback (for display purposes only, real interaction handled by mobile app) -->
+    <script>
+        document.querySelectorAll('.practice-question .button').forEach(button => {
+            button.addEventListener('click', function() {
+                const parentQuestion = this.closest('.practice-question');
+                const feedbackBox = parentQuestion.querySelector('.feedback-box');
+                
+                // Reset previous feedback for all buttons in the same question
+                parentQuestion.querySelectorAll('.button').forEach(btn => {
+                    btn.style.backgroundColor = 'var(--primary-color)';
+                    btn.style.color = 'var(--white)';
+                });
+
+                if (this.dataset.correct === 'true') {
+                    feedbackBox.textContent = 'Chính xác! ✅';
+                    feedbackBox.className = 'feedback-box feedback-correct';
+                    this.style.backgroundColor = '#28a745'; // Green for correct
+                } else {
+                    feedbackBox.textContent = 'Chưa đúng. Thử lại nhé! ❌';
+                    feedbackBox.className = 'feedback-box feedback-incorrect';
+                    this.style.backgroundColor = '#dc3545'; // Red for incorrect
+                }
+                feedbackBox.style.display = 'flex'; // Show feedback
+            });
+        });
+    </script>
+</body>
+</html>

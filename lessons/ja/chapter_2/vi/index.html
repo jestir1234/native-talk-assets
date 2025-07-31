@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Hiragana – The Vowel Sounds</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white-color: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body text size */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6em; /* ~25.6px */
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5em;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.3em; /* ~20.8px */
+            color: var(--primary-color);
+            margin-top: 1.2em;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1em;
+            text-align: justify;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        ul li {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '👉'; /* Unicode arrow or other suitable emoji */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Sections */
+        .lesson-section {
+            background-color: var(--white-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Lesson Header */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation-guide {
+            background-color: #e6f7ff; /* Lighter blue for pronunciation notes */
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        .pronunciation-guide strong {
+            color: var(--heading-color);
+        }
+
+        /* Stroke Order */
+        .stroke-order {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stroke-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            border: 1px dashed var(--border-color);
+        }
+
+        .stroke-item span.number {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2em;
+            min-width: 25px;
+            text-align: center;
+        }
+
+        .stroke-item span.description {
+            flex-grow: 1;
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 2px dashed var(--primary-color);
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: var(--white-color);
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .practice-question {
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .answer-reveal {
+            margin-top: 10px;
+            font-style: italic;
+            color: var(--body-text-color);
+            border-top: 1px dotted var(--border-color);
+            padding-top: 10px;
+        }
+        
+        /* Audio Icon Styles */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px; /* Min 44px for touch */
+            height: 48px; /* Min 44px for touch */
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 50%; /* Make it round */
+            font-size: 1.5em; /* Emoji size */
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 10px; /* Spacing from text */
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C4CA6; /* Darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        .audio-icon:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Vocabulary List */
+        .vocabulary-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .vocabulary-item {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .vocabulary-item .word-details {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .vocabulary-item .japanese-word {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: var(--heading-color);
+            display: flex; /* For audio icon alignment */
+            align-items: center;
+            gap: 5px;
+        }
+
+        .vocabulary-item .romaji-pronunciation {
+            font-size: 1em;
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+        
+        .vocabulary-item .vietnamese-translation {
+            font-size: 1em;
+            color: var(--body-text-color);
+            margin-top: 5px;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--white-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            border-bottom: none;
+            padding-bottom: 0;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .summary-char {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 15px 10px;
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--heading-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .summary-char .romaji {
+            font-size: 0.5em;
+            color: var(--primary-color);
+            margin-top: 5px;
+            font-weight: normal;
+        }
+
+        /* Responsive adjustments for smaller screens (mobile-first approach implies these are default) */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            h3 {
+                font-size: 1.1em;
+            }
+            
+            .audio-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.4em;
+            }
+
+            .vocabulary-item .japanese-word {
+                font-size: 1.2em;
+            }
+            
+            .summary-char {
+                font-size: 1.8em;
+                padding: 10px 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 2: Hiragana – The Vowel Sounds</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>Chào mừng bạn đến với Ngữ âm Hiragana! 👋</h2>
+            <p>Xin chào, người học tiếng Nhật tương lai! Hôm nay chúng ta sẽ bắt đầu hành trình khám phá bảng chữ cái Hiragana, bước đầu tiên để bạn có thể đọc và viết tiếng Nhật. Chương này tập trung vào 5 nguyên âm cơ bản trong tiếng Nhật: <strong>あ (a), い (i), う (u), え (e), お (o)</strong>.</p>
+            <p>Học tốt 5 âm này là chìa khóa để phát âm chuẩn tiếng Nhật, vì chúng là nền tảng cho mọi âm tiết khác!</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>Năm Nguyên Âm Cơ Bản (あ, い, う, え, お)</h2>
+            <p>Không giống như tiếng Việt với nhiều sắc thái, nguyên âm tiếng Nhật được phát âm "phẳng" và rõ ràng, không lên xuống giọng. Hãy cùng tìm hiểu từng chữ một nhé!</p>
+
+            <h3>1. あ (a)</h3>
+            <p>Đây là nguyên âm đầu tiên và cơ bản nhất. Nó được phát âm giống như âm "a" trong từ tiếng Việt "ba" hoặc "lá", nhưng giữ cho âm thanh ngắn và dứt khoát.</p>
+            <div class="pronunciation-guide">
+                <strong>Phát âm:</strong> Giống như 'a' trong 'ba' hoặc 'ca'. 🔊 <span class="audio-icon" data-audio-text="あ">🔊</span>
+            </div>
+            <h4>Thứ tự nét viết:</h4>
+            <div class="stroke-order">
+                <div class="stroke-item">
+                    <span class="number">1️⃣</span> <span class="description">Nét ngang ngắn từ trái sang phải.</span>
+                </div>
+                <div class="stroke-item">
+                    <span class="number">2️⃣</span> <span class="description">Nét sổ từ trên xuống, hơi cong sang trái ở cuối.</span>
+                </div>
+                <div class="stroke-item">
+                    <span class="number">3️⃣</span> <span class="description">Nét móc từ trên xuống, tạo một vòng tròn nhỏ rồi kết thúc bằng một nét cong lớn.</span>
+                </div>
+            </div>
+            <div class="practice-section">
+                <h3>Thử viết あ!</h3>
+                <p>Hãy tưởng tượng bạn đang viết chữ あ trên màn hình hoặc trên giấy. Bạn có thể lặp lại thứ tự nét viết để ghi nhớ nhé!</p>
+                <div class="practice-item">
+                    <div class="practice-question">Tưởng tượng chữ あ và thực hành viết nó 3 lần.</div>
+                    <div class="answer-reveal">Gợi ý: Nhớ 3 nét! 1️⃣ Ngang, 2️⃣ Sổ cong, 3️⃣ Móc vòng.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>2. い (i)</h3>
+            <p>Âm い khá đơn giản! Nó được phát âm giống như âm "i" trong tiếng Việt "đi" hoặc "khi", nhưng một lần nữa, hãy giữ cho âm thanh ngắn và không kéo dài.</p>
+            <div class="pronunciation-guide">
+                <strong>Phát âm:</strong> Giống như 'i' trong 'đi' hoặc 'khi'. 🔊 <span class="audio-icon" data-audio-text="い">🔊</span>
+            </div>
+            <h4>Thứ tự nét viết:</h4>
+            <div class="stroke-order">
+                <div class="stroke-item">
+                    <span class="number">1️⃣</span> <span class="description">Nét sổ từ trên xuống hơi cong và có móc nhỏ ở cuối.</span>
+                </div>
+                <div class="stroke-item">
+                    <span class="number">2️⃣</span> <span class="description">Nét sổ ngắn hơn, song song với nét 1, cũng hơi cong và có móc.</span>
+                </div>
+            </div>
+            <div class="practice-section">
+                <h3>Thử viết い!</h3>
+                <p>Nào, hãy cùng thực hành viết い. Nó giống như hai giọt nước đúng không?</p>
+                <div class="practice-item">
+                    <div class="practice-question">Viết chữ い 5 lần.</div>
+                    <div class="answer-reveal">Gợi ý: Hai nét song song, nét trái dài hơn nét phải.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>3. う (u)</h3>
+            <p>Âm う được phát âm tương tự âm "ư" trong tiếng Việt "tư" hoặc "hư", nhưng bạn cần làm tròn môi hơn một chút và không bè ra như khi nói "u" trong "thu".</p>
+            <div class="pronunciation-guide">
+                <strong>Phát âm:</strong> Giống như 'ư' trong 'tư', nhưng môi hơi tròn hơn. 🔊 <span class="audio-icon" data-audio-text="う">🔊</span>
+            </div>
+            <h4>Thứ tự nét viết:</h4>
+            <div class="stroke-order">
+                <div class="stroke-item">
+                    <span class="number">1️⃣</span> <span class="description">Nét sổ ngắn, xiên nhẹ từ trên xuống dưới.</span>
+                </div>
+                <div class="stroke-item">
+                    <span class="number">2️⃣</span> <span class="description">Nét cong lớn từ trên xuống, tạo hình vòng cung.</span>
+                </div>
+            </div>
+            <div class="practice-section">
+                <h3>Thử viết う!</h3>
+                <p>Tập trung vào sự mềm mại của nét cong thứ hai nhé!</p>
+                <div class="practice-item">
+                    <div class="practice-question">Viết chữ う 3 lần.</div>
+                    <div class="answer-reveal">Gợi ý: Một nét nhỏ và một nét cong lớn bao trùm.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>4. え (e)</h3>
+            <p>Âm え được phát âm giống như âm "ê" trong tiếng Việt "ghế" hoặc "kệ", nhưng hãy nhớ giữ cho âm thanh phẳng và không có độ rung hay luyến. </p>
+            <div class="pronunciation-guide">
+                <strong>Phát âm:</strong> Giống như 'ê' trong 'ghế' hoặc 'kệ'. 🔊 <span class="audio-icon" data-audio-text="え">🔊</span>
+            </div>
+            <h4>Thứ tự nét viết:</h4>
+            <div class="stroke-order">
+                <div class="stroke-item">
+                    <span class="number">1️⃣</span> <span class="description">Nét ngang ngắn từ trái sang phải.</span>
+                </div>
+                <div class="stroke-item">
+                    <span class="number">2️⃣</span> <span class="description">Nét sổ từ trên xuống, cắt ngang nét 1, rồi tạo thành một vòng lặp và kết thúc bằng nét ngang.</span>
+                </div>
+            </div>
+            <div class="practice-section">
+                <h3>Thử viết え!</h3>
+                <p>Nét thứ hai của え có vẻ phức tạp hơn một chút, nhưng hãy luyện tập từ từ nhé!</p>
+                <div class="practice-item">
+                    <div class="practice-question">Thực hành viết え 4 lần.</div>
+                    <div class="answer-reveal">Gợi ý: Nét thứ hai là một "khuôn" lớn bao quanh.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>5. お (o)</h3>
+            <p>Và cuối cùng là âm お. Âm này giống với âm "ô" trong tiếng Việt "tô" hoặc "cô". Hãy đảm bảo môi bạn tròn khi phát âm và âm thanh ngắn gọn.</p>
+            <div class="pronunciation-guide">
+                <strong>Phát âm:</strong> Giống như 'ô' trong 'tô' hoặc 'cô'. 🔊 <span class="audio-icon" data-audio-text="お">🔊</span>
+            </div>
+            <h4>Thứ tự nét viết:</h4>
+            <div class="stroke-order">
+                <div class="stroke-item">
+                    <span class="number">1️⃣</span> <span class="description">Nét ngang từ trái sang phải.</span>
+                </div>
+                <div class="stroke-item">
+                    <span class="number">2️⃣</span> <span class="description">Nét sổ từ trên xuống, cắt ngang nét 1, sau đó kéo một vòng cung lớn từ trái sang phải.</span>
+                </div>
+                <div class="stroke-item">
+                    <span class="number">3️⃣</span> <span class="description">Nét chấm nhỏ ở góc trên bên phải.</span>
+                </div>
+            </div>
+            <div class="practice-section">
+                <h3>Thử viết お!</h3>
+                <p>Chữ お trông khá giống あ, nhưng có thêm một "nét chấm" đặc trưng đó!</p>
+                <div class="practice-item">
+                    <div class="practice-question">Viết chữ お 3 lần.</div>
+                    <div class="answer-reveal">Gợi ý: Giống あ nhưng có chấm nhỏ ở trên cùng bên phải.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>Từ Vựng Cơ Bản Đầu Tiên Của Bạn! 🥳</h2>
+            <p>Tuyệt vời! Bạn đã học được 5 nguyên âm. Giờ là lúc kết hợp chúng lại để tạo thành những từ tiếng Nhật đầu tiên!</p>
+            <div class="vocabulary-list">
+                <div class="vocabulary-item">
+                    <div class="word-details">
+                        <span class="japanese-word">あい <span class="audio-icon" data-audio-text="あい">🔊</span></span>
+                        <span class="romaji-pronunciation">[ai]</span>
+                        <span class="vietnamese-translation">Tình yêu</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div class="word-details">
+                        <span class="japanese-word">いえ <span class="audio-icon" data-audio-text="いえ">🔊</span></span>
+                        <span class="romaji-pronunciation">[ie]</span>
+                        <span class="vietnamese-translation">Nhà</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div class="word-details">
+                        <span class="japanese-word">うみ <span class="audio-icon" data-audio-text="うみ">🔊</span></span>
+                        <span class="romaji-pronunciation">[umi]</span>
+                        <span class="vietnamese-translation">Biển</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div class="word-details">
+                        <span class="japanese-word">あおい <span class="audio-icon" data-audio-text="あおい">🔊</span></span>
+                        <span class="romaji-pronunciation">[aoi]</span>
+                        <span class="vietnamese-translation">Màu xanh (tính từ)</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div class="word-details">
+                        <span class="japanese-word">えい <span class="audio-icon" data-audio-text="えい">🔊</span></span>
+                        <span class="romaji-pronunciation">[ei]</span>
+                        <span class="vietnamese-translation">Cá đuối; hoặc Anh (viết tắt của Anh quốc)</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div class="word-details">
+                        <span class="japanese-word">いう <span class="audio-icon" data-audio-text="いう">🔊</span></span>
+                        <span class="romaji-pronunciation">[iu]</span>
+                        <span class="vietnamese-translation">Nói</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>Luyện Tập Tổng Hợp 🧠</h2>
+            <p>Kiểm tra kiến thức của bạn với một vài câu hỏi nhanh nhé!</p>
+            <div class="practice-section">
+                <h3>Ghép nối!</h3>
+                <div class="practice-item">
+                    <div class="practice-question">1. Chữ Hiragana nào phát âm là "a"?</div>
+                    <div class="answer-reveal">Đáp án: あ</div>
+                </div>
+                <div class="practice-item">
+                    <div class="practice-question">2. Chữ Hiragana nào phát âm là "i"?</div>
+                    <div class="answer-reveal">Đáp án: い</div>
+                </div>
+                <div class="practice-item">
+                    <div class="practice-question">3. "Nhà" trong tiếng Nhật là gì?</div>
+                    <div class="answer-reveal">Đáp án: いえ [ie]</div>
+                </div>
+                <div class="practice-item">
+                    <div class="practice-question">4. Nghe và chọn từ đúng: 🔊 <span class="audio-icon" data-audio-text="うみ">🔊</span></div>
+                    <div class="answer-reveal">Đáp án: うみ (biển)</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>Tổng Kết Chương 2 🎉</h2>
+            <p>Chúc mừng bạn! Bạn đã hoàn thành chương đầu tiên của Hiragana và làm quen với 5 nguyên âm quan trọng nhất. Đây là nền tảng vững chắc cho hành trình học tiếng Nhật của bạn.</p>
+            <p>Hãy nhớ lại 5 nguyên âm chúng ta đã học hôm nay:</p>
+            <div class="summary-grid">
+                <div class="summary-char">あ<span class="romaji">a</span></div>
+                <div class="summary-char">い<span class="romaji">i</span></div>
+                <div class="summary-char">う<span class="romaji">u</span></div>
+                <div class="summary-char">え<span class="romaji">e</span></div>
+                <div class="summary-char">お<span class="romaji">o</span></div>
+            </div>
+            <p>Hãy tiếp tục luyện tập phát âm và nét viết cho đến khi bạn tự tin nhé! Việc ghi nhớ những âm này là cực kỳ quan trọng.</p>
+        </section>
+
+    </div>
+</body>
+</html>

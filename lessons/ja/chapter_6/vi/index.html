@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 6: Số, Thời Gian và Trợ Từ Đếm</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+        }
+
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            padding: 20px 15px 0;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 5px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        p {
+            margin: 10px 15px;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 10px 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode symbol for list item */
+            position: absolute;
+            left: -10px;
+            color: #8B5FBF; /* Primary color */
+        }
+
+        a {
+            color: #8B5FBF; /* Primary: Purple for links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        strong {
+            color: #2C3E50; /* Dark blue for strong text */
+        }
+
+        em {
+            font-style: italic;
+            color: #8B5FBF;
+        }
+
+        /* Specific Component Styles */
+        .chapter-title {
+            margin-top: 20px;
+            margin-bottom: 0;
+            padding-top: 0;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .section-content {
+            background-color: #FDF9E5; /* Secondary color for sections */
+            padding: 15px 0;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-box {
+            background-color: #ffffff;
+            border: 1px solid #E0E0E0;
+            border-left: 5px solid #8B5FBF; /* Primary color accent */
+            padding: 15px;
+            margin: 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .example-box p {
+            margin: 5px 0;
+            padding: 0;
+        }
+
+        .practice-section {
+            background-color: #ffffff;
+            border: 1px solid #E0E0E0;
+            padding: 20px;
+            margin: 20px 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            text-align: center; /* Center buttons within practice section */
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF; /* Primary color for practice headings */
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: left; /* Align practice heading to left */
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px dashed #E0E0E0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align items to start */
+        }
+
+        .practice-item:last-child {
+            border-bottom: none;
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #8B5FBF;
+            display: block; /* Ensure it takes full width below text */
+            margin-top: 5px;
+        }
+
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary color */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Circular button */
+            width: 44px; /* Minimum 44px tall */
+            height: 44px; /* Minimum 44px tall */
+            font-size: 1.2em;
+            display: inline-flex; /* Use flex to center icon */
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 10px; /* Space from text */
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4899; /* Darker shade on hover */
+            transform: translateY(-2px);
+        }
+
+        .text-with-audio {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Distribute space */
+            margin-bottom: 10px; /* Space between items in list */
+            width: 100%; /* Ensure it takes full width */
+        }
+
+        .text-with-audio span {
+            flex-grow: 1; /* Allow text to grow */
+            text-align: left;
+        }
+        .text-with-audio .pronunciation {
+             flex-grow: 1; /* Allow text to grow */
+             text-align: left;
+             margin-top: 0;
+             margin-left: 0;
+        }
+
+
+        .cultural-note {
+            background-color: #fff9e6; /* Lighter cream */
+            border-left: 5px solid #FFC107; /* Orange/Yellow for info */
+            padding: 15px;
+            margin: 15px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: #555555;
+        }
+
+        .cultural-note strong {
+            color: #FFC107;
+        }
+
+        .summary-section {
+            background-color: #E6F7FF; /* Light blue for summary */
+            border-top: 3px solid #8B5FBF;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-section h2 {
+            color: #2C3E50;
+            border-bottom: none;
+            text-align: center;
+            margin-bottom: 15px;
+            padding-bottom: 0;
+        }
+
+        .summary-section ul {
+            list-style-type: '🌟 '; /* Star bullet points */
+            margin-left: 0;
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            margin-bottom: 10px;
+            color: #2C3E50;
+            font-weight: bold;
+            padding-left: 5px; /* Adjust for unicode bullet */
+        }
+        .summary-section li::before {
+            content: none; /* Remove default bullet */
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 600px) {
+            body {
+                font-size: 17px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.5em;
+            }
+            .section-content, .practice-section, .example-box, .cultural-note, .summary-section {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 800px; /* Max width for larger screens */
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            .lesson-header-image {
+                max-width: 700px; /* Slightly larger image on wider screens */
+            }
+        }
+        @media (min-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+            .section-content, .practice-section, .example-box, .cultural-note, .summary-section {
+                max-width: 900px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="chapter-title">Chương 6: Số, Thời Gian và Trợ Từ Đếm</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+    </div>
+
+    <section class="section-content">
+        <h2>👋 Chào mừng đến với Chương 6!</h2>
+        <p>Trong chương này, chúng ta sẽ đi sâu vào thế giới số đếm và thời gian trong tiếng Nhật. Bạn sẽ học cách đếm từ 1 đến 10, cách hỏi và nói giờ, các ngày trong tuần và một trợ từ ngữ pháp quan trọng là 「に」 dùng cho thời gian và địa điểm. Cùng bắt đầu thôi nào! ✨</p>
+    </section>
+
+    <section class="section-content">
+        <h2>🔢 Phần 1: Các Số Từ 1 Đến 10 (数字 - Suuji)</h2>
+        <p>Học cách đếm là nền tảng quan trọng. Hãy cùng học các số từ 1 đến 10 nhé. Hãy lắng nghe và lặp lại theo!</p>
+        <ul>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>1:</strong> いち (ichi)</span>
+                    <button class="audio-icon" data-audio-text="いち">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>2:</strong> に (ni)</span>
+                    <button class="audio-icon" data-audio-text="に">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>3:</strong> さん (san)</span>
+                    <button class="audio-icon" data-audio-text="さん">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>4:</strong> し (shi) / よん (yon)</span>
+                    <button class="audio-icon" data-audio-text="し">🔊</button>
+                    <button class="audio-icon" data-audio-text="よん">🔊</button>
+                </div>
+                <span class="pronunciation"><em>(Cả hai đều được dùng, 'yon' thường phổ biến hơn)</em></span>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>5:</strong> ご (go)</span>
+                    <button class="audio-icon" data-audio-text="ご">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>6:</strong> ろく (roku)</span>
+                    <button class="audio-icon" data-audio-text="ろく">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>7:</strong> しち (shichi) / なな (nana)</span>
+                    <button class="audio-icon" data-audio-text="しち">🔊</button>
+                    <button class="audio-icon" data-audio-text="なな">🔊</button>
+                </div>
+                <span class="pronunciation"><em>(Cả hai đều được dùng, 'nana' thường phổ biến hơn)</em></span>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>8:</strong> はち (hachi)</span>
+                    <button class="audio-icon" data-audio-text="はち">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>9:</strong> きゅう (kyuu) / く (ku)</span>
+                    <button class="audio-icon" data-audio-text="きゅう">🔊</button>
+                    <button class="audio-icon" data-audio-text="く">🔊</button>
+                </div>
+                <span class="pronunciation"><em>(Cả hai đều được dùng, 'kyuu' thường phổ biến hơn)</em></span>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>10:</strong> じゅう (juu)</span>
+                    <button class="audio-icon" data-audio-text="じゅう">🔊</button>
+                </div>
+            </li>
+        </ul>
+
+        <div class="practice-section">
+            <h3>📖 Luyện Tập Số Đếm</h3>
+            <p>Hãy tự kiểm tra xem bạn nhớ được bao nhiêu số nhé!</p>
+            <div class="practice-item">
+                <div class="text-with-audio">
+                    <span>Bạn có nhớ số này không?</span>
+                    <button class="audio-icon" data-audio-text="さん">🔊</button>
+                </div>
+                <span class="pronunciation"><em>(Bạn nghĩ đó là số mấy?)</em></span>
+            </div>
+            <div class="practice-item">
+                <div class="text-with-audio">
+                    <span>Số 7 trong tiếng Nhật là gì? (hãy thử cả 2 cách)</span>
+                    <button class="audio-icon" data-audio-text="しち">🔊</button>
+                    <button class="audio-icon" data-audio-text="なな">🔊</button>
+                </div>
+            </div>
+            <div class="practice-item">
+                <div class="text-with-audio">
+                    <span>Hãy nói "10" bằng tiếng Nhật.</span>
+                    <button class="audio-icon" data-audio-text="じゅう">🔊</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-content">
+        <h2>⏰ Phần 2: Thời Gian (時間 - Jikan)</h2>
+        <p>Bây giờ chúng ta sẽ học cách nói và hỏi về thời gian. Để nói giờ, bạn chỉ cần thêm 「じ」(ji) vào sau số!</p>
+
+        <div class="example-box">
+            <p><strong>Cấu trúc:</strong> [Số] + じ です。</p>
+            <p>Ví dụ:</p>
+            <p>1 giờ: いちじ です (ichiji desu) <button class="audio-icon" data-audio-text="いちじです">🔊</button></p>
+            <p>2 giờ: にじ です (niji desu) <button class="audio-icon" data-audio-text="にじです">🔊</button></p>
+            <p>7 giờ: しちじ です (shichiji desu) <button class="audio-icon" data-audio-text="しちじです">🔊</button> / ななじ です (nanaji desu) <button class="audio-icon" data-audio-text="ななじです">🔊</button></p>
+            <p><em>Lưu ý đặc biệt:</em></p>
+            <p>4 giờ: よじ (yoji) <button class="audio-icon" data-audio-text="よじ">🔊</button> (Không dùng よんじ - yonji)</p>
+            <p>9 giờ: くじ (kuji) <button class="audio-icon" data-audio-text="くじ">🔊</button> (Không dùng きゅうじ - kyuuji)</p>
+        </div>
+
+        <h3>❓ Hỏi Thời Gian: いま なんじですか？</h3>
+        <p>Để hỏi "Bây giờ là mấy giờ?", chúng ta dùng câu hỏi sau:</p>
+        <div class="example-box">
+            <p><strong>A:</strong> いま なんじですか？ (Ima nanji desu ka?) <button class="audio-icon" data-audio-text="いまなんじですか？">🔊</button></p>
+            <p><em>(Bây giờ là mấy giờ?)</em></p>
+            <p><strong>B:</strong> [Giờ] です。</p>
+            <p>Ví dụ:</p>
+            <p><strong>A:</strong> いま なんじですか？ <button class="audio-icon" data-audio-text="いまなんじですか？">🔊</button></p>
+            <p><strong>B:</strong> はちじ です。 (Hachiji desu) <button class="audio-icon" data-audio-text="はちじです">🔊</button></p>
+            <p><em>(Bây giờ là 8 giờ.)</em></p>
+        </div>
+
+        <div class="practice-section">
+            <h3>⏰ Luyện Tập Hỏi Giờ</h3>
+            <div class="practice-item">
+                <p>Hãy hỏi: "Bây giờ là mấy giờ?"</p>
+                <div class="text-with-audio">
+                    <span><strong>Gợi ý:</strong> <em>Ima nanji desu ka?</em></span>
+                    <button class="audio-icon" data-audio-text="いまなんじですか？">🔊</button>
+                </div>
+            </div>
+            <div class="practice-item">
+                <p>Trả lời: "Bây giờ là 5 giờ."</p>
+                <div class="text-with-audio">
+                    <span><strong>Gợi ý:</strong> <em>Goji desu.</em></span>
+                    <button class="audio-icon" data-audio-text="ごじです">🔊</button>
+                </div>
+            </div>
+            <div class="practice-item">
+                <p>Trả lời: "Bây giờ là 4 giờ."</p>
+                <div class="text-with-audio">
+                    <span><strong>Gợi ý:</strong> <em>Yoji desu.</em> (Nhớ trường hợp đặc biệt!)</span>
+                    <button class="audio-icon" data-audio-text="よじです">🔊</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-content">
+        <h2>🛍️ Phần 3: Trợ Từ Đếm Cơ Bản (～つ - tsu)</h2>
+        <p>Trong tiếng Nhật, khi đếm vật, chúng ta thường dùng trợ từ đếm. 「～つ」 là một trợ từ đếm cơ bản, dùng cho nhiều loại vật nhỏ, và đặc biệt hữu ích khi bạn không biết trợ từ đếm cụ thể.</p>
+        <p>Dưới đây là các số từ 1 đến 10 khi dùng với 「～つ」:</p>
+        <ul>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>1 cái:</strong> ひとつ (hitotsu)</span>
+                    <button class="audio-icon" data-audio-text="ひとつ">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>2 cái:</strong> ふたつ (futatsu)</span>
+                    <button class="audio-icon" data-audio-text="ふたつ">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>3 cái:</strong> みっつ (mittsu)</span>
+                    <button class="audio-icon" data-audio-text="みっつ">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>4 cái:</strong> よっつ (yottsu)</span>
+                    <button class="audio-icon" data-audio-text="よっつ">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>5 cái:</strong> いつつ (itsutsu)</span>
+                    <button class="audio-icon" data-audio-text="いつつ">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>6 cái:</strong> むっつ (muttsu)</span>
+                    <button class="audio-icon" data-audio-text="むっつ">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>7 cái:</strong> ななつ (nanatsu)</span>
+                    <button class="audio-icon" data-audio-text="ななつ">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>8 cái:</strong> やっつ (yattsu)</span>
+                    <button class="audio-icon" data-audio-text="やっつ">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>9 cái:</strong> ここのつ (kokonotsu)</span>
+                    <button class="audio-icon" data-audio-text="ここのつ">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>10 cái:</strong> とお (too)</span>
+                    <button class="audio-icon" data-audio-text="とお">🔊</button>
+                </div>
+            </li>
+        </ul>
+        <p>Để hỏi "bao nhiêu cái?", chúng ta dùng 「いくつ」(ikutsu). <button class="audio-icon" data-audio-text="いくつ">🔊</button></p>
+
+        <div class="example-box">
+            <p>りんごをいくつほしいですか？ (Ringo o ikutsu hoshii desu ka?)</p>
+            <p><em>(Bạn muốn bao nhiêu quả táo?)</em></p>
+            <p>みっつ ほしいです。 (Mittsu hoshii desu.)</p>
+            <p><em>(Tôi muốn 3 quả.)</em></p>
+        </div>
+
+        <div class="practice-section">
+            <h3>🍎 Luyện Tập Với 「～つ」</h3>
+            <div class="practice-item">
+                <p>Bạn muốn 6 cái bánh quy. Nói "6 cái" bằng 「～つ」.</p>
+                <div class="text-with-audio">
+                    <span><strong>Gợi ý:</strong> <em>Muttsu.</em></span>
+                    <button class="audio-icon" data-audio-text="むっつ">🔊</button>
+                </div>
+            </div>
+            <div class="practice-item">
+                <p>Hãy hỏi "Bạn có bao nhiêu cái bút chì?" (dùng 「いくつ」)</p>
+                <div class="text-with-audio">
+                    <span><strong>Gợi ý:</strong> <em>Enpitsu wa ikutsu arimasu ka?</em></span>
+                    <button class="audio-icon" data-audio-text="えんぴつはいくつありますか？">🔊</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-content">
+        <h2>🗓️ Phần 4: Các Ngày Trong Tuần (曜日 - Youbi)</h2>
+        <p>Học các ngày trong tuần sẽ giúp bạn lên kế hoạch và sắp xếp cuộc hẹn!</p>
+        <ul>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>Thứ Hai:</strong> 月曜日 (げつようび - Getsuyoubi)</span>
+                    <button class="audio-icon" data-audio-text="げつようび">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>Thứ Ba:</strong> 火曜日 (かようび - Kayoubi)</span>
+                    <button class="audio-icon" data-audio-text="かようび">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>Thứ Tư:</strong> 水曜日 (すいようび - Suiyoubi)</span>
+                    <button class="audio-icon" data-audio-text="すいようび">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>Thứ Năm:</strong> 木曜日 (もくようび - Mokuyoubi)</span>
+                    <button class="audio-icon" data-audio-text="もくようび">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>Thứ Sáu:</strong> 金曜日 (きんようび - Kin'youbi)</span>
+                    <button class="audio-icon" data-audio-text="きんようび">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>Thứ Bảy:</strong> 土曜日 (どようび - Doyoubi)</span>
+                    <button class="audio-icon" data-audio-text="どようび">🔊</button>
+                </div>
+            </li>
+            <li>
+                <div class="text-with-audio">
+                    <span><strong>Chủ Nhật:</strong> 日曜日 (にちようび - Nichiyoubi)</span>
+                    <button class="audio-icon" data-audio-text="にちようび">🔊</button>
+                </div>
+            </li>
+        </ul>
+
+        <div class="cultural-note">
+            <strong>💡 Ghi chú Văn hóa:</strong>
+            <p>Các chữ Kanji cho các ngày trong tuần đều liên quan đến các yếu tố tự nhiên hoặc hành tinh:</p>
+            <ul>
+                <li>月 (Tsuki - Mặt trăng) cho Thứ Hai</li>
+                <li>火 (Hi - Lửa) cho Thứ Ba (Sao Hỏa)</li>
+                <li>水 (Mizu - Nước) cho Thứ Tư (Sao Thủy)</li>
+                <li>木 (Ki - Cây/Gỗ) cho Thứ Năm (Sao Mộc)</li>
+                <li>金 (Kane - Vàng/Tiền) cho Thứ Sáu (Sao Kim)</li>
+                <li>土 (Tsuchi - Đất) cho Thứ Bảy (Sao Thổ)</li>
+                <li>日 (Hi - Mặt trời) cho Chủ Nhật</li>
+            </ul>
+        </div>
+
+        <p>Để hỏi "Hôm nay là thứ mấy?", dùng: 「きょうは なんようび ですか？」(Kyou wa nan'youbi desu ka?) <button class="audio-icon" data-audio-text="きょうはなんようびですか？">🔊</button></p>
+        <div class="example-box">
+            <p><strong>A:</strong> きょうは なんようび ですか？</p>
+            <p><em>(Hôm nay là thứ mấy?)</em></p>
+            <p><strong>B:</strong> かようび です。</p>
+            <p><em>(Hôm nay là Thứ Ba.)</em></p>
+        </div>
+
+        <div class="practice-section">
+            <h3>🗓️ Luyện Tập Ngày Trong Tuần</h3>
+            <div class="practice-item">
+                <p>Hãy nói "Thứ Năm" bằng tiếng Nhật.</p>
+                <div class="text-with-audio">
+                    <span><strong>Gợi ý:</strong> <em>Mokuyoubi.</em></span>
+                    <button class="audio-icon" data-audio-text="もくようび">🔊</button>
+                </div>
+            </div>
+            <div class="practice-item">
+                <p>Hỏi: "Hôm nay là thứ mấy?"</p>
+                <div class="text-with-audio">
+                    <span><strong>Gợi ý:</strong> <em>Kyou wa nan'youbi desu ka?</em></span>
+                    <button class="audio-icon" data-audio-text="きょうはなんようびですか？">🔊</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-content">
+        <h2>📍 Phần 5: Ngữ Pháp 「に」 (ni) cho Thời Gian và Địa Điểm</h2>
+        <p>Trợ từ 「に」 là một trong những trợ từ đa năng nhất trong tiếng Nhật. Trong chương này, chúng ta sẽ tập trung vào hai cách dùng chính:</p>
+
+        <h3>1. 「に」 cho Thời Gian Cụ Thể</h3>
+        <p>Khi bạn muốn chỉ một thời điểm cụ thể trong ngày hoặc ngày trong tuần mà một hành động xảy ra, bạn sử dụng 「に」.</p>
+        <div class="example-box">
+            <p>わたしは <strong>くじに</strong> ねます。(Watashi wa <strong>kuji ni</strong> nemasu.) <button class="audio-icon" data-audio-text="わたしはくじにねます">🔊</button></p>
+            <p><em>(Tôi ngủ <strong>lúc 9 giờ</strong>.)</em></p>
+            <p>げつようび<strong>に</strong> えいがをみます。(Getsuyoubi <strong>ni</strong> eiga o mimasu.) <button class="audio-icon" data-audio-text="げつようびにえいがをみます">🔊</button></p>
+            <p><em>(Tôi xem phim <strong>vào Thứ Hai</strong>.)</em></p>
+            <p><em>Lưu ý: Bạn không cần dùng 「に」 với các từ như きょう (kyou - hôm nay), あした (ashita - ngày mai), きのう (kinou - hôm qua), まいにち (mainichi - mỗi ngày), まいばん (maiban - mỗi tối).</em></p>
+        </div>
+
+        <h3>2. 「に」 cho Địa Điểm (Đích đến / Sự tồn tại)</h3>
+        <p>「に」 cũng được dùng để chỉ đích đến của một chuyển động hoặc nơi mà một vật/người tồn tại.</p>
+        <div class="example-box">
+            <p>がっこう<strong>に</strong> いきます。(Gakkou <strong>ni</strong> ikimasu.) <button class="audio-icon" data-audio-text="がっこうにいきます">🔊</button></p>
+            <p><em>(Tôi đi <strong>đến trường</strong>.)</em></p>
+            <p>へや<strong>に</strong> います。(Heya <strong>ni</strong> imasu.) <button class="audio-icon" data-audio-text="へやにいます">🔊</button></p>
+            <p><em>(Tôi ở <strong>trong phòng</strong>.)</em></p>
+            <p>つくえのうえ<strong>に</strong> ほんです。(Tsukue no ue <strong>ni</strong> hon desu.) <button class="audio-icon" data-audio-text="つくえのうえにほんです">🔊</button></p>
+            <p><em>(Quyển sách ở <strong>trên bàn</strong>.)</em></p>
+        </div>
+
+        <div class="practice-section">
+            <h3>✍️ Luyện Tập Với 「に」</h3>
+            <div class="practice-item">
+                <p>Hoàn thành câu: "Tôi thức dậy vào lúc 6 giờ."</p>
+                <div class="text-with-audio">
+                    <span>わたしは ろくじ ＿＿ おきます。</span>
+                    <button class="audio-icon" data-audio-text="わたしはろくじにおきます">🔊</button>
+                </div>
+                <span class="pronunciation"><em>(Đáp án: に)</em></span>
+            </div>
+            <div class="practice-item">
+                <p>Hoàn thành câu: "Anh ấy đi đến cửa hàng."</p>
+                <div class="text-with-audio">
+                    <span>かれは みせ ＿＿ いきます。</span>
+                    <button class="audio-icon" data-audio-text="かれはみせにいきます">🔊</button>
+                </div>
+                <span class="pronunciation"><em>(Đáp án: に)</em></span>
+            </div>
+            <div class="practice-item">
+                <p>Dịch câu: "Bạn học tiếng Nhật vào Chủ Nhật."</p>
+                <div class="text-with-audio">
+                    <span><strong>Gợi ý:</strong> <em>Nichiyoubi ni Nihongo o benkyoushimasu.</em></span>
+                    <button class="audio-icon" data-audio-text="にちようびににほんごをべんきょうします">🔊</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="summary-section">
+        <h2>🌟 Tóm Tắt Chương 6</h2>
+        <p>Bạn đã hoàn thành một chương quan trọng! Hãy cùng nhìn lại những gì chúng ta đã học:</p>
+        <ul>
+            <li>Học các số từ <strong>1 đến 10</strong> trong tiếng Nhật.</li>
+            <li>Cách nói giờ bằng cách thêm <strong>「じ」</strong> vào sau số (nhớ các trường hợp đặc biệt!).</li>
+            <li>Hỏi thời gian với <strong>「いま なんじですか？」</strong>.</li>
+            <li>Học trợ từ đếm đa năng <strong>「～つ」</strong> và cách dùng <strong>「いくつ」</strong> để hỏi số lượng.</li>
+            <li>Nắm vững các <strong>ngày trong tuần</strong> và cách hỏi <strong>「なんようび」</strong>.</li>
+            <li>Hiểu cách dùng trợ từ <strong>「に」</strong> để chỉ <strong>thời gian cụ thể</strong> và <strong>đích đến/sự tồn tại của địa điểm</strong>.</li>
+        </ul>
+        <p>Tiếp tục luyện tập nhé! Kiến thức này sẽ rất hữu ích trong giao tiếp hàng ngày đấy. 💪</p>
+    </section>
+</body>
+</html>

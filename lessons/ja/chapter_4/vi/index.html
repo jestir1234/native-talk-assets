@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 4: Katakana – Từ mượn</title>
+    <style>
+        /* Global Styles & Color Scheme */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white-color: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        .lesson-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 32px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+
+        /* Specific Header Requirement */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        .section {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            margin-bottom: 12px;
+            padding: 0 5px; /* Slight padding for readability on small screens */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 12px;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '👉'; /* Unicode bullet point */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Emphasis and Strong Text */
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: normal;
+            color: var(--primary-color);
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            min-width: 44px; /* Minimum touch target size */
+            min-height: 44px; /* Minimum touch target size */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Example Boxes */
+        .example-box {
+            background-color: var(--white-color);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .example-box p {
+            margin: 5px 0;
+            padding: 0;
+        }
+
+        .example-box .japanese-text {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--heading-text-color);
+        }
+
+        .example-box .vietnamese-translation {
+            font-size: 0.95em;
+            color: var(--body-text-color);
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--white-color);
+            border: 2px dashed var(--primary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .practice-item {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .practice-item .question {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-bottom: 10px;
+        }
+
+        .quiz-options button {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            min-width: 44px;
+            min-height: 44px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            width: calc(100% - 10px); /* For mobile stacking */
+        }
+
+        .quiz-options button:hover {
+            background-color: #6C3D9A; /* Darker primary */
+            transform: scale(1.02);
+        }
+
+        .quiz-options button.correct {
+            background-color: #4CAF50; /* Green for correct answer */
+        }
+
+        .quiz-options button.incorrect {
+            background-color: #F44336; /* Red for incorrect answer */
+        }
+
+        /* Katakana Character Display */
+        .katakana-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .katakana-char-item {
+            background-color: var(--white-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .katakana-char-item .char {
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .katakana-char-item .romaji {
+            font-size: 1.1em;
+            color: var(--heading-text-color);
+            margin-bottom: 5px;
+        }
+
+        .katakana-char-item .stroke-order {
+            font-size: 0.9em;
+            color: var(--body-text-color);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--white-color);
+            border-top: 3px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+            border-bottom: none;
+            margin-bottom: 15px;
+        }
+
+        .summary-section ul {
+            list-style: disc; /* Use regular disc for summary points */
+            padding-left: 20px;
+        }
+
+        .summary-section ul li::before {
+            content: none; /* Remove custom bullet point */
+        }
+
+        .summary-section ul li {
+            margin-bottom: 10px;
+            color: var(--body-text-color);
+        }
+
+        /* Responsive Design for larger screens */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            .lesson-container {
+                padding: 40px;
+            }
+
+            .section {
+                padding: 30px;
+            }
+
+            .katakana-grid {
+                grid-template-columns: repeat(3, 1fr); /* More columns on wider screens */
+            }
+
+            .quiz-options button {
+                width: auto; /* Allow buttons to take natural width */
+                min-width: 150px; /* Wider buttons on desktop */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chapter 4: Katakana – Từ mượn</h1>
+        <div class="lesson-header">
+            <!-- This image is a placeholder and should ideally be pre-loaded or generated on the client side.
+                 Per instructions, no external image URLs are allowed, so this `src` is for demonstration
+                 of the required HTML structure. In a real mobile app, this might be a local asset. -->
+            <img src="../header.webp" alt="Chapter 4 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section">
+            <h2>Chào mừng bạn đến với Katakana! 👋</h2>
+            <p>Trong các chương trước, chúng ta đã học Hiragana, bảng chữ cái chính dùng cho các từ tiếng Nhật bản địa.</p>
+            <p>Bây giờ, hãy cùng khám phá <strong>Katakana</strong>! Đây là bảng chữ cái được dùng chủ yếu để viết các <em>từ mượn</em> từ ngôn ngữ khác (thường là tiếng Anh), tên riêng nước ngoài, từ tượng thanh và nhấn mạnh. Katakana có các âm cơ bản giống Hiragana nhưng hình dáng khác biệt, thường thẳng và góc cạnh hơn.</p>
+            <p>Bạn đã sẵn sàng chưa? Bắt đầu nào!</p>
+        </section>
+
+        <section class="section">
+            <h2>1. Học Katakana: カ, キ, ク, ケ, コ</h2>
+            <p>Chúng ta sẽ bắt đầu với 5 chữ Katakana đầu tiên, tương ứng với hàng 'Ka' trong Hiragana. Hãy chú ý cách viết và lắng nghe cách phát âm nhé!</p>
+
+            <div class="katakana-grid">
+                <div class="katakana-char-item">
+                    <div class="char">カ</div>
+                    <div class="romaji">Ka</div>
+                    <div class="stroke-order">Viết: 2 nét (như Hiragana か nhưng nét thẳng hơn)</div>
+                    <button class="audio-icon" data-audio-text="カ">🔊</button>
+                </div>
+                <div class="katakana-char-item">
+                    <div class="char">キ</div>
+                    <div class="romaji">Ki</div>
+                    <div class="stroke-order">Viết: 3 nét (như Hiragana き nhưng nét thẳng hơn)</div>
+                    <button class="audio-icon" data-audio-text="キ">🔊</button>
+                </div>
+                <div class="katakana-char-item">
+                    <div class="char">ク</div>
+                    <div class="romaji">Ku</div>
+                    <div class="stroke-order">Viết: 1 nét (như Hiragana く nhưng góc cạnh hơn)</div>
+                    <button class="audio-icon" data-audio-text="ク">🔊</button>
+                </div>
+                <div class="katakana-char-item">
+                    <div class="char">ケ</div>
+                    <div class="romaji">Ke</div>
+                    <div class="stroke-order">Viết: 3 nét (như Hiragana け nhưng nét thẳng và góc cạnh)</div>
+                    <button class="audio-icon" data-audio-text="ケ">🔊</button>
+                </div>
+                <div class="katakana-char-item">
+                    <div class="char">コ</div>
+                    <div class="romaji">Ko</div>
+                    <div class="stroke-order">Viết: 2 nét (hình vuông, nét thẳng)</div>
+                    <button class="audio-icon" data-audio-text="コ">🔊</button>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h3>Thực hành: Nhận diện Katakana ✏️</h3>
+                <p>Chọn chữ Katakana đúng cho mỗi âm sau:</p>
+
+                <div class="practice-item">
+                    <p class="question">1. Chọn chữ Katakana cho âm "Ka":</p>
+                    <div class="quiz-options">
+                        <button data-answer="incorrect">キ</button>
+                        <button data-answer="correct">カ</button>
+                        <button data-answer="incorrect">コ</button>
+                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p class="question">2. Chọn chữ Katakana cho âm "Ku":</p>
+                    <div class="quiz-options">
+                        <button data-answer="incorrect">ケ</button>
+                        <button data-answer="correct">ク</button>
+                        <button data-answer="incorrect">カ</button>
+                    </div>
+                </div>
+                <p><em>(Nhấn vào nút để xem đáp án)</em></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>2. Từ mượn (Gairaigo) trong Katakana</h2>
+            <p>Một trong những ứng dụng chính của Katakana là để viết các từ có nguồn gốc nước ngoài. Tiếng Nhật mượn rất nhiều từ từ tiếng Anh và các ngôn ngữ khác.</p>
+
+            <h3>Ví dụ về từ mượn:</h3>
+
+            <div class="example-box">
+                <p class="japanese-text">
+                    コーヒー <button class="audio-icon" data-audio-text="コーヒー">🔊</button>
+                    <span class="romaji">(Kōhī)</span>
+                </p>
+                <p class="vietnamese-translation">Nghĩa: Cà phê (từ "coffee" trong tiếng Anh)</p>
+                <p>☕️ Bạn có thích uống コーヒー không?</p>
+            </div>
+
+            <div class="example-box">
+                <p class="japanese-text">
+                    パン <button class="audio-icon" data-audio-text="パン">🔊</button>
+                    <span class="romaji">(Pan)</span>
+                </p>
+                <p class="vietnamese-translation">Nghĩa: Bánh mì (từ "pão" trong tiếng Bồ Đào Nha)</p>
+                <p class="cultural-note">💡 <strong>Lưu ý văn hóa:</strong> Từ "pan" có nguồn gốc từ tiếng Bồ Đào Nha, được du nhập vào Nhật Bản từ thế kỷ 16! Thú vị phải không?</p>
+                <p>🥐 Buổi sáng tôi thường ăn パン.</p>
+            </div>
+
+            <div class="example-box">
+                <p class="japanese-text">
+                    コンピューター <button class="audio-icon" data-audio-text="コンピューター">🔊</button>
+                    <span class="romaji">(Konpyūtā)</span>
+                </p>
+                <p class="vietnamese-translation">Nghĩa: Máy tính (từ "computer" trong tiếng Anh)</p>
+                <p>💻 コンピューター của tôi rất nhanh.</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>Thực hành: Ghép từ mượn 🧩</h3>
+                <p>Ghép từ Katakana với nghĩa tiếng Việt của nó:</p>
+
+                <div class="practice-item">
+                    <p class="question">1. コーヒー:</p>
+                    <div class="quiz-options">
+                        <button data-answer="correct">Cà phê</button>
+                        <button data-answer="incorrect">Bánh mì</button>
+                        <button data-answer="incorrect">Máy tính</button>
+                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p class="question">2. パン:</p>
+                    <div class="quiz-options">
+                        <button data-answer="incorrect">Cà phê</button>
+                        <button data-answer="correct">Bánh mì</button>
+                        <button data-answer="incorrect">Máy tính</button>
+                    </div>
+                </div>
+                <p><em>(Nhấn vào nút để xem đáp án)</em></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>3. Từ tượng thanh (Onomatopoeia)</h2>
+            <p>Katakana cũng thường được sử dụng để viết các từ tượng thanh (từ mô phỏng âm thanh hoặc trạng thái). Tiếng Nhật có rất nhiều từ tượng thanh độc đáo!</p>
+
+            <h3>Ví dụ về từ tượng thanh:</h3>
+
+            <div class="example-box">
+                <p class="japanese-text">
+                    ピカピカ <button class="audio-icon" data-audio-text="ピカピカ">🔊</button>
+                    <span class="romaji">(Pikapika)</span>
+                </p>
+                <p class="vietnamese-translation">Nghĩa: Lấp lánh, sáng chói (ví dụ: một chiếc xe mới, ngôi sao lấp lánh)</p>
+                <p>✨ Chiếc giày mới của tôi ピカピカ.</p>
+            </div>
+
+            <div class="example-box">
+                <p class="japanese-text">
+                    ドキドキ <button class="audio-icon" data-audio-text="ドキドキ">🔊</button>
+                    <span class="romaji">(Dokidoki)</span>
+                </p>
+                <p class="vietnamese-translation">Nghĩa: Tim đập thình thịch (khi hồi hộp, lo lắng, hoặc phấn khích)</p>
+                <p>💖 Trước kỳ thi, tim tôi ドキドキ quá!</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>Thực hành: Từ tượng thanh 💭</h3>
+                <p>Hoàn thành câu với từ tượng thanh phù hợp:</p>
+
+                <div class="practice-item">
+                    <p class="question">1. Xe hơi của anh ấy rất sạch sẽ và ____.</p>
+                    <div class="quiz-options">
+                        <button data-answer="correct">ピカピカ</button>
+                        <button data-answer="incorrect">ドキドキ</button>
+                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p class="question">2. Khi tôi gặp thần tượng, tim tôi ____.</p>
+                    <div class="quiz-options">
+                        <button data-answer="incorrect">ピカピカ</button>
+                        <button data-answer="correct">ドキドキ</button>
+                    </div>
+                </div>
+                <p><em>(Nhấn vào nút để xem đáp án)</em></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>4. Ngữ pháp: Sử dụng の (no) để chỉ sở hữu</h2>
+            <p>Trợ từ <strong>の (no)</strong> là một trợ từ rất quan trọng trong tiếng Nhật. Nó có nhiều chức năng, nhưng trong bài này, chúng ta sẽ học cách nó được sử dụng để chỉ sự <strong>sở hữu</strong> (giống như 'của' trong tiếng Việt hoặc 's trong tiếng Anh).</p>
+            <p>Cấu trúc rất đơn giản:</p>
+            <div class="example-box">
+                <p class="japanese-text">
+                    [Danh từ 1] の [Danh từ 2]
+                </p>
+                <p class="vietnamese-translation">Nghĩa: Danh từ 2 của Danh từ 1 / Danh từ 1's Danh từ 2</p>
+            </div>
+
+            <h3>Ví dụ:</h3>
+            <div class="example-box">
+                <p class="japanese-text">
+                    わたしの コンピューター <button class="audio-icon" data-audio-text="わたしの コンピューター">🔊</button>
+                    <span class="romaji">(Watashi no Konpyūtā)</span>
+                </p>
+                <p class="vietnamese-translation">Nghĩa: Máy tính của tôi</p>
+                <p>👉 わたし (watashi) = tôi</p>
+                <p>👉 コンピューター (konpyūtā) = máy tính</p>
+            </div>
+
+            <p>Và đây là cách bạn có thể nói "Tên của tôi là OOO" (My name is OOO), một câu rất hữu ích khi giới thiệu bản thân!</p>
+            <div class="example-box">
+                <p class="japanese-text">
+                    わたしの なまえは 〇〇です。 <button class="audio-icon" data-audio-text="わたしの なまえは 〇〇です">🔊</button>
+                    <span class="romaji">(Watashi no namae wa OO desu.)</span>
+                </p>
+                <p class="vietnamese-translation">Nghĩa: Tên của tôi là OOO.</p>
+                <p>👉 なまえ (namae) = tên</p>
+                <p>👉 は (wa) = trợ từ chủ ngữ (sẽ học kỹ hơn sau)</p>
+                <p>👉 です (desu) = là, thì, ở (dùng ở cuối câu để làm cho câu lịch sự)</p>
+            </div>
+
+            <p>Hãy thử nói tên của bạn nhé!</p>
+            <div class="example-box">
+                <p class="japanese-text">
+                    わたしの なまえは Linh です。 <button class="audio-icon" data-audio-text="わたしの なまえは リン です">🔊</button>
+                    <span class="romaji">(Watashi no namae wa Rin desu.)</span>
+                </p>
+                <p class="vietnamese-translation">Nghĩa: Tên của tôi là Linh.</p>
+                <p><em>(Lưu ý: Tên riêng tiếng Việt thường được viết bằng Katakana trong tiếng Nhật, ví dụ Linh -> リン (Rin))</em></p>
+            </div>
+
+            <div class="practice-section">
+                <h3>Thực hành: Đặt câu với の 🗣️</h3>
+                <p>Hãy chọn từ đúng để hoàn thành câu:</p>
+
+                <div class="practice-item">
+                    <p class="question">1. ______ なまえは Hana です。</p>
+                    <div class="quiz-options">
+                        <button data-answer="correct">わたしの</button>
+                        <button data-answer="incorrect">コンピューターの</button>
+                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <p class="question">2. これは Linh ______ パン です。</p>
+                    <div class="quiz-options">
+                        <button data-answer="correct">の</button>
+                        <button data-answer="incorrect">は</button>
+                    </div>
+                </div>
+                <p><em>(Nhấn vào nút để xem đáp án)</em></p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>Tổng kết Chương 4 ✨</h2>
+            <ul>
+                <li>Bạn đã làm quen với 5 chữ Katakana đầu tiên: <strong>カ (ka), キ (ki), ク (ku), ケ (ke), コ (ko)</strong>.</li>
+                <li>Học cách Katakana được dùng để viết <strong>từ mượn (Gairaigo)</strong> như コーヒー (Kōhī - cà phê), パン (Pan - bánh mì), コンピューター (Konpyūtā - máy tính).</li>
+                <li>Khám phá <strong>từ tượng thanh</strong> trong tiếng Nhật qua ピカピカ (Pikapika - lấp lánh) và ドキドキ (Dokidoki - tim đập thình thịch).</li>
+                <li>Nắm vững cách sử dụng trợ từ <strong>の (no)</strong> để chỉ sự sở hữu, đặc biệt là trong câu giới thiệu tên: <strong>わたしの なまえは 〇〇です。</strong> (Watashi no namae wa OO desu. - Tên của tôi là OOO.)</li>
+            </ul>
+            <p>Chúc mừng bạn đã hoàn thành Chương 4! Katakana sẽ giúp bạn đọc và hiểu thêm nhiều từ vựng mới trong tiếng Nhật. Hãy tiếp tục luyện tập nhé!</p>
+        </section>
+    </div>
+</body>
+</html>

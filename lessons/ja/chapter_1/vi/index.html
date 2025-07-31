@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 1: Hệ thống chữ viết tiếng Nhật</title>
+    <style>
+        /* Global Styles & Reset */
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body text size */
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling on orientation change */
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            padding-left: 20px; /* Consistent padding for smaller screens */
+            padding-right: 20px;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.6em; /* ~25.6px */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 5px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        h3 {
+            font-size: 1.3em; /* ~20.8px */
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        /* Paragraphs and Lists */
+        p, ul, ol {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        strong {
+            color: #2C3E50; /* Stronger text color */
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            background-color: #FFFFFF; /* White background for content blocks */
+            margin: 15px 10px; /* Spacing for mobile */
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Light gray border */
+        }
+
+        /* Header Specifics */
+        .chapter-title {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Max width for larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Interactive Elements - Audio Icon */
+        .audio-icon {
+            display: inline-flex; /* Use flexbox for centering icon and text */
+            align-items: center;
+            justify-content: center;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: #FFFFFF;
+            padding: 10px 15px; /* Adjust padding for 44px minimum height */
+            border-radius: 8px;
+            cursor: pointer;
+            min-width: 44px; /* Minimum width for tap target */
+            min-height: 44px; /* Minimum height for tap target */
+            font-size: 1.1em;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin: 5px; /* Spacing between multiple icons */
+            vertical-align: middle; /* Align with text */
+            box-sizing: border-box; /* Include padding in dimensions */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a479b; /* Slightly darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        .audio-icon .icon-text {
+            margin-left: 5px; /* Space between icon and text */
+        }
+        
+        /* Practice Section Styling */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background for practice */
+            margin: 15px 10px;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #E0E0E0;
+        }
+
+        .practice-question:last-child {
+            border-bottom: none;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on mobile */
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .option-button {
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 1em;
+            color: #666666;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            min-height: 44px; /* Ensure tap target size */
+            display: flex; /* Use flex to align content if needed */
+            align-items: center;
+            box-sizing: border-box; /* Include padding in dimensions */
+        }
+
+        .option-button:hover {
+            background-color: #F5F5F5;
+            border-color: #8B5FBF;
+        }
+        
+        .option-button.correct {
+            background-color: #E6FAE6; /* Light green */
+            border-color: #4CAF50; /* Green */
+            color: #2C3E50;
+        }
+
+        .option-button.incorrect {
+            background-color: #FFE6E6; /* Light red */
+            border-color: #F44336; /* Red */
+            color: #2C3E50;
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: rgba(139, 95, 191, 0.08); /* Light purple tint */
+            border-left: 5px solid #8B5FBF; /* Primary color border */
+            padding: 15px;
+            margin: 20px 10px;
+            border-radius: 8px;
+            font-style: italic;
+            color: #2C3E50; /* Dark blue for emphasis */
+        }
+
+        .cultural-note strong {
+            color: #8B5FBF; /* Primary color for emphasis in notes */
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #FDF9E5;
+            margin: 20px 10px;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #E0E0E0;
+        }
+        
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 0 20px; /* Padding for the container */
+        }
+
+        .flex-item {
+            flex: 1 1 150px; /* Grow, shrink, base width for mobile */
+            text-align: center;
+            background-color: #FFFFFF;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            min-width: 140px; /* Ensure items don't get too small */
+        }
+        
+        .japanese-example {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .vietnamese-translation {
+            font-size: 0.9em;
+            color: #666666;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 600px) {
+            .options-grid {
+                grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+            }
+            .flex-item {
+                flex: 1 1 auto; /* Adjust flex behavior for larger screens */
+                max-width: 30%; /* Limit width for 3 items per row approx */
+            }
+        }
+
+        @media (min-width: 768px) {
+            body {
+                font-size: 17px; /* Slightly larger font on tablets */
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            .lesson-section, .practice-section, .cultural-note, .summary-section {
+                margin: 20px auto;
+                max-width: 800px; /* Max width for content on large screens */
+                padding: 25px;
+            }
+            p, ul, ol {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Chapter 1: Hệ thống chữ viết tiếng Nhật</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+    </div>
+
+    <div class="lesson-section">
+        <h2>Chào mừng bạn đến với Tiếng Nhật! 👋</h2>
+        <p>Hệ thống chữ viết tiếng Nhật thoạt nhìn có vẻ phức tạp, nhưng đừng lo lắng! Với bài học này, chúng ta sẽ cùng khám phá ba loại chữ viết chính và cách chúng hoạt động.</p>
+        <p>Hãy sẵn sàng cho hành trình học tiếng Nhật của bạn nhé!</p>
+    </div>
+
+    <div class="lesson-section">
+        <h2>1. Ba hệ thống chữ viết chính ✍️</h2>
+        <p>Tiếng Nhật sử dụng ba loại chữ viết khác nhau, mỗi loại có vai trò riêng biệt:</p>
+        <ul>
+            <li><strong>Hiragana (ひらがな):</strong> Chữ cái ngữ âm cơ bản, dùng cho từ vựng tiếng Nhật thuần túy, các trợ từ, đuôi động từ/tính từ.</li>
+            <li><strong>Katakana (カタカナ):</strong> Chữ cái ngữ âm, dùng cho từ mượn nước ngoài, tên riêng nước ngoài, từ tượng thanh và nhấn mạnh.</li>
+            <li><strong>Kanji (漢字):</strong> Chữ Hán, có nguồn gốc từ Trung Quốc, mỗi chữ mang một ý nghĩa riêng, dùng để biểu thị danh từ, gốc động từ/tính từ.</li>
+        </ul>
+
+        <h3>Hiragana: Nét mềm mại của Nhật Bản</h3>
+        <p>Hiragana là bảng chữ cái ngữ âm cơ bản nhất, mỗi ký tự đại diện cho một âm tiết (ngoại trừ âm 'n'). Đây là "trái tim" của tiếng Nhật.</p>
+        <p class="text-center">
+            <span class="audio-icon" data-audio-text="あ">あ<span class="icon-text"> (a)</span></span>
+            <span class="audio-icon" data-audio-text="い">い<span class="icon-text"> (i)</span></span>
+            <span class="audio-icon" data-audio-text="う">う<span class="icon-text"> (u)</span></span>
+            <span class="audio-icon" data-audio-text="え">え<span class="icon-text"> (e)</span></span>
+            <span class="audio-icon" data-audio-text="お">お<span class="icon-text"> (o)</span></span>
+        </p>
+        <div class="cultural-note">
+            <strong>💡 Ghi chú văn hóa:</strong> Hiragana là bảng chữ cái đầu tiên mà trẻ em Nhật Bản được học. Nếu bạn không chắc chắn về cách viết một từ bằng Kanji hoặc Katakana, bạn luôn có thể viết nó bằng Hiragana!
+        </div>
+        <p><strong>Ví dụ:</strong></p>
+        <ul>
+            <li><span class="audio-icon" data-audio-text="ありがとう">ありがとう<span class="icon-text"> (arigatoo)</span></span> – Cảm ơn</li>
+            <li><span class="audio-icon" data-audio-text="さくら">さくら<span class="icon-text"> (sakura)</span></span> – Hoa anh đào</li>
+        </ul>
+
+        <h3>Katakana: Dành cho thế giới bên ngoài 🌍</h3>
+        <p>Katakana cũng là một bảng chữ cái ngữ âm, nhưng có nét thẳng và góc cạnh hơn. Nó chủ yếu dùng cho các từ mượn từ tiếng nước ngoài (gairaigo), tên riêng nước ngoài, và các từ tượng thanh.</p>
+        <p class="text-center">
+            <span class="audio-icon" data-audio-text="ア">ア<span class="icon-text"> (a)</span></span>
+            <span class="audio-icon" data-audio-text="イ">イ<span class="icon-text"> (i)</span></span>
+            <span class="audio-icon" data-audio-text="ウ">ウ<span class="icon-text"> (u)</span></span>
+            <span class="audio-icon" data-audio-text="エ">エ<span class="icon-text"> (e)</span></span>
+            <span class="audio-icon" data-audio-text="オ">オ<span class="icon-text"> (o)</span></span>
+        </p>
+        <div class="cultural-note">
+            <strong>💡 Ghi chú văn hóa:</strong> Bạn sẽ thường thấy Katakana được sử dụng trong quảng cáo hoặc biển hiệu để thu hút sự chú ý, giống như cách chúng ta dùng chữ in hoa hoặc in đậm.
+        </div>
+        <p><strong>Ví dụ:</strong></p>
+        <ul>
+            <li><span class="audio-icon" data-audio-text="コーヒー">コーヒー<span class="icon-text"> (koohii)</span></span> – Cà phê (từ tiếng Anh "coffee")</li>
+            <li><span class="audio-icon" data-audio-text="ベトナム">ベトナム<span class="icon-text"> (Betonamu)</span></span> – Việt Nam</li>
+        </ul>
+
+        <h3>Kanji: Sức mạnh của ý nghĩa ✨</h3>
+        <p>Kanji là các ký tự biểu ý được mượn từ tiếng Trung Quốc. Mỗi Kanji thường mang một hoặc nhiều ý nghĩa, và có thể có nhiều cách đọc khác nhau tùy theo ngữ cảnh.</p>
+        <p class="text-center">
+            <span class="audio-icon" data-audio-text="日">日<span class="icon-text"> (mặt trời/ngày)</span></span>
+            <span class="audio-icon" data-audio-text="本">本<span class="icon-text"> (gốc/sách)</span></span>
+            <span class="audio-icon" data-audio-text="語">語<span class="icon-text"> (ngôn ngữ)</span></span>
+        </p>
+        <p>Khi kết hợp lại, chúng tạo thành các từ phức tạp:</p>
+        <p class="text-center">
+            <span class="audio-icon" data-audio-text="日本語">日本語<span class="icon-text"> (nihongo)</span></span> – Tiếng Nhật (kết hợp 日 + 本 + 語)
+        </p>
+        <div class="cultural-note">
+            <strong>💡 Ghi chú văn hóa:</strong> Có hàng ngàn chữ Kanji được sử dụng, và việc học Kanji là một phần quan trọng (và thách thức) trong việc học tiếng Nhật. Tuy nhiên, đừng nản lòng! Chúng giúp bạn hiểu sâu sắc hơn về ý nghĩa của từ vựng.
+        </div>
+    </div>
+
+    <div class="lesson-section">
+        <h2>2. Tại sao tiếng Nhật sử dụng cả ba? 🤔</h2>
+        <p>Sự kết hợp của Hiragana, Katakana và Kanji có vẻ phức tạp, nhưng nó giúp tiếng Nhật trở nên rõ ràng và hiệu quả hơn rất nhiều:</p>
+        <ul>
+            <li><strong>Giảm sự mơ hồ:</strong> Tiếng Nhật có nhiều từ đồng âm. Kanji giúp phân biệt chúng bằng cách cung cấp ý nghĩa trực quan. Ví dụ: <span class="audio-icon" data-audio-text="はし">はし<span class="icon-text"> (hashi)</span></span> có thể là "đũa" (箸) hoặc "cầu" (橋). Kanji giúp phân biệt ngay lập tức.</li>
+            <li><strong>Cấu trúc ngữ pháp rõ ràng:</strong> Hiragana dùng cho các trợ từ và đuôi động từ/tính từ, giúp người đọc dễ dàng nhận biết cấu trúc ngữ pháp.</li>
+            <li><strong>Phân biệt từ mượn:</strong> Katakana làm cho các từ mượn và tên nước ngoài nổi bật, giúp người đọc nhận ra ngay đó là từ không phải gốc Nhật.</li>
+            <li><strong>Đọc nhanh hơn:</strong> Kanji cô đọng ý nghĩa, giúp đọc hiểu nhanh hơn so với việc viết toàn bộ bằng Hiragana.</li>
+        </ul>
+        <p>Hãy xem một câu ví dụ kết hợp cả ba nhé:</p>
+        <p class="text-center japanese-example">
+            <span class="audio-icon" data-audio-text="私は日本語を勉強します。">私は日本語を勉強します。<span class="icon-text"> (Watashi wa nihongo o benkyou shimasu.)</span></span>
+        </p>
+        <p class="text-center vietnamese-translation">
+            Tôi học tiếng Nhật.
+        </p>
+        <p class="text-center" style="font-size: 0.9em;">
+            (私: Kanji, は: Hiragana, 日本語: Kanji, を: Hiragana, 勉強: Kanji, します: Hiragana)
+        </p>
+    </div>
+
+    <div class="lesson-section">
+        <h2>3. Quy tắc đọc (Reading Flow) ➡️⬇️</h2>
+        <p>Thông thường, tiếng Nhật được đọc theo chiều <strong>từ trái sang phải, từ trên xuống dưới</strong>, giống như tiếng Việt và các ngôn ngữ phương Tây khác. Đây là cách bạn sẽ thấy hầu hết các tài liệu, trang web, và sách giáo khoa hiện đại.</p>
+        <div class="text-center" style="font-size: 3em; margin: 20px 0;">
+            ➡️➡️➡️<br>
+            ➡️➡️➡️<br>
+            ⬇️
+        </div>
+        <div class="cultural-note">
+            <strong>💡 Ghi chú văn hóa:</strong> Một số sách truyền thống, truyện tranh (manga), hoặc sách văn học cổ điển có thể được viết theo chiều dọc, từ trên xuống dưới, và các cột được đọc từ phải sang trái. Tuy nhiên, đối với người mới bắt đầu, bạn sẽ chủ yếu gặp cách đọc ngang.
+        </div>
+    </div>
+
+    <div class="lesson-section">
+        <h2>4. Giới thiệu âm tiết và cách viết ngữ âm 🎵</h2>
+        <p>Tiếng Nhật là một ngôn ngữ có tính ngữ âm cao. Các từ được cấu tạo từ các "mora" (tiếng Việt hay gọi là "âm tiết"), thường là sự kết hợp của một phụ âm và một nguyên âm, hoặc chỉ một nguyên âm. Có khoảng 100 âm tiết cơ bản trong tiếng Nhật.</p>
+        <ul>
+            <li>Hầu hết các âm tiết có cấu trúc <strong>Phụ âm + Nguyên âm</strong> (ví dụ: ka, ki, ku, ke, ko).</li>
+            <li>Có 5 nguyên âm cơ bản: <span class="audio-icon" data-audio-text="あ">あ (a)</span>, <span class="audio-icon" data-audio-text="い">い (i)</span>, <span class="audio-icon" data-audio-text="う">う (u)</span>, <span class="audio-icon" data-audio-text="え">え (e)</span>, <span class="audio-icon" data-audio-text="お">お (o)</span>.</li>
+            <li>Chỉ có một ngoại lệ là âm 'n' độc lập: <span class="audio-icon" data-audio-text="ん">ん (n)</span>.</li>
+        </ul>
+        <p>Điều này có nghĩa là một khi bạn học được cách phát âm các âm tiết cơ bản trong Hiragana và Katakana, bạn có thể đọc gần như bất kỳ từ nào!</p>
+        <p><strong>Ví dụ:</strong></p>
+        <p class="text-center japanese-example">
+            <span class="audio-icon" data-audio-text="さくら">さくら<span class="icon-text"> (sakura)</span></span>
+        </p>
+        <p class="text-center vietnamese-translation">
+            Được cấu tạo từ ba âm tiết: さ (sa) - く (ku) - ら (ra).
+        </p>
+        <p>Việc này làm cho việc phát âm tiếng Nhật khá dễ dàng một khi bạn nắm vững các âm cơ bản!</p>
+    </div>
+
+    <div class="practice-section">
+        <h2>Thực hành nhỏ 💪</h2>
+        <p>Hãy cùng kiểm tra kiến thức của bạn nhé!</p>
+
+        <div class="practice-question">
+            <h3>Câu hỏi 1: Loại chữ viết nào dùng để viết các từ mượn từ nước ngoài?</h3>
+            <div class="options-grid">
+                <span class="option-button" data-correct="false">Hiragana</span>
+                <span class="option-button correct" data-correct="true">Katakana</span>
+                <span class="option-button" data-correct="false">Kanji</span>
+            </div>
+            <p style="font-size: 0.9em; margin-top: 10px;">Đáp án đúng: Katakana (カタカナ).</p>
+        </div>
+
+        <div class="practice-question">
+            <h3>Câu hỏi 2: Loại chữ viết nào giúp biểu thị ý nghĩa của từ?</h3>
+            <div class="options-grid">
+                <span class="option-button" data-correct="false">Hiragana</span>
+                <span class="option-button" data-correct="false">Katakana</span>
+                <span class="option-button correct" data-correct="true">Kanji</span>
+            </div>
+            <p style="font-size: 0.9em; margin-top: 10px;">Đáp án đúng: Kanji (漢字).</p>
+        </div>
+
+        <div class="practice-question">
+            <h3>Câu hỏi 3: Đâu là từ viết bằng Hiragana?</h3>
+            <div class="options-grid">
+                <span class="option-button" data-correct="false">コーヒー</span>
+                <span class="option-button" data-correct="false">日本</span>
+                <span class="option-button correct" data-correct="true">ありがとう</span>
+            </div>
+            <p style="font-size: 0.9em; margin-top: 10px;">Đáp án đúng: ありがとう (arigatoo) - cảm ơn.</p>
+        </div>
+
+        <div class="practice-question">
+            <h3>Câu hỏi 4: Đọc các từ sau và cho biết chúng được viết bằng hệ thống chữ nào?</h3>
+            <div class="flex-row">
+                <div class="flex-item">
+                    <span class="audio-icon" data-audio-text="わたし">わたし<span class="icon-text"></span></span>
+                    <p class="japanese-example">わたし</p>
+                    <p class="vietnamese-translation"><strong>Hệ thống:</strong> Hiragana</p>
+                </div>
+                <div class="flex-item">
+                    <span class="audio-icon" data-audio-text="アメリカ">アメリカ<span class="icon-text"></span></span>
+                    <p class="japanese-example">アメリカ</p>
+                    <p class="vietnamese-translation"><strong>Hệ thống:</strong> Katakana</p>
+                </div>
+                <div class="flex-item">
+                    <span class="audio-icon" data-audio-text="学生">学生<span class="icon-text"></span></span>
+                    <p class="japanese-example">学生</p>
+                    <p class="vietnamese-translation"><strong>Hệ thống:</strong> Kanji</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary-section">
+        <h2>Tóm tắt Chương 1 📝</h2>
+        <p>Chúc mừng! Bạn đã hoàn thành bài học đầu tiên về hệ thống chữ viết tiếng Nhật!</p>
+        <p>Đây là những điểm chính bạn cần nhớ:</p>
+        <ul>
+            <li>Tiếng Nhật sử dụng <strong>ba hệ thống chữ viết</strong>: <strong>Hiragana</strong> (chữ ngữ âm cơ bản), <strong>Katakana</strong> (chữ ngữ âm cho từ nước ngoài, tên riêng), và <strong>Kanji</strong> (chữ Hán biểu ý).</li>
+            <li>Sự kết hợp này giúp ngôn ngữ trở nên <strong>rõ ràng và hiệu quả</strong> hơn.</li>
+            <li>Hướng đọc phổ biến là <strong>từ trái sang phải, từ trên xuống dưới</strong>.</li>
+            <li>Tiếng Nhật là ngôn ngữ <strong>ngữ âm</strong>, hầu hết các từ được tạo thành từ các âm tiết <strong>Phụ âm + Nguyên âm</strong>.</li>
+        </ul>
+        <p>Bạn đã có một nền tảng vững chắc để tiếp tục hành trình học tiếng Nhật rồi đó! Hãy tự tin khám phá những điều thú vị tiếp theo nhé. Ganbatte! 💪</p>
+    </div>
+
+</body>
+</html>

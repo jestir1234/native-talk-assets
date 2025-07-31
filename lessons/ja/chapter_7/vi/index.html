@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Essential Verbs & Conjugation Basics</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Container for responsive layout */
+        .container {
+            max-width: 600px; /* Optimal reading width for mobile */
+            margin: 0 auto;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6em; /* ~25.6px */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 8px;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.3em; /* ~20.8px */
+            margin-top: 1.5em;
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        ul li {
+            background-color: #FFFFFF;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Strong/Emphasis */
+        strong {
+            color: #2C3E50;
+        }
+
+        em {
+            font-style: italic;
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        /* Buttons */
+        button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            width: 100%;
+            max-width: 250px;
+            margin: 15px auto;
+            display: block;
+            min-height: 44px; /* Minimum tap target size */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #724c9c; /* Slightly darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Specific header requirements */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Placeholder for an actual image, user specified ../header.webp */
+            background-color: #D3BFF9; /* A light purple placeholder color */
+            min-height: 150px; /* Ensure some height even if image isn't loaded */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8B5FBF;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 1.8em; /* Large enough for tapping */
+            color: #8B5FBF; /* Primary: Purple */
+            cursor: pointer;
+            padding: 0; /* Remove default button padding */
+            min-width: 44px; /* Minimum tap target size */
+            min-height: 44px; /* Minimum tap target size */
+            display: inline-flex; /* For centering content */
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease;
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background for sections */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .practice-options button {
+            background-color: #FFFFFF;
+            color: #666666;
+            border: 1px solid #E0E0E0;
+            box-shadow: none;
+            margin: 8px 0;
+            padding: 10px 15px;
+            width: 100%;
+            text-align: left;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .practice-options button:hover {
+            background-color: #F0F0F0;
+            border-color: #B0B0B0;
+        }
+
+        .practice-options button.correct {
+            background-color: #e6ffe6; /* Light green */
+            border-color: #4CAF50; /* Green */
+            color: #2C3E50;
+        }
+
+        .practice-options button.incorrect {
+            background-color: #ffe6e6; /* Light red */
+            border-color: #F44336; /* Red */
+            color: #2C3E50;
+        }
+
+        .feedback-message {
+            margin-top: 15px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            display: none; /* Hidden by default, shown by JS */
+        }
+
+        .feedback-message.correct {
+            color: #4CAF50;
+            background-color: #e6ffe6;
+        }
+
+        .feedback-message.incorrect {
+            color: #F44336;
+            background-color: #ffe6e6;
+        }
+
+        /* Code/Japanese text highlight */
+        .japanese {
+            font-family: 'Yu Gothic', 'Meiryo', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+            color: #8B5FBF;
+            font-weight: bold;
+        }
+
+        .romaji {
+            font-style: italic;
+            color: #A0A0A0;
+            font-size: 0.9em;
+        }
+
+        .translation {
+            color: #666666;
+            font-size: 0.9em;
+        }
+
+        /* Divider */
+        .divider {
+            border-top: 1px solid #E0E0E0;
+            margin: 25px 0;
+        }
+
+        /* Summary Section */
+        .summary-box {
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .summary-box h3 {
+            color: #8B5FBF;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .summary-box ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .summary-box ul li {
+            background-color: transparent;
+            box-shadow: none;
+            padding: 5px 0;
+            margin-bottom: 5px;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (min-width: 480px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            .practice-options button {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 7: Động Từ Cần Thiết & Cơ Bản Về Chia Động Từ</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>👋 Chào mừng đến với Chương 7!</h2>
+            <p>Trong chương này, chúng ta sẽ khám phá thế giới của động từ trong tiếng Nhật. Bạn sẽ học những động từ cơ bản nhất và cách chia chúng ở thì hiện tại/tương lai (dạng lịch sự) cũng như thể phủ định. Hãy sẵn sàng để diễn đạt hành động của mình nhé!</p>
+        </section>
+
+        <section>
+            <h2>📚 Các Động Từ Quan Trọng</h2>
+            <p>Dưới đây là bốn động từ bạn sẽ sử dụng rất thường xuyên. Hãy ghi nhớ chúng!</p>
+
+            <h3>1. いく (Iku) - Đi</h3>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="いく">🔊</button>
+                    <span class="japanese">いく</span> (<span class="romaji">iku</span>) - <span class="translation">đi</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="わたしは がっこうに いきます。">🔊</button>
+                    <span class="japanese">わたしは がっこうに いきます。</span><br>
+                    <span class="romaji">Watashi wa gakkou ni ikimasu.</span><br>
+                    <span class="translation">Tôi đi học. (Tôi đi đến trường.)</span>
+                </li>
+            </ul>
+
+            <h3>2. たべる (Taberu) - Ăn</h3>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="たべる">🔊</button>
+                    <span class="japanese">たべる</span> (<span class="romaji">taberu</span>) - <span class="translation">ăn</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="パンを たべます。">🔊</button>
+                    <span class="japanese">パンを たべます。</span><br>
+                    <span class="romaji">Pan o tabemasu.</span><br>
+                    <span class="translation">Tôi ăn bánh mì.</span>
+                </li>
+            </ul>
+
+            <h3>3. する (Suru) - Làm, Thực hiện</h3>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="する">🔊</button>
+                    <span class="japanese">する</span> (<span class="romaji">suru</span>) - <span class="translation">làm, thực hiện</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="しゅくだいを します。">🔊</button>
+                    <span class="japanese">しゅくだいを します。</span><br>
+                    <span class="romaji">Shukudai o shimasu.</span><br>
+                    <span class="translation">Tôi làm bài tập về nhà.</span>
+                </li>
+            </ul>
+
+            <h3>4. くる (Kuru) - Đến</h3>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="くる">🔊</button>
+                    <span class="japanese">くる</span> (<span class="romaji">kuru</span>) - <span class="translation">đến</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="がっこうに きます。">🔊</button>
+                    <span class="japanese">がっこうに きます。</span><br>
+                    <span class="romaji">Gakkou ni kimasu.</span><br>
+                    <span class="translation">Tôi đến trường.</span>
+                </li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section>
+            <h2>✨ Chia Động Từ: Thể Hiện Tại/Tương Lai & Phủ Định</h2>
+            <p>Để thể hiện hành động một cách lịch sự trong tiếng Nhật, chúng ta thường sử dụng dạng <strong>~ます (~masu)</strong> cho khẳng định và <strong>~ません (~masen)</strong> cho phủ định.</p>
+
+            <h3>1. Thể Hiện Tại/Tương Lai (Khẳng định - Lịch sự)</h3>
+            <p>Dạng <strong>~ます (~masu)</strong> được dùng để nói về hành động sẽ diễn ra, đang diễn ra (thói quen) hoặc diễn ra trong tương lai.</p>
+            <ul>
+                <li>
+                    <span class="japanese">いく</span> (iku) → <span class="japanese">いきます</span> (ikimasu) - <span class="translation">đi</span>
+                </li>
+                <li>
+                    <span class="japanese">たべる</span> (taberu) → <span class="japanese">たべます</span> (tabemasu) - <span class="translation">ăn</span>
+                </li>
+                <li>
+                    <span class="japanese">する</span> (suru) → <span class="japanese">します</span> (shimasu) - <span class="translation">làm</span>
+                </li>
+                <li>
+                    <span class="japanese">くる</span> (kuru) → <span class="japanese">きます</span> (kimasu) - <span class="translation">đến</span>
+                </li>
+            </ul>
+
+            <h3>2. Thể Phủ Định (Lịch sự)</h3>
+            <p>Để nói "không làm gì đó", chúng ta chuyển động từ sang dạng <strong>~ません (~masen)</strong>.</p>
+            <ul>
+                <li>
+                    <span class="japanese">いきます</span> (ikimasu) → <span class="japanese">いきません</span> (ikimasen) - <span class="translation">không đi</span>
+                </li>
+                <li>
+                    <span class="japanese">たべます</span> (tabemasu) → <span class="japanese">たべません</span> (tabemasen) - <span class="translation">không ăn</span>
+                </li>
+                <li>
+                    <span class="japanese">します</span> (shimasu) → <span class="japanese">しません</span> (shimasen) - <span class="translation">không làm</span>
+                </li>
+                <li>
+                    <span class="japanese">きます</span> (kimasu) → <span class="japanese">きません</span> (kimasen) - <span class="translation">không đến</span>
+                </li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section>
+            <h2>📝 Cấu Trúc Câu Cơ Bản</h2>
+            <p>Chúng ta cùng ghép các động từ đã học với các trợ từ để tạo thành câu hoàn chỉnh nhé!</p>
+
+            <h3>1. Diễn tả hành động đi/đến một địa điểm: [Địa điểm] に [いきます/きます]</h3>
+            <p>Trợ từ <strong>に (ni)</strong> được dùng để chỉ đích đến hoặc hướng của chuyển động.</p>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="わたしは がっこうに いきます。">🔊</button>
+                    <span class="japanese">わたしは がっこうに いきます。</span><br>
+                    <span class="romaji">Watashi wa gakkou ni ikimasu.</span><br>
+                    <span class="translation">Tôi đi học.</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="まいにち うちに きます。">🔊</button>
+                    <span class="japanese">まいにち うちに きます。</span><br>
+                    <span class="romaji">Mainichi uchi ni kimasu.</span><br>
+                    <span class="translation">Hàng ngày tôi về nhà.</span>
+                </li>
+            </ul>
+
+            <h3>2. Diễn tả hành động tác động lên đối tượng: [Tân ngữ] を [Động từ]</h3>
+            <p>Trợ từ <strong>を (o/wo)</strong> đứng sau danh từ để chỉ đó là tân ngữ trực tiếp của động từ (đối tượng chịu tác động của hành động).</p>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="パンを たべません。">🔊</button>
+                    <span class="japanese">パンを たべません。</span><br>
+                    <span class="romaji">Pan o tabemasen.</span><br>
+                    <span class="translation">Tôi không ăn bánh mì.</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="えいがを みます。">🔊</button>
+                    <span class="japanese">えいがを みます。</span><br>
+                    <span class="romaji">Eiga o mimasu.</span><br>
+                    <span class="translation">Tôi xem phim. (Động từ みる - miru: xem)</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="しゅくだいを しません。">🔊</button>
+                    <span class="japanese">しゅくだいを しません。</span><br>
+                    <span class="romaji">Shukudai o shimasen.</span><br>
+                    <span class="translation">Tôi không làm bài tập về nhà.</span>
+                </li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="practice-section">
+            <h2>🧠 Luyện Tập Nhanh!</h2>
+            <p>Hãy chọn đáp án đúng để hoàn thành các câu sau.</p>
+
+            <div class="practice-question">1. Chọn dạng phủ định của <span class="japanese">たべます</span>.</div>
+            <div class="practice-options">
+                <button data-answer="incorrect">たべますん</button>
+                <button data-answer="correct">たべません</button>
+                <button data-answer="incorrect">たべませんん</button>
+            </div>
+            <div class="feedback-message" id="q1-feedback"></div>
+
+            <div class="practice-question">2. Hoàn thành câu: <span class="japanese">わたしは＿＿＿に いきます。</span> (trường học)</div>
+            <div class="practice-options">
+                <button data-answer="incorrect">パン</button>
+                <button data-answer="correct">がっこう</button>
+                <button data-answer="incorrect">しゅくだい</button>
+            </div>
+            <div class="feedback-message" id="q2-feedback"></div>
+
+            <div class="practice-question">3. Chọn động từ phù hợp cho câu: <span class="japanese">私はコーヒーを＿＿＿。</span> (Tôi uống cà phê.)</div>
+            <div class="practice-options">
+                <button data-answer="correct">のみます</button>
+                <button data-answer="incorrect">きます</button>
+                <button data-answer="incorrect">します</button>
+            </div>
+            <div class="feedback-message" id="q3-feedback"></div>
+
+            <p style="margin-top: 25px; text-align: center;"><em>(Lưu ý: Chức năng kiểm tra đáp án sẽ được hỗ trợ bởi ứng dụng.)</em></p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="summary-box">
+            <h3>Tổng Kết Chương 7 📝</h3>
+            <ul>
+                <li>Chúng ta đã học 4 động từ cơ bản:
+                    <ul>
+                        <li><span class="japanese">いく</span> (iku) - đi</li>
+                        <li><span class="japanese">たべる</span> (taberu) - ăn</li>
+                        <li><span class="japanese">する</span> (suru) - làm</li>
+                        <li><span class="japanese">くる</span> (kuru) - đến</li>
+                    </ul>
+                </li>
+                <li>Cách chia động từ lịch sự:
+                    <ul>
+                        <li>Hiện tại/Tương lai khẳng định: <strong>~ます</strong></li>
+                        <li>Hiện tại/Tương lai phủ định: <strong>~ません</strong></li>
+                    </ul>
+                </li>
+                <li>Các cấu trúc câu cơ bản:
+                    <ul>
+                        <li><span class="japanese">[Địa điểm] に [いきます/きます]</span> (Đi/đến một địa điểm)</li>
+                        <li><span class="japanese">[Tân ngữ] を [Động từ]</span> (Tác động lên một đối tượng)</li>
+                    </ul>
+                </li>
+            </ul>
+            <p style="text-align: center; margin-top: 20px;">Chúc mừng bạn đã hoàn thành Chương 7! 🎉 Hãy luyện tập thường xuyên để ghi nhớ các động từ và cách chia nhé.</p>
+        </section>
+
+    </div>
+
+    <!-- Simple JavaScript for practice section (for web testing purposes, actual app will handle) -->
+    <script>
+        document.querySelectorAll('.practice-options button').forEach(button => {
+            button.addEventListener('click', function() {
+                const parentDiv = this.closest('.practice-section');
+                const feedbackId = this.closest('.practice-options').nextElementSibling.id;
+                const feedbackMessage = document.getElementById(feedbackId);
+
+                // Reset all buttons in this question
+                this.closest('.practice-options').querySelectorAll('button').forEach(btn => {
+                    btn.classList.remove('correct', 'incorrect');
+                    btn.disabled = false; // Re-enable for multiple attempts in testing
+                });
+
+                if (this.dataset.answer === 'correct') {
+                    this.classList.add('correct');
+                    feedbackMessage.textContent = 'Chính xác! ✅';
+                    feedbackMessage.className = 'feedback-message correct';
+                } else {
+                    this.classList.add('incorrect');
+                    feedbackMessage.textContent = 'Chưa đúng. Hãy thử lại! ❌';
+                    feedbackMessage.className = 'feedback-message incorrect';
+                    // Optionally, highlight correct answer
+                    // this.closest('.practice-options').querySelector('button[data-answer="correct"]').classList.add('correct');
+                }
+                feedbackMessage.style.display = 'block';
+                // Disable buttons after selection
+                // this.closest('.practice-options').querySelectorAll('button').forEach(btn => btn.disabled = true);
+            });
+        });
+
+        // Placeholder for audio functionality (will be injected by React Native TTS)
+        document.querySelectorAll('.audio-icon').forEach(icon => {
+            icon.addEventListener('click', () => {
+                const text = icon.dataset.audioText;
+                console.log(`Playing audio for: "${text}"`);
+                // In a real app, this would trigger a native audio play function.
+                // For browser testing, you could use SpeechSynthesisUtterance.
+                // const synth = window.speechSynthesis;
+                // const utterance = new SpeechSynthesisUtterance(text);
+                // utterance.lang = 'ja-JP'; // Set language to Japanese
+                // synth.speak(utterance);
+            });
+        });
+    </script>
+</body>
+</html>

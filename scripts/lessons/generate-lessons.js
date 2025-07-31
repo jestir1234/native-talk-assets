@@ -106,7 +106,7 @@ Requirements:
 7. Keep it concise but comprehensive
 8. Include cultural notes where relevant
 9. Add pronunciation guides for ${languageLearnName} words
-10. Include a summary section at the end
+10. Include a summary section at the end, however DO NOT include a button to go to the next chapter
 11. All explanations should be in ${targetLanguageName}
 12. Include ${languageLearnName} examples with ${targetLanguageName} translations
 
@@ -405,9 +405,16 @@ async function generateLessons() {
         }
         
         // Process each chapter
-        for (const chapter of chaptersToProcess) {
+        for (let i = 0; i < chaptersToProcess.length; i++) {
+            const chapter = chaptersToProcess[i];
             console.log(`\n🔄 Processing Chapter ${chapter.number}: ${chapter.title}`);
             await processChapter(chapter, LANGUAGE_LEARN, TARGET_LANGUAGE);
+            
+            // Add delay between chapters to avoid rate limiting (except for the last chapter)
+            if (i < chaptersToProcess.length - 1) {
+                console.log('⏳ Waiting 3 seconds before next chapter...');
+                await new Promise(resolve => setTimeout(resolve, 3000));
+            }
         }
         
         console.log(`\n🎉 All lessons generated successfully for ${LANGUAGE_LEARN.toUpperCase()} in ${TARGET_LANGUAGE.toUpperCase()}!`);

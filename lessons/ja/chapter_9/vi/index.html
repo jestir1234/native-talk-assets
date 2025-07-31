@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Từ Vựng Hàng Ngày & Yêu Cầu Lịch Sự</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for Color Scheme */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-bg-color: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white-color: #FFFFFF;
+        }
+
+        /* Base Styles for Mobile-First */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body text size */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Global Reset & Box Model */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Roboto', sans-serif; /* Keep consistent or use Noto Sans JP for Japanese specific if desired */
+            color: var(--heading-text-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-weight: 700;
+        }
+
+        h1 { font-size: 2.2em; }
+        h2 { font-size: 1.8em; }
+        h3 { font-size: 1.4em; }
+        p { margin-bottom: 1em; }
+
+        /* General Layout & Spacing */
+        .container {
+            padding: 20px;
+            max-width: 800px; /* Limit width for readability on larger screens */
+            margin: 0 auto;
+        }
+
+        /* Chapter Header */
+        .chapter-title {
+            text-align: center;
+            padding: 20px 0;
+            margin: 0;
+            color: var(--heading-text-color);
+            font-size: 1.8em; /* Adjusted for mobile header */
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .lesson-section h2, .lesson-section h3 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 0;
+        }
+        
+        .lesson-section h3 {
+            color: var(--heading-text-color);
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            text-align: left; /* Align sub-headings left */
+        }
+
+        /* Vocabulary Cards/Lists */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Adjusted for more columns if space allows */
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .vocab-item {
+            background-color: var(--white-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .vocab-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .vocab-japanese {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+            font-size: 1.3em;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .vocab-romaji {
+            font-size: 0.9em;
+            color: var(--body-text-color);
+            margin-bottom: 5px;
+        }
+
+        .vocab-vietnamese {
+            font-size: 0.9em;
+            color: var(--heading-text-color);
+            margin-top: 5px;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.5em; /* Icon size */
+            cursor: pointer;
+            padding: 8px; /* Touch target padding */
+            border-radius: 50%;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            display: inline-flex; /* For better alignment */
+            justify-content: center;
+            align-items: center;
+            min-width: 44px; /* Minimum touch target size */
+            min-height: 44px;
+            margin: 0 -5px; /* Adjust if needed to align next to text */
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light hover effect */
+            color: var(--heading-text-color);
+        }
+
+        /* Grammar Explanation */
+        .grammar-box {
+            background-color: var(--white-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .grammar-box h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .grammar-example {
+            background-color: var(--secondary-bg-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            font-size: 0.95em;
+        }
+
+        .grammar-example p {
+            margin: 5px 0;
+        }
+
+        .grammar-example .jp-text {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 500;
+            color: var(--heading-text-color);
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .grammar-example .vn-translation {
+            color: var(--body-text-color);
+            font-style: italic;
+            display: inline-block;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FFF9E0; /* Slightly different cream for cultural notes */
+            border-left: 4px solid #F5A623; /* Orange accent */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.9em;
+            color: var(--heading-text-color);
+        }
+
+        .cultural-note strong {
+            color: #F5A623;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-question {
+            background-color: var(--white-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--heading-text-color);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Stack options on mobile */
+            gap: 10px;
+        }
+
+        .option-button {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 1.0em;
+            cursor: pointer;
+            min-height: 48px; /* Ensure ample tap target */
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            text-align: center;
+        }
+
+        .option-button:hover {
+            background-color: #7A4BA1; /* Slightly darker purple on hover */
+            transform: translateY(-1px);
+        }
+
+        .option-button:active {
+            transform: translateY(0);
+        }
+
+        .reveal-button {
+            background-color: #6C7A89; /* Grey for reveal */
+            color: var(--white-color);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 1.0em;
+            cursor: pointer;
+            min-height: 48px;
+            width: 100%;
+            margin-top: 15px;
+            transition: background-color 0.2s ease;
+        }
+
+        .reveal-button:hover {
+            background-color: #5A6675;
+        }
+
+        .answer-box {
+            background-color: #E6F3F9; /* Light blue for answer */
+            border: 1px solid #A4D8EE;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+            display: none; /* Hidden by default, shown by JS logic (or manual for static HTML) */
+            color: var(--heading-text-color);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-section ul {
+            list-style-type: '👉 '; /* Custom bullet point */
+            padding-left: 20px;
+        }
+
+        .summary-section ul li {
+            margin-bottom: 10px;
+            color: var(--body-text-color);
+        }
+
+        .summary-section strong {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 600px) {
+            .chapter-title {
+                font-size: 2.5em;
+            }
+            .container {
+                padding: 30px;
+            }
+            .vocabulary-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* More columns on wider screens */
+            }
+            .options-grid {
+                grid-template-columns: repeat(2, 1fr); /* Two columns for options on wider screens */
+            }
+        }
+
+        @media (min-width: 768px) {
+            h1 { font-size: 2.8em; }
+            h2 { font-size: 2.2em; }
+            h3 { font-size: 1.6em; }
+            body { font-size: 17px; }
+            .lesson-section {
+                padding: 30px;
+            }
+            .vocab-item {
+                padding: 20px;
+            }
+        }
+
+        /* Helper Classes */
+        .text-center { text-align: center; }
+        .mb-20 { margin-bottom: 20px; }
+        .mt-20 { margin-top: 20px; }
+        .p-15 { padding: 15px; }
+
+    </style>
+</head>
+<body>
+    <h1 class="chapter-title">Chapter 9: Từ Vựng Hàng Ngày & Yêu Cầu Lịch Sự</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 9 Header" class="lesson-header-image">
+    </div>
+
+    <div class="container">
+        <p class="text-center mb-20">Chào mừng bạn đến với Chapter 9! Trong bài học này, chúng ta sẽ mở rộng vốn từ vựng về cuộc sống hàng ngày và học cách thực hiện các yêu cầu một cách lịch sự trong tiếng Nhật. Sẵn sàng khám phá chưa nào? 🚀</p>
+
+        <!-- Section 1: Daily Life Vocabulary -->
+        <section class="lesson-section">
+            <h2>✨ Từ Vựng Đời Sống Hàng Ngày (日常生活の語彙 - Nichijō Seikatsu no Goi)</h2>
+            <p>Hãy cùng học những từ vựng phổ biến mà bạn sẽ gặp thường xuyên trong cuộc sống hàng ngày ở Nhật Bản nhé!</p>
+
+            <h3>🍔 Đồ Ăn (食べ物 - Tabemono)</h3>
+            <div class="vocabulary-grid">
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="水">🔊</button>
+                    <div class="vocab-japanese">水</div>
+                    <div class="vocab-romaji">mizu</div>
+                    <div class="vocab-vietnamese">Nước</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="コーヒー">🔊</button>
+                    <div class="vocab-japanese">コーヒー</div>
+                    <div class="vocab-romaji">kōhī</div>
+                    <div class="vocab-vietnamese">Cà phê</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="お茶">🔊</button>
+                    <div class="vocab-japanese">お茶</div>
+                    <div class="vocab-romaji">ocha</div>
+                    <div class="vocab-vietnamese">Trà</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="ご飯">🔊</button>
+                    <div class="vocab-japanese">ご飯</div>
+                    <div class="vocab-romaji">gohan</div>
+                    <div class="vocab-vietnamese">Cơm/Bữa ăn</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="パン">🔊</button>
+                    <div class="vocab-japanese">パン</div>
+                    <div class="vocab-romaji">pan</div>
+                    <div class="vocab-vietnamese">Bánh mì</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="果物">🔊</button>
+                    <div class="vocab-japanese">果物</div>
+                    <div class="vocab-romaji">kudamono</div>
+                    <div class="vocab-vietnamese">Trái cây</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="野菜">🔊</button>
+                    <div class="vocab-japanese">野菜</div>
+                    <div class="vocab-romaji">yasai</div>
+                    <div class="vocab-vietnamese">Rau củ</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="お菓子">🔊</button>
+                    <div class="vocab-japanese">お菓子</div>
+                    <div class="vocab-romaji">okashi</div>
+                    <div class="vocab-vietnamese">Kẹo/Đồ ngọt</div>
+                </div>
+            </div>
+
+            <h3>📍 Địa Điểm (場所 - Basho)</h3>
+            <div class="vocabulary-grid">
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="駅">🔊</button>
+                    <div class="vocab-japanese">駅</div>
+                    <div class="vocab-romaji">eki</div>
+                    <div class="vocab-vietnamese">Nhà ga</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="銀行">🔊</button>
+                    <div class="vocab-japanese">銀行</div>
+                    <div class="vocab-romaji">ginkō</div>
+                    <div class="vocab-vietnamese">Ngân hàng</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="病院">🔊</button>
+                    <div class="vocab-japanese">病院</div>
+                    <div class="vocab-romaji">byōin</div>
+                    <div class="vocab-vietnamese">Bệnh viện</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="スーパー">🔊</button>
+                    <div class="vocab-japanese">スーパー</div>
+                    <div class="vocab-romaji">sūpā</div>
+                    <div class="vocab-vietnamese">Siêu thị</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="レストラン">🔊</button>
+                    <div class="vocab-japanese">レストラン</div>
+                    <div class="vocab-romaji">resutoran</div>
+                    <div class="vocab-vietnamese">Nhà hàng</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="学校">🔊</button>
+                    <div class="vocab-japanese">学校</div>
+                    <div class="vocab-romaji">gakkō</div>
+                    <div class="vocab-vietnamese">Trường học</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="家">🔊</button>
+                    <div class="vocab-japanese">家</div>
+                    <div class="vocab-romaji">ie</div>
+                    <div class="vocab-vietnamese">Nhà</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="公園">🔊</button>
+                    <div class="vocab-japanese">公園</div>
+                    <div class="vocab-romaji">kōen</div>
+                    <div class="vocab-vietnamese">Công viên</div>
+                </div>
+            </div>
+
+            <h3>🚗 Phương Tiện Di Chuyển (交通機関 - Kōtsū Kikan)</h3>
+            <div class="vocabulary-grid">
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="電車">🔊</button>
+                    <div class="vocab-japanese">電車</div>
+                    <div class="vocab-romaji">densha</div>
+                    <div class="vocab-vietnamese">Tàu điện</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="バス">🔊</button>
+                    <div class="vocab-japanese">バス</div>
+                    <div class="vocab-romaji">basu</div>
+                    <div class="vocab-vietnamese">Xe buýt</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="タクシー">🔊</button>
+                    <div class="vocab-japanese">タクシー</div>
+                    <div class="vocab-romaji">takushī</div>
+                    <div class="vocab-vietnamese">Taxi</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="自転車">🔊</button>
+                    <div class="vocab-japanese">自転車</div>
+                    <div class="vocab-romaji">jitensha</div>
+                    <div class="vocab-vietnamese">Xe đạp</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="車">🔊</button>
+                    <div class="vocab-japanese">車</div>
+                    <div class="vocab-romaji">kuruma</div>
+                    <div class="vocab-vietnamese">Ô tô</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="飛行機">🔊</button>
+                    <div class="vocab-japanese">飛行機</div>
+                    <div class="vocab-romaji">hikōki</div>
+                    <div class="vocab-vietnamese">Máy bay</div>
+                </div>
+            </div>
+
+            <h3>⏰ Hoạt Động Hàng Ngày (毎日の活動 - Mainichi no Katsudō)</h3>
+            <div class="vocabulary-grid">
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="起きる">🔊</button>
+                    <div class="vocab-japanese">起きる</div>
+                    <div class="vocab-romaji">okiru</div>
+                    <div class="vocab-vietnamese">Thức dậy</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="食べる">🔊</button>
+                    <div class="vocab-japanese">食べる</div>
+                    <div class="vocab-romaji">taberu</div>
+                    <div class="vocab-vietnamese">Ăn</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="飲む">🔊</button>
+                    <div class="vocab-japanese">飲む</div>
+                    <div class="vocab-romaji">nomu</div>
+                    <div class="vocab-vietnamese">Uống</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="読む">🔊</button>
+                    <div class="vocab-japanese">読む</div>
+                    <div class="vocab-romaji">yomu</div>
+                    <div class="vocab-vietnamese">Đọc</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="勉強する">🔊</button>
+                    <div class="vocab-japanese">勉強する</div>
+                    <div class="vocab-romaji">benkyō suru</div>
+                    <div class="vocab-vietnamese">Học bài</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="寝る">🔊</button>
+                    <div class="vocab-japanese">寝る</div>
+                    <div class="vocab-romaji">neru</div>
+                    <div class="vocab-vietnamese">Đi ngủ</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="働く">🔊</button>
+                    <div class="vocab-japanese">働く</div>
+                    <div class="vocab-romaji">hataraku</div>
+                    <div class="vocab-vietnamese">Làm việc</div>
+                </div>
+                <div class="vocab-item">
+                    <button class="audio-icon" data-audio-text="行く">🔊</button>
+                    <div class="vocab-japanese">行く</div>
+                    <div class="vocab-romaji">iku</div>
+                    <div class="vocab-vietnamese">Đi</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Making Polite Requests -->
+        <section class="lesson-section">
+            <h2>🗣️ Cách Yêu Cầu Lịch Sự (丁寧な依頼 - Teinei na Irai)</h2>
+            <p>Khi bạn muốn yêu cầu điều gì đó hoặc hỏi xin một vật phẩm, có hai cấu trúc phổ biến và hữu ích mà bạn cần biết!</p>
+
+            <h3>1. Cấu trúc: ～をください (~ o kudasai)</h3>
+            <div class="grammar-box">
+                <h4>Ý nghĩa: "Làm ơn cho tôi..." hoặc "Xin vui lòng cho..."</h4>
+                <p>Cấu trúc này dùng để yêu cầu một vật gì đó một cách trực tiếp. Thường dùng khi bạn đang ở cửa hàng, nhà hàng, hoặc muốn xin một vật từ người khác.</p>
+                <p><strong>Cấu trúc: Danh từ + を + ください</strong></p>
+                <div class="grammar-example">
+                    <p><span class="jp-text">水 <button class="audio-icon" data-audio-text="水">🔊</button> を <button class="audio-icon" data-audio-text="ください">🔊</button>ください。</span></p>
+                    <p><span class="vn-translation">(Mizu o kudasai.) - Xin cho tôi nước.</span></p>
+                </div>
+                <div class="grammar-example">
+                    <p><span class="jp-text">メニュー <button class="audio-icon" data-audio-text="メニュー">🔊</button> を <button class="audio-icon" data-audio-text="ください">🔊</button>ください。</span></p>
+                    <p><span class="vn-translation">(Menyū o kudasai.) - Xin cho tôi thực đơn.</span></p>
+                </div>
+                <div class="grammar-example">
+                    <p><span class="jp-text">ペン <button class="audio-icon" data-audio-text="ペン">🔊</button> を <button class="audio-icon" data-audio-text="ください">🔊</button>ください。</span></p>
+                    <p><span class="vn-translation">(Pen o kudasai.) - Xin cho tôi cây bút.</span></p>
+                </div>
+            </div>
+            
+            <div class="cultural-note">
+                <strong>📝 Ghi chú văn hóa:</strong> Cụm từ "〜ください" khá thông dụng nhưng đôi khi mang sắc thái hơi trực tiếp. Khi bạn muốn yêu cầu thứ gì đó tại cửa hàng hoặc nhà hàng, đặc biệt khi gọi món, "〜をお願いします" thường được ưu tiên hơn vì nó lịch sự và mềm mại hơn.
+            </div>
+
+            <h3>2. Cấu trúc: ～をお願いします (~ o onegaishimasu)</h3>
+            <div class="grammar-box">
+                <h4>Ý nghĩa: "Tôi muốn...", "Làm ơn (khi gọi món/dịch vụ)"</h4>
+                <p>Cấu trúc này mang sắc thái lịch sự hơn, thường được dùng khi bạn yêu cầu dịch vụ hoặc gọi món tại nhà hàng, quán cà phê. Nó thể hiện sự nhờ vả, yêu cầu một cách trang trọng.</p>
+                <p><strong>Cấu trúc: Danh từ + を + お願いします</strong></p>
+                <div class="grammar-example">
+                    <p><span class="jp-text">コーヒー <button class="audio-icon" data-audio-text="コーヒー">🔊</button> を <button class="audio-icon" data-audio-text="一つ">🔊</button>一つ <button class="audio-icon" data-audio-text="お願いします">🔊</button>お願いします。</span></p>
+                    <p><span class="vn-translation">(Kōhī o hitotsu onegaishimasu.) - Xin cho tôi một cà phê. (Cách nói lịch sự khi gọi món)</span></p>
+                </div>
+                <div class="grammar-example">
+                    <p><span class="jp-text">タクシー <button class="audio-icon" data-audio-text="タクシー">🔊</button> を <button class="audio-icon" data-audio-text="お願いします">🔊</button>お願いします。</span></p>
+                    <p><span class="vn-translation">(Takushī o onegaishimasu.) - Xin gọi cho tôi một taxi.</span></p>
+                </div>
+                <div class="grammar-example">
+                    <p><span class="jp-text">この <button class="audio-icon" data-audio-text="この">🔊</button> 本 <button class="audio-icon" data-audio-text="本">🔊</button> を <button class="audio-icon" data-audio-text="お願いします">🔊</button>お願いします。</span></p>
+                    <p><span class="vn-translation">(Kono hon o onegaishimasu.) - Xin vui lòng cho tôi cuốn sách này. (Khi mua hàng, mang ra quầy tính tiền)</span></p>
+                </div>
+            </div>
+
+            <div class="cultural-note">
+                <strong>💡 Lưu ý quan trọng:</strong>
+                <ul>
+                    <li>Dùng <strong>～をください</strong> khi bạn muốn xin/yêu cầu trực tiếp một vật phẩm cụ thể.</li>
+                    <li>Dùng <strong>～をお願いします</strong> khi bạn đang gọi món, yêu cầu dịch vụ, hoặc muốn một thứ gì đó được phục vụ/cung cấp cho mình một cách lịch sự hơn.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section class="practice-section">
+            <h2>🎯 Luyện Tập (練習 - Renshū)</h2>
+            <p class="text-center">Hãy cùng thực hành những gì bạn đã học nhé!</p>
+
+            <div class="practice-question">
+                <p class="question-text"><strong>1. Chọn từ đúng để hoàn thành câu: "Xin cho tôi bánh mì."</strong></p>
+                <p class="question-text">____ を <button class="audio-icon" data-audio-text="ください">🔊</button>ください。</p>
+                <div class="options-grid">
+                    <button class="option-button">水 (Nước)</button>
+                    <button class="option-button">パン (Bánh mì)</button>
+                    <button class="option-button">ご飯 (Cơm)</button>
+                </div>
+                <button class="reveal-button" onclick="document.getElementById('answer1').style.display = 'block';">Xem đáp án</button>
+                <div id="answer1" class="answer-box">
+                    <p>Đáp án: <strong>パン (Pan)</strong></p>
+                    <p>Câu hoàn chỉnh: <span class="jp-text">パン <button class="audio-icon" data-audio-text="パン">🔊</button> を <button class="audio-icon" data-audio-text="ください">🔊</button>ください。</span> <span class="vn-translation">(Xin cho tôi bánh mì.)</span></p>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p class="question-text"><strong>2. Sắp xếp các từ sau thành câu "Xin gọi cho tôi một taxi." (Khi yêu cầu dịch vụ)</strong></p>
+                <p class="question-text">お願い (onegaishimasu) | を | タクシー (takushī) | します</p>
+                <div class="options-grid">
+                    <button class="option-button">タクシー を お願いします</button>
+                    <button class="option-button">お願いします を タクシー</button>
+                    <button class="option-button">を タクシー お願いします</button>
+                </div>
+                <button class="reveal-button" onclick="document.getElementById('answer2').style.display = 'block';">Xem đáp án</button>
+                <div id="answer2" class="answer-box">
+                    <p>Đáp án: <strong>タクシー を お願いします</strong></p>
+                    <p>Câu hoàn chỉnh: <span class="jp-text">タクシー <button class="audio-icon" data-audio-text="タクシー">🔊</button> を <button class="audio-icon" data-audio-text="お願いします">🔊</button>お願いします。</span> <span class="vn-translation">(Xin gọi cho tôi một taxi.)</span></p>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p class="question-text"><strong>3. Bạn muốn gọi một cốc trà (お茶 - ocha) tại quán. Bạn sẽ nói thế nào cho lịch sự?</strong></p>
+                <div class="options-grid">
+                    <button class="option-button">お茶をください。</button>
+                    <button class="option-button">お茶をお願いします。</button>
+                    <button class="option-button">お茶です。</button>
+                </div>
+                <button class="reveal-button" onclick="document.getElementById('answer3').style.display = 'block';">Xem đáp án</button>
+                <div id="answer3" class="answer-box">
+                    <p>Đáp án: <strong>お茶をお願いします。</strong></p>
+                    <p>Giải thích: Khi gọi món/đồ uống tại quán, dùng "～をお願いします" sẽ lịch sự và tự nhiên hơn.</p>
+                    <p>Câu hoàn chỉnh: <span class="jp-text">お茶 <button class="audio-icon" data-audio-text="お茶">🔊</button> を <button class="audio-icon" data-audio-text="お願いします">🔊</button>お願いします。</span> <span class="vn-translation">(Xin cho tôi trà.)</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="summary-section">
+            <h2>🌟 Tóm Tắt (まとめ - Matome)</h2>
+            <p>Tuyệt vời! Bạn đã hoàn thành Chapter 9. Dưới đây là những điểm chính bạn đã học:</p>
+            <ul>
+                <li>Bạn đã mở rộng vốn từ vựng về <strong>đồ ăn, địa điểm, phương tiện di chuyển</strong> và <strong>hoạt động hàng ngày</strong>.</li>
+                <li>Bạn đã học cách thực hiện yêu cầu sử dụng hai cấu trúc chính:
+                    <ul>
+                        <li><strong>Danh từ + を + ください:</strong> "Xin cho tôi [danh từ]." Dùng để yêu cầu trực tiếp một vật phẩm.</li>
+                        <li><strong>Danh từ + を + お願いします:</strong> "Tôi muốn [danh từ]. / Xin cho tôi [danh từ]." Lịch sự hơn, thường dùng khi gọi món hoặc yêu cầu dịch vụ.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p class="text-center">Hãy tiếp tục luyện tập để thành thạo các từ vựng và mẫu câu này nhé! Gặp lại bạn ở bài học tiếp theo! 😊</p>
+        </section>
+    </div>
+
+    <!-- Simple JS for "Show Answer" buttons for static HTML demonstration -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealButtons = document.querySelectorAll('.reveal-button');
+            revealButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('onclick').match(/'(.*)'/)[1];
+                    const answerBox = document.getElementById(targetId);
+                    if (answerBox) {
+                        answerBox.style.display = 'block';
+                        this.style.display = 'none'; // Hide the reveal button after showing answer
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
