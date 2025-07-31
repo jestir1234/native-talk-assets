@@ -5,69 +5,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter 6: Numbers, Time, and Counters</title>
     <style>
-        /* Base styles & mobile-first approach */
+        /* Color Variables */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-color: #FDF9E5;
+            --heading-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        /* Base Styles */
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #FDF9E5; /* Secondary: Cream background */
-            color: #666666; /* Body Text: Medium gray */
+            background-color: #ffffff;
+            color: var(--body-text-color);
             line-height: 1.6;
             font-size: 16px; /* Minimum font size */
+            -webkit-text-size-adjust: 100%; /* Ensure text is not resized on mobile */
         }
 
+        /* Container for content */
         .container {
-            padding: 15px;
-            max-width: 800px; /* Max width for content on larger screens */
+            max-width: 800px;
             margin: 0 auto;
+            padding: 16px;
         }
 
+        /* Headings */
         h1, h2, h3 {
-            color: #2C3E50; /* Text: Dark blue for headings */
+            color: var(--heading-color);
             margin-top: 1.5em;
             margin-bottom: 0.8em;
+            line-height: 1.2;
         }
 
         h1 {
             font-size: 2em;
             text-align: center;
-            padding-top: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
         }
 
         h2 {
             font-size: 1.6em;
+            border-bottom: 2px solid var(--primary-color);
             padding-bottom: 5px;
-            border-bottom: 2px solid #E0E0E0; /* Light gray border */
+            margin-top: 2em;
         }
 
         h3 {
             font-size: 1.3em;
-            color: #8B5FBF; /* Primary: Purple for sub-headings */
-            margin-top: 1.2em;
+            color: var(--primary-color);
         }
 
+        /* Paragraphs */
         p {
             margin-bottom: 1em;
+            text-align: justify;
         }
 
-        ul {
-            list-style: none;
-            padding-left: 0;
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
         }
 
-        ul li {
+        /* List Styling */
+        ul, ol {
+            margin: 0 0 1em 20px;
+            padding: 0;
+            list-style-type: disc;
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+
+        li {
             margin-bottom: 0.5em;
-            padding-left: 25px; /* Indent for bullet */
-            position: relative;
+            padding-left: 5px;
         }
 
-        ul li::before {
-            content: '👉'; /* Unicode arrow or other emoji */
-            position: absolute;
-            left: 0;
-            color: #8B5FBF;
+        /* Accent Box Styles */
+        .info-box, .example-box, .exercise-box {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
+        .info-box strong, .example-box strong, .exercise-box strong {
+            color: var(--heading-color);
+        }
+
+        .exercise-box {
+            background-color: #f9f9f9; /* Slightly different for exercises */
+            border-left-color: #f5a623; /* A warm orange for exercises */
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation {
+            font-style: italic;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        /* Interactive Elements - Audio */
+        .audio-icon {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 1.8em; /* Visually large */
+            cursor: pointer;
+            padding: 10px; /* Make touch target at least 44px */
+            min-width: 44px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            border-radius: 50%;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            box-sizing: border-box; /* Include padding in dimensions */
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+            background-color: rgba(139, 95, 191, 0.1); /* Light transparent primary color */
+        }
+
+        .word-with-audio {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px; /* Space between word and icon */
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        /* Exercise Styles */
+        .exercise-item {
+            margin-bottom: 1em;
+            padding-bottom: 0.5em;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        .exercise-item:last-child {
+            border-bottom: none;
+        }
+
+        .exercise-question {
+            font-weight: bold;
+            margin-bottom: 0.5em;
+            color: var(--heading-color);
+        }
+
+        .exercise-answer {
+            color: #28a745; /* Green for answers */
+            font-weight: bold;
+            display: none; /* Hidden by default */
+        }
+
+        /* Pseudo-class for hover reveal (for exercises, if desired) */
+        .reveal-answer {
+            cursor: pointer;
+            text-decoration: underline;
+            color: var(--primary-color);
+        }
+
+        /* This is a simple hover reveal. For mobile, a tap-to-reveal (with JS) would be better. */
+        /* For this example, we adhere to no JS event handlers. */
+        /* A mobile app would inject JS to handle the reveal on tap. */
+        .reveal-answer:hover + .exercise-answer {
+            display: block;
+        }
+
+        /* Header specific styles (as per requirements) */
         .lesson-header {
             margin: 20px 0;
             text-align: center;
@@ -78,176 +196,68 @@
             max-width: 600px;
             height: auto;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
             display: block;
             margin: 0 auto;
         }
 
-        .section-block {
-            background-color: #FDF9E5; /* Secondary: Cream background for sections */
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        .example {
-            background-color: #f0f0f0; /* Light gray for examples */
-            border-left: 5px solid #8B5FBF; /* Primary: Purple accent */
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 5px;
-        }
-
-        .example p {
-            margin: 0.5em 0;
-        }
-
-        .example .japanese-text {
-            font-weight: bold;
-            color: #2C3E50;
-            font-size: 1.1em;
-        }
-
-        .audio-icon {
-            background: #8B5FBF; /* Primary: Purple */
-            color: white;
-            border: none;
-            border-radius: 50%; /* Make it round */
-            width: 44px; /* Minimum touch size */
-            height: 44px; /* Minimum touch size */
-            font-size: 1.2em;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            margin-left: 10px;
-            vertical-align: middle;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .audio-icon:hover {
-            background-color: #6a4491; /* Darker purple on hover */
-            transform: translateY(-2px);
-        }
-
-        .practice-section {
-            background-color: #FDF9E5; /* Secondary: Cream background */
-            border: 2px dashed #8B5FBF; /* Primary: Purple dashed border */
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        .practice-section h3 {
-            color: #2C3E50;
-            margin-top: 0;
-        }
-
-        .practice-item {
-            margin-bottom: 20px;
-            padding: 10px;
-            background-color: #ffffff; /* White background for practice items */
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .practice-question {
-            font-weight: bold;
-            color: #666666;
-            margin-bottom: 10px;
-        }
-
-        .practice-answer-box {
-            background-color: #e9e9e9; /* Light gray for answer box */
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 10px;
-            display: inline-block; /* To make it wrap content */
-            min-width: 150px; /* Ensure some width */
-            text-align: center;
-            font-size: 1.1em;
-            color: #2C3E50;
-            font-style: italic;
-        }
-
-        .translation {
-            color: #666666;
-            font-style: italic;
-            font-size: 0.95em;
-            margin-top: 5px;
-        }
-
-        .romaji {
-            font-style: italic;
-            color: #8B5FBF; /* Primary: Purple */
-        }
-
-        .key-point {
-            background-color: #e8d0fb; /* Lighter purple background for key points */
-            padding: 10px 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            font-weight: bold;
-            color: #2C3E50;
-            display: flex;
-            align-items: center;
-        }
-
-        .key-point span {
-            margin-right: 10px;
-            font-size: 1.5em;
-        }
-
-        .summary-section {
-            background-color: #e8d0fb; /* Lighter purple */
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 30px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-        }
-
-        .summary-section h2 {
-            color: #2C3E50;
-            border-bottom: none;
-            margin-bottom: 15px;
-        }
-
-        .summary-section ul {
-            text-align: left;
-            padding-left: 20px;
-        }
-
-        .summary-section ul li {
-            margin-bottom: 10px;
-            font-size: 1.05em;
-            color: #2C3E50;
-        }
-        .summary-section ul li::before {
-            content: '⭐';
-        }
-
-        /* Responsive adjustments */
-        @media (min-width: 768px) {
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .container {
-                padding: 30px;
+                padding: 10px;
             }
 
             h1 {
-                font-size: 2.5em;
+                font-size: 1.8em;
             }
 
             h2 {
-                font-size: 2em;
+                font-size: 1.4em;
             }
 
             h3 {
-                font-size: 1.5em;
+                font-size: 1.2em;
             }
+
+            section {
+                padding: 15px;
+                margin-bottom: 15px;
+                border-radius: 8px;
+            }
+
+            .info-box, .example-box, .exercise-box {
+                padding: 10px;
+                margin: 10px 0;
+                border-radius: 6px;
+            }
+
+            .audio-icon {
+                font-size: 1.6em;
+                padding: 8px; /* Maintain touch target size */
+            }
+
+            .word-with-audio {
+                display: block; /* Stack on small screens for better readability */
+                margin-bottom: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 15px;
+            }
+            .audio-icon {
+                font-size: 1.5em;
+                padding: 7px;
+            }
+        }
+
+        /* Utility classes */
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to next line */
+            gap: 10px;
+            align-items: center;
         }
     </style>
 </head>
@@ -258,203 +268,220 @@
             <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
         </div>
 
-        <section class="section-block">
-            <h2>👋 Welcome to Chapter 6!</h2>
-            <p>Ready to talk about numbers, time, and how to count different things in Japanese? This chapter is super practical for daily conversations, from asking "What time is it?" to making plans.</p>
-            <p>Let's dive in! 🚀</p>
+        <section>
+            <h2>Welcome to Chapter 6! ⏰</h2>
+            <p>Ready to count, tell time, and talk about your week in Japanese? This chapter is packed with practical phrases and essential vocabulary you'll use every day!</p>
+            <p>Understanding numbers is fundamental, and in Japanese, they come with a twist: counters! Don't worry, we'll start with the simplest ones.</p>
         </section>
 
-        <section class="section-block">
-            <h2>🔢 Numbers 1-10</h2>
-            <p>Learning to count is one of the first steps! Here are the basic numbers from 1 to 10. Pay close attention to their pronunciation!</p>
+        <section>
+            <h2>Counting Basics: Numbers 1-10 🔢</h2>
+            <p>Let's start with the building blocks – numbers 1 to 10. These are crucial for everything from telling time to counting objects.</p>
+
             <ul>
-                <li>1: 一 <span class="romaji">(ichi)</span> <button class="audio-icon" data-audio-text="いち">🔊</button></li>
-                <li>2: 二 <span class="romaji">(ni)</span> <button class="audio-icon" data-audio-text="に">🔊</button></li>
-                <li>3: 三 <span class="romaji">(san)</span> <button class="audio-icon" data-audio-text="さん">🔊</button></li>
-                <li>4: 四 <span class="romaji">(yon / shi)</span> <button class="audio-icon" data-audio-text="よん">🔊</button> (Use <span class="romaji">yon</span> more often)</li>
-                <li>5: 五 <span class="romaji">(go)</span> <button class="audio-icon" data-audio-text="ご">🔊</button></li>
-                <li>6: 六 <span class="romaji">(roku)</span> <button class="audio-icon" data-audio-text="ろく">🔊</button></li>
-                <li>7: 七 <span class="romaji">(nana / shichi)</span> <button class="audio-icon" data-audio-text="なな">🔊</button> (Use <span class="romaji">nana</span> more often)</li>
-                <li>8: 八 <span class="romaji">(hachi)</span> <button class="audio-icon" data-audio-text="はち">🔊</button></li>
-                <li>9: 九 <span class="romaji">(kyuu / ku)</span> <button class="audio-icon" data-audio-text="きゅう">🔊</button> (Use <span class="romaji">kyuu</span> more often)</li>
-                <li>10: 十 <span class="romaji">(juu)</span> <button class="audio-icon" data-audio-text="じゅう">🔊</button></li>
+                <li><span class="word-with-audio">1: いち <button class="audio-icon" data-audio-text="いち">🔊</button></span> <span class="pronunciation">(ichi)</span></li>
+                <li><span class="word-with-audio">2: に <button class="audio-icon" data-audio-text="に">🔊</button></span> <span class="pronunciation">(ni)</span></li>
+                <li><span class="word-with-audio">3: さん <button class="audio-icon" data-audio-text="さん">🔊</button></span> <span class="pronunciation">(san)</span></li>
+                <li><span class="word-with-audio">4: よん / し <button class="audio-icon" data-audio-text="よん">🔊</button><button class="audio-icon" data-audio-text="し">🔊</button></span> <span class="pronunciation">(yon / shi)</span> <br> <small><em>(Note: よん is more common for counting things, し often used for months/time.)</em></small></li>
+                <li><span class="word-with-audio">5: ご <button class="audio-icon" data-audio-text="ご">🔊</button></span> <span class="pronunciation">(go)</span></li>
+                <li><span class="word-with-audio">6: ろく <button class="audio-icon" data-audio-text="ろく">🔊</button></span> <span class="pronunciation">(roku)</span></li>
+                <li><span class="word-with-audio">7: なな / しち <button class="audio-icon" data-audio-text="なな">🔊</button><button class="audio-icon" data-audio-text="しち">🔊</button></span> <span class="pronunciation">(nana / shichi)</span> <br> <small><em>(Note: なな is more common in general conversation.)</em></small></li>
+                <li><span class="word-with-audio">8: はち <button class="audio-icon" data-audio-text="はち">🔊</button></span> <span class="pronunciation">(hachi)</span></li>
+                <li><span class="word-with-audio">9: きゅう / く <button class="audio-icon" data-audio-text="きゅう">🔊</button><button class="audio-icon" data-audio-text="く">🔊</button></span> <span class="pronunciation">(kyuu / ku)</span> <br> <small><em>(Note: きゅう is more common in general conversation.)</em></small></li>
+                <li><span class="word-with-audio">10: じゅう <button class="audio-icon" data-audio-text="じゅう">🔊</button></span> <span class="pronunciation">(jū)</span></li>
             </ul>
-            <div class="key-point">
-                <span>💡</span> Note: For 4, 7, and 9, there are two readings! While both are understood, <span class="romaji">yon</span>, <span class="romaji">nana</span>, and <span class="romaji">kyuu</span> are generally preferred in everyday speech, especially when counting.
+
+            <div class="info-box">
+                <h3>💡 Cultural Note: Lucky & Unlucky Numbers</h3>
+                <p>The number 4 (四, <span class="pronunciation">shi</span>) sounds like 死 (<span class="pronunciation">shi</span>), meaning "death," so it's often avoided in hospitals or apartment numbers. Similarly, 9 (九, <span class="pronunciation">ku</span>) can sound like 苦 (<span class="pronunciation">ku</span>), meaning "suffering" or "agony."</p>
+                <p>Because of this, you often hear よん (<span class="pronunciation">yon</span>) for 4 and きゅう (<span class="pronunciation">kyuu</span>) for 9.</p>
             </div>
         </section>
 
-        <section class="section-block">
-            <h2>⏰ Telling Time: なんじですか？</h2>
-            <p>To tell time in Japanese, you simply add <span class="romaji">~ji</span> (時) after the number for the hour. For minutes, it's a bit more complex, but we'll focus on hours first!</p>
+        <section>
+            <h2>Telling Time: じかん (jikan) ⏰</h2>
+            <p>To tell time in Japanese, you mostly add <span class="word-with-audio">～じ <button class="audio-icon" data-audio-text="じ">🔊</button></span> (<span class="pronunciation">-ji</span>) after the number for "o'clock."</p>
+
+            <div class="example-box">
+                <h3>Examples:</h3>
+                <ul>
+                    <li>1 o'clock: <span class="word-with-audio">いちじ <button class="audio-icon" data-audio-text="いちじ">🔊</button></span> <span class="pronunciation">(ichi-ji)</span></li>
+                    <li>2 o'clock: <span class="word-with-audio">にじ <button class="audio-icon" data-audio-text="にじ">🔊</button></span> <span class="pronunciation">(ni-ji)</span></li>
+                    <li>7 o'clock: <span class="word-with-audio">しちじ <button class="audio-icon" data-audio-text="しちじ">🔊</button></span> <span class="pronunciation">(shichi-ji)</span> <br> <small><em>(Note: For 7 o'clock, しちじ is used, not ななじ.)</em></small></li>
+                    <li>9 o'clock: <span class="word-with-audio">くじ <button class="audio-icon" data-audio-text="くじ">🔊</button></span> <span class="pronunciation">(ku-ji)</span> <br> <small><em>(Note: For 9 o'clock, くじ is used, not きゅうじ.)</em></small></li>
+                </ul>
+            </div>
 
             <h3>Asking the Time: いま なんじですか？</h3>
-            <p>This is your go-to phrase to ask "What time is it (now)?".</p>
-            <div class="example">
-                <p><span class="japanese-text">いま なんじですか？</span> <button class="audio-icon" data-audio-text="いま なんじですか">🔊</button><br><span class="romaji">(Ima nan ji desu ka?)</span></p>
-                <p class="translation">What time is it now?</p>
-            </div>
+            <p>This is a super useful phrase!</p>
+            <p class="flex-container">
+                <span class="word-with-audio">いま <button class="audio-icon" data-audio-text="いま">🔊</button></span> (<span class="pronunciation">ima</span>) - now
+                <span class="word-with-audio">なんじ <button class="audio-icon" data-audio-text="なんじ">🔊</button></span> (<span class="pronunciation">nan-ji</span>) - what time?
+                <span class="word-with-audio">ですか <button class="audio-icon" data-audio-text="ですか">🔊</button></span> (<span class="pronunciation">desu ka</span>) - is it? (question particle)
+            </p>
 
-            <h3>Answering the Time: ~じです</h3>
-            <p>To answer, use the number + <span class="romaji">ji</span> + <span class="romaji">desu</span>.</p>
+            <div class="example-box">
+                <p><strong>Question:</strong> <span class="word-with-audio">いま なんじですか？ <button class="audio-icon" data-audio-text="いま なんじですか？">🔊</button></span></p>
+                <p class="pronunciation"> (Ima nan-ji desu ka?) - What time is it now?</p>
+                <p><strong>Answer:</strong> <span class="word-with-audio">さんじです。 <button class="audio-icon" data-audio-text="さんじです。">🔊</button></span></p>
+                <p class="pronunciation"> (San-ji desu.) - It's 3 o'clock.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Basic Counters: ～つ (~tsu) 🍎</h2>
+            <p>In Japanese, you often need to use a "counter" depending on what you're counting. It's like saying "two *pieces* of bread" or "three *sheets* of paper" in English. For general, non-specific small items, we use the <span class="word-with-audio">～つ <button class="audio-icon" data-audio-text="つ">🔊</button></span> (<span class="pronunciation">~tsu</span>) counter system.</p>
+            <p>This counter system is used for numbers 1 to 10 and applies to many common, everyday objects when you just want to say "one of something," "two of something," etc., without specifying the shape or type of object.</p>
+
             <ul>
-                <li>1 o'clock: 一時 <span class="romaji">(ichi-ji)</span> <button class="audio-icon" data-audio-text="いちじ">🔊</button></li>
-                <li>2 o'clock: 二時 <span class="romaji">(ni-ji)</span> <button class="audio-icon" data-audio-text="にじ">🔊</button></li>
-                <li>4 o'clock: 四時 <span class="romaji">(yo-ji)</span> <button class="audio-icon" data-audio-text="よじ">🔊</button> (Special pronunciation for 4 o'clock!)</li>
-                <li>7 o'clock: 七時 <span class="romaji">(shichi-ji)</span> <button class="audio-icon" data-audio-text="しちじ">🔊</button> (Often <span class="romaji">shichi-ji</span> for time)</li>
-                <li>9 o'clock: 九時 <span class="romaji">(ku-ji)</span> <button class="audio-icon" data-audio-text="くじ">🔊</button> (Often <span class="romaji">ku-ji</span> for time)</li>
-                <li>10 o'clock: 十時 <span class="romaji">(juu-ji)</span> <button class="audio-icon" data-audio-text="じゅうじ">🔊</button></li>
+                <li>1 item: <span class="word-with-audio">ひとつ <button class="audio-icon" data-audio-text="ひとつ">🔊</button></span> <span class="pronunciation">(hitotsu)</span></li>
+                <li>2 items: <span class="word-with-audio">ふたつ <button class="audio-icon" data-audio-text="ふたつ">🔊</button></span> <span class="pronunciation">(futatsu)</span></li>
+                <li>3 items: <span class="word-with-audio">みっつ <button class="audio-icon" data-audio-text="みっつ">🔊</button></span> <span class="pronunciation">(mittsu)</span></li>
+                <li>4 items: <span class="word-with-audio">よっつ <button class="audio-icon" data-audio-text="よっつ">🔊</button></span> <span class="pronunciation">(yottsu)</span></li>
+                <li>5 items: <span class="word-with-audio">いつつ <button class="audio-icon" data-audio-text="いつつ">🔊</button></span> <span class="pronunciation">(itsutsu)</span></li>
+                <li>6 items: <span class="word-with-audio">むっつ <button class="audio-icon" data-audio-text="むっつ">🔊</button></span> <span class="pronunciation">(muttsu)</span></li>
+                <li>7 items: <span class="word-with-audio">ななつ <button class="audio-icon" data-audio-text="ななつ">🔊</button></span> <span class="pronunciation">(nanatsu)</span></li>
+                <li>8 items: <span class="word-with-audio">やっつ <button class="audio-icon" data-audio-text="やっつ">🔊</button></span> <span class="pronunciation">(yattsu)</span></li>
+                <li>9 items: <span class="word-with-audio">ここのつ <button class="audio-icon" data-audio-text="ここのつ">🔊</button></span> <span class="pronunciation">(kokonotsu)</span></li>
+                <li>10 items: <span class="word-with-audio">とお <button class="audio-icon" data-audio-text="とお">🔊</button></span> <span class="pronunciation">(tō)</span></li>
             </ul>
-            <div class="example">
-                <p><span class="japanese-text">いま ごじです。</span> <button class="audio-icon" data-audio-text="いま ごじです">🔊</button><br><span class="romaji">(Ima go-ji desu.)</span></p>
-                <p class="translation">It's 5 o'clock now.</p>
-            </div>
-            <div class="key-point">
-                <span>🌟</span> Remember the irregular readings for 4, 7, and 9 when telling time: <span class="romaji">yo-ji</span>, <span class="romaji">shichi-ji</span>, and <span class="romaji">ku-ji</span>!
+
+            <div class="example-box">
+                <p><strong>Example:</strong> You are buying apples at a market. You can say:</p>
+                <p>りんごを <span class="word-with-audio">ふたつ <button class="audio-icon" data-audio-text="ふたつ">🔊</button></span> ください。</p>
+                <p class="pronunciation">(Ringo o futatsu kudasai.)</p>
+                <p>Please give me two apples.</p>
             </div>
         </section>
 
-        <section class="section-block">
-            <h2>✨ Basic Counters: ～つ</h2>
-            <p>Japanese uses "counters" depending on what you're counting. For general, small, non-specific items (like "one apple", "two books" when not specifying quantity in detail), you can use the <span class="romaji">~tsu</span> (～つ) counter for numbers 1 to 10. This is very handy!</p>
+        <section>
+            <h2>Days of the Week: 曜日 (yōbi) 📅</h2>
+            <p>Learning the days of the week is essential for making plans! Most days end with <span class="word-with-audio">～ようび <button class="audio-icon" data-audio-text="ようび">🔊</button></span> (<span class="pronunciation">~yōbi</span>), which means "day of the week."</p>
+            <p>The kanji for each day often relates to a celestial body or element, which is a fun cultural connection!</p>
+
             <ul>
-                <li>1 item: 一つ <span class="romaji">(hitotsu)</span> <button class="audio-icon" data-audio-text="ひとつ">🔊</button></li>
-                <li>2 items: 二つ <span class="romaji">(futatsu)</span> <button class="audio-icon" data-audio-text="ふたつ">🔊</button></li>
-                <li>3 items: 三つ <span class="romaji">(mittsu)</span> <button class="audio-icon" data-audio-text="みっつ">🔊</button></li>
-                <li>4 items: 四つ <span class="romaji">(yottsu)</span> <button class="audio-icon" data-audio-text="よっつ">🔊</button></li>
-                <li>5 items: 五つ <span class="romaji">(itsutsu)</span> <button class="audio-icon" data-audio-text="いつつ">🔊</button></li>
-                <li>6 items: 六つ <span class="romaji">(muttsu)</span> <button class="audio-icon" data-audio-text="むっつ">🔊</button></li>
-                <li>7 items: 七つ <span class="romaji">(nanatsu)</span> <button class="audio-icon" data-audio-text="ななつ">🔊</button></li>
-                <li>8 items: 八つ <span class="romaji">(yattsu)</span> <button class="audio-icon" data-audio-text="やっつ">🔊</button></li>
-                <li>9 items: 九つ <span class="romaji">(kokonotsu)</span> <button class="audio-icon" data-audio-text="ここのつ">🔊</button></li>
-                <li>10 items: 十 <span class="romaji">(too)</span> <button class="audio-icon" data-audio-text="とお">🔊</button> (Note: 十 becomes <span class="romaji">too</span> here, not <span class="romaji">juu-tsu</span>!)</li>
+                <li>Monday: <span class="word-with-audio">月曜日 <button class="audio-icon" data-audio-text="げつようび">🔊</button></span> <span class="pronunciation">(getsuyōbi)</span> - Moon day 🌙</li>
+                <li>Tuesday: <span class="word-with-audio">火曜日 <button class="audio-icon" data-audio-text="かようび">🔊</button></span> <span class="pronunciation">(kayōbi)</span> - Fire day 🔥</li>
+                <li>Wednesday: <span class="word-with-audio">水曜日 <button class="audio-icon" data-audio-text="すいようび">🔊</button></span> <span class="pronunciation">(suiyōbi)</span> - Water day 💧</li>
+                <li>Thursday: <span class="word-with-audio">木曜日 <button class="audio-icon" data-audio-text="もくようび">🔊</button></span> <span class="pronunciation">(mokuyōbi)</span> - Wood/Tree day 🌳</li>
+                <li>Friday: <span class="word-with-audio">金曜日 <button class="audio-icon" data-audio-text="きんようび">🔊</button></span> <span class="pronunciation">(kin'yōbi)</span> - Gold/Money day 💰</li>
+                <li>Saturday: <span class="word-with-audio">土曜日 <button class="audio-icon" data-audio-text="どようび">🔊</button></span> <span class="pronunciation">(doyōbi)</span> - Earth/Soil day 🌍</li>
+                <li>Sunday: <span class="word-with-audio">日曜日 <button class="audio-icon" data-audio-text="にちようび">🔊</button></span> <span class="pronunciation">(nichiyōbi)</span> - Sun day ☀️</li>
             </ul>
-            <div class="example">
-                <p>りんごを <span class="japanese-text">みっつ</span> ください。<button class="audio-icon" data-audio-text="りんごを みっつ ください">🔊</button><br><span class="romaji">(Ringo o mittsu kudasai.)</span></p>
-                <p class="translation">Please give me three apples.</p>
-            </div>
-            <div class="example">
-                <p>プレゼントが <span class="japanese-text">ひとつ</span> あります。<button class="audio-icon" data-audio-text="プレゼントが ひとつ あります">🔊</button><br><span class="romaji">(Purezento ga hitotsu arimasu.)</span></p>
-                <p class="translation">There is one present.</p>
-            </div>
-            <div class="key-point">
-                <span>💡</span> These <span class="romaji">~tsu</span> counters are super useful for simple counting when you don't know the specific counter for an item (e.g., people, thin flat objects, etc.). But remember they only go up to 10!
+
+            <div class="info-box">
+                <h3>💡 Cultural Note: Kanji Meaning for Days</h3>
+                <p>Notice how the kanji used for each day relates to a natural element or celestial body. This is similar to how English days are named after Norse or Roman gods (e.g., Tuesday from Tiw's day, Sunday from Sun's day)!</p>
             </div>
         </section>
 
-        <section class="section-block">
-            <h2>🗓️ Days of the Week</h2>
-            <p>Let's learn the days of the week! They are named after elements/planets, which is a common pattern in many languages.</p>
-            <ul>
-                <li>Monday: 月曜日 <span class="romaji">(Getsuyoubi)</span> <button class="audio-icon" data-audio-text="げつようび">🔊</button> (Moon day)</li>
-                <li>Tuesday: 火曜日 <span class="romaji">(Kayoubi)</span> <button class="audio-icon" data-audio-text="かようび">🔊</button> (Fire day / Mars day)</li>
-                <li>Wednesday: 水曜日 <span class="romaji">(Suiyoubi)</span> <button class="audio-icon" data-audio-text="すいようび">🔊</button> (Water day / Mercury day)</li>
-                <li>Thursday: 木曜日 <span class="romaji">(Mokuyoubi)</span> <button class="audio-icon" data-audio-text="もくようび">🔊</button> (Wood day / Jupiter day)</li>
-                <li>Friday: 金曜日 <span class="romaji">(Kinyoubi)</span> <button class="audio-icon" data-audio-text="きんようび">🔊</button> (Gold day / Venus day)</li>
-                <li>Saturday: 土曜日 <span class="romaji">(Doyoubi)</span> <button class="audio-icon" data-audio-text="どようび">🔊</button> (Earth day / Saturn day)</li>
-                <li>Sunday: 日曜日 <span class="romaji">(Nichiyoubi)</span> <button class="audio-icon" data-audio-text="にちようび">🔊</button> (Sun day)</li>
-            </ul>
-            <p>To ask "What day is it?", you can say:</p>
-            <div class="example">
-                <p><span class="japanese-text">きょうは なんようびですか？</span> <button class="audio-icon" data-audio-text="きょうは なんようびですか">🔊</button><br><span class="romaji">(Kyou wa nan'youbi desu ka?)</span></p>
-                <p class="translation">What day is it today?</p>
+        <section>
+            <h2>Grammar Focus: Particle に (ni) for Time and Location 📍⏰</h2>
+            <p>The particle <span class="word-with-audio">に <button class="audio-icon" data-audio-text="に">🔊</button></span> (<span class="pronunciation">ni</span>) is incredibly versatile! It indicates a specific point in time or a specific location where an action takes place.</p>
+
+            <h3>に for Time (Specific Point)</h3>
+            <p>Use <span class="word-with-audio">に <button class="audio-icon" data-audio-text="に">🔊</button></span> after a specific time (like a day of the week, a specific hour, or a date) to indicate *when* something happens.</p>
+            <div class="example-box">
+                <ul>
+                    <li><span class="word-with-audio">かようび に <button class="audio-icon" data-audio-text="かようび に">🔊</button></span> (kayōbi ni) - on Tuesday</li>
+                    <li><span class="word-with-audio">ごじ に <button class="audio-icon" data-audio-text="ごじ に">🔊</button></span> (go-ji ni) - at 5 o'clock</li>
+                </ul>
+                <p><strong>Example Sentence:</strong></p>
+                <p>わたしは <span class="word-with-audio">もくようび に <button class="audio-icon" data-audio-text="もくようび に">🔊</button></span> がっこうへ いきます。</p>
+                <p class="pronunciation">(Watashi wa mokuyōbi ni gakkō e ikimasu.)</p>
+                <p>I go to school <mark>on Thursday</mark>.</p>
             </div>
-            <p>And to answer:</p>
-            <div class="example">
-                <p><span class="japanese-text">きょうは かようびです。</span> <button class="audio-icon" data-audio-text="きょうは かようびです">🔊</button><br><span class="romaji">(Kyou wa kayoubi desu.)</span></p>
-                <p class="translation">Today is Tuesday.</p>
+
+            <h3>に for Location (Target of Movement/Existence)</h3>
+            <p>When used with verbs of existence (like います <span class="pronunciation">imasu</span> - to be, for living things; あります <span class="pronunciation">arimasu</span> - to be, for inanimate things) or verbs of movement, <span class="word-with-audio">に <button class="audio-icon" data-audio-text="に">🔊</button></span> indicates the specific location *at* which something is, or *to* which someone/something moves.</p>
+            <div class="example-box">
+                <ul>
+                    <li><span class="word-with-audio">レストラン に <button class="audio-icon" data-audio-text="レストラン に">🔊</button></span> (resutoran ni) - at the restaurant / to the restaurant</li>
+                    <li><span class="word-with-audio">いえ に <button class="audio-icon" data-audio-text="いえ に">🔊</button></span> (ie ni) - at home / to home</li>
+                </ul>
+                <p><strong>Example Sentence (Existence):</strong></p>
+                <p>えき <span class="word-with-audio">に <button class="audio-icon" data-audio-text="えき に">🔊</button></span> あります。</p>
+                <p class="pronunciation">(Eki ni arimasu.)</p>
+                <p>It is <mark>at the station</mark>.</p>
+                <p><strong>Example Sentence (Movement):</strong></p>
+                <p>わたしは とうきょう <span class="word-with-audio">に <button class="audio-icon" data-audio-text="とうきょう に">🔊</button></span> いきます。</p>
+                <p class="pronunciation">(Watashi wa Tōkyō ni ikimasu.)</p>
+                <p>I go <mark>to Tokyo</mark>.</p>
             </div>
         </section>
 
-        <section class="section-block">
-            <h2>📍 Grammar: Particle に (ni) for Time and Location</h2>
-            <p>The particle <span class="romaji">ni</span> (に) is incredibly versatile! In this chapter, we'll focus on its use to indicate a specific time or a specific location.</p>
+        <section class="exercise-box">
+            <h2>Practice Time! ✏️</h2>
+            <p>Test your knowledge with these quick exercises!</p>
 
-            <h3>Time Marker に</h3>
-            <p>When you want to specify *when* something happens, you attach <span class="romaji">ni</span> to the time phrase.</p>
-            <div class="example">
-                <p><span class="japanese-text">ろくじ に おきます。</span> <button class="audio-icon" data-audio-text="ろくじ におきます">🔊</button><br><span class="romaji">(Roku-ji ni okimasu.)</span></p>
-                <p class="translation">I wake up at 6 o'clock.</p>
+            <h3>Exercise 1: Numbers 🔢</h3>
+            <div class="exercise-item">
+                <p class="exercise-question">How do you say "3" in Japanese?</p>
+                <p class="reveal-answer">Show Answer</p>
+                <p class="exercise-answer"><span class="word-with-audio">さん <button class="audio-icon" data-audio-text="さん">🔊</button></span> (san)</p>
             </div>
-            <div class="example">
-                <p><span class="japanese-text">にちようび に えいがを みます。</span> <button class="audio-icon" data-audio-text="にちようび に えいがを みます">🔊</button><br><span class="romaji">(Nichiyoubi ni eiga o mimasu.)</span></p>
-                <p class="translation">I will watch a movie on Sunday.</p>
-            </div>
-            <div class="key-point">
-                <span>🌟</span> Important: You generally *don't* use <span class="romaji">ni</span> with vague time expressions like "today" (<span class="romaji">kyou</span>), "tomorrow" (<span class="romaji">ashita</span>), "yesterday" (<span class="romaji">kinou</span>), "every day" (<span class="romaji">mainichi</span>), or "this week" (<span class="romaji">konshuu</span>). Only with specific times (like 6 o'clock) or specific days (like Monday).
+            <div class="exercise-item">
+                <p class="exercise-question">How do you say "7" (the more common way) in Japanese?</p>
+                <p class="reveal-answer">Show Answer</p>
+                <p class="exercise-answer"><span class="word-with-audio">なな <button class="audio-icon" data-audio-text="なな">🔊</button></span> (nana)</p>
             </div>
 
-            <h3>Location Marker に</h3>
-            <p><span class="romaji">Ni</span> can also mark the specific location where something *exists* or where an action *occurs* (when referring to arrival/departure or existence). It implies a fixed point or destination.</p>
-            <div class="example">
-                <p><span class="japanese-text">ほんが つくえ の うえ に あります。</span> <button class="audio-icon" data-audio-text="ほんが つくえ の うえ に あります">🔊</button><br><span class="romaji">(Hon ga tsukue no ue ni arimasu.)</span></p>
-                <p class="translation">The book is on the desk.</p>
+            <h3>Exercise 2: Time ⏰</h3>
+            <div class="exercise-item">
+                <p class="exercise-question">How do you ask "What time is it now?"</p>
+                <p class="reveal-answer">Show Answer</p>
+                <p class="exercise-answer"><span class="word-with-audio">いま なんじですか？ <button class="audio-icon" data-audio-text="いま なんじですか？">🔊</button></span> (Ima nan-ji desu ka?)</p>
             </div>
-            <div class="example">
-                <p><span class="japanese-text">がっこう に いきます。</span> <button class="audio-icon" data-audio-text="がっこう に いきます">🔊</button><br><span class="romaji">(Gakkou ni ikimasu.)</span></p>
-                <p class="translation">I go to school.</p>
+            <div class="exercise-item">
+                <p class="exercise-question">How do you say "4 o'clock" in Japanese?</p>
+                <p class="reveal-answer">Show Answer</p>
+                <p class="exercise-answer"><span class="word-with-audio">よじ <button class="audio-icon" data-audio-text="よじ">🔊</button></span> (yo-ji) <br> <small><em>(Note: For 4 o'clock, よじ is used, not よんじ.)</em></small></p>
             </div>
-            <div class="key-point">
-                <span>🤔</span> How is it different from <span class="romaji">de</span> (で)? <span class="romaji">Ni</span> (に) indicates *existence at* or *movement to* a location. <span class="romaji">De</span> (で) indicates *where an action takes place*. E.g., レストラン<strong>に</strong>います (I am *at* the restaurant) vs. レストラン<strong>で</strong>たべます (I eat *at* the restaurant).
+
+            <h3>Exercise 3: Basic Counters (～つ) 🍎</h3>
+            <div class="exercise-item">
+                <p class="exercise-question">How do you say "5 items" (using the ～つ counter)?</p>
+                <p class="reveal-answer">Show Answer</p>
+                <p class="exercise-answer"><span class="word-with-audio">いつつ <button class="audio-icon" data-audio-text="いつつ">🔊</button></span> (itsutsu)</p>
+            </div>
+            <div class="exercise-item">
+                <p class="exercise-question">How do you say "2 items" (using the ～つ counter)?</p>
+                <p class="reveal-answer">Show Answer</p>
+                <p class="exercise-answer"><span class="word-with-audio">ふたつ <button class="audio-icon" data-audio-text="ふたつ">🔊</button></span> (futatsu)</p>
+            </div>
+
+            <h3>Exercise 4: Days of the Week 📅</h3>
+            <div class="exercise-item">
+                <p class="exercise-question">What is "Tuesday" in Japanese?</p>
+                <p class="reveal-answer">Show Answer</p>
+                <p class="exercise-answer"><span class="word-with-audio">火曜日 <button class="audio-icon" data-audio-text="かようび">🔊</button></span> (kayōbi)</p>
+            </div>
+            <div class="exercise-item">
+                <p class="exercise-question">What is "Sunday" in Japanese?</p>
+                <p class="reveal-answer">Show Answer</p>
+                <p class="exercise-answer"><span class="word-with-audio">日曜日 <button class="audio-icon" data-audio-text="にちようび">🔊</button></span> (nichiyōbi)</p>
+            </div>
+
+            <h3>Exercise 5: Particle に (ni) 📍⏰</h3>
+            <div class="exercise-item">
+                <p class="exercise-question">Translate: "I go to the library on Friday."</p>
+                <p class="reveal-answer">Show Answer</p>
+                <p class="exercise-answer">わたしは <span class="word-with-audio">きんようび に <button class="audio-icon" data-audio-text="きんようび に">🔊</button></span> としょかんへ いきます。</p>
+                <p class="pronunciation">(Watashi wa kin'yōbi ni toshokan e ikimasu.)</p>
+            </div>
+            <div class="exercise-item">
+                <p class="exercise-question">Translate: "There is a cat at the park."</p>
+                <p class="reveal-answer">Show Answer</p>
+                <p class="exercise-answer">こうえん <span class="word-with-audio">に <button class="audio-icon" data-audio-text="に">🔊</button></span> ねこが います。</p>
+                <p class="pronunciation">(Kōen ni neko ga imasu.)</p>
             </div>
         </section>
 
-        <section class="practice-section">
-            <h3>📝 Let's Practice!</h3>
-            <p>Test your knowledge with these quick questions!</p>
-
-            <div class="practice-item">
-                <p class="practice-question">1. How do you say "3 o'clock" in Japanese?</p>
-                <div class="practice-answer-box">
-                    <span class="japanese-text">さんじ</span> <button class="audio-icon" data-audio-text="さんじ">🔊</button>
-                    <p class="romaji">(san-ji)</p>
-                </div>
-            </div>
-
-            <div class="practice-item">
-                <p class="practice-question">2. Translate: "I wake up at 7 o'clock on Monday."</p>
-                <div class="practice-answer-box">
-                    <span class="japanese-text">げつようび に しちじ に おきます。</span> <button class="audio-icon" data-audio-text="げつようび に しちじ に おきます">🔊</button>
-                    <p class="romaji">(Getsuyoubi ni shichi-ji ni okimasu.)</p>
-                </div>
-            </div>
-
-            <div class="practice-item">
-                <p class="practice-question">3. How would you ask "What day is it today?"</p>
-                <div class="practice-answer-box">
-                    <span class="japanese-text">きょうは なんようびですか？</span> <button class="audio-icon" data-audio-text="きょうは なんようびですか">🔊</button>
-                    <p class="romaji">(Kyou wa nan'youbi desu ka?)</p>
-                </div>
-            </div>
-
-            <div class="practice-item">
-                <p class="practice-question">4. You want two general items. How do you say "two items"?</p>
-                <div class="practice-answer-box">
-                    <span class="japanese-text">ふたつ</span> <button class="audio-icon" data-audio-text="ふたつ">🔊</button>
-                    <p class="romaji">(futatsu)</p>
-                </div>
-            </div>
-
-            <div class="practice-item">
-                <p class="practice-question">5. "There is a cat in the house." (Use いえ = house, ねこ = cat, います = to be/exist for living things)</p>
-                <div class="practice-answer-box">
-                    <span class="japanese-text">いえ に ねこが います。</span> <button class="audio-icon" data-audio-text="いえ に ねこが います">🔊</button>
-                    <p class="romaji">(Ie ni neko ga imasu.)</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="summary-section">
-            <h2>✅ Chapter 6 Summary</h2>
-            <p>You've learned some essential building blocks in this chapter!</p>
-            <ul>
-                <li>You can now count from <strong>1 to 10</strong> in Japanese!</li>
-                <li>You know how to tell and ask the time using <strong>~ji (～時)</strong> and <strong>いま なんじですか？</strong></li>
-                <li>You've discovered the handy general counter <strong>~tsu (～つ)</strong> for small items (up to 10).</li>
-                <li>You're familiar with the <strong>days of the week</strong> in Japanese.</li>
-                <li>And you've started using the versatile particle <strong>に (ni)</strong> for specific times and locations!</li>
-            </ul>
-            <p>Great job! Keep practicing these new phrases in your daily life. They'll come in handy more often than you think! ✨</p>
+        <section>
+            <h2>Chapter 6 Wrap-up 🎉</h2>
+            <p>Congratulations! You've mastered numbers 1-10, learned how to tell time, count basic items with <span class="word-with-audio">～つ <button class="audio-icon" data-audio-text="つ">🔊</button></span>, and even how to name all the days of the week! Plus, the powerful particle <span class="word-with-audio">に <button class="audio-icon" data-audio-text="に">🔊</button></span> is now in your grammar toolkit.</p>
+            <p>These are truly fundamental building blocks for daily conversations. Keep practicing, and you'll be giving directions and making appointments in Japanese in no time!</p>
+            <p>おつかれさまでした！ (Otsukaresama deshita!) - Good work!</p>
         </section>
     </div>
 </body>
