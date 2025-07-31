@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Daily Activities and Routines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* グローバル設定 */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-bg-color: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-bg-color);
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Safari/iOS text size adjustment */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 15px; /* モバイルでの左右の余白 */
+            box-sizing: border-box; /* パディングを幅に含める */
+        }
+
+        /* ヘッダーのスタイル */
+        .chapter-title {
+            font-size: 28px;
+            color: var(--heading-text-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* header.webp はモバイルアプリの内部アセットとして扱われます */
+        }
+
+        /* セクションのスタイル */
+        .lesson-section {
+            background-color: #FFFFFF; /* 各セクションの背景を白に */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color); /* 軽くボーダーを追加 */
+        }
+
+        h2 {
+            font-size: 24px;
+            color: var(--heading-text-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: var(--heading-text-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+            display: inline-block; /* 下線をテキスト幅に合わせる */
+        }
+
+        h4 {
+            font-size: 18px;
+            color: var(--heading-text-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--body-text-color);
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        /* リストのスタイル */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-size: 16px;
+            margin-bottom: 12px;
+            padding-left: 30px; /* アイコン分のスペース */
+            position: relative;
+            color: var(--body-text-color);
+        }
+
+        li::before {
+            content: '✨'; /* リストアイコン */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 20px;
+            line-height: 1;
+            top: -2px; /* アイコンの位置調整 */
+        }
+
+        /* 例と練習問題のボックス */
+        .example-box, .exercise-box {
+            background-color: #EEF4F6; /* 薄いグレーの背景 */
+            border: 1px dashed var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .exercise-box {
+            background-color: #E5F3F7; /* 練習問題は少し違う色に */
+        }
+
+        /* 音声アイコン */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            min-height: 44px; /* タップしやすいサイズ */
+            min-width: 44px;
+            margin-left: 8px; /* テキストとの間隔 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            vertical-align: middle; /* テキストと高さを合わせる */
+        }
+
+        .audio-icon:active {
+            background-color: #6a4891; /* クリック時の色 */
+            transform: scale(0.98); /* クリック時の縮小エフェクト */
+        }
+
+        /* ボタンのスタイル */
+        .button-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            cursor: pointer;
+            display: block; /* ブロック要素にして中央揃えしやすく */
+            width: fit-content;
+            margin: 25px auto 10px auto; /* 中央揃え */
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            min-height: 44px; /* タップしやすいサイズ */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-primary:active {
+            background-color: #6a4891;
+            transform: scale(0.98);
+        }
+
+        /* 入力フィールドのスタイル */
+        .input-field {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #FFFFFF;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        /* まとめセクション */
+        .summary-section {
+            background-color: #E0F7FA; /* まとめは明るい青系 */
+            border: 1px solid #B2EBF2;
+        }
+
+        .summary-section h3 {
+            border-bottom-color: #00BCD4; /* まとめセクションの見出し下線 */
+        }
+
+        .summary-section li::before {
+            content: '✅';
+            color: #00BCD4;
+        }
+
+        /* レスポンシブ調整 */
+        @media (min-width: 600px) {
+            .container {
+                padding: 30px;
+            }
+
+            .chapter-title {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            p, li {
+                font-size: 17px;
+            }
+
+            .audio-icon {
+                padding: 10px 18px;
+                font-size: 17px;
+            }
+
+            .button-primary {
+                padding: 15px 30px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 6: Daily Activities and Routines</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>ようこそ！今日のレッスンは… 🥳</h2>
+            <p>こんにちは！今日のレッスンでは、私たちの<strong>「毎日の活動」</strong>や<strong>「ルーティン」</strong>について英語で話す方法を学びます。毎日何をするかを英語で表現できるようになりましょう！</p>
+            <p>基本の動詞から始めて、簡単な文の作り方、そして一日の時間の表現まで、盛りだくさんです。準備はいいですか？始めましょう！</p>
+        </section>
+
+        <section class="lesson-section">
+            <h3>今日のキー動詞 (Key Verbs) ✨</h3>
+            <p>まずは、毎日よく使う基本的な動詞を覚えましょう。音声アイコン 🔊 をタップして発音を聞いてみてくださいね。</p>
+            <ul>
+                <li><strong>eat</strong> (食べる) <span class="audio-icon" data-audio-text="eat">🔊</span><br>
+                    <small>例: I <strong>eat</strong> breakfast. (私は朝食を食べます。)</small></li>
+                <li><strong>drink</strong> (飲む) <span class="audio-icon" data-audio-text="drink">🔊</span><br>
+                    <small>例: I <strong>drink</strong> water. (私は水を飲みます。)</small></li>
+                <li><strong>sleep</strong> (寝る) <span class="audio-icon" data-audio-text="sleep">🔊</span><br>
+                    <small>例: I <strong>sleep</strong> well. (私はよく寝ます。)</small></li>
+                <li><strong>work</strong> (働く) <span class="audio-icon" data-audio-text="work">🔊</span><br>
+                    <small>例: I <strong>work</strong> from 9 to 5. (私は9時から5時まで働きます。)</small></li>
+                <li><strong>study</strong> (勉強する) <span class="audio-icon" data-audio-text="study">🔊</span><br>
+                    <small>例: I <strong>study</strong> English. (私は英語を勉強します。)</small></li>
+                <li><strong>play</strong> (遊ぶ、スポーツをする、楽器を演奏する) <span class="audio-icon" data-audio-text="play">🔊</span><br>
+                    <small>例: I <strong>play</strong> tennis. (私はテニスをします。)</small></li>
+            </ul>
+        </section>
+
+        <section class="lesson-section">
+            <h3>Present Simple Tense の基本 ⏰</h3>
+            <p>毎日の習慣や、常に真実であること（事実）を話すときには、<strong>Present Simple Tense（現在形）</strong>を使います。形はとてもシンプルですよ！</p>
+            <p><strong>I / You / We / They</strong> の主語では、動詞は元の形（<strong>原形</strong>）を使います。</p>
+            <div class="example-box">
+                <p><strong>I eat.</strong> (私は食べます。) <span class="audio-icon" data-audio-text="I eat.">🔊</span></p>
+                <p><strong>You drink.</strong> (あなたは飲みます。) <span class="audio-icon" data-audio-text="You drink.">🔊</span></p>
+                <p><strong>We study.</strong> (私たちは勉強します。) <span class="audio-icon" data-audio-text="We study.">🔊</span></p>
+            </div>
+            <p>今回はまず<strong>「I」</strong>を使って、自分自身のルーティンを話す練習をしましょう。</p>
+        </section>
+
+        <section class="lesson-section">
+            <h3>肯定文と否定文 (Affirmative & Negative) 👍👎</h3>
+            <p>「私は〜します」という肯定文と、「私は〜しません」という否定文の作り方を見ていきましょう。</p>
+
+            <h4>肯定文 (Affirmative Sentences)</h4>
+            <p>主語「I」の後に動詞の原形を置くだけです。</p>
+            <div class="example-box">
+                <p><strong>I eat breakfast.</strong> (私は朝食を食べます。) <span class="audio-icon" data-audio-text="I eat breakfast.">🔊</span></p>
+                <p><strong>I work every day.</strong> (私は毎日働きます。) <span class="audio-icon" data-audio-text="I work every day.">🔊</span></p>
+                <p><strong>I study English.</strong> (私は英語を勉強します。) <span class="audio-icon" data-audio-text="I study English.">🔊</span></p>
+            </div>
+
+            <h4>否定文 (Negative Sentences)</h4>
+            <p>「〜しない」と言うときは、動詞の前に <strong>don't</strong> をつけます。「don't」は「do not」の短縮形です。</p>
+            <div class="example-box">
+                <p><strong>I don't eat meat.</strong> (私は肉を食べません。) <span class="audio-icon" data-audio-text="I don't eat meat.">🔊</span></p>
+                <p><strong>I don't drink coffee.</strong> (私はコーヒーを飲みません。) <span class="audio-icon" data-audio-text="I don't drink coffee.">🔊</span></p>
+                <p><strong>I don't sleep much.</strong> (私はあまり寝ません。) <span class="audio-icon" data-audio-text="I don't sleep much.">🔊</span></p>
+            </div>
+
+            <div class="exercise-box">
+                <h4>練習問題: 文を作ろう！📝</h4>
+                <p>以下の日本語の文を英語にしてみましょう。音声アイコンをタップして答えを確認できます。</p>
+                <div class="input-group">
+                    <p>1. 私は水を飲みます。</p>
+                    <p>👉 <strong data-audio-text="I drink water.">I drink water.</strong> <span class="audio-icon" data-audio-text="I drink water.">🔊</span></p>
+                </div>
+                <div class="input-group">
+                    <p>2. 私は働きません。</p>
+                    <p>👉 <strong data-audio-text="I don't work.">I don't work.</strong> <span class="audio-icon" data-audio-text="I don't work.">🔊</span></p>
+                </div>
+                <div class="input-group">
+                    <p>3. 私は毎日勉強します。</p>
+                    <p>👉 <strong data-audio-text="I study every day.">I study every day.</strong> <span class="audio-icon" data-audio-text="I study every day.">🔊</span></p>
+                </div>
+                <div class="input-group">
+                    <p>4. 私は朝食を食べません。</p>
+                    <p>👉 <strong data-audio-text="I don't eat breakfast.">I don't eat breakfast.</strong> <span class="audio-icon" data-audio-text="I don't eat breakfast.">🔊</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>毎日の習慣を表す言葉 🗓️</h3>
+            <p>一日の行動を表すフレーズを覚えましょう。これらのフレーズは、あなたのルーティンを話すのにとても役立ちます。</p>
+            <ul>
+                <li><strong>get up</strong> (起きる) <span class="audio-icon" data-audio-text="get up">🔊</span></li>
+                <li><strong>have breakfast / lunch / dinner</strong> (朝食 / 昼食 / 夕食をとる) <span class="audio-icon" data-audio-text="have breakfast">🔊</span></li>
+                <li><strong>go to work / school</strong> (仕事 / 学校に行く) <span class="audio-icon" data-audio-text="go to work">🔊</span></li>
+                <li><strong>go home</strong> (家に帰る) <span class="audio-icon" data-audio-text="go home">🔊</span></li>
+                <li><strong>go to bed</strong> (寝る) <span class="audio-icon" data-audio-text="go to bed">🔊</span></li>
+            </ul>
+        </section>
+
+        <section class="lesson-section">
+            <h3>時間の表現 ☀️🌙</h3>
+            <p>一日の特定の時間を言うときには、以下の表現を使います。前置詞に注意しましょう。</p>
+            <ul>
+                <li><strong>in the morning</strong> (午前に、朝に) <span class="audio-icon" data-audio-text="in the morning">🔊</span></li>
+                <li><strong>in the afternoon</strong> (午後に) <span class="audio-icon" data-audio-text="in the afternoon">🔊</span></li>
+                <li><strong>in the evening</strong> (夕方に) <span class="audio-icon" data-audio-text="in the evening">🔊</span></li>
+            </ul>
+            <div class="example-box">
+                <p>例: I work <strong>in the morning</strong>. (私は午前中に働きます。) <span class="audio-icon" data-audio-text="I work in the morning.">🔊</span></p>
+                <p>例: I have lunch <strong>in the afternoon</strong>. (私は午後に昼食をとります。) <span class="audio-icon" data-audio-text="I have lunch in the afternoon.">🔊</span></p>
+                <p>例: I go home <strong>in the evening</strong>. (私は夕方に家に帰ります。) <span class="audio-icon" data-audio-text="I go home in the evening.">🔊</span></p>
+            </div>
+            <h4>文化ノート: 「at night」と「in the evening」🌃</h4>
+            <p>英語では、「in the evening」は夕方から夜にかけて、まだ活動している時間帯（例: 食事の後、テレビを見るなど）を指します。一方、「at night」はもっと暗い時間帯、具体的に夜中や寝ている時間帯を指すことが多いです。</p>
+            <div class="example-box">
+                <p>I study <strong>in the evening</strong>. (私は夕方に勉強します。)</p>
+                <p>I sleep <strong>at night</strong>. (私は夜に寝ます。)</p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>一日のルーティンを見てみよう！🚶‍♀️</h3>
+            <p>これまでに学んだ動詞と時間の表現を使って、一日のルーティンを表す文を見てみましょう。</p>
+            <div class="example-box">
+                <p>I <strong>get up</strong> <strong>in the morning</strong>. (私は朝に起きます。) <span class="audio-icon" data-audio-text="I get up in the morning.">🔊</span></p>
+                <p>I <strong>eat breakfast</strong>. (私は朝食を食べます。) <span class="audio-icon" data-audio-text="I eat breakfast.">🔊</span></p>
+                <p>I <strong>go to work</strong>. (私は仕事に行きます。) <span class="audio-icon" data-audio-text="I go to work.">🔊</span></p>
+                <p>I <strong>have lunch</strong> <strong>in the afternoon</strong>. (私は午後に昼食をとります。) <span class="audio-icon" data-audio-text="I have lunch in the afternoon.">🔊</span></p>
+                <p>I <strong>go home</strong> <strong>in the evening</strong>. (私は夕方に家に帰ります。) <span class="audio-icon" data-audio-text="I go home in the evening.">🔊</span></p>
+                <p>I <strong>have dinner</strong>. (私は夕食をとります。) <span class="audio-icon" data-audio-text="I have dinner.">🔊</span></p>
+                <p>I <strong>study English</strong>. (私は英語を勉強します。) <span class="audio-icon" data-audio-text="I study English.">🔊</span></p>
+                <p>I <strong>go to bed</strong>. (私は寝ます。) <span class="audio-icon" data-audio-text="I go to bed.">🔊</span></p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>今日のまとめと練習！✍️</h3>
+            <p>さあ、学んだことを使って、自分自身で文を作ってみましょう！</p>
+            <div class="exercise-box">
+                <h4>確認問題！🤔</h4>
+                <p>以下の文の空欄に適切な単語やフレーズを入れてみましょう。答えはそれぞれの文の後に表示されています。</p>
+
+                <div class="input-group">
+                    <p>1. I _______ in the morning. (私は朝に起きます。)</p>
+                    <p>👉 <strong data-audio-text="get up">get up</strong> <span class="audio-icon" data-audio-text="get up">🔊</span></p>
+                </div>
+                <div class="input-group">
+                    <p>2. I _______ dinner in the evening. (私は夕食をとります。)</p>
+                    <p>👉 <strong data-audio-text="have">have</strong> <span class="audio-icon" data-audio-text="have">🔊</span></p>
+                </div>
+                <div class="input-group">
+                    <p>3. I don't _______ coffee. (私はコーヒーを飲みません。)</p>
+                    <p>👉 <strong data-audio-text="drink">drink</strong> <span class="audio-icon" data-audio-text="drink">🔊</span></p>
+                </div>
+                <div class="input-group">
+                    <p>4. I go to _______ in the afternoon. (私は午後に仕事に行きます。)</p>
+                    <p>👉 <strong data-audio-text="work">work</strong> <span class="audio-icon" data-audio-text="work">🔊</span></p>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <h4>今日のルーティンについて話してみよう！🗣️</h4>
+                <p>今日、あなたはどんなことをしましたか？学んだフレーズを使って、3つ以上の文で自分のルーティンを表現してみましょう。</p>
+                <p>例:</p>
+                <ul>
+                    <li>I get up in the morning.</li>
+                    <li>I have breakfast.</li>
+                    <li>I study English in the afternoon.</li>
+                    <li>I don't go to work today.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="lesson-section summary-section">
+            <h3>今日のまとめ 💡</h3>
+            <p>今日のレッスンでは、毎日の活動について話すための重要な表現を学びましたね。</p>
+            <ul>
+                <li><strong>✔️ 主要な動詞:</strong> eat, drink, sleep, work, study, play を学びました。</li>
+                <li><strong>✔️ 現在形 (Present Simple):</strong> 毎日の習慣や事実を表すときに使います。「I + 動詞の原形」で肯定文を作ります。</li>
+                <li><strong>✔️ 否定文:</strong> 「I don't + 動詞の原形」で「〜しません」と表現します。</li>
+                <li><strong>✔️ 毎日のルーティン語彙:</strong> get up, have breakfast/lunch/dinner, go to work/school, go home, go to bed などを覚えました。</li>
+                <li><strong>✔️ 時間の表現:</strong> in the morning, in the afternoon, in the evening を使って時間を指定する方法を学びました。</li>
+            </ul>
+            <p>これで、あなたは自分の毎日の活動について英語で話すための基礎を築きました！素晴らしい進歩です！</p>
+        </section>
+    </div>
+</body>
+</html>

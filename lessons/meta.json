@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-31T04:52:16.189Z",
+  "lastUpdated": "2025-07-31T05:04:29.129Z",
   "totalLanguages": 4,
   "totalChapters": 40,
-  "totalAvailableChapters": 10,
+  "totalAvailableChapters": 13,
   "totalTargetLanguages": 2,
   "languages": {
     "en": {
@@ -11,7 +11,7 @@
       "name": "English",
       "flag": "🇺🇸",
       "totalChapters": 10,
-      "availableChapters": 5,
+      "availableChapters": 8,
       "availableTargetLanguages": [
         "ja"
       ],
@@ -125,8 +125,10 @@
               "時間表現：in the morning、afternoon、evening"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "ja"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 7,
@@ -142,8 +144,10 @@
               "レストランの基本的な語彙"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "ja"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 8,
@@ -159,8 +163,10 @@
               "場所の語彙"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "ja"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 9,
@@ -878,6 +884,30 @@
           "chapterNumber": 5,
           "chapterTitle": {
             "ja": "家族と人間関係"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 6,
+          "chapterTitle": {
+            "ja": "日常の活動とルーティン"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 7,
+          "chapterTitle": {
+            "ja": "食べ物と飲み物"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 8,
+          "chapterTitle": {
+            "ja": "場所と方向"
           }
         },
         {
