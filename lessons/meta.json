@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-31T05:23:43.095Z",
+  "lastUpdated": "2025-07-31T05:31:43.881Z",
   "totalLanguages": 4,
   "totalChapters": 40,
-  "totalAvailableChapters": 20,
+  "totalAvailableChapters": 23,
   "totalTargetLanguages": 2,
   "languages": {
     "en": {
@@ -213,7 +213,7 @@
       "name": "Japanese",
       "flag": "🇯🇵",
       "totalChapters": 10,
-      "availableChapters": 7,
+      "availableChapters": 10,
       "availableTargetLanguages": [
         "en"
       ],
@@ -287,8 +287,10 @@
               "わたしの なまえは 〇〇です。"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 5,
@@ -304,8 +306,10 @@
               "ジョンさんがきます。"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 6,
@@ -320,8 +324,10 @@
               "Grammar: に for time and location"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 7,
@@ -988,6 +994,30 @@
           "chapterNumber": 3,
           "chapterTitle": {
             "en": "Basic Greetings & Introductions"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 4,
+          "chapterTitle": {
+            "en": "Katakana – Borrowed Words"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 5,
+          "chapterTitle": {
+            "en": "Simple Sentence Structure"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 6,
+          "chapterTitle": {
+            "en": "Numbers, Time, and Counters"
           }
         },
         {

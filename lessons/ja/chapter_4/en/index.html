@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Katakana – Borrowed Words</title>
+    <style>
+        /* General Body and Container Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size */
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling on iOS */
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 8px;
+            margin-top: 2em;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            color: #8B5FBF; /* Primary: Purple for sub-headings */
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        ul li {
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        /* Specific Header Styles */
+        .chapter-title {
+            color: #2C3E50; /* Dark blue for titles */
+            font-size: 2.5em; /* Larger for chapter title */
+            padding-top: 20px;
+            padding-bottom: 10px;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Interactive Elements - Buttons (Though not directly used for navigation in this lesson) */
+        .button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 14px 25px;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: #FFFFFF;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            min-height: 44px; /* Touch-friendly size */
+        }
+
+        .button:hover {
+            background-color: #6C4299; /* Darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Audio Icon Styles */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 1.5em; /* Large enough for tapping */
+            cursor: pointer;
+            padding: 10px; /* Padding for tap target */
+            border-radius: 50%;
+            color: #8B5FBF; /* Primary color */
+            transition: background-color 0.2s ease;
+            display: inline-flex; /* To center icon if padding makes it bigger */
+            align-items: center;
+            justify-content: center;
+            min-width: 44px; /* Minimum touch size */
+            min-height: 44px; /* Minimum touch size */
+            vertical-align: middle; /* Align with text */
+            margin-left: 5px;
+            flex-shrink: 0; /* Prevent icon from shrinking on small screens */
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple hover effect */
+        }
+
+        /* Specific content styles */
+        .character-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .character-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 20px;
+            width: calc(50% - 30px); /* Two cards per row on mobile, accounting for gap */
+            max-width: 150px; /* Limit max width for larger screens */
+            text-align: center;
+            border: 1px solid #E0E0E0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        .character-card .kana {
+            font-size: 3em;
+            color: #2C3E50;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .character-card .romaji {
+            font-size: 1.1em;
+            color: #8B5FBF;
+            margin-bottom: 10px;
+        }
+
+        .word-example {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #E0E0E0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .word-example .japanese-text {
+            font-size: 1.5em;
+            color: #2C3E50;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Allow text and audio icon to wrap */
+        }
+
+        .word-example .romaji-text {
+            font-size: 1.1em;
+            color: #8B5FBF;
+        }
+
+        .word-example .english-translation {
+            font-size: 1em;
+            color: #666666;
+            font-style: italic;
+        }
+
+        .explanation-box {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .practice-section {
+            background-color: #FDF9E5;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-top: 30px;
+            border: 1px solid #E0E0E0;
+        }
+
+        .practice-item {
+            background-color: #ffffff;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .practice-item strong {
+            color: #2C3E50;
+        }
+
+        .practice-item em {
+            color: #8B5FBF;
+            font-style: normal;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #FDF9E5;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            margin-top: 30px;
+            border: 1px solid #E0E0E0;
+        }
+
+        .summary-section ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .summary-section ul li {
+            background-color: transparent;
+            box-shadow: none;
+            border: none;
+            padding: 5px 0;
+            margin-bottom: 5px;
+        }
+
+
+        /* Responsive Adjustments */
+        @media (min-width: 600px) {
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 3em;
+            }
+
+            h2 {
+                font-size: 2.2em;
+            }
+
+            h3 {
+                font-size: 1.6em;
+            }
+
+            body {
+                font-size: 18px;
+            }
+
+            .character-card {
+                width: calc(33.33% - 20px); /* Three cards per row on tablets */
+            }
+        }
+
+        @media (min-width: 800px) {
+            .container {
+                padding: 40px;
+            }
+
+            .character-card {
+                width: calc(20% - 20px); /* Five cards per row on desktop */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 4: Katakana – Borrowed Words</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 4 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>Hello, Language Adventurer! 🌟</h2>
+            <p>Welcome to Chapter 4! So far, we've explored Hiragana, which is used for native Japanese words and grammar. Now, get ready for something new and exciting: <strong>Katakana (カタカナ)</strong>!</p>
+            <p>Katakana is like the cool cousin of Hiragana. It has a more angular, sharp appearance and is primarily used for words borrowed from other languages (like English!), foreign names, and onomatopoeia. Think of it as Japan's way of saying "I'm borrowing this word!" 🤝</p>
+            <p>Mastering Katakana will unlock a whole new vocabulary, making everyday Japanese life even more understandable, especially with the influx of foreign words into daily conversation.</p>
+        </section>
+
+        <section>
+            <h2>Meet Your First Katakana Characters: カ, キ, ク, ケ, コ</h2>
+            <p>Let's dive into the first five Katakana characters, which correspond to the 'K' sounds!</p>
+
+            <div class="character-grid">
+                <div class="character-card">
+                    <span class="kana">カ</span>
+                    <span class="romaji">Ka</span>
+                    <button class="audio-icon" data-audio-text="カ">🔊</button>
+                </div>
+                <div class="character-card">
+                    <span class="kana">キ</span>
+                    <span class="romaji">Ki</span>
+                    <button class="audio-icon" data-audio-text="キ">🔊</button>
+                </div>
+                <div class="character-card">
+                    <span class="kana">ク</span>
+                    <span class="romaji">Ku</span>
+                    <button class="audio-icon" data-audio-text="ク">🔊</button>
+                </div>
+                <div class="character-card">
+                    <span class="kana">ケ</span>
+                    <span class="romaji">Ke</span>
+                    <button class="audio-icon" data-audio-text="ケ">🔊</button>
+                </div>
+                <div class="character-card">
+                    <span class="kana">コ</span>
+                    <span class="romaji">Ko</span>
+                    <button class="audio-icon" data-audio-text="コ">🔊</button>
+                </div>
+            </div>
+            <p class="explanation-box"><strong>Tip:</strong> Many Katakana characters look similar to their Hiragana counterparts but are more angular. For example, カ (Ka) looks a bit like 力 (Chikara - strength), while キ (Ki) is quite distinct from き (ki).</p>
+        </section>
+
+        <section>
+            <h2>Borrowed Words (外来語 - Gairaigo) 🗣️</h2>
+            <p>This is where Katakana really shines! Japan has adopted many words from English and other languages, writing them in Katakana. Let's learn some common ones.</p>
+
+            <h3>Coffee: コーヒー (Kōhī)</h3>
+            <div class="word-example">
+                <div class="japanese-text">
+                    コーヒー <button class="audio-icon" data-audio-text="コーヒー">🔊</button>
+                </div>
+                <div class="romaji-text">kōhī</div>
+                <div class="english-translation">Coffee</div>
+                <p>Notice the long 'ō' sound represented by the ー (chōonpu) symbol. This symbol extends the vowel sound.</p>
+            </div>
+
+            <h3>Bread: パン (Pan)</h3>
+            <div class="word-example">
+                <div class="japanese-text">
+                    パン <button class="audio-icon" data-audio-text="パン">🔊</button>
+                </div>
+                <div class="romaji-text">pan</div>
+                <div class="english-translation">Bread</div>
+                <p>This word actually comes from the Portuguese word "pão" (bread)! A great example of how Japanese borrowed words from various languages over centuries. Japan had early contact with Portuguese traders.</p>
+            </div>
+
+            <h3>Computer: コンピューター (Konpyūtā)</h3>
+            <div class="word-example">
+                <div class="japanese-text">
+                    コンピューター <button class="audio-icon" data-audio-text="コンピューター">🔊</button>
+                </div>
+                <div class="romaji-text">konpyūtā</div>
+                <div class="english-translation">Computer</div>
+                <p>This is a longer one! See how the ー (chōonpu) is used again for the long 'ā' sound.</p>
+            </div>
+            <p class="explanation-box"><strong>Cultural Note:</strong> Japanese convenience stores and cafes are full of borrowed words written in Katakana. You'll often see things like "sandwich" (サンドイッチ - sandoitchi) or "ice cream" (アイスクリーム - aisukuriimu)!</p>
+        </section>
+
+        <section>
+            <h2>Onomatopoeia (オノマトペ - Onomatope) 🎶</h2>
+            <p>Japanese loves onomatopoeia – words that mimic sounds or describe states! They're used a lot in daily conversation, manga, and advertisements. While some are in Hiragana, many are written in Katakana, especially those describing clear, sharp sounds or distinct states.</p>
+
+            <h3>Sparkling / Shiny: ピカピカ (Pikapika)</h3>
+            <div class="word-example">
+                <div class="japanese-text">
+                    ピカピカ <button class="audio-icon" data-audio-text="ピカピカ">🔊</button>
+                </div>
+                <div class="romaji-text">pikapika</div>
+                <div class="english-translation">Sparkling, shiny, glittering</div>
+                <p>Think of something clean and gleaming, like a freshly polished car or a star twinkling!</p>
+            </div>
+
+            <h3>Heartbeat / Thump-thump: ドキドキ (Dokidoki)</h3>
+            <div class="word-example">
+                <div class="japanese-text">
+                    ドキドキ <button class="audio-icon" data-audio-text="ドキドキ">🔊</button>
+                </div>
+                <div class="romaji-text">dokidoki</div>
+                <div class="english-translation">Thump-thump (heartbeat), pounding (with nervousness or excitement)</div>
+                <p>This is the sound your heart makes when you're nervous before a test, or excited to see a friend!</p>
+            </div>
+            <p class="explanation-box"><strong>Cultural Note:</strong> Onomatopoeia are incredibly prevalent in Japanese media. If you read manga or watch anime, you'll see them pop up everywhere, bringing scenes to life!</p>
+        </section>
+
+        <section>
+            <h2>Grammar Spotlight: Using の (No) to Show Possession ✨</h2>
+            <p>Let's learn a super useful grammar point: the particle <strong>の (no)</strong>. It's similar to `'s` in English and shows possession or a relationship between two nouns.</p>
+            <p>The basic structure is <strong>[Noun 1] の [Noun 2]</strong>, meaning "Noun 1's Noun 2" or "Noun 2 of Noun 1."</p>
+
+            <h3>My Name Is...: わたしの なまえは 〇〇です。</h3>
+            <p>One of the most common uses of の is when introducing yourself and stating your name. We learned わたし (watashi - I/me) and なまえ (namae - name) earlier. Now, put them together!</p>
+
+            <div class="word-example">
+                <div class="japanese-text">
+                    わたしの なまえは 〇〇です。<button class="audio-icon" data-audio-text="わたしの なまえは 〇〇です。">🔊</button>
+                </div>
+                <div class="romaji-text">Watashi no namae wa 〇〇 desu.</div>
+                <div class="english-translation">My name is 〇〇.</div>
+                <p>Just replace 〇〇 with your name (or any name)!</p>
+            </div>
+
+            <h4>Examples:</h4>
+            <ul>
+                <li>
+                    <div class="japanese-text">
+                        わたしの なまえは ジョンです。<button class="audio-icon" data-audio-text="わたしの なまえは ジョンです。">🔊</button>
+                    </div>
+                    <div class="romaji-text">Watashi no namae wa Jon desu.</div>
+                    <div class="english-translation">My name is John.</div>
+                </li>
+                <li>
+                    <div class="japanese-text">
+                        わたしの なまえは スミスです。<button class="audio-icon" data-audio-text="わたしの なまえは スミスです。">🔊</button>
+                    </div>
+                    <div class="romaji-text">Watashi no namae wa Sumisu desu.</div>
+                    <div class="english-translation">My name is Smith.</div>
+                </li>
+                <li>
+                    <div class="japanese-text">
+                        わたしの なまえは メアリーです。<button class="audio-icon" data-audio-text="わたしの なまえは メアリーです。">🔊</button>
+                    </div>
+                    <div class="romaji-text">Watashi no namae wa Mearī desu.</div>
+                    <div class="english-translation">My name is Mary.</div>
+                </li>
+            </ul>
+            <p class="explanation-box"><strong>Remember:</strong> Foreign names are also written in Katakana! So, John would be ジョン (Jon), Smith would be スミス (Sumisu), and Mary would be メアリー (Mearī).</p>
+        </section>
+
+        <section class="practice-section">
+            <h2>Let's Practice! 💪</h2>
+            <p>Time to test your knowledge and put what you've learned into action!</p>
+
+            <div class="practice-item">
+                <p><strong>Practice 1: Identify the Katakana!</strong></p>
+                <p>Which Katakana character is this? <span style="font-size: 2em; color: #2C3E50; font-weight: bold;">ケ</span></p>
+                <button class="audio-icon" data-audio-text="ケ">🔊</button>
+                <p><em>(Hint: It's 'Ke')</em></p>
+            </div>
+
+            <div class="practice-item">
+                <p><strong>Practice 2: What's this borrowed word?</strong></p>
+                <p>What does <span class="japanese-text">コーヒー</span> mean?</p>
+                <button class="audio-icon" data-audio-text="コーヒー">🔊</button>
+                <p><em>(Hint: It's something you drink in the morning!)</em></p>
+                <p>Translation: <span style="font-weight: bold; color: #8B5FBF;">Coffee</span></p>
+            </div>
+
+            <div class="practice-item">
+                <p><strong>Practice 3: Complete the sentence!</strong></p>
+                <p>How would you say "My name is Anna" in Japanese?</p>
+                <p>わたしの なまえは _______ です。</p>
+                <p><em>(Hint: Anna in Katakana is アンナ)</em></p>
+                <p>Answer: わたしの なまえは <strong>アンナ</strong> です。<button class="audio-icon" data-audio-text="わたしの なまえは アンナです。">🔊</button></p>
+            </div>
+
+            <div class="practice-item">
+                <p><strong>Practice 4: Onomatopoeia Match!</strong></p>
+                <p>Which onomatopoeia describes a "thump-thump" heartbeat?</p>
+                <p>A) ピカピカ <button class="audio-icon" data-audio-text="ピカピカ">🔊</button></p>
+                <p>B) ドキドキ <button class="audio-icon" data-audio-text="ドキドキ">🔊</button></p>
+                <p>Answer: <span style="font-weight: bold; color: #8B5FBF;">B) ドキドキ</span></p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>Chapter 4 Summary 📝</h2>
+            <p>You've made great progress in this chapter! Here's a quick recap of what we covered:</p>
+            <ul>
+                <li>Learned your first five Katakana characters: <strong>カ (ka), キ (ki), ク (ku), ケ (ke), コ (ko)</strong>.</li>
+                <li>Discovered how Katakana is used for <strong>borrowed words (外来語 - gairaigo)</strong> like コーヒー (kōhī - coffee), パン (pan - bread), and コンピューター (konpyūtā - computer).</li>
+                <li>Explored fun Japanese <strong>onomatopoeia (オノマトペ - onomatope)</strong> such as ピカピカ (pikapika - sparkling) and ドキドキ (dokidoki - heartbeat).</li>
+                <li>Mastered the basic use of the possessive particle <strong>の (no)</strong>, particularly in the phrase わたしの なまえは 〇〇です。 (Watashi no namae wa 〇〇 desu. - My name is 〇〇.).</li>
+            </ul>
+            <p>Keep practicing these new characters and words! They will significantly expand your ability to read and understand Japanese in real-world contexts.</p>
+        </section>
+
+    </div>
+</body>
+</html>
