@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Time and Schedules</title>
+    <style>
+        /* Base Styles & Mobile-First Approach */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-background: #FDF9E5;
+            --heading-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--body-text-color);
+            background-color: #FFFFFF; /* White background for the main body */
+            font-size: 16px; /* Minimum body text size */
+            -webkit-text-size-adjust: 100%; /* Prevent text scaling on mobile */
+            -moz-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+            padding-bottom: 30px; /* Space for scroll */
+        }
+
+        .container {
+            max-width: 600px; /* Max width for content on larger screens */
+            margin: 0 auto;
+            padding: 0 15px; /* Padding on sides for small screens */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow or other bullet */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+
+        /* Specific header structure requirement */
+        .chapter-title {
+            margin-top: 20px;
+            margin-bottom: 0;
+            color: var(--heading-color);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Fallback visual if image doesn't load/exist, as per general no-image rule */
+            background-color: var(--primary-color);
+            min-height: 120px; /* Ensure some height even if img is missing */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .lesson-header-image::before {
+            content: '⏰ スケジュール 📚'; /* Text for placeholder if image is not rendered */
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* Examples and Translations */
+        .example {
+            background-color: rgba(139, 95, 191, 0.1); /* Lighter primary color */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .example strong {
+            color: var(--heading-color);
+        }
+
+        .translation {
+            color: var(--body-text-color);
+            font-size: 15px;
+            margin-top: 5px;
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation {
+            font-size: 0.9em;
+            color: var(--primary-color);
+            font-style: italic;
+            margin-left: 5px;
+            white-space: nowrap; /* Keep pronunciation on one line */
+        }
+
+        /* Interactive Elements - Audio Icons */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%; /* Circle shape */
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            vertical-align: middle;
+            margin-left: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4993; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.98);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-section h3 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .practice-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .practice-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .fill-in-the-blank input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .fill-in-the-blank input[type="text"]:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 95, 191, 0.3);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-section h2 {
+            color: #FFFFFF;
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .summary-section ul li {
+            color: #FFFFFF;
+            padding-left: 20px;
+            position: relative;
+        }
+        .summary-section ul li::before {
+            content: '✨';
+            color: #FFFFFF;
+            font-size: 16px;
+        }
+
+        /* Responsive Adjustments (for larger mobiles/tablets, though primary focus is mobile-first) */
+        @media (min-width: 480px) {
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            body {
+                font-size: 17px;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            section {
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 10: Time and Schedules</h1>
+        <div class="lesson-header">
+            <!-- As per specific requirement: include this exact structure -->
+            <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>ようこそ！「時間とスケジュール」の章へ ⏰</h2>
+            <p>
+                この章では、英語で時間を伝えたり、日や月を表現したり、アポイントメントを設定したりする方法を学びます。日常生活で役立つ表現がたくさん出てきますよ！
+            </p>
+            <p>
+                準備はいいですか？一緒に時間をマスターしましょう！
+            </p>
+        </section>
+
+        <section>
+            <h2>1. 時間を伝える：What time is it? 🕰️</h2>
+            <p>
+                「今何時ですか？」と尋ねる基本的なフレーズから始めましょう。
+            </p>
+
+            <h3>基本の質問と答え</h3>
+            <div class="example">
+                <p><strong>What time is it?</strong> <span class="pronunciation">/ワット タイム イズ イット/</span>
+                    <button class="audio-icon" data-audio-text="What time is it?">🔊</button>
+                </p>
+                <p class="translation">今何時ですか？</p>
+            </div>
+            <div class="example">
+                <p><strong>It's [時間].</strong> <span class="pronunciation">/イッツ [時間]/</span>
+                    <button class="audio-icon" data-audio-text="It's 3 o'clock.">🔊</button>
+                </p>
+                <p class="translation">〜時です。</p>
+            </div>
+
+            <h3>時間の表現方法</h3>
+            <ul>
+                <li><strong>ぴったりな時間：「o'clock」</strong>
+                    <div class="example">
+                        <p><strong>It's 3 o'clock.</strong> <span class="pronunciation">/イッツ スリー オークロック/</span>
+                            <button class="audio-icon" data-audio-text="It's 3 o'clock.">🔊</button>
+                        </p>
+                        <p class="translation">3時です。</p>
+                    </div>
+                </li>
+                <li><strong>30分：「half past」</strong>
+                    <div class="example">
+                        <p><strong>It's half past 3.</strong> <span class="pronunciation">/イッツ ハーフ パースト スリー/</span>
+                            <button class="audio-icon" data-audio-text="It's half past 3.">🔊</button>
+                        </p>
+                        <p class="translation">3時半です。</p>
+                        <p class="translation">(または <strong>It's 3:30.</strong>)</p>
+                    </div>
+                </li>
+                <li><strong>15分：「quarter past / quarter to」</strong>
+                    <div class="example">
+                        <p><strong>It's quarter past 3.</strong> <span class="pronunciation">/イッツ クォーター パースト スリー/</span>
+                            <button class="audio-icon" data-audio-text="It's quarter past 3.">🔊</button>
+                        </p>
+                        <p class="translation">3時15分です。</p>
+                    </div>
+                    <div class="example">
+                        <p><strong>It's quarter to 4.</strong> <span class="pronunciation">/イッツ クォーター トゥー フォー/</span>
+                            <button class="audio-icon" data-audio-text="It's quarter to 4.">🔊</button>
+                        </p>
+                        <p class="translation">4時15分前です（3時45分）。</p>
+                    </div>
+                </li>
+                <li><strong>その他の分数：「minutes past / minutes to」</strong>
+                    <p>通常、分数が5分単位でない場合や、「o'clock」「half」「quarter」を使わない場合は、シンプルに数字で伝えます。</p>
+                    <div class="example">
+                        <p><strong>It's 3:10.</strong> <span class="pronunciation">/イッツ スリー テン/</span>
+                            <button class="audio-icon" data-audio-text="It's 3:10.">🔊</button>
+                        </p>
+                        <p class="translation">3時10分です。</p>
+                    </div>
+                    <div class="example">
+                        <p><strong>It's 3:55.</strong> <span class="pronunciation">/イッツ スリー フィフティファイブ/</span>
+                            <button class="audio-icon" data-audio-text="It's 3:55.">🔊</button>
+                        </p>
+                        <p class="translation">3時55分です。</p>
+                        <p class="translation">(または <strong>It's five to 4.</strong>)</p>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>午前と午後：AM / PM</h3>
+            <p>英語圏では、通常12時間制を使います。午前は「AM」、午後は「PM」をつけます。</p>
+            <ul>
+                <li><strong>AM</strong> <span class="pronunciation">/エーエム/</span> (午前0時から正午まで)</li>
+                <li><strong>PM</strong> <span class="pronunciation">/ピーエム/</span> (正午から深夜0時まで)</li>
+            </ul>
+            <div class="example">
+                <p><strong>It's 7 AM.</strong> <span class="pronunciation">/イッツ セブン エーエム/</span>
+                    <button class="audio-icon" data-audio-text="It's 7 AM.">🔊</button>
+                </p>
+                <p class="translation">午前7時です。</p>
+            </div>
+            <div class="example">
+                <p><strong>It's 9 PM.</strong> <span class="pronunciation">/イッツ ナイン ピーエム/</span>
+                    <button class="audio-icon" data-audio-text="It's 9 PM.">🔊</button>
+                </p>
+                <p class="translation">午後9時です。</p>
+            </div>
+
+            <p>💡 <strong>文化ノート：</strong></p>
+            <p>日本語の「午後1時」は英語で「1 PM」と表現します。24時間制を使う場合は「13:00」ですが、日常会話ではあまり使われません。例えば「10:00」だけだとAMかPMか分からないので、必ず明記しましょう。</p>
+
+            <div class="practice-section">
+                <h3>練習してみよう！📝 (Practice Time!)</h3>
+                <div class="practice-item fill-in-the-blank">
+                    <p>日本語の時間を見て、英語で答えてみましょう。</p>
+                    <p>1. 午後2時</p>
+                    <input type="text" placeholder="例: It's 2 PM." aria-label="午後2時">
+                </div>
+                <div class="practice-item fill-in-the-blank">
+                    <p>2. 午前10時半</p>
+                    <input type="text" placeholder="例: It's half past 10 AM." aria-label="午前10時半">
+                </div>
+                <div class="practice-item fill-in-the-blank">
+                    <p>3. 午後7時15分</p>
+                    <input type="text" placeholder="例: It's quarter past 7 PM." aria-label="午後7時15分">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 曜日：Days of the Week 🗓️</h2>
+            <p>1週間の曜日を英語で言えるようになりましょう。曜日を表す単語は、常に大文字で始めます。</p>
+            <ul>
+                <li><strong>Monday</strong> <span class="pronunciation">/マンデイ/</span> <button class="audio-icon" data-audio-text="Monday">🔊</button> (月曜日)</li>
+                <li><strong>Tuesday</strong> <span class="pronunciation">/チューズデイ/</span> <button class="audio-icon" data-audio-text="Tuesday">🔊</button> (火曜日)</li>
+                <li><strong>Wednesday</strong> <span class="pronunciation">/ウェンズデイ/</span> <button class="audio-icon" data-audio-text="Wednesday">🔊</button> (水曜日)</li>
+                <li><strong>Thursday</strong> <span class="pronunciation">/サーズデイ/</span> <button class="audio-icon" data-audio-text="Thursday">🔊</button> (木曜日)</li>
+                <li><strong>Friday</strong> <span class="pronunciation">/フライデイ/</span> <button class="audio-icon" data-audio-text="Friday">🔊</button> (金曜日)</li>
+                <li><strong>Saturday</strong> <span class="pronunciation">/サタデイ/</span> <button class="audio-icon" data-audio-text="Saturday">🔊</button> (土曜日)</li>
+                <li><strong>Sunday</strong> <span class="pronunciation">/サンデイ/</span> <button class="audio-icon" data-audio-text="Sunday">🔊</button> (日曜日)</li>
+            </ul>
+
+            <h3>曜日を使った表現</h3>
+            <p>特定の曜日に何かをする場合は、前置詞 <strong>on</strong> を使います。</p>
+            <div class="example">
+                <p><strong>I work on Monday.</strong> <span class="pronunciation">/アイ ワーク オン マンデイ/</span>
+                    <button class="audio-icon" data-audio-text="I work on Monday.">🔊</button>
+                </p>
+                <p class="translation">私は月曜日に働きます。</p>
+            </div>
+            <div class="example">
+                <p><strong>Let's meet on Friday.</strong> <span class="pronunciation">/レッツ ミート オン フライデイ/</span>
+                    <button class="audio-icon" data-audio-text="Let's meet on Friday.">🔊</button>
+                </p>
+                <p class="translation">金曜日に会いましょう。</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>練習してみよう！📝 (Practice Time!)</h3>
+                <div class="practice-item fill-in-the-blank">
+                    <p>英語の曜日のカタカナを埋めましょう。</p>
+                    <p>1. 土曜日: Sa_____day</p>
+                    <input type="text" placeholder="答えを入力" aria-label="土曜日">
+                </div>
+                <div class="practice-item fill-in-the-blank">
+                    <p>2. 水曜日: We_____day</p>
+                    <input type="text" placeholder="答えを入力" aria-label="水曜日">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. 月：Months of the Year 🗓️</h2>
+            <p>1年間の12ヶ月を覚えましょう。月を表す単語も、常に大文字で始めます。</p>
+            <ul>
+                <li><strong>January</strong> <span class="pronunciation">/ジャニュアリー/</span> <button class="audio-icon" data-audio-text="January">🔊</button> (1月)</li>
+                <li><strong>February</strong> <span class="pronunciation">/フェブラリー/</span> <button class="audio-icon" data-audio-text="February">🔊</button> (2月)</li>
+                <li><strong>March</strong> <span class="pronunciation">/マーチ/</span> <button class="audio-icon" data-audio-text="March">🔊</button> (3月)</li>
+                <li><strong>April</strong> <span class="pronunciation">/エイプリル/</span> <button class="audio-icon" data-audio-text="April">🔊</button> (4月)</li>
+                <li><strong>May</strong> <span class="pronunciation">/メイ/</span> <button class="audio-icon" data-audio-text="May">🔊</button> (5月)</li>
+                <li><strong>June</strong> <span class="pronunciation">/ジューン/</span> <button class="audio-icon" data-audio-text="June">🔊</button> (6月)</li>
+                <li><strong>July</strong> <span class="pronunciation">/ジュライ/</span> <button class="audio-icon" data-audio-text="July">🔊</button> (7月)</li>
+                <li><strong>August</strong> <span class="pronunciation">/オーガスト/</span> <button class="audio-icon" data-audio-text="August">🔊</button> (8月)</li>
+                <li><strong>September</strong> <span class="pronunciation">/セプテンバー/</span> <button class="audio-icon" data-audio-text="September">🔊</button> (9月)</li>
+                <li><strong>October</strong> <span class="pronunciation">/オクトーバー/</span> <button class="audio-icon" data-audio-text="October">🔊</button> (10月)</li>
+                <li><strong>November</strong> <span class="pronunciation">/ノベンバー/</span> <button class="audio-icon" data-audio-text="November">🔊</button> (11月)</li>
+                <li><strong>December</strong> <span class="pronunciation">/ディセンバー/</span> <button class="audio-icon" data-audio-text="December">🔊</button> (12月)</li>
+            </ul>
+
+            <h3>月を使った表現</h3>
+            <p>特定の月に何かをする場合は、前置詞 <strong>in</strong> を使います。</p>
+            <div class="example">
+                <p><strong>My birthday is in August.</strong> <span class="pronunciation">/マイ バースデイ イズ イン オーガスト/</span>
+                    <button class="audio-icon" data-audio-text="My birthday is in August.">🔊</button>
+                </p>
+                <p class="translation">私の誕生日は8月です。</p>
+            </div>
+            <div class="example">
+                <p><strong>We have a holiday in May.</strong> <span class="pronunciation">/ウィー ハブ ア ホリデイ イン メイ/</span>
+                    <button class="audio-icon" data-audio-text="We have a holiday in May.">🔊</button>
+                </p>
+                <p class="translation">5月に祝日があります。</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>練習してみよう！📝 (Practice Time!)</h3>
+                <div class="practice-item fill-in-the-blank">
+                    <p>日本語の月を見て、英語で埋めましょう。</p>
+                    <p>1. 6月: J___</p>
+                    <input type="text" placeholder="答えを入力" aria-label="6月">
+                </div>
+                <div class="practice-item fill-in-the-blank">
+                    <p>2. 9月: Se________</p>
+                    <input type="text" placeholder="答えを入力" aria-label="9月">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. 「いつですか？」：When is...? 📅</h2>
+            <p>イベントや予定がいつあるかを尋ねる、とても便利な質問です。</p>
+
+            <h3>質問と答え</h3>
+            <div class="example">
+                <p><strong>When is your meeting?</strong> <span class="pronunciation">/ウェン イズ ユア ミーティング/</span>
+                    <button class="audio-icon" data-audio-text="When is your meeting?">🔊</button>
+                </p>
+                <p class="translation">あなたの会議はいつですか？</p>
+            </div>
+            <p>答えるときは、前置詞を正しく使い分けましょう。</p>
+            <ul>
+                <li><strong>日や曜日について話す時 → on</strong></li>
+                <div class="example">
+                    <p><strong>It's on Monday.</strong> <span class="pronunciation">/イッツ オン マンデイ/</span>
+                        <button class="audio-icon" data-audio-text="It's on Monday.">🔊</button>
+                    </p>
+                    <p class="translation">月曜日です。</p>
+                </div>
+                <div class="example">
+                    <p><strong>It's on April 15th.</strong> <span class="pronunciation">/イッツ オン エイプリル フィフティーンス/</span>
+                        <button class="audio-icon" data-audio-text="It's on April 15th.">🔊</button>
+                    </p>
+                    <p class="translation">4月15日です。</p>
+                </div>
+                <li><strong>月や年について話す時 → in</strong></li>
+                <div class="example">
+                    <p><strong>It's in July.</strong> <span class="pronunciation">/イッツ イン ジュライ/</span>
+                        <button class="audio-icon" data-audio-text="It's in July.">🔊</button>
+                    </p>
+                    <p class="translation">7月です。</p>
+                </div>
+                <li><strong>時間について話す時 → at</strong></li>
+                <div class="example">
+                    <p><strong>It's at 10 AM.</strong> <span class="pronunciation">/イッツ アット テン エーエム/</span>
+                        <button class="audio-icon" data-audio-text="It's at 10 AM.">🔊</button>
+                    </p>
+                    <p class="translation">午前10時です。</p>
+                </div>
+            </ul>
+
+            <p>💡 <strong>文化ノート：日付の書き方</strong></p>
+            <p>アメリカ英語では「月/日/年 (MM/DD/YYYY)」が一般的です。（例: 04/15/2024）<br>
+            イギリス英語や多くの国では「日/月/年 (DD/MM/YYYY)」が一般的です。（例: 15/04/2024）</p>
+            <p>混乱を避けるため、ビジネスシーンなどでは月を省略せずに書くのがおすすめです。例: April 15th, 2024。</p>
+
+            <div class="practice-section">
+                <h3>練習してみよう！📝 (Practice Time!)</h3>
+                <div class="practice-item fill-in-the-blank">
+                    <p>適切な前置詞 (on, in, at) を選びましょう。</p>
+                    <p>1. The party is ____ Saturday.</p>
+                    <input type="text" placeholder="答えを入力" aria-label="パーティーは土曜日です">
+                </div>
+                <div class="practice-item fill-in-the-blank">
+                    <p>2. The new semester starts ____ September.</p>
+                    <input type="text" placeholder="答えを入力" aria-label="新学期は9月に始まります">
+                </div>
+                <div class="practice-item fill-in-the-blank">
+                    <p>3. Let's meet ____ 6 PM.</p>
+                    <input type="text" placeholder="答えを入力" aria-label="午後6時に会いましょう">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. アポイントメントとスケジュールを立てる 🗓️🤝</h2>
+            <p>人と会う約束をしたり、スケジュールを調整したりするときに使える便利なフレーズです。</p>
+
+            <h3>空き状況を尋ねる</h3>
+            <div class="example">
+                <p><strong>Are you free on Monday?</strong> <span class="pronunciation">/アー ユー フリー オン マンデイ/</span>
+                    <button class="audio-icon" data-audio-text="Are you free on Monday?">🔊</button>
+                </p>
+                <p class="translation">月曜日は空いていますか？</p>
+            </div>
+            <div class="example">
+                <p><strong>What time works for you?</strong> <span class="pronunciation">/ワット タイム ワークス フォー ユー/</span>
+                    <button class="audio-icon" data-audio-text="What time works for you?">🔊</button>
+                </p>
+                <p class="translation">何時が都合が良いですか？</p>
+            </div>
+
+            <h3>提案する</h3>
+            <div class="example">
+                <p><strong>How about 3 PM on Tuesday?</strong> <span class="pronunciation">/ハワバウト スリー ピーエム オン チューズデイ/</span>
+                    <button class="audio-icon" data-audio-text="How about 3 PM on Tuesday?">🔊</button>
+                </p>
+                <p class="translation">火曜日の午後3時はいかがですか？</p>
+            </div>
+            <div class="example">
+                <p><strong>Let's meet at 10 AM.</strong> <span class="pronunciation">/レッツ ミート アット テン エーエム/</span>
+                    <button class="audio-icon" data-audio-text="Let's meet at 10 AM.">🔊</button>
+                </p>
+                <p class="translation">午前10時に会いましょう。</p>
+            </div>
+
+            <h3>受け入れる/断る/変更する</h3>
+            <ul>
+                <li><strong>受け入れる：</strong>
+                    <div class="example">
+                        <p><strong>Sounds good!</strong> <span class="pronunciation">/サウンズ グッド/</span>
+                            <button class="audio-icon" data-audio-text="Sounds good!">🔊</button>
+                        </p>
+                        <p class="translation">いいですね！</p>
+                    </div>
+                    <div class="example">
+                        <p><strong>That works for me.</strong> <span class="pronunciation">/ザット ワークス フォー ミー/</span>
+                            <button class="audio-icon" data-audio-text="That works for me.">🔊</button>
+                        </p>
+                        <p class="translation">それで大丈夫です。</p>
+                    </div>
+                </li>
+                <li><strong>断る/変更する：</strong>
+                    <div class="example">
+                        <p><strong>I'm sorry, I'm busy then.</strong> <span class="pronunciation">/アイム ソーリー、アイム ビジー デン/</span>
+                            <button class="audio-icon" data-audio-text="I'm sorry, I'm busy then.">🔊</button>
+                        </p>
+                        <p class="translation">すみません、その時間は忙しいです。</p>
+                    </div>
+                    <div class="example">
+                        <p><strong>Can we reschedule?</strong> <span class="pronunciation">/キャン ウィー リスケジュール/</span>
+                            <button class="audio-icon" data-audio-text="Can we reschedule?">🔊</button>
+                        </p>
+                        <p class="translation">リスケジュールできますか？</p>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>練習してみよう！📝 (Practice Time!)</h3>
+                <div class="practice-item fill-in-the-blank">
+                    <p>会話を完成させましょう。</p>
+                    <p>A: When is the meeting?</p>
+                    <p>B: It's ____ 10 AM ____ Wednesday.</p>
+                    <input type="text" placeholder="適切な前置詞を2つ入力" aria-label="会議は水曜日の午前10時です">
+                </div>
+                <div class="practice-item fill-in-the-blank">
+                    <p>A: Are you free ____ Friday?</p>
+                    <p>B: Yes, I am! ____ about 6 PM?</p>
+                    <input type="text" placeholder="適切な語句を2つ入力" aria-label="金曜日は空いていますか？はい、午後6時はいかがですか？">
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>まとめ：時間とスケジュール 🚀</h2>
+            <p>この章では、英語で時間とスケジュールを伝えるための重要なフレーズと概念を学びました。主要なポイントをもう一度確認しましょう。</p>
+            <ul>
+                <li><strong>時間を伝える：</strong>
+                    <ul>
+                        <li><button class="audio-icon" data-audio-text="What time is it?">🔊</button>「今何時？」</li>
+                        <li><button class="audio-icon" data-audio-text="It's 5 o'clock.">🔊</button>「5時です。」</li>
+                        <li><button class="audio-icon" data-audio-text="It's 2:30 PM.">🔊</button>「午後2時半です。」</li>
+                    </ul>
+                </li>
+                <li><strong>曜日と月：</strong>
+                    <ul>
+                        <li><button class="audio-icon" data-audio-text="Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.">🔊</button>曜日を覚え、常に大文字で始めること。</li>
+                        <li><button class="audio-icon" data-audio-text="January, February, March, April, May, June, July, August, September, October, November, December.">🔊</button>月を覚え、常に大文字で始めること。</li>
+                    </ul>
+                </li>
+                <li><strong>「いつ？」と尋ねる：</strong>
+                    <ul>
+                        <li><button class="audio-icon" data-audio-text="When is the party?">🔊</button>「パーティーはいつ？」</li>
+                        <li>日・曜日には <button class="audio-icon" data-audio-text="on">🔊</button> (例: <button class="audio-icon" data-audio-text="on Sunday">🔊</button>)</li>
+                        <li>月・年・季節には <button class="audio-icon" data-audio-text="in">🔊</button> (例: <button class="audio-icon" data-audio-text="in December">🔊</button>)</li>
+                        <li>時間には <button class="audio-icon" data-audio-text="at">🔊</button> (例: <button class="audio-icon" data-audio-text="at 9 AM">🔊</button>)</li>
+                    </ul>
+                </li>
+                <li><strong>アポイントメント：</strong>
+                    <ul>
+                        <li><button class="audio-icon" data-audio-text="Are you free on Tuesday?">🔊</button>「火曜日は空いていますか？」</li>
+                        <li><button class="audio-icon" data-audio-text="How about 4 PM?">🔊</button>「午後4時はいかがですか？」</li>
+                        <li><button class="audio-icon" data-audio-text="Sounds good!">🔊</button>「いいですね！」</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>これらの表現を使いこなせるようになると、英語でのコミュニケーションが格段にスムーズになります。繰り返し練習して、自信を持って使ってみてくださいね！</p>
+        </section>
+
+    </div>
+</body>
+</html>

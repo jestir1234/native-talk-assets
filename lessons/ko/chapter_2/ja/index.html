@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 2: 基本の挨拶と自己紹介</title>
+    <style>
+        /*
+         * MOBILE-FIRST DESIGN REQUIREMENTS
+         * Ensure all content is easily readable on small screens (320px+ width)
+         * Use appropriate font sizes (minimum 16px for body text)
+         * Include proper spacing and padding for touch interfaces
+         * Make buttons and interactive elements at least 44px tall for easy tapping
+         * Use semantic HTML5 tags for accessibility
+         * Include CSS that works well on both portrait and landscape orientations
+         * DO NOT use external image URLs or placeholder images.
+         * Use emojis, Unicode symbols, or text-based visual elements instead of images
+         * Avoid any @https://via.placeholder.com or similar external image URLs
+         * Use a clean, modern design that feels native to mobile apps
+         */
+
+        /* Base styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            box-sizing: border-box;
+        }
+
+        /* Container for overall lesson content */
+        .lesson-container {
+            padding: 20px;
+            max-width: 800px; /* Limit width for readability on larger screens */
+            margin: 0 auto;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1.chapter-title {
+            font-size: 2.2em;
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 0; /* Adjust for lesson-header */
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 5px;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-top: 1.2em;
+            margin-bottom: 0.8em;
+        }
+
+        p {
+            font-size: 1.0em; /* minimum 16px for body text */
+            margin-bottom: 1em;
+        }
+
+        /* Specific header structure requirement */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section styling */
+        section {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        /* Key points / Lists */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 0.8em;
+            font-size: 1.0em;
+        }
+
+        ul li::before {
+            content: '👉'; /* Unicode symbol for bullet */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        /* Korean words and translations */
+        .korean-phrase {
+            display: flex;
+            align-items: center;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .korean-text {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-right: 15px;
+        }
+
+        .japanese-translation {
+            font-size: 1.0em;
+            color: #666666;
+        }
+
+        .pronunciation-guide {
+            font-size: 0.9em;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* Audio icon button */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%;
+            width: 48px; /* Min 44px */
+            height: 48px; /* Min 44px */
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+            margin-right: 10px; /* Space between icon and text */
+        }
+
+        .audio-icon:hover {
+            background-color: #6A449B; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Practice section */
+        .practice-section {
+            background-color: #EBF7FF; /* Light blue for practice */
+            border-left: 5px solid #8B5FBF;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-section h3 {
+            color: #2C3E50;
+            margin-top: 0;
+        }
+
+        .exercise-question {
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .answer-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .answer-option-button {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666;
+            border: 1px solid #8B5FBF; /* Primary: Purple */
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 1.0em;
+            text-align: left;
+            cursor: pointer;
+            min-height: 48px; /* Min 44px for tapping */
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .answer-option-button:hover {
+            background-color: #E0E0E0; /* Light gray on hover */
+            border-color: #6A449B; /* Darker purple */
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FFF3E0; /* Light orange for cultural notes */
+            border-left: 5px solid #F79F1F; /* Orange accent */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: #5C4B4B;
+        }
+
+        .cultural-note strong {
+            color: #F79F1F;
+        }
+
+        /* Summary section */
+        .summary-section {
+            background-color: #FFFFFF;
+            border-top: 2px solid #8B5FBF; /* Primary: Purple */
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            margin-top: 0;
+            border-bottom: none;
+        }
+
+        .summary-section ul {
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 600px;
+        }
+
+        .summary-section li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Utility classes for visual emphasis */
+        .highlight {
+            color: #8B5FBF; /* Primary: Purple */
+            font-weight: bold;
+        }
+
+        /* Responsive adjustments for larger screens (tablets/desktops) */
+        @media (min-width: 600px) {
+            .lesson-container {
+                padding: 30px;
+            }
+
+            h1.chapter-title {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            h3 {
+                font-size: 1.6em;
+            }
+
+            p, ul li, .korean-text, .japanese-translation, .pronunciation-guide, .exercise-question, .answer-option-button, .cultural-note {
+                font-size: 1.1em;
+            }
+
+            .korean-phrase {
+                padding: 20px;
+            }
+
+            .audio-icon {
+                width: 52px;
+                height: 52px;
+                font-size: 1.7em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chapter 2: 基本の挨拶と自己紹介</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>はじめに</h2>
+            <p>皆さん、こんにちは！👋 第2章へようこそ。この章では、韓国語で最も基本的な挨拶と自己紹介の方法を学びます。日常生活で頻繁に使う表現ばかりですので、しっかりマスターしましょう！</p>
+            <p>それぞれのフレーズには、🔊ボタンがあります。タップして発音を聞きながら、声に出して練習してみてくださいね。</p>
+        </section>
+
+        <section>
+            <h2>1. 안녕하세요 (こんにちは / さようなら)</h2>
+            <p>「<strong>안녕하세요</strong>」は韓国語で最もよく使われる挨拶です。時間帯を問わず「こんにちは」として使えますし、別れる時の「さようなら」としても使うことができる、非常に便利な表現です。</p>
+            <p>「〜세요 (〜セヨ)」は丁寧な語尾で、目上の人や初対面の人に対しても安心して使えます。</p>
+
+            <div class="korean-phrase">
+                <button class="audio-icon" data-audio-text="안녕하세요">🔊</button>
+                <div>
+                    <span class="korean-text">안녕하세요</span>
+                    <span class="japanese-translation">：こんにちは / さようなら</span>
+                    <div class="pronunciation-guide">発音: アンニョンハセヨ</div>
+                </div>
+            </div>
+            <p>💡 韓国語の「안녕 (アンニョン)」は「安寧」という意味で、「平和に、元気で」というニュアンスを含んでいます。</p>
+        </section>
+
+        <section>
+            <h2>2. 안녕히 가세요 / 안녕히 계세요 (さようなら)</h2>
+            <p>日本語の「さようなら」は、韓国語では状況によって2つの表現を使い分けます。相手が「行く」のか、相手が「いる」のか、どちらの状況かによって変わります。</p>
+
+            <h3>2-1. 안녕히 가세요 (安寧に行きなさい)</h3>
+            <p>この表現は、<span class="highlight">相手がその場を去るとき</span>に使います。つまり、あなたが残る場合に「気をつけて行ってくださいね」という気持ちを込めて言います。</p>
+            <div class="korean-phrase">
+                <button class="audio-icon" data-audio-text="안녕히 가세요">🔊</button>
+                <div>
+                    <span class="korean-text">안녕히 가세요</span>
+                    <span class="japanese-translation">：さようなら (相手が去るとき)</span>
+                    <div class="pronunciation-guide">発音: アンニョンヒ ガセヨ</div>
+                </div>
+            </div>
+            <p>例：お店の店員が帰るお客さんに対して言う場合。</p>
+
+            <h3>2-2. 안녕히 계세요 (安寧にいなさい)</h3>
+            <p>この表現は、<span class="highlight">あなたがその場を去るとき</span>に使います。相手がその場に残る場合に「お元気でいてくださいね」という気持ちを込めて言います。</p>
+            <div class="korean-phrase">
+                <button class="audio-icon" data-audio-text="안녕히 계세요">🔊</button>
+                <div>
+                    <span class="korean-text">안녕히 계세요</span>
+                    <span class="japanese-translation">：さようなら (自分が去るとき)</span>
+                    <div class="pronunciation-guide">発音: アンニョンヒ ゲセヨ</div>
+                </div>
+            </div>
+            <p>例：お客さんがお店を出るときに店員に対して言う場合。</p>
+
+            <div class="cultural-note">
+                <strong>💡 文化ノート：別れの挨拶の使い分け</strong>
+                <p>この「안녕히 가세요」と「안녕히 계세요」の使い分けは、韓国語学習者が最初につまずきやすいポイントです。日本語にはない概念なので、どちらの立場で挨拶しているのかを意識して練習しましょう。「가다 (カダ) = 行く」、「있다 (イッタ) = いる」と覚えると分かりやすいですよ。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. 만나서 반갑습니다 (お会いできて嬉しいです)</h2>
+            <p>誰かと初めて会うときに使う、丁寧な挨拶です。「はじめまして」に相当します。</p>
+            <div class="korean-phrase">
+                <button class="audio-icon" data-audio-text="만나서 반갑습니다">🔊</button>
+                <div>
+                    <span class="korean-text">만나서 반갑습니다</span>
+                    <span class="japanese-translation">：お会いできて嬉しいです / はじめまして</span>
+                    <div class="pronunciation-guide">発音: マンナソ パンガプスムニダ</div>
+                </div>
+            </div>
+            <p>💡 「반갑다 (パンガプタ)」は「嬉しい、喜ばしい」という意味の形容詞です。</p>
+        </section>
+
+        <section>
+            <h2>4. 저는 [이름]입니다 (私の名前は〜です)</h2>
+            <p>自己紹介で自分の名前を言うときに使う表現です。</p>
+            <p>「<strong>저는</strong> (チョヌン)」は「私は」という意味で、丁寧な表現です。「<strong>[이름]입니다</strong> ([名前]イムニダ)」は「[名前]です」という意味の丁寧な語尾です。</p>
+
+            <div class="korean-phrase">
+                <button class="audio-icon" data-audio-text="저는 다나카입니다">🔊</button>
+                <div>
+                    <span class="korean-text">저는 다나카입니다</span>
+                    <span class="japanese-translation">：私は田中です</span>
+                    <div class="pronunciation-guide">発音: チョヌン ダナカ イムニダ</div>
+                </div>
+            </div>
+            <p>例：</p>
+            <ul>
+                <li><span class="korean-text">저는 야마다입니다.</span> (チョヌン ヤマダ イムニダ)：私は山田です。</li>
+                <li><span class="korean-text">저는 김민준입니다.</span> (チョヌン キムミンジュン イムニダ)：私はキム・ミンジュンです。</li>
+            </ul>
+
+            <h3>練習してみましょう！</h3>
+            <div class="practice-section">
+                <p>あなたの名前を韓国語で言ってみましょう。</p>
+                <p>「저는 [あなたの名前]입니다.」</p>
+                <p>例: <span class="korean-text">저는 [あなたのお名前]입니다.</span></p>
+                <p>実際に声に出して練習してみてくださいね！</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. 基本の丁寧な表現</h2>
+            <p>基本的な丁寧な表現も一緒に覚えておきましょう。</p>
+
+            <h3>5-1. 감사합니다 (ありがとうございます)</h3>
+            <p>感謝の気持ちを伝える一番丁寧な表現です。</p>
+            <div class="korean-phrase">
+                <button class="audio-icon" data-audio-text="감사합니다">🔊</button>
+                <div>
+                    <span class="korean-text">감사합니다</span>
+                    <span class="japanese-translation">：ありがとうございます</span>
+                    <div class="pronunciation-guide">発音: カムサハムニダ</div>
+                </div>
+            </div>
+
+            <h3>5-2. 죄송합니다 / 미안합니다 (ごめんなさい)</h3>
+            <p>謝罪の表現です。どちらも丁寧な表現ですが、「죄송합니다 (チェソンハムニダ)」の方がより丁寧で、改まった状況で使われます。「미안합니다 (ミアナムニダ)」はより日常的です。</p>
+            <div class="korean-phrase">
+                <button class="audio-icon" data-audio-text="죄송합니다">🔊</button>
+                <div>
+                    <span class="korean-text">죄송합니다</span>
+                    <span class="japanese-translation">：申し訳ありません / すみません</span>
+                    <div class="pronunciation-guide">発音: チェソンハムニダ</div>
+                </div>
+            </div>
+            <div class="korean-phrase">
+                <button class="audio-icon" data-audio-text="미안합니다">🔊</button>
+                <div>
+                    <span class="korean-text">미안합니다</span>
+                    <span class="japanese-translation">：ごめんなさい / すみません</span>
+                    <div class="pronunciation-guide">発音: ミアナムニダ</div>
+                </div>
+            </div>
+
+            <h3>5-3. 네 / 아니요 (はい / いいえ)</h3>
+            <p>日常会話で非常に重要です。</p>
+            <div class="korean-phrase">
+                <button class="audio-icon" data-audio-text="네">🔊</button>
+                <div>
+                    <span class="korean-text">네</span>
+                    <span class="japanese-translation">：はい</span>
+                    <div class="pronunciation-guide">発音: ネ</div>
+                </div>
+            </div>
+            <div class="korean-phrase">
+                <button class="audio-icon" data-audio-text="아니요">🔊</button>
+                <div>
+                    <span class="korean-text">아니요</span>
+                    <span class="japanese-translation">：いいえ</span>
+                    <div class="pronunciation-guide">発音: アニヨ</div>
+                </div>
+            </div>
+            <div class="cultural-note">
+                <strong>💡 文化ノート：韓国語の敬語</strong>
+                <p>韓国語には、日本語と同様に複雑な敬語のシステムがあります。今回学んだ表現は、主に「ハムニダ体 (〜ㅂ니다/습니다)」と呼ばれる最も丁寧な表現です。公式な場や初対面の人、目上の人に対して使われます。他にも、より日常的な「ヘヨ体 (〜아요/어요)」などがありますが、それは今後の章で学びます。まずは「ハムニダ体」をしっかり覚えましょう！</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>6. 文化的な背景：韓国の挨拶</h2>
+            <p>韓国の挨拶には、独特の文化的な背景があります。</p>
+            <ul>
+                <li><strong>年齢と敬意：</strong> 韓国社会では、年齢や社会的地位による上下関係が非常に重要視されます。挨拶の際も、相手への敬意を示すために適切な表現（今回学んだ丁寧語）を使うことが求められます。</li>
+                <li><strong>お辞儀：</strong> 日本と同様に、挨拶の際にお辞儀をすることが一般的です。深さやタイミングは状況によって異なりますが、一般的には丁寧な挨拶とともに行われます。</li>
+                <li><strong>謙遜の文化：</strong> 自己紹介の際も、控えめに振る舞うことが美徳とされます。自分の能力や立場を誇張することは避けられる傾向にあります。</li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h2>練習問題！💡</h2>
+            <p>学んだフレーズを使って、簡単な問題を解いてみましょう。正しいと思う選択肢を選んでください。</p>
+
+            <div class="exercise-question">
+                <p><strong>質問 1:</strong> あなたがお客さんで、お店を出て帰るとき、店員さんに何と言いますか？</p>
+                <div class="answer-options">
+                    <button class="answer-option-button" data-correct="false">안녕히 가세요</button>
+                    <button class="answer-option-button" data-correct="true">안녕히 계세요</button>
+                    <button class="answer-option-button" data-correct="false">안녕하세요</button>
+                </div>
+            </div>
+
+            <div class="exercise-question">
+                <p><strong>質問 2:</strong> あなたがお店の店員で、お客さんが帰るとき、お客さんに何と言いますか？</p>
+                <div class="answer-options">
+                    <button class="answer-option-button" data-correct="true">안녕히 가세요</button>
+                    <button class="answer-option-button" data-correct="false">안녕히 계세요</button>
+                    <button class="answer-option-button" data-correct="false">만나서 반갑습니다</button>
+                </div>
+            </div>
+
+            <div class="exercise-question">
+                <p><strong>質問 3:</strong> 誰かと初めて会ったときに、最初に言う挨拶は何ですか？</p>
+                <div class="answer-options">
+                    <button class="answer-option-button" data-correct="false">감사합니다</button>
+                    <button class="answer-option-button" data-correct="true">만나서 반갑습니다</button>
+                    <button class="answer-option-button" data-correct="false">죄송합니다</button>
+                </div>
+            </div>
+
+            <div class="exercise-question">
+                <p><strong>質問 4:</strong> 相手に「ありがとう」と伝えたいとき、最も丁寧な表現は何ですか？</p>
+                <div class="answer-options">
+                    <button class="answer-option-button" data-correct="true">감사합니다</button>
+                    <button class="answer-option-button" data-correct="false">미안합니다</button>
+                    <button class="answer-option-button" data-correct="false">네</button>
+                </div>
+            </div>
+
+            <p style="font-size: 0.9em; text-align: center; margin-top: 20px;">（💡 ヒント: 回答は上記のレッスン内容に隠されています。正解は表示されませんが、自分で見つけてみましょう！）</p>
+        </section>
+
+        <section class="summary-section">
+            <h2>まとめ</h2>
+            <p>この章では、韓国語の基本的な挨拶と自己紹介について学びました。これで、韓国人と簡単なコミュニケーションが取れる第一歩を踏み出しましたね！</p>
+            <ul>
+                <li><strong class="highlight">안녕하세요 (アンニョンハセヨ)</strong>: 汎用性の高い「こんにちは」「さようなら」</li>
+                <li><strong class="highlight">안녕히 가세요 (アンニョンヒ ガセヨ)</strong>: 相手が去るときの「さようなら」</li>
+                <li><strong class="highlight">안녕히 계세요 (アンニョンヒ ゲセヨ)</strong>: 自分が去るときの「さようなら」</li>
+                <li><strong class="highlight">만나서 반갑습니다 (マンナソ パンガプスムニダ)</strong>: 初めて会うときの「はじめまして」</li>
+                <li><strong class="highlight">저는 [이름]입니다 (チョヌン [名前] イムニダ)</strong>: 「私の名前は〜です」</li>
+                <li><strong class="highlight">감사합니다 (カムサハムニダ)</strong>: 「ありがとうございます」</li>
+                <li><strong class="highlight">죄송합니다 / 미안합니다 (チェソンハムニダ / ミアナムニダ)</strong>: 「ごめんなさい」</li>
+                <li><strong class="highlight">네 (ネ) / 아니요 (アニヨ)</strong>: 「はい / いいえ」</li>
+            </ul>
+            <p>これらの表現は、韓国語学習の土台となります。繰り返し練習して、自然に口から出るようにしましょう！</p>
+        </section>
+    </div>
+</body>
+</html>

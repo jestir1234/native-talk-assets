@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Essential Verbs & Conjugation Basics</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-color: #FDF9E5;
+            --text-heading-color: #2C3E50;
+            --text-body-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            line-height: 1.6;
+            color: var(--text-body-color);
+            background-color: #ffffff; /* A clean white background for the overall app feel */
+            min-width: 320px; /* Ensure readability on small screens */
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 600px; /* Max width for readability on larger screens/landscape */
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Headers */
+        h1, h2, h3 {
+            color: var(--text-heading-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--border-color);
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow or other bullet */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        strong {
+            color: var(--text-heading-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Lesson Header specific styles */
+        .chapter-title {
+            font-size: 28px; /* Specific font size for this H1 */
+            margin-bottom: 0; /* Adjusted for image below */
+        }
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+            padding: 0 15px; /* Add some horizontal padding to prevent image touching screen edges */
+        }
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Ensures it doesn't get too big on large screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .section {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Code/Example Boxes */
+        .example-box {
+            background-color: #f8f8f8;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 15px;
+            line-height: 1.5;
+            overflow-x: auto; /* For long lines on small screens */
+        }
+
+        .example-box p {
+            margin-bottom: 5px;
+        }
+
+        .example-box strong {
+            color: var(--primary-color);
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%; /* Makes it round */
+            width: 44px;
+            height: 44px;
+            min-width: 44px; /* Ensure minimum tap target size */
+            min-height: 44px;
+            font-size: 20px;
+            cursor: pointer;
+            display: inline-flex; /* For centering the icon */
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle; /* Align with text */
+            margin-left: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            outline: none; /* Remove outline on focus */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C47A2; /* Darker shade of primary */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Practice Section Specifics */
+        .practice-question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #ffffff; /* White background for question box */
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+        }
+
+        .practice-question p {
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .answer-box {
+            background-color: #e9f5e9; /* Light green for correct answers */
+            color: #28a745; /* Dark green text */
+            border: 1px solid #28a745;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 10px;
+            display: none; /* Hidden by default */
+        }
+
+        .reveal-answer-btn {
+            background-color: #F0B323; /* A warm orange for "Reveal Answer" */
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            min-height: 44px;
+            margin-top: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            outline: none;
+        }
+
+        .reveal-answer-btn:hover {
+            background-color: #DDAA11;
+            transform: translateY(-1px);
+        }
+
+        .reveal-answer-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #fff3cd; /* Light yellow for cultural notes */
+            border: 1px solid #ffeeba;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            color: #856404; /* Dark yellow text */
+        }
+
+        .cultural-note h3 {
+            color: #856404;
+            margin-top: 0;
+        }
+
+        /* Summary */
+        .summary-list li::before {
+            content: '✨'; /* Sparkle bullet */
+        }
+
+        /* Responsive adjustments (optional, as mobile-first covers small screens) */
+        @media (orientation: landscape) and (max-width: 800px) {
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            p, li {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 7: Essential Verbs & Conjugation Basics</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section">
+            <h2>👋 Welcome to Chapter 7!</h2>
+            <p>Ready to unlock more conversational power in Japanese? Verbs are the action words that make sentences move, and in this chapter, you'll learn four essential verbs and how to use them in their polite present/future and negative forms. Let's get moving! 🚀</p>
+        </section>
+
+        <section class="section">
+            <h2>🌟 Essential Verbs</h2>
+            <p>These four verbs are fundamental for everyday Japanese conversation. Master them, and you'll be able to express a lot!</p>
+
+            <h3>1. いく (iku) - To Go <button class="audio-icon" data-audio-text="いく">🔊</button></h3>
+            <p>This verb is used for physical movement from one place to another.</p>
+            <div class="example-box">
+                <p><strong>いく</strong> (iku) - to go</p>
+                <p><strong>Pronunciation:</strong> "ee-koo" (like the "ee" in "feet", and "koo" in "cool")</p>
+                <p>Example: <span class="jp-word">がっこうにいく</span> <button class="audio-icon" data-audio-text="がっこうにいく">🔊</button> (gakkou ni iku) - to go to school</p>
+            </div>
+
+            <h3>2. たべる (taberu) - To Eat <button class="audio-icon" data-audio-text="たべる">🔊</button></h3>
+            <p>As simple as it sounds, this verb lets you talk about food! 🍣</p>
+            <div class="example-box">
+                <p><strong>たべる</strong> (taberu) - to eat</p>
+                <p><strong>Pronunciation:</strong> "tah-beh-roo" (like "tah" in "father", "beh" in "bed", "roo" in "rooster")</p>
+                <p>Example: <span class="jp-word">パンをたべる</span> <button class="audio-icon" data-audio-text="パンをたべる">🔊</button> (pan o taberu) - to eat bread</p>
+            </div>
+
+            <h3>3. する (suru) - To Do <button class="audio-icon" data-audio-text="する">🔊</button></h3>
+            <p>This is an incredibly versatile verb, often combined with nouns to create new verbs!</p>
+            <div class="example-box">
+                <p><strong>する</strong> (suru) - to do</p>
+                <p><strong>Pronunciation:</strong> "soo-roo" (like "soo" in "soup", "roo" in "rooster")</p>
+                <p>Example: <span class="jp-word">しゅくだいをする</span> <button class="audio-icon" data-audio-text="しゅくだいをする">🔊</button> (shukudai o suru) - to do homework</p>
+            </div>
+
+            <h3>4. くる (kuru) - To Come <button class="audio-icon" data-audio-text="くる">🔊</button></h3>
+            <p>The counterpart to "to go," this verb indicates movement towards the speaker's location.</p>
+            <div class="example-box">
+                <p><strong>くる</strong> (kuru) - to come</p>
+                <p><strong>Pronunciation:</strong> "koo-roo" (like "koo" in "cool", "roo" in "rooster")</p>
+                <p>Example: <span class="jp-word">ともだちがくる</span> <button class="audio-icon" data-audio-text="ともだちがくる">🔊</button> (tomodachi ga kuru) - a friend comes</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>📝 Conjugation Basics: Polite Forms</h2>
+            <p>Japanese verbs change their endings based on tense, politeness, and more. For now, let's focus on the polite present/future and negative forms, which are standard for beginners.</p>
+
+            <h3>Polite Present/Future Affirmative: ~ます (~masu)</h3>
+            <p>To make a verb polite and express present or future action (like "I go," "I will eat," "They do"), you attach <span class="jp-word">~ます</span> (~masu) to its stem.</p>
+            <div class="example-box">
+                <p>いく (iku) ➡️ <strong>いきます</strong> (ikimasu) <button class="audio-icon" data-audio-text="いきます">🔊</button> - go/will go</p>
+                <p>たべる (taberu) ➡️ <strong>たべます</strong> (tabemasu) <button class="audio-icon" data-audio-text="たべます">🔊</button> - eat/will eat</p>
+                <p>する (suru) ➡️ <strong>します</strong> (shimasu) <button class="audio-icon" data-audio-text="します">🔊</button> - do/will do</p>
+                <p>くる (kuru) ➡️ <strong>きます</strong> (kimasu) <button class="audio-icon" data-audio-text="きます">🔊</button> - come/will come</p>
+            </div>
+
+            <h3>Polite Present/Future Negative: ~ません (~masen)</h3>
+            <p>To make a verb polite and express negative present or future action (like "I don't go," "I won't eat"), you attach <span class="jp-word">~ません</span> (~masen) to its stem.</p>
+            <div class="example-box">
+                <p>いく (iku) ➡️ <strong>いきません</strong> (ikimasen) <button class="audio-icon" data-audio-text="いきません">🔊</button> - don't go/won't go</p>
+                <p>たべる (taberu) ➡️ <strong>たべません</strong> (tabemasen) <button class="audio-icon" data-audio-text="たべません">🔊</button> - don't eat/won't eat</p>
+                <p>する (suru) ➡️ <strong>しません</strong> (shimasen) <button class="audio-icon" data-audio-text="しません">🔊</button> - don't do/won't do</p>
+                <p>くる (kuru) ➡️ <strong>きません</strong> (kimasen) <button class="audio-icon" data-audio-text="きません">🔊</button> - don't come/won't come</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>💬 Basic Sentence Drills</h2>
+            <p>Now let's put these verbs into action with some simple sentences!</p>
+
+            <h3>Example 1: I go to school.</h3>
+            <div class="example-box">
+                <p><span class="jp-word">わたしはがっこうにいきます。</span> <button class="audio-icon" data-audio-text="わたしはがっこうにいきます">🔊</button></p>
+                <p><strong>わたし</strong> (watashi) - I</p>
+                <p><strong>は</strong> (wa) - topic particle</p>
+                <p><strong>がっこう</strong> (gakkou) - school</p>
+                <p><strong>に</strong> (ni) - destination/direction particle</p>
+                <p><strong>いきます</strong> (ikimasu) - go/will go</p>
+                <p><em>Translation: I go to school.</em></p>
+            </div>
+
+            <h3>Example 2: I don't eat bread.</h3>
+            <div class="example-box">
+                <p><span class="jp-word">パンをたべません。</span> <button class="audio-icon" data-audio-text="パンをたべません">🔊</button></p>
+                <p><strong>パン</strong> (pan) - bread</p>
+                <p><strong>を</strong> (o) - object particle</p>
+                <p><strong>たべません</strong> (tabemasen) - don't eat/won't eat</p>
+                <p><em>Translation: I don't eat bread.</em></p>
+            </div>
+
+            <h3>Example 3: I do homework.</h3>
+            <div class="example-box">
+                <p><span class="jp-word">しゅくだいをします。</span> <button class="audio-icon" data-audio-text="しゅくだいをします">🔊</button></p>
+                <p><strong>しゅくだい</strong> (shukudai) - homework</p>
+                <p><strong>を</strong> (o) - object particle</p>
+                <p><strong>します</strong> (shimasu) - do/will do</p>
+                <p><em>Translation: I do homework.</em></p>
+            </div>
+
+            <h3>Example 4: My friend will come.</h3>
+            <div class="example-box">
+                <p><span class="jp-word">ともだちがきます。</span> <button class="audio-icon" data-audio-text="ともだちがきます">🔊</button></p>
+                <p><strong>ともだち</strong> (tomodachi) - friend</p>
+                <p><strong>が</strong> (ga) - subject particle (often used with くる/kuru)</p>
+                <p><strong>きます</strong> (kimasu) - come/will come</p>
+                <p><em>Translation: My friend will come.</em></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🎯 Practice Time!</h2>
+            <p>Let's test your understanding. Try to translate these sentences or fill in the blanks. Then, tap "Reveal Answer" to check!</p>
+
+            <div class="practice-question">
+                <p><strong>Question 1:</strong> How do you say "to eat" (polite present/future)?</p>
+                <button class="reveal-answer-btn" data-target="answer1">Reveal Answer</button>
+                <div class="answer-box" id="answer1">
+                    <p><span class="jp-word">たべます</span> (tabemasu) <button class="audio-icon" data-audio-text="たべます">🔊</button></p>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p><strong>Question 2:</strong> Translate: "I don't go."</p>
+                <button class="reveal-answer-btn" data-target="answer2">Reveal Answer</button>
+                <div class="answer-box" id="answer2">
+                    <p><span class="jp-word">いきません。</span> (ikimasen) <button class="audio-icon" data-audio-text="いきません">🔊</button></p>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p><strong>Question 3:</strong> Fill in the blank: "I will do homework."</p>
+                <p>わたしは しゅくだいを ______。</p>
+                <button class="reveal-answer-btn" data-target="answer3">Reveal Answer</button>
+                <div class="answer-box" id="answer3">
+                    <p><span class="jp-word">します</span> (shimasu) <button class="audio-icon" data-audio-text="します">🔊</button></p>
+                    <p>Complete sentence: <span class="jp-word">わたしはしゅくだいをします。</span> <button class="audio-icon" data-audio-text="わたしはしゅくだいをします">🔊</button></p>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p><strong>Question 4:</strong> Translate: "I don't eat ramen."</p>
+                <button class="reveal-answer-btn" data-target="answer4">Reveal Answer</button>
+                <div class="answer-box" id="answer4">
+                    <p><span class="jp-word">ラーメンをたべません。</span> (rāmen o tabemasen) <button class="audio-icon" data-audio-text="ラーメンをたべません">🔊</button></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cultural-note">
+            <h3>🌸 Cultural Note: Politeness in Verbs</h3>
+            <p>The <span class="jp-word">~ます (~masu)</span> and <span class="jp-word">~ません (~masen)</span> forms you just learned are called <strong>polite forms</strong> (丁寧語 - teineigo). These are the standard forms used in most everyday conversations with people you don't know well, or when you want to show respect. As you progress, you'll learn other verb forms, but these polite forms are your essential starting point for speaking Japanese appropriately in most situations. Always a good choice! 👍</p>
+        </section>
+
+        <section class="section">
+            <h2>🎉 Chapter 7 Summary</h2>
+            <ul class="summary-list">
+                <li>You've learned four vital verbs:
+                    <ul>
+                        <li><span class="jp-word">いく</span> (iku) - to go</li>
+                        <li><span class="jp-word">たべる</span> (taberu) - to eat</li>
+                        <li><span class="jp-word">する</span> (suru) - to do</li>
+                        <li><span class="jp-word">くる</span> (kuru) - to come</li>
+                    </ul>
+                </li>
+                <li>You now know how to conjugate verbs into their polite present/future affirmative form using <span class="jp-word">~ます</span> (~masu).</li>
+                <li>You can also form the polite present/future negative using <span class="jp-word">~ません</span> (~masen).</li>
+                <li>You practiced basic sentences combining these verbs with particles like <span class="jp-word">は</span> (wa), <span class="jp-word">を</span> (o), <span class="jp-word">に</span> (ni), and <span class="jp-word">が</span> (ga).</li>
+            </ul>
+            <p>Great job! Keep practicing these verbs and their conjugations. They are building blocks for so much more. Ganbatte! 💪</p>
+        </section>
+    </div>
+
+    <!-- Simple JS for "Reveal Answer" to show/hide boxes -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.reveal-answer-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.dataset.target;
+                    const answerBox = document.getElementById(targetId);
+                    if (answerBox) {
+                        answerBox.style.display = answerBox.style.display === 'block' ? 'none' : 'block';
+                        this.textContent = answerBox.style.display === 'block' ? 'Hide Answer' : 'Reveal Answer';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

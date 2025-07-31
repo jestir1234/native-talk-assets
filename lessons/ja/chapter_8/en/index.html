@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Adjectives and Description</title>
+    <style>
+        /* Global Reset & Body Styles */
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh; /* Ensure full height for background */
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box; /* Include padding/border in element's total width/height */
+        }
+
+        /* Container for overall lesson content */
+        .lesson-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1; /* Allow content to grow and fill space */
+            box-sizing: border-box;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-weight: 700;
+        }
+
+        h1.chapter-title {
+            font-size: 1.8em; /* Adjusted for mobile readability */
+            text-align: center;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.5em; /* Adjusted for mobile readability */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.2em; /* Adjusted for mobile readability */
+            margin-top: 1.5em;
+            color: #8B5FBF; /* Primary: Purple for sub-headings */
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            font-size: 1em; /* Minimum 16px for body text */
+            margin-bottom: 1em;
+            padding: 0 5px; /* Slight horizontal padding for mobile */
+        }
+
+        ul {
+            list-style-type: none; /* Custom list style */
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        ul li {
+            font-size: 1em;
+            margin-bottom: 0.7em;
+            padding-left: 1.8em;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '👉'; /* Unicode arrow as bullet */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary color */
+        }
+
+        /* Specific Requirement: Lesson Header */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Lesson Sections */
+        .lesson-section {
+            background-color: #ffffff; /* White background for sections */
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Light gray border */
+        }
+
+        /* Example Boxes */
+        .example-box {
+            background-color: #FDF9E5; /* Cream background, for contrast */
+            border: 1px solid #E0E0E0;
+            border-left: 5px solid #8B5FBF; /* Primary color accent */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+
+        .example-box p {
+            margin: 0.5em 0;
+            padding: 0; /* Remove padding from p inside example-box */
+        }
+
+        /* Japanese Text & Pronunciation */
+        .japanese-word {
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue */
+        }
+
+        .kana-romaji {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #666666; /* Medium gray */
+        }
+
+        .translation {
+            font-style: normal;
+            font-size: 0.9em;
+            color: #8B5FBF; /* Primary color for translations */
+            display: block; /* New line for translation */
+            margin-top: 5px;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            cursor: pointer;
+            font-size: 1.3em; /* Larger for touch */
+            margin-left: 8px;
+            vertical-align: middle;
+            color: #8B5FBF; /* Primary color */
+            display: inline-flex; /* Use flexbox for centering text and icon */
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            border-radius: 50%; /* Make it round */
+            background-color: rgba(139, 95, 191, 0.1); /* Light tint for background */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.2);
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Cream background */
+            border: 2px dashed #8B5FBF; /* Primary color dashed border */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .practice-question {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #2C3E50; /* Dark blue */
+            font-weight: 600;
+            padding: 0 5px; /* Consistent padding */
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically by default */
+            align-items: center;
+            width: 100%;
+        }
+
+        .option-button {
+            background-color: #ffffff; /* White background */
+            color: #666666; /* Medium gray text */
+            border: 1px solid #E0E0E0;
+            border-radius: 25px; /* Pill-shaped buttons */
+            padding: 12px 20px;
+            margin: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            width: calc(100% - 16px); /* Full width minus margin */
+            max-width: 320px; /* Max width for buttons */
+            display: block; /* Ensure block level for margin auto */
+            margin-left: auto;
+            margin-right: auto;
+            min-height: 44px; /* Ensure touch target size */
+            transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+            text-align: center;
+        }
+
+        .option-button:hover {
+            background-color: #8B5FBF; /* Primary color */
+            color: #ffffff;
+            border-color: #8B5FBF;
+        }
+
+        .option-button.selected {
+            background-color: #8B5FBF; /* Primary color when selected */
+            color: #ffffff;
+            border-color: #8B5FBF;
+        }
+
+        .check-answer-button {
+            background-color: #8B5FBF; /* Primary color */
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            margin-top: 20px;
+            font-size: 1.1em;
+            cursor: pointer;
+            min-height: 44px; /* Ensure touch target size */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .check-answer-button:hover {
+            background-color: #7a4eb0; /* Slightly darker purple */
+            transform: translateY(-2px);
+        }
+
+        .check-answer-button:active {
+            transform: translateY(0);
+        }
+
+        .feedback-message {
+            margin-top: 20px;
+            font-size: 1em;
+            font-weight: bold;
+            padding: 0 5px; /* Consistent padding */
+        }
+
+        .feedback-message.correct {
+            color: #28a745; /* Green for correct */
+        }
+
+        .feedback-message.incorrect {
+            color: #dc3545; /* Red for incorrect */
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px; /* More space at the bottom */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0;
+        }
+
+        .summary-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .summary-list li {
+            font-size: 1em;
+            margin-bottom: 1em;
+            padding-left: 1.8em;
+            position: relative;
+        }
+
+        .summary-list li::before {
+            content: '✨'; /* Sparkle emoji */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF;
+        }
+
+        .summary-list ul { /* Nested list in summary */
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            padding-left: 1em;
+        }
+
+        .summary-list ul li::before {
+            content: '- '; /* Dash for nested list */
+            color: #666666;
+            font-weight: bold;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 600px) {
+            .options {
+                flex-direction: row; /* Display side-by-side on larger screens */
+                justify-content: center;
+                flex-wrap: wrap; /* Allow wrapping if many options */
+            }
+
+            .option-button {
+                width: auto;
+                min-width: 150px;
+            }
+        }
+
+        /* Accessibility (Semantic HTML already helps) */
+        /* Focus styles for keyboard navigation */
+        button:focus, a:focus, .audio-icon:focus, .option-button:focus, .check-answer-button:focus {
+            outline: 2px solid #8B5FBF;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+
+        <!-- Header Structure Requirement -->
+        <h1 class="chapter-title">Chapter 8: Adjectives and Description</h1>
+        <div class="lesson-header">
+            <!-- The src path is a placeholder as per instructions; actual image handling is external to this HTML -->
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <div class="lesson-section">
+            <h2>Hey there, language explorer! 👋</h2>
+            <p>Ready to make your Japanese descriptions sparkle? In this chapter, we're diving deep into <strong class="japanese-word">adjectives</strong>! Just like in English, adjectives help us talk about qualities – whether something is big, beautiful, quiet, or delicious.</p>
+            <p>Japanese adjectives are super interesting because they come in two main flavors. Let's dig in!</p>
+        </div>
+
+        <div class="lesson-section">
+            <h2>Adjective Showdown: い-adjectives vs. な-adjectives</h2>
+            <p>Japanese categorizes adjectives into two groups. Knowing the difference is key to using them correctly!</p>
+
+            <h3>1. い-adjectives (i-adjectives)</h3>
+            <p>These adjectives <strong class="japanese-word">always end in い (i)</strong>. They are very straightforward!</p>
+            <ul>
+                <li><span class="japanese-word">たかい</span><span class="kana-romaji"> (takai)</span> <span class="audio-icon" data-audio-text="たかい">🔊</span>: expensive / tall</li>
+                <li><span class="japanese-word">おもしろい</span><span class="kana-romaji"> (omoshiroi)</span> <span class="audio-icon" data-audio-text="おもしろい">🔊</span>: interesting / funny</li>
+                <li><span class="japanese-word">おいしい</span><span class="kana-romaji"> (oishii)</span> <span class="audio-icon" data-audio-text="おいしい">🔊</span>: delicious</li>
+                <li><span class="japanese-word">ちいさい</span><span class="kana-romaji"> (chiisai)</span> <span class="audio-icon" data-audio-text="ちいさい">🔊</span>: small</li>
+            </ul>
+
+            <div class="example-box">
+                <p>💡 <span class="japanese-word">たかい</span> can mean both 'expensive' and 'tall'! Context is everything.</p>
+            </div>
+
+            <h3>2. な-adjectives (na-adjectives)</h3>
+            <p>These adjectives <strong class="japanese-word">do NOT end in い</strong> (usually, except for a few rare exceptions like <span class="japanese-word">きれい</span> which acts like a な-adjective despite ending in い!). The "な" is a particle that <strong class="japanese-word">attaches to them when they directly modify a noun</strong>.</p>
+            <ul>
+                <li><span class="japanese-word">しずか</span><span class="kana-romaji"> (shizuka)</span> <span class="audio-icon" data-audio-text="しずか">🔊</span>: quiet</li>
+                <li><span class="japanese-word">きれい</span><span class="kana-romaji"> (kirei)</span> <span class="audio-icon" data-audio-text="きれい">🔊</span>: beautiful / clean</li>
+                <li><span class="japanese-word">げんき</span><span class="kana-romaji"> (genki)</span> <span class="audio-icon" data-audio-text="げんき">🔊</span>: healthy / energetic</li>
+                <li><span class="japanese-word">ゆうめい</span><span class="kana-romaji"> (yūmei)</span> <span class="audio-icon" data-audio-text="ゆうめい">🔊</span>: famous</li>
+            </ul>
+        </div>
+
+        <div class="lesson-section">
+            <h2>Building Sentences with Adjectives</h2>
+            <p>Now, let's put these adjectives into action with some common sentence structures!</p>
+
+            <h3>Using い-adjectives</h3>
+            <p>When an い-adjective describes something and comes at the end of a sentence (acting as a predicate), you just add <strong class="japanese-word">です (desu)</strong>.</p>
+            <div class="example-box">
+                <p><span class="japanese-word">この みせは たかいです。</span><span class="audio-icon" data-audio-text="この みせは たかいです。">🔊</span></p>
+                <p class="translation">Kono mise wa takai desu.</p>
+                <p class="translation">This shop is expensive.</p>
+            </div>
+            <div class="example-box">
+                <p><span class="japanese-word">この ほんは おもしろいです。</span><span class="audio-icon" data-audio-text="この ほんは おもしろいです。">🔊</span></p>
+                <p class="translation">Kono hon wa omoshiroi desu.</p>
+                <p class="translation">This book is interesting.</p>
+            </div>
+            <p>When an い-adjective modifies a noun directly, it just goes right before the noun!</p>
+            <div class="example-box">
+                <p><span class="japanese-word">たかい みせ</span><span class="audio-icon" data-audio-text="たかい みせ">🔊</span>: an expensive shop</p>
+                <p><span class="japanese-word">おいしい たべもの</span><span class="audio-icon" data-audio-text="おいしい たべもの">🔊</span>: delicious food</p>
+            </div>
+
+            <h3>Using な-adjectives</h3>
+            <p>This is where the "な" comes into play! If a な-adjective is describing a noun that follows it, you <strong class="japanese-word">MUST add な (na)</strong> between the adjective stem and the noun.</p>
+            <div class="example-box">
+                <p><span class="japanese-word">しずかな まちです。</span><span class="audio-icon" data-audio-text="しずかな まちです。">🔊</span></p>
+                <p class="translation">Shizuka na machi desu.</p>
+                <p class="translation">It's a quiet town.</p>
+                <p class="translation"><em>(Literally: "quiet 'na' town is")</em></p>
+            </div>
+            <div class="example-box">
+                <p><span class="japanese-word">きれいな へやです。</span><span class="audio-icon" data-audio-text="きれいな へやです。">🔊</span></p>
+                <p class="translation">Kirei na heya desu.</p>
+                <p class="translation">It's a clean room.</p>
+            </div>
+            <p>However, if a な-adjective comes at the end of a sentence (acting as a predicate), you <strong class="japanese-word">DO NOT use な</strong>. Just add <strong class="japanese-word">です (desu)</strong>, similar to い-adjectives.</p>
+            <div class="example-box">
+                <p><span class="japanese-word">この まちは しずかです。</span><span class="audio-icon" data-audio-text="この まちは しずかです。">🔊</span></p>
+                <p class="translation">Kono machi wa shizuka desu.</p>
+                <p class="translation">This town is quiet.</p>
+            </div>
+            <div class="example-box">
+                <p><span class="japanese-word">この へやは きれいです。</span><span class="audio-icon" data-audio-text="この へやは きれいです。">🔊</span></p>
+                <p class="translation">Kono heya wa kirei desu.</p>
+                <p class="translation">This room is clean.</p>
+            </div>
+            <p>🤔 Tricky, right? Remember: <strong class="japanese-word">な</strong> is a bridge to a noun. If there's no noun right after, no bridge needed!</p>
+        </div>
+
+        <div class="practice-section">
+            <h2>📝 Practice Time! Adjective Types</h2>
+            <p class="practice-question">Is <span class="japanese-word">げんき</span> (genki) an い-adjective or a な-adjective?</p>
+            <div class="options" role="radiogroup" aria-labelledby="question1">
+                <button class="option-button" data-answer="na-adjective" role="radio" aria-checked="false">な-adjective</button>
+                <button class="option-button" data-answer="i-adjective" role="radio" aria-checked="false">い-adjective</button>
+            </div>
+            <div class="feedback-message" aria-live="polite"></div>
+            <button class="check-answer-button" data-correct-answer="na-adjective">Check Answer</button>
+        </div>
+
+        <div class="lesson-section">
+            <h2>Connecting Adjectives: Say More!</h2>
+            <p>What if you want to say something is "big <strong class="japanese-word">and</strong> expensive" or "quiet <strong class="japanese-word">and</strong> beautiful"? Japanese has special ways to connect adjectives!</p>
+
+            <h3>Connecting い-adjectives (～くて)</h3>
+            <p>To connect two or more い-adjectives, change the final <strong class="japanese-word">い</strong> to <strong class="japanese-word">くて (kute)</strong> for all but the last adjective.</p>
+            <p><strong>Formula:</strong> <span class="japanese-word">[い-adjective (remove い) + くて]</span>, <span class="japanese-word">[second い-adjective] です。</span></p>
+            <div class="example-box">
+                <p><span class="japanese-word">この みせは たかくて、おおきいです。</span><span class="audio-icon" data-audio-text="この みせは たかくて、おおきいです。">🔊</span></p>
+                <p class="translation">Kono mise wa takakute, ookii desu.</p>
+                <p class="translation">This shop is expensive and big.</p>
+            </div>
+            <div class="example-box">
+                <p><span class="japanese-word">この えいがは おもしろくて、ながいです。</span><span class="audio-icon" data-audio-text="この えいがは おもしろくて、ながいです。">🔊</span></p>
+                <p class="translation">Kono eiga wa omoshirokute, nagai desu.</p>
+                <p class="translation">This movie is interesting and long.</p>
+            </div>
+
+            <h3>Connecting な-adjectives (～で)</h3>
+            <p>To connect two or more な-adjectives, add <strong class="japanese-word">で (de)</strong> after the first な-adjective.</p>
+            <p><strong>Formula:</strong> <span class="japanese-word">[な-adjective + で]</span>, <span class="japanese-word">[second な-adjective (or な + noun if modifying)] です。</span></p>
+            <div class="example-box">
+                <p><span class="japanese-word">この まちは しずかで、きれいです。</span><span class="audio-icon" data-audio-text="この まちは しずかで、きれいです。">🔊</span></p>
+                <p class="translation">Kono machi wa shizukade, kirei desu.</p>
+                <p class="translation">This town is quiet and clean.</p>
+            </div>
+            <div class="example-box">
+                <p><span class="japanese-word">かれは げんきで、ゆうめいです。</span><span class="audio-icon" data-audio-text="かれは げんきで、ゆうめいです。">🔊</span></p>
+                <p class="translation">Kare wa genki de, yūmei desu.</p>
+                <p class="translation">He is energetic and famous.</p>
+            </div>
+            <p>You can also connect a な-adjective modifying a noun:</p>
+            <div class="example-box">
+                <p><span class="japanese-word">しずかで、きれいな まちです。</span><span class="audio-icon" data-audio-text="しずかで、きれいな まちです。">🔊</span></p>
+                <p class="translation">Shizukade, kirei na machi desu.</p>
+                <p class="translation">It's a quiet and beautiful town.</p>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <h2>📝 Practice Time! Connecting Adjectives</h2>
+            <p class="practice-question">How would you say "This restaurant is delicious and cheap" in Japanese?</p>
+            <p>(Hint: <span class="japanese-word">おいしい</span> (oishii - delicious, い-adjective), <span class="japanese-word">やすい</span> (yasui - cheap, い-adjective))</p>
+            <div class="options" role="radiogroup" aria-labelledby="question2">
+                <button class="option-button" data-answer="option1" role="radio" aria-checked="false">この レストランは おいしで、やすいです。</button>
+                <button class="option-button" data-answer="option2" role="radio" aria-checked="false">この レストランは おいしくて、やすいです。</button>
+                <button class="option-button" data-answer="option3" role="radio" aria-checked="false">この レストランは おいしな、やすいです。</button>
+            </div>
+            <div class="feedback-message" aria-live="polite"></div>
+            <button class="check-answer-button" data-correct-answer="option2">Check Answer</button>
+        </div>
+
+        <div class="lesson-section">
+            <h2>🌍 Cultural Note: Adjectives in Everyday Life</h2>
+            <p>Adjectives are everywhere in Japanese conversation! One you'll hear constantly is <span class="japanese-word">かわいい (kawaii)</span><span class="kana-romaji"> (cute)</span> <span class="audio-icon" data-audio-text="かわいい">🔊</span>. It's used for everything from babies and pets to fashion, food, and even stationery!</p>
+            <p>Japanese people often use adjectives to share their feelings about things, making conversations very expressive. Don't be shy to use them!</p>
+        </div>
+
+        <div class="summary-section">
+            <h2>Chapter Summary ✨</h2>
+            <p>Phew! You've learned a lot about Japanese adjectives. Here's a quick recap:</p>
+            <ul class="summary-list">
+                <li><strong>い-adjectives:</strong> End in <span class="japanese-word">い</span>.
+                    <ul>
+                        <li>Predicate: <span class="japanese-word">[い-adjective] です。</span> (e.g., <span class="japanese-word">たかいです。</span>)</li>
+                        <li>Modifying noun: <span class="japanese-word">[い-adjective] [Noun]</span> (e.g., <span class="japanese-word">たかい みせ</span>)</li>
+                        <li>Connecting: Change <span class="japanese-word">い</span> to <span class="japanese-word">くて</span> (e.g., <span class="japanese-word">たかくて、おおきいです。</span>)</li>
+                    </ul>
+                </li>
+                <li><strong>な-adjectives:</strong> Do not end in <span class="japanese-word">い</span> (mostly).
+                    <ul>
+                        <li>Predicate: <span class="japanese-word">[な-adjective] です。</span> (e.g., <span class="japanese-word">しずかです。</span>)</li>
+                        <li>Modifying noun: <span class="japanese-word">[な-adjective] な [Noun]</span> (e.g., <span class="japanese-word">しずかな まち</span>)</li>
+                        <li>Connecting: Add <span class="japanese-word">で</span> (e.g., <span class="japanese-word">しずかで、きれいです。</span>)</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Great job! Keep practicing these forms, and you'll be describing the world in Japanese like a pro! 🌟</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Simple client-side interaction for practice sections
+        // This script simulates basic interactivity for the buttons.
+        // The actual audio playback will be handled by the mobile frontend framework (e.g., React Native TTS)
+        // by detecting elements with class="audio-icon" and data-audio-text attribute.
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const practiceSections = document.querySelectorAll('.practice-section');
+
+            practiceSections.forEach(section => {
+                const options = section.querySelectorAll('.option-button');
+                const checkButton = section.querySelector('.check-answer-button');
+                const feedbackMessage = section.querySelector('.feedback-message');
+                let selectedOption = null;
+
+                options.forEach(option => {
+                    option.addEventListener('click', () => {
+                        // Deselect any previously selected option
+                        options.forEach(opt => {
+                            opt.classList.remove('selected');
+                            opt.setAttribute('aria-checked', 'false'); // Accessibility
+                        });
+                        // Select the clicked option
+                        option.classList.add('selected');
+                        option.setAttribute('aria-checked', 'true'); // Accessibility
+                        selectedOption = option.dataset.answer;
+                        feedbackMessage.textContent = ''; // Clear feedback on new selection
+                        feedbackMessage.classList.remove('correct', 'incorrect');
+                        feedbackMessage.style.color = ''; // Reset color
+                    });
+                });
+
+                checkButton.addEventListener('click', () => {
+                    if (selectedOption) {
+                        const correctAnswer = checkButton.dataset.correctAnswer;
+                        if (selectedOption === correctAnswer) {
+                            feedbackMessage.textContent = 'Correct! 🎉 Well done!';
+                            feedbackMessage.classList.remove('incorrect');
+                            feedbackMessage.classList.add('correct');
+                        } else {
+                            feedbackMessage.textContent = 'Oops! Try again. 🤔';
+                            feedbackMessage.classList.remove('correct');
+                            feedbackMessage.classList.add('incorrect');
+                        }
+                    } else {
+                        feedbackMessage.textContent = 'Please select an option first!';
+                        feedbackMessage.classList.remove('correct', 'incorrect');
+                        feedbackMessage.style.color = '#666666'; // Default color for instruction
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

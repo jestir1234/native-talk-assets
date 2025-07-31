@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Daily Life Vocabulary & Polite Requests</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            -webkit-text-size-adjust: 100%; /* Prevent text scaling on iOS */
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.6em; /* ~25.6px */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            text-align: left;
+        }
+
+        h3 {
+            font-size: 1.3em; /* ~20.8px */
+            margin-top: 1.2em;
+            margin-bottom: 0.6em;
+            color: #8B5FBF; /* Primary: Purple for accents */
+            text-align: left;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1em;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px solid #E0E0E0; /* Borders: Light gray */
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Distribute items */
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        /* General Spacing */
+        section {
+            padding: 20px 0;
+        }
+
+        /* Specific Component Styles */
+        .chapter-title {
+            margin-top: 20px;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Placeholder for image - as per instructions, will use the given src */
+            background-color: #8B5FBF; /* To visually simulate header if image fails */
+            color: white;
+            padding: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Concept Box for Grammar/Key Points */
+        .concept-box {
+            background-color: rgba(139, 95, 191, 0.1); /* Primary color, slightly transparent */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .concept-box strong {
+            color: #2C3E50; /* Dark blue for emphasized text in concept box */
+        }
+
+        /* Example Sentences */
+        .example {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .example .japanese-text {
+            font-size: 1.1em;
+            color: #2C3E50; /* Dark blue for Japanese text */
+            margin-bottom: 5px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .example .english-translation {
+            font-style: italic;
+            color: #666666; /* Medium gray for English translation */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            color: #8B5FBF; /* Primary: Purple */
+            font-size: 1.8em; /* Large enough for touch */
+            cursor: pointer;
+            padding: 0px 5px; /* Adjust padding to make it larger if needed */
+            min-width: 44px; /* Ensure touch target is large enough */
+            min-height: 44px; /* Ensure touch target is large enough */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; /* Make it round */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-sizing: border-box; /* Crucial for padding/min-width to work as expected */
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light hover effect */
+            transform: scale(1.05); /* Slight growth on hover */
+        }
+
+        /* Vocabulary Item Layout */
+        .vocabulary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow content to wrap on small screens */
+            padding: 10px 0;
+            border-bottom: 1px dashed #E0E0E0;
+        }
+        .vocabulary-item:last-child {
+            border-bottom: none;
+        }
+        .vocabulary-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-grow: 1; /* Allow info to take up available space */
+            margin-right: 10px; /* Space between info and audio icon */
+        }
+        .vocabulary-japanese {
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue */
+            font-size: 1.1em;
+            display: flex; /* For inline audio icon */
+            align-items: center;
+        }
+        .vocabulary-english {
+            color: #666666; /* Medium gray */
+            font-style: italic;
+            font-size: 0.95em;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #FDF9E5; /* Cream background */
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .practice-question {
+            background-color: #ffffff;
+            border: 1px solid #E0E0E0;
+            padding: 15px;
+            margin: 15px auto;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .practice-question p {
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+
+        .hint {
+            font-size: 0.9em;
+            color: #8B5FBF;
+            margin-top: 10px;
+        }
+
+        /* Summary Section */
+        .summary-box {
+            background-color: rgba(139, 95, 191, 0.05); /* Very light primary */
+            border: 1px solid #8B5FBF; /* Primary: Purple */
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .summary-box ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .summary-box li {
+            border-bottom: none;
+            padding: 5px 0;
+            line-height: 1.4;
+        }
+
+        /* Cultural Note */
+        .note {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-left: 4px solid #8B5FBF; /* Primary: Purple */
+            padding: 10px;
+            margin: 20px 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0; /* Rounded on the right */
+        }
+
+        .note p {
+            margin: 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            h3 {
+                font-size: 1.1em;
+            }
+
+            .vocabulary-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .vocabulary-info {
+                margin-right: 0;
+                margin-bottom: 5px; /* Space between info and audio icon when stacked */
+            }
+            .audio-icon {
+                align-self: flex-end; /* Align audio icon to the right when stacked */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 9: Daily Life Vocabulary & Polite Requests</h1>
+        <div class="lesson-header">
+            <!-- As per instructions, including the specific img tag structure.
+                 Note: This img src will likely not load a real image in a browser,
+                 but it adheres to the strict requirement. A background color
+                 and text are added via CSS to provide a visual fallback. -->
+            <img src="../header.webp" alt="Chapter 9 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>Konnichiwa! こんにちは! 👋</h2>
+            <p>Welcome to Chapter 9! In this lesson, we're diving into essential vocabulary you'll use every day in Japan, from ordering food to talking about your commute. Plus, we'll master two crucial phrases for making polite requests. Get ready to make yourself understood!</p>
+        </section>
+
+        <section>
+            <h2>Daily Life Vocabulary 🗓️</h2>
+            <p>Let's build your word bank for common situations. Pay attention to the pronunciation!</p>
+
+            <h3>Food & Drink (食べ物・飲み物) 🍎☕</h3>
+            <ul>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">水 (みず)</span>
+                        <span class="vocabulary-english">mizu - water</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="水">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">コーヒー</span>
+                        <span class="vocabulary-english">kōhī - coffee</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="コーヒー">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">お茶 (おちゃ)</span>
+                        <span class="vocabulary-english">ocha - tea</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="お茶">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">ごはん</span>
+                        <span class="vocabulary-english">gohan - cooked rice / meal</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="ごはん">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">パン</span>
+                        <span class="vocabulary-english">pan - bread</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="パン">🔊</button>
+                </li>
+            </ul>
+
+            <h3>Places (場所) 📍</h3>
+            <ul>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">駅 (えき)</span>
+                        <span class="vocabulary-english">eki - train station</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="駅">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">スーパー</span>
+                        <span class="vocabulary-english">sūpā - supermarket</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="スーパー">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">銀行 (ぎんこう)</span>
+                        <span class="vocabulary-english">ginkō - bank</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="銀行">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">レストラン</span>
+                        <span class="vocabulary-english">resutoran - restaurant</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="レストラン">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">学校 (がっこう)</span>
+                        <span class="vocabulary-english">gakkō - school</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="学校">🔊</button>
+                </li>
+            </ul>
+
+            <h3>Transport (交通) 🚌🚆</h3>
+            <ul>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">電車 (でんしゃ)</span>
+                        <span class="vocabulary-english">densha - train</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="電車">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">バス</span>
+                        <span class="vocabulary-english">basu - bus</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="バス">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">タクシー</span>
+                        <span class="vocabulary-english">takushī - taxi</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="タクシー">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">自転車 (じてんしゃ)</span>
+                        <span class="vocabulary-english">jitensha - bicycle</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="自転車">🔊</button>
+                </li>
+            </ul>
+
+            <h3>Daily Routine (日課) ⏰</h3>
+            <ul>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">起きる (おきる)</span>
+                        <span class="vocabulary-english">okiru - to wake up / get up (verb)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="起きる">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">食べる (たべる)</span>
+                        <span class="vocabulary-english">taberu - to eat (verb)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="食べる">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">飲む (のむ)</span>
+                        <span class="vocabulary-english">nomu - to drink (verb)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="飲む">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">行く (いく)</span>
+                        <span class="vocabulary-english">iku - to go (verb)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="行く">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-japanese">寝る (ねる)</span>
+                        <span class="vocabulary-english">neru - to sleep / go to bed (verb)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="寝る">🔊</button>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Making Requests: Polite Phrases 🙏</h2>
+            <p>Now that you have some vocabulary, let's learn how to ask for things politely. These two phrases are essential for daily interactions.</p>
+
+            <h3>1. ～ください (kudasai) - "Please give me..."</h3>
+            <div class="concept-box">
+                <p>Use <strong>～ください (kudasai)</strong> when you want to directly ask for an object. It literally means "please give me..." or "please do... (for me)".</p>
+                <p><strong>Structure:</strong> Noun + を (o) + ください (kudasai)。</p>
+                <p>The particle <strong>を (o)</strong> marks the direct object of the verb.</p>
+            </div>
+
+            <div class="example">
+                <span class="japanese-text">
+                    水<span class="audio-icon" data-audio-text="水">🔊</span> を<span class="audio-icon" data-audio-text="を">🔊</span> ください<span class="audio-icon" data-audio-text="ください">🔊</span>。
+                </span>
+                <span class="english-translation">Mizu o kudasai. - Please give me water.</span>
+            </div>
+            <div class="example">
+                <span class="japanese-text">
+                    パン<span class="audio-icon" data-audio-text="パン">🔊</span> を<span class="audio-icon" data-audio-text="を">🔊</span> ください<span class="audio-icon" data-audio-text="ください">🔊</span>。
+                </span>
+                <span class="english-translation">Pan o kudasai. - Please give me bread.</span>
+            </div>
+
+            <div class="note">
+                <p><strong>Cultural Note:</strong> While "kudasai" is polite, it's a direct request. In many situations, especially in shops or restaurants, the next phrase, "onegai shimasu," might sound even softer and more common.</p>
+            </div>
+
+            <h3>2. ～をお願いします (o onegai shimasu) - "I'd like..." / "Please..."</h3>
+            <div class="concept-box">
+                <p><strong>～をお願いします (o onegai shimasu)</strong> is a very versatile and polite way to make a request, often translated as "I'd like..." or "Please (give me)...". It's commonly used when ordering food, asking for a service, or making a gentle request.</p>
+                <p><strong>Structure:</strong> Noun + を (o) + お願いします (onegai shimasu)。</p>
+                <p>This phrase conveys a sense of "I ask for your favor regarding this item."</p>
+            </div>
+
+            <div class="example">
+                <span class="japanese-text">
+                    コーヒー<span class="audio-icon" data-audio-text="コーヒー">🔊</span> を<span class="audio-icon" data-audio-text="を">🔊</span> ひとつ<span class="audio-icon" data-audio-text="ひとつ">🔊</span> お願いします<span class="audio-icon" data-audio-text="お願いします">🔊</span>。
+                </span>
+                <span class="english-translation">Kōhī o hitotsu onegai shimasu. - One coffee, please. (Literally: "Regarding coffee, one, I ask for your favor.")</span>
+                <span class="hint">"ひとつ (hitotsu)" means "one (thing)". Counters will be covered in more detail later, but it's good to know for ordering.</span>
+            </div>
+            <div class="example">
+                <span class="japanese-text">
+                    お茶<span class="audio-icon" data-audio-text="お茶">🔊</span> を<span class="audio-icon" data-audio-text="を">🔊</span> お願いします<span class="audio-icon" data-audio-text="お願いします">🔊</span>。
+                </span>
+                <span class="english-translation">Ocha o onegai shimasu. - Tea, please. / I'd like tea.</span>
+            </div>
+            <div class="example">
+                <span class="japanese-text">
+                    タクシー<span class="audio-icon" data-audio-text="タクシー">🔊</span> を<span class="audio-icon" data-audio-text="を">🔊</span> お願いします<span class="audio-icon" data-audio-text="お願いします">🔊</span>。
+                </span>
+                <span class="english-translation">Takushī o onegai shimasu. - A taxi, please. / I'd like a taxi.</span>
+            </div>
+
+            <div class="note">
+                <p><strong>Usage Tip:</strong> When ordering at a restaurant or shop, "onegai shimasu" is generally preferred as it sounds very polite and natural. "Kudasai" is also correct but can sometimes feel a bit more direct or even demanding depending on context and tone.</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>Practice Time! 🧠</h2>
+            <p>Ready to try it out? Think of how you'd say these in Japanese using the phrases you just learned. Tap the "🔊" to hear the pronunciation after you've thought of your answer!</p>
+
+            <div class="practice-question">
+                <p>1. You're thirsty. How do you politely ask for water?</p>
+                <p class="hint">Hint: Use "onegai shimasu".</p>
+                <div class="example">
+                    <span class="japanese-text">
+                        水<span class="audio-icon" data-audio-text="水">🔊</span> を<span class="audio-icon" data-audio-text="を">🔊</span> お願いします<span class="audio-icon" data-audio-text="お願いします">🔊</span>。
+                    </span>
+                    <span class="english-translation">Mizu o onegai shimasu. - Water, please.</span>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p>2. You want the waiter to bring you coffee. How would you say "Please give me coffee."?</p>
+                <p class="hint">Hint: Use "kudasai".</p>
+                <div class="example">
+                    <span class="japanese-text">
+                        コーヒー<span class="audio-icon" data-audio-text="コーヒー">🔊</span> を<span class="audio-icon" data-audio-text="を">🔊</span> ください<span class="audio-icon" data-audio-text="ください">🔊</span>。
+                    </span>
+                    <span class="english-translation">Kōhī o kudasai. - Please give me coffee.</span>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p>3. You need to catch a taxi. What do you tell the person helping you?</p>
+                <p class="hint">Hint: "Taxi, please."</p>
+                <div class="example">
+                    <span class="japanese-text">
+                        タクシー<span class="audio-icon" data-audio-text="タクシー">🔊</span> を<span class="audio-icon" data-audio-text="を">🔊</span> お願いします<span class="audio-icon" data-audio-text="お願いします">🔊</span>。
+                    </span>
+                    <span class="english-translation">Takushī o onegai shimasu. - A taxi, please.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-box">
+            <h2>Chapter Summary ✨</h2>
+            <p>You've made great progress in Chapter 9! Here's a quick recap of what we covered:</p>
+            <ul>
+                <li><strong>Daily Life Vocabulary:</strong> Learned essential words for food & drink (水, コーヒー, お茶, ごはん, パン), places (駅, スーパー, 銀行, レストラン, 学校), transport (電車, バス, タクシー, 自転車), and daily routines (起きる, 食べる, 飲む, 行く, 寝る).</li>
+                <li><strong>Making Requests with ～ください:</strong> Used for direct requests like "Please give me..." (e.g., 水をください - Please give me water).</li>
+                <li><strong>Making Requests with ～をお願いします:</strong> A very polite and common way to say "I'd like..." or "Please..." (e.g., コーヒーをお願いします - Coffee, please. / I'd like coffee).</li>
+                <li><strong>Cultural Nuance:</strong> Understood that while both are polite, "onegai shimasu" is often preferred in service settings for a softer tone.</li>
+            </ul>
+            <p>Keep practicing these words and phrases in your mind! The more you use them, the more natural they'll feel.</p>
+        </section>
+
+    </div>
+</body>
+</html>

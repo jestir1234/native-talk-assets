@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-31T05:04:29.129Z",
+  "lastUpdated": "2025-07-31T05:23:43.095Z",
   "totalLanguages": 4,
   "totalChapters": 40,
-  "totalAvailableChapters": 13,
+  "totalAvailableChapters": 20,
   "totalTargetLanguages": 2,
   "languages": {
     "en": {
@@ -11,7 +11,7 @@
       "name": "English",
       "flag": "🇺🇸",
       "totalChapters": 10,
-      "availableChapters": 8,
+      "availableChapters": 10,
       "availableTargetLanguages": [
         "ja"
       ],
@@ -182,8 +182,10 @@
               "天気に関連する活動"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "ja"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 10,
@@ -199,8 +201,10 @@
               "約束やスケジュールの立て方"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "ja"
+          ],
+          "totalLanguages": 1
         }
       ]
     },
@@ -209,7 +213,7 @@
       "name": "Japanese",
       "flag": "🇯🇵",
       "totalChapters": 10,
-      "availableChapters": 3,
+      "availableChapters": 7,
       "availableTargetLanguages": [
         "en"
       ],
@@ -333,8 +337,10 @@
               "パンをたべません。"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 8,
@@ -350,8 +356,10 @@
               "しずかな まちです。"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 9,
@@ -367,8 +375,10 @@
               "コーヒーをいっつつ おねがいします。"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 10,
@@ -384,8 +394,10 @@
               "Reflection: You've come a long way!"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         }
       ]
     },
@@ -394,7 +406,7 @@
       "name": "Korean",
       "flag": "🇰🇷",
       "totalChapters": 10,
-      "availableChapters": 1,
+      "availableChapters": 2,
       "availableTargetLanguages": [
         "en",
         "ja"
@@ -450,8 +462,11 @@
               "基本的な丁寧な表現"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en",
+            "ja"
+          ],
+          "totalLanguages": 2
         },
         {
           "number": 3,
@@ -911,12 +926,37 @@
           }
         },
         {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 9,
+          "chapterTitle": {
+            "ja": "天気と季節"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 10,
+          "chapterTitle": {
+            "ja": "時間とスケジュール"
+          }
+        },
+        {
           "languageLearn": "ko",
           "languageLearnName": "Korean",
           "chapterNumber": 1,
           "chapterTitle": {
             "en": "한글 (Hangul) - The Korean Alphabet",
             "ja": "한글（ハングル）- 韓国語のアルファベット"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 2,
+          "chapterTitle": {
+            "en": "Basic Greetings and Introductions",
+            "ja": "基本的な挨拶と自己紹介"
           }
         }
       ]
@@ -951,12 +991,53 @@
           }
         },
         {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 7,
+          "chapterTitle": {
+            "en": "Essential Verbs & Conjugation Basics"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 8,
+          "chapterTitle": {
+            "en": "Adjectives and Description"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 9,
+          "chapterTitle": {
+            "en": "Daily Life Vocabulary & Polite Requests"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 10,
+          "chapterTitle": {
+            "en": "Your First Japanese Paragraph"
+          }
+        },
+        {
           "languageLearn": "ko",
           "languageLearnName": "Korean",
           "chapterNumber": 1,
           "chapterTitle": {
             "en": "한글 (Hangul) - The Korean Alphabet",
             "ja": "한글（ハングル）- 韓国語のアルファベット"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 2,
+          "chapterTitle": {
+            "en": "Basic Greetings and Introductions",
+            "ja": "基本的な挨拶と自己紹介"
           }
         },
         {

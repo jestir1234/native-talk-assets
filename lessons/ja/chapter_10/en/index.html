@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Your First Japanese Paragraph</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling on orientation change */
+        }
+
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue - for headings */
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 1.8em; /* Adjusted for mobile readability */
+            margin-top: 1.2em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5em; /* Adjusted for mobile readability */
+            margin-top: 1.5em;
+            border-bottom: 2px solid #E0E0E0; /* Light gray border */
+            padding-bottom: 0.5em;
+        }
+
+        h3 {
+            font-size: 1.2em; /* Adjusted for mobile readability */
+            margin-top: 1.2em;
+        }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 1em; /* Minimum 16px for body text */
+        }
+
+        section {
+            padding: 20px;
+            margin-bottom: 15px;
+            background-color: #FFFFFF; /* White background for sections */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        ul li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #E0E0E0; /* Light gray border */
+            font-size: 1em;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        strong {
+            color: #2C3E50; /* Dark blue for emphasis */
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Specific Component Styles */
+        .chapter-title {
+            margin-top: 20px;
+            margin-bottom: 0;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .example-box {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple accent */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+
+        .example-box p {
+            margin: 0.5em 0;
+        }
+
+        .japanese-text {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue */
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-left: 5px;
+        }
+
+        .translation {
+            font-style: italic;
+            color: #666666; /* Medium gray */
+            margin-top: 5px;
+        }
+
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Make it circular */
+            width: 44px; /* Minimum 44px for easy tapping */
+            height: 44px; /* Minimum 44px for easy tapping */
+            font-size: 1.2em;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            vertical-align: middle;
+            margin-left: 8px;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #7242A6; /* Darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #E0E0E0;
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF; /* Primary: Purple */
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        .practice-item {
+            background-color: #FFFFFF;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-item p {
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        .fill-in-the-blank {
+            display: block;
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+            color: #2C3E50;
+        }
+
+        .hint {
+            font-size: 0.9em;
+            color: #8B5FBF;
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* Reflection Section */
+        .reflection-section {
+            text-align: center;
+            padding: 25px;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .reflection-section h2 {
+            color: white;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            font-size: 1.6em;
+        }
+
+        .reflection-section p {
+            color: white;
+            font-size: 1.1em;
+            margin-bottom: 0;
+        }
+
+        /* Utility Classes */
+        .flex-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .flex-container .japanese-text {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="chapter-title">Chapter 10: Your First Japanese Paragraph</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+    </div>
+
+    <section>
+        <h2>🌟 Welcome to Paragraph Power!</h2>
+        <p>Hey there, language adventurer! 👋 You've made it to Chapter 10, and trust us, this is a big one. For weeks, you've been learning individual words, perfecting particles, and mastering verb conjugations.</p>
+        <p>Today, we're putting it all together! You're going to write your very first Japanese paragraph. How cool is that?! 😎</p>
+        <p>It's time to tell a mini-story about your day or your family using all the amazing Japanese you've learned so far.</p>
+    </section>
+
+    <section>
+        <h2>🔗 Connecting Ideas: The て-form Review</h2>
+        <p>To write a paragraph, we need to connect sentences smoothly. Remember the <strong>て-form</strong>? It's your best friend for listing actions in a sequence!</p>
+        <div class="example-box">
+            <p><span class="japanese-text">あさごはんをたべます。</span><span class="pronunciation">[Asagohan o tabemasu.]</span><br><span class="translation">I eat breakfast.</span></p>
+            <p><span class="japanese-text">がっこうにいきます。</span><span class="pronunciation">[Gakkou ni ikimasu.]</span><br><span class="translation">I go to school.</span></p>
+            <p>➡️ Combine them:</p>
+            <div class="flex-container">
+                <span class="japanese-text">あさごはんをたべて、</span>
+                <button class="audio-icon" data-audio-text="あさごはんをたべて">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Asagohan o tabete,]</span><br><span class="translation">Eating breakfast, (and then)...</span></p>
+            <div class="flex-container">
+                <span class="japanese-text">がっこうにいきます。</span>
+                <button class="audio-icon" data-audio-text="がっこうにいきます">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Gakkou ni ikimasu.]</span><br><span class="translation">I eat breakfast and go to school.</span></p>
+        </div>
+        <p>The comma (、) after the て-form shows that the action continues or leads to the next one. You can chain multiple て-forms before ending with a politeness marker like ます/です.</p>
+    </section>
+
+    <section>
+        <h2>✍️ Building Your Routine Paragraph</h2>
+        <p>Let's start by describing a typical day. Think about your morning routine!</p>
+
+        <h3>Step 1: Start with "I" and "Every Day"</h3>
+        <p>Who is doing the action? You! And when does it happen? Every day!</p>
+        <div class="example-box">
+            <div class="flex-container">
+                <span class="japanese-text">わたしは まいにち ６じに おきます。</span>
+                <button class="audio-icon" data-audio-text="わたしは まいにち ６じに おきます">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Watashi wa mainichi roku-ji ni okimasu.]</span><br><span class="translation">I wake up at 6 o'clock every day.</span></p>
+            <p>Remember: <strong>
+                <span class="japanese-text">まいにち</span>
+                <span class="pronunciation">[mainichi]</span>
+                (every day)</strong> and <strong>
+                <span class="japanese-text">～じに</span>
+                <span class="pronunciation">[-ji ni]</span>
+                (at ~ o'clock)</strong>.</p>
+        </div>
+
+        <h3>Step 2: Add Your Morning Actions (using て-form)</h3>
+        <p>What do you do right after waking up? Let's add eating breakfast and going to school!</p>
+        <div class="example-box">
+            <div class="flex-container">
+                <span class="japanese-text">あさごはんをたべて、</span>
+                <button class="audio-icon" data-audio-text="あさごはんをたべて">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Asagohan o tabete,]</span><br><span class="translation">eating breakfast,</span></p>
+            <div class="flex-container">
+                <span class="japanese-text">がっこうにいきます。</span>
+                <button class="audio-icon" data-audio-text="がっこうにいきます">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Gakkou ni ikimasu.]</span><br><span class="translation">I go to school.</span></p>
+            <p><strong>Combined:</strong></p>
+            <div class="flex-container">
+                <span class="japanese-text">わたしは まいにち ６じに おきて、あさごはんをたべて、がっこうにいきます。</span>
+                <button class="audio-icon" data-audio-text="わたしは まいにち ６じに おきて、あさごはんをたべて、がっこうにいきます">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Watashi wa mainichi roku-ji ni okite, asagohan o tabete, gakkou ni ikimasu.]</span><br><span class="translation">I wake up at 6 every day, eat breakfast, and go to school.</span></p>
+        </div>
+        <p>See how the て-form of <strong>
+            <span class="japanese-text">おきます</span>
+            <span class="pronunciation">[okimasu]</span>
+            (to wake up)</strong> is <strong>
+            <span class="japanese-text">おきて</span>
+            <span class="pronunciation">[okite]</span>
+            </strong>?</p>
+
+        <h3>Step 3: Continue Your Day</h3>
+        <p>What happens next? Maybe you study, then go home, eat dinner, and sleep!</p>
+        <div class="example-box">
+            <div class="flex-container">
+                <span class="japanese-text">がっこうでべんきょうして、</span>
+                <button class="audio-icon" data-audio-text="がっこうでべんきょうして">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Gakkou de benkyou shite,]</span><br><span class="translation">at school, I study,</span></p>
+            <div class="flex-container">
+                <span class="japanese-text">うちにかえります。</span>
+                <button class="audio-icon" data-audio-text="うちにかえります">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Uchi ni kaerimasu.]</span><br><span class="translation">and return home.</span></p>
+            <div class="flex-container">
+                <span class="japanese-text">よるごはんをたべて、ねます。</span>
+                <button class="audio-icon" data-audio-text="よるごはんをたべて、ねます">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Yorugohan o tabete, nemasu.]</span><br><span class="translation">I eat dinner and sleep.</span></p>
+        </div>
+
+        <h3>Putting It All Together: Your First Paragraph!</h3>
+        <p>Here's a full example of a daily routine paragraph:</p>
+        <div class="example-box">
+            <div class="flex-container">
+                <span class="japanese-text">わたしは まいにち ６じに おきて、あさごはんをたべて、がっこうにいきます。</span>
+                <button class="audio-icon" data-audio-text="わたしは まいにち ６じに おきて、あさごはんをたべて、がっこうにいきます">🔊</button>
+            </div>
+            <div class="flex-container">
+                <span class="japanese-text">がっこうで べんきょうして、うちにかえります。</span>
+                <button class="audio-icon" data-audio-text="がっこうで べんきょうして、うちにかえります">🔊</button>
+            </div>
+            <div class="flex-container">
+                <span class="japanese-text">よるごはんをたべて、ねます。</span>
+                <button class="audio-icon" data-audio-text="よるごはんをたべて、ねます">🔊</button>
+            </div>
+            <p><span class="translation">I wake up at 6 every day, eat breakfast, and go to school. At school, I study, and return home. I eat dinner and sleep.</span></p>
+        </div>
+        <p>Isn't that amazing? You just read a Japanese paragraph you can actually understand!</p>
+    </section>
+
+    <section>
+        <h2>👨‍👩‍👧‍👦 Talking About Family</h2>
+        <p>You can also use what you've learned to talk about your family's routine or activities!</p>
+        <p>Remember <strong>
+            <span class="japanese-text">～と</span>
+            <span class="pronunciation">[-to]</span>
+            (with/and)</strong> to connect people.</p>
+        <div class="example-box">
+            <div class="flex-container">
+                <span class="japanese-text">ちちは ７じに おきます。</span>
+                <button class="audio-icon" data-audio-text="ちちは ７じに おきます">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Chichi wa shichi-ji ni okimasu.]</span><br><span class="translation">My father wakes up at 7.</span></p>
+            <div class="flex-container">
+                <span class="japanese-text">ははは テレビをみて、そうじをします。</span>
+                <button class="audio-icon" data-audio-text="ははは テレビをみて、そうじをします">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Haha wa terebi o mite, souji o shimasu.]</span><br><span class="translation">My mother watches TV and cleans.</span></p>
+            <div class="flex-container">
+                <span class="japanese-text">わたしは ともだちと えいがをみます。</span>
+                <button class="audio-icon" data-audio-text="わたしは ともだちと えいがをみます">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Watashi wa tomodachi to eiga o mimasu.]</span><br><span class="translation">I watch a movie with my friend.</span></p>
+        </div>
+        <p>You can combine these with て-form too!</p>
+        <div class="example-box">
+            <div class="flex-container">
+                <span class="japanese-text">ちちは はたらいて、よる かえります。</span>
+                <button class="audio-icon" data-audio-text="ちちは はたらいて、よる かえります">🔊</button>
+            </div>
+            <p><span class="pronunciation">[Chichi wa hataraite, yoru kaerimasu.]</span><br><span class="translation">My father works and returns at night.</span></p>
+        </div>
+    </section>
+
+    <section>
+        <h2>💡 Cultural Note: The Importance of Routine</h2>
+        <p>Daily routines in Japan, especially for students and salarymen/women, are often very structured and punctual. Waking up early, having a set schedule for meals, study, and work, and commuting are common aspects of daily life. The sentences you're learning today are very practical for describing a typical Japanese day!</p>
+    </section>
+
+    <section class="practice-section">
+        <h3>📝 Let's Practice!</h3>
+
+        <div class="practice-item">
+            <p><strong>Practice 1: Fill in the Blanks</strong></p>
+            <p>Complete the routine. Use the Japanese words given below.</p>
+            <ul>
+                <li><strong>Words:</strong> おきます (wake up), たべて (eat - て-form), いきます (go), します (do), ねます (sleep)</li>
+            </ul>
+            <p>わたしは まいにち ７じに <input type="text" class="fill-in-the-blank" placeholder="おきます" aria-label="Blank for okimasu">。</p>
+            <p><input type="text" class="fill-in-the-blank" placeholder="あさごはんをたべて" aria-label="Blank for asagohan o tabete">、がっこうに <input type="text" class="fill-in-the-blank" placeholder="いきます" aria-label="Blank for ikimasu">。</p>
+            <p>うちで べんきょうを <input type="text" class="fill-in-the-blank" placeholder="します" aria-label="Blank for shimasu">。</p>
+            <p>よるごはんを たべて、<input type="text" class="fill-in-the-blank" placeholder="ねます" aria-label="Blank for nemasu">。</p>
+            <span class="hint"><em>(Hint: Focus on the て-form for connecting actions!)</em></span>
+        </div>
+
+        <div class="practice-item">
+            <p><strong>Practice 2: Translate to Japanese</strong></p>
+            <p>Translate these simple sentences into Japanese. Try to use て-form where appropriate!</p>
+            <p>1. I read a book and drink coffee.</p>
+            <input type="text" class="fill-in-the-blank" placeholder="わたしは ほんを よんで、コーヒーを のみます。" aria-label="Translation practice 1">
+            <span class="hint"><em>(Hint: よみます → よんで)</em></span>
+
+            <p>2. My mother cooks and cleans.</p>
+            <input type="text" class="fill-in-the-blank" placeholder="ははは りょうりして、そうじをします。" aria-label="Translation practice 2">
+            <span class="hint"><em>(Hint: りょうりします → りょうりして)</em></span>
+
+            <p>3. I wake up at 7:30 every day and go to work.</p>
+            <input type="text" class="fill-in-the-blank" placeholder="わたしは まいにち しちじはんにおきて、しごとにいきます。" aria-label="Translation practice 3">
+            <span class="hint"><em>(Hint: ７時半 [shichiji han], おきます → おきて)</em></span>
+        </div>
+    </section>
+
+    <section class="reflection-section">
+        <h2>🎉 You've Come So Far!</h2>
+        <p>Give yourself a huge pat on the back! You started with basic greetings and now you're crafting whole paragraphs in Japanese. That's incredible progress!</p>
+        <p>This chapter is a milestone. It shows you're not just learning words, but truly building sentences and expressing more complex ideas.</p>
+        <p>Keep practicing your daily routines and family activities. The more you use these patterns, the more natural they'll become!</p>
+        <p>素晴らしいです！ (Subarashii desu! - That's wonderful!)</p>
+    </section>
+</body>
+</html>

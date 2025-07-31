@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Basic Korean Greetings</title>
+    <style>
+        /* General Reset & Body Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary color for overall background */
+            color: #666666; /* Body Text */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Lesson Container - for responsive centering and max-width */
+        .lesson-container {
+            max-width: 600px; /* Max width for larger screens */
+            margin: 0 auto; /* Center content */
+            padding: 16px; /* Base padding for mobile */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: #2C3E50; /* Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.2em; /* Approximately 35px */
+            text-align: center;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.8em; /* Approximately 29px */
+            border-bottom: 2px solid #E0E0E0; /* Light gray border */
+            padding-bottom: 8px;
+            margin-top: 24px;
+        }
+
+        h3 {
+            font-size: 1.4em; /* Approximately 22px */
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1em; /* 16px base font size */
+            margin-bottom: 1em;
+        }
+
+        strong {
+            color: #2C3E50; /* Make strong text stand out a bit more */
+        }
+
+        ul {
+            list-style: none; /* Remove default bullet points */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em; /* Space for custom bullet */
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary color for bullets */
+        }
+
+        /* Specific Header Requirements */
+        .chapter-title {
+            text-align: center;
+            margin: 20px 0;
+            color: #2C3E50;
+            font-size: 2em; /* Matched h1 styling */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Sections and Content Blocks */
+        .section {
+            background-color: #FFFFFF; /* White background for sections */
+            padding: 16px;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .example-box {
+            background-color: #f8f8f8; /* Lighter background for examples */
+            border-left: 5px solid #8B5FBF; /* Primary color accent */
+            padding: 12px;
+            margin: 16px 0;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+
+        .korean-phrase {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2C3E50;
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .korean-translation {
+            font-size: 0.9em;
+            color: #666666;
+            margin-left: 52px; /* Align with phrase, considering audio icon's width+margin */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex; /* Use flexbox for centering icon */
+            justify-content: center;
+            align-items: center;
+            background-color: #8B5FBF; /* Primary color */
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            font-size: 20px;
+            margin-left: 8px;
+            flex-shrink: 0; /* Prevent shrinking on small screens */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            vertical-align: middle; /* Align with text baseline */
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.05);
+            background-color: #7A4E9E; /* Slightly darker purple on hover */
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Cream background */
+            border: 1px solid #E0E0E0; /* Light gray border */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF; /* Primary color for practice headings */
+            margin-top: 0;
+        }
+
+        .practice-item {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px dashed #E0E0E0;
+        }
+
+        .practice-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .fill-in-the-blank input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            font-size: 1em;
+            box-sizing: border-box;
+            color: #2C3E50;
+        }
+
+        .fill-in-the-blank label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .cultural-note {
+            background-color: rgba(139, 95, 191, 0.1); /* Primary color with transparency */
+            border-left: 5px solid #8B5FBF;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: #2C3E50;
+        }
+
+        .summary-section {
+            background-color: #ffffff;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            color: #8B5FBF;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        .summary-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .summary-section li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .summary-section li::before {
+            content: "💡"; /* Unicode for lightbulb */
+            margin-right: 10px;
+            font-size: 1.2em;
+            flex-shrink: 0;
+            position: static; /* Override default li::before positioning */
+        }
+
+        /* Responsive Adjustments for larger screens (e.g., tablets in landscape) */
+        @media (min-width: 600px) {
+            body {
+                padding: 20px; /* More padding on larger screens */
+            }
+
+            .lesson-container {
+                padding: 24px;
+                border-radius: 12px;
+                background-color: #FFFFFF; /* White background for the main content area on larger screens */
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            }
+
+            h1 {
+                font-size: 2.8em;
+            }
+
+            h2 {
+                font-size: 2.2em;
+            }
+
+            h3 {
+                font-size: 1.6em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+
+            .section {
+                padding: 24px;
+                margin-bottom: 24px;
+            }
+
+            .example-box {
+                padding: 16px;
+                margin: 20px 0;
+            }
+
+            .practice-section {
+                padding: 30px;
+                margin: 30px 0;
+            }
+
+            .audio-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chapter 2: Basic Greetings and Introductions</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section">
+            <h2>👋 Saying Hello & Goodbye: 안녕하세요</h2>
+            <p>Let's kick off your Korean journey with the most essential phrase! <strong>안녕하세요 (Annyeonghaseyo)</strong> is your versatile go-to for both "Hello" and "Goodbye" in many situations.</p>
+            <div class="example-box">
+                <div class="korean-phrase">
+                    안녕하세요
+                    <span class="audio-icon" data-audio-text="안녕하세요">🔊</span>
+                </div>
+                <div class="korean-translation">Hello / Good morning / Good afternoon / Good evening / Goodbye</div>
+                <p><strong>Pronunciation:</strong> Ahn-nyung-ha-say-yo</p>
+            </div>
+            <p>This phrase is polite and commonly used with people you don't know well, elders, or in formal settings. It literally means "Are you at peace?" or "Are you well?".</p>
+
+            <div class="cultural-note">
+                <strong>Cultural Note: Politeness Levels</strong><br>
+                Korean language has different politeness levels. The ending <strong>-요 (-yo)</strong>, as seen in 안녕하세요, makes a phrase polite without being overly formal. It's perfect for most everyday interactions.
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>👋 Saying Goodbye (More Specifically): 안녕히 가세요 / 안녕히 계세요</h2>
+            <p>While 안녕하세요 can work for goodbye, Koreans also use specific phrases depending on whether *you* are leaving or the *other person* is leaving. This shows more nuanced politeness.</p>
+
+            <h3>1. When someone is leaving you (You are staying): 안녕히 가세요</h3>
+            <p>Use <strong>안녕히 가세요 (Annyeonghi gaseyo)</strong> when you are staying, and the other person is going. It literally means "Go peacefully."</p>
+            <div class="example-box">
+                <div class="korean-phrase">
+                    안녕히 가세요
+                    <span class="audio-icon" data-audio-text="안녕히 가세요">🔊</span>
+                </div>
+                <div class="korean-translation">Goodbye (to someone leaving) / Please go in peace</div>
+                <p><strong>Pronunciation:</strong> Ahn-nyung-hee gah-say-yo</p>
+            </div>
+
+            <h3>2. When you are leaving someone (The other person is staying): 안녕히 계세요</h3>
+            <p>Use <strong>안녕히 계세요 (Annyeonghi gyeseyo)</strong> when you are leaving, and the other person is staying. It literally means "Stay peacefully."</p>
+            <div class="example-box">
+                <div class="korean-phrase">
+                    안녕히 계세요
+                    <span class="audio-icon" data-audio-text="안녕히 계세요">🔊</span>
+                </div>
+                <div class="korean-translation">Goodbye (to someone staying) / Please stay in peace</div>
+                <p><strong>Pronunciation:</strong> Ahn-nyung-hee geh-say-yo</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>Practice Time! 🚀 Choose the Right Goodbye</h3>
+            <p>Imagine you're in these situations. Which goodbye phrase would you use?</p>
+            <div class="practice-item">
+                <p>1. You are leaving a cafe, and the barista is staying:</p>
+                <div class="korean-phrase">
+                    안녕히 __________
+                    <span class="audio-icon" data-audio-text="안녕히 계세요">🔊</span>
+                </div>
+                <p class="korean-translation">(Answer: 계세요)</p>
+            </div>
+            <div class="practice-item">
+                <p>2. Your friend is leaving your house, and you are staying home:</p>
+                <div class="korean-phrase">
+                    안녕히 __________
+                    <span class="audio-icon" data-audio-text="안녕히 가세요">🔊</span>
+                </div>
+                <p class="korean-translation">(Answer: 가세요)</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🤝 Nice to Meet You: 만나서 반갑습니다</h2>
+            <p>After a polite 안녕하세요, it's common to express that you're happy to meet someone.</p>
+            <div class="example-box">
+                <div class="korean-phrase">
+                    만나서 반갑습니다
+                    <span class="audio-icon" data-audio-text="만나서 반갑습니다">🔊</span>
+                </div>
+                <div class="korean-translation">Nice to meet you</div>
+                <p><strong>Pronunciation:</strong> Mahn-na-suh bahn-gahp-seup-nee-da</p>
+            </div>
+            <p>This phrase is quite polite and formal, suitable for first impressions. The <strong>-ㅂ니다/습니다 (-pnida/seupnida)</strong> ending is a more formal politeness level often used in presentations, news, or very formal settings, but it's perfectly natural and common for this particular greeting.</p>
+        </section>
+
+        <section class="section">
+            <h2>🗣️ Introducing Yourself: 저는 [이름]입니다</h2>
+            <p>Time to tell people who you are! This is a very straightforward and polite way to introduce yourself.</p>
+            <div class="example-box">
+                <div class="korean-phrase">
+                    저는 [이름]입니다
+                    <span class="audio-icon" data-audio-text="저는 입니다">🔊</span>
+                </div>
+                <div class="korean-translation">My name is [Name]</div>
+                <p><strong>Pronunciation:</strong> Juh-neun [your name] im-nee-da</p>
+            </div>
+            <ul>
+                <li><strong>저는 (jeo-neun):</strong> "I" (polite form) + topic marker.</li>
+                <li><strong>[이름] ([i-reum]):</strong> Insert your name here.</li>
+                <li><strong>입니다 (im-nida):</strong> "am / is / are" (formal polite ending, same level as 반갑습니다).</li>
+            </ul>
+            <p><strong>Example:</strong> If your name is Sarah, you would say:</p>
+            <div class="example-box">
+                <div class="korean-phrase">
+                    저는 사라입니다
+                    <span class="audio-icon" data-audio-text="저는 사라입니다">🔊</span>
+                </div>
+                <div class="korean-translation">My name is Sarah.</div>
+                <p><strong>Pronunciation:</strong> Juh-neun sah-rah im-nee-da</p>
+            </div>
+            <p>This structure is very common for stating simple facts about yourself or others in a polite way.</p>
+        </section>
+
+        <section class="practice-section">
+            <h3>Practice Time! 🗣️ Introduce Yourself</h3>
+            <p>Fill in the blank with your own name in Korean (or just type it out phonetically!). Then, say the whole phrase out loud!</p>
+            <div class="practice-item fill-in-the-blank">
+                <label for="your-name">Hello, my name is __________.</label>
+                <div class="korean-phrase">
+                    안녕하세요, 저는 <input type="text" id="your-name" placeholder="[Your Name]"> 입니다.
+                    <span class="audio-icon" data-audio-text="안녕하세요, 저는 입니다">🔊</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🙏 Basic Polite Expressions: Thank You & Sorry</h2>
+            <p>While not strictly "greetings," these are essential for polite interactions and complement your basic introduction skills.</p>
+
+            <h3>Thank You: 감사합니다</h3>
+            <div class="example-box">
+                <div class="korean-phrase">
+                    감사합니다
+                    <span class="audio-icon" data-audio-text="감사합니다">🔊</span>
+                </div>
+                <div class="korean-translation">Thank you (formal polite)</div>
+                <p><strong>Pronunciation:</strong> Gahm-sa-ham-nee-da</p>
+            </div>
+            <p>This is the most common and polite way to say "Thank you." You'll hear and use it constantly!</p>
+
+            <h3>Sorry / Excuse Me: 죄송합니다 / 실례합니다</h3>
+            <p>There are a few ways to say sorry or excuse me. Here are two very useful ones:</p>
+            <div class="example-box">
+                <div class="korean-phrase">
+                    죄송합니다
+                    <span class="audio-icon" data-audio-text="죄송합니다">🔊</span>
+                </div>
+                <div class="korean-translation">I am sorry / My apologies (formal polite)</div>
+                <p><strong>Pronunciation:</strong> Jweh-song-ham-nee-da</p>
+            </div>
+            <p>Use <strong>죄송합니다</strong> when you want to sincerely apologize for something you did or when you feel bad for bothering someone.</p>
+
+            <div class="example-box">
+                <div class="korean-phrase">
+                    실례합니다
+                    <span class="audio-icon" data-audio-text="실례합니다">🔊</span>
+                </div>
+                <div class="korean-translation">Excuse me / Pardon me (formal polite - for interrupting or passing by)</div>
+                <p><strong>Pronunciation:</strong> Shil-lye-ham-nee-da</p>
+            </div>
+            <p>Use <strong>실례합니다</strong> when you need to get someone's attention (like a waiter), pass through a crowded area, or when entering someone's space without permission (like opening a door to a private room).</p>
+        </section>
+
+        <section class="cultural-note">
+            <strong>Cultural Note: Bowing & Eye Contact</strong><br>
+            When greeting, especially with 안녕하세요 or 만나서 반갑습니다, a slight bow is very common and shows respect. The depth of the bow often corresponds to the level of respect you wish to show (deeper for elders or superiors). Direct eye contact can sometimes be considered less respectful when addressing elders or superiors, so it's common to slightly avert your gaze, especially during a bow.
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ Chapter 2 Summary: Your First Steps!</h2>
+            <ul>
+                <li>💡 <strong>안녕하세요 (Annyeonghaseyo)</strong>: Your all-purpose "Hello" and "Goodbye" (polite).</li>
+                <li>💡 <strong>안녕히 가세요 (Annyeonghi gaseyo)</strong>: "Goodbye" when the other person is leaving (you are staying).</li>
+                <li>💡 <strong>안녕히 계세요 (Annyeonghi gyeseyo)</strong>: "Goodbye" when you are leaving (the other person is staying).</li>
+                <li>💡 <strong>만나서 반갑습니다 (Mannaseo bangapseumnida)</strong>: "Nice to meet you" (polite/formal).</li>
+                <li>💡 <strong>저는 [이름]입니다 (Jeo-neun [name] imnida)</strong>: "My name is [Name]" (polite/formal).</li>
+                <li>💡 <strong>감사합니다 (Gamsahamnida)</strong>: "Thank you" (polite/formal).</li>
+                <li>💡 <strong>죄송합니다 (Joesonghamnida)</strong>: "I am sorry / My apologies" (polite/formal).</li>
+                <li>💡 <strong>실례합니다 (Sillyehamnida)</strong>: "Excuse me / Pardon me" (polite/formal).</li>
+                <li>💡 Korean politeness is key! Pay attention to endings like -요 and -ㅂ니다/습니다.</li>
+                <li>💡 Don't forget a slight bow often accompanies greetings!</li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>
