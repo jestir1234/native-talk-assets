@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-31T06:25:43.407Z",
+  "lastUpdated": "2025-07-31T06:31:27.756Z",
   "totalLanguages": 5,
   "totalChapters": 50,
   "totalAvailableChapters": 25,
@@ -297,13 +297,15 @@
       "totalChapters": 10,
       "availableChapters": 10,
       "availableTargetLanguages": [
-        "en"
+        "en",
+        "zh"
       ],
       "chapters": [
         {
           "number": 1,
           "title": {
-            "en": "The Japanese Writing System"
+            "en": "The Japanese Writing System",
+            "zh": "The Japanese Writing System"
           },
           "keyPoints": {
             "en": [
@@ -311,17 +313,25 @@
               "Why Japanese uses all three",
               "Reading flow (left-to-right, top-to-bottom)",
               "Intro to syllables and phonetic writing"
+            ],
+            "zh": [
+              "The three scripts: Hiragana, Katakana, Kanji",
+              "Why Japanese uses all three",
+              "Reading flow (left-to-right, top-to-bottom)",
+              "Intro to syllables and phonetic writing"
             ]
           },
           "availableLanguages": [
-            "en"
+            "en",
+            "zh"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 2,
           "title": {
-            "en": "Hiragana – The Vowel Sounds"
+            "en": "Hiragana – The Vowel Sounds",
+            "zh": "Hiragana – The Vowel Sounds"
           },
           "keyPoints": {
             "en": [
@@ -329,17 +339,25 @@
               "Pronunciation guide and stroke order",
               "Basic words: あい (love), いえ (house), うみ (sea), etc.",
               "Your first full hiragana words"
+            ],
+            "zh": [
+              "あ, い, う, え, お",
+              "Pronunciation guide and stroke order",
+              "Basic words: あい (love), いえ (house), うみ (sea), etc.",
+              "Your first full hiragana words"
             ]
           },
           "availableLanguages": [
-            "en"
+            "en",
+            "zh"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 3,
           "title": {
-            "en": "Basic Greetings & Introductions"
+            "en": "Basic Greetings & Introductions",
+            "zh": "Basic Greetings & Introductions"
           },
           "keyPoints": {
             "en": [
@@ -348,20 +366,36 @@
               "わたしは〇〇です。",
               "はじめまして。よろしくおねがいします。",
               "Grammar: Particle は, copula です"
+            ],
+            "zh": [
+              "Greetings: こんにちは, おはよう, こんばんは, さようなら",
+              "Introducing yourself:",
+              "わたしは〇〇です。",
+              "はじめまして。よろしくおねがいします。",
+              "Grammar: Particle は, copula です"
             ]
           },
           "availableLanguages": [
-            "en"
+            "en",
+            "zh"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 4,
           "title": {
-            "en": "Katakana – Borrowed Words"
+            "en": "Katakana – Borrowed Words",
+            "zh": "Katakana – Borrowed Words"
           },
           "keyPoints": {
             "en": [
+              "カ, キ, ク, ケ, コ (start of katakana)",
+              "Foreign words: コーヒー, パン, コンピューター",
+              "Onomatopoeia: ピカピカ, ドキドキ",
+              "Grammar: Using の to show possession",
+              "わたしの なまえは 〇〇です。"
+            ],
+            "zh": [
               "カ, キ, ク, ケ, コ (start of katakana)",
               "Foreign words: コーヒー, パン, コンピューター",
               "Onomatopoeia: ピカピカ, ドキドキ",
@@ -377,10 +411,18 @@
         {
           "number": 5,
           "title": {
-            "en": "Simple Sentence Structure"
+            "en": "Simple Sentence Structure",
+            "zh": "Simple Sentence Structure"
           },
           "keyPoints": {
             "en": [
+              "Japanese word order: Subject–Object–Verb",
+              "Particles: を (object), が (subject focus)",
+              "Sample patterns:",
+              "わたしはりんごをたべます。",
+              "ジョンさんがきます。"
+            ],
+            "zh": [
               "Japanese word order: Subject–Object–Verb",
               "Particles: を (object), が (subject focus)",
               "Sample patterns:",
@@ -396,10 +438,17 @@
         {
           "number": 6,
           "title": {
-            "en": "Numbers, Time, and Counters"
+            "en": "Numbers, Time, and Counters",
+            "zh": "Numbers, Time, and Counters"
           },
           "keyPoints": {
             "en": [
+              "Numbers 1–10, じかん (time), and basic counters (～つ)",
+              "Asking the time: いま なんじですか？",
+              "Days of the week: 月曜日, 火曜日...",
+              "Grammar: に for time and location"
+            ],
+            "zh": [
               "Numbers 1–10, じかん (time), and basic counters (～つ)",
               "Asking the time: いま なんじですか？",
               "Days of the week: 月曜日, 火曜日...",
@@ -414,10 +463,18 @@
         {
           "number": 7,
           "title": {
-            "en": "Essential Verbs & Conjugation Basics"
+            "en": "Essential Verbs & Conjugation Basics",
+            "zh": "Essential Verbs & Conjugation Basics"
           },
           "keyPoints": {
             "en": [
+              "Verbs: いく (to go), たべる (to eat), する (to do), くる (to come)",
+              "Conjugation: Present/future, negative",
+              "Basic sentence drills:",
+              "わたしはがっこうにいきます。",
+              "パンをたべません。"
+            ],
+            "zh": [
               "Verbs: いく (to go), たべる (to eat), する (to do), くる (to come)",
               "Conjugation: Present/future, negative",
               "Basic sentence drills:",
@@ -433,10 +490,18 @@
         {
           "number": 8,
           "title": {
-            "en": "Adjectives and Description"
+            "en": "Adjectives and Description",
+            "zh": "Adjectives and Description"
           },
           "keyPoints": {
             "en": [
+              "い-adjectives vs. な-adjectives",
+              "Examples: たかい (expensive), しずか (quiet)",
+              "Sentence structure:",
+              "この みせは たかいです。",
+              "しずかな まちです。"
+            ],
+            "zh": [
               "い-adjectives vs. な-adjectives",
               "Examples: たかい (expensive), しずか (quiet)",
               "Sentence structure:",
@@ -452,10 +517,18 @@
         {
           "number": 9,
           "title": {
-            "en": "Daily Life Vocabulary & Polite Requests"
+            "en": "Daily Life Vocabulary & Polite Requests",
+            "zh": "Daily Life Vocabulary & Polite Requests"
           },
           "keyPoints": {
             "en": [
+              "Vocabulary: food, places, transport, daily routine",
+              "Making requests: ～ください, ～をおねがいします",
+              "Example:",
+              "みずをください。",
+              "コーヒーをいっつつ おねがいします。"
+            ],
+            "zh": [
               "Vocabulary: food, places, transport, daily routine",
               "Making requests: ～ください, ～をおねがいします",
               "Example:",
@@ -471,7 +544,8 @@
         {
           "number": 10,
           "title": {
-            "en": "Your First Japanese Paragraph"
+            "en": "Your First Japanese Paragraph",
+            "zh": "Your First Japanese Paragraph"
           },
           "keyPoints": {
             "en": [
@@ -480,6 +554,13 @@
               "わたしはまいにち６じにおきます。",
               "あさごはんをたべて、がっこうにいきます。",
               "Reflection: You've come a long way!"
+            ],
+            "zh": [
+              "Combining learned grammar and vocabulary",
+              "Writing about your routine or family:",
+              "わたしはまいにち６じにおきます。",
+              "あさごはんをたべて、がっこうにいきます。",
+              "Reflection: You’ve come a long way!"
             ]
           },
           "availableLanguages": [
@@ -1258,6 +1339,33 @@
             "ja": "英語のアルファベットと音声",
             "zh": "英语字母表和发音"
           }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 1,
+          "chapterTitle": {
+            "en": "The Japanese Writing System",
+            "zh": "The Japanese Writing System"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 2,
+          "chapterTitle": {
+            "en": "Hiragana – The Vowel Sounds",
+            "zh": "Hiragana – The Vowel Sounds"
+          }
+        },
+        {
+          "languageLearn": "ja",
+          "languageLearnName": "Japanese",
+          "chapterNumber": 3,
+          "chapterTitle": {
+            "en": "Basic Greetings & Introductions",
+            "zh": "Basic Greetings & Introductions"
+          }
         }
       ]
     },
@@ -1271,7 +1379,8 @@
           "languageLearnName": "Japanese",
           "chapterNumber": 1,
           "chapterTitle": {
-            "en": "The Japanese Writing System"
+            "en": "The Japanese Writing System",
+            "zh": "The Japanese Writing System"
           }
         },
         {
@@ -1279,7 +1388,8 @@
           "languageLearnName": "Japanese",
           "chapterNumber": 2,
           "chapterTitle": {
-            "en": "Hiragana – The Vowel Sounds"
+            "en": "Hiragana – The Vowel Sounds",
+            "zh": "Hiragana – The Vowel Sounds"
           }
         },
         {
@@ -1287,7 +1397,8 @@
           "languageLearnName": "Japanese",
           "chapterNumber": 3,
           "chapterTitle": {
-            "en": "Basic Greetings & Introductions"
+            "en": "Basic Greetings & Introductions",
+            "zh": "Basic Greetings & Introductions"
           }
         },
         {
@@ -1295,7 +1406,8 @@
           "languageLearnName": "Japanese",
           "chapterNumber": 4,
           "chapterTitle": {
-            "en": "Katakana – Borrowed Words"
+            "en": "Katakana – Borrowed Words",
+            "zh": "Katakana – Borrowed Words"
           }
         },
         {
@@ -1303,7 +1415,8 @@
           "languageLearnName": "Japanese",
           "chapterNumber": 5,
           "chapterTitle": {
-            "en": "Simple Sentence Structure"
+            "en": "Simple Sentence Structure",
+            "zh": "Simple Sentence Structure"
           }
         },
         {
@@ -1311,7 +1424,8 @@
           "languageLearnName": "Japanese",
           "chapterNumber": 6,
           "chapterTitle": {
-            "en": "Numbers, Time, and Counters"
+            "en": "Numbers, Time, and Counters",
+            "zh": "Numbers, Time, and Counters"
           }
         },
         {
@@ -1319,7 +1433,8 @@
           "languageLearnName": "Japanese",
           "chapterNumber": 7,
           "chapterTitle": {
-            "en": "Essential Verbs & Conjugation Basics"
+            "en": "Essential Verbs & Conjugation Basics",
+            "zh": "Essential Verbs & Conjugation Basics"
           }
         },
         {
@@ -1327,7 +1442,8 @@
           "languageLearnName": "Japanese",
           "chapterNumber": 8,
           "chapterTitle": {
-            "en": "Adjectives and Description"
+            "en": "Adjectives and Description",
+            "zh": "Adjectives and Description"
           }
         },
         {
@@ -1335,7 +1451,8 @@
           "languageLearnName": "Japanese",
           "chapterNumber": 9,
           "chapterTitle": {
-            "en": "Daily Life Vocabulary & Polite Requests"
+            "en": "Daily Life Vocabulary & Polite Requests",
+            "zh": "Daily Life Vocabulary & Polite Requests"
           }
         },
         {
@@ -1343,7 +1460,8 @@
           "languageLearnName": "Japanese",
           "chapterNumber": 10,
           "chapterTitle": {
-            "en": "Your First Japanese Paragraph"
+            "en": "Your First Japanese Paragraph",
+            "zh": "Your First Japanese Paragraph"
           }
         },
         {

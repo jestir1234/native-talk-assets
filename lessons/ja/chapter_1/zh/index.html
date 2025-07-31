@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: The Japanese Writing System</title>
+    <style>
+        /* Global Styles & Color Scheme */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            padding: 15px;
+            font-size: 16px; /* Minimum font size for readability */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Specific Header Structure Requirements */
+        .chapter-title {
+            margin: 20px 0;
+            text-align: center;
+            color: var(--heading-text-color);
+            font-size: 32px; /* Ensure main title is prominent */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Constrain max width for larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--white);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 15px;
+            color: var(--body-text-color);
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: none; /* Remove default bullets */
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px; /* Space for custom bullet */
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet emoji */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 18px;
+            top: -2px;
+        }
+
+        /* Highlight Text */
+        .highlight {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Example Boxes */
+        .example-box {
+            background-color: var(--secondary-color);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .example-box p {
+            margin-bottom: 5px;
+        }
+
+        .example-box strong {
+            color: var(--heading-text-color);
+        }
+
+        /* Audio Icon Styling */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%; /* Circular button */
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+            vertical-align: middle;
+            margin-left: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C429F; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Practice Section Styling */
+        .practice-section {
+            background-color: var(--secondary-color);
+            border: 2px dashed var(--primary-color);
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .quiz-question {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-bottom: 20px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-option-button {
+            background-color: var(--white);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            min-height: 44px; /* Minimum touch target size */
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .quiz-option-button:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .quiz-option-button:active {
+            background-color: #6C429F;
+            border-color: #6C429F;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+            color: var(--body-text-color);
+        }
+        .cultural-note strong {
+            color: var(--heading-text-color);
+        }
+
+        /* Summary Section */
+        .summary-box {
+            background-color: var(--white);
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .summary-box h2 {
+            border-bottom: none;
+            color: var(--primary-color);
+        }
+
+        .summary-box ul {
+            list-style-type: '✅ '; /* Custom checkmark bullet */
+            padding-left: 20px;
+        }
+        .summary-box li::before {
+             content: ''; /* Remove default bullet from parent */
+             padding-left: 0;
+        }
+        .summary-box li {
+            padding-left: 0;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 600px) {
+            body {
+                padding: 30px;
+            }
+            section {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 36px;
+            }
+            h2 {
+                font-size: 26px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            .quiz-options {
+                flex-direction: row; /* Layout buttons in a row on wider screens */
+                flex-wrap: wrap; /* Allow wrapping if many options */
+                justify-content: center;
+            }
+            .quiz-option-button {
+                width: auto; /* Auto width when in row */
+                flex-grow: 1; /* Allow buttons to grow */
+                max-width: 48%; /* Two columns roughly */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Chapter 1: 日本的文字系统</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+    </div>
+
+    <section>
+        <h2>📝 日本的文字系统：三种脚本</h2>
+        <p>欢迎来到日本语学习之旅的第一站！日本的文字系统可能看起来有些复杂，因为它同时使用了<span class="highlight">三种不同的脚本</span>。别担心，我们会一起探索它们，你会发现它们各自的独特之处和用途。</p>
+
+        <h3>1. 平假名 (Hiragana - ひらがな)</h3>
+        <p>平假名是日语中最<span class="highlight">基础</span>、最<span class="highlight">常用</span>的表音文字。它发源于汉字的草书，看起来比较柔和、圆润。学会平假名，你就迈出了日语学习的第一大步！</p>
+        <p>它主要用于：</p>
+        <ul>
+            <li>书写日语<span class="highlight">固有词</span>（和语）。</li>
+            <li>表示<span class="highlight">语法成分</span>（如助词、助动词）。</li>
+            <li>给汉字标注<span class="highlight">读音</span>（振假名，ふりがな）。</li>
+        </ul>
+        <div class="example-box">
+            <p><strong>例子：</strong></p>
+            <p>你好：<span class="highlight">こんにちは</span><button class="audio-icon" data-audio-text="こんにちは">🔊</button> (Konnichiwa)</p>
+            <p>我：<span class="highlight">わたし</span><button class="audio-icon" data-audio-text="わたし">🔊</button> (Watashi)</p>
+            <p>樱花：<span class="highlight">さくら</span><button class="audio-icon" data-audio-text="さくら">🔊</button> (Sakura)</p>
+        </div>
+
+        <h3>2. 片假名 (Katakana - カタカナ)</h3>
+        <p>片假名与平假名一样，也是一套<span class="highlight">表音文字</span>，但它的笔画更<span class="highlight">直线</span>、更<span class="highlight">棱角分明</span>。片假名发源于汉字的偏旁部首，像汉字的一部分。</p>
+        <p>它主要用于：</p>
+        <ul>
+            <li>书写<span class="highlight">外来语</span>（从其他语言音译过来的词汇）。</li>
+            <li>表示<span class="highlight">拟声词</span>、<span class="highlight">拟态词</span>。</li>
+            <li>强调某个词汇（类似中文的加粗或英文的斜体）。</li>
+            <li>书写<span class="highlight">外国人的名字</span>或<span class="highlight">地名</span>。</li>
+        </ul>
+        <div class="example-box">
+            <p><strong>例子：</strong></p>
+            <p>电脑：<span class="highlight">コンピュータ</span><button class="audio-icon" data-audio-text="コンピュータ">🔊</button> (Konpyūta - 来自"computer")</p>
+            <p>咖啡：<span class="highlight">コーヒー</span><button class="audio-icon" data-audio-text="コーヒー">🔊</button> (Kōhī - 来自"coffee")</p>
+            <p>你好：<span class="highlight">ハロー</span><button class="audio-icon" data-audio-text="ハロー">🔊</button> (Harō - 来自"hello")</p>
+        </div>
+
+        <h3>3. 汉字 (Kanji - かんじ)</h3>
+        <p>汉字是日本从<span class="highlight">中国引进</span>并演变而来的文字。它们是表意文字，每个字通常都有<span class="highlight">独立的含义</span>，并且可以有<span class="highlight">多种读音</span>。</p>
+        <p>它主要用于：</p>
+        <ul>
+            <li>书写<span class="highlight">名词</span>、<span class="highlight">动词和形容词的词干</span>。</li>
+            <li>表达<span class="highlight">复杂概念</span>，使文章简洁易读。</li>
+        </ul>
+        <div class="example-box">
+            <p><strong>例子：</strong></p>
+            <p>山：<span class="highlight">山</span><button class="audio-icon" data-audio-text="やま">🔊</button> (Yama)</p>
+            <p>学：<span class="highlight">学</span><button class="audio-icon" data-audio-text="まなぶ">🔊</button> (Manabu - 学习)</p>
+            <p>学校：<span class="highlight">学校</span><button class="audio-icon" data-audio-text="がっこう">🔊</button> (Gakkō)</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>🤔 为什么日语要用这三种脚本？</h2>
+        <p>同时使用平假名、片假名和汉字，是日语的独特之处，也是其强大的表现力来源。这并非随意组合，而是有其历史和实际原因：</p>
+        <ul>
+            <li><strong>区分度：</strong> 汉字提供<span class="highlight">词义上的清晰度</span>，使得长句在视觉上更易理解。试想，如果没有汉字，一篇日语文章可能会是一长串平假名，阅读起来会非常费力！</li>
+            <li><strong>音译需求：</strong> 片假名完美解决了<span class="highlight">外来词</span>的音译问题，让日语能够轻松吸收和表达来自世界各地的新事物和概念。</li>
+            <li><strong>语法功能：</strong> 平假名负责承载<span class="highlight">语法功能</span>，如动词变位、助词等，这些都是日语结构不可或缺的部分。</li>
+            <li><strong>美学与传统：</strong> 三种文字的混合使用也赋予了日语独特的美学和韵味，延续了日本悠久的文字传统。</li>
+        </ul>
+        <div class="cultural-note">
+            <strong>文化小贴士：</strong>
+            <p>在古代，日本并没有自己的文字系统。汉字传入日本后，日本人利用汉字的形、音、义，逐步发展出了假名。平假名主要由女性和歌作者使用并推广，而片假名则多用于佛经批注等场合，两者各有渊源，共同构成了现代日语的基石。</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>➡️ 阅读流向：左到右，上到下</h2>
+        <p>现代日语的阅读方向通常与中文和英文相同：</p>
+        <ul>
+            <li>从<span class="highlight">左到右</span></li>
+            <li>从<span class="highlight">上到下</span></li>
+        </ul>
+        <p>这在大多数书籍、杂志、网页和手机应用中都很常见。</p>
+        <div class="example-box">
+            <p><strong>例子：</strong></p>
+            <p>这是<span class="highlight">现代日语</span>的阅读方向。</p>
+            <p><span>これは現代日本語の読み方です。</span><button class="audio-icon" data-audio-text="これは現代日本語の読み方です。">🔊</button></p>
+        </div>
+        <p>不过，在一些传统文本（如小说、漫画、报纸）中，你仍然会看到<span class="highlight">竖排书写</span>：</p>
+        <ul>
+            <li>从<span class="highlight">右到左</span>的列</li>
+            <li>每列从<span class="highlight">上到下</span></li>
+        </ul>
+        <p>对于初学者，我们主要关注横向书写，但了解竖排书写也是有益的！</p>
+    </section>
+
+    <section>
+        <h2>🎵 音节与表音文字入门</h2>
+        <p>日语是一种<span class="highlight">表音文字</span>，这意味着它的每个字符或组合都代表一个特定的声音单位，而不是像汉字那样代表一个完整的含义。</p>
+
+        <h3>什么是“拍” (Mora)?</h3>
+        <p>在日语中，我们通常不叫“音节”，而是更倾向于用“<span class="highlight">拍</span>” (Mora) 这个概念。一个拍是一个长度单位，大致相当于一个假名。这意味着无论一个音多简单或多复杂，它都占据一个“拍”的时间长度。</p>
+        <p>例如：</p>
+        <ul>
+            <li><span class="highlight">あ</span> (a) - 1拍 <button class="audio-icon" data-audio-text="あ">🔊</button></li>
+            <li><span class="highlight">か</span> (ka) - 1拍 <button class="audio-icon" data-audio-text="か">🔊</button></li>
+            <li><span class="highlight">きょ</span> (kyo) - 1拍 (虽然听起来像两个音，但它是一个合成音，占1拍) <button class="audio-icon" data-audio-text="きょ">🔊</button></li>
+            <li><span class="highlight">ん</span> (n) - 1拍 (拨音，独立占1拍) <button class="audio-icon" data-audio-text="ん">🔊</button></li>
+            <li><span class="highlight">っ</span> (小tsu，促音) - 1拍 (表示停顿，独立占1拍) <button class="audio-icon" data-audio-text="ちょっと">🔊</button> (如 "ちょっと" (chotto) 有4拍：cho-'-to-o)</li>
+        </ul>
+        <p>理解“拍”的概念对于学习日语的<span class="highlight">发音和节奏</span>至关重要。你不需要一开始就完全掌握，随着学习的深入，你会自然而然地感受到它的存在。</p>
+    </section>
+
+    <div class="practice-section">
+        <h2>💡 练习一下！</h2>
+        <p class="quiz-question">哪个选项全部是<span class="highlight">片假名</span>？</p>
+        <div class="quiz-options">
+            <button class="quiz-option-button" data-audio-text="さくら、わたし、がっこう">さくら、わたし、学校</button>
+            <button class="quiz-option-button" data-audio-text="コーヒー、コンピュータ、ハロー">コーヒー、コンピュータ、ハロー</button>
+            <button class="quiz-option-button" data-audio-text="山、学ぶ、学校">山、学ぶ、学校</button>
+            <button class="quiz-option-button" data-audio-text="こんにちは、わたし、さくら">こんにちは、わたし、さくら</button>
+        </div>
+        <p style="margin-top: 20px; font-size: 14px;">（答案：第二个选项是正确的，因为它全部由片假名组成，表示外来语。）</p>
+    </div>
+
+    <section class="summary-box">
+        <h2>总结</h2>
+        <p>恭喜你完成了第一章！让我们快速回顾一下今天学到的重要知识点：</p>
+        <ul>
+            <li>日语使用<span class="highlight">平假名、片假名和汉字</span>这三种文字脚本。</li>
+            <li><span class="highlight">平假名</span>是基础的表音文字，用于日语固有词和语法成分。</li>
+            <li><span class="highlight">片假名</span>也是表音文字，主要用于外来语和强调。</li>
+            <li><span class="highlight">汉字</span>是表意文字，提供词义，使阅读更清晰。</li>
+            <li>日语的现代阅读方向通常是<span class="highlight">从左到右，从上到下</span>。</li>
+            <li>日语是<span class="highlight">表音文字</span>，它的声音单位被称为“<span class="highlight">拍</span>”(Mora)。</li>
+        </ul>
+        <p>理解这些基本概念，是你学习日语的坚实基础。继续加油！ 💪</p>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Hiragana – The Vowel Sounds</title>
+    <style>
+        /* Base Styles & Mobile-First */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-background: #FDF9E5;
+            --heading-text-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* White background for general body */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling on mobile */
+        }
+
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 1.8em; /* Slightly larger for chapter title */
+            padding: 0 15px;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        p {
+            margin: 0.8em 15px;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 15px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Lesson Header */
+        .chapter-title {
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 0;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+            background-color: var(--secondary-background); /* Use secondary color for header background */
+            padding: 15px 0;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .section {
+            background-color: var(--secondary-background);
+            padding: 20px 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .section:nth-of-type(odd) {
+            background-color: #FFFFFF; /* Alternate background for sections for visual separation */
+        }
+
+        .section-title {
+            color: var(--heading-text-color);
+            margin-bottom: 15px;
+            text-align: center;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        /* Character Card */
+        .char-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #FFFFFF;
+            padding: 15px;
+            margin: 10px 15px; /* Apply margin from body edge */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+        }
+
+        .char-card-hiragana {
+            font-size: 4em;
+            font-weight: bold;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .char-card-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .char-card-pronunciation {
+            font-size: 1.2em;
+            color: var(--heading-text-color);
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .char-card-explanation {
+            font-size: 0.9em;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .stroke-order {
+            font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif; /* Specific font for clear hiragana display */
+            font-size: 1em; /* Adjusted for better readability within smaller space */
+            line-height: 1.4;
+            margin-top: 5px;
+            text-align: left; /* Aligned left for bullet points */
+            color: var(--body-text-color);
+            padding: 0 10px;
+        }
+
+        .stroke-order p {
+            margin: 5px 0;
+            padding: 0;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px; /* Minimum 44px */
+            height: 48px; /* Minimum 44px */
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border-radius: 50%;
+            font-size: 1.8em;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-left: 10px;
+            vertical-align: middle;
+            border: none; /* Ensure no default button border */
+            -webkit-tap-highlight-color: transparent; /* Remove tap highlight on iOS */
+        }
+
+        .audio-icon:hover {
+            background-color: #7A4EAB; /* Darker primary color on hover */
+            transform: scale(1.05);
+        }
+
+        /* Word Examples */
+        .word-list {
+            margin: 0 15px;
+            padding: 0;
+        }
+        .word-example {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .word-example:last-child {
+            border-bottom: none;
+        }
+
+        .word-example-text {
+            flex-grow: 1;
+            font-size: 1.1em;
+            color: var(--heading-text-color);
+        }
+
+        .word-example-text span {
+            display: block;
+            font-size: 0.9em;
+            color: var(--body-text-color);
+            margin-top: 2px;
+        }
+
+        .word-example .audio-icon {
+            margin-left: 15px;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--secondary-background);
+            padding: 20px 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .practice-question:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .practice-question p {
+            margin: 0 0 10px 0;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center; /* Center options */
+        }
+
+        .practice-option {
+            background-color: #FFFFFF;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            min-width: 80px; /* Ensure buttons are not too small */
+            text-align: center;
+            min-height: 44px; /* Ensure touch target size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1; /* Allow options to grow */
+            max-width: calc(50% - 5px); /* Max two options per row on small screens */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .practice-option:hover,
+        .practice-option.selected {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+        }
+
+        .highlight-text {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Summary */
+        .summary-section {
+            background-color: var(--secondary-background);
+            padding: 20px 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95em; /* Slightly smaller for summary list */
+        }
+
+        .summary-list li::before {
+            content: '👉'; /* Unicode arrow */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1.2em; /* Ensure arrow is visible */
+            line-height: 1;
+        }
+
+        .summary-list ul {
+            margin-top: 5px;
+            margin-left: 15px; /* Indent sub-list */
+            padding-left: 0;
+        }
+
+        .summary-list ul li::before {
+            content: '•'; /* Bullet for sub-list */
+            color: var(--heading-text-color);
+        }
+
+        /* Responsive adjustments for larger screens (tablets/desktops) */
+        @media (min-width: 600px) {
+            body {
+                font-size: 17px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            .section, .practice-section, .summary-section {
+                padding: 30px 40px;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            p, ul, li {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 720px; /* Adjust based on section padding 800px - 2*40px */
+            }
+            .char-card {
+                flex-direction: row;
+                justify-content: center;
+                gap: 30px;
+                padding: 20px 30px;
+                max-width: 720px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .char-card-details {
+                text-align: left;
+                align-items: flex-start; /* Align text to left */
+                flex-basis: 60%;
+            }
+            .char-card-hiragana {
+                font-size: 5em;
+            }
+            .audio-icon {
+                width: 54px;
+                height: 54px;
+                font-size: 2em;
+            }
+            .word-list {
+                max-width: 720px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .practice-options {
+                justify-content: flex-start; /* Align options to left */
+            }
+            .practice-option {
+                max-width: 180px; /* Wider buttons on larger screens */
+                flex-grow: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="chapter-title">Chapter 2: Hiragana – The Vowel Sounds</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+    </div>
+
+    <section class="section">
+        <h2 class="section-title">🌟 开启你的日语之旅：基础元音！</h2>
+        <p>欢迎来到日语平假名学习的第二章！在本章中，我们将学习日语中最基本的音——五个元音：<strong>あ (a)</strong>, <strong>い (i)</strong>, <strong>う (u)</strong>, <strong>え (e)</strong>, <strong>お (o)</strong>。它们是所有日语发音的基石，掌握好它们，你就迈出了成功的第一步！</p>
+        <p>每个元音我们都会提供详细的<span class="highlight-text">发音指南</span>、<span class="highlight-text">笔顺</span>，并带你学习一些<span class="highlight-text">简单的单词</span>。准备好了吗？让我们开始吧！</p>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">🎵 认识五个元音</h2>
+        <p>日语的元音发音清晰、纯粹，与汉语拼音或英语的发音有所不同。一起来听听并模仿它们吧！</p>
+
+        <!-- あ (a) -->
+        <div class="char-card">
+            <div class="char-card-hiragana">あ</div>
+            <div class="char-card-details">
+                <div class="char-card-pronunciation">发音：<strong class="highlight-text">a</strong> (像“啊”的音) <button class="audio-icon" data-audio-text="あ">🔊</button></div>
+                <div class="char-card-explanation">
+                    <strong>笔顺：</strong>
+                    <div class="stroke-order">
+                        <p>1. 横撇 (像汉字“亠”的上半部分)</p>
+                        <p>2. 短横 (在第一笔的下方)</p>
+                        <p>3. 扭曲的圈 (从左到右，像一个“之”字形，最后有一个小勾)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- い (i) -->
+        <div class="char-card">
+            <div class="char-card-hiragana">い</div>
+            <div class="char-card-details">
+                <div class="char-card-pronunciation">发音：<strong class="highlight-text">i</strong> (像“衣”的音) <button class="audio-icon" data-audio-text="い">🔊</button></div>
+                <div class="char-card-explanation">
+                    <strong>笔顺：</strong>
+                    <div class="stroke-order">
+                        <p>1. 左撇 (短而直的撇)</p>
+                        <p>2. 右撇 (稍长，带有一点点弧度)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- う (u) -->
+        <div class="char-card">
+            <div class="char-card-hiragana">う</div>
+            <div class="char-card-details">
+                <div class="char-card-pronunciation">发音：<strong class="highlight-text">u</strong> (像“乌”的音，但嘴型更扁平，无明显圆唇) <button class="audio-icon" data-audio-text="う">🔊</button></div>
+                <div class="char-card-explanation">
+                    <strong>笔顺：</strong>
+                    <div class="stroke-order">
+                        <p>1. 短撇 (在上方)</p>
+                        <p>2. 弯曲的竖 (从左往右弯曲，像一个U形)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- え (e) -->
+        <div class="char-card">
+            <div class="char-card-hiragana">え</div>
+            <div class="char-card-details">
+                <div class="char-card-pronunciation">发音：<strong class="highlight-text">e</strong> (像“欸”的音) <button class="audio-icon" data-audio-text="え">🔊</button></div>
+                <div class="char-card-explanation">
+                    <strong>笔顺：</strong>
+                    <div class="stroke-order">
+                        <p>1. 短横 (稍向上倾斜)</p>
+                        <p>2. 竖横折 (从左下角向上，然后横折向右，再向下弯曲)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- お (o) -->
+        <div class="char-card">
+            <div class="char-card-hiragana">お</div>
+            <div class="char-card-details">
+                <div class="char-card-pronunciation">发音：<strong class="highlight-text">o</strong> (像“喔”的音) <button class="audio-icon" data-audio-text="お">🔊</button></div>
+                <div class="char-card-explanation">
+                    <strong>笔顺：</strong>
+                    <div class="stroke-order">
+                        <p>1. 短横 (在上方)</p>
+                        <p>2. 横折竖撇 (从左往右，然后向下折，再向左撇)</p>
+                        <p>3. 小点 (在右上方)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 class="section-title">📚 你的第一个平假名单词！</h2>
+        <p>现在你已经掌握了五个元音，是时候把它们组合起来，形成你的第一个日语单词了！是不是很激动？🥳</p>
+
+        <div class="word-list">
+            <div class="word-example">
+                <div class="word-example-text">
+                    <strong>あい</strong><br><span>(ai) 爱 ❤️</span>
+                </div>
+                <button class="audio-icon" data-audio-text="あい">🎵</button>
+            </div>
+            <div class="word-example">
+                <div class="word-example-text">
+                    <strong>いえ</strong><br><span>(ie) 家 🏠</span>
+                </div>
+                <button class="audio-icon" data-audio-text="いえ">🎵</button>
+            </div>
+            <div class="word-example">
+                <div class="word-example-text">
+                    <strong>うみ</strong><br><span>(umi) 海 🌊 <br><small>（注：み (mi) 是辅音加元音的假名，本章暂时只关注元音发音）</small></span>
+                </div>
+                <button class="audio-icon" data-audio-text="うみ">🎵</button>
+            </div>
+            <div class="word-example">
+                <div class="word-example-text">
+                    <strong>え</strong><br><span>(e) 画 🎨 <br><small>（注：可以指画作、图画等）</small></span>
+                </div>
+                <button class="audio-icon" data-audio-text="え">🎵</button>
+            </div>
+            <div class="word-example">
+                <div class="word-example-text">
+                    <strong>おおい</strong><br><span>(ooi) 多、许多 ➕</span>
+                </div>
+                <button class="audio-icon" data-audio-text="おおい">🎵</button>
+            </div>
+        </div>
+        <p>是不是很棒？这些都是由你刚才学会的元音（或少量其他音）组成的词汇。即使只有一个元音，比如「え」，也能是一个完整的词呢！</p>
+    </section>
+
+    <section class="practice-section">
+        <h2 class="section-title">✍️ 实践练习：发音配对</h2>
+        <p>听发音，选择正确的平假名。点击喇叭图标听发音，然后选择你认为对应的平假名！</p>
+
+        <div class="practice-question">
+            <p>1. 哪个是 “a” 的发音？ <button class="audio-icon" data-audio-text="あ">🔊</button></p>
+            <div class="practice-options">
+                <div class="practice-option">い</div>
+                <div class="practice-option">あ</div>
+                <div class="practice-option">う</div>
+            </div>
+        </div>
+
+        <div class="practice-question">
+            <p>2. 哪个是 “i” 的发音？ <button class="audio-icon" data-audio-text="い">🔊</button></p>
+            <div class="practice-options">
+                <div class="practice-option">え</div>
+                <div class="practice-option">お</div>
+                <div class="practice-option">い</div>
+            </div>
+        </div>
+
+        <div class="practice-question">
+            <p>3. 哪个是 “u” 的发音？ <button class="audio-icon" data-audio-text="う">🔊</button></p>
+            <div class="practice-options">
+                <div class="practice-option">う</div>
+                <div class="practice-option">あ</div>
+                <div class="practice-option">え</div>
+            </div>
+        </div>
+
+        <div class="practice-question">
+            <p>4. 哪个是 “e” 的发音？ <button class="audio-icon" data-audio-text="え">🔊</button></p>
+            <div class="practice-options">
+                <div class="practice-option">お</div>
+                <div class="practice-option">え</div>
+                <div class="practice-option">い</div>
+            </div>
+        </div>
+
+        <div class="practice-question">
+            <p>5. 哪个是 “o” 的发音？ <button class="audio-icon" data-audio-text="お">🔊</button></p>
+            <div class="practice-options">
+                <div class="practice-option">あ</div>
+                <div class="practice-option">う</div>
+                <div class="practice-option">お</div>
+            </div>
+        </div>
+        <p><em>（在实际应用中，点击选项会显示对错反馈。现在请在大脑中进行练习吧！继续加油！💪）</em></p>
+    </section>
+
+    <section class="practice-section">
+        <h2 class="section-title">✍️ 实践练习：单词识别</h2>
+        <p>根据中文意思，选择正确的平假名单词。💡</p>
+
+        <div class="practice-question">
+            <p>1. “爱” 的日语是？</p>
+            <div class="practice-options">
+                <div class="practice-option">いえ</div>
+                <div class="practice-option">あい</div>
+                <div class="practice-option">うみ</div>
+            </div>
+        </div>
+
+        <div class="practice-question">
+            <p>2. “家” 的日语是？</p>
+            <div class="practice-options">
+                <div class="practice-option">おおい</div>
+                <div class="practice-option">え</div>
+                <div class="practice-option">いえ</div>
+            </div>
+        </div>
+
+        <div class="practice-question">
+            <p>3. “画” 的日语是？</p>
+            <div class="practice-options">
+                <div class="practice-option">え</div>
+                <div class="practice-option">あい</div>
+                <div class="practice-option">うみ</div>
+            </div>
+        </div>
+        <p><em>（你正在构建你的日语词汇量，非常棒！🎉）</em></p>
+    </section>
+
+    <section class="summary-section">
+        <h2 class="section-title">🎉 章末总结</h2>
+        <p>恭喜你！你已经完成了平假名元音的学习，并学会了几个简单的日语单词。回顾一下本章的重点：</p>
+        <ul class="summary-list">
+            <li>学习了日语的五个元音：<strong>あ (a)</strong>, <strong>い (i)</strong>, <strong>う (u)</strong>, <strong>え (e)</strong>, <strong>お (o)</strong>。</li>
+            <li>掌握了每个元音的<span class="highlight-text">正确发音</span>和<span class="highlight-text">笔顺</span>。</li>
+            <li>学会了你的<span class="highlight-text">第一批平假名单词</span>：
+                <ul>
+                    <li>あい (ai) - 爱 ❤️</li>
+                    <li>いえ (ie) - 家 🏠</li>
+                    <li>うみ (umi) - 海 🌊</li>
+                    <li>え (e) - 画 🎨</li>
+                    <li>おおい (ooi) - 多、许多 ➕</li>
+                </ul>
+            </li>
+            <li>通过练习巩固了元音的识别和基本单词的理解。</li>
+        </ul>
+        <p>这些元音是所有日语发音的基础，务必反复听，反复练习，直到能够自然地发出这些声音。你今天的努力将为未来的学习打下坚实的基础！</p>
+    </section>
+
+</body>
+</html>
