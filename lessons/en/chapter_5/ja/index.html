@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Family and Relationships</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px; /* Minimum font size */
+        }
+
+        /* Overall Lesson Container */
+        .lesson-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Headers */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 1.8em; /* Roughly 28.8px */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5em; /* Roughly 24px */
+            border-bottom: 2px solid #E0E0E0; /* Light gray border */
+            padding-bottom: 5px;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.25em; /* Roughly 20px */
+            color: #8B5FBF; /* Primary: Purple for sub-headings */
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            margin-bottom: 1em;
+            padding: 0 10px; /* Some padding for readability */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0 10px 0 25px; /* Adjust padding for list items */
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            position: relative;
+        }
+
+        li::before {
+            content: '•';
+            color: #8B5FBF; /* Primary: Purple bullet */
+            position: absolute;
+            left: -15px;
+        }
+
+        /* Strong emphasis */
+        strong {
+            color: #2C3E50; /* Dark blue for emphasis */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Make it round */
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            font-size: 1.2em;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-left: 10px;
+            vertical-align: middle;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevents shrinking on smaller screens */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a449a; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0; /* Light gray border */
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .practice-section h3 {
+            text-align: center;
+            color: #8B5FBF;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #E0E0E0; /* Dashed border for items */
+        }
+
+        .practice-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .practice-question {
+            margin-bottom: 10px;
+            color: #2C3E50;
+        }
+
+        .practice-answer-box {
+            background-color: white;
+            border: 1px solid #E0E0E0;
+            padding: 10px;
+            border-radius: 4px;
+            color: #666666;
+            min-height: 40px; /* Ensure visible input area */
+            display: flex; /* For alignment of content */
+            align-items: center;
+        }
+
+        /* Header structure requirement */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+            display: block;
+            margin: 0 auto;
+            object-fit: cover; /* Ensures image covers area without distortion */
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: #fdf3c7; /* A slightly different cream/yellow for cultural notes */
+            border-left: 5px solid #d4af37; /* Gold-like color for emphasis */
+            padding: 15px;
+            margin: 25px 0;
+            border-radius: 8px;
+            color: #4a4a4a;
+        }
+
+        .cultural-note strong {
+            color: #2C3E50;
+        }
+
+        /* Pronunciation */
+        .pronunciation {
+            font-size: 0.9em;
+            color: #888;
+            margin-left: 5px;
+        }
+
+        /* Example sentences within lists */
+        .example-sentence {
+            font-style: italic;
+            color: #4a4a4a;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding-left: 10px;
+            border-left: 3px solid #E0E0E0;
+        }
+
+        .example-sentence span {
+            display: block; /* Ensures translation is on a new line */
+            margin-top: 5px;
+        }
+
+        .english-word {
+            color: #8B5FBF;
+            font-weight: bold;
+        }
+
+        /* Responsive adjustments for larger screens */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.2em; /* Roughly 35.2px */
+            }
+            h2 {
+                font-size: 1.8em; /* Roughly 28.8px */
+            }
+            h3 {
+                font-size: 1.4em; /* Roughly 22.4px */
+            }
+            .lesson-container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+
+        <h1 class="chapter-title">Chapter 5: Family and Relationships</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <p>
+            皆さん、こんにちは！ Chapter 5へようこそ。この章では、英語で家族や人間関係について話す方法を学びます。大切な人たちを紹介したり、彼らについて話したりするのに役立つ表現を身につけましょう。
+        </p>
+        <p>
+            Let's learn how to talk about the people we love! 💖
+        </p>
+
+        <section>
+            <h2>👩‍👩‍👦‍👦 セクション1: 家族のメンバー (Family Members)</h2>
+            <p>
+                まずは、家族の呼び方から覚えましょう。これらは日常会話でとてもよく使われます。
+            </p>
+
+            <h3>基本的な家族</h3>
+            <ul>
+                <li>
+                    <strong class="english-word">Mother</strong><span class="pronunciation"> (マザー)</span>: お母さん
+                    <button class="audio-icon" data-audio-text="Mother">🔊</button>
+                    <div class="example-sentence">
+                        My <strong>mother</strong> is kind.
+                        <span>私のお母さんは優しいです。</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="english-word">Father</strong><span class="pronunciation"> (ファーザー)</span>: お父さん
+                    <button class="audio-icon" data-audio-text="Father">🔊</button>
+                    <div class="example-sentence">
+                        His <strong>father</strong> works hard.
+                        <span>彼のお父さんはよく働きます。</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="english-word">Sister</strong><span class="pronunciation"> (シスター)</span>: 姉妹 (姉または妹)
+                    <button class="audio-icon" data-audio-text="Sister">🔊</button>
+                    <div class="example-sentence">
+                        Do you have a <strong>sister</strong>?
+                        <span>あなたには姉妹がいますか？</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="english-word">Brother</strong><span class="pronunciation"> (ブラザー)</span>: 兄弟 (兄または弟)
+                    <button class="audio-icon" data-audio-text="Brother">🔊</button>
+                    <div class="example-sentence">
+                        I have one <strong>brother</strong>.
+                        <span>私には兄弟が一人います。</span>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>夫婦と子ども</h3>
+            <ul>
+                <li>
+                    <strong class="english-word">Husband</strong><span class="pronunciation"> (ハズバンド)</span>: 夫
+                    <button class="audio-icon" data-audio-text="Husband">🔊</button>
+                </li>
+                <li>
+                    <strong class="english-word">Wife</strong><span class="pronunciation"> (ワイフ)</span>: 妻
+                    <button class="audio-icon" data-audio-text="Wife">🔊</button>
+                </li>
+                <li>
+                    <strong class="english-word">Son</strong><span class="pronunciation"> (サン)</span>: 息子
+                    <button class="audio-icon" data-audio-text="Son">🔊</button>
+                </li>
+                <li>
+                    <strong class="english-word">Daughter</strong><span class="pronunciation"> (ドーター)</span>: 娘
+                    <button class="audio-icon" data-audio-text="Daughter">🔊</button>
+                </li>
+            </ul>
+
+            <h3>祖父母と孫</h3>
+            <ul>
+                <li>
+                    <strong class="english-word">Grandmother</strong><span class="pronunciation"> (グランドマザー)</span> または <strong class="english-word">Grandma</strong>: 祖母、おばあちゃん
+                    <button class="audio-icon" data-audio-text="Grandmother">🔊</button>
+                    <button class="audio-icon" data-audio-text="Grandma">🔊</button>
+                </li>
+                <li>
+                    <strong class="english-word">Grandfather</strong><span class="pronunciation"> (グランドファーザー)</span> または <strong class="english-word">Grandpa</strong>: 祖父、おじいちゃん
+                    <button class="audio-icon" data-audio-text="Grandfather">🔊</button>
+                    <button class="audio-icon" data-audio-text="Grandpa">🔊</button>
+                </li>
+                <li>
+                    <strong class="english-word">Grandparents</strong><span class="pronunciation"> (グランドペアレンツ)</span>: 祖父母 (両方まとめて)
+                    <button class="audio-icon" data-audio-text="Grandparents">🔊</button>
+                </li>
+                <li>
+                    <strong class="english-word">Grandchild</strong><span class="pronunciation"> (グランドチャイルド)</span>: 孫 (性別を問わない)
+                    <button class="audio-icon" data-audio-text="Grandchild">🔊</button>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>💡 文化ノート：兄弟姉妹の呼び方</strong><br>
+                英語では「兄」「弟」「姉」「妹」といった具体的な呼び分けはせず、シンプルに「brother」や「sister」を使います。年齢の区別をつけたい場合は、「my older brother (兄)」や「my younger sister (妹)」のように「older」や「younger」を付け加えることがあります。
+            </div>
+
+            <div class="practice-section">
+                <h3>📝 練習問題1: 家族の名前 (Family Names)</h3>
+                <p>以下の日本語に合う英語の単語を選んでみましょう。</p>
+                <div class="practice-item">
+                    <p class="practice-question">1. お母さん:</p>
+                    <div class="practice-answer-box">
+                        <span class="english-word">Mother</span>
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p class="practice-question">2. 息子:</p>
+                    <div class="practice-answer-box">
+                        <span class="english-word">Son</span>
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p class="practice-question">3. 祖父:</p>
+                    <div class="practice-answer-box">
+                        <span class="english-word">Grandfather</span> / <span class="english-word">Grandpa</span>
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p class="practice-question">4. 兄弟姉妹 (複数):</p>
+                    <div class="practice-answer-box">
+                        <span class="english-word">Siblings</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>👨‍👩‍👧‍👦 セクション2: 所有代名詞 (Possessive Pronouns)</h2>
+            <p>
+                「誰のものか」を示すときに使うのが「所有代名詞」です。家族を紹介するときには必須の表現なので、しっかり覚えましょう！
+            </p>
+
+            <h3>主な所有代名詞</h3>
+            <ul>
+                <li>
+                    <strong class="english-word">My</strong><span class="pronunciation"> (マイ)</span>: 私の
+                    <button class="audio-icon" data-audio-text="My">🔊</button>
+                    <div class="example-sentence">
+                        This is <strong>my</strong> cat.
+                        <span>これは私の猫です。</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="english-word">Your</strong><span class="pronunciation"> (ユア)</span>: あなたの / あなたたちの
+                    <button class="audio-icon" data-audio-text="Your">🔊</button>
+                    <div class="example-sentence">
+                        Is this <strong>your</strong> book?
+                        <span>これはあなたの本ですか？</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="english-word">His</strong><span class="pronunciation"> (ヒズ)</span>: 彼(男性)の
+                    <button class="audio-icon" data-audio-text="His">🔊</button>
+                    <div class="example-sentence">
+                        That is <strong>his</strong> car.
+                        <span>あれは彼の車です。</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="english-word">Her</strong><span class="pronunciation"> (ハー)</span>: 彼女(女性)の
+                    <button class="audio-icon" data-audio-text="Her">🔊</button>
+                    <div class="example-sentence">
+                        This is <strong>her</strong> house.
+                        <span>これは彼女の家です。</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="english-word">Its</strong><span class="pronunciation"> (イツ)</span>: それの (物や動物など)
+                    <button class="audio-icon" data-audio-text="Its">🔊</button>
+                    <div class="example-sentence">
+                        The dog wagged <strong>its</strong> tail.
+                        <span>犬はしっぽを振りました。</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="english-word">Our</strong><span class="pronunciation"> (アワー)</span>: 私たちの
+                    <button class="audio-icon" data-audio-text="Our">🔊</button>
+                    <div class="example-sentence">
+                        This is <strong>our</strong> family.
+                        <span>これは私たちの家族です。</span>
+                    </div>
+                </li>
+                <li>
+                    <strong class="english-word">Their</strong><span class="pronunciation"> (ゼア)</span>: 彼ら(彼女ら/それら)の
+                    <button class="audio-icon" data-audio-text="Their">🔊</button>
+                    <div class="example-sentence">
+                        <strong>Their</strong> children are playing.
+                        <span>彼らの子供たちは遊んでいます。</span>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>📝 練習問題2: 所有代名詞を埋めよう！</h3>
+                <p>括弧内の指示に従って、適切な所有代名詞を入れましょう。</p>
+                <div class="practice-item">
+                    <p class="practice-question">1. This is (私の) sister.</p>
+                    <div class="practice-answer-box">
+                        This is <span class="english-word">my</span> sister.
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p class="practice-question">2. That is (彼[男性]の) father.</p>
+                    <div class="practice-answer-box">
+                        That is <span class="english-word">his</span> father.
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p class="practice-question">3. Are these (あなたたちの) grandparents?</p>
+                    <div class="practice-answer-box">
+                        Are these <span class="english-word">your</span> grandparents?
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p class="practice-question">4. We love (私たちの) children.</p>
+                    <div class="practice-answer-box">
+                        We love <span class="english-word">our</span> children.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>👨‍👧 セクション3: 家族を紹介する表現 (Introducing Family)</h2>
+            <p>
+                誰かに家族を紹介するときに使う基本的なフレーズを学びましょう。「This is my...」と「These are my...」を使い分けます。
+            </p>
+
+            <h3>単数形: This is my...</h3>
+            <p>
+                一人の家族メンバーを紹介するときに使います。
+            </p>
+            <ul>
+                <li>
+                    <strong class="english-word">This is my mother.</strong>
+                    <button class="audio-icon" data-audio-text="This is my mother.">🔊</button>
+                    <span>これは私の母です。</span>
+                </li>
+                <li>
+                    <strong class="english-word">This is my brother, Ken.</strong>
+                    <button class="audio-icon" data-audio-text="This is my brother, Ken.">🔊</button>
+                    <span>こちらは私の兄のケンです。</span>
+                </li>
+            </ul>
+
+            <h3>複数形: These are my...</h3>
+            <p>
+                二人以上の家族メンバーや、両親・祖父母など複数で一つのカテゴリになる場合に使います。
+            </p>
+            <ul>
+                <li>
+                    <strong class="english-word">These are my parents.</strong>
+                    <button class="audio-icon" data-audio-text="These are my parents.">🔊</button>
+                    <span>これらは私の両親です。</span>
+                </li>
+                <li>
+                    <strong class="english-word">These are my children.</strong>
+                    <button class="audio-icon" data-audio-text="These are my children.">🔊</button>
+                    <span>これらは私の子供たちです。</span>
+                </li>
+                <li>
+                    <strong class="english-word">These are my grandparents.</strong>
+                    <button class="audio-icon" data-audio-text="These are my grandparents.">🔊</button>
+                    <span>これらは私の祖父母です。</span>
+                </li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>📝 練習問題3: 紹介してみよう！</h3>
+                <p>次の状況で、どのように家族を紹介しますか？</p>
+                <div class="practice-item">
+                    <p class="practice-question">1. あなたの父親を友達に紹介する時:</p>
+                    <div class="practice-answer-box">
+                        <span class="english-word">This is my father.</span>
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p class="practice-question">2. あなたの兄弟と姉妹が一緒にいる時:</p>
+                    <div class="practice-answer-box">
+                        <span class="english-word">These are my brother and sister.</span>
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p class="practice-question">3. あなたの妻を紹介する時:</p>
+                    <div class="practice-answer-box">
+                        <span class="english-word">This is my wife.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🗣️ セクション4: 家族について話す (Talking About Family)</h2>
+            <p>
+                家族構成や状況について尋ねたり答えたりする一般的な会話表現を学びましょう。
+            </p>
+
+            <h3>兄弟姉妹について尋ねる</h3>
+            <ul>
+                <li>
+                    <strong class="english-word">Do you have any siblings?</strong>
+                    <button class="audio-icon" data-audio-text="Do you have any siblings?">🔊</button>
+                    <span>兄弟姉妹はいますか？</span>
+                    <p class="example-sentence">
+                        <strong>Yes, I have one brother.</strong>
+                        <span>はい、兄（弟）が一人います。</span>
+                    </p>
+                    <p class="example-sentence">
+                        <strong>No, I'm an only child.</strong>
+                        <span>いいえ、一人っ子です。</span>
+                    </p>
+                </li>
+                <li>
+                    <strong class="english-word">How many brothers/sisters do you have?</strong>
+                    <button class="audio-icon" data-audio-text="How many brothers do you have?">🔊</button>
+                    <span>兄弟／姉妹は何人いますか？</span>
+                    <p class="example-sentence">
+                        <strong>I have two sisters.</strong>
+                        <span>姉妹が二人います。</span>
+                    </p>
+                </li>
+            </ul>
+
+            <h3>家族の状況について話す</h3>
+            <ul>
+                <li>
+                    <strong class="english-word">My parents live in Tokyo.</strong>
+                    <button class="audio-icon" data-audio-text="My parents live in Tokyo.">🔊</button>
+                    <span>私の両親は東京に住んでいます。</span>
+                </li>
+                <li>
+                    <strong class="english-word">My husband works as a teacher.</strong>
+                    <button class="audio-icon" data-audio-text="My husband works as a teacher.">🔊</button>
+                    <span>私の夫は教師として働いています。</span>
+                </li>
+                <li>
+                    <strong class="english-word">My daughter is studying English.</strong>
+                    <button class="audio-icon" data-audio-text="My daughter is studying English.">🔊</button>
+                    <span>私の娘は英語を勉強しています。</span>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>💡 文化ノート：家族のプライバシー</strong><br>
+                欧米では、家族の個人的な状況（結婚しているか、子供がいるかなど）は、特に初対面の人にいきなり尋ねるのは避けるべき場合があります。親しい間柄になってから尋ねるのが一般的です。
+            </div>
+
+            <div class="practice-section">
+                <h3>📝 練習問題4: 会話の練習</h3>
+                <p>次の質問に英語で答えてみましょう。</p>
+                <div class="practice-item">
+                    <p class="practice-question">1. Do you have any siblings?</p>
+                    <div class="practice-answer-box">
+                        (例) <span class="english-word">Yes, I have one sister.</span>
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p class="practice-question">2. How many children do you have?</p>
+                    <div class="practice-answer-box">
+                        (例) <span class="english-word">I have two children, a son and a daughter.</span>
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p class="practice-question">3. What does your father do?</p>
+                    <div class="practice-answer-box">
+                        (例) <span class="english-word">He is a doctor.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>✨ まとめ (Summary)</h2>
+            <p>
+                Chapter 5: Family and Relationships のレッスン、お疲れ様でした！この章では、以下の重要なポイントを学びました。
+            </p>
+            <ul>
+                <li>
+                    <strong>家族メンバーの呼び方</strong>: Mother, Father, Sister, Brother, Husband, Wife, Son, Daughter, Grandparents など。
+                </li>
+                <li>
+                    <strong>所有代名詞の使い方</strong>: my, your, his, her, its, our, their を使って「〜の」と表現する方法。
+                </li>
+                <li>
+                    <strong>家族の紹介の仕方</strong>: 「This is my... (単数)」と「These are my... (複数)」を使って紹介する。
+                </li>
+                <li>
+                    <strong>家族について話す表現</strong>: 兄弟姉妹の有無や人数、家族の状況を尋ねたり答えたりする会話フレーズ。
+                </li>
+            </ul>
+            <p>
+                これらの表現をマスターすれば、英語で自信を持って家族や友人について話すことができるようになります。今日学んだことを日常生活で使ってみてくださいね！
+            </p>
+            <p>
+                練習は完璧への道です！これからも頑張りましょう！
+            </p>
+        </section>
+
+    </div>
+</body>
+</html>

@@ -6,12 +6,19 @@ const LESSONS_ROOT = path.resolve(__dirname, '../../lessons');
 const META_OUTPUT_PATH = path.resolve(__dirname, '../../lessons/meta.json');
 
 /**
- * Get chapter information from the outline file
- * @param {string} language - Language code
- * @returns {Array} Array of chapter objects
+ * Get chapter information from the outline file for a specific target language
+ * @param {string} languageLearn - Language being learned
+ * @param {string} targetLanguage - Target language for translations
+ * @returns {Array} Array of chapter objects with multilingual structure
  */
-function getChaptersFromOutline(language) {
-    const outlinePath = path.resolve(__dirname, `./${language}/chapters_outline_basic.txt`);
+function getChaptersFromOutlineForTarget(languageLearn, targetLanguage) {
+    // Try to read from the language-specific outline file first
+    let outlinePath = path.resolve(__dirname, `./${languageLearn}/${targetLanguage}/chapters_outline_basic.txt`);
+    
+    // If that doesn't exist, fall back to the base language outline
+    if (!fs.existsSync(outlinePath)) {
+        outlinePath = path.resolve(__dirname, `./${languageLearn}/chapters_outline_basic.txt`);
+    }
     
     if (!fs.existsSync(outlinePath)) {
         return [];
@@ -20,8 +27,8 @@ function getChaptersFromOutline(language) {
     const content = fs.readFileSync(outlinePath, 'utf-8');
     const chapters = [];
     
-    // Split by chapter markers (## CHAPTER X:)
-    const chapterBlocks = content.split(/## CHAPTER \d+:/);
+    // Split by chapter markers (## CHAPTER X: or ## 第X章：)
+    const chapterBlocks = content.split(/## (?:CHAPTER \d+:|第\d+章：)/);
     
     // Skip the first empty block if it exists
     const validBlocks = chapterBlocks.filter(block => block.trim());
@@ -44,6 +51,52 @@ function getChaptersFromOutline(language) {
             keyPoints: keyPoints
         });
     });
+    
+    return chapters;
+}
+
+/**
+ * Get all chapter information with multilingual structure
+ * @param {string} languageLearn - Language being learned
+ * @returns {Array} Array of chapter objects with multilingual titles and keyPoints
+ */
+function getChaptersFromOutline(languageLearn) {
+    // Get all available target languages for this language being learned
+    const allTargetLanguages = getAllAvailableTargetLanguages(languageLearn);
+    
+    // If no target languages found, try to get at least the base language
+    const targetLanguages = allTargetLanguages.length > 0 ? allTargetLanguages : [languageLearn];
+    
+    // Get chapters for each target language
+    const chaptersByTarget = {};
+    targetLanguages.forEach(targetLang => {
+        chaptersByTarget[targetLang] = getChaptersFromOutlineForTarget(languageLearn, targetLang);
+    });
+    
+    // Create multilingual structure
+    const chapters = [];
+    const maxChapters = Math.max(...Object.values(chaptersByTarget).map(chapters => chapters.length));
+    
+    for (let i = 0; i < maxChapters; i++) {
+        const chapterNumber = i + 1;
+        const title = {};
+        const keyPoints = {};
+        
+        // Add translations for each target language
+        targetLanguages.forEach(targetLang => {
+            const targetChapters = chaptersByTarget[targetLang];
+            if (targetChapters[i]) {
+                title[targetLang] = targetChapters[i].title;
+                keyPoints[targetLang] = targetChapters[i].keyPoints;
+            }
+        });
+        
+        chapters.push({
+            number: chapterNumber,
+            title: title,
+            keyPoints: keyPoints
+        });
+    }
     
     return chapters;
 }
@@ -134,6 +187,7 @@ function getLanguageInfo(languageLearn) {
         'vi': '🇻🇳'
     };
     
+    // Get chapters with multilingual structure
     const chapters = getChaptersFromOutline(languageLearn);
     
     // Get available target languages for each chapter

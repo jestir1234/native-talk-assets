@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Colors and Descriptions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            box-sizing: border-box;
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+        }
+
+        h1.chapter-title {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+            padding-top: 20px; /* Add some padding at the top */
+        }
+
+        /* Lesson Header */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        .lesson-section h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .lesson-section h3 {
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        /* Example Box */
+        .example-box {
+            background-color: #f7f7f7;
+            padding: 15px;
+            border-left: 5px solid #8B5FBF; /* Primary: Purple */
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .english-phrase {
+            font-weight: bold;
+            color: #8B5FBF; /* Primary: Purple */
+            font-size: 1.1em;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .japanese-translation {
+            font-size: 0.9em;
+            color: #666666;
+            margin-top: 5px;
+        }
+
+        .pronunciation-guide {
+            font-size: 0.85em;
+            color: #999;
+            font-style: italic;
+            margin-left: 8px;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Min 44px for easy tapping */
+            height: 44px; /* Min 44px for easy tapping */
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-left: 8px;
+            vertical-align: middle;
+            transition: background-color 0.2s ease;
+            border: none;
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4a9b; /* Darker purple on hover */
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #EBF7FB; /* Light blue for practice sections */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 25px;
+            border: 1px dashed #8B5FBF; /* Primary: Purple */
+        }
+
+        .practice-section h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .practice-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2C3E50; /* Text: Dark blue */
+        }
+
+        .practice-options {
+            display: flex;
+            flex-wrap: wrap; /* Allow options to wrap on small screens */
+            justify-content: center;
+            gap: 10px; /* Space between buttons */
+        }
+
+        .practice-options button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 0; /* Reset margin for gap property */
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            min-height: 44px; /* Min 44px for easy tapping */
+            flex-grow: 1; /* Allow buttons to grow */
+            max-width: 100%; /* Ensure buttons don't overflow */
+        }
+
+        .practice-options button:hover {
+            background-color: #6a4a9b; /* Darker purple on hover */
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FFF3CD;
+            border-left: 5px solid #F1C40F; /* Yellowish border */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            color: #2C3E50; /* Dark blue for cultural note text */
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #EBF7FB;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border: 1px solid #E0E0E0;
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .summary-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            margin-bottom: 8px;
+        }
+
+        /* General spacing for lists */
+        ul {
+            list-style: none; /* Remove default list style */
+            padding: 0;
+            margin: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 25px; /* Indent for custom bullet */
+            position: relative;
+        }
+        ul li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary: Purple */
+            font-size: 1.2em;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            h1.chapter-title {
+                font-size: 24px;
+            }
+            .lesson-section {
+                padding: 15px;
+            }
+            .practice-options button {
+                width: 100%; /* Stack buttons on very small screens */
+                margin: 5px 0;
+            }
+            .audio-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 1em;
+            }
+            .english-phrase {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 4: Colors and Descriptions</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 4 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>🎉 こんにちは、Chapter 4へようこそ！ 🎉</h2>
+            <p>この章では、ものの<strong>色</strong>や<strong>形、大きさ</strong>を英語で表現する方法を学びます。さらに、「これは〜です」「あれは〜です」という基本的な文の組み立て方もマスターしましょう。日常生活で役立つ表現ばかりですよ！</p>
+            <p>このレッスンを終える頃には、あなたの周りのものを英語で描写できるようになっているはずです！</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🎨 セクション1: 基本的な色を言ってみよう！ (Basic Colors)</h2>
+            <p>まずは、英語でよく使う色を覚えましょう。発音を聞いて、声に出して練習してみてくださいね。</p>
+            <ul>
+                <li>
+                    <span class="english-phrase">Red</span> <span class="audio-icon" data-audio-text="Red">🔊</span> <span class="pronunciation-guide">(レッド)</span> 🔴
+                    <div class="japanese-translation">赤</div>
+                </li>
+                <li>
+                    <span class="english-phrase">Blue</span> <span class="audio-icon" data-audio-text="Blue">🔊</span> <span class="pronunciation-guide">(ブルー)</span> 🔵
+                    <div class="japanese-translation">青</div>
+                </li>
+                <li>
+                    <span class="english-phrase">Green</span> <span class="audio-icon" data-audio-text="Green">🔊</span> <span class="pronunciation-guide">(グリーン)</span> 🟢
+                    <div class="japanese-translation">緑</div>
+                </li>
+                <li>
+                    <span class="english-phrase">Yellow</span> <span class="audio-icon" data-audio-text="Yellow">🔊</span> <span class="pronunciation-guide">(イエロー)</span> 🟡
+                    <div class="japanese-translation">黄</div>
+                </li>
+                <li>
+                    <span class="english-phrase">Black</span> <span class="audio-icon" data-audio-text="Black">🔊</span> <span class="pronunciation-guide">(ブラック)</span> ⚫
+                    <div class="japanese-translation">黒</div>
+                </li>
+                <li>
+                    <span class="english-phrase">White</span> <span class="audio-icon" data-audio-text="White">🔊</span> <span class="pronunciation-guide">(ホワイト)</span> ⚪
+                    <div class="japanese-translation">白</div>
+                </li>
+                <li>
+                    <span class="english-phrase">Orange</span> <span class="audio-icon" data-audio-text="Orange">🔊</span> <span class="pronunciation-guide">(オレンジ)</span> 🟠
+                    <div class="japanese-translation">オレンジ</div>
+                </li>
+                <li>
+                    <span class="english-phrase">Purple</span> <span class="audio-icon" data-audio-text="Purple">🔊</span> <span class="pronunciation-guide">(パープル)</span> 🟣
+                    <div class="japanese-translation">紫</div>
+                </li>
+                <li>
+                    <span class="english-phrase">Pink</span> <span class="audio-icon" data-audio-text="Pink">🔊</span> <span class="pronunciation-guide">(ピンク)</span> 🌸
+                    <div class="japanese-translation">ピンク</div>
+                </li>
+                <li>
+                    <span class="english-phrase">Brown</span> <span class="audio-icon" data-audio-text="Brown">🔊</span> <span class="pronunciation-guide">(ブラウン)</span> 🟫
+                    <div class="japanese-translation">茶色</div>
+                </li>
+                <li>
+                    <span class="english-phrase">Gray</span> <span class="audio-icon" data-audio-text="Gray">🔊</span> <span class="pronunciation-guide">(グレイ)</span> 🔘
+                    <div class="japanese-translation">灰色</div>
+                </li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>💡 練習問題: 色の名前を選ぼう！</h3>
+                <p class="practice-question">このリンゴは何色ですか？ 🍎</p>
+                <div class="practice-options">
+                    <button data-answer="red">Red</button>
+                    <button data-answer="blue">Blue</button>
+                    <button data-answer="yellow">Yellow</button>
+                </div>
+                <p class="practice-question">この空は何色ですか？ ☁️</p>
+                <div class="practice-options">
+                    <button data-answer="green">Green</button>
+                    <button data-answer="blue">Blue</button>
+                    <button data-answer="white">White</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>📏 セクション2: 物体の特徴を説明する形容詞 (Describing Objects)</h2>
+            <p>ものの大きさや高さを表す基本的な形容詞を学びましょう。</p>
+            <ul>
+                <li>
+                    <span class="english-phrase">Big</span> <span class="audio-icon" data-audio-text="Big">🔊</span> <span class="pronunciation-guide">(ビッグ)</span>
+                    <div class="japanese-translation">大きい</div>
+                    <div class="example-box">
+                        <span class="english-phrase">A big car</span> <span class="audio-icon" data-audio-text="A big car">🔊</span>
+                        <div class="japanese-translation">大きな車 🚗</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="english-phrase">Small</span> <span class="audio-icon" data-audio-text="Small">🔊</span> <span class="pronunciation-guide">(スモール)</span>
+                    <div class="japanese-translation">小さい</div>
+                    <div class="example-box">
+                        <span class="english-phrase">A small apple</span> <span class="audio-icon" data-audio-text="A small apple">🔊</span>
+                        <div class="japanese-translation">小さなリンゴ 🍎</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="english-phrase">Tall</span> <span class="audio-icon" data-audio-text="Tall">🔊</span> <span class="pronunciation-guide">(トール)</span>
+                    <div class="japanese-translation">背が高い、高い (主に垂直方向の高さ)</div>
+                    <div class="example-box">
+                        <span class="english-phrase">A tall tree</span> <span class="audio-icon" data-audio-text="A tall tree">🔊</span>
+                        <div class="japanese-translation">高い木 🌳</div>
+                    </div>
+                </li>
+                <li>
+                    <span class="english-phrase">Short</span> <span class="audio-icon" data-audio-text="Short">🔊</span> <span class="pronunciation-guide">(ショート)</span>
+                    <div class="japanese-translation">背が低い、短い</div>
+                    <div class="example-box">
+                        <span class="english-phrase">A short person</span> <span class="audio-icon" data-audio-text="A short person">🔊</span>
+                        <div class="japanese-translation">背の低い人 🧍</div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>💡 練習問題: 正しい形容詞を選ぼう！</h3>
+                <p class="practice-question">この建物はとても ___ です。 🏙️</p>
+                <div class="practice-options">
+                    <button data-answer="tall">tall</button>
+                    <button data-answer="small">small</button>
+                    <button data-answer="short">short</button>
+                </div>
+                <p class="practice-question">これは ___ なペンです。 (手のひらに乗るくらいの)</p>
+                <div class="practice-options">
+                    <button data-answer="big">big</button>
+                    <button data-answer="small">small</button>
+                    <button data-answer="tall">tall</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🗣️ セクション3: 「This is... / That is...」を使ってみよう！</h2>
+            <p>「これは〜です」「あれは〜です」と、何かを指し示すときに使う表現を学びます。</p>
+
+            <h3>1. 近くのものを指す時: <span class="english-phrase">This is...</span></h3>
+            <p>話している人から見て、<strong>近くにあるもの一つ</strong>を指すときに使います。</p>
+            <div class="example-box">
+                <span class="english-phrase">This is a book.</span> <span class="audio-icon" data-audio-text="This is a book.">🔊</span>
+                <div class="japanese-translation">これは本です。 📖</div>
+            </div>
+            <div class="example-box">
+                <span class="english-phrase">This is a red apple.</span> <span class="audio-icon" data-audio-text="This is a red apple.">🔊</span>
+                <div class="japanese-translation">これは赤いリンゴです。 🍎🔴</div>
+            </div>
+
+            <h3>2. 遠くのものを指す時: <span class="english-phrase">That is...</span></h3>
+            <p>話している人から見て、<strong>遠くにあるもの一つ</strong>を指すときに使います。</p>
+            <div class="example-box">
+                <span class="english-phrase">That is a dog.</span> <span class="audio-icon" data-audio-text="That is a dog.">🔊</span>
+                <div class="japanese-translation">あれは犬です。 🐕</div>
+            </div>
+            <div class="example-box">
+                <span class="english-phrase">That is a big tree.</span> <span class="audio-icon" data-audio-text="That is a big tree.">🔊</span>
+                <div class="japanese-translation">あれは大きな木です。 🌳</div>
+            </div>
+
+            <div class="practice-section">
+                <h3>💡 練習問題: 「This」か「That」を選ぼう！</h3>
+                <p class="practice-question">（手で指さしながら）___ is a flower. 🌸</p>
+                <div class="practice-options">
+                    <button data-answer="This">This</button>
+                    <button data-answer="That">That</button>
+                </div>
+                <p class="practice-question">（遠くの景色を眺めながら）___ is a beautiful mountain. ⛰️</p>
+                <div class="practice-options">
+                    <button data-answer="This">This</button>
+                    <button data-answer="That">That</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>❓ セクション4: 「What color is it?」と質問してみよう！</h2>
+            <p>ものの色を尋ねたり、答えたりする表現を学びましょう。</p>
+
+            <h3>質問の仕方: <span class="english-phrase">What color is it?</span></h3>
+            <p>これは「それは何色ですか？」という意味です。</p>
+            <div class="example-box">
+                <span class="english-phrase">What color is it?</span> <span class="audio-icon" data-audio-text="What color is it?">🔊</span>
+                <div class="japanese-translation">それは何色ですか？</div>
+            </div>
+
+            <h3>答え方: <span class="english-phrase">It's [color].</span></h3>
+            <p>「それは〜色です」と答えます。`It's` は `It is` の短縮形です。</p>
+            <div class="example-box">
+                <span class="english-phrase">It's red.</span> <span class="audio-icon" data-audio-text="It's red.">🔊</span>
+                <div class="japanese-translation">それは赤です。</div>
+            </div>
+
+            <h3>会話例:</h3>
+            <div class="example-box">
+                <span class="english-phrase">Q: What color is the apple?</span> <span class="audio-icon" data-audio-text="What color is the apple?">🔊</span>
+                <div class="japanese-translation">リンゴは何色ですか？</div>
+                <br>
+                <span class="english-phrase">A: It's red.</span> <span class="audio-icon" data-audio-text="It's red.">🔊</span>
+                <div class="japanese-translation">それは赤です。 🍎</div>
+            </div>
+            <div class="example-box">
+                <span class="english-phrase">Q: What color is the sky?</span> <span class="audio-icon" data-audio-text="What color is the sky?">🔊</span>
+                <div class="japanese-translation">空は何色ですか？</div>
+                <br>
+                <span class="english-phrase">A: It's blue.</span> <span class="audio-icon" data-audio-text="It's blue.">🔊</span>
+                <div class="japanese-translation">それは青です。 🔵</div>
+            </div>
+
+            <div class="practice-section">
+                <h3>💡 練習問題: 質問に答えてみよう！</h3>
+                <p class="practice-question">Q: What color is the sun? ☀️</p>
+                <div class="practice-options">
+                    <button data-answer="It's yellow.">It's yellow.</button>
+                    <button data-answer="It's green.">It's green.</button>
+                    <button data-answer="It's black.">It's black.</button>
+                </div>
+                <p class="practice-question">Q: What color is the grass? 🌿</p>
+                <div class="practice-options">
+                    <button data-answer="It's blue.">It's blue.</button>
+                    <button data-answer="It's green.">It's green.</button>
+                    <button data-answer="It's brown.">It's brown.</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>✍️ セクション5: 形容詞と基本的な描写 (Adjectives and Basic Descriptions)</h2>
+            <p>これまで学んだ色や形容詞を使って、もっと詳しくものを描写してみましょう！</p>
+
+            <h3>形容詞の順番</h3>
+            <p>英語では、一つの名詞に複数の形容詞をつける場合、だいたいの決まった順番があります。</p>
+            <div class="cultural-note">
+                <strong>文化メモ: 形容詞の順番（簡単な例）</strong>
+                <p>「大きさ」と「色」を両方言う場合は、通常<strong>「大きさ → 色」</strong>の順番になります。</p>
+                <ul>
+                    <li><span class="english-phrase">A big red car</span> <span class="audio-icon" data-audio-text="A big red car">🔊</span>
+                        <div class="japanese-translation">大きな赤い車 🚗🔴</div>
+                        <p>❌ "A red big car" とは言いません。</p>
+                    </li>
+                </ul>
+            </div>
+
+            <h3>他にもよく使う形容詞</h3>
+            <p>基本的なもの以外にも、よく使う形容詞をいくつか紹介します。</p>
+            <ul>
+                <li>
+                    <span class="english-phrase">New</span> <span class="audio-icon" data-audio-text="New">🔊</span> <span class="pronunciation-guide">(ニュー)</span>
+                    <div class="japanese-translation">新しい</div>
+                </li>
+                <li>
+                    <span class="english-phrase">Old</span> <span class="audio-icon" data-audio-text="Old">🔊</span> <span class="pronunciation-guide">(オールド)</span>
+                    <div class="japanese-translation">古い</div>
+                </li>
+                <li>
+                    <span class="english-phrase">Beautiful</span> <span class="audio-icon" data-audio-text="Beautiful">🔊</span> <span class="pronunciation-guide">(ビューティフル)</span>
+                    <div class="japanese-translation">美しい</div>
+                </li>
+                <li>
+                    <span class="english-phrase">Good</span> <span class="audio-icon" data-audio-text="Good">🔊</span> <span class="pronunciation-guide">(グッド)</span>
+                    <div class="japanese-translation">良い</div>
+                </li>
+            </ul>
+
+            <h3>例文:</h3>
+            <div class="example-box">
+                <span class="english-phrase">This is a new book.</span> <span class="audio-icon" data-audio-text="This is a new book.">🔊</span>
+                <div class="japanese-translation">これは新しい本です。 📚✨</div>
+            </div>
+            <div class="example-box">
+                <span class="english-phrase">That is a beautiful flower.</span> <span class="audio-icon" data-audio-text="That is a beautiful flower.">🔊</span>
+                <div class="japanese-translation">あれは美しい花です。 🌷💖</div>
+            </div>
+            <div class="example-box">
+                <span class="english-phrase">It's a good idea.</span> <span class="audio-icon" data-audio-text="It's a good idea.">🔊</span>
+                <div class="japanese-translation">それは良い考えです。 🤔💡</div>
+            </div>
+
+            <div class="practice-section">
+                <h3>💡 練習問題: 文を完成させよう！</h3>
+                <p class="practice-question">「これは美しい青い鳥です。」を英語で言ってみましょう。</p>
+                <div class="practice-options">
+                    <button data-answer="This is a beautiful blue bird.">This is a beautiful blue bird.</button>
+                    <button data-answer="This is a blue beautiful bird.">This is a blue beautiful bird.</button>
+                    <button data-answer="This a beautiful blue bird is.">This a beautiful blue bird is.</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ Chapter 4のまとめ ✨</h2>
+            <p>この章では、ものの色や特徴を英語で描写するための基本的な表現を学びました。お疲れ様でした！</p>
+            <ul>
+                <li><strong>基本的な色:</strong> <code>red</code>, <code>blue</code>, <code>green</code> など、様々な色を覚えました。</li>
+                <li><strong>ものの描写:</strong> <code>big</code>, <code>small</code>, <code>tall</code>, <code>short</code> といった形容詞を使えるようになりました。</li>
+                <li><strong>指し示す表現:</strong> 近くのものは <code>This is...</code>、遠くのものは <code>That is...</code> を使います。</li>
+                <li><strong>色を尋ねる・答える:</strong> <code>What color is it?</code> と尋ね、<code>It's [color].</code> と答えます。</li>
+                <li><strong>形容詞の組み合わせ:</strong> 形容詞を使って、より具体的に描写する方法を学びました。(例: <code>a big red car</code>)</li>
+            </ul>
+            <p>学んだ表現を使って、あなたの周りにあるものを英語でたくさん説明してみてくださいね。練習すればするほど、英語が自然に出てくるようになります！</p>
+        </section>
+    </div>
+</body>
+</html>
