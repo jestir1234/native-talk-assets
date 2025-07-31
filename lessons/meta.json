@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-31T05:41:30.365Z",
-  "totalLanguages": 4,
-  "totalChapters": 40,
-  "totalAvailableChapters": 23,
+  "lastUpdated": "2025-07-31T06:04:07.163Z",
+  "totalLanguages": 5,
+  "totalChapters": 50,
+  "totalAvailableChapters": 24,
   "totalTargetLanguages": 2,
   "languages": {
     "en": {
@@ -859,6 +859,190 @@
           "totalLanguages": 0
         }
       ]
+    },
+    "zh": {
+      "code": "zh",
+      "name": "Chinese",
+      "flag": "🇨🇳",
+      "totalChapters": 10,
+      "availableChapters": 1,
+      "availableTargetLanguages": [
+        "en"
+      ],
+      "chapters": [
+        {
+          "number": 1,
+          "title": {
+            "en": "Chinese Pinyin and Tones"
+          },
+          "keyPoints": {
+            "en": [
+              "Introduction to Chinese Pinyin alphabet",
+              "Initials and finals",
+              "Four tones: First tone, Second tone, Third tone, Fourth tone",
+              "Tone marks and pronunciation rules",
+              "Simple character pinyin practice"
+            ]
+          },
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
+        },
+        {
+          "number": 2,
+          "title": {
+            "en": "Basic Greetings and Introductions"
+          },
+          "keyPoints": {
+            "en": [
+              "Hello, Good morning, Good afternoon, Good evening",
+              "Goodbye, Thank you, You're welcome",
+              "My name is... / I am...",
+              "Nice to meet you",
+              "Basic polite expressions"
+            ]
+          },
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 3,
+          "title": {
+            "en": "Numbers and Counting"
+          },
+          "keyPoints": {
+            "en": [
+              "Numbers 1-20",
+              "Counting and quantity expressions",
+              "Age: How old are you? I'm... years old",
+              "Phone numbers and addresses",
+              "Basic math vocabulary: add, subtract, equals"
+            ]
+          },
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 4,
+          "title": {
+            "en": "Colors and Descriptions"
+          },
+          "keyPoints": {
+            "en": [
+              "Basic colors: red, blue, green, yellow, etc.",
+              "Describing objects: big, small, tall, short",
+              "This is... / That is...",
+              "What color is it? It's...",
+              "Adjectives and basic descriptions"
+            ]
+          },
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 5,
+          "title": {
+            "en": "Family and Relationships"
+          },
+          "keyPoints": {
+            "en": [
+              "Family members: father, mother, older brother, older sister, younger brother, younger sister",
+              "Possessive pronouns: my, your, his, her, their",
+              "This is my... / These are my...",
+              "Family vocabulary and relationships",
+              "Talking about family members"
+            ]
+          },
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 6,
+          "title": {
+            "en": "Daily Activities and Routines"
+          },
+          "keyPoints": {
+            "en": [
+              "Common verbs: eat, drink, sleep, work, study, play",
+              "Present tense basics",
+              "I eat... / I don't eat...",
+              "Daily routine vocabulary",
+              "Time expressions: morning, afternoon, evening"
+            ]
+          },
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 7,
+          "title": {
+            "en": "Food and Drinks"
+          },
+          "keyPoints": {
+            "en": [
+              "Common food items: rice, noodles, meat, vegetables",
+              "Drinks: water, coffee, tea, juice, milk",
+              "I like... / I don't like...",
+              "What do you like to eat?",
+              "Restaurant vocabulary basics"
+            ]
+          },
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 8,
+          "title": {
+            "en": "Places and Directions"
+          },
+          "keyPoints": {
+            "en": [
+              "Common places: school, home, work, store, park",
+              "Prepositions: at, to, from, near, far",
+              "Where is...? It's at...",
+              "Basic directions: left, right, straight, turn",
+              "Location vocabulary"
+            ]
+          },
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 9,
+          "title": {
+            "en": "Weather and Seasons"
+          },
+          "keyPoints": {
+            "en": [
+              "Weather vocabulary: sunny, rainy, cloudy, snowy",
+              "Seasons: spring, summer, fall, winter",
+              "What's the weather like? It's...",
+              "Temperature: hot, cold, warm, cool",
+              "Weather-related activities"
+            ]
+          },
+          "availableLanguages": [],
+          "totalLanguages": 0
+        },
+        {
+          "number": 10,
+          "title": {
+            "en": "Time and Schedules"
+          },
+          "keyPoints": {
+            "en": [
+              "Telling time: What time is it? It's...",
+              "Days of the week: Monday, Tuesday, etc.",
+              "Months of the year",
+              "When is...? It's on...",
+              "Making appointments and schedules"
+            ]
+          },
+          "availableLanguages": [],
+          "totalLanguages": 0
+        }
+      ]
     }
   },
   "userLanguageSupport": {
@@ -1076,6 +1260,14 @@
           "chapterNumber": 1,
           "chapterTitle": {
             "en": "Bảng chữ cái tiếng Việt (Vietnamese Alphabet)"
+          }
+        },
+        {
+          "languageLearn": "zh",
+          "languageLearnName": "Chinese",
+          "chapterNumber": 1,
+          "chapterTitle": {
+            "en": "Chinese Pinyin and Tones"
           }
         }
       ]
