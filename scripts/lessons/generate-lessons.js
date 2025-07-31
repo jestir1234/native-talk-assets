@@ -3,10 +3,15 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-// Get language and target language from command line arguments
-const LANGUAGE_LEARN = process.argv[2] || 'ja'; // Language being learned
-const TARGET_LANGUAGE = process.argv[3] || 'en'; // Language to generate lesson in
-const CHAPTER_NUMBER = process.argv[4] ? parseInt(process.argv[4]) : null; // Specific chapter (optional)
+// How to run: node generate-lessons.js ja en [chapter_number] [--skip]
+
+// Parse command line arguments
+const args = process.argv.slice(2);
+const LANGUAGE_LEARN = args[0] || 'ja'; // Language being learned
+const TARGET_LANGUAGE = args[1] || 'en'; // Language to generate lesson in
+const SKIP_EXISTING = args.includes('--skip'); // Skip existing lessons flag
+const CHAPTER_NUMBER = args.find(arg => !isNaN(parseInt(arg)) && !arg.startsWith('--')) ? 
+    parseInt(args.find(arg => !isNaN(parseInt(arg)) && !arg.startsWith('--'))) : null; // Specific chapter (optional)
 
 const CHAPTERS_OUTLINE_PATH = path.resolve(__dirname, `./${LANGUAGE_LEARN}/chapters_outline_basic.txt`);
 const LESSONS_DIR = path.resolve(__dirname, `../../lessons/${LANGUAGE_LEARN}`);
@@ -325,6 +330,7 @@ function updateHtmlWithImage(htmlContent, imagePath, chapterNumber) {
 async function processChapter(chapter, languageLearn, targetLanguage) {
     const chapterDir = path.join(LESSONS_DIR, `chapter_${chapter.number}`);
     const targetLangDir = path.join(chapterDir, targetLanguage);
+    const htmlPath = path.join(targetLangDir, 'index.html');
     
     // Create chapter directory and target language subdirectory
     if (!fs.existsSync(chapterDir)) {
@@ -332,6 +338,12 @@ async function processChapter(chapter, languageLearn, targetLanguage) {
     }
     if (!fs.existsSync(targetLangDir)) {
         fs.mkdirSync(targetLangDir, { recursive: true });
+    }
+    
+    // Check if lesson already exists and skip if --skip flag is used
+    if (SKIP_EXISTING && fs.existsSync(htmlPath)) {
+        console.log(`⏭️  Skipping Chapter ${chapter.number}: Lesson already exists in ${targetLanguage}`);
+        return;
     }
     
     try {
@@ -366,7 +378,6 @@ async function processChapter(chapter, languageLearn, targetLanguage) {
         const updatedContent = updateHtmlWithImage(lessonContent, headerImagePath, chapter.number);
         
         // Save HTML content
-        const htmlPath = path.join(targetLangDir, 'index.html');
         fs.writeFileSync(htmlPath, updatedContent);
         
         console.log(`✅ Chapter ${chapter.number} completed successfully in ${targetLanguage}!`);
@@ -382,7 +393,8 @@ async function processChapter(chapter, languageLearn, targetLanguage) {
  */
 async function generateLessons() {
     try {
-        console.log(`📚 Starting lesson generation for ${LANGUAGE_LEARN.toUpperCase()} in ${TARGET_LANGUAGE.toUpperCase()}...`);
+        const skipStatus = SKIP_EXISTING ? ' (skipping existing lessons)' : '';
+        console.log(`📚 Starting lesson generation for ${LANGUAGE_LEARN.toUpperCase()} in ${TARGET_LANGUAGE.toUpperCase()}${skipStatus}...`);
         
         // Check if chapters outline file exists
         if (!fs.existsSync(CHAPTERS_OUTLINE_PATH)) {

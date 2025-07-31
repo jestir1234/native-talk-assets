@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>第5章：简单句型结构</title>
+    <style>
+        /* Global Styles & Reset for Mobile-First */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-background: #FDF9E5;
+            --heading-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+            --white: #FFFFFF;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background-color: var(--white);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body text font size */
+            -webkit-text-size-adjust: 100%; /* Prevent font boosting */
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Headings */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Strong/Emphasis */
+        strong {
+            color: var(--primary-color);
+        }
+
+        em {
+            font-style: normal;
+            color: var(--heading-color);
+        }
+
+        /* Links/Buttons */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 25px;
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            min-height: 44px; /* Ensure tap-friendly size */
+            display: flex; /* For vertical centering of text */
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #6C429F; /* Slightly darker purple */
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        .lesson-section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Examples & Notes */
+        .example-box {
+            background-color: var(--white);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .example-box p {
+            margin-bottom: 8px;
+        }
+
+        .example-box .japanese-text {
+            font-size: 17px;
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-bottom: 5px;
+        }
+
+        .example-box .chinese-translation {
+            font-size: 15px;
+            color: var(--body-text-color);
+            margin-top: 5px;
+        }
+
+        .note-box {
+            background-color: rgba(139, 95, 191, 0.1); /* Light primary color */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: var(--body-text-color);
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex; /* Use flex for vertical alignment of emoji */
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 44px; /* Minimum tap-friendly size */
+            height: 44px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            vertical-align: middle; /* Align with text */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C429F;
+            transform: scale(1.05);
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .practice-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .practice-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--heading-color);
+        }
+
+        .practice-input-group {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .practice-input-group span {
+            margin-right: 5px;
+            white-space: nowrap; /* Prevent breaking in the middle of a word */
+        }
+
+        .practice-input {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 16px;
+            min-width: 80px; /* Ensure input is wide enough */
+            flex-grow: 1; /* Allow input to grow */
+            margin-right: 10px;
+            margin-bottom: 10px; /* For wrap */
+        }
+
+        .practice-feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--primary-color); /* Correct answer style */
+            font-size: 15px;
+        }
+
+        .summary-section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-list li {
+            margin-bottom: 8px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .summary-list li::before {
+            content: "✨";
+            position: absolute;
+            left: -5px;
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+        
+        /* Specific header image styling as per requirement */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 600px) {
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            .lesson-section, .practice-section, .summary-section {
+                padding: 30px;
+            }
+            .button {
+                padding: 15px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">第5章：简单句型结构</h1>
+        <div class="lesson-header">
+            <!-- As per instruction: "Include CSS for .lesson-header and .lesson-header-image classes" and "Start the lesson content with this exact structure" -->
+            <!-- The requirement "DO NOT use external image URLs or placeholder images" refers to content images. This specific header image URL is part of the required structure. -->
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>🎉 欢迎来到第5章：构建你的第一批日语句子！</h2>
+            <p>这一章，我们将学习日语最基础、也是最重要的句型结构。掌握了它，你就能开始表达简单的想法了！</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>1. 日语词序：主语–宾语–动词 (SOV)</h2>
+            <p>和中文（主语–动词–宾语，SVO）不同，日语的动词总是放在句子的<strong>最后面</strong>。这是一个非常重要的规则！</p>
+            <div class="example-box">
+                <p class="japanese-text">中文：我 <strong>吃</strong> 苹果。</p>
+                <p class="chinese-translation">S &nbsp;&nbsp;&nbsp;&nbsp;V &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O</p>
+            </div>
+            <div class="example-box">
+                <p class="japanese-text">日语：私 (Watashi) りんご (ringo) <strong>食べます</strong> (tabemasu)。</p>
+                <p class="chinese-translation">S &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V</p>
+            </div>
+            <p>记住：<strong>动词在句末！</strong> 这是日语的核心语法之一。</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>2. 关键“粘合剂”：助词</h2>
+            <p>日语没有空格分隔单词，而是使用“助词”来表示词语在句子中的作用。它们就像中文里的“的”、“地”、“得”，但功能更强大！</p>
+
+            <h3>2.1 宾语助词：を (o)</h3>
+            <p>助词 <strong>を</strong> (o) 跟在名词后面，表示这个名词是句子的<strong>宾语</strong>，也就是动词的直接作用对象。</p>
+            <div class="example-box">
+                <p class="japanese-text">私 は りんご <button class="audio-icon" data-audio-text="を">🔊</button> 食べます。</p>
+                <p class="chinese-translation">わたし は りんご <strong>を</strong> たべます。</p>
+                <p class="chinese-translation">我 吃 苹果。</p>
+            </div>
+            <p>这个句子直译是：“我 苹果 <strong>を</strong> 吃”。<strong>りんご</strong> (ringo, 苹果) 是被吃的对象，所以它后面跟着 <strong>を</strong>。</p>
+
+            <div class="example-box">
+                <p class="japanese-text">水 <button class="audio-icon" data-audio-text="を">🔊</button> 飲みます。</p>
+                <p class="chinese-translation">みず <strong>を</strong> のみます。</p>
+                <p class="chinese-translation">喝水。</p>
+                <div class="note-box">
+                    <p>🤔 注意：在日常口语中，助词有时会被省略，尤其是在很明显的语境下。但作为初学者，建议你先完整使用它们！</p>
+                </div>
+            </div>
+
+            <h3>2.2 主语助词：が (ga)</h3>
+            <p>助词 <strong>が</strong> (ga) 通常用于强调或指出句子的<strong>主语</strong>，或引出新的信息。当主语是新信息、疑问句的回答，或动词是非意志动词（如“有”、“喜欢”、“能”）时，常用 <strong>が</strong>。</p>
+            <div class="example-box">
+                <p class="japanese-text">ジョンさん <button class="audio-icon" data-audio-text="が">🔊</button> 来ます。</p>
+                <p class="chinese-translation">ジョンさん <strong>が</strong> きます。</p>
+                <p class="chinese-translation">约翰先生来了。（强调：是约翰来了，不是别人）</p>
+            </div>
+            <p>当你想强调“是谁”或“是什么”做了某事时，就可以用 <strong>が</strong>。比如，门铃响了，你问“谁啊？”，回答时通常会用 <strong>が</strong>。</p>
+            <div class="example-box">
+                <p class="japanese-text">誰 <button class="audio-icon" data-audio-text="が">🔊</button> 来ますか？</p>
+                <p class="chinese-translation">だれ <strong>が</strong> きますか？</p>
+                <p class="chinese-translation">谁来了？</p>
+            </div>
+            <div class="example-box">
+                <p class="japanese-text">ジョンさん <button class="audio-icon" data-audio-text="が">🔊</button> 来ます。</p>
+                <p class="chinese-translation">ジョンさん <strong>が</strong> きます。</p>
+                <p class="chinese-translation">是约翰先生来了。</p>
+            </div>
+            <div class="note-box">
+                <p>💡 小贴士：和我们之前学的 <strong>は</strong> (wa) 相比，<strong>が</strong> 强调的是主语本身，而 <strong>は</strong> 强调的是主语后面的内容（关于主语的描述）。这是一个比较进阶的区分，初期你只要记住：<strong>を</strong> 接宾语，<strong>が</strong> 强调主语。</p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3. 提出问题：疑问助词 か (ka)</h2>
+            <p>在日语中，把一个陈述句变成疑问句非常简单！只需要在句子的<strong>末尾</strong>加上助词 <strong>か</strong> (ka) 就可以了。语音语调也会相应地上扬。</p>
+            <div class="example-box">
+                <p class="japanese-text">りんご を 食べます。</p>
+                <p class="chinese-translation">りんご を たべます。(吃苹果。)</p>
+            </div>
+            <div class="example-box">
+                <p class="japanese-text">りんご を 食べます <button class="audio-icon" data-audio-text="か">🔊</button>？</p>
+                <p class="chinese-translation">りんご を たべます <strong>か</strong>？(吃苹果吗？)</p>
+            </div>
+            <div class="example-box">
+                <p class="japanese-text">ジョンさん が 来ます <button class="audio-icon" data-audio-text="か">🔊</button>？</p>
+                <p class="chinese-translation">ジョンさん が きます <strong>か</strong>？</p>
+                <p class="chinese-translation">约翰先生会来吗？</p>
+            </div>
+            <p>无论是对人还是对事提问，<strong>か</strong> 都是万能的问号！</p>
+        </section>
+
+        <section class="practice-section">
+            <h2>📝 练习时间！</h2>
+            <p>尝试填空，用正确的助词完成句子。虽然这里不能实时检查答案，但你可以大声读出来，感受日语的节奏！</p>
+
+            <div class="practice-item">
+                <p class="practice-question">1. 我 (私) 喝 (飲みます) 水 (水)。</p>
+                <div class="practice-input-group">
+                    <button class="audio-icon" data-audio-text="わたし は みず を のみます">🔊</button>
+                    <span>私 は 水</span> <input type="text" class="practice-input" placeholder="填入助词"> <span>飲みます。</span>
+                </div>
+                <p class="practice-feedback">提示：水是“喝”的对象，所以用“を”。</p>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">2. 谁 (誰) 去了 (行きます)？ (强调是“谁”)</p>
+                <div class="practice-input-group">
+                    <button class="audio-icon" data-audio-text="だれ が いきます か">🔊</button>
+                    <span>誰</span> <input type="text" class="practice-input" placeholder="填入助词"> <span>行きます</span> <input type="text" class="practice-input" placeholder="填入助词">
+                </div>
+                <p class="practice-feedback">提示：强调主语用“が”，疑问句末尾用“か”。</p>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">3. 吃 (食べます) 寿司 (寿司) 吗？</p>
+                <div class="practice-input-group">
+                    <button class="audio-icon" data-audio-text="すし を たべます か">🔊</button>
+                    <span>寿司</span> <input type="text" class="practice-input" placeholder="填入助词"> <span>食べます</span> <input type="text" class="practice-input" placeholder="填入助词">
+                </div>
+                <p class="practice-feedback">提示：寿司是被吃的宾语，用“を”，疑问句末尾用“か”。</p>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">4. 狗 (犬) 来了 (来ます)。 (强调是“狗”来了)</p>
+                <div class="practice-input-group">
+                    <button class="audio-icon" data-audio-text="いぬ が きます">🔊</button>
+                    <span>犬</span> <input type="text" class="practice-input" placeholder="填入助词"> <span>来ます。</span>
+                </div>
+                <p class="practice-feedback">提示：强调主语用“が”。</p>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">5. 我 (私) 看 (見ます) 电影 (映画)。</p>
+                <div class="practice-input-group">
+                    <button class="audio-icon" data-audio-text="わたし は えいが を みます">🔊</button>
+                    <span>私 は 映画</span> <input type="text" class="practice-input" placeholder="填入助词"> <span>見ます。</span>
+                </div>
+                <p class="practice-feedback">提示：电影是“看”的宾语，用“を”。</p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ 本章小结</h2>
+            <ul class="summary-list">
+                <li>日语的基本词序是 <strong>主语-宾语-动词 (SOV)</strong>，动词总是在句末。</li>
+                <li>助词 <strong>を (o)</strong> 用来标记句子的<strong>宾语</strong>。
+                    <br><span class="example-text">例：ご飯<span style="color:var(--primary-color);">を</span>食べます。(吃饭。)</span>
+                </li>
+                <li>助词 <strong>が (ga)</strong> 通常用于<strong>强调主语</strong>，或引出新的信息。
+                    <br><span class="example-text">例：猫<span style="color:var(--primary-color);">が</span>います。(有猫。)</span>
+                </li>
+                <li>在句末加上助词 <strong>か (ka)</strong> 可以将陈述句变为<strong>疑问句</strong>。
+                    <br><span class="example-text">例：行きます<span style="color:var(--primary-color);">か</span>？(去吗？)</span>
+                </li>
+            </ul>
+            <p>恭喜你！现在你已经掌握了日语最基本的句型结构。多加练习，熟能生巧！🥳</p>
+        </section>
+
+    </div>
+</body>
+</html>

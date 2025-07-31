@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: 形容词和描述</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* 最小主体文本大小 */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* 容器用于居中内容和设置最大宽度 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box; /* 确保内边距不增加总宽度 */
+        }
+
+        /* 标题样式 */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 25px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #8B5FBF; /* Primary: Purple for sub-headings */
+        }
+
+        /* 段落和列表样式 */
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        ul li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #E0E0E0;
+            display: flex;
+            align-items: center;
+            font-size: 1.05em; /* Slightly larger for list items */
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        strong {
+            color: #2C3E50;
+        }
+
+        em {
+            font-style: normal;
+            color: #8B5FBF;
+        }
+
+        /* 章节头部图片和文本 */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* 课程章节样式 */
+        .lesson-section {
+            background-color: #FFFFFF;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 示例框样式 */
+        .example-box {
+            background-color: #FDF9E5; /* Secondary: Cream background for example boxes */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .example-box p {
+            margin: 5px 0;
+            color: #2C3E50;
+        }
+
+        .example-box .japanese-sentence {
+            font-size: 1.1em;
+            font-weight: bold;
+            display: block; /* Ensures it takes full width for better readability */
+        }
+
+        .example-box .translation {
+            color: #666666;
+            font-size: 0.95em;
+            display: block;
+        }
+
+        /* 音频图标按钮 */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 22px; /* 确保图标足够大 */
+            cursor: pointer;
+            padding: 11px; /* 确保最小点击区域为 44px */
+            min-width: 44px;
+            min-height: 44px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-right: 10px;
+            color: #8B5FBF; /* Primary color */
+            vertical-align: middle; /* 垂直对齐文本 */
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* 浅紫色悬停效果 */
+            transform: scale(1.05); /* 轻微放大效果 */
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95); /* 点击缩小效果 */
+        }
+
+        /* 练习部分样式 */
+        .practice-section {
+            background-color: #FFFFFF;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .practice-question {
+            margin-bottom: 25px;
+            text-align: left;
+            border-bottom: 1px dashed #E0E0E0;
+            padding-bottom: 20px;
+        }
+
+        .practice-question:last-of-type {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .practice-question p {
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .practice-option-button {
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            color: #666666;
+            padding: 12px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: left;
+            min-height: 44px; /* 最小点击区域 */
+            transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            white-space: normal; /* 允许文本换行 */
+        }
+
+        .practice-option-button:hover:not([disabled]) {
+            background-color: #8B5FBF; /* Primary */
+            color: #FFFFFF;
+            border-color: #8B5FBF;
+            box-shadow: 0 4px 8px rgba(139, 95, 191, 0.2);
+        }
+
+        .practice-option-button[disabled] {
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        .practice-option-button.correct {
+            background-color: #D4EDDA; /* Light green */
+            border-color: #28A745; /* Green */
+            color: #155724; /* Dark green text */
+        }
+
+        .practice-option-button.incorrect {
+            background-color: #F8D7DA; /* Light red */
+            border-color: #DC3545; /* Red */
+            color: #721C24; /* Dark red text */
+        }
+
+        .feedback-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: none; /* 默认隐藏 */
+            font-size: 0.95em;
+        }
+
+        .feedback-message.correct {
+            background-color: #D4EDDA;
+            color: #155724;
+        }
+
+        .feedback-message.incorrect {
+            background-color: #F8D7DA;
+            color: #721C24;
+        }
+
+        /* 总结部分样式 */
+        .summary-list li {
+            font-size: 0.95em;
+            padding: 8px 0;
+            border-bottom: 1px dotted #E0E0E0;
+            align-items: flex-start; /* 文本多行时对齐到顶部 */
+        }
+
+        .summary-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* 文化小贴士 */
+        .cultural-note {
+            background-color: #FDF9E5;
+            border: 1px dashed #8B5FBF;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .cultural-note strong {
+            color: #8B5FBF;
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* 辅助类 */
+        .japanese-word {
+            font-weight: bold;
+            color: #8B5FBF; /* Primary for Japanese words */
+        }
+        .japanese-sentence {
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue for full Japanese sentences */
+        }
+
+        /* 媒体查询，针对更大屏幕的优化 */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 22px;
+            }
+            body {
+                font-size: 17px;
+            }
+            .container {
+                padding: 30px;
+            }
+            .lesson-section {
+                padding: 30px;
+            }
+            .example-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 8: 形容词和描述 (Adjectives and Description)</h1>
+        <div class="lesson-header">
+            <!-- 注意：此图片路径假设在移动应用内是可访问的本地资源。 -->
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>🎉 欢迎来到第八章：形容词！</h2>
+            <p>这一章，我们将学习如何使用形容词来描述人、物和地点。在日语中，形容词分为两种主要类型：い-形容词 (i-adjectives) 和 な-形容词 (na-adjectives)。理解它们的区别是掌握日语描述能力的关键！</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🎯 い-形容词 (i-adjectives) vs. な-形容词 (na-adjectives)</h2>
+            <p>日语形容词根据词尾不同，分为两大类。就像中文里形容词可以直接修饰名词（漂亮的房子），或者跟在“是”后面（房子是漂亮的），日语也有类似但更规范的用法。</p>
+
+            <h3>✨ い-形容词 (i-adjective)</h3>
+            <p><strong>特点：</strong> 以假名「い」结尾（排除一些特殊情况）。</p>
+            <p><strong>用法：</strong> 当它们直接修饰名词时，不需要任何连接词。当用在句尾描述时，通常直接跟「です」。</p>
+            <ul>
+                <li><button class="audio-icon" data-audio-text="たかい">🔊</button> <span class="japanese-word">たかい</span> (takai) - 高的 / 贵的</li>
+                <li><button class="audio-icon" data-audio-text="あたらしい">🔊</button> <span class="japanese-word">あたらしい</span> (atarashii) - 新的</li>
+                <li><button class="audio-icon" data-audio-text="おいしい">🔊</button> <span class="japanese-word">おいしい</span> (oishii) - 美味的</li>
+                <li><button class="audio-icon" data-audio-text="さむい">🔊</button> <span class="japanese-word">さむい</span> (samui) - 寒冷的</li>
+            </ul>
+
+            <div class="example-box">
+                <p class="japanese-sentence">この みせは たかいです。<button class="audio-icon" data-audio-text="この みせは たかいです。">🔊</button></p>
+                <p class="translation">Kono mise wa takai desu. (这家店很贵。)</p>
+            </div>
+            <div class="example-box">
+                <p class="japanese-sentence">あたらしい くるま。<button class="audio-icon" data-audio-text="あたらしい くるま。">🔊</button></p>
+                <p class="translation">Atarashii kuruma. (新车。)</p>
+            </div>
+
+            <h3>✨ な-形容词 (na-adjective)</h3>
+            <p><strong>特点：</strong> 不是以「い」结尾的形容词。也有一些特殊的以「い」结尾但属于な-形容词。</p>
+            <p><strong>用法：</strong> 当它们直接修饰名词时，需要在词尾加上「な」。当用在句尾描述时，通常直接跟「です」。</p>
+            <ul>
+                <li><button class="audio-icon" data-audio-text="しずか">🔊</button> <span class="japanese-word">しずか</span> (shizuka) - 安静的</li>
+                <li><button class="audio-icon" data-audio-text="きれい">🔊</button> <span class="japanese-word">きれい</span> (kirei) - 漂亮的 / 干净的 (<strong>注意：</strong> 虽然以い结尾，但它是な-形容词！)</li>
+                <li><button class="audio-icon" data-audio-text="ゆうめい">🔊</button> <span class="japanese-word">ゆうめい</span> (yūmei) - 有名的</li>
+                <li><button class="audio-icon" data-audio-text="げんき">🔊</button> <span class="japanese-word">げんき</span> (genki) - 健康的 / 有精神的</li>
+            </ul>
+
+            <div class="example-box">
+                <p class="japanese-sentence">しずかな まちです。<button class="audio-icon" data-audio-text="しずかな まちです。">🔊</button></p>
+                <p class="translation">Shizukana machi desu. (安静的城市。)</p>
+            </div>
+            <div class="example-box">
+                <p class="japanese-sentence">その へやは きれいです。<button class="audio-icon" data-audio-text="その へやは きれいです。">🔊</button></p>
+                <p class="translation">Sono heya wa kirei desu. (那个房间很干净。)</p>
+            </div>
+
+            <div class="cultural-note">
+                <strong>💡 文化小贴士：</strong>
+                <p>「きれい (kirei)」是一个特殊的な-形容词。它以「い」结尾，但功能上是な-形容词。类似的还有「ゆうめい (yūmei - 有名)」和「きらい (kirai - 讨厌)」等。这些都被称为“形容动词”的特殊形式，需要特别记忆哦！它们在使用时遵循な-形容词的规则。</p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🔗 连接形容词 (Connecting Adjectives)</h2>
+            <p>当你想用多个形容词来描述一个事物时，我们可以通过改变形容词的形态来实现“又...又...”的效果。</p>
+
+            <h3>い-形容词的连接</h3>
+            <p>将第一个い-形容词的「い」变为「<strong>くて</strong>」。</p>
+            <p><strong>公式：</strong> <strong>形容词(い)</strong> + <strong>くて</strong> + <strong>形容词</strong></p>
+            <ul>
+                <li><button class="audio-icon" data-audio-text="さむい">🔊</button> <span class="japanese-word">さむい</span> (samui) → <button class="audio-icon" data-audio-text="さむくて">🔊</button> <span class="japanese-word">さむくて</span> (samukute)</li>
+                <li><button class="audio-icon" data-audio-text="おいしい">🔊</button> <span class="japanese-word">おいしい</span> (oishii) → <button class="audio-icon" data-audio-text="おいしくて">🔊</button> <span class="japanese-word">おいしくて</span> (oishikute)</li>
+            </ul>
+            <div class="example-box">
+                <p class="japanese-sentence">この みせは たかくて、おいしいです。<button class="audio-icon" data-audio-text="この みせは たかくて、おいしいです。">🔊</button></p>
+                <p class="translation">Kono mise wa takakute, oishii desu. (这家店又贵又好吃。)</p>
+            </div>
+            <div class="example-box">
+                <p class="japanese-sentence">きょうは さむくて、ふるいです。<button class="audio-icon" data-audio-text="きょうは さむくて、ふるいです。">🔊</button></p>
+                <p class="translation">Kyō wa samukute, furui desu. (今天又冷又旧。)</p>
+            </div>
+
+            <h3>な-形容词的连接</h3>
+            <p>将第一个な-形容词的词干后加上「<strong>で</strong>」。</p>
+            <p><strong>公式：</strong> <strong>形容词(な)词干</strong> + <strong>で</strong> + <strong>形容词</strong></p>
+            <ul>
+                <li><button class="audio-icon" data-audio-text="しずか">🔊</button> <span class="japanese-word">しずか</span> (shizuka) → <button class="audio-icon" data-audio-text="しずかで">🔊</button> <span class="japanese-word">しずかで</span> (shizukade)</li>
+                <li><button class="audio-icon" data-audio-text="きれい">🔊</button> <span class="japanese-word">きれい</span> (kirei) → <button class="audio-icon" data-audio-text="きれいで">🔊</button> <span class="japanese-word">きれいで</span> (kireide)</li>
+            </ul>
+            <div class="example-box">
+                <p class="japanese-sentence">ここは しずかで、きれいな まちです。<button class="audio-icon" data-audio-text="ここは しずかで、きれいな まちです。">🔊</button></p>
+                <p class="translation">Koko wa shizukade, kireina machi desu. (这里是又安静又漂亮的城市。)</p>
+            </div>
+            <div class="example-box">
+                <p class="japanese-sentence">田中さんは げんきで、しんせつです。<button class="audio-icon" data-audio-text="田中さんは げんきで、しんせつです。">🔊</button></p>
+                <p class="translation">Tanaka-san wa genkide, shinsetsu desu. (田中先生/小姐又健康又亲切。)</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>📝 练习时间！</h2>
+            <p>选择正确的选项来完成句子。</p>
+
+            <div class="practice-question">
+                <p>1. 这个房间很干净。</p>
+                <div class="practice-options">
+                    <button class="practice-option-button" data-correct="false">この へやは きれいなです。</button>
+                    <button class="practice-option-button" data-correct="true">この へやは きれいです。</button>
+                    <button class="practice-option-button" data-correct="false">この へやは きれいくいです。</button>
+                </div>
+                <div class="feedback-message"></div>
+            </div>
+
+            <div class="practice-question">
+                <p>2. 那是著名又古老的寺庙。</p>
+                <div class="practice-options">
+                    <button class="practice-option-button" data-correct="false">あれは ゆうめいで、ふるいお寺です。</button>
+                    <button class="practice-option-button" data-correct="false">あれは ゆうめいな、ふるいお寺です。</button>
+                    <button class="practice-option-button" data-correct="true">あれは ゆうめいで、ふるい おてらです。</button>
+                </div>
+                <div class="feedback-message"></div>
+            </div>
+
+            <div class="practice-question">
+                <p>3. 今天很热，也很有趣。</p>
+                <div class="practice-options">
+                    <button class="practice-option-button" data-correct="false">きょうは あついし、おもしろいです。</button>
+                    <button class="practice-option-button" data-correct="true">きょうは あつくて、おもしろいです。</button>
+                    <button class="practice-option-button" data-correct="false">きょうは あつで、おもしろいです。</button>
+                </div>
+                <div class="feedback-message"></div>
+            </div>
+
+            <div class="practice-question">
+                <p>4. 那个公园又安静又漂亮。</p>
+                <div class="practice-options">
+                    <button class="practice-option-button" data-correct="false">あの こうえんは しずかくて、きれいです。</button>
+                    <button class="practice-option-button" data-correct="true">あの こうえんは しずかで、きれい です。</button>
+                    <button class="practice-option-button" data-correct="false">あの こうえんは しずかです、きれい です。</button>
+                </div>
+                <div class="feedback-message"></div>
+            </div>
+
+            <script>
+                // JavaScript 用于处理练习题的交互逻辑
+                document.querySelectorAll('.practice-options').forEach(optionsContainer => {
+                    optionsContainer.querySelectorAll('.practice-option-button').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const feedbackMessage = this.closest('.practice-question').querySelector('.feedback-message');
+                            
+                            // 禁用所有选项按钮并清除之前的状态
+                            optionsContainer.querySelectorAll('.practice-option-button').forEach(btn => {
+                                btn.disabled = true;
+                                btn.classList.remove('correct', 'incorrect');
+                            });
+
+                            if (this.dataset.correct === 'true') {
+                                this.classList.add('correct');
+                                feedbackMessage.textContent = '✅ 太棒了！回答正确！';
+                                feedbackMessage.classList.add('correct');
+                                feedbackMessage.classList.remove('incorrect');
+                            } else {
+                                this.classList.add('incorrect');
+                                feedbackMessage.textContent = '❌ 再试一次哦。';
+                                feedbackMessage.classList.add('incorrect');
+                                feedbackMessage.classList.remove('correct');
+                                // 如果回答错误，高亮正确答案
+                                optionsContainer.querySelectorAll('.practice-option-button').forEach(btn => {
+                                    if (btn.dataset.correct === 'true') {
+                                        btn.classList.add('correct');
+                                    }
+                                });
+                            }
+                            feedbackMessage.style.display = 'block'; // 显示反馈信息
+                        });
+                    });
+                });
+            </script>
+        </section>
+
+        <section class="lesson-section">
+            <h2>📚 本章总结</h2>
+            <p>恭喜你！在本章中，我们学习了日语形容词的基础知识：</p>
+            <ul class="summary-list">
+                <li><strong>い-形容词</strong>：以「い」结尾（少数例外），直接修饰名词或加「です」在句尾。
+                    <br>例如：<span class="japanese-word">たかい</span> (贵的) → <span class="japanese-sentence">この みせは たかいです。</span>
+                </li>
+                <li><strong>な-形容词</strong>：不以「い」结尾（多数情况），修饰名词时加「な」，句尾加「です」。记住例外：「きれい」「ゆうめい」等。
+                    <br>例如：<span class="japanese-word">しずか</span> (安静的) → <span class="japanese-sentence">しずかな まちです。</span>
+                </li>
+                <li><strong>连接形容词</strong>：用于表达“又...又...”的含义。
+                    <ul>
+                        <li>い-形容词：将第一个「い」改为「<strong>くて</strong>」。
+                            <br>例如：<span class="japanese-word">たかい</span> → <span class="japanese-word">たかくて</span>。<span class="japanese-sentence">たかくて、おいしいです。</span> (又贵又好吃。)
+                        </li>
+                        <li>な-形容词：将第一个词干后加「<strong>で</strong>」。
+                            <br>例如：<span class="japanese-word">しずか</span> → <span class="japanese-word">しずかで</span>。<span class="japanese-sentence">しずかで、きれいな まちです。</span> (又安静又漂亮的城市。)
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <p>现在你已经可以开始用日语描述你周围的世界了！多多练习，你就会越来越熟练！</p>
+        </section>
+    </div>
+</body>
+</html>

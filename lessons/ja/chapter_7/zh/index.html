@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Essential Verbs & Conjugation Basics</title>
+    <style>
+        /* Global Styles & Reset */
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white-color: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header Structure Requirements */
+        .chapter-title {
+            color: var(--heading-color);
+            font-size: 28px;
+            text-align: center;
+            margin: 25px 15px 15px; /* Adjust margin for mobile */
+            padding: 0;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            background-color: var(--white-color);
+            margin: 20px 15px; /* Consistent margin for sections */
+            padding: 25px 20px; /* Generous padding for content */
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .lesson-section h2 {
+            color: var(--heading-color);
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .lesson-section h3 {
+            color: var(--heading-color);
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--body-text-color);
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            color: var(--primary-color);
+            font-style: normal;
+        }
+
+        /* Japanese Text & Audio */
+        .japanese-word {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Space between word and audio icon */
+            margin-bottom: 5px;
+        }
+
+        .audio-icon {
+            background-color: transparent;
+            border: none;
+            color: var(--primary-color);
+            font-size: 24px; /* Icon size */
+            padding: 10px; /* Make it a large touch target */
+            min-width: 44px; /* Minimum touch target size */
+            min-height: 44px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light hover effect */
+            transform: scale(1.05);
+        }
+
+        .translation {
+            font-size: 0.95em;
+            color: var(--body-text-color);
+            margin-left: 38px; /* Align with Japanese word if audio icon is present */
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .example-sentence {
+            background-color: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-sentence .japanese-word {
+            font-size: 1em;
+            margin-bottom: 0;
+        }
+        .example-sentence .translation {
+            margin-left: 0; /* Override default margin */
+            font-size: 0.9em;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '👉'; /* Unicode arrow or other suitable icon */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1.1em;
+        }
+
+        /* Tables for Conjugation */
+        .conjugation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95em;
+            border-radius: 8px; /* Rounded corners for the table */
+            overflow: hidden; /* Ensures border-radius applies */
+        }
+
+        .conjugation-table th,
+        .conjugation-table td {
+            border: 1px solid var(--border-color);
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        .conjugation-table th {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            font-weight: bold;
+        }
+
+        .conjugation-table tr:nth-child(even) {
+            background-color: #F8F8F8; /* Slightly darker row for readability */
+        }
+
+        /* Practice Section */
+        .practice-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .practice-item p {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--heading-color);
+        }
+
+        .practice-input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+            color: var(--body-text-color);
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .practice-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center; /* Center buttons if few */
+        }
+
+        .option-button {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            flex-grow: 1; /* Allow buttons to grow */
+            min-width: 44px; /* Ensure touch target */
+            min-height: 44px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .option-button:hover {
+            background-color: #6F4A99; /* Darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        .check-button {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            padding: 15px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            margin-top: 20px;
+            min-height: 50px; /* Slightly larger check button */
+            transition: background-color 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .check-button:hover {
+            background-color: #6F4A99;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            display: none; /* Hidden by default */
+        }
+
+        .feedback.correct {
+            background-color: #E6F7ED; /* Light green */
+            color: #388E3C; /* Dark green */
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background-color: #FEEEEE; /* Light red */
+            color: #D32F2F; /* Dark red */
+            display: block;
+        }
+
+        /* Summary Section */
+        .summary-section ul li::before {
+            content: '✨'; /* Different icon for summary */
+        }
+
+        /* Media Queries for larger screens (e.g., tablets, desktops) */
+        @media (min-width: 600px) {
+            .chapter-title {
+                font-size: 32px;
+            }
+
+            .lesson-section {
+                margin: 30px auto; /* Center sections on larger screens */
+                max-width: 600px; /* Keep content within readable width */
+            }
+
+            .lesson-section h2 {
+                font-size: 24px;
+            }
+
+            .lesson-section h3 {
+                font-size: 20px;
+            }
+
+            .example-sentence {
+                padding: 15px 20px;
+            }
+
+            .conjugation-table th,
+            .conjugation-table td {
+                padding: 12px 15px;
+            }
+        }
+
+        /* Helper classes */
+        .text-center {
+            text-align: center;
+        }
+        .mt-20 { margin-top: 20px; }
+        .mb-20 { margin-bottom: 20px; }
+        .p-15 { padding: 15px; }
+
+    </style>
+</head>
+<body>
+    <h1 class="chapter-title">Chapter 7: Essential Verbs & Conjugation Basics</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+    </div>
+
+    <section class="lesson-section">
+        <h2>🎉 欢迎来到第七章：核心动词与基本活用！</h2>
+        <p>
+            准备好掌握日语中最常用的一些动词了吗？本章我们将学习几个关键动词，并开始探索动词的“变身”——活用！学完本章，你就能表达“去”、“吃”、“做”、“来”这些日常活动，并学会如何表达它们的肯定和否定形式。让我们开始吧！🚀
+        </p>
+    </section>
+
+    <section class="lesson-section">
+        <h2>🚶‍♀️ 核心动词一：行く (iku) - 去</h2>
+        <p>
+            <em>行く (いく / iku)</em> 是一个非常重要的动词，表示“去”、“前往”。当表示去某个地点时，通常使用助词 <em>に (ni)</em> 来指明目的地。
+        </p>
+        <div class="japanese-word">
+            <span>行く (いく)</span>
+            <button class="audio-icon" data-audio-text="いく">🔊</button>
+        </div>
+        <span class="translation">去 / 前往</span>
+
+        <h3>例句：</h3>
+        <div class="example-sentence">
+            <div class="japanese-word">
+                <span>わたしは がっこう に いきます。</span>
+                <button class="audio-icon" data-audio-text="わたしはがっこうにいきます">🔊</button>
+            </div>
+            <span class="translation">我去学校。</span>
+            <p>
+                <small>わたし (watashi): 我</small><br>
+                <small>がっこう (gakkou): 学校</small><br>
+                <small>に (ni): 助词，表示目的地</small><br>
+                <small>いきます (ikimasu): 行く 的礼貌形（现在/将来时）</small>
+            </p>
+        </div>
+        <div class="example-sentence">
+            <div class="japanese-word">
+                <span>えき に いきます。</span>
+                <button class="audio-icon" data-audio-text="えきにいきます">🔊</button>
+            </div>
+            <span class="translation">去车站。</span>
+            <p><small>えき (eki): 车站</small></p>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>🍚 核心动词二：食べる (taberu) - 吃</h2>
+        <p>
+            <em>食べる (たべる / taberu)</em> 是表示“吃”的动词。当表示吃什么东西时，通常使用助词 <em>を (o)</em> 来指明宾语。
+        </p>
+        <div class="japanese-word">
+            <span>食べる (たべる)</span>
+            <button class="audio-icon" data-audio-text="たべる">🔊</button>
+        </div>
+        <span class="translation">吃</span>
+
+        <h3>例句：</h3>
+        <div class="example-sentence">
+            <div class="japanese-word">
+                <span>パン を たべます。</span>
+                <button class="audio-icon" data-audio-text="パンをたべます">🔊</button>
+            </div>
+            <span class="translation">吃面包。</span>
+            <p>
+                <small>パン (pan): 面包</small><br>
+                <small>を (o): 助词，表示宾语</small><br>
+                <small>たべます (tabemasu): 食べる 的礼貌形</small>
+            </p>
+        </div>
+        <div class="example-sentence">
+            <div class="japanese-word">
+                <span>ごはん を たべます。</span>
+                <button class="audio-icon" data-audio-text="ごはんをたべます">🔊</button>
+            </div>
+            <span class="translation">吃饭。</span>
+            <p><small>ごはん (gohan): 饭</small></p>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>✨ 核心动词三：する (suru) - 做</h2>
+        <p>
+            <em>する (suru)</em> 是一个万能动词，表示“做”、“进行”。它可以和名词结合，形成新的动词短语，比如“学习”、“购物”等。
+        </p>
+        <div class="japanese-word">
+            <span>する (する)</span>
+            <button class="audio-icon" data-audio-text="する">🔊</button>
+        </div>
+        <span class="translation">做 / 进行</span>
+
+        <h3>例句：</h3>
+        <div class="example-sentence">
+            <div class="japanese-word">
+                <span>べんきょう を します。</span>
+                <button class="audio-icon" data-audio-text="べんきょうをします">🔊</button>
+            </div>
+            <span class="translation">学习。</span>
+            <p>
+                <small>べんきょう (benkyou): 学习 (名词)</small><br>
+                <small>します (shimasu): する 的礼貌形</small>
+            </p>
+        </div>
+        <div class="example-sentence">
+            <div class="japanese-word">
+                <span>かいもの を します。</span>
+                <button class="audio-icon" data-audio-text="かいものをします">🔊</button>
+            </div>
+            <span class="translation">购物。</span>
+            <p><small>かいもの (kaimono): 购物 (名词)</small></p>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>👋 核心动词四：来る (kuru) - 来</h2>
+        <p>
+            <em>来る (くる / kuru)</em> 表示“来”、“来到”。和 “行く” 类似，当表示从某处“来”时，也常与助词 <em>に (ni)</em> 结合。
+        </p>
+        <div class="japanese-word">
+            <span>来る (くる)</span>
+            <button class="audio-icon" data-audio-text="くる">🔊</button>
+        </div>
+        <span class="translation">来 / 来到</span>
+
+        <h3>例句：</h3>
+        <div class="example-sentence">
+            <div class="japanese-word">
+                <span>ともだち が きます。</span>
+                <button class="audio-icon" data-audio-text="ともだちがきます">🔊</button>
+            </div>
+            <span class="translation">朋友来了。</span>
+            <p>
+                <small>ともだち (tomodachi): 朋友</small><br>
+                <small>が (ga): 助词，表示主语</small><br>
+                <small>きます (kimasu): 来る 的礼貌形</small>
+            </p>
+        </div>
+        <div class="example-sentence">
+            <div class="japanese-word">
+                <span>いえ に きます。</span>
+                <button class="audio-icon" data-audio-text="いえにきます">🔊</button>
+            </div>
+            <span class="translation">来家里。</span>
+            <p><small>いえ (ie): 家</small></p>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>✏️ 动词活用基础：现在/将来肯定形 (ます 形)</h2>
+        <p>
+            在日常交流中，我们通常使用动词的 <em>ます 形 (masu-kei)</em>，它是一种礼貌的表达方式，可以表示现在或将来的动作。
+        </p>
+        <p>基本规则（本章动词）：</p>
+        <ul>
+            <li>
+                <em>行く (iku)</em> → <strong>行きます (ikimasu)</strong>
+                <button class="audio-icon" data-audio-text="いきます">🔊</button>
+            </li>
+            <li>
+                <em>食べる (taberu)</em> → <strong>食べます (tabemasu)</strong>
+                <button class="audio-icon" data-audio-text="たべます">🔊</button>
+            </li>
+            <li>
+                <em>する (suru)</em> → <strong>します (shimasu)</strong>
+                <button class="audio-icon" data-audio-text="します">🔊</button>
+            </li>
+            <li>
+                <em>来る (kuru)</em> → <strong>来ます (kimasu)</strong>
+                <button class="audio-icon" data-audio-text="きます">🔊</button>
+            </li>
+        </ul>
+
+        <table class="conjugation-table">
+            <thead>
+                <tr>
+                    <th>动词原形</th>
+                    <th>现在/将来肯定形</th>
+                    <th>意义</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="japanese-word">行く<button class="audio-icon" data-audio-text="いく">🔊</button></div></td>
+                    <td><div class="japanese-word">行きます<button class="audio-icon" data-audio-text="いきます">🔊</button></div></td>
+                    <td>去</td>
+                </tr>
+                <tr>
+                    <td><div class="japanese-word">食べる<button class="audio-icon" data-audio-text="たべる">🔊</button></div></td>
+                    <td><div class="japanese-word">食べます<button class="audio-icon" data-audio-text="たべます">🔊</button></div></td>
+                    <td>吃</td>
+                </tr>
+                <tr>
+                    <td><div class="japanese-word">する<button class="audio-icon" data-audio-text="する">🔊</button></div></td>
+                    <td><div class="japanese-word">します<button class="audio-icon" data-audio-text="します">🔊</button></div></td>
+                    <td>做</td>
+                </tr>
+                <tr>
+                    <td><div class="japanese-word">来る<button class="audio-icon" data-audio-text="くる">🔊</button></div></td>
+                    <td><div class="japanese-word">来ます<button class="audio-icon" data-audio-text="きます">🔊</button></div></td>
+                    <td>来</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="lesson-section">
+        <h2>🙅‍♀️ 动词活用基础：现在/将来否定形 (ません 形)</h2>
+        <p>
+            要表达否定，只需将 <em>ます</em> 替换为 <em>ません (masen)</em>。这表示“不…”或“不曾…”。
+        </p>
+        <p>基本规则：</p>
+        <ul>
+            <li>
+                <em>行きます (ikimasu)</em> → <strong>行きません (ikimasen)</strong>
+                <button class="audio-icon" data-audio-text="いきません">🔊</button>
+            </li>
+            <li>
+                <em>食べます (tabemasu)</em> → <strong>食べません (tabemasen)</strong>
+                <button class="audio-icon" data-audio-text="たべません">🔊</button>
+            </li>
+            <li>
+                <em>します (shimasu)</em> → <strong>しません (shimasen)</strong>
+                <button class="audio-icon" data-audio-text="しません">🔊</button>
+            </li>
+            <li>
+                <em>来ます (kimasu)</em> → <strong>来ません (kimasen)</strong>
+                <button class="audio-icon" data-audio-text="きません">🔊</button>
+            </li>
+        </ul>
+
+        <table class="conjugation-table">
+            <thead>
+                <tr>
+                    <th>现在/将来肯定形</th>
+                    <th>现在/将来否定形</th>
+                    <th>意义</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div class="japanese-word">行きます<button class="audio-icon" data-audio-text="いきます">🔊</button></div></td>
+                    <td><div class="japanese-word">行きません<button class="audio-icon" data-audio-text="いきません">🔊</button></div></td>
+                    <td>不去</td>
+                </tr>
+                <tr>
+                    <td><div class="japanese-word">食べます<button class="audio-icon" data-audio-text="たべます">🔊</button></div></td>
+                    <td><div class="japanese-word">食べません<button class="audio-icon" data-audio-text="たべません">🔊</button></div></td>
+                    <td>不吃</td>
+                </tr>
+                <tr>
+                    <td><div class="japanese-word">します<button class="audio-icon" data-audio-text="します">🔊</button></div></td>
+                    <td><div class="japanese-word">しません<button class="audio-icon" data-audio-text="しません">🔊</button></div></td>
+                    <td>不做</td>
+                </tr>
+                <tr>
+                    <td><div class="japanese-word">来ます<button class="audio-icon" data-audio-text="きます">🔊</button></div></td>
+                    <td><div class="japanese-word">来ません<button class="audio-icon" data-audio-text="きません">🔊</button></div></td>
+                    <td>不来</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>否定形例句：</h3>
+        <div class="example-sentence">
+            <div class="japanese-word">
+                <span>パン を たべません。</span>
+                <button class="audio-icon" data-audio-text="パンをたべません">🔊</button>
+            </div>
+            <span class="translation">不吃面包。</span>
+        </div>
+        <div class="example-sentence">
+            <div class="japanese-word">
+                <span>きょう は がっこう に いきません。</span>
+                <button class="audio-icon" data-audio-text="きょうはがっこうにいきません">🔊</button>
+            </div>
+            <span class="translation">今天不去学校。</span>
+            <p><small>きょう (kyou): 今天</small></p>
+        </div>
+    </section>
+
+    <section class="lesson-section practice-section">
+        <h2>🎯 练习时间！</h2>
+        <p>选择正确的动词形式来完成句子。</p>
+
+        <div class="practice-item">
+            <p>1. わたしは しごと に ________。</p>
+            <div class="practice-options">
+                <button class="option-button" data-question="1" data-answer="いきます">行きます</button>
+                <button class="option-button" data-question="1" data-answer="たべます">食べます</button>
+                <button class="option-button" data-question="1" data-answer="しません">しません</button>
+            </div>
+            <div class="feedback" id="feedback1"></div>
+        </div>
+
+        <div class="practice-item">
+            <p>2. きょう パン を ________。</p>
+            <div class="practice-options">
+                <button class="option-button" data-question="2" data-answer="たべません">食べません</button>
+                <button class="option-button" data-question="2" data-answer="きます">来ます</button>
+                <button class="option-button" data-question="2" data-answer="します">します</button>
+            </div>
+            <div class="feedback" id="feedback2"></div>
+        </div>
+
+        <div class="practice-item">
+            <p>3. 毎日 日本語 を ________。</p>
+            <div class="practice-options">
+                <button class="option-button" data-question="3" data-answer="します">します</button>
+                <button class="option-button" data-question="3" data-answer="いきます">行きます</button>
+                <button class="option-button" data-question="3" data-answer="きません">来ません</button>
+            </div>
+            <div class="feedback" id="feedback3"></div>
+        </div>
+        <p class="mt-20" style="color: var(--primary-color); text-align: center;">
+            <small>在实际应用中，点击上方选项后会立即显示对错提示哦！</small>
+        </p>
+    </section>
+
+    <section class="lesson-section summary-section">
+        <h2>📚 本章总结</h2>
+        <p>恭喜你！本章你学习了日语的四个核心动词以及它们的基本活用形式：</p>
+        <ul>
+            <li>
+                <strong>核心动词：</strong>
+                <ul>
+                    <li><div class="japanese-word">行く (いく)</div> <span class="translation">去</span></li>
+                    <li><div class="japanese-word">食べる (たべる)</div> <span class="translation">吃</span></li>
+                    <li><div class="japanese-word">する (する)</div> <span class="translation">做</span></li>
+                    <li><div class="japanese-word">来る (くる)</div> <span class="translation">来</span></li>
+                </ul>
+            </li>
+            <li>
+                <strong>动词活用：</strong>
+                <ul>
+                    <li>
+                        <strong>ます 形 (礼貌形 / 现在或将来肯定)：</strong>
+                        <br><small>例：行きます (ikimasu) - 去 / 食べます (tabemasu) - 吃</small>
+                    </li>
+                    <li>
+                        <strong>ません 形 (礼貌形 / 现在或将来否定)：</strong>
+                        <br><small>例：行きません (ikimasen) - 不去 / 食べません (tabemasen) - 不吃</small>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>基本句型：</strong>
+                <ul>
+                    <li><code>[主语]は [地点]に [动词ます形/ません形]。</code> (去/来某个地方)</li>
+                    <li><code>[名词]を [动词ます形/ません形]。</code> (吃/做某物)</li>
+                </ul>
+            </li>
+        </ul>
+        <p>这些是日语动词的基础，掌握它们将大大提升你的日常交流能力！继续加油！💪</p>
+    </section>
+
+</body>
+</html>

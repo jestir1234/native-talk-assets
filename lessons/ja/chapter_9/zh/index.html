@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Daily Life & Polite Requests</title>
+    <style>
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-color: #FDF9E5;
+            --heading-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Specific Styles */
+        .chapter-title {
+            color: var(--heading-color);
+            text-align: center;
+            padding: 20px 0;
+            margin: 0;
+            font-size: 2em; /* Larger for chapter title */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Constrain image width for larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        h2, h3 {
+            color: var(--heading-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--primary-color);
+            font-size: 1.5em;
+        }
+
+        h3 {
+            font-size: 1.3em;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .vocabulary-list, .example-list, .practice-options {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .vocabulary-list li, .example-list li {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space out content and audio icon */
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .vocabulary-item-text {
+            flex: 1; /* Allow text to take available space */
+            margin-right: 10px; /* Space between text and audio icon */
+        }
+
+        .japanese-word {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 5px;
+        }
+
+        .romaji {
+            font-style: italic;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .chinese-translation {
+            color: var(--body-text-color);
+        }
+
+        .section-box {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+        }
+
+        .tip {
+            background-color: #e6f7ff; /* Light blue for tips */
+            border-left: 5px solid #007bff; /* Blue border */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: #333;
+        }
+
+        .tip strong {
+            color: #0056b3;
+        }
+
+        .practice-section {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: center;
+            border: 1px dashed var(--primary-color);
+        }
+
+        .practice-question {
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .practice-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 25px;
+            padding: 14px 25px; /* Ensure minimum height */
+            margin: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            min-height: 44px; /* Ensure tap target size */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .practice-button:hover {
+            background-color: #6C429B; /* Slightly darker purple */
+            transform: translateY(-2px);
+        }
+
+        .practice-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .audio-icon {
+            background-color: #E0D3F5; /* Lighter purple background for audio */
+            color: var(--primary-color);
+            border: none;
+            border-radius: 50%;
+            width: 44px; /* Minimum tap target size */
+            height: 44px; /* Minimum tap target size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            flex-shrink: 0; /* Prevent shrinking on small screens */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-icon:hover {
+            background-color: #D0C3E5; /* Slightly darker on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        .summary-box {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-box ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .summary-box li {
+            margin-bottom: 8px;
+            color: var(--body-text-color);
+        }
+
+        /* Responsive adjustments */
+        @media screen and (min-width: 600px) {
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.5em;
+            }
+            body {
+                font-size: 17px;
+            }
+            .container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 9: Daily Life Vocabulary & Polite Requests</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 9 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-box">
+            <h2>🎉 欢迎来到第九章！每日生活词汇与礼貌请求 🎉</h2>
+            <p>这一章我们将学习和日常生活息息相关的词汇，让你能描述去哪里、吃什么、怎么出行。更重要的是，我们还会学习如何用日语提出礼貌的请求！</p>
+            <p>准备好了吗？让我们开始吧！🚀</p>
+        </section>
+
+        <section class="section-box">
+            <h2>词汇拓展：日常生活必备 📚</h2>
+            <p>先来认识一些在日常对话中非常常用的名词吧！</p>
+
+            <h3>🍜 食物 (たべもの - tabemono)</h3>
+            <ul class="vocabulary-list">
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">水</span> (<span class="romaji">みず - mizu</span>)
+                        <br><span class="chinese-translation">水</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="水">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">コーヒー</span> (<span class="romaji">kōhī</span>)
+                        <br><span class="chinese-translation">咖啡</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="コーヒー">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">お茶</span> (<span class="romaji">おちゃ - ocha</span>)
+                        <br><span class="chinese-translation">茶</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="お茶">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">ご飯</span> (<span class="romaji">ごはん - gohan</span>)
+                        <br><span class="chinese-translation">米饭；饭菜</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="ご飯">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">パン</span> (<span class="romaji">pan</span>)
+                        <br><span class="chinese-translation">面包</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="パン">🔊</button>
+                </li>
+            </ul>
+
+            <h3>📍 地点 (ばしょ - basho)</h3>
+            <ul class="vocabulary-list">
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">駅</span> (<span class="romaji">えき - eki</span>)
+                        <br><span class="chinese-translation">车站</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="駅">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">病院</span> (<span class="romaji">びょういん - byōin</span>)
+                        <br><span class="chinese-translation">医院</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="病院">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">学校</span> (<span class="romaji">がっこう - gakkō</span>)
+                        <br><span class="chinese-translation">学校</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="学校">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">銀行</span> (<span class="romaji">ぎんこう - ginkō</span>)
+                        <br><span class="chinese-translation">银行</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="銀行">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">レストラン</span> (<span class="romaji">resutoran</span>)
+                        <br><span class="chinese-translation">餐厅</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="レストラン">🔊</button>
+                </li>
+            </ul>
+
+            <h3>🚗 交通工具 (のりもの - norimono)</h3>
+            <ul class="vocabulary-list">
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">電車</span> (<span class="romaji">でんしゃ - densha</span>)
+                        <br><span class="chinese-translation">电车</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="電車">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">バス</span> (<span class="romaji">basu</span>)
+                        <br><span class="chinese-translation">巴士</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="バス">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">タクシー</span> (<span class="romaji">takushī</span>)
+                        <br><span class="chinese-translation">出租车</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="タクシー">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">車</span> (<span class="romaji">くるま - kuruma</span>)
+                        <br><span class="chinese-translation">汽车</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="車">🔊</button>
+                </li>
+            </ul>
+
+            <h3>🗓️ 每日惯例 (まいにちのしゅうかん - mainichi no shūkan)</h3>
+            <ul class="vocabulary-list">
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">朝ごはん</span> (<span class="romaji">あさごはん - asagohan</span>)
+                        <br><span class="chinese-translation">早餐</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="朝ごはん">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">昼ごはん</span> (<span class="romaji">ひるごはん - hirugohan</span>)
+                        <br><span class="chinese-translation">午餐</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="昼ごはん">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">晩ごはん</span> (<span class="romaji">ばんごはん - bangohan</span>)
+                        <br><span class="chinese-translation">晚餐</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="晩ごはん">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">仕事</span> (<span class="romaji">しごと - shigoto</span>)
+                        <br><span class="chinese-translation">工作</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="仕事">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">勉強</span> (<span class="romaji">べんきょう - benkyō</span>)
+                        <br><span class="chinese-translation">学习</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="勉強">🔊</button>
+                </li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h3>试试看！词汇练习 🧩</h3>
+            <p class="practice-question">请选择对应“医院”的日语单词：</p>
+            <div class="practice-options">
+                <button class="practice-button" data-audio-text="学校">学校</button>
+                <button class="practice-button" data-audio-text="病院">病院</button>
+                <button class="practice-button" data-audio-text="駅">駅</button>
+            </div>
+            <p class="practice-question">请选择对应“水”的日语单词：</p>
+            <div class="practice-options">
+                <button class="practice-button" data-audio-text="お茶">お茶</button>
+                <button class="practice-button" data-audio-text="ご飯">ご飯</button>
+                <button class="practice-button" data-audio-text="水">水</button>
+            </div>
+        </section>
+
+        <section class="section-box">
+            <h2>提出请求：礼貌地开口说日语 🗣️</h2>
+            <p>在日常生活中，我们经常需要向别人请求帮助或者索取物品。日语中有两种非常常用的礼貌请求表达方式。</p>
+
+            <h3>1. ～ください (kudasai) - “请给我/请做…”</h3>
+            <p>这是最常见、最直接的礼貌请求形式，通常用于请求物品或指示对方进行某个动作。它可以接在名词后面，表示“请给我（这个名词）”。</p>
+            <ul class="example-list">
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">水</span>を<span class="japanese-word">ください。</span>
+                        <br><span class="romaji">Mizu o kudasai.</span>
+                        <br><span class="chinese-translation">请给我水。</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="水をください。">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">コーヒー</span>を<span class="japanese-word">ください。</span>
+                        <br><span class="romaji">Kōhī o kudasai.</span>
+                        <br><span class="chinese-translation">请给我咖啡。</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="コーヒーをください。">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">これ</span>を<span class="japanese-word">ください。</span>
+                        <br><span class="romaji">Kore o kudasai.</span>
+                        <br><span class="chinese-translation">请给我这个。</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="これをください。">🔊</button>
+                </li>
+            </ul>
+            <div class="tip">
+                <strong>💡 小贴士：</strong>
+                <p>这里的助词「を (o)」表示动作的对象，即“给我”什么。你可以把任何你想请求的物品名词放在「を」的前面。</p>
+            </div>
+
+            <h3>2. ～をおねがいします (o o-negai shimasu) - “麻烦你给我/请给我…”</h3>
+            <p>这个表达比「～ください」更客气，更委婉，带有“拜托了”的语气，常用于点餐、请求服务或者请求对方做某事。它同样可以接在名词后面。</p>
+            <ul class="example-list">
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">コーヒー</span>を<span class="japanese-word">一つ</span> <span class="japanese-word">おねがいします。</span>
+                        <br><span class="romaji">Kōhī o hitotsu o-negai shimasu.</span>
+                        <br><span class="chinese-translation">请给我一杯咖啡。（字面：麻烦请给我一杯咖啡。）</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="コーヒーを一つ おねがいします。">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">水</span>を<span class="japanese-word">お願いします。</span>
+                        <br><span class="romaji">Mizu o o-negai shimasu.</span>
+                        <br><span class="chinese-translation">请给我水。（更礼貌的说法）</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="水をお願いします。">🔊</button>
+                </li>
+                <li>
+                    <div class="vocabulary-item-text">
+                        <span class="japanese-word">メニュー</span>を<span class="japanese-word">お願いします。</span>
+                        <br><span class="romaji">Menyū o o-negai shimasu.</span>
+                        <br><span class="chinese-translation">请给我菜单。</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="メニューをお願いします。">🔊</button>
+                </li>
+            </ul>
+            <div class="tip">
+                <strong>💡 小贴士：</strong>
+                <p>「一つ (hitotsu)」是“一个”的意思，在点餐时常用于强调数量。即使不说数量，直接用名词+「をお願いします」也是很礼貌的。</p>
+                <p>这两种表达在日常生活中都非常常用。「～ください」更直接，「～をお願いします」则更显客气和周到。</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>试试看！造句练习 ✍️</h3>
+            <p class="practice-question">你想向服务员点一杯茶。你会怎么说？</p>
+            <div class="practice-options">
+                <button class="practice-button" data-audio-text="お茶をください。">お茶をください。</button>
+                <button class="practice-button" data-audio-text="お茶を一つ おねがいします。">お茶を一つ おねがいします。</button>
+            </div>
+            <p class="practice-question">你想让对方给你看菜单。你会怎么说？</p>
+            <div class="practice-options">
+                <button class="practice-button" data-audio-text="メニューをください。">メニューをください。</button>
+                <button class="practice-button" data-audio-text="メニューをお願いします。">メニューをお願いします。</button>
+            </div>
+        </section>
+
+        <section class="section-box summary-box">
+            <h2>本章总结 📖</h2>
+            <p>恭喜你！你已经完成了第九章的学习。让我们回顾一下你所掌握的知识点：</p>
+            <ul>
+                <li>掌握了<strong>日常生活中的基础词汇</strong>，包括食物、地点、交通工具和日常惯例。</li>
+                <li>学习了两种<strong>礼貌的请求表达方式</strong>：
+                    <ul>
+                        <li><strong>～ください (kudasai)</strong>：请给我/请做…（直接但礼貌）</li>
+                        <li><strong>～をおねがいします (o o-negai shimasu)</strong>：麻烦你给我/请给我…（更委婉客气）</li>
+                    </ul>
+                </li>
+                <li>了解了在不同场合选择不同请求表达的小技巧。</li>
+            </ul>
+            <p>这些词汇和句型在你的日本旅行或日常交流中会非常有用！多加练习，让它们成为你的口语习惯吧！</p>
+        </section>
+    </div>
+</body>
+</html>

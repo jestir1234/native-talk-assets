@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>第六章：数字、时间与计数器</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-bg-color: #FDF9E5;
+            --heading-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body text size */
+            -webkit-text-size-adjust: 100%; /* Prevent font size inflation */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit; /* Inherit box-sizing from body */
+        }
+
+        /* Responsive Layout */
+        .container {
+            padding: 0 15px;
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto;
+        }
+
+        @media (min-width: 600px) {
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        /* Header Styles */
+        .chapter-title {
+            color: var(--heading-color);
+            text-align: center;
+            padding-top: 20px;
+            font-size: 28px; /* Responsive font size */
+            margin-bottom: 0;
+        }
+        @media (min-width: 600px) {
+            .chapter-title {
+                font-size: 32px;
+            }
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            margin: 20px 0;
+            padding: 20px 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        section h2 {
+            color: var(--heading-color);
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+
+        section h3 {
+            color: var(--heading-color);
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Text Styles */
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        strong {
+            color: var(--heading-color);
+        }
+        em {
+            font-style: normal;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* List Styles */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dotted var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        .japanese-word {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 18px;
+            min-width: 80px; /* Ensure space for word and audio icon */
+            display: flex;
+            align-items: center;
+        }
+        .pronunciation {
+            font-style: italic;
+            color: #999;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+        .chinese-translation {
+            flex: 1; /* Take remaining space */
+            text-align: right;
+            color: var(--body-text-color);
+            font-size: 16px;
+        }
+        @media (max-width: 400px) {
+            li {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .japanese-word {
+                margin-bottom: 5px;
+            }
+            .chinese-translation {
+                text-align: left;
+                width: 100%;
+                margin-left: 30px; /* Indent translation slightly */
+            }
+        }
+
+        /* Examples */
+        .example-box {
+            background-color: rgba(139, 95, 191, 0.08); /* Light primary color */
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+        .example-box p {
+            margin: 5px 0;
+        }
+        .example-box strong {
+            color: var(--primary-color);
+        }
+
+        /* Interactive Elements - Practice Sections */
+        .practice-section {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            border: 1px dashed var(--primary-color);
+        }
+        .practice-section p {
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-bottom: 15px;
+        }
+        .practice-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted var(--border-color);
+        }
+        .practice-item:last-child {
+            border-bottom: none;
+        }
+        .practice-question {
+            margin-bottom: 10px;
+            color: var(--body-text-color);
+            font-size: 16px;
+        }
+        .practice-question strong {
+            color: var(--primary-color);
+        }
+
+        .input-placeholder {
+            display: inline-block;
+            min-width: 120px;
+            height: 28px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            vertical-align: middle;
+            text-align: center;
+            line-height: 28px;
+            font-style: italic;
+            color: #aaa;
+            font-size: 14px;
+            padding: 0 5px;
+        }
+
+        /* Buttons (for conceptual practice, actual interaction via app) */
+        .button-choice {
+            background-color: #E0E0E0; /* Light gray for inactive choice */
+            color: var(--heading-color);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 18px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            min-height: 44px; /* Touch-friendly */
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+        .button-choice:hover {
+            background-color: #d0d0d0;
+            transform: translateY(-1px);
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%; /* Make it round */
+            width: 44px; /* Touch-friendly size */
+            height: 44px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px; /* Icon size */
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-left: 10px; /* Space from text */
+            flex-shrink: 0; /* Prevent shrinking on small screens */
+        }
+        .audio-icon:hover {
+            background-color: #6C429A; /* Darker primary */
+            transform: scale(1.05);
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: rgba(253, 249, 229, 0.7); /* Lighter secondary background */
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 15px;
+            color: var(--body-text-color);
+        }
+        .cultural-note strong {
+            color: var(--primary-color);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 12px;
+            margin: 20px 0;
+            padding: 20px 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+        .summary-section h2 {
+            color: white;
+            border-bottom: 2px solid white;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .summary-section ul {
+            list-style: disc;
+            text-align: left;
+            margin-left: 20px;
+        }
+        .summary-section li {
+            color: white;
+            border-bottom: none;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 6: 数字、时间与计数器</h1>
+        <div class="lesson-header">
+            <!-- As per requirements, src="../header.webp" is used. No external image URLs. -->
+            <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>你好！欢迎来到第六章！ 👋</h2>
+            <p>这一章，我们将深入学习日常生活中非常实用的日语技能：<strong>表达数字、询问和告知时间，以及使用基本的计数器</strong>。我们还会学习<strong>星期的说法</strong>，并掌握一个超重要的语法点：<strong>助词「に」</strong>，它能帮助你指明动作发生的时间和地点！</p>
+            <p>准备好了吗？让我们开始吧！🚀</p>
+        </section>
+
+        <section>
+            <h2>🔢 数字 1 - 10</h2>
+            <p>首先，让我们来学习日语中的基本数字 1 到 10。这些是构建更复杂数字的基础！</p>
+            <ul>
+                <li>
+                    <span class="japanese-word">一 <span class="pronunciation">ichi</span></span>
+                    <button class="audio-icon" data-audio-text="いち">🔊</button>
+                    <span class="chinese-translation">一</span>
+                </li>
+                <li>
+                    <span class="japanese-word">二 <span class="pronunciation">ni</span></span>
+                    <button class="audio-icon" data-audio-text="に">🔊</button>
+                    <span class="chinese-translation">二</span>
+                </li>
+                <li>
+                    <span class="japanese-word">三 <span class="pronunciation">san</span></span>
+                    <button class="audio-icon" data-audio-text="さん">🔊</button>
+                    <span class="chinese-translation">三</span>
+                </li>
+                <li>
+                    <span class="japanese-word">四 <span class="pronunciation">yon / shi</span></span>
+                    <button class="audio-icon" data-audio-text="よん">🔊</button>
+                    <span class="chinese-translation">四 (通常用 'yon')</span>
+                </li>
+                <li>
+                    <span class="japanese-word">五 <span class="pronunciation">go</span></span>
+                    <button class="audio-icon" data-audio-text="ご">🔊</button>
+                    <span class="chinese-translation">五</span>
+                </li>
+                <li>
+                    <span class="japanese-word">六 <span class="pronunciation">roku</span></span>
+                    <button class="audio-icon" data-audio-text="ろく">🔊</button>
+                    <span class="chinese-translation">六</span>
+                </li>
+                <li>
+                    <span class="japanese-word">七 <span class="pronunciation">nana / shichi</span></span>
+                    <button class="audio-icon" data-audio-text="なな">🔊</button>
+                    <span class="chinese-translation">七 (通常用 'nana')</span>
+                </li>
+                <li>
+                    <span class="japanese-word">八 <span class="pronunciation">hachi</span></span>
+                    <button class="audio-icon" data-audio-text="はち">🔊</button>
+                    <span class="chinese-translation">八</span>
+                </li>
+                <li>
+                    <span class="japanese-word">九 <span class="pronunciation">kyuu / ku</span></span>
+                    <button class="audio-icon" data-audio-text="きゅう">🔊</button>
+                    <span class="chinese-translation">九 (通常用 'kyuu')</span>
+                </li>
+                <li>
+                    <span class="japanese-word">十 <span class="pronunciation">juu</span></span>
+                    <button class="audio-icon" data-audio-text="じゅう">🔊</button>
+                    <span class="chinese-translation">十</span>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>文化小贴士：</strong>数字「四 (し / yon)」和「九 (く / kyuu)」都有两种读法。通常更倾向于使用「<strong>よん (yon)</strong>」和「<strong>なな (nana)</strong>」以及「<strong>きゅう (kyuu)</strong>」，因为「し (shi)」听起来像“死”，而「く (ku)」听起来像“苦”，日本人会尽量避免在某些场合使用。
+            </div>
+
+            <div class="practice-section">
+                <h3>练习：听并选择</h3>
+                <p>听发音，然后选择正确的数字。🎧</p>
+                <div class="practice-item">
+                    <p>1. <strong>"ご"</strong> 是哪个数字？</p>
+                    <div>
+                        <button class="button-choice">三</button>
+                        <button class="button-choice">四</button>
+                        <button class="button-choice">五</button>
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p>2. <strong>"なな"</strong> 是哪个数字？</p>
+                    <div>
+                        <button class="button-choice">六</button>
+                        <button class="button-choice">七</button>
+                        <button class="button-choice">八</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>⏰ じかん (时间)</h2>
+            <p>学习了数字，现在我们就可以开始表达时间了！日语中表示“小时”的后缀是 <strong>～時 (～じ)</strong>。</p>
+
+            <ul>
+                <li>
+                    <span class="japanese-word">一時 <span class="pronunciation">ichiji</span></span>
+                    <button class="audio-icon" data-audio-text="いちじ">🔊</button>
+                    <span class="chinese-translation">一点</span>
+                </li>
+                <li>
+                    <span class="japanese-word">二時 <span class="pronunciation">niji</span></span>
+                    <button class="audio-icon" data-audio-text="にじ">🔊</button>
+                    <span class="chinese-translation">两点</span>
+                </li>
+                <li>
+                    <span class="japanese-word">三時 <span class="pronunciation">sanji</span></span>
+                    <button class="audio-icon" data-audio-text="さんじ">🔊</button>
+                    <span class="chinese-translation">三点</span>
+                </li>
+                <li>
+                    <span class="japanese-word">四時 <span class="pronunciation">yoji</span></span>
+                    <button class="audio-icon" data-audio-text="よじ">🔊</button>
+                    <span class="chinese-translation">四点 (注意：不是 'yonji'!)</span>
+                </li>
+                <li>
+                    <span class="japanese-word">五時 <span class="pronunciation">goji</span></span>
+                    <button class="audio-icon" data-audio-text="ごじ">🔊</button>
+                    <span class="chinese-translation">五点</span>
+                </li>
+                <li>
+                    <span class="japanese-word">六時 <span class="pronunciation">rokuji</span></span>
+                    <button class="audio-icon" data-audio-text="ろくじ">🔊</button>
+                    <span class="chinese-translation">六点</span>
+                </li>
+                <li>
+                    <span class="japanese-word">七時 <span class="pronunciation">shichiji</span></span>
+                    <button class="audio-icon" data-audio-text="しちじ">🔊</button>
+                    <span class="chinese-translation">七点 (注意：通常是 'shichiji'!)</span>
+                </li>
+                <li>
+                    <span class="japanese-word">八時 <span class="pronunciation">hachiji</span></span>
+                    <button class="audio-icon" data-audio-text="はちじ">🔊</button>
+                    <span class="chinese-translation">八点</span>
+                </li>
+                <li>
+                    <span class="japanese-word">九時 <span class="pronunciation">kuji</span></span>
+                    <button class="audio-icon" data-audio-text="くじ">🔊</button>
+                    <span class="chinese-translation">九点 (注意：不是 'kyuuji'!)</span>
+                </li>
+                <li>
+                    <span class="japanese-word">十時 <span class="pronunciation">juuji</span></span>
+                    <button class="audio-icon" data-audio-text="じゅうじ">🔊</button>
+                    <span class="chinese-translation">十点</span>
+                </li>
+                <li>
+                    <span class="japanese-word">十一時 <span class="pronunciation">juuichiji</span></span>
+                    <button class="audio-icon" data-audio-text="じゅういちじ">🔊</button>
+                    <span class="chinese-translation">十一点</span>
+                </li>
+                <li>
+                    <span class="japanese-word">十二時 <span class="pronunciation">juuniji</span></span>
+                    <button class="audio-icon" data-audio-text="じゅうにじ">🔊</button>
+                    <span class="chinese-translation">十二点</span>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>文化小贴士：</strong>请特别注意 <strong>四時 (yoji)</strong>, <strong>七時 (shichiji)</strong> 和 <strong>九時 (kuji)</strong> 的读法，它们与数字单独读法有所不同。
+            </div>
+
+            <h3>🤔 询问时间：いま なんじですか？</h3>
+            <p>要询问现在是几点，你可以使用以下短语：</p>
+            <div class="example-box">
+                <p><strong class="japanese-word">いま なんじですか？</strong><button class="audio-icon" data-audio-text="いま なんじですか？">🔊</button></p>
+                <p> <span class="pronunciation">Ima nanji desu ka?</span></p>
+                <p>现在几点了？</p>
+            </div>
+            <p>回答时，只需说出时间，然后加上 <strong>です (desu)</strong>。</p>
+            <div class="example-box">
+                <p><strong class="japanese-word">四時です。</strong><button class="audio-icon" data-audio-text="よじです。">🔊</button></p>
+                <p> <span class="pronunciation">Yoji desu.</span></p>
+                <p>四点。</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>练习：回答时间</h3>
+                <p>看看时钟，然后写出或说出现在是几点。🕒</p>
+                <div class="practice-item">
+                    <p>1. 🕗 (8:00)</p>
+                    <p>いま なんじですか？ → <span class="input-placeholder">はちじ です</span></p>
+                </div>
+                <div class="practice-item">
+                    <p>2. 🕙 (10:00)</p>
+                    <p>いま なんじですか？ → <span class="input-placeholder">じゅうじ です</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🍎 基本计数器：～つ (tsu)</h2>
+            <p>除了时间，我们还可以用数字来数东西！<strong>～つ (tsu)</strong> 是一个非常通用的计数器，用于计算<strong>一般的小件物品</strong>，通常是 1 到 10 个。</p>
+            <ul>
+                <li>
+                    <span class="japanese-word">一つ <span class="pronunciation">hitotsu</span></span>
+                    <button class="audio-icon" data-audio-text="ひとつ">🔊</button>
+                    <span class="chinese-translation">一个</span>
+                </li>
+                <li>
+                    <span class="japanese-word">二つ <span class="pronunciation">futatsu</span></span>
+                    <button class="audio-icon" data-audio-text="ふたつ">🔊</button>
+                    <span class="chinese-translation">两个</span>
+                </li>
+                <li>
+                    <span class="japanese-word">三つ <span class="pronunciation">mittsu</span></span>
+                    <button class="audio-icon" data-audio-text="みっつ">🔊</button>
+                    <span class="chinese-translation">三个</span>
+                </li>
+                <li>
+                    <span class="japanese-word">四つ <span class="pronunciation">yottsu</span></span>
+                    <button class="audio-icon" data-audio-text="よっつ">🔊</button>
+                    <span class="chinese-translation">四个</span>
+                </li>
+                <li>
+                    <span class="japanese-word">五つ <span class="pronunciation">itsutsu</span></span>
+                    <button class="audio-icon" data-audio-text="いつつ">🔊</button>
+                    <span class="chinese-translation">五个</span>
+                </li>
+                <li>
+                    <span class="japanese-word">六つ <span class="pronunciation">muttsu</span></span>
+                    <button class="audio-icon" data-audio-text="むっつ">🔊</button>
+                    <span class="chinese-translation">六个</span>
+                </li>
+                <li>
+                    <span class="japanese-word">七つ <span class="pronunciation">nanatsu</span></span>
+                    <button class="audio-icon" data-audio-text="ななつ">🔊</button>
+                    <span class="chinese-translation">七个</span>
+                </li>
+                <li>
+                    <span class="japanese-word">八つ <span class="pronunciation">yattsu</span></span>
+                    <button class="audio-icon" data-audio-text="やっつ">🔊</button>
+                    <span class="chinese-translation">八个</span>
+                </li>
+                <li>
+                    <span class="japanese-word">九つ <span class="pronunciation">kokonotsu</span></span>
+                    <button class="audio-icon" data-audio-text="ここのつ">🔊</button>
+                    <span class="chinese-translation">九个</span>
+                </li>
+                <li>
+                    <span class="japanese-word">十 <span class="pronunciation">too</span></span>
+                    <button class="audio-icon" data-audio-text="とお">🔊</button>
+                    <span class="chinese-translation">十个 (注意：十个是 'too'!)</span>
+                </li>
+            </ul>
+
+            <p>使用时直接放在名词后面，或者单独使用。</p>
+            <div class="example-box">
+                <p>りんごを <strong class="japanese-word">三つ</strong> ください。</p>
+                <p><span class="pronunciation">Ringo o mittsu kudasai.</span></p>
+                <p>请给我三个苹果。</p>
+                <p>パンを <strong class="japanese-word">二つ</strong> 食べました。</p>
+                <p><span class="pronunciation">Pan o futatsu tabemashita.</span></p>
+                <p>吃了两个面包。</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>练习：计数</h3>
+                <p>请填空，表示正确的数量。</p>
+                <div class="practice-item">
+                    <p>1. 📦📦📦📦 (4个盒子)</p>
+                    <p>はこが <span class="input-placeholder">よっつ</span> あります。</p>
+                </div>
+                <div class="practice-item">
+                    <p>2. 🍬🍬 (2颗糖)</p>
+                    <p>あめが <span class="input-placeholder">ふたつ</span> あります。</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🗓️ 星期 (Days of the Week)</h2>
+            <p>记住一周的每一天是非常有用的！日语中的星期词汇是这样构成的：</p>
+            <ul>
+                <li>
+                    <span class="japanese-word">月曜日 <span class="pronunciation">getsuyoubi</span></span>
+                    <button class="audio-icon" data-audio-text="げつようび">🔊</button>
+                    <span class="chinese-translation">星期一 (月亮之日)</span>
+                </li>
+                <li>
+                    <span class="japanese-word">火曜日 <span class="pronunciation">kayoubi</span></span>
+                    <button class="audio-icon" data-audio-text="かようび">🔊</button>
+                    <span class="chinese-translation">星期二 (火星之日)</span>
+                </li>
+                <li>
+                    <span class="japanese-word">水曜日 <span class="pronunciation">suiyoubi</span></span>
+                    <button class="audio-icon" data-audio-text="すいようび">🔊</button>
+                    <span class="chinese-translation">星期三 (水星之日)</span>
+                </li>
+                <li>
+                    <span class="japanese-word">木曜日 <span class="pronunciation">mokuyoubi</span></span>
+                    <button class="audio-icon" data-audio-text="もくようび">🔊</button>
+                    <span class="chinese-translation">星期四 (木星之日)</span>
+                </li>
+                <li>
+                    <span class="japanese-word">金曜日 <span class="pronunciation">kin'youbi</span></span>
+                    <button class="audio-icon" data-audio-text="きんようび">🔊</button>
+                    <span class="chinese-translation">星期五 (金星之日)</span>
+                </li>
+                <li>
+                    <span class="japanese-word">土曜日 <span class="pronunciation">doyoubi</span></span>
+                    <button class="audio-icon" data-audio-text="どようび">🔊</button>
+                    <span class="chinese-translation">星期六 (土星之日)</span>
+                </li>
+                <li>
+                    <span class="japanese-word">日曜日 <span class="pronunciation">nichiyoubi</span></span>
+                    <button class="audio-icon" data-audio-text="にちようび">🔊</button>
+                    <span class="chinese-translation">星期日 (太阳之日)</span>
+                </li>
+                <li>
+                    <span class="japanese-word">何曜日 <span class="pronunciation">nanyoubi</span></span>
+                    <button class="audio-icon" data-audio-text="なんようび">🔊</button>
+                    <span class="chinese-translation">星期几？</span>
+                </li>
+            </ul>
+
+            <p>要询问“今天星期几？”，你可以说：</p>
+            <div class="example-box">
+                <p><strong class="japanese-word">今日は何曜日ですか？</strong><button class="audio-icon" data-audio-text="きょうはなんようびですか？">🔊</button></p>
+                <p><span class="pronunciation">Kyou wa nanyoubi desu ka?</span></p>
+                <p>今天星期几？</p>
+                <p>回答：<strong class="japanese-word">今日は月曜日です。</strong><button class="audio-icon" data-audio-text="きょうはげつようびです。">🔊</button></p>
+                <p><span class="pronunciation">Kyou wa getsuyoubi desu.</span></p>
+                <p>今天是星期一。</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>练习：星期配对</h3>
+                <p>选择与中文对应的日语星期。</p>
+                <div class="practice-item">
+                    <p>1. 星期三</p>
+                    <div>
+                        <button class="button-choice">火曜日</button>
+                        <button class="button-choice">水曜日</button>
+                        <button class="button-choice">木曜日</button>
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p>2. 星期五</p>
+                    <div>
+                        <button class="button-choice">金曜日</button>
+                        <button class="button-choice">土曜日</button>
+                        <button class="button-choice">日曜日</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📍 语法：「に」表示时间和地点</h2>
+            <p>助词 <strong>「に」 (ni)</strong> 是一个多功能的助词，在本章中我们重点学习它表示<strong>具体时间</strong>和<strong>动作发生的地点</strong>的用法。</p>
+
+            <h3>🕒 表示时间</h3>
+            <p>当你想说明一个动作发生<strong>在具体的某个时间点</strong>时，使用 <strong>时间 + に</strong>。</p>
+            <div class="example-box">
+                <p><strong class="japanese-word">六時 に 食べます。</strong><button class="audio-icon" data-audio-text="ろくじに たべます。">🔊</button></p>
+                <p><span class="pronunciation">Rokuji ni tabemasu.</span></p>
+                <p>我<strong>在六点</strong>吃饭。</p>
+                <p><strong class="japanese-word">月曜日 に 日本語を勉強します。</strong><button class="audio-icon" data-audio-text="げつようびに にほんごをべんきょうします。">🔊</button></p>
+                <p><span class="pronunciation">Getsuyoubi ni nihongo o benkyoushimasu.</span></p>
+                <p>我<strong>在星期一</strong>学习日语。</p>
+            </div>
+            <p><strong>注意：</strong>
+            <ul>
+                <li>对于<strong>不确定或不具体</strong>的时间（如“每天”、“上周”），通常不加「に」。</li>
+                <li>对于“几点”、“星期几”等<strong>具体时间点</strong>，则需要加「に」。</li>
+            </ul>
+            </p>
+
+            <h3>📍 表示地点</h3>
+            <p>当动词表示<strong>移动到某个地点</strong>，或者<strong>某个物体或人存在于某个地点</strong>时，使用 <strong>地点 + に</strong>。</p>
+            <div class="example-box">
+                <p><strong class="japanese-word">学校 に 行きます。</strong><button class="audio-icon" data-audio-text="がっこうに いきます。">🔊</button></p>
+                <p><span class="pronunciation">Gakkou ni ikimasu.</span></p>
+                <p>我去<strong>学校</strong>。</p>
+                <p><strong class="japanese-word">部屋 に 猫がいます。</strong><button class="audio-icon" data-audio-text="へやに ねこがいます。">🔊</button></p>
+                <p><span class="pronunciation">Heya ni neko ga imasu.</span></p>
+                <p><strong>房间里</strong>有猫。</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>练习：选择合适的助词</h3>
+                <p>请为下列句子选择最合适的助词。</p>
+                <div class="practice-item">
+                    <p>1. わたしは <span class="input-placeholder">_</span> 日本へ 行きます。(我去日本。)</p>
+                    <div>
+                        <button class="button-choice">が</button>
+                        <button class="button-choice">に</button>
+                        <button class="button-choice">を</button>
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <p>2. まいあさ 七時 <span class="input-placeholder">_</span> おきます。(我每天早上七点起床。)</p>
+                    <div>
+                        <button class="button-choice">は</button>
+                        <button class="button-choice">で</button>
+                        <button class="button-choice">に</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ 本章小结 ✨</h2>
+            <p>恭喜你！你已经完成了第六章的学习！让我们快速回顾一下今天学到的重要知识点：</p>
+            <ul>
+                <li><strong>数字 1-10：</strong> いち、に、さん、よん/し、ご、ろく、なな/しち、はち、きゅう/く、じゅう。</li>
+                <li><strong>时间：</strong> 数字 + <strong>～時 (～じ)</strong>。特别注意四点 (よじ)、七点 (しちじ)、九点 (くじ) 的读音。</li>
+                <li><strong>询问时间：</strong> <strong>いま なんじですか？</strong> (现在几点？)</li>
+                <li><strong>基本计数器：</strong> <strong>～つ (tsu)</strong> 用于计算一般小件物品 (ひとつ、ふたつ... とお)。</li>
+                <li><strong>星期：</strong> 月曜日、火曜日、水曜日、木曜日、金曜日、土曜日、日曜日。</li>
+                <li><strong>助词「に」：</strong> 用于表示<strong>具体时间点</strong>和<strong>动作发生或存在的地点</strong>。</li>
+            </ul>
+            <p>你掌握了这些，就能更好地表达日常生活中的时间、数量和行程了！🎉 继续加油！</p>
+        </section>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Katakana – Borrowed Words</title>
+    <style>
+        /* Global Styles & Variables */
+        :root {
+            --primary-color: #8B5FBF;          /* Purple */
+            --secondary-bg-color: #FDF9E5;      /* Cream background */
+            --heading-text-color: #2C3E50;      /* Dark blue */
+            --body-text-color: #666666;         /* Medium gray */
+            --border-color: #E0E0E0;            /* Light gray */
+            --tip-bg-color: #e6f7ff;            /* Light blue for tips */
+            --tip-border-color: #007bff;        /* Blue for tip border */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* Main body background */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        .container {
+            max-width: 800px; /* Limit content width on larger screens */
+            margin: 0 auto;
+            padding: 0 15px; /* Padding for mobile screens */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        strong {
+            color: var(--primary-color); /* Highlight important words */
+        }
+
+        /* Lesson Header */
+        .chapter-title {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--heading-text-color);
+        }
+
+        .lesson-header {
+            margin: 20px 0; /* Required margin */
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%; /* Full width on small screens */
+            max-width: 600px; /* Max width on larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto; /* Center the image */
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-bg-color);
+            padding: 20px 15px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .content-block {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .example {
+            background-color: #F8F8F8;
+            border-left: 4px solid var(--primary-color);
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example p {
+            margin: 5px 0;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex; /* For centering the emoji */
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            font-size: 24px; /* Icon size */
+            color: var(--primary-color);
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%; /* Circle shape */
+            cursor: pointer;
+            vertical-align: middle; /* Align with text */
+            margin-left: 8px;
+            transition: background-color 0.3s, color 0.3s; /* Smooth hover effect */
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+        }
+
+        .word-with-audio {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            gap: 8px; /* Space between items */
+        }
+
+        /* Practice Section */
+        .practice-block {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .practice-block h3 {
+            color: #FFFFFF;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .practice-block .question {
+            background-color: #FFFFFF;
+            color: var(--body-text-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            text-align: left;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .practice-block .question strong {
+            color: var(--primary-color); /* Highlight key parts in questions */
+        }
+
+        .practice-block .answer-hint {
+            color: var(--primary-color);
+            font-style: italic;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: block; /* Ensure it takes its own line */
+        }
+        
+        /* Cultural Tips */
+        .tip {
+            background-color: var(--tip-bg-color);
+            border-left: 5px solid var(--tip-border-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+            color: #333; /* Slightly darker text for contrast */
+        }
+
+        .tip strong {
+            color: var(--tip-border-color);
+            font-style: normal;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--secondary-bg-color);
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-section h2 {
+            border-bottom: none; /* Remove border for summary heading */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .summary-item {
+            display: flex;
+            align-items: flex-start; /* Align icon with top of text */
+            margin-bottom: 10px;
+        }
+
+        .summary-item .icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: var(--primary-color);
+            flex-shrink: 0; /* Prevent icon from shrinking */
+        }
+
+        .summary-item p {
+            margin: 0;
+        }
+
+        /* Responsive Adjustments for larger screens */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 26px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            body {
+                font-size: 17px; /* Slightly larger body text on tablets */
+            }
+            .container {
+                padding: 0 25px; /* More padding on wider screens */
+            }
+            section {
+                padding: 25px;
+            }
+            .content-block {
+                padding: 20px;
+            }
+            .audio-icon {
+                width: 48px; /* Slightly larger touch target */
+                height: 48px;
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 4: Katakana – Borrowed Words</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 4 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>🎉 新文字！片假名 (Katakana)</h2>
+            <p>你好！欢迎来到第四章！今天我们要学习一种全新的日语文字——<strong>片假名 (Katakana)</strong>。片假名主要用于书写外来词、外国人的名字以及一些特殊词汇和拟声词。</p>
+            <p>是不是很酷？有了片假名，你就能读懂很多来自世界各地的词了！让我们从第一批片假名开始吧！</p>
+        </section>
+
+        <section>
+            <h2>✍️ 片假名基础：カ, キ, ク, ケ, コ</h2>
+            <p>我们先来学习片假名中的「か行」（ka-gyō，卡行）：</p>
+
+            <div class="content-block">
+                <h3>1. カ (Ka)</h3>
+                <p><strong>カ</strong> 的形状是不是有点像中文的「力」字？记住它代表「Ka」音。</p>
+                <div class="word-with-audio">
+                    <span class="audio-icon" data-audio-text="カ">🔊</span>
+                    <span><strong>カ</strong> (Ka)</span>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>2. キ (Ki)</h3>
+                <p><strong>キ</strong> 看起来像是一个有三根刺的叉子。记住它代表「Ki」音。</p>
+                <div class="word-with-audio">
+                    <span class="audio-icon" data-audio-text="キ">🔊</span>
+                    <span><strong>キ</strong> (Ki)</span>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>3. ク (Ku)</h3>
+                <p><strong>ク</strong> 非常简单，就像一个张开的嘴巴，准备发出「Ku」音！</p>
+                <div class="word-with-audio">
+                    <span class="audio-icon" data-audio-text="ク">🔊</span>
+                    <span><strong>ク</strong> (Ku)</span>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>4. ケ (Ke)</h3>
+                <p><strong>ケ</strong> 有点像中文的「个」字或者一个倒过来的“人”字。记住它代表「Ke」音。</p>
+                <div class="word-with-audio">
+                    <span class="audio-icon" data-audio-text="ケ">🔊</span>
+                    <span><strong>ケ</strong> (Ke)</span>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>5. コ (Ko)</h3>
+                <p><strong>コ</strong> 看起来像一个简单的方框或者一个入口。记住它代表「Ko」音。</p>
+                <div class="word-with-audio">
+                    <span class="audio-icon" data-audio-text="コ">🔊</span>
+                    <span><strong>コ</strong> (Ko)</span>
+                </div>
+            </div>
+
+            <div class="practice-block">
+                <h3>💡 片假名认读练习</h3>
+                <p>点击播放音频，听一听并选择正确的片假名：</p>
+                <div class="question">
+                    <div class="word-with-audio">
+                        <span class="audio-icon" data-audio-text="カ">🔊</span>
+                        <span>听到的音是: <strong>カ</strong>, キ, ク, ケ, コ 中的哪一个？</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="word-with-audio">
+                        <span class="audio-icon" data-audio-text="キ">🔊</span>
+                        <span>听到的音是: カ, <strong>キ</strong>, ク, ケ, コ 中的哪一个？</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <div class="word-with-audio">
+                        <span class="audio-icon" data-audio-text="ク">🔊</span>
+                        <span>听到的音是: カ, キ, <strong>ク</strong>, ケ, コ 中的哪一个？</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🌍 外来词 (Borrowed Words)</h2>
+            <p>片假名最主要的用途就是书写外来词。这些词通常来自英语，但发音会根据日语发音规则有所调整。一起来看看常见的外来词吧！</p>
+
+            <div class="content-block">
+                <h3>☕ コーヒー (Kōhī) - 咖啡</h3>
+                <p>这个词来自英文 "coffee"。</p>
+                <div class="word-with-audio">
+                    <span class="audio-icon" data-audio-text="コーヒー">🔊</span>
+                    <span><strong>コーヒー</strong> (Kōhī) - 咖啡</span>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>🍞 パン (Pan) - 面包</h3>
+                <p>你知道吗？这个词不是来自英语，而是来自葡萄牙语 "pão"！</p>
+                <div class="word-with-audio">
+                    <span class="audio-icon" data-audio-text="パン">🔊</span>
+                    <span><strong>パン</strong> (Pan) - 面包</span>
+                </div>
+                <div class="tip">
+                    <strong>💡 小贴士：</strong>
+                    日语中有很多词汇来自其他语言。例如，<strong>パン (pan)</strong> 来自葡萄牙语，<strong>アルバイト (arubaito)</strong> "兼职" 来自德语 "Arbeit" (工作)。这反映了日本在历史上的文化交流。
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>💻 コンピューター (Konpyūtā) - 电脑</h3>
+                <p>这个词来自英文 "computer"。</p>
+                <div class="word-with-audio">
+                    <span class="audio-icon" data-audio-text="コンピューター">🔊</span>
+                    <span><strong>コンピューター</strong> (Konpyūtā) - 电脑</span>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>更多常用外来词：</h3>
+                <ul>
+                    <li class="word-with-audio"><span class="audio-icon" data-audio-text="ホテル">🔊</span> <span><strong>ホテル</strong> (Hoteru) - 酒店 (Hotel)</span></li>
+                    <li class="word-with-audio"><span class="audio-icon" data-audio-text="カメラ">🔊</span> <span><strong>カメラ</strong> (Kamera) - 相机 (Camera)</span></li>
+                    <li class="word-with-audio"><span class="audio-icon" data-audio-text="テレビ">🔊</span> <span><strong>テレビ</strong> (Terebi) - 电视 (TV)</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>⚡ 拟声词 (Onomatopoeia)</h2>
+            <p>日语中有很多有趣的拟声词，它们用声音来描述事物或动作。片假名也经常用来书写这些词，因为它们通常强调声音或特殊效果。</p>
+
+            <div class="content-block">
+                <h3>✨ ピカピカ (Pikapika) - 闪闪发光</h3>
+                <p>这个词形容物体闪闪发光的样子，比如星星或者擦亮的鞋子。</p>
+                <div class="word-with-audio">
+                    <span class="audio-icon" data-audio-text="ピカピカ">🔊</span>
+                    <span><strong>ピカピカ</strong> (Pikapika) - 闪闪发光</span>
+                </div>
+                <div class="example">
+                    <p><span class="audio-icon" data-audio-text="星がピカピカしている">🔊</span> 星 (ほし) が <strong>ピカピカ</strong> している。</p>
+                    <p>星星在<strong>闪闪发光</strong>。</p>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h3>💖 ドキドキ (Dokidoki) - 心跳声/紧张激动</h3>
+                <p>这个词用来形容心跳的声音，也可以表示紧张、激动的心情。</p>
+                <div class="word-with-audio">
+                    <span class="audio-icon" data-audio-text="ドキドキ">🔊</span>
+                    <span><strong>ドキドキ</strong> (Dokidoki) - 心跳声/紧张激动</span>
+                </div>
+                <div class="example">
+                    <p><span class="audio-icon" data-audio-text="面接でドキドキする">🔊</span> 面接 (めんせつ) で <strong>ドキドキ</strong> する。</p>
+                    <p>面试时<strong>心跳加速/很紧张</strong>。</p>
+                </div>
+                <div class="tip">
+                    <strong>💡 小贴士：</strong>
+                    日语的拟声词非常丰富，不仅有模仿声音的（如“汪汪”），还有模仿状态和感觉的（如“湿漉漉”）。掌握它们能让你的日语表达更生动！
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🔗 Grammar: の (No) - 表示所属</h2>
+            <p>「の」是一个非常重要的助词，它可以表示所属关系，相当于中文的“的”。</p>
+
+            <h3>句型：わたしの なまえは 〇〇です。 (Watashi no namae wa 〇〇 desu.)</h3>
+            <p>这是用来介绍自己名字的经典句型，意思是“我的名字是〇〇”。</p>
+            <ul>
+                <li><strong>わたし (watashi)</strong>：我</li>
+                <li><strong>の (no)</strong>：的 (表示所属)</li>
+                <li><strong>なまえ (namae)</strong>：名字</li>
+                <li><strong>は (wa)</strong>：是 (助词，表示主语)</li>
+                <li><strong>〇〇 (〇〇)</strong>：你的名字</li>
+                <li><strong>です (desu)</strong>：是 (肯定句结尾)</li>
+            </ul>
+
+            <div class="example">
+                <p><span class="audio-icon" data-audio-text="わたしの なまえは りゅうです">🔊</span> <strong>わたしの なまえは りゅうです。</strong></p>
+                <p>我的名字是刘。</p>
+            </div>
+            <div class="example">
+                <p><span class="audio-icon" data-audio-text="わたしの なまえは たなかです">🔊</span> <strong>わたしの なまえは たなかです。</strong></p>
+                <p>我的名字是田中。</p>
+            </div>
+
+            <h3>「の」的其他用法：连接名词表示所属</h3>
+            <p>「の」不仅可以连接人名，也可以连接任何名词，表示“A的B”或“属于A的B”。</p>
+            <div class="example">
+                <p><span class="audio-icon" data-audio-text="わたしの カメラ">🔊</span> <strong>わたしの カメラ</strong></p>
+                <p>我的相机</p>
+            </div>
+            <div class="example">
+                <p><span class="audio-icon" data-audio-text="これは わたしの コンピューターです">🔊</span> <strong>これは わたしの コンピューターです。</strong></p>
+                <p>这是我的电脑。</p>
+            </div>
+            <div class="example">
+                <p><span class="audio-icon" data-audio-text="たなかさんのかばん">🔊</span> <strong>田中さん (たなかさん) の かばん (kaban)</strong></p>
+                <p>田中先生/女士的包</p>
+            </div>
+
+            <div class="practice-block">
+                <h3>📝 语法练习：の (No)</h3>
+                <p>请完成以下句子，使用「の」表示所属：</p>
+                <div class="question">
+                    <p>1. 这是 (我) ____ 书。</p>
+                    <p>参考答案: 这是 わたしの ほん です。</p>
+                    <div class="word-with-audio">
+                         <span class="audio-icon" data-audio-text="これは わたしの ほん です">🔊</span>
+                         <span class="answer-hint">(点击听答案)</span>
+                    </div>
+                </div>
+                <div class="question">
+                    <p>2. (他) ____ 名字是 山田。</p>
+                    <p>参考答案: かれの なまえは やまだ です。</p>
+                    <div class="word-with-audio">
+                        <span class="audio-icon" data-audio-text="かれの なまえは やまだ です">🔊</span>
+                        <span class="answer-hint">(点击听答案)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>📚 本章总结</h2>
+            <p>恭喜你完成了第四章！我们学习了以下内容：</p>
+            <ul>
+                <li class="summary-item">
+                    <span class="icon">✨</span>
+                    <p><strong>片假名 (Katakana)</strong>：学习了前五个片假名：<strong>カ, キ, ク, ケ, コ</strong>。</p>
+                </li>
+                <li class="summary-item">
+                    <span class="icon">🗣️</span>
+                    <p><strong>外来词</strong>：了解了片假名主要用于书写外来词，并学习了 <strong>コーヒー (咖啡)</strong>、<strong>パン (面包)</strong>、<strong>コンピューター (电脑)</strong> 等词汇。</p>
+                </li>
+                <li class="summary-item">
+                    <span class="icon">💖</span>
+                    <p><strong>拟声词</strong>：认识了日语中独特的拟声词，例如 <strong>ピカピカ (闪闪发光)</strong> 和 <strong>ドキドキ (心跳/紧张)</strong>。</p>
+                </li>
+                <li class="summary-item">
+                    <span class="icon">🔗</span>
+                    <p><strong>语法「の」</strong>：学习了如何使用助词「の」来表示所属关系，如 <strong>わたしの なまえは 〇〇です (我的名字是〇〇)</strong>。</p>
+                </li>
+            </ul>
+            <p>片假名是日语中非常实用的一部分，多加练习，你会发现它很有趣！继续加油！</p>
+        </section>
+    </div>
+</body>
+</html>
