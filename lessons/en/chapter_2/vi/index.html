@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 2: Lời chào và Giới thiệu cơ bản</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #8B5FBF;          /* Purple */
+            --secondary-color: #FDF9E5;         /* Cream background */
+            --heading-text-color: #2C3E50;      /* Dark blue */
+            --body-text-color: #666666;         /* Medium gray */
+            --border-color: #E0E0E0;            /* Light gray */
+            --white-color: #FFFFFF;             /* White */
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white-color); /* Overall page background */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        /* Lesson Content Container */
+        .lesson-container {
+            max-width: 600px; /* Max width for content on larger screens */
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Header Specific Styles */
+        .chapter-title {
+            color: var(--heading-text-color);
+            text-align: center;
+            margin: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Visual representation as per requirement, no actual image loaded */
+            background-color: var(--primary-color);
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-color);
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+            box-sizing: border-box;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .lesson-header-image::before {
+            content: "Chào mừng đến với Chương 2! 🎉"; /* Text inside the "image" area */
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-color);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h2, h3 {
+            color: var(--heading-text-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: var(--body-text-color);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 25px; /* Space for custom bullet */
+            position: relative;
+            font-size: 16px;
+            color: var(--body-text-color);
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow as bullet */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 18px; /* Larger emoji */
+            top: 0px;
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: normal; /* Override default italic for pronunciation */
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation {
+            font-style: italic;
+            color: var(--primary-color);
+            font-size: 0.95em;
+            margin-left: 5px;
+        }
+
+        /* Examples and Translations */
+        .example-block {
+            background-color: rgba(139, 95, 191, 0.1); /* Lighter primary color */
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .example-block p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: var(--heading-text-color);
+        }
+
+        .translation {
+            color: var(--body-text-color);
+            font-size: 0.95em;
+            margin-top: 5px;
+            display: block; /* Ensures it's on a new line */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex; /* Use flexbox for centering content */
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum touch target size */
+            height: 44px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 50%; /* Make it round */
+            cursor: pointer;
+            font-size: 24px; /* Icon size */
+            margin-left: 10px;
+            vertical-align: middle; /* Align with text baseline */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            user-select: none; /* Prevent text selection */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4099; /* Darker shade for hover */
+            transform: scale(1.05);
+        }
+
+        /* Exercises */
+        .exercise-box {
+            background-color: var(--white-color); /* White for exercise background */
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            margin-top: 20px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .exercise-box p {
+            margin-bottom: 15px;
+            color: var(--heading-text-color);
+            font-weight: 500;
+        }
+
+        .interactive-btn {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+            display: block;
+            width: calc(100% - 20px); /* Adjust for padding within max-width */
+            max-width: 300px;
+            margin: 15px auto;
+            text-align: center;
+            min-height: 44px; /* Minimum touch target size */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .interactive-btn:hover {
+            background-color: #6a4099; /* Darker shade for hover */
+            transform: translateY(-2px);
+        }
+
+        .fill-in-the-blank {
+            display: inline-block;
+            min-width: 80px;
+            border-bottom: 2px dashed var(--primary-color);
+            text-align: center;
+            margin: 0 5px;
+            padding: 0 5px;
+            font-weight: bold;
+            color: var(--primary-color); /* Highlight the blank */
+        }
+
+        .dialogue-prompt {
+            background-color: var(--border-color); /* Light gray for prompt background */
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            font-style: italic;
+            color: var(--heading-text-color);
+            font-size: 15px;
+        }
+        .dialogue-prompt p {
+            margin: 5px 0;
+        }
+
+        /* Summary Section */
+        .summary-list li::before {
+            content: '✨'; /* Different bullet for summary */
+            font-size: 20px;
+        }
+
+        /* Responsive adjustments for smaller screens (mobile-first approach) */
+        @media (max-width: 600px) {
+            .lesson-container {
+                padding: 15px;
+            }
+
+            .chapter-title {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 17px;
+            }
+
+            p, li, .translation, .pronunciation {
+                font-size: 15px;
+            }
+
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 22px;
+            }
+
+            .interactive-btn {
+                padding: 10px 15px;
+                font-size: 16px;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chương 2: Lời chào và Giới thiệu cơ bản</h1>
+        <div class="lesson-header">
+            <!-- As per requirement, using this exact img tag. The actual image is not loaded, CSS makes it visually functional. -->
+            <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>Chào bạn đến với Chương 2! 👋</h2>
+            <p>Trong chương này, chúng ta sẽ khám phá những cụm từ tiếng Anh cơ bản nhất để bắt đầu một cuộc trò chuyện: cách chào hỏi và giới thiệu bản thân. Đây là nền tảng quan trọng để bạn tự tin giao tiếp!</p>
+            <p>Hãy cùng bắt đầu và luyện tập ngay nhé! 🚀</p>
+        </section>
+
+        <section>
+            <h2>1. Lời chào cơ bản (Basic Greetings)</h2>
+            <p>Chào hỏi là bước đầu tiên để kết nối với mọi người. Tùy vào thời điểm trong ngày và mức độ thân mật, bạn sẽ có những cách chào khác nhau.</p>
+
+            <h3>1.1. Hello & Hi</h3>
+            <ul>
+                <li><strong>Hello</strong> <span class="pronunciation">[ˈhɛloʊ]</span> <span class="audio-icon" data-audio-text="Hello">🔊</span>
+                    <br><span class="translation">Xin chào (dùng trong hầu hết các tình huống, lịch sự và phổ biến)</span>
+                </li>
+                <li><strong>Hi</strong> <span class="pronunciation">[haɪ]</span> <span class="audio-icon" data-audio-text="Hi">🔊</span>
+                    <br><span class="translation">Chào (thân mật hơn, thường dùng với bạn bè, người quen)</span>
+                </li>
+            </ul>
+            <div class="example-block">
+                <p><strong>Ví dụ:</strong></p>
+                <p><strong>A:</strong> Hello, John! <span class="audio-icon" data-audio-text="Hello, John!">🔊</span></p>
+                <p class="translation">Xin chào, John!</p>
+                <p><strong>B:</strong> Hi, Mary! How are you? <span class="audio-icon" data-audio-text="Hi, Mary! How are you?">🔊</span></p>
+                <p class="translation">Chào, Mary! Bạn khỏe không?</p>
+            </div>
+
+            <h3>1.2. Good morning, Good afternoon, Good evening</h3>
+            <p>Những lời chào này được dùng tùy theo thời gian trong ngày và mang tính lịch sự hơn.</p>
+            <ul>
+                <li><strong>Good morning</strong> <span class="pronunciation">[gʊd ˈmɔːrnɪŋ]</span> <span class="audio-icon" data-audio-text="Good morning">🔊</span>
+                    <br><span class="translation">Chào buổi sáng (thường dùng từ sáng sớm đến khoảng 12 giờ trưa)</span>
+                </li>
+                <li><strong>Good afternoon</strong> <span class="pronunciation">[gʊd ˌæftərˈnuːn]</span> <span class="audio-icon" data-audio-text="Good afternoon">🔊</span>
+                    <br><span class="translation">Chào buổi chiều (từ khoảng 12 giờ trưa đến 6 giờ tối)</span>
+                </li>
+                <li><strong>Good evening</strong> <span class="pronunciation">[gʊd ˈiːvnɪŋ]</span> <span class="audio-icon" data-audio-text="Good evening">🔊</span>
+                    <br><span class="translation">Chào buổi tối (từ khoảng 6 giờ tối trở đi, khi mặt trời lặn)</span>
+                </li>
+            </ul>
+            <p>💡 <strong>Lưu ý văn hóa:</strong> <strong>Good night</strong> <span class="pronunciation">[gʊd naɪt]</span> <span class="audio-icon" data-audio-text="Good night">🔊</span> không phải lời chào mà là lời tạm biệt khi bạn rời đi vào buổi tối hoặc chúc ai đó ngủ ngon.</p>
+            <div class="example-block">
+                <p><strong>Ví dụ:</strong></p>
+                <p>Good morning, class! <span class="audio-icon" data-audio-text="Good morning, class!">🔊</span></p>
+                <p class="translation">Chào buổi sáng, cả lớp!</p>
+                <p>Good afternoon, Mr. Smith. <span class="audio-icon" data-audio-text="Good afternoon, Mr. Smith.">🔊</span></p>
+                <p class="translation">Chào buổi chiều, ông Smith.</p>
+                <p>Good evening, everyone. <span class="audio-icon" data-audio-text="Good evening, everyone.">🔊</span></p>
+                <p class="translation">Chào buổi tối, mọi người.</p>
+            </div>
+
+            <div class="exercise-box">
+                <h3>Thực hành 1: Chọn từ đúng</h3>
+                <p>Hãy tưởng tượng bạn đang gặp gỡ mọi người. Bạn sẽ nói gì?</p>
+                <p>1. Bạn gặp một người bạn thân vào lúc 9 giờ sáng. Bạn nên nói: <span class="fill-in-the-blank">Hi</span></p>
+                <p>2. Bạn đến một cuộc họp lúc 2 giờ chiều. Bạn nên nói với sếp: <span class="fill-in-the-blank">Good afternoon</span></p>
+                <p>3. Khi bạn đi ngủ, bạn nói với gia đình: <span class="fill-in-the-blank">Good night</span></p>
+                <button class="interactive-btn" aria-label="Kiểm tra đáp án bài tập 1">Kiểm tra đáp án ✨</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Hỏi thăm sức khỏe (Asking about well-being)</h2>
+            <p>Sau khi chào, bạn có thể hỏi thăm sức khỏe của đối phương để thể hiện sự quan tâm.</p>
+            <h3>How are you?</h3>
+            <ul>
+                <li><strong>How are you?</strong> <span class="pronunciation">[haʊ ɑːr juː]</span> <span class="audio-icon" data-audio-text="How are you?">🔊</span>
+                    <br><span class="translation">Bạn khỏe không? / Bạn thế nào rồi?</span>
+                </li>
+            </ul>
+            <p>Cách trả lời phổ biến:</p>
+            <ul>
+                <li><strong>I'm fine, thank you.</strong> <span class="pronunciation">[aɪm faɪn, θæŋk juː]</span> <span class="audio-icon" data-audio-text="I'm fine, thank you.">🔊</span>
+                    <br><span class="translation">Tôi khỏe, cảm ơn bạn.</span>
+                </li>
+                <li><strong>I'm good, thanks.</strong> <span class="pronunciation">[aɪm gʊd, θæŋks]</span> <span class="audio-icon" data-audio-text="I'm good, thanks.">🔊</span>
+                    <br><span class="translation">Tôi ổn, cảm ơn. (Thân mật hơn)</span>
+                </li>
+                <li><strong>Not bad, thanks.</strong> <span class="pronunciation">[nɑːt bæd, θæŋks]</span> <span class="audio-icon" data-audio-text="Not bad, thanks.">🔊</span>
+                    <br><span class="translation">Không tệ, cảm ơn.</span>
+                </li>
+            </ul>
+            <p>Và đừng quên hỏi lại để thể hiện sự lịch sự và quan tâm!</p>
+            <ul>
+                <li><strong>And you?</strong> <span class="pronunciation">[ænd juː]</span> <span class="audio-icon" data-audio-text="And you?">🔊</span>
+                    <br><span class="translation">Còn bạn thì sao?</span>
+                </li>
+            </ul>
+
+            <div class="example-block">
+                <p><strong>Ví dụ hội thoại:</strong></p>
+                <p><strong>A:</strong> Hi, Sarah! How are you? <span class="audio-icon" data-audio-text="Hi, Sarah! How are you?">🔊</span></p>
+                <p class="translation">Chào, Sarah! Bạn khỏe không?</p>
+                <p><strong>B:</strong> I'm fine, thank you. And you? <span class="audio-icon" data-audio-text="I'm fine, thank you. And you?">🔊</span></p>
+                <p class="translation">Tôi khỏe, cảm ơn bạn. Còn bạn thì sao?</p>
+                <p><strong>A:</strong> I'm good, thanks! <span class="audio-icon" data-audio-text="I'm good, thanks!">🔊</span></p>
+                <p class="translation">Tôi ổn, cảm ơn!</p>
+            </div>
+
+            <div class="exercise-box">
+                <h3>Thực hành 2: Hoàn thành đoạn hội thoại</h3>
+                <p>Hãy điền từ còn thiếu vào chỗ trống để hoàn thành đoạn hội thoại sau:</p>
+                <div class="dialogue-prompt">
+                    <p><strong>A:</strong> Hello, Tom! How <span class="fill-in-the-blank">are</span> you? <span class="audio-icon" data-audio-text="Hello, Tom! How are you?">🔊</span></p>
+                    <p><strong>B:</strong> I'm <span class="fill-in-the-blank">fine</span>, thank you. And <span class="fill-in-the-blank">you</span>? <span class="audio-icon" data-audio-text="I'm fine, thank you. And you?">🔊</span></p>
+                    <p><strong>A:</strong> I'm <span class="fill-in-the-blank">good</span>, thanks! <span class="audio-icon" data-audio-text="I'm good, thanks!">🔊</span></p>
+                </div>
+                <button class="interactive-btn" aria-label="Kiểm tra đáp án bài tập 2">Kiểm tra đáp án ✨</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Giới thiệu tên (Introducing yourself)</h2>
+            <p>Khi gặp người mới, bạn sẽ muốn giới thiệu tên của mình.</p>
+            <h3>3.1. My name is... / I'm...</h3>
+            <ul>
+                <li><strong>My name is [Tên của bạn].</strong> <span class="pronunciation">[maɪ neɪm ɪz]</span> <span class="audio-icon" data-audio-text="My name is">🔊</span>
+                    <br><span class="translation">Tên tôi là [Tên của bạn]. (Lịch sự, đầy đủ)</span>
+                </li>
+                <li><strong>I'm [Tên của bạn].</strong> <span class="pronunciation">[aɪm]</span> <span class="audio-icon" data-audio-text="I'm">🔊</span>
+                    <br><span class="translation">Tôi là [Tên của bạn]. (Thông dụng, ngắn gọn)</span>
+                </li>
+            </ul>
+            <div class="example-block">
+                <p><strong>Ví dụ:</strong></p>
+                <p>My name is Anna. <span class="audio-icon" data-audio-text="My name is Anna.">🔊</span></p>
+                <p class="translation">Tên tôi là Anna.</p>
+                <p>I'm David. <span class="audio-icon" data-audio-text="I'm David.">🔊</span></p>
+                <p class="translation">Tôi là David.</p>
+            </div>
+
+            <h3>3.2. Nice to meet you.</h3>
+            <ul>
+                <li><strong>Nice to meet you.</strong> <span class="pronunciation">[naɪs tuː miːt juː]</span> <span class="audio-icon" data-audio-text="Nice to meet you.">🔊</span>
+                    <br><span class="translation">Rất vui được gặp bạn.</span>
+                </li>
+            </ul>
+            <p>Khi ai đó nói "Nice to meet you", bạn có thể đáp lại:</p>
+            <ul>
+                <li><strong>Nice to meet you, too.</strong> <span class="pronunciation">[naɪs tuː miːt juː tuː]</span> <span class="audio-icon" data-audio-text="Nice to meet you, too.">🔊</span>
+                    <br><span class="translation">Tôi cũng rất vui được gặp bạn.</span>
+                </li>
+            </ul>
+            <div class="example-block">
+                <p><strong>Ví dụ hội thoại:</strong></p>
+                <p><strong>A:</strong> Hello, my name is Linda. <span class="audio-icon" data-audio-text="Hello, my name is Linda.">🔊</span></p>
+                <p class="translation">Xin chào, tên tôi là Linda.</p>
+                <p><strong>B:</strong> Hi Linda, I'm Mike. Nice to meet you. <span class="audio-icon" data-audio-text="Hi Linda, I'm Mike. Nice to meet you.">🔊</span></p>
+                <p class="translation">Chào Linda, tôi là Mike. Rất vui được gặp bạn.</p>
+                <p><strong>A:</strong> Nice to meet you, too, Mike. <span class="audio-icon" data-audio-text="Nice to meet you, too, Mike.">🔊</span></p>
+                <p class="translation">Tôi cũng rất vui được gặp bạn, Mike.</p>
+            </div>
+
+            <div class="exercise-box">
+                <h3>Thực hành 3: Giới thiệu bản thân</h3>
+                <p>Bạn hãy tự giới thiệu bản thân mình bằng tiếng Anh theo các cách đã học:</p>
+                <p>🗣️ "My name is [Tên của bạn]."</p>
+                <p>🗣️ "I'm [Tên của bạn]."</p>
+                <p>Thực hành nói to và sau đó thêm "Nice to meet you!" vào cuối câu nhé!</p>
+                <button class="interactive-btn" aria-label="Bắt đầu thực hành nói">Bắt đầu thực hành 🎤</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Hội thoại cơ bản (Basic Conversation Starters)</h2>
+            <p>Bây giờ, chúng ta hãy cùng nhau ghép các cụm từ đã học để tạo thành một đoạn hội thoại cơ bản hoàn chỉnh!</p>
+            <div class="example-block">
+                <p><strong>Tình huống:</strong> Hai người lạ gặp nhau lần đầu.</p>
+                <p><strong>A:</strong> Hi! Good morning! <span class="audio-icon" data-audio-text="Hi! Good morning!">🔊</span></p>
+                <p class="translation">Chào! Chào buổi sáng!</p>
+                <p><strong>B:</strong> Good morning! How are you? <span class="audio-icon" data-audio-text="Good morning! How are you?">🔊</span></p>
+                <p class="translation">Chào buổi sáng! Bạn khỏe không?</p>
+                <p><strong>A:</strong> I'm good, thanks! And you? <span class="audio-icon" data-audio-text="I'm good, thanks! And you?">🔊</span></p>
+                <p class="translation">Tôi ổn, cảm ơn! Còn bạn thì sao?</p>
+                <p><strong>B:</strong> I'm fine, thank you. My name is Alex. Nice to meet you. <span class="audio-icon" data-audio-text="I'm fine, thank you. My name is Alex. Nice to meet you.">🔊</span></p>
+                <p class="translation">Tôi khỏe, cảm ơn bạn. Tên tôi là Alex. Rất vui được gặp bạn.</p>
+                <p><strong>A:</strong> Nice to meet you, too, Alex. I'm Chloe. <span class="audio-icon" data-audio-text="Nice to meet you, too, Alex. I'm Chloe.">🔊</span></p>
+                <p class="translation">Tôi cũng rất vui được gặp bạn, Alex. Tôi là Chloe.</p>
+            </div>
+
+            <div class="exercise-box">
+                <h3>Thực hành tổng hợp: Nhập vai</h3>
+                <p>Hãy thử nhập vai! Bạn là <strong>Người A</strong>. Ứng dụng sẽ đưa ra lời của <strong>Người B</strong>. Điền vào chỗ trống để hoàn thành đoạn hội thoại.</p>
+                <p class="dialogue-prompt">Bạn gặp một người mới vào buổi chiều.</p>
+                <p>Bạn: <span class="fill-in-the-blank">Good afternoon!</span></p>
+                <p>Người B: Good afternoon! How are you? <span class="audio-icon" data-audio-text="Good afternoon! How are you?">🔊</span></p>
+                <p>Bạn: <span class="fill-in-the-blank">I'm fine, thank you. And you?</span></p>
+                <p>Người B: I'm good, thanks! What's your name? <span class="audio-icon" data-audio-text="I'm good, thanks! What's your name?">🔊</span></p>
+                <p>Bạn: <span class="fill-in-the-blank">My name is [Tên của bạn]. Nice to meet you!</span></p>
+                <p>Người B: Nice to meet you, too! <span class="audio-icon" data-audio-text="Nice to meet you, too!">🔊</span></p>
+                <button class="interactive-btn" aria-label="Bắt đầu nhập vai">Bắt đầu nhập vai 🎭</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tóm tắt chương 2 ✨</h2>
+            <p>Tuyệt vời! Bạn đã hoàn thành Chương 2 và nắm vững những cụm từ chào hỏi và giới thiệu bản thân cơ bản trong tiếng Anh.</p>
+            <p>Những gì bạn đã học:</p>
+            <ul class="summary-list">
+                <li>Cách chào hỏi phù hợp với từng thời điểm trong ngày: <strong>Hello, Hi, Good morning, Good afternoon, Good evening.</strong></li>
+                <li>Cách hỏi thăm và trả lời về sức khỏe: <strong>How are you? I'm fine, thank you. And you?</strong></li>
+                <li>Cách giới thiệu tên của mình: <strong>My name is... / I'm...</strong></li>
+                <li>Cụm từ để bày tỏ sự vui mừng khi gặp ai đó: <strong>Nice to meet you.</strong></li>
+            </ul>
+            <p>Hãy tiếp tục luyện tập những cụm từ này trong cuộc sống hàng ngày để ghi nhớ và sử dụng chúng một cách tự nhiên nhé! Bạn có thể thực hành với bạn bè, người thân hoặc thậm chí là tự nói chuyện với chính mình trước gương.</p>
+            <p>Chúc mừng bạn đã hoàn thành bài học! 🎉</p>
+        </section>
+
+    </div>
+</body>
+</html>

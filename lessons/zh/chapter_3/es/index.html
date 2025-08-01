@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 3: Números y Conteo - Lección de Chino</title>
+    <style>
+        /* Base styles for mobile-first */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-bg-color: #FDF9E5;
+            --heading-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDFDFD; /* Slightly lighter than secondary for overall background */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px; /* Minimum font size */
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 768px; /* Max width for content on larger screens */
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 1em;
+            color: var(--primary-color); /* Headings for sections can use primary color */
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-top: 1.2em;
+            margin-bottom: 0.8em;
+            color: var(--heading-color);
+        }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 1em;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        .chapter-title {
+            font-size: 2.5em;
+            color: var(--heading-color);
+            text-align: center;
+            padding: 20px 0;
+            background-color: var(--secondary-bg-color);
+            margin: 0 -20px; /* Extend full width if container has padding */
+            box-shadow: 0 2px 5px var(--shadow-color);
+        }
+
+        /* Specific header structure requirements */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .example-block, .practice-block {
+            background-color: #FFFFFF;
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-block p, .practice-block p {
+            margin: 0;
+            padding-bottom: 5px;
+        }
+
+        .chinese-text {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-right: 8px;
+        }
+
+        .pinyin {
+            font-style: italic;
+            color: var(--primary-color);
+            font-size: 0.9em;
+            margin-left: 5px;
+        }
+
+        .translation {
+            color: var(--body-text-color);
+            font-size: 0.95em;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .note {
+            background-color: rgba(139, 95, 191, 0.1); /* Light primary color background */
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.95em;
+        }
+
+        .note strong {
+            color: var(--primary-color);
+        }
+
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            font-size: 1.4em;
+            cursor: pointer;
+            border: none;
+            margin-left: 10px;
+            vertical-align: middle;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4896; /* Darker primary on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        ul li span {
+            flex-grow: 1;
+        }
+
+        .number-entry {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            padding-right: 10px; /* Space between text and audio button */
+        }
+
+        .number-entry .chinese-text {
+            min-width: 50px; /* Ensure alignment for numbers */
+            text-align: right;
+            padding-right: 5px;
+        }
+
+        .number-entry .pinyin {
+            min-width: 80px;
+        }
+
+        .practice-question {
+            margin-bottom: 10px;
+            background-color: #F8F8F8;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .practice-question p {
+            margin: 0 0 8px 0;
+            font-weight: bold;
+            color: var(--heading-color);
+        }
+
+        .practice-question .options button {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            color: var(--body-text-color);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            min-height: 44px; /* Touch friendly */
+            width: calc(50% - 10px); /* Two buttons per line */
+            box-sizing: border-box;
+        }
+
+        .practice-question .options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .practice-question .options button:hover {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border-color: var(--primary-color);
+        }
+
+        .practice-question .options button:active {
+            background-color: #6a4896;
+            border-color: #6a4896;
+        }
+
+        .summary-section {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+
+        .summary-section h2 {
+            color: #FFFFFF;
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+            margin-bottom: 15px;
+        }
+
+        .summary-section ul {
+            text-align: left;
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        .summary-section ul li {
+            color: #FDF9E5; /* Light cream for text on dark background */
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            line-height: 1.5;
+            padding: 0;
+            background: none;
+            border: none;
+            box-shadow: none;
+            display: list-item; /* Override flex display for list items */
+        }
+        .summary-section ul li::before {
+            content: "✨ "; /* Unicode star or similar */
+            margin-right: 8px;
+            color: #FDF9E5;
+        }
+
+
+        /* Responsive adjustments */
+        @media (min-width: 600px) {
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 3em;
+            }
+
+            h2 {
+                font-size: 2.2em;
+            }
+
+            h3 {
+                font-size: 1.6em;
+            }
+
+            .section {
+                padding: 30px;
+            }
+
+            .practice-question .options button {
+                width: calc(33.33% - 10px); /* Three buttons per line */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Capítulo 3: Números y Conteo</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+        </div>
+
+        <p>¡Hola! 👋 En este capítulo, nos sumergiremos en el fascinante mundo de los números chinos. Aprender a contar es fundamental para muchas situaciones cotidianas, desde ir de compras hasta dar tu número de teléfono. ¡Prepárate para dominar los números del 1 al 20 y mucho más!</p>
+
+        <section class="section">
+            <h2>🔢 Números 1-20</h2>
+            <p>Empecemos con los números básicos. Practica la pronunciación con el botón de audio.</p>
+            <ul>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">一</span> <span class="pinyin">yī</span> <span class="translation">Uno</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="一">🔊</button>
+                </li>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">二</span> <span class="pinyin">èr</span> <span class="translation">Dos</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="二">🔊</button>
+                </li>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">三</span> <span class="pinyin">sān</span> <span class="translation">Tres</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="三">🔊</button>
+                </li>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">四</span> <span class="pinyin">sì</span> <span class="translation">Cuatro</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="四">🔊</button>
+                </li>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">五</span> <span class="pinyin">wǔ</span> <span class="translation">Cinco</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="五">🔊</button>
+                </li>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">六</span> <span class="pinyin">liù</span> <span class="translation">Seis</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="六">🔊</button>
+                </li>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">七</span> <span class="pinyin">qī</span> <span class="translation">Siete</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="七">🔊</button>
+                </li>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">八</span> <span class="pinyin">bā</span> <span class="translation">Ocho</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="八">🔊</button>
+                </li>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">九</span> <span class="pinyin">jiǔ</span> <span class="translation">Nueve</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="九">🔊</button>
+                </li>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">十</span> <span class="pinyin">shí</span> <span class="translation">Diez</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="十">🔊</button>
+                </li>
+            </ul>
+
+            <h3>Formando Números del 11 al 20</h3>
+            <p>Para formar los números del 11 al 19, simplemente dices <strong>diez (十 shí)</strong> y luego el número adicional.</p>
+            <ul>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">十一</span> <span class="pinyin">shí yī</span> <span class="translation">Once (10 + 1)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="十一">🔊</button>
+                </li>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">十二</span> <span class="pinyin">shí èr</span> <span class="translation">Doce (10 + 2)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="十二">🔊</button>
+                </li>
+                <li>
+                    <div class="number-entry">
+                        <span class="chinese-text">二十</span> <span class="pinyin">èr shí</span> <span class="translation">Veinte (2 x 10)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="二十">🔊</button>
+                </li>
+            </ul>
+            <p>¡Y así sucesivamente hasta el 19! Para <strong>veinte (二十 èr shí)</strong>, es dos veces diez.</p>
+
+            <div class="practice-block">
+                <h3>✍️ ¡A practicar!</h3>
+                <div class="practice-question">
+                    <p>¿Cómo se dice "quince" en chino?</p>
+                    <div class="options">
+                        <button data-answer="incorrect">èr shí wǔ</button>
+                        <button data-answer="incorrect">wǔ shí</button>
+                        <button data-answer="correct">shí wǔ</button>
+                        <button data-answer="incorrect">sān shí</button>
+                    </div>
+                </div>
+                <div class="practice-question">
+                    <p>¿Qué número es "bā"?</p>
+                    <div class="options">
+                        <button data-answer="incorrect">Cuatro</button>
+                        <button data-answer="correct">Ocho</button>
+                        <button data-answer="incorrect">Nueve</button>
+                        <button data-answer="incorrect">Diez</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>📦 Contar y Expresiones de Cantidad</h2>
+            <p>En chino, cuando contamos sustantivos, casi siempre necesitamos usar una <strong>palabra de medida (量词 liàngcí)</strong> entre el número y el sustantivo. La palabra de medida más común es <strong>个 (gè)</strong>, que se usa para personas y muchos objetos generales.</p>
+            <p>La estructura es: <strong>Número + Palabra de Medida + Sustantivo</strong></p>
+            <div class="example-block">
+                <p><span class="chinese-text">一个人</span> <span class="pinyin">yī ge rén</span> <span class="translation">una persona</span> <button class="audio-icon" data-audio-text="一个人">🔊</button></p>
+                <p><span class="chinese-text">两个苹果</span> <span class="pinyin">liǎng ge píngguǒ</span> <span class="translation">dos manzanas</span> <button class="audio-icon" data-audio-text="两个苹果">🔊</button></p>
+                <p class="note">⚠️ ¡Ojo! Para el número "dos" en conteo de cantidad (seguido de un clasificador), generalmente se usa <strong>两 (liǎng)</strong> en lugar de <strong>二 (èr)</strong>.</p>
+            </div>
+            <p>Aquí tienes algunos ejemplos más:</p>
+            <ul>
+                <li>
+                    <span class="chinese-text">三本书</span> <span class="pinyin">sān běn shū</span> <span class="translation">tres libros (本 běn para libros)</span> <button class="audio-icon" data-audio-text="三本书">🔊</button>
+                </li>
+                <li>
+                    <span class="chinese-text">四个学生</span> <span class="pinyin">sì ge xuéshēng</span> <span class="translation">cuatro estudiantes</span> <button class="audio-icon" data-audio-text="四个学生">🔊</button>
+                </li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>🎂 Edad: ¿Cuántos años tienes?</h2>
+            <p>Preguntar la edad es una parte común de la conversación. Hay varias maneras, dependiendo de la persona.</p>
+
+            <h3>Preguntar la Edad:</h3>
+            <ul>
+                <li>
+                    <p>Para niños o jóvenes:<br>
+                    <span class="chinese-text">你几岁？</span> <span class="pinyin">Nǐ jǐ suì?</span> <span class="translation">¿Cuántos años tienes? (informal)</span> <button class="audio-icon" data-audio-text="你几岁？">🔊</button></p>
+                </li>
+                <li>
+                    <p>Para adultos (más común):<br>
+                    <span class="chinese-text">你多大？</span> <span class="pinyin">Nǐ duō dà?</span> <span class="translation">¿Qué edad tienes? (más común)</span> <button class="audio-icon" data-audio-text="你多大？">🔊</button></p>
+                </li>
+                <li>
+                    <p>Para personas mayores (respetuoso):<br>
+                    <span class="chinese-text">您多大年纪了？</span> <span class="pinyin">Nín duō dà niánjì le?</span> <span class="translation">¿Cuántos años tiene usted?</span> <button class="audio-icon" data-audio-text="您多大年纪了？">🔊</button></p>
+                </li>
+            </ul>
+
+            <h3>Responder la Edad:</h3>
+            <p>La estructura es simple: <strong>Yo (我 wǒ) + número + 岁 (suì)</strong> (años de edad).</p>
+            <div class="example-block">
+                <p><span class="chinese-text">我二十岁。</span> <span class="pinyin">Wǒ èr shí suì.</span> <span class="translation">Tengo veinte años.</span> <button class="audio-icon" data-audio-text="我二十岁。">🔊</button></p>
+                <p><span class="chinese-text">我十八岁。</span> <span class="pinyin">Wǒ shí bā suì.</span> <span class="translation">Tengo dieciocho años.</span> <button class="audio-icon" data-audio-text="我十八岁。">🔊</button></p>
+            </div>
+
+            <div class="note">
+                <strong>Cultural Note:</strong> En China, es común preguntar la edad, pero sé sensible si no quieres revelar la tuya. Una sonrisa y un "Todavía soy joven" (我还年轻 wǒ hái niánqīng) pueden funcionar si no quieres responder directamente. 😊
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>📞 Números de Teléfono y Direcciones</h2>
+            <p>Para números de teléfono, cada dígito se pronuncia individualmente. Esto es muy diferente a cómo lo hacemos en español.</p>
+            <div class="example-block">
+                <p>Tu número de teléfono es <strong>139-8765-4321</strong></p>
+                <p><span class="chinese-text">我的电话号码是：一三九八七六五四三二一</span></p>
+                <p><span class="pinyin">Wǒ de diànhuà hàomǎ shì: yī sān jiǔ bā qī liù wǔ sì sān èr yī</span></p>
+                <span class="translation">Mi número de teléfono es: uno tres nueve ocho siete seis cinco cuatro tres dos uno</span> <button class="audio-icon" data-audio-text="我的电话号码是一三九八七六五四三二一">🔊</button>
+            </div>
+            <p class="note">⚠️ Para el número "uno" en un número de teléfono, a veces se pronuncia <strong>yāo (幺)</strong> para evitar confusión con "siete" (七 qī) que puede sonar similar en algunos dialectos o con ruido de fondo. Ambas formas son correctas.</p>
+            <p>Las direcciones son más complejas y no las cubriremos en detalle aquí, pero al igual que los números de teléfono, los números en las direcciones (como el número de edificio o apartamento) se dirían dígito por dígito.</p>
+        </section>
+
+        <section class="section">
+            <h2>➕➖ Matemáticas Básicas</h2>
+            <p>¡Incluso las matemáticas básicas son sencillas en chino!</p>
+            <ul>
+                <li><strong>Más / Sumar:</strong>
+                    <span class="chinese-text">加</span> <span class="pinyin">jiā</span> <button class="audio-icon" data-audio-text="加">🔊</button></li>
+                <li><strong>Menos / Restar:</strong>
+                    <span class="chinese-text">减</span> <span class="pinyin">jiǎn</span> <button class="audio-icon" data-audio-text="减">🔊</button></li>
+                <li><strong>Igual a:</strong>
+                    <span class="chinese-text">等于</span> <span class="pinyin">děngyú</span> <button class="audio-icon" data-audio-text="等于">🔊</button></li>
+            </ul>
+
+            <div class="example-block">
+                <p><span class="chinese-text">一加一等于二。</span> <span class="pinyin">Yī jiā yī děngyú èr.</span> <span class="translation">Uno más uno es igual a dos.</span> <button class="audio-icon" data-audio-text="一加一等于二。">🔊</button></p>
+                <p><span class="chinese-text">五减三等于二。</span> <span class="pinyin">Wǔ jiǎn sān děngyú èr.</span> <span class="translation">Cinco menos tres es igual a dos.</span> <button class="audio-icon" data-audio-text="五减三等于二。">🔊</button></p>
+            </div>
+
+            <div class="practice-block">
+                <h3>✍️ ¡Practica tus matemáticas!</h3>
+                <div class="practice-question">
+                    <p>¿Cómo dirías "Diez menos seis es igual a cuatro" en chino?</p>
+                    <div class="options">
+                        <button data-answer="incorrect">十加六等于四</button>
+                        <button data-answer="correct">十减六等于四</button>
+                        <button data-answer="incorrect">六减十等于四</button>
+                        <button data-answer="incorrect">十等于六加四</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ Resumen del Capítulo 3</h2>
+            <ul>
+                <li>Hemos aprendido los números del <strong>1 (一 yī) al 10 (十 shí)</strong>.</li>
+                <li>Descubrimos cómo formar números hasta el <strong>20 (二十 èr shí)</strong>, usando la estructura <strong>Diez + Número</strong> para 11-19 y <strong>Número + Diez</strong> para múltiplos de diez.</li>
+                <li>Conocimos las <strong>palabras de medida (量词 liàngcí)</strong>, especialmente <strong>个 (gè)</strong>, y la importancia de <strong>两 (liǎng)</strong> para "dos" en cantidades.</li>
+                <li>Practicamos cómo <strong>preguntar y decir la edad</strong> usando <strong>几岁 (jǐ suì) / 多大 (duō dà)</strong> y la estructura <strong>我...岁 (Wǒ... suì)</strong>.</li>
+                <li>Aprendimos que los números de teléfono se dicen <strong>dígito por dígito</strong>.</li>
+                <li>Dominamos el vocabulario de <strong>matemáticas básicas: 加 (jiā - más), 减 (jiǎn - menos), 等于 (děngyú - igual a)</strong>.</li>
+            </ul>
+            <p>¡Felicidades! 🎉 Has completado un paso crucial en tu viaje de aprendizaje del chino. Sigue practicando estos números a diario.</p>
+        </section>
+    </div>
+
+    <!-- This script is for basic client-side interactivity simulation for the buttons -->
+    <!-- It's not part of the required output but useful for local testing -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate audio playback (in real app, react-native-tts would handle this)
+            document.querySelectorAll('.audio-icon').forEach(button => {
+                button.addEventListener('click', function() {
+                    const text = this.getAttribute('data-audio-text');
+                    console.log('Playing audio for:', text);
+                    // In a real app, this would trigger TTS playback.
+                    // For browser, we could use SpeechSynthesisUtterance:
+                    // const utterance = new SpeechSynthesisUtterance(text);
+                    // utterance.lang = 'zh-CN'; // Set language to Chinese
+                    // window.speechSynthesis.speak(utterance);
+                });
+            });
+
+            // Simulate quiz functionality (in real app, more complex logic might exist)
+            document.querySelectorAll('.practice-question .options button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const parent = this.closest('.practice-question');
+                    const options = parent.querySelectorAll('.options button');
+                    
+                    // Reset previous feedback
+                    options.forEach(opt => {
+                        opt.style.backgroundColor = '#FFFFFF';
+                        opt.style.borderColor = 'var(--border-color)';
+                        opt.style.color = 'var(--body-text-color)';
+                    });
+
+                    // Provide feedback
+                    if (this.getAttribute('data-answer') === 'correct') {
+                        this.style.backgroundColor = '#d4edda'; // Light green for correct
+                        this.style.borderColor = '#28a745';
+                        this.style.color = '#28a745';
+                        console.log('Correct answer!');
+                    } else {
+                        this.style.backgroundColor = '#f8d7da'; // Light red for incorrect
+                        this.style.borderColor = '#dc3545';
+                        this.style.color = '#dc3545';
+                        console.log('Incorrect answer.');
+                        // Highlight correct answer if incorrect one was chosen
+                        parent.querySelector('[data-answer="correct"]').style.backgroundColor = '#d4edda';
+                        parent.querySelector('[data-answer="correct"]').style.borderColor = '#28a745';
+                        parent.querySelector('[data-answer="correct"]').style.color = '#28a745';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

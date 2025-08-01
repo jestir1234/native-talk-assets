@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 2: Saludos y Presentaciones Básicas</title>
+    <style>
+        /* Global Styles & Variables */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-bg-color: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --success-color: #28a745; /* Green for success/correct */
+            --error-color: #dc3545; /* Red for error/incorrect */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--body-text-color);
+            background-color: #FFFFFF; /* White background for the main body */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding-bottom: 30px; /* Space at the bottom */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+            color: var(--primary-color);
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Lesson Header */
+        .chapter-title {
+            font-size: 2.2em;
+            color: var(--heading-text-color);
+            text-align: center;
+            margin-bottom: 25px;
+            padding: 15px 0;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        .lesson-section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Lists for Examples */
+        .example-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .example-list li {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        
+        .example-list li span {
+            flex-basis: 45%; /* Distribute space */
+            font-size: 17px;
+        }
+
+        .example-list li .english-phrase {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-right: 10px;
+            flex-basis: 60%; /* More space for English */
+        }
+
+        .example-list li .spanish-translation {
+            color: var(--body-text-color);
+            font-style: italic;
+            flex-basis: 35%; /* Less space for Spanish */
+            text-align: right;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking */
+            margin-left: 10px; /* Space from text */
+        }
+
+        .audio-icon:hover {
+            background-color: #7A4EA5; /* Slightly darker purple */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation {
+            display: block;
+            font-size: 14px;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: center; /* Center content in practice */
+        }
+
+        .practice-question {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            text-align: left;
+        }
+
+        .practice-question p {
+            font-size: 17px;
+            margin-bottom: 15px;
+            color: var(--heading-text-color);
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically on mobile */
+            gap: 10px;
+        }
+
+        .option-button {
+            background-color: #FFFFFF;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 25px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease;
+            width: 100%; /* Full width for mobile */
+            min-height: 44px; /* Ensure touch target size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .option-button:hover {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+        }
+
+        .option-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #E6F3FF; /* Light blue for cultural notes */
+            border-left: 5px solid #6BAFF7;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            font-size: 15px;
+            color: #444;
+        }
+
+        .cultural-note h3 {
+            color: #337ab7; /* Darker blue for cultural note heading */
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        /* Summary */
+        .summary-section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .summary-section ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        .summary-section ul li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 480px) {
+            .options-container {
+                flex-direction: row; /* Layout buttons side-by-side on wider screens */
+                flex-wrap: wrap; /* Allow wrapping if many options */
+                justify-content: center;
+            }
+            .option-button {
+                flex: 1 1 auto; /* Allow buttons to grow and shrink */
+                max-width: 48%; /* Two columns */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 26px;
+            }
+            p {
+                font-size: 17px;
+            }
+            .example-list li {
+                padding: 18px;
+            }
+            .example-list li span {
+                flex-basis: auto; /* Revert to auto on larger screens */
+            }
+            .example-list li .english-phrase {
+                flex-basis: auto;
+            }
+            .example-list li .spanish-translation {
+                flex-basis: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 2: Basic Greetings and Introductions</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>👋 Saludos Básicos (Basic Greetings)</h2>
+            <p>Empecemos con las frases más comunes para saludar a alguien en inglés. ¡Son súper útiles!</p>
+            <ul class="example-list">
+                <li>
+                    <span class="english-phrase">Hello</span>
+                    <button class="audio-icon" data-audio-text="Hello">🔊</button>
+                    <span class="spanish-translation">Hola</span>
+                    <span class="pronunciation"> (jel-LOU)</span>
+                </li>
+                <li>
+                    <span class="english-phrase">Hi</span>
+                    <button class="audio-icon" data-audio-text="Hi">🔊</button>
+                    <span class="spanish-translation">Hola (más informal)</span>
+                    <span class="pronunciation"> (jai)</span>
+                </li>
+                <li>
+                    <span class="english-phrase">Good morning</span>
+                    <button class="audio-icon" data-audio-text="Good morning">🔊</button>
+                    <span class="spanish-translation">Buenos días</span>
+                    <span class="pronunciation"> (gud MOR-ning)</span>
+                </li>
+                <li>
+                    <span class="english-phrase">Good afternoon</span>
+                    <button class="audio-icon" data-audio-text="Good afternoon">🔊</button>
+                    <span class="spanish-translation">Buenas tardes</span>
+                    <span class="pronunciation"> (gud AF-ter-nun)</span>
+                </li>
+                <li>
+                    <span class="english-phrase">Good evening</span>
+                    <button class="audio-icon" data-audio-text="Good evening">🔊</button>
+                    <span class="spanish-translation">Buenas noches (al llegar)</span>
+                    <span class="pronunciation"> (gud IV-ning)</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="lesson-section">
+            <h2>💬 Preguntando y Respondiendo "¿Cómo estás?"</h2>
+            <p>Después de un saludo, es muy común preguntar cómo está la otra persona.</p>
+            <ul class="example-list">
+                <li>
+                    <span class="english-phrase">How are you?</span>
+                    <button class="audio-icon" data-audio-text="How are you?">🔊</button>
+                    <span class="spanish-translation">¿Cómo estás? / ¿Qué tal?</span>
+                    <span class="pronunciation"> (jau ar yu?)</span>
+                </li>
+                <li>
+                    <span class="english-phrase">I'm fine, thank you.</span>
+                    <button class="audio-icon" data-audio-text="I'm fine, thank you.">🔊</button>
+                    <span class="spanish-translation">Estoy bien, gracias.</span>
+                    <span class="pronunciation"> (aim fain, zaenk yu)</span>
+                </li>
+                <li>
+                    <span class="english-phrase">And you?</span>
+                    <button class="audio-icon" data-audio-text="And you?">🔊</button>
+                    <span class="spanish-translation">¿Y tú?</span>
+                    <span class="pronunciation"> (and yu?)</span>
+                </li>
+                <li>
+                    <span class="english-phrase">I'm good, thanks.</span>
+                    <button class="audio-icon" data-audio-text="I'm good, thanks.">🔊</button>
+                    <span class="spanish-translation">Estoy bien, gracias. (más informal)</span>
+                    <span class="pronunciation"> (aim gud, zaenks)</span>
+                </li>
+            </ul>
+            <p><strong>Ejemplo de conversación:</strong></p>
+            <p><strong>A:</strong> Hello! How are you?<br>
+            <strong>B:</strong> I'm fine, thank you. And you?</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>👤 Presentándote: "Mi nombre es..."</h2>
+            <p>Es hora de decir tu nombre. Hay dos formas muy comunes.</p>
+            <ul class="example-list">
+                <li>
+                    <span class="english-phrase">My name is [Your Name].</span>
+                    <button class="audio-icon" data-audio-text="My name is...">🔊</button>
+                    <span class="spanish-translation">Mi nombre es [Tu Nombre].</span>
+                    <span class="pronunciation"> (mai neim is...)</span>
+                </li>
+                <li>
+                    <span class="english-phrase">I'm [Your Name].</span>
+                    <button class="audio-icon" data-audio-text="I'm...">🔊</button>
+                    <span class="spanish-translation">Soy [Tu Nombre].</span>
+                    <span class="pronunciation"> (aim...)</span>
+                </li>
+            </ul>
+            <p><strong>Ejemplo:</strong></p>
+            <p><strong>A:</strong> Hello, my name is Ana.<br>
+            <strong>B:</strong> Hi, I'm Ben.</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🤝 Encantado/a de Conocerte (Nice to meet you)</h2>
+            <p>Después de presentaros, esta es la frase perfecta para mostrar cortesía.</p>
+            <ul class="example-list">
+                <li>
+                    <span class="english-phrase">Nice to meet you.</span>
+                    <button class="audio-icon" data-audio-text="Nice to meet you.">🔊</button>
+                    <span class="spanish-translation">Encantado/a de conocerte.</span>
+                    <span class="pronunciation"> (nais tu mit yu)</span>
+                </li>
+                <li>
+                    <span class="english-phrase">Nice to meet you too.</span>
+                    <button class="audio-icon" data-audio-text="Nice to meet you too.">🔊</button>
+                    <span class="spanish-translation">Encantado/a de conocerte también.</span>
+                    <span class="pronunciation"> (nais tu mit yu tu)</span>
+                </li>
+            </ul>
+            <p><strong>Ejemplo de conversación completa:</strong></p>
+            <p><strong>A:</strong> Good morning! My name is Maria. How are you?<br>
+            <strong>B:</strong> Good morning, Maria! I'm fine, thank you. And you? I'm Tom.<br>
+            <strong>A:</strong> I'm good, thanks! Nice to meet you, Tom.<br>
+            <strong>B:</strong> Nice to meet you too, Maria.</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>✨ Iniciadores de Conversación (Basic Conversation Starters)</h2>
+            <p>Una vez que te has saludado, puedes usar estas frases para seguir la conversación de manera sencilla.</p>
+            <ul class="example-list">
+                <li>
+                    <span class="english-phrase">What's your name?</span>
+                    <button class="audio-icon" data-audio-text="What's your name?">🔊</button>
+                    <span class="spanish-translation">¿Cómo te llamas?</span>
+                    <span class="pronunciation"> (wots yor neim?)</span>
+                </li>
+                <li>
+                    <span class="english-phrase">How's your day?</span>
+                    <button class="audio-icon" data-audio-text="How's your day?">🔊</button>
+                    <span class="spanish-translation">¿Qué tal tu día?</span>
+                    <span class="pronunciation"> (jauz yor dei?)</span>
+                </li>
+                <li>
+                    <span class="english-phrase">How was your weekend?</span>
+                    <button class="audio-icon" data-audio-text="How was your weekend?">🔊</button>
+                    <span class="spanish-translation">¿Qué tal tu fin de semana?</span>
+                    <span class="pronunciation"> (jau wos yor wii-kend?)</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h2>📝 ¡A Practicar!</h2>
+            <p>Elige la opción correcta para completar las oraciones.</p>
+
+            <div class="practice-question">
+                <p>1. Hello! How ______ you?</p>
+                <div class="options-container">
+                    <button class="option-button">is</button>
+                    <button class="option-button">are</button>
+                    <button class="option-button">am</button>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p>2. I'm fine, ______ you.</p>
+                <div class="options-container">
+                    <button class="option-button">please</button>
+                    <button class="option-button">welcome</button>
+                    <button class="option-button">thank</button>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p>3. My name ______ Sarah.</p>
+                <div class="options-container">
+                    <button class="option-button">is</button>
+                    <button class="option-button">are</button>
+                    <button class="option-button">am</button>
+                </div>
+            </div>
+            
+            <div class="practice-question">
+                <p>4. Nice to meet ______.</p>
+                <div class="options-container">
+                    <button class="option-button">him</button>
+                    <button class="option-button">her</button>
+                    <button class="option-button">you</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="cultural-note">
+            <h3>🌎 Nota Cultural: Formalidad en los Saludos</h3>
+            <p>En inglés, los saludos como "Hello" o "Good morning" son bastante versátiles y se pueden usar en casi cualquier situación, ya sea formal o informal.</p>
+            <p>"Hi" es más informal, ideal para amigos o personas de tu misma edad.</p>
+            <p>Cuando te presentas, usar "My name is..." o "I'm..." son ambos igualmente aceptables y comunes, aunque "I'm..." es un poco más coloquial.</p>
+            <p>Siempre es importante decir "Thank you" (gracias) para mostrar aprecio, es una parte fundamental de la cortesía en inglés.</p>
+        </section>
+
+        <section class="summary-section">
+            <h2>📚 Resumen del Capítulo 2</h2>
+            <p>¡Felicidades! Has aprendido las bases para saludar y presentarte en inglés. Aquí tienes un repaso rápido:</p>
+            <ul class="example-list">
+                <li>
+                    <span class="english-phrase">Hello / Hi</span>
+                    <button class="audio-icon" data-audio-text="Hello">🔊</button>
+                    <span class="spanish-translation">Hola</span>
+                </li>
+                <li>
+                    <span class="english-phrase">Good morning / Good afternoon / Good evening</span>
+                    <button class="audio-icon" data-audio-text="Good morning">🔊</button>
+                    <span class="spanish-translation">Saludos según la hora del día</span>
+                </li>
+                <li>
+                    <span class="english-phrase">How are you?</span>
+                    <button class="audio-icon" data-audio-text="How are you?">🔊</button>
+                    <span class="spanish-translation">¿Cómo estás?</span>
+                </li>
+                <li>
+                    <span class="english-phrase">I'm fine, thank you. And you?</span>
+                    <button class="audio-icon" data-audio-text="I'm fine, thank you.">🔊</button>
+                    <span class="spanish-translation">Estoy bien, gracias. ¿Y tú?</span>
+                </li>
+                <li>
+                    <span class="english-phrase">My name is... / I'm...</span>
+                    <button class="audio-icon" data-audio-text="My name is...">🔊</button>
+                    <span class="spanish-translation">Me llamo... / Soy...</span>
+                </li>
+                <li>
+                    <span class="english-phrase">Nice to meet you.</span>
+                    <button class="audio-icon" data-audio-text="Nice to meet you.">🔊</button>
+                    <span class="spanish-translation">Encantado/a de conocerte.</span>
+                </li>
+                <li>
+                    <span class="english-phrase">What's your name?</span>
+                    <button class="audio-icon" data-audio-text="What's your name?">🔊</button>
+                    <span class="spanish-translation">¿Cómo te llamas?</span>
+                </li>
+            </ul>
+            <p>¡Sigue practicando estas frases en voz alta para que se vuelvan naturales!</p>
+        </section>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 9: El Clima y las Estaciones</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent text scaling issues */
+        }
+
+        /* Color Scheme Variables */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-background: #FDF9E5; /* Cream */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        /* Responsive Container */
+        .main-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 1em;
+            text-align: center; /* Center h2 for mobile-first */
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: var(--primary-color);
+            margin-top: 1.2em;
+            margin-bottom: 0.6em;
+        }
+
+        p {
+            font-size: 1em; /* Minimum 16px */
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 0.8em;
+            font-size: 1em;
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: italic;
+            color: var(--primary-color);
+        }
+
+        /* Specific Header Structure Requirement */
+        .chapter-title {
+            margin-top: 20px;
+            margin-bottom: 0;
+            font-size: 2.5em; /* Slightly larger for main title */
+            color: var(--heading-text-color);
+            text-align: center;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Limits size on larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            background-color: #FFFFFF; /* White for content sections */
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .lesson-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Vocabulary Items */
+        .vocab-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Spacing for items */
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .vocab-item:last-child {
+            border-bottom: none;
+        }
+
+        .vocab-chinese {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--heading-text-color);
+            flex: 1; /* Allows text to grow */
+        }
+
+        .vocab-pinyin {
+            font-size: 0.9em;
+            color: var(--primary-color);
+            margin-left: 10px;
+            flex: 1;
+        }
+
+        .vocab-translation {
+            font-size: 1em;
+            color: var(--body-text-color);
+            text-align: right;
+            flex: 1.5; /* Allows translation to take more space */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%; /* Circular button */
+            width: 48px; /* Min 44px for touch */
+            height: 48px; /* Min 44px for touch */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4em;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevents shrinking */
+            margin-left: 15px;
+        }
+
+        .audio-icon:hover {
+            background-color: #6C429B; /* Darker primary on hover */
+            transform: scale(1.05);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border: 2px dashed var(--primary-color);
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        .practice-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .practice-question {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: var(--heading-text-color);
+        }
+
+        .practice-answer-options {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            justify-content: center;
+            gap: 10px; /* Space between buttons */
+        }
+
+        .practice-answer-option {
+            background-color: #FFFFFF;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+            min-height: 44px; /* Ensure tap target size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1; /* Allow buttons to grow */
+            max-width: 48%; /* Two columns on mobile */
+        }
+
+        .practice-answer-option:hover {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+
+        .example-sentence {
+            background-color: rgba(139, 95, 191, 0.05); /* Light primary color background */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .example-sentence p {
+            margin: 0;
+            font-style: italic;
+        }
+
+        .example-sentence strong {
+            color: var(--primary-color);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #E6D8F2; /* Lighter shade of primary for summary */
+            border-radius: 12px;
+            padding: 25px 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: var(--heading-text-color);
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 15px;
+        }
+
+        .summary-section ul {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 500px;
+            list-style: disc; /* Use discs for summary list */
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            margin-bottom: 0.5em;
+            color: var(--heading-text-color);
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: #F8F0D7; /* Slightly darker cream for cultural notes */
+            border-left: 5px solid #E0B53C; /* Gold-like color for emphasis */
+            padding: 15px;
+            margin: 25px 0;
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: #555555;
+        }
+
+        .cultural-note strong {
+            color: #E0B53C;
+        }
+
+        /* Media Queries for larger screens (Tablet/Desktop) */
+        @media screen and (min-width: 600px) {
+            h1 {
+                font-size: 2.8em;
+            }
+
+            h2 {
+                font-size: 2.2em;
+                text-align: left; /* Align h2 to left on larger screens */
+            }
+
+            h3 {
+                font-size: 1.6em;
+            }
+
+            p {
+                font-size: 1.1em;
+            }
+
+            .main-container {
+                padding: 30px;
+            }
+
+            .lesson-section {
+                padding: 30px 25px;
+                margin-bottom: 35px;
+            }
+
+            .vocab-item {
+                padding: 15px 0;
+            }
+
+            .vocab-chinese {
+                font-size: 1.3em;
+            }
+
+            .vocab-pinyin {
+                font-size: 1em;
+            }
+
+            .vocab-translation {
+                font-size: 1.1em;
+            }
+
+            .audio-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5em;
+            }
+
+            .practice-section {
+                padding: 30px 25px;
+            }
+
+            .practice-answer-options {
+                gap: 15px;
+            }
+
+            .practice-answer-option {
+                padding: 12px 20px;
+                max-width: 30%; /* Three columns on larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1 class="chapter-title">Capítulo 9: El Clima y las Estaciones</h1>
+        <div class="lesson-header">
+            <!-- The 'src' attribute will be correctly resolved by the mobile app's asset system -->
+            <img src="../header.webp" alt="Chapter 9 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>¡Hola! 👋 ¡Exploremos el Clima en Chino!</h2>
+            <p>¿Alguna vez te has preguntado cómo describir si hace sol, llueve o nieva en chino? ¡Este capítulo es perfecto para ti! Aprenderemos vocabulario esencial para hablar sobre el tiempo, las estaciones del año y algunas actividades divertidas relacionadas con el clima. ¡Prepárate para conversar sobre el pronóstico!</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>☁️ Vocabulario del Clima (天气词汇 - tiānqì cíhuì)</h2>
+            <p>Comencemos con las palabras clave para describir el estado del tiempo. ¡Escucha y repite!</p>
+
+            <ul>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">晴天</span>
+                    <span class="vocab-pinyin">(qíngtiān)</span>
+                    <span class="vocab-translation">Soleado / Día despejado</span>
+                    <button class="audio-icon" data-audio-text="晴天">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">下雨</span>
+                    <span class="vocab-pinyin">(xiàyǔ)</span>
+                    <span class="vocab-translation">Llover / Lluvioso</span>
+                    <button class="audio-icon" data-audio-text="下雨">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">多云</span>
+                    <span class="vocab-pinyin">(duōyún)</span>
+                    <span class="vocab-translation">Nublado (literalmente: muchas nubes)</span>
+                    <button class="audio-icon" data-audio-text="多云">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">下雪</span>
+                    <span class="vocab-pinyin">(xiàxuě)</span>
+                    <span class="vocab-translation">Nevar / Nevado</span>
+                    <button class="audio-icon" data-audio-text="下雪">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">刮风</span>
+                    <span class="vocab-pinyin">(guāfēng)</span>
+                    <span class="vocab-translation">Hacer viento / Ventoso</span>
+                    <button class="audio-icon" data-audio-text="刮风">🔊</button>
+                </li>
+            </ul>
+
+            <h3>Preguntar sobre el Clima:</h3>
+            <p>Para preguntar "¿Qué tiempo hace hoy?", usamos:</p>
+            <div class="example-sentence">
+                <p><strong>今天天气怎么样？</strong></p>
+                <p><em>(Jīntiān tiānqì zěnmeyàng?)</em></p>
+                <p>¿Qué tiempo hace hoy?</p>
+                <button class="audio-icon" data-audio-text="今天天气怎么样？">🔊</button>
+            </div>
+
+            <h3>Responder sobre el Clima:</h3>
+            <p>Para responder, simplemente decimos el tiempo:</p>
+            <div class="example-sentence">
+                <p><strong>今天是晴天。</strong></p>
+                <p><em>(Jīntiān shì qíngtiān.)</em></p>
+                <p>Hoy está soleado.</p>
+                <button class="audio-icon" data-audio-text="今天是晴天。">🔊</button>
+            </div>
+            <div class="example-sentence">
+                <p><strong>今天下雨。</strong></p>
+                <p><em>(Jīntiān xiàyǔ.)</em></p>
+                <p>Hoy llueve.</p>
+                <button class="audio-icon" data-audio-text="今天下雨。">🔊</button>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 Práctica: ¿Qué tiempo hace?</h3>
+            <p>Elige la opción correcta para cada descripción del clima.</p>
+
+            <div class="practice-item">
+                <p class="practice-question">1. El sol brilla fuerte, no hay nubes. (Soleado)</p>
+                <div class="practice-answer-options">
+                    <button class="practice-answer-option" data-answer="多云">多云</button>
+                    <button class="practice-answer-option" data-answer="下雨">下雨</button>
+                    <button class="practice-answer-option" data-answer="晴天">晴天</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">2. Las nubes cubren el cielo, pero no llueve. (Nublado)</p>
+                <div class="practice-answer-options">
+                    <button class="practice-answer-option" data-answer="下雪">下雪</button>
+                    <button class="practice-answer-option" data-answer="多云">多云</button>
+                    <button class="practice-answer-option" data-answer="刮风">刮风</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">3. Gotas de agua caen del cielo. (Lluvioso)</p>
+                <div class="practice-answer-options">
+                    <button class="practice-answer-option" data-answer="下雨">下雨</button>
+                    <button class="practice-answer-option" data-answer="晴天">晴天</button>
+                    <button class="practice-answer-option" data-answer="下雪">下雪</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🌸 Las Estaciones (季节 - jìjié)</h2>
+            <p>China, como muchos países, experimenta cuatro estaciones distintas. ¡Vamos a conocerlas!</p>
+
+            <ul>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">春天</span>
+                    <span class="vocab-pinyin">(chūntiān)</span>
+                    <span class="vocab-translation">Primavera</span>
+                    <button class="audio-icon" data-audio-text="春天">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">夏天</span>
+                    <span class="vocab-pinyin">(xiàtiān)</span>
+                    <span class="vocab-translation">Verano</span>
+                    <button class="audio-icon" data-audio-text="夏天">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">秋天</span>
+                    <span class="vocab-pinyin">(qiūtiān)</span>
+                    <span class="vocab-translation">Otoño</span>
+                    <button class="audio-icon" data-audio-text="秋天">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">冬天</span>
+                    <span class="vocab-pinyin">(dōngtiān)</span>
+                    <span class="vocab-translation">Invierno</span>
+                    <button class="audio-icon" data-audio-text="冬天">🔊</button>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>💡 Nota Cultural:</strong> En algunas regiones de China, las estaciones son muy marcadas. Por ejemplo, Beijing tiene veranos calurosos e inviernos muy fríos, mientras que el sur, como Guangzhou, es más tropical y puede tener un invierno suave.
+            </div>
+
+            <h3>Preguntar sobre la estación favorita:</h3>
+            <div class="example-sentence">
+                <p><strong>你喜欢什么季节？</strong></p>
+                <p><em>(Nǐ xǐhuan shénme jìjié?)</em></p>
+                <p>¿Qué estación te gusta?</p>
+                <button class="audio-icon" data-audio-text="你喜欢什么季节？">🔊</button>
+            </div>
+
+            <h3>Responder:</h3>
+            <div class="example-sentence">
+                <p><strong>我喜欢春天。</strong></p>
+                <p><em>(Wǒ xǐhuan chūntiān.)</em></p>
+                <p>Me gusta la primavera.</p>
+                <button class="audio-icon" data-audio-text="我喜欢春天。">🔊</button>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 Práctica: ¡Empareja la Estación!</h3>
+            <p>Relaciona la estación con su descripción típica.</p>
+
+            <div class="practice-item">
+                <p class="practice-question">1. Hace frío, a veces nieva. ❄️</p>
+                <div class="practice-answer-options">
+                    <button class="practice-answer-option" data-answer="夏天">夏天</button>
+                    <button class="practice-answer-option" data-answer="冬天">冬天</button>
+                    <button class="practice-answer-option" data-answer="春天">春天</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">2. Las flores florecen, el clima es agradable. 🌷</p>
+                <div class="practice-answer-options">
+                    <button class="practice-answer-option" data-answer="秋天">秋天</button>
+                    <button class="practice-answer-option" data-answer="春天">春天</button>
+                    <button class="practice-answer-option" data-answer="冬天">冬天</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">3. Hace mucho calor, ideal para ir a la playa. 🏖️</p>
+                <div class="practice-answer-options">
+                    <button class="practice-answer-option" data-answer="春天">春天</button>
+                    <button class="practice-answer-option" data-answer="秋天">秋天</button>
+                    <button class="practice-answer-option" data-answer="夏天">夏天</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🌡️ La Temperatura (温度 - wēndù)</h2>
+            <p>Además de si está soleado o nublado, ¡queremos saber si hace frío o calor!</p>
+
+            <ul>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">热</span>
+                    <span class="vocab-pinyin">(rè)</span>
+                    <span class="vocab-translation">Caliente / Hace calor</span>
+                    <button class="audio-icon" data-audio-text="热">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">冷</span>
+                    <span class="vocab-pinyin">(lěng)</span>
+                    <span class="vocab-translation">Frío / Hace frío</span>
+                    <button class="audio-icon" data-audio-text="冷">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">暖和</span>
+                    <span class="vocab-pinyin">(nuǎnhuo)</span>
+                    <span class="vocab-translation">Cálido / Templado</span>
+                    <button class="audio-icon" data-audio-text="暖和">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">凉快</span>
+                    <span class="vocab-pinyin">(liángkuai)</span>
+                    <span class="vocab-translation">Fresco / Fresquito</span>
+                    <button class="audio-icon" data-audio-text="凉快">🔊</button>
+                </li>
+            </ul>
+
+            <h3>Cómo usarlo en oraciones:</h3>
+            <p>Usamos "很 (hěn)" antes del adjetivo para enfatizar, aunque a menudo puede omitirse sin cambiar el significado principal.</p>
+            <div class="example-sentence">
+                <p><strong>今天很热。</strong></p>
+                <p><em>(Jīntiān hěn rè.)</em></p>
+                <p>Hoy hace mucho calor.</p>
+                <button class="audio-icon" data-audio-text="今天很热。">🔊</button>
+            </div>
+            <div class="example-sentence">
+                <p><strong>上海的冬天很冷。</strong></p>
+                <p><em>(Shànghǎi de dōngtiān hěn lěng.)</em></p>
+                <p>El invierno en Shanghái hace mucho frío.</p>
+                <button class="audio-icon" data-audio-text="上海的冬天很冷。">🔊</button>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 Práctica: Describe la temperatura</h3>
+            <p>Completa la oración con la palabra de temperatura adecuada.</p>
+
+            <div class="practice-item">
+                <p class="practice-question">1. En verano hace mucho _____. (Calor)</p>
+                <div class="practice-answer-options">
+                    <button class="practice-answer-option" data-answer="冷">冷</button>
+                    <button class="practice-answer-option" data-answer="热">热</button>
+                    <button class="practice-answer-option" data-answer="暖和">暖和</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">2. Por la noche hace _____, necesito una chaqueta. (Frío)</p>
+                <div class="practice-answer-options">
+                    <button class="practice-answer-option" data-answer="冷">冷</button>
+                    <button class="practice-answer-option" data-answer="凉快">凉快</button>
+                    <button class="practice-answer-option" data-answer="热">热</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🚴 Actividades Relacionadas con el Clima (天气活动 - tiānqì huódòng)</h2>
+            <p>Ahora que sabemos describir el clima, ¡hablemos de lo que podemos hacer!</p>
+
+            <ul>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">游泳</span>
+                    <span class="vocab-pinyin">(yóuyǒng)</span>
+                    <span class="vocab-translation">Nadar / Natación</span>
+                    <button class="audio-icon" data-audio-text="游泳">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">滑雪</span>
+                    <span class="vocab-pinyin">(huáxuě)</span>
+                    <span class="vocab-translation">Esquiar / Esquí</span>
+                    <button class="audio-icon" data-audio-text="滑雪">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">散步</span>
+                    <span class="vocab-pinyin">(sànbù)</span>
+                    <span class="vocab-translation">Dar un paseo / Caminar</span>
+                    <button class="audio-icon" data-audio-text="散步">🔊</button>
+                </li>
+                <li class="vocab-item">
+                    <span class="vocab-chinese">去海边</span>
+                    <span class="vocab-pinyin">(qù hǎibiān)</span>
+                    <span class="vocab-translation">Ir a la playa</span>
+                    <button class="audio-icon" data-audio-text="去海边">🔊</button>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>💡 Nota Cultural:</strong> En China, ir a la playa es una actividad muy popular en verano. Para el invierno, las estaciones de esquí en el norte, como las cerca de Beijing o en Heilongjiang, son destinos frecuentes.
+            </div>
+
+            <h3>Ejemplos de oraciones:</h3>
+            <div class="example-sentence">
+                <p><strong>夏天可以游泳。</strong></p>
+                <p><em>(Xiàtiān kěyǐ yóuyǒng.)</em></p>
+                <p>En verano se puede nadar.</p>
+                <button class="audio-icon" data-audio-text="夏天可以游泳。">🔊</button>
+            </div>
+            <div class="example-sentence">
+                <p><strong>冬天我喜欢滑雪。</strong></p>
+                <p><em>(Dōngtiān wǒ xǐhuan huáxuě.)</em></p>
+                <p>En invierno me gusta esquiar.</p>
+                <button class="audio-icon" data-audio-text="冬天我喜欢滑雪。">🔊</button>
+            </div>
+            <div class="example-sentence">
+                <p><strong>天气凉快的时候，我们去散步吧。</strong></p>
+                <p><em>(Tiānqì liángkuai de shíhou, wǒmen qù sànbù ba.)</em></p>
+                <p>Cuando el tiempo esté fresco, vayamos a caminar.</p>
+                <button class="audio-icon" data-audio-text="天气凉快的时候，我们去散步吧。">🔊</button>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 Práctica: ¿Qué actividad harías?</h3>
+            <p>Elige la actividad más adecuada para cada tipo de clima.</p>
+
+            <div class="practice-item">
+                <p class="practice-question">1. Si hace mucho calor y estás de vacaciones... (Nadar)</p>
+                <div class="practice-answer-options">
+                    <button class="practice-answer-option" data-answer="滑雪">滑雪</button>
+                    <button class="practice-answer-option" data-answer="游泳">游泳</button>
+                    <button class="practice-answer-option" data-answer="散步">散步</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">2. Cuando nieva y es invierno... (Esquiar)</p>
+                <div class="practice-answer-options">
+                    <button class="practice-answer-option" data-answer="散步">散步</button>
+                    <button class="practice-answer-option" data-answer="去海边">去海边</button>
+                    <button class="practice-answer-option" data-answer="滑雪">滑雪</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>🌟 Resumen del Capítulo</h2>
+            <p>¡Felicidades! Has completado el capítulo sobre el clima y las estaciones. Aquí un repaso de lo que aprendimos:</p>
+            <ul>
+                <li><strong>Vocabulario del Clima:</strong> 晴天 (qíngtiān - soleado), 下雨 (xiàyǔ - llover), 多云 (duōyún - nublado), 下雪 (xiàxuě - nevar), 刮风 (guāfēng - ventoso).</li>
+                <li><strong>Preguntar el Clima:</strong> 今天天气怎么样？ (Jīntiān tiānqì zěnmeyàng? - ¿Qué tiempo hace hoy?).</li>
+                <li><strong>Estaciones:</strong> 春天 (chūntiān - primavera), 夏天 (xiàtiān - verano), 秋天 (qiūtiān - otoño), 冬天 (dōngtiān - invierno).</li>
+                <li><strong>Temperatura:</strong> 热 (rè - caliente), 冷 (lěng - frío), 暖和 (nuǎnhuo - cálido), 凉快 (liángkuai - fresco).</li>
+                <li><strong>Actividades:</strong> 游泳 (yóuyǒng - nadar), 滑雪 (huáxuě - esquiar), 散步 (sànbù - caminar), 去海边 (qù hǎibiān - ir a la playa).</li>
+            </ul>
+            <p>¡Ahora puedes empezar a hablar sobre el clima y tus actividades favoritas en chino! ¡Sigue practicando!</p>
+        </section>
+
+    </div>
+</body>
+</html>

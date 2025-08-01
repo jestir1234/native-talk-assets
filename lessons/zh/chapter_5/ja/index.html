@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: 家族と人間関係</title>
+    <style>
+        /* Base Styles & Mobile-First Approach */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-background: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --light-cream-background: #FCFBF4; /* Slightly lighter cream for nested elements */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'メイリオ', Meiryo, '游ゴシック', YuGothic, sans-serif;
+            background-color: var(--secondary-background);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for readability */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 16px; /* Global padding for mobile-first layout */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--secondary-background); /* Ensure background extends */
+            border-radius: 16px;
+            overflow: hidden; /* For rounded corners on contained elements */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1.chapter-title {
+            font-size: 1.8em;
+            text-align: center;
+            margin: 20px 0; /* Required spacing */
+            padding: 0 16px; /* Align with container padding */
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 1.5em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5em;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-top: 1em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        li {
+            padding: 0.5em 0;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            font-style: normal; /* For pinyin, not italic */
+            color: var(--primary-color);
+        }
+
+        /* Header Specifics */
+        .lesson-header {
+            margin: 20px 0; /* Required spacing */
+            text-align: center; /* Required alignment */
+            padding: 0 16px; /* Align with container padding */
+        }
+
+        .lesson-header-image {
+            width: 100%; /* Required */
+            max-width: 600px; /* Required */
+            height: auto; /* Required */
+            border-radius: 8px; /* Required */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Required */
+            display: block; /* Required */
+            margin: 0 auto; /* Required */
+        }
+
+        /* Section and Card Styles */
+        .section {
+            background-color: var(--light-cream-background);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+        }
+
+        .example-block {
+            background-color: #F8F8F8;
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 1em 0;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .example-block .chinese-text {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--heading-color);
+            display: block;
+        }
+
+        .example-block .japanese-translation {
+            font-size: 0.9em;
+            color: var(--body-text-color);
+        }
+
+        .example-block .audio-icon {
+            align-self: flex-end; /* Align audio icon to the right */
+            margin-top: 5px;
+            margin-right: 0; /* Remove left margin from general audio-icon */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            min-width: 44px; /* Ensure it doesn't shrink */
+            min-height: 44px; /* Ensure it doesn't shrink */
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            vertical-align: middle;
+            margin-left: 8px; /* Default margin for inline use */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-icon:hover {
+            background-color: #6C42A1; /* Darker primary color */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        .vocab-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dotted var(--border-color);
+        }
+        .vocab-item:last-child {
+            border-bottom: none;
+        }
+        .vocab-item-details {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .vocab-item-chinese {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--heading-color);
+        }
+        .vocab-item-pinyin {
+            font-size: 0.9em;
+            color: var(--primary-color);
+            margin-top: 2px;
+        }
+        .vocab-item-japanese {
+            font-size: 0.9em;
+            color: var(--body-text-color);
+            margin-top: 4px;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: rgba(139, 95, 191, 0.1); /* Light primary color background */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 1em 0;
+            border-radius: 4px;
+            color: var(--heading-color);
+        }
+        .cultural-note strong {
+            display: block;
+            margin-bottom: 0.5em;
+            color: var(--heading-color);
+        }
+        .cultural-note ul {
+            padding-left: 20px;
+            list-style: disc;
+        }
+        .cultural-note li {
+            border-bottom: none;
+            padding: 0.2em 0;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--light-cream-background);
+            border-top: 2px dashed var(--border-color);
+            padding-top: 20px;
+            margin-top: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 20px; /* Consistent with .section */
+        }
+
+        .exercise-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+        }
+
+        .exercise-item p {
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            color: var(--heading-color);
+        }
+
+        .exercise-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .exercise-item li {
+            padding: 0.4em 0;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        .exercise-item .chinese-text span { /* For translation answer */
+            font-weight: normal;
+            color: var(--primary-color);
+        }
+
+        .exercise-item .audio-icon {
+            display: inline-flex; /* Keep it inline for the answer lines */
+        }
+
+        .exercise-item .answer-placeholder {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 8px;
+            display: block;
+            font-style: italic;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--light-cream-background);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+        .summary-section ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        .summary-section li {
+            border-bottom: none;
+            padding: 0.2em 0;
+        }
+
+        /* Responsive Adjustments for Larger Screens (Tablets/Desktops) */
+        @media screen and (min-width: 600px) {
+            body {
+                padding: 24px;
+                font-size: 18px; /* Slightly larger body text */
+            }
+
+            h1.chapter-title {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            h3 {
+                font-size: 1.5em;
+            }
+
+            .section, .practice-section, .summary-section {
+                padding: 30px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .audio-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 5: 家族と人間関係</h1>
+        <div class="lesson-header">
+            <!-- Header image as per instructions. Note: no external images allowed, this is a relative path. -->
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section">
+            <h2>🎉 こんにちは！第5章へようこそ！</h2>
+            <p>この章では、中国語での<strong>家族メンバーの呼び方</strong>、そして<strong>「私の〜」といった所有を示す表現</strong>を学びます。中国語の家族表現は日本語と似ている部分もあれば、少しユニークな部分もあります。一緒に楽しく学んでいきましょう！</p>
+        </section>
+
+        <section class="section">
+            <h2>👨‍👩‍👧‍👦 セクション1: 家族メンバーの紹介</h2>
+            <p>まずは、一番基本的な家族メンバーの呼び方から見ていきましょう。</p>
+
+            <h3>1. 両親</h3>
+            <div class="card">
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">爸爸</span>
+                        <span class="vocab-item-pinyin"><em>bàba</em></span>
+                        <span class="vocab-item-japanese">お父さん</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="爸爸" aria-label="Play audio for 爸爸">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">妈妈</span>
+                        <span class="vocab-item-pinyin"><em>māma</em></span>
+                        <span class="vocab-item-japanese">お母さん</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="妈妈" aria-label="Play audio for 妈妈">🔊</button>
+                </div>
+            </div>
+
+            <h3>2. 兄弟姉妹</h3>
+            <p>中国語では、日本語のように「兄」「姉」「弟」「妹」と区別します。特に、年上か年下かを明確にすることが重要です。</p>
+            <div class="card">
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">哥哥</span>
+                        <span class="vocab-item-pinyin"><em>gēge</em></span>
+                        <span class="vocab-item-japanese">お兄さん</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="哥哥" aria-label="Play audio for 哥哥">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">姐姐</span>
+                        <span class="vocab-item-pinyin"><em>jiějie</em></span>
+                        <span class="vocab-item-japanese">お姉さん</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="姐姐" aria-label="Play audio for 姐姐">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">弟弟</span>
+                        <span class="vocab-item-pinyin"><em>dìdi</em></span>
+                        <span class="vocab-item-japanese">弟</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="弟弟" aria-label="Play audio for 弟弟">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">妹妹</span>
+                        <span class="vocab-item-pinyin"><em>mèimei</em></span>
+                        <span class="vocab-item-japanese">妹</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="妹妹" aria-label="Play audio for 妹妹">🔊</button>
+                </div>
+            </div>
+
+            <div class="example-block">
+                <span class="chinese-text">这是我的爸爸。</span>
+                <span class="japanese-translation">これは私のお父さんです。</span>
+                <button class="audio-icon" data-audio-text="这是我的爸爸。" aria-label="Play audio for 这是我的爸爸。">🔊</button>
+            </div>
+            <div class="example-block">
+                <span class="chinese-text">她是我姐姐。</span>
+                <span class="japanese-translation">彼女は私の姉です。</span>
+                <button class="audio-icon" data-audio-text="她是我姐姐。" aria-label="Play audio for 她是我姐姐。">🔊</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>💡 セクション2: 所有代名詞「的 (de)」</h2>
+            <p>「<strong>〜の</strong>」や<strong>所有</strong>を示すときには、助詞の「<strong>的</strong> (de)」を使います。日本語の「の」に非常に似ています。</p>
+            <p>基本的な形: <strong>[所有者] + 的 (de) + [名詞]</strong></p>
+
+            <div class="card">
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">我的</span>
+                        <span class="vocab-item-pinyin"><em>wǒde</em></span>
+                        <span class="vocab-item-japanese">私の</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="我的" aria-label="Play audio for 我的">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">你的</span>
+                        <span class="vocab-item-pinyin"><em>nǐde</em></span>
+                        <span class="vocab-item-japanese">あなたの</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="你的" aria-label="Play audio for 你的">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">他的</span>
+                        <span class="vocab-item-pinyin"><em>tāde</em></span>
+                        <span class="vocab-item-japanese">彼の</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="他的" aria-label="Play audio for 他的">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">她的</span>
+                        <span class="vocab-item-pinyin"><em>tāde</em></span>
+                        <span class="vocab-item-japanese">彼女の</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="她的" aria-label="Play audio for 彼女の">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">他们的</span>
+                        <span class="vocab-item-pinyin"><em>tāmen de</em></span>
+                        <span class="vocab-item-japanese">彼らの / 彼女らの</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="他们的" aria-label="Play audio for 他们的">🔊</button>
+                </div>
+            </div>
+
+            <p><strong>ポイント：</strong>
+            家族メンバーなど親しい関係性の名詞の前では、「的 (de)」を省略することがよくあります。例: 我的妈妈 → 我妈妈</p>
+
+            <div class="example-block">
+                <span class="chinese-text">我的书。</span>
+                <span class="japanese-translation">私の本。</span>
+                <button class="audio-icon" data-audio-text="我的书。" aria-label="Play audio for 我的书。">🔊</button>
+            </div>
+            <div class="example-block">
+                <span class="chinese-text">我妈妈。</span> <em style="font-size:0.9em;">(より自然な表現)</em>
+                <span class="japanese-translation">私のお母さん。</span>
+                <button class="audio-icon" data-audio-text="我妈妈。" aria-label="Play audio for 我妈妈。">🔊</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🏡 セクション3: 「これは私の〜です」</h2>
+            <p>誰かを紹介するときによく使う表現です。</p>
+            <p><strong>[これは/彼は/彼女は] + 私の + [家族メンバー]</strong></p>
+            <p>中国語では：<strong>这是我的 [家族メンバー]。 / 他是我的 [家族メンバー]。 / 她是我的 [家族メンバー]。</strong></p>
+            <p>※「これ/これら」は「这 (zhè)」を使いますが、人の紹介では「彼/彼女」を表す「他 (tā) / 她 (tā)」もよく使います。</p>
+
+            <div class="example-block">
+                <span class="chinese-text">这是我弟弟。</span>
+                <span class="japanese-translation">これは私の弟です。</span>
+                <button class="audio-icon" data-audio-text="这是我弟弟。" aria-label="Play audio for 这是我弟弟。">🔊</button>
+            </div>
+            <div class="example-block">
+                <span class="chinese-text">他是我哥哥。</span>
+                <span class="japanese-translation">彼はお兄さんです。</span>
+                <button class="audio-icon" data-audio-text="他是我哥哥。" aria-label="Play audio for 他是我哥哥。">🔊</button>
+            </div>
+            <div class="example-block">
+                <span class="chinese-text">她是我妹妹。</span>
+                <span class="japanese-translation">彼女は私の妹です。</span>
+                <button class="audio-icon" data-audio-text="她是我妹妹。" aria-label="Play audio for 她是我妹妹。">🔊</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>👨‍👩‍👧‍👦 セクション4: その他の家族語彙と関係</h2>
+            <p>基本的な家族メンバー以外にも、覚えておくと便利な語彙があります。</p>
+
+            <h3>1. その他の親族</h3>
+            <div class="card">
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">爷爷</span>
+                        <span class="vocab-item-pinyin"><em>yéye</em></span>
+                        <span class="vocab-item-japanese">（父方の）おじいさん</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="爷爷" aria-label="Play audio for 爷爷">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">奶奶</span>
+                        <span class="vocab-item-pinyin"><em>nǎinai</em></span>
+                        <span class="vocab-item-japanese">（父方の）おばあさん</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="奶奶" aria-label="Play audio for 奶奶">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">外公</span>
+                        <span class="vocab-item-pinyin"><em>wàigōng</em></span>
+                        <span class="vocab-item-japanese">（母方の）おじいさん</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="外公" aria-label="Play audio for 外公">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">外婆</span>
+                        <span class="vocab-item-pinyin"><em>wàipó</em></span>
+                        <span class="vocab-item-japanese">（母方の）おばあさん</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="外婆" aria-label="Play audio for 外婆">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">儿子</span>
+                        <span class="vocab-item-pinyin"><em>érzi</em></span>
+                        <span class="vocab-item-japanese">息子</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="儿子" aria-label="Play audio for 儿子">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">女儿</span>
+                        <span class="vocab-item-pinyin"><em>nǚ'ér</em></span>
+                        <span class="vocab-item-japanese">娘</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="女儿" aria-label="Play audio for 女儿">🔊</button>
+                </div>
+            </div>
+
+            <div class="cultural-note">
+                <strong>文化メモ：父方と母方のおじいちゃん・おばあちゃん👵👴</strong>
+                <p>中国語では、父方と母方のおじいちゃん・おばあちゃんの呼び方が異なります。これは家族の系譜を重視する文化が反映されています。日本語にはない概念なので、少し混乱するかもしれませんが、とても重要です！</p>
+                <ul>
+                    <li>父方: <strong>爷爷</strong> (yéye) / <strong>奶奶</strong> (nǎinai)</li>
+                    <li>母方: <strong>外公</strong> (wàigōng) / <strong>外婆</strong> (wàipó)</li>
+                </ul>
+            </div>
+
+            <h3>2. 家族全般の用語</h3>
+            <div class="card">
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">家庭</span>
+                        <span class="vocab-item-pinyin"><em>jiātíng</em></span>
+                        <span class="vocab-item-japanese">家庭、家</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="家庭" aria-label="Play audio for 家庭">🔊</button>
+                </div>
+                <div class="vocab-item">
+                    <div class="vocab-item-details">
+                        <span class="vocab-item-chinese">家人</span>
+                        <span class="vocab-item-pinyin"><em>jiārén</em></span>
+                        <span class="vocab-item-japanese">家族（メンバー）</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="家人" aria-label="Play audio for 家人">🔊</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>💬 セクション5: 家族について話す</h2>
+            <p>家族について尋ねたり答えたりする基本的なフレーズです。</p>
+
+            <h3>1. 家族の人数を尋ねる</h3>
+            <div class="example-block">
+                <span class="chinese-text">你家有几口人？</span>
+                <span class="japanese-translation">あなたの家族は何人ですか？</span>
+                <button class="audio-icon" data-audio-text="你家有几口人？" aria-label="Play audio for 你家有几口人？">🔊</button>
+            </div>
+            <p><strong>口 (kǒu)</strong> は、家族の人数を数えるときに使う量詞（助数詞）です。日本語の「人」に相当します。</p>
+            <div class="example-block">
+                <span class="chinese-text">我家有四口人。</span>
+                <span class="japanese-translation">私の家族は4人です。</span>
+                <button class="audio-icon" data-audio-text="我家有四口人。" aria-label="Play audio for 我家有四口人。">🔊</button>
+            </div>
+            <div class="example-block">
+                <span class="chinese-text">我家有爸爸、妈妈、哥哥和我。</span>
+                <span class="japanese-translation">私の家は父、母、兄、そして私です。</span>
+                <button class="audio-icon" data-audio-text="我家有爸爸、妈妈、哥哥和我。" aria-label="Play audio for 我家有爸爸、妈妈、哥哥和我。">🔊</button>
+            </div>
+
+            <h3>2. 兄弟姉妹の有無を尋ねる</h3>
+            <div class="example-block">
+                <span class="chinese-text">你有没有兄弟姐妹？</span>
+                <span class="japanese-translation">兄弟姉妹はいますか？</span>
+                <button class="audio-icon" data-audio-text="你有没有兄弟姐妹？" aria-label="Play audio for 你有没有兄弟姐妹？">🔊</button>
+            </div>
+            <p><strong>兄弟姐妹 (xiōngdì jiěmèi)</strong> は「兄弟姉妹」という意味です。「有没有 (yǒu méiyǒu)」は「あるかないか」つまり「〜ですか？」と尋ねる時に使います。</p>
+            <div class="example-block">
+                <span class="chinese-text">我有两个哥哥。</span>
+                <span class="japanese-translation">私には兄が2人います。</span>
+                <button class="audio-icon" data-audio-text="我有两个哥哥。" aria-label="Play audio for 我有两个哥哥。">🔊</button>
+            </div>
+            <div class="example-block">
+                <span class="chinese-text">我没有兄弟姐妹。</span>
+                <span class="japanese-translation">私には兄弟姉妹がいません。</span>
+                <button class="audio-icon" data-audio-text="我没有兄弟姐妹。" aria-label="Play audio for 我没有兄弟姐妹。">🔊</button>
+            </div>
+            <div class="cultural-note">
+                <strong>文化メモ：一人っ子政策の影響👪</strong>
+                <p>中国ではかつて一人っ子政策があったため、兄弟姉妹がいない人も多くいます。このため「兄弟姐妹」の有無を尋ねる質問は一般的です。</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>📝 練習問題</h2>
+            <p>これまでに学んだ内容を使って、簡単な練習問題を解いてみましょう！</p>
+
+            <div class="exercise-item">
+                <p><strong>問題1: 単語とピンイン・日本語訳を一致させてみましょう。（正しい組み合わせを選んでください）</strong></p>
+                <ul>
+                    <li><span class="vocab-item-chinese">妈妈</span> : <em>māma</em> (お母さん)</li>
+                    <li><span class="vocab-item-chinese">弟弟</span> : <em>dìdi</em> (弟)</li>
+                    <li><span class="vocab-item-chinese">姐姐</span> : <em>jiějie</em> (お姉さん)</li>
+                    <li><span class="vocab-item-chinese">哥哥</span> : <em>gēge</em> (お兄さん)</li>
+                    <li><span class="vocab-item-chinese">爸爸</span> : <em>bàba</em> (お父さん)</li>
+                </ul>
+                <p class="answer-placeholder">（これは表示のみの練習です。実際にアプリでインタラクティブにする場合は、選択肢や入力欄などを設けます。）</p>
+            </div>
+
+            <div class="exercise-item">
+                <p><strong>問題2: 以下の日本語を中国語に翻訳してみましょう。（音声を聞いて発音も練習！）</strong></p>
+                <p>1. これは私の妹です。</p>
+                <div class="example-block" style="border-left: none; padding: 0; margin: 0; flex-direction: row; align-items: center; justify-content: space-between;">
+                    <span class="chinese-text" style="margin-bottom: 0;">→ <span style="font-weight: normal; color: var(--primary-color);">这是我妹妹。</span></span>
+                    <button class="audio-icon" data-audio-text="这是我妹妹。" aria-label="Play audio for 这是我妹妹。">🔊</button>
+                </div>
+            </div>
+
+            <div class="exercise-item">
+                <p>2. 彼らは私の家族です。</p>
+                <div class="example-block" style="border-left: none; padding: 0; margin: 0; flex-direction: row; align-items: center; justify-content: space-between;">
+                    <span class="chinese-text" style="margin-bottom: 0;">→ <span style="font-weight: normal; color: var(--primary-color);">他们是我的家人。</span></span>
+                    <button class="audio-icon" data-audio-text="他们是我的家人。" aria-label="Play audio for 彼らは私の家族です。">🔊</button>
+                </div>
+            </div>
+
+            <div class="exercise-item">
+                <p>3. 私には弟が一人います。</p>
+                <div class="example-block" style="border-left: none; padding: 0; margin: 0; flex-direction: row; align-items: center; justify-content: space-between;">
+                    <span class="chinese-text" style="margin-bottom: 0;">→ <span style="font-weight: normal; color: var(--primary-color);">我有一个弟弟。</span></span>
+                    <button class="audio-icon" data-audio-text="我有一个弟弟。" aria-label="Play audio for 私には弟が一人います。">🔊</button>
+                </div>
+            </div>
+
+            <div class="exercise-item">
+                <p>4. 私のおじいさん（父方）。</p>
+                <div class="example-block" style="border-left: none; padding: 0; margin: 0; flex-direction: row; align-items: center; justify-content: space-between;">
+                    <span class="chinese-text" style="margin-bottom: 0;">→ <span style="font-weight: normal; color: var(--primary-color);">我爷爷。</span></span>
+                    <button class="audio-icon" data-audio-text="我爷爷。" aria-label="Play audio for 私のおじいさん（父方）。">🔊</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ まとめ</h2>
+            <p>第5章、お疲れ様でした！この章では、以下のことを学びました。</p>
+            <ul>
+                <li>👨‍👩‍👧‍👦 <strong>家族メンバーの呼び方:</strong> 爸爸 (bàba), 妈妈 (māma), 哥哥 (gēge), 姐姐 (jiějie), 弟弟 (dìdi), 妹妹 (mèimei) など。</li>
+                <li>💡 <strong>所有を表す「的 (de)」:</strong> 「私の (我的 wǒde)」のように使います。親しい関係では省略されることも。</li>
+                <li>🏡 <strong>紹介のフレーズ:</strong> 「这是我... (Zhè shì wǒ...)」や「他是/她是我... (Tā shì wǒ...)」で家族を紹介できます。</li>
+                <li>👵👴 <strong>その他の家族語彙:</strong> 父方・母方の祖父母の呼び分けや、家庭・家族といった言葉。</li>
+                <li>💬 <strong>家族についての会話:</strong> 人数や兄弟姉妹の有無を尋ねる質問と答え方。</li>
+            </ul>
+            <p>これで、あなたの家族について中国語で少し話せるようになりましたね！繰り返し練習して、どんどん使ってみましょう！</p>
+        </section>
+
+    </div>
+</body>
+</html>

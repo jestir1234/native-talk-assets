@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 6: Actividades Diarias y Rutinas</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-bg-color: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --audio-icon-size: 44px; /* Minimum size for touch */
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* White background for the main content area */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        .container {
+            max-width: 800px; /* Max width for larger screens, mobile-first approach */
+            margin: 0 auto;
+            padding: 0 15px; /* Padding on sides for mobile screens */
+        }
+
+        /* Header Structure Requirements */
+        .chapter-title {
+            color: var(--heading-text-color);
+            text-align: center;
+            padding: 20px 0 10px;
+            font-size: 28px;
+            margin-top: 0;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            padding: 25px 15px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            background-color: #FFFFFF; /* Default white background for sections */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .lesson-section.background-secondary {
+            background-color: var(--secondary-bg-color); /* Cream background for alternating sections */
+        }
+
+        .section-title, .subsection-title {
+            color: var(--heading-text-color);
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .subsection-title {
+            font-size: 20px;
+            text-align: left;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Typography */
+        p {
+            margin-bottom: 1em;
+            font-size: 17px;
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+
+        /* Chinese text and Pinyin elements */
+        .chinese-char {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 5px;
+        }
+
+        .pinyin {
+            font-style: italic;
+            color: #555;
+            margin-right: 10px;
+        }
+
+        .meaning {
+            font-size: 16px;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        .chinese-text {
+            font-size: 22px;
+            font-weight: bold;
+            color: var(--heading-text-color);
+        }
+
+        .pinyin-text {
+            font-style: italic;
+            color: #555;
+            font-size: 18px;
+            margin-left: 5px;
+        }
+
+        .translation {
+            color: var(--body-text-color);
+            font-size: 16px;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        /* Audio Icon Styling */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%; /* Make it round */
+            width: var(--audio-icon-size);
+            height: var(--audio-icon-size);
+            display: inline-flex; /* Use flexbox to center content */
+            justify-content: center;
+            align-items: center;
+            font-size: 20px; /* Icon size inside the button */
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 10px;
+            vertical-align: middle; /* Align with text baseline */
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4099; /* Darker shade of primary for hover */
+            transform: scale(1.05);
+        }
+
+        /* Vocabulary Grid Layout */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Responsive grid columns */
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .vocab-item {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .vocab-item .chinese-char {
+            font-size: 32px;
+            display: block; /* Each part on its own line in the card */
+            margin-bottom: 5px;
+        }
+        .vocab-item .pinyin {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .vocab-item .meaning {
+            font-size: 18px;
+            color: var(--body-text-color);
+        }
+
+        /* Vocabulary List (for smaller, row-based items) */
+        .vocabulary-list {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .vocab-item-small {
+            display: flex;
+            align-items: center;
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.03);
+        }
+        .vocab-item-small .chinese-char {
+            font-size: 24px;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+        .vocab-item-small .pinyin {
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .vocab-item-small .meaning {
+            margin-left: auto; /* Push meaning to the right */
+            font-size: 16px;
+            text-align: right;
+            color: var(--body-text-color);
+            flex-grow: 1; /* Allow meaning to take available space */
+        }
+
+
+        /* Example Boxes and Sentences */
+        .example-box {
+            background-color: var(--secondary-bg-color); /* Cream background for examples */
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .example-sentence {
+            background-color: var(--secondary-bg-color);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .example-sentence p {
+            margin: 5px 0; /* Smaller margin for lines within an example sentence */
+        }
+
+
+        /* Practice Sections */
+        .practice-box {
+            background-color: #EBF7FF; /* Light blue for practice sections */
+            border: 1px solid #C0E0F0;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .practice-title {
+            color: #2D6C9F; /* Darker blue for practice titles */
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .practice-box ul, .practice-box ol {
+            list-style: none; /* Remove default list bullets/numbers */
+            padding-left: 0;
+        }
+
+        .practice-box li {
+            margin-bottom: 12px;
+            background-color: #FFFFFF;
+            border: 1px solid #D0EAF8;
+            border-radius: 8px;
+            padding: 12px 15px;
+            display: flex; /* Use flexbox for layout within list items */
+            justify-content: space-between;
+            align-items: center;
+            font-size: 17px;
+        }
+        .practice-box li .clue {
+            font-size: 15px;
+            color: #999;
+            font-style: italic;
+            margin-left: 10px;
+        }
+
+        /* Responsive Adjustments for larger screens (e.g., tablets and desktops) */
+        @media (min-width: 600px) {
+            .chapter-title {
+                font-size: 32px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .subsection-title {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 18px;
+            }
+
+            li {
+                font-size: 18px;
+            }
+
+            .lesson-section {
+                padding: 30px 25px;
+            }
+
+            .vocab-item .chinese-char {
+                font-size: 36px;
+            }
+
+            .chinese-text {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Capítulo 6: Actividades Diarias y Rutinas</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2 class="section-title">¡Hola! 👋 ¿Qué haces hoy?</h2>
+            <p>En este capítulo, vamos a explorar cómo hablar sobre nuestras actividades diarias y rutinas en chino. Es súper útil para describir tu día a día, hacer planes y entender a los demás. ¡Prepárate para añadir más verbos y frases a tu vocabulario!</p>
+        </section>
+
+        <section class="lesson-section background-secondary">
+            <h3 class="subsection-title">✨ Verbos Comunes para Tu Día</h3>
+            <p>Aquí tienes algunos verbos esenciales que usarás constantemente. ¡Escucha y repite!</p>
+            <div class="vocabulary-grid">
+                <div class="vocab-item">
+                    <span class="chinese-char">吃</span> <span class="pinyin">chī</span> <span class="audio-icon" data-audio-text="吃">🔊</span>
+                    <p class="meaning">comer</p>
+                </div>
+                <div class="vocab-item">
+                    <span class="chinese-char">喝</span> <span class="pinyin">hē</span> <span class="audio-icon" data-audio-text="喝">🔊</span>
+                    <p class="meaning">beber</p>
+                </div>
+                <div class="vocab-item">
+                    <span class="chinese-char">睡</span> <span class="pinyin">shuì</span> <span class="audio-icon" data-audio-text="睡">🔊</span>
+                    <p class="meaning">dormir</p>
+                </div>
+                <div class="vocab-item">
+                    <span class="chinese-char">工作</span> <span class="pinyin">gōngzuò</span> <span class="audio-icon" data-audio-text="工作">🔊</span>
+                    <p class="meaning">trabajar</p>
+                </div>
+                <div class="vocab-item">
+                    <span class="chinese-char">学习</span> <span class="pinyin">xuéxí</span> <span class="audio-icon" data-audio-text="学习">🔊</span>
+                    <p class="meaning">estudiar</p>
+                </div>
+                <div class="vocab-item">
+                    <span class="chinese-char">玩</span> <span class="pinyin">wán</span> <span class="audio-icon" data-audio-text="玩">🔊</span>
+                    <p class="meaning">jugar / divertirse</p>
+                </div>
+            </div>
+
+            <div class="practice-box">
+                <h4 class="practice-title">Práctica Rápida 📝</h4>
+                <p>¿Recuerdas estos verbos? Asocia el carácter con su significado correcto:</p>
+                <ul>
+                    <li><span class="chinese-char">吃</span> <span class="clue">(beber / comer)</span></li>
+                    <li><span class="chinese-char">睡</span> <span class="clue">(trabajar / dormir)</span></li>
+                    <li><span class="chinese-char">学习</span> <span class="clue">(estudiar / jugar)</span></li>
+                </ul>
+                <p class="translation" style="text-align: center;"><em>(Respuestas: comer, dormir, estudiar)</em></p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3 class="subsection-title">🚶‍♀️🚶‍♂️ Mi Rutina: Presente Simple</h3>
+            <p>¡Buenas noticias! En chino, formar oraciones en presente es muy sencillo. El verbo <strong>no cambia</strong> según la persona. Solo necesitas: Sujeto + Verbo (+ Objeto).</p>
+            <div class="example-box">
+                <p><span class="chinese-char">我</span> <span class="pinyin">wǒ</span> - yo</p>
+                <p><span class="chinese-char">你</span> <span class="pinyin">nǐ</span> - tú</p>
+                <p><span class="chinese-char">他</span> <span class="pinyin">tā</span> - él</p>
+                <p><span class="chinese-char">她</span> <span class="pinyin">tā</span> - ella</p>
+                <p><span class="chinese-char">我们</span> <span class="pinyin">wǒmen</span> - nosotros/as</p>
+            </div>
+            <p>Veamos cómo funciona:</p>
+            <div class="example-sentence">
+                <p><span class="chinese-text">我吃饭。</span> <span class="pinyin-text">Wǒ chī fàn.</span> <span class="audio-icon" data-audio-text="我吃饭。">🔊</span></p>
+                <p class="translation">Yo como (comida).</p>
+            </div>
+            <div class="example-sentence">
+                <p><span class="chinese-text">她学习。</span> <span class="pinyin-text">Tā xuéxí.</span> <span class="audio-icon" data-audio-text="她学习。">🔊</span></p>
+                <p class="translation">Ella estudia.</p>
+            </div>
+
+            <h4>🚫 Cómo Negar: Usando 不 (bù)</h4>
+            <p>Para decir "no" o "no hago", simplemente añade <span class="chinese-char">不</span> <span class="pinyin">bù</span> antes del verbo. ¡Así de fácil!</p>
+            <div class="example-sentence">
+                <p><span class="chinese-text">我不吃饭。</span> <span class="pinyin-text">Wǒ bù chī fàn.</span> <span class="audio-icon" data-audio-text="我不吃饭。">🔊</span></p>
+                <p class="translation">Yo no como (comida).</p>
+            </div>
+            <div class="example-sentence">
+                <p><span class="chinese-text">他不喜欢。</span> <span class="pinyin-text">Tā bù xǐhuān.</span> <span class="audio-icon" data-audio-text="他不喜欢。">🔊</span></p>
+                <p class="translation">A él no le gusta. <em>(Literalmente: Él no gusta.)</em></p>
+            </div>
+
+            <div class="practice-box">
+                <h4 class="practice-title">¡A Practicar! 💬</h4>
+                <p>Traduce estas frases al chino. ¡Usa tus nuevos verbos y <span class="chinese-char">不</span>!</p>
+                <ol>
+                    <li>Yo bebo agua. <span class="clue">(agua = 水 shuǐ)</span></li>
+                    <li>Ella estudia chino. <span class="clue">(chino = 汉语 Hànyǔ)</span></li>
+                    <li>Nosotros no trabajamos.</li>
+                    <li>Tú no duermes.</li>
+                </ol>
+                <p class="translation" style="text-align: center;"><em>(Respuestas: 1. 我喝水。 2. 她学习汉语。 3. 我们不工作。 4. 你不睡。)</em></p>
+            </div>
+        </section>
+
+        <section class="lesson-section background-secondary">
+            <h3 class="subsection-title">🗓️ Vocabulario de Rutinas Diarias</h3>
+            <p>Aquí tienes más frases para describir las actividades que haces cada día:</p>
+            <div class="vocabulary-list">
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">起床</span> <span class="pinyin">qǐchuáng</span> <span class="audio-icon" data-audio-text="起床">🔊</span></p>
+                    <p class="meaning">levantarse de la cama</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">刷牙</span> <span class="pinyin">shuāyá</span> <span class="audio-icon" data-audio-text="刷牙">🔊</span></p>
+                    <p class="meaning">cepillarse los dientes</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">洗澡</span> <span class="pinyin">xǐzǎo</span> <span class="audio-icon" data-audio-text="洗澡">🔊</span></p>
+                    <p class="meaning">ducharse / bañarse</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">吃饭</span> <span class="pinyin">chī fàn</span> <span class="audio-icon" data-audio-text="吃饭">🔊</span></p>
+                    <p class="meaning">comer (una comida)</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">上班</span> <span class="pinyin">shàngbān</span> <span class="audio-icon" data-audio-text="上班">🔊</span></p>
+                    <p class="meaning">ir a trabajar</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">下班</span> <span class="pinyin">xiàbān</span> <span class="audio-icon" data-audio-text="下班">🔊</span></p>
+                    <p class="meaning">salir del trabajo</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">回家</span> <span class="pinyin">huíjiā</span> <span class="audio-icon" data-audio-text="回家">🔊</span></p>
+                    <p class="meaning">ir a casa / volver a casa</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">看书</span> <span class="pinyin">kàn shū</span> <span class="audio-icon" data-audio-text="看书">🔊</span></p>
+                    <p class="meaning">leer un libro</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">看电视</span> <span class="pinyin">kàn diànshì</span> <span class="audio-icon" data-audio-text="看电视">🔊</span></p>
+                    <p class="meaning">ver televisión</p>
+                </div>
+            </div>
+            <div class="example-sentence">
+                <p><span class="chinese-text">我刷牙。</span> <span class="pinyin-text">Wǒ shuāyá.</span> <span class="audio-icon" data-audio-text="我刷牙。">🔊</span></p>
+                <p class="translation">Yo me cepillo los dientes.</p>
+            </div>
+            <div class="example-sentence">
+                <p><span class="chinese-text">他回家。</span> <span class="pinyin-text">Tā huíjiā.</span> <span class="audio-icon" data-audio-text="他回家。">🔊</span></p>
+                <p class="translation">Él va a casa.</p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3 class="subsection-title">☀️🌙 Momentos del Día</h3>
+            <p>Para hablar de cuándo haces las cosas, podemos usar estas expresiones de tiempo. Generalmente, el tiempo va <strong>antes del verbo</strong> en una oración.</p>
+            <div class="vocabulary-list">
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">早上</span> <span class="pinyin">zǎoshang</span> <span class="audio-icon" data-audio-text="早上">🔊</span></p>
+                    <p class="meaning">por la mañana (temprano)</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">上午</span> <span class="pinyin">shàngwǔ</span> <span class="audio-icon" data-audio-text="上午">🔊</span></p>
+                    <p class="meaning">por la mañana (antes del mediodía)</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">中午</span> <span class="pinyin">zhōngwǔ</span> <span class="audio-icon" data-audio-text="中午">🔊</span></p>
+                    <p class="meaning">mediodía</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">下午</span> <span class="pinyin">xiàwǔ</span> <span class="audio-icon" data-audio-text="下午">🔊</span></p>
+                    <p class="meaning">por la tarde</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">晚上</span> <span class="pinyin">wǎnshang</span> <span class="audio-icon" data-audio-text="晚上">🔊</span></p>
+                    <p class="meaning">por la noche</p>
+                </div>
+                <div class="vocab-item-small">
+                    <p><span class="chinese-char">每天</span> <span class="pinyin">měitiān</span> <span class="audio-icon" data-audio-text="每天">🔊</span></p>
+                    <p class="meaning">todos los días</p>
+                </div>
+            </div>
+            <p>Estructura: Sujeto + Tiempo + Verbo (+ Objeto)</p>
+            <div class="example-sentence">
+                <p><span class="chinese-text">我早上起床。</span> <span class="pinyin-text">Wǒ zǎoshang qǐchuáng.</span> <span class="audio-icon" data-audio-text="我早上起床。">🔊</span></p>
+                <p class="translation">Yo me levanto por la mañana.</p>
+            </div>
+            <div class="example-sentence">
+                <p><span class="chinese-text">她下午学习汉语。</span> <span class="pinyin-text">Tā xiàwǔ xuéxí Hànyǔ.</span> <span class="audio-icon" data-audio-text="她下午学习汉语。">🔊</span></p>
+                <p class="translation">Ella estudia chino por la tarde.</p>
+            </div>
+            <div class="example-sentence">
+                <p><span class="chinese-text">我们每天工作。</span> <span class="pinyin-text">Wǒmen měitiān gōngzuò.</span> <span class="audio-icon" data-audio-text="我们每天工作。">🔊</span></p>
+                <p class="translation">Nosotros trabajamos todos los días.</p>
+            </div>
+        </section>
+
+        <section class="lesson-section background-secondary">
+            <h3 class="subsection-title">💡 Nota Cultural: Comidas en China</h3>
+            <p>En China, las comidas son momentos importantes y a menudo se comparten. Es común que las familias coman juntas, con muchos platos en el centro de la mesa para compartir. Los horarios de las comidas suelen ser:</p>
+            <ul>
+                <li><strong>Desayuno (早餐 - zǎocān):</strong> Temprano, a menudo entre las 6:30 y 8:00 AM.</li>
+                <li><strong>Almuerzo (午餐 - wǔcān):</strong> Alrededor del mediodía, entre las 12:00 y 1:00 PM.</li>
+                <li><strong>Cena (晚餐 - wǎncān):</strong> Tarde, usualmente entre las 6:00 y 7:30 PM.</li>
+            </ul>
+            <p>¡Disfrutar de la comida con amigos y familia es una parte fundamental de la cultura china! 🥢</p>
+        </section>
+
+        <section class="lesson-section">
+            <h3 class="subsection-title">🎯 Resumen del Capítulo 6</h3>
+            <p>¡Felicidades! Has cubierto una base importante para hablar sobre tus actividades diarias en chino:</p>
+            <ul>
+                <li><strong>Verbos Clave:</strong> Aprendiste a decir comer (<span class="chinese-char">吃</span>), beber (<span class="chinese-char">喝</span>), dormir (<span class="chinese-char">睡</span>), trabajar (<span class="chinese-char">工作</span>), estudiar (<span class="chinese-char">学习</span>) y jugar (<span class="chinese-char">玩</span>).</li>
+                <li><strong>Oraciones Básicas:</strong> Dominaste la estructura Sujeto + Verbo (+ Objeto), y cómo usar <span class="chinese-char">不</span> <span class="pinyin">bù</span> para negar.</li>
+                <li><strong>Rutinas:</strong> Expandiste tu vocabulario con acciones como levantarse (<span class="chinese-char">起床</span>), cepillarse los dientes (<span class="chinese-char">刷牙</span>), ir a trabajar (<span class="chinese-char">上班</span>) y ver televisión (<span class="chinese-char">看电视</span>).</li>
+                <li><strong>Momentos del Día:</strong> Ahora puedes usar expresiones como por la mañana (<span class="chinese-char">早上</span>), por la tarde (<span class="chinese-char">下午</span>) y por la noche (<span class="chinese-char">晚上</span>) para decir cuándo haces las cosas.</li>
+            </ul>
+            <p>¡Sigue practicando estas frases y vocabulario en tu día a día! Intenta describir tu propia rutina en chino cada mañana. ¡Verás lo rápido que mejoras!</p>
+        </section>
+
+    </div>
+</body>
+</html>

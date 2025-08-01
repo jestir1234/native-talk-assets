@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: 色と描写 - 中国語レッスン</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling on iOS */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 600px; /* Optimal reading width for mobile */
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Header Styles */
+        .chapter-title {
+            color: #2C3E50; /* Text: Dark blue */
+            font-size: 28px;
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 0;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        h2 {
+            color: #2C3E50; /* Text: Dark blue */
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        strong {
+            color: #2C3E50;
+        }
+
+        em {
+            font-style: normal; /* Override default italic for emphasis */
+            color: #8B5FBF; /* Primary: Purple for emphasis */
+        }
+
+        /* Vocabulary and Example Styles */
+        .vocabulary-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .vocabulary-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #FFFFFF; /* White background for list items */
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+
+        .vocabulary-item span {
+            flex: 1;
+            padding-right: 10px; /* Space between text and audio icon */
+        }
+
+        .chinese-word {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-right: 5px;
+        }
+
+        .pinyin {
+            font-size: 14px;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-right: 5px;
+        }
+
+        .japanese-translation {
+            font-size: 16px;
+            color: #666666;
+        }
+
+        .example-box {
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-left: 5px solid #8B5FBF; /* Primary: Purple accent */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .example-box p {
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+
+        .example-box .chinese-example {
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 5px;
+        }
+
+        .example-box .japanese-translation {
+            color: #666666;
+            font-style: italic;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px; /* Min 44px for tap target */
+            height: 48px; /* Min 44px for tap target */
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #6B4999; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 2px dashed #E0E0E0; /* Borders: Light gray */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: #2C3E50;
+            margin-bottom: 15px;
+        }
+
+        .practice-question {
+            margin-bottom: 20px;
+            font-size: 17px;
+            text-align: left; /* Align question text to left */
+            color: #2C3E50;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap */
+            justify-content: center;
+            gap: 10px; /* Space between buttons */
+            margin-top: 15px;
+        }
+
+        .practice-options button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            min-height: 48px; /* Ensure tap target is large enough */
+            width: calc(50% - 5px); /* Two buttons per row for mobile, accounting for gap */
+            max-width: 200px; /* Limit individual button width */
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .practice-options button:hover {
+            background-color: #6B4999;
+            transform: translateY(-2px);
+        }
+
+        .practice-options button:active {
+            transform: translateY(0);
+        }
+
+        .feedback {
+            margin-top: 20px;
+            font-weight: bold;
+            font-size: 18px;
+            min-height: 24px; /* Space for feedback text */
+            text-align: center;
+        }
+
+        .feedback.correct {
+            color: #28a745; /* Green for correct */
+        }
+
+        .feedback.incorrect {
+            color: #dc3545; /* Red for incorrect */
+        }
+
+        /* Summary Section */
+        .summary-list {
+            list-style: disc;
+            padding-left: 25px;
+        }
+
+        .summary-list li {
+            margin-bottom: 8px;
+            color: #666666;
+        }
+
+        .summary-list li strong {
+            color: #2C3E50;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 375px) {
+            .chapter-title {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            .vocabulary-item {
+                flex-direction: column; /* Stack elements for very small screens */
+                align-items: flex-start;
+                padding-bottom: 8px; /* Adjust padding for stacked items */
+            }
+            .vocabulary-item span {
+                padding-right: 0; /* Remove right padding for stacked text */
+                margin-bottom: 5px; /* Add space between stacked text and audio icon */
+            }
+            .vocabulary-item .audio-icon {
+                align-self: flex-end; /* Align audio icon to the right when stacked */
+                margin-top: 5px; /* Adjust spacing */
+            }
+            .practice-options button {
+                width: 100%; /* Full width buttons for very small screens */
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 4: 色と描写</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 4 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>🎉 こんにちは！第4章へようこそ！</h2>
+            <p>この章では、中国語で物の<strong>色</strong>や<strong>特徴</strong>を表現する方法を学びます。周りの世界をより豊かに描写できるようになりますよ！</p>
+            <p>それでは、さっそく始めましょう！🚀</p>
+        </section>
+
+        <section>
+            <h2>🎨 基本の色を学ぼう (Basic Colors)</h2>
+            <p>まずは、最も基本的な色の名前からマスターしましょう！</p>
+            <ul class="vocabulary-list">
+                <li class="vocabulary-item">
+                    <span class="chinese-word">红</span>
+                    <span class="pinyin">(hóng)</span>
+                    <span class="japanese-translation">赤</span>
+                    <div class="audio-icon" data-audio-text="红">🔊</div>
+                </li>
+                <li class="vocabulary-item">
+                    <span class="chinese-word">蓝</span>
+                    <span class="pinyin">(lán)</span>
+                    <span class="japanese-translation">青／藍</span>
+                    <div class="audio-icon" data-audio-text="蓝">🔊</div>
+                </li>
+                <li class="vocabulary-item">
+                    <span class="chinese-word">绿</span>
+                    <span class="pinyin">(lǜ)</span>
+                    <span class="japanese-translation">緑</span>
+                    <div class="audio-icon" data-audio-text="绿">🔊</div>
+                </li>
+                <li class="vocabulary-item">
+                    <span class="chinese-word">黄</span>
+                    <span class="pinyin">(huáng)</span>
+                    <span class="japanese-translation">黄</span>
+                    <div class="audio-icon" data-audio-text="黄">🔊</div>
+                </li>
+                <li class="vocabulary-item">
+                    <span class="chinese-word">白</span>
+                    <span class="pinyin">(bái)</span>
+                    <span class="japanese-translation">白</span>
+                    <div class="audio-icon" data-audio-text="白">🔊</div>
+                </li>
+                <li class="vocabulary-item">
+                    <span class="chinese-word">黑</span>
+                    <span class="pinyin">(hēi)</span>
+                    <span class="japanese-translation">黒</span>
+                    <div class="audio-icon" data-audio-text="黑">🔊</div>
+                </li>
+            </ul>
+
+            <h3>💡文化ノート：中国と「赤」</h3>
+            <p>中国では、<strong>赤 (红 - hóng)</strong> は非常に縁起の良い色とされています。お祭りやお祝い事、特に旧正月には赤色が溢れます。幸運や繁栄、喜びを象徴する色なんですよ！</p>
+        </section>
+
+        <section>
+            <h2>📏 物を説明する言葉 (Describing Objects)</h2>
+            <p>物の大きさや背丈を表現する形容詞も見ていきましょう。</p>
+            <ul class="vocabulary-list">
+                <li class="vocabulary-item">
+                    <span class="chinese-word">大</span>
+                    <span class="pinyin">(dà)</span>
+                    <span class="japanese-translation">大きい</span>
+                    <div class="audio-icon" data-audio-text="大">🔊</div>
+                </li>
+                <li class="vocabulary-item">
+                    <span class="chinese-word">小</span>
+                    <span class="pinyin">(xiǎo)</span>
+                    <span class="japanese-translation">小さい</span>
+                    <div class="audio-icon" data-audio-text="小">🔊</div>
+                </li>
+                <li class="vocabulary-item">
+                    <span class="chinese-word">高</span>
+                    <span class="pinyin">(gāo)</span>
+                    <span class="japanese-translation">高い (背丈、高さ)</span>
+                    <div class="audio-icon" data-audio-text="高">🔊</div>
+                </li>
+                <li class="vocabulary-item">
+                    <span class="chinese-word">矮</span>
+                    <span class="pinyin">(ǎi)</span>
+                    <span class="japanese-translation">低い (背丈)</span>
+                    <div class="audio-icon" data-audio-text="矮">🔊</div>
+                </li>
+            </ul>
+            <p>中国語の形容詞は、通常<strong>「很 (hěn)」</strong>と一緒に使われます。「とても〜だ」という意味合いになりますが、単に形容詞として使う場合でもよく使われます。</p>
+            <div class="example-box">
+                <p class="chinese-example">这个苹果<strong>很</strong>大。</p>
+                <p class="japanese-translation"><em>(Zhège píngguǒ hěn dà.) このリンゴはとても大きいです。</em></p>
+            </div>
+            <div class="example-box">
+                <p class="chinese-example">那棵树<strong>很</strong>高。</p>
+                <p class="japanese-translation"><em>(Nà kē shù hěn gāo.) あの木はとても高いです。</em></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>📍 これ／あれは〜です (This is... / That is...)</h2>
+            <p>指示代名詞の<strong>「这 (zhè)」</strong>と<strong>「那 (nà)」</strong>を使って、物事を指し示しましょう。</p>
+            <ul class="vocabulary-list">
+                <li class="vocabulary-item">
+                    <span class="chinese-word">这</span>
+                    <span class="pinyin">(zhè)</span>
+                    <span class="japanese-translation">これ、この</span>
+                    <div class="audio-icon" data-audio-text="这">🔊</div>
+                </li>
+                <li class="vocabulary-item">
+                    <span class="chinese-word">那</span>
+                    <span class="pinyin">(nà)</span>
+                    <span class="japanese-translation">あれ、あの</span>
+                    <div class="audio-icon" data-audio-text="那">🔊</div>
+                </li>
+                <li class="vocabulary-item">
+                    <span class="chinese-word">是</span>
+                    <span class="pinyin">(shì)</span>
+                    <span class="japanese-translation">〜です／〜である (be動詞)</span>
+                    <div class="audio-icon" data-audio-text="是">🔊</div>
+                </li>
+            </ul>
+            <h3>📚文法：这/那是 + 名詞</h3>
+            <p>「これは〜です」「あれは〜です」という文を作るには、<strong>「这/那是 + 名詞」</strong>の形を使います。</p>
+            <div class="example-box">
+                <p class="chinese-example">这是书。</p>
+                <p class="japanese-translation"><em>(Zhè shì shū.) これは本です。</em></p>
+            </div>
+            <div class="example-box">
+                <p class="chinese-example">那是水。</p>
+                <p class="japanese-translation"><em>(Nà shì shuǐ.) あれは水です。</em></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>❓ 色を尋ねる・答える (What color is it? It's...)</h2>
+            <p>色について尋ねる表現も覚えましょう。</p>
+            <ul class="vocabulary-list">
+                <li class="vocabulary-item">
+                    <span class="chinese-word">什么</span>
+                    <span class="pinyin">(shénme)</span>
+                    <span class="japanese-translation">何、どんな</span>
+                    <div class="audio-icon" data-audio-text="什么">🔊</div>
+                </li>
+                <li class="vocabulary-item">
+                    <span class="chinese-word">颜色</span>
+                    <span class="pinyin">(yánsè)</span>
+                    <span class="japanese-translation">色</span>
+                    <div class="audio-icon" data-audio-text="颜色">🔊</div>
+                </li>
+                <li class="vocabulary-item">
+                    <span class="chinese-word">它</span>
+                    <span class="pinyin">(tā)</span>
+                    <span class="japanese-translation">それは (物や動物を指す三人称単数)</span>
+                    <div class="audio-icon" data-audio-text="它">🔊</div>
+                </li>
+            </ul>
+
+            <h3>📚文法：〜是什么颜色？／它是〜颜色。</h3>
+            <p>物の色を尋ねる場合は、<strong>「〜是什么颜色？ (〜は何色ですか？)」</strong>を使います。</p>
+            <p>答える場合は、<strong>「它是〜颜色。 (それは〜色です。)」</strong>の形になります。</p>
+            <div class="example-box">
+                <p class="chinese-example"><strong>问 (Wèn):</strong> 这个苹果是什么颜色？</p>
+                <p class="japanese-translation"><em>(Zhège píngguǒ shì shénme yánsè?) このリンゴは何色ですか？</em></p>
+            </div>
+            <div class="example-box">
+                <p class="chinese-example"><strong>答 (Dá):</strong> 它是红色。</p>
+                <p class="japanese-translation"><em>(Tā shì hóngsè.) それは赤色です。</em></p>
+            </div>
+            <div class="example-box">
+                <p class="chinese-example"><strong>问 (Wèn):</strong> 那本书是什么颜色？</p>
+                <p class="japanese-translation"><em>(Nà běn shū shì shénme yánsè?) あの本は何色ですか？</em></p>
+            </div>
+            <div class="example-box">
+                <p class="chinese-example"><strong>答 (Dá):</strong> 它是蓝色。</p>
+                <p class="japanese-translation"><em>(Tā shì lánsè.) それは青色です。</em></p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 練習問題：色と形容詞</h3>
+            <p>正しい中国語を選びましょう！</p>
+            <div class="practice-question">
+                <p>1. あなたが赤いリンゴを指さして「これは赤い」と言うとき、何と言いますか？</p>
+                <div class="practice-options">
+                    <button data-correct="true" data-question="1">这是红色。</button>
+                    <button data-correct="false" data-question="1">它是红色。</button>
+                </div>
+                <div class="feedback" id="feedback-1"></div>
+            </div>
+
+            <div class="practice-question">
+                <p>2. 「大きい」という形容詞はどれですか？</p>
+                <div class="practice-options">
+                    <button data-correct="false" data-question="2">小</button>
+                    <button data-correct="true" data-question="2">大</button>
+                </div>
+                <div class="feedback" id="feedback-2"></div>
+            </div>
+
+            <div class="practice-question">
+                <p>3. 「あれは青い車です」を中国語でどう言いますか？</p>
+                <div class="practice-options">
+                    <button data-correct="true" data-question="3">那是蓝色汽车。</button>
+                    <button data-correct="false" data-question="3">这是蓝色汽车。</button>
+                </div>
+                <div class="feedback" id="feedback-3"></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📚 形容詞と基本的な描写 (Adjectives and Basic Descriptions)</h2>
+            <p>最後に、学んだ色や形容詞を使って、より詳細に物を描写する方法を見ていきましょう。</p>
+            <p>名詞の前に形容詞を置くことで、<strong>「〜な名詞」</strong>という表現ができます。</p>
+            <div class="example-box">
+                <p class="chinese-example"><strong>红色的苹果</strong></p>
+                <p class="japanese-translation"><em>(hóngsè de píngguǒ) 赤いリンゴ</em></p>
+            </div>
+            <div class="example-box">
+                <p class="chinese-example"><strong>很大的房子</strong></p>
+                <p class="japanese-translation"><em>(hěn dà de fángzi) とても大きい家</em></p>
+            </div>
+            <p>「〜の色」は <strong>「〜色 (〜sè)」</strong>、または <strong>「〜的颜色 (〜 de yánsè)」</strong>で表現できます。</p>
+            <p>例: <strong>红色的</strong> (hóngsè de - 赤いもの/赤の)</p>
+            <p>「〜な」という形容詞の後に「的 (de)」を付けて名詞を修飾します。</p>
+            <div class="example-box">
+                <p class="chinese-example">这是<strong>一个红色的</strong>包。</p>
+                <p class="japanese-translation"><em>(Zhè shì yī gè hóngsè de bāo.) これは赤いカバンです。</em></p>
+            </div>
+            <div class="example-box">
+                <p class="chinese-example">那是<strong>一棵很高的</strong>树。</p>
+                <p class="japanese-translation"><em>(Nà shì yī kē hěn gāo de shù.) あれはとても高い木です。</em></p>
+            </div>
+            <p>さらに表現を豊かにするために、量詞 (Classifier) と一緒に使うこともよくあります。上の例の「一个」「一棵」がそれにあたります。</p>
+        </section>
+
+        <section>
+            <h2>📝 第4章のまとめ</h2>
+            <p>お疲れ様でした！この章では、以下のことを学びました。</p>
+            <ul class="summary-list">
+                <li>🎨 <strong>基本的な色の名前：</strong> 赤 (红)、青 (蓝)、緑 (绿)、黄 (黄)、白 (白)、黒 (黑)</li>
+                <li>📏 <strong>物を説明する形容詞：</strong> 大きい (大)、小さい (小)、高い (高)、低い (矮)</li>
+                <li>📍 <strong>指示代名詞と「です」の表現：</strong> 「これ／あれは〜です」(这/那是 + 名詞)</li>
+                <li>❓ <strong>色を尋ねる・答えるフレーズ：</strong> 「〜は何色ですか？」(〜是什么颜色？)、「それは〜色です」(它是〜颜色。)</li>
+                <li>📚 <strong>形容詞を使った描写：</strong> 名詞の前に形容詞を置いて修飾する (例: 红色的苹果)</li>
+            </ul>
+            <p>これで、身の回りにある物の色や特徴を中国語で説明できるようになりましたね！どんどん練習して、表現の幅を広げていきましょう！</p>
+        </section>
+    </div>
+
+    <!-- JavaScript for practice section interactivity (Note: Audio playback is handled by the mobile app's native TTS feature, not by JS here) -->
+    <script>
+        document.querySelectorAll('.practice-options button').forEach(button => {
+            button.addEventListener('click', function() {
+                const questionNumber = this.dataset.question;
+                const feedbackDiv = document.getElementById(`feedback-${questionNumber}`);
+                if (this.dataset.correct === 'true') {
+                    feedbackDiv.textContent = '正解！🎉';
+                    feedbackDiv.className = 'feedback correct';
+                } else {
+                    feedbackDiv.textContent = '不正解…もう一度挑戦しましょう！🤔';
+                    feedbackDiv.className = 'feedback incorrect';
+                }
+            });
+        });
+
+        // The audio playback is intended to be handled by the mobile application's native functionality
+        // via the .audio-icon class and data-audio-text attribute, not via JavaScript in this HTML.
+        // For demonstration purposes in a browser, you might uncomment the following (but it's not part of the requirement):
+        /*
+        document.querySelectorAll('.audio-icon').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const textToSpeak = this.dataset.audioText;
+                console.log(`Attempting to play audio for: "${textToSpeak}"`);
+                if ('speechSynthesis' in window) {
+                    const utterance = new SpeechSynthesisUtterance(textToSpeak);
+                    utterance.lang = 'zh-CN'; // Set language for Chinese
+                    window.speechSynthesis.speak(utterance);
+                } else {
+                    alert('お使いのブラウザは音声合成に対応していません。');
+                }
+            });
+        });
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: 数字と数え方 - 中国語レッスン</title>
+    <style>
+        /* グローバルスタイルとリセット */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            -webkit-text-size-adjust: 100%; /* Prevent font size inflation */
+        }
+
+        h1, h2, h3, h4 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6em; /* ~25.6px */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 8px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        h3 {
+            font-size: 1.3em; /* ~20.8px */
+            margin-left: 15px;
+        }
+
+        p {
+            margin: 0 15px 1em 15px;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 15px 1em 15px;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #E0E0E0;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        strong {
+            color: #2C3E50; /* Dark blue for emphasis */
+        }
+
+        /* コンテナとセクションのスタイル */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        section {
+            background-color: #FFFFFF; /* White for content sections */
+            margin: 20px 10px;
+            padding: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            overflow: hidden; /* For containing floats/margins */
+        }
+
+        .section-intro {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 20px 15px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 20px 10px;
+            box-shadow: none; /* No shadow for intro */
+        }
+
+        /* レッスンヘッダーの要件 */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+            padding: 0 10px; /* Adjust padding for mobile screens */
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* 中国語フレーズ表示 */
+        .chinese-phrase {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-radius: 8px;
+            margin: 10px 15px;
+            padding: 12px 15px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+
+        .chinese-text {
+            flex-grow: 1;
+            font-size: 1.1em; /* Slightly larger for Chinese text */
+            color: #2C3E50;
+            font-weight: bold;
+        }
+
+        .pronunciation-guide {
+            font-size: 0.9em;
+            color: #666666;
+            margin-top: 5px;
+            display: block; /* Ensure it's on a new line */
+        }
+
+        .japanese-translation {
+            font-size: 0.9em;
+            color: #666666;
+            margin-left: 10px;
+        }
+
+        /* オーディオアイコン */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%;
+            width: 44px; /* Minimum 44px for tapping */
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .audio-icon:hover {
+            background-color: #6A4996; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* 練習問題 */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            margin: 20px 10px;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+        }
+
+        .practice-question p {
+            margin: 0 0 10px 0;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .practice-input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 1em;
+            color: #666666;
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        .practice-button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+            min-height: 44px; /* Ensure tap target size */
+            display: block; /* Take full width */
+            text-align: center;
+        }
+
+        .practice-button:hover {
+            background-color: #6A4996;
+        }
+
+        .example-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 15px 1em 15px;
+        }
+
+        .example-list li {
+            background-color: #F8F8F8;
+            border: 1px solid #EAEAEA;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .example-list li .chinese-text {
+            font-weight: normal;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .example-list li .japanese-translation {
+            margin-left: 0;
+            font-size: 0.9em;
+            color: #888888;
+        }
+
+        /* 文化ノート */
+        .cultural-note {
+            background-color: #FFF3E0; /* Lighter cream for notes */
+            border-left: 5px solid #FBC02D; /* Orange accent */
+            padding: 15px;
+            margin: 20px 15px;
+            border-radius: 8px;
+            color: #4CAF50; /* Green text for positive notes */
+        }
+
+        .cultural-note p {
+            margin: 0;
+        }
+
+        .cultural-note strong {
+            color: #2C3E50;
+        }
+
+        /* まとめ */
+        .summary-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            margin: 20px 10px;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            border-bottom: none;
+            margin-bottom: 10px;
+            margin-left: 0;
+            margin-right: 0;
+            text-align: center;
+        }
+
+        .summary-section ul {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 90%;
+            padding: 0;
+            list-style: disc; /* Use discs for summary list */
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            border-bottom: none;
+            padding: 5px 0;
+        }
+
+        /* レスポンシブ調整 */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            section, .practice-section, .summary-section {
+                margin: 15px 5px;
+                padding: 15px 0;
+            }
+            p, ul, .chinese-phrase {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .chinese-phrase {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .japanese-translation {
+                margin-left: 0;
+                margin-top: 5px;
+            }
+            .audio-icon {
+                margin-top: 10px; /* Space out icon from text in column layout */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 3: 数字と数え方</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-intro">
+            <h2>ようこそ！数字の世界へ！🔢</h2>
+            <p>今回のレッスンでは、中国語の数字の数え方、年齢の尋ね方、電話番号の伝え方、そして簡単な計算まで、日常生活で役立つ表現をたくさん学びます。さあ、一緒に数字の旅に出かけましょう！</p>
+        </section>
+
+        <section>
+            <h2>1. 数字 1〜20</h2>
+            <p>まずは、中国語の基本となる数字1から20までを覚えましょう。発音にも注意してくださいね！</p>
+
+            <ul>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">一 (yī)</span>
+                            <span class="pronunciation-guide">イー</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="一">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">二 (èr)</span>
+                            <span class="pronunciation-guide">アー</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="二">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">三 (sān)</span>
+                            <span class="pronunciation-guide">サン</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="三">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">四 (sì)</span>
+                            <span class="pronunciation-guide">スー</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="四">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">五 (wǔ)</span>
+                            <span class="pronunciation-guide">ウー</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="五">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">六 (liù)</span>
+                            <span class="pronunciation-guide">リョウ</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="六">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">七 (qī)</span>
+                            <span class="pronunciation-guide">チー</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="七">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">八 (bā)</span>
+                            <span class="pronunciation-guide">バー</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="八">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">九 (jiǔ)</span>
+                            <span class="pronunciation-guide">ジョウ</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="九">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">十 (shí)</span>
+                            <span class="pronunciation-guide">シー</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="十">🔊</button>
+                    </div>
+                </li>
+            </ul>
+
+            <p>10より大きい数字は、日本語と同じように「十（shí）」と組み合わせて作ります。</p>
+            <ul>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">十一 (shíyī)</span>
+                            <span class="pronunciation-guide">シーイー (10+1)</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="十一">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">十二 (shí'èr)</span>
+                            <span class="pronunciation-guide">シーアー (10+2)</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="十二">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="chinese-phrase">
+                        <div>
+                            <span class="chinese-text">二十 (èrshí)</span>
+                            <span class="pronunciation-guide">アーシー (2×10)</span>
+                        </div>
+                        <button class="audio-icon" data-audio-text="二十">🔊</button>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <h3>🇨🇳 文化ノート：縁起の良い数字と悪い数字</h3>
+                <p>中国では、数字にも縁起が良い・悪いがあります。</p>
+                <ul>
+                    <li><strong>八 (bā) バー：</strong>「発財 (fācái) 財を成す」の「発 (fā)」と音が似ているため、<strong>とても縁起が良い</strong>とされています。</li>
+                    <li><strong>四 (sì) スー：</strong>「死 (sǐ) 死ぬ」と音が似ているため、<strong>縁起が悪い</strong>とされています。ホテルなどで4階がないこともあります。</li>
+                </ul>
+            </div>
+
+            <div class="practice-section">
+                <h3>やってみよう！数字の確認</h3>
+                <p>次の中国語の数字を日本語に直してみてください。</p>
+                <div class="practice-question">
+                    <p>1. <strong class="chinese-text">七 (qī)</strong> は何ですか？</p>
+                    <input type="text" class="practice-input" placeholder="ここに答えを入力">
+                </div>
+                <div class="practice-question">
+                    <p>2. <strong class="chinese-text">二十 (èrshí)</strong> は何ですか？</p>
+                    <input type="text" class="practice-input" placeholder="ここに答えを入力">
+                </div>
+                <button class="practice-button">答えを見る</button>
+                <p style="text-align: right; margin-top: 10px;"><em>💡ヒント：答えは「7」と「20」です。</em></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 数え方と数量表現</h2>
+            <p>中国語でモノの数を数えるときは、数字の後に「量詞 (りょうし)」と呼ばれる助数詞を使います。最も一般的な量詞は「个 (gè)」です。</p>
+
+            <div class="chinese-phrase">
+                <div>
+                    <span class="chinese-text">个 (gè)</span>
+                    <span class="pronunciation-guide">ガー</span>
+                </div>
+                <span class="japanese-translation">〜個、〜人 (一般的な量詞)</span>
+                <button class="audio-icon" data-audio-text="个">🔊</button>
+            </div>
+
+            <h3>使い方： [数字] + [量詞] + [名詞]</h3>
+            <ul class="example-list">
+                <li>
+                    <div class="chinese-text">一个人 (yī gè rén)</div>
+                    <span class="japanese-translation">1人の人</span>
+                    <button class="audio-icon" data-audio-text="一个人">🔊</button>
+                </li>
+                <li>
+                    <div class="chinese-text">两个苹果 (liǎng gè píngguǒ)</div>
+                    <span class="japanese-translation">2つのリンゴ</span>
+                    <button class="audio-icon" data-audio-text="两个苹果">🔊</button>
+                    <p class="pronunciation-guide" style="margin-top: 5px;">⚠️注意：「二 (èr)」の代わりに「两 (liǎng) リャン」を使うことが多いです。</p>
+                </li>
+                <li>
+                    <div class="chinese-text">三个学生 (sān gè xuéshēng)</div>
+                    <span class="japanese-translation">3人の学生</span>
+                    <button class="audio-icon" data-audio-text="三个学生">🔊</button>
+                </li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>やってみよう！数を数える</h3>
+                <p>次の日本語を中国語にしてみましょう。</p>
+                <div class="practice-question">
+                    <p>1. 5つのカップ</p>
+                    <input type="text" class="practice-input" placeholder="ここに答えを入力 (例: 一个苹果)">
+                    <button class="audio-icon" data-audio-text="五个杯子" style="margin-top: 10px;">🔊</button>
+                    <span class="japanese-translation">カップ：杯子 (bēizi) ベイツ</span>
+                </div>
+                <div class="practice-question">
+                    <p>2. 8人の先生</p>
+                    <input type="text" class="practice-input" placeholder="ここに答えを入力">
+                    <button class="audio-icon" data-audio-text="八个老师" style="margin-top: 10px;">🔊</button>
+                    <span class="japanese-translation">先生：老师 (lǎoshī) ラオシー</span>
+                </div>
+                <button class="practice-button">答えを見る</button>
+                <p style="text-align: right; margin-top: 10px;"><em>💡ヒント：量詞は「个 (gè)」を使ってください。</em></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. 年齢：何歳ですか？</h2>
+            <p>年齢を尋ねたり答えたりする表現を学びましょう。相手の年齢によって尋ね方が少し変わります。</p>
+
+            <h3>何歳ですか？</h3>
+            <ul class="example-list">
+                <li>
+                    <div class="chinese-text">你几岁？ (Nǐ jǐ suì?)</div>
+                    <span class="japanese-translation">あなたは何歳ですか？ (年下や同年代の友達に)</span>
+                    <button class="audio-icon" data-audio-text="你几岁？">🔊</button>
+                </li>
+                <li>
+                    <div class="chinese-text">您多大？ (Nín duō dà?)</div>
+                    <span class="japanese-translation">あなたはおいくつですか？ (年上や目上の人に丁寧に)</span>
+                    <button class="audio-icon" data-audio-text="您多大？">🔊</button>
+                </li>
+            </ul>
+
+            <h3>〜歳です</h3>
+            <div class="chinese-phrase">
+                <div>
+                    <span class="chinese-text">我...岁。 (Wǒ... suì.)</span>
+                    <span class="pronunciation-guide">ウォー ... スイ</span>
+                </div>
+                <span class="japanese-translation">私は〜歳です。</span>
+                <button class="audio-icon" data-audio-text="我岁。">🔊</button>
+            </div>
+
+            <ul class="example-list">
+                <li>
+                    <div class="chinese-text">我二十岁。 (Wǒ èrshí suì.)</div>
+                    <span class="japanese-translation">私は20歳です。</span>
+                    <button class="audio-icon" data-audio-text="我二十岁。">🔊</button>
+                </li>
+                <li>
+                    <div class="chinese-text">我十八岁。 (Wǒ shíbā suì.)</div>
+                    <span class="japanese-translation">私は18歳です。</span>
+                    <button class="audio-icon" data-audio-text="我十八岁。">🔊</button>
+                </li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>やってみよう！年齢の会話</h3>
+                <p>次の質問に中国語で答えてみましょう。</p>
+                <div class="practice-question">
+                    <p>1. (友達に) あなたは何歳ですか？</p>
+                    <input type="text" class="practice-input" placeholder="ここに質問を入力 (例: 你几岁？)">
+                    <button class="audio-icon" data-audio-text="你几岁？" style="margin-top: 10px;">🔊</button>
+                </div>
+                <div class="practice-question">
+                    <p>2. 私は15歳です。</p>
+                    <input type="text" class="practice-input" placeholder="ここに答えを入力 (例: 我十五岁。)">
+                    <button class="audio-icon" data-audio-text="我十五岁。" style="margin-top: 10px;">🔊</button>
+                </div>
+                <button class="practice-button">答えを見る</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. 電話番号と住所</h2>
+            <p>電話番号を伝えるときは、数字を一つずつ読み上げます。住所は、大きな区分から小さな区分へと順番に言います。</p>
+
+            <h3>電話番号</h3>
+            <p>電話番号の「1」は、誤解を避けるため「一 (yī)」ではなく「<strong>幺 (yāo) ヤオ</strong>」と読むことが多いです。</p>
+
+            <div class="chinese-phrase">
+                <div>
+                    <span class="chinese-text">我的电话号码是... (Wǒ de diànhuà hàomǎ shì...)</span>
+                    <span class="pronunciation-guide">ウォー ドゥ ディエンホワ ハオマー シー</span>
+                </div>
+                <span class="japanese-translation">私の電話番号は〜です。</span>
+                <button class="audio-icon" data-audio-text="我的电话号码是">🔊</button>
+            </div>
+
+            <ul class="example-list">
+                <li>
+                    <div class="chinese-text">我的电话号码是 一三五 幺二三四 五六七八。</div>
+                    <span class="japanese-translation">私の電話番号は135-1234-5678です。</span>
+                    <button class="audio-icon" data-audio-text="我的电话号码是一三五幺二三四五六七八">🔊</button>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <h3>📱 文化ノート：中国の電話番号</h3>
+                <p>中国の携帯電話番号は、通常11桁です。数字を3-4-4のグループに分けて発音することが多いです。</p>
+            </div>
+
+            <h3>住所</h3>
+            <p>中国の住所は「国 &gt; 省 &gt; 市 &gt; 区 &gt; 街道 &gt; 番地」のように、大きい単位から小さい単位へと順番に書きます。</p>
+            <ul class="example-list">
+                <li>
+                    <div class="chinese-text">北京 (Běijīng)</div>
+                    <span class="japanese-translation">北京 (都市名)</span>
+                    <button class="audio-icon" data-audio-text="北京">🔊</button>
+                </li>
+                <li>
+                    <div class="chinese-text">朝阳区 (Cháoyáng qū)</div>
+                    <span class="japanese-translation">朝陽区 (区名)</span>
+                    <button class="audio-icon" data-audio-text="朝阳区">🔊</button>
+                </li>
+            </ul>
+            <p style="margin-top: 10px;">※住所の表現は複雑なため、ここでは概念だけを理解しておきましょう。</p>
+
+            <div class="practice-section">
+                <h3>やってみよう！電話番号を言ってみよう</h3>
+                <p>もしあなたの電話番号が「090-1234-5678」だったら、中国語でどう言いますか？「0」は「零 (líng) リン」を使います。</p>
+                <input type="text" class="practice-input" placeholder="ここに答えを入力 (例: 零九零 幺二三四 五六七八)">
+                <button class="audio-icon" data-audio-text="零九零幺二三四五六七八" style="margin-top: 10px;">🔊</button>
+                <button class="practice-button">答えを見る</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. 基本的な算数</h2>
+            <p>簡単な足し算、引き算、イコールの言い方を学びましょう。買い物などで役立ちます。</p>
+
+            <div class="chinese-phrase">
+                <div>
+                    <span class="chinese-text">加 (jiā)</span>
+                    <span class="pronunciation-guide">ジアー</span>
+                </div>
+                <span class="japanese-translation">足す (plus)</span>
+                <button class="audio-icon" data-audio-text="加">🔊</button>
+            </div>
+            <div class="chinese-phrase">
+                <div>
+                    <span class="chinese-text">减 (jiǎn)</span>
+                    <span class="pronunciation-guide">ジエン</span>
+                </div>
+                <span class="japanese-translation">引く (minus)</span>
+                <button class="audio-icon" data-audio-text="减">🔊</button>
+            </div>
+            <div class="chinese-phrase">
+                <div>
+                    <span class="chinese-text">等于 (děngyú)</span>
+                    <span class="pronunciation-guide">ドンユー</span>
+                </div>
+                <span class="japanese-translation">等しい (equals)</span>
+                <button class="audio-icon" data-audio-text="等于">🔊</button>
+            </div>
+
+            <h3>例</h3>
+            <ul class="example-list">
+                <li>
+                    <div class="chinese-text">一加一等于二。 (Yī jiā yī děngyú èr.)</div>
+                    <span class="japanese-translation">1足す1は2。</span>
+                    <button class="audio-icon" data-audio-text="一加一等于二">🔊</button>
+                </li>
+                <li>
+                    <div class="chinese-text">五减三等于二。 (Wǔ jiǎn sān děngyú èr.)</div>
+                    <span class="japanese-translation">5引く3は2。</span>
+                    <button class="audio-icon" data-audio-text="五减三等于二">🔊</button>
+                </li>
+                <li>
+                    <div class="chinese-text">三加七等于十。 (Sān jiā qī děngyú shí.)</div>
+                    <span class="japanese-translation">3足す7は10。</span>
+                    <button class="audio-icon" data-audio-text="三加七等于十">🔊</button>
+                </li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>やってみよう！計算に挑戦</h3>
+                <p>次の計算を中国語で言ってみましょう。</p>
+                <div class="practice-question">
+                    <p>1. 6 + 4 = 10</p>
+                    <input type="text" class="practice-input" placeholder="ここに答えを入力 (例: 六加四等于十)">
+                    <button class="audio-icon" data-audio-text="六加四等于十" style="margin-top: 10px;">🔊</button>
+                </div>
+                <div class="practice-question">
+                    <p>2. 9 - 2 = 7</p>
+                    <input type="text" class="practice-input" placeholder="ここに答えを入力">
+                    <button class="audio-icon" data-audio-text="九减二等于七" style="margin-top: 10px;">🔊</button>
+                </div>
+                <button class="practice-button">答えを見る</button>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>🎉 まとめ 🎉</h2>
+            <p>Chapter 3お疲れ様でした！数字と数え方、日常生活で頻繁に使う表現をたくさん学びましたね。</p>
+            <ul>
+                <li>✅ <strong>数字 1-20：</strong> 基本の数字をマスターしました。特に「二 (èr)」と「两 (liǎng)」の使い分けに慣れましょう。</li>
+                <li>✅ <strong>数え方：</strong> 「[数字] + [量詞] + [名詞]」の構造を学び、基本的な量詞「个 (gè)」を使えるようになりました。</li>
+                <li>✅ <strong>年齢：</strong> 「你几岁？」「您多大？」で尋ねて「我...岁。」と答える練習をしました。</li>
+                <li>✅ <strong>電話番号と住所：</strong> 数字を一つずつ言うこと、特に「1」が「幺 (yāo)」になることを学びました。</li>
+                <li>✅ <strong>算数：</strong> 「加 (jiā)」「减 (jiǎn)」「等于 (děngyú)」を使って簡単な計算を中国語で表現できるようになりました。</li>
+            </ul>
+            <p>これらの表現は、中国語でのコミュニケーションにおいて非常に重要です。繰り返し練習して、自信を持って使えるようになりましょう！</p>
+        </section>
+
+    </div>
+</body>
+</html>

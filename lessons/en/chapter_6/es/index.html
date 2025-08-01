@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 6: Actividades Diarias y Rutinas</title>
+    <style>
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-bg-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white-color: #FFFFFF;
+            --light-grey-bg: #F8F8F8;
+            --success-bg: #D4EDDA;
+            --success-text: #155724;
+            --error-bg: #F8D7DA;
+            --error-text: #721C24;
+            --warning-bg: #FFF3CD;
+            --warning-border: #FFC107;
+            --warning-text: #856404;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header structure requirements */
+        .chapter-title {
+            color: var(--heading-color);
+            font-size: 28px;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            color: var(--heading-color);
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: var(--heading-color);
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow */
+            position: absolute;
+            left: -10px;
+            color: var(--primary-color);
+            font-size: 1em;
+            top: 0;
+        }
+
+        .example {
+            background-color: var(--light-grey-bg);
+            border-left: 4px solid var(--primary-color);
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: #333; /* Slightly darker text for readability */
+        }
+
+        .example span.english {
+            display: block;
+            font-weight: bold;
+            color: var(--heading-color);
+        }
+
+        .example span.spanish {
+            display: block;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #999;
+            margin-left: 5px;
+        }
+
+        /* Audio Icon Styles */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            font-size: 24px;
+            color: var(--primary-color);
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 10px;
+            vertical-align: middle;
+            transition: background-color 0.2s, color 0.2s, transform 0.2s;
+            flex-shrink: 0; /* Prevents shrinking on small screens */
+        }
+
+        .audio-icon:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            transform: scale(1.05);
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #EBF5FB; /* A slightly different background for practice */
+            border: 1px solid #BEE3F8;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .practice-section h3 {
+            color: var(--primary-color);
+            border-bottom: none;
+            margin-bottom: 20px;
+        }
+
+        .practice-question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--white-color);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .practice-question p {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--heading-color);
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 10px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+            color: var(--body-text-color);
+        }
+
+        .options label:hover {
+            background-color: var(--light-grey-bg);
+            border-color: var(--primary-color);
+        }
+
+        .options input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.2); /* Make radio buttons slightly larger */
+            vertical-align: middle;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .feedback.correct {
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            border: 1px solid #C3E6CB;
+        }
+
+        .feedback.incorrect {
+            background-color: var(--error-bg);
+            color: var(--error-text);
+            border: 1px solid #F5C6CB;
+        }
+
+        /* Cultural Note Styling */
+        .cultural-note {
+            background-color: var(--warning-bg);
+            border-left: 5px solid var(--warning-border);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: var(--warning-text);
+        }
+
+        .cultural-note strong {
+            color: #6a5300;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-section h2 {
+            border-bottom: none;
+            text-align: center;
+        }
+
+        .summary-section ul {
+            list-style: circle;
+            padding-left: 20px;
+        }
+        .summary-section li::before {
+            content: ''; /* Override default li::before */
+        }
+
+        .key-point {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+            .chapter-title {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 16px;
+            }
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                margin-left: 5px; /* Adjust margin for smaller screens */
+            }
+            li {
+                padding-left: 5px; /* Adjust list item padding */
+            }
+            li::before {
+                left: -15px; /* Adjust for smaller screen alignment */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 6: Daily Activities and Routines</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>¡Hola! 👋 ¡Bienvenido al Capítulo 6!</h2>
+            <p>En este capítulo, vamos a explorar el mundo de tus actividades diarias en inglés. Aprenderás verbos comunes, cómo hablar de tu rutina y las expresiones de tiempo para que puedas contarle a cualquiera lo que haces cada día. ¡Prepárate para expresarte!</p>
+        </section>
+
+        <section>
+            <h2>Verbos Comunes de Actividades Diarias 🗣️</h2>
+            <p>Empecemos con algunos de los verbos más importantes que usarás para hablar de tu día a día.</p>
+
+            <ul>
+                <li>
+                    <strong>Eat</strong> <span class="pronunciation">[iit]</span> (Comer)
+                    <span class="audio-icon" data-audio-text="Eat">🔊</span>
+                    <div class="example">
+                        <span class="english">I eat breakfast every morning.</span>
+                        <span class="spanish">Yo como desayuno cada mañana.</span>
+                        <span class="audio-icon" data-audio-text="I eat breakfast every morning.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Drink</strong> <span class="pronunciation">[drrink]</span> (Beber)
+                    <span class="audio-icon" data-audio-text="Drink">🔊</span>
+                    <div class="example">
+                        <span class="english">I drink water.</span>
+                        <span class="spanish">Yo bebo agua.</span>
+                        <span class="audio-icon" data-audio-text="I drink water.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Sleep</strong> <span class="pronunciation">[sliip]</span> (Dormir)
+                    <span class="audio-icon" data-audio-text="Sleep">🔊</span>
+                    <div class="example">
+                        <span class="english">I sleep eight hours.</span>
+                        <span class="spanish">Yo duermo ocho horas.</span>
+                        <span class="audio-icon" data-audio-text="I sleep eight hours.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Work</strong> <span class="pronunciation">[woork]</span> (Trabajar)
+                    <span class="audio-icon" data-audio-text="Work">🔊</span>
+                    <div class="example">
+                        <span class="english">I work from Monday to Friday.</span>
+                        <span class="spanish">Yo trabajo de lunes a viernes.</span>
+                        <span class="audio-icon" data-audio-text="I work from Monday to Friday.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Study</strong> <span class="pronunciation">[stá-di]</span> (Estudiar)
+                    <span class="audio-icon" data-audio-text="Study">🔊</span>
+                    <div class="example">
+                        <span class="english">I study English every day.</span>
+                        <span class="spanish">Yo estudio inglés todos los días.</span>
+                        <span class="audio-icon" data-audio-text="I study English every day.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Play</strong> <span class="pronunciation">[plei]</span> (Jugar / Tocar un instrumento)
+                    <span class="audio-icon" data-audio-text="Play">🔊</span>
+                    <div class="example">
+                        <span class="english">I play video games.</span>
+                        <span class="spanish">Yo juego videojuegos.</span>
+                        <span class="audio-icon" data-audio-text="I play video games.">🔊</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>El Presente Simple: ¡Tus Rutinas! ⏰</h2>
+            <p>El Presente Simple (<strong>Present Simple</strong>) se usa para hablar de hábitos, rutinas o hechos generales. Por ahora, nos enfocaremos en cómo usarlo con "I" (yo).</p>
+
+            <h3>Forma Afirmativa: I + Verbo</h3>
+            <p>Es muy sencillo: solo pones "I" y luego el verbo en su forma base.</p>
+            <ul>
+                <li>
+                    <span class="key-point">I eat.</span> <span class="pronunciation">[ai iit]</span> (Yo como.)
+                    <span class="audio-icon" data-audio-text="I eat.">🔊</span>
+                </li>
+                <li>
+                    <span class="key-point">I drink.</span> <span class="pronunciation">[ai drrink]</span> (Yo bebo.)
+                    <span class="audio-icon" data-audio-text="I drink.">🔊</span>
+                </li>
+                <li>
+                    <span class="key-point">I sleep.</span> <span class="pronunciation">[ai sliip]</span> (Yo duermo.)
+                    <span class="audio-icon" data-audio-text="I sleep.">🔊</span>
+                </li>
+            </ul>
+            <div class="example">
+                <span class="english">I work in an office.</span>
+                <span class="spanish">Yo trabajo en una oficina.</span>
+                <span class="audio-icon" data-audio-text="I work in an office.">🔊</span>
+            </div>
+            <div class="example">
+                <span class="english">I study in the library.</span>
+                <span class="spanish">Yo estudio en la biblioteca.</span>
+                <span class="audio-icon" data-audio-text="I study in the library.">🔊</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Negaciones: ¡Lo Que NO Haces! 🚫</h2>
+            <p>Para decir que no haces algo en Presente Simple, usamos <strong>don't</strong> (que es la contracción de "do not").</p>
+            <p>Estructura: <strong>I + don't + Verbo</strong></p>
+            <ul>
+                <li>
+                    <span class="key-point">I don't eat meat.</span> <span class="pronunciation">[ai dont iit miit]</span> (Yo no como carne.)
+                    <span class="audio-icon" data-audio-text="I don't eat meat.">🔊</span>
+                </li>
+                <li>
+                    <span class="key-point">I don't drink coffee.</span> <span class="pronunciation">[ai dont drrink co-fi]</span> (Yo no bebo café.)
+                    <span class="audio-icon" data-audio-text="I don't drink coffee.">🔊</span>
+                </li>
+                <li>
+                    <span class="key-point">I don't work on weekends.</span> <span class="pronunciation">[ai dont woork on wii-kends]</span> (Yo no trabajo los fines de semana.)
+                    <span class="audio-icon" data-audio-text="I don't work on weekends.">🔊</span>
+                </div>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Vocabulario de Rutina Diaria 🌅</h2>
+            <p>Aquí tienes más frases comunes para describir un día típico.</p>
+            <ul>
+                <li>
+                    <strong>Wake up</strong> <span class="pronunciation">[weik ap]</span> (Despertarse)
+                    <span class="audio-icon" data-audio-text="Wake up">🔊</span>
+                    <div class="example">
+                        <span class="english">I wake up at 7 AM.</span>
+                        <span class="spanish">Me despierto a las 7 AM.</span>
+                        <span class="audio-icon" data-audio-text="I wake up at 7 AM.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Get up</strong> <span class="pronunciation">[get ap]</span> (Levantarse de la cama)
+                    <span class="audio-icon" data-audio-text="Get up">🔊</span>
+                    <div class="example">
+                        <span class="english">I get up and make breakfast.</span>
+                        <span class="spanish">Me levanto y hago el desayuno.</span>
+                        <span class="audio-icon" data-audio-text="I get up and make breakfast.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Have breakfast/lunch/dinner</strong> (Desayunar/Almorzar/Cenar)
+                    <span class="audio-icon" data-audio-text="Have breakfast, lunch, dinner">🔊</span>
+                    <div class="example">
+                        <span class="english">I have breakfast at home.</span>
+                        <span class="spanish">Desayuno en casa.</span>
+                        <span class="audio-icon" data-audio-text="I have breakfast at home.">🔊</span>
+                    </div>
+                    <div class="example">
+                        <span class="english">I have lunch at 1 PM.</span>
+                        <span class="spanish">Almuerzo a la 1 PM.</span>
+                        <span class="audio-icon" data-audio-text="I have lunch at 1 PM.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Go to work/school</strong> (Ir al trabajo/escuela)
+                    <span class="audio-icon" data-audio-text="Go to work, school">🔊</span>
+                    <div class="example">
+                        <span class="english">I go to work by bus.</span>
+                        <span class="spanish">Voy al trabajo en autobús.</span>
+                        <span class="audio-icon" data-audio-text="I go to work by bus.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Finish work/school</strong> (Terminar el trabajo/escuela)
+                    <span class="audio-icon" data-audio-text="Finish work, school">🔊</span>
+                    <div class="example">
+                        <span class="english">I finish work at 5 PM.</span>
+                        <span class="spanish">Termino el trabajo a las 5 PM.</span>
+                        <span class="audio-icon" data-audio-text="I finish work at 5 PM.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Go home</strong> (Ir a casa)
+                    <span class="audio-icon" data-audio-text="Go home">🔊</span>
+                    <div class="example">
+                        <span class="english">I go home after work.</span>
+                        <span class="spanish">Voy a casa después del trabajo.</span>
+                        <span class="audio-icon" data-audio-text="I go home after work.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Take a shower</strong> <span class="pronunciation">[teik a shau-er]</span> (Ducharse)
+                    <span class="audio-icon" data-audio-text="Take a shower">🔊</span>
+                    <div class="example">
+                        <span class="english">I take a shower every morning.</span>
+                        <span class="spanish">Me ducho cada mañana.</span>
+                        <span class="audio-icon" data-audio-text="I take a shower every morning.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Brush my teeth</strong> <span class="pronunciation">[brrash mai tiith]</span> (Cepillarse los dientes)
+                    <span class="audio-icon" data-audio-text="Brush my teeth">🔊</span>
+                    <div class="example">
+                        <span class="english">I brush my teeth before bed.</span>
+                        <span class="spanish">Me cepillo los dientes antes de acostarme.</span>
+                        <span class="audio-icon" data-audio-text="I brush my teeth before bed.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Go to bed</strong> (Acostarse)
+                    <span class="audio-icon" data-audio-text="Go to bed">🔊</span>
+                    <div class="example">
+                        <span class="english">I go to bed at 10 PM.</span>
+                        <span class="spanish">Me acuesto a las 10 PM.</span>
+                        <span class="audio-icon" data-audio-text="I go to bed at 10 PM.">🔊</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="cultural-note">
+                <strong>💡 Nota Cultural:</strong> En inglés, a menudo usamos "<strong>have</strong>" para referirnos a las comidas: "have breakfast", "have lunch", "have dinner". Aunque "eat" también es correcto, "have" es muy común y suena más natural en este contexto.
+                <span class="audio-icon" data-audio-text="In English, we often use 'have' for meals: have breakfast, have lunch, have dinner.">🔊</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Expresiones de Tiempo para Tu Día 🕒</h2>
+            <p>Para indicar cuándo haces tus actividades, usa estas expresiones:</p>
+            <ul>
+                <li>
+                    <strong>in the morning</strong> <span class="pronunciation">[in dhi mor-ning]</span> (por la mañana)
+                    <span class="audio-icon" data-audio-text="in the morning">🔊</span>
+                    <div class="example">
+                        <span class="english">I exercise in the morning.</span>
+                        <span class="spanish">Hago ejercicio por la mañana.</span>
+                        <span class="audio-icon" data-audio-text="I exercise in the morning.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>in the afternoon</strong> <span class="pronunciation">[in dhi af-ter-nuun]</span> (por la tarde)
+                    <span class="audio-icon" data-audio-text="in the afternoon">🔊</span>
+                    <div class="example">
+                        <span class="english">I read in the afternoon.</span>
+                        <span class="spanish">Leo por la tarde.</span>
+                        <span class="audio-icon" data-audio-text="I read in the afternoon.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>in the evening</strong> <span class="pronunciation">[in dhi iiv-ning]</span> (por la tarde-noche)
+                    <span class="audio-icon" data-audio-text="in the evening">🔊</span>
+                    <div class="example">
+                        <span class="english">I watch TV in the evening.</span>
+                        <span class="spanish">Veo televisión por la tarde-noche.</span>
+                        <span class="audio-icon" data-audio-text="I watch TV in the evening.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>at night</strong> <span class="pronunciation">[at nait]</span> (por la noche / en la noche)
+                    <span class="audio-icon" data-audio-text="at night">🔊</span>
+                    <div class="example">
+                        <span class="english">I sleep well at night.</span>
+                        <span class="spanish">Duermo bien por la noche.</span>
+                        <span class="audio-icon" data-audio-text="I sleep well at night.">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    Para horas específicas, usa <strong>at</strong>:
+                    <div class="example">
+                        <span class="english">I wake up at 7 AM.</span>
+                        <span class="spanish">Me despierto a las 7 AM.</span>
+                        <span class="audio-icon" data-audio-text="I wake up at 7 AM.">🔊</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h3>¡A Practicar! 💪</h3>
+
+            <div class="practice-question" id="q1">
+                <p>1. Elige la palabra correcta para completar la oración:</p>
+                <p>I ______ breakfast at 8 AM.</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="eat"> eat</label>
+                    <label><input type="radio" name="q1" value="drink"> drink</label>
+                    <label><input type="radio" name="q1" value="sleep"> sleep</label>
+                </div>
+                <div class="feedback" id="feedback1"></div>
+            </div>
+
+            <div class="practice-question" id="q2">
+                <p>2. ¿Cómo dirías "Yo no trabajo los domingos" en inglés?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="A"> I work not on Sundays.</label>
+                    <label><input type="radio" name="q2" value="B"> I don't work on Sundays.</label>
+                    <label><input type="radio" name="q2" value="C"> I no work on Sundays.</label>
+                </div>
+                <div class="feedback" id="feedback2"></div>
+            </div>
+
+            <div class="practice-question" id="q3">
+                <p>3. Completa la frase con la expresión de tiempo adecuada:</p>
+                <p>I go to bed late ______.</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="A"> in the morning</label>
+                    <label><input type="radio" name="q3" value="B"> at night</label>
+                    <label><input type="radio" name="q3" value="C"> in the afternoon</label>
+                </div>
+                <div class="feedback" id="feedback3"></div>
+            </div>
+
+            <div class="practice-question" id="q4">
+                <p>4. ¿Qué significa "I take a shower"?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="A"> Yo tomo un café.</label>
+                    <label><input type="radio" name="q4" value="B"> Yo me ducho.</label>
+                    <label><input type="radio" name="q4" value="C"> Yo me visto.</label>
+                </div>
+                <div class="feedback" id="feedback4"></div>
+            </div>
+
+            <!-- The following JavaScript is for demonstration purposes in a web browser.
+                 Per instructions, the mobile frontend will inject its own click handlers for audio and interactive elements. -->
+            <script>
+                document.querySelectorAll('.practice-question .options input[type="radio"]').forEach(radio => {
+                    radio.addEventListener('change', function() {
+                        const questionId = this.name;
+                        const feedbackDiv = document.getElementById(`feedback${questionId.replace('q','')}`);
+                        let isCorrect = false;
+                        let correctAnswer = '';
+
+                        if (questionId === 'q1') {
+                            isCorrect = this.value === 'eat';
+                            correctAnswer = 'eat';
+                        } else if (questionId === 'q2') {
+                            isCorrect = this.value === 'B';
+                            correctAnswer = 'I don\'t work on Sundays.';
+                        } else if (questionId === 'q3') {
+                            isCorrect = this.value === 'B';
+                            correctAnswer = 'at night';
+                        } else if (questionId === 'q4') {
+                            isCorrect = this.value === 'B';
+                            correctAnswer = 'Yo me ducho.';
+                        }
+
+                        if (isCorrect) {
+                            feedbackDiv.textContent = '¡Correcto! ✅';
+                            feedbackDiv.className = 'feedback correct';
+                        } else {
+                            feedbackDiv.textContent = `Incorrecto. ❌ La respuesta correcta es: "${correctAnswer}".`;
+                            feedbackDiv.className = 'feedback incorrect';
+                        }
+                    });
+                });
+            </script>
+        </section>
+
+        <section class="summary-section">
+            <h2>Resumen del Capítulo 6 ✨</h2>
+            <p>¡Felicidades! Has cubierto mucho en este capítulo. Aquí están los puntos clave:</p>
+            <ul>
+                <li>Hemos aprendido verbos esenciales para actividades diarias: <span class="key-point">eat, drink, sleep, work, study, play.</span></li>
+                <li>Comprendes las bases del <span class="key-point">Presente Simple</span> para describir hábitos y rutinas con "I".</li>
+                <li>Sabes cómo formar negaciones usando <span class="key-point">I don't + verbo.</span></li>
+                <li>Has ampliado tu vocabulario con expresiones de rutina como <span class="key-point">wake up, get up, have breakfast, go to work, take a shower, go to bed.</span></li>
+                <li>Y puedes usar expresiones de tiempo como <span class="key-point">in the morning, in the afternoon, in the evening, at night</span> y <span class="key-point">at + hora.</span></li>
+            </ul>
+            <p>¡Ahora puedes empezar a describir tu día en inglés! Sigue practicando estas frases y verás qué rápido te familiarizas con ellas. ¡Excelente trabajo!</p>
+        </section>
+
+    </div>
+</body>
+</html>

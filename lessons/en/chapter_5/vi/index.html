@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 5: Gia đình và Các mối quan hệ</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            box-sizing: border-box;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        /* Lesson Container */
+        .lesson-container {
+            padding: 15px;
+            max-width: 800px; /* Max width for larger screens to keep content readable */
+            margin: 0 auto; /* Center the container */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 25px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        h2 {
+            font-size: 1.6em; /* ~25.6px */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 5px;
+            margin-top: 35px;
+        }
+
+        h3 {
+            font-size: 1.3em; /* ~20.8px */
+            margin-top: 20px;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none; /* Remove default bullet points */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            display: flex; /* Use flexbox for layout within list items */
+            align-items: center; /* Vertically align items */
+            flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+            gap: 10px; /* Space between the audio icon and text */
+        }
+        li strong {
+            color: #2C3E50; /* Dark blue for emphasized words */
+        }
+
+
+        /* Specific header classes required */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Audio Icon Styles */
+        .audio-icon {
+            background-color: #E0E0E0; /* Light gray for audio button background */
+            color: #2C3E50; /* Dark blue for icon */
+            border: none;
+            border-radius: 50%; /* Make it circular */
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            display: inline-flex; /* Use flexbox to center content */
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            flex-shrink: 0; /* Prevent the button from shrinking */
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-icon:hover {
+            background-color: #d1d1d1; /* Slightly darker gray on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        /* Example and Practice Section Styles */
+        .example, .practice-item {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple accent on the left */
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .example p, .practice-item p {
+            margin: 0;
+        }
+
+        .practice-item strong {
+            color: #2C3E50; /* Dark blue for strong text in practice */
+        }
+
+        /* Styles for the answer reveal button and content */
+        .reveal-button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            min-height: 44px; /* Minimum touch target size */
+            font-size: 1em;
+            display: inline-block; /* Allows side-by-side with other content if space */
+            transition: background-color 0.3s ease;
+        }
+
+        .reveal-button:hover {
+            background-color: #7a4fad; /* Darker purple on hover */
+        }
+
+        .answer-reveal {
+            background-color: #e6e6e6; /* Light gray background for answer */
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 10px;
+            color: #2C3E50;
+            font-weight: bold;
+            display: none; /* Hidden by default, will be revealed by JS */
+        }
+        .answer-reveal.show {
+            display: block; /* Show when 'show' class is added */
+        }
+        .answer-reveal .audio-icon { /* Adjust audio icon in answer reveal */
+             background-color: #C0C0C0; /* Slightly darker audio icon */
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden; /* Ensures border-radius applies to corners */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            padding: 12px;
+            text-align: left;
+            vertical-align: top; /* Align content to top */
+        }
+
+        th {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Slightly different background for even rows */
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #8B5FBF; /* Primary: Purple border */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: #2C3E50; /* Dark blue for emphasis */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .cultural-note strong {
+            color: #8B5FBF; /* Purple for key terms in cultural note */
+        }
+
+        /* Summary Section */
+        .summary {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary ul {
+            list-style: disc; /* Use regular disc bullets for summary list */
+            padding-left: 25px; /* Indent the list */
+        }
+        .summary li {
+            border: none; /* Remove border for summary list items */
+            background-color: transparent; /* Transparent background */
+            padding: 5px 0;
+            margin-bottom: 0;
+            display: list-item; /* Ensure it behaves like a normal list item */
+            align-items: flex-start; /* Align text to top if multiple lines */
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.4em; }
+            h3 { font-size: 1.1em; }
+            body { font-size: 15px; } /* Slightly smaller for very small screens for better fit */
+            .lesson-container { padding: 10px; }
+            li { flex-direction: column; align-items: flex-start; } /* Stack items vertically in list for tiny screens */
+            .audio-icon { margin-bottom: 5px; /* Add space when stacked */ }
+            th, td { padding: 10px; } /* Reduce table cell padding */
+        }
+
+        /* Specific adjustment for practice item lists */
+        .practice-item ul {
+            list-style: upper-alpha; /* A, B, C... */
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        .practice-item ul li {
+            border: none;
+            background-color: transparent;
+            padding: 5px 0;
+            margin-bottom: 5px;
+            display: list-item;
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chapter 5: Family and Relationships</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>Chào mừng đến với Chương 5: Gia đình và Các mối quan hệ! 👋</h2>
+            <p>Trong chương này, chúng ta sẽ cùng khám phá một chủ đề vô cùng gần gũi và quan trọng: <strong>Gia đình</strong>. Bạn sẽ học cách gọi tên các thành viên trong gia đình bằng tiếng Anh, cách giới thiệu người thân của mình, và cách nói về các mối quan hệ một cách tự nhiên.</p>
+            <p>Hãy cùng bắt đầu nhé! 🏡❤️</p>
+        </section>
+
+        <section>
+            <h2>1. Thành viên gia đình (Family Members) 👨‍👩‍👧‍👦</h2>
+            <p>Đây là những từ vựng cơ bản để gọi tên các thành viên trong gia đình bạn.</p>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="Mother">🔊</button>
+                    <strong>Mother</strong> /ˈmʌðər/ (Mă-đờ) - Mẹ
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Father">🔊</button>
+                    <strong>Father</strong> /ˈfɑːðər/ (Fa-đờ) - Bố
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Parents">🔊</button>
+                    <strong>Parents</strong> /ˈpeərənts/ (Pe-rờn-ts) - Bố mẹ (số nhiều)
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Sister">🔊</button>
+                    <strong>Sister</strong> /ˈsɪstər/ (Sít-tờ) - Chị/Em gái
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Brother">🔊</button>
+                    <strong>Brother</strong> /ˈbrʌðər/ (Brớ-đờ) - Anh/Em trai
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Siblings">🔊</button>
+                    <strong>Siblings</strong> /ˈsɪblɪŋz/ (Síp-linhz) - Anh chị em ruột
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Son">🔊</button>
+                    <strong>Son</strong> /sʌn/ (Săn) - Con trai
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Daughter">🔊</button>
+                    <strong>Daughter</strong> /ˈdɔːtər/ (Đo-tờ) - Con gái
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Children">🔊</button>
+                    <strong>Children</strong> /ˈtʃɪldrən/ (Chil-đrần) - Con cái (số nhiều)
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Husband">🔊</button>
+                    <strong>Husband</strong> /ˈhʌzbənd/ (Hớt-bầnđ) - Chồng
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Wife">🔊</button>
+                    <strong>Wife</strong> /waɪf/ (Oai-f) - Vợ
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Grandmother">🔊</button>
+                    <strong>Grandmother</strong> /ˈɡrændmʌðər/ (Gren-mă-đờ) - Bà (có thể gọi tắt là <strong>Grandma</strong>)
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Grandfather">🔊</button>
+                    <strong>Grandfather</strong> /ˈɡrændfɑːðər/ (Gren-fa-đờ) - Ông (có thể gọi tắt là <strong>Grandpa</strong>)
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Grandparents">🔊</button>
+                    <strong>Grandparents</strong> /ˈɡrændpeərənts/ (Gren-pe-rờn-ts) - Ông bà (số nhiều)
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Aunt">🔊</button>
+                    <strong>Aunt</strong> /ænt/ hoặc /ɑːnt/ (Anht hoặc Ant) - Cô/Dì/Thím/Mợ
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Uncle">🔊</button>
+                    <strong>Uncle</strong> /ˈʌŋkl/ (Ăng-kồ) - Chú/Bác trai/Cậu
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Cousin">🔊</button>
+                    <strong>Cousin</strong> /ˈkʌzn/ (Kớt-zần) - Anh/Chị/Em họ
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Niece">🔊</button>
+                    <strong>Niece</strong> /niːs/ (Ni-s) - Cháu gái (con của anh chị em ruột)
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Nephew">🔊</button>
+                    <strong>Nephew</strong> /ˈnefjuː/ (Nef-fiu) - Cháu trai (con của anh chị em ruột)
+                </li>
+            </ul>
+
+            <h3>Ví dụ:</h3>
+            <div class="example">
+                <p><button class="audio-icon" data-audio-text="My mother is very kind.">🔊</button> <strong>My mother</strong> is very kind. - Mẹ của tôi rất tốt bụng.</p>
+                <p><button class="audio-icon" data-audio-text="I have two sisters and one brother.">🔊</button> I have two <strong>sisters</strong> and one <strong>brother</strong>. - Tôi có hai chị em gái và một anh trai.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Đại từ sở hữu (Possessive Adjectives) 📖</h2>
+            <p>Để nói "của ai đó", chúng ta sử dụng các đại từ sở hữu (hay còn gọi là tính từ sở hữu). Chúng đứng trước danh từ để chỉ sự sở hữu.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Đại từ (Adjective)</th>
+                        <th>Nghĩa</th>
+                        <th>Ví dụ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><button class="audio-icon" data-audio-text="My">🔊</button> <strong>My</strong></td>
+                        <td>Của tôi</td>
+                        <td><button class="audio-icon" data-audio-text="My father">🔊</button> My father (bố của tôi)</td>
+                    </tr>
+                    <tr>
+                        <td><button class="audio-icon" data-audio-text="Your">🔊</button> <strong>Your</strong></td>
+                        <td>Của bạn/các bạn</td>
+                        <td><button class="audio-icon" data-audio-text="Your sister">🔊</button> Your sister (chị gái của bạn)</td>
+                    </tr>
+                    <tr>
+                        <td><button class="audio-icon" data-audio-text="His">🔊</button> <strong>His</strong></td>
+                        <td>Của anh ấy/ông ấy</td>
+                        <td><button class="audio-icon" data-audio-text="His mother">🔊</button> His mother (mẹ của anh ấy)</td>
+                    </tr>
+                    <tr>
+                        <td><button class="audio-icon" data-audio-text="Her">🔊</button> <strong>Her</strong></td>
+                        <td>Của cô ấy/bà ấy</td>
+                        <td><button class="audio-icon" data-audio-text="Her husband">🔊</button> Her husband (chồng của cô ấy)</td>
+                    </tr>
+                    <tr>
+                        <td><button class="audio-icon" data-audio-text="Our">🔊</button> <strong>Our</strong></td>
+                        <td>Của chúng tôi/chúng ta</td>
+                        <td><button class="audio-icon" data-audio-text="Our children">🔊</button> Our children (con cái của chúng tôi)</td>
+                    </tr>
+                    <tr>
+                        <td><button class="audio-icon" data-audio-text="Their">🔊</button> <strong>Their</strong></td>
+                        <td>Của họ</td>
+                        <td><button class="audio-icon" data-audio-text="Their grandparents">🔊</button> Their grandparents (ông bà của họ)</td>
+                    </tr>
+                    <tr>
+                        <td><button class="audio-icon" data-audio-text="Its">🔊</button> <strong>Its</strong></td>
+                        <td>Của nó (dùng cho vật/con vật)</td>
+                        <td><button class="audio-icon" data-audio-text="Its name">🔊</button> Its name (tên của nó)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>3. Giới thiệu gia đình (Introducing Family) 👋</h2>
+            <p>Để giới thiệu một người hoặc nhiều người trong gia đình, bạn sử dụng cấu trúc:</p>
+            <h3>Với số ít (một người):</h3>
+            <p>
+                <button class="audio-icon" data-audio-text="This is my...">🔊</button> <strong>This is my...</strong> (Đây là... của tôi)
+            </p>
+            <div class="example">
+                <p><button class="audio-icon" data-audio-text="This is my mother.">🔊</button> <strong>This is my mother.</strong> - Đây là mẹ của tôi.</p>
+                <p><button class="audio-icon" data-audio-text="This is my brother, Tom.">🔊</button> <strong>This is my brother, Tom.</strong> - Đây là anh trai tôi, Tom.</p>
+            </div>
+
+            <h3>Với số nhiều (nhiều người):</h3>
+            <p>
+                <button class="audio-icon" data-audio-text="These are my...">🔊</button> <strong>These are my...</strong> (Đây là những... của tôi)
+            </p>
+            <div class="example">
+                <p><button class="audio-icon" data-audio-text="These are my parents.">🔊</button> <strong>These are my parents.</strong> - Đây là bố mẹ của tôi.</p>
+                <p><button class="audio-icon" data-audio-text="These are my children.">🔊</button> <strong>These are my children.</strong> - Đây là các con của tôi.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Nói về các thành viên gia đình (Talking About Family Members) 💬</h2>
+            <p>Bạn có thể sử dụng các cấu trúc câu đơn giản để nói về gia đình mình, hoặc để hỏi về người khác.</p>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="He is my father.">🔊</button> <strong>He is my father.</strong> - Ông ấy là bố tôi.
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="She is my sister.">🔊</button> <strong>She is my sister.</strong> - Cô ấy là chị gái tôi.
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="They are my grandparents.">🔊</button> <strong>They are my grandparents.</strong> - Họ là ông bà tôi.
+                </li>
+            </ul>
+
+            <h3>Hỏi về người khác:</h3>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="Who is this?">🔊</button> <strong>Who is this?</strong> - Đây là ai?
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Is this your sister?">🔊</button> <strong>Is this your sister?</strong> - Đây có phải là chị gái của bạn không?
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Are these your parents?">🔊</button> <strong>Are these your parents?</strong> - Đây có phải là bố mẹ của bạn không?
+                </li>
+            </ul>
+
+            <h3>Ví dụ hội thoại ngắn:</h3>
+            <div class="example">
+                <p><strong>A:</strong> <button class="audio-icon" data-audio-text="Who is this?">🔊</button> Who is this?</p>
+                <p><strong>B:</strong> <button class="audio-icon" data-audio-text="This is my aunt.">🔊</button> This is my aunt.</p>
+                <p><strong>A:</strong> <button class="audio-icon" data-audio-text="She is very beautiful.">🔊</button> She is very beautiful. - Cô ấy rất xinh đẹp.</p>
+            </div>
+            <div class="example">
+                <p><strong>A:</strong> <button class="audio-icon" data-audio-text="Are these your children?">🔊</button> Are these your children?</p>
+                <p><strong>B:</strong> <button class="audio-icon" data-audio-text="Yes, they are.">🔊</button> Yes, they are. - Vâng, đúng vậy.</p>
+            </div>
+
+            <div class="cultural-note">
+                <strong>💡 Lưu ý văn hóa:</strong><br>
+                Trong tiếng Anh, cách xưng hô trong gia đình thường đơn giản hơn tiếng Việt. Ví dụ, <strong>brother</strong> có thể là anh trai hoặc em trai, <strong>sister</strong> là chị gái hoặc em gái, và <strong>cousin</strong> là anh/chị/em họ mà không phân biệt tuổi tác hay giới tính. Điều này đôi khi gây bối rối cho người Việt khi mới học.
+                Người phương Tây thường độc lập hơn khi trưởng thành và ít sống chung nhiều thế hệ trong một nhà so với văn hóa Á Đông. Tuy nhiên, mối quan hệ gia đình vẫn luôn được coi trọng.
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Luyện tập (Practice Time!) ✍️</h2>
+            <p>Hãy cùng thực hành những gì bạn đã học nhé! Nhấn vào nút "Xem đáp án" để kiểm tra câu trả lời của bạn.</p>
+
+            <h3>Bài 1: Chọn từ đúng nhất để hoàn thành câu.</h3>
+            <div class="practice-item">
+                <p>1. This is ___ mother.</p>
+                <ul>
+                    <li>(A) he</li>
+                    <li>(B) my</li>
+                    <li>(C) his</li>
+                </ul>
+                <button class="reveal-button" data-target="answer1">Xem đáp án</button>
+                <div id="answer1" class="answer-reveal">Đáp án đúng: (B) my. (<button class="audio-icon" data-audio-text="This is my mother.">🔊</button> This is my mother.)</div>
+            </div>
+
+            <div class="practice-item">
+                <p>2. She is ___ grandmother.</p>
+                <ul>
+                    <li>(A) their</li>
+                    <li>(B) they</li>
+                    <li>(C) them</li>
+                </ul>
+                <button class="reveal-button" data-target="answer2">Xem đáp án</button>
+                <div id="answer2" class="answer-reveal">Đáp án đúng: (A) their. (<button class="audio-icon" data-audio-text="She is their grandmother.">🔊</button> She is their grandmother.)</div>
+            </div>
+
+            <div class="practice-item">
+                <p>3. Tom has a sister. ___ sister is a doctor.</p>
+                <ul>
+                    <li>(A) Her</li>
+                    <li>(B) His</li>
+                    <li>(C) My</li>
+                </ul>
+                <button class="reveal-button" data-target="answer3">Xem đáp án</button>
+                <div id="answer3" class="answer-reveal">Đáp án đúng: (B) His. (<button class="audio-icon" data-audio-text="His sister is a doctor.">🔊</button> His sister is a doctor.)</div>
+            </div>
+
+            <h3>Bài 2: Điền vào chỗ trống với từ vựng gia đình phù hợp (Mother, Father, Brother, Sister, Parents, Children, Aunt, Uncle).</h3>
+            <div class="practice-item">
+                <p>1. My _____ is a teacher. (Bố/Mẹ tôi là giáo viên)</p>
+                <button class="reveal-button" data-target="answer4">Xem đáp án</button>
+                <div id="answer4" class="answer-reveal">Đáp án: Father / Mother (<button class="audio-icon" data-audio-text="My father is a teacher.">🔊</button> My father is a teacher. / <button class="audio-icon" data-audio-text="My mother is a teacher.">🔊</button> My mother is a teacher.)</div>
+            </div>
+
+            <div class="practice-item">
+                <p>2. I have one older _____ and two younger _____. (Tôi có một anh trai và hai em gái)</p>
+                <button class="reveal-button" data-target="answer5">Xem đáp án</button>
+                <div id="answer5" class="answer-reveal">Đáp án: brother, sisters (<button class="audio-icon" data-audio-text="I have one older brother and two younger sisters.">🔊</button> I have one older brother and two younger sisters.)</div>
+            </div>
+
+            <div class="practice-item">
+                <p>3. These are my _____. They are enjoying the park. (Đây là các con của tôi. Chúng đang tận hưởng công viên)</p>
+                <button class="reveal-button" data-target="answer6">Xem đáp án</button>
+                <div id="answer6" class="answer-reveal">Đáp án: children (<button class="audio-icon" data-audio-text="These are my children. They are enjoying the park.">🔊</button> These are my children. They are enjoying the park.)</div>
+            </div>
+        </section>
+
+        <section class="summary">
+            <h2>Tóm tắt Chương 5 ✨</h2>
+            <p>Bạn đã học được rất nhiều điều bổ ích trong chương này:</p>
+            <ul>
+                <li>✅ Các từ vựng cơ bản về thành viên gia đình như <strong>mother, father, brother, sister,</strong> v.v.</li>
+                <li>✅ Cách sử dụng các đại từ sở hữu (<strong>my, your, his, her, their,</strong> v.v.) để chỉ sự sở hữu.</li>
+                <li>✅ Cấu trúc câu để giới thiệu người thân: <strong>This is my...</strong> (số ít) và <strong>These are my...</strong> (số nhiều).</li>
+                <li>✅ Cách đặt câu hỏi và trả lời đơn giản khi nói về các thành viên gia đình.</li>
+                <li>✅ Một số lưu ý về văn hóa gia đình trong tiếng Anh.</li>
+            </ul>
+            <p>Bạn đã làm rất tốt! Hãy tiếp tục luyện tập để ghi nhớ và sử dụng thành thạo nhé! 🚀</p>
+        </section>
+    </div>
+
+    <!-- JavaScript for reveal buttons - This script is for web browser demonstration only.
+         In the mobile app, this functionality will be handled by native code. -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const revealButtons = document.querySelectorAll('.reveal-button');
+            revealButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.dataset.target;
+                    const answerDiv = document.getElementById(targetId);
+                    if (answerDiv) {
+                        answerDiv.classList.toggle('show');
+                        this.textContent = answerDiv.classList.contains('show') ? 'Ẩn đáp án' : 'Xem đáp án';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

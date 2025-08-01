@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: 中国語の基本的な挨拶と自己紹介</title>
+    <style>
+        /* グローバルスタイルとリセット */
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /* コンテナ */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+            overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+        }
+
+        /* ヘッダーセクション */
+        .chapter-title {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            font-size: 1.8em; /* Adjusted for mobile readability */
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 0 10px; /* Ensure padding on small screens */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Note: Per instructions, no external image URLs. This 'src' is for structure only. */
+        }
+
+        /* セクション共通スタイル */
+        section {
+            background-color: #FFFFFF; /* White for content sections */
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.4em; /* h2 */
+        }
+
+        h3 {
+            font-size: 1.2em; /* h3 */
+        }
+
+        p {
+            color: #666666; /* Body Text: Medium gray */
+            margin-bottom: 10px;
+            font-size: 1em; /* Minimum 16px for body text */
+        }
+
+        strong {
+            color: #2C3E50;
+        }
+
+        /* フレーズカード */
+        .phrase-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #FDF9E5; /* Secondary: Cream for phrase background */
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #E0E0E0;
+            flex-wrap: wrap; /* Allow wrapping on very small screens */
+            min-height: 60px; /* Ensure minimum height */
+        }
+
+        .phrase-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-grow: 1;
+            padding-right: 10px; /* Space before audio icon */
+        }
+
+        .chinese-text {
+            font-size: 1.3em; /* Slightly smaller for mobile */
+            color: #2C3E50;
+            font-weight: bold;
+            word-break: break-word; /* Prevent overflow */
+        }
+
+        .pronunciation {
+            font-size: 0.85em;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-top: 3px;
+            word-break: break-word;
+        }
+
+        .japanese-translation {
+            font-size: 0.9em;
+            color: #666666;
+            margin-top: 5px;
+        }
+
+        /* オーディオアイコン */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px; /* Slightly larger for easier tapping */
+            height: 48px;
+            min-width: 44px; /* Minimum tap target size */
+            min-height: 44px;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: #FFFFFF;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            border: none;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .audio-icon:hover {
+            background-color: #6A459B; /* Darker purple on hover */
+            transform: scale(1.05); /* Slight scale effect */
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95); /* Click effect */
+        }
+
+        /* 例文・ダイアログ */
+        .example-dialogue {
+            background-color: #FDF9E5; /* Secondary: Cream */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple border */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            color: #4A4A4A;
+        }
+
+        .example-dialogue p {
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .example-dialogue strong {
+            color: #8B5FBF; /* Purple for speaker */
+        }
+
+        /* 文化メモ */
+        .cultural-note {
+            background-color: #FDF9E5; /* Secondary: Cream */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple border */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            color: #4A4A4A;
+            font-style: italic;
+        }
+
+        .cultural-note::before {
+            content: "💡 文化メモ: ";
+            font-weight: bold;
+            color: #8B5FBF;
+        }
+
+        /* 練習問題 */
+        .practice-section {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px dashed #E0E0E0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+
+        .practice-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2C3E50;
+        }
+
+        .input-field {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #E0E0E0;
+            border-radius: 5px;
+            font-size: 1em;
+            color: #666666;
+            background-color: #FDF9E5;
+        }
+
+        .submit-button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: #FFFFFF;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            width: 100%;
+            min-height: 44px; /* Minimum tap target size */
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            font-weight: bold;
+        }
+
+        .submit-button:hover {
+            background-color: #6A459B; /* Darker purple on hover */
+            transform: translateY(-1px);
+        }
+
+        .submit-button:active {
+            transform: translateY(1px);
+        }
+
+        /* リストスタイル */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px; /* Space for custom bullet */
+            color: #666666;
+        }
+
+        ul li::before {
+            content: "✨"; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary: Purple */
+            font-size: 1.1em;
+            top: 0;
+        }
+
+        /* Summary list specifics */
+        .summary-list li {
+            font-size: 0.95em;
+            line-height: 1.4;
+            padding-left: 0; /* Remove custom bullet */
+            margin-bottom: 8px;
+        }
+        .summary-list li::before {
+            content: none; /* Remove custom bullet */
+        }
+        .summary-list .chinese-text {
+            font-size: 1.1em;
+        }
+        .summary-list .pronunciation {
+            font-size: 0.8em;
+            margin-left: 5px;
+        }
+        .summary-list .japanese-translation {
+            display: inline;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 2: 基本的な挨拶と自己紹介</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>✨ 中国語の第一歩：挨拶を学ぼう！</h2>
+            <p>
+                新しい言語を学ぶ最初のステップは、人々とのコミュニケーションです。このチャプターでは、中国語での基本的な挨拶や自己紹介のフレーズを学びます。これらのフレーズは、中国語圏の人々と交流を始めるための強力なツールとなるでしょう。
+            </p>
+        </section>
+
+        <section>
+            <h3>1. 基本的な挨拶</h3>
+            <p>様々な時間帯での挨拶を学びましょう。</p>
+
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">你好</span>
+                    <span class="pronunciation">Nǐ hǎo</span>
+                    <span class="japanese-translation">こんにちは (Hello)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="你好">🔊</button>
+            </div>
+            <p>
+                <strong>「你好 (Nǐ hǎo)」</strong>は、中国語で最も一般的で万能な挨拶です。文字通り「あなたは良い」という意味で、時間帯を問わず使えます。
+            </p>
+
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">早上好</span>
+                    <span class="pronunciation">Zǎoshang hǎo</span>
+                    <span class="japanese-translation">おはようございます (Good morning)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="早上好">🔊</button>
+            </div>
+            <p>
+                よりカジュアルに「早 (Zǎo)」だけでも「おはよう」として使われます。
+            </p>
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">下午好</span>
+                    <span class="pronunciation">Xiàwǔ hǎo</span>
+                    <span class="japanese-translation">こんにちは (午後) (Good afternoon)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="下午好">🔊</button>
+            </div>
+
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">晚上好</span>
+                    <span class="pronunciation">Wǎnshang hǎo</span>
+                    <span class="japanese-translation">こんばんは (Good evening)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="晚上好">🔊</button>
+            </div>
+
+            <div class="cultural-note">
+                <p>「你好 (Nǐ hǎo)」は最も無難でよく使われますが、時間帯に合わせた挨拶も丁寧で好印象を与えます。親しい間柄では、朝に「早 (Zǎo)」とだけ言うことも多いです。</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>💡 練習問題：正しい挨拶を選ぼう！</h3>
+                <p class="practice-question">午前中に友達と会いました。何と挨拶しますか？</p>
+                <div class="phrase-card">
+                    <div class="phrase-content">
+                        <span class="chinese-text">A. 下午好</span>
+                        <span class="japanese-translation">(午後です)</span>
+                    </div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-content">
+                        <span class="chinese-text">B. 早上好</span>
+                        <span class="japanese-translation">(朝です)</span>
+                    </div>
+                </div>
+                <div class="phrase-card">
+                    <div class="phrase-content">
+                        <span class="chinese-text">C. 晚上好</span>
+                        <span class="japanese-translation">(夜です)</span>
+                    </div>
+                </div>
+                <button class="submit-button" data-correct-answer="B">回答をチェック</button>
+            </div>
+        </section>
+
+        <section>
+            <h3>2. 別れの言葉と感謝</h3>
+            <p>別れの挨拶と、感謝の気持ちを伝える表現です。</p>
+
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">再见</span>
+                    <span class="pronunciation">Zàijiàn</span>
+                    <span class="japanese-translation">さようなら (Goodbye)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="再见">🔊</button>
+            </div>
+            <p>
+                「再见 (Zàijiàn)」は「また会う」という意味で、最も一般的な別れの挨拶です。
+            </p>
+
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">谢谢</span>
+                    <span class="pronunciation">Xièxie</span>
+                    <span class="japanese-translation">ありがとうございます (Thank you)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="谢谢">🔊</button>
+            </div>
+
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">不客气</span>
+                    <span class="pronunciation">Bù kèqì</span>
+                    <span class="japanese-translation">どういたしまして (You're welcome)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="不客气">🔊</button>
+            </div>
+            <p>
+                「不客气 (Bù kèqì)」の他に、カジュアルに「不谢 (Bú xiè)」も使われます。
+            </p>
+
+            <div class="cultural-note">
+                <p>「不客气 (Bù kèqì)」は「遠慮しないでください」という意味合いで、より丁寧な「どういたしまして」です。口語では「不谢 (Bú xiè)」もよく聞かれます。</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>💡 練習問題：会話を完成させよう！</h3>
+                <p class="practice-question">店員：谢谢！ (Xièxie!)</p>
+                <p class="practice-question">あなた：_______！</p>
+                <input type="text" class="input-field" placeholder="中国語で入力してください (例: 不客气)">
+                <button class="submit-button" data-correct-answer="不客气">回答をチェック</button>
+            </div>
+        </section>
+
+        <section>
+            <h3>3. 自己紹介：私の名前は... / 私は...</h3>
+            <p>初めて会う人に自分の名前や身分を伝えるフレーズです。</p>
+
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">我叫...</span>
+                    <span class="pronunciation">Wǒ jiào...</span>
+                    <span class="japanese-translation">私の名前は〜です (My name is...)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="我叫">🔊</button>
+            </div>
+            <p>
+                例: <strong>我叫田中。</strong> (Wǒ jiào Tiánzhōng.) - 田中です。<button class="audio-icon" data-audio-text="我叫田中">🔊</button>
+            </p>
+
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">我是...</span>
+                    <span class="pronunciation">Wǒ shì...</span>
+                    <span class="japanese-translation">私は〜です (I'm...)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="我是">🔊</button>
+            </div>
+            <p>
+                例: <strong>我是学生。</strong> (Wǒ shì xuésheng.) - 私は学生です。<button class="audio-icon" data-audio-text="我是学生">🔊</button><br>
+                例: <strong>我是日本人。</strong> (Wǒ shì Rìběnrén.) - 私は日本人です。<button class="audio-icon" data-audio-text="我是日本人">🔊</button>
+            </p>
+
+            <div class="practice-section">
+                <h3>💡 練習問題：自己紹介をしよう！</h3>
+                <p class="practice-question">あなたは山田さんで、会社員です。中国語で自己紹介してください。</p>
+                <p>私の名前は山田です。</p>
+                <input type="text" class="input-field" placeholder="例: 我叫山田。">
+                <p>私は会社員です。</p>
+                <input type="text" class="input-field" placeholder="例: 我是公司职员。">
+                <button class="submit-button">自分の答えをチェック</button>
+                <p style="font-size:0.85em; text-align: right; margin-top: 10px;">(回答例: 我叫山田。我是公司职员。)</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>4. 初めまして</h3>
+            <p>初めて会う人に使う丁寧な表現です。</p>
+
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">很高兴认识你</span>
+                    <span class="pronunciation">Hěn gāoxìng rènshi nǐ</span>
+                    <span class="japanese-translation">初めまして / お会いできて嬉しいです (Nice to meet you)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="很高兴认识你">🔊</button>
+            </div>
+
+            <div class="cultural-note">
+                <p>このフレーズは、新しい人との出会いを喜ぶ気持ちを伝える、非常に丁寧で一般的な表現です。</p>
+            </div>
+
+            <div class="example-dialogue">
+                <p><strong>A:</strong> 你好，我叫小李。<button class="audio-icon" data-audio-text="你好，我叫小李">🔊</button><br>
+                (Nǐ hǎo, wǒ jiào Xiǎo Lǐ.) - こんにちは、李です。</p>
+                <p><strong>B:</strong> 你好，我叫佐藤。很高兴认识你。<button class="audio-icon" data-audio-text="你好，我叫佐藤。很高兴认识你">🔊</button><br>
+                (Nǐ hǎo, wǒ jiào Zuǒténg. Hěn gāoxìng rènshi nǐ.) - こんにちは、佐藤です。初めまして。</p>
+            </div>
+        </section>
+
+        <section>
+            <h3>5. 基本的な丁寧な表現</h3>
+            <p>日常生活で役立つ、基本的な丁寧なフレーズです。</p>
+
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">对不起</span>
+                    <span class="pronunciation">Duìbuqǐ</span>
+                    <span class="japanese-translation">すみません / ごめんなさい (Excuse me / Sorry)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="对不起">🔊</button>
+            </div>
+            <p>
+                軽い謝罪から真剣な謝罪まで幅広く使えます。
+            </p>
+
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">没关系</span>
+                    <span class="pronunciation">Méi guānxi</span>
+                    <span class="japanese-translation">大丈夫です / 関係ありません (It's okay / No problem)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="没关系">🔊</button>
+            </div>
+            <p>
+                謝罪に対する返答や、「問題ない」と伝えるときに使います。
+            </p>
+
+            <div class="phrase-card">
+                <div class="phrase-content">
+                    <span class="chinese-text">请</span>
+                    <span class="pronunciation">Qǐng</span>
+                    <span class="japanese-translation">お願いします / どうぞ (Please)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="请">🔊</button>
+            </div>
+            <p>
+                「请」は「〜してください」という依頼や、「どうぞ」と勧める際に使われる非常に便利な単語です。<br>
+                例: <strong>请坐。</strong> (Qǐng zuò.) - どうぞ座ってください。<button class="audio-icon" data-audio-text="请坐">🔊</button><br>
+                例: <strong>请问。</strong> (Qǐng wèn.) - (すみませんが)お尋ねします。<button class="audio-icon" data-audio-text="请问">🔊</button>
+            </p>
+
+            <div class="cultural-note">
+                <p>「请 (Qǐng)」は日本語の「お願いします」のように、単独で使うよりも動詞と組み合わせて使うことが多いです。また、相手に何かを促す際にも使われます。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>📚 まとめ：このチャプターで学んだこと</h2>
+            <p>このチャプターでは、中国語の基本的な挨拶と自己紹介のフレーズを学びました。これらは日常会話の土台となる非常に重要な表現です。</p>
+            <ul class="summary-list">
+                <li>
+                    <strong class="chinese-text">你好</strong><span class="pronunciation">(Nǐ hǎo)</span> <span class="japanese-translation">こんにちは</span>
+                </li>
+                <li>
+                    <strong class="chinese-text">早上好</strong><span class="pronunciation">(Zǎoshang hǎo)</span> <span class="japanese-translation">おはようございます</span>
+                </li>
+                <li>
+                    <strong class="chinese-text">下午好</strong><span class="pronunciation">(Xiàwǔ hǎo)</span> <span class="japanese-translation">こんにちは (午後)</span>
+                </li>
+                <li>
+                    <strong class="chinese-text">晚上好</strong><span class="pronunciation">(Wǎnshang hǎo)</span> <span class="japanese-translation">こんばんは</span>
+                </li>
+                <li>
+                    <strong class="chinese-text">再见</strong><span class="pronunciation">(Zàijiàn)</span> <span class="japanese-translation">さようなら</span>
+                </li>
+                <li>
+                    <strong class="chinese-text">谢谢</strong><span class="pronunciation">(Xièxie)</span> <span class="japanese-translation">ありがとうございます</span>
+                </li>
+                <li>
+                    <strong class="chinese-text">不客气</strong><span class="pronunciation">(Bù kèqì)</span> <span class="japanese-translation">どういたしまして</span>
+                </li>
+                <li>
+                    <strong class="chinese-text">我叫...</strong><span class="pronunciation">(Wǒ jiào...)</span> <span class="japanese-translation">私の名前は〜です</span>
+                </li>
+                <li>
+                    <strong class="chinese-text">我是...</strong><span class="pronunciation">(Wǒ shì...)</span> <span class="japanese-translation">私は〜です</span>
+                </li>
+                <li>
+                    <strong class="chinese-text">很高兴认识你</strong><span class="pronunciation">(Hěn gāoxìng rènshi nǐ)</span> <span class="japanese-translation">初めまして</span>
+                </li>
+                <li>
+                    <strong class="chinese-text">对不起</strong><span class="pronunciation">(Duìbuqǐ)</span> <span class="japanese-translation">すみません / ごめんなさい</span>
+                </li>
+                <li>
+                    <strong class="chinese-text">没关系</strong><span class="pronunciation">(Méi guānxi)</span> <span class="japanese-translation">大丈夫です / 関係ありません</span>
+                </li>
+                <li>
+                    <strong class="chinese-text">请</strong><span class="pronunciation">(Qǐng)</span> <span class="japanese-translation">お願いします / どうぞ</span>
+                </li>
+            </ul>
+            <p>これらのフレーズを何度も聞いて、発音し、日常生活で積極的に使ってみましょう。次のチャプターでは、さらに踏み込んだ表現を学びます！</p>
+        </section>
+
+    </div>
+</body>
+</html>

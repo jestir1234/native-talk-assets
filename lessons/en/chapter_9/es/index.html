@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 9: El Clima y las Estaciones</title>
+    <style>
+        /* Base styles for mobile-first */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            text-align: center;
+            padding: 20px 15px 0;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-left: 15px;
+            margin-right: 15px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-left: 15px;
+            margin-right: 15px;
+            color: #8B5FBF; /* Primary: Purple for sub-headings */
+        }
+
+        p {
+            margin: 0 15px 1em 15px;
+            text-align: justify;
+        }
+
+        strong {
+            color: #2C3E50; /* Dark blue for strong emphasis */
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Main container for content */
+        .container {
+            max-width: 800px; /* Max width for larger screens (tablet/desktop) */
+            margin: 0 auto;
+            padding: 0 10px; /* Small padding for horizontal edges */
+        }
+
+        /* Header structure requirements */
+        .chapter-title {
+            margin-top: 20px;
+            margin-bottom: 0;
+            padding-top: 0;
+            text-align: center;
+            color: #2C3E50;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for visual appeal */
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section styling */
+        section {
+            background-color: #FDF9E5; /* Secondary: Cream */
+            margin-bottom: 20px;
+            padding: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Soft shadow */
+        }
+
+        /* Example box styling */
+        .example-box {
+            background-color: rgba(139, 95, 191, 0.1); /* Light primary color with transparency */
+            border-left: 4px solid #8B5FBF; /* Primary color border */
+            padding: 10px 15px;
+            margin: 15px 15px;
+            border-radius: 5px;
+        }
+
+        .example-box p {
+            margin: 5px 0;
+            color: #2C3E50; /* Dark blue for example text */
+            text-align: left;
+        }
+
+        .example-box strong {
+            color: #8B5FBF; /* Primary for emphasis in examples */
+        }
+
+        /* Pronunciation guide styling */
+        .pronunciation {
+            font-size: 0.9em;
+            color: #666666;
+            font-style: italic;
+            margin-left: 5px;
+        }
+
+        /* Audio icon styling */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 1.8em; /* Large enough for touch */
+            cursor: pointer;
+            color: #8B5FBF; /* Primary color */
+            min-width: 44px; /* Minimum touch target size */
+            min-height: 44px; /* Minimum touch target size */
+            padding: 0;
+            margin-left: 5px;
+            vertical-align: middle;
+            display: inline-flex; /* For better alignment */
+            align-items: center;
+            justify-content: center;
+        }
+
+        .audio-icon:hover {
+            color: #6C3FB0; /* Slightly darker purple on hover */
+            transform: scale(1.1); /* Subtle scale effect */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        /* Practice section styling */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream */
+            padding: 20px 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #E0E0E0; /* Light gray border */
+        }
+
+        .practice-section h3 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1em;
+            color: #8B5FBF;
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #E0E0E0; /* Dashed line for separation */
+        }
+
+        .practice-item:last-child {
+            border-bottom: none; /* No border for the last item */
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .question-text {
+            margin-bottom: 10px;
+            color: #2C3E50;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping for long questions */
+        }
+
+        .question-text .audio-icon {
+            margin-right: 8px;
+        }
+
+        .options-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow options to wrap on smaller screens */
+            gap: 10px; /* Space between buttons */
+            justify-content: center; /* Center options horizontally */
+        }
+
+        .option-button {
+            background-color: #8B5FBF; /* Primary color */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px; /* Pill-shaped buttons */
+            font-size: 1em;
+            cursor: pointer;
+            min-width: 120px; /* Ensure a decent width */
+            min-height: 44px; /* Minimum touch target */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .option-button:hover {
+            background-color: #6C3FB0; /* Slightly darker purple */
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+
+        .option-button:active {
+            background-color: #5A358F; /* Even darker on click */
+            transform: translateY(0); /* Reset position on click */
+        }
+
+        /* Fill-in-the-blank input */
+        .fill-in-the-blank input[type="text"] {
+            width: calc(100% - 30px); /* Full width minus padding */
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #E0E0E0;
+            border-radius: 5px;
+            font-size: 1em;
+            color: #2C3E50;
+        }
+
+        .fill-in-the-blank input[type="text"]:focus {
+            outline: none;
+            border-color: #8B5FBF; /* Primary color on focus */
+            box-shadow: 0 0 0 3px rgba(139, 95, 191, 0.2); /* Soft glow on focus */
+        }
+
+        /* Summary section */
+        .summary-section {
+            background-color: #FDF9E5;
+            padding: 20px 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #E0E0E0;
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            margin-top: 0;
+            color: #2C3E50;
+            border-bottom: none; /* No border for summary heading */
+        }
+
+        .summary-section ul {
+            list-style: none; /* Remove default list bullets */
+            padding: 0;
+            margin: 0;
+        }
+
+        .summary-section li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: #666666;
+        }
+
+        .summary-section li::before {
+            content: '✨'; /* Sparkle emoji for list items */
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #8B5FBF; /* Primary color for emoji */
+        }
+
+        /* General utility classes */
+        .text-center {
+            text-align: center;
+        }
+        .bold-text {
+            font-weight: bold;
+            color: #2C3E50;
+        }
+        .highlight {
+            color: #8B5FBF;
+            font-weight: bold;
+        }
+
+        /* Media queries for larger screens (tablet/desktop) */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            p {
+                margin: 0 30px 1em 30px; /* More padding on larger screens */
+            }
+            section, .practice-section, .summary-section {
+                padding: 20px 30px; /* More padding inside sections */
+            }
+            .example-box {
+                margin: 15px 30px;
+            }
+            .option-button {
+                min-width: 150px; /* Wider buttons on larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 9: Weather and Seasons</h1>
+        <div class="lesson-header">
+            <!-- This image is a placeholder required by the prompt structure. 
+                 Actual lesson content uses emojis/text as specified. -->
+            <img src="../header.webp" alt="Chapter 9 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>¡Hola, Aprendiz de Inglés! 👋</h2>
+            <p>¡Bienvenidos al Capítulo 9! Hoy vamos a explorar el fascinante mundo del <strong class="highlight">clima</strong> (weather) y las <strong class="highlight">estaciones</strong> (seasons) en inglés. Hablar del tiempo es una de las formas más comunes de iniciar una conversación en inglés, ¡así que esta lección te será muy útil!</p>
+            <p>Prepárate para describir si hace sol, llueve o nieva, ¡y mucho más!</p>
+        </section>
+
+        <section>
+            <h2>🌧️ Vocabulario del Clima (Weather Vocabulary)</h2>
+            <p>Empecemos con las palabras clave para describir cómo está el día. Escucha la pronunciación y repite:</p>
+
+            <h3>☀️ Soleado (Sunny)</h3>
+            <p>Cuando el sol brilla y no hay nubes.</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="It's sunny today.">🔊</button> <strong class="highlight">It's sunny today.</strong></p>
+                <p>Está soleado hoy.</p>
+            </div>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="I love sunny days.">🔊</button> <strong class="highlight">I love sunny days.</strong></p>
+                <p>Me encantan los días soleados.</p>
+            </div>
+
+            <h3>☁️ Nublado (Cloudy)</h3>
+            <p>Cuando el cielo está cubierto de nubes.</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="It's cloudy, but it's not raining.">🔊</button> <strong class="highlight">It's cloudy, but it's not raining.</strong></p>
+                <p>Está nublado, pero no está lloviendo.</p>
+            </div>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="The sky is cloudy.">🔊</button> <strong class="highlight">The sky is cloudy.</strong></p>
+                <p>El cielo está nublado.</p>
+            </div>
+
+            <h3>☔ Lluvioso (Rainy)</h3>
+            <p>Cuando está lloviendo.</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="It's rainy outside. Don't forget your umbrella.">🔊</button> <strong class="highlight">It's rainy outside. Don't forget your umbrella.</strong></p>
+                <p>Está lloviendo afuera. No olvides tu paraguas.</p>
+            </div>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="We are having a very rainy week.">🔊</button> <strong class="highlight">We are having a very rainy week.</strong></p>
+                <p>Estamos teniendo una semana muy lluviosa.</p>
+            </div>
+
+            <h3>❄️ Nevado (Snowy)</h3>
+            <p>Cuando está nevando o cubierto de nieve.</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="It's snowy and cold in winter.">🔊</button> <strong class="highlight">It's snowy and cold in winter.</strong></p>
+                <p>Está nevado y frío en invierno.</p>
+            </div>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="Let's build a snowman if it's snowy.">🔊</button> <strong class="highlight">Let's build a snowman if it's snowy.</strong></p>
+                <p>Vamos a construir un muñeco de nieve si está nevado.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🌸 Las Estaciones (Seasons)</h2>
+            <p>El año tiene cuatro estaciones principales. Cada una tiene su clima y actividades típicas.</p>
+
+            <h3>🌱 Primavera (Spring)</h3>
+            <p>La estación de las flores y el renacer. El clima suele ser <span class="highlight">templado</span> (mild).</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="Flowers bloom in spring.">🔊</button> <strong class="highlight">Flowers bloom in spring.</strong></p>
+                <p>Las flores florecen en primavera.</p>
+            </div>
+
+            <h3>☀️ Verano (Summer)</h3>
+            <p>La estación más <span class="highlight">cálida</span> (warmest), ideal para ir a la playa o la piscina.</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="We go on vacation in summer.">🔊</button> <strong class="highlight">We go on vacation in summer.</strong></p>
+                <p>Nos vamos de vacaciones en verano.</p>
+            </div>
+
+            <h3>🍂 Otoño (Fall / Autumn)</h3>
+            <p>Las hojas cambian de color y caen. El clima empieza a ser más <span class="highlight">fresco</span> (cool). En inglés americano se usa más <strong class="highlight">"Fall"</strong>, mientras que en inglés británico es más común <strong class="highlight">"Autumn"</strong>. Ambos son correctos. <span class="pronunciation">[fɔːl / ˈɔːtəm]</span></p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="The leaves turn orange in fall.">🔊</button> <strong class="highlight">The leaves turn orange in fall.</strong></p>
+                <p>Las hojas se ponen naranjas en otoño.</p>
+            </div>
+
+            <h3>❄️ Invierno (Winter)</h3>
+            <p>La estación más <span class="highlight">fría</span> (coldest), a menudo con nieve en muchos lugares.</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="It often snows in winter.">🔊</button> <strong class="highlight">It often snows in winter.</strong></p>
+                <p>A menudo nieva en invierno.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>❓ ¿Qué tiempo hace? (What's the weather like?)</h2>
+            <p>Para preguntar sobre el clima, usamos la pregunta:</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="What's the weather like?">🔊</button> <strong class="highlight">What's the weather like?</strong></p>
+                <p>¿Qué tiempo hace?</p>
+            </div>
+            <p>Y para responder, casi siempre usamos <strong class="highlight">"It's..."</strong> (Es/Está...).</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="What's the weather like today? It's sunny and warm.">🔊</button> <strong class="highlight">What's the weather like today? It's sunny and warm.</strong></p>
+                <p>¿Qué tiempo hace hoy? Hace sol y está templado.</p>
+            </div>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="What's the weather like in London in winter? It's often rainy.">🔊</button> <strong class="highlight">What's the weather like in London in winter? It's often rainy.</strong></p>
+                <p>¿Qué tiempo hace en Londres en invierno? A menudo llueve.</p>
+            </div>
+            <p class="text-center">💡 <strong class="bold-text">Nota Cultural:</strong> En países de habla inglesa, preguntar "¿What's the weather like?" o simplemente hacer un comentario sobre el tiempo es una forma muy común de romper el hielo o iniciar una pequeña charla (small talk). ¡Es educado y universal!</p>
+        </section>
+
+        <section>
+            <h2>🌡️ La Temperatura (Temperature)</h2>
+            <p>Podemos describir la temperatura con estas palabras:</p>
+
+            <h3>🔥 Caluroso (Hot)</h3>
+            <p>Cuando hace mucho calor.</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="It's very hot in summer.">🔊</button> <strong class="highlight">It's very hot in summer.</strong></p>
+                <p>Hace mucho calor en verano.</p>
+            </div>
+
+            <h3>🥶 Frío (Cold)</h3>
+            <p>Cuando hace mucho frío.</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="I feel cold.">🔊</button> <strong class="highlight">I feel cold.</strong></p>
+                <p>Tengo frío.</p>
+            </div>
+
+            <h3>☀️ Templado (Warm)</h3>
+            <p>Agradablemente cálido, no muy caliente.</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="It's a warm spring day.">🔊</button> <strong class="highlight">It's a warm spring day.</strong></p>
+                <p>Es un día templado de primavera.</p>
+            </div>
+
+            <h3>🌬️ Fresco (Cool)</h3>
+            <p>Agradablemente frío, no helado.</p>
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="The air is cool in the evening.">🔊</button> <strong class="highlight">The air is cool in the evening.</strong></p>
+                <p>El aire está fresco por la noche.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🤸 Actividades Relacionadas con el Clima (Weather-Related Activities)</h2>
+            <p>El clima a menudo dicta qué actividades podemos hacer. Aquí tienes algunas ideas:</p>
+            <ul>
+                <li><p><button class="audio-icon" data-audio-text="Go to the beach.">🔊</button> <strong class="highlight">Go to the beach.</strong> (Ir a la playa) - Cuando hace <strong class="highlight">sunny</strong> y <strong class="highlight">hot</strong>.</p></li>
+                <li><p><button class="audio-icon" data-audio-text="Build a snowman.">🔊</button> <strong class="highlight">Build a snowman.</strong> (Hacer un muñeco de nieve) - Cuando hace <strong class="highlight">snowy</strong> y <strong class="highlight">cold</strong>.</p></li>
+                <li><p><button class="audio-icon" data-audio-text="Stay indoors and read a book.">🔊</button> <strong class="highlight">Stay indoors and read a book.</strong> (Quedarse en casa y leer un libro) - Cuando hace <strong class="highlight">rainy</strong> o <strong class="highlight">stormy</strong>.</p></li>
+                <li><p><button class="audio-icon" data-audio-text="Go for a walk in the park.">🔊</button> <strong class="highlight">Go for a walk in the park.</strong> (Ir a pasear por el parque) - Cuando hace <strong class="highlight">sunny</strong> y <strong class="highlight">warm</strong> o <strong class="highlight">cool</strong>.</p></li>
+                <li><p><button class="audio-icon" data-audio-text="Wear a coat.">🔊</button> <strong class="highlight">Wear a coat.</strong> (Ponerse un abrigo) - Cuando hace <strong class="highlight">cold</strong>.</p></li>
+            </ul>
+        </section>
+
+        <div class="practice-section">
+            <h3>¡Es Hora de Practicar! 📝</h3>
+            <p class="text-center">Elige la mejor opción para completar cada frase o escribe la respuesta.</p>
+
+            <div class="practice-item">
+                <p class="question-text"><button class="audio-icon" data-audio-text="It's _____. Let's go to the beach!">🔊</button> It's _____. Let's go to the beach!</p>
+                <div class="options-container">
+                    <button class="option-button">rainy</button>
+                    <button class="option-button">snowy</button>
+                    <button class="option-button">sunny</button>
+                    <button class="option-button">cloudy</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="question-text"><button class="audio-icon" data-audio-text="What season is it when leaves fall from trees?">🔊</button> What season is it when leaves fall from trees?</p>
+                <div class="options-container">
+                    <button class="option-button">winter</button>
+                    <button class="option-button">summer</button>
+                    <button class="option-button">fall</button>
+                    <button class="option-button">spring</button>
+                </div>
+            </div>
+
+            <div class="practice-item fill-in-the-blank">
+                <p class="question-text"><button class="audio-icon" data-audio-text="It's very _____. I need a jacket!">🔊</button> It's very _____. I need a jacket!</p>
+                <p><em>(Escribe el adjetivo de temperatura adecuado)</em></p>
+                <input type="text" placeholder="Escribe aquí (ej. cold)">
+            </div>
+
+            <div class="practice-item">
+                <p class="question-text"><button class="audio-icon" data-audio-text="In which season do flowers usually bloom?">🔊</button> In which season do flowers usually bloom?</p>
+                <div class="options-container">
+                    <button class="option-button">summer</button>
+                    <button class="option-button">spring</button>
+                    <button class="option-button">winter</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h2>Resumen del Capítulo 9: Clima y Estaciones</h2>
+            <p>¡Felicidades! Has completado el Capítulo 9. Aquí tienes un breve repaso de lo que aprendiste:</p>
+            <ul>
+                <li>✨ Vocabulario del clima: <strong class="highlight">sunny, rainy, cloudy, snowy</strong>.</li>
+                <li>✨ Las cuatro estaciones: <strong class="highlight">spring, summer, fall/autumn, winter</strong>.</li>
+                <li>✨ Cómo preguntar y responder sobre el clima: <strong class="highlight">"What's the weather like?" / "It's..."</strong>.</li>
+                <li>✨ Adjetivos de temperatura: <strong class="highlight">hot, cold, warm, cool</strong>.</li>
+                <li>✨ Actividades típicas según el clima: <strong class="highlight">go to the beach, build a snowman, stay indoors</strong>, etc.</li>
+            </ul>
+            <p class="text-center">¡Ahora tienes las herramientas para hablar sobre el tiempo en inglés! Sigue practicando y úsalas en tus conversaciones.</p>
+        </div>
+
+    </div>
+</body>
+</html>

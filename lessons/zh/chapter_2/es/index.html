@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 2: Saludos Básicos e Introducciones</title>
+    <style>
+        /* Variables de Color */
+        :root {
+            --primary-color: #8B5FBF;       /* Purple */
+            --secondary-color: #FDF9E5;     /* Cream background */
+            --heading-color: #2C3E50;       /* Dark blue */
+            --body-text-color: #666666;     /* Medium gray */
+            --border-color: #E0E0E0;        /* Light gray */
+            --white: #FFFFFF;
+            --light-gray-bg: #F8F8F8;       /* Very light gray for body */
+            --dark-purple-hover: #6A488E;   /* Darker shade of primary for hover states */
+        }
+
+        /* Estilos Globales y Tipografía */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-gray-bg);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Previene el escalado de texto en cambios de orientación */
+            font-size: 16px; /* Mínimo 16px para texto de cuerpo */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 30px; /* Espacio al final para un mejor desplazamiento */
+        }
+
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding: 20px 15px 10px;
+            background-color: var(--secondary-color);
+            border-bottom: 1px solid var(--border-color);
+            margin: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-left: 15px;
+            margin-right: 15px;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        p {
+            font-size: 16px;
+            padding: 0 15px;
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Estructura del Encabezado de la Lección */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+            background-color: var(--secondary-color);
+            padding: 0 15px;
+            border-radius: 12px;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Bloques de Contenido General */
+        .section-block {
+            background-color: var(--secondary-color);
+            margin: 15px;
+            padding: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .card {
+            background-color: var(--white);
+            margin: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Ejemplos de Frases */
+        .example {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px dotted var(--border-color);
+        }
+        .example:last-child {
+            border-bottom: none;
+        }
+
+        .chinese-phrase {
+            font-size: 18px;
+            color: var(--heading-color);
+            font-weight: bold;
+            flex-shrink: 0;
+            min-width: 80px; /* Asegura espacio para frases cortas */
+        }
+
+        .pinyin {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-style: italic;
+            flex-grow: 1;
+        }
+
+        .translation {
+            font-size: 16px;
+            color: var(--body-text-color);
+            flex-grow: 2;
+            text-align: right;
+        }
+
+        /* Icono de Audio */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            min-width: 44px; /* Tamaño mínimo de área táctil */
+            min-height: 44px; /* Tamaño mínimo de área táctil */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0;
+            user-select: none; /* Previene la selección de texto */
+        }
+
+        .audio-icon:hover {
+            background-color: var(--dark-purple-hover);
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Notas Culturales */
+        .cultural-note {
+            background-color: rgba(139, 95, 191, 0.1); /* Color primario con transparencia */
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px;
+            border-radius: 8px;
+            font-size: 15px;
+            color: var(--heading-color);
+        }
+        .cultural-note strong {
+            color: var(--primary-color);
+            font-size: 16px;
+        }
+
+        /* Sección de Práctica */
+        .practice-section {
+            background-color: var(--secondary-color);
+            margin: 15px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .practice-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--white);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .practice-question {
+            font-size: 17px;
+            color: var(--heading-color);
+            margin-bottom: 10px;
+        }
+
+        .answer-input {
+            width: calc(100% - 20px); /* Ajusta por padding */
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 16px;
+            color: var(--body-text-color);
+            box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+        }
+        .answer-input::placeholder {
+            color: #999;
+        }
+
+        .check-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: auto;
+            min-height: 44px; /* Tamaño mínimo de área táctil */
+            display: inline-block; /* Para que el padding y min-height funcionen bien */
+        }
+
+        .check-button:hover {
+            background-color: var(--dark-purple-hover);
+            transform: translateY(-2px);
+        }
+
+        .check-button:active {
+            transform: translateY(0);
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .feedback.correct {
+            color: green;
+        }
+        .feedback.incorrect {
+            color: red;
+        }
+
+        /* Sección de Resumen */
+        .summary-section {
+            background-color: var(--heading-color); /* Fondo azul oscuro */
+            color: var(--white);
+            margin: 15px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: var(--white); /* Blanco para el título en el resumen */
+            border-bottom-color: rgba(255,255,255,0.2);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .summary-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .summary-list li {
+            background-color: rgba(255,255,255,0.1);
+            margin-bottom: 8px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+        }
+        .summary-list li strong {
+            color: var(--white);
+            font-size: 17px;
+        }
+        .summary-list li .pinyin-summary {
+            font-size: 14px;
+            color: #ccc;
+            font-style: italic;
+            text-align: right;
+            flex-grow: 1;
+            padding-left: 10px;
+        }
+        .summary-list li span:last-child {
+            flex-shrink: 0;
+            margin-left: 10px;
+        }
+
+        /* Ajustes Responsivos para pantallas más grandes (Tablets y Desktop) */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 28px;
+                text-align: left;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            h3 {
+                font-size: 22px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            p {
+                padding: 0 20px;
+            }
+            .section-block, .practice-section, .summary-section {
+                margin: 20px auto;
+                padding: 25px 0;
+                max-width: 700px;
+            }
+            .card {
+                margin: 20px;
+                padding: 20px;
+            }
+            .example {
+                padding: 10px 0;
+            }
+            .chinese-phrase {
+                font-size: 20px;
+            }
+            .pinyin {
+                font-size: 16px;
+            }
+            .translation {
+                font-size: 18px;
+            }
+            .cultural-note {
+                padding: 20px;
+                margin: 20px;
+            }
+            .audio-icon {
+                width: 52px;
+                height: 52px;
+                font-size: 26px;
+            }
+            .practice-section h3 {
+                font-size: 22px;
+            }
+            .practice-item {
+                padding: 20px;
+            }
+            .practice-question {
+                font-size: 18px;
+            }
+            .answer-input {
+                padding: 12px;
+                font-size: 17px;
+            }
+            .check-button {
+                padding: 14px 30px;
+                font-size: 19px;
+            }
+            .summary-section h2 {
+                font-size: 28px;
+            }
+            .summary-list li {
+                font-size: 17px;
+            }
+            .summary-list li strong {
+                font-size: 18px;
+            }
+            .summary-list li .pinyin-summary {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Capítulo 2: Saludos Básicos e Introducciones</h1>
+        <div class="lesson-header">
+            <!-- La ruta de la imagen se proporciona como requisito, asumimos que 'header.webp' existe en la ubicación relativa esperada. -->
+            <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-block">
+            <h2>👋 Saludos Diarios</h2>
+            <p>Empecemos con las frases más importantes para interactuar con la gente en China. ¡Son sencillas y muy útiles!</p>
+
+            <h3>Hola</h3>
+            <div class="card">
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="你好">🔊</button>
+                    <span class="chinese-phrase">你好</span>
+                    <span class="pinyin">nǐ hǎo</span>
+                    <span class="translation">Hola</span>
+                </div>
+                <p><strong>你好 (nǐ hǎo)</strong> es el saludo estándar y más común. Significa literalmente "tú bien". Es versátil y se puede usar en la mayoría de las situaciones.</p>
+            </div>
+
+            <h3>Buenos Días / Tardes / Noches</h3>
+            <div class="card">
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="早上好">🔊</button>
+                    <span class="chinese-phrase">早上好</span>
+                    <span class="pinyin">zǎo shàng hǎo</span>
+                    <span class="translation">Buenos días (por la mañana)</span>
+                </div>
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="下午好">🔊</button>
+                    <span class="chinese-phrase">下午好</span>
+                    <span class="pinyin">xià wǔ hǎo</span>
+                    <span class="translation">Buenas tardes (después del mediodía)</span>
+                </div>
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="晚上好">🔊</button>
+                    <span class="chinese-phrase">晚上好</span>
+                    <span class="pinyin">wǎn shàng hǎo</span>
+                    <span class="translation">Buenas noches (por la noche)</span>
+                </div>
+                <p>Estas frases siguen la misma estructura que "nǐ hǎo", añadiendo la parte del día. Literalmente significan "mañana bien", "tarde bien", "noche bien".</p>
+            </div>
+
+            <div class="cultural-note">
+                <strong>💡 Nota Cultural:</strong> Aunque existen saludos específicos para el momento del día, en China es muy común simplemente usar <strong>你好 (nǐ hǎo)</strong> a cualquier hora, incluso con personas que conoces. Los saludos horarios son un poco más formales o se usan para enfatizar.
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>👋 Despedidas y Cortesías</h2>
+            <p>Ahora, aprendamos cómo decir adiós y expresar gratitud.</p>
+
+            <h3>Adiós</h3>
+            <div class="card">
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="再见">🔊</button>
+                    <span class="chinese-phrase">再见</span>
+                    <span class="pinyin">zài jiàn</span>
+                    <span class="translation">Adiós / Hasta la vista</span>
+                </div>
+                <p><strong>再见 (zài jiàn)</strong> se traduce literalmente como "de nuevo ver". Es la forma más común de despedirse.</p>
+            </div>
+
+            <h3>Gracias y De Nada</h3>
+            <div class="card">
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="谢谢">🔊</button>
+                    <span class="chinese-phrase">谢谢</span>
+                    <span class="pinyin">xiè xie</span>
+                    <span class="translation">Gracias</span>
+                </div>
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="不客气">🔊</button>
+                    <span class="chinese-phrase">不客气</span>
+                    <span class="pinyin">bú kè qì</span>
+                    <span class="translation">De nada</span>
+                </div>
+                <p><strong>谢谢 (xiè xie)</strong> es la forma universal de dar las gracias. Cuando alguien te agradezca, responde con <strong>不客气 (bú kè qì)</strong>, que significa "de nada" o "no hay de qué".</p>
+            </div>
+
+            <h3>Otras Expresiones de Cortesía</h3>
+            <div class="card">
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="对不起">🔊</button>
+                    <span class="chinese-phrase">对不起</span>
+                    <span class="pinyin">duì bu qǐ</span>
+                    <span class="translation">Lo siento / Perdón</span>
+                </div>
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="没关系">🔊</button>
+                    <span class="chinese-phrase">没关系</span>
+                    <span class="pinyin">méi guān xi</span>
+                    <span class="translation">No importa / No hay problema</span>
+                </div>
+                <p>Para disculparte, usa <strong>对不起 (duì bu qǐ)</strong>. Si alguien te pide disculpas o no pasa nada, puedes decir <strong>没关系 (méi guān xi)</strong>.</p>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>🗣️ Presentaciones Básicas</h2>
+            <p>¡Es hora de aprender a presentarte y decir "encantado de conocerte"!</p>
+
+            <h3>Mi nombre es... / Soy...</h3>
+            <div class="card">
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="我叫">🔊</button>
+                    <span class="chinese-phrase">我叫</span>
+                    <span class="pinyin">wǒ jiào</span>
+                    <span class="translation">Yo me llamo...</span>
+                </div>
+                <p>Usa <strong>我叫 (wǒ jiào)</strong> seguido de tu nombre para presentarte. "我" (wǒ) significa "yo" y "叫" (jiào) significa "llamar".</p>
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="我叫玛丽亚">🔊</button>
+                    <span class="chinese-phrase">我叫玛丽亚。</span>
+                    <span class="pinyin">Wǒ jiào Mǎlìyà.</span>
+                    <span class="translation">Me llamo María.</span>
+                </div>
+                <p>También puedes usar <strong>我是 (wǒ shì)</strong> que significa "yo soy".</p>
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="我是大卫">🔊</button>
+                    <span class="chinese-phrase">我是大卫。</span>
+                    <span class="pinyin">Wǒ shì Dàwèi.</span>
+                    <span class="translation">Soy David.</span>
+                </div>
+                <div class="cultural-note">
+                    <strong>💡 Nota Cultural:</strong> En chino, los nombres de pila a menudo se pronuncian sílaba por sílaba, y puede que tu nombre suene un poco diferente al adaptarlo. ¡No te preocupes! La gente apreciará el esfuerzo que haces al hablar chino.
+                </div>
+            </div>
+
+            <h3>Encantado de Conocerte</h3>
+            <div class="card">
+                <div class="example">
+                    <button class="audio-icon" data-audio-text="很高兴认识你">🔊</button>
+                    <span class="chinese-phrase">很高兴认识你</span>
+                    <span class="pinyin">hěn gāo xìng rèn shi nǐ</span>
+                    <span class="translation">Encantado/a de conocerte</span>
+                </div>
+                <p>Esta frase es muy educada y se usa comúnmente después de presentarse. Significa "muy feliz de conocerte".</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 ¡A Practicar!</h3>
+            <p>Pon a prueba tus conocimientos con estas frases. Intenta escribir el Pinyin o la traducción correcta.</p>
+
+            <div class="practice-item">
+                <p class="practice-question">1. ¿Cómo dices "Hola" en chino?</p>
+                <input type="text" class="answer-input" placeholder="Escribe el Pinyin (ej. ni hao)">
+                <button class="check-button" data-correct-answer="ni hao">Comprobar</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">2. ¿Qué significa "谢谢" (xiè xie)?</p>
+                <input type="text" class="answer-input" placeholder="Escribe la traducción al español">
+                <button class="check-button" data-correct-answer="gracias">Comprobar</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">3. ¿Cómo dices "Me llamo Ana" en chino (Pinyin)?</p>
+                <input type="text" class="answer-input" placeholder="Escribe el Pinyin (ej. wo jiao ana)">
+                <button class="check-button" data-correct-answer="wo jiao ana">Comprobar</button>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">4. ¿Cómo respondes a "Gracias" (de nada)?</p>
+                <input type="text" class="answer-input" placeholder="Escribe el Pinyin (ej. bu ke qi)">
+                <button class="check-button" data-correct-answer="bu ke qi">Comprobar</button>
+                <div class="feedback"></div>
+            </div>
+            <!-- Nota: La lógica para comprobar respuestas se manejará en el frontend de la aplicación móvil. -->
+        </section>
+
+        <section class="summary-section">
+            <h2>🌟 Resumen del Capítulo 2</h2>
+            <p>¡Felicidades! Has aprendido las bases para saludar y presentarte en chino. ¡Sigue practicando estas frases esenciales!</p>
+            <ul class="summary-list">
+                <li>
+                    <strong>你好</strong>
+                    <span class="pinyin-summary">(nǐ hǎo)</span>
+                    <span>Hola</span>
+                </li>
+                <li>
+                    <strong>早上好</strong>
+                    <span class="pinyin-summary">(zǎo shàng hǎo)</span>
+                    <span>Buenos días</span>
+                </li>
+                <li>
+                    <strong>下午好</strong>
+                    <span class="pinyin-summary">(xià wǔ hǎo)</span>
+                    <span>Buenas tardes</span>
+                </li>
+                <li>
+                    <strong>晚上好</strong>
+                    <span class="pinyin-summary">(wǎn shàng hǎo)</span>
+                    <span>Buenas noches</span>
+                </li>
+                <li>
+                    <strong>再见</strong>
+                    <span class="pinyin-summary">(zài jiàn)</span>
+                    <span>Adiós</span>
+                </li>
+                <li>
+                    <strong>谢谢</strong>
+                    <span class="pinyin-summary">(xiè xie)</span>
+                    <span>Gracias</span>
+                </li>
+                <li>
+                    <strong>不客气</strong>
+                    <span class="pinyin-summary">(bú kè qì)</span>
+                    <span>De nada</span>
+                </li>
+                <li>
+                    <strong>对不起</strong>
+                    <span class="pinyin-summary">(duì bu qǐ)</span>
+                    <span>Lo siento</span>
+                </li>
+                <li>
+                    <strong>没关系</strong>
+                    <span class="pinyin-summary">(méi guān xi)</span>
+                    <span>No importa</span>
+                </li>
+                <li>
+                    <strong>我叫...</strong>
+                    <span class="pinyin-summary">(wǒ jiào...)</span>
+                    <span>Me llamo...</span>
+                </li>
+                <li>
+                    <strong>我是...</strong>
+                    <span class="pinyin-summary">(wǒ shì...)</span>
+                    <span>Soy...</span>
+                </li>
+                <li>
+                    <strong>很高兴认识你</strong>
+                    <span class="pinyin-summary">(hěn gāo xìng rèn shi nǐ)</span>
+                    <span>Encantado/a de conocerte</span>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

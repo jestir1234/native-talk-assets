@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Thời tiết và Mùa</title>
+    <style>
+        /* Global Styles & Reset */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white: #FFFFFF;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--body-text-color);
+            background-color: var(--white);
+            padding: 20px;
+            max-width: 600px; /* Constrain content width for readability on larger screens */
+            margin: 0 auto;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+            color: var(--primary-color);
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        li::before {
+            content: '👉'; /* Or any other suitable bullet */
+            margin-right: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            font-style: italic;
+            color: var(--primary-color);
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Interactive Elements */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 48px; /* Increased size for tap target */
+            height: 48px; /* Increased size for tap target */
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 10px;
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a429a; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        .vocabulary-item, .phrase-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--white);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        
+        .vocabulary-item span, .phrase-item span {
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-right: 10px;
+            flex-grow: 1; /* Allow text to grow */
+            min-width: 100px; /* Ensure space for English word */
+        }
+
+        .vocabulary-item .translation, .phrase-item .translation {
+            color: var(--body-text-color);
+            flex-grow: 1;
+        }
+
+        .vocabulary-item .pronunciation {
+            font-style: italic;
+            color: var(--primary-color);
+            margin-left: 10px;
+            font-size: 14px;
+            flex-basis: 100%; /* New line for pronunciation on small screens */
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        .phrase-item .pronunciation {
+             font-style: italic;
+            color: var(--primary-color);
+            margin-left: 10px;
+            font-size: 14px;
+            flex-basis: 100%;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        .example {
+            background-color: rgba(139, 95, 191, 0.1); /* Light primary color background */
+            border-left: 4px solid var(--primary-color);
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .example p {
+            margin-bottom: 5px;
+        }
+
+        .example .translation {
+            color: var(--body-text-color);
+            font-style: italic;
+        }
+
+        .practice-section {
+            background-color: var(--white);
+            border: 2px dashed var(--primary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .practice-question {
+            font-size: 17px;
+            margin-bottom: 15px;
+            color: var(--heading-color);
+            font-weight: 600;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .practice-option {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 16px;
+            color: var(--body-text-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .practice-option:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        .answer-reveal {
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 16px;
+        }
+        
+        .note {
+            background-color: rgba(139, 95, 191, 0.05); /* Very light primary */
+            border-left: 3px solid var(--primary-color);
+            padding: 10px 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+        .note p {
+            margin-bottom: 0;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--heading-color); /* Dark blue background for summary */
+            color: var(--white);
+            padding: 25px 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .summary-section h2 {
+            color: var(--white);
+            border-bottom-color: rgba(255, 255, 255, 0.3);
+            margin-bottom: 15px;
+        }
+
+        .summary-section p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 10px;
+        }
+
+        .summary-section ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin: 0 auto;
+            max-width: 400px; /* Constrain list width */
+        }
+
+        .summary-section li {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .summary-section li::before {
+            content: '⭐';
+            color: var(--primary-color);
+            margin-right: 8px;
+        }
+
+        /* Responsive adjustments for very small screens */
+        @media (max-width: 375px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 17px;
+            }
+
+            p, li, .vocabulary-item span, .phrase-item span, .vocabulary-item .translation, .phrase-item .translation {
+                font-size: 15px;
+            }
+
+            .audio-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+
+            .vocabulary-item .pronunciation, .phrase-item .pronunciation {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Chapter 9: Thời tiết và Mùa</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 9 Header" class="lesson-header-image">
+    </div>
+
+    <section>
+        <p>Chào mừng bạn đến với Chapter 9! Trong bài học này, chúng ta sẽ cùng khám phá thế giới của thời tiết và các mùa trong tiếng Anh. Biết cách mô tả thời tiết sẽ giúp bạn giao tiếp và hiểu rõ hơn về thế giới xung quanh. Hãy bắt đầu nhé!</p>
+    </section>
+
+    <section>
+        <h2>Phần 1: Từ vựng về Thời tiết (Weather Vocabulary) ☀️🌧️☁️🌨️</h2>
+        <p>Đây là những từ vựng cơ bản để bạn mô tả thời tiết. Hãy lắng nghe và lặp lại nhé!</p>
+
+        <div class="vocabulary-item">
+            <span>Sunny</span>
+            <span class="translation">Trời nắng</span>
+            <span class="pronunciation">(săn-ni)</span>
+            <button class="audio-icon" data-audio-text="Sunny">🔊</button>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> It's <em>sunny</em> today. Let's go to the beach!</p>
+            <p class="translation"><strong>Ví dụ:</strong> Hôm nay trời <em>nắng</em>. Chúng ta hãy đi biển nào!</p>
+        </div>
+
+        <div class="vocabulary-item">
+            <span>Rainy</span>
+            <span class="translation">Trời mưa</span>
+            <span class="pronunciation">(rây-ni)</span>
+            <button class="audio-icon" data-audio-text="Rainy">🔊</button>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> It's <em>rainy</em>, so don't forget your umbrella.</p>
+            <p class="translation"><strong>Ví dụ:</strong> Trời <em>mưa</em>, vì vậy đừng quên mang ô nhé.</p>
+        </div>
+
+        <div class="vocabulary-item">
+            <span>Cloudy</span>
+            <span class="translation">Trời nhiều mây/u ám</span>
+            <span class="pronunciation">(kloau-di)</span>
+            <button class="audio-icon" data-audio-text="Cloudy">🔊</button>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> The sky is <em>cloudy</em>, but it might not rain.</p>
+            <p class="translation"><strong>Ví dụ:</strong> Bầu trời <em>nhiều mây</em>, nhưng có thể sẽ không mưa đâu.</p>
+        </div>
+
+        <div class="vocabulary-item">
+            <span>Snowy</span>
+            <span class="translation">Trời có tuyết</span>
+            <span class="pronunciation">(snou-wi)</span>
+            <button class="audio-icon" data-audio-text="Snowy">🔊</button>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> It's <em>snowy</em> outside. Let's build a snowman!</p>
+            <p class="translation"><strong>Ví dụ:</strong> Bên ngoài trời <em>có tuyết</em>. Chúng ta hãy làm người tuyết nào!</p>
+        </div>
+        <div class="note">
+            <p><strong>Lưu ý Văn hóa:</strong> Từ "snowy" thường được dùng ở các nước có khí hậu lạnh, có tuyết rơi. Ở Việt Nam, tuyết rất hiếm, chỉ xuất hiện ở một số vùng núi cao vào mùa đông.</p>
+        </div>
+
+        <div class="practice-section">
+            <h3>Luyện tập 1: Nối từ với biểu tượng (Match the word to the emoji)</h3>
+            <p class="practice-question">Bạn hãy thử nối các từ vựng đã học với biểu tượng thời tiết tương ứng nhé!</p>
+            <ul>
+                <li><strong>Rainy</strong> 🌧️</li>
+                <li><strong>Cloudy</strong> ☁️</li>
+                <li><strong>Sunny</strong> ☀️</li>
+                <li><strong>Snowy</strong> 🌨️</li>
+            </ul>
+            <div class="answer-reveal">Tự kiểm tra lại kiến thức của bạn nhé!</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Phần 2: Các mùa trong năm (Seasons) 🌷☀️🍂❄️</h2>
+        <p>Trên thế giới có bốn mùa chính. Cùng tìm hiểu tên của chúng trong tiếng Anh nhé!</p>
+
+        <div class="vocabulary-item">
+            <span>Spring</span>
+            <span class="translation">Mùa xuân</span>
+            <span class="pronunciation">(spring)</span>
+            <button class="audio-icon" data-audio-text="Spring">🔊</button>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> Flowers bloom in <em>spring</em>.</p>
+            <p class="translation"><strong>Ví dụ:</strong> Hoa nở vào mùa <em>xuân</em>.</p>
+        </div>
+
+        <div class="vocabulary-item">
+            <span>Summer</span>
+            <span class="translation">Mùa hè</span>
+            <span class="pronunciation">(săm-mơ)</span>
+            <button class="audio-icon" data-audio-text="Summer">🔊</button>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> We often go swimming in <em>summer</em>.</p>
+            <p class="translation"><strong>Ví dụ:</strong> Chúng tôi thường đi bơi vào mùa <em>hè</em>.</p>
+        </div>
+
+        <div class="vocabulary-item">
+            <span>Fall / Autumn</span>
+            <span class="translation">Mùa thu</span>
+            <span class="pronunciation">(fol / ot-tầm)</span>
+            <button class="audio-icon" data-audio-text="Fall">🔊</button>
+            <button class="audio-icon" data-audio-text="Autumn">🔊</button>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> Leaves turn yellow and red in <em>fall</em>.</p>
+            <p class="translation"><strong>Ví dụ:</strong> Lá chuyển sang màu vàng và đỏ vào mùa <em>thu</em>.</p>
+        </div>
+        <div class="note">
+            <p><strong>Lưu ý:</strong> Cả <strong>Fall</strong> (thường dùng ở Mỹ) và <strong>Autumn</strong> (thường dùng ở Anh) đều có nghĩa là mùa thu. Bạn có thể dùng từ nào cũng được nhé!</p>
+        </div>
+
+        <div class="vocabulary-item">
+            <span>Winter</span>
+            <span class="translation">Mùa đông</span>
+            <span class="pronunciation">(win-tơ)</span>
+            <button class="audio-icon" data-audio-text="Winter">🔊</button>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> It's very cold in <em>winter</em>.</p>
+            <p class="translation"><strong>Ví dụ:</strong> Trời rất lạnh vào mùa <em>đông</em>.</p>
+        </div>
+
+        <div class="practice-section">
+            <h3>Luyện tập 2: Kể về mùa yêu thích của bạn (Talk about your favorite season)</h3>
+            <p class="practice-question">Trả lời câu hỏi sau bằng tiếng Anh:</p>
+            <p class="practice-question">"What is your favorite season and why?"</p>
+            <p class="translation">(Mùa yêu thích của bạn là gì và tại sao?)</p>
+            <p><strong>Gợi ý câu trả lời:</strong></p>
+            <div class="example">
+                <p>My favorite season is <em>summer</em> because I love going to the beach.</p>
+                <p class="translation">Mùa yêu thích của tôi là <em>mùa hè</em> vì tôi thích đi biển.</p>
+            </div>
+            <p>Hãy thử nói to câu trả lời của bạn nhé!</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Phần 3: Hỏi và trả lời về thời tiết (What's the weather like?) 💬</h2>
+        <p>Để hỏi về thời tiết, chúng ta dùng mẫu câu đơn giản này:</p>
+
+        <div class="phrase-item">
+            <span>What's the weather like?</span>
+            <span class="translation">Thời tiết thế nào?</span>
+            <span class="pronunciation">(Wát-s đờ we-thờ lai-k?)</span>
+            <button class="audio-icon" data-audio-text="What's the weather like?">🔊</button>
+        </div>
+        
+        <p>Và để trả lời, bạn dùng cấu trúc: <strong>It's + tính từ thời tiết.</strong></p>
+
+        <div class="phrase-item">
+            <span>It's sunny.</span>
+            <span class="translation">Trời nắng.</span>
+            <span class="pronunciation">(It-s săn-ni.)</span>
+            <button class="audio-icon" data-audio-text="It's sunny.">🔊</button>
+        </div>
+        <div class="phrase-item">
+            <span>It's rainy.</span>
+            <span class="translation">Trời mưa.</span>
+            <span class="pronunciation">(It-s rây-ni.)</span>
+            <button class="audio-icon" data-audio-text="It's rainy.">🔊</button>
+        </div>
+        <div class="phrase-item">
+            <span>It's cloudy.</span>
+            <span class="translation">Trời nhiều mây.</span>
+            <span class="pronunciation">(It-s kloau-di.)</span>
+            <button class="audio-icon" data-audio-text="It's cloudy.">🔊</button>
+        </div>
+        <div class="phrase-item">
+            <span>It's snowy.</span>
+            <span class="translation">Trời có tuyết.</span>
+            <span class="pronunciation">(It-s snou-wi.)</span>
+            <button class="audio-icon" data-audio-text="It's snowy.">🔊</button>
+        </div>
+
+        <div class="practice-section">
+            <h3>Luyện tập 3: Hỏi và trả lời (Ask and Answer)</h3>
+            <p class="practice-question">Bạn hãy tưởng tượng hôm nay trời đang mưa. Một người bạn hỏi bạn:</p>
+            <p class="example">"What's the weather like?"</p>
+            <p class="practice-question">Bạn sẽ trả lời thế nào?</p>
+            <div class="practice-options">
+                <div class="practice-option">A. It's sunny.</div>
+                <div class="practice-option">B. It's rainy.</div>
+                <div class="practice-option">C. It's snowy.</div>
+            </div>
+            <div class="answer-reveal"><strong>Đáp án đúng:</strong> B. It's rainy.</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Phần 4: Nhiệt độ (Temperature) 🔥🥶☀️🍃</h2>
+        <p>Để mô tả nhiệt độ, chúng ta có các từ sau:</p>
+
+        <div class="vocabulary-item">
+            <span>Hot</span>
+            <span class="translation">Nóng</span>
+            <span class="pronunciation">(hót)</span>
+            <button class="audio-icon" data-audio-text="Hot">🔊</button>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> It's very <em>hot</em> in July.</p>
+            <p class="translation"><strong>Ví dụ:</strong> Trời rất <em>nóng</em> vào tháng Bảy.</p>
+        </div>
+
+        <div class="vocabulary-item">
+            <span>Cold</span>
+            <span class="translation">Lạnh</span>
+            <span class="pronunciation">(kould)</span>
+            <button class="audio-icon" data-audio-text="Cold">🔊</button>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> Wear a jacket, it's <em>cold</em> outside.</p>
+            <p class="translation"><strong>Ví dụ:</strong> Mặc áo khoác vào, bên ngoài trời <em>lạnh</em> đấy.</p>
+        </div>
+
+        <div class="vocabulary-item">
+            <span>Warm</span>
+            <span class="translation">Ấm áp</span>
+            <span class="pronunciation">(wom)</span>
+            <button class="audio-icon" data-audio-text="Warm">🔊</button>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> The weather is <em>warm</em> in spring.</p>
+            <p class="translation"><strong>Ví dụ:</strong> Thời tiết <em>ấm áp</em> vào mùa xuân.</p>
+        </div>
+
+        <div class="vocabulary-item">
+            <span>Cool</span>
+            <span class="translation">Mát mẻ</span>
+            <span class="pronunciation">(kul)</span>
+            <button class="audio-icon" data-audio-text="Cool">🔊</button>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> It's a <em>cool</em> evening, perfect for a walk.</p>
+            <p class="translation"><strong>Ví dụ:</strong> Trời một buổi tối <em>mát mẻ</em>, thật tuyệt để đi dạo.</p>
+        </div>
+
+        <div class="practice-section">
+            <h3>Luyện tập 4: Điền từ (Fill in the blank)</h3>
+            <p class="practice-question">Hoàn thành câu sau với từ mô tả nhiệt độ phù hợp:</p>
+            <p class="example">"In December, it's usually very _______ in Hanoi."</p>
+            <p class="translation">(Vào tháng Mười Hai, trời thường rất _______ ở Hà Nội.)</p>
+            <div class="practice-options">
+                <div class="practice-option">A. hot</div>
+                <div class="practice-option">B. warm</div>
+                <div class="practice-option">C. cold</div>
+            </div>
+            <div class="answer-reveal"><strong>Đáp án đúng:</strong> C. cold (Vào tháng 12, trời thường rất lạnh ở Hà Nội).</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Phần 5: Hoạt động liên quan đến thời tiết (Weather-related Activities) 🏄‍♀️☔️📚🧣</h2>
+        <p>Thời tiết ảnh hưởng đến các hoạt động của chúng ta. Dưới đây là một số ví dụ:</p>
+
+        <ul>
+            <li><strong>Go swimming:</strong> Đi bơi 🏊‍♀️ <button class="audio-icon" data-audio-text="Go swimming">🔊</button></li>
+            <li><strong>Wear a coat:</strong> Mặc áo khoác 🧥 <button class="audio-icon" data-audio-text="Wear a coat">🔊</button></li>
+            <li><strong>Play outside:</strong> Chơi bên ngoài 🤸 <button class="audio-icon" data-audio-text="Play outside">🔊</button></li>
+            <li><strong>Stay indoors:</strong> Ở trong nhà 🏠 <button class="audio-icon" data-audio-text="Stay indoors">🔊</button></li>
+            <li><strong>Drink hot chocolate:</strong> Uống sô cô la nóng ☕ <button class="audio-icon" data-audio-text="Drink hot chocolate">🔊</button></li>
+            <li><strong>Have a picnic:</strong> Đi dã ngoại 🧺 <button class="audio-icon" data-audio-text="Have a picnic">🔊</button></li>
+        </ul>
+
+        <div class="example">
+            <p><strong>Example:</strong> When it's <em>sunny</em>, I like to <em>go swimming</em>.</p>
+            <p class="translation"><strong>Ví dụ:</strong> Khi trời <em>nắng</em>, tôi thích <em>đi bơi</em>.</p>
+        </div>
+        <div class="example">
+            <p><strong>Example:</strong> If it's <em>cold</em>, we should <em>wear a coat</em>.</p>
+            <p class="translation"><strong>Ví dụ:</strong> Nếu trời <em>lạnh</em>, chúng ta nên <em>mặc áo khoác</em>.</p>
+        </div>
+
+        <div class="practice-section">
+            <h3>Luyện tập 5: Chọn hoạt động phù hợp (Choose the right activity)</h3>
+            <p class="practice-question">Bạn sẽ làm gì khi trời <strong>rainy</strong> (mưa)?</p>
+            <div class="practice-options">
+                <div class="practice-option">A. Go swimming</div>
+                <div class="practice-option">B. Stay indoors</div>
+                <div class="practice-option">C. Have a picnic</div>
+            </div>
+            <div class="answer-reveal"><strong>Đáp án đúng:</strong> B. Stay indoors. (Ở trong nhà)</div>
+        </div>
+    </section>
+
+    <section class="summary-section">
+        <h2>Tóm tắt (Summary) 📚</h2>
+        <p>Chúc mừng! Bạn đã hoàn thành bài học về Thời tiết và Các mùa. Hãy cùng ôn lại những gì chúng ta đã học nhé:</p>
+        <ul>
+            <li><strong>Từ vựng thời tiết:</strong> sunny, rainy, cloudy, snowy.</li>
+            <li><strong>Các mùa:</strong> spring, summer, fall/autumn, winter.</li>
+            <li><strong>Hỏi và trả lời về thời tiết:</strong> "What's the weather like?" - "It's..."</li>
+            <li><strong>Nhiệt độ:</strong> hot, cold, warm, cool.</li>
+            <li><strong>Hoạt động theo thời tiết:</strong> go swimming, wear a coat, stay indoors, v.v.</li>
+        </ul>
+        <p>Giao tiếp về thời tiết là một kỹ năng quan trọng trong tiếng Anh. Hãy tiếp tục luyện tập để thành thạo hơn nhé!</p>
+    </section>
+
+</body>
+</html>

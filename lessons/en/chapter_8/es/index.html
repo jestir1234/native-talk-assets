@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 8: Lugares y Direcciones</title>
+    <style>
+        /* Base Styles & Mobile-First Approach */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        html {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            font-size: 16px; /* Base font size for mobile */
+            line-height: 1.6;
+            color: var(--body-text-color);
+            background-color: #FFFFFF; /* White background for the entire page */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
+        /* Responsive Container */
+        .container {
+            width: 100%;
+            max-width: 600px; /* Max width for content on larger screens */
+            margin: 0 auto;
+            padding: 20px 15px; /* Padding for mobile screens */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2em;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: var(--heading-color);
+        }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 1rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 1em 0;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        /* Specific header classes as per requirements */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Placeholder styling for an image, as actual images are not allowed */
+            background-color: var(--primary-color); /* To simulate a visual block */
+            color: white;
+            font-size: 1.5rem;
+            padding: 50px 20px;
+            text-align: center;
+            /* Remove this if actual image can be used, but per instructions, it cannot be an external URL */
+        }
+         .lesson-header-image::before {
+            content: "🗺️ Lugares y Direcciones 🗺️"; /* Text for the "image" */
+        }
+
+
+        /* Section Styling */
+        .section {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: var(--heading-color);
+        }
+
+        .option-button {
+            display: block;
+            width: 100%;
+            padding: 14px 20px;
+            margin-bottom: 10px;
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            background-color: #FFFFFF;
+            color: var(--primary-color);
+            font-size: 1rem;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+            min-height: 44px; /* For easy tapping */
+        }
+
+        .option-button:hover,
+        .option-button:focus {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            outline: none;
+        }
+
+        /* Audio Icon */
+        .audio-container {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.05);
+            background-color: #6C429C; /* Slightly darker purple */
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #888888;
+            font-style: italic;
+            margin-left: 5px;
+        }
+
+        /* Example sentences styling */
+        .example {
+            background-color: #F0F8FF; /* Light blue */
+            border-left: 4px solid var(--primary-color);
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-style: italic;
+        }
+
+        .example strong {
+            color: var(--heading-color);
+        }
+
+        .example .translation {
+            display: block;
+            margin-top: 5px;
+            color: var(--body-text-color);
+            font-style: normal;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--heading-color);
+            color: #FFFFFF;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: #FFFFFF;
+            border-bottom-color: #FFFFFF;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .summary-section ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .summary-section li {
+            margin-bottom: 10px;
+            padding-left: 1.5em;
+            position: relative;
+            color: #FDF9E5; /* Cream for list items */
+        }
+
+        .summary-section li::before {
+            content: '✨'; /* Sparkle Unicode */
+            position: absolute;
+            left: 0;
+            color: #FDF9E5;
+        }
+
+        /* Media Queries for Larger Screens (Tablet/Desktop) */
+        @media (min-width: 600px) {
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            .option-button {
+                font-size: 1.1rem;
+                padding: 16px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 8: Places and Directions</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">¡Bienvenido al Capítulo 8: Lugares y Direcciones! 🗺️</h2>
+            <p>¡Hola! En este capítulo, aprenderemos a hablar sobre dónde están las cosas y cómo llegar a diferentes lugares. ¡Prepárate para orientarte en inglés!</p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">1. Lugares Comunes (Common Places) 📍</h2>
+            <p>Empecemos con algunos de los lugares más comunes que visitamos a diario.</p>
+
+            <ul>
+                <li>
+                    <strong>School</strong> <span class="pronunciation">[sku:l]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="School">🔊</button></span>
+                    <br>
+                    <span class="translation">Escuela / Colegio</span>
+                </li>
+                <li>
+                    <strong>Home</strong> <span class="pronunciation">[hoʊm]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Home">🔊</button></span>
+                    <br>
+                    <span class="translation">Casa / Hogar</span>
+                </li>
+                <li>
+                    <strong>Work</strong> <span class="pronunciation">[wɜːrk]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Work">🔊</button></span>
+                    <br>
+                    <span class="translation">Trabajo</span>
+                </li>
+                <li>
+                    <strong>Store</strong> <span class="pronunciation">[stɔːr]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Store">🔊</button></span>
+                    <br>
+                    <span class="translation">Tienda</span>
+                </li>
+                <li>
+                    <strong>Park</strong> <span class="pronunciation">[pɑːrk]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Park">🔊</button></span>
+                    <br>
+                    <span class="translation">Parque</span>
+                </li>
+            </ul>
+
+            <h3>Ejemplos:</h3>
+            <div class="example">
+                <p>I go to <strong>school</strong> every day.</p>
+                <span class="translation">Voy a la <strong>escuela</strong> todos los días.</span>
+                <span class="audio-container"><button class="audio-icon" data-audio-text="I go to school every day.">🔊</button></span>
+            </div>
+            <div class="example">
+                <p>I am at <strong>home</strong> now.</p>
+                <span class="translation">Estoy en <strong>casa</strong> ahora.</span>
+                <span class="audio-container"><button class="audio-icon" data-audio-text="I am at home now.">🔊</button></span>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3 class="section-title">¡Practica! Elige la palabra correcta.</h3>
+            <div class="practice-question">
+                <p>Voy al __________ para comprar comida.</p>
+            </div>
+            <button class="option-button" data-correct="false">Work</button>
+            <button class="option-button" data-correct="true">Store</button>
+            <button class="option-button" data-correct="false">School</button>
+
+            <div class="practice-question">
+                <p>Los niños juegan en el _________.</p>
+            </div>
+            <button class="option-button" data-correct="false">Home</button>
+            <button class="option-button" data-correct="true">Park</button>
+            <button class="option-button" data-correct="false">Work</button>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">2. Preposiciones de Lugar (Prepositions of Place) 📌</h2>
+            <p>Estas palabras nos dicen dónde están las cosas o personas.</p>
+
+            <ul>
+                <li>
+                    <strong>In</strong> <span class="pronunciation">[ɪn]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="In">🔊</button></span>
+                    <br>
+                    <span class="translation">En (dentro de un espacio)</span>
+                    <div class="example">
+                        <p>The keys are <strong>in</strong> the bag.</p>
+                        <span class="translation">Las llaves están <strong>en</strong> la bolsa.</span>
+                        <span class="audio-container"><button class="audio-icon" data-audio-text="The keys are in the bag.">🔊</button></span>
+                    </div>
+                </li>
+                <li>
+                    <strong>On</strong> <span class="pronunciation">[ɒn]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="On">🔊</button></span>
+                    <br>
+                    <span class="translation">En (sobre una superficie)</span>
+                    <div class="example">
+                        <p>The book is <strong>on</strong> the table.</p>
+                        <span class="translation">El libro está <strong>en</strong> la mesa.</span>
+                        <span class="audio-container"><button class="audio-icon" data-audio-text="The book is on the table.">🔊</button></span>
+                    </div>
+                </li>
+                <li>
+                    <strong>At</strong> <span class="pronunciation">[æt]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="At">🔊</button></span>
+                    <br>
+                    <span class="translation">En (en un punto específico, o para eventos/direcciones generales)</span>
+                    <div class="example">
+                        <p>She is <strong>at</strong> the bus stop.</p>
+                        <span class="translation">Ella está <strong>en</strong> la parada de autobús.</span>
+                        <span class="audio-container"><button class="audio-icon" data-audio-text="She is at the bus stop.">🔊</button></span>
+                    </div>
+                    <p><strong>💡 Nota cultural:</strong> A menudo usamos "at home" cuando hablamos de estar en el lugar general de nuestra residencia, mientras que "in the house" se usa para un espacio físico dentro de la casa. Ejemplo: "I'm at home." (Estoy en casa.) vs. "The dog is in the house." (El perro está dentro de la casa.)</p>
+                </li>
+                <li>
+                    <strong>Near</strong> <span class="pronunciation">[nɪər]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Near">🔊</button></span>
+                    <br>
+                    <span class="translation">Cerca de</span>
+                    <div class="example">
+                        <p>The park is <strong>near</strong> my house.</p>
+                        <span class="translation">El parque está <strong>cerca de</strong> mi casa.</span>
+                        <span class="audio-container"><button class="audio-icon" data-audio-text="The park is near my house.">🔊</button></span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Far from</strong> <span class="pronunciation">[fɑːr frɒm]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Far from">🔊</button></span>
+                    <br>
+                    <span class="translation">Lejos de</span>
+                    <div class="example">
+                        <p>The museum is <strong>far from</strong> here.</p>
+                        <span class="translation">El museo está <strong>lejos de</strong> aquí.</span>
+                        <span class="audio-container"><button class="audio-icon" data-audio-text="The museum is far from here.">🔊</button></span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h3 class="section-title">¡Practica! Completa la oración con la preposición correcta.</h3>
+            <div class="practice-question">
+                <p>The cat is _______ the bed. (El gato está sobre la cama)</p>
+            </div>
+            <button class="option-button" data-correct="false">in</button>
+            <button class="option-button" data-correct="true">on</button>
+            <button class="option-button" data-correct="false">at</button>
+
+            <div class="practice-question">
+                <p>My keys are _______ my pocket. (Mis llaves están en mi bolsillo)</p>
+            </div>
+            <button class="option-button" data-correct="true">in</button>
+            <button class="option-button" data-correct="false">on</button>
+            <button class="option-button" data-correct="false">near</button>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">3. ¿Dónde está...? Es/Está... (Where is...? It's...) ❓📍</h2>
+            <p>Para preguntar por la ubicación de algo, usamos:</p>
+            <h3>Where is...?</h3>
+            <span class="audio-container"><button class="audio-icon" data-audio-text="Where is?">🔊</button></span>
+            <p>
+                <span class="translation">¿Dónde está...? / ¿Dónde es...?</span>
+            </p>
+
+            <div class="example">
+                <p><strong>Where is</strong> the store?</p>
+                <span class="translation">¿<strong>Dónde está</strong> la tienda?</span>
+                <span class="audio-container"><button class="audio-icon" data-audio-text="Where is the store?">🔊</button></span>
+            </div>
+
+            <p>Para responder, usamos:</p>
+            <h3>It's...</h3>
+            <span class="audio-container"><button class="audio-icon" data-audio-text="It's.">🔊</button></span>
+            <p>
+                <span class="translation">Es... / Está...</span>
+            </p>
+
+            <div class="example">
+                <p>Where is the store?</p>
+                <p><strong>It's</strong> near the park.</p>
+                <span class="translation">¿Dónde está la tienda?<br><strong>Está</strong> cerca del parque.</span>
+                <span class="audio-container"><button class="audio-icon" data-audio-text="Where is the store? It's near the park.">🔊</button></span>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3 class="section-title">¡Practica! Responde la pregunta.</h3>
+            <div class="practice-question">
+                <p>Where is your work? (Mi trabajo está lejos de aquí.)</p>
+            </div>
+            <button class="option-button" data-correct="false">It's in the park.</button>
+            <button class="option-button" data-correct="true">It's far from here.</button>
+            <button class="option-button" data-correct="false">It's on the school.</button>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">4. Direcciones Básicas (Basic Directions) ➡️↩️</h2>
+            <p>Cuando necesitas indicar cómo llegar a un lugar, estas palabras son muy útiles.</p>
+
+            <ul>
+                <li>
+                    <strong>Left</strong> <span class="pronunciation">[left]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Left">🔊</button></span>
+                    <br>
+                    <span class="translation">Izquierda</span>
+                </li>
+                <li>
+                    <strong>Right</strong> <span class="pronunciation">[raɪt]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Right">🔊</button></span>
+                    <br>
+                    <span class="translation">Derecha</span>
+                </li>
+                <li>
+                    <strong>Straight</strong> <span class="pronunciation">[streɪt]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Straight">🔊</button></span>
+                    <br>
+                    <span class="translation">Derecho / Todo recto</span>
+                </li>
+                <li>
+                    <strong>Turn</strong> <span class="pronunciation">[tɜːrn]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Turn">🔊</button></span>
+                    <br>
+                    <span class="translation">Girar / Doblar</span>
+                </li>
+            </ul>
+
+            <h3>Ejemplos:</h3>
+            <div class="example">
+                <p><strong>Turn left</strong> at the corner.</p>
+                <span class="translation"><strong>Gira a la izquierda</strong> en la esquina.</span>
+                <span class="audio-container"><button class="audio-icon" data-audio-text="Turn left at the corner.">🔊</button></span>
+            </div>
+            <div class="example">
+                <p>Go <strong>straight</strong> for two blocks.</p>
+                <span class="translation">Ve <strong>derecho</strong> dos cuadras.</span>
+                <span class="audio-container"><button class="audio-icon" data-audio-text="Go straight for two blocks.">🔊</button></span>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3 class="section-title">¡Practica! Elige la dirección correcta.</h3>
+            <div class="practice-question">
+                <p>Si quieres ir hacia adelante sin girar, vas ______.</p>
+            </div>
+            <button class="option-button" data-correct="false">left</button>
+            <button class="option-button" data-correct="true">straight</button>
+            <button class="option-button" data-correct="false">right</button>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">5. Vocabulario de Ubicación Adicional (Additional Location Vocabulary) 🗺️</h2>
+            <p>Más formas de describir la ubicación de algo.</p>
+
+            <ul>
+                <li>
+                    <strong>Next to</strong> <span class="pronunciation">[nekst tuː]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Next to">🔊</button></span>
+                    <br>
+                    <span class="translation">Al lado de</span>
+                    <div class="example">
+                        <p>The library is <strong>next to</strong> the park.</p>
+                        <span class="translation">La biblioteca está <strong>al lado del</strong> parque.</span>
+                        <span class="audio-container"><button class="audio-icon" data-audio-text="The library is next to the park.">🔊</button></span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Between</strong> <span class="pronunciation">[bɪˈtwiːn]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Between">🔊</button></span>
+                    <br>
+                    <span class="translation">Entre (dos cosas)</span>
+                    <div class="example">
+                        <p>The store is <strong>between</strong> the bank and the post office.</p>
+                        <span class="translation">La tienda está <strong>entre</strong> el banco y la oficina de correos.</span>
+                        <span class="audio-container"><button class="audio-icon" data-audio-text="The store is between the bank and the post office.">🔊</button></span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Behind</strong> <span class="pronunciation">[bɪˈhaɪnd]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Behind">🔊</button></span>
+                    <br>
+                    <span class="translation">Detrás de</span>
+                    <div class="example">
+                        <p>The cat is hiding <strong>behind</strong> the sofa.</p>
+                        <span class="translation">El gato está escondido <strong>detrás del</strong> sofá.</span>
+                        <span class="audio-container"><button class="audio-icon" data-audio-text="The cat is hiding behind the sofa.">🔊</button></span>
+                    </div>
+                </li>
+                <li>
+                    <strong>In front of</strong> <span class="pronunciation">[ɪn frʌnt ɒv]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="In front of">🔊</button></span>
+                    <br>
+                    <span class="translation">Delante de / Frente a</span>
+                    <div class="example">
+                        <p>My car is parked <strong>in front of</strong> the building.</p>
+                        <span class="translation">Mi coche está aparcado <strong>delante del</strong> edificio.</span>
+                        <span class="audio-container"><button class="audio-icon" data-audio-text="My car is parked in front of the building.">🔊</button></span>
+                    </div>
+                </li>
+                <li>
+                    <strong>Across from</strong> <span class="pronunciation">[əˈkrɒs frɒm]</span>
+                    <span class="audio-container"><button class="audio-icon" data-audio-text="Across from">🔊</button></span>
+                    <br>
+                    <span class="translation">Enfrente de / Al otro lado de (cruzando una calle, etc.)</span>
+                    <div class="example">
+                        <p>The cafe is <strong>across from</strong> the cinema.</p>
+                        <span class="translation">La cafetería está <strong>enfrente del</strong> cine.</span>
+                        <span class="audio-container"><button class="audio-icon" data-audio-text="The cafe is across from the cinema.">🔊</button></span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h3 class="section-title">¡Practica! Elige la opción correcta.</h3>
+            <div class="practice-question">
+                <p>Mi casa está ______ el supermercado y la farmacia.</p>
+            </div>
+            <button class="option-button" data-correct="false">next to</button>
+            <button class="option-button" data-correct="true">between</button>
+            <button class="option-button" data-correct="false">behind</button>
+        </section>
+
+        <section class="summary-section">
+            <h2>¡Resumen del Capítulo 8! 🎉</h2>
+            <p>¡Felicidades! Has completado el Capítulo 8 y ahora sabes cómo hablar sobre lugares y direcciones en inglés. Aquí están los puntos clave que aprendiste:</p>
+            <ul>
+                <li><strong>Lugares Comunes:</strong> school, home, work, store, park.</li>
+                <li><strong>Preposiciones:</strong> in, on, at, near, far from para ubicar cosas.</li>
+                <li><strong>Preguntar y Responder:</strong> Usa "Where is...?" y "It's..." para ubicar.</li>
+                <li><strong>Direcciones Básicas:</strong> left, right, straight, turn para indicar el camino.</li>
+                <li><strong>Vocabulario de Ubicación:</strong> next to, between, behind, in front of, across from para descripciones más precisas.</li>
+            </ul>
+            <p>¡Sigue practicando para orientarte como un experto en inglés!</p>
+        </section>
+    </div>
+</body>
+</html>

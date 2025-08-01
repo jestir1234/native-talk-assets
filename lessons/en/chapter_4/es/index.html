@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 4: Colores y Descripciones</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white: #FFFFFF;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body text size */
+        }
+
+        /* Container for overall lesson content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            word-wrap: break-word; /* Ensures long titles break correctly */
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6em; /* ~25.6px */
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-size: 1.3em; /* ~20.8px */
+            color: var(--primary-color);
+            margin-top: 1.2em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Lesson Header */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            font-size: 1.1em;
+            color: var(--heading-color);
+        }
+
+        ul li span.translation {
+            color: var(--body-text-color);
+            font-size: 0.9em;
+            margin-left: 10px;
+            font-style: italic;
+            flex-grow: 1; /* Allows translation to take available space */
+            min-width: 80px; /* Ensure it has some space */
+        }
+        ul li span.english-word {
+            flex-shrink: 0; /* Prevents shrinking */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 48px; /* Min 44px */
+            height: 48px; /* Min 44px */
+            font-size: 1.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking */
+            margin-left: 10px; /* Space from text */
+        }
+
+        .audio-icon:hover {
+            background-color: #7A4BAA; /* Slightly darker purple */
+            transform: scale(1.05);
+        }
+
+        /* Examples and Practice */
+        .example-block, .practice-block {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .example-block p, .practice-block p {
+            margin-bottom: 0.5em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow wrapping */
+        }
+
+        .example-block p span.english-phrase {
+            font-weight: bold;
+            color: var(--heading-color);
+            flex-grow: 1;
+            min-width: 120px; /* Ensure enough space for longer phrases */
+        }
+
+        .example-block p span.spanish-translation {
+            font-style: italic;
+            color: var(--body-text-color);
+            font-size: 0.95em;
+            margin-left: 10px;
+            flex-grow: 1;
+            min-width: 120px;
+            text-align: right; /* Align translation to the right */
+        }
+
+        /* Adjust audio button position for examples/practice to be at the end */
+        .example-block p .audio-icon, .practice-question p .audio-icon {
+            order: 3; /* Push to end */
+            margin-left: auto; /* Push to right */
+        }
+
+
+        .practice-question {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            padding: 10px;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            border: 1px dashed var(--primary-color);
+        }
+
+        .practice-question strong {
+            color: var(--primary-color);
+        }
+
+        .hint {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #F8F0DE; /* A slightly different cream for distinction */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .cultural-note p {
+            margin: 0;
+            color: var(--body-text-color);
+        }
+
+        .cultural-note strong {
+            color: var(--heading-color);
+        }
+
+        /* Summary Section */
+        .summary-list {
+            list-style-type: disc; /* Use actual disc list style */
+            padding-left: 20px; /* Indent for disc list style */
+        }
+
+        .summary-list li {
+            background-color: transparent; /* No background */
+            border: none;
+            box-shadow: none;
+            padding: 8px 0;
+            margin-bottom: 5px;
+            display: list-item; /* Ensure it behaves as a list item */
+            margin-left: 0; /* Reset margin from general ul li */
+            font-size: 1em;
+            color: var(--body-text-color);
+            align-items: flex-start; /* Align text at the start */
+            justify-content: flex-start; /* Align text at the start */
+            flex-wrap: nowrap; /* Prevent wrapping elements inside summary list items */
+        }
+
+        .summary-list li strong {
+            color: var(--primary-color);
+        }
+
+        /* Responsive adjustments for larger screens (e.g., tablets, desktops) */
+        @media (min-width: 600px) {
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1.5em;
+            }
+
+            section {
+                padding: 30px;
+            }
+
+            .audio-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.6em;
+            }
+
+            ul li {
+                padding: 15px 20px;
+                flex-wrap: nowrap; /* Prevent wrapping in main lists on larger screens */
+            }
+
+            .example-block p, .practice-block p {
+                flex-wrap: nowrap; /* Prevent wrapping in examples/practice on larger screens */
+            }
+
+            .example-block p span.english-phrase,
+            .example-block p span.spanish-translation {
+                min-width: auto; /* Remove min-width on larger screens */
+                flex-grow: 0; /* Don't grow to fill space aggressively */
+            }
+
+            .example-block p span.spanish-translation {
+                text-align: left; /* Reset text align */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 4: Colors and Descriptions</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 4 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>¡Hola! 👋 Bienvenido al Capítulo 4: Colores y Descripciones</h2>
+            <p>En este capítulo, vamos a darle vida a tus objetos favoritos aprendiendo a describirlos. Conocerás los colores básicos, cómo usar palabras como 'grande' o 'pequeño', y cómo preguntar y responder sobre el color y las características de las cosas. ¡Prepárate para añadir color a tu inglés!</p>
+        </section>
+
+        <section>
+            <h2>🎨 Sección 1: Colores Básicos (Basic Colors)</h2>
+            <p>Empecemos con los colores más comunes. Escucha atentamente la pronunciación y repite.</p>
+
+            <ul>
+                <li>
+                    <span class="english-word">Red</span> <span class="translation">(Rojo)</span>
+                    <button class="audio-icon" data-audio-text="Red">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Blue</span> <span class="translation">(Azul)</span>
+                    <button class="audio-icon" data-audio-text="Blue">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Green</span> <span class="translation">(Verde)</span>
+                    <button class="audio-icon" data-audio-text="Green">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Yellow</span> <span class="translation">(Amarillo)</span>
+                    <button class="audio-icon" data-audio-text="Yellow">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Black</span> <span class="translation">(Negro)</span>
+                    <button class="audio-icon" data-audio-text="Black">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">White</span> <span class="translation">(Blanco)</span>
+                    <button class="audio-icon" data-audio-text="White">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Orange</span> <span class="translation">(Naranja)</span>
+                    <button class="audio-icon" data-audio-text="Orange">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Purple</span> <span class="translation">(Morado/Púrpura)</span>
+                    <button class="audio-icon" data-audio-text="Purple">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Pink</span> <span class="translation">(Rosa)</span>
+                    <button class="audio-icon" data-audio-text="Pink">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Brown</span> <span class="translation">(Marrón/Café)</span>
+                    <button class="audio-icon" data-audio-text="Brown">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Gray</span> <span class="translation">(Gris)</span>
+                    <button class="audio-icon" data-audio-text="Gray">🔊</button>
+                </li>
+            </ul>
+
+            <h3>Ejemplos (Examples):</h3>
+            <div class="example-block">
+                <p>
+                    <span class="english-phrase">The apple is red.</span>
+                    <span class="spanish-translation">(La manzana es roja.)</span>
+                    <button class="audio-icon" data-audio-text="The apple is red.">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">The sky is blue.</span>
+                    <span class="spanish-translation">(El cielo es azul.)</span>
+                    <button class="audio-icon" data-audio-text="The sky is blue.">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">The grass is green.</span>
+                    <span class="spanish-translation">(La hierba es verde.)</span>
+                    <button class="audio-icon" data-audio-text="The grass is green.">🔊</button>
+                </p>
+            </div>
+
+            <h3>¡A Practicar! 💪 (Let's Practice!)</h3>
+            <p>¿Qué color es la fruta/objeto? Escoge la opción correcta. ¡No uses el teclado!</p>
+            <div class="practice-block">
+                <div class="practice-question">
+                    <p>1. 🍎 (Manzana) <br> Es <strong>____</strong>.</p>
+                    <div class="hint"><em>Piensa: Red / Blue / Yellow</em></div>
+                </div>
+                <div class="practice-question">
+                    <p>2. ☀️ (Sol) <br> Es <strong>____</strong>.</p>
+                    <div class="hint"><em>Piensa: Green / Yellow / Orange</em></div>
+                </div>
+                <div class="practice-question">
+                    <p>3. ⚫ (Agujero negro) <br> Es <strong>____</strong>.</p>
+                    <div class="hint"><em>Piensa: White / Black / Brown</em></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📏 Sección 2: Describiendo Objetos (Describing Objects)</h2>
+            <p>Además de los colores, podemos describir el tamaño y la altura de los objetos y personas.</p>
+
+            <ul>
+                <li>
+                    <span class="english-word">Big</span> <span class="translation">(Grande)</span>
+                    <button class="audio-icon" data-audio-text="Big">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Small</span> <span class="translation">(Pequeño)</span>
+                    <button class="audio-icon" data-audio-text="Small">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Tall</span> <span class="translation">(Alto/a - para personas o cosas verticales como árboles)</span>
+                    <button class="audio-icon" data-audio-text="Tall">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Short</span> <span class="translation">(Bajo/a - para personas o cosas verticales; o corto/a para longitud)</span>
+                    <button class="audio-icon" data-audio-text="Short">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">New</span> <span class="translation">(Nuevo/a)</span>
+                    <button class="audio-icon" data-audio-text="New">🔊</button>
+                </li>
+                <li>
+                    <span class="english-word">Old</span> <span class="translation">(Viejo/a)</span>
+                    <button class="audio-icon" data-audio-text="Old">🔊</button>
+                </li>
+            </ul>
+
+            <h3>Ejemplos (Examples):</h3>
+            <div class="example-block">
+                <p>
+                    <span class="english-phrase">A big house.</span>
+                    <span class="spanish-translation">(Una casa grande.)</span>
+                    <button class="audio-icon" data-audio-text="A big house.">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">A small car.</span>
+                    <span class="spanish-translation">(Un coche pequeño.)</span>
+                    <button class="audio-icon" data-audio-text="A small car.">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">A tall tree.</span>
+                    <span class="spanish-translation">(Un árbol alto.)</span>
+                    <button class="audio-icon" data-audio-text="A tall tree.">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">A short person.</span>
+                    <span class="spanish-translation">(Una persona baja.)</span>
+                    <button class="audio-icon" data-audio-text="A short person.">🔊</button>
+                </p>
+            </div>
+
+            <h3>¡A Practicar! 💪</h3>
+            <p>Completa la frase con el adjetivo adecuado.</p>
+            <div class="practice-block">
+                <div class="practice-question">
+                    <p>1. Un elefante es <strong>____</strong>. (An elephant is ____.)</p>
+                    <div class="hint"><em>Piensa: Big / Small</em></div>
+                </div>
+                <div class="practice-question">
+                    <p>2. Un ratón es <strong>____</strong>. (A mouse is ____.)</p>
+                    <div class="hint"><em>Piensa: Big / Small</em></div>
+                </div>
+                <div class="practice-question">
+                    <p>3. Una jirafa es <strong>____</strong>. (A giraffe is ____.)</p>
+                    <div class="hint"><em>Piensa: Tall / Short</em></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📍 Sección 3: This is... / That is...</h2>
+            <p>Para indicar si algo está cerca o lejos de ti, usamos <strong>'This'</strong> y <strong>'That'</strong>.</p>
+
+            <ul>
+                <li>
+                    <strong>This is...</strong> <span class="translation">(Esto/a es... / Este/a es...)</span>
+                    <button class="audio-icon" data-audio-text="This is">🔊</button>
+                    <p class="hint">👉 Úsalo para objetos que están <strong>cerca</strong> de ti.</p>
+                </li>
+                <li>
+                    <strong>That is...</strong> <span class="translation">(Eso/a es... / Aquel/aquella es...)</span>
+                    <button class="audio-icon" data-audio-text="That is">🔊</button>
+                    <p class="hint">👉 Úsalo para objetos que están <strong>lejos</strong> de ti.</p>
+                </li>
+            </ul>
+
+            <h3>Ejemplos (Examples):</h3>
+            <div class="example-block">
+                <p>
+                    <span class="english-phrase">This is a book.</span>
+                    <span class="spanish-translation">(Esto es un libro. - El libro está cerca)</span>
+                    <button class="audio-icon" data-audio-text="This is a book.">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">That is a car.</span>
+                    <span class="spanish-translation">(Eso es un coche. - El coche está lejos)</span>
+                    <button class="audio-icon" data-audio-text="That is a car.">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">This is my pen.</span>
+                    <span class="spanish-translation">(Este es mi bolígrafo.)</span>
+                    <button class="audio-icon" data-audio-text="This is my pen.">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">That is your house.</span>
+                    <span class="spanish-translation">(Esa es tu casa.)</span>
+                    <button class="audio-icon" data-audio-text="That is your house.">🔊</button>
+                </p>
+            </div>
+
+            <h3>¡A Practicar! 💪</h3>
+            <p>Completa con <strong>'This'</strong> o <strong>'That'</strong> según la situación.</p>
+            <div class="practice-block">
+                <div class="practice-question">
+                    <p>1. ____ is an apple. (Cerca de ti)</p>
+                    <div class="hint"><em>Piensa: This / That</em></div>
+                </div>
+                <div class="practice-question">
+                    <p>2. ____ is a mountain. (Lejos de ti)</p>
+                    <div class="hint"><em>Piensa: This / That</em></div>
+                </div>
+                <div class="practice-question">
+                    <p>3. ____ is my phone. (Lo tienes en la mano)</p>
+                    <div class="hint"><em>Piensa: This / That</em></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>❓ Sección 4: ¿Qué color es? (What color is it?)</h2>
+            <p>Para preguntar por el color de algo, usamos una pregunta sencilla. Y para responder, también es muy fácil.</p>
+
+            <ul>
+                <li>
+                    <strong>Pregunta: What color is it?</strong>
+                    <span class="translation">(¿Qué color es? / ¿De qué color es?)</span>
+                    <button class="audio-icon" data-audio-text="What color is it?">🔊</button>
+                </li>
+                <li>
+                    <strong>Respuesta: It's [color].</strong>
+                    <span class="translation">(Es [color].)</span>
+                    <button class="audio-icon" data-audio-text="It's.">🔊</button>
+                    <!-- Added a specific example for 'It's red' for better audio context -->
+                    <button class="audio-icon" data-audio-text="It's red.">🔊</button>
+                </li>
+            </ul>
+
+            <h3>Ejemplos (Examples):</h3>
+            <div class="example-block">
+                <p>
+                    <span class="english-phrase">What color is the sun?</span>
+                    <span class="spanish-translation">(¿De qué color es el sol?)</span>
+                    <button class="audio-icon" data-audio-text="What color is the sun?">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">It's yellow.</span>
+                    <span class="spanish-translation">(Es amarillo.)</span>
+                    <button class="audio-icon" data-audio-text="It's yellow.">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">What color is your car?</span>
+                    <span class="spanish-translation">(¿De qué color es tu coche?)</span>
+                    <button class="audio-icon" data-audio-text="What color is your car?">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">It's blue.</span>
+                    <span class="spanish-translation">(Es azul.)</span>
+                    <button class="audio-icon" data-audio-text="It's blue.">🔊</button>
+                </p>
+            </div>
+
+            <h3>¡A Practicar! 💪</h3>
+            <p>Responde las preguntas sobre el color. Piensa en objetos que conozcas.</p>
+            <div class="practice-block">
+                <div class="practice-question">
+                    <p>1. What color is the grass? <br> It's <strong>____</strong>.</p>
+                    <div class="hint"><em>Piensa: Green</em></div>
+                </div>
+                <div class="practice-question">
+                    <p>2. What color is milk? <br> It's <strong>____</strong>.</p>
+                    <div class="hint"><em>Piensa: White</em></div>
+                </div>
+                <div class="practice-question">
+                    <p>3. What color is a banana? <br> It's <strong>____</strong>.</p>
+                    <div class="hint"><em>Piensa: Yellow</em></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📝 Sección 5: Adjetivos y Descripciones Básicas</h2>
+            <p>Ahora, combinemos lo que hemos aprendido. En inglés, el adjetivo (la palabra que describe) siempre va <strong>antes</strong> del sustantivo (la cosa que estamos describiendo).</p>
+
+            <ul>
+                <li>
+                    <strong>Orden: Adjetivo + Sustantivo</strong>
+                    <button class="audio-icon" data-audio-text="Adjective plus Noun">🔊</button>
+                    <p class="hint">Ej: <em>red apple</em> (manzana roja)</p>
+                </li>
+                <li>
+                    <strong>Con dos adjetivos (ej. color y tamaño): Adjetivo de tamaño + Adjetivo de color + Sustantivo</strong>
+                    <button class="audio-icon" data-audio-text="Size adjective plus color adjective plus noun">🔊</button>
+                    <p class="hint">Ej: <em>big red apple</em> (manzana roja grande)</p>
+                </li>
+            </ul>
+
+            <h3>Ejemplos (Examples):</h3>
+            <div class="example-block">
+                <p>
+                    <span class="english-phrase">This is a red car.</span>
+                    <span class="spanish-translation">(Este es un coche rojo.)</span>
+                    <button class="audio-icon" data-audio-text="This is a red car.">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">That is a big house.</span>
+                    <span class="spanish-translation">(Esa es una casa grande.)</span>
+                    <button class="audio-icon" data-audio-text="That is a big house.">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">It's a small blue bird.</span>
+                    <span class="spanish-translation">(Es un pájaro azul pequeño.)</span>
+                    <button class="audio-icon" data-audio-text="It's a small blue bird.">🔊</button>
+                </p>
+                <p>
+                    <span class="english-phrase">This is a tall green tree.</span>
+                    <span class="spanish-translation">(Este es un árbol verde alto.)</span>
+                    <button class="audio-icon" data-audio-text="This is a tall green tree.">🔊</button>
+                </p>
+            </div>
+
+            <h3>¡A Practicar! 💪</h3>
+            <p>Describe el objeto usando los adjetivos y el sustantivo. ¡Recuerda el orden!</p>
+            <div class="practice-block">
+                <div class="practice-question">
+                    <p>1. (manzana 🍎, rojo, grande) <br> It's a <strong>____ ____ ____</strong>.</p>
+                    <div class="hint"><em>Piensa: big red apple</em></div>
+                </div>
+                <div class="practice-question">
+                    <p>2. (perro 🐶, pequeño, negro) <br> This is a <strong>____ ____ ____</strong>.</p>
+                    <div class="hint"><em>Piensa: small black dog</em></div>
+                </div>
+                <div class="practice-question">
+                    <p>3. (coche 🚗, nuevo, azul) <br> That is a <strong>____ ____ ____</strong>.</p>
+                    <div class="hint"><em>Piensa: new blue car</em></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="cultural-note">
+            <h3>🌍 Nota Cultural: Colores y Significados</h3>
+            <p>En inglés, los colores también pueden tener significados culturales o emocionales, ¡igual que en español!</p>
+            <ul class="summary-list"> <!-- Using summary-list style for this ul -->
+                <li><strong>Red (Rojo):</strong> A menudo asociado con el amor ❤️, la pasión, pero también el peligro 🛑 o la ira.</li>
+                <li><strong>Blue (Azul):</strong> Con frecuencia representa tranquilidad 💙, confianza, o tristeza (sentirse "blue").</li>
+                <li><strong>Green (Verde):</strong> Generalmente ligado a la naturaleza 🌳, el crecimiento, la envidia o el dinero 💸.</li>
+            </ul>
+            <p>¡Es fascinante cómo los colores nos hacen sentir diferentes cosas en distintas culturas!</p>
+        </div>
+
+        <section>
+            <h2>📚 Resumen del Capítulo 4</h2>
+            <p>¡Excelente trabajo! Has cubierto mucho en este capítulo. Aquí están los puntos clave:</p>
+            <ul class="summary-list">
+                <li>Aprendiste los <strong>colores básicos</strong>: <strong>Red, Blue, Green, Yellow, Black, White, Orange, Purple, Pink, Brown, Gray.</strong></li>
+                <li>Practicaste <strong>adjetivos</strong> para describir tamaño y altura: <strong>Big, Small, Tall, Short, New, Old.</strong></li>
+                <li>Descubriste cómo usar <strong>'This is...'</strong> para objetos cercanos y <strong>'That is...'</strong> para objetos lejanos.</li>
+                <li>Aprendiste a preguntar <strong>'What color is it?'</strong> y a responder <strong>'It's [color].'</strong></li>
+                <li>Comprendiste que los adjetivos van <strong>antes del sustantivo</strong> en inglés (ej. a <em>red car</em>, a <em>big blue bird</em>).</li>
+            </ul>
+            <p>¡Sigue practicando estas descripciones en tu día a día! Observa los objetos a tu alrededor y descríbelos en inglés. ¡Lo estás haciendo muy bien!</p>
+        </section>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国語レッスン - 第7章：食べ物と飲み物</title>
+    <style>
+        /* グローバルスタイルとリセット */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: クリーム色の背景 */
+            color: #666666; /* Body Text: ミディアムグレー */
+            line-height: 1.6;
+            font-size: 16px; /* 本文の最小フォントサイズ */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* 見出しのスタイル */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: ダークブルー */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            padding: 0 20px; /* 小画面でのテキストの溢れを防ぐ */
+        }
+
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: ライトグレー */
+            padding-bottom: 0.3em;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-left: 20px;
+        }
+
+        p {
+            margin: 0 20px 1em 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 20px 1em 20px;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #E0E0E0;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        strong {
+            color: #2C3E50; /* ダークブルーで強調 */
+        }
+
+        em {
+            font-style: normal; /* デフォルトのイタリックを無効化 */
+            color: #8B5FBF; /* Primary: アクセントカラーのパープル */
+        }
+
+        /* コンテナとセクションのスタイル */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 40px; /* 下部に余白 */
+        }
+
+        .section {
+            background-color: #FFFFFF; /* セクションの背景は白 */
+            margin: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #E0E0E0; /* Borders: ライトグレー */
+        }
+
+        /* ヘッダーセクションのスタイル */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* 単語リストのスタイル */
+        .vocabulary-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #E0E0E0; /* Borders: ライトグレー */
+        }
+        .vocabulary-item:last-child {
+            border-bottom: none;
+        }
+
+        .vocabulary-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-grow: 1; /* スペースを埋める */
+        }
+
+        .vocabulary-chinese {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #2C3E50; /* Text: ダークブルー */
+        }
+
+        .vocabulary-pinyin {
+            font-size: 0.9em;
+            color: #8B5FBF; /* Primary: パープル */
+            margin-top: 2px;
+        }
+
+        .vocabulary-japanese {
+            font-size: 1em;
+            color: #666666; /* Body Text: ミディアムグレー */
+            margin-left: auto; /* 日本語訳を右寄せ */
+            padding-right: 10px; /* アイコンとの間にスペース */
+        }
+
+        /* 音声アイコンのスタイル */
+        .audio-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.8em; /* タップしやすい大きさ */
+            color: #8B5FBF; /* Primary: パープル */
+            padding: 10px; /* タップ領域を大きくする */
+            min-width: 44px; /* 最小タップターゲットサイズ */
+            min-height: 44px; /* 最小タップターゲットサイズ */
+            display: flex; /* コンテンツの中央揃え用 */
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; /* 円形にする */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* ホバー時に薄いパープル */
+            transform: scale(1.05);
+        }
+
+        /* 例文のスタイル */
+        .example-sentence {
+            background-color: rgba(139, 95, 191, 0.05); /* 薄いPrimaryカラーの背景 */
+            border-left: 5px solid #8B5FBF; /* Primaryカラーのボーダー */
+            padding: 15px;
+            margin: 20px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .example-sentence p {
+            margin: 0;
+            padding-bottom: 5px;
+        }
+
+        .example-sentence .audio-icon {
+            align-self: flex-end; /* 右下に配置 */
+            margin-top: 10px;
+        }
+
+        /* 練習問題セクションのスタイル */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: クリーム色の背景 */
+            border: 1px solid #E0E0E0; /* Borders: ライトグレー */
+            margin: 20px;
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .practice-section h3 {
+            margin-top: 0;
+            margin-bottom: 1em;
+            text-align: left;
+            margin-left: 0; /* デフォルトマージンを上書き */
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dotted #E0E0E0;
+        }
+        .practice-question:last-child {
+            border-bottom: none;
+        }
+
+        .practice-question .prompt {
+            flex-grow: 1;
+            margin: 0; /* デフォルトマージンをリセット */
+        }
+
+        /* まとめセクションのスタイル */
+        .summary-section {
+            background-color: #FFFFFF;
+            margin: 20px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #E0E0E0; /* Borders: ライトグレー */
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            border-bottom: none;
+            margin-bottom: 1.5em;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .summary-list li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px dashed #E0E0E0;
+        }
+        .summary-list li:last-child {
+            border-bottom: none;
+        }
+
+        .summary-list .term {
+            flex: 1;
+            font-weight: bold;
+            color: #2C3E50; /* Text: ダークブルー */
+            padding-right: 10px;
+        }
+        .summary-list .translation {
+            flex: 1;
+            text-align: right;
+            color: #666666; /* Body Text: ミディアムグレー */
+        }
+
+        /* レスポンシブ調整 (タブレット以上) */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            .section, .practice-section, .summary-section {
+                padding: 30px;
+            }
+            .vocabulary-info {
+                flex-direction: row; /* 横並びに戻す */
+                align-items: center;
+            }
+            .vocabulary-pinyin {
+                margin-top: 0;
+                margin-left: 10px; /* ピンインを中国語の右に */
+            }
+            .vocabulary-japanese {
+                padding-right: 0; /* 日本語訳のパディングをリセット */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 7: Food and Drinks</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section">
+            <h2>🍜🥤 食と飲み物 (Shí hé yǐnliào) へようこそ！</h2>
+            <p>皆さん、こんにちは！</p>
+            <p>中国語の第7章へようこそ！今回は、私たちの生活に欠かせない「食と飲み物」について学びます。美味しいものを中国語で表現できるようになりましょう！</p>
+            <p>この章では、以下のことを学びます：</p>
+            <ul>
+                <li>🍽️ よく食べるもの（ご飯、麺、肉、野菜など）</li>
+                <li>💧 飲み物（水、コーヒー、お茶など）</li>
+                <li>「〜が好き／〜は好きじゃない」と表現する方法</li>
+                <li>「何を食べたいですか？」と尋ねるフレーズ</li>
+                <li>🍴 レストランで役立つ基本単語</li>
+            </ul>
+            <p>準備はいいですか？始めましょう！</p>
+        </section>
+
+        <section class="section">
+            <h2>🍚 基本的な食べ物 (Jīběn de shíwù)</h2>
+            <p>まずは、中国でよく食べられる基本的な食べ物の単語を覚えましょう。</p>
+
+            <h3>1. ご飯 (Rice)</h3>
+            <ul>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">米饭</span>
+                        <span class="vocabulary-pinyin">mǐfàn</span>
+                    </div>
+                    <span class="vocabulary-japanese">ご飯</span>
+                    <button class="audio-icon" data-audio-text="米饭">🔊</button>
+                </li>
+            </ul>
+            <div class="example-sentence">
+                <p>我喜欢吃米饭。</p>
+                <p>Wǒ xǐhuān chī mǐfàn.</p>
+                <p>私はご飯を食べるのが好きです。</p>
+                <button class="audio-icon" data-audio-text="我喜欢吃米饭">🔊</button>
+            </div>
+
+            <h3>2. 麺 (Noodles)</h3>
+            <ul>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">面条</span>
+                        <span class="vocabulary-pinyin">miàntiáo</span>
+                    </div>
+                    <span class="vocabulary-japanese">麺</span>
+                    <button class="audio-icon" data-audio-text="面条">🔊</button>
+                </li>
+            </ul>
+            <div class="example-sentence">
+                <p>你喜欢吃面条吗？</p>
+                <p>Nǐ xǐhuān chī miàntiáo ma?</p>
+                <p>あなたは麺を食べるのが好きですか？</p>
+                <button class="audio-icon" data-audio-text="你喜欢吃面条吗">🔊</button>
+            </div>
+
+            <h3>3. 肉 (Meat)</h3>
+            <ul>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">肉</span>
+                        <span class="vocabulary-pinyin">ròu</span>
+                    </div>
+                    <span class="vocabulary-japanese">肉</span>
+                    <button class="audio-icon" data-audio-text="肉">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">猪肉</span>
+                        <span class="vocabulary-pinyin">zhūròu</span>
+                    </div>
+                    <span class="vocabulary-japanese">豚肉</span>
+                    <button class="audio-icon" data-audio-text="猪肉">🔊</button>
+                </li>
+            </ul>
+            <div class="example-sentence">
+                <p>我想吃肉。</p>
+                <p>Wǒ xiǎng chī ròu.</p>
+                <p>私は肉が食べたいです。</p>
+                <button class="audio-icon" data-audio-text="我想吃肉">🔊</button>
+            </div>
+
+            <h3>4. 野菜 (Vegetables)</h3>
+            <ul>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">蔬菜</span>
+                        <span class="vocabulary-pinyin">shūcài</span>
+                    </div>
+                    <span class="vocabulary-japanese">野菜</span>
+                    <button class="audio-icon" data-audio-text="蔬菜">🔊</button>
+                </li>
+            </ul>
+            <div class="example-sentence">
+                <p>多吃蔬菜对身体好。</p>
+                <p>Duō chī shūcài duì shēntǐ hǎo.</p>
+                <p>野菜をたくさん食べるのは体に良いです。</p>
+                <button class="audio-icon" data-audio-text="多吃蔬菜对身体好">🔊</button>
+            </div>
+            <p>💡 <strong>文化ノート：</strong>中国では、米飯(mǐfàn)と面条(miàntiáo)が主食として非常に重要です。地域によってどちらがより一般的か異なりますが、どちらも日常の食卓に欠かせません。</p>
+        </section>
+
+        <section class="section">
+            <h2>🥤 飲み物 (Yǐnliào)</h2>
+            <p>次に、飲み物の単語を覚えましょう。お気に入りの飲み物を中国語で言ってみましょう！</p>
+
+            <ul>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">水</span>
+                        <span class="vocabulary-pinyin">shuǐ</span>
+                    </div>
+                    <span class="vocabulary-japanese">水</span>
+                    <button class="audio-icon" data-audio-text="水">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">咖啡</span>
+                        <span class="vocabulary-pinyin">kāfēi</span>
+                    </div>
+                    <span class="vocabulary-japanese">コーヒー</span>
+                    <button class="audio-icon" data-audio-text="咖啡">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">茶</span>
+                        <span class="vocabulary-pinyin">chá</span>
+                    </div>
+                    <span class="vocabulary-japanese">お茶</span>
+                    <button class="audio-icon" data-audio-text="茶">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">果汁</span>
+                        <span class="vocabulary-pinyin">guǒzhī</span>
+                    </div>
+                    <span class="vocabulary-japanese">ジュース</span>
+                    <button class="audio-icon" data-audio-text="果汁">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">牛奶</span>
+                        <span class="vocabulary-pinyin">niúnǎi</span>
+                    </div>
+                    <span class="vocabulary-japanese">牛乳</span>
+                    <button class="audio-icon" data-audio-text="牛奶">🔊</button>
+                </li>
+            </ul>
+            <div class="example-sentence">
+                <p>我喜欢喝茶。</p>
+                <p>Wǒ xǐhuān hē chá.</p>
+                <p>私はお茶を飲むのが好きです。</p>
+                <button class="audio-icon" data-audio-text="我喜欢喝茶">🔊</button>
+            </div>
+            <p>💡 <strong>文化ノート：</strong>中国では、お茶(chá)は非常に重要な飲み物で、種類も豊富です。食事の際や来客時など、様々な場面で飲まれます。</p>
+        </section>
+
+        <section class="section">
+            <h2>👍👎 好き／好きじゃない (Xǐhuān / Bù xǐhuān)</h2>
+            <p>「〜が好き」や「〜は好きじゃない」と表現するフレーズを学びましょう。</p>
+            <h3>好きです： 喜欢 (xǐhuān)</h3>
+            <div class="example-sentence">
+                <p>我喜欢米饭。</p>
+                <p>Wǒ xǐhuān mǐfàn.</p>
+                <p>私はご飯が好きです。</p>
+                <button class="audio-icon" data-audio-text="我喜欢米饭">🔊</button>
+            </div>
+            <div class="example-sentence">
+                <p>她喜欢喝咖啡。</p>
+                <p>Tā xǐhuān hē kāfēi.</p>
+                <p>彼女はコーヒーを飲むのが好きです。</p>
+                <button class="audio-icon" data-audio-text="她喜欢喝咖啡">🔊</button>
+            </div>
+
+            <h3>好きじゃないです： 不喜欢 (bù xǐhuān)</h3>
+            <p>「不 (bù)」を「喜欢 (xǐhuān)」の前に置くだけで「好きじゃない」という意味になります。</p>
+            <div class="example-sentence">
+                <p>我不喜欢吃猪肉。</p>
+                <p>Wǒ bù xǐhuān chī zhūròu.</p>
+                <p>私は豚肉を食べるのが好きじゃないです。</p>
+                <button class="audio-icon" data-audio-text="我不喜欢吃猪肉">🔊</button>
+            </div>
+            <div class="example-sentence">
+                <p>他们不喜欢喝牛奶。</p>
+                <p>Tāmen bù xǐhuān hē niúnǎi.</p>
+                <p>彼らは牛乳を飲むのが好きじゃないです。</p>
+                <button class="audio-icon" data-audio-text="他们不喜欢喝牛奶">🔊</button>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 練習時間！ (Liànxí shíjiān!)</h3>
+            <p>以下の文を中国語にしてみましょう。</p>
+            <div class="practice-question">
+                <p class="prompt">1. 私は野菜が好きです。</p>
+                <button class="audio-icon" data-audio-text="我喜欢蔬菜">🔊</button>
+            </div>
+            <div class="practice-question">
+                <p class="prompt">2. 彼はジュースを飲むのが好きじゃないです。</p>
+                <button class="audio-icon" data-audio-text="他不喜欢喝果汁">🔊</button>
+            </div>
+            <div class="practice-question">
+                <p class="prompt">3. あなたは肉が好きですか？ (答え方：好きです)</p>
+                <button class="audio-icon" data-audio-text="你喜欢肉吗？喜欢">🔊</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>❓ 何を食べたい／飲みたい？ (Nǐ xǐhuān chī/hē shénme?)</h2>
+            <p>「何を食べるのが好きですか？」と尋ねる基本的な質問を学びましょう。</p>
+
+            <h3>何を食べるのが好きですか？</h3>
+            <p>基本的な形：<strong>你喜欢吃什么？</strong> (Nǐ xǐhuān chī shénme?)</p>
+            <div class="example-sentence">
+                <p>A: 你喜欢吃什么？</p>
+                <p>A: Nǐ xǐhuān chī shénme?</p>
+                <p>A: あなたは何を食べるのが好きですか？</p>
+                <button class="audio-icon" data-audio-text="你喜欢吃什么">🔊</button>
+                <br><br>
+                <p>B: 我喜欢吃面条。</p>
+                <p>B: Wǒ xǐhuān chī miàntiáo.</p>
+                <p>B: 私は麺を食べるのが好きです。</p>
+                <button class="audio-icon" data-audio-text="我喜欢吃面条">🔊</button>
+            </div>
+
+            <h3>何を飲むのが好きですか？</h3>
+            <p>「食べる」の <em>吃 (chī)</em> を「飲む」の <em>喝 (hē)</em> に変えるだけです。</p>
+            <p>基本的な形：<strong>你喜欢喝什么？</strong> (Nǐ xǐhuān hē shénme?)</p>
+            <div class="example-sentence">
+                <p>A: 你喜欢喝什么？</p>
+                <p>A: Nǐ xǐhuān hē shénme?</p>
+                <p>A: あなたは何を飲むのが好きですか？</p>
+                <button class="audio-icon" data-audio-text="你喜欢喝什么">🔊</button>
+                <br><br>
+                <p>B: 我喜欢喝茶。</p>
+                <p>B: Wǒ xǐhuān hē chá.</p>
+                <p>B: 私はお茶を飲むのが好きです。</p>
+                <button class="audio-icon" data-audio-text="我喜欢喝茶">🔊</button>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 練習時間！ (Liànxí shíjiān!)</h3>
+            <p>質問に答えてみましょう！</p>
+            <div class="practice-question">
+                <p class="prompt">A: 你喜欢吃什么？</p>
+                <p class="prompt">B: (例：私はご飯が好きです。)</p>
+                <button class="audio-icon" data-audio-text="我喜欢吃米饭">🔊</button>
+            </div>
+            <div class="practice-question">
+                <p class="prompt">A: 你喜欢喝什么？</p>
+                <p class="prompt">B: (例：私は水が好きです。)</p>
+                <button class="audio-icon" data-audio-text="我喜欢喝水">🔊</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🍽️ レストランで役立つ基本単語 (Cāntīng jīběn cíhuì)</h2>
+            <p>最後に、レストランで役立つ便利な単語をいくつか覚えましょう。</p>
+
+            <ul>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">饭馆 / 餐厅</span>
+                        <span class="vocabulary-pinyin">fànguǎn / cāntīng</span>
+                    </div>
+                    <span class="vocabulary-japanese">レストラン</span>
+                    <button class="audio-icon" data-audio-text="饭馆">🔊</button>
+                    <button class="audio-icon" data-audio-text="餐厅">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">点菜</span>
+                        <span class="vocabulary-pinyin">diǎncài</span>
+                    </div>
+                    <span class="vocabulary-japanese">注文する</span>
+                    <button class="audio-icon" data-audio-text="点菜">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">菜单</span>
+                        <span class="vocabulary-pinyin">càidān</span>
+                    </div>
+                    <span class="vocabulary-japanese">メニュー</span>
+                    <button class="audio-icon" data-audio-text="菜单">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">服务员</span>
+                        <span class="vocabulary-pinyin">fúwùyuán</span>
+                    </div>
+                    <span class="vocabulary-japanese">店員／ウェイトレス</span>
+                    <button class="audio-icon" data-audio-text="服务员">🔊</button>
+                </li>
+                <li class="vocabulary-item">
+                    <div class="vocabulary-info">
+                        <span class="vocabulary-chinese">买单</span>
+                        <span class="vocabulary-pinyin">mǎidān</span>
+                    </div>
+                    <span class="vocabulary-japanese">お会計</span>
+                    <button class="audio-icon" data-audio-text="买单">🔊</button>
+                </li>
+            </ul>
+            <div class="example-sentence">
+                <p>服务员，买单！</p>
+                <p>Fúwùyuán, mǎidān!</p>
+                <p>店員さん、お会計！</p>
+                <button class="audio-icon" data-audio-text="服务员，买单！">🔊</button>
+            </div>
+            <p>💡 <strong>文化ノート：</strong>中国のレストランでは、サービス料が自動的に加算されることは稀で、チップの習慣も一般的ではありません。お会計は「买单(mǎidān)」と呼びかけます。</p>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ 第7章のまとめ (Dì qī zhāng de zǒngjié)</h2>
+            <p>第7章「食と飲み物」のレッスンお疲れ様でした！この章で学んだことを復習しましょう。</p>
+
+            <ul class="summary-list">
+                <li>
+                    <span class="term">基本的な食べ物</span>
+                    <span class="translation">米饭 (mǐfàn) ご飯, 面条 (miàntiáo) 麺, 肉 (ròu) 肉, 蔬菜 (shūcài) 野菜</span>
+                </li>
+                <li>
+                    <span class="term">飲み物</span>
+                    <span class="translation">水 (shuǐ) 水, 咖啡 (kāfēi) コーヒー, 茶 (chá) お茶, 果汁 (guǒzhī) ジュース, 牛奶 (niúnǎi) 牛乳</span>
+                </li>
+                <li>
+                    <span class="term">好き／好きじゃない</span>
+                    <span class="translation">喜欢 (xǐhuān) 好き, 不喜欢 (bù xǐhuān) 好きじゃない</span>
+                </li>
+                <li>
+                    <span class="term">質問</span>
+                    <span class="translation">你喜欢吃什么？(Nǐ xǐhuān chī shénme?) 何を食べるのが好きですか？</span>
+                </li>
+                <li>
+                    <span class="term">レストラン単語</span>
+                    <span class="translation">饭馆/餐厅 (fànguǎn/cāntīng) レストラン, 点菜 (diǎncài) 注文する, 菜单 (càidān) メニュー, 服务员 (fúwùyuán) 店員, 买单 (mǎidān) お会計</span>
+                </li>
+            </ul>
+            <p>これで、中国語で基本的な食べ物や飲み物について話したり、レストランで注文したりする準備ができましたね！</p>
+            <p>次回のレッスンもお楽しみに！👋</p>
+        </section>
+
+    </div>
+</body>
+</html>

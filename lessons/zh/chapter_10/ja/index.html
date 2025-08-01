@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中国語レッスン - Chapter 10: 時間とスケジュール</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white-color: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            margin-top: 0;
+            padding-top: 15px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 35px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 25px;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1em;
+            font-size: 16px;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 0 1em 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Strong emphasis */
+        strong {
+            color: var(--heading-color);
+            font-weight: bold;
+        }
+
+        /* Pronunciation */
+        .pronunciation {
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Min tap target size */
+            height: 44px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 8px;
+            vertical-align: middle;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C3D9A; /* Darker primary */
+            transform: scale(1.05);
+        }
+
+        .audio-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .audio-container p {
+            margin: 0;
+            padding-right: 10px;
+            font-size: 17px;
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--white-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-section h3 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .practice-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .answer-button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto 0 auto;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            min-height: 44px; /* Min tap target size */
+            box-sizing: border-box; /* Include padding in height */
+        }
+
+        .answer-button:hover {
+            background-color: #6C3D9A;
+        }
+
+        .answer {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e6e6fa; /* Light purple for answers */
+            border-radius: 5px;
+            font-weight: bold;
+            color: var(--heading-color);
+        }
+        
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #EAF4F9; /* Light blue for cultural notes */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .cultural-note strong {
+            color: var(--primary-color);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--white-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+            border-bottom: none;
+            margin-top: 0;
+            padding-bottom: 0;
+        }
+
+        .summary-section ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .summary-section ul li::before {
+            content: none; /* Remove default arrow for summary list */
+        }
+        .summary-section ul li {
+            padding-left: 0;
+            margin-bottom: 5px;
+        }
+
+        /* Header Specifics */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            body {
+                font-size: 15px;
+            }
+            p, li {
+                font-size: 15px;
+            }
+            .practice-section, .summary-section {
+                padding: 15px;
+            }
+            .audio-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .audio-container p {
+                padding-right: 0;
+                margin-bottom: 8px;
+            }
+            .audio-icon {
+                margin-left: 0; /* Remove left margin when stacked */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 10: 時間とスケジュール</h1>
+        <div class="lesson-header">
+            <!-- 視覚的な要素として、時間やスケジュールを連想させる絵文字ベースのアイコンやテキストアートを使用できます。 -->
+            <!-- 例えば、時計とカレンダーの絵文字を組み合わせるなど。 -->
+            <!-- 実際には、header.webpはアプリによって提供される画像を指します。 -->
+            <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>🕒 時間とスケジュールをマスターしよう！</h2>
+            <p>皆さん、こんにちは！このチャプターでは、中国語で時間や日付を尋ねたり答えたりする方法、そしてアポイントメントを取るための基本的なフレーズを学びます。日常生活で非常に役立つ表現ばかりですので、しっかりマスターしましょう！</p>
+        </section>
+
+        <section>
+            <h2>1. 時刻の表現：今、何時ですか？</h2>
+            <p>中国語で時間を伝えるには、主に以下の単語を使います。</p>
+
+            <ul>
+                <li><strong>点</strong> <span class="pronunciation">(diǎn - ディエン)</span>：〜時 (o'clock)</li>
+                <li><strong>分</strong> <span class="pronunciation">(fēn - フェン)</span>：〜分 (minute)</li>
+                <li><strong>半</strong> <span class="pronunciation">(bàn - バン)</span>：〜時半 (half past)</li>
+                <li><strong>刻</strong> <span class="pronunciation">(kè - クァ)</span>：15分、四半 (quarter)</li>
+                <li><strong>差</strong> <span class="pronunciation">(chà - チャ)</span>：〜分前 (to / minus)</li>
+            </ul>
+
+            <h3>「今、何時ですか？」と尋ねる</h3>
+            <div class="audio-container">
+                <p><strong>现在几点？</strong></p>
+                <div class="audio-icon" data-audio-text="现在几点？">🔊</div>
+            </div>
+            <p><strong>(Xiànzài jǐ diǎn? - シエンザイ ジー ディエン？)</strong><br>
+            今、何時ですか？</p>
+
+            <h3>答え方：</h3>
+            <div class="audio-container">
+                <p><strong>现在上午十点三十分。</strong></p>
+                <div class="audio-icon" data-audio-text="现在上午十点三十分。">🔊</div>
+            </div>
+            <p><strong>(Xiànzài shàngwǔ shí diǎn sānshí fēn. - シエンザイ シャンウー シー ディエン サンシー フェン)</strong><br>
+            今、午前10時30分です。</p>
+
+            <div class="audio-container">
+                <p><strong>下午两点半。</strong></p>
+                <div class="audio-icon" data-audio-text="下午两点半。">🔊</div>
+            </div>
+            <p><strong>(Xiàwǔ liǎng diǎn bàn. - シアウー リャン ディエン バン)</strong><br>
+            午後2時半です。</p>
+
+            <div class="audio-container">
+                <p><strong>晚上八点一刻。</strong></p>
+                <div class="audio-icon" data-audio-text="晚上八点一刻。">🔊</div>
+            </div>
+            <p><strong>(Wǎnshàng bā diǎn yī kè. - ワンシャン バー ディエン イー クァ)</strong><br>
+            夜8時15分です。</p>
+            <div class="cultural-note">
+                <strong>💡 文化ノート：</strong>
+                <p>「15分」を表現する際、<strong>一刻 (yī kè)</strong> を使うことがあります。しかし、最近では <strong>十五分 (shíwǔ fēn)</strong> と言うのが一般的です。フォーマルな場面や、より正確さを求める場合は「〜分」を使いましょう。</p>
+                <p>「45分」は <strong>三刻 (sān kè)</strong> とも言えますが、<strong>差一刻 (chà yī kè)</strong> と「〜時15分前」のように言うこともあります。例えば「3時45分」は <strong>四点差一刻 (sì diǎn chà yī kè)</strong> と表現できます。</p>
+            </div>
+            <div class="audio-container">
+                <p><strong>差五分九点。</strong></p>
+                <div class="audio-icon" data-audio-text="差五分九点。">🔊</div>
+            </div>
+            <p><strong>(Chà wǔ fēn jiǔ diǎn. - チャ ウー フェン ジウ ディエン)</strong><br>
+            9時5分前 (8時55分) です。</p>
+        </section>
+
+        <section class="practice-section">
+            <h3>⏰ 練習タイム：何時？</h3>
+            <p>以下の時間を中国語で言ってみましょう。</p>
+            <div class="practice-item">
+                <p>1. 午前6時</p>
+                <p>2. 午後3時10分</p>
+                <p>3. 夜7時半</p>
+                <p>4. 12時45分 (午後1時15分前)</p>
+            </div>
+            <button class="answer-button">答えを見る</button>
+            <div class="answer" style="display: none;">
+                <p>1. 上午六点 (Shàngwǔ liù diǎn)</p>
+                <p>2. 下午三点十分 (Xiàwǔ sān diǎn shí fēn)</p>
+                <p>3. 晚上七点半 (Wǎnshàng qī diǎn bàn)</p>
+                <p>4. 差一刻一点 (Chà yī kè yī diǎn) または 十二点四十五分 (Shí'èr diǎn sìshíwǔ fēn)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 🗓️ 曜日を覚えよう！</h2>
+            <p>中国語では、曜日を表現するのに主に3つの単語があります。どれも使えますが、<strong>星期 (xīngqī)</strong> が最も一般的です。</p>
+            <ul>
+                <li><strong>星期</strong> <span class="pronunciation">(xīngqī - シンチー)</span>：週</li>
+                <li><strong>周</strong> <span class="pronunciation">(zhōu - ジョウ)</span>：週</li>
+                <li><strong>礼拜</strong> <span class="pronunciation">(lǐbài - リーバイ)</span>：週 (口語的)</li>
+            </ul>
+
+            <p>曜日は <strong>星期 + 数字</strong> で表します。日曜日は少し特殊です。</p>
+            <ul>
+                <li>月曜日：<strong>星期一</strong> <span class="pronunciation">(xīngqīyī - シンチーイー)</span></li>
+                <li>火曜日：<strong>星期二</strong> <span class="pronunciation">(xīngqī'èr - シンチーアー)</span></li>
+                <li>水曜日：<strong>星期三</strong> <span class="pronunciation">(xīngqīsān - シンチーサン)</span></li>
+                <li>木曜日：<strong>星期四</strong> <span class="pronunciation">(xīngqīsì - シンチースー)</span></li>
+                <li>金曜日：<strong>星期五</strong> <span class="pronunciation">(xīngqīwǔ - シンチーウー)</span></li>
+                <li>土曜日：<strong>星期六</strong> <span class="pronunciation">(xīngqīliù - シンチーリウ)</span></li>
+                <li>日曜日：<strong>星期天 / 星期日</strong> <span class="pronunciation">(xīngqītiān / xīngqīrì - シンチーティエン / シンチーリー)</span></li>
+            </ul>
+
+            <div class="audio-container">
+                <p><strong>你星期几有空？</strong></p>
+                <div class="audio-icon" data-audio-text="你星期几有空？">🔊</div>
+            </div>
+            <p><strong>(Nǐ xīngqījǐ yǒu kòng? - ニー シンチージー ヨウ コン？)</strong><br>
+            あなたは何曜日が空いていますか？</p>
+
+            <div class="audio-container">
+                <p><strong>我星期三有空。</strong></p>
+                <div class="audio-icon" data-audio-text="我星期三有空。">🔊</div>
+            </div>
+            <p><strong>(Wǒ xīngqīsān yǒu kòng. - ウォ シンチーサン ヨウ コン)</strong><br>
+            私は水曜日が空いています。</p>
+        </section>
+
+        <section>
+            <h2>3. 📆 月を表現しよう！</h2>
+            <p>月は、数字の後に <strong>月 (yuè)</strong> をつけるだけで簡単です。</p>
+            <ul>
+                <li>1月：<strong>一月</strong> <span class="pronunciation">(yī yuè - イー ユエ)</span></li>
+                <li>2月：<strong>二月</strong> <span class="pronunciation">(èr yuè - アー ユエ)</span></li>
+                <li>...</li>
+                <li>12月：<strong>十二月</strong> <span class="pronunciation">(shí'èr yuè - シーアー ユエ)</span></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. 🗓️ いつですか？</h2>
+            <p>日付を尋ねるには、<strong>几月几号？ (jǐ yuè jǐ hào?)</strong> を使います。年月日は、<strong>年 → 月 → 日</strong> の順に言います。</p>
+
+            <ul>
+                <li><strong>年</strong> <span class="pronunciation">(nián - ニエン)</span>：年</li>
+                <li><strong>月</strong> <span class="pronunciation">(yuè - ユエ)</span>：月</li>
+                <li><strong>日 / 号</strong> <span class="pronunciation">(rì / hào - ルー / ハオ)</span>：日 (<strong>号</strong> は口語でよく使われます)</li>
+            </ul>
+
+            <div class="audio-container">
+                <p><strong>今天几月几号？</strong></p>
+                <div class="audio-icon" data-audio-text="今天几月几号？">🔊</div>
+            </div>
+            <p><strong>(Jīntiān jǐ yuè jǐ hào? - ジンティエン ジー ユエ ジー ハオ？)</strong><br>
+            今日は何月何日ですか？</p>
+
+            <div class="audio-container">
+                <p><strong>今天是十月二十五号。</strong></p>
+                <div class="audio-icon" data-audio-text="今天是十月二十五号。">🔊</div>
+            </div>
+            <p><strong>(Jīntiān shì shí yuè èrshíwǔ hào. - ジンティエン シー シー ユエ アーシーウー ハオ)</strong><br>
+            今日は10月25日です。</p>
+
+            <div class="audio-container">
+                <p><strong>你的生日是几月几号？</strong></p>
+                <div class="audio-icon" data-audio-text="你的生日是几月几号？">🔊</div>
+            </div>
+            <p><strong>(Nǐ de shēngrì shì jǐ yuè jǐ hào? - ニー ダ シェンルー シー ジー ユエ ジー ハオ？)</strong><br>
+            あなたの誕生日は何月何日ですか？</p>
+
+            <div class="audio-container">
+                <p><strong>我的生日是九月十二号。</strong></p>
+                <div class="audio-icon" data-audio-text="我的生日是九月十二号。">🔊</div>
+            </div>
+            <p><strong>(Wǒ de shēngrì shì jiǔ yuè shí'èr hào. - ウォ ダ シェンルー シー ジウ ユエ シーアー ハオ)</strong><br>
+            私の誕生日は9月12日です。</p>
+
+            <div class="audio-container">
+                <p><strong>派对是什么时候？</strong></p>
+                <div class="audio-icon" data-audio-text="派对是什么时候？">🔊</div>
+            </div>
+            <p><strong>(Pàiduì shì shénme shíhou? - パイトゥイ シー シェンマ シーホウ？)</strong><br>
+            パーティーはいつですか？</p>
+
+            <div class="audio-container">
+                <p><strong>派对是十一月六号星期天。</strong></p>
+                <div class="audio-icon" data-audio-text="派对是十一月六号星期天。">🔊</div>
+            </div>
+            <p><strong>(Pàiduì shì shíyī yuè liù hào xīngqītiān. - パイトゥイ シー シーイー ユエ リウ ハオ シンチーティエン)</strong><br>
+            パーティーは11月6日日曜日です。</p>
+            <div class="cultural-note">
+                <strong>💡 文化ノート：</strong>
+                <p>中国語では日付の表記順は「年-月-日」となります。例えば、2023年10月25日は <strong>二零二三年十月二十五日 (èr líng èr sān nián shí yuè èrshíwǔ rì)</strong> となります。この順序は日本語の「年-月-日」と似ていますが、英語などとは異なるため注意しましょう。</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📅 練習タイム：日付を言ってみよう！</h3>
+            <p>以下の日付を中国語で言ってみましょう。</p>
+            <div class="practice-item">
+                <p>1. 8月1日</p>
+                <p>2. 3月15日水曜日</p>
+                <p>3. 2024年1月1日</p>
+            </div>
+            <button class="answer-button">答えを見る</button>
+            <div class="answer" style="display: none;">
+                <p>1. 八月一号 (Bā yuè yī hào)</p>
+                <p>2. 三月十五号星期三 (Sān yuè shíwǔ hào xīngqīsān)</p>
+                <p>3. 二零二四年一月一日 (Èr líng èr sì nián yī yuè yī rì)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. 🤝 アポイントメントとスケジュール</h2>
+            <p>誰かと会う約束をしたり、スケジュールを確認したりする際の便利なフレーズです。</p>
+
+            <ul>
+                <li><strong>有空吗？</strong> <span class="pronunciation">(yǒu kòng ma? - ヨウ コン マ？)</span>：空いてますか？</li>
+                <li><strong>时间</strong> <span class="pronunciation">(shíjiān - シージエン)</span>：時間</li>
+                <li><strong>见面</strong> <span class="pronunciation">(jiànmiàn - ジエンミエン)</span>：会う、面会する</li>
+                <li><strong>可以吗？</strong> <span class="pronunciation">(kěyǐ ma? - カーイー マ？)</span>：いいですか？／できますか？</li>
+                <li><strong>没问题。</strong> <span class="pronunciation">(méi wèntí. - メイ ウェンティー)</span>：問題ないです。</li>
+            </ul>
+
+            <h3>簡単な会話例：</h3>
+            <div class="audio-container">
+                <p>A: <strong>明天你有空吗？</strong></p>
+                <div class="audio-icon" data-audio-text="明天你有空吗？">🔊</div>
+            </div>
+            <p><strong>(Míngtiān nǐ yǒu kòng ma? - ミンティエン ニー ヨウ コン マ？)</strong><br>
+            明日、空いていますか？</p>
+
+            <div class="audio-container">
+                <p>B: <strong>我明天上午有空，下午没空。</strong></p>
+                <div class="audio-icon" data-audio-text="我明天上午有空，下午没空。">🔊</div>
+            </div>
+            <p><strong>(Wǒ míngtiān shàngwǔ yǒu kòng, xiàwǔ méi kòng. - ウォ ミンティエン シャンウー ヨウ コン, シアウー メイ コン)</strong><br>
+            私は明日午前中空いていますが、午後は空いていません。</p>
+
+            <div class="audio-container">
+                <p>A: <strong>那我们下午两点见面可以吗？</strong></p>
+                <div class="audio-icon" data-audio-text="那我们下午两点见面可以吗？">🔊</div>
+            </div>
+            <p><strong>(Nà wǒmen xiàwǔ liǎng diǎn jiànmiàn kěyǐ ma? - ナー ウォメン シアウー リャン ディエン ジエンミエン カーイー マ？)</strong><br>
+            では、午後2時に会うのはどうですか？</p>
+
+            <div class="audio-container">
+                <p>B: <strong>没问题！</strong></p>
+                <div class="audio-icon" data-audio-text="没问题！">🔊</div>
+            </div>
+            <p><strong>(Méi wèntí! - メイ ウェンティー！)</strong><br>
+            問題ないです！</p>
+        </section>
+
+        <section class="practice-section">
+            <h3>🗣️ 会話練習：アポイントメント</h3>
+            <p>（　）に適切な中国語の単語を入れて、会話を完成させましょう。</p>
+            <div class="practice-item">
+                <p>A: 你（　　）有空吗？</p>
+                <p>B: 我今天下午（　　）。</p>
+                <p>A: 那我们下午四点（　　）可以吗？</p>
+                <p>B: 可以！</p>
+            </div>
+            <button class="answer-button">答えを見る</button>
+            <div class="answer" style="display: none;">
+                <p>A: 你<strong>今天</strong>有空吗？ (Jīntiān - 今日)</p>
+                <p>B: 我今天下午<strong>有空</strong>。 (yǒu kòng - 空いています)</p>
+                <p>A: 那我们下午四点<strong>见面</strong>可以吗？ (jiànmiàn - 会う)</p>
+                <p>B: 可以！</p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>🎉 チャプター10：まとめ</h2>
+            <p>お疲れ様でした！このチャプターでは、時間とスケジュールに関する重要な表現を学びました。</p>
+            <ul>
+                <li><strong>時刻の表現</strong>: <strong>点</strong> (時), <strong>分</strong> (分), <strong>半</strong> (半), <strong>刻</strong> (15分), <strong>差</strong> (〜分前)。
+                    <div class="audio-container">
+                        <p>例: <strong>现在几点？</strong> <span class="pronunciation">(今、何時ですか？)</span></p>
+                        <div class="audio-icon" data-audio-text="现在几点？">🔊</div>
+                    </div>
+                </li>
+                <li><strong>曜日の表現</strong>: <strong>星期一〜星期六</strong>、<strong>星期天/星期日</strong> (日曜日)。
+                    <div class="audio-container">
+                        <p>例: <strong>星期三</strong> <span class="pronunciation">(水曜日)</span></p>
+                        <div class="audio-icon" data-audio-text="星期三">🔊</div>
+                    </div>
+                </li>
+                <li><strong>月の表現</strong>: 数字 + <strong>月</strong>。
+                    <div class="audio-container">
+                        <p>例: <strong>十月</strong> <span class="pronunciation">(10月)</span></p>
+                        <div class="audio-icon" data-audio-text="十月">🔊</div>
+                    </div>
+                </li>
+                <li><strong>日付の表現と尋ね方</strong>: <strong>年 → 月 → 日/号</strong> の順。
+                    <div class="audio-container">
+                        <p>例: <strong>今天几月几号？</strong> <span class="pronunciation">(今日は何月何日ですか？)</span></p>
+                        <div class="audio-icon" data-audio-text="今天几月几号？">🔊</div>
+                    </div>
+                </li>
+                <li><strong>アポイントメントのフレーズ</strong>: <strong>有空吗？</strong> (空いていますか？), <strong>见面</strong> (会う)。
+                    <div class="audio-container">
+                        <p>例: <strong>明天有空吗？</strong> <span class="pronunciation">(明日、空いていますか？)</span></p>
+                        <div class="audio-icon" data-audio-text="明天有空吗？">🔊</div>
+                    </div>
+                </li>
+            </ul>
+            <p>これらの表現を使いこなせれば、中国語での日常会話がぐっとスムーズになります。何度も練習して、身につけてくださいね！</p>
+        </section>
+
+    </div>
+
+    <script>
+        // これはプレースホルダーです。
+        // モバイルアプリの環境でTTS機能が注入されることを想定しています。
+        // ここにはonClickハンドラを直接記述しません。
+        // フロントエンドがdata-audio-text属性を読み取ってTTSをトリガーします。
+
+        document.querySelectorAll('.answer-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const answerDiv = button.nextElementSibling;
+                if (answerDiv && answerDiv.classList.contains('answer')) {
+                    answerDiv.style.display = answerDiv.style.display === 'none' ? 'block' : 'none';
+                    button.textContent = answerDiv.style.display === 'none' ? '答えを見る' : '答えを隠す';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 5: Familia y Relaciones</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px; /* Base font size, ensures minimum 16px */
+        }
+
+        /* Container for content */
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        h2 {
+            font-size: 1.6em; /* ~25.6px */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            font-size: 1.3em; /* ~20.8px */
+            margin-top: 1.2em;
+        }
+
+        p {
+            font-size: 1.0em; /* ~16px */
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 1.5em;
+        }
+
+        ul li {
+            background-color: #ffffff; /* White background for list items */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple accent */
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            font-size: 1.0em; /* ~16px */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        ul li strong {
+            color: #2C3E50;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 1.5em; /* ~24px */
+            cursor: pointer;
+            color: #8B5FBF; /* Primary color */
+            padding: 0; /* Remove default padding */
+            min-width: 44px; /* Minimum touch target size */
+            min-height: 44px; /* Minimum touch target size */
+            display: flex; /* To center icon */
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease;
+            -webkit-tap-highlight-color: transparent; /* Remove tap highlight */
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Example Boxes */
+        .example-box {
+            background-color: #f0f0f0; /* Light gray for examples */
+            border-left: 5px solid #E0E0E0; /* Light gray border */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 1.0em; /* ~16px */
+        }
+
+        .example-box p {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .example-box p .audio-icon {
+            margin-left: 10px; /* Space between text and icon */
+        }
+
+        .example-box strong {
+            color: #8B5FBF; /* Highlight keywords */
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .practice-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #E0E0E0;
+        }
+
+        .practice-item:last-child {
+            border-bottom: none;
+        }
+
+        .practice-item p {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #2C3E50;
+            font-size: 1.0em; /* ~16px */
+        }
+
+        .practice-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px; /* Space between buttons */
+        }
+
+        .practice-options button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.0em; /* ~16px */
+            min-height: 44px; /* Minimum touch target size */
+            flex-grow: 1; /* Allow buttons to grow and fill space */
+            max-width: calc(50% - 10px); /* Two buttons per row on larger mobiles */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        @media (max-width: 480px) {
+            .practice-options button {
+                max-width: 100%; /* One button per row on very small screens */
+            }
+        }
+
+        .practice-options button:hover {
+            background-color: #6f479f; /* Slightly darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #F0F0F0;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #E0E0E0;
+        }
+
+        .summary-section h3 {
+            color: #8B5FBF; /* Purple for summary heading */
+            text-align: center;
+        }
+
+        .summary-section ul li {
+            background-color: transparent; /* No background for summary list items */
+            border-left: none;
+            box-shadow: none;
+            padding: 5px 0;
+            margin-bottom: 5px;
+            font-size: 1.0em; /* ~16px */
+            color: #2C3E50;
+            display: block; /* Remove flex, no audio icons here */
+        }
+
+        .summary-section ul li strong {
+            color: #8B5FBF;
+        }
+
+        /* Responsive Design (Mobile-First) */
+        @media (min-width: 600px) {
+            .container {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 1.1em; /* ~17.6px */
+            }
+            ul li {
+                padding: 15px 20px;
+                font-size: 1.1em;
+            }
+            .example-box {
+                font-size: 1.05em; /* ~16.8px */
+            }
+            .practice-options button {
+                padding: 15px 25px;
+                max-width: calc(33.333% - 10px); /* Three buttons per row on tablets */
+            }
+        }
+
+        /* Specific Header Requirement */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .chapter-title {
+            color: #2C3E50;
+            text-align: center;
+            font-size: 2.2em;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E0E0E0;
+            margin-top: 0;
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #8B5FBF;
+            font-style: normal;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 5: Family and Relationships</h1>
+        <div class="lesson-header">
+            <!-- This image is a placeholder as per instructions. It doesn't rely on an external URL. -->
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <p>¡Hola! 👋 ¡Bienvenidos al Capítulo 5! Hoy vamos a aprender a hablar sobre una de las partes más importantes de nuestras vidas: ¡nuestra <strong>familia y nuestras relaciones</strong>! Aprenderás los nombres de los miembros de la familia en inglés, cómo usar los pronombres posesivos y cómo presentar a tus seres queridos.</p>
+
+        <h2>1. Miembros de la Familia 👨‍👩‍👧‍👦</h2>
+        <p>Aquí tienes los miembros de la familia más comunes en inglés. ¡Escucha y repite!</p>
+        <ul>
+            <li>
+                <strong>Mother</strong> (Madre)
+                <span class="pronunciation">[ˈmʌðər]</span>
+                <button class="audio-icon" data-audio-text="Mother">🔊</button>
+            </li>
+            <li>
+                <strong>Father</strong> (Padre)
+                <span class="pronunciation">[ˈfɑːðər]</span>
+                <button class="audio-icon" data-audio-text="Father">🔊</button>
+            </li>
+            <li>
+                <strong>Sister</strong> (Hermana)
+                <span class="pronunciation">[ˈsɪstər]</span>
+                <button class="audio-icon" data-audio-text="Sister">🔊</button>
+            </li>
+            <li>
+                <strong>Brother</strong> (Hermano)
+                <span class="pronunciation">[ˈbrʌðər]</span>
+                <button class="audio-icon" data-audio-text="Brother">🔊</button>
+            </li>
+            <li>
+                <strong>Grandmother</strong> (Abuela)
+                <span class="pronunciation">[ˈɡrændˌmʌðər]</span>
+                <button class="audio-icon" data-audio-text="Grandmother">🔊</button>
+            </li>
+            <li>
+                <strong>Grandfather</strong> (Abuelo)
+                <span class="pronunciation">[ˈɡrændˌfɑːðər]</span>
+                <button class="audio-icon" data-audio-text="Grandfather">🔊</button>
+            </li>
+            <li>
+                <strong>Son</strong> (Hijo)
+                <span class="pronunciation">[sʌn]</span>
+                <button class="audio-icon" data-audio-text="Son">🔊</button>
+            </li>
+            <li>
+                <strong>Daughter</strong> (Hija)
+                <span class="pronunciation">[ˈdɔːtər]</span>
+                <button class="audio-icon" data-audio-text="Daughter">🔊</button>
+            </li>
+            <li>
+                <strong>Aunt</strong> (Tía)
+                <span class="pronunciation">[ænt] o [ɑːnt]</span>
+                <button class="audio-icon" data-audio-text="Aunt">🔊</button>
+            </li>
+            <li>
+                <strong>Uncle</strong> (Tío)
+                <span class="pronunciation">[ˈʌŋkl]</span>
+                <button class="audio-icon" data-audio-text="Uncle">🔊</button>
+            </li>
+            <li>
+                <strong>Cousin</strong> (Primo/a)
+                <span class="pronunciation">[ˈkʌzən]</span>
+                <button class="audio-icon" data-audio-text="Cousin">🔊</button>
+            </li>
+            <li>
+                <strong>Niece</strong> (Sobrina)
+                <span class="pronunciation">[niːs]</span>
+                <button class="audio-icon" data-audio-text="Niece">🔊</button>
+            </li>
+            <li>
+                <strong>Nephew</strong> (Sobrino)
+                <span class="pronunciation">[ˈnɛfjuː]</span>
+                <button class="audio-icon" data-audio-text="Nephew">🔊</button>
+            </li>
+        </ul>
+
+        <h2>2. Pronombres Posesivos: ¡Esto es MÍO! 🙋‍♀️🙋‍♂️</h2>
+        <p>Los pronombres posesivos nos dicen a quién pertenece algo. Son esenciales para hablar de tu familia.</p>
+        <ul>
+            <li>
+                <strong>My</strong> (Mi/Mis) - Para cosas que me pertenecen a mí.
+                <span class="pronunciation">[maɪ]</span>
+                <button class="audio-icon" data-audio-text="My">🔊</button>
+            </li>
+            <li>
+                <strong>Your</strong> (Tu/Tus, Su/Sus de usted/ustedes) - Para cosas que te pertenecen a ti o a ustedes.
+                <span class="pronunciation">[jʊər]</span>
+                <button class="audio-icon" data-audio-text="Your">🔊</button>
+            </li>
+            <li>
+                <strong>His</strong> (Su/Sus de él) - Para cosas que le pertenecen a un hombre o un niño.
+                <span class="pronunciation">[hɪz]</span>
+                <button class="audio-icon" data-audio-text="His">🔊</button>
+            </li>
+            <li>
+                <strong>Her</strong> (Su/Sus de ella) - Para cosas que le pertenecen a una mujer o una niña.
+                <span class="pronunciation">[hɜːr]</span>
+                <button class="audio-icon" data-audio-text="Her">🔊</button>
+            </li>
+            <li>
+                <strong>Their</strong> (Su/Sus de ellos/ellas) - Para cosas que les pertenecen a ellos o a ellas.
+                <span class="pronunciation">[ðer]</span>
+                <button class="audio-icon" data-audio-text="Their">🔊</button>
+            </li>
+        </ul>
+
+        <div class="example-box">
+            <p><strong>My</strong> mother. (Mi madre.) <button class="audio-icon" data-audio-text="My mother">🔊</button></p>
+            <p><strong>Your</strong> brother. (Tu hermano.) <button class="audio-icon" data-audio-text="Your brother">🔊</button></p>
+            <p><strong>His</strong> sister. (Su hermana de él.) <button class="audio-icon" data-audio-text="His sister">🔊</button></p>
+            <p><strong>Her</strong> father. (Su padre de ella.) <button class="audio-icon" data-audio-text="Her father">🔊</button></p>
+            <p><strong>Their</strong> children. (Sus hijos de ellos/ellas.) <button class="audio-icon" data-audio-text="Their children">🔊</button></p>
+        </div>
+
+        <p>💡 <strong>Nota Cultural:</strong> En español, "su" puede ser ambiguo (su casa, ¿de él, de ella, de ellos?). En inglés, "his" y "her" eliminan esa ambigüedad, lo que ayuda a saber si hablamos de "su de él" o "su de ella".</p>
+
+        <h2>3. ¡Presentando a tu Familia! 🗣️</h2>
+        <p>Para presentar a un miembro de la familia (o a cualquier persona u objeto singular) usamos "This is my...". Si son varios, usamos "These are my...".</p>
+
+        <h3>Para uno solo (Singular):</h3>
+        <div class="example-box">
+            <p><strong>This is my mother.</strong> (Ella es mi madre.) <button class="audio-icon" data-audio-text="This is my mother">🔊</button></p>
+            <p><strong>This is my brother.</strong> (Él es mi hermano.) <button class="audio-icon" data-audio-text="This is my brother">🔊</button></p>
+        </div>
+
+        <h3>Para varios (Plural):</h3>
+        <p>Para los plurales, necesitamos algunas palabras nuevas:</p>
+        <ul>
+            <li>
+                <strong>Parents</strong> (Padres: madre y padre)
+                <span class="pronunciation">[ˈpɛərənts]</span>
+                <button class="audio-icon" data-audio-text="Parents">🔊</button>
+            </li>
+            <li>
+                <strong>Children</strong> (Hijos/as: en general)
+                <span class="pronunciation">[ˈʧɪldrən]</span>
+                <button class="audio-icon" data-audio-text="Children">🔊</button>
+            </li>
+            <li>
+                <strong>Siblings</strong> (Hermanos/as: en general)
+                <span class="pronunciation">[ˈsɪblɪŋz]</span>
+                <button class="audio-icon" data-audio-text="Siblings">🔊</button>
+            </li>
+            <li>
+                <strong>Grandparents</strong> (Abuelos: abuelo y abuela)
+                <span class="pronunciation">[ˈɡrændˌpɛərənts]</span>
+                <button class="audio-icon" data-audio-text="Grandparents">🔊</button>
+            </li>
+        </ul>
+
+        <div class="example-box">
+            <p><strong>These are my parents.</strong> (Ellos son mis padres.) <button class="audio-icon" data-audio-text="These are my parents">🔊</button></p>
+            <p><strong>These are my children.</strong> (Ellos son mis hijos.) <button class="audio-icon" data-audio-text="These are my children">🔊</button></p>
+            <p><strong>These are my grandparents.</strong> (Ellos son mis abuelos.) <button class="audio-icon" data-audio-text="These are my grandparents">🔊</button></p>
+        </div>
+
+        <h2>4. Vocabulario Adicional y Relaciones 💖</h2>
+        <p>Aquí tienes más palabras para hablar de relaciones en tu vida.</p>
+        <ul>
+            <li>
+                <strong>Husband</strong> (Esposo)
+                <span class="pronunciation">[ˈhʌzbənd]</span>
+                <button class="audio-icon" data-audio-text="Husband">🔊</button>
+            </li>
+            <li>
+                <strong>Wife</strong> (Esposa)
+                <span class="pronunciation">[waɪf]</span>
+                <button class="audio-icon" data-audio-text="Wife">🔊</button>
+            </li>
+            <li>
+                <strong>Friend</strong> (Amigo/a)
+                <span class="pronunciation">[frɛnd]</span>
+                <button class="audio-icon" data-audio-text="Friend">🔊</button>
+            </li>
+            <li>
+                <strong>Partner</strong> (Pareja) - para relaciones románticas o de negocios.
+                <span class="pronunciation">[ˈpɑːrtnər]</span>
+                <button class="audio-icon" data-audio-text="Partner">🔊</button>
+            </li>
+            <li>
+                <strong>Boyfriend</strong> (Novio)
+                <span class="pronunciation">[ˈbɔɪˌfrɛnd]</span>
+                <button class="audio-icon" data-audio-text="Boyfriend">🔊</button>
+            </li>
+            <li>
+                <strong>Girlfriend</strong> (Novia)
+                <span class="pronunciation">[ˈɡɜːrlˌfrɛnd]</span>
+                <button class="audio-icon" data-audio-text="Girlfriend">🔊</button>
+            </li>
+        </ul>
+
+        <div class="example-box">
+            <p><strong>She is my wife.</strong> (Ella es mi esposa.) <button class="audio-icon" data-audio-text="She is my wife">🔊</button></p>
+            <p><strong>He is my friend.</strong> (Él es mi amigo.) <button class="audio-icon" data-audio-text="He is my friend">🔊</button></p>
+            <p><strong>This is my boyfriend.</strong> (Él es mi novio.) <button class="audio-icon" data-audio-text="This is my boyfriend">🔊</button></p>
+        </div>
+
+        <h2>¡A Practicar! 💪</h2>
+        <p>Es hora de poner a prueba lo que has aprendido. ¡Elige la mejor opción o traduce!</p>
+
+        <div class="practice-section">
+            <div class="practice-item">
+                <p>1. ¿Cómo se dice "mi hermana" en inglés?</p>
+                <div class="practice-options">
+                    <button>My brother</button>
+                    <button>My sister</button>
+                    <button>My mother</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p>2. Traduce: "His father." (Es el padre de _______)</p>
+                <div class="practice-options">
+                    <button>Ella</button>
+                    <button>Él</button>
+                    <button>Ellos</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p>3. ¿Qué usarías para presentar a tus dos hijos? "____ are my children."</p>
+                <div class="practice-options">
+                    <button>This</button>
+                    <button>These</button>
+                    <button>That</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p>4. ¿Cómo se dice "esposo" en inglés?</p>
+                <div class="practice-options">
+                    <button>Wife</button>
+                    <button>Husband</button>
+                    <button>Partner</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p>5. Escucha y selecciona la palabra: <button class="audio-icon" data-audio-text="Grandfather">🔊</button></p>
+                <div class="practice-options">
+                    <button>Grandmother</button>
+                    <button>Grandson</button>
+                    <button>Grandfather</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h3>📝 Resumen del Capítulo 5</h3>
+            <ul>
+                <li>Hemos aprendido los nombres de los miembros de la familia: <strong>mother, father, sister, brother, son, daughter, aunt, uncle, cousin, etc.</strong></li>
+                <li>Conocimos los pronombres posesivos: <strong>my, your, his, her, their</strong>.</li>
+                <li>Aprendimos a presentar a personas: <strong>"This is my..."</strong> (singular) y <strong>"These are my..."</strong> (plural).</li>
+                <li>Exploramos vocabulario adicional como <strong>husband, wife, friend, partner, boyfriend, girlfriend</strong>.</li>
+                <li>¡Recuerda practicar la pronunciación para sonar como un nativo!</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>

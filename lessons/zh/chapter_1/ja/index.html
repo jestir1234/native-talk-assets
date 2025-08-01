@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>中国語レッスン Chapter 1: ピンインと声調</title>
+    <style>
+        /* Base Styles & Mobile-First Approach */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-background: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+            background-color: var(--secondary-background);
+            color: var(--body-text-color);
+            margin: 0;
+            padding: 20px; /* Overall padding for content */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            box-sizing: border-box; /* Ensures padding doesn't increase total width */
+            overflow-x: hidden; /* Prevent horizontal scroll on small screens */
+        }
+
+        /* Container for overall content to control max width */
+        .container {
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto; /* Center content */
+            padding: 0 10px; /* Small padding on sides for very small screens */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center; /* Chapter title centered */
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 32px; /* Slightly larger for main chapter title */
+        }
+
+        h2 {
+            font-size: 24px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 25px;
+        }
+
+        p {
+            margin-bottom: 1em;
+            padding: 0 5px; /* Slight padding for paragraphs */
+        }
+
+        ul {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 0.8em;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet point using emoji */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 18px;
+            top: 0;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            font-style: normal;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Specific header structure requirement */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Sections and Cards */
+        section {
+            background-color: #FFFFFF; /* White background for sections */
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .card {
+            background-color: #F8F8F8;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .note {
+            background-color: #EAF7FE; /* Light blue for notes */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .note strong {
+            color: var(--primary-color);
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%; /* Make it round */
+            width: 44px; /* Minimum 44px for touch targets */
+            height: 44px; /* Minimum 44px for touch targets */
+            font-size: 20px;
+            cursor: pointer;
+            vertical-align: middle;
+            margin-left: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C429D; /* Slightly darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Inline Audio button for text */
+        .pronunciation-word {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 10px;
+            background-color: #F0E6F7; /* Light purple background */
+            border-radius: 8px;
+            margin: 5px 0;
+            font-weight: bold;
+            color: var(--heading-color);
+            white-space: nowrap; /* Prevent wrapping of word and icon */
+        }
+
+        .pronunciation-word .pinyin {
+            margin-right: 8px;
+        }
+
+        /* Tone Grid Examples */
+        .tone-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Responsive grid columns */
+            gap: 15px;
+            margin-top: 20px;
+            padding: 0 5px;
+        }
+
+        .tone-item {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tone-item h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .tone-item .pinyin-example {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-bottom: 5px;
+        }
+
+        .tone-item .kanji-meaning {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #EAF7FE; /* Light blue background for practice */
+            border: 1px solid #CDE0F3;
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-bottom: 25px;
+        }
+
+        .practice-question {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-direction: column; /* Stack options vertically on mobile */
+            gap: 10px;
+        }
+
+        .quiz-option {
+            display: block; /* Make buttons block level */
+            width: 100%;
+            padding: 15px 20px;
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--heading-color);
+            font-size: 17px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            min-height: 44px; /* Ensure touch target size */
+            box-sizing: border-box; /* Include padding in height */
+        }
+
+        .quiz-option:hover {
+            background-color: #F0E6F7; /* Light purple on hover */
+            border-color: var(--primary-color);
+        }
+
+        /* Visual feedback for quiz options (simulated) */
+        .quiz-option.correct {
+            background-color: #D4EDDA; /* Light green for correct */
+            border-color: #28A745;
+            color: #155724;
+        }
+
+        .quiz-option.incorrect {
+            background-color: #F8D7DA; /* Light red for incorrect */
+            border-color: #DC3545;
+            color: #721C24;
+        }
+
+        .solution-reveal {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .solution-button {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            min-height: 44px;
+        }
+
+        .solution-button:hover {
+            background-color: #6C429D;
+        }
+
+        .solution-text {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #F0F0F0;
+            border-radius: 8px;
+            display: none; /* Hidden by default, JS would toggle */
+            text-align: left;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .solution-text.visible {
+            display: block;
+        }
+
+        /* Summary section */
+        .summary-section {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+        .summary-section ul {
+            text-align: left; /* Keep list items left aligned */
+            padding-left: 20px;
+            list-style-type: disc; /* Use default disc for summary list */
+        }
+        .summary-section li::before {
+            content: '✨'; /* Different bullet for summary */
+            font-size: 18px;
+            color: var(--primary-color);
+        }
+        .summary-section li {
+            padding-left: 25px; /* Adjust for new bullet */
+        }
+
+        /* Responsive adjustments for larger screens */
+        @media (min-width: 600px) {
+            body {
+                padding: 30px;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            h1 {
+                font-size: 36px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 22px;
+            }
+            section {
+                padding: 30px 25px;
+            }
+            .tone-grid {
+                grid-template-columns: repeat(4, 1fr); /* 4 columns on wider screens */
+            }
+            .practice-options {
+                flex-direction: row; /* Layout options horizontally on wider screens */
+                flex-wrap: wrap; /* Allow wrapping if many options */
+                justify-content: center;
+            }
+            .quiz-option {
+                width: calc(50% - 10px); /* Two columns layout for options */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 1: 中国語のピンインと声調</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>はじめに：ピンインと声調とは？ 💡</h2>
+            <p>中国語を学ぶ上で、最初にして最も大切なステップが<strong>ピンイン (Pīnyīn, 拼音)</strong>と<strong>声調 (Shēngdiào, 声调)</strong>の習得です。</p>
+            <p><strong>ピンイン</strong>は、中国語の発音をアルファベットで表記するためのシステムです。私たちが日本語をローマ字で書くように、中国語の音を世界中の人が理解できるようにしたものです。ピンインをマスターすれば、初めて見る中国語の単語でも、正しい発音で読めるようになります。</p>
+            <p>そして、中国語の発音には欠かせないのが<strong>声調</strong>です。声調とは、単語の音の高さの変化のこと。同じ「ma」という音でも、声調が変わると意味が全く異なる魔法のような特徴です。まるで音楽のメロディーのように、音が上がったり下がったりします。</p>
+            <div class="note">
+                <strong>💡ポイント:</strong> ピンインと声調は、中国語の「発音の地図」🗺️です。これらをしっかり学べば、中国語学習の素晴らしいスタートを切ることができます！
+            </div>
+        </section>
+
+        <section>
+            <h2>ピンインの構成：声母と韻母 🗣️</h2>
+            <p>ピンインは、主に「声母 (Shēngmǔ, 子音)」と「韻母 (Yùnmǔ, 母音)」という二つの要素で構成されています。</p>
+            <p>まるで日本語の「か (k + a)」のように、子音と母音が組み合わさって一つの音を作り出します。</p>
+
+            <h3>1. 声母 (Shēngmǔ, 子音)</h3>
+            <p>単語の最初に来る子音のような部分です。日本語にはない発音もあるので、注意が必要です。</p>
+            <div class="card">
+                <p><strong>よく使う声母の例:</strong></p>
+                <ul>
+                    <li><strong>b</strong> <span class="audio-icon" data-audio-text="b">🔊</span> (日本語の「ブ」より唇をしっかり閉じて破裂させる)</li>
+                    <li><strong>p</strong> <span class="audio-icon" data-audio-text="p">🔊</span> (「プ」と息を強く出す)</li>
+                    <li><strong>m</strong> <span class="audio-icon" data-audio-text="m">🔊</span> (日本語の「ム」と同じ)</li>
+                    <li><strong>f</strong> <span class="audio-icon" data-audio-text="f">🔊</span> (日本語の「フ」と同じ)</li>
+                    <li><strong>d</strong> <span class="audio-icon" data-audio-text="d">🔊</span> (日本語の「ド」より舌を上の歯茎の裏にしっかりつけて)</li>
+                    <li><strong>t</strong> <span class="audio-icon" data-audio-text="t">🔊</span> (「ト」と息を強く出す)</li>
+                    <li><strong>n</strong> <span class="audio-icon" data-audio-text="n">🔊</span> (日本語の「ヌ」と同じ)</li>
+                    <li><strong>l</strong> <span class="audio-icon" data-audio-text="l">🔊</span> (日本語の「ル」と同じ)</li>
+                    <li><strong>g</strong> <span class="audio-icon" data-audio-text="g">🔊</span> (日本語の「グ」と同じ)</li>
+                    <li><strong>k</strong> <span class="audio-icon" data-audio-text="k">🔊</span> (「ク」と息を強く出す)</li>
+                    <li><strong>h</strong> <span class="audio-icon" data-audio-text="h">🔊</span> (日本語の「ハ」より喉の奥で出す)</li>
+                </ul>
+            </div>
+
+            <h3>2. 韻母 (Yùnmǔ, 母音)</h3>
+            <p>声母の後ろに来る母音のような部分です。単独で音節になることもあります。</p>
+            <div class="card">
+                <p><strong>よく使う韻母の例:</strong></p>
+                <ul>
+                    <li><strong>a</strong> <span class="audio-icon" data-audio-text="a">🔊</span> (日本語の「ア」より口を大きく開けて)</li>
+                    <li><strong>o</strong> <span class="audio-icon" data-audio-text="o">🔊</span> (日本語の「オ」より口を丸めて)</li>
+                    <li><strong>e</strong> <span class="audio-icon" data-audio-text="e">🔊</span> (日本語の「エ」より曖昧な「ア」と「オ」の中間のような音)</li>
+                    <li><strong>i</strong> <span class="audio-icon" data-audio-text="i">🔊</span> (日本語の「イ」と同じ)</li>
+                    <li><strong>u</strong> <span class="audio-icon" data-audio-text="u">🔊</span> (日本語の「ウ」より口を突き出して)</li>
+                    <li><strong>ü</strong> <span class="audio-icon" data-audio-text="ü">🔊</span> (日本語にはない音。「イ」の口の形で「ウ」と発音)</li>
+                    <li><strong>ai</strong> <span class="audio-icon" data-audio-text="ai">🔊</span> (日本語の「アイ」と同じ)</li>
+                    <li><strong>ao</strong> <span class="audio-icon" data-audio-text="ao">🔊</span> (日本語の「アオ」と同じ)</li>
+                    <li><strong>an</strong> <span class="audio-icon" data-audio-text="an">🔊</span> (日本語の「アン」と同じ、ただし「ン」は鼻にかける)</li>
+                    <li><strong>ang</strong> <span class="audio-icon" data-audio-text="ang">🔊</span> (日本語の「アング」の「グ」を発音しない「ン」)</li>
+                </ul>
+            </div>
+            <p>声母と韻母が合わさって、一つの音節になります。</p>
+            <div class="pronunciation-word">
+                <span class="pinyin"><em>pīn</em></span> <span class="audio-icon" data-audio-text="pin">🔊</span> (p + in)
+            </div>
+            <div class="pronunciation-word">
+                <span class="pinyin"><em>yīn</em></span> <span class="audio-icon" data-audio-text="yin">🔊</span> (y + in)
+            </div>
+        </section>
+
+        <section>
+            <h2>中国語の四声 🎶</h2>
+            <p>中国語には4つの主要な声調（+軽声）があり、同じピンインでも声調が異なると意味が全く変わります。これは中国語学習の最大の難関の一つですが、同時に最も魅力的な部分でもあります！</p>
+            <p>例えば、ピンインの<em>"ma"</em>を使って、四声の違いを見てみましょう。</p>
+
+            <div class="tone-grid">
+                <div class="tone-item">
+                    <h4>第一声 (īn, 高く平ら)</h4>
+                    <span class="pinyin-example"><em>mā</em></span> <span class="audio-icon" data-audio-text="mā">🔊</span>
+                    <span class="kanji-meaning">媽 (お母さん)</span>
+                    <p>高く、平らに伸ばします。歌の「ドレミファソ」の「ソ」くらいの高さで、そのままキープするイメージです。</p>
+                </div>
+                <div class="tone-item">
+                    <h4>第二声 (yáng, 上昇)</h4>
+                    <span class="pinyin-example"><em>má</em></span> <span class="audio-icon" data-audio-text="má">🔊</span>
+                    <span class="kanji-meaning">麻 (麻、しびれる)</span>
+                    <p>低いところから高いところへ、質問するときのように語尾を上げます。「え？何？」と聞き返すような感じです。</p>
+                </div>
+                <div class="tone-item">
+                    <h4>第三声 (shàng, 低く谷型)</h4>
+                    <span class="pinyin-example"><em>mǎ</em></span> <span class="audio-icon" data-audio-text="mǎ">🔊</span>
+                    <span class="kanji-meaning">馬 (馬)</span>
+                    <p>一度低く下がり、それから少し上がります。日本語の「あれ？」と疑問に思うときの「れ？」のようなイメージです。</p>
+                </div>
+                <div class="tone-item">
+                    <h4>第四声 (qù, 下降)</h4>
+                    <span class="pinyin-example"><em>mà</em></span> <span class="audio-icon" data-audio-text="mà">🔊</span>
+                    <span class="kanji-meaning">罵 (罵る)</span>
+                    <p>高いところから低いところへ、勢いよく下降させます。怒って「違う！」と言うときのような感じです。</p>
+                </div>
+            </div>
+
+            <div class="note">
+                <strong>💡ポイント:</strong>
+                <ul>
+                    <li>声調は音の高さの変化です。音量ではありません。</li>
+                    <li>最初はゆっくり、大げさに練習しましょう。</li>
+                    <li><strong>軽声 (qīngshēng, 軽声)</strong>という、強く発音しない短い声調もあります。これはマークされません。例: <em>māma</em> <span class="audio-icon" data-audio-text="māma">🔊</span> (お母さん) の二つ目の「ma」。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>声調記号と表記ルール ✍️</h2>
+            <p>ピンインには、声調を示す記号（声調符号）が母音の上に付けられます。</p>
+            <ul>
+                <li><strong>第一声:</strong> 横棒 (例: <em>ā</em>)</li>
+                <li><strong>第二声:</strong> 右上がり (例: <em>á</em>)</li>
+                <li><strong>第三声:</strong> V字型 (例: <em>ǎ</em>)</li>
+                <li><strong>第四声:</strong> 右下がり (例: <em>à</em>)</li>
+            </ul>
+
+            <h3>声調符号の付ける位置のルール</h3>
+            <p>一つのピンインに複数の母音がある場合、どの母音に声調符号を付けるかにはルールがあります。</p>
+            <div class="card">
+                <p><strong>ルール:</strong></p>
+                <ol>
+                    <li>主に <strong>a, o, e</strong> の優先順位で付けます。
+                        <br>例: <em>h<strong style="color:var(--primary-color);">ǎ</strong>o</em> <span class="audio-icon" data-audio-text="hǎo">🔊</span> (好, 良い) - 「a」に付く
+                        <br>例: <em>gu<strong style="color:var(--primary-color);">ī</strong></em> <span class="audio-icon" data-audio-text="guī">🔊</span> (帰, 帰る) - 「i」に付く (a, o, eがない場合、他の母音に付く)
+                    </li>
+                    <li><strong>iu</strong> と <strong>ui</strong> の場合、後ろの母音に付けます。
+                        <br>例: <em>li<strong style="color:var(--primary-color);">ú</strong></em> <span class="audio-icon" data-audio-text="liú">🔊</span> (流, 流れる) - 「u」に付く
+                        <br>例: <em>hu<strong style="color:var(--primary-color);">ī</strong></em> <span class="audio-icon" data-audio-text="huī">🔊</span> (灰, 灰色) - 「i」に付く
+                    </li>
+                </ol>
+            </div>
+
+            <h3>声調変化 (Tone Sandhi) の注意 ⚠️</h3>
+            <p>特定の声調が連続する場合、発音しやすくするために声調が変化することがあります。</p>
+            <div class="note">
+                <strong>例: 第三声＋第三声 → 第二声＋第三声</strong><br>
+                最もよく知られている例は「你好 (nǐ hǎo)」です。
+                <br>本来は <em>nǐ</em> (第三声) + <em>hǎo</em> (第三声) ですが、続けて発音すると
+                <br><em>nǐ hǎo</em> <span class="audio-icon" data-audio-text="你好">🔊</span> → <em>ní hǎo</em> のように、最初の「nǐ」が第二声に変化します。
+                <br>（表記は「nǐ hǎo」のままです。変化するのは発音だけです。）
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>ピンインと声調の練習 👂</h2>
+            <p>さあ、学んだことを実践してみましょう！発音を聞いて、正しいピンインや声調を選んでみてください。</p>
+
+            <div class="card">
+                <p class="practice-question">
+                    <strong>問題 1:</strong> この音を聞いて、正しいピンインを選びましょう。
+                    <span class="audio-icon" data-audio-text="wǒ">🔊</span> (私)
+                </p>
+                <div class="practice-options">
+                    <button class="quiz-option" data-answer="wo_incorrect1"><em>wo</em></button>
+                    <button class="quiz-option" data-answer="wo_incorrect2"><em>guo</em></button>
+                    <button class="quiz-option" data-answer="wo_incorrect3"><em>shuo</em></button>
+                    <button class="quiz-option" data-answer="wo_correct"><em>wǒ</em></button>
+                </div>
+                <div class="solution-reveal">
+                    <button class="solution-button">答えを見る</button>
+                    <p class="solution-text">正解は <em>wǒ</em> (第三声) です。「私」という意味です。</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <p class="practice-question">
+                    <strong>問題 2:</strong> この音を聞いて、正しい意味を選びましょう。
+                    <span class="audio-icon" data-audio-text="bēi">🔊</span>
+                </p>
+                <div class="practice-options">
+                    <button class="quiz-option" data-answer="bēi_correct">杯 (コップ)</button>
+                    <button class="quiz-option" data-answer="bei_incorrect1">背 (背中)</button>
+                    <button class="quiz-option" data-answer="bei_incorrect2">北 (北)</button>
+                    <button class="quiz-option" data-answer="bei_incorrect3">悲 (悲しい)</button>
+                </div>
+                <div class="solution-reveal">
+                    <button class="solution-button">答えを見る</button>
+                    <p class="solution-text">正解は <em>bēi</em> (第一声) で「杯 (コップ)」です。他の「bei」もピンインは同じですが、声調が異なります。</p>
+                </div>
+            </div>
+
+            <p class="practice-question">
+                <strong>問題 3:</strong> 以下のピンインと漢字を声調に注意して読んでみましょう。
+            </p>
+            <div class="card">
+                <div class="pronunciation-word">
+                    <span class="pinyin"><em>nǐ hǎo</em></span> <span class="audio-icon" data-audio-text="你好">🔊</span> (你好 / こんにちは)
+                </div>
+                <div class="pronunciation-word">
+                    <span class="pinyin"><em>xièxie</em></span> <span class="audio-icon" data-audio-text="谢谢">🔊</span> (谢谢 / ありがとう)
+                </div>
+                <div class="pronunciation-word">
+                    <span class="pinyin"><em>zàijiàn</em></span> <span class="audio-icon" data-audio-text="再见">🔊</span> (再见 / さようなら)
+                </div>
+                <div class="pronunciation-word">
+                    <span class="pinyin"><em>bú kèqi</em></span> <span class="audio-icon" data-audio-text="不客气">🔊</span> (不客气 / どういたしまして)
+                </div>
+            </div>
+            <div class="note">
+                <strong>💡ヒント:</strong> 「不 (bù)」は通常第四声ですが、後ろに第四声が続く場合は第二声に変化します。
+                <br>例: <em>bú kèqi</em> (不客气)
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>まとめ ✨</h2>
+            <p>このレッスンでは、中国語の発音の基礎であるピンインと声調について学びました。</p>
+            <ul>
+                <li><strong>ピンイン</strong>は中国語の音をアルファベットで表記するシステムです。声母（子音）と韻母（母音）で構成されます。</li>
+                <li>中国語には<strong>四つの声調</strong> (第一声, 第二声, 第三声, 第四声) があり、それぞれ音の高さの変化が異なります。声調は意味を区別するために非常に重要です。</li>
+                <li>声調記号は母音の上に付けられ、その位置にはルールがあります。</li>
+                <li>特定の状況では、声調が変化する<strong>声調変化</strong>（例: 二つの第三声が続く場合）もあります。</li>
+            </ul>
+            <p>ピンインと声調は、中国語学習の土台となる部分です。繰り返し練習し、耳で聞き分け、口で発音できるようになることが上達の鍵です。焦らず、楽しみながら取り組んでいきましょう！</p>
+            <p>お疲れ様でした！また次のレッスンでお会いしましょう！</p>
+        </section>
+    </div>
+
+    <!-- JavaScript for quiz solution toggling and option feedback -->
+    <script>
+        // Toggle solution text visibility
+        document.querySelectorAll('.solution-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const solutionText = button.nextElementSibling;
+                solutionText.classList.toggle('visible');
+                if (solutionText.classList.contains('visible')) {
+                    button.textContent = '答えを隠す';
+                } else {
+                    button.textContent = '答えを見る';
+                }
+            });
+        });
+
+        // Basic "correct/incorrect" visual feedback for quiz options
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const parentOptions = option.closest('.practice-options');
+                // Clear previous feedback for all options in this question
+                parentOptions.querySelectorAll('.quiz-option').forEach(opt => {
+                    opt.classList.remove('correct', 'incorrect');
+                });
+
+                // Apply feedback based on data-answer attribute
+                if (option.dataset.answer && option.dataset.answer.endsWith('_correct')) {
+                    option.classList.add('correct');
+                } else {
+                    option.classList.add('incorrect');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

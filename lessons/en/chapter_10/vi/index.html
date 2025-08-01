@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Time and Schedules</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+        }
+
+        /* Responsive Container */
+        .container {
+            max-width: 600px; /* Optimal reading width */
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2em; /* Approx 32px */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6em; /* Approx 25.6px */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.3em; /* Approx 20.8px */
+            color: #8B5FBF; /* Primary: Purple for accents */
+            margin-top: 1.2em;
+            margin-bottom: 0.6em;
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #E0E0E0;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        /* Specific section styling */
+        .section-card {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid #E0E0E0; /* Light gray border */
+        }
+
+        /* Lesson Header */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Placeholder for image, as per instructions, no external image URLs */
+            background-color: #ccc; /* Visual placeholder */
+            min-height: 150px; /* Ensure visibility */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9em;
+            color: #555;
+            text-align: center;
+            /* No actual image will be loaded from src="../header.webp", it's just to fulfill the requirement for the tag. */
+        }
+        /* Hide image content and show text as it's a placeholder */
+        .lesson-header-image::before {
+            content: "✨ Khám phá Thời Gian & Lịch Trình ✨";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #DDEEEE;
+            border-radius: 8px;
+            color: #2C3E50;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .lesson-header-image[src]::before { /* Hide pseudo-element if a real image is loaded */
+            content: none;
+        }
+        /* Further hide real image if we cannot use external ones */
+        .lesson-header-image {
+            background-image: none !important;
+            object-fit: contain; /* ensures the placeholder content is visible */
+        }
+
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            min-width: 44px; /* Ensure tap target size */
+            min-height: 44px; /* Ensure tap target size */
+            font-size: 1.2em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4897; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Examples and Translations */
+        .example {
+            background-color: #f5f5f5;
+            border-left: 5px solid #8B5FBF; /* Primary: Purple */
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .example strong {
+            color: #2C3E50; /* Dark blue for emphasis */
+        }
+
+        .translation {
+            font-style: italic;
+            color: #666666;
+            margin-top: 5px;
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px dashed #8B5FBF; /* Primary: Purple dashed border */
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .practice-item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+            border: 1px solid #E0E0E0;
+        }
+
+        .practice-item strong {
+            color: #2C3E50;
+        }
+
+        .answer-reveal {
+            margin-top: 10px;
+            font-style: italic;
+            color: #8B5FBF; /* Primary: Purple */
+            font-weight: bold;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FFF3E0; /* Light orange for cultural notes */
+            border-left: 5px solid #FFAB40; /* Orange accent */
+            padding: 15px;
+            margin: 25px 0;
+            border-radius: 8px;
+            color: #5C4033; /* Darker brown for text */
+        }
+        .cultural-note h3 {
+            color: #FFAB40; /* Orange for heading */
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #E6E6FA; /* Light lavender */
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            border: 1px solid #C3B1E1;
+        }
+
+        .summary-section h2 {
+            color: #8B5FBF; /* Primary: Purple */
+            border-bottom: none;
+            margin-bottom: 15px;
+        }
+
+        .summary-section ul {
+            text-align: left;
+            list-style-type: '👉 ';
+            padding-left: 25px;
+        }
+
+        .summary-section li {
+            border-bottom: none;
+            padding: 5px 0;
+        }
+
+        /* Semantic HTML5 tags */
+        section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 10: Time and Schedules</h1>
+        <div class="lesson-header">
+            <!-- As per instructions, src="../header.webp" is required, but actual image display is prevented for mobile-first/no external image requirement -->
+            <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-card">
+            <h2>Chào mừng đến với Chương 10: Thời Gian và Lịch Trình! ⏰</h2>
+            <p>Trong chương này, chúng ta sẽ học cách nói về thời gian, các ngày trong tuần, các tháng trong năm và cách sắp xếp lịch trình trong tiếng Anh. Đây là những kỹ năng rất quan trọng để giao tiếp hàng ngày đấy!</p>
+            <p>Hãy cùng bắt đầu nào! Bạn đã sẵn sàng chưa? 💪</p>
+        </section>
+
+        <section class="section-card">
+            <h2>1. Nói về Thời Gian: "What time is it?" 🕒</h2>
+            <p>Để hỏi về thời gian, chúng ta dùng câu hỏi: </p>
+            <div class="example">
+                <strong>What time is it?</strong> <button class="audio-icon" data-audio-text="What time is it?">🔊</button><br>
+                <span class="translation">Mấy giờ rồi?</span>
+            </div>
+            <p>Để trả lời, chúng ta dùng cấu trúc <strong>"It's..."</strong> (Nó là...)</p>
+
+            <h3>Cách nói giờ tròn (o'clock)</h3>
+            <p>Khi đồng hồ chỉ đúng giờ, chúng ta dùng <strong>"o'clock"</strong>.</p>
+            <ul>
+                <li><strong>It's one o'clock.</strong> <button class="audio-icon" data-audio-text="It's one o'clock.">🔊</button> (1 giờ)</li>
+                <li><strong>It's five o'clock.</strong> <button class="audio-icon" data-audio-text="It's five o'clock.">🔊</button> (5 giờ)</li>
+                <li><strong>It's ten o'clock.</strong> <button class="audio-icon" data-audio-text="It's ten o'clock.">🔊</button> (10 giờ)</li>
+            </ul>
+
+            <h3>Cách nói giờ hơn (past)</h3>
+            <p>Chúng ta dùng <strong>"past"</strong> (qua) để nói giờ hơn, thường từ phút 1 đến phút 30. </p>
+            <p>Cấu trúc: <strong>It's [phút] past [giờ]</strong></p>
+            <ul>
+                <li><strong>It's ten past three.</strong> <button class="audio-icon" data-audio-text="It's ten past three.">🔊</button> (3 giờ 10 phút)</li>
+                <li><strong>It's twenty past seven.</strong> <button class="audio-icon" data-audio-text="It's twenty past seven.">🔊</button> (7 giờ 20 phút)</li>
+                <li><strong>It's a quarter past nine.</strong> <button class="audio-icon" data-audio-text="It's a quarter past nine.">🔊</button> (9 giờ 15 phút - 'a quarter' = 15 phút)</li>
+                <li><strong>It's half past two.</strong> <button class="audio-icon" data-audio-text="It's half past two.">🔊</button> (2 giờ 30 phút - 'half' = 30 phút)</li>
+            </ul>
+
+            <h3>Cách nói giờ kém (to)</h3>
+            <p>Chúng ta dùng <strong>"to"</strong> (đến) để nói giờ kém, thường từ phút 31 đến phút 59. Bạn cần lấy 60 trừ đi số phút hiện tại để ra số phút còn lại và nói giờ tiếp theo.</p>
+            <p>Cấu trúc: <strong>It's [số phút còn lại] to [giờ tiếp theo]</strong></p>
+            <ul>
+                <li><strong>It's twenty to five.</strong> <button class="audio-icon" data-audio-text="It's twenty to five.">🔊</button> (4 giờ 40 phút, tức là còn 20 phút nữa đến 5 giờ)</li>
+                <li><strong>It's a quarter to six.</strong> <button class="audio-icon" data-audio-text="It's a quarter to six.">🔊</button> (5 giờ 45 phút, tức là còn 15 phút nữa đến 6 giờ)</li>
+                <li><strong>It's five to twelve.</strong> <button class="audio-icon" data-audio-text="It's five to twelve.">🔊</button> (11 giờ 55 phút, tức là còn 5 phút nữa đến 12 giờ)</li>
+            </ul>
+
+            <h3>Cách nói giờ kỹ thuật số (digital time)</h3>
+            <p>Đây là cách đơn giản nhất, chỉ cần đọc giờ rồi đọc phút.</p>
+            <ul>
+                <li><strong>It's three thirty.</strong> <button class="audio-icon" data-audio-text="It's three thirty.">🔊</button> (3 giờ 30 phút)</li>
+                <li><strong>It's eight fifteen.</strong> <button class="audio-icon" data-audio-text="It's eight fifteen.">🔊</button> (8 giờ 15 phút)</li>
+                <li><strong>It's twelve forty-five.</strong> <button class="audio-icon" data-audio-text="It's twelve forty-five.">🔊</button> (12 giờ 45 phút)</li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h3>Thực hành: Nói về Thời Gian ✍️</h3>
+            <p>Bạn hãy tự luyện tập nói các giờ sau đây nhé. Sau đó xem đáp án!</p>
+            <div class="practice-item">
+                1. <strong>7:00</strong> <br>
+                <div class="answer-reveal">Đáp án: It's seven o'clock.</div>
+            </div>
+            <div class="practice-item">
+                2. <strong>2:15</strong> <br>
+                <div class="answer-reveal">Đáp án: It's a quarter past two. (Hoặc It's two fifteen.)</div>
+            </div>
+            <div class="practice-item">
+                3. <strong>11:30</strong> <br>
+                <div class="answer-reveal">Đáp án: It's half past eleven. (Hoặc It's eleven thirty.)</div>
+            </div>
+            <div class="practice-item">
+                4. <strong>6:45</strong> <br>
+                <div class="answer-reveal">Đáp án: It's a quarter to seven. (Hoặc It's six forty-five.)</div>
+            </div>
+            <div class="practice-item">
+                5. <strong>9:50</strong> <br>
+                <div class="answer-reveal">Đáp án: It's ten to ten. (Hoặc It's nine fifty.)</div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>2. Các Ngày trong Tuần: "Days of the Week" 🗓️</h2>
+            <p>Có 7 ngày trong tuần. Hãy cùng học cách phát âm và ghi nhớ chúng nhé!</p>
+            <ul>
+                <li><strong>Monday</strong> <button class="audio-icon" data-audio-text="Monday">🔊</button> (Thứ Hai)</li>
+                <li><strong>Tuesday</strong> <button class="audio-icon" data-audio-text="Tuesday">🔊</button> (Thứ Ba)</li>
+                <li><strong>Wednesday</strong> <button class="audio-icon" data-audio-text="Wednesday">🔊</button> (Thứ Tư)</li>
+                <li><strong>Thursday</strong> <button class="audio-icon" data-audio-text="Thursday">🔊</button> (Thứ Năm)</li>
+                <li><strong>Friday</strong> <button class="audio-icon" data-audio-text="Friday">🔊</button> (Thứ Sáu)</li>
+                <li><strong>Saturday</strong> <button class="audio-icon" data-audio-text="Saturday">🔊</button> (Thứ Bảy)</li>
+                <li><strong>Sunday</strong> <button class="audio-icon" data-audio-text="Sunday">🔊</button> (Chủ Nhật)</li>
+            </ul>
+            <p>Để hỏi "Hôm nay là thứ mấy?", chúng ta hỏi:</p>
+            <div class="example">
+                <strong>What day is it today?</strong> <button class="audio-icon" data-audio-text="What day is it today?">🔊</button><br>
+                <span class="translation">Hôm nay là thứ mấy?</span>
+            </div>
+            <p>Để trả lời:</p>
+            <div class="example">
+                <strong>It's Monday.</strong> <button class="audio-icon" data-audio-text="It's Monday.">🔊</button><br>
+                <span class="translation">Hôm nay là thứ Hai.</span>
+            </div>
+            <p>Khi nói về một sự kiện diễn ra vào một ngày cụ thể, chúng ta dùng giới từ <strong>"on"</strong>.</p>
+            <div class="example">
+                <strong>I have a meeting on Tuesday.</strong> <button class="audio-icon" data-audio-text="I have a meeting on Tuesday.">🔊</button><br>
+                <span class="translation">Tôi có cuộc họp vào thứ Ba.</span>
+            </div>
+            <div class="example">
+                <strong>Let's go to the park on Saturday.</strong> <button class="audio-icon" data-audio-text="Let's go to the park on Saturday.">🔊</button><br>
+                <span class="translation">Chúng ta đi công viên vào thứ Bảy nhé.</span>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>Thực hành: Các Ngày trong Tuần 🗓️</h3>
+            <p>Điền vào chỗ trống với ngày trong tuần thích hợp.</p>
+            <div class="practice-item">
+                1. The day after Tuesday is ______. <br>
+                <div class="answer-reveal">Đáp án: Wednesday</div>
+            </div>
+            <div class="practice-item">
+                2. The first day of the weekend is ______. <br>
+                <div class="answer-reveal">Đáp án: Saturday</div>
+            </div>
+            <div class="practice-item">
+                3. My favorite day is ______ because I don't work. <br>
+                <div class="answer-reveal">Đáp án: Sunday (hoặc Saturday)</div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>3. Các Tháng trong Năm: "Months of the Year" 📅</h2>
+            <p>Có 12 tháng trong năm. Cùng học tên và cách phát âm của chúng nhé!</p>
+            <ul>
+                <li><strong>January</strong> <button class="audio-icon" data-audio-text="January">🔊</button> (Tháng Một)</li>
+                <li><strong>February</strong> <button class="audio-icon" data-audio-text="February">🔊</button> (Tháng Hai)</li>
+                <li><strong>March</strong> <button class="audio-icon" data-audio-text="March">🔊</button> (Tháng Ba)</li>
+                <li><strong>April</strong> <button class="audio-icon" data-audio-text="April">🔊</button> (Tháng Tư)</li>
+                <li><strong>May</strong> <button class="audio-icon" data-audio-text="May">🔊</button> (Tháng Năm)</li>
+                <li><strong>June</strong> <button class="audio-icon" data-audio-text="June">🔊</button> (Tháng Sáu)</li>
+                <li><strong>July</strong> <button class="audio-icon" data-audio-text="July">🔊</button> (Tháng Bảy)</li>
+                <li><strong>August</strong> <button class="audio-icon" data-audio-text="August">🔊</button> (Tháng Tám)</li>
+                <li><strong>September</strong> <button class="audio-icon" data-audio-text="September">🔊</button> (Tháng Chín)</li>
+                <li><strong>October</strong> <button class="audio-icon" data-audio-text="October">🔊</button> (Tháng Mười)</li>
+                <li><strong>November</strong> <button class="audio-icon" data-audio-text="November">🔊</button> (Tháng Mười Một)</li>
+                <li><strong>December</strong> <button class="audio-icon" data-audio-text="December">🔊</button> (Tháng Mười Hai)</li>
+            </ul>
+            <p>Để hỏi "Sinh nhật bạn vào tháng mấy?", chúng ta hỏi:</p>
+            <div class="example">
+                <strong>When is your birthday?</strong> <button class="audio-icon" data-audio-text="When is your birthday?">🔊</button><br>
+                <span class="translation">Sinh nhật bạn khi nào?</span>
+            </div>
+            <p>Khi nói về một sự kiện diễn ra trong một tháng hoặc năm, chúng ta dùng giới từ <strong>"in"</strong>.</p>
+            <div class="example">
+                <strong>My birthday is in June.</strong> <button class="audio-icon" data-audio-text="My birthday is in June.">🔊</button><br>
+                <span class="translation">Sinh nhật tôi vào tháng Sáu.</span>
+            </div>
+            <div class="example">
+                <strong>The festival is in October.</strong> <button class="audio-icon" data-audio-text="The festival is in October.">🔊</button><br>
+                <span class="translation">Lễ hội vào tháng Mười.</span>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>Thực hành: Các Tháng trong Năm 📅</h3>
+            <p>Điền vào chỗ trống với tháng thích hợp.</p>
+            <div class="practice-item">
+                1. Christmas is in ______. <br>
+                <div class="answer-reveal">Đáp án: December</div>
+            </div>
+            <div class="practice-item">
+                2. Summer usually starts in ______. (ở Bắc bán cầu) <br>
+                <div class="answer-reveal">Đáp án: June</div>
+            </div>
+            <div class="practice-item">
+                3. The first month of the year is ______. <br>
+                <div class="answer-reveal">Đáp án: January</div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>4. Hỏi "Khi nào là...?": "When is...?" 🤔</h2>
+            <p>Để hỏi về thời gian cụ thể của một sự kiện, chúng ta dùng <strong>"When is...?"</strong>.</p>
+            <p>Và để trả lời, chúng ta dùng các giới từ thời gian:</p>
+            <ul>
+                <li><strong>at:</strong> dùng cho giờ cụ thể (at 7 o'clock, at noon, at midnight)</li>
+                <li><strong>on:</strong> dùng cho ngày trong tuần hoặc ngày cụ thể (on Monday, on October 26th)</li>
+                <li><strong>in:</strong> dùng cho tháng, năm, mùa, hoặc khoảng thời gian dài hơn (in July, in 2024, in the morning/afternoon/evening)</li>
+            </ul>
+
+            <div class="example">
+                <strong>When is the party?</strong> <button class="audio-icon" data-audio-text="When is the party?">🔊</button><br>
+                <span class="translation">Bữa tiệc khi nào?</span><br>
+                <strong>It's on Saturday at 8 PM.</strong> <button class="audio-icon" data-audio-text="It's on Saturday at 8 PM.">🔊</button><br>
+                <span class="translation">Nó vào thứ Bảy lúc 8 giờ tối.</span>
+            </div>
+
+            <div class="example">
+                <strong>When is your flight?</strong> <button class="audio-icon" data-audio-text="When is your flight?">🔊</button><br>
+                <span class="translation">Chuyến bay của bạn khi nào?</span><br>
+                <strong>It's on July 15th.</strong> <button class="audio-icon" data-audio-text="It's on July 15th.">🔊</button><br>
+                <span class="translation">Nó vào ngày 15 tháng 7.</span>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>Thực hành: "When is...?" ✍️</h3>
+            <p>Trả lời câu hỏi sau đây, sử dụng giới từ thời gian phù hợp.</p>
+            <div class="practice-item">
+                1. <strong>When is the meeting? (9:00 AM / Friday)</strong> <br>
+                <div class="answer-reveal">Đáp án: It's on Friday at 9:00 AM.</div>
+            </div>
+            <div class="practice-item">
+                2. <strong>When is the concert? (August)</strong> <br>
+                <div class="answer-reveal">Đáp án: It's in August.</div>
+            </div>
+            <div class="practice-item">
+                3. <strong>When is your exam? (December 10th)</strong> <br>
+                <div class="answer-reveal">Đáp án: It's on December 10th.</div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>5. Đặt Lịch Hẹn và Lịch Trình 🗓️🤝</h2>
+            <p>Đây là một số cụm từ hữu ích khi bạn muốn đặt lịch hẹn hoặc sắp xếp một buổi gặp mặt:</p>
+            <ul>
+                <li><strong>Are you free on [day/date]?</strong> <button class="audio-icon" data-audio-text="Are you free on Saturday?">🔊</button><br>
+                    <span class="translation">Bạn có rảnh vào [thứ/ngày] không?</span></li>
+                <li><strong>How about [time/day]?</strong> <button class="audio-icon" data-audio-text="How about Tuesday morning?">🔊</button><br>
+                    <span class="translation">Thế còn [giờ/ngày] thì sao?</span></li>
+                <li><strong>What time works for you?</strong> <button class="audio-icon" data-audio-text="What time works for you?">🔊</button><br>
+                    <span class="translation">Giờ nào thì tiện cho bạn?</span></li>
+                <li><strong>Let's meet at [time] on [day/date].</strong> <button class="audio-icon" data-audio-text="Let's meet at 6 PM on Wednesday.">🔊</button><br>
+                    <span class="translation">Chúng ta gặp nhau lúc [giờ] vào [thứ/ngày] nhé.</span></li>
+                <li><strong>I'm busy on [day/time].</strong> <button class="audio-icon" data-audio-text="I'm busy on Monday.">🔊</button><br>
+                    <span class="translation">Tôi bận vào [thứ/giờ].</span></li>
+                <li><strong>I'm free. / I'm available.</strong> <button class="audio-icon" data-audio-text="I'm free.">🔊</button><br>
+                    <span class="translation">Tôi rảnh.</span></li>
+            </ul>
+
+            <h3>Ví dụ hội thoại:</h3>
+            <div class="example">
+                <strong>A: Hi John, are you free on Friday?</strong> <button class="audio-icon" data-audio-text="Hi John, are you free on Friday?">🔊</button><br>
+                <span class="translation">Chào John, bạn có rảnh vào thứ Sáu không?</span><br>
+                <strong>B: Hmm, I'm busy on Friday. How about Saturday afternoon?</strong> <button class="audio-icon" data-audio-text="Hmm, I'm busy on Friday. How about Saturday afternoon?">🔊</button><br>
+                <span class="translation">Hmm, tôi bận thứ Sáu rồi. Chiều thứ Bảy thì sao?</span><br>
+                <strong>A: Saturday afternoon works for me! Let's meet at 3 PM.</strong> <button class="audio-icon" data-audio-text="Saturday afternoon works for me! Let's meet at 3 PM.">🔊</button><br>
+                <span class="translation">Chiều thứ Bảy tiện cho tôi! Chúng ta gặp nhau lúc 3 giờ chiều nhé.</span><br>
+                <strong>B: Perfect! See you then.</strong> <button class="audio-icon" data-audio-text="Perfect! See you then.">🔊</button><br>
+                <span class="translation">Tuyệt vời! Hẹn gặp bạn.</span>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>Thực hành: Đặt Lịch Hẹn 🤝</h3>
+            <p>Bạn hãy thử sắp xếp một cuộc hẹn với bạn của mình, sử dụng các cụm từ vừa học nhé!</p>
+            <div class="practice-item">
+                Bạn muốn mời bạn đi xem phim. Bạn có rảnh vào tối thứ Sáu không?
+                <br>Gợi ý: <strong>Are you free on Friday evening?</strong> <button class="audio-icon" data-audio-text="Are you free on Friday evening?">🔊</button>
+            </div>
+            <div class="practice-item">
+                Bạn của bạn bận tối thứ Sáu. Bạn ấy đề xuất chiều Chủ Nhật. Bạn sẽ nói gì?
+                <br>Gợi ý: <strong>How about Sunday afternoon?</strong> <button class="audio-icon" data-audio-text="How about Sunday afternoon?">🔊</button>
+            </div>
+            <div class="practice-item">
+                Bạn đồng ý và muốn gặp lúc 2 giờ chiều.
+                <br>Gợi ý: <strong>Sunday afternoon works for me! Let's meet at 2 PM.</strong> <button class="audio-icon" data-audio-text="Sunday afternoon works for me! Let's meet at 2 PM.">🔊</button>
+            </div>
+        </section>
+
+        <section class="cultural-note section-card">
+            <h3>📝 Lưu ý Văn hóa: Tính đúng giờ (Punctuality)</h3>
+            <p>Ở nhiều quốc gia nói tiếng Anh, đặc biệt là Anh, Mỹ, Canada, tính đúng giờ (punctuality) rất được coi trọng. Đến muộn vài phút có thể chấp nhận được trong một số trường hợp xã giao, nhưng đến quá trễ mà không báo trước có thể bị coi là thiếu tôn trọng.</p>
+            <p>Nếu bạn có khả năng đến muộn, hãy thông báo trước cho người kia càng sớm càng tốt nhé! Điều này thể hiện sự chuyên nghiệp và tôn trọng của bạn. 👍</p>
+        </section>
+
+        <section class="summary-section">
+            <h2>🎉 Tóm tắt Chương 10 🎉</h2>
+            <p>Chúc mừng bạn đã hoàn thành Chương 10! Bạn đã học được rất nhiều kiến thức quan trọng về thời gian và lịch trình:</p>
+            <ul>
+                <li>Cách hỏi và nói giờ: <strong>What time is it? It's... o'clock/past/to.</strong></li>
+                <li>Các ngày trong tuần: <strong>Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.</strong></li>
+                <li>Các tháng trong năm: <strong>January, February,... December.</strong></li>
+                <li>Cách hỏi và trả lời về thời gian sự kiện: <strong>When is...? It's on/in/at...</strong></li>
+                <li>Các cụm từ để đặt lịch hẹn và sắp xếp lịch trình: <strong>Are you free...? How about...? Let's meet...</strong></li>
+            </ul>
+            <p>Hãy tiếp tục luyện tập để thành thạo những kỹ năng này nhé! Thực hành thường xuyên sẽ giúp bạn tự tin hơn rất nhiều đấy!</p>
+        </section>
+
+    </div>
+</body>
+</html>

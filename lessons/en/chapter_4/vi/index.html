@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 4: Màu Sắc và Mô Tả</title>
+    <style>
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-background: #FDF9E5;
+            --heading-text-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* Nền trắng cho toàn trang */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Kích thước chữ tối thiểu cho nội dung */
+            -webkit-text-size-adjust: 100%; /* Đảm bảo font size không bị thay đổi */
+        }
+
+        /* Thiết lập layout mobile-first */
+        .container {
+            padding: 15px;
+            max-width: 800px; /* Giới hạn chiều rộng cho màn hình lớn */
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-bottom: 15px;
+            text-align: left; /* Mặc định căn trái */
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 25px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none; /* Bỏ dấu chấm mặc định */
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 25px; /* Khoảng cách cho icon */
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Biểu tượng mũi tên */
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .section-card {
+            background-color: var(--secondary-background);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .example {
+            background-color: rgba(139, 95, 191, 0.05); /* Màu nền nhạt từ primary color */
+            padding: 12px;
+            margin: 10px 0;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 6px;
+        }
+
+        .example p {
+            margin: 5px 0;
+        }
+
+        .pronunciation {
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .audio-icon {
+            display: inline-flex; /* Dùng flex để căn giữa nội dung */
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Kích thước tối thiểu cho dễ chạm */
+            height: 44px; /* Kích thước tối thiểu cho dễ chạm */
+            line-height: 1; /* Đặt lại line-height */
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 8px;
+            vertical-align: middle;
+            transition: background-color 0.2s ease, transform 0.2s ease; /* Hiệu ứng chuyển động mượt mà */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-icon:hover {
+            background-color: #6A488F; /* Màu tối hơn khi hover */
+            transform: scale(1.05); /* Phóng to nhẹ khi hover */
+        }
+
+        .practice-section {
+            background-color: var(--secondary-background);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 1px dashed var(--border-color); /* Viền nét đứt cho bài tập */
+            text-align: center; /* Căn giữa hướng dẫn bài tập */
+        }
+
+        .practice-section p {
+            margin-bottom: 15px;
+        }
+
+        .practice-option-group {
+            display: flex;
+            flex-wrap: wrap; /* Cho phép các nút xuống dòng */
+            justify-content: center;
+            gap: 10px; /* Khoảng cách giữa các nút */
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .practice-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            min-height: 44px; /* Đảm bảo kích thước chạm */
+            flex-grow: 1; /* Cho phép nút mở rộng */
+            max-width: 180px; /* Giới hạn chiều rộng tối đa */
+            transition: background-color 0.2s ease;
+        }
+
+        .practice-button:hover {
+            background-color: #6A488F;
+        }
+
+        .summary-section {
+            background-color: var(--secondary-background);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-section ul {
+            list-style: disc; /* Dùng dấu chấm cho danh sách tóm tắt */
+            padding-left: 20px;
+        }
+        .summary-section li::before {
+            content: none; /* Bỏ biểu tượng custom */
+        }
+
+        .important-note {
+            background-color: rgba(253, 249, 229, 0.8); /* Nền nhạt hơn của secondary */
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        /* Điều chỉnh cho màn hình nhỏ hơn (nếu cần, nhưng thiết kế đã mobile-first) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 17px;
+            }
+            body {
+                font-size: 15px; /* Giảm nhẹ font cho màn hình rất nhỏ */
+            }
+            .container {
+                padding: 10px;
+            }
+            .section-card, .practice-section, .summary-section {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+            .practice-button {
+                padding: 10px 15px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 4: Colors and Descriptions</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 4 Header" class="lesson-header-image">
+        </div>
+
+        <p>Chào mừng bạn đến với Chương 4! 👋 Trong chương này, chúng ta sẽ học cách miêu tả thế giới xung quanh bằng tiếng Anh. Bạn sẽ khám phá những màu sắc cơ bản và cách sử dụng các từ để nói về kích thước, hình dạng của đồ vật. Hãy sẵn sàng để làm cho vốn từ vựng của bạn thêm phong phú nhé!</p>
+
+        <section class="section-card">
+            <h2>1. Các Màu Sắc Cơ Bản (Basic Colors)</h2>
+            <p>Màu sắc giúp chúng ta nhận biết và mô tả mọi thứ. Dưới đây là những màu cơ bản bạn cần biết:</p>
+            <ul>
+                <li><strong>Red</strong> <span class="pronunciation">/rɛd/</span> (đỏ)
+                    <span class="audio-icon" data-audio-text="Red">🔊</span></li>
+                <li><strong>Blue</strong> <span class="pronunciation">/bluː/</span> (xanh dương)
+                    <span class="audio-icon" data-audio-text="Blue">🔊</span></li>
+                <li><strong>Green</strong> <span class="pronunciation">/ɡriːn/</span> (xanh lá)
+                    <span class="audio-icon" data-audio-text="Green">🔊</span></li>
+                <li><strong>Yellow</strong> <span class="pronunciation">/ˈjɛloʊ/</span> (vàng)
+                    <span class="audio-icon" data-audio-text="Yellow">🔊</span></li>
+                <li><strong>Orange</strong> <span class="pronunciation">/ˈɒrɪndʒ/</span> (cam)
+                    <span class="audio-icon" data-audio-text="Orange">🔊</span></li>
+                <li><strong>Purple</strong> <span class="pronunciation">/ˈpɜːrpl/</span> (tím)
+                    <span class="audio-icon" data-audio-text="Purple">🔊</span></li>
+                <li><strong>Pink</strong> <span class="pronunciation">/pɪŋk/</span> (hồng)
+                    <span class="audio-icon" data-audio-text="Pink">🔊</span></li>
+                <li><strong>Black</strong> <span class="pronunciation">/blæk/</span> (đen)
+                    <span class="audio-icon" data-audio-text="Black">🔊</span></li>
+                <li><strong>White</strong> <span class="pronunciation">/waɪt/</span> (trắng)
+                    <span class="audio-icon" data-audio-text="White">🔊</span></li>
+                <li><strong>Brown</strong> <span class="pronunciation">/braʊn/</span> (nâu)
+                    <span class="audio-icon" data-audio-text="Brown">🔊</span></li>
+                <li><strong>Gray</strong> <span class="pronunciation">/ɡreɪ/</span> (xám)
+                    <span class="audio-icon" data-audio-text="Gray">🔊</span></li>
+            </ul>
+
+            <h3>Thực hành: Nhận diện Màu sắc</h3>
+            <div class="example">
+                <p>Nhấn vào biểu tượng loa để nghe và luyện đọc các màu sắc nhé!</p>
+                <p>Ví dụ: <strong>Red</strong> <span class="audio-icon" data-audio-text="Red">🔊</span></p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>2. Miêu Tả Đối Tượng (Describing Objects)</h2>
+            <p>Ngoài màu sắc, chúng ta còn dùng các tính từ để miêu tả kích thước, chiều cao, hoặc trạng thái của đồ vật.</p>
+            <ul>
+                <li><strong>Big</strong> <span class="pronunciation">/bɪɡ/</span> (to, lớn)
+                    <span class="audio-icon" data-audio-text="Big">🔊</span></li>
+                <li><strong>Small</strong> <span class="pronunciation">/smɔːl/</span> (nhỏ)
+                    <span class="audio-icon" data-audio-text="Small">🔊</span></li>
+                <li><strong>Tall</strong> <span class="pronunciation">/tɔːl/</span> (cao - dùng cho người, vật có chiều cao)
+                    <span class="audio-icon" data-audio-text="Tall">🔊</span></li>
+                <li><strong>Short</strong> <span class="pronunciation">/ʃɔːrt/</span> (thấp - dùng cho người, vật có chiều cao; hoặc ngắn)
+                    <span class="audio-icon" data-audio-text="Short">🔊</span></li>
+                <li><strong>New</strong> <span class="pronunciation">/nuː/</span> (mới)
+                    <span class="audio-icon" data-audio-text="New">🔊</span></li>
+                <li><strong>Old</strong> <span class="pronunciation">/oʊld/</span> (cũ; hoặc già)
+                    <span class="audio-icon" data-audio-text="Old">🔊</span></li>
+            </ul>
+
+            <div class="example">
+                <p><strong>Ví dụ:</strong></p>
+                <p>A <strong>big</strong> house. (Một ngôi nhà <strong>lớn</strong>.) <span class="audio-icon" data-audio-text="A big house">🔊</span></p>
+                <p>A <strong>small</strong> dog. (Một chú chó <strong>nhỏ</strong>.) <span class="audio-icon" data-audio-text="A small dog">🔊</span></p>
+                <p>A <strong>tall</strong> tree. (Một cái cây <strong>cao</strong>.) <span class="audio-icon" data-audio-text="A tall tree">🔊</span></p>
+                <p>A <strong>new</strong> phone. (Một chiếc điện thoại <strong>mới</strong>.) <span class="audio-icon" data-audio-text="A new phone">🔊</span></p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>3. "This is..." / "That is..." (Đây là... / Kia là...)</h2>
+            <p>Chúng ta dùng <strong>"This is..."</strong> để chỉ những vật ở gần bạn, và <strong>"That is..."</strong> để chỉ những vật ở xa bạn.</p>
+            <div class="example">
+                <p><strong>This is</strong> a book. (<strong>Đây là</strong> một cuốn sách.) <span class="audio-icon" data-audio-text="This is a book">🔊</span></p>
+                <p><strong>That is</strong> a car. (<strong>Kia là</strong> một chiếc ô tô.) <span class="audio-icon" data-audio-text="That is a car">🔊</span></p>
+                <p><strong>This is</strong> my pen. (<strong>Đây là</strong> bút của tôi.) <span class="audio-icon" data-audio-text="This is my pen">🔊</span></p>
+                <p><strong>That is</strong> her bag. (<strong>Kia là</strong> túi của cô ấy.) <span class="audio-icon" data-audio-text="That is her bag">🔊</span></p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📖 Luyện Tập 1: Chọn từ đúng</h3>
+            <p>Hãy chọn <strong>"This is"</strong> hoặc <strong>"That is"</strong> phù hợp với tình huống (giả định vật ở gần hoặc xa).</p>
+            <p>Để thực hành, hãy đọc to câu với lựa chọn của bạn và tưởng tượng tình huống nhé!</p>
+            <p>... an apple. (giả sử quả táo ở gần)</p>
+            <div class="practice-option-group">
+                <button class="practice-button" data-audio-text="This is an apple">This is</button>
+                <button class="practice-button" data-audio-text="That is an apple">That is</button>
+            </div>
+            <p>... a bird. (giả sử con chim ở xa)</p>
+            <div class="practice-option-group">
+                <button class="practice-button" data-audio-text="This is a bird">This is</button>
+                <button class="practice-button" data-audio-text="That is a bird">That is</button>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>4. "What color is it? It's..." (Nó màu gì? Nó là...)</h2>
+            <p>Khi muốn hỏi về màu sắc của một vật, bạn dùng câu hỏi <strong>"What color is it?"</strong> hoặc <strong>"What color is the [tên vật]?"</strong>. Để trả lời, chúng ta dùng <strong>"It's [màu sắc]."</strong></p>
+            <div class="example">
+                <p><strong>What color is it?</strong> (Nó màu gì?) <span class="audio-icon" data-audio-text="What color is it?">🔊</span></p>
+                <p><strong>It's red.</strong> (Nó màu đỏ.) <span class="audio-icon" data-audio-text="It's red">🔊</span></p>
+                <p><strong>What color is the sky?</strong> (Bầu trời màu gì?) <span class="audio-icon" data-audio-text="What color is the sky?">🔊</span></p>
+                <p><strong>It's blue.</strong> (Nó màu xanh dương.) <span class="audio-icon" data-audio-text="It's blue">🔊</span></p>
+                <p><strong>What color is your car?</strong> (Xe ô tô của bạn màu gì?) <span class="audio-icon" data-audio-text="What color is your car?">🔊</span></p>
+                <p><strong>It's black.</strong> (Nó màu đen.) <span class="audio-icon" data-audio-text="It's black">🔊</span></p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>🎨 Luyện Tập 2: Trả lời câu hỏi</h3>
+            <p>Hãy chọn màu sắc đúng để trả lời câu hỏi.</p>
+            <p>What color is the grass? (Cỏ màu gì?)</p>
+            <div class="practice-option-group">
+                <button class="practice-button" data-audio-text="It's red">It's red</button>
+                <button class="practice-button" data-audio-text="It's green">It's green</button>
+                <button class="practice-button" data-audio-text="It's yellow">It's yellow</button>
+            </div>
+            <p>What color is the sun? (Mặt trời màu gì?)</p>
+            <div class="practice-option-group">
+                <button class="practice-button" data-audio-text="It's blue">It's blue</button>
+                <button class="practice-button" data-audio-text="It's yellow">It's yellow</button>
+                <button class="practice-button" data-audio-text="It's white">It's white</button>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>5. Tính Từ và Miêu Tả Cơ Bản (Adjectives and Basic Descriptions)</h2>
+            <p>Bây giờ, chúng ta hãy kết hợp các tính từ (kích thước, trạng thái) và màu sắc để miêu tả một cách chi tiết hơn. Trật tự thông thường là: <strong>kích thước/trạng thái + màu sắc + danh từ</strong>.</p>
+            <div class="example">
+                <p>This is a <strong>big red</strong> apple. (Đây là một quả táo <strong>to màu đỏ</strong>.)
+                    <span class="audio-icon" data-audio-text="This is a big red apple">🔊</span></p>
+                <p>That is a <strong>small blue</strong> car. (Kia là một chiếc ô tô <strong>nhỏ màu xanh dương</strong>.)
+                    <span class="audio-icon" data-audio-text="That is a small blue car">🔊</span></p>
+                <p>This is a <strong>new black</strong> phone. (Đây là một chiếc điện thoại <strong>mới màu đen</strong>.)
+                    <span class="audio-icon" data-audio-text="This is a new black phone">🔊</span></p>
+                <p>That is a <strong>tall green</strong> tree. (Kia là một cái cây <strong>cao màu xanh lá</strong>.)
+                    <span class="audio-icon" data-audio-text="That is a tall green tree">🔊</span></p>
+            </div>
+            <div class="important-note">
+                <p>✨ <strong>Ghi nhớ:</strong> Trong tiếng Anh, tính từ (adjective) luôn đứng <strong>trước</strong> danh từ (noun) mà nó bổ nghĩa. Khi có nhiều tính từ, chúng thường có một trật tự nhất định (ví dụ: kích thước, sau đó đến màu sắc).</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>✍️ Luyện Tập 3: Ghép từ tạo câu</h3>
+            <p>Hãy ghép các từ cho sẵn để tạo thành câu miêu tả hoàn chỉnh. Sau đó, nhấn vào loa để nghe cách đọc đúng nhé!</p>
+            <p>Gợi ý: (This is / That is) + a/an + (tính từ) + (màu sắc) + (danh từ).</p>
+            <p><strong>1.</strong> (This is) (apple) (red) (big)</p>
+            <div class="example">
+                <p>➡️ <strong>This is a big red apple.</strong> <span class="audio-icon" data-audio-text="This is a big red apple">🔊</span></p>
+            </div>
+            <p><strong>2.</strong> (That is) (car) (blue) (small)</p>
+            <div class="example">
+                <p>➡️ <strong>That is a small blue car.</strong> <span class="audio-icon" data-audio-text="That is a small blue car">🔊</span></p>
+            </div>
+            <p><strong>3.</strong> (This is) (house) (white) (new)</p>
+            <div class="example">
+                <p>➡️ <strong>This is a new white house.</strong> <span class="audio-icon" data-audio-text="This is a new white house">🔊</span></p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>🎉 Tóm Tắt Chương 4</h2>
+            <p>Chúc mừng bạn! Bạn đã hoàn thành Chương 4 và học được nhiều điều bổ ích:</p>
+            <ul>
+                <li>Bạn đã làm quen với các <strong>màu sắc cơ bản</strong> trong tiếng Anh (red, blue, green, yellow, v.v.).</li>
+                <li>Bạn đã học các <strong>tính từ miêu tả đồ vật</strong> như big, small, tall, short, new, old.</li>
+                <li>Bạn biết cách sử dụng <strong>"This is..."</strong> (Đây là...) và <strong>"That is..."</strong> (Kia là...) để chỉ đồ vật ở gần hoặc xa.</li>
+                <li>Bạn đã biết cách hỏi <strong>"What color is it?"</strong> (Nó màu gì?) và trả lời <strong>"It's [màu sắc]."</strong></li>
+                <li>Cuối cùng, bạn đã có thể <strong>kết hợp các tính từ và màu sắc</strong> để miêu tả đồ vật một cách chi tiết hơn (ví dụ: "This is a big red apple.").</li>
+            </ul>
+            <p>Hãy tiếp tục luyện tập để ghi nhớ và sử dụng thành thạo nhé! Hẹn gặp lại bạn ở chương tiếp theo!</p>
+        </section>
+    </div>
+</body>
+</html>

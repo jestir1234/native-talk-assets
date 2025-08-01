@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 10: Tiempo y Horarios</title>
+    <style>
+        /* Global Styles & CSS Reset */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-bg-color: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #FFFFFF; /* White background for the overall app body */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 16px; /* Overall padding for the content on mobile */
+            font-size: 16px; /* Minimum body text size */
+        }
+
+        /* Responsive adjustments for larger screens */
+        @media (min-width: 600px) {
+            body {
+                padding: 24px;
+                max-width: 800px; /* Constrain content width on larger screens */
+                margin: 0 auto;
+            }
+        }
+
+        /* Chapter Header Structure */
+        .chapter-title {
+            font-size: 28px;
+            color: var(--heading-text-color);
+            text-align: center;
+            margin: 24px 0 16px 0;
+            line-height: 1.2;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /*
+           IMPORTANT NOTE FOR lesson-header-image:
+           The requirement explicitly asks for <img src="../header.webp" ...> and associated CSS.
+           While other requirements state "DO NOT use external image URLs or placeholder images",
+           this specific instruction for the header structure is being followed verbatim.
+           The CSS below provides a visual placeholder if the image fails to load,
+           as no actual image data is provided in this HTML file.
+        */
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Placeholder styling if no actual image loads */
+            background-color: var(--border-color);
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--body-text-color);
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.4;
+        }
+        .lesson-header-image::before {
+            content: "Imagen del Capítulo 10"; /* Text to display in placeholder */
+        }
+        /* End Chapter Header */
+
+        /* Headings */
+        h2 {
+            font-size: 22px;
+            color: var(--heading-text-color);
+            margin-top: 24px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 18px;
+            color: var(--heading-text-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-heading {
+            font-size: 20px;
+            color: var(--heading-text-color);
+            margin-bottom: 15px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Vocabulary Item Layout */
+        .vocab-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+        }
+        .vocab-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .vocab-text {
+            flex: 1; /* Allows text to take available space */
+            min-width: calc(100% - 60px); /* Ensure text has enough width, accounting for audio button */
+        }
+        .chinese-phrase {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 4px;
+            display: block;
+        }
+        .pinyin {
+            font-style: italic;
+            color: #888;
+            font-size: 15px;
+            margin-bottom: 4px;
+            display: block;
+        }
+        .translation {
+            color: var(--body-text-color);
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+
+        /* Audio Icon Styling */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px; /* Minimum 44px required, 48px is a good size for tapping */
+            height: 48px;
+            font-size: 26px; /* Larger icon for visibility */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-left: 12px; /* Space from text */
+            vertical-align: middle;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevents button from shrinking */
+        }
+        .audio-icon:hover {
+            background-color: #6a4095; /* Darker shade on hover */
+            transform: translateY(-2px);
+        }
+        .audio-icon:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Practice Section Styling */
+        .practice-section {
+            background-color: #F8F8F8; /* Lighter background for practice */
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        .practice-section h3 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .exercise-question {
+            color: var(--heading-text-color);
+            margin-bottom: 10px;
+            font-size: 17px;
+        }
+        .exercise-question ol {
+            list-style-type: none; /* Remove default numbering */
+            padding-left: 0;
+        }
+        .exercise-question li {
+            margin-bottom: 15px;
+        }
+        .exercise-question li > p {
+            margin-bottom: 8px; /* Space between question text and Chinese answer */
+            font-weight: bold;
+        }
+
+        /* Cultural Note Styling */
+        .culture-note {
+            background-color: rgba(139, 95, 191, 0.1); /* Light primary color background */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: var(--heading-text-color);
+            font-size: 15px;
+        }
+        .culture-note strong {
+            color: var(--primary-color);
+        }
+
+        /* List Styling for Examples */
+        ul {
+            list-style: none; /* Remove default bullet points */
+            padding-left: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Inline Flex for better alignment of Chinese phrase + audio + translation */
+        .inline-flex {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping if text is too long for one line */
+            gap: 8px; /* Spacing between elements */
+        }
+        .inline-flex .chinese-phrase {
+            display: inline; /* Override block display for inline-flex context */
+            margin-bottom: 0;
+        }
+        .inline-flex .pinyin {
+             display: inline;
+             margin-bottom: 0;
+        }
+        .inline-flex .translation {
+            flex: 1; /* Allow translation to take remaining space */
+            min-width: 150px; /* Ensure translation doesn't become too narrow */
+            margin-bottom: 0;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .summary-section h2 {
+            text-align: center;
+            border-bottom: none; /* Remove border from summary heading */
+            margin-bottom: 15px;
+        }
+        .summary-section ul {
+            list-style: none; /* Remove default list style */
+            padding: 0;
+        }
+        .summary-section li {
+            margin-bottom: 10px;
+            padding-left: 30px; /* Space for the custom bullet */
+            position: relative;
+            color: var(--body-text-color);
+            font-size: 16px;
+        }
+        .summary-section li::before {
+            content: '✨'; /* Unicode star as a custom bullet */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 18px;
+            line-height: 1; /* Adjust vertical alignment of the emoji */
+        }
+
+        /* Utility classes */
+        .text-center { text-align: center; }
+        .mb-15 { margin-bottom: 15px; }
+        .mt-20 { margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Capítulo 10: Tiempo y Horarios</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+    </div>
+
+    <section>
+        <h2 class="section-heading">🕒 ¿Qué Hora Es? - 几点？ (jǐ diǎn?)</h2>
+        <p>Aprender a decir la hora en chino es fundamental para tu día a día. Usamos <strong>点 (diǎn)</strong> para "o'clock" (en punto) y <strong>分 (fēn)</strong> para "minutos". ¡Verás que es bastante lógico!</p>
+
+        <h3>Vocabulario Clave</h3>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">几点？</span>
+                <span class="pinyin">jǐ diǎn?</span>
+                <span class="translation">¿Qué hora es? / ¿A qué hora?</span>
+            </div>
+            <button class="audio-icon" data-audio-text="几点？">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">现在</span>
+                <span class="pinyin">xiàn zài</span>
+                <span class="translation">Ahora</span>
+            </div>
+            <button class="audio-icon" data-audio-text="现在">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">点</span>
+                <span class="pinyin">diǎn</span>
+                <span class="translation">O'clock (en punto)</span>
+            </div>
+            <button class="audio-icon" data-audio-text="点">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">分 / 分钟</span>
+                <span class="pinyin">fēn / fēn zhōng</span>
+                <span class="translation">Minuto / Minutos</span>
+            </div>
+            <button class="audio-icon" data-audio-text="分">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">半</span>
+                <span class="pinyin">bàn</span>
+                <span class="translation">Y media (30 minutos)</span>
+            </div>
+            <button class="audio-icon" data-audio-text="半">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">刻</span>
+                <span class="pinyin">kè</span>
+                <span class="translation">Cuarto de hora (15 minutos)</span>
+            </div>
+            <button class="audio-icon" data-audio-text="刻">🔊</button>
+        </div>
+
+        <h3>Estructura: Ahora + Hora + 点 + Minutos + 分</h3>
+        <p>Para decir la hora, la estructura más común es "Ahora + [Hora] + 点 (diǎn) + [Minutos] + 分 (fēn)".</p>
+        <p><strong>Ejemplos:</strong></p>
+        <ul>
+            <li class="inline-flex mb-15">
+                <span class="chinese-phrase">现在几点？</span>
+                <button class="audio-icon" data-audio-text="现在几点？">🔊</button>
+                <span class="translation">¿Qué hora es ahora?</span>
+            </li>
+            <li class="inline-flex mb-15">
+                <span class="chinese-phrase">现在三点。</span>
+                <button class="audio-icon" data-audio-text="现在三点。">🔊</button>
+                <span class="translation">Ahora son las tres en punto.</span>
+            </li>
+            <li class="inline-flex mb-15">
+                <span class="chinese-phrase">七点半。</span>
+                <button class="audio-icon" data-audio-text="七点半。">🔊</button>
+                <span class="translation">Las siete y media.</span>
+            </li>
+            <li class="inline-flex mb-15">
+                <span class="chinese-phrase">九点十五分。</span>
+                <button class="audio-icon" data-audio-text="九点十五分。">🔊</button>
+                <span class="translation">Las nueve y quince minutos.</span>
+            </li>
+            <li class="inline-flex mb-15">
+                <span class="chinese-phrase">九点一刻。</span>
+                <button class="audio-icon" data-audio-text="九点一刻。">🔊</button>
+                <span class="translation">Las nueve y cuarto.</span>
+            </li>
+             <li class="inline-flex mb-15">
+                <span class="chinese-phrase">十点三刻。</span>
+                <button class="audio-icon" data-audio-text="十点三刻。">🔊</button>
+                <span class="translation">Las diez menos cuarto (lit. "las diez y tres cuartos").</span>
+            </li>
+            <li class="inline-flex">
+                <span class="chinese-phrase">两点零五分。</span> <span class="pinyin">(liǎng diǎn líng wǔ fēn)</span>
+                <button class="audio-icon" data-audio-text="两点零五分。">🔊</button>
+                <span class="translation">Las dos y cinco minutos. (Nota: Se usa 零 líng para el "cero" si los minutos son menos de 10, ej. 2:05)</span>
+            </li>
+        </ul>
+
+        <div class="culture-note">
+            <strong>💡 Nota Cultural:</strong> En chino, para las 2 en punto, se usa <strong>两 (liǎng)</strong> en lugar de <strong>二 (èr)</strong>. Así, es <strong>两点 (liǎng diǎn)</strong>, no <strong>二点 (èr diǎn)</strong>. Para el resto de los números, se usa la forma regular de los números. También es común que los chinos den la hora en formato de 24 horas (ej. 15:00 en lugar de 3:00 PM), pero el formato de 12 horas también se entiende.
+        </div>
+
+        <div class="practice-section">
+            <h3>¡A Practicar! 📝 La Hora</h3>
+            <p class="exercise-question"><strong>Traduce las siguientes horas al chino:</strong></p>
+            <ol>
+                <li>
+                    <p>1. Son las cinco y cuarto.</p>
+                    <div class="inline-flex">
+                        <span class="chinese-phrase">五点一刻。</span>
+                        <button class="audio-icon" data-audio-text="五点一刻。">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <p>2. Son las ocho y media.</p>
+                    <div class="inline-flex">
+                        <span class="chinese-phrase">八点半。</span>
+                        <button class="audio-icon" data-audio-text="八点半。">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <p>3. Ahora son las seis y diez minutos.</p>
+                    <div class="inline-flex">
+                        <span class="chinese-phrase">现在六点十分。</span>
+                        <button class="audio-icon" data-audio-text="现在六点十分。">🔊</button>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-heading">📅 Días de la Semana y Meses del Año</h2>
+        <p>Aprender los días de la semana y los meses es sorprendentemente sencillo en chino. Generalmente se basan en números, ¡lo que los hace muy fáciles de memorizar!</p>
+
+        <h3>Días de la Semana (星期 Xīngqī)</h3>
+        <p>Se forma con <strong>星期 (xīngqī)</strong> + un número (1-6) o un carácter especial para el domingo.</p>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">星期一</span>
+                <span class="pinyin">xīng qī yī</span>
+                <span class="translation">Lunes (lit. "semana uno")</span>
+            </div>
+            <button class="audio-icon" data-audio-text="星期一">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">星期二</span>
+                <span class="pinyin">xīng qī èr</span>
+                <span class="translation">Martes</span>
+            </div>
+            <button class="audio-icon" data-audio-text="星期二">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">星期三</span>
+                <span class="pinyin">xīng qī sān</span>
+                <span class="translation">Miércoles</span>
+            </div>
+            <button class="audio-icon" data-audio-text="星期三">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">星期四</span>
+                <span class="pinyin">xīng qī sì</span>
+                <span class="translation">Jueves</span>
+            </div>
+            <button class="audio-icon" data-audio-text="星期四">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">星期五</span>
+                <span class="pinyin">xīng qī wǔ</span>
+                <span class="translation">Viernes</span>
+            </div>
+            <button class="audio-icon" data-audio-text="星期五">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">星期六</span>
+                <span class="pinyin">xīng qī liù</span>
+                <span class="translation">Sábado</span>
+            </div>
+            <button class="audio-icon" data-audio-text="星期六">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">星期天 / 星期日</span>
+                <span class="pinyin">xīng qī tiān / xīng qī rì</span>
+                <span class="translation">Domingo</span>
+            </div>
+            <button class="audio-icon" data-audio-text="星期天">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">今天</span>
+                <span class="pinyin">jīn tiān</span>
+                <span class="translation">Hoy</span>
+            </div>
+            <button class="audio-icon" data-audio-text="今天">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">昨天</span>
+                <span class="pinyin">zuó tiān</span>
+                <span class="translation">Ayer</span>
+            </div>
+            <button class="audio-icon" data-audio-text="昨天">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">明天</span>
+                <span class="pinyin">míng tiān</span>
+                <span class="translation">Mañana (el día siguiente)</span>
+            </div>
+            <button class="audio-icon" data-audio-text="明天">🔊</button>
+        </div>
+
+        <h3>Meses del Año (月 Yuè)</h3>
+        <p>Los meses se forman con el número del mes + <strong>月 (yuè)</strong>. ¡Así de fácil!</p>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">一月</span>
+                <span class="pinyin">yī yuè</span>
+                <span class="translation">Enero (lit. "un mes")</span>
+            </div>
+            <button class="audio-icon" data-audio-text="一月">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">二月</span>
+                <span class="pinyin">èr yuè</span>
+                <span class="translation">Febrero</span>
+            </div>
+            <button class="audio-icon" data-audio-text="二月">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">...十二月</span>
+                <span class="pinyin">...shí èr yuè</span>
+                <span class="translation">...Diciembre</span>
+            </div>
+            <button class="audio-icon" data-audio-text="十二月">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">年</span>
+                <span class="pinyin">nián</span>
+                <span class="translation">Año</span>
+            </div>
+            <button class="audio-icon" data-audio-text="年">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">日 / 号</span>
+                <span class="pinyin">rì / hào</span>
+                <span class="translation">Día (para fecha, 日 formal/escrito, 号 coloquial/hablado)</span>
+            </div>
+            <button class="audio-icon" data-audio-text="日">🔊</button>
+        </div>
+
+        <div class="culture-note">
+            <strong>💡 Nota Cultural:</strong> En chino, el formato para las fechas es Año + Mes + Día. Por ejemplo, "26 de octubre de 2023" se dice <strong>二零二三年十月二十六日 (Èr líng èr sān nián shí yuè èr shí liù rì)</strong>. ¡Es el orden inverso al español, así que tenlo en cuenta!
+        </div>
+
+        <div class="practice-section">
+            <h3>¡A Practicar! 📝 Días y Meses</h3>
+            <p class="exercise-question"><strong>Traduce al chino:</strong></p>
+            <ol>
+                <li>
+                    <p>1. ¿Qué día de la semana es hoy?</p>
+                    <div class="inline-flex">
+                        <span class="chinese-phrase">今天星期几？</span>
+                        <button class="audio-icon" data-audio-text="今天星期几？">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <p>2. Hoy es martes.</p>
+                    <div class="inline-flex">
+                        <span class="chinese-phrase">今天星期二。</span>
+                        <button class="audio-icon" data-audio-text="今天星期二。">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <p>3. Mi cumpleaños es en mayo.</p>
+                    <div class="inline-flex">
+                        <span class="chinese-phrase">我的生日是五月。</span>
+                        <button class="audio-icon" data-audio-text="我的生日是五月。">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <p>4. El 1 de enero de 2024.</p>
+                    <div class="inline-flex">
+                        <span class="chinese-phrase">二零二四年一月一日。</span>
+                        <button class="audio-icon" data-audio-text="二零二四年一月一日。">🔊</button>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-heading">🗓️ ¿Cuándo es...? y Horarios</h2>
+        <p>Combinemos lo que hemos aprendido sobre la hora, los días y los meses para hablar de cuándo ocurren las cosas y cómo hacer citas y planificar tu tiempo.</p>
+
+        <h3>Vocabulario de Horarios y Citas</h3>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">什么时候？</span>
+                <span class="pinyin">shén me shí hou?</span>
+                <span class="translation">¿Cuándo? / ¿En qué momento?</span>
+            </div>
+            <button class="audio-icon" data-audio-text="什么时候？">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">有时间</span>
+                <span class="pinyin">yǒu shí jiān</span>
+                <span class="translation">Tener tiempo / Estar libre</span>
+            </div>
+            <button class="audio-icon" data-audio-text="有时间">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">没时间</span>
+                <span class="pinyin">méi shí jiān</span>
+                <span class="translation">No tener tiempo / Estar ocupado</span>
+            </div>
+            <button class="audio-icon" data-audio-text="没时间">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">约会</span>
+                <span class="pinyin">yuē huì</span>
+                <span class="translation">Cita (generalmente social o romántica)</span>
+            </div>
+            <button class="audio-icon" data-audio-text="约会">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">预约</span>
+                <span class="pinyin">yù yuē</span>
+                <span class="translation">Hacer una reserva / cita (profesional, médica, hotel)</span>
+            </div>
+            <button class="audio-icon" data-audio-text="预约">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">时间表</span>
+                <span class="pinyin">shí jiān biǎo</span>
+                <span class="translation">Horario / Programa</span>
+            </div>
+            <button class="audio-icon" data-audio-text="时间表">🔊</button>
+        </div>
+        <div class="vocab-item">
+            <div class="vocab-text">
+                <span class="chinese-phrase">上午 / 下午 / 晚上</span>
+                <span class="pinyin">shàng wǔ / xià wǔ / wǎn shàng</span>
+                <span class="translation">Mañana / Tarde / Noche</span>
+            </div>
+            <div class="inline-flex">
+                <button class="audio-icon" data-audio-text="上午">🔊</button>
+                <button class="audio-icon" data-audio-text="下午">🔊</button>
+                <button class="audio-icon" data-audio-text="晚上">🔊</button>
+            </div>
+        </div>
+
+        <h3>Preguntar y Responder sobre Horarios</h3>
+        <p>Puedes combinar los días de la semana, las partes del día y la hora para ser muy específico.</p>
+        <ul>
+            <li class="inline-flex mb-15">
+                <span class="chinese-phrase">我们什么时候见面？</span>
+                <button class="audio-icon" data-audio-text="我们什么时候见面？">🔊</button>
+                <span class="translation">¿Cuándo nos vemos?</span>
+            </li>
+            <li class="inline-flex mb-15">
+                <span class="chinese-phrase">星期三下午两点半。</span>
+                <button class="audio-icon" data-audio-text="星期三下午两点半。">🔊</button>
+                <span class="translation">El miércoles a las dos y media de la tarde.</span>
+            </li>
+            <li class="inline-flex mb-15">
+                <span class="chinese-phrase">你明天有时间吗？</span>
+                <button class="audio-icon" data-audio-text="你明天有时间吗？">🔊</button>
+                <span class="translation">¿Tienes tiempo mañana? / ¿Estás libre mañana?</span>
+            </li>
+            <li class="inline-flex mb-15">
+                <span class="chinese-phrase">对不起，我明天没时间。</span>
+                <button class="audio-icon" data-audio-text="对不起，我明天没时间。">🔊</button>
+                <span class="translation">Lo siento, mañana no tengo tiempo / estoy ocupado/a.</span>
+            </li>
+            <li class="inline-flex mb-15">
+                <span class="chinese-phrase">我们可以预约一个医生吗？</span>
+                <button class="audio-icon" data-audio-text="我们可以预约一个医生吗？">🔊</button>
+                <span class="translation">¿Podemos pedir una cita con el médico?</span>
+            </li>
+        </ul>
+
+        <div class="practice-section">
+            <h3>¡A Practicar! 📝 Preparando una Cita</h3>
+            <p class="exercise-question"><strong>Traduce las frases para concertar una cita:</strong></p>
+            <ol>
+                <li>
+                    <p>1. ¿Cuándo es la reunión?</p>
+                    <div class="inline-flex">
+                        <span class="chinese-phrase">会议什么时候？</span>
+                        <button class="audio-icon" data-audio-text="会议什么时候？">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <p>2. La reunión es el lunes por la mañana a las diez.</p>
+                    <div class="inline-flex">
+                        <span class="chinese-phrase">会议是星期一上午十点。</span>
+                        <button class="audio-icon" data-audio-text="会议是星期一上午十点。">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <p>3. ¿Estás libre el sábado por la tarde?</p>
+                    <div class="inline-flex">
+                        <span class="chinese-phrase">你星期六下午有时间吗？</span>
+                        <button class="audio-icon" data-audio-text="你星期六下午有时间吗？">🔊</button>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section class="summary-section">
+        <h2 class="section-heading">✨ Resumen del Capítulo 10</h2>
+        <p class="text-center mb-15">¡Felicidades! Has cubierto una parte crucial del chino: hablar sobre el tiempo y los horarios. Dominar esto te permitirá comunicarte mucho más eficazmente en situaciones cotidianas.</p>
+        <ul>
+            <li>✨ Aprendiste a preguntar y decir la hora usando <strong>几点 (jǐ diǎn)</strong> y estructuras con <strong>点 (diǎn)</strong>, <strong>分 (fēn)</strong>, <strong>半 (bàn)</strong> y <strong>刻 (kè)</strong>.</li>
+            <li>✨ Dominaste los días de la semana con <strong>星期 (xīngqī)</strong> y los meses del año con el número + <strong>月 (yuè)</strong>.</li>
+            <li>✨ Entendiste el formato de fechas en chino (Año + Mes + Día).</li>
+            <li>✨ Practicaste cómo preguntar <strong>什么时候 (shénme shíhou)</strong> y hablar de tener o no tener tiempo con <strong>有时间 (yǒu shí jiān)</strong> y <strong>没时间 (méi shí jiān)</strong>.</li>
+            <li>✨ Conociste el vocabulario para hacer citas y horarios, como <strong>约会 (yuē huì)</strong> y <strong>预约 (yù yuē)</strong>.</li>
+        </ul>
+        <p class="text-center" style="margin-top: 20px;">¡Sigue practicando estas frases en tu día a día para que se te queden grabadas!</p>
+    </section>
+
+</body>
+</html>

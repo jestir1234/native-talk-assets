@@ -102,7 +102,10 @@
             margin-bottom: 8px;
             padding: 0 10px;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
 
@@ -136,6 +139,9 @@
             text-decoration: none;
             transition: background-color 0.3s ease, transform 0.2s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            white-space: normal;
+            word-wrap: break-word;
+            max-width: 100%;
         }
 
         .btn:hover {
@@ -159,6 +165,9 @@
             margin-left: 10px;
             transition: background-color 0.3s ease, transform 0.2s ease;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            align-self: flex-start;
+            margin-top: 2px; /* Align with first line of text */
+            flex-shrink: 0; /* Prevent button from shrinking */
         }
 
         .audio-icon:hover {
@@ -168,13 +177,16 @@
 
         .audio-text {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
             margin-bottom: 10px;
             background-color: var(--white);
             padding: 10px 15px;
             border-radius: 6px;
             border: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .audio-text span {
@@ -198,6 +210,9 @@
             align-items: center;
             margin-bottom: 15px;
             gap: 15px;
+            flex-wrap: wrap;
+            word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .practice-item span {
@@ -271,6 +286,34 @@
             margin-bottom: 0;
         }
 
+
+        /* Mobile-specific optimizations */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .audio-text {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .practice-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+        }
 
         /* Responsive Adjustments for larger screens */
         @media (min-width: 600px) {

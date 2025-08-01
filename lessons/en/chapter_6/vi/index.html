@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 6: Hoạt Động Hàng Ngày và Lịch Trình</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --padding-mobile: 16px;
+            --margin-section: 24px 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* White background for the main body */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling on orientation change */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            text-align: center; /* Center headings for mobile-first */
+        }
+
+        h1 {
+            font-size: 28px;
+            padding: 0 var(--padding-mobile);
+        }
+
+        h2 {
+            font-size: 24px;
+            padding: 0 var(--padding-mobile);
+            text-align: left; /* Sub-headings can be left-aligned */
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 20px;
+            padding: 0 var(--padding-mobile);
+            text-align: left;
+            margin-top: 1.5em;
+        }
+
+        p {
+            margin-bottom: 1em;
+            padding: 0 var(--padding-mobile);
+        }
+
+        ul {
+            list-style: none; /* Remove default list style */
+            padding: 0 var(--padding-mobile);
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            position: relative;
+            padding-left: 25px; /* Space for custom bullet */
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-color);
+            padding: 20px 0;
+            margin: var(--margin-section);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            max-width: 600px; /* Constrain content width */
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden; /* Clear floats */
+        }
+
+        section:first-of-type {
+            margin-top: 0; /* Remove top margin for the first section after header */
+        }
+
+        /* Specific Header Requirement */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Audio Icon Styling */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%; /* Make it round */
+            width: 48px; /* Fixed size */
+            height: 48px; /* Fixed size */
+            min-width: 44px; /* Ensure touch friendly */
+            min-height: 44px; /* Ensure touch friendly */
+            display: inline-flex; /* For centering content */
+            align-items: center; /* Center icon vertically */
+            justify-content: center; /* Center icon horizontally */
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 8px;
+            vertical-align: middle; /* Align with text */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .audio-icon:hover {
+            background-color: #6A3E9F; /* Slightly darker purple on hover */
+            transform: scale(1.05); /* Slight scale up on hover */
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95); /* Slight scale down on click */
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #EAF7FF; /* A slightly different light blue for practice */
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            margin: var(--margin-section);
+            border-radius: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+            color: var(--body-text-color);
+        }
+
+        .practice-section h3 {
+            color: var(--heading-color);
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            background-color: #FFFFFF;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-question p {
+            margin-bottom: 10px;
+            padding: 0; /* Remove extra padding for questions */
+        }
+
+        .practice-question .answer-placeholder {
+            display: inline-block;
+            min-width: 80px; /* For the "_______" */
+            border-bottom: 1px dashed var(--primary-color);
+            color: var(--primary-color);
+            font-weight: bold;
+            text-align: center;
+            padding: 0 5px;
+            margin: 0 5px;
+        }
+
+        .practice-question .hint-answer {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 15px;
+            display: block;
+            text-align: right;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FFF3E0; /* Light orange for cultural notes */
+            border-left: 5px solid #FF9800; /* Orange accent */
+            padding: 15px;
+            margin: var(--margin-section);
+            border-radius: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            color: #795548; /* Darker brown text for cultural notes */
+        }
+
+        .cultural-note h3 {
+            color: #E65100; /* Darker orange heading */
+            margin-top: 0;
+            text-align: left;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #E0F7FA; /* Light blue for summary */
+            border-top: 3px solid var(--primary-color);
+            padding: 20px;
+            margin: var(--margin-section);
+            border-radius: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: var(--body-text-color);
+        }
+
+        .summary-section h2 {
+            color: var(--heading-color);
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .summary-section ul {
+            list-style: circle; /* Use normal circles for summary list */
+            padding-left: 40px; /* Indent for circle list */
+            padding-right: var(--padding-mobile);
+        }
+
+        .summary-section li::before {
+            content: none; /* Remove custom bullet */
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 600px) {
+            body {
+                font-size: 17px;
+            }
+            h1 {
+                font-size: 36px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 22px;
+            }
+            section, .practice-section, .cultural-note, .summary-section {
+                padding: 30px;
+            }
+            .audio-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Chapter 6: Daily Activities and Routines</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+    </div>
+
+    <section>
+        <h2>Chào mừng đến với Chương 6: Hoạt Động Hàng Ngày và Lịch Trình! ⏰</h2>
+        <p>Trong chương này, chúng ta sẽ học cách nói về những việc bạn làm mỗi ngày, từ lúc thức dậy cho đến khi đi ngủ. Đây là những kiến thức rất quan trọng để bạn có thể kể chuyện về cuộc sống của mình bằng tiếng Anh đó!</p>
+        <p>Chúng ta sẽ khám phá:</p>
+        <ul>
+            <li>Các động từ thông dụng liên quan đến hoạt động hàng ngày.</li>
+            <li>Cách dùng thì hiện tại đơn (Present Simple) để nói về thói quen.</li>
+            <li>Cách nói bạn làm gì và không làm gì.</li>
+            <li>Các cụm từ chỉ thời gian trong ngày.</li>
+        </ul>
+        <p>Hãy bắt đầu nào! Bạn đã sẵn sàng chưa? 💪</p>
+    </section>
+
+    <section>
+        <h2>Phần 1: Các Động Từ Thông Dụng 🚀</h2>
+        <p>Đây là một số động từ cơ bản bạn sẽ dùng rất nhiều khi nói về hoạt động hàng ngày:</p>
+        
+        <h3>1. Eat (ăn)</h3>
+        <p>Phát âm: <button class="audio-icon" data-audio-text="eat">🔊</button> /iːt/</p>
+        <ul>
+            <li><strong>I eat</strong> breakfast every morning. <br> (Tôi ăn sáng mỗi buổi sáng.)</li>
+            <li>She likes to <strong>eat</strong> fruit. <br> (Cô ấy thích ăn trái cây.)</li>
+        </ul>
+
+        <h3>2. Drink (uống)</h3>
+        <p>Phát âm: <button class="audio-icon" data-audio-text="drink">🔊</button> /drɪŋk/</p>
+        <ul>
+            <li>He <strong>drinks</strong> coffee in the morning. <br> (Anh ấy uống cà phê vào buổi sáng.)</li>
+            <li>Do you want to <strong>drink</strong> water? <br> (Bạn có muốn uống nước không?)</li>
+        </ul>
+
+        <h3>3. Sleep (ngủ)</h3>
+        <p>Phát âm: <button class="audio-icon" data-audio-text="sleep">🔊</button> /sliːp/</p>
+        <ul>
+            <li>I usually <strong>sleep</strong> for 7 hours. <br> (Tôi thường ngủ 7 tiếng.)</li>
+            <li>The baby is <strong>sleeping</strong> now. <br> (Em bé đang ngủ bây giờ.)</li>
+        </ul>
+
+        <h3>4. Work (làm việc)</h3>
+        <p>Phát âm: <button class="audio-icon" data-audio-text="work">🔊</button> /wɜːrk/</p>
+        <ul>
+            <li>I <strong>work</strong> from 9 AM to 5 PM. <br> (Tôi làm việc từ 9 giờ sáng đến 5 giờ chiều.)</li>
+            <li>She <strong>works</strong> hard. <br> (Cô ấy làm việc chăm chỉ.)</li>
+        </ul>
+
+        <h3>5. Study (học)</h3>
+        <p>Phát âm: <button class="audio-icon" data-audio-text="study">🔊</button> /ˈstʌd.i/</p>
+        <ul>
+            <li>They <strong>study</strong> English every day. <br> (Họ học tiếng Anh mỗi ngày.)</li>
+            <li>I need to <strong>study</strong> for my exam. <br> (Tôi cần học cho kỳ thi của mình.)</li>
+        </ul>
+
+        <h3>6. Play (chơi)</h3>
+        <p>Phát âm: <button class="audio-icon" data-audio-text="play">🔊</button> /pleɪ/</p>
+        <ul>
+            <li>Kids love to <strong>play</strong> outside. <br> (Trẻ em thích chơi bên ngoài.)</li>
+            <li>I <strong>play</strong> sports on weekends. <br> (Tôi chơi thể thao vào cuối tuần.)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Phần 2: Thì Hiện Tại Đơn (Present Simple) 🗓️</h2>
+        <p>Chúng ta dùng <strong>thì Hiện tại đơn (Present Simple)</strong> để nói về những hoạt động bạn làm <strong>thường xuyên, hàng ngày, hoặc những sự thật hiển nhiên</strong>. Đây là thì hoàn hảo để nói về lịch trình và thói quen của bạn!</p>
+
+        <h3>Cấu trúc cơ bản:</h3>
+        <h4>Khẳng định (Affirmative): S + V (nguyên mẫu)</h4>
+        <p>Khi chủ ngữ là <strong>I, You, We, They</strong> hoặc danh từ số nhiều, động từ giữ nguyên mẫu.</p>
+        <ul>
+            <li><button class="audio-icon" data-audio-text="I eat breakfast.">🔊</button> <strong>I eat</strong> breakfast. <br> (Tôi ăn sáng.)</li>
+            <li><button class="audio-icon" data-audio-text="We study English.">🔊</button> <strong>We study</strong> English. <br> (Chúng tôi học tiếng Anh.)</li>
+        </ul>
+        <p>Khi chủ ngữ là <strong>He, She, It</strong> hoặc danh từ số ít, động từ thêm <strong>-s</strong> hoặc <strong>-es</strong>.</p>
+        <ul>
+            <li><button class="audio-icon" data-audio-text="He drinks coffee.">🔊</button> <strong>He drinks</strong> coffee. <br> (Anh ấy uống cà phê.)</li>
+            <li><button class="audio-icon" data-audio-text="She works in an office.">🔊</button> <strong>She works</strong> in an office. <br> (Cô ấy làm việc ở văn phòng.)</li>
+        </ul>
+
+        <h4>Phủ định (Negative): S + do not / does not + V (nguyên mẫu)</h4>
+        <p>Dùng <strong>do not (don't)</strong> với <strong>I, You, We, They</strong>.</p>
+        <ul>
+            <li><button class="audio-icon" data-audio-text="I do not eat meat.">🔊</button> <strong>I do not (don't) eat</strong> meat. <br> (Tôi không ăn thịt.)</li>
+            <li><button class="audio-icon" data-audio-text="They do not play games.">🔊</button> <strong>They do not (don't) play</strong> games. <br> (Họ không chơi trò chơi.)</li>
+        </ul>
+        <p>Dùng <strong>does not (doesn't)</strong> với <strong>He, She, It</strong>. Động từ sau <strong>does not</strong> trở về nguyên mẫu.</p>
+        <ul>
+            <li><button class="audio-icon" data-audio-text="He does not drink milk.">🔊</button> <strong>He does not (doesn't) drink</strong> milk. <br> (Anh ấy không uống sữa.)</li>
+            <li><button class="audio-icon" data-audio-text="She does not study on weekends.">🔊</button> <strong>She does not (doesn't) study</strong> on weekends. <br> (Cô ấy không học vào cuối tuần.)</li>
+        </ul>
+    </section>
+
+    <div class="practice-section">
+        <h3>🎯 Hãy Luyện Tập! (Practice Time!)</h3>
+        <p>Hoàn thành các câu sau bằng cách sử dụng đúng dạng của động từ trong ngoặc. Nhấn vào nút <strong>"Gợi ý"</strong> để xem đáp án nhé!</p>
+
+        <div class="practice-question">
+            <p>1. I <span class="answer-placeholder">_______</span> (drink) water every day.</p>
+            <span class="hint-answer">Đáp án: drink</span>
+        </div>
+
+        <div class="practice-question">
+            <p>2. She <span class="answer-placeholder">_______</span> (work) at a hospital.</p>
+            <span class="hint-answer">Đáp án: works</span>
+        </div>
+
+        <div class="practice-question">
+            <p>3. We <span class="answer-placeholder">_______</span> (not / eat) fast food often.</p>
+            <span class="hint-answer">Đáp án: do not eat (don't eat)</span>
+        </div>
+
+        <div class="practice-question">
+            <p>4. He <span class="answer-placeholder">_______</span> (not / play) football.</p>
+            <span class="hint-answer">Đáp án: does not play (doesn't play)</span>
+        </div>
+
+        <div class="practice-question">
+            <p>5. They <span class="answer-placeholder">_______</span> (sleep) late on Sundays.</p>
+            <span class="hint-answer">Đáp án: sleep</span>
+        </div>
+    </div>
+
+    <section>
+        <h2>Phần 3: Từ Vựng Hàng Ngày & Các Cụm Từ Chỉ Thời Gian ☀️🌙</h2>
+        <p>Bây giờ, hãy ghép các động từ với các hoạt động và thời gian trong ngày để tạo thành lịch trình hoàn chỉnh nhé!</p>
+
+        <h3>Các cụm từ chỉ thời gian:</h3>
+        <ul>
+            <li><button class="audio-icon" data-audio-text="in the morning">🔊</button> <strong>in the morning</strong> (vào buổi sáng)</li>
+            <li><button class="audio-icon" data-audio-text="in the afternoon">🔊</button> <strong>in the afternoon</strong> (vào buổi chiều)</li>
+            <li><button class="audio-icon" data-audio-text="in the evening">🔊</button> <strong>in the evening</strong> (vào buổi tối)</li>
+            <li><button class="audio-icon" data-audio-text="at night">🔊</button> <strong>at night</strong> (vào ban đêm - thường dùng cho các hoạt động cụ thể vào ban đêm hoặc khi trời tối hẳn, không dùng "in the night")</li>
+        </ul>
+
+        <h3>Các hoạt động hàng ngày phổ biến:</h3>
+        <ul>
+            <li><button class="audio-icon" data-audio-text="wake up">🔊</button> <strong>wake up</strong> (thức dậy)</li>
+            <li><button class="audio-icon" data-audio-text="get up">🔊</button> <strong>get up</strong> (ngủ dậy/rời khỏi giường)</li>
+            <li><button class="audio-icon" data-audio-text="brush my teeth">🔊</button> <strong>brush my teeth</strong> (đánh răng)</li>
+            <li><button class="audio-icon" data-audio-text="have breakfast">🔊</button> <strong>have breakfast</strong> (ăn sáng)</li>
+            <li><button class="audio-icon" data-audio-text="go to work / school">🔊</button> <strong>go to work / school</strong> (đi làm / đi học)</li>
+            <li><button class="audio-icon" data-audio-text="have lunch">🔊</button> <strong>have lunch</strong> (ăn trưa)</li>
+            <li><button class="audio-icon" data-audio-text="finish work / school">🔊</button> <strong>finish work / school</strong> (tan làm / tan học)</li>
+            <li><button class="audio-icon" data-audio-text="have dinner">🔊</button> <strong>have dinner</strong> (ăn tối)</li>
+            <li><button class="audio-icon" data-audio-text="go to bed">🔊</button> <strong>go to bed</strong> (đi ngủ)</li>
+        </ul>
+
+        <h3>Ví dụ về lịch trình hàng ngày:</h3>
+        <p>Hãy xem lịch trình của Anna:</p>
+        <ul>
+            <li>Anna <button class="audio-icon" data-audio-text="wakes up at 7 AM">🔊</button> <strong>wakes up at 7 AM</strong> in the morning. <br> (Anna thức dậy lúc 7 giờ sáng.)</li>
+            <li>She <button class="audio-icon" data-audio-text="has breakfast">🔊</button> <strong>has breakfast</strong>. <br> (Cô ấy ăn sáng.)</li>
+            <li>Then, she <button class="audio-icon" data-audio-text="goes to work">🔊</button> <strong>goes to work</strong>. <br> (Sau đó, cô ấy đi làm.)</li>
+            <li>She <button class="audio-icon" data-audio-text="has lunch">🔊</button> <strong>has lunch</strong> in the afternoon. <br> (Cô ấy ăn trưa vào buổi chiều.)</li>
+            <li>Anna <button class="audio-icon" data-audio-text="finishes work at 5 PM">🔊</button> <strong>finishes work at 5 PM</strong>. <br> (Anna tan làm lúc 5 giờ chiều.)</li>
+            <li>In the evening, she <button class="audio-icon" data-audio-text="has dinner">🔊</button> <strong>has dinner</strong> with her family. <br> (Vào buổi tối, cô ấy ăn tối với gia đình.)</li>
+            <li>Finally, she <button class="audio-icon" data-audio-text="goes to bed">🔊</button> <strong>goes to bed</strong> at 10 PM. <br> (Cuối cùng, cô ấy đi ngủ lúc 10 giờ tối.)</li>
+        </ul>
+    </section>
+
+    <div class="cultural-note">
+        <h3>💡 Ghi chú Văn hóa!</h3>
+        <p>Ở các nước nói tiếng Anh, đặc biệt là Mỹ và Anh, bữa sáng (breakfast) thường là bữa ăn nhẹ và nhanh gọn, đôi khi chỉ là ngũ cốc hoặc bánh mì nướng với cà phê/trà. Bữa trưa (lunch) cũng thường là bữa nhanh gọn. Bữa tối (dinner) là bữa chính trong ngày, thường có đầy đủ các món và là lúc gia đình quây quần.</p>
+        <p>Tương tự như ở Việt Nam, nhiều người cũng có những thói quen và lịch trình sinh hoạt khá giống nhau, nhưng cũng có những khác biệt nhỏ tùy theo vùng miền và lối sống cá nhân nhé!</p>
+    </div>
+
+    <div class="practice-section">
+        <h3>🎯 Hãy Luyện Tập! (Practice Time!)</h3>
+        <p>Hãy sắp xếp các câu sau theo đúng thứ tự một ngày của bạn. Gợi ý nằm ở cuối nhé!</p>
+
+        <div class="practice-question">
+            <p>1. I go to bed at 11 PM.</p>
+            <p>2. I have breakfast at 7:30 AM.</p>
+            <p>3. I wake up at 7 AM.</p>
+            <p>4. I go to work.</p>
+            <p>5. I have dinner in the evening.</p>
+            <p>6. I have lunch in the afternoon.</p>
+            <span class="hint-answer">Đáp án: 3, 2, 4, 6, 5, 1</span>
+        </div>
+        <p>Bây giờ, hãy thử tự kể về một ngày của bạn bằng tiếng Anh nhé!</p>
+    </div>
+
+    <div class="summary-section">
+        <h2>Tổng Kết Chương 6 📚</h2>
+        <p>Chúc mừng! Bạn đã hoàn thành Chương 6! Bạn đã học được rất nhiều điều quan trọng:</p>
+        <ul>
+            <li>Các động từ thông dụng cho hoạt động hàng ngày: <strong>eat, drink, sleep, work, study, play</strong>.</li>
+            <li>Cách sử dụng <strong>thì Hiện tại đơn (Present Simple)</strong> để nói về thói quen và lịch trình.</li>
+            <li>Cách nói <strong>khẳng định (I eat...)</strong> và <strong>phủ định (I don't eat...)</strong>.</li>
+            <li>Các từ vựng về hoạt động hàng ngày như <strong>wake up, brush teeth, go to work</strong>, v.v.</li>
+            <li>Các cụm từ chỉ thời gian trong ngày: <strong>in the morning, in the afternoon, in the evening, at night</strong>.</li>
+        </ul>
+        <p>Bây giờ bạn đã có thể kể về một ngày của mình bằng tiếng Anh rồi đó! Hãy luyện tập thường xuyên để ghi nhớ và sử dụng thành thạo nhé.</p>
+        <p>Hẹn gặp lại bạn trong chương tiếp theo!</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1: Pinyin y Tonos Chinos</title>
+    <style>
+        /* Global Styles & Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px; /* Max width for content on larger screens */
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5em; /* ~24px */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        h3 {
+            font-size: 1.2em; /* ~19.2px */
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        p {
+            font-size: 1em; /* ~16px */
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            font-size: 1em; /* ~16px */
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+            display: flex; /* Use flex to align icon and text */
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on small screens for long items */
+        }
+
+        li::before {
+            content: '👉'; /* Unicode symbol for list item marker */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.9em;
+            color: #8B5FBF;
+            line-height: 1.6; /* Align with text line height */
+        }
+        li > .audio-icon {
+            margin-left: auto; /* Push audio icon to the right if space allows */
+            margin-top: 0; /* Reset margin-top for audio-icon in list context */
+            margin-bottom: 0; /* Reset margin-bottom for audio-icon in list context */
+        }
+
+        strong {
+            color: #2C3E50;
+        }
+
+        em {
+            font-style: italic;
+            color: #8B5FBF;
+        }
+
+        /* Lesson Header Specifics */
+        .chapter-title {
+            color: #2C3E50;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.8em; /* Slightly smaller for mobile context */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Placeholder styling as external images are forbidden. */
+            background-color: #8B5FBF; /* To give some visual presence */
+            color: white;
+            font-size: 1.5em;
+            line-height: 150px; /* Placeholder height */
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            font-weight: bold;
+            overflow: hidden; /* Hide overflow text if it doesn't fit */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex; /* Use flexbox for perfect centering of content */
+            justify-content: center;
+            align-items: center;
+            width: 48px; /* Min 44px for tap target */
+            height: 48px; /* Min 44px for tap target */
+            line-height: 1; /* Reset line-height */
+            border-radius: 50%;
+            background-color: #8B5FBF; /* Primary color */
+            color: white;
+            cursor: pointer;
+            font-size: 24px; /* Larger icon for better visibility */
+            vertical-align: middle;
+            margin-left: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #6A4899; /* Darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Inline examples with audio */
+        .example-block {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+        }
+
+        .example-text {
+            flex-grow: 1; /* Allow text to take up available space */
+            margin-right: 10px; /* Space between text and icon */
+            font-size: 1.1em;
+            color: #2C3E50;
+            font-weight: bold;
+        }
+
+        .tone-visual {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #FDF9E5;
+            border-left: 4px solid #8B5FBF;
+            border-radius: 4px;
+        }
+
+        .tone-visual p {
+            margin-bottom: 5px;
+            color: #2C3E50;
+        }
+
+        .tone-chart {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px 0;
+            gap: 15px;
+        }
+
+        .tone-item {
+            flex: 1 1 200px; /* Allows items to grow and shrink, min width 200px */
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid #E0E0E0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Push audio icon to bottom if it's the last item */
+        }
+
+        .tone-item h4 {
+            color: #8B5FBF;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .tone-item .pinyin-example {
+            font-size: 1.3em;
+            color: #2C3E50;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .tone-item .char-example {
+            font-size: 1.5em;
+            color: #2C3E50;
+            margin-bottom: 8px;
+        }
+
+        .tone-item .translation {
+            font-size: 0.9em;
+            color: #666666;
+            font-style: italic;
+            flex-grow: 1; /* Allow translation to take space if needed */
+            margin-bottom: 10px; /* Space before audio icon */
+        }
+        .tone-item .audio-icon {
+            margin: 0 auto; /* Center audio icon in the tone-item */
+            margin-top: 10px; /* Ensure space from text above */
+        }
+
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            border: 1px solid #E0E0E0;
+        }
+
+        .practice-item {
+            margin-bottom: 20px;
+            background-color: #FDF9E5;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+        }
+
+        .practice-item p {
+            margin-bottom: 10px;
+            color: #2C3E50;
+        }
+
+        .practice-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .practice-answer-hint {
+            font-size: 0.9em;
+            color: #8B5FBF;
+            font-style: italic;
+            margin-top: 5px;
+            width: 100%; /* Ensure hint takes full width */
+            text-align: right; /* Align hint to the right */
+        }
+
+        /* Summary */
+        .summary-section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+            border: 1px solid #E0E0E0;
+            text-align: center;
+        }
+
+        .summary-section p {
+            margin-bottom: 10px;
+            color: #2C3E50;
+        }
+
+        .summary-section ul {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            h3 {
+                font-size: 1.1em;
+            }
+
+            .audio-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+            }
+
+            .example-block {
+                flex-direction: column; /* Stack items vertically on very small screens */
+                align-items: flex-start;
+            }
+
+            .example-text {
+                margin-right: 0;
+                margin-bottom: 8px;
+            }
+
+            .practice-answer-hint {
+                text-align: left; /* Align hint to left on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Capítulo 1: Pinyin y Tonos Chinos</h1>
+        <div class="lesson-header">
+            <!-- As per instructions, src and alt are present. Visual representation is handled by CSS (background, text) since external images are forbidden. -->
+            <div class="lesson-header-image">
+                <img src="../header.webp" alt="Introducción al Pinyin y Tonos Chinos" style="display: none;"> <!-- Hidden img tag as per requirement, visual handled by div -->
+                Pinyin y Tonos ✨
+            </div>
+        </div>
+
+        <section>
+            <h2>👋 ¡Bienvenido al Mandarín!</h2>
+            <p>¡Hola, futuro hablante de chino! Prepárate para embarcarte en una emocionante aventura lingüística. En este primer capítulo, descubriremos los cimientos del chino mandarín: el <strong>Pinyin</strong> y los <strong>Tonos</strong>. Son la clave para leer, pronunciar y ser entendido en chino. ¡Vamos allá! 🚀</p>
+        </section>
+
+        <section>
+            <h2>1. Introducción al Pinyin 🗣️</h2>
+            <p>El <strong>Pinyin (拼音 pīnyīn)</strong> es el sistema de romanización oficial del chino mandarín. ¿Qué significa eso? Que utiliza el alfabeto latino (el que ya conoces) para representar los sonidos del chino. Es como una "guía de pronunciación" para los caracteres chinos.</p>
+            <p>¡Gracias al Pinyin, no necesitas memorizar miles de caracteres desde el primer día para empezar a hablar! Es una herramienta invaluable para los principiantes. Además, se usa para escribir en teclados y en muchos nombres de lugares y personas.</p>
+            <div class="example-block">
+                <span class="example-text"><strong>Pinyin:</strong> pīnyīn</span>
+                <span class="audio-icon" data-audio-text="pīnyīn">🔊</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Iniciales y Finales 🔡</h2>
+            <p>En chino, cada sílaba se forma generalmente con una <strong>inicial</strong> (como una consonante) y una <strong>final</strong> (como una vocal o combinación de vocales). Es similar a cómo formamos sílabas en español, como en "ca-sa" (c + a, s + a).</p>
+
+            <h3>Iniciales (声母 shēngmǔ)</h3>
+            <p>Son el sonido inicial de la sílaba. Hay 23 iniciales en Pinyin. Algunas son muy parecidas al español, otras requieren un poco de práctica.</p>
+            <ul>
+                <li><span><strong>b</strong> (como la "p" en "pato")</span> <span class="audio-icon" data-audio-text="b">🔊</span></li>
+                <li><span><strong>p</strong> (como la "p" aspirada en "pepper" en inglés)</span> <span class="audio-icon" data-audio-text="p">🔊</span></li>
+                <li><span><strong>m</strong> (como la "m" en "mesa")</span> <span class="audio-icon" data-audio-text="m">🔊</span></li>
+                <li><span><strong>f</strong> (como la "f" en "flor")</span> <span class="audio-icon" data-audio-text="f">🔊</span></li>
+                <li><span><strong>d</strong> (como la "t" en "taco")</span> <span class="audio-icon" data-audio-text="d">🔊</span></li>
+                <li><span><strong>t</strong> (como la "t" aspirada en "top" en inglés)</span> <span class="audio-icon" data-audio-text="t">🔊</span></li>
+                <li><span><strong>n</strong> (como la "n" en "nube")</span> <span class="audio-icon" data-audio-text="n">🔊</span></li>
+                <li><span><strong>l</strong> (como la "l" en "luna")</span> <span class="audio-icon" data-audio-text="l">🔊</span></li>
+                <li><span><strong>g</strong> (como la "k" en "kilo")</span> <span class="audio-icon" data-audio-text="g">🔊</span></li>
+                <li><span><strong>k</strong> (como la "k" aspirada en "cat" en inglés)</span> <span class="audio-icon" data-audio-text="k">🔊</span></li>
+                <li><span><strong>h</strong> (como la "j" en "jamón" español)</span> <span class="audio-icon" data-audio-text="h">🔊</span></li>
+                <li><span><strong>j</strong> (similar a "ch" en "chocolate", pero con la lengua más plana)</span> <span class="audio-icon" data-audio-text="j">🔊</span></li>
+                <li><span><strong>q</strong> (similar a "ch" aspirada, como en "cheese" en inglés)</span> <span class="audio-icon" data-audio-text="q">🔊</span></li>
+                <li><span><strong>x</strong> (similar a "sh" en "shirt" en inglés)</span> <span class="audio-icon" data-audio-text="x">🔊</span></li>
+                <li><span><strong>zh</strong> (como la "j" en "jump" en inglés, retrofleja)</span> <span class="audio-icon" data-audio-text="zh">🔊</span></li>
+                <li><span><strong>ch</strong> (como la "ch" en "church" en inglés, retrofleja, aspirada)</span> <span class="audio-icon" data-audio-text="ch">🔊</span></li>
+                <li><span><strong>sh</strong> (como la "sh" en "she" en inglés, retrofleja)</span> <span class="audio-icon" data-audio-text="sh">🔊</span></li>
+                <li><span><strong>r</strong> (similar a la "r" en "run" en inglés, retrofleja)</span> <span class="audio-icon" data-audio-text="r">🔊</span></li>
+                <li><span><strong>z</strong> (como la "ds" en "beds")</span> <span class="audio-icon" data-audio-text="z">🔊</span></li>
+                <li><span><strong>c</strong> (como la "ts" en "cats")</span> <span class="audio-icon" data-audio-text="c">🔊</span></li>
+                <li><span><strong>s</strong> (como la "s" en "sol")</span> <span class="audio-icon" data-audio-text="s">🔊</span></li>
+                <li><span><strong>y</strong> (como la "i" en "hielo", cuando es inicial)</span> <span class="audio-icon" data-audio-text="y">🔊</span></li>
+                <li><span><strong>w</strong> (como la "u" en "hueso", cuando es inicial)</span> <span class="audio-icon" data-audio-text="w">🔊</span></li>
+            </ul>
+
+            <h3>Finales (韵母 yùnmǔ)</h3>
+            <p>Son los sonidos de las vocales o combinaciones de vocales y algunas consonantes finales. Hay 36 finales. Las más importantes son:</p>
+            <ul>
+                <li><strong>Vocales simples:</strong>
+                    <ul>
+                        <li><span><strong>a</strong> (como la "a" en "padre")</span> <span class="audio-icon" data-audio-text="a">🔊</span></li>
+                        <li><span><strong>o</strong> (como la "o" en "oso", pero más redondeada)</span> <span class="audio-icon" data-audio-text="o">🔊</span></li>
+                        <li><span><strong>e</strong> (como la "e" en "perro", pero más cerrada, o como la "er" en "teacher" inglés)</span> <span class="audio-icon" data-audio-text="e">🔊</span></li>
+                        <li><span><strong>i</strong> (como la "i" en "silla")</span> <span class="audio-icon" data-audio-text="i">🔊</span></li>
+                        <li><span><strong>u</strong> (como la "u" en "luna")</span> <span class="audio-icon" data-audio-text="u">🔊</span></li>
+                        <li><span><strong>ü</strong> (la "u" francesa o alemana, labios redondeados como "u" pero pronunciando "i")</span> <span class="audio-icon" data-audio-text="ü">🔊</span></li>
+                    </ul>
+                </li>
+                <li><strong>Finales compuestas populares:</strong>
+                    <ul>
+                        <li><span><strong>ai</strong> (como "ai" en "aire")</span> <span class="audio-icon" data-audio-text="ai">🔊</span></li>
+                        <li><span><strong>ei</strong> (como "ei" en "seis")</span> <span class="audio-icon" data-audio-text="ei">🔊</span></li>
+                        <li><span><strong>ao</strong> (como "ao" en "auto")</span> <span class="audio-icon" data-audio-text="ao">🔊</span></li>
+                        <li><span><strong>ou</strong> (como "ou" en "soul" inglés)</span> <span class="audio-icon" data-audio-text="ou">🔊</span></li>
+                        <li><span><strong>an</strong> (como "an" en "pan")</span> <span class="audio-icon" data-audio-text="an">🔊</span></li>
+                        <li><span><strong>eng</strong> (similar a "ung" en "sung" inglés, pero más nasal)</span> <span class="audio-icon" data-audio-text="eng">🔊</span></li>
+                    </ul>
+                </li>
+            </ul>
+            <p><strong>¡Practiquemos algunas sílabas completas!</strong></p>
+            <div class="example-block">
+                <span class="example-text">bā (八 - ocho)</span>
+                <span class="audio-icon" data-audio-text="bā">🔊</span>
+            </div>
+            <div class="example-block">
+                <span class="example-text">tīng (听 - escuchar)</span>
+                <span class="audio-icon" data-audio-text="tīng">🔊</span>
+            </div>
+            <div class="example-block">
+                <span class="example-text">nǐ (你 - tú)</span>
+                <span class="audio-icon" data-audio-text="nǐ">🔊</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Los Cuatro Tonos ✨</h2>
+            <p>¡Aquí viene lo divertido y desafiante! El chino mandarín es una lengua tonal, lo que significa que el significado de una palabra cambia dependiendo de cómo sube o baja el tono de tu voz al pronunciarla. Hay <strong>cuatro tonos principales</strong> y un tono neutro.</p>
+            <p>Un mismo Pinyin puede tener ¡muchos significados diferentes! Por ejemplo, la sílaba "ma" puede significar:</p>
+            <ul>
+                <li><span><strong>mā</strong> (妈 - madre) 👩‍👧</span></li>
+                <li><span><strong>má</strong> (麻 - cáñamo) 🌿</span></li>
+                <li><span><strong>mǎ</strong> (马 - caballo) 🐎</span></li>
+                <li><span><strong>mà</strong> (骂 - regañar) 😡</span></li>
+                <li><span><strong>ma</strong> (吗 - partícula interrogativa, no tiene significado propio) ❓</span></li>
+            </ul>
+
+            <div class="tone-chart">
+                <div class="tone-item">
+                    <h4>Primer Tono (阴平 yīnpíng)</h4>
+                    <p class="pinyin-example">mā (妈)</p>
+                    <p class="char-example">_ _ _ _</p>
+                    <p class="translation">(alto y plano)</p>
+                    <span class="audio-icon" data-audio-text="mā">🔊</span>
+                </div>
+                <div class="tone-item">
+                    <h4>Segundo Tono (阳平 yángpíng)</h4>
+                    <p class="pinyin-example">má (麻)</p>
+                    <p class="char-example">/ / / /</p>
+                    <p class="translation">(ascendente, como una pregunta)</p>
+                    <span class="audio-icon" data-audio-text="má">🔊</span>
+                </div>
+                <div class="tone-item">
+                    <h4>Tercer Tono (上声 shǎngshēng)</h4>
+                    <p class="pinyin-example">mǎ (马)</p>
+                    <p class="char-example">V V V V</p>
+                    <p class="translation">(descendente-ascendente, "dipping")</p>
+                    <span class="audio-icon" data-audio-text="mǎ">🔊</span>
+                </div>
+                <div class="tone-item">
+                    <h4>Cuarto Tono (去声 qùshēng)</h4>
+                    <p class="pinyin-example">mà (骂)</p>
+                    <p class="char-example">\ \ \ \</p>
+                    <p class="translation">(descendente, como una orden)</p>
+                    <span class="audio-icon" data-audio-text="mà">🔊</span>
+                </div>
+                <div class="tone-item">
+                    <h4>Tono Neutro (轻声 qīngshēng)</h4>
+                    <p class="pinyin-example">ma (吗)</p>
+                    <p class="char-example">•</p>
+                    <p class="translation">(ligero, corto, sin marca)</p>
+                    <span class="audio-icon" data-audio-text="ma">🔊</span>
+                </div>
+            </div>
+            <p><strong>¡Un consejo!</strong> No te frustres si al principio te cuesta distinguirlos. Con práctica y escucha, tus oídos y tu boca se acostumbrarán. ¡Es como aprender a cantar una canción nueva!</p>
+        </section>
+
+        <section>
+            <h2>4. Marcas de Tono y Reglas de Pronunciación 🖍️</h2>
+            <p>Las marcas de tono se colocan sobre la vocal principal de la final. Hay una jerarquía para saber dónde poner la marca:</p>
+            <div class="tone-visual">
+                <p><strong>Regla de prioridad:</strong> <strong>a > o > e > i > u > ü</strong></p>
+                <p>La marca va sobre la vocal que tenga mayor prioridad en la final.</p>
+                <div class="example-block">
+                    <span class="example-text">hǎo (好 - bueno) 👉 La 'a' tiene prioridad sobre la 'o'.</span>
+                    <span class="audio-icon" data-audio-text="hǎo">🔊</span>
+                </div>
+                <div class="example-block">
+                    <span class="example-text">shuǐ (水 - agua) 👉 La 'u' tiene prioridad sobre la 'i'.</span>
+                    <span class="audio-icon" data-audio-text="shuǐ">🔊</span>
+                </div>
+            </div>
+
+            <p><strong>Excepciones o casos especiales:</strong></p>
+            <ul>
+                <li><span>Cuando <strong>i</strong> y <strong>u</strong> están juntos, la marca va sobre la última vocal (por ejemplo, `liú` y no `líu`). Aunque la regla de prioridad dice `u` antes de `i`, para `iu` o `ui`, el tono va en la segunda vocal. Esto es más una regla práctica. La prioridad principal es para el diptongo/triptongo más prominente.</span></li>
+                <li><span>Si una final solo tiene una vocal, la marca va sobre ella (ej. `mā`).</span></li>
+                <li><span>La vocal <strong>i</strong> pierde su punto cuando lleva una marca de tono (ej. `nǐ`, no `nǐ̇`).</span></li>
+                <li><span>La <strong>ü</strong> pierde los dos puntos sobre ella cuando va después de <strong>j, q, x, y</strong> (ej. `jù`, `qù`, `xué`, `yǔ`). En estos casos, se pronuncia como una "ü", aunque se escriba como "u".</span></li>
+                <li><span>Cuando el Pinyin no tiene inicial (empieza con vocal), se añade <strong>'y'</strong> o <strong>'w'</strong> como 'inicial silenciosa'.
+                    <div class="example-block">
+                        <span class="example-text">'ai' se convierte en 'ài' (爱 - amor)</span>
+                        <span class="audio-icon" data-audio-text="ài">🔊</span>
+                    </div>
+                    <div class="example-block">
+                        <span class="example-text">si 'i' es inicial, se convierte en 'yi' (一 - uno)</span>
+                        <span class="audio-icon" data-audio-text="yī">🔊</span>
+                    </div>
+                    <div class="example-block">
+                        <span class="example-text">si 'u' es inicial, se convierte en 'wu' (五 - cinco)</span>
+                        <span class="audio-icon" data-audio-text="wǔ">🔊</span>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>Reglas de Cambio de Tono (Tone Sandhi)</h3>
+            <p>Algunos tonos cambian cuando aparecen juntos:</p>
+            <ul>
+                <li><span><strong>Dos Terceros Tonos Seguidos (V + V = / + V):</strong> Cuando dos sílabas en tercer tono están juntas, la primera cambia a un segundo tono.
+                    <div class="example-block">
+                        <span class="example-text">nǐ hǎo (你 好 - hola)</span>
+                        <span class="audio-icon" data-audio-text="nǐ hǎo">🔊</span>
+                        <span class="practice-answer-hint">Originalmente nǐ(V) hǎo(V) se pronuncia NÍ( ascendente) HǍO(dipping)</span>
+                    </div>
+                </li>
+                <li><span><strong>El carácter 不 (bù - no):</strong> Originalmente cuarto tono, pero cambia a segundo tono (bú) cuando le sigue otro cuarto tono.
+                    <div class="example-block">
+                        <span class="example-text">bú qù (不去 - no ir)</span>
+                        <span class="audio-icon" data-audio-text="bú qù">🔊</span>
+                        <span class="practice-answer-hint">bù( \) + qù( \) = bú( / ) + qù( \)</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h2>5. ¡A Practicar! 💪</h2>
+            <p>Es hora de poner en práctica lo que hemos aprendido. Escucha y trata de identificar los tonos y el significado.</p>
+
+            <div class="practice-item">
+                <p class="practice-question"><strong>1. Escucha y repite. ¿Puedes identificar el tono de cada sílaba?</strong></p>
+                <div class="example-block">
+                    <span class="example-text">rén (人 - persona)</span>
+                    <span class="audio-icon" data-audio-text="rén">🔊</span>
+                    <span class="practice-answer-hint">Tono: Segundo (ascendente)</span>
+                </div>
+                <div class="example-block">
+                    <span class="example-text">mǐfàn (米饭 - arroz cocido)</span>
+                    <span class="audio-icon" data-audio-text="mǐfàn">🔊</span>
+                    <span class="practice-answer-hint">Tono: Tercero, Cuarto</span>
+                </div>
+                <div class="example-block">
+                    <span class="example-text">hē (喝 - beber)</span>
+                    <span class="audio-icon" data-audio-text="hē">🔊</span>
+                    <span class="practice-answer-hint">Tono: Primer (plano)</span>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question"><strong>2. Escucha y adivina el significado de estas palabras comunes:</strong></p>
+                <div class="example-block">
+                    <span class="example-text">xièxie (谢谢)</span>
+                    <span class="audio-icon" data-audio-text="xièxie">🔊</span>
+                    <span class="practice-answer-hint">Significado: gracias</span>
+                </div>
+                <div class="example-block">
+                    <span class="example-text">zàijiàn (再见)</span>
+                    <span class="audio-icon" data-audio-text="zàijiàn">🔊</span>
+                    <span class="practice-answer-hint">Significado: adiós</span>
+                </div>
+                <div class="example-block">
+                    <span class="example-text">duìbùqǐ (对不起)</span>
+                    <span class="audio-icon" data-audio-text="duìbùqǐ">🔊</span>
+                    <span class="practice-answer-hint">Significado: lo siento</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ Resumen del Capítulo 1 ✨</h2>
+            <p>¡Felicidades! Has dado tus primeros pasos en el fascinante mundo del chino mandarín. Aquí están los puntos clave de este capítulo:</p>
+            <ul>
+                <li><span>El <strong>Pinyin</strong> es el sistema de romanización para leer chino.</span></li>
+                <li><span>Cada sílaba china se compone de una <strong>inicial</strong> y una <strong>final</strong>.</span></li>
+                <li><span>El chino tiene <strong>cuatro tonos principales</strong> y un tono neutro; son cruciales para el significado.</span></li>
+                <li><span>Las marcas de tono se colocan sobre la vocal principal de la final siguiendo una jerarquía.</span></li>
+                <li><span>Existen <strong>reglas de cambio de tono</strong> (Tone Sandhi) que modifican la pronunciación de los tonos cuando están juntos.</span></li>
+            </ul>
+            <p>¡Sigue practicando la pronunciación de Pinyin y los tonos! La práctica hace al maestro. 🌟</p>
+        </section>
+    </div>
+</body>
+</html>

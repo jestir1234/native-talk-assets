@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección 4: Colores y Descripciones</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body font size */
+        }
+
+        /* Semantic HTML Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /* Headings */
+        h1, h2, h3, h4 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5em; /* ~24px */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 8px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        h3 {
+            font-size: 1.2em; /* ~19.2px */
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        /* Chapter Header specific styles */
+        .chapter-title {
+            padding: 20px 15px 0;
+            text-align: center;
+            color: #2C3E50;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* General Content Styling */
+        section {
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        p {
+            margin-bottom: 1em;
+            padding: 0 15px; /* Add padding to paragraphs */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 8px 15px;
+            margin-bottom: 5px;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            display: flex;
+            align-items: center;
+        }
+
+        .chinese-word {
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue */
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .pinyin {
+            font-style: italic;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .translation {
+            flex-grow: 1;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px; /* Min 44px tall */
+            height: 48px; /* Min 44px tall */
+            font-size: 1.5em;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C449E; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.98);
+        }
+
+        .word-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            background-color: #fdfdfd;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        .word-item .text-group {
+            display: flex;
+            align-items: baseline;
+            flex-grow: 1;
+            margin-right: 10px; /* Space between text and audio */
+            flex-wrap: wrap;
+        }
+        .word-item .chinese-word, .word-item .pinyin {
+            margin-right: 8px;
+            font-size: 1.1em;
+        }
+        .word-item .translation {
+            font-size: 0.95em;
+            color: #666666;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #FFF; /* Lighter background for practice */
+            border: 1px dashed #8B5FBF; /* Primary color dashed border */
+            padding: 20px;
+            margin: 20px 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .practice-question {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #2C3E50;
+            font-weight: bold;
+        }
+
+        .practice-answer-box {
+            background-color: #E0E0E0; /* Light gray */
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            text-align: left;
+            font-weight: bold;
+            color: #2C3E50;
+            border: 1px solid #B0B0B0;
+        }
+
+        .reveal-button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            min-height: 44px; /* Ensure touch friendly */
+            margin-top: 15px;
+        }
+
+        .reveal-button:hover {
+            background-color: #6C449E;
+        }
+
+        .reveal-button:active {
+            transform: translateY(1px);
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple */
+            padding: 15px;
+            margin: 20px 10px;
+            border-radius: 8px;
+            font-style: italic;
+            color: #666666;
+        }
+        .cultural-note strong {
+            color: #2C3E50;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-top: 2px solid #8B5FBF; /* Primary: Purple */
+            padding: 20px 15px;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .summary-section h2 {
+            border-bottom: none;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .summary-list li {
+            background-color: #ffffff;
+            border: 1px solid #E0E0E0;
+            margin-bottom: 8px;
+            padding: 12px 15px;
+            font-size: 0.95em;
+        }
+
+        /* Responsive Adjustments (Mobile-first, so this is for larger screens if needed) */
+        @media screen and (min-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 25px;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 800px; /* Constrain width on larger screens */
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            h3 {
+                font-size: 1.5em;
+            }
+
+            .lesson-header-image {
+                max-width: 700px;
+            }
+
+            .word-item {
+                padding: 15px 20px;
+            }
+
+            .audio-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .practice-section, .cultural-note, .summary-section {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 780px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="chapter-title">Chapter 4: Colores y Descripciones</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 4 Header" class="lesson-header-image">
+    </div>
+
+    <section>
+        <h2>¡Hola! 🎨 ¿Qué color es?</h2>
+        <p>¡Bienvenido al Capítulo 4! Hoy vamos a añadir un toque de color a tus descripciones y aprender a hablar sobre el tamaño y la apariencia de las cosas. ¡Prepárate para describir el mundo en chino!</p>
+    </section>
+
+    <section>
+        <h3>🌈 Colores Básicos (颜色 - yánsè)</h3>
+        <p>Empecemos con algunos colores esenciales. ¡Escucha y repite!</p>
+        <ul>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">红色</span>
+                    <span class="pinyin">(hóngsè)</span>
+                    <span class="translation">Rojo</span>
+                </div>
+                <button class="audio-icon" data-audio-text="红色">🔊</button>
+            </li>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">蓝色</span>
+                    <span class="pinyin">(lánsè)</span>
+                    <span class="translation">Azul</span>
+                </div>
+                <button class="audio-icon" data-audio-text="蓝色">🔊</button>
+            </li>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">绿色</span>
+                    <span class="pinyin">(lǜsè)</span>
+                    <span class="translation">Verde</span>
+                </div>
+                <button class="audio-icon" data-audio-text="绿色">🔊</button>
+            </li>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">黄色</span>
+                    <span class="pinyin">(huángsè)</span>
+                    <span class="translation">Amarillo</span>
+                </div>
+                <button class="audio-icon" data-audio-text="黄色">🔊</button>
+            </li>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">黑色</span>
+                    <span class="pinyin">(hēisè)</span>
+                    <span class="translation">Negro</span>
+                </div>
+                <button class="audio-icon" data-audio-text="黑色">🔊</button>
+            </li>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">白色</span>
+                    <span class="pinyin">(báisè)</span>
+                    <span class="translation">Blanco</span>
+                </div>
+                <button class="audio-icon" data-audio-text="白色">🔊</button>
+            </li>
+        </ul>
+
+        <div class="cultural-note">
+            <h3>💡 Nota Cultural: El Rojo en China</h3>
+            <p>El color <strong>红色 (hóngsè - rojo)</strong> es muy importante en la cultura china. Simboliza buena fortuna, felicidad, prosperidad y éxito. Lo verás por todas partes, especialmente durante celebraciones como el Año Nuevo Chino y bodas. ¡Es un color de celebración!</p>
+        </div>
+    </section>
+
+    <section>
+        <h3>📏 Describiendo Objetos: Tamaño y Altura</h3>
+        <p>Ahora, aprendamos a describir si algo es grande, pequeño, alto o bajo.</p>
+        <ul>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">大</span>
+                    <span class="pinyin">(dà)</span>
+                    <span class="translation">Grande</span>
+                </div>
+                <button class="audio-icon" data-audio-text="大">🔊</button>
+            </li>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">小</span>
+                    <span class="pinyin">(xiǎo)</span>
+                    <span class="translation">Pequeño/a</span>
+                </div>
+                <button class="audio-icon" data-audio-text="小">🔊</button>
+            </li>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">高</span>
+                    <span class="pinyin">(gāo)</span>
+                    <span class="translation">Alto/a (para personas o edificios)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="高">🔊</button>
+            </li>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">矮</span>
+                    <span class="pinyin">(ǎi)</span>
+                    <span class="translation">Bajo/a (para personas)</span>
+                </div>
+                <button class="audio-icon" data-audio-text="矮">🔊</button>
+            </li>
+        </ul>
+        <h4>Ejemplos:</h4>
+        <p>
+            <span class="chinese-word">大狗</span>
+            <span class="pinyin">(dà gǒu)</span>
+            <span class="translation"> - Perro grande</span>
+            <button class="audio-icon" data-audio-text="大狗">🔊</button>
+        </p>
+        <p>
+            <span class="chinese-word">小猫</span>
+            <span class="pinyin">(xiǎo māo)</span>
+            <span class="translation"> - Gato pequeño</span>
+            <button class="audio-icon" data-audio-text="小猫">🔊</button>
+        </p>
+        <p>
+            <span class="chinese-word">高楼</span>
+            <span class="pinyin">(gāo lóu)</span>
+            <span class="translation"> - Edificio alto</span>
+            <button class="audio-icon" data-audio-text="高楼">🔊</button>
+        </p>
+    </section>
+
+    <section>
+        <h3>👉 Esto es... / Eso es... (这是... / 那是...)</h3>
+        <p>Usamos 这是 (zhè shì) para "Esto es..." y 那是 (nà shì) para "Eso es...".</p>
+        <ul>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">这是</span>
+                    <span class="pinyin">(zhè shì)</span>
+                    <span class="translation">Esto es / Este es</span>
+                </div>
+                <button class="audio-icon" data-audio-text="这是">🔊</button>
+            </li>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">那是</span>
+                    <span class="pinyin">(nà shì)</span>
+                    <span class="translation">Eso es / Ese es</span>
+                </div>
+                <button class="audio-icon" data-audio-text="那是">🔊</button>
+            </li>
+        </ul>
+        <h4>Ejemplos:</h4>
+        <p>
+            <span class="chinese-word">这是狗。</span>
+            <span class="pinyin">(Zhè shì gǒu.)</span>
+            <span class="translation"> - Esto es un perro.</span>
+            <button class="audio-icon" data-audio-text="这是狗。">🔊</button>
+        </p>
+        <p>
+            <span class="chinese-word">那是猫。</span>
+            <span class="pinyin">(Nà shì māo.)</span>
+            <span class="translation"> - Eso es un gato.</span>
+            <button class="audio-icon" data-audio-text="那是猫。">🔊</button>
+        </p>
+    </section>
+
+    <section>
+        <h3>❓ ¿Qué color es? Es... (这是什么颜色？它是...)</h3>
+        <p>¡Combina lo aprendido para preguntar y responder sobre colores!</p>
+        <ul>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">这是什么颜色？</span>
+                    <span class="pinyin">(Zhè shì shénme yánsè?)</span>
+                    <span class="translation">¿Qué color es esto?</span>
+                </div>
+                <button class="audio-icon" data-audio-text="这是什么颜色？">🔊</button>
+            </li>
+            <li class="word-item">
+                <div class="text-group">
+                    <span class="chinese-word">它是...</span>
+                    <span class="pinyin">(Tā shì...)</span>
+                    <span class="translation">Es (de color)...</span>
+                </div>
+                <button class="audio-icon" data-audio-text="它是">🔊</button>
+            </li>
+        </ul>
+        <h4>Ejemplos:</h4>
+        <p>
+            <span class="chinese-word">这是什么颜色？它是红色。</span>
+            <span class="pinyin">(Zhè shì shénme yánsè? Tā shì hóngsè.)</span>
+            <span class="translation"> - ¿Qué color es esto? Es rojo.</span>
+            <button class="audio-icon" data-audio-text="这是什么颜色？它是红色。">🔊</button>
+        </p>
+        <p>
+            <span class="chinese-word">那是什么颜色？它是蓝色。</span>
+            <span class="pinyin">(Nà shì shénme yánsè? Tā shì lánsè.)</span>
+            <span class="translation"> - ¿Qué color es eso? Es azul.</span>
+            <button class="audio-icon" data-audio-text="那是什么颜色？它是蓝色。">🔊</button>
+        </p>
+    </section>
+
+    <section>
+        <h3>🎨 Adjetivos y Descripciones Básicas</h3>
+        <p>En chino, el adjetivo generalmente va antes del sustantivo, como en español.</p>
+        <p><strong>Estructura: [Adjetivo] + [Sustantivo]</strong></p>
+        <h4>Ejemplos:</h4>
+        <p>
+            <span class="chinese-word">红色的苹果</span>
+            <span class="pinyin">(hóngsè de píngguǒ)</span>
+            <span class="translation"> - Manzana roja (lit. "roja DE manzana")</span>
+            <button class="audio-icon" data-audio-text="红色的苹果">🔊</button>
+            <br>
+            <small>Nota: A menudo se usa 的 (de) después del adjetivo de color. No siempre es obligatorio, pero es común.</small>
+        </p>
+        <p>
+            <span class="chinese-word">大狗</span>
+            <span class="pinyin">(dà gǒu)</span>
+            <span class="translation"> - Perro grande</span>
+            <button class="audio-icon" data-audio-text="大狗">🔊</button>
+        </p>
+        <p>
+            <span class="chinese-word">小猫</span>
+            <span class="pinyin">(xiǎo māo)</span>
+            <span class="translation"> - Gato pequeño</span>
+            <button class="audio-icon" data-audio-text="小猫">🔊</button>
+        </p>
+        <p>
+            <span class="chinese-word">这是红色的车。</span>
+            <span class="pinyin">(Zhè shì hóngsè de chē.)</span>
+            <span class="translation"> - Esto es un coche rojo.</span>
+            <button class="audio-icon" data-audio-text="这是红色的车。">🔊</button>
+        </p>
+        <p>
+            <span class="chinese-word">那是蓝色的书。</span>
+            <span class="pinyin">(Nà shì lánsè de shū.)</span>
+            <span class="translation"> - Eso es un libro azul.</span>
+            <button class="audio-icon" data-audio-text="那是蓝色的书。">🔊</button>
+        </p>
+    </section>
+
+    <div class="practice-section">
+        <h3>✨ ¡A Practicar! ✨</h3>
+        <p class="practice-question">Intenta traducir las siguientes frases al chino. ¡Piensa en la respuesta y luego revela!</p>
+
+        <div class="practice-item">
+            <p>1. ¿Cómo se dice "perro pequeño" en chino?</p>
+            <button class="reveal-button" onclick="document.getElementById('answer1').style.display='block';">Mostrar Respuesta</button>
+            <div id="answer1" class="practice-answer-box" style="display:none;">
+                <span class="chinese-word">小狗</span> <span class="pinyin">(xiǎo gǒu)</span>
+                <button class="audio-icon" data-audio-text="小狗">🔊</button>
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <p>2. ¿Cómo dirías "Esto es una manzana roja"?</p>
+            <button class="reveal-button" onclick="document.getElementById('answer2').style.display='block';">Mostrar Respuesta</button>
+            <div id="answer2" class="practice-answer-box" style="display:none;">
+                <span class="chinese-word">这是红色的苹果。</span> <span class="pinyin">(Zhè shì hóngsè de píngguǒ.)</span>
+                <button class="audio-icon" data-audio-text="这是红色的苹果。">🔊</button>
+            </div>
+        </div>
+
+        <div class="practice-item">
+            <p>3. ¿Cómo preguntarías "¿Qué color es esto?"?</p>
+            <button class="reveal-button" onclick="document.getElementById('answer3').style.display='block';">Mostrar Respuesta</button>
+            <div id="answer3" class="practice-answer-box" style="display:none;">
+                <span class="chinese-word">这是什么颜色？</span> <span class="pinyin">(Zhè shì shénme yánsè?)</span>
+                <button class="audio-icon" data-audio-text="这是什么颜色？">🔊</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="summary-section">
+        <h2>📚 Resumen del Capítulo 4</h2>
+        <p>¡Felicidades! Has cubierto mucho en este capítulo. Aquí un repaso rápido de lo que aprendiste:</p>
+        <ul class="summary-list">
+            <li><strong>Colores Básicos:</strong> 红色 (hóngsè - rojo), 蓝色 (lánsè - azul), 绿色 (lǜsè - verde), 黄色 (huángsè - amarillo), 黑色 (hēisè - negro), 白色 (báisè - blanco).</li>
+            <li><strong>Descripciones de Tamaño/Altura:</strong> 大 (dà - grande), 小 (xiǎo - pequeño), 高 (gāo - alto), 矮 (ǎi - bajo).</li>
+            <li><strong>Demostrativos:</strong> 这是 (zhè shì - Esto es...), 那是 (nà shì - Eso es...).</li>
+            <li><strong>Preguntar y Responder sobre Colores:</strong> 这是什么颜色？(Zhè shì shénme yánsè?) y 它是... (Tā shì...).</li>
+            <li><strong>Adjetivos y Sustantivos:</strong> El adjetivo va antes del sustantivo, a menudo con 的 (de) para colores (ej. 红色的苹果).</li>
+        </ul>
+        <p>¡Sigue practicando estas frases y colores en tu día a día! ¡Nos vemos en la próxima lección!</p>
+    </section>
+
+    <!-- Simple JS for practice section to reveal answers -->
+    <script>
+        // Note: The mobile frontend will inject its own click handlers for audio-icon.
+        // This basic JS is only for the "reveal answer" buttons within this HTML context.
+        // In a real mobile app, these reveal mechanisms might be handled natively.
+        // The user specifically requested NO JS handlers for audio-icon, so this is respected.
+    </script>
+</body>
+</html>

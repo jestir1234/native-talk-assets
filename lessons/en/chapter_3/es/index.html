@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 3: Números y Conteo</title>
+    <style>
+        /* Estilos Globales */
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Evita el escalado de texto en móviles */
+        }
+
+        /* Contenedor Responsivo */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Encabezados */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #8B5FBF; /* Primary: Purple para énfasis en sub-encabezados */
+            margin-bottom: 1em;
+        }
+
+        p {
+            font-size: 1em; /* Equivalente a 16px, mínimo requerido */
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        li {
+            padding: 8px 0;
+            font-size: 1em;
+        }
+
+        /* Estilos Específicos del Encabezado de la Lección */
+        .chapter-title {
+            text-align: center;
+            font-size: 2.5em;
+            padding-top: 20px;
+            color: #2C3E50;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Icono de Audio */
+        .audio-icon {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #F0F0F0; /* Gris claro para el fondo del icono */
+            border: 1px solid #E0E0E0;
+            border-radius: 50%;
+            width: 44px; /* Tamaño mínimo para fácil toque */
+            height: 44px; /* Tamaño mínimo para fácil toque */
+            font-size: 1.4em;
+            margin-left: 10px;
+            vertical-align: middle;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-icon:hover {
+            background-color: #E0E0E0;
+            transform: scale(1.05);
+        }
+
+        /* Ejemplos y Práctica */
+        .example-box {
+            background-color: #FDF9E5; /* Fondo secundario, ligeramente distinto */
+            border: 1px solid #E0E0E0;
+            border-left: 5px solid #8B5FBF; /* Borde de acento Primario */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .example-box p {
+            margin: 5px 0;
+            font-size: 1.05em;
+        }
+
+        .example-box strong {
+            color: #2C3E50; /* Color de texto para énfasis */
+        }
+
+        .practice-section {
+            background-color: #EEF4F6; /* Un tono más claro para áreas de práctica */
+            border: 1px dashed #A0A0A0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+        }
+
+        .practice-question input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box; /* Incluye padding en el ancho */
+        }
+
+        /* Notas Culturales */
+        .cultural-note {
+            background-color: #F5F5DC; /* Beige claro para notas culturales */
+            border-left: 5px solid #D4AF37; /* Acento dorado */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        .cultural-note strong {
+            color: #D4AF37;
+        }
+
+        /* Sección de Resumen */
+        .summary-section {
+            background-color: #E6E6FA; /* Lavanda claro para el resumen */
+            padding: 25px;
+            margin-top: 40px;
+            border-radius: 10px;
+            border: 1px solid #C3B1E1;
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            border-bottom: none;
+            color: #8B5FBF;
+        }
+
+        .summary-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            margin-bottom: 8px;
+        }
+
+        /* Ajustes para Dispositivos Móviles Pequeños */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            h3 {
+                font-size: 1.2em;
+            }
+
+            p, li, .example-box p, .practice-question {
+                font-size: 0.95em; /* Ligeramente más pequeño para pantallas muy pequeñas */
+            }
+
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2em;
+                margin-left: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 3: Numbers and Counting</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>¡Hola! 👋 ¡Aprendamos sobre Números y Conteo!</h2>
+            <p>En este capítulo, vamos a sumergirnos en el mundo de los números en inglés. Desde contar objetos hasta decir tu edad y entender números de teléfono, ¡serás un experto en poco tiempo!</p>
+        </section>
+
+        <section>
+            <h2>1. Números 1-20 🔢</h2>
+            <p>Empecemos con los números básicos del 1 al 20. Escucha y repite la pronunciación.</p>
+            <ul>
+                <li><strong>1</strong> - One <span class="audio-icon" data-audio-text="one">🔊</span></li>
+                <li><strong>2</strong> - Two <span class="audio-icon" data-audio-text="two">🔊</span></li>
+                <li><strong>3</strong> - Three <span class="audio-icon" data-audio-text="three">🔊</span></li>
+                <li><strong>4</strong> - Four <span class="audio-icon" data-audio-text="four">🔊</span></li>
+                <li><strong>5</strong> - Five <span class="audio-icon" data-audio-text="five">🔊</span></li>
+                <li><strong>6</strong> - Six <span class="audio-icon" data-audio-text="six">🔊</span></li>
+                <li><strong>7</strong> - Seven <span class="audio-icon" data-audio-text="seven">🔊</span></li>
+                <li><strong>8</strong> - Eight <span class="audio-icon" data-audio-text="eight">🔊</span></li>
+                <li><strong>9</strong> - Nine <span class="audio-icon" data-audio-text="nine">🔊</span></li>
+                <li><strong>10</strong> - Ten <span class="audio-icon" data-audio-text="ten">🔊</span></li>
+            </ul>
+            <p>¡Bien! Ahora los números del 11 al 20:</p>
+            <ul>
+                <li><strong>11</strong> - Eleven <span class="audio-icon" data-audio-text="eleven">🔊</span></li>
+                <li><strong>12</strong> - Twelve <span class="audio-icon" data-audio-text="twelve">🔊</span></li>
+                <li><strong>13</strong> - Thirteen <span class="audio-icon" data-audio-text="thirteen">🔊</span></li>
+                <li><strong>14</strong> - Fourteen <span class="audio-icon" data-audio-text="fourteen">🔊</span></li>
+                <li><strong>15</strong> - Fifteen <span class="audio-icon" data-audio-text="fifteen">🔊</span></li>
+                <li><strong>16</strong> - Sixteen <span class="audio-icon" data-audio-text="sixteen">🔊</span></li>
+                <li><strong>17</strong> - Seventeen <span class="audio-icon" data-audio-text="seventeen">🔊</span></li>
+                <li><strong>18</strong> - Eighteen <span class="audio-icon" data-audio-text="eighteen">🔊</span></li>
+                <li><strong>19</strong> - Nineteen <span class="audio-icon" data-audio-text="nineteen">🔊</span></li>
+                <li><strong>20</strong> - Twenty <span class="audio-icon" data-audio-text="twenty">🔊</span></li>
+            </ul>
+
+            <h3>Ejemplos:</h3>
+            <div class="example-box">
+                <p><strong>English:</strong> I have <strong>one</strong> apple.</p>
+                <p><strong>Español:</strong> Tengo <strong>una</strong> manzana.</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> She bought <strong>twelve</strong> eggs.</p>
+                <p><strong>Español:</strong> Ella compró <strong>doce</strong> huevos.</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>¡Practica! Escribe el número en inglés:</h3>
+                <div class="practice-question">
+                    <p>1. Tres: <input type="text" placeholder="Escribe aquí"></p>
+                </div>
+                <div class="practice-question">
+                    <p>2. Dieciocho: <input type="text" placeholder="Escribe aquí"></p>
+                </div>
+                <div class="practice-question">
+                    <p>3. Siete: <input type="text" placeholder="Escribe aquí"></p>
+                </div>
+                <div class="practice-question">
+                    <p>4. Catorce: <input type="text" placeholder="Escribe aquí"></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Contando Objetos 🍎⚽</h2>
+            <p>Para contar objetos, usamos los números que acabamos de aprender. Recuerda que los sustantivos en inglés suelen añadir <strong>-s</strong> o <strong>-es</strong> para volverse plurales.</p>
+            <p>La pregunta más común para saber la cantidad es: <strong>How many...?</strong> <span class="audio-icon" data-audio-text="How many?">🔊</span> (¿Cuántos/as...?)</p>
+
+            <h3>Ejemplos:</h3>
+            <div class="example-box">
+                <p><strong>English:</strong> How many <strong>books</strong> do you have?</p>
+                <p><strong>Español:</strong> ¿Cuántos <strong>libros</strong> tienes?</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> I have <strong>two books</strong>.</p>
+                <p><strong>Español:</strong> Tengo <strong>dos libros</strong>.</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> How many <strong>chairs</strong> are there?</p>
+                <p><strong>Español:</strong> ¿Cuántas <strong>sillas</strong> hay?</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> There are <strong>five chairs</strong>.</p>
+                <p><strong>Español:</strong> Hay <strong>cinco sillas</strong>.</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>¡Practica! Responde las preguntas contando los objetos:</h3>
+                <div class="practice-question">
+                    <p>❓ How many 🖊️ pens do you see? (Imagínate 6 bolígrafos)</p>
+                    <p>Respuesta: <input type="text" placeholder="Escribe aquí"></p>
+                    <p><small>(Ejemplo de respuesta: Six pens)</small></p>
+                </div>
+                <div class="practice-question">
+                    <p>❓ How many 📱 phones are there? (Imagínate 3 teléfonos)</p>
+                    <p>Respuesta: <input type="text" placeholder="Escribe aquí"></p>
+                    <p><small>(Ejemplo de respuesta: Three phones)</small></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Edad: How old are you? 👶👵</h2>
+            <p>Preguntar y decir la edad es una de las primeras cosas que querrás hacer. En inglés, usamos el verbo "to be" (ser/estar) para la edad.</p>
+
+            <h3>Preguntar la edad:</h3>
+            <p><strong>How old are you?</strong> <span class="audio-icon" data-audio-text="How old are you?">🔊</span> (¿Cuántos años tienes? / ¿Qué edad tienes?)</p>
+
+            <h3>Responder la edad:</h3>
+            <p><strong>I am ___ years old.</strong> <span class="audio-icon" data-audio-text="I am years old.">🔊</span> (Tengo ___ años de edad.)</p>
+            <p>También puedes decir simplemente <strong>I am ___</strong>. <span class="audio-icon" data-audio-text="I am.">🔊</span> (Tengo ___).</p>
+
+            <h3>Ejemplos:</h3>
+            <div class="example-box">
+                <p><strong>English:</strong> A: How old are you?</p>
+                <p><strong>Español:</strong> A: ¿Cuántos años tienes?</p>
+                <p><strong>English:</strong> B: I am <strong>ten</strong> years old. <span class="audio-icon" data-audio-text="I am ten years old.">🔊</span></p>
+                <p><strong>Español:</strong> B: Tengo <strong>diez</strong> años.</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> A: How old is he?</p>
+                <p><strong>Español:</strong> A: ¿Cuántos años tiene él?</p>
+                <p><strong>English:</strong> B: He is <strong>fifteen</strong>. <span class="audio-icon" data-audio-text="He is fifteen.">🔊</span></p>
+                <p><strong>Español:</strong> B: Él tiene <strong>quince</strong>.</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>¡Practica! Responde las preguntas sobre la edad:</h3>
+                <div class="practice-question">
+                    <p>❓ How old are you? (Usa tu edad real o inventa una)</p>
+                    <p>Respuesta: <input type="text" placeholder="Escribe aquí"></p>
+                    <p><small>(Ejemplo de respuesta: I am twenty years old.)</small></p>
+                </div>
+                <div class="practice-question">
+                    <p>❓ How old is your friend? (Tu amigo tiene 16)</p>
+                    <p>Respuesta: <input type="text" placeholder="Escribe aquí"></p>
+                    <p><small>(Ejemplo de respuesta: My friend is sixteen years old.)</small></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Números de Teléfono y Direcciones 📞🏠</h2>
+            <p>Cuando decimos números de teléfono en inglés, generalmente decimos cada dígito individualmente.</p>
+
+            <h3>Números de Teléfono:</h3>
+            <p>Pregunta: <strong>What's your phone number?</strong> <span class="audio-icon" data-audio-text="What's your phone number?">🔊</span> (¿Cuál es tu número de teléfono?)</p>
+            <p>Respuesta: <strong>My phone number is ___</strong>. <span class="audio-icon" data-audio-text="My phone number is.">🔊</span></p>
+
+            <div class="cultural-note">
+                <strong>Nota Cultural:</strong> Cuando hay un cero (0) en un número de teléfono, a menudo se pronuncia como <strong>"oh"</strong> <span class="audio-icon" data-audio-text="oh">🔊</span> (como la letra 'o'), no como "zero". Si hay dos dígitos iguales seguidos, a veces se usa "double" (doble), por ejemplo, "double two" para "22".
+            </div>
+
+            <h3>Ejemplos de números de teléfono:</h3>
+            <div class="example-box">
+                <p><strong>English:</strong> 555-0123 - five five five - <strong>oh</strong> one two three <span class="audio-icon" data-audio-text="five five five oh one two three">🔊</span></p>
+                <p><strong>Español:</strong> 555-0123 - cinco cinco cinco - cero uno dos tres</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> 212-987-6543 - two one two - nine eight seven - six five four three <span class="audio-icon" data-audio-text="two one two nine eight seven six five four three">🔊</span></p>
+                <p><strong>Español:</strong> 212-987-6543 - dos uno dos - nueve ocho siete - seis cinco cuatro tres</p>
+            </div>
+
+            <h3>Direcciones:</h3>
+            <p>Para direcciones, también usamos números. Se dicen los números de casa o apartamento como dígitos individuales o como el número completo, dependiendo del contexto.</p>
+            <p>Ejemplo de dirección simple: <strong>123 Main Street</strong></p>
+            <div class="example-box">
+                <p><strong>English:</strong> My address is <strong>one two three Main Street</strong>. <span class="audio-icon" data-audio-text="My address is one two three Main Street.">🔊</span></p>
+                <p><strong>Español:</strong> Mi dirección es la <strong>calle Main número 123</strong>.</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> He lives at <strong>789 Oak Avenue</strong>. <span class="audio-icon" data-audio-text="He lives at seven eight nine Oak Avenue.">🔊</span></p>
+                <p><strong>Español:</strong> Él vive en la <strong>avenida Oak número 789</strong>.</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>¡Practica! Di estos números de teléfono en inglés:</h3>
+                <div class="practice-question">
+                    <p>📞 415-867-5309</p>
+                    <p>Respuesta: <input type="text" placeholder="Escribe aquí"></p>
+                    <p><small>(Ejemplo de respuesta: four one five - eight six seven - five three oh nine)</small></p>
+                </div>
+                <div class="practice-question">
+                    <p>📞 900-100-2000</p>
+                    <p>Respuesta: <input type="text" placeholder="Escribe aquí"></p>
+                    <p><small>(Ejemplo de respuesta: nine oh oh - one oh oh - two oh oh oh)</small></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Vocabulario Básico de Matemáticas: Plus, Minus, Equals ➕➖🟰</h2>
+            <p>Aquí tienes algunas palabras clave para operaciones matemáticas simples:</p>
+            <ul>
+                <li><strong>Plus</strong> <span class="audio-icon" data-audio-text="plus">🔊</span> (más / +)</li>
+                <li><strong>Minus</strong> <span class="audio-icon" data-audio-text="minus">🔊</span> (menos / -)</li>
+                <li><strong>Equals</strong> <span class="audio-icon" data-audio-text="equals">🔊</span> (es igual a / =)</li>
+            </ul>
+
+            <h3>Ejemplos:</h3>
+            <div class="example-box">
+                <p><strong>English:</strong> Two <strong>plus</strong> two <strong>equals</strong> four. <span class="audio-icon" data-audio-text="Two plus two equals four.">🔊</span></p>
+                <p><strong>Español:</strong> Dos <strong>más</strong> dos <strong>es igual a</strong> cuatro. (2 + 2 = 4)</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> Ten <strong>minus</strong> five <strong>equals</strong> five. <span class="audio-icon" data-audio-text="Ten minus five equals five.">🔊</span></p>
+                <p><strong>Español:</strong> Diez <strong>menos</strong> cinco <strong>es igual a</strong> cinco. (10 - 5 = 5)</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> Eight <strong>plus</strong> three <strong>equals</strong> eleven. <span class="audio-icon" data-audio-text="Eight plus three equals eleven.">🔊</span></p>
+                <p><strong>Español:</strong> Ocho <strong>más</strong> tres <strong>es igual a</strong> once. (8 + 3 = 11)</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>¡Practica! Resuelve estos problemas de matemáticas en inglés:</h3>
+                <div class="practice-question">
+                    <p>5 + 3 = ?</p>
+                    <p>Respuesta: <input type="text" placeholder="Escribe aquí"></p>
+                    <p><small>(Ejemplo de respuesta: Five plus three equals eight.)</small></p>
+                </div>
+                <div class="practice-question">
+                    <p>15 - 7 = ?</p>
+                    <p>Respuesta: <input type="text" placeholder="Escribe aquí"></p>
+                    <p><small>(Ejemplo de respuesta: Fifteen minus seven equals eight.)</small></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>Resumen del Capítulo 3: Números y Conteo ✨</h2>
+            <p>¡Felicidades! Has cubierto un terreno importante en este capítulo. Aquí están los puntos clave:</p>
+            <ul>
+                <li>Dominaste los números del 1 al 20.</li>
+                <li>Aprendiste a contar objetos y a usar "How many...?".</li>
+                <li>Ahora sabes cómo preguntar y decir la edad usando "How old are you?" y "I am ___ years old.".</li>
+                <li>Descubriste cómo se dicen los números de teléfono (dígito por dígito, usando "oh" para el cero) y la estructura básica de las direcciones.</li>
+                <li>Conociste el vocabulario matemático esencial: "plus", "minus", y "equals".</li>
+            </ul>
+            <p>¡Sigue practicando estos números en tu vida diaria! Cuantas más veces los uses, más fácil será recordarlos. ¡Excelente trabajo! 💪</p>
+        </section>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: 天気と季節 - 中国語レッスン</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Hiragino Sans', 'メイリオ', Meiryo, 'Yu Gothic', YuGothic, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            -webkit-text-size-adjust: 100%; /* Prevent font size adjustment on mobile */
+        }
+
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            padding-left: 10px; /* Small padding for visual separation */
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+            padding: 20px 10px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 5px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-left: 15px;
+        }
+
+        p {
+            margin-bottom: 1em;
+            padding: 0 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0 20px;
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        strong {
+            color: #2C3E50; /* Darker for emphasis */
+        }
+
+        /* Lesson Specific Styles */
+        .lesson-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            display: block;
+            margin: 0 auto;
+        }
+
+        .section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        .example-block {
+            background-color: #FDF9E5; /* Same background for example blocks */
+            border-left: 4px solid #8B5FBF; /* Primary: Purple for accent */
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example-block p {
+            padding: 0; /* Remove extra padding within example block */
+            margin-bottom: 0.5em;
+        }
+
+        .practice-section {
+            background-color: #FDF9E5;
+            border: 1px dashed #8B5FBF; /* Primary: Purple dashed border */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .practice-answer-toggle {
+            display: inline-block;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+            min-height: 44px; /* Minimum 44px tall for tapping */
+            transition: background-color 0.3s ease;
+        }
+
+        .practice-answer-toggle:hover {
+            background-color: #6C4A9E; /* Darker purple on hover */
+        }
+
+        .practice-answer {
+            background-color: #FDF9E5;
+            border: 1px solid #E0E0E0;
+            padding: 10px 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            text-align: left;
+            display: none; /* Hidden by default, JavaScript would toggle */
+            color: #2C3E50; /* Darker color for answers */
+        }
+
+        .audio-icon {
+            cursor: pointer;
+            font-size: 1.8em;
+            color: #8B5FBF; /* Primary: Purple */
+            vertical-align: middle;
+            margin-left: 8px;
+            display: inline-block;
+            min-width: 44px; /* Ensure tap target size */
+            min-height: 44px;
+            line-height: 1; /* Adjust line height to center emoji vertically */
+            text-align: center; /* Center emoji horizontally */
+            padding: 2px; /* Add some padding for better tap area */
+            border-radius: 50%; /* Make it circular */
+            transition: transform 0.2s ease;
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .pronunciation {
+            font-style: italic;
+            color: #8B5FBF; /* Primary: Purple */
+            font-weight: bold;
+            display: inline-block; /* For proper alignment with audio icon */
+        }
+
+        .cultural-note {
+            background-color: #FDF9E5;
+            border-left: 5px solid #E0E0E0; /* Light gray border */
+            padding: 12px 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #666666;
+            border-radius: 5px;
+        }
+
+        .summary-section {
+            background-color: #FDF9E5;
+            padding: 20px;
+            margin-top: 30px;
+            border-top: 2px solid #8B5FBF; /* Primary: Purple */
+            border-radius: 10px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-section h2 {
+            border-bottom: none;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        .summary-section ul {
+            padding-left: 20px; /* Indent list for readability */
+        }
+
+        .summary-section li {
+            margin-bottom: 0.8em;
+        }
+
+        /* Mobile-first adjustments for smaller screens (default is mobile) */
+        @media screen and (min-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            h3 {
+                font-size: 1.6em;
+            }
+            p {
+                padding: 0 20px;
+            }
+            .lesson-container {
+                padding: 20px;
+            }
+            .section {
+                padding: 20px;
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+            body {
+                font-size: 17px;
+            }
+            h1 {
+                font-size: 2.8em;
+            }
+            h2 {
+                font-size: 2.2em;
+            }
+            h3 {
+                font-size: 1.8em;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chapter 9: 天気と季節</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 9 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section">
+            <h2>はじめに</h2>
+            <p>皆さん、こんにちは！</p>
+            <p>このチャプターでは、中国語で「天気」や「季節」について話す方法を学びます。旅行中に現地の天気について尋ねたり、友人との会話で今日の天気を表現したりできるようになりましょう！</p>
+        </section>
+
+        <section class="section">
+            <h2>今日の天気はどうですか？ 🌦️ 天気に関する語彙</h2>
+            <p>まずは、基本的な天気に関する表現を学びましょう。</p>
+
+            <h3>☀️ 晴れ</h3>
+            <ul>
+                <li><strong>晴れ</strong>: <span class="pronunciation">晴天</span> (<span class="pronunciation">qíng tiān</span>) <span class="audio-icon" data-audio-text="晴天">🔊</span></li>
+                <li><strong>晴れている</strong>: <span class="pronunciation">晴</span> (<span class="pronunciation">qíng</span>) <span class="audio-icon" data-audio-text="晴">🔊</span></li>
+            </ul>
+            <div class="example-block">
+                <p><strong>例:</strong></p>
+                <p>今天天气很好，是<strong>晴天</strong>。</p>
+                <p> (<span class="pronunciation">Jīntiān tiānqì hěn hǎo, shì qíngtiān.</span>)</p>
+                <p> - 今日はとても良い天気で、<strong>晴れ</strong>です。</p>
+            </div>
+
+            <h3>🌧️ 雨</h3>
+            <ul>
+                <li><strong>雨</strong>: <span class="pronunciation">雨</span> (<span class="pronunciation">yǔ</span>) <span class="audio-icon" data-audio-text="雨">🔊</span></li>
+                <li><strong>雨が降る</strong>: <span class="pronunciation">下雨</span> (<span class="pronunciation">xià yǔ</span>) <span class="audio-icon" data-audio-text="下雨">🔊</span></li>
+            </ul>
+            <div class="example-block">
+                <p><strong>例:</strong></p>
+                <p>外面<strong>下雨</strong>了，带伞吧。</p>
+                <p> (<span class="pronunciation">Wàimiàn xià yǔ le, dài sǎn ba.</span>)</p>
+                <p> - 外は<strong>雨が降って</strong>います、傘を持っていきましょう。</p>
+            </div>
+
+            <h3>☁️ 曇り</h3>
+            <ul>
+                <li><strong>曇り</strong>: <span class="pronunciation">阴天</span> (<span class="pronunciation">yīn tiān</span>) <span class="audio-icon" data-audio-text="阴天">🔊</span></li>
+                <li><strong>曇っている</strong>: <span class="pronunciation">阴</span> (<span class="pronunciation">yīn</span>) <span class="audio-icon" data-audio-text="阴">🔊</span></li>
+            </ul>
+            <div class="example-block">
+                <p><strong>例:</strong></p>
+                <p>今天是<strong>阴天</strong>，看起来要下雨了。</p>
+                <p> (<span class="pronunciation">Jīntiān shì yīn tiān, kàn qǐlái yào xià yǔ le.</span>)</p>
+                <p> - 今日は<strong>曇り</strong>で、雨が降りそうです。</p>
+            </div>
+
+            <h3>❄️ 雪</h3>
+            <ul>
+                <li><strong>雪</strong>: <span class="pronunciation">雪</span> (<span class="pronunciation">xuě</span>) <span class="audio-icon" data-audio-text="雪">🔊</span></li>
+                <li><strong>雪が降る</strong>: <span class="pronunciation">下雪</span> (<span class="pronunciation">xià xuě</span>) <span class="audio-icon" data-audio-text="下雪">🔊</span></li>
+            </ul>
+            <div class="example-block">
+                <p><strong>例:</strong></p>
+                <p>北京冬天经常<strong>下雪</strong>。</p>
+                <p> (<span class="pronunciation">Běijīng dōngtiān jīngcháng xià xuě.</span>)</p>
+                <p> - 北京の冬はよく<strong>雪が降り</strong>ます。</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>練習タイム！ 📝</h3>
+                <p class="practice-question">次の日本語の天気表現を中国語にしてみましょう。</p>
+                <ol>
+                    <li>晴れ</li>
+                    <li>雨が降る</li>
+                    <li>曇り</li>
+                    <li>雪</li>
+                </ol>
+                <button class="practice-answer-toggle">答えを見る</button>
+                <div class="practice-answer">
+                    <ol>
+                        <li>晴天 (<span class="pronunciation">qíng tiān</span>)</li>
+                        <li>下雨 (<span class="pronunciation">xià yǔ</span>)</li>
+                        <li>阴天 (<span class="pronunciation">yīn tiān</span>)</li>
+                        <li>雪 (<span class="pronunciation">xuě</span>)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>季節について話す 🌸🏖️🍂☃️</h2>
+            <p>中国語で四季を表現する方法を学びましょう。</p>
+            <ul>
+                <li><strong>春</strong>: <span class="pronunciation">春天</span> (<span class="pronunciation">chūntiān</span>) <span class="audio-icon" data-audio-text="春天">🔊</span></li>
+                <li><strong>夏</strong>: <span class="pronunciation">夏天</span> (<span class="pronunciation">xiàtiān</span>) <span class="audio-icon" data-audio-text="夏天">🔊</span></li>
+                <li><strong>秋</strong>: <span class="pronunciation">秋天</span> (<span class="pronunciation">qiūtiān</span>) <span class="audio-icon" data-audio-text="秋天">🔊</span></li>
+                <li><strong>冬</strong>: <span class="pronunciation">冬天</span> (<span class="pronunciation">dōngtiān</span>) <span class="audio-icon" data-audio-text="冬天">🔊</span></li>
+            </ul>
+
+            <div class="cultural-note">
+                <p>🌸 <strong>文化ノート：中国の四季</strong></p>
+                <p>中国は国土が広いため、地域によって四季の感じ方は大きく異なります。北方は冬が非常に寒く雪が多く降る一方、南方ではほとんど雪が降らず温暖な気候です。春は「百花繚乱 (bǎi huā liáo luàn - 様々な花が咲き乱れる)」の季節、秋は「秋高气爽 (qiū gāo qì shuǎng - 空が高く空気が爽やか)」と表現されることが多いです。</p>
+            </div>
+
+            <div class="example-block">
+                <p><strong>例:</strong></p>
+                <p>我最喜欢<strong>春天</strong>。</p>
+                <p> (<span class="pronunciation">Wǒ zuì xǐhuan chūntiān.</span>)</p>
+                <p> - 私は<strong>春</strong>が一番好きです。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>「今日の天気はどうですか？」と尋ねる ❓</h2>
+            <p>天気について尋ねるフレーズと、その答え方です。</p>
+            <h3>質問の仕方</h3>
+            <ul>
+                <li><strong>今日の天気はどうですか？</strong>: <span class="pronunciation">今天天气怎么样？</span> (<span class="pronunciation">Jīntiān tiānqì zěnmeyàng?</span>) <span class="audio-icon" data-audio-text="今天天气怎么样？">🔊</span></li>
+            </ul>
+            <h3>答え方</h3>
+            <p><strong>「天気が〜です」</strong>: <span class="pronunciation">天气很...</span> (<span class="pronunciation">tiānqì hěn...</span>)</p>
+            <div class="example-block">
+                <p><strong>例:</strong></p>
+                <p>A: 今天天气怎么样？</p>
+                <p> (<span class="pronunciation">Jīntiān tiānqì zěnmeyàng?</span>)</p>
+                <p> - 今日の天気はどうですか？</p>
+                <p>B: 天气很好，是晴天。</p>
+                <p> (<span class="pronunciation">Tiānqì hěn hǎo, shì qíngtiān.</span>)</p>
+                <p> - 天気はとても良いです、晴れです。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>温度について話す 🌡️</h2>
+            <p>暑い、寒い、暖かい、涼しいなどの温度表現を学びましょう。</p>
+            <ul>
+                <li><strong>暑い</strong>: <span class="pronunciation">热</span> (<span class="pronunciation">rè</span>) <span class="audio-icon" data-audio-text="热">🔊</span></li>
+                <li><strong>寒い</strong>: <span class="pronunciation">冷</span> (<span class="pronunciation">lěng</span>) <span class="audio-icon" data-audio-text="冷">🔊</span></li>
+                <li><strong>暖かい</strong>: <span class="pronunciation">暖和</span> (<span class="pronunciation">nuǎnhuo</span>) <span class="audio-icon" data-audio-text="暖和">🔊</span></li>
+                <li><strong>涼しい</strong>: <span class="pronunciation">凉快</span> (<span class="pronunciation">liángkuai</span>) <span class="audio-icon" data-audio-text="凉快">🔊</span></li>
+            </ul>
+            <div class="example-block">
+                <p><strong>例:</strong></p>
+                <p>今天很<strong>热</strong>，出门要多喝水。</p>
+                <p> (<span class="pronunciation">Jīntiān hěn rè, chūmén yào duō hē shuǐ.</span>)</p>
+                <p> - 今日はとても<strong>暑い</strong>ので、外出するときはたくさん水を飲みましょう。</p>
+                <p>现在外面有点<strong>冷</strong>。</p>
+                <p> (<span class="pronunciation">Xiànzài wàimiàn yǒudiǎn lěng.</span>)</p>
+                <p> - 今、外は少し<strong>寒い</strong>です。</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>練習タイム！ 📝</h3>
+                <p class="practice-question">日本語の意味に合うように、中国語の単語を選びましょう。</p>
+                <ol>
+                    <li>「暑い」は？</li>
+                    <li>「寒い」は？</li>
+                    <li>「暖かい」は？</li>
+                </ol>
+                <button class="practice-answer-toggle">答えを見る</button>
+                <div class="practice-answer">
+                    <ol>
+                        <li>热 (<span class="pronunciation">rè</span>)</li>
+                        <li>冷 (<span class="pronunciation">lěng</span>)</li>
+                        <li>暖和 (<span class="pronunciation">nuǎnhuo</span>)</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>天気に関連するアクティビティ 🚶‍♀️☔️⛷️</h2>
+            <p>天気や季節に合わせてどんなことをするか、表現を学びましょう。</p>
+            <ul>
+                <li><strong>散歩する</strong>: <span class="pronunciation">散步</span> (<span class="pronunciation">sànbù</span>) <span class="audio-icon" data-audio-text="散步">🔊</span></li>
+                <li><strong>ピクニックをする</strong>: <span class="pronunciation">野餐</span> (<span class="pronunciation">yěcān</span>) <span class="audio-icon" data-audio-text="野餐">🔊</span></li>
+                <li><strong>水泳をする</strong>: <span class="pronunciation">游泳</span> (<span class="pronunciation">yóuyǒng</span>) <span class="audio-icon" data-audio-text="游泳">🔊</span></li>
+                <li><strong>スキーをする</strong>: <span class="pronunciation">滑雪</span> (<span class="pronunciation">huáxuě</span>) <span class="audio-icon" data-audio-text="滑雪">🔊</span></li>
+            </ul>
+            <div class="example-block">
+                <p><strong>例:</strong></p>
+                <p>天气好的时候，我们去<strong>散步</strong>吧。</p>
+                <p> (<span class="pronunciation">Tiānqì hǎo de shíhou, wǒmen qù sànbù ba.</span>)</p>
+                <p> - 天気が良いとき、<strong>散歩に</strong>行きましょう。</p>
+                <p>夏天适合<strong>游泳</strong>。</p>
+                <p> (<span class="pronunciation">Xiàtiān shìhé yóuyǒng.</span>)</p>
+                <p> - 夏は<strong>水泳</strong>に適しています。</p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>まとめ 💡</h2>
+            <p>このチャプターでは、天気や季節に関する重要な中国語の語彙とフレーズを学びました。</p>
+            <ul>
+                <li><strong>天気に関する語彙</strong>: 晴天 (qíng tiān - 晴れ)、下雨 (xià yǔ - 雨が降る)、阴天 (yīn tiān - 曇り)、下雪 (xià xuě - 雪が降る)</li>
+                <li><strong>四季の表現</strong>: 春天 (chūntiān - 春)、夏天 (xiàtiān - 夏)、秋天 (qiūtiān - 秋)、冬天 (dōngtiān - 冬)</li>
+                <li><strong>天気を尋ねるフレーズ</strong>: 今天天气怎么样？ (Jīntiān tiānqì zěnmeyàng? - 今日の天気はどうですか？)</li>
+                <li><strong>温度の表現</strong>: 热 (rè - 暑い)、冷 (lěng - 寒い)、暖和 (nuǎnhuo - 暖かい)、凉快 (liángkuai - 涼しい)</li>
+                <li><strong>天気に関連するアクティビティ</strong>: 散步 (sànbù - 散歩する)、游泳 (yóuyǒng - 水泳する) など</li>
+            </ul>
+            <p>これらのフレーズを使って、中国語での会話をさらに豊かにしていきましょう！</p>
+        </section>
+
+    </div>
+
+    <!-- JavaScript for practice answer toggle (for demonstration purposes only) -->
+    <script>
+        document.querySelectorAll('.practice-answer-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    button.textContent = '答えを見る';
+                } else {
+                    answer.style.display = 'block';
+                    button.textContent = '答えを隠す';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

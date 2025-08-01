@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Food and Drinks</title>
+    <style>
+        /* Global Styles & Mobile-First Foundation */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Base font size for readability */
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto; /* Center content */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 25px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center; /* Align items in the center vertically */
+            flex-wrap: wrap; /* Allow wrapping for long lines on small screens */
+        }
+
+        li strong {
+            color: #2C3E50;
+            margin-right: 5px; /* Space between word and pronunciation/audio */
+        }
+
+        /* Lesson Header Specifics (REQUIRED) */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Interactive & Content Elements */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background, ensure consistency */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF; /* Primary: Purple for practice headings */
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .example-block {
+            background-color: #ffffff; /* White background for examples */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple accent */
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .example-block p {
+            margin: 5px 0;
+            font-size: 15px; /* Slightly smaller for examples for distinction */
+        }
+
+        .translation {
+            color: #666666;
+            font-style: italic;
+            display: block; /* New line for translation */
+            margin-top: 5px;
+        }
+
+        /* Audio Icon (REQUIRED) */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Make it round */
+            min-width: 44px; /* Minimum touch target size */
+            min-height: 44px; /* Minimum touch target size */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            flex-shrink: 0; /* Prevent shrinking */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        }
+
+        .audio-icon:hover {
+            background-color: #7a4bb0; /* Slightly darker purple on hover */
+            transform: scale(1.05); /* Slight enlarge on hover */
+        }
+
+        .pronunciation {
+            font-size: 14px;
+            color: #8B5FBF; /* Primary: Purple for pronunciation */
+            margin-left: 8px;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .highlight {
+            color: #8B5FBF; /* Primary: Purple */
+            font-weight: bold;
+        }
+
+        .note {
+            background-color: #e6e6fa; /* Light purple for notes */
+            border-left: 5px solid #8B5FBF;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .note p {
+            margin: 0;
+            color: #2C3E50; /* Darker text for note content */
+        }
+
+        .summary-section {
+            border-top: 2px solid #E0E0E0;
+            padding-top: 20px;
+            margin-top: 30px;
+            background-color: #f8f8f8; /* Slightly different background for summary */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .summary-section h2 {
+            border-bottom: none;
+            text-align: center;
+            color: #8B5FBF;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            .container {
+                padding: 15px;
+            }
+            .practice-section {
+                padding: 15px;
+            }
+            .audio-icon {
+                min-width: 40px; /* Slightly smaller for very small screens */
+                min-height: 40px;
+                font-size: 18px;
+            }
+            li {
+                flex-direction: column; /* Stack items vertically in list on very small screens */
+                align-items: flex-start;
+            }
+            li strong, .pronunciation, .audio-icon {
+                margin-bottom: 5px; /* Add space when stacked */
+                margin-left: 0; /* Remove left margin when stacked */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 7: Food and Drinks</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>Chào mừng đến với "Food and Drinks"! 🍉☕</h2>
+            <p>Xin chào! Hôm nay chúng ta sẽ cùng khám phá thế giới ẩm thực và đồ uống trong tiếng Anh. Đây là những từ vựng và cụm từ rất quan trọng để bạn có thể gọi món, nói về sở thích ăn uống hoặc hỏi han về thức ăn.</p>
+            <p>Hãy sẵn sàng để học và thực hành nhé! 🚀</p>
+        </section>
+
+        <section>
+            <h2>1. Các Món Ăn Phổ Biến (Common Food Items) 🥐🥩🥦</h2>
+            <p>Cùng học tên một số món ăn cơ bản mà bạn sẽ thường gặp nhé:</p>
+            <ul>
+                <li>
+                    <strong>Bread</strong>
+                    <span class="pronunciation">(bờ-rét)</span>
+                    <button class="audio-icon" data-audio-text="Bread">🔊</button>
+                    <span class="translation">Bánh mì</span>
+                </li>
+                <li>
+                    <strong>Rice</strong>
+                    <span class="pronunciation">(rai-x)</span>
+                    <button class="audio-icon" data-audio-text="Rice">🔊</button>
+                    <span class="translation">Cơm, gạo</span>
+                </li>
+                <li>
+                    <strong>Meat</strong>
+                    <span class="pronunciation">(mít)</span>
+                    <button class="audio-icon" data-audio-text="Meat">🔊</button>
+                    <span class="translation">Thịt</span>
+                </li>
+                <li>
+                    <strong>Vegetables</strong>
+                    <span class="pronunciation">(vé-giơ-tờ-bồl)</span>
+                    <button class="audio-icon" data-audio-text="Vegetables">🔊</button>
+                    <span class="translation">Rau củ</span>
+                </li>
+                <li>
+                    <strong>Fruit</strong>
+                    <span class="pronunciation">(frút)</span>
+                    <button class="audio-icon" data-audio-text="Fruit">🔊</button>
+                    <span class="translation">Trái cây</span>
+                </li>
+                <li>
+                    <strong>Fish</strong>
+                    <span class="pronunciation">(fít)</span>
+                    <button class="audio-icon" data-audio-text="Fish">🔊</button>
+                    <span class="translation">Cá</span>
+                </li>
+                <li>
+                    <strong>Egg</strong>
+                    <span class="pronunciation">(eg)</span>
+                    <button class="audio-icon" data-audio-text="Egg">🔊</button>
+                    <span class="translation">Trứng</span>
+                </li>
+            </ul>
+
+            <div class="example-block">
+                <p><button class="audio-icon" data-audio-text="I eat bread for breakfast.">🔊</button> I eat <strong>bread</strong> for breakfast.</p>
+                <p class="translation">Tôi ăn bánh mì vào bữa sáng.</p>
+            </div>
+            <div class="example-block">
+                <p><button class="audio-icon" data-audio-text="Rice is a staple food in Vietnam.">🔊</button> <strong>Rice</strong> is a staple food in Vietnam.</p>
+                <p class="translation">Cơm là món ăn chính ở Việt Nam.</p>
+            </div>
+            <div class="example-block">
+                <p><button class="audio-icon" data-audio-text="Do you like meat or vegetables?">🔊</button> Do you like <strong>meat</strong> or <strong>vegetables</strong>?</p>
+                <p class="translation">Bạn thích thịt hay rau củ?</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>✨ Thực hành 1: Ghép từ ✨</h3>
+            <p>Kéo thả (hoặc chạm để chọn) từ tiếng Anh phù hợp với nghĩa tiếng Việt. (Hướng dẫn: Hãy thử nhẩm nghĩa trong đầu nhé!)</p>
+            <ul>
+                <li><strong>Bánh mì</strong>: ____</li>
+                <li><strong>Thịt</strong>: ____</li>
+                <li><strong>Cơm</strong>: ____</li>
+                <li><strong>Rau củ</strong>: ____</li>
+            </ul>
+            <p><em>Gợi ý đáp án: Bread, Meat, Rice, Vegetables</em></p>
+        </section>
+
+        <section>
+            <h2>2. Đồ Uống (Drinks) 🥤🥛</h2>
+            <p>Giờ thì đến phần giải khát nào! Cùng học tên các loại đồ uống nhé:</p>
+            <ul>
+                <li>
+                    <strong>Water</strong>
+                    <span class="pronunciation">(wo-tờ)</span>
+                    <button class="audio-icon" data-audio-text="Water">🔊</button>
+                    <span class="translation">Nước</span>
+                </li>
+                <li>
+                    <strong>Coffee</strong>
+                    <span class="pronunciation">(ko-fi)</span>
+                    <button class="audio-icon" data-audio-text="Coffee">🔊</button>
+                    <span class="translation">Cà phê</span>
+                </li>
+                <li>
+                    <strong>Tea</strong>
+                    <span class="pronunciation">(ti)</span>
+                    <button class="audio-icon" data-audio-text="Tea">🔊</button>
+                    <span class="translation">Trà</span>
+                </li>
+                <li>
+                    <strong>Juice</strong>
+                    <span class="pronunciation">(ju-x)</span>
+                    <button class="audio-icon" data-audio-text="Juice">🔊</button>
+                    <span class="translation">Nước ép</span>
+                </li>
+                <li>
+                    <strong>Milk</strong>
+                    <span class="pronunciation">(mịlk)</span>
+                    <button class="audio-icon" data-audio-text="Milk">🔊</button>
+                    <span class="translation">Sữa</span>
+                </li>
+            </ul>
+
+            <div class="note">
+                <p><strong>💡 Lưu ý văn hóa:</strong> Cà phê ở Việt Nam rất nổi tiếng! Khi ở nước ngoài, bạn có thể thấy nhiều loại cà phê khác nhau như Latte, Cappuccino. Đừng ngại thử nhé!</p>
+            </div>
+
+            <div class="example-block">
+                <p><button class="audio-icon" data-audio-text="I need a glass of water.">🔊</button> I need a glass of <strong>water</strong>.</p>
+                <p class="translation">Tôi cần một ly nước.</p>
+            </div>
+            <div class="example-block">
+                <p><button class="audio-icon" data-audio-text="Do you drink coffee every morning?">🔊</button> Do you drink <strong>coffee</strong> every morning?</p>
+                <p class="translation">Bạn có uống cà phê mỗi sáng không?</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>✨ Thực hành 2: Điền vào chỗ trống ✨</h3>
+            <p>Chọn từ vựng phù hợp để hoàn thành câu. (Gợi ý: Sử dụng từ vựng về đồ uống!)</p>
+            <p>1. I drink ____ (nước) when I'm thirsty.</p>
+            <p>2. She likes ____ (sữa) with her cereal.</p>
+            <p>3. Would you like some ____ (trà) or ____ (cà phê)?</p>
+            <p><em>Gợi ý đáp án: 1. water, 2. milk, 3. tea, coffee</em></p>
+        </section>
+
+        <section>
+            <h2>3. Diễn tả sở thích: "I like..." / "I don't like..." ❤️‍🩹</h2>
+            <p>Đây là cách đơn giản nhất để nói về món bạn thích hoặc không thích.</p>
+            <ul>
+                <li>
+                    <strong>I like...</strong>
+                    <span class="pronunciation">(ai lai-k)</span>
+                    <button class="audio-icon" data-audio-text="I like">🔊</button>
+                    <span class="translation">Tôi thích...</span>
+                </li>
+                <li>
+                    <strong>I don't like...</strong>
+                    <span class="pronunciation">(ai đônt lai-k)</span>
+                    <button class="audio-icon" data-audio-text="I don't like">🔊</button>
+                    <span class="translation">Tôi không thích...</span>
+                </li>
+            </ul>
+
+            <div class="example-block">
+                <p><button class="audio-icon" data-audio-text="I like rice.">🔊</button> <span class="highlight">I like</span> rice.</p>
+                <p class="translation">Tôi thích cơm.</p>
+            </div>
+            <div class="example-block">
+                <p><button class="audio-icon" data-audio-text="I don't like coffee.">🔊</button> <span class="highlight">I don't like</span> coffee.</p>
+                <p class="translation">Tôi không thích cà phê.</p>
+            </div>
+            <div class="example-block">
+                <p><button class="audio-icon" data-audio-text="She likes vegetables and fruit.">🔊</button> She <span class="highlight">likes</span> vegetables and fruit.</p>
+                <p class="translation">Cô ấy thích rau củ và trái cây.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Hỏi về sở thích: "What do you like to eat/drink?" ❓</h2>
+            <p>Để hỏi ai đó thích ăn hoặc uống gì, bạn có thể dùng câu hỏi sau:</p>
+            <ul>
+                <li>
+                    <strong>What do you like to eat?</strong>
+                    <span class="pronunciation">(goạt đu du lai-k tu ít)</span>
+                    <button class="audio-icon" data-audio-text="What do you like to eat?">🔊</button>
+                    <span class="translation">Bạn thích ăn gì?</span>
+                </li>
+                <li>
+                    <strong>What do you like to drink?</strong>
+                    <span class="pronunciation">(goạt đu du lai-k tu trinh-k)</span>
+                    <button class="audio-icon" data-audio-text="What do you like to drink?">🔊</button>
+                    <span class="translation">Bạn thích uống gì?</span>
+                </li>
+            </ul>
+
+            <p><strong>Cách trả lời:</strong></p>
+            <div class="example-block">
+                <p>A: <button class="audio-icon" data-audio-text="What do you like to eat?">🔊</button> What do you like to eat?</p>
+                <p class="translation">Bạn thích ăn gì?</p>
+                <p>B: <button class="audio-icon" data-audio-text="I like chicken and rice.">🔊</button> I like chicken and rice.</p>
+                <p class="translation">Tôi thích gà và cơm.</p>
+            </div>
+            <div class="example-block">
+                <p>A: <button class="audio-icon" data-audio-text="What do you like to drink?">🔊</button> What do you like to drink?</p>
+                <p class="translation">Bạn thích uống gì?</p>
+                <p>B: <button class="audio-icon" data-audio-text="I like juice.">🔊</button> I like juice.</p>
+                <p class="translation">Tôi thích nước ép.</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>✨ Thực hành 3: Hội thoại ✨</h3>
+            <p>Hãy tưởng tượng bạn đang nói chuyện với một người bạn. Bạn hỏi họ thích ăn gì, và họ trả lời.</p>
+            <p>Bạn: <button class="audio-icon" data-audio-text="What do you like to eat?">🔊</button> What do you like to eat?</p>
+            <p>Bạn của bạn: I like ____ (Điền món bạn thích).</p>
+            <p>Bạn: <button class="audio-icon" data-audio-text="What do you like to drink?">🔊</button> What do you like to drink?</p>
+            <p>Bạn của bạn: I like ____ (Điền đồ uống bạn thích).</p>
+            <p><em>Hãy tự nghĩ ra câu trả lời cho riêng mình nhé!</em></p>
+        </section>
+
+        <section>
+            <h2>5. Từ vựng cơ bản tại nhà hàng (Restaurant Vocabulary Basics) 🍽️🧾</h2>
+            <p>Khi đi ăn ở nhà hàng, một số từ vựng sau sẽ rất hữu ích:</p>
+            <ul>
+                <li>
+                    <strong>Menu</strong>
+                    <span class="pronunciation">(me-niu)</span>
+                    <button class="audio-icon" data-audio-text="Menu">🔊</button>
+                    <span class="translation">Thực đơn</span>
+                </li>
+                <li>
+                    <strong>Order</strong>
+                    <span class="pronunciation">(o-đờ)</span>
+                    <button class="audio-icon" data-audio-text="Order">🔊</button>
+                    <span class="translation">Gọi món, gọi đồ</span>
+                </li>
+                <li>
+                    <strong>Waiter / Waitress</strong>
+                    <span class="pronunciation">(uây-tơ / uây-trét)</span>
+                    <button class="audio-icon" data-audio-text="Waiter">🔊</button><button class="audio-icon" data-audio-text="Waitress">🔊</button>
+                    <span class="translation">Bồi bàn (nam / nữ)</span>
+                </li>
+                <li>
+                    <strong>Bill / Check</strong>
+                    <span class="pronunciation">(bịl / che-k)</span>
+                    <button class="audio-icon" data-audio-text="Bill">🔊</button><button class="audio-icon" data-audio-text="Check">🔊</button>
+                    <span class="translation">Hóa đơn</span>
+                </li>
+            </ul>
+
+            <div class="example-block">
+                <p><button class="audio-icon" data-audio-text="Can I see the menu, please?">🔊</button> Can I see the <strong>menu</strong>, please?</p>
+                <p class="translation">Làm ơn cho tôi xem thực đơn được không?</p>
+            </div>
+            <div class="example-block">
+                <p><button class="audio-icon" data-audio-text="I want to order a salad.">🔊</button> I want to <strong>order</strong> a salad.</p>
+                <p class="translation">Tôi muốn gọi một món salad.</p>
+            </div>
+            <div class="example-block">
+                <p><button class="audio-icon" data-audio-text="Waiter, can I have the bill?">🔊</button> <strong>Waiter</strong>, can I have the <strong>bill</strong>?</p>
+                <p class="translation">Anh bồi bàn, làm ơn cho tôi hóa đơn được không?</p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>🎉 Tóm tắt chương 7: Food and Drinks 🎉</h2>
+            <p>Chúc mừng! Bạn đã hoàn thành Chương 7. Hãy cùng ôn lại những gì chúng ta đã học nhé:</p>
+            <ul>
+                <li><strong>Từ vựng đồ ăn & đồ uống:</strong> bread, rice, meat, vegetables, water, coffee, tea, juice, milk.</li>
+                <li><strong>Diễn tả sở thích:</strong> "I like..." (Tôi thích...) và "I don't like..." (Tôi không thích...).</li>
+                <li><strong>Hỏi về sở thích:</strong> "What do you like to eat?" (Bạn thích ăn gì?) và "What do you like to drink?" (Bạn thích uống gì?).</li>
+                <li><strong>Từ vựng nhà hàng:</strong> menu, order, waiter/waitress, bill/check.</li>
+            </ul>
+            <p>Bạn đã làm rất tốt! Hãy tiếp tục luyện tập để ghi nhớ và sử dụng thành thạo các cụm từ này trong cuộc sống hàng ngày nhé! 🌟</p>
+        </section>
+    </div>
+</body>
+</html>

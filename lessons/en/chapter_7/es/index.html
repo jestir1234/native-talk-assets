@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 7: Comida y Bebidas</title>
+    <style>
+        /* Estilos generales del cuerpo */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Contenedor principal para la lección, centrado y con un ancho máximo */
+        .container {
+            max-width: 768px; /* Ancho máximo para contenido */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Estilos de los encabezados */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 2em; /* Aproximadamente 32px */
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5em; /* Aproximadamente 24px */
+            border-bottom: 1px solid #E0E0E0;
+            padding-bottom: 5px;
+            margin-top: 2em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            font-size: 1.25em; /* Aproximadamente 20px */
+            margin-top: 1.5em;
+        }
+
+        /* Estilos de los párrafos */
+        p {
+            font-size: 1em; /* Aproximadamente 16px */
+            margin-bottom: 1em;
+        }
+
+        /* Estilos de las listas */
+        ul {
+            list-style: none; /* Quita los puntos de lista predeterminados */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #E0E0E0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        li:last-child {
+            border-bottom: none; /* No hay borde en el último elemento de la lista */
+        }
+
+        /* Estilos para texto en negrita y cursiva */
+        strong {
+            color: #2C3E50;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Estilos de las secciones de contenido */
+        section {
+            background-color: #FFFFFF; /* White para secciones, contrasta con el fondo crema del cuerpo */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0;
+        }
+
+        /* Estilos específicos para el encabezado de la lección */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Estilos para el botón de audio */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Hace el botón circular */
+            width: 44px; /* Tamaño mínimo de toque */
+            height: 44px; /* Tamaño mínimo de toque */
+            font-size: 1.2em; /* Tamaño del icono */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Evita que el icono se encoja en contenedores flex */
+        }
+
+        .audio-icon:hover {
+            background-color: #6A449B; /* Púrpura más oscuro al pasar el ratón */
+            transform: scale(1.05); /* Ligeramente más grande al pasar el ratón */
+        }
+
+        /* Estilos para ejemplos de palabras con audio y traducción */
+        .word-example {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+            padding: 5px 0;
+        }
+
+        .word-example strong {
+            flex-grow: 1; /* Permite que la palabra ocupe el espacio disponible */
+        }
+
+        .word-example .pronunciation {
+            font-size: 0.9em;
+            color: #8B5FBF; /* Purple para la pronunciación */
+            font-weight: bold;
+            margin-left: auto; /* Empuja la pronunciación a la derecha */
+        }
+
+        /* Estilos de la sección de práctica */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background para la práctica */
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 1px dashed #8B5FBF; /* Borde punteado púrpura */
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF; /* Primary: Purple para los títulos de práctica */
+            margin-top: 0;
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-direction: column; /* Apila las opciones verticalmente para móvil */
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .practice-option {
+            background-color: #FFFFFF;
+            border: 1px solid #8B5FBF;
+            color: #8B5FBF;
+            padding: 12px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            text-align: center;
+            min-height: 44px; /* Asegura el tamaño del área de toque */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .practice-option:hover {
+            background-color: #8B5FBF;
+            color: white;
+        }
+
+        /* Clases para feedback de respuesta (serían aplicadas por JS en la app) */
+        .correct-answer {
+            background-color: #D4EDDA; /* Verde claro */
+            border-color: #28A745; /* Verde */
+            color: #28A745;
+        }
+
+        .incorrect-answer {
+            background-color: #F8D7DA; /* Rojo claro */
+            border-color: #DC3545; /* Rojo */
+            color: #DC3545;
+        }
+
+        /* Estilos para traducciones */
+        .translation {
+            font-style: italic;
+            color: #8B5FBF; /* Primary color para traducciones */
+            margin-left: 10px;
+        }
+
+        /* Estilos para oraciones de ejemplo */
+        .example-sentence {
+            background-color: #F5F5F5;
+            padding: 15px;
+            border-left: 5px solid #8B5FBF;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-size: 0.95em;
+        }
+
+        .example-sentence p {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .example-sentence p .english-text {
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .example-sentence p .spanish-translation {
+            color: #666666;
+            font-style: italic;
+        }
+
+        /* Estilos para las "tips" o notas culturales */
+        .tip {
+            background-color: #E6EBFD; /* Azul claro para tips */
+            border-left: 4px solid #8B5FBF;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .tip strong {
+            color: #8B5FBF;
+        }
+
+        /* Estilos para la sección de resumen */
+        .summary {
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary h2 {
+            text-align: center;
+            border-bottom: none;
+            margin-top: 0;
+            color: #8B5FBF; /* Primary: Purple para el título del resumen */
+        }
+
+        .summary ul {
+            list-style: disc; /* Vuelve a los puntos de lista para el resumen */
+            padding-left: 20px;
+        }
+
+        .summary ul li {
+            border-bottom: none;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 7: Food and Drinks</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>¡Hola, futuro bilingüe! 👋</h2>
+            <p>¡Bienvenidos al Capítulo 7! Hoy vamos a explorar un tema delicioso y fundamental: la <strong>comida y las bebidas</strong> en inglés. Aprenderás a nombrar tus platos favoritos, pedir en un restaurante y expresar lo que te gusta (y lo que no). ¡Prepara tu apetito para aprender! 😋</p>
+        </section>
+
+        <section>
+            <h2>🍎 Comida Común (Common Food Items)</h2>
+            <p>Empecemos con algunas palabras esenciales para hablar de comida. Presta atención a la pronunciación y a cómo se usan en oraciones.</p>
+
+            <h3>🍞 Pan y Arroz (Bread and Rice)</h3>
+            <ul>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="bread">🔊</button>
+                        <strong>Bread</strong> <span class="pronunciation">(bréd)</span>
+                        <span class="translation">pan</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="rice">🔊</button>
+                        <strong>Rice</strong> <span class="pronunciation">(ráis)</span>
+                        <span class="translation">arroz</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="example-sentence">
+                <p>
+                    <button class="audio-icon" data-audio-text="I eat bread for breakfast.">🔊</button>
+                    <span class="english-text">I eat <strong>bread</strong> for breakfast.</span>
+                    <span class="spanish-translation">Yo como <strong>pan</strong> para el desayuno.</span>
+                </p>
+                <p>
+                    <button class="audio-icon" data-audio-text="Do you like rice?">🔊</button>
+                    <span class="english-text">Do you like <strong>rice</strong>?</span>
+                    <span class="spanish-translation">¿Te gusta el <strong>arroz</strong>?</span>
+                </p>
+            </div>
+
+            <h3>🥩 Carne y Verduras (Meat and Vegetables)</h3>
+            <p>Aquí tienes algunas de las comidas más comunes.</p>
+            <ul>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="meat">🔊</button>
+                        <strong>Meat</strong> <span class="pronunciation">(míit)</span>
+                        <span class="translation">carne</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="chicken">🔊</button>
+                        <strong>Chicken</strong> <span class="pronunciation">(chí-ken)</span>
+                        <span class="translation">pollo</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="fish">🔊</button>
+                        <strong>Fish</strong> <span class="pronunciation">(físh)</span>
+                        <span class="translation">pescado</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="vegetables">🔊</button>
+                        <strong>Vegetables</strong> <span class="pronunciation">(véch-ta-bols)</span>
+                        <span class="translation">verduras</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="example-sentence">
+                <p>
+                    <button class="audio-icon" data-audio-text="I like chicken and vegetables.">🔊</button>
+                    <span class="english-text">I like <strong>chicken</strong> and <strong>vegetables</strong>.</span>
+                    <span class="spanish-translation">Me gusta el <strong>pollo</strong> y las <strong>verduras</strong>.</span>
+                </p>
+            </div>
+
+            <div class="practice-section">
+                <h3>Práctica: Comida 🍽️</h3>
+                <p class="practice-question">Toca la palabra correcta para la descripción:</p>
+                <div class="practice-question">
+                    <p>¡Es esencial en tu desayuno o para hacer sándwiches! 🥪</p>
+                    <div class="practice-options">
+                        <div class="practice-option" data-correct="true">Bread</div>
+                        <div class="practice-option">Rice</div>
+                        <div class="practice-option">Meat</div>
+                    </div>
+                </div>
+                <div class="practice-question">
+                    <p>Un grano muy popular en muchas culturas, se come con curry o con sushi. 🍣</p>
+                    <div class="practice-options">
+                        <div class="practice-option">Fish</div>
+                        <div class="practice-option" data-correct="true">Rice</div>
+                        <div class="practice-option">Vegetables</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🥤 Bebidas (Drinks)</h2>
+            <p>Ahora, aprendamos a pedir algo para beber. ¡Hidratarse es importante! 😉</p>
+            <ul>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="water">🔊</button>
+                        <strong>Water</strong> <span class="pronunciation">(uó-ter)</span>
+                        <span class="translation">agua</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="coffee">🔊</button>
+                        <strong>Coffee</strong> <span class="pronunciation">(có-fi)</span>
+                        <span class="translation">café</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="tea">🔊</button>
+                        <strong>Tea</strong> <span class="pronunciation">(tíi)</span>
+                        <span class="translation">té</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="juice">🔊</button>
+                        <strong>Juice</strong> <span class="pronunciation">(yús)</span>
+                        <span class="translation">jugo/zumo</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="milk">🔊</button>
+                        <strong>Milk</strong> <span class="pronunciation">(mílk)</span>
+                        <span class="translation">leche</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="example-sentence">
+                <p>
+                    <button class="audio-icon" data-audio-text="Can I have a glass of water, please?">🔊</button>
+                    <span class="english-text">Can I have a glass of <strong>water</strong>, please?</span>
+                    <span class="spanish-translation">¿Me puede dar un vaso de <strong>agua</strong>, por favor?</span>
+                </p>
+                <p>
+                    <button class="audio-icon" data-audio-text="I drink coffee every morning.">🔊</button>
+                    <span class="english-text">I drink <strong>coffee</strong> every morning.</span>
+                    <span class="spanish-translation">Bebo <strong>café</strong> todas las mañanas.</span>
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>👍 Me gusta... / 👎 No me gusta... (I like... / I don't like...)</h2>
+            <p>Expresar tus preferencias es muy útil cuando hablas de comida. Usa las siguientes estructuras:</p>
+
+            <h3>Para expresar gusto: "I like..."</h3>
+            <div class="example-sentence">
+                <p>
+                    <button class="audio-icon" data-audio-text="I like coffee.">🔊</button>
+                    <span class="english-text"><strong>I like</strong> coffee.</span>
+                    <span class="spanish-translation">Me gusta el café.</span>
+                </p>
+                <p>
+                    <button class="audio-icon" data-audio-text="She likes rice.">🔊</button>
+                    <span class="english-text">She <strong>likes</strong> rice.</span>
+                    <span class="spanish-translation">A ella le gusta el arroz.</span>
+                </p>
+            </div>
+            <div class="tip">
+                💡 <strong>¡Atención!</strong> Para "he" (él), "she" (ella) e "it" (ello/neutro), añadimos una <strong>'-s'</strong> al verbo: "She like<strong>s</strong>", "He like<strong>s</strong>".
+            </div>
+
+            <h3>Para expresar disgusto: "I don't like..."</h3>
+            <div class="example-sentence">
+                <p>
+                    <button class="audio-icon" data-audio-text="I don't like milk.">🔊</button>
+                    <span class="english-text"><strong>I don't like</strong> milk.</span>
+                    <span class="spanish-translation">No me gusta la leche.</span>
+                </p>
+                <p>
+                    <button class="audio-icon" data-audio-text="He doesn't like vegetables.">🔊</button>
+                    <span class="english-text">He <strong>doesn't like</strong> vegetables.</span>
+                    <span class="spanish-translation">A él no le gustan las verduras.</span>
+                </p>
+            </div>
+            <div class="tip">
+                💡 <strong>¡Atención!</strong> Para "he/she/it", usamos <strong>"doesn't"</strong> en lugar de "don't". ¡Y el verbo "like" vuelve a su forma base (sin '-s')!
+            </div>
+
+            <div class="practice-section">
+                <h3>Práctica: Gustos y Disgustos 🤔</h3>
+                <p class="practice-question">Toca la forma correcta del verbo para completar la oración:</p>
+                <div class="practice-question">
+                    <p>I ______ coffee. (Me gusta el café)</p>
+                    <div class="practice-options">
+                        <div class="practice-option" data-correct="true">like</div>
+                        <div class="practice-option">don't like</div>
+                        <div class="practice-option">likes</div>
+                    </div>
+                </div>
+                <div class="practice-question">
+                    <p>She ______ fish. (A ella no le gusta el pescado)</p>
+                    <div class="practice-options">
+                        <div class="practice-option">don't like</div>
+                        <div class="practice-option" data-correct="true">doesn't like</div>
+                        <div class="practice-option">likes</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>❓ ¿Qué te gusta comer? (What do you like to eat?)</h2>
+            <p>Para preguntar a alguien sobre sus preferencias de comida o bebida, usa estas preguntas:</p>
+            <div class="example-sentence">
+                <p>
+                    <button class="audio-icon" data-audio-text="What do you like to eat?">🔊</button>
+                    <span class="english-text"><strong>What do you like to eat?</strong></span>
+                    <span class="spanish-translation">¿Qué te gusta comer?</span>
+                </p>
+                <p>
+                    <button class="audio-icon" data-audio-text="What does he like to drink?">🔊</button>
+                    <span class="english-text"><strong>What does he like to drink?</strong></span>
+                    <span class="spanish-translation">¿Qué le gusta beber a él?</span>
+                </p>
+            </div>
+            <div class="tip">
+                💡 Al igual que con "don't" y "doesn't", usamos <strong>"do"</strong> para "I/you/we/they" y <strong>"does"</strong> para "he/she/it" en las preguntas.
+            </div>
+
+            <h3>Posibles respuestas:</h3>
+            <ul>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="I like pizza.">🔊</button>
+                        <strong>I like pizza.</strong> <span class="translation">Me gusta la pizza.</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="I like to eat fruit.">🔊</button>
+                        <strong>I like to eat fruit.</strong> <span class="translation">Me gusta comer fruta.</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="I don't like vegetables.">🔊</button>
+                        <strong>I don't like vegetables.</strong> <span class="translation">No me gustan las verduras.</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🍽️ Vocabulario básico de restaurante (Restaurant vocabulary basics)</h2>
+            <p>¡Es hora de poner en práctica lo aprendido en un restaurante! Aquí tienes algunas palabras y frases clave que te serán muy útiles.</p>
+            <ul>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="menu">🔊</button>
+                        <strong>Menu</strong> <span class="pronunciation">(mé-nu)</span>
+                        <span class="translation">menú / carta</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="order">🔊</button>
+                        <strong>Order</strong> <span class="pronunciation">(ór-der)</span>
+                        <span class="translation">pedir / ordenar</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="bill / check">🔊</button>
+                        <strong>Bill / Check</strong> <span class="pronunciation">(bíil / chék)</span>
+                        <span class="translation">la cuenta</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="word-example">
+                        <button class="audio-icon" data-audio-text="waiter / waitress">🔊</button>
+                        <strong>Waiter / Waitress</strong> <span class="pronunciation">(uéi-ter / uéi-tres)</span>
+                        <span class="translation">camarero / camarera</span>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>Frases útiles para el restaurante:</h3>
+            <div class="example-sentence">
+                <p>
+                    <button class="audio-icon" data-audio-text="Can I see the menu, please?">🔊</button>
+                    <span class="english-text"><strong>Can I see the menu, please?</strong></span>
+                    <span class="spanish-translation">¿Puedo ver el menú, por favor?</span>
+                </p>
+                <p>
+                    <button class="audio-icon" data-audio-text="I would like to order.">🔊</button>
+                    <span class="english-text"><strong>I would like to order.</strong></span>
+                    <span class="spanish-translation">Me gustaría ordenar.</span>
+                </p>
+                <p>
+                    <button class="audio-icon" data-audio-text="Could I have the bill, please?">🔊</button>
+                    <span class="english-text"><strong>Could I have the bill, please?</strong></span>
+                    <span class="spanish-translation">¿Podría traerme la cuenta, por favor?</span>
+                </p>
+            </div>
+            <div class="tip">
+                💡 <strong>Nota cultural:</strong> En Estados Unidos es más común pedir "the check" para la cuenta, mientras que en el Reino Unido se usa "the bill". Ambos son correctos y entendidos.
+            </div>
+        </section>
+
+        <section class="summary">
+            <h2>Resumen del Capítulo 7 ✨</h2>
+            <p>¡Excelente trabajo! Has aprendido mucho sobre comida y bebidas en inglés. Aquí un repaso rápido de lo más importante:</p>
+            <ul>
+                <li><strong>Vocabulario clave de comida y bebida:</strong>
+                    <ul>
+                        <li>Comida: <em>bread, rice, meat, chicken, fish, vegetables</em></li>
+                        <li>Bebidas: <em>water, coffee, tea, juice, milk</em></li>
+                    </ul>
+                </li>
+                <li><strong>Expresar gustos y disgustos:</strong>
+                    <ul>
+                        <li><em>I like...</em> (Me gusta...)</li>
+                        <li><em>I don't like...</em> (No me gusta...)</li>
+                        <li>Recuerda la <strong>'-s'</strong> para <em>he/she/it</em> en "likes" y el uso de <strong>"doesn't like"</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Preguntar sobre preferencias:</strong>
+                    <ul>
+                        <li><em>What do you like to eat/drink?</em> (¿Qué te gusta comer/beber?)</li>
+                        <li>Usa <strong>"do"</strong> o <strong>"does"</strong> según el sujeto.</li>
+                    </ul>
+                </li>
+                <li><strong>En el restaurante:</strong>
+                    <ul>
+                        <li>Palabras clave: <em>Menu</em> (menú), <em>order</em> (pedir), <em>bill/check</em> (la cuenta), <em>waiter/waitress</em> (camarero/a)</li>
+                        <li>Frases útiles: <em>Can I see the menu, please?</em>, <em>I would like to order.</em>, <em>Could I have the bill, please?</em></li>
+                    </ul>
+                </li>
+            </ul>
+            <p>¡Sigue practicando estas palabras y frases en tu día a día! La próxima vez que veas un plato de comida o una bebida, ¡intenta nombrarla en inglés y piensa en cómo dirías si te gusta o no! ¡Hasta el próximo capítulo! 🎉</p>
+        </section>
+
+    </div>
+</body>
+</html>

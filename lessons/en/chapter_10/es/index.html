@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 10: Hora y Horarios</title>
+    <style>
+        /* General Styles & Mobile-First Approach */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-background: #FDF9E5;
+            --heading-text-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+            --button-min-height: 48px; /* Slightly larger for better tapping */
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-background);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body text size */
+            -webkit-text-size-adjust: 100%; /* Prevent text scaling issues */
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.2em; /* ~35px */
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.8em; /* ~29px */
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.4em; /* ~22px */
+            color: var(--primary-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1em;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        li strong {
+            color: var(--heading-text-color);
+            margin-right: 8px;
+        }
+
+        /* Examples */
+        .example-box {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        }
+
+        .example-box p {
+            margin: 5px 0;
+        }
+
+        .example-box span.english {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .example-box span.spanish {
+            font-style: italic;
+            color: var(--body-text-color);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #e6e6fa; /* Light purple tint for practice */
+            border-radius: 12px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: var(--heading-text-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .practice-item {
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+            text-align: left;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .practice-item .question {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-bottom: 5px;
+        }
+
+        .practice-item .answer-placeholder {
+            font-style: italic;
+            color: var(--body-text-color);
+        }
+
+        .practice-item .reveal-answer {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 1em;
+            text-align: center;
+            min-height: var(--button-min-height); /* Ensure tap-friendly height */
+            line-height: calc(var(--button-min-height) - 20px); /* Adjust line height for vertical centering */
+        }
+
+        .practice-item .reveal-answer:hover {
+            opacity: 0.9;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            cursor: pointer;
+            font-size: 1.6em; /* Larger emoji */
+            margin-left: 10px;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px; /* Minimum touch target size */
+            min-height: 44px;
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple background */
+            border-radius: 50%; /* Circular background */
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+            background-color: rgba(139, 95, 191, 0.2);
+        }
+
+        /* Special text formatting */
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            color: var(--primary-color);
+            font-style: normal;
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: #FFF3E0; /* Light orange tint for cultural notes */
+            border-left: 5px solid #FFC107; /* Orange accent */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 25px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        }
+
+        .cultural-note p {
+            margin: 0;
+            color: #795548; /* Darker text for contrast */
+        }
+
+        .cultural-note strong {
+            color: #FFC107;
+        }
+
+        /* Summary */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .summary-section h2 {
+            color: white;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .summary-section ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            background-color: transparent;
+            color: white;
+            margin-bottom: 8px;
+            padding: 0;
+            box-shadow: none;
+            display: list-item;
+        }
+
+        /* Header Specific Styles (as per requirements) */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Responsive adjustments for larger screens */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.8em; /* Larger on tablets/desktops */
+            }
+            h2 {
+                font-size: 2.2em;
+            }
+            h3 {
+                font-size: 1.6em;
+            }
+            .container {
+                padding: 30px;
+            }
+            .practice-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 10: Time and Schedules</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>¡Hola! ⏰ Bienvenidos al Capítulo 10: Hora y Horarios</h2>
+            <p>En este capítulo, aprenderás a hablar sobre la hora, los días, los meses y cómo hacer planes en inglés. ¡Prepárate para organizar tu agenda! 🗓️</p>
+        </section>
+
+        <section>
+            <h2>1. Telling time: ¿Qué hora es?</h2>
+            <p>Preguntar la hora es muy común. La forma más sencilla es:</p>
+            <div class="example-box">
+                <p><span class="english">What time is it?</span> <span class="audio-icon" data-audio-text="What time is it?">🔊</span></p>
+                <p><span class="spanish">¿Qué hora es?</span></p>
+            </div>
+            <p>Para responder, usamos <strong>It's...</strong> (Es...)</p>
+
+            <h3>Formas comunes de decir la hora:</h3>
+            <ul>
+                <li>
+                    <strong>Horas en punto (o'clock)</strong>
+                    <p><span class="english">It's two o'clock.</span> <span class="audio-icon" data-audio-text="It's two o'clock.">🔊</span></p>
+                    <p><span class="spanish">Son las dos en punto.</span></p>
+                </li>
+                <li>
+                    <strong>Media hora (half past)</strong>
+                    <p><span class="english">It's half past three.</span> <span class="audio-icon" data-audio-text="It's half past three.">🔊</span></p>
+                    <p><span class="spanish">Son las tres y media.</span></p>
+                </li>
+                <li>
+                    <strong>Cuarto (quarter past / quarter to)</strong>
+                    <p><span class="english">It's quarter past four.</span> <span class="audio-icon" data-audio-text="It's quarter past four.">🔊</span></p>
+                    <p><span class="spanish">Son las cuatro y cuarto.</span></p>
+                    <p><span class="english">It's quarter to five.</span> <span class="audio-icon" data-audio-text="It's quarter to five.">🔊</span></p>
+                    <p><span class="spanish">Son cuarto para las cinco (o las cuatro y cuarenta y cinco).</span></p>
+                </li>
+                <li>
+                    <strong>Minutos (past / to)</strong>
+                    <p>Usa <strong>past</strong> para los primeros 30 minutos y <strong>to</strong> para los últimos 30 minutos.</p>
+                    <p><span class="english">It's ten past six.</span> <span class="audio-icon" data-audio-text="It's ten past six.">🔊</span></p>
+                    <p><span class="spanish">Son las seis y diez.</span></p>
+                    <p><span class="english">It's twenty to seven.</span> <span class="audio-icon" data-audio-text="It's twenty to seven.">🔊</span></p>
+                    <p><span class="spanish">Son veinte para las siete (o las seis y cuarenta).</span></p>
+                </li>
+                <li>
+                    <strong>Formato digital (más común hoy en día)</strong>
+                    <p>Simplemente di los números.</p>
+                    <p><span class="english">It's six thirty.</span> <span class="audio-icon" data-audio-text="It's six thirty.">🔊</span></p>
+                    <p><span class="spanish">Son las seis y treinta.</span></p>
+                    <p><span class="english">It's nine fifteen.</span> <span class="audio-icon" data-audio-text="It's nine fifteen.">🔊</span></p>
+                    <p><span class="spanish">Son las nueve y quince.</span></p>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <p>💡 <strong>Nota Cultural:</strong> En inglés, a menudo usamos el formato de 12 horas con <strong>AM</strong> (ante meridiem, de medianoche a mediodía) y <strong>PM</strong> (post meridiem, de mediodía a medianoche), en lugar del formato de 24 horas (hora militar).</p>
+                <p><span class="english">It's 10 AM.</span> <span class="audio-icon" data-audio-text="It's 10 AM.">🔊</span> (Son las 10 de la mañana)</p>
+                <p><span class="english">It's 3 PM.</span> <span class="audio-icon" data-audio-text="It's 3 PM.">🔊</span> (Son las 3 de la tarde)</p>
+            </div>
+
+            <div class="practice-section">
+                <h3>¡Practica la Hora! 🕒</h3>
+                <p>Intenta decir la hora en inglés para cada reloj:</p>
+                <div class="practice-item">
+                    <p class="question">1. 8:00</p>
+                    <p class="answer-placeholder">Respuesta: <span class="english">It's eight o'clock.</span> <span class="audio-icon" data-audio-text="It's eight o'clock.">🔊</span></p>
+                </div>
+                <div class="practice-item">
+                    <p class="question">2. 1:30</p>
+                    <p class="answer-placeholder">Respuesta: <span class="english">It's half past one.</span> <span class="audio-icon" data-audio-text="It's half past one.">🔊</span> / <span class="english">It's one thirty.</span> <span class="audio-icon" data-audio-text="It's one thirty.">🔊</span></p>
+                </div>
+                <div class="practice-item">
+                    <p class="question">3. 11:45</p>
+                    <p class="answer-placeholder">Respuesta: <span class="english">It's quarter to twelve.</span> <span class="audio-icon" data-audio-text="It's quarter to twelve.">🔊</span> / <span class="english">It's eleven forty-five.</span> <span class="audio-icon" data-audio-text="It's eleven forty-five.">🔊</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Days of the week: Días de la semana 🗓️</h2>
+            <p>Los días de la semana siempre se escriben con mayúscula en inglés.</p>
+            <ul>
+                <li><strong>Monday</strong> <span class="audio-icon" data-audio-text="Monday">🔊</span> (Lunes)</li>
+                <li><strong>Tuesday</strong> <span class="audio-icon" data-audio-text="Tuesday">🔊</span> (Martes)</li>
+                <li><strong>Wednesday</strong> <span class="audio-icon" data-audio-text="Wednesday">🔊</span> (Miércoles)</li>
+                <li><strong>Thursday</strong> <span class="audio-icon" data-audio-text="Thursday">🔊</span> (Jueves)</li>
+                <li><strong>Friday</strong> <span class="audio-icon" data-audio-text="Friday">🔊</span> (Viernes)</li>
+                <li><strong>Saturday</strong> <span class="audio-icon" data-audio-text="Saturday">🔊</span> (Sábado)</li>
+                <li><strong>Sunday</strong> <span class="audio-icon" data-audio-text="Sunday">🔊</span> (Domingo)</li>
+            </ul>
+            <p>Para preguntar sobre un día específico, puedes decir:</p>
+            <div class="example-box">
+                <p><span class="english">What day is it today?</span> <span class="audio-icon" data-audio-text="What day is it today?">🔊</span></p>
+                <p><span class="spanish">¿Qué día es hoy?</span></p>
+                <p><span class="english">It's Monday.</span> <span class="audio-icon" data-audio-text="It's Monday.">🔊</span></p>
+                <p><span class="spanish">Es Lunes.</span></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Months of the year: Meses del año 🗓️</h2>
+            <p>Al igual que los días, los meses también se escriben con mayúscula.</p>
+            <ul>
+                <li><strong>January</strong> <span class="audio-icon" data-audio-text="January">🔊</span> (Enero)</li>
+                <li><strong>February</strong> <span class="audio-icon" data-audio-text="February">🔊</span> (Febrero)</li>
+                <li><strong>March</strong> <span class="audio-icon" data-audio-text="March">🔊</span> (Marzo)</li>
+                <li><strong>April</strong> <span class="audio-icon" data-audio-text="April">🔊</span> (Abril)</li>
+                <li><strong>May</strong> <span class="audio-icon" data-audio-text="May">🔊</span> (Mayo)</li>
+                <li><strong>June</strong> <span class="audio-icon" data-audio-text="June">🔊</span> (Junio)</li>
+                <li><strong>July</strong> <span class="audio-icon" data-audio-text="July">🔊</span> (Julio)</li>
+                <li><strong>August</strong> <span class="audio-icon" data-audio-text="August">🔊</span> (Agosto)</li>
+                <li><strong>September</strong> <span class="audio-icon" data-audio-text="September">🔊</span> (Septiembre)</li>
+                <li><strong>October</strong> <span class="audio-icon" data-audio-text="October">🔊</span> (Octubre)</li>
+                <li><strong>November</strong> <span class="audio-icon" data-audio-text="November">🔊</span> (Noviembre)</li>
+                <li><strong>December</strong> <span class="audio-icon" data-audio-text="December">🔊</span> (Diciembre)</li>
+            </ul>
+            <div class="practice-section">
+                <h3>¡Practica los Meses! 🤔</h3>
+                <p>¿Qué mes es? Elige la opción correcta.</p>
+                <div class="practice-item">
+                    <p class="question">1. El mes después de abril es...</p>
+                    <p class="answer-placeholder">a) June  b) March  c) <span class="english">May</span></p>
+                </div>
+                <div class="practice-item">
+                    <p class="question">2. La Navidad es en...</p>
+                    <p class="answer-placeholder">a) January  b) <span class="english">December</span>  c) July</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. When is...? It's on... ¿Cuándo es...? Es el...</h2>
+            <p>Para hablar de fechas o cuándo ocurre algo, usamos la preposición <strong>on</strong>.</p>
+            <div class="example-box">
+                <p><span class="english">When is your birthday?</span> <span class="audio-icon" data-audio-text="When is your birthday?">🔊</span></p>
+                <p><span class="spanish">¿Cuándo es tu cumpleaños?</span></p>
+                <p><span class="english">It's on October 25th.</span> <span class="audio-icon" data-audio-text="It's on October 25th.">🔊</span></p>
+                <p><span class="spanish">Es el 25 de octubre.</span></p>
+            </div>
+            <p>También usamos <strong>on</strong> para días específicos:</p>
+            <div class="example-box">
+                <p><span class="english">The meeting is on Tuesday.</span> <span class="audio-icon" data-audio-text="The meeting is on Tuesday.">🔊</span></p>
+                <p><span class="spanish">La reunión es el martes.</span></p>
+            </div>
+            <p>Y <strong>in</strong> para meses o años:</p>
+            <div class="example-box">
+                <p><span class="english">My vacation is in July.</span> <span class="audio-icon" data-audio-text="My vacation is in July.">🔊</span></p>
+                <p><span class="spanish">Mis vacaciones son en julio.</span></p>
+                <p><span class="english">She was born in 1990.</span> <span class="audio-icon" data-audio-text="She was born in nineteen ninety.">🔊</span></p>
+                <p><span class="spanish">Ella nació en 1990.</span></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Making appointments and schedules: Haciendo citas y horarios 📆</h2>
+            <p>Para hacer y hablar de citas, puedes usar estas frases:</p>
+            <ul>
+                <li>
+                    <strong>Preguntar por disponibilidad:</strong>
+                    <p><span class="english">Are you free on Monday?</span> <span class="audio-icon" data-audio-text="Are you free on Monday?">🔊</span></p>
+                    <p><span class="spanish">¿Estás libre el lunes?</span></p>
+                    <p><span class="english">What time works for you?</span> <span class="audio-icon" data-audio-text="What time works for you?">🔊</span></p>
+                    <p><span class="spanish">¿Qué hora te viene bien?</span></p>
+                </li>
+                <li>
+                    <strong>Proponer una cita:</strong>
+                    <p><span class="english">How about 3 PM on Wednesday?</span> <span class="audio-icon" data-audio-text="How about three PM on Wednesday?">🔊</span></p>
+                    <p><span class="spanish">¿Qué tal las 3 PM el miércoles?</span></p>
+                    <p><span class="english">Can we meet at 10 AM tomorrow?</span> <span class="audio-icon" data-audio-text="Can we meet at ten AM tomorrow?">🔊</span></p>
+                    <p><span class="spanish">¿Podemos vernos a las 10 AM mañana?</span></p>
+                </li>
+                <li>
+                    <strong>Aceptar o rechazar:</strong>
+                    <p><span class="english">Yes, that works for me!</span> <span class="audio-icon" data-audio-text="Yes, that works for me!">🔊</span></p>
+                    <p><span class="spanish">¡Sí, eso me viene bien!</span></p>
+                    <p><span class="english">Sorry, I'm busy then.</span> <span class="audio-icon" data-audio-text="Sorry, I'm busy then.">🔊</span></p>
+                    <p><span class="spanish">Lo siento, estoy ocupado/a entonces.</span></p>
+                    <p><span class="english">Can we reschedule?</span> <span class="audio-icon" data-audio-text="Can we reschedule?">🔊</span></p>
+                    <p><span class="spanish">¿Podemos cambiar la fecha/hora?</span></p>
+                </li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>¡Organiza tu Horario! 🤝</h3>
+                <p>Completa los espacios en blanco con la palabra correcta (on, in, at).</p>
+                <div class="practice-item">
+                    <p class="question">1. The party is _____ Saturday.</p>
+                    <p class="answer-placeholder">Respuesta: <span class="english">on</span></p>
+                </div>
+                <div class="practice-item">
+                    <p class="question">2. My birthday is _____ August.</p>
+                    <p class="answer-placeholder">Respuesta: <span class="english">in</span></p>
+                </div>
+                <div class="practice-item">
+                    <p class="question">3. Let's meet _____ 7 PM.</p>
+                    <p class="answer-placeholder">Respuesta: <span class="english">at</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>Resumen del Capítulo 10: Hora y Horarios ✨</h2>
+            <ul>
+                <li>Aprendiste a preguntar "¿What time is it?" y responder con "It's..." usando "o'clock", "half past", "quarter past/to", "past/to" y formato digital.</li>
+                <li>Dominaste los "Days of the week" (Monday-Sunday) y los "Months of the year" (January-December), ¡recuerda siempre con mayúscula!</li>
+                <li>Practicaste el uso de las preposiciones <strong>on</strong> (para días y fechas específicas), <strong>in</strong> (para meses y años) y <strong>at</strong> (para horas específicas).</li>
+                <li>Conociste frases clave para "Making appointments and schedules", como "¿Are you free...?", "¿What time works for you?", "How about...?" y cómo aceptar o rechazar citas.</li>
+            </ul>
+            <p>¡Excelente trabajo! Ahora tienes las herramientas para hablar y planificar tu tiempo en inglés. ¡Sigue practicando!</p>
+        </section>
+
+    </div>
+</body>
+</html>

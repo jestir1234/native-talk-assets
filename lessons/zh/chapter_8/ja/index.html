@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Places and Directions - 中国語レッスン</title>
+    <style>
+        /* カラーパレット */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-bg-color: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        /* 全体設定 */
+        body {
+            font-family: 'Hiragino Sans', 'ヒラギノ角ゴ ProN', 'Meiryo', sans-serif;
+            background-color: var(--secondary-bg-color);
+            color: var(--body-text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            font-size: 16px; /* 最小フォントサイズ */
+        }
+
+        /* コンテナ */
+        .lesson-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* ヘッダー */
+        .chapter-title {
+            color: var(--heading-text-color);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            padding-top: 20px;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Placeholder for actual image. DO NOT use external URLs. */
+            /* This is a relative path as required by the prompt's header structure. */
+        }
+
+        /* セクションカード */
+        .section-card {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+        }
+
+        .section-card h2 {
+            color: var(--heading-text-color);
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .section-card h3 {
+            color: var(--heading-text-color);
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* 段落とリスト */
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Emphasize list items */
+            position: absolute;
+            left: -10px;
+            top: 2px;
+            font-size: 1.1em;
+        }
+
+        /* 中国語単語表示 */
+        .chinese-word {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1em;
+            margin-right: 5px;
+        }
+
+        .pinyin {
+            font-style: italic;
+            color: #888;
+            font-size: 0.9em;
+            margin-right: 10px;
+        }
+
+        .japanese-translation {
+            font-size: 0.9em;
+            color: #555;
+            display: inline-block; /* Keep on same line as word */
+        }
+
+        /* 音声アイコン */
+        .audio-icon {
+            display: inline-flex; /* Use flexbox for centering */
+            justify-content: center;
+            align-items: center;
+            width: 44px; /* Minimum tap target size */
+            height: 44px; /* Minimum tap target size */
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            vertical-align: middle; /* Align with text */
+            margin-left: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            -webkit-tap-highlight-color: transparent; /* Prevent default tap highlight */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a409f; /* Darker purple on hover */
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95); /* Slight shrink on tap */
+        }
+
+        /* 例と練習問題 */
+        .example-box, .practice-item {
+            background-color: var(--secondary-bg-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-box::before {
+            content: '例';
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 0.8em;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .practice-item::before {
+            content: '練習';
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 0.8em;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .practice-question {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-bottom: 10px;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-button {
+            background-color: white;
+            color: var(--body-text-color);
+            border: 1px solid var(--border-color);
+            padding: 12px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: left;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            min-height: 44px; /* Ensure tap target size */
+            display: flex;
+            align-items: center; /* Vertically align content */
+        }
+
+        .option-button:hover {
+            background-color: #f0f0f0;
+            border-color: var(--primary-color);
+        }
+
+        .option-button.correct {
+            background-color: #e6ffe6; /* Light green for correct */
+            border-color: #4CAF50;
+        }
+
+        .option-button.wrong {
+            background-color: #ffe6e6; /* Light red for wrong */
+            border-color: #f44336;
+        }
+
+        .note {
+            background-color: #fff8e1;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            color: #795548;
+        }
+
+        .summary-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .summary-section h2 {
+            color: white;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .summary-section ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            margin-bottom: 8px;
+            color: #eee;
+        }
+
+        .summary-section li::before {
+            content: '✨';
+            color: white;
+        }
+
+        /* レスポンシブデザイン */
+        @media (min-width: 600px) {
+            .lesson-container {
+                padding: 30px;
+            }
+
+            .chapter-title {
+                font-size: 32px;
+            }
+
+            .section-card h2 {
+                font-size: 24px;
+            }
+
+            .section-card h3 {
+                font-size: 20px;
+            }
+
+            .option-button {
+                flex-direction: row; /* For wider screens, options can be side-by-side if preferred, but column is safer */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+
+        <h1 class="chapter-title">Chapter 8: Places and Directions</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-card">
+            <h2>🌍 中国語で道案内をマスターしよう！</h2>
+            <p>皆さん、こんにちは！今回は、中国語で場所を尋ねたり、道案内をしたりするためのフレーズを学びます。旅行や日常生活でとても役立つ表現ばかりなので、一緒に楽しく学んでいきましょう！</p>
+            <p>この章では、以下のことを学びます：</p>
+            <ul>
+                <li>よく使う場所の単語</li>
+                <li>「〜に、〜から」などの前置詞</li>
+                <li>場所を尋ねる質問と答え方</li>
+                <li>基本的な方向の表現</li>
+            </ul>
+            <p>さあ、中国語の場所と方向の世界へ出発です！🗺️</p>
+        </section>
+
+        <section class="section-card">
+            <h2>📍 よく使う場所の単語</h2>
+            <p>まずは、日常生活でよく使う場所の中国語名を覚えましょう。単語と発音をしっかり確認してくださいね。</p>
+
+            <h3>1. 学校 (がっこう)</h3>
+            <p>
+                <span class="chinese-word">学校</span>
+                <span class="pinyin"> (xuéxiào)</span>
+                <span class="japanese-translation">学校</span>
+                <span class="audio-icon" data-audio-text="学校">🔊</span>
+            </p>
+
+            <h3>2. 家 (いえ)</h3>
+            <p>
+                <span class="chinese-word">家</span>
+                <span class="pinyin"> (jiā)</span>
+                <span class="japanese-translation">家</span>
+                <span class="audio-icon" data-audio-text="家">🔊</span>
+            </p>
+
+            <h3>3. 職場/会社 (しょくば/かいしゃ)</h3>
+            <p>
+                <span class="chinese-word">公司</span>
+                <span class="pinyin"> (gōngsī)</span>
+                <span class="japanese-translation">会社</span>
+                <span class="audio-icon" data-audio-text="公司">🔊</span>
+            </p>
+
+            <h3>4. お店 (おみせ)</h3>
+            <p>
+                <span class="chinese-word">商店</span>
+                <span class="pinyin"> (shāngdiàn)</span>
+                <span class="japanese-translation">商店、お店</span>
+                <span class="audio-icon" data-audio-text="商店">🔊</span>
+                <br>
+                <span class="chinese-word">店</span>
+                <span class="pinyin"> (diàn)</span>
+                <span class="japanese-translation">店（より一般的）</span>
+                <span class="audio-icon" data-audio-text="店">🔊</span>
+            </p>
+
+            <h3>5. 公園 (こうえん)</h3>
+            <p>
+                <span class="chinese-word">公园</span>
+                <span class="pinyin"> (gōngyuán)</span>
+                <span class="japanese-translation">公園</span>
+                <span class="audio-icon" data-audio-text="公园">🔊</span>
+            </p>
+
+            <h3>練習問題：場所の名前を覚えよう！</h3>
+            <div class="practice-item">
+                <p class="practice-question">質問：写真（イメージ）を見て、正しい中国語の場所を選びましょう。</p>
+                <div class="practice-options">
+                    <button class="option-button" data-correct="true">🏢 公园 (gōngyuán)</button>
+                    <button class="option-button">🏡 家 (jiā)</button>
+                    <button class="option-button">🏫 学校 (xuéxiào)</button>
+                    <p>（注：モバイルアプリでは写真が表示され、ユーザーがタップして選択します。ここではテキストでイメージを表現しています。）</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>➡️ 前置詞：どこに、どこから？</h2>
+            <p>場所と組み合わせて使う前置詞は、文を作る上でとても重要です。</p>
+
+            <h3>1. 〜に、〜で、〜へ (場所を表す)</h3>
+            <p>
+                <span class="chinese-word">在</span>
+                <span class="pinyin"> (zài)</span>
+                <span class="japanese-translation">〜に、〜で（場所、存在）</span>
+                <span class="audio-icon" data-audio-text="在">🔊</span>
+            </p>
+            <p>
+                <span class="chinese-word">去</span>
+                <span class="pinyin"> (qù)</span>
+                <span class="japanese-translation">〜へ行く（方向、移動）</span>
+                <span class="audio-icon" data-audio-text="去">🔊</span>
+            </p>
+            <div class="example-box">
+                <p><span class="chinese-word">我在家。</span>
+                <span class="japanese-translation">私は家にいます。</span>
+                <span class="audio-icon" data-audio-text="我在家。">🔊</span></p>
+                <p><span class="chinese-word">我去学校。</span>
+                <span class="japanese-translation">私は学校に行きます。</span>
+                <span class="audio-icon" data-audio-text="我去学校。">🔊</span></p>
+            </div>
+
+            <h3>2. 〜から (出発点)</h3>
+            <p>
+                <span class="chinese-word">从</span>
+                <span class="pinyin"> (cóng)</span>
+                <span class="japanese-translation">〜から</span>
+                <span class="audio-icon" data-audio-text="从">🔊</span>
+            </p>
+            <div class="example-box">
+                <p><span class="chinese-word">我从公司回家。</span>
+                <span class="japanese-translation">私は会社から家に帰ります。</span>
+                <span class="audio-icon" data-audio-text="我从公司回家。">🔊</span></p>
+            </div>
+
+            <h3>3. 近い、遠い</h3>
+            <p>
+                <span class="chinese-word">近</span>
+                <span class="pinyin"> (jìn)</span>
+                <span class="japanese-translation">近い</span>
+                <span class="audio-icon" data-audio-text="近">🔊</span>
+            </p>
+            <p>
+                <span class="chinese-word">远</span>
+                <span class="pinyin"> (yuǎn)</span>
+                <span class="japanese-translation">遠い</span>
+                <span class="audio-icon" data-audio-text="远">🔊</span>
+            </p>
+            <div class="example-box">
+                <p><span class="chinese-word">我家很近。</span>
+                <span class="japanese-translation">私の家は近いです。</span>
+                <span class="audio-icon" data-audio-text="我家很近。">🔊</span></p>
+                <p><span class="chinese-word">学校很远。</span>
+                <span class="japanese-translation">学校は遠いです。</span>
+                <span class="audio-icon" data-audio-text="学校很远。">🔊</span></p>
+            </div>
+
+            <div class="note">
+                <p><strong>💡文化ノート：在 (zài) と 去 (qù) の使い分け</strong></p>
+                <p>「在 (zài)」は<strong>「どこにいるか、存在する」</strong>場所を表し、「去 (qù)」は<strong>「どこへ向かうか、移動する」</strong>方向や目的地を表します。動きがあるかどうかで使い分けましょう。</p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>❓〜はどこですか？〜にあります</h2>
+            <p>場所を尋ねたり、答えたりする基本フレーズです。</p>
+
+            <h3>「どこですか？」の質問</h3>
+            <p>
+                <span class="chinese-word">在哪儿？</span>
+                <span class="pinyin"> (zài nǎr?)</span>
+                <span class="japanese-translation">どこですか？</span>
+                <span class="audio-icon" data-audio-text="在哪儿？">🔊</span>
+                <br>
+                または
+                <span class="chinese-word">在哪里？</span>
+                <span class="pinyin"> (zài nǎlǐ?)</span>
+                <span class="japanese-translation">どこですか？</span>
+                <span class="audio-icon" data-audio-text="在哪里？">🔊</span>
+                <br>
+                （「哪儿」は北方訛りでよく使われます。「哪里」はより一般的です。）
+            </p>
+            <div class="example-box">
+                <p>A: <span class="chinese-word">学校在哪儿？</span>
+                <span class="japanese-translation">学校はどこですか？</span>
+                <span class="audio-icon" data-audio-text="学校在哪儿？">🔊</span></p>
+                <p>B: <span class="chinese-word">学校在公园旁边。</span>
+                <span class="japanese-translation">学校は公園の隣にあります。</span>
+                <span class="audio-icon" data-audio-text="学校在公园旁边。">🔊</span></p>
+            </div>
+
+            <h3>練習問題：会話を完成させよう！</h3>
+            <div class="practice-item">
+                <p class="practice-question">空欄に適切な中国語を入れましょう。</p>
+                <p>A: 商店<span class="chinese-word">______</span>？</p>
+                <p>B: 商店在公司旁边。</p>
+                <div class="practice-options">
+                    <button class="option-button" data-correct="true">在哪儿</button>
+                    <button class="option-button">去</button>
+                    <button class="option-button">从</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>↩️ 基本的な方向</h2>
+            <p>道案内をする際に必須の方向を示す単語です。</p>
+
+            <h3>1. 左 (ひだり)</h3>
+            <p>
+                <span class="chinese-word">左</span>
+                <span class="pinyin"> (zuǒ)</span>
+                <span class="japanese-translation">左</span>
+                <span class="audio-icon" data-audio-text="左">🔊</span>
+            </p>
+
+            <h3>2. 右 (みぎ)</h3>
+            <p>
+                <span class="chinese-word">右</span>
+                <span class="pinyin"> (yòu)</span>
+                <span class="japanese-translation">右</span>
+                <span class="audio-icon" data-audio-text="右">🔊</span>
+            </p>
+
+            <h3>3. まっすぐ (行く)</h3>
+            <p>
+                <span class="chinese-word">直走</span>
+                <span class="pinyin"> (zhízǒu)</span>
+                <span class="japanese-translation">まっすぐ行く</span>
+                <span class="audio-icon" data-audio-text="直走">🔊</span>
+            </p>
+
+            <h3>4. 曲がる</h3>
+            <p>
+                <span class="chinese-word">拐</span>
+                <span class="pinyin"> (guǎi)</span>
+                <span class="japanese-translation">曲がる</span>
+                <span class="audio-icon" data-audio-text="拐">🔊</span>
+                <br>
+                <span class="chinese-word">向左拐</span>
+                <span class="pinyin"> (xiàng zuǒ guǎi)</span>
+                <span class="japanese-translation">左に曲がる</span>
+                <span class="audio-icon" data-audio-text="向左拐">🔊</span>
+                <br>
+                <span class="chinese-word">向右拐</span>
+                <span class="pinyin"> (xiàng yòu guǎi)</span>
+                <span class="japanese-translation">右に曲がる</span>
+                <span class="audio-icon" data-audio-text="向右拐">🔊</span>
+            </p>
+
+            <div class="example-box">
+                <p><span class="chinese-word">请直走。</span>
+                <span class="japanese-translation">まっすぐ行ってください。</span>
+                <span class="audio-icon" data-audio-text="请直走。">🔊</span></p>
+                <p><span class="chinese-word">然后向右拐。</span>
+                <span class="japanese-translation">それから右に曲がってください。</span>
+                <span class="audio-icon" data-audio-text="然后向右拐。">🔊</span></p>
+            </div>
+
+            <h3>練習問題：正しい方向は？</h3>
+            <div class="practice-item">
+                <p class="practice-question">音声を聞いて、どちらの方向を指示しているか選びましょう。</p>
+                <span class="audio-icon" data-audio-text="向左拐">🎵</span>
+                <div class="practice-options">
+                    <button class="option-button">右に曲がる ➡️</button>
+                    <button class="option-button" data-correct="true">左に曲がる ⬅️</button>
+                    <button class="option-button">まっすぐ行く ⬆️</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>🗺️ 位置の語彙</h2>
+            <p>より詳しく場所を説明するための表現です。</p>
+
+            <h3>1. 前、後ろ</h3>
+            <p>
+                <span class="chinese-word">前边</span>
+                <span class="pinyin"> (qiánbian)</span>
+                <span class="japanese-translation">前</span>
+                <span class="audio-icon" data-audio-text="前边">🔊</span>
+            </p>
+            <p>
+                <span class="chinese-word">后边</span>
+                <span class="pinyin"> (hòubian)</span>
+                <span class="japanese-translation">後ろ</span>
+                <span class="audio-icon" data-audio-text="后边">🔊</span>
+            </p>
+
+            <h3>2. 上、下</h3>
+            <p>
+                <span class="chinese-word">上边</span>
+                <span class="pinyin"> (shàngbian)</span>
+                <span class="japanese-translation">上</span>
+                <span class="audio-icon" data-audio-text="上边">🔊</span>
+            </p>
+            <p>
+                <span class="chinese-word">下边</span>
+                <span class="pinyin"> (xiàbian)</span>
+                <span class="japanese-translation">下</span>
+                <span class="audio-icon" data-audio-text="下边">🔊</span>
+            </p>
+
+            <h3>3. 中、外</h3>
+            <p>
+                <span class="chinese-word">里边</span>
+                <span class="pinyin"> (lǐbian)</span>
+                <span class="japanese-translation">中</span>
+                <span class="audio-icon" data-audio-text="里边">🔊</span>
+            </p>
+            <p>
+                <span class="chinese-word">外边</span>
+                <span class="pinyin"> (wàibian)</span>
+                <span class="japanese-translation">外</span>
+                <span class="audio-icon" data-audio-text="外边">🔊</span>
+            </p>
+
+            <h3>4. 隣、向かい</h3>
+            <p>
+                <span class="chinese-word">旁边</span>
+                <span class="pinyin"> (pángbiān)</span>
+                <span class="japanese-translation">隣</span>
+                <span class="audio-icon" data-audio-text="旁边">🔊</span>
+            </p>
+            <p>
+                <span class="chinese-word">对面</span>
+                <span class="pinyin"> (duìmiàn)</span>
+                <span class="japanese-translation">向かい</span>
+                <span class="audio-icon" data-audio-text="对面">🔊</span>
+            </p>
+
+            <div class="example-box">
+                <p><span class="chinese-word">书在桌子上边。</span>
+                <span class="japanese-translation">本はテーブルの上にあります。</span>
+                <span class="audio-icon" data-audio-text="书在桌子上边。">🔊</span></p>
+                <p><span class="chinese-word">商店在银行对面。</span>
+                <span class="japanese-translation">商店は銀行の向かいにあります。</span>
+                <span class="audio-icon" data-audio-text="商店在银行对面。">🔊</span></p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>🌟 総合練習</h2>
+            <p>学んだことを使って、簡単な道案内をしてみましょう！</p>
+
+            <h3>練習1：道順を指示しよう</h3>
+            <div class="practice-item">
+                <p class="practice-question">次の道順を中国語で言ってみましょう。</p>
+                <p>「まっすぐ行って、最初の交差点を右に曲がると、公園があります。」</p>
+                <div class="practice-options">
+                    <button class="option-button" data-correct="true">直走，第一个路口向右拐，就到公园了。</button>
+                    <button class="option-button">左走，然后向左拐，在公园里。</button>
+                </div>
+            </div>
+
+            <h3>練習2：空欄を埋めよう</h3>
+            <div class="practice-item">
+                <p class="practice-question">適切な単語を選んで文を完成させましょう。</p>
+                <p>我的学校<span class="chinese-word">______</span>公园很近。</p>
+                <div class="practice-options">
+                    <button class="option-button">去</button>
+                    <button class="option-button">从</button>
+                    <button class="option-button" data-correct="true">离</button> <!-- Added '离' as it's common for distance. If not covered, I can adjust -->
+                </div>
+                <div class="note">
+                    <p><strong>💡ヒント：離 (lí)</strong></p>
+                    <p>「離 (lí)」は「〜から（距離が）離れている」という意味で、AとBの距離を表すときによく使われます。「A離B很近/很远 (AはBからとても近い/遠い)」のように使います。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ Chapter 8: まとめ</h2>
+            <p>この章で、あなたは中国語で場所や方向を伝えるための基本的なツールを手に入れました！</p>
+            <ul>
+                <li><strong>場所の単語:</strong> 学校 (xuéxiào)、家 (jiā)、公司 (gōngsī)、商店 (shāngdiàn)、公园 (gōngyuán) を覚えました。</li>
+                <li><strong>前置詞:</strong> 「在 (zài)」（〜に、〜で）、「去 (qù)」（〜へ行く）、「从 (cóng)」（〜から）、「近 (jìn)」（近い）、「远 (yuǎn)」（遠い）の使い分けを学びました。</li>
+                <li><strong>質問と応答:</strong> 「〜在哪儿/在哪里？」で場所を尋ね、「〜在〜」で答える方法を練習しました。</li>
+                <li><strong>方向:</strong> 左 (zuǒ)、右 (yòu)、直走 (zhízǒu)、拐 (guǎi) で道案内ができるようになりました。</li>
+                <li><strong>位置:</strong> 前边 (qiánbian)、后边 (hòubian)、上边 (shàngbian)、下边 (xiàbian)、里边 (lǐbian)、外边 (wàibian)、旁边 (pángbiān)、对面 (duìmiàn) などの位置を示す語彙を学びました。</li>
+            </ul>
+            <p>これであなたは、中国で目的地を見つけたり、人に道を教えたりする自信がついたはずです。実際に道を歩きながら、学んだフレーズを使ってみてくださいね！</p>
+            <p>お疲れ様でした！</p>
+        </section>
+
+    </div>
+
+    <!-- This script is for demonstration of interaction, but actual JS for audio/buttons will be injected by the app -->
+    <script>
+        document.querySelectorAll('.option-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove any previous feedback classes
+                button.closest('.practice-options').querySelectorAll('.option-button').forEach(btn => {
+                    btn.classList.remove('correct', 'wrong');
+                });
+
+                // Add feedback based on correctness
+                if (this.dataset.correct === 'true') {
+                    this.classList.add('correct');
+                    // In a real app, maybe show a "Correct!" message
+                } else {
+                    this.classList.add('wrong');
+                    // In a real app, maybe show an "Incorrect, try again" message
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: 日常活動とルーティン</title>
+    <style>
+        /* Base Styles & Mobile-First Approach */
+        :root {
+            --primary-color: #8B5FBF;          /* Purple */
+            --secondary-background: #FDF9E5;   /* Cream background */
+            --heading-color: #2C3E50;          /* Dark blue */
+            --body-text-color: #666666;        /* Medium gray */
+            --border-color: #E0E0E0;           /* Light gray */
+            --white: #FFFFFF;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: var(--white);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size */
+            padding: 0 15px; /* Padding for content to not touch screen edges */
+        }
+
+        .container {
+            max-width: 600px; /* Max width for readability on larger screens */
+            margin: 0 auto; /* Center content */
+            padding-bottom: 40px; /* Space at the bottom */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            padding-bottom: 0.3em;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-top: 1.2em;
+        }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            font-size: 1em;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            font-style: normal;
+            color: var(--primary-color);
+        }
+
+        /* Chapter Header specific styles */
+        .chapter-title {
+            margin-top: 25px;
+            margin-bottom: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            min-width: 44px; /* Ensure it doesn't shrink */
+            min-height: 44px; /* Ensure it doesn't shrink */
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%; /* Circle shape */
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            vertical-align: middle;
+            margin-left: 8px; /* Space from text */
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4a9b; /* Slightly darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        .chinese-word-group {
+            display: flex;
+            flex-direction: column; /* Stack Pinyin below Chinese for mobile */
+            align-items: flex-start;
+        }
+        .chinese-word {
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-right: 5px; /* Space from next group or audio icon */
+        }
+        .pinyin {
+            font-size: 0.9em;
+            color: var(--body-text-color);
+            margin-right: 5px;
+        }
+        .japanese-meaning {
+            font-size: 0.95em;
+            color: var(--body-text-color);
+            margin-top: 5px; /* Space below Chinese/Pinyin group */
+        }
+        .example-sentence {
+            background-color: var(--white);
+            border-left: 5px solid var(--primary-color);
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            display: flex; /* For aligning Chinese, Pinyin, Japanese and audio */
+            flex-direction: column;
+        }
+        .example-line {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            gap: 8px; /* Space between word groups */
+            margin-bottom: 5px;
+        }
+        .example-line:last-child {
+            margin-bottom: 0;
+        }
+        .example-line .audio-icon {
+            margin-left: auto; /* Push audio icon to the right */
+        }
+
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-top: 20px;
+        }
+
+        .practice-item {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .practice-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--heading-color);
+        }
+
+        .solution-toggle {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.2s ease;
+            min-height: 44px; /* Ensure tap target size */
+        }
+
+        .solution-toggle:hover {
+            background-color: #6a4a9b;
+        }
+
+        .solution {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px dashed var(--primary-color);
+            background-color: rgba(139, 95, 191, 0.1); /* Light primary color background */
+            border-radius: 8px;
+            color: var(--heading-color);
+            font-weight: bold;
+            display: flex; /* For displaying Chinese, Pinyin, and audio icon horizontally */
+            align-items: center;
+            justify-content: space-between; /* Push audio icon to the right */
+            gap: 5px;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple background */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+            color: var(--heading-color);
+        }
+
+        .cultural-note strong {
+            color: var(--primary-color);
+        }
+
+        /* Summary */
+        .summary-section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-section ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        .summary-section li {
+            margin-bottom: 0.8em;
+        }
+
+
+        /* Responsive adjustments for larger screens (tablets, desktops) */
+        @media (min-width: 600px) {
+            body {
+                padding: 0 20px;
+            }
+            .container {
+                padding: 0 20px 40px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            p, li {
+                font-size: 1.1em;
+            }
+            .section, .practice-section, .summary-section {
+                padding: 25px 30px;
+            }
+            .example-sentence {
+                padding: 15px 20px;
+            }
+            .solution-toggle {
+                max-width: 300px; /* Limit width of toggle button on wider screens */
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .audio-icon {
+                font-size: 1.3em;
+            }
+            .example-line {
+                flex-direction: row; /* Layout horizontally on larger screens */
+                flex-wrap: nowrap;
+                justify-content: flex-start; /* Align items to start */
+            }
+            .example-line .audio-icon {
+                margin-left: auto; /* Push audio icon to the right */
+            }
+            .chinese-word-group {
+                flex-direction: row; /* Pinyin next to Chinese on larger screens */
+                align-items: baseline;
+                gap: 2px; /* Small gap between Chinese and Pinyin */
+            }
+            .chinese-word {
+                margin-right: 0; /* Remove extra margin if already handled by gap */
+            }
+            .japanese-meaning {
+                margin-top: 0; /* No extra margin when in a row */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 6: 日常活動とルーティン</h1>
+        <div class="lesson-header">
+            <!-- 指示通り、src="../header.webp" が必要ですが、このHTML単体では実際の画像は表示されません。 -->
+            <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>はじめに</h2>
+            <p>皆さん、こんにちは！👋 第6章へようこそ。この章では、中国語で<strong>日常の活動やルーティン</strong>について話す方法を学びます。毎日何をしているか、友人や家族に伝えられるようになりましょう！</p>
+        </section>
+
+        <section>
+            <h2>1. よく使う動詞</h2>
+            <p>まずは、日常生活でよく使う基本的な動詞を学びましょう。これらの動詞は、これから中国語であなたの1日を表現するために不可欠です！</p>
+            <ul>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">吃</span>
+                            <span class="pinyin">(chī)</span>
+                        </span>
+                        <span class="japanese-meaning">食べる</span>
+                        <span class="audio-icon" data-audio-text="吃">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">喝</span>
+                            <span class="pinyin">(hē)</span>
+                        </span>
+                        <span class="japanese-meaning">飲む</span>
+                        <span class="audio-icon" data-audio-text="喝">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">睡觉</span>
+                            <span class="pinyin">(shuìjiào)</span>
+                        </span>
+                        <span class="japanese-meaning">寝る</span>
+                        <span class="audio-icon" data-audio-text="睡觉">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">工作</span>
+                            <span class="pinyin">(gōngzuò)</span>
+                        </span>
+                        <span class="japanese-meaning">働く</span>
+                        <span class="audio-icon" data-audio-text="工作">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">学习</span>
+                            <span class="pinyin">(xuéxí)</span>
+                        </span>
+                        <span class="japanese-meaning">勉強する</span>
+                        <span class="audio-icon" data-audio-text="学习">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">玩</span>
+                            <span class="pinyin">(wán)</span>
+                        </span>
+                        <span class="japanese-meaning">遊ぶ</span>
+                        <span class="audio-icon" data-audio-text="玩">🔊</span>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>例文を見てみよう！</h3>
+            <div class="example-sentence">
+                <div class="example-line">
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">我</span>
+                        <span class="pinyin">(Wǒ)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">吃</span>
+                        <span class="pinyin">(chī)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">米饭。</span>
+                        <span class="pinyin">(mǐfàn.)</span>
+                    </span>
+                    <span class="audio-icon" data-audio-text="我吃米饭。">🔊</span>
+                </div>
+                <p class="japanese-meaning">私はご飯を食べます。</p>
+            </div>
+            <div class="example-sentence">
+                <div class="example-line">
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">她</span>
+                        <span class="pinyin">(Tā)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">喝</span>
+                        <span class="pinyin">(hē)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">水。</span>
+                        <span class="pinyin">(shuǐ.)</span>
+                    </span>
+                    <span class="audio-icon" data-audio-text="她喝水。">🔊</span>
+                </div>
+                <p class="japanese-meaning">彼女は水を飲みます。</p>
+            </div>
+            <div class="example-sentence">
+                <div class="example-line">
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">你</span>
+                        <span class="pinyin">(Nǐ)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">睡觉</span>
+                        <span class="pinyin">(shuìjiào)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">吗？</span>
+                        <span class="pinyin">(ma?)</span>
+                    </span>
+                    <span class="audio-icon" data-audio-text="你睡觉吗？">🔊</span>
+                </div>
+                <p class="japanese-meaning">あなたは寝ますか？</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 現在形の基本</h2>
+            <p>中国語の動詞は、日本語のように時制によって形を変える<strong>活用がありません！</strong> これはとても便利ですね。</p>
+            <p>例えば、「食べる」はどんな時でも「吃 (chī)」のままです。</p>
+            <ul>
+                <li><strong>私</strong>は<strong>食べる</strong>。: <span class="chinese-word">我吃。</span> <span class="pinyin">(Wǒ chī.)</span> <span class="audio-icon" data-audio-text="我吃。">🔊</span></li>
+                <li><strong>彼</strong>は<strong>食べる</strong>。: <span class="chinese-word">他吃。</span> <span class="pinyin">(Tā chī.)</span> <span class="audio-icon" data-audio-text="他吃。">🔊</span></li>
+            </ul>
+            <p>文の構造は基本的に <strong>主語 + 動詞 (+ 目的語)</strong> です。</p>
+        </section>
+
+        <section>
+            <h2>3. 「〜します」と「〜しません」</h2>
+            <p>何かを「〜しません」と否定するには、動詞の前に<strong>不 (bù)</strong> を置きます。</p>
+            <p>例:</p>
+            <div class="example-sentence">
+                <div class="example-line">
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">我</span>
+                        <span class="pinyin">(Wǒ)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">不</span>
+                        <span class="pinyin">(bù)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">吃</span>
+                        <span class="pinyin">(chī)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">肉。</span>
+                        <span class="pinyin">(ròu.)</span>
+                    </span>
+                    <span class="audio-icon" data-audio-text="我不吃肉。">🔊</span>
+                </div>
+                <p class="japanese-meaning">私は肉を食べません。</p>
+            </div>
+            <div class="example-sentence">
+                <div class="example-line">
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">他们</span>
+                        <span class="pinyin">(Tāmen)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">不</span>
+                        <span class="pinyin">(bù)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">工作。</span>
+                        <span class="pinyin">(gōngzuò.)</span>
+                    </span>
+                    <span class="audio-icon" data-audio-text="他们不工作。">🔊</span>
+                </div>
+                <p class="japanese-meaning">彼らは働きません。</p>
+            </div>
+            <div class="cultural-note">
+                <strong>文化メモ：</strong><br>
+                「不 (bù)」は通常、第4声ですが、その後に第4声の漢字が続く場合、第2声に変化します。
+                例えば、「不是 (bú shì - 違う)」のように発音します。このレッスンでは、基本的な使い方に焦点を当てますが、耳を傾けてみてくださいね！
+            </div>
+        </section>
+
+        <section>
+            <h2>4. 日常生活の語彙</h2>
+            <p>あなたの1日を語るための役立つ単語を見ていきましょう！</p>
+            <ul>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">起床</span>
+                            <span class="pinyin">(qǐchuáng)</span>
+                        </span>
+                        <span class="japanese-meaning">起きる</span>
+                        <span class="audio-icon" data-audio-text="起床">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">洗澡</span>
+                            <span class="pinyin">(xǐzǎo)</span>
+                        </span>
+                        <span class="japanese-meaning">シャワーを浴びる/入浴する</span>
+                        <span class="audio-icon" data-audio-text="洗澡">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">刷牙</span>
+                            <span class="pinyin">(shuāyá)</span>
+                        </span>
+                        <span class="japanese-meaning">歯を磨く</span>
+                        <span class="audio-icon" data-audio-text="刷牙">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">吃早饭</span>
+                            <span class="pinyin">(chī zǎofàn)</span>
+                        </span>
+                        <span class="japanese-meaning">朝食を食べる</span>
+                        <span class="audio-icon" data-audio-text="吃早饭">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">上班</span>
+                            <span class="pinyin">(shàngbān)</span>
+                        </span>
+                        <span class="japanese-meaning">出勤する</span>
+                        <span class="audio-icon" data-audio-text="上班">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">上学</span>
+                            <span class="pinyin">(shàngxué)</span>
+                        </span>
+                        <span class="japanese-meaning">登校する</span>
+                        <span class="audio-icon" data-audio-text="上学">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">回家</span>
+                            <span class="pinyin">(huíjiā)</span>
+                        </span>
+                        <span class="japanese-meaning">家に帰る</span>
+                        <span class="audio-icon" data-audio-text="回家">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">吃晚饭</span>
+                            <span class="pinyin">(chī wǎnfàn)</span>
+                        </span>
+                        <span class="japanese-meaning">夕食を食べる</span>
+                        <span class="audio-icon" data-audio-text="吃晚饭">🔊</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. 時間表現</h2>
+            <p>1日のうちの時間を表す表現を学びましょう。</p>
+            <ul>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">早上</span>
+                            <span class="pinyin">(zǎoshang)</span>
+                        </span>
+                        <span class="japanese-meaning">朝</span>
+                        <span class="audio-icon" data-audio-text="早上">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">下午</span>
+                            <span class="pinyin">(xiàwǔ)</span>
+                        </span>
+                        <span class="japanese-meaning">午後</span>
+                        <span class="audio-icon" data-audio-text="下午">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="example-line">
+                        <span class="chinese-word-group">
+                            <span class="chinese-word">晚上</span>
+                            <span class="pinyin">(wǎnshang)</span>
+                        </span>
+                        <span class="japanese-meaning">夜、晩</span>
+                        <span class="audio-icon" data-audio-text="晚上">🔊</span>
+                    </div>
+                </li>
+            </ul>
+            <h3>例文</h3>
+            <div class="example-sentence">
+                <div class="example-line">
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">我</span>
+                        <span class="pinyin">(Wǒ)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">早上</span>
+                        <span class="pinyin">(zǎoshang)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">吃</span>
+                        <span class="pinyin">(chī)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">早饭。</span>
+                        <span class="pinyin">(zǎofàn.)</span>
+                    </span>
+                    <span class="audio-icon" data-audio-text="我早上吃早饭。">🔊</span>
+                </div>
+                <p class="japanese-meaning">私は朝食を食べます。</p>
+            </div>
+            <div class="example-sentence">
+                <div class="example-line">
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">她</span>
+                        <span class="pinyin">(Tā)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">下午</span>
+                        <span class="pinyin">(xiàwǔ)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">学习。</span>
+                        <span class="pinyin">(xuéxí.)</span>
+                    </span>
+                    <span class="audio-icon" data-audio-text="她下午学习。">🔊</span>
+                </div>
+                <p class="japanese-meaning">彼女は午後に勉強します。</p>
+            </div>
+            <div class="example-sentence">
+                <div class="example-line">
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">你</span>
+                        <span class="pinyin">(Nǐ)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">晚上</span>
+                        <span class="pinyin">(wǎnshang)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">睡觉</span>
+                        <span class="pinyin">(shuìjiào)</span>
+                    </span>
+                    <span class="chinese-word-group">
+                        <span class="chinese-word">吗？</span>
+                        <span class="pinyin">(ma?)</span>
+                    </span>
+                    <span class="audio-icon" data-audio-text="你晚上睡觉吗？">🔊</span>
+                </div>
+                <p class="japanese-meaning">あなたは夜に寝ますか？</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>練習問題 💪</h2>
+            <p>学んだことを使って、以下の問題を解いてみましょう！答えは「答えを見る」ボタンで確認できます。</p>
+
+            <h3>問題1: 日本語を中国語に翻訳しましょう。</h3>
+            <div class="practice-item">
+                <p class="practice-question">1. 私はご飯を食べません。</p>
+                <button class="solution-toggle" data-target="q1-solution">答えを見る</button>
+                <div id="q1-solution" class="solution" style="display: none;">
+                    <span class="chinese-word">我不吃米饭。</span> <span class="pinyin">(Wǒ bù chī mǐfàn.)</span>
+                    <span class="audio-icon" data-audio-text="我不吃米饭。">🔊</span>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">2. 彼は朝に起きます。</p>
+                <button class="solution-toggle" data-target="q2-solution">答えを見る</button>
+                <div id="q2-solution" class="solution" style="display: none;">
+                    <span class="chinese-word">他早上起床。</span> <span class="pinyin">(Tā zǎoshang qǐchuáng.)</span>
+                    <span class="audio-icon" data-audio-text="他早上起床。">🔊</span>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">3. 彼女は午後に勉強しません。</p>
+                <button class="solution-toggle" data-target="q3-solution">答えを見る</button>
+                <div id="q3-solution" class="solution" style="display: none;">
+                    <span class="chinese-word">她下午不学习。</span> <span class="pinyin">(Tā xiàwǔ bù xuéxí.)</span>
+                    <span class="audio-icon" data-audio-text="她下午不学习。">🔊</span>
+                </div>
+            </div>
+
+            <h3>問題2: 空欄に適切な動詞または否定を表す「不」を入れましょう。</h3>
+            <div class="practice-item">
+                <p class="practice-question">1. 我 ( ) 水。 (私は水を飲む)</p>
+                <button class="solution-toggle" data-target="q4-solution">答えを見る</button>
+                <div id="q4-solution" class="solution" style="display: none;">
+                    <span class="chinese-word">喝</span> <span class="pinyin">(hē)</span>
+                </div>
+            </div>
+            <div class="practice-item">
+                <p class="practice-question">2. 她 ( ) 睡觉。 (彼女は寝ない)</p>
+                <button class="solution-toggle" data-target="q5-solution">答えを見る</button>
+                <div id="q5-solution" class="solution" style="display: none;">
+                    <span class="chinese-word">不</span> <span class="pinyin">(bù)</span>
+                </div>
+            </div>
+            <div class="practice-item">
+                <p class="practice-question">3. 他们晚上 ( ) 晚饭。 (彼らは夜に夕食を食べる)</p>
+                <button class="solution-toggle" data-target="q6-solution">答えを見る</button>
+                <div id="q6-solution" class="solution" style="display: none;">
+                    <span class="chinese-word">吃</span> <span class="pinyin">(chī)</span>
+                </div>
+            </div>
+            <p><strong><small>💡 ヒント: JavaScriptが注入されることで、「答えを見る」ボタンが機能します。</small></strong></p>
+        </section>
+
+        <section class="summary-section">
+            <h2>まとめ</h2>
+            <p>お疲れ様でした！この章では、中国語で日常の活動について話すための重要な表現を学びました。</p>
+            <ul>
+                <li>✨ <strong>主要動詞:</strong> 吃 (chī - 食べる)、喝 (hē - 飲む)、睡觉 (shuìjiào - 寝る)、工作 (gōngzuò - 働く)、学习 (xuéxí - 勉強する)、玩 (wán - 遊ぶ)</li>
+                <li>✨ <strong>現在形:</strong> 中国語の動詞には活用がなく、主語 + 動詞 (+ 目的語) のシンプルな構造です。</li>
+                <li>✨ <strong>否定形:</strong> 動詞の前に「不 (bù)」を置いて否定します (例: 我不吃 - 私は食べません)。</li>
+                <li>✨ <strong>日常の語彙:</strong> 起床 (qǐchuáng - 起きる) や 上班 (shàngbān - 出勤する) など、日々の行動を表す語彙を学びました。</li>
+                <li>✨ <strong>時間表現:</strong> 早上 (zǎoshang - 朝)、下午 (xiàwǔ - 午後)、晚上 (wǎnshang - 夜) を使って時間を指定できます。</li>
+            </ul>
+            <p>これらの表現を使って、あなたの1日を中国語で話す練習をしてみましょう！</p>
+        </section>
+
+        <!-- Placeholder for the actual JS logic to be injected by the app -->
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const solutionToggles = document.querySelectorAll('.solution-toggle');
+
+                solutionToggles.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const targetId = button.dataset.target;
+                        const solutionElement = document.getElementById(targetId);
+                        if (solutionElement) {
+                            // Toggle display for simple show/hide.
+                            solutionElement.style.display = solutionElement.style.display === 'none' ? 'flex' : 'none'; // Use flex for solution display
+                            button.textContent = solutionElement.style.display === 'none' ? '答えを見る' : '答えを隠す';
+                        }
+                    });
+                });
+
+                // Audio functionality will be injected externally by the mobile app.
+                // The .audio-icon elements with data-audio-text are ready for it.
+            });
+        </script>
+    </div>
+</body>
+</html>

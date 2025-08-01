@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 7: Comida y Bebidas</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Global Padding for Mobile */
+        p, ul, ol, h2, h3, .lesson-section > div {
+            padding-left: 15px;
+            padding-right: 15px;
+            box-sizing: border-box; /* Include padding in element's total width */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            padding-top: 20px; /* Spacing from top of screen */
+            padding-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.6em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+            margin-left: 0; /* Handled by global padding */
+            margin-right: 0; /* Handled by global padding */
+        }
+
+        h3 {
+            font-size: 1.3em;
+            margin-left: 0; /* Handled by global padding */
+            margin-right: 0; /* Handled by global padding */
+        }
+
+        /* Links and Buttons (though no direct links in content) */
+        a {
+            color: #8B5FBF; /* Primary: Purple */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            background-color: white;
+            margin: 15px;
+            padding: 20px 0; /* Padding for content inside handled by global padding */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Specific Header Requirement */
+        .chapter-title {
+            margin-top: 20px; /* Spacing below status bar/top of screen */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /*
+            Note: Per instructions, this CSS class is required.
+            However, external images are prohibited. The 'src' attribute
+            in the HTML points to a relative path, assuming a local asset
+            in a mobile app context, not an external URL for this pure HTML output.
+            The CSS for this class is provided as requested.
+        */
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Vocab List Styling */
+        .vocab-list {
+            padding-top: 10px; /* Space above first item */
+            padding-bottom: 10px; /* Space below last item */
+        }
+
+        .vocab-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0; /* Vertical padding */
+            border-bottom: 1px dashed #E0E0E0; /* Borders: Light gray */
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        }
+
+        .vocab-item:last-child {
+            border-bottom: none;
+        }
+
+        .vocab-chinese {
+            font-size: 1.3em;
+            color: #2C3E50; /* Text: Dark blue */
+            font-weight: bold;
+            flex-basis: 40%; /* Take 40% width initially */
+            text-align: left;
+            padding-right: 5px;
+        }
+
+        .vocab-pinyin {
+            font-size: 0.9em;
+            color: #8B5FBF; /* Primary: Purple */
+            flex-basis: 100%; /* Take full width below Chinese character on mobile */
+            text-align: left;
+            margin-top: 2px;
+            order: 2; /* Pinyin appears below Chinese char on wrap */
+        }
+
+        .vocab-spanish {
+            font-size: 1em;
+            flex-basis: 40%; /* Take 40% width initially */
+            text-align: right;
+            padding-left: 5px;
+        }
+
+        .vocab-audio {
+            flex-basis: 10%; /* Take 10% width initially */
+            text-align: center;
+            display: flex; /* For centering the audio icon */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 1.8em; /* Large enough for visibility */
+            cursor: pointer;
+            color: #8B5FBF; /* Primary: Purple */
+            min-width: 44px; /* For easy tapping */
+            min-height: 44px; /* For easy tapping */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; /* Make it circular */
+            transition: background-color 0.2s ease;
+            padding: 0; /* Remove default button padding */
+            box-sizing: border-box; /* Include padding in height calculation */
+            line-height: 1; /* Align emoji vertically */
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple hover effect */
+        }
+
+        /* Practice Sections */
+        .practice-block {
+            background-color: #FDF9E5; /* Secondary: Cream background for contrast */
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+        }
+
+        .practice-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2C3E50; /* Text: Dark blue */
+            padding: 0; /* Override global padding for internal elements */
+        }
+
+        .answer-reveal {
+            margin-top: 15px;
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 5px solid #8B5FBF; /* Primary: Purple */
+            font-style: italic;
+            color: #2C3E50; /* Text: Dark blue */
+            padding-left: 15px; /* Adjust for border */
+            word-break: break-word; /* Ensure long words wrap */
+        }
+        .answer-reveal .audio-icon {
+            font-size: 1.5em; /* Slightly smaller for inline usage */
+            min-width: 38px;
+            min-height: 38px;
+            vertical-align: middle; /* Align with text */
+            margin-left: 5px;
+        }
+
+
+        /* Example Sentences */
+        .example-sentence {
+            background-color: #f7f7f7;
+            border-left: 4px solid #8B5FBF; /* Primary: Purple */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .example-chinese {
+            font-size: 1.2em;
+            color: #2C3E50; /* Text: Dark blue */
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            padding: 0; /* Override global padding for internal elements */
+        }
+
+        .example-chinese .audio-icon {
+            font-size: 1.5em; /* Slightly smaller for inline usage */
+            min-width: 38px;
+            min-height: 38px;
+            vertical-align: middle; /* Align with text */
+            margin-left: 5px;
+        }
+
+        .example-pinyin {
+            font-size: 0.9em;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-bottom: 5px;
+            padding: 0; /* Override global padding */
+        }
+
+        .example-spanish {
+            font-size: 1em;
+            color: #666666; /* Body Text: Medium gray */
+            padding: 0; /* Override global padding */
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FDF9E5; /* Secondary: Cream */
+            border: 1px solid #8B5FBF; /* Primary: Purple */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+            color: #2C3E50; /* Text: Dark blue */
+            box-sizing: border-box;
+        }
+
+        .cultural-note strong {
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.4em; }
+            h3 { font-size: 1.2em; }
+            .vocab-item {
+                padding: 10px 0;
+            }
+            .vocab-chinese, .vocab-spanish {
+                flex-basis: 45%; /* Adjust basis for better fit */
+                font-size: 1.2em;
+            }
+            .vocab-audio {
+                flex-basis: 10%;
+            }
+            .vocab-pinyin {
+                flex-basis: 100%; /* Pinyin always on new line below char */
+                font-size: 0.85em;
+            }
+            .vocab-item {
+                align-items: flex-start; /* Align top for wrapped content */
+            }
+            .example-chinese { font-size: 1.1em; }
+            .example-pinyin { font-size: 0.85em; }
+            .example-spanish { font-size: 0.95em; }
+        }
+
+        /* For landscape orientation on mobile, or larger screens */
+        @media (min-width: 600px) {
+            body {
+                font-size: 18px;
+            }
+            .lesson-section {
+                margin: 20px auto;
+                max-width: 800px;
+                padding: 30px; /* More generous padding on larger screens */
+            }
+            /* Overriding global padding for sections on larger screens */
+            .lesson-section p, .lesson-section ul, .lesson-section ol,
+            .lesson-section h2, .lesson-section h3, .lesson-section > div {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            h1 { font-size: 2.5em; }
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.5em; }
+            .vocab-chinese {
+                flex-basis: 30%; /* More space for a single line */
+                font-size: 1.4em;
+            }
+            .vocab-pinyin {
+                flex-basis: 30%; /* Pinyin can be next to char */
+                order: 0; /* Reset order for horizontal layout */
+                font-size: 0.9em;
+            }
+            .vocab-spanish {
+                flex-basis: 30%;
+                font-size: 1.05em;
+            }
+            .vocab-audio {
+                flex-basis: 10%;
+            }
+            .vocab-item {
+                flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+                align-items: center;
+            }
+            .example-chinese { font-size: 1.3em; }
+            .example-pinyin { font-size: 0.95em; }
+            .example-spanish { font-size: 1.05em; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Capítulo 7: Comida y Bebidas</h1>
+    <div class="lesson-header">
+        <!--
+            Nota importante: La instrucción requiere esta estructura exacta para el encabezado,
+            incluyendo la etiqueta <img> con `src="../header.webp"`.
+            Sin embargo, también se prohíbe el uso de URLs de imágenes externas o placeholders,
+            y se indica usar emojis/texto para los elementos visuales.
+            Para cumplir con ambas directrices, incluimos la estructura HTML solicitada,
+            asumiendo que `src="../header.webp"` sería una ruta de un recurso local
+            dentro de una aplicación móvil real, no una URL externa.
+            El CSS para `.lesson-header-image` se define según las especificaciones.
+        -->
+        <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+    </div>
+
+    <section class="lesson-section">
+        <h2>¡Hola, futuro chef de chino! 👋</h2>
+        <p>¡Bienvenido al Capítulo 7, donde exploraremos el delicioso mundo de la comida y las bebidas en chino! Prepárate para aprender a nombrar tus platillos favoritos y pedir en un restaurante. ¡Vamos a llenar el estómago (y la mente)! 🍜🥤</p>
+    </section>
+
+    <section class="lesson-section">
+        <h2>Alimentos Comunes 🍚🥩🥦</h2>
+        <p>Comencemos con algunos alimentos básicos que encontrarás a menudo en China y en conversaciones cotidianas.</p>
+
+        <h3>Vocabulario Clave: Alimentos</h3>
+        <div class="vocab-list">
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">米饭</span>
+                <span class="vocab-pinyin">mǐfàn</span>
+                <span class="vocab-spanish">arroz (cocido)</span>
+                <button class="audio-icon" data-audio-text="米饭">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">面条</span>
+                <span class="vocab-pinyin">miàntiáo</span>
+                <span class="vocab-spanish">fideos</span>
+                <button class="audio-icon" data-audio-text="面条">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">肉</span>
+                <span class="vocab-pinyin">ròu</span>
+                <span class="vocab-spanish">carne</span>
+                <button class="audio-icon" data-audio-text="肉">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">蔬菜</span>
+                <span class="vocab-pinyin">shūcài</span>
+                <span class="vocab-spanish">verduras</span>
+                <button class="audio-icon" data-audio-text="蔬菜">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">饺子</span>
+                <span class="vocab-pinyin">jiǎozi</span>
+                <span class="vocab-spanish">dumplings</span>
+                <button class="audio-icon" data-audio-text="饺子">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">汤</span>
+                <span class="vocab-pinyin">tāng</span>
+                <span class="vocab-spanish">sopa</span>
+                <button class="audio-icon" data-audio-text="汤">🔊</button>
+            </div>
+        </div>
+
+        <div class="cultural-note">
+            <strong>Nota Cultural:</strong> El <span lang="zh-Hans">米饭</span> (mǐfàn) es un alimento básico en China, similar al pan en muchas culturas occidentales. Los <span lang="zh-Hans">面条</span> (miàntiáo) también son increíblemente populares, y hay una inmensa variedad regional.
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>Bebidas ☕🍵🥛</h2>
+        <p>¡No podemos comer sin algo que beber! Aquí tienes algunas bebidas esenciales.</p>
+
+        <h3>Vocabulario Clave: Bebidas</h3>
+        <div class="vocab-list">
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">水</span>
+                <span class="vocab-pinyin">shuǐ</span>
+                <span class="vocab-spanish">agua</span>
+                <button class="audio-icon" data-audio-text="水">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">咖啡</span>
+                <span class="vocab-pinyin">kāfēi</span>
+                <span class="vocab-spanish">café</span>
+                <button class="audio-icon" data-audio-text="咖啡">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">茶</span>
+                <span class="vocab-pinyin">chá</span>
+                <span class="vocab-spanish">té</span>
+                <button class="audio-icon" data-audio-text="茶">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">果汁</span>
+                <span class="vocab-pinyin">guǒzhī</span>
+                <span class="vocab-spanish">zumo/jugo</span>
+                <button class="audio-icon" data-audio-text="果汁">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">牛奶</span>
+                <span class="vocab-pinyin">niúnǎi</span>
+                <span class="vocab-spanish">leche</span>
+                <button class="audio-icon" data-audio-text="牛奶">🔊</button>
+            </div>
+        </div>
+
+        <div class="cultural-note">
+            <strong>Nota Cultural:</strong> El <span lang="zh-Hans">茶</span> (chá) es más que una bebida en China; es una parte fundamental de la cultura. Hay miles de variedades y ceremonias de té. Ofrecer té es un gesto de hospitalidad.
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>Me gusta... / No me gusta... 🥰 싫어</h2>
+        <p>Ahora que conoces algunos alimentos y bebidas, aprendamos a expresar tus preferencias.</p>
+
+        <h3>Estructura Clave:</h3>
+        <ul>
+            <li><strong>Me gusta:</strong> 我喜欢... (<span lang="zh-Hans">Wǒ xǐhuān...</span>)</li>
+            <li><strong>No me gusta:</strong> 我不喜欢... (<span lang="zh-Hans">Wǒ bù xǐhuān...</span>)</li>
+        </ul>
+
+        <p>Simplemente coloca el alimento o bebida después de <span lang="zh-Hans">喜欢</span> (xǐhuān) para "gustar" o <span lang="zh-Hans">不喜欢</span> (bù xǐhuān) para "no gustar".</p>
+
+        <h3>Ejemplos:</h3>
+        <div class="example-sentence">
+            <div class="example-chinese">我喜欢米饭 <button class="audio-icon" data-audio-text="我喜欢米饭">🔊</button></div>
+            <div class="example-pinyin">Wǒ xǐhuān mǐfàn</div>
+            <div class="example-spanish">Me gusta el arroz.</div>
+        </div>
+        <div class="example-sentence">
+            <div class="example-chinese">她喜欢喝茶 <button class="audio-icon" data-audio-text="她喜欢喝茶">🔊</button></div>
+            <div class="example-pinyin">Tā xǐhuān hē chá</div>
+            <div class="example-spanish">A ella le gusta beber té. (El verbo "beber", <span lang="zh-Hans">喝</span> hē, a menudo se usa con bebidas).</div>
+        </div>
+        <div class="example-sentence">
+            <div class="example-chinese">我不太喜欢肉 <button class="audio-icon" data-audio-text="我不太喜欢肉">🔊</button></div>
+            <div class="example-pinyin">Wǒ bù tài xǐhuān ròu</div>
+            <div class="example-spanish">No me gusta mucho la carne. (Para "no me gusta mucho", puedes añadir "不太" bù tài).</div>
+        </div>
+        <div class="example-sentence">
+            <div class="example-chinese">他不喜欢咖啡 <button class="audio-icon" data-audio-text="他不喜欢咖啡">🔊</button></div>
+            <div class="example-pinyin">Tā bù xǐhuān kāfēi</div>
+            <div class="example-spanish">A él no le gusta el café.</div>
+        </div>
+
+        <div class="practice-block">
+            <h3>¡Practica un poco!</h3>
+            <p><strong>Traduce estas frases al chino:</strong></p>
+            <div class="practice-question">1. Me gusta el té.</div>
+            <div class="answer-reveal">
+                <span lang="zh-Hans">我喜欢茶</span> (Wǒ xǐhuān chá) <button class="audio-icon" data-audio-text="我喜欢茶">🔊</button>
+            </div>
+            <div class="practice-question">2. No me gustan los fideos.</div>
+            <div class="answer-reveal">
+                <span lang="zh-Hans">我不喜欢面条</span> (Wǒ bù xǐhuān miàntiáo) <button class="audio-icon" data-audio-text="我不喜欢面条">🔊</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>¿Qué te gusta comer/beber? 🧐</h2>
+        <p>Para preguntar a alguien sobre sus preferencias, usamos el carácter interrogativo <span lang="zh-Hans">什么</span> (shénme), que significa "qué".</p>
+
+        <h3>Estructura Clave:</h3>
+        <ul>
+            <li><strong>¿Qué te gusta comer?:</strong> 你喜欢吃什么？ (<span lang="zh-Hans">Nǐ xǐhuān chī shénme?</span>)</li>
+            <li><strong>¿Qué te gusta beber?:</strong> 你喜欢喝什么？ (<span lang="zh-Hans">Nǐ xǐhuān hē shénme?</span>)</li>
+        </ul>
+
+        <p>El verbo "comer" es <span lang="zh-Hans">吃</span> (chī) y "beber" es <span lang="zh-Hans">喝</span> (hē).</p>
+
+        <h3>Ejemplos:</h3>
+        <div class="example-sentence">
+            <div class="example-chinese">A: 你喜欢吃什么？ <button class="audio-icon" data-audio-text="你喜欢吃什么">🔊</button></div>
+            <div class="example-pinyin">Nǐ xǐhuān chī shénme?</div>
+            <div class="example-spanish">A: ¿Qué te gusta comer?</div>
+            <br>
+            <div class="example-chinese">B: 我喜欢吃饺子。 <button class="audio-icon" data-audio-text="我喜欢吃饺子">🔊</button></div>
+            <div class="example-pinyin">Wǒ xǐhuān chī jiǎozi.</div>
+            <div class="example-spanish">B: Me gustan los dumplings.</div>
+        </div>
+        <div class="example-sentence">
+            <div class="example-chinese">A: 你喜欢喝什么？ <button class="audio-icon" data-audio-text="你喜欢喝什么">🔊</button></div>
+            <div class="example-pinyin">Nǐ xǐhuān hē shénme?</div>
+            <div class="example-spanish">A: ¿Qué te gusta beber?</div>
+            <br>
+            <div class="example-chinese">B: 我喜欢喝牛奶。 <button class="audio-icon" data-audio-text="我喜欢喝牛奶">🔊</button></div>
+            <div class="example-pinyin">Wǒ xǐhuān hē niúnǎi.</div>
+            <div class="example-spanish">B: Me gusta beber leche.</div>
+        </div>
+
+        <div class="practice-block">
+            <h3>¡Tu turno! Responde en chino.</h3>
+            <p><strong>¿Qué te gusta comer? (Me gusta comer arroz.)</strong></p>
+            <div class="answer-reveal">
+                <span lang="zh-Hans">我喜欢吃米饭。</span> (Wǒ xǐhuān chī mǐfàn.) <button class="audio-icon" data-audio-text="我喜欢吃米饭">🔊</button>
+            </div>
+            <p><strong>¿Qué te gusta beber? (Me gusta beber agua.)</strong></p>
+            <div class="answer-reveal">
+                <span lang="zh-Hans">我喜欢喝水。</span> (Wǒ xǐhuān hē shuǐ.) <button class="audio-icon" data-audio-text="我喜欢喝水">🔊</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>Vocabulario Básico de Restaurante 🍽️</h2>
+        <p>¡Es hora de poner a prueba tus habilidades! Aquí tienes algunas frases y palabras útiles para tu primera visita a un restaurante chino.</p>
+
+        <h3>Vocabulario Clave: Restaurante</h3>
+        <div class="vocab-list">
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">餐厅</span>
+                <span class="vocab-pinyin">cāntīng</span>
+                <span class="vocab-spanish">restaurante</span>
+                <button class="audio-icon" data-audio-text="餐厅">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">菜单</span>
+                <span class="vocab-pinyin">càidān</span>
+                <span class="vocab-spanish">menú</span>
+                <button class="audio-icon" data-audio-text="菜单">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">点菜</span>
+                <span class="vocab-pinyin">diǎncài</span>
+                <span class="vocab-spanish">pedir comida</span>
+                <button class="audio-icon" data-audio-text="点菜">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">买单</span>
+                <span class="vocab-pinyin">mǎidān</span>
+                <span class="vocab-spanish">la cuenta/pagar</span>
+                <button class="audio-icon" data-audio-text="买单">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">服务员</span>
+                <span class="vocab-pinyin">fúwùyuán</span>
+                <span class="vocab-spanish">camarero/a</span>
+                <button class="audio-icon" data-audio-text="服务员">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">好吃</span>
+                <span class="vocab-pinyin">hǎochī</span>
+                <span class="vocab-spanish">delicioso (para comida)</span>
+                <button class="audio-icon" data-audio-text="好吃">🔊</button>
+            </div>
+            <div class="vocab-item">
+                <span lang="zh-Hans" class="vocab-chinese">好喝</span>
+                <span class="vocab-pinyin">hǎohē</span>
+                <span class="vocab-spanish">delicioso (para bebida)</span>
+                <button class="audio-icon" data-audio-text="好喝">🔊</button>
+            </div>
+        </div>
+
+        <h3>Frases Útiles en el Restaurante:</h3>
+        <div class="example-sentence">
+            <div class="example-chinese">请给我菜单。 <button class="audio-icon" data-audio-text="请给我菜单">🔊</button></div>
+            <div class="example-pinyin">Qǐng gěi wǒ càidān.</div>
+            <div class="example-spanish">Por favor, dame el menú.</div>
+        </div>
+        <div class="example-sentence">
+            <div class="example-chinese">我要米饭。 <button class="audio-icon" data-audio-text="我要米饭">🔊</button></div>
+            <div class="example-pinyin">Wǒ yào mǐfàn.</div>
+            <div class="example-spanish">Quiero arroz.</div>
+        </div>
+        <div class="example-sentence">
+            <div class="example-chinese">请买单。 <button class="audio-icon" data-audio-text="请买单">🔊</button></div>
+            <div class="example-pinyin">Qǐng mǎidān.</div>
+            <div class="example-spanish">Por favor, la cuenta.</div>
+        </div>
+        <div class="example-sentence">
+            <div class="example-chinese">这个很好吃。 <button class="audio-icon" data-audio-text="这个很好吃">🔊</button></div>
+            <div class="example-pinyin">Zhège hěn hǎochī.</div>
+            <div class="example-spanish">Esto está muy delicioso.</div>
+        </div>
+
+        <div class="cultural-note">
+            <strong>Nota Cultural:</strong> En China, es común que la gente comparta la comida en la mesa, pidiendo varios platos para que todos puedan probar un poco de todo. ¡Es una experiencia comunitaria!
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>Resumen del Capítulo 7 🚀</h2>
+        <p>¡Felicidades! Has completado el Capítulo 7 y ahora tienes las herramientas básicas para hablar sobre comida y bebidas en chino. Aquí un repaso rápido de lo que aprendiste:</p>
+        <ul>
+            <li>✨ <strong>Alimentos y Bebidas:</strong> Palabras como <span lang="zh-Hans">米饭</span> (mǐfàn), <span lang="zh-Hans">面条</span> (miàntiáo), <span lang="zh-Hans">水</span> (shuǐ), <span lang="zh-Hans">茶</span> (chá).</li>
+            <li>✨ <strong>Expresar Preferencias:</strong> Usar <span lang="zh-Hans">我喜欢...</span> (Wǒ xǐhuān...) y <span lang="zh-Hans">我不喜欢...</span> (Wǒ bù xǐhuān...).</li>
+            <li>✨ <strong>Preguntar Preferencias:</strong> Con <span lang="zh-Hans">你喜欢吃什么？</span> (Nǐ xǐhuān chī shénme?) y <span lang="zh-Hans">你喜欢喝什么？</span> (Nǐ xǐhuān hē shénme?).</li>
+            <li>✨ <strong>Vocabulario de Restaurante:</strong> Frases como <span lang="zh-Hans">请给我菜单</span> (Qǐng gěi wǒ càidān) y <span lang="zh-Hans">请买单</span> (Qǐng mǎidān).</li>
+        </ul>
+        <p>¡Sigue practicando estas palabras y frases en tu vida diaria y verás qué rápido te sentirás cómodo pidiendo tu comida favorita en chino! ¡Buen provecho! 🥢</p>
+    </section>
+
+</body>
+</html>

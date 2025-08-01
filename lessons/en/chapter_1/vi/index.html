@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 1: Bảng Chữ Cái và Âm Thanh Tiếng Anh</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent text zoom on orientation change */
+        }
+
+        /* Responsive Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6em; /* ~25.6px */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.3em; /* ~20.8px */
+            margin-top: 1.2em;
+        }
+
+        p {
+            font-size: 1em; /* ~16px */
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            font-size: 1em; /* ~16px */
+            margin-bottom: 0.5em;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: "✨"; /* Using emoji for list bullet */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary color */
+        }
+
+        strong {
+            color: #2C3E50; /* Dark blue for emphasis */
+        }
+
+        /* Specific Header Structure */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        /* Example Word Styling */
+        .example-word {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        .example-word .word {
+            font-weight: bold;
+            font-size: 1.1em; /* ~17.6px */
+            color: #8B5FBF; /* Primary color */
+            margin-right: 10px;
+            min-width: 50px; /* Ensure space for short words */
+        }
+
+        .example-word .phonetic {
+            font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', sans-serif;
+            font-size: 0.95em; /* ~15.2px */
+            color: #666666;
+            margin-right: 10px;
+        }
+
+        .example-word .translation {
+            font-style: italic;
+            font-size: 0.9em; /* ~14.4px */
+            color: #666666;
+            flex-grow: 1; /* Allow translation to take available space */
+        }
+
+        /* Audio Icon Styling */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%; /* Make it round */
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 10px; /* Space from other elements */
+            flex-shrink: 0; /* Prevent shrinking on smaller screens */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a479e; /* Slightly darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Practice Section Styling */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 2px dashed #8B5FBF; /* Primary color for dashed border */
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF; /* Primary color */
+            margin-top: 0;
+        }
+
+        .practice-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            background-color: #FFFFFF;
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+        }
+
+        .practice-item .label {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #2C3E50;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #FFFFFF;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: #8B5FBF; /* Primary color */
+            border-bottom: none;
+            margin-top: 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            h3 {
+                font-size: 1.15em;
+            }
+
+            p, li, .example-word .word, .example-word .phonetic, .example-word .translation {
+                font-size: 0.95em; /* Slightly smaller for very small screens */
+            }
+
+            .example-word {
+                flex-direction: column; /* Stack items vertically */
+                align-items: flex-start; /* Align to the start */
+            }
+
+            .example-word .word,
+            .example-word .phonetic,
+            .example-word .translation,
+            .audio-icon {
+                margin-bottom: 5px; /* Add space between stacked items */
+                margin-left: 0; /* Reset left margin */
+                width: auto; /* Allow auto width for stacked items */
+                height: auto; /* Allow auto height for stacked items */
+                min-width: unset; /* Remove min-width for stacked items */
+            }
+
+            .audio-icon {
+                width: 44px; /* Keep minimum touch target size */
+                height: 44px;
+                margin-top: 10px; /* Space from translations */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 1: The English Alphabet and Sounds</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>👋 Chào Mừng Bạn Đến Với Tiếng Anh!</h2>
+            <p>Trong hành trình học tiếng Anh này, chúng ta sẽ bắt đầu từ những viên gạch đầu tiên: bảng chữ cái và các âm cơ bản. Đây là nền tảng vững chắc giúp bạn phát âm chuẩn và tự tin đọc các từ tiếng Anh!</p>
+            <p>Hãy cùng khám phá nhé! 🚀</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🔠 26 Chữ Cái Trong Bảng Chữ Cái Tiếng Anh</h2>
+            <p>Bảng chữ cái tiếng Anh có 26 chữ cái. Mỗi chữ cái có một tên gọi riêng và thường đại diện cho một hoặc nhiều âm thanh khác nhau khi đứng trong từ.</p>
+            <p>Hãy cùng nghe và lặp lại tên của từng chữ cái nhé!</p>
+            <ul>
+                <li><strong>A</strong> <span class="audio-icon" data-audio-text="A">🔊</span></li>
+                <li><strong>B</strong> <span class="audio-icon" data-audio-text="B">🔊</span></li>
+                <li><strong>C</strong> <span class="audio-icon" data-audio-text="C">🔊</span></li>
+                <li><strong>D</strong> <span class="audio-icon" data-audio-text="D">🔊</span></li>
+                <li><strong>E</strong> <span class="audio-icon" data-audio-text="E">🔊</span></li>
+                <li><strong>F</strong> <span class="audio-icon" data-audio-text="F">🔊</span></li>
+                <li><strong>G</strong> <span class="audio-icon" data-audio-text="G">🔊</span></li>
+                <li><strong>H</strong> <span class="audio-icon" data-audio-text="H">🔊</span></li>
+                <li><strong>I</strong> <span class="audio-icon" data-audio-text="I">🔊</span></li>
+                <li><strong>J</strong> <span class="audio-icon" data-audio-text="J">🔊</span></li>
+                <li><strong>K</strong> <span class="audio-icon" data-audio-text="K">🔊</span></li>
+                <li><strong>L</strong> <span class="audio-icon" data-audio-text="L">🔊</span></li>
+                <li><strong>M</strong> <span class="audio-icon" data-audio-text="M">🔊</span></li>
+                <li><strong>N</strong> <span class="audio-icon" data-audio-text="N">🔊</span></li>
+                <li><strong>O</strong> <span class="audio-icon" data-audio-text="O">🔊</span></li>
+                <li><strong>P</strong> <span class="audio-icon" data-audio-text="P">🔊</span></li>
+                <li><strong>Q</strong> <span class="audio-icon" data-audio-text="Q">🔊</span></li>
+                <li><strong>R</strong> <span class="audio-icon" data-audio-text="R">🔊</span></li>
+                <li><strong>S</strong> <span class="audio-icon" data-audio-text="S">🔊</span></li>
+                <li><strong>T</strong> <span class="audio-icon" data-audio-text="T">🔊</span></li>
+                <li><strong>U</strong> <span class="audio-icon" data-audio-text="U">🔊</span></li>
+                <li><strong>V</strong> <span class="audio-icon" data-audio-text="V">🔊</span></li>
+                <li><strong>W</strong> <span class="audio-icon" data-audio-text="W">🔊</span></li>
+                <li><strong>X</strong> <span class="audio-icon" data-audio-text="X">🔊</span></li>
+                <li><strong>Y</strong> <span class="audio-icon" data-audio-text="Y">🔊</span></li>
+                <li><strong>Z</strong> <span class="audio-icon" data-audio-text="Z">🔊</span></li>
+            </ul>
+            <p><strong>Lưu ý văn hóa:</strong> Ở Anh và một số quốc gia khác, chữ 'Z' thường được phát âm là /zed/ thay vì /ziː/ như ở Mỹ nhé!</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🗣️ Âm Nguyên Âm (Vowel Sounds): A, E, I, O, U</h2>
+            <p>Có 5 chữ cái nguyên âm trong tiếng Anh: <strong>A, E, I, O, U</strong>. Các nguyên âm tạo ra âm thanh mở, không bị cản trở bởi lưỡi, răng hoặc môi. Mỗi nguyên âm thường có ít nhất hai âm phổ biến: âm ngắn và âm dài.</p>
+
+            <h3>🅰️ Chữ A</h3>
+            <div class="example-word">
+                <span class="word">Cat</span> <span class="phonetic">/kæt/</span> <span class="translation">(Con mèo - âm A ngắn)</span>
+                <span class="audio-icon" data-audio-text="cat">🔊</span>
+            </div>
+            <div class="example-word">
+                <span class="word">Name</span> <span class="phonetic">/neɪm/</span> <span class="translation">(Tên - âm A dài)</span>
+                <span class="audio-icon" data-audio-text="name">🔊</span>
+            </div>
+
+            <h3>📧 Chữ E</h3>
+            <div class="example-word">
+                <span class="word">Bed</span> <span class="phonetic">/bed/</span> <span class="translation">(Cái giường - âm E ngắn)</span>
+                <span class="audio-icon" data-audio-text="bed">🔊</span>
+            </div>
+            <div class="example-word">
+                <span class="word">He</span> <span class="phonetic">/hiː/</span> <span class="translation">(Anh ấy - âm E dài)</span>
+                <span class="audio-icon" data-audio-text="he">🔊</span>
+            </div>
+
+            <h3>ℹ️ Chữ I</h3>
+            <div class="example-word">
+                <span class="word">Big</span> <span class="phonetic">/bɪɡ/</span> <span class="translation">(To, lớn - âm I ngắn)</span>
+                <span class="audio-icon" data-audio-text="big">🔊</span>
+            </div>
+            <div class="example-word">
+                <span class="word">Bike</span> <span class="phonetic">/baɪk/</span> <span class="translation">(Xe đạp - âm I dài)</span>
+                <span class="audio-icon" data-audio-text="bike">🔊</span>
+            </div>
+
+            <h3>🅾️ Chữ O</h3>
+            <div class="example-word">
+                <span class="word">Dog</span> <span class="phonetic">/dɒɡ/</span> <span class="translation">(Con chó - âm O ngắn)</span>
+                <span class="audio-icon" data-audio-text="dog">🔊</span>
+            </div>
+            <div class="example-word">
+                <span class="word">Go</span> <span class="phonetic">/ɡəʊ/</span> <span class="translation">(Đi - âm O dài)</span>
+                <span class="audio-icon" data-audio-text="go">🔊</span>
+            </div>
+
+            <h3>ⓤ Chữ U</h3>
+            <div class="example-word">
+                <span class="word">Sun</span> <span class="phonetic">/sʌn/</span> <span class="translation">(Mặt trời - âm U ngắn)</span>
+                <span class="audio-icon" data-audio-text="sun">🔊</span>
+            </div>
+            <div class="example-word">
+                <span class="word">Blue</span> <span class="phonetic">/bluː/</span> <span class="translation">(Màu xanh - âm U dài)</span>
+                <span class="audio-icon" data-audio-text="blue">🔊</span>
+            </div>
+
+            <div class="practice-section">
+                <h3>Thực Hành: Âm Nguyên Âm 🎤</h3>
+                <p>Nghe từ và cố gắng nhận biết đó là âm nguyên âm ngắn hay dài nhé!</p>
+                <div class="practice-item">
+                    <span class="label">Cat</span>
+                    <span class="audio-icon" data-audio-text="cat">🔊</span>
+                </div>
+                <div class="practice-item">
+                    <span class="label">Table</span>
+                    <span class="audio-icon" data-audio-text="table">🔊</span>
+                </div>
+                <div class="practice-item">
+                    <span class="label">Pen</span>
+                    <span class="audio-icon" data-audio-text="pen">🔊</span>
+                </div>
+                <div class="practice-item">
+                    <span class="label">Read</span>
+                    <span class="audio-icon" data-audio-text="read">🔊</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>📝 Âm Phụ Âm (Consonant Sounds) và Phát Âm</h2>
+            <p>Các chữ cái còn lại trong bảng chữ cái tiếng Anh là phụ âm. Phụ âm được tạo ra khi luồng không khí bị cản trở một phần hoặc hoàn toàn bởi lưỡi, răng hoặc môi.</p>
+            <p>Chúng ta sẽ xem xét một số phụ âm phổ biến và cách phát âm của chúng trong từ:</p>
+
+            <h3>Chữ B</h3>
+            <div class="example-word">
+                <span class="word">Bat</span> <span class="phonetic">/bæt/</span> <span class="translation">(Cái gậy/Con dơi)</span>
+                <span class="audio-icon" data-audio-text="bat">🔊</span>
+            </div>
+
+            <h3>Chữ C (khi phát âm là /k/)</h3>
+            <div class="example-word">
+                <span class="word">Car</span> <span class="phonetic">/kɑːr/</span> <span class="translation">(Xe ô tô)</span>
+                <span class="audio-icon" data-audio-text="car">🔊</span>
+            </div>
+
+            <h3>Chữ D</h3>
+            <div class="example-word">
+                <span class="word">Day</span> <span class="phonetic">/deɪ/</span> <span class="translation">(Ngày)</span>
+                <span class="audio-icon" data-audio-text="day">🔊</span>
+            </div>
+
+            <h3>Chữ F</h3>
+            <div class="example-word">
+                <span class="word">Fish</span> <span class="phonetic">/fɪʃ/</span> <span class="translation">(Con cá)</span>
+                <span class="audio-icon" data-audio-text="fish">🔊</span>
+            </div>
+
+            <h3>Chữ H</h3>
+            <div class="example-word">
+                <span class="word">Hat</span> <span class="phonetic">/hæt/</span> <span class="translation">(Cái mũ)</span>
+                <span class="audio-icon" data-audio-text="hat">🔊</span>
+            </div>
+
+            <h3>Chữ M</h3>
+            <div class="example-word">
+                <span class="word">Mom</span> <span class="phonetic">/mɒm/</span> <span class="translation">(Mẹ)</span>
+                <span class="audio-icon" data-audio-text="mom">🔊</span>
+            </div>
+
+            <h3>Chữ P</h3>
+            <div class="example-word">
+                <span class="word">Pen</span> <span class="phonetic">/pen/</span> <span class="translation">(Cây bút)</span>
+                <span class="audio-icon" data-audio-text="pen">🔊</span>
+            </div>
+
+            <h3>Chữ S</h3>
+            <div class="example-word">
+                <span class="word">Sun</span> <span class="phonetic">/sʌn/</span> <span class="translation">(Mặt trời)</span>
+                <span class="audio-icon" data-audio-text="sun">🔊</span>
+            </div>
+
+            <div class="practice-section">
+                <h3>Thực Hành: Âm Phụ Âm 🎧</h3>
+                <p>Lắng nghe và luyện phát âm các phụ âm này nhé!</p>
+                <div class="practice-item">
+                    <span class="label">Book</span>
+                    <span class="audio-icon" data-audio-text="book">🔊</span>
+                </div>
+                <div class="practice-item">
+                    <span class="label">Table</span>
+                    <span class="audio-icon" data-audio-text="table">🔊</span>
+                </div>
+                <div class="practice-item">
+                    <span class="label">Fan</span>
+                    <span class="audio-icon" data-audio-text="fan">🔊</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>💡 Phonics Cơ Bản và Ghép Âm</h2>
+            <p>Phonics là phương pháp học đọc bằng cách hiểu mối quan hệ giữa chữ cái và âm thanh. Khi bạn biết các âm của từng chữ cái, bạn có thể ghép chúng lại để đọc thành từ!</p>
+            <p>Hãy cùng thử đọc các từ đơn giản có cấu trúc Phụ âm-Nguyên âm-Phụ âm (CVC) nhé:</p>
+
+            <h3>Ghép Âm (Blending Sounds)</h3>
+            <p>Hãy nghe cách các âm được ghép lại để tạo thành từ:</p>
+            <ul>
+                <li><strong>C + A + T</strong> 👉 <span class="word">Cat</span> <span class="phonetic">/kæt/</span> <span class="audio-icon" data-audio-text="cat">🔊</span></li>
+                <li><strong>D + O + G</strong> 👉 <span class="word">Dog</span> <span class="phonetic">/dɒɡ/</span> <span class="audio-icon" data-audio-text="dog">🔊</span></li>
+                <li><strong>S + U + N</strong> 👉 <span class="word">Sun</span> <span class="phonetic">/sʌn/</span> <span class="audio-icon" data-audio-text="sun">🔊</span></li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>Thực Hành: Đánh Vần & Đọc 📖</h3>
+                <p>Nghe từng âm, sau đó nghe cả từ và lặp lại!</p>
+                <div class="practice-item">
+                    <span class="label">B-A-T</span>
+                    <span class="audio-icon" data-audio-text="B A T bat">🔊</span>
+                </div>
+                <div class="practice-item">
+                    <span class="label">P-E-N</span>
+                    <span class="audio-icon" data-audio-text="P E N pen">🔊</span>
+                </div>
+                <div class="practice-item">
+                    <span class="label">H-I-T</span>
+                    <span class="audio-icon" data-audio-text="H I T hit">🔊</span>
+                </div>
+                <div class="practice-item">
+                    <span class="label">M-O-P</span>
+                    <span class="audio-icon" data-audio-text="M O P mop">🔊</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>📚 Giới Thiệu Đọc Các Từ Đơn Giản</h2>
+            <p>Bây giờ bạn đã biết cách các chữ cái và âm thanh kết hợp, hãy thử đọc một vài từ đơn giản nhé!</p>
+            <ul>
+                <li><span class="word">Run</span> <span class="phonetic">/rʌn/</span> <span class="translation">(Chạy)</span> <span class="audio-icon" data-audio-text="run">🔊</span></li>
+                <li><span class="word">Red</span> <span class="phonetic">/red/</span> <span class="translation">(Màu đỏ)</span> <span class="audio-icon" data-audio-text="red">🔊</span></li>
+                <li><span class="word">Map</span> <span class="phonetic">/mæp/</span> <span class="translation">(Bản đồ)</span> <span class="audio-icon" data-audio-text="map">🔊</span></li>
+                <li><span class="word">Top</span> <span class="phonetic">/tɒp/</span> <span class="translation">(Đỉnh)</span> <span class="audio-icon" data-audio-text="top">🔊</span></li>
+                <li><span class="word">Sit</span> <span class="phonetic">/sɪt/</span> <span class="translation">(Ngồi)</span> <span class="audio-icon" data-audio-text="sit">🔊</span></li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>Thực Hành: Đọc Lớn 🗣️</h3>
+                <p>Hãy đọc to những từ này và nghe để kiểm tra lại phát âm của mình nhé!</p>
+                <div class="practice-item">
+                    <span class="label">Jump</span>
+                    <span class="audio-icon" data-audio-text="jump">🔊</span>
+                </div>
+                <div class="practice-item">
+                    <span class="label">Big</span>
+                    <span class="audio-icon" data-audio-text="big">🔊</span>
+                </div>
+                <div class="practice-item">
+                    <span class="label">Hot</span>
+                    <span class="audio-icon" data-audio-text="hot">🔊</span>
+                </div>
+                <div class="practice-item">
+                    <span class="label">Cup</span>
+                    <span class="audio-icon" data-audio-text="cup">🔊</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ Tóm Tắt Bài Học</h2>
+            <p>Chúc mừng bạn đã hoàn thành Chương 1! Bạn đã học được:</p>
+            <ul>
+                <li>Bảng chữ cái tiếng Anh gồm 26 chữ cái.</li>
+                <li>Sự khác biệt giữa nguyên âm (A, E, I, O, U) và phụ âm.</li>
+                <li>Các âm ngắn và dài của nguyên âm, cũng như âm của một số phụ âm.</li>
+                <li>Cách ghép các âm để đọc những từ đơn giản.</li>
+            </ul>
+            <p>Hãy tiếp tục luyện tập thường xuyên để củng cố kiến thức này nhé. Phát âm chuẩn là chìa khóa để tự tin giao tiếp!</p>
+            <p>Hẹn gặp lại bạn trong các bài học tiếp theo! 😊</p>
+        </section>
+    </div>
+</body>
+</html>

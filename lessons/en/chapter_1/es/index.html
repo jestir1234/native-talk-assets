@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Capítulo 1: El Alfabeto y Sonidos en Inglés</title>
+    <style>
+        /* Base Styles & Mobile-First Approach */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-background: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --padding-mobile: 16px;
+            --padding-tablet: 24px;
+            --padding-desktop: 32px;
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FFFFFF; /* White background for the overall page */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling on orientation change */
+        }
+
+        .container {
+            max-width: 800px; /* Max width for content on larger screens */
+            margin: 0 auto;
+            padding: var(--padding-mobile);
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-bottom: 0.8em;
+            font-weight: 700;
+        }
+
+        .chapter-title {
+            font-size: 2em; /* Approx 32px */
+            text-align: center;
+            padding-top: var(--padding-mobile);
+        }
+
+        h2 {
+            font-size: 1.6em; /* Approx 25.6px */
+            margin-top: 1.5em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 0.5em;
+        }
+
+        h3 {
+            font-size: 1.3em; /* Approx 20.8px */
+            margin-top: 1.2em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul {
+            margin-bottom: 1em;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Lesson Header Specific Styles */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-background);
+            border-radius: var(--border-radius);
+            padding: var(--padding-mobile);
+            margin-bottom: var(--padding-mobile);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Interactive Elements - Buttons & Audio Icons */
+        .button {
+            display: block;
+            width: 100%;
+            padding: 14px 20px;
+            margin: 15px 0;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            min-height: 44px; /* Ensure tap target size */
+            transition: background-color 0.2s ease;
+            -webkit-appearance: none; /* Remove default button styles for consistency */
+        }
+
+        .button:hover {
+            background-color: #6F4A95; /* Slightly darker purple */
+        }
+
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum tap target size */
+            height: 44px; /* Minimum tap target size */
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%; /* Circle shape */
+            font-size: 1.4em;
+            cursor: pointer;
+            margin-left: 8px;
+            vertical-align: middle;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #6F4A95;
+            transform: scale(1.05);
+        }
+
+        /* Specific Layouts */
+        .letter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Responsive grid */
+            gap: 10px;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .letter-item {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 10px 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .letter-item strong {
+            font-size: 1.8em;
+            color: var(--heading-text-color);
+        }
+
+        .letter-item span {
+            font-size: 0.9em;
+            color: var(--body-text-color);
+        }
+
+        .vowel-example, .consonant-example, .word-example {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .vowel-example:last-child, .consonant-example:last-child, .word-example:last-child {
+            border-bottom: none;
+        }
+        .vowel-example span, .consonant-example span, .word-example span {
+            flex: 1;
+        }
+        .vowel-example .translation, .consonant-example .translation, .word-example .translation {
+            flex: 1;
+            text-align: right;
+            color: var(--body-text-color);
+            font-size: 0.9em;
+        }
+        .vowel-example .english-word, .consonant-example .english-word, .word-example .english-word {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-right: 10px;
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--secondary-background);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: var(--padding-mobile);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        .practice-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .practice-card .question-text {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--heading-text-color);
+        }
+
+        .practice-card .options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+        }
+
+        .practice-card .option-button {
+            background-color: #E0E0E0; /* Light gray for options */
+            color: var(--body-text-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 12px 18px;
+            font-size: 1em;
+            min-width: 80px;
+            min-height: 44px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            flex-grow: 1;
+            flex-basis: calc(50% - 10px); /* Two columns on mobile */
+            -webkit-appearance: none;
+        }
+
+        .practice-card .option-button:hover {
+            background-color: #D0D0D0;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive adjustments for larger screens (tablets and desktops) */
+        @media (min-width: 600px) {
+            body {
+                font-size: 17px;
+            }
+
+            .container {
+                padding: var(--padding-tablet);
+            }
+
+            .chapter-title {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1.4em;
+            }
+
+            section {
+                padding: var(--padding-tablet);
+                margin-bottom: var(--padding-tablet);
+            }
+
+            .button {
+                max-width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .practice-card .option-button {
+                flex-basis: calc(33.33% - 10px); /* Three columns on larger screens */
+            }
+        }
+
+        @media (min-width: 900px) {
+            body {
+                font-size: 18px;
+            }
+            .container {
+                padding: var(--padding-desktop);
+            }
+            section {
+                padding: var(--padding-desktop);
+                margin-bottom: var(--padding-desktop);
+            }
+        }
+
+        /* Cultural Note Styling */
+        .cultural-note {
+            background-color: rgba(139, 95, 191, 0.1); /* Light tint of primary color */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: var(--border-radius);
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+        .cultural-note strong {
+            color: var(--primary-color);
+        }
+
+        /* Utility classes */
+        .text-center { text-align: center; }
+        .mt-20 { margin-top: 20px; }
+        .mb-10 { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 1: The English Alphabet and Sounds</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>¡Hola y bienvenidos a tu primera lección de inglés! 👋</h2>
+            <p>En este capítulo, vamos a sentar las bases para tu aprendizaje del inglés. Empezaremos con algo fundamental: <strong>el alfabeto inglés y cómo suenan sus letras</strong>. Entender esto es clave para leer, escribir y pronunciar correctamente.</p>
+            <p>No te preocupes si al principio parece un poco diferente al español. ¡Estamos aquí para guiarte paso a paso!</p>
+        </section>
+
+        <section>
+            <h2>Las 26 Letras del Alfabeto Inglés 🅰️🅱️</h2>
+            <p>El alfabeto inglés tiene 26 letras, igual que el español. Sin embargo, la pronunciación de muchas de ellas es diferente. ¡Vamos a conocerlas!</p>
+
+            <div class="letter-grid">
+                <div class="letter-item">
+                    <strong>A</strong>
+                    <button class="audio-icon" data-audio-text="A">🔊</button>
+                    <span>(ei)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>B</strong>
+                    <button class="audio-icon" data-audio-text="B">🔊</button>
+                    <span>(bi)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>C</strong>
+                    <button class="audio-icon" data-audio-text="C">🔊</button>
+                    <span>(si)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>D</strong>
+                    <button class="audio-icon" data-audio-text="D">🔊</button>
+                    <span>(di)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>E</strong>
+                    <button class="audio-icon" data-audio-text="E">🔊</button>
+                    <span>(i)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>F</strong>
+                    <button class="audio-icon" data-audio-text="F">🔊</button>
+                    <span>(ef)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>G</strong>
+                    <button class="audio-icon" data-audio-text="G">🔊</button>
+                    <span>(yi)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>H</strong>
+                    <button class="audio-icon" data-audio-text="H">🔊</button>
+                    <span>(eich)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>I</strong>
+                    <button class="audio-icon" data-audio-text="I">🔊</button>
+                    <span>(ai)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>J</strong>
+                    <button class="audio-icon" data-audio-text="J">🔊</button>
+                    <span>(yei)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>K</strong>
+                    <button class="audio-icon" data-audio-text="K">🔊</button>
+                    <span>(kei)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>L</strong>
+                    <button class="audio-icon" data-audio-text="L">🔊</button>
+                    <span>(el)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>M</strong>
+                    <button class="audio-icon" data-audio-text="M">🔊</button>
+                    <span>(em)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>N</strong>
+                    <button class="audio-icon" data-audio-text="N">🔊</button>
+                    <span>(en)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>O</strong>
+                    <button class="audio-icon" data-audio-text="O">🔊</button>
+                    <span>(ou)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>P</strong>
+                    <button class="audio-icon" data-audio-text="P">🔊</button>
+                    <span>(pi)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>Q</strong>
+                    <button class="audio-icon" data-audio-text="Q">🔊</button>
+                    <span>(kiu)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>R</strong>
+                    <button class="audio-icon" data-audio-text="R">🔊</button>
+                    <span>(ar)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>S</strong>
+                    <button class="audio-icon" data-audio-text="S">🔊</button>
+                    <span>(es)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>T</strong>
+                    <button class="audio-icon" data-audio-text="T">🔊</button>
+                    <span>(ti)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>U</strong>
+                    <button class="audio-icon" data-audio-text="U">🔊</button>
+                    <span>(iu)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>V</strong>
+                    <button class="audio-icon" data-audio-text="V">🔊</button>
+                    <span>(vi)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>W</strong>
+                    <button class="audio-icon" data-audio-text="W">🔊</button>
+                    <span>(dábl yu)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>X</strong>
+                    <button class="audio-icon" data-audio-text="X">🔊</button>
+                    <span>(ex)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>Y</strong>
+                    <button class="audio-icon" data-audio-text="Y">🔊</button>
+                    <span>(uai)</span>
+                </div>
+                <div class="letter-item">
+                    <strong>Z</strong>
+                    <button class="audio-icon" data-audio-text="Z">🔊</button>
+                    <span>(zi / zed)</span>
+                </div>
+            </div>
+
+            <div class="cultural-note">
+                <strong>Nota Cultural: La "Z"</strong><br>
+                La letra 'Z' se pronuncia de dos formas principales:
+                <ul>
+                    <li><strong>"Zee"</strong> (<button class="audio-icon" data-audio-text="Zee">🔊</button>) en inglés americano (EE. UU.).</li>
+                    <li><strong>"Zed"</strong> (<button class="audio-icon" data-audio-text="Zed">🔊</button>) en inglés británico (Reino Unido).</li>
+                </ul>
+                Ambas son correctas, solo depende de la variante de inglés que estés usando. ¡Es bueno conocer las dos!
+            </div>
+        </section>
+
+        <section>
+            <h2>Sonidos de Vocales: A, E, I, O, U 🗣️</h2>
+            <p>Las vocales son el corazón de la pronunciación. En inglés, cada vocal puede tener al menos dos sonidos principales: un sonido "corto" y un sonido "largo".</p>
+
+            <h3>Sonidos Cortos (Short Vowels)</h3>
+            <p>Son sonidos rápidos y secos, como los de una palabra que termina abruptamente.</p>
+            <ul>
+                <li><strong>A</strong> (<button class="audio-icon" data-audio-text="A short sound">🔊</button>): Como la 'a' en "cat" (<span class="english-word">cat</span> - gato). Suena similar a la 'a' en español, pero más abierta.</li>
+                <li><strong>E</strong> (<button class="audio-icon" data-audio-text="E short sound">🔊</button>): Como la 'e' en "bed" (<span class="english-word">bed</span> - cama). Suena un poco como la 'e' de "pez", pero más relajada.</li>
+                <li><strong>I</strong> (<button class="audio-icon" data-audio-text="I short sound">🔊</button>): Como la 'i' en "sit" (<span class="english-word">sit</span> - sentarse). Suena a medio camino entre la 'i' y la 'e' en español.</li>
+                <li><strong>O</strong> (<button class="audio-icon" data-audio-text="O short sound">🔊</button>): Como la 'o' en "dog" (<span class="english-word">dog</span> - perro). Suena como una 'o' muy abierta, casi 'a' en algunos acentos.</li>
+                <li><strong>U</strong> (<button class="audio-icon" data-audio-text="U short sound">🔊</button>): Como la 'u' en "sun" (<span class="english-word">sun</span> - sol). Suena como una 'a' corta o una 'o' muy suave, como la 'o' en "amor".</li>
+            </ul>
+
+            <div class="vowel-example">
+                <span class="english-word">Cat</span>
+                <button class="audio-icon" data-audio-text="Cat">🔊</button>
+                <span class="translation">(Gato)</span>
+            </div>
+            <div class="vowel-example">
+                <span class="english-word">Bed</span>
+                <button class="audio-icon" data-audio-text="Bed">🔊</button>
+                <span class="translation">(Cama)</span>
+            </div>
+            <div class="vowel-example">
+                <span class="english-word">Sit</span>
+                <button class="audio-icon" data-audio-text="Sit">🔊</button>
+                <span class="translation">(Sentarse)</span>
+            </div>
+            <div class="vowel-example">
+                <span class="english-word">Dog</span>
+                <button class="audio-icon" data-audio-text="Dog">🔊</button>
+                <span class="translation">(Perro)</span>
+            </div>
+            <div class="vowel-example">
+                <span class="english-word">Sun</span>
+                <button class="audio-icon" data-audio-text="Sun">🔊</button>
+                <span class="translation">(Sol)</span>
+            </div>
+
+            <h3>Sonidos Largos (Long Vowels)</h3>
+            <p>Los sonidos largos de las vocales son los que suenan <strong>igual que el nombre de la letra</strong>.</p>
+            <ul>
+                <li><strong>A</strong> (<button class="audio-icon" data-audio-text="A long sound">🔊</button>): Como la 'A' en "name" (<span class="english-word">name</span> - nombre). Suena "ei".</li>
+                <li><strong>E</strong> (<button class="audio-icon" data-audio-text="E long sound">🔊</button>): Como la 'E' en "tree" (<span class="english-word">tree</span> - árbol). Suena "i".</li>
+                <li><strong>I</strong> (<button class="audio-icon" data-audio-text="I long sound">🔊</button>): Como la 'I' en "bike" (<span class="english-word">bike</span> - bicicleta). Suena "ai".</li>
+                <li><strong>O</strong> (<button class="audio-icon" data-audio-text="O long sound">🔊</button>): Como la 'O' en "boat" (<span class="english-word">boat</span> - barco). Suena "ou".</li>
+                <li><strong>U</strong> (<button class="audio-icon" data-audio-text="U long sound">🔊</button>): Como la 'U' en "cute" (<span class="english-word">cute</span> - mono/bonito). Suena "iu".</li>
+            </ul>
+
+            <div class="vowel-example">
+                <span class="english-word">Name</span>
+                <button class="audio-icon" data-audio-text="Name">🔊</button>
+                <span class="translation">(Nombre)</span>
+            </div>
+            <div class="vowel-example">
+                <span class="english-word">Tree</span>
+                <button class="audio-icon" data-audio-text="Tree">🔊</button>
+                <span class="translation">(Árbol)</span>
+            </div>
+            <div class="vowel-example">
+                <span class="english-word">Bike</span>
+                <button class="audio-icon" data-audio-text="Bike">🔊</button>
+                <span class="translation">(Bicicleta)</span>
+            </div>
+            <div class="vowel-example">
+                <span class="english-word">Boat</span>
+                <button class="audio-icon" data-audio-text="Boat">🔊</button>
+                <span class="translation">(Barco)</span>
+            </div>
+            <div class="vowel-example">
+                <span class="english-word">Cute</span>
+                <button class="audio-icon" data-audio-text="Cute">🔊</button>
+                <span class="translation">(Mono/Bonito)</span>
+            </div>
+
+            <div class="practice-section">
+                <h3>¡Practiquemos los Sonidos de Vocales!</h3>
+                <p>Escucha la palabra y elige si la vocal marcada tiene un sonido <strong>largo</strong> o <strong>corto</strong>.</p>
+                <div class="practice-card">
+                    <p class="question-text">Escucha: <button class="audio-icon" data-audio-text="Cap">🔊</button> (Palabra: Cap)</p>
+                    <p>¿Qué sonido tiene la 'A' en "Cap"?</p>
+                    <div class="options">
+                        <button class="option-button">Corto</button>
+                        <button class="option-button">Largo</button>
+                    </div>
+                </div>
+                <div class="practice-card">
+                    <p class="question-text">Escucha: <button class="audio-icon" data-audio-text="He">🔊</button> (Palabra: He)</p>
+                    <p>¿Qué sonido tiene la 'E' en "He"?</p>
+                    <div class="options">
+                        <button class="option-button">Corto</button>
+                        <button class="option-button">Largo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Sonidos de Consonantes y Pronunciación 💬</h2>
+            <p>Muchas consonantes en inglés tienen sonidos similares al español, pero algunas son diferentes y requieren práctica.</p>
+
+            <h3>Consonantes Clave a Recordar:</h3>
+            <ul>
+                <li><strong>C</strong>: Puede sonar como 'k' (<button class="audio-icon" data-audio-text="Cat">🔊</button>) o 's' (<button class="audio-icon" data-audio-text="City">🔊</button>).
+                    <div class="consonant-example">
+                        <span class="english-word">Cat</span>
+                        <span class="translation">(Gato)</span>
+                    </div>
+                    <div class="consonant-example">
+                        <span class="english-word">City</span>
+                        <span class="translation">(Ciudad)</span>
+                    </div>
+                </li>
+                <li><strong>G</strong>: Puede sonar como 'g' fuerte (<button class="audio-icon" data-audio-text="Go">🔊</button>) o 'j' suave (<button class="audio-icon" data-audio-text="Giant">🔊</button>).
+                    <div class="consonant-example">
+                        <span class="english-word">Go</span>
+                        <span class="translation">(Ir)</span>
+                    </div>
+                    <div class="consonant-example">
+                        <span class="english-word">Giant</span>
+                        <span class="translation">(Gigante)</span>
+                    </div>
+                </li>
+                <li><strong>H</strong> (<button class="audio-icon" data-audio-text="H sound">🔊</button>): Siempre se pronuncia con un sonido aspirado, como una 'j' muy suave, nunca es muda como en español.
+                    <div class="consonant-example">
+                        <span class="english-word">Hat</span>
+                        <span class="translation">(Sombrero)</span>
+                    </div>
+                    <div class="consonant-example">
+                        <span class="english-word">House</span>
+                        <span class="translation">(Casa)</span>
+                    </div>
+                </li>
+                <li><strong>J</strong> (<button class="audio-icon" data-audio-text="J sound">🔊</button>): Suena como la 'j' fuerte del inglés, similar a 'ch' en "cheese" pero con vibración en la garganta (como la 'y' argentina en "yo").
+                    <div class="consonant-example">
+                        <span class="english-word">Jump</span>
+                        <span class="translation">(Saltar)</span>
+                    </div>
+                </li>
+                <li><strong>R</strong> (<button class="audio-icon" data-audio-text="R sound">🔊</button>): No es una 'erre' vibrante como en español. Es un sonido suave, retroflejo, la lengua se retrae sin tocar el paladar.
+                    <div class="consonant-example">
+                        <span class="english-word">Red</span>
+                        <span class="translation">(Rojo)</span>
+                    </div>
+                </li>
+                <li><strong>V</strong> (<button class="audio-icon" data-audio-text="V sound">🔊</button>): Se pronuncia con los dientes superiores tocando el labio inferior, produciendo una vibración (diferente a la 'b' española).
+                    <div class="consonant-example">
+                        <span class="english-word">Van</span>
+                        <span class="translation">(Furgoneta)</span>
+                    </div>
+                </li>
+                <li><strong>W</strong> (<button class="audio-icon" data-audio-text="W sound">🔊</button>): Suena como una 'u' vocal fuerte, haciendo los labios como para un beso. No es una 'b' o 'v'.
+                    <div class="consonant-example">
+                        <span class="english-word">Water</span>
+                        <span class="translation">(Agua)</span>
+                    </div>
+                </li>
+                <li><strong>Y</strong> (<button class="audio-icon" data-audio-text="Y sound">🔊</button>): Al principio de palabra, suena como la 'i' o 'll' en español (como en "yogurt").
+                    <div class="consonant-example">
+                        <span class="english-word">Yellow</span>
+                        <span class="translation">(Amarillo)</span>
+                    </div>
+                </li>
+                <li><strong>Z</strong> (<button class="audio-icon" data-audio-text="Z sound">🔊</button>): Un sonido vibrante, como una abeja zumbando (zzz).
+                    <div class="consonant-example">
+                        <span class="english-word">Zoo</span>
+                        <span class="translation">(Zoológico)</span>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>Consejo de Pronunciación: El Sonido 'TH'</strong><br>
+                Una de las combinaciones de consonantes más difíciles para los hispanohablantes es 'TH'. Hay dos tipos:
+                <ul>
+                    <li><strong>Sonido sordo (unvoiced)</strong>: Como en "<span class="english-word">think</span>" (<button class="audio-icon" data-audio-text="think">🔊</button> - pensar). La lengua va entre los dientes, pero no hay vibración. Es como una 'f' con la lengua fuera.</li>
+                    <li><strong>Sonido sonoro (voiced)</strong>: Como en "<span class="english-word">this</span>" (<button class="audio-icon" data-audio-text="this">🔊</button> - esto). La lengua va entre los dientes y sientes una vibración en tu garganta.</li>
+                </ul>
+                ¡No te desanimes, esto mejora con la práctica!
+            </div>
+
+            <div class="practice-section">
+                <h3>¡Practiquemos los Sonidos de Consonantes!</h3>
+                <p>Escucha la palabra y presta atención al sonido de la consonante marcada.</p>
+                <div class="practice-card">
+                    <p class="question-text">Escucha: <button class="audio-icon" data-audio-text="Hello">🔊</button> (Palabra: Hello)</p>
+                    <p>¿Cómo suena la 'H' al inicio de "Hello"?</p>
+                    <div class="options">
+                        <button class="option-button">Muda (como en español)</button>
+                        <button class="option-button">Aspirada (como una 'j' suave)</button>
+                    </div>
+                </div>
+                <div class="practice-card">
+                    <p class="question-text">Escucha: <button class="audio-icon" data-audio-text="Very">🔊</button> (Palabra: Very)</p>
+                    <p>¿Cómo suena la 'V' en "Very"?</p>
+                    <div class="options">
+                        <button class="option-button">Como 'B' en español</button>
+                        <button class="option-button">Con labios y dientes (vibrando)</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Fónica Básica y Lectura de Palabras Simples 📖</h2>
+            <p>Ahora que conoces las letras y sus sonidos, podemos empezar a leer palabras simples. Muchos de los sonidos del inglés son "fónicos", lo que significa que puedes "sonarlos" o "mezclarlos" para formar palabras.</p>
+            <p>Empezaremos con palabras de tres letras que siguen el patrón <strong>Consonante-Vocal-Consonante (CVC)</strong>. Aquí la vocal suele tener un sonido corto.</p>
+
+            <h3>Ejemplos de Palabras CVC:</h3>
+            <div class="word-example">
+                <span class="english-word">M-a-p (<button class="audio-icon" data-audio-text="Map">🔊</button>)</span>
+                <span class="translation">(Mapa)</span>
+            </div>
+            <div class="word-example">
+                <span class="english-word">R-u-n (<button class="audio-icon" data-audio-text="Run">🔊</button>)</span>
+                <span class="translation">(Correr)</span>
+            </div>
+            <div class="word-example">
+                <span class="english-word">S-i-t (<button class="audio-icon" data-audio-text="Sit">🔊</button>)</span>
+                <span class="translation">(Sentarse)</span>
+            </div>
+            <div class="word-example">
+                <span class="english-word">H-e-n (<button class="audio-icon" data-audio-text="Hen">🔊</button>)</span>
+                <span class="translation">(Gallina)</span>
+            </div>
+            <div class="word-example">
+                <span class="english-word">F-o-x (<button class="audio-icon" data-audio-text="Fox">🔊</button>)</span>
+                <span class="translation">(Zorro)</span>
+            </div>
+
+            <p>La clave es identificar el sonido de cada letra y luego unirlos rápidamente.</p>
+
+            <div class="practice-section">
+                <h3>¡Lee las Palabras!</h3>
+                <p>Intenta leer cada palabra en voz alta y luego escucha la pronunciación para verificar.</p>
+                <div class="practice-card">
+                    <p class="question-text">Lee en voz alta: <strong><span class="english-word">P-e-n</span></strong></p>
+                    <button class="button mt-20" data-audio-text="Pen">🔊 Escuchar pronunciación</button>
+                    <p class="translation mt-10">(Bolígrafo)</p>
+                </div>
+                <div class="practice-card">
+                    <p class="question-text">Lee en voz alta: <strong><span class="english-word">C-a-p</span></strong></p>
+                    <button class="button mt-20" data-audio-text="Cap">🔊 Escuchar pronunciación</button>
+                    <p class="translation mt-10">(Gorra)</p>
+                </div>
+                <div class="practice-card">
+                    <p class="question-text">Lee en voz alta: <strong><span class="english-word">B-u-s</span></strong></p>
+                    <button class="button mt-20" data-audio-text="Bus">🔊 Escuchar pronunciación</button>
+                    <p class="translation mt-10">(Autobús)</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>Resumen del Capítulo 1 ✨</h2>
+            <p>¡Felicidades! Has completado tu primera lección de inglés. Aquí están los puntos clave que cubrimos:</p>
+            <ul>
+                <li>El alfabeto inglés tiene <strong>26 letras</strong>, muchas con pronunciaciones diferentes al español.</li>
+                <li>Las <strong>vocales (A, E, I, O, U)</strong> tienen sonidos <strong>cortos y largos</strong>. El sonido largo es el mismo que el nombre de la letra.</li>
+                <li>Algunas <strong>consonantes</strong> como 'H', 'R', 'V', 'W', 'J', 'Z' tienen sonidos muy específicos en inglés. La combinación 'TH' es única.</li>
+                <li>La <strong>fónica básica</strong> nos permite "mezclar" los sonidos de las letras para leer palabras simples, especialmente las de tipo Consonante-Vocal-Consonante (CVC).</li>
+            </ul>
+            <p>¡Sigue practicando la pronunciación de cada letra y sonido! La práctica constante es la clave para dominar estos conceptos básicos.</p>
+        </section>
+
+    </div>
+</body>
+</html>

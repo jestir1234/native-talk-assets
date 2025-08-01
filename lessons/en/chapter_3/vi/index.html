@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 3: Số và Đếm</title>
+    <style>
+        /* General Resets and Base Styles */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-color: #FDF9E5;
+            --heading-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif; /* Common mobile-friendly font */
+            line-height: 1.6;
+            color: var(--body-text-color);
+            background-color: #FFFFFF; /* White background for overall app feel */
+            padding: 15px; /* Overall padding for the content */
+            max-width: 800px; /* Max width for larger screens, centers content */
+            margin: 0 auto; /* Center content */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-bottom: 10px;
+        }
+
+        h1.chapter-title {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 15px;
+            font-size: 17px; /* Slightly larger for better readability */
+        }
+
+        /* Sections */
+        .lesson-section {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Header image and container */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        ul li {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            font-size: 17px;
+        }
+
+        ul li strong {
+            color: var(--heading-color);
+            margin-right: 8px;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            min-width: 44px; /* Ensure minimum size */
+            height: 44px;
+            min-height: 44px; /* Ensure minimum size */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-left: 10px;
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a449d; /* Darker shade of primary */
+            transform: translateY(-2px);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #F8F8F8; /* Lighter background for practice */
+            border: 1px dashed var(--border-color);
+            border-radius: 10px;
+            padding: 18px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .practice-section h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 20px;
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .practice-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            background-color: #FFFFFF;
+            color: var(--body-text-color);
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .option-button {
+            background-color: #FFFFFF;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            min-height: 48px; /* Ensure touch-friendly size */
+            display: flex; /* For centering text */
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .option-button:hover, .option-button.selected {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FFF8E1; /* Light yellow background */
+            border-left: 5px solid #FFC107; /* Orange accent */
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #4A4A4A;
+        }
+
+        .cultural-note strong {
+            color: #D35400; /* Darker orange for emphasis */
+        }
+
+        /* Example styling */
+        .example {
+            background-color: #F0F4F7; /* Light blue-gray for examples */
+            border-left: 4px solid var(--primary-color);
+            padding: 12px 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+
+        .example p {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .example p:last-child {
+            margin-bottom: 0;
+        }
+
+        .example .english {
+            font-weight: bold;
+            color: var(--heading-color);
+        }
+
+        .example .vietnamese {
+            font-style: italic;
+            color: var(--body-text-color);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-section h2 {
+            color: white;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .summary-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .summary-section ul li {
+            color: white;
+            background-color: transparent;
+            border: none;
+            padding: 5px 0;
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            h1.chapter-title {
+                font-size: 26px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            p, ul li, .input-field, .option-button, .cultural-note, .example p, .summary-section ul li {
+                font-size: 16px;
+            }
+
+            .lesson-section, .practice-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="chapter-title">Chapter 3: Numbers and Counting</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+    </div>
+
+    <section class="lesson-section">
+        <h2>Chào mừng đến với Chương 3: Số và Đếm! 👋</h2>
+        <p>Trong chương này, chúng ta sẽ khám phá thế giới của các con số trong tiếng Anh. Từ việc đếm đơn giản đến nói tuổi và số điện thoại, bạn sẽ thấy con số có mặt ở khắp mọi nơi!</p>
+    </section>
+
+    <section class="lesson-section">
+        <h2>1. Các Số Từ 1 Đến 20 🔢</h2>
+        <p>Hãy bắt đầu với những con số cơ bản nhất. Lắng nghe và lặp lại để ghi nhớ cách phát âm nhé!</p>
+        <ul>
+            <li><strong>1: One</strong> <span class="audio-icon" data-audio-text="one">🔊</span> <br> <em>(oăn)</em></li>
+            <li><strong>2: Two</strong> <span class="audio-icon" data-audio-text="two">🔊</span> <br> <em>(tu)</em></li>
+            <li><strong>3: Three</strong> <span class="audio-icon" data-audio-text="three">🔊</span> <br> <em>(thri)</em></li>
+            <li><strong>4: Four</strong> <span class="audio-icon" data-audio-text="four">🔊</span> <br> <em>(fo)</em></li>
+            <li><strong>5: Five</strong> <span class="audio-icon" data-audio-text="five">🔊</span> <br> <em>(fai-v)</em></li>
+            <li><strong>6: Six</strong> <span class="audio-icon" data-audio-text="six">🔊</span> <br> <em>(sích-s)</em></li>
+            <li><strong>7: Seven</strong> <span class="audio-icon" data-audio-text="seven">🔊</span> <br> <em>(se-vừn)</em></li>
+            <li><strong>8: Eight</strong> <span class="audio-icon" data-audio-text="eight">🔊</span> <br> <em>(êit)</em></li>
+            <li><strong>9: Nine</strong> <span class="audio-icon" data-audio-text="nine">🔊</span> <br> <em>(nain)</em></li>
+            <li><strong>10: Ten</strong> <span class="audio-icon" data-audio-text="ten">🔊</span> <br> <em>(ten)</em></li>
+        </ul>
+        <p>Và bây giờ là các số từ 11 đến 20. Chú ý các số có hậu tố "-teen" nhé!</p>
+        <ul>
+            <li><strong>11: Eleven</strong> <span class="audio-icon" data-audio-text="eleven">🔊</span> <br> <em>(i-le-vừn)</em></li>
+            <li><strong>12: Twelve</strong> <span class="audio-icon" data-audio-text="twelve">🔊</span> <br> <em>(twelv)</em></li>
+            <li><strong>13: Thirteen</strong> <span class="audio-icon" data-audio-text="thirteen">🔊</span> <br> <em>(thơ-ti-n)</em></li>
+            <li><strong>14: Fourteen</strong> <span class="audio-icon" data-audio-text="fourteen">🔊</span> <br> <em>(fo-ti-n)</em></li>
+            <li><strong>15: Fifteen</strong> <span class="audio-icon" data-audio-text="fifteen">🔊</span> <br> <em>(fíf-ti-n)</em></li>
+            <li><strong>16: Sixteen</strong> <span class="audio-icon" data-audio-text="sixteen">🔊</span> <br> <em>(sích-sti-n)</em></li>
+            <li><strong>17: Seventeen</strong> <span class="audio-icon" data-audio-text="seventeen">🔊</span> <br> <em>(se-vừn-ti-n)</em></li>
+            <li><strong>18: Eighteen</strong> <span class="audio-icon" data-audio-text="eighteen">🔊</span> <br> <em>(ei-ti-n)</em></li>
+            <li><strong>19: Nineteen</strong> <span class="audio-icon" data-audio-text="nineteen">🔊</span> <br> <em>(nain-ti-n)</em></li>
+            <li><strong>20: Twenty</strong> <span class="audio-icon" data-audio-text="twenty">🔊</span> <br> <em>(twen-ti)</em></li>
+        </ul>
+
+        <div class="practice-section">
+            <h3>📖 Luyện tập: Điền Số</h3>
+            <p>Hãy điền số đúng vào chỗ trống dựa trên chữ viết:</p>
+            <div class="practice-item">
+                <p>Five = <input type="text" class="input-field" placeholder="Điền số..."></p>
+            </div>
+            <div class="practice-item">
+                <p>Ten = <input type="text" class="input-field" placeholder="Điền số..."></p>
+            </div>
+            <div class="practice-item">
+                <p>Thirteen = <input type="text" class="input-field" placeholder="Điền số..."></p>
+            </div>
+            <div class="practice-item">
+                <p>Twenty = <input type="text" class="input-field" placeholder="Điền số..."></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>2. Đếm Vật Thể 🍎📚</h2>
+        <p>Khi đếm các vật thể, chúng ta chỉ cần đặt số trước danh từ (có thể là số ít hoặc số nhiều). Nếu có nhiều hơn một vật, danh từ phải ở dạng số nhiều (thường thêm 's' hoặc 'es').</p>
+        <div class="example">
+            <p><span class="english">One apple</span> <span class="audio-icon" data-audio-text="one apple">🔊</span></p>
+            <p class="vietnamese">Một quả táo</p>
+        </div>
+        <div class="example">
+            <p><span class="english">Two books</span> <span class="audio-icon" data-audio-text="two books">🔊</span></p>
+            <p class="vietnamese">Hai quyển sách</p>
+        </div>
+        <div class="example">
+            <p><span class="english">Five cats</span> <span class="audio-icon" data-audio-text="five cats">🔊</span></p>
+            <p class="vietnamese">Năm con mèo</p>
+        </div>
+
+        <div class="practice-section">
+            <h3>📖 Luyện tập: Đếm và Chọn</h3>
+            <p>Chọn câu đúng để mô tả số lượng vật thể.</p>
+            <div class="practice-item">
+                <p>Có 3 chiếc xe hơi. Bạn sẽ nói thế nào?</p>
+                <div class="options-grid">
+                    <button class="option-button" data-answer="Three car">Three car</button>
+                    <button class="option-button" data-answer="Three cars">Three cars</button>
+                    <button class="option-button" data-answer="Car three">Car three</button>
+                </div>
+            </div>
+            <div class="practice-item">
+                <p>Có 10 bông hoa. Bạn sẽ nói thế nào?</p>
+                <div class="options-grid">
+                    <button class="option-button" data-answer="Ten flower">Ten flower</button>
+                    <button class="option-button" data-answer="Flower ten">Flower ten</button>
+                    <button class="option-button" data-answer="Ten flowers">Ten flowers</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>3. Hỏi và Nói Tuổi Tác 🎂</h2>
+        <p>Để hỏi tuổi của ai đó, chúng ta dùng câu hỏi sau:</p>
+        <div class="example">
+            <p><span class="english">How old are you?</span> <span class="audio-icon" data-audio-text="How old are you?">🔊</span></p>
+            <p class="vietnamese">Bạn bao nhiêu tuổi?</p>
+        </div>
+        <p>Để trả lời, chúng ta dùng cấu trúc: <strong>I'm [số tuổi] years old.</strong></p>
+        <div class="example">
+            <p><span class="english">I'm twenty years old.</span> <span class="audio-icon" data-audio-text="I'm twenty years old.">🔊</span></p>
+            <p class="vietnamese">Tôi 20 tuổi.</p>
+        </div>
+        <div class="example">
+            <p><span class="english">I'm thirteen years old.</span> <span class="audio-icon" data-audio-text="I'm thirteen years old.">🔊</span></p>
+            <p class="vietnamese">Tôi 13 tuổi.</p>
+        </div>
+        <p>Bạn cũng có thể nói ngắn gọn là <strong>I'm [số tuổi].</strong></p>
+        <div class="example">
+            <p><span class="english">I'm eight.</span> <span class="audio-icon" data-audio-text="I'm eight.">🔊</span></p>
+            <p class="vietnamese">Tôi 8 tuổi.</p>
+        </div>
+
+        <div class="practice-section">
+            <h3>📖 Luyện tập: Hỏi Tuổi</h3>
+            <div class="practice-item">
+                <p>Bạn muốn hỏi tuổi một người bạn. Bạn sẽ nói gì?</p>
+                <input type="text" class="input-field" placeholder="Điền câu hỏi...">
+            </div>
+            <div class="practice-item">
+                <p>Bạn 15 tuổi. Bạn sẽ trả lời thế nào?</p>
+                <input type="text" class="input-field" placeholder="Điền câu trả lời...">
+            </div>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>4. Số Điện Thoại và Địa Chỉ 📞🏠</h2>
+        <p>Khi nói số điện thoại hoặc địa chỉ trong tiếng Anh, chúng ta thường đọc từng chữ số một.</p>
+        <div class="example">
+            <p><span class="english">My phone number is 0123 456 789.</span> <span class="audio-icon" data-audio-text="My phone number is zero one two three four five six seven eight nine.">🔊</span></p>
+            <p class="vietnamese">Số điện thoại của tôi là 0123 456 789.</p>
+        </div>
+        <p>Lưu ý:</p>
+        <ul>
+            <li>Số 0 thường được đọc là <strong class="audio-icon" data-audio-text="zero">zero</strong> (di-rô) hoặc <strong class="audio-icon" data-audio-text="oh">oh</strong> (ô). 'Oh' phổ biến hơn khi nói số điện thoại.</li>
+            <li>Nếu có hai số giống nhau liên tiếp (ví dụ: 55), bạn có thể nói <strong class="audio-icon" data-audio-text="double five">double five</strong> (đắp-bồ fai-v).</li>
+        </ul>
+        <div class="example">
+            <p><span class="english">My phone number is 0988 776 554.</span> <span class="audio-icon" data-audio-text="My phone number is oh nine eight eight double seven six double five four.">🔊</span></p>
+            <p class="vietnamese">Số điện thoại của tôi là 0988 776 554.</p>
+        </div>
+
+        <div class="cultural-note">
+            <strong>💡 Lưu ý Văn hóa:</strong> <br>
+            Ở các nước nói tiếng Anh, đặc biệt là Mỹ và Canada, số điện thoại thường được nhóm thành ba phần (ví dụ: 123-456-7890). Khi đọc, họ có thể đọc nhóm ba số đầu, sau đó nhóm ba số tiếp theo, và cuối cùng là nhóm bốn số cuối.
+            Tuy nhiên, cách đọc từng chữ số vẫn luôn đúng và dễ hiểu.
+        </div>
+
+        <div class="practice-section">
+            <h3>📖 Luyện tập: Đọc Số</h3>
+            <div class="practice-item">
+                <p>Số điện thoại: 0123456789. Bạn sẽ đọc nó như thế nào (từng số một)?</p>
+                <input type="text" class="input-field" placeholder="Ví dụ: Oh one two three...">
+            </div>
+            <div class="practice-item">
+                <p>Số phòng: 202. Đọc theo cách "double".</p>
+                <input type="text" class="input-field" placeholder="Ví dụ: Two oh two...">
+            </div>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>5. Từ Vựng Toán Học Cơ Bản ➕➖</h2>
+        <p>Chúng ta cũng dùng số trong các phép tính cơ bản. Dưới đây là một số từ vựng quan trọng:</p>
+        <ul>
+            <li><strong>Plus</strong> <span class="audio-icon" data-audio-text="plus">🔊</span> <em>(plăs)</em>: Cộng (+)</li>
+            <li><strong>Minus</strong> <span class="audio-icon" data-audio-text="minus">🔊</span> <em>(mai-nớt-s)</em>: Trừ (-)</li>
+            <li><strong>Equals</strong> <span class="audio-icon" data-audio-text="equals">🔊</span> <em>(i-quồl-s)</em>: Bằng (=)</li>
+        </ul>
+        <div class="example">
+            <p><span class="english">One plus one equals two.</span> <span class="audio-icon" data-audio-text="One plus one equals two.">🔊</span></p>
+            <p class="vietnamese">Một cộng một bằng hai.</p>
+        </div>
+        <div class="example">
+            <p><span class="english">Five minus two equals three.</span> <span class="audio-icon" data-audio-text="Five minus two equals three.">🔊</span></p>
+            <p class="vietnamese">Năm trừ hai bằng ba.</p>
+        </div>
+        <div class="practice-section">
+            <h3>📖 Luyện tập: Giải Toán</h3>
+            <div class="practice-item">
+                <p>Hoàn thành câu sau:</p>
+                <p>Four <input type="text" class="input-field" placeholder="cộng"> three <input type="text" class="input-field" placeholder="bằng"> seven.</p>
+            </div>
+            <div class="practice-item">
+                <p>Hoàn thành câu sau:</p>
+                <p>Ten <input type="text" class="input-field" placeholder="trừ"> five <input type="text" class="input-field" placeholder="bằng"> five.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="summary-section">
+        <h2>✨ Tóm Tắt Chương 3</h2>
+        <p>Chúc mừng bạn đã hoàn thành Chương 3! Bạn đã học được rất nhiều điều quan trọng:</p>
+        <ul>
+            <li>Các số từ <strong>1 đến 20</strong> và cách phát âm của chúng.</li>
+            <li>Cách <strong>đếm vật thể</strong> (ví dụ: two books).</li>
+            <li>Hỏi tuổi bằng <strong>"How old are you?"</strong> và trả lời <strong>"I'm ___ years old."</strong>.</li>
+            <li>Cách đọc <strong>số điện thoại</strong> (từng chữ số một, "oh" cho số 0, "double" cho số lặp lại).</li>
+            <li>Các từ vựng toán học cơ bản: <strong>plus, minus, equals</strong>.</li>
+        </ul>
+        <p>Hãy tiếp tục luyện tập các con số mỗi ngày nhé. Chúng sẽ rất hữu ích trong giao tiếp hàng ngày!</p>
+    </section>
+</body>
+</html>
