@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 3: Saludos e Introducciones Básicas</title>
+    <style>
+        /* General Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            padding: 15px;
+            overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+        }
+
+        /* Color Scheme Variables for easier management */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-bg-color: #FDF9E5; /* Cream background */
+            --text-heading-color: #2C3E50; /* Dark blue */
+            --text-body-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--text-heading-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 30px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 17px; /* Minimum 16px for body text */
+        }
+
+        ul {
+            list-style: none; /* Remove default list bullets */
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 20px; /* Indent list items */
+            position: relative;
+            font-size: 17px;
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        strong {
+            color: var(--text-heading-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Lesson Header */
+        .chapter-title {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-heading-color);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Ensures it doesn't get too wide on large screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            background-color: #FFFFFF; /* White background for sections */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            color: var(--text-heading-color);
+            text-align: left;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+            font-size: 24px;
+        }
+
+        /* Japanese Text & Pronunciation */
+        .japanese-phrase {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            background-color: #FDF9E5; /* Cream background for phrases */
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .japanese-phrase strong {
+            font-size: 20px;
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .pronunciation {
+            font-size: 16px;
+            color: #888;
+            margin-right: 10px;
+            font-style: italic;
+        }
+
+        .translation {
+            font-size: 16px;
+            flex-grow: 1;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 28px; /* Larger icon for tapping */
+            cursor: pointer;
+            color: var(--primary-color);
+            padding: 8px; /* Padding for touch target */
+            min-width: 44px; /* Ensure minimum touch target size */
+            min-height: 44px; /* Ensure minimum touch target size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; /* Make it circular */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent icon from shrinking */
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light primary color on hover */
+            transform: scale(1.05);
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--secondary-bg-color); /* Use cream background for practice */
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .practice-card {
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+        }
+
+        .practice-question {
+            font-weight: bold;
+            color: var(--text-heading-color);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .option-button {
+            background-color: #F8F8F8;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 16px;
+            color: var(--text-body-color);
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            min-height: 44px; /* Ensure touch target size */
+            width: 100%;
+        }
+
+        .option-button:hover {
+            background-color: #EFEFEF;
+            border-color: var(--primary-color);
+        }
+
+        /* Grammar boxes */
+        .grammar-box {
+            background-color: #EAE0F5; /* Lighter shade of primary for grammar highlights */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 17px;
+        }
+
+        .grammar-box strong {
+            color: var(--primary-color);
+        }
+
+        .grammar-example {
+            margin-top: 10px;
+            padding-left: 10px;
+            border-left: 2px dashed rgba(139, 95, 191, 0.5);
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FFF9E0; /* Slightly different cream for cultural notes */
+            border-left: 5px solid #FFA500; /* Orange for cultural insights */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .cultural-note strong {
+            color: #FFA500;
+        }
+
+        /* Summary Section */
+        .summary-list li::before {
+            content: '✨'; /* Different bullet for summary */
+        }
+
+        /* Responsive adjustments (mobile-first means these are for larger screens) */
+        @media (min-width: 600px) {
+            body {
+                padding: 25px;
+            }
+
+            .lesson-section, .practice-section {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            p, li {
+                font-size: 18px;
+            }
+
+            .japanese-phrase strong {
+                font-size: 22px;
+            }
+
+            .pronunciation, .translation {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Chapter 3: Basic Greetings & Introductions</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+    </div>
+
+    <section class="lesson-section">
+        <h2 class="section-title">👋 ¡Hola y Adiós en Japonés!</h2>
+        <p>¡Bienvenidos al Capítulo 3! Hoy aprenderemos a saludar y despedirnos, así como a presentarnos de manera básica en japonés. ¡Será súper útil para tus primeras interacciones!</p>
+
+        <h3>☀️ Saludos Básicos</h3>
+        <p>Los saludos en japonés cambian según la hora del día y el nivel de formalidad. ¡Vamos a ver los más comunes!</p>
+
+        <div class="japanese-phrase">
+            <button class="audio-icon" data-audio-text="おはよう">🔊</button>
+            <strong>おはよう</strong>
+            <span class="pronunciation">(Ohayou)</span>
+            <span class="translation">Buenos días (informal)</span>
+        </div>
+        <p>Se usa por la mañana, generalmente antes de las 10-11 AM. Es bastante informal, ideal para amigos o familia.</p>
+
+        <div class="japanese-phrase">
+            <button class="audio-icon" data-audio-text="おはようございます">🔊</button>
+            <strong>おはようございます</strong>
+            <span class="pronunciation">(Ohayou gozaimasu)</span>
+            <span class="translation">Buenos días (formal)</span>
+        </div>
+        <p>Esta es la versión formal. Úsala en la oficina, la escuela o con personas mayores y en situaciones más respetuosas.</p>
+
+        <div class="japanese-phrase">
+            <button class="audio-icon" data-audio-text="こんにちは">🔊</button>
+            <strong>こんにちは</strong>
+            <span class="pronunciation">(Konnichiwa)</span>
+            <span class="translation">Hola / Buenas tardes</span>
+        </div>
+        <p>Este es el saludo más conocido. Se usa desde media mañana hasta la tarde (aproximadamente hasta las 6 PM). Es versátil y seguro en la mayoría de las situaciones diurnas.</p>
+
+        <div class="japanese-phrase">
+            <button class="audio-icon" data-audio-text="こんばんは">🔊</button>
+            <strong>こんばんは</strong>
+            <span class="pronunciation">(Konbanwa)</span>
+            <span class="translation">Buenas noches</span>
+        </div>
+        <p>Se usa al llegar por la noche. ¡No lo confundas con una despedida nocturna!</p>
+
+        <h3>👋 Despedida</h3>
+        <div class="japanese-phrase">
+            <button class="audio-icon" data-audio-text="さようなら">🔊</button>
+            <strong>さようなら</strong>
+            <span class="pronunciation">(Sayounara)</span>
+            <span class="translation">Adiós</span>
+        </div>
+        <p>Es una despedida que implica cierta permanencia, como si no fueras a ver a la persona en un tiempo. No se usa tan casualmente como "adiós" en español para todos los días. Más adelante aprenderemos despedidas más informales y cotidianas.</p>
+    </section>
+
+    <section class="lesson-section">
+        <h2 class="section-title">🤝 ¡Presentándote!</h2>
+        <p>Cuando conoces a alguien nuevo, es importante saber cómo presentarte.</p>
+
+        <h3>🗣️ "Yo soy..."</h3>
+        <div class="japanese-phrase">
+            <button class="audio-icon" data-audio-text="わたしはまるまるです">🔊</button>
+            <strong>わたしは〇〇です。</strong>
+            <span class="pronunciation">(Watashi wa OO desu.)</span>
+            <span class="translation">Yo soy OO. (Mi nombre es OO.)</span>
+        </div>
+        <p>Aquí, <strong>わたし (watashi)</strong> significa "yo" y <strong>〇〇</strong> es donde pones tu nombre.</p>
+        <p><strong>Ejemplo:</strong></p>
+        <div class="japanese-phrase">
+            <button class="audio-icon" data-audio-text="わたしはマリアです">🔊</button>
+            <strong>わたしはマリアです。</strong>
+            <span class="pronunciation">(Watashi wa Maria desu.)</span>
+            <span class="translation">Yo soy María. (Mi nombre es María.)</span>
+        </div>
+
+        <h3>✨ Frases de Cortesía al Conocer a Alguien</h3>
+        <div class="japanese-phrase">
+            <button class="audio-icon" data-audio-text="はじめまして">🔊</button>
+            <strong>はじめまして。</strong>
+            <span class="pronunciation">(Hajimemashite.)</span>
+            <span class="translation">Encantado/a de conocerte. (Nice to meet you.)</span>
+        </div>
+        <p>Esta es la frase estándar al conocer a alguien por primera vez. Es como nuestro "Encantado/a".</p>
+
+        <div class="japanese-phrase">
+            <button class="audio-icon" data-audio-text="よろしくおねがいします">🔊</button>
+            <strong>よろしくおねがいします。</strong>
+            <span class="pronunciation">(Yoroshiku onegaishimasu.)</span>
+            <span class="translation">Por favor, trátame bien. (Literalmente: "Te lo encargo", "Por favor, tenme en cuenta").</span>
+        </div>
+        <p>Esta frase es difícil de traducir directamente, pero significa algo así como "espero que tengamos una buena relación", "por favor, trátame bien" o "cuento contigo". Siempre se usa después de <strong>はじめまして</strong> al presentarse.</p>
+
+        <p><strong>¡Combinemos todo para una presentación completa!</strong></p>
+        <div class="japanese-phrase">
+            <button class="audio-icon" data-audio-text="はじめまして。わたしはジョンです。よろしくおねがいします。">🔊</button>
+            <strong>はじめまして。わたしはジョンです。よろしくおねがいします。</strong>
+            <span class="pronunciation">(Hajimemashite. Watashi wa Jon desu. Yoroshiku onegaishimasu.)</span>
+            <span class="translation">Encantado/a de conocerte. Soy John. Por favor, trátame bien.</span>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2 class="section-title">📚 Gramática Esencial: は y です</h2>
+
+        <div class="grammar-box">
+            <h3>Particle は (wa)</h3>
+            <p>El caracter <strong>は</strong> se pronuncia normalmente "ha" (como en "Hana"), pero cuando se usa como partícula gramatical, ¡se pronuncia <strong>"wa"</strong>! Es una de las primeras cosas que confunden a los estudiantes, ¡así que presta mucha atención!</p>
+            <p><strong>は</strong> es una <strong>partícula de tema</strong>. Marca el tema o sujeto principal de la oración. Lo que viene antes de は es sobre lo que estamos hablando.</p>
+            <div class="grammar-example">
+                <p><strong>わたし<span style="color: var(--primary-color);">は</span> マリアです。</strong></p>
+                <p><em>(Watashi <span style="font-style: italic;">wa</span> Maria desu.)</em></p>
+                <p>Yo <span style="color: var(--primary-color);">(como tema)</span> soy María.</p>
+            </div>
+            <p>Aquí, "yo" (わたし) es el tema de la conversación. Es el quién o qué del que se está dando información.</p>
+        </div>
+
+        <div class="grammar-box">
+            <h3>Copula です (desu)</h3>
+            <p><strong>です (desu)</strong> es la forma cortés del verbo "ser" o "estar". Siempre va al final de una oración para hacerla educada y completa. Sin <strong>です</strong>, tus oraciones sonarían muy rudas, incompletas o demasiado informales en la mayoría de los contextos de conversación normal.</p>
+            <div class="grammar-example">
+                <p><strong>わたしは学生<span style="color: var(--primary-color);">です</span>。</strong></p>
+                <p><em>(Watashi wa gakusei <span style="font-style: italic;">desu</span>.)</em></p>
+                <p>Yo soy estudiante.</p>
+            </div>
+            <p>Si dices solo <strong>わたしは学生。</strong> (Watashi wa gakusei.), sonaría muy informal, casi como hablar consigo mismo o en un contexto muy específico entre amigos íntimos. ¡Usa <strong>です</strong> para sonar natural y educado en la mayoría de las situaciones!</p>
+        </div>
+    </section>
+
+    <section class="lesson-section cultural-note">
+        <h2 class="section-title">🌸 Nota Cultural: Cortesía en Japonés</h2>
+        <p>La cortesía (敬語 - <em>keigo</em>) es un pilar fundamental en la sociedad japonesa. Las frases que hemos aprendido en este capítulo (<strong>おはようございます, こんにちは, こんばんは, わたしは〇〇です, はじめまして, よろしくおねがいします</strong>) son todas formas educadas.</p>
+        <ul>
+            <li>La terminación <strong>です (desu)</strong> (y <strong>ます (masu)</strong>, que aprenderás más adelante) son clave para sonar educado y respetuoso. Si omites estas terminaciones, el hablante nativo podría percibirlo como informalidad extrema o incluso rudeza, dependiendo de la situación.</li>
+            <li>En Japón, es común el uso de los nombres de pila seguidos de honoríficos (como <strong>-san</strong>, <strong>-kun</strong>, <strong>-chan</strong>, etc.) en lugar de solo el nombre para referirse a otras personas. Sin embargo, para este capítulo, nos enfocamos en tu propia presentación.</li>
+            <li>Un ligero arco (お辞儀 - <em>ojigi</em>) suele acompañar a los saludos y presentaciones, mostrando respeto. Aunque no lo practicaremos ahora, tenlo en cuenta para el futuro, ¡es una parte importante de la comunicación no verbal!</li>
+        </ul>
+        <p>Practicar estas frases te ayudará a dar una excelente primera impresión y a demostrar respeto en Japón.</p>
+    </section>
+
+    <section class="practice-section">
+        <h2 class="section-title">🧠 ¡A Practicar!</h2>
+        <p>Es hora de poner a prueba lo que has aprendido. ¡Intenta responder estas preguntas!</p>
+
+        <div class="practice-card">
+            <p class="practice-question">1. ¿Qué saludo usarías si encuentras a tu profesor a las 9:00 AM en el pasillo de la universidad?</p>
+            <div class="practice-options">
+                <button class="option-button" data-question="1" data-answer="おはようございます">おはようございます</button>
+                <button class="option-button" data-question="1" data-answer="こんにちは">こんにちは</button>
+                <button class="option-button" data-question="1" data-answer="こんばんは">こんばんは</button>
+            </div>
+        </div>
+
+        <div class="practice-card">
+            <p class="practice-question">2. ¿Cómo dirías "Soy Ana" en japonés, de forma educada, al presentarte a alguien nuevo?</p>
+            <div class="practice-options">
+                <button class="option-button" data-question="2" data-answer="わたしはアナです。">わたしはアナです。</button>
+                <button class="option-button" data-question="2" data-answer="アナ。">アナ。</button>
+                <button class="option-button" data-question="2" data-answer="アナはわたしです。">アナはわたしです。</button>
+            </div>
+        </div>
+
+        <div class="practice-card">
+            <p class="practice-question">3. ¿Cuál es la partícula de tema que se escribe は pero se pronuncia "wa" en la frase "わたしは..."?</p>
+            <div class="practice-options">
+                <button class="option-button" data-question="3" data-answer="が">が</button>
+                <button class="option-button" data-question="3" data-answer="は">は</button>
+                <button class="option-button" data-question="3" data-answer="を">を</button>
+            </div>
+        </div>
+
+        <div class="practice-card">
+            <p class="practice-question">4. Completa la frase estándar de presentación: はじめまして。わたしは〇〇です。______。</p>
+            <div class="practice-options">
+                <button class="option-button" data-question="4" data-answer="さようなら">さようなら</button>
+                <button class="option-button" data-question="4" data-answer="ありがとう">ありがとう</button>
+                <button class="option-button" data-question="4" data-answer="よろしくおねがいします">よろしくおねがいします</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2 class="section-title">✅ Resumen del Capítulo 3</h2>
+        <p>¡Felicidades! Has cubierto los fundamentos de los saludos y las presentaciones básicas en japonés.</p>
+        <ul class="summary-list">
+            <li>Aprendiste saludos como <strong>おはようございます</strong> (Buenos días - formal), <strong>こんにちは</strong> (Hola/Buenas tardes), <strong>こんばんは</strong> (Buenas noches al llegar) y la despedida <strong>さようなら</strong> (Adiós - con connotación de permanencia).</li>
+            <li>Descubriste cómo presentarte a ti mismo: <strong>わたしは〇〇です。</strong> (Yo soy OO.).</li>
+            <li>Conociste las frases esenciales al conocer a alguien por primera vez: <strong>はじめまして。</strong> (Encantado/a de conocerte.) y <strong>よろしくおねがいします。</strong> (Por favor, trátame bien / Espero tener una buena relación.).</li>
+            <li>Entendiste el uso de la partícula de tema <strong>は (wa)</strong> y la copula de cortesía <strong>です (desu)</strong>.</li>
+            <li>Comprendiste la importancia de la cortesía en la comunicación japonesa.</li>
+        </ul>
+        <p>¡Sigue practicando estas frases en voz alta para memorizarlas! Te serán muy útiles en tus futuras interacciones en japonés.</p>
+    </section>
+
+</body>
+</html>

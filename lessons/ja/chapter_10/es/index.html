@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 10: Tu Primer Párrafo en Japonés</title>
+    <style>
+        /* Global Styles & Mobile-First Base */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-color: #FDF9E5;
+            --heading-text-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body text size for readability */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Specific Header Structure */
+        .chapter-title {
+            color: var(--heading-text-color);
+            font-size: 1.8em; /* Slightly larger for main title */
+            text-align: center;
+            padding: 20px 15px 0;
+            margin-top: 0;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+            padding: 0 15px; /* Add padding to prevent image touching screen edges */
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Limits width on larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* General Layout */
+        .container {
+            padding: 0 15px 30px; /* Padding for entire content */
+            max-width: 800px; /* Max width for readability on larger screens */
+            margin: 0 auto;
+        }
+
+        section {
+            background-color: #FFFFFF; /* White background for sections */
+            border-radius: 12px;
+            padding: 25px 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            color: var(--heading-text-color);
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2 span.emoji {
+            font-size: 1.2em;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: var(--body-text-color);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+        li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 0.9em;
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: normal;
+            color: var(--primary-color); /* Highlight key terms */
+        }
+
+        /* Japanese text and pronunciation */
+        .japanese-example {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .japanese-text {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--heading-text-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .pronunciation {
+            font-size: 0.9em;
+            color: #555555;
+            margin-left: 20px; /* Indent pronunciation */
+        }
+        .translation {
+            font-size: 1em;
+            color: var(--body-text-color);
+            margin-left: 20px; /* Indent translation */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            font-size: 1.5em; /* Make icon large enough for tapping */
+            color: var(--primary-color);
+            line-height: 1; /* Adjust line height for better alignment */
+            display: inline-flex; /* Use flex for precise alignment */
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            border-radius: 50%; /* Make it round */
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            flex-shrink: 0; /* Prevent icon from shrinking on small screens */
+        }
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light hover effect */
+            transform: scale(1.05);
+        }
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 25px;
+            border: 1px dashed var(--primary-color);
+        }
+        .practice-section h3 {
+            color: var(--heading-text-color);
+            margin-top: 0;
+            border-bottom: 1px dashed var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .practice-section p {
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .note {
+            background-color: #EBF5FB; /* Light blue for notes */
+            border-left: 4px solid #3498DB;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: #2C3E50;
+        }
+        .note strong {
+            color: #3498DB;
+        }
+
+        /* Responsive adjustments for larger screens (tablets and desktops) */
+        @media (min-width: 600px) {
+            body {
+                font-size: 17px;
+            }
+            .chapter-title {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            .container {
+                padding: 0 30px 40px;
+            }
+            section {
+                padding: 30px;
+            }
+            .japanese-example {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="chapter-title">Capítulo 10: Tu Primer Párrafo en Japonés</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+    </div>
+
+    <div class="container">
+        <section>
+            <h2>¡Felicidades! 🎉 Estás list@ para tu Primer Párrafo</h2>
+            <p>¡Hola, estudiante de japonés! Has llegado muy lejos. Desde aprender los hiragana hasta construir oraciones complejas, cada paso te ha acercado a la fluidez. En este capítulo, ¡vas a dar un salto gigantesco!</p>
+            <p>Es hora de unir todas esas piezas del rompecabezas: el vocabulario que has aprendido, las partículas (<code>は</code>, <code>が</code>, <code>に</code>, <code>を</code>, <code>と</code>, <code>で</code>) y las formas verbales (incluyendo la forma <code>〜て</code>). Tu objetivo es escribir tu <em>primer párrafo completo en japonés</em>.</p>
+            <p>¡Prepárate para expresarte de una manera totalmente nueva! ✨</p>
+        </section>
+
+        <section>
+            <h2>✍️ Construyendo Oraciones Coherentes</h2>
+            <p>Para escribir un párrafo, necesitamos conectar oraciones de manera lógica. Una de las herramientas más útiles que ya conoces es la forma <code>〜て</code> de los verbos, que usamos para listar acciones en secuencia o para conectar cláusulas.</p>
+            <h3>Recordemos la forma 〜て:</h3>
+            <ul>
+                <li><strong>Verbo 1 + て、Verbo 2.</strong> (Hacer Verbo 1, y luego Verbo 2.)</li>
+                <li>Ejemplo: ごはんを<strong>食べて</strong>、学校に行きます。
+                    <button class="audio-icon" data-audio-text="ごはんを食べて、学校に行きます。">🔊</button>
+                    <br> <span class="pronunciation">(Gohan o <strong>tabete</strong>, gakkou ni ikimasu.)</span>
+                    <br> <span class="translation">Comer la comida, y luego ir a la escuela.</span>
+                </li>
+            </ul>
+            <p>También usarás partículas para indicar el sujeto, el objeto, el lugar, el tiempo, etc. ¡Todas esas bases que has construido son esenciales ahora!</p>
+        </section>
+
+        <section>
+            <h2>🗓️ Mi Rutina Diaria (私の日課 - Watashi no Nikka)</h2>
+            <p>Vamos a empezar describiendo algo que haces todos los días: ¡tu rutina!</p>
+            <div class="japanese-example">
+                <span class="japanese-text">
+                    わたしはまいにち６じに<strong>おきます</strong>。
+                    <button class="audio-icon" data-audio-text="わたしはまいにち６じにおきます。">🔊</button>
+                </span>
+                <span class="pronunciation">Watashi wa mainichi roku-ji ni <strong>okimasu</strong>.</span>
+                <span class="translation">Yo todos los días a las 6 en punto <strong>me levanto</strong>.</span>
+            </div>
+            <div class="japanese-example">
+                <span class="japanese-text">
+                    あさごはんを<strong>たべて</strong>、がっこうに<strong>いきます</strong>。
+                    <button class="audio-icon" data-audio-text="あさごはんをたべて、がっこうにいきます。">🔊</button>
+                </span>
+                <span class="pronunciation">Asagohan o <strong>tabete</strong>, gakkou ni <strong>ikimasu</strong>.</span>
+                <span class="translation"><strong>Como</strong> el desayuno, y luego <strong>voy</strong> a la escuela.</span>
+            </div>
+            <p>Observa cómo la forma <code>〜て</code> conecta las acciones de "comer desayuno" y "ir a la escuela". Puedes seguir añadiendo más acciones:</p>
+            <div class="japanese-example">
+                <span class="japanese-text">
+                    がっこうでべんきょうして、うちに<strong>かえります</strong>。
+                    <button class="audio-icon" data-audio-text="がっこうでべんきょうして、うちにかえります。">🔊</button>
+                </span>
+                <span class="pronunciation">Gakkou de benkyou shite, uchi ni <strong>kaerimasu</strong>.</span>
+                <span class="translation"><strong>Estudio</strong> en la escuela, y luego <strong>regreso</strong> a casa.</span>
+            </div>
+            <div class="japanese-example">
+                <span class="japanese-text">
+                    よるごはんをたべて、テレビを<strong>みます</strong>。
+                    <button class="audio-icon" data-audio-text="よるごはんをたべて、テレビをみます。">🔊</button>
+                </span>
+                <span class="pronunciation">Yorugohan o tabete, terebi o <strong>mimasu</strong>.</span>
+                <span class="translation"><strong>Ceno</strong>, y luego <strong>veo</strong> televisión.</span>
+            </div>
+            <div class="japanese-example">
+                <span class="japanese-text">
+                    それから、１１じに<strong>ねます</strong>。
+                    <button class="audio-icon" data-audio-text="それから、１１じにねます。">🔊</button>
+                </span>
+                <span class="pronunciation">Sore kara, juuichi-ji ni <strong>nemasu</strong>.</span>
+                <span class="translation">Después de eso, a las 11 en punto <strong>me duermo</strong>.</span>
+            </div>
+
+            <div class="practice-section">
+                <h3>¡A Practicar! 📝 Mi Rutina Diaria</h3>
+                <p>Intenta escribir 3-4 oraciones sobre tu propia rutina diaria, usando la forma <code>〜て</code> y el vocabulario que conoces. Aquí tienes algunas ideas:</p>
+                <ul>
+                    <li>¿A qué hora te levantas? (〜じに おきます)</li>
+                    <li>¿Qué haces por la mañana? (〜を たべます、〜に いきます)</li>
+                    <li>¿Qué haces por la tarde? (〜で べんきょうします、〜を します)</li>
+                    <li>¿Qué haces por la noche? (〜を みます、〜を よみます)</li>
+                    <li>¿A qué hora te acuestas? (〜じに ねます)</li>
+                </ul>
+                <p>Escribe tu párrafo aquí:</p>
+                <div style="background-color: #f0f0f0; border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; min-height: 100px; margin-top: 10px; color: var(--body-text-color);">
+                    <!-- Simulate a text input area for users to type -->
+                    <p style="opacity: 0.7;"><em>E.g., わたしは７じにおきます。あさごはんをたべて、しごとへいきます。しごとでおひるごはんをたべて、５じにかえります。よるごはんをたべて、ほんをよみます。それから、１０じにねます。</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>👨‍👩‍👧‍👦 Mi Familia (私の家族 - Watashi no Kazoku)</h2>
+            <p>Ahora, probemos con un tema más personal: tu familia. Usa el vocabulario de la familia y las estructuras para describir quiénes son y qué hacen.</p>
+            <div class="japanese-example">
+                <span class="japanese-text">
+                    わたしの<strong>かぞく</strong>はよにんです。
+                    <button class="audio-icon" data-audio-text="わたしの家族はよにんです。">🔊</button>
+                </span>
+                <span class="pronunciation">Watashi no <strong>kazoku</strong> wa yo-nin desu.</span>
+                <span class="translation">Mi <strong>familia</strong> es de cuatro personas.</span>
+            </div>
+            <div class="japanese-example">
+                <span class="japanese-text">
+                    ちちと、ははと、いもうとと、わたしです。
+                    <button class="audio-icon" data-audio-text="父と、母と、妹と、わたしです。">🔊</button>
+                </span>
+                <span class="pronunciation">Chichi to, haha to, imouto to, watashi desu.</span>
+                <span class="translation">Somos mi padre, mi madre, mi hermana menor y yo.</span>
+            </div>
+            <div class="japanese-example">
+                <span class="japanese-text">
+                    ちちはエンジニアで、はははせんせいです。
+                    <button class="audio-icon" data-audio-text="父はエンジニアで、母は先生です。">🔊</button>
+                </span>
+                <span class="pronunciation">Chichi wa enjinia de, haha wa sensei desu.</span>
+                <span class="translation">Mi padre es ingeniero, y mi madre es profesora.</span>
+            </div>
+            <p>Aquí usamos la forma <code>〜で</code> del verbo <code>です</code> (desu) para conectar descripciones de manera similar a como <code>〜て</code> conecta verbos.</p>
+            <div class="japanese-example">
+                <span class="japanese-text">
+                    いもうとはがくせいです。
+                    <button class="audio-icon" data-audio-text="妹は学生です。">🔊</button>
+                </span>
+                <span class="pronunciation">Imouto wa gakusei desu.</span>
+                <span class="translation">Mi hermana menor es estudiante.</span>
+            </div>
+
+            <div class="practice-section">
+                <h3>¡A Practicar! 👨‍👩‍👧‍👦 Mi Familia</h3>
+                <p>Ahora, ¡cuéntanos sobre tu propia familia! ¿Cuántos son? ¿Quiénes son? ¿A qué se dedican?</p>
+                <ul>
+                    <li>¿Cuántas personas hay en tu familia? (〜にんです)</li>
+                    <li>¿Quiénes son? (ちち、はは、あに、あね、おとうと、いもうと, など)</li>
+                    <li>¿Cuál es su ocupación o qué hacen? (〜は 〜です)</li>
+                </ul>
+                <p>Escribe tu párrafo aquí:</p>
+                <div style="background-color: #f0f0f0; border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; min-height: 100px; margin-top: 10px; color: var(--body-text-color);">
+                    <!-- Simulate a text input area for users to type -->
+                    <p style="opacity: 0.7;"><em>E.g., わたしの家族はさんにんです。ちちと、ははと、わたしです。ちちはかいしゃいんで、はははしゅふです。</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🌟 ¡Tu Primer Párrafo COMPLETO!</h2>
+            <p>¡Es momento de unir todo! Intenta escribir un párrafo más largo y complejo combinando descripciones de tu rutina y tu familia, o añadiendo más detalles.</p>
+            <p><strong>Ejemplo de un párrafo combinado:</strong></p>
+            <div class="japanese-example">
+                <span class="japanese-text">
+                    わたしはまいにち７じにおきます。あさごはんをたべて、がっこうへいきます。がっこうで日本語をべんきょうして、おひるごはんをたべます。４じにうちへかえって、スポーツをします。よるごはんをたべて、ほんをよみます。それから、１１じにねます。わたしの家族は４にんです。ちちと、ははと、いもうとと、わたしです。ちちはエンジニアで、はははしゅふです。いもうとは高校生です。
+                    <button class="audio-icon" data-audio-text="わたしはまいにち７じにおきます。あさごはんをたべて、がっこうへいきます。がっこうで日本語をべんきょうして、おひるごはんをたべます。４じにうちへかえって、スポーツをします。よるごはんをたべて、ほんをよみます。それから、１１じにねます。わたしの家族は４にんです。ちちと、ははと、いもうとと、わたしです。ちちはエンジニアで、はははしゅふです。いもうとは高校生です。">🔊</button>
+                </span>
+                <span class="pronunciation">Watashi wa mainichi shichi-ji ni okimasu. Asagohan o tabete, gakkou e ikimasu. Gakkou de nihongo o benkyou shite, ohirugohan o tabemasu. Yo-ji ni uchi e kaette, supootsu o shimasu. Yorugohan o tabete, hon o yomimasu. Sore kara, juuichi-ji ni nemasu. Watashi no kazoku wa yo-nin desu. Chichi to, haha to, imouto to, watashi desu. Chichi wa enjinia de, haha wa shufu desu. Imouto wa koukousei desu.</span>
+                <span class="translation">Yo todos los días me levanto a las 7. Desayuno y voy a la escuela. En la escuela estudio japonés y almuerzo. A las 4 regreso a casa y hago deporte. Ceno y leo libros. Después de eso, me duermo a las 11. Mi familia es de 4 personas. Somos mi padre, mi madre, mi hermana menor y yo. Mi padre es ingeniero y mi madre es ama de casa. Mi hermana menor es estudiante de secundaria.</span>
+            </div>
+
+            <div class="note">
+                <strong>💡 Nota Cultural:</strong> En Japón, las rutinas diarias y la estructura familiar suelen ser importantes. Ser puntual (como levantarse a una hora específica) es valorado. La descripción de la familia a menudo incluye quiénes la componen y sus roles, lo que refleja un énfasis en el grupo sobre el individuo.
+            </div>
+
+            <div class="practice-section">
+                <h3>¡Tu Desafío Final! 💪 Mi Historia en Japonés</h3>
+                <p>¡Este es tu gran momento! Escribe un párrafo de 5-7 oraciones combinando todo lo que sabes. Habla de tu día, de tu familia, de tus pasatiempos, ¡lo que quieras! Usa la forma <code>〜て</code> para conectar ideas.</p>
+                <div style="background-color: #f0f0f0; border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; min-height: 150px; margin-top: 10px; color: var(--body-text-color);">
+                    <!-- Simulate a text input area for users to type -->
+                    <p style="opacity: 0.7;"><em>¡Sé creativo! Usa todo el vocabulario y la gramática que has aprendido.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>✨ ¡Has Recorrido un Largo Camino! (振り返り - Furikaeri)</h2>
+            <p>¡Felicidades! 🎉 Has escrito tu primer párrafo en japonés. ¡Esto es un logro enorme! Piensa en dónde empezaste y lo lejos que has llegado. Ahora no solo puedes formar oraciones, sino que puedes unirlas para contar una pequeña historia sobre ti o tu vida.</p>
+            <p>Esto demuestra tu habilidad para:
+                <ul>
+                    <li>Utilizar vocabulario de manera efectiva.</li>
+                    <li>Aplicar partículas correctamente.</li>
+                    <li>Conjugar verbos y usarlos en diferentes formas (especialmente la forma <code>〜て</code>).</li>
+                    <li>Conectar ideas para formar un texto coherente.</li>
+                </ul>
+            </p>
+            <p>¡Sigue practicando y construyendo sobre esta base! Cada pequeño párrafo te acercará más a la fluidez. ¡よくできました!
+                <button class="audio-icon" data-audio-text="よくできました">🔊</button>
+                (Yoku dekimashita! - ¡Bien hecho!)
+            </p>
+        </section>
+
+        <section>
+            <h2>Resumen del Capítulo 📝</h2>
+            <p>En este capítulo, aprendiste a:</p>
+            <ul>
+                <li><strong>Combinar oraciones</strong> usando la forma <code>〜て</code> de los verbos y la forma <code>〜で</code> de <code>です</code> para crear un flujo coherente de ideas.</li>
+                <li><strong>Describir tu rutina diaria</strong> (日課 - にっか) utilizando expresiones de tiempo y verbos de acción.</li>
+                <li><strong>Hablar sobre tu familia</strong> (家族 - かぞく), mencionando sus miembros y ocupaciones.</li>
+                <li><strong>Construir tu primer párrafo completo en japonés</strong>, uniendo todos los conceptos gramaticales y el vocabulario aprendido hasta ahora.</li>
+            </ul>
+            <p>¡Este es un hito importante en tu viaje de aprendizaje del japonés! ¡Sigue adelante! 💪</p>
+        </section>
+
+    </div>
+</body>
+</html>

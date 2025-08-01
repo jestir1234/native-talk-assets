@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: 場所と方向</title>
+    <style>
+        /* Base Styles & Mobile-First Approach */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'ヒラギノ角ゴ ProN W3', 'Yu Gothic', '游ゴシック', 'Meiryo', 'メイリオ', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        /* Responsive Layout */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-top: 1.2em;
+        }
+
+        p {
+            margin-bottom: 1em;
+            padding: 0 5px; /* Slight horizontal padding for better mobile readability */
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            font-style: normal;
+            color: var(--primary-color); /* For emphasis, often Korean words or key terms */
+        }
+
+        /* Header Specifics */
+        .chapter-title {
+            text-align: center;
+            padding: 20px 10px 0;
+            font-size: 2em;
+            margin-bottom: 0;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Limits size on larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Content Sections */
+        section {
+            background-color: #FFFFFF; /* White background for sections */
+            border-radius: 10px;
+            padding: 20px 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Vocabulary and Examples */
+        .vocabulary-item, .grammar-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #F8F8F8;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 5px;
+        }
+
+        .korean-word {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #888;
+            margin-left: 10px;
+        }
+
+        .japanese-meaning {
+            font-size: 1.1em;
+            color: var(--heading-color);
+            margin-bottom: 10px;
+        }
+
+        .example {
+            border-left: 3px solid var(--border-color);
+            padding-left: 10px;
+            margin-top: 10px;
+        }
+
+        .example p {
+            margin: 5px 0;
+        }
+
+        .example .korean-sentence {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .example .japanese-translation {
+            font-size: 0.9em;
+            color: var(--body-text-color);
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevents shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #7A4DA2; /* Slightly darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #EAF7FF; /* Light blue background for practice */
+            border: 1px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .quiz-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .quiz-item:last-child {
+            border-bottom: none;
+        }
+
+        .quiz-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .option-button {
+            background-color: #FFF;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 12px 15px;
+            border-radius: 25px;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            min-height: 44px; /* Minimum touch target size */
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .option-button:hover,
+        .option-button:focus {
+            background-color: var(--primary-color);
+            color: white;
+            outline: none;
+        }
+
+        /* Summary */
+        .summary {
+            background-color: #E8F5E9; /* Light green for summary */
+            border: 1px solid var(--heading-color);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .summary ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .summary li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .summary li::before {
+            content: '✅'; /* Checkmark emoji */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FEF3D7; /* Light yellow for cultural notes */
+            border-left: 5px solid #F0B400; /* Orange-yellow border */
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .cultural-note strong {
+            color: #F0B400;
+        }
+
+        /* Responsive adjustments for larger screens (e.g., tablets) */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            body {
+                font-size: 17px;
+            }
+            .container {
+                padding: 30px;
+            }
+            section {
+                padding: 30px;
+            }
+            .vocabulary-item, .grammar-item {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 8: 場所と方向</h1>
+        <div class="lesson-header">
+            <!-- Header image as per instructions -->
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>はじめに</h2>
+            <p>皆さん、こんにちは！👋</p>
+            <p>今回は、私たちの日常生活に欠かせない「場所」と「方向」について学びます。韓国語で「家はどこ？」「学校はあっち！」のように、目的地を尋ねたり、道案内をしたりできるようになりますよ。新しい単語と、それを使いこなすための大切な助詞を一緒に見ていきましょう！</p>
+        </section>
+
+        <section>
+            <h2>📍 主要な場所の語彙</h2>
+            <p>まずは、よく使う場所の名前を覚えましょう。</p>
+
+            <div class="vocabulary-item">
+                <div class="korean-word">
+                    집 <button class="audio-icon" data-audio-text="집">🔊</button>
+                    <span class="pronunciation">(チプ)</span>
+                </div>
+                <p class="japanese-meaning">家 / ホーム</p>
+                <div class="example">
+                    <p class="korean-sentence">우리 집은 서울에 있어요.</p>
+                    <p class="japanese-translation">私たちの家はソウルにあります。</p>
+                </div>
+            </div>
+
+            <div class="vocabulary-item">
+                <div class="korean-word">
+                    학교 <button class="audio-icon" data-audio-text="학교">🔊</button>
+                    <span class="pronunciation">(ハッキョ)</span>
+                </div>
+                <p class="japanese-meaning">学校</p>
+                <div class="example">
+                    <p class="korean-sentence">저는 학교에 가요.</p>
+                    <p class="japanese-translation">私は学校に行きます。</p>
+                </div>
+            </div>
+
+            <div class="vocabulary-item">
+                <div class="korean-word">
+                    회사 <button class="audio-icon" data-audio-text="회사">🔊</button>
+                    <span class="pronunciation">(フェサ)</span>
+                </div>
+                <p class="japanese-meaning">会社 / オフィス</p>
+                <div class="example">
+                    <p class="korean-sentence">아빠는 회사에 있어요.</p>
+                    <p class="japanese-translation">お父さんは会社にいます。</p>
+                </div>
+            </div>
+
+            <div class="vocabulary-item">
+                <div class="korean-word">
+                    병원 <button class="audio-icon" data-audio-text="병원">🔊</button>
+                    <span class="pronunciation">(ピョンウォン)</span>
+                </div>
+                <p class="japanese-meaning">病院</p>
+                <div class="example">
+                    <p class="korean-sentence">친구가 병원에 입원했어요.</p>
+                    <p class="japanese-translation">友達が病院に入院しました。</p>
+                </div>
+            </div>
+
+            <div class="vocabulary-item">
+                <div class="korean-word">
+                    은행 <button class="audio-icon" data-audio-text="은행">🔊</button>
+                    <span class="pronunciation">(ウネン)</span>
+                </div>
+                <p class="japanese-meaning">銀行</p>
+                <div class="example">
+                    <p class="korean-sentence">은행은 저쪽에 있어요.</p>
+                    <p class="japanese-translation">銀行はあちらにあります。</p>
+                </div>
+            </div>
+
+            <div class="vocabulary-item">
+                <div class="korean-word">
+                    우체국 <button class="audio-icon" data-audio-text="우체국">🔊</button>
+                    <span class="pronunciation">(ウチェグク)</span>
+                </div>
+                <p class="japanese-meaning">郵便局</p>
+                <div class="example">
+                    <p class="korean-sentence">우체국에서 편지를 보냈어요.</p>
+                    <p class="japanese-translation">郵便局で手紙を送りました。</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🧭 方向を表す語彙</h2>
+            <p>次に、ものや場所の「どこ」を示す方向の言葉を学びましょう。</p>
+
+            <div class="vocabulary-item">
+                <div class="korean-word">
+                    앞 <button class="audio-icon" data-audio-text="앞">🔊</button>
+                    <span class="pronunciation">(アプ)</span>
+                </div>
+                <p class="japanese-meaning">前</p>
+                <div class="example">
+                    <p class="korean-sentence">학교 앞에 버스 정류장이 있어요.</p>
+                    <p class="japanese-translation">学校の前にバス停があります。</p>
+                </div>
+            </div>
+
+            <div class="vocabulary-item">
+                <div class="korean-word">
+                    뒤 <button class="audio-icon" data-audio-text="뒤">🔊</button>
+                    <span class="pronunciation">(トゥィ)</span>
+                </div>
+                <p class="japanese-meaning">後ろ</p>
+                <div class="example">
+                    <p class="korean-sentence">집 뒤에 작은 공원이 있어요.</p>
+                    <p class="japanese-translation">家の後ろに小さな公園があります。</p>
+                </div>
+            </div>
+
+            <div class="vocabulary-item">
+                <div class="korean-word">
+                    왼쪽 <button class="audio-icon" data-audio-text="왼쪽">🔊</button>
+                    <span class="pronunciation">(ウェンッチョク)</span>
+                </div>
+                <p class="japanese-meaning">左</p>
+                <div class="example">
+                    <p class="korean-sentence">왼쪽으로 가세요.</p>
+                    <p class="japanese-translation">左に行ってください。</p>
+                </div>
+            </div>
+
+            <div class="vocabulary-item">
+                <div class="korean-word">
+                    오른쪽 <button class="audio-icon" data-audio-text="오른쪽">🔊</button>
+                    <span class="pronunciation">(オルンッチョク)</span>
+                </div>
+                <p class="japanese-meaning">右</p>
+                <div class="example">
+                    <p class="korean-sentence">오른쪽에 편의점이 있어요.</p>
+                    <p class="japanese-translation">右側にコンビニがあります。</p>
+                </div>
+            </div>
+
+            <div class="vocabulary-item">
+                <div class="korean-word">
+                    위 <button class="audio-icon" data-audio-text="위">🔊</button>
+                    <span class="pronunciation">(ウィ)</span>
+                </div>
+                <p class="japanese-meaning">上</p>
+                <div class="example">
+                    <p class="korean-sentence">책상 위에 책이 있어요.</p>
+                    <p class="japanese-translation">机の上に本があります。</p>
+                </div>
+            </div>
+
+            <div class="vocabulary-item">
+                <div class="korean-word">
+                    아래 <button class="audio-icon" data-audio-text="아래">🔊</button>
+                    <span class="pronunciation">(アレ)</span>
+                </div>
+                <p class="japanese-meaning">下</p>
+                <div class="example">
+                    <p class="korean-sentence">의자 아래에 가방이 있어요.</p>
+                    <p class="japanese-translation">椅子の下にカバンがあります。</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📍 「どこに？」を表す助詞: 에 と 에서</h2>
+            <p>場所を示す助詞には、主に <em>에 (エ)</em> と <em>에서 (エソ)</em> の2つがあります。それぞれの使い方をしっかり覚えましょう！</p>
+
+            <h3>1. 助詞: <em>-에 (-エ)</em></h3>
+            <div class="grammar-item">
+                <p><strong>意味:</strong> 「〜に」「〜へ」</p>
+                <p><strong>使い方:</strong>
+                    <ul>
+                        <li><span role="img" aria-label="point">👉</span> <strong>存在/位置:</strong> あるものが「どこにあるか」を示す時。</li>
+                        <li><span role="img" aria-label="point">👉</span> <strong>方向/到達点:</strong> どこかへ「向かう」「着く」という移動の目標地点を示す時。</li>
+                    </ul>
+                </p>
+                <div class="example">
+                    <p class="korean-sentence">저는 집에 있어요. <button class="audio-icon" data-audio-text="저는 집에 있어요.">🔊</button></p>
+                    <p class="japanese-translation">私は家にいます。（存在）</p>
+                </div>
+                <div class="example">
+                    <p class="korean-sentence">도서관이 학교 옆에 있어요. <button class="audio-icon" data-audio-text="도서관이 학교 옆에 있어요.">🔊</button></p>
+                    <p class="japanese-translation">図書館が学校の隣にあります。（位置）</p>
+                </div>
+                <div class="example">
+                    <p class="korean-sentence">저는 병원에 가요. <button class="audio-icon" data-audio-text="저는 병원에 가요.">🔊</button></p>
+                    <p class="japanese-translation">私は病院に行きます。（方向）</p>
+                </div>
+            </div>
+
+            <h3>2. 助詞: <em>-에서 (-エソ)</em></h3>
+            <div class="grammar-item">
+                <p><strong>意味:</strong> 「〜で（場所）」「〜から（出発点）」</p>
+                <p><strong>使い方:</strong>
+                    <ul>
+                        <li><span role="img" aria-label="point">👉</span> <strong>動作の場所:</strong> ある場所で「何かを行う」時。</li>
+                        <li><span role="img" aria-label="point">👉</span> <strong>出発点/起点:</strong> どこかから「始まる」時。</li>
+                    </ul>
+                </p>
+                <div class="example">
+                    <p class="korean-sentence">저는 학교에서 공부해요. <button class="audio-icon" data-audio-text="저는 학교에서 공부해요.">🔊</button></p>
+                    <p class="japanese-translation">私は学校で勉強します。（動作の場所）</p>
+                </div>
+                <div class="example">
+                    <p class="korean-sentence">은행에서 돈을 찾았어요. <button class="audio-icon" data-audio-text="은행에서 돈을 찾았어요.">🔊</button></p>
+                    <p class="japanese-translation">銀行でお金をおろしました。（動作の場所）</p>
+                </div>
+                <div class="example">
+                    <p class="korean-sentence">집에서 회사까지 멀어요. <button class="audio-icon" data-audio-text="집에서 회사까지 멀어요.">🔊</button></p>
+                    <p class="japanese-translation">家から会社まで遠いです。（出発点）</p>
+                </div>
+            </div>
+
+            <div class="cultural-note">
+                <strong>文化メモ：韓国での「どこで？」</strong><br>
+                韓国では、友達と会う場所やお店の場所を伝える際によく「어디에서 만날까? (どこで会おうか？)」のように <em>-에서</em> を使います。単に存在する場所を指す <em>-에</em> と、そこで何かの活動が行われる <em>-에서</em> の違いを意識して使い分けましょう！
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>✍️ 練習問題</h2>
+            <p>学んだ知識を使って、次の問題を解いてみましょう！</p>
+
+            <div class="quiz-item">
+                <p class="quiz-question">1. 次の日本語に合う韓国語を選びましょう。<br>「郵便局」</p>
+                <div class="quiz-options">
+                    <button class="option-button" data-audio-text="은행">은행</button>
+                    <button class="option-button" data-audio-text="병원">병원</button>
+                    <button class="option-button" data-audio-text="우체국">우체국</button>
+                </div>
+            </div>
+
+            <div class="quiz-item">
+                <p class="quiz-question">2. 次の日本語に合う韓国語を選びましょう。<br>「右」</p>
+                <div class="quiz-options">
+                    <button class="option-button" data-audio-text="왼쪽">왼쪽</button>
+                    <button class="option-button" data-audio-text="오른쪽">오른쪽</button>
+                    <button class="option-button" data-audio-text="앞">앞</button>
+                </div>
+            </div>
+
+            <div class="quiz-item">
+                <p class="quiz-question">3. 次の文章の空欄に適切な助詞 (에 / 에서) を選びましょう。</p>
+                <p class="quiz-question">저는 집 ( ) 영화를 봐요。</p>
+                <div class="quiz-options">
+                    <button class="option-button" data-audio-text="에서">에서</button>
+                    <button class="option-button" data-audio-text="에">에</button>
+                </div>
+            </div>
+
+            <div class="quiz-item">
+                <p class="quiz-question">4. 次の文章の空欄に適切な助詞 (에 / 에서) を選びましょう。</p>
+                <p class="quiz-question">친구가 회사 ( ) 있어요。</p>
+                <div class="quiz-options">
+                    <button class="option-button" data-audio-text="에">에</button>
+                    <button class="option-button" data-audio-text="에서">에서</button>
+                </div>
+            </div>
+
+            <div class="quiz-item">
+                <p class="quiz-question">5. 日本語に合うように空欄を埋めてみましょう。</p>
+                <p class="korean-sentence">____에 가요. <button class="audio-icon" data-audio-text="회사에 가요.">🔊</button></p>
+                <p class="japanese-translation">会社に行きます。</p>
+                <div class="quiz-options">
+                    <button class="option-button" data-audio-text="학교">학교</button>
+                    <button class="option-button" data-audio-text="회사">회사</button>
+                    <button class="option-button" data-audio-text="병원">병원</button>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 20px;">💡 答えはすぐ下をスクロール！</p>
+            <div style="margin-top: 20px; border-top: 1px dashed var(--border-color); padding-top: 20px;">
+                <h3>解答</h3>
+                <ol>
+                    <li>우체국</li>
+                    <li>오른쪽</li>
+                    <li>에서 (家で映画を見る、という動作なので '에서')</li>
+                    <li>에 (友達が会社にいる、という存在なので '에')</li>
+                    <li>회사</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="summary">
+            <h2>✨ まとめ</h2>
+            <p>Chapter 8、お疲れ様でした！今回は場所や方向に関する語彙と、重要な助詞 <em>-에</em> と <em>-에서</em> について学びましたね。</p>
+            <ul>
+                <li>場所の語彙: 집, 학교, 회사, 병원, 은행, 우체국</li>
+                <li>方向の語彙: 앞, 뒤, 왼쪽, 오른쪽, 위, 아래</li>
+                <li>存在や移動の到達点には <strong>-에</strong> を使う。</li>
+                <li>動作が行われる場所や出発点には <strong>-에서</strong> を使う。</li>
+            </ul>
+            <p>これらの表現を使いこなせば、より具体的な会話ができるようになります。日常生活で意識して使ってみてくださいね！</p>
+        </section>
+
+    </div>
+</body>
+</html>

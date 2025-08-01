@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Daily Activities and Routines</title>
+    <style>
+        /* Base Styles & Mobile-First Approach */
+        body {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body text font size */
+            -webkit-font-smoothing: antialiased; /* Better text rendering */
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Main Content Container */
+        .container {
+            max-width: 600px; /* Max width for larger screens */
+            margin: 0 auto; /* Center content */
+            padding: 15px; /* Padding for mobile screens */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 0; /* Adjust for lesson-header margin */
+        }
+
+        h2 {
+            font-size: 24px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 5px;
+            margin-top: 35px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 25px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size: 16px; /* Ensure paragraph text meets min size */
+        }
+
+        /* Lesson Header Specific Styles */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Cards for digestible content blocks */
+        .section-card {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        /* Korean Example Boxes */
+        .korean-example {
+            background-color: #f8f8f8; /* Slightly lighter background for examples */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple accent */
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue for emphasis */
+            font-size: 17px;
+            display: flex; /* For aligning audio icon if needed within example */
+            align-items: flex-start; /* Align text to top */
+            flex-wrap: wrap; /* Allow content to wrap */
+        }
+
+        .korean-example .pronunciation {
+            font-size: 14px;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-left: 8px;
+            font-weight: normal;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .japanese-translation {
+            font-style: italic;
+            color: #666666; /* Body Text color */
+            margin-top: 5px;
+            display: block;
+            font-weight: normal; /* Override bold from parent for translation */
+            width: 100%; /* Ensure translation takes full width below Korean */
+        }
+
+        /* Pronunciation Guide (inline) */
+        .pronunciation {
+            font-size: 14px;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-left: 8px;
+            font-weight: normal;
+        }
+
+        /* Audio Icon Styling */
+        .audio-icon {
+            display: inline-flex; /* Use flex for centering icon/text if any */
+            align-items: center;
+            justify-content: center;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Circle shape */
+            min-width: 44px; /* Minimum touch target size */
+            min-height: 44px; /* Minimum touch target size */
+            width: 44px; /* Explicit size for consistent look */
+            height: 44px; /* Explicit size for consistent look */
+            font-size: 20px; /* Icon size */
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 10px; /* Space from text */
+            vertical-align: middle; /* Align with text baseline */
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+            text-decoration: none; /* Remove underline for anchor if used */
+        }
+
+        .audio-icon:hover {
+            background-color: #7a4bb0; /* Slightly darker purple on hover */
+            transform: scale(1.05); /* Slight grow effect */
+        }
+
+        /* List Styles (used for verbs and time expressions) */
+        ul {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #E0E0E0; /* Borders: Light gray dashed */
+            display: flex; /* For aligning text and audio icon */
+            align-items: center;
+            justify-content: space-between; /* Push audio icon to right */
+            font-size: 16px; /* Ensure list item text meets min size */
+        }
+
+        li:last-child {
+            border-bottom: none; /* No border for the last item */
+        }
+
+        small {
+            font-size: 14px; /* Smaller text for examples within lists */
+            color: #888;
+        }
+
+        /* Practice Section Styling */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 2px dashed #8B5FBF; /* Primary: Purple dashed border */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF; /* Primary: Purple */
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .exercise-item {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+        .exercise-item:last-child {
+            border-bottom: none;
+        }
+
+        .exercise-question {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #2C3E50; /* Dark blue for questions */
+            font-size: 17px;
+        }
+
+        .exercise-answer-box {
+            background-color: #f7f7f7; /* Light gray background for answer area */
+            border: 1px solid #ccc; /* Light gray border */
+            padding: 10px;
+            border-radius: 8px;
+            min-height: 40px; /* Visual cue for an input area */
+            display: flex;
+            align-items: center;
+            font-style: italic;
+            color: #888; /* Lighter color for placeholder-like text */
+            font-size: 16px;
+        }
+
+        /* Cultural Note Section */
+        .cultural-note {
+            background-color: #e8f5fd; /* Light blueish background */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple accent */
+            padding: 15px;
+            margin: 25px 0;
+            border-radius: 8px;
+            color: #2C3E50; /* Dark blue for cultural note text */
+            font-size: 16px;
+        }
+        .cultural-note strong {
+            color: #8B5FBF; /* Primary: Purple for emphasis */
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #e6f7ff; /* Lighter blue for summary */
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 12px;
+            border: 1px solid #8B5FBF; /* Primary: Purple border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-section h2 {
+            color: #8B5FBF; /* Primary: Purple */
+            text-align: center;
+            border-bottom: none;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .summary-section ul {
+            list-style-type: disc; /* Use bullets for summary list */
+            padding-left: 20px;
+        }
+        .summary-section li {
+            border-bottom: none; /* No borders in summary list */
+            padding: 5px 0;
+            color: #666666; /* Body Text color */
+        }
+        .summary-section strong {
+            color: #2C3E50; /* Dark blue for emphasized words */
+        }
+
+        /* Spacer at the bottom for better mobile scrolling */
+        .spacer {
+            height: 50px;
+        }
+
+        /* Responsive adjustments for smaller screens (portrait orientation optimization) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            body {
+                font-size: 15px; /* Slightly smaller base font for very small screens if needed, still above 16px for most text elements due to explicit definitions */
+            }
+            .section-card, .practice-section, .cultural-note, .summary-section {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
+                min-height: 40px;
+                font-size: 18px;
+            }
+            .korean-example, .exercise-question, .exercise-answer-box {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 6: Daily Activities and Routines</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+        </div>
+
+        <div class="section-card">
+            <h2>🎉 こんにちは！今日のテーマは「一日のルーティン」</h2>
+            <p>今回は、私たちの毎日の活動を表す韓国語の基本的な動詞と、時間を表す表現を学びましょう。このレッスンを終える頃には、あなたの「一日」を韓国語で話せるようになるはずです！</p>
+            <p>さあ、始めましょう！</p>
+        </div>
+
+        <div class="section-card">
+            <h2>✨ 毎日の活動を表す動詞</h2>
+            <p>まずは、私たちが毎日行う行動を表す重要な動詞を学びます。これらの動詞は、とてもよく使うのでしっかり覚えましょう！</p>
+
+            <h3>1. 起きる・目覚める: 일어나다 (ireonada)</h3>
+            <ul>
+                <li>原形: 일어나다 <span class="audio-icon" data-audio-text="일어나다">🔊</span></li>
+                <li>丁寧語 (～아/어요形): 일어나요 <span class="audio-icon" data-audio-text="일어나요">🔊</span></li>
+            </ul>
+            <div class="korean-example">
+                아침에 일어나요.<span class="pronunciation">(achim-e ireonayo)</span>
+                <span class="japanese-translation">朝に起きます。</span>
+            </div>
+            <div class="korean-example">
+                저는 일찍 일어나요.<span class="pronunciation">(jeoneun iljjik ireonayo)</span>
+                <span class="japanese-translation">私は早く起きます。</span>
+            </div>
+
+            <h3>2. 食べる: 먹다 (meokda)</h3>
+            <ul>
+                <li>原形: 먹다 <span class="audio-icon" data-audio-text="먹다">🔊</span></li>
+                <li>丁寧語 (～아/어요形): 먹어요 <span class="audio-icon" data-audio-text="먹어요">🔊</span></li>
+            </ul>
+            <div class="korean-example">
+                점심을 먹어요.<span class="pronunciation">(jeomsim-eul meogeoyo)</span>
+                <span class="japanese-translation">昼食を食べます。</span>
+            </div>
+            <div class="korean-example">
+                밥을 먹어요.<span class="pronunciation">(bap-eul meogeoyo)</span>
+                <span class="japanese-translation">ご飯（食事）を食べます。</span>
+            </div>
+            <p>💡 「밥 (bap)」は「ご飯」だけでなく、「食事」全般を指すこともあります。</p>
+
+            <h3>3. 飲む: 마시다 (masida)</h3>
+            <ul>
+                <li>原形: 마시다 <span class="audio-icon" data-audio-text="마시다">🔊</span></li>
+                <li>丁寧語 (～아/어요形): 마셔요 <span class="audio-icon" data-audio-text="마셔요">🔊</span></li>
+            </ul>
+            <div class="korean-example">
+                물을 마셔요.<span class="pronunciation">(mul-eul masyeoyo)</span>
+                <span class="japanese-translation">水を飲みます。</span>
+            </div>
+            <div class="korean-example">
+                커피를 마셔요.<span class="pronunciation">(keopi-reul masyeoyo)</span>
+                <span class="japanese-translation">コーヒーを飲みます。</span>
+            </div>
+
+            <h3>4. 勉強する: 공부하다 (gongbuhada)</h3>
+            <ul>
+                <li>原形: 공부하다 <span class="audio-icon" data-audio-text="공부하다">🔊</span></li>
+                <li>丁寧語 (～아/어요形): 공부해요 <span class="audio-icon" data-audio-text="공부해요">🔊</span></li>
+            </ul>
+            <div class="korean-example">
+                한국어를 공부해요.<span class="pronunciation">(hangugeo-reul gongbuhaeyo)</span>
+                <span class="japanese-translation">韓国語を勉強します。</span>
+            </div>
+            <div class="korean-example">
+                도서관에서 공부해요.<span class="pronunciation">(doseogwan-eseo gongbuhaeyo)</span>
+                <span class="japanese-translation">図書館で勉強します。</span>
+            </div>
+
+            <h3>5. 働く: 일하다 (ilhada)</h3>
+            <ul>
+                <li>原形: 일하다 <span class="audio-icon" data-audio-text="일하다">🔊</span></li>
+                <li>丁寧語 (～아/어요形): 일해요 <span class="audio-icon" data-audio-text="일해요">🔊</span></li>
+            </ul>
+            <div class="korean-example">
+                회사에서 일해요.<span class="pronunciation">(hoesa-eseo ilhaeyo)</span>
+                <span class="japanese-translation">会社で働きます。</span>
+            </div>
+            <div class="korean-example">
+                오늘 일해요.<span class="pronunciation">(oneul ilhaeyo)</span>
+                <span class="japanese-translation">今日働きます。</span>
+            </div>
+
+            <h3>6. 寝る: 자다 (jada)</h3>
+            <ul>
+                <li>原形: 자다 <span class="audio-icon" data-audio-text="자다">🔊</span></li>
+                <li>丁寧語 (～아/어요形): 자요 <span class="audio-icon" data-audio-text="자요">🔊</span></li>
+            </ul>
+            <div class="korean-example">
+                밤에 자요.<span class="pronunciation">(bam-e jayo)</span>
+                <span class="japanese-translation">夜に寝ます。</span>
+            </div>
+            <div class="korean-example">
+                저는 빨리 자요.<span class="pronunciation">(jeoneun ppalli jayo)</span>
+                <span class="japanese-translation">私は早く寝ます。</span>
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2>⏰ 時間を表す表現</h2>
+            <p>一日の活動を話すときに便利な、時間を表す言葉を学びましょう。「～に」という意味の助詞 <strong>-에</strong> をつけて使います。</p>
+
+            <ul>
+                <li><strong>아침 (achim)</strong>: 朝 <span class="audio-icon" data-audio-text="아침">🔊</span>
+                    <br><small>例: 아침<strong>에</strong> 일어나요. (朝に起きます)</small>
+                </li>
+                <li><strong>점심 (jeomsim)</strong>: 昼 / 昼食 <span class="audio-icon" data-audio-text="점심">🔊</span>
+                    <br><small>例: 점심<strong>에</strong> 밥을 먹어요. (昼に食事をします)</small>
+                </li>
+                <li><strong>저녁 (jeonyeok)</strong>: 夕方 / 夕食 <span class="audio-icon" data-audio-text="저녁">🔊</span>
+                    <br><small>例: 저녁<strong>에</strong> 공부해요. (夕方に勉強します)</small>
+                </li>
+                <li><strong>밤 (bam)</strong>: 夜 <span class="audio-icon" data-audio-text="밤">🔊</span>
+                    <br><small>例: 밤<strong>에</strong> 자요. (夜に寝ます)</small>
+                </li>
+            </ul>
+            <p><strong>-에</strong> は「時間」や「場所」を表すときに使われる助詞です。ここでは主に「～に」と訳されます。</p>
+        </div>
+
+        <div class="cultural-note">
+            <strong>💡 文化ノート：韓国の食事時間</strong>
+            <p>韓国では、通常、朝食は아침(achim)、昼食は점심(jeomsim)、夕食は저녁(jeonyeok)と呼びます。점심と저녁は時間帯だけでなく、その時間帯に食べる「食事」そのものを指すことも多いです。</p>
+            <p>例：<br>
+            점심 먹었어요? <span class="pronunciation">(jeomsim meogeosseoyo?)</span><br>
+            <span class="japanese-translation">昼食食べましたか？</span><br>
+            저녁 같이 먹어요. <span class="pronunciation">(jeonyeok gachi meogeoyo.)</span><br>
+            <span class="japanese-translation">夕食を一緒に食べましょう。</span></p>
+        </div>
+
+        <div class="practice-section">
+            <h3>📝 練習問題</h3>
+
+            <h4>Q1: 正しい動詞を選びましょう！</h4>
+            <div class="exercise-item">
+                <p class="exercise-question">① コーヒーを（飲む）。</p>
+                <div class="exercise-answer-box">
+                    <span style="color:#2C3E50;">커피를 _______ (마셔요 / 먹어요)</span>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <p class="exercise-question">② 会社で（働く）。</p>
+                <div class="exercise-answer-box">
+                    <span style="color:#2C3E50;">회사에서 _______ (자요 / 일해요)</span>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <p class="exercise-question">③ 朝に（起きる）。</p>
+                <div class="exercise-answer-box">
+                    <span style="color:#2C3E50;">아침에 _______ (일어나요 / 공부해요)</span>
+                </div>
+            </div>
+
+            <h4>Q2: 日本語を韓国語にしましょう！</h4>
+            <div class="exercise-item">
+                <p class="exercise-question">① 夕食を食べます。</p>
+                <div class="exercise-answer-box">
+                    <span style="color:#2C3E50;">_______ 먹어요. (저녁 / 밤)</span>
+                </div>
+            </div>
+            <div class="exercise-item">
+                <p class="exercise-question">② 夜に寝ます。</p>
+                <div class="exercise-answer-box">
+                    <span style="color:#2C3E50;">_______ 자요. (아침에 / 밤에)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h2>💡 まとめ</h2>
+            <p>今日のレッスンで、一日のルーティンに関する基本的な韓国語表現を学びましたね！</p>
+            <ul>
+                <li><strong>動詞:</strong>
+                    <ul>
+                        <li>일어나다 (起きる)</li>
+                        <li>먹다 (食べる)</li>
+                        <li>마시다 (飲む)</li>
+                        <li>공부하다 (勉強する)</li>
+                        <li>일하다 (働く)</li>
+                        <li>자다 (寝る)</li>
+                    </ul>
+                </li>
+                <li><strong>時間表現:</strong>
+                    <ul>
+                        <li>아침 (朝)</li>
+                        <li>점심 (昼 / 昼食)</li>
+                        <li>저녁 (夕方 / 夕食)</li>
+                        <li>밤 (夜)</li>
+                    </ul>
+                </li>
+                <li>時間表現には「～に」という意味の助詞 <strong>-에</strong> を付けて使います。</li>
+            </ul>
+            <p>これらの表現を使って、自分の日課を韓国語で表現してみてください！よく使う表現ばかりなので、繰り返し練習して慣れていきましょう。よく頑張りました！👏</p>
+        </div>
+
+        <div class="spacer"></div> <!-- Spacer for bottom padding on mobile -->
+    </div>
+</body>
+</html>

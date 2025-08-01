@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Daily Activities and Routines</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf9e5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2c3e50; /* Text: Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #e0e0e0; /* Borders: Light gray */
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-top: 25px;
+        }
+
+        /* Sections */
+        .section {
+            background-color: #fdf9e5; /* Secondary: Cream background */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0; /* Borders: Light gray */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Lesson Header */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Text Formatting */
+        p {
+            margin-bottom: 1em;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: #2c3e50; /* Dark blue for emphasis */
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* List Styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        ul li {
+            background-color: #fcfcfc;
+            border-left: 4px solid #8b5fbf; /* Primary: Purple */
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+            display: flex;
+            align-items: center;
+            line-height: 1.4;
+        }
+
+        ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .spanish-word {
+            font-weight: bold;
+            color: #8b5fbf; /* Primary: Purple */
+            margin-right: 5px;
+        }
+
+        .pronunciation-guide {
+            font-size: 0.9em;
+            color: #999;
+            margin-left: 5px;
+        }
+
+        .translation {
+            flex-grow: 1;
+        }
+
+        /* Examples */
+        .example-block {
+            background-color: #f8f8f8;
+            border-left: 5px solid #8b5fbf; /* Primary: Purple */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .example-block p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+
+        .example-block .spanish {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .example-block .english {
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #e6e6fa; /* A slightly lighter purple tint for practice */
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 12px;
+            border: 1px solid #8b5fbf; /* Primary: Purple border */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .practice-input {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            color: #666;
+            box-sizing: border-box;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .practice-option-button {
+            background-color: #ffffff;
+            color: #8b5fbf; /* Primary: Purple */
+            border: 2px solid #8b5fbf; /* Primary: Purple */
+            padding: 14px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.1s ease;
+            text-align: left;
+            min-height: 44px; /* Ensure touch target size */
+            box-sizing: border-box;
+        }
+
+        .practice-option-button:hover {
+            background-color: #8b5fbf; /* Primary: Purple */
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .practice-option-button:active {
+            transform: translateY(0);
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: #f2f7ff; /* Light blue for cultural notes */
+            border-left: 5px solid #a3bded; /* A slightly darker blue */
+            padding: 15px;
+            margin: 25px 0;
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: #3f51b5; /* Darker blue text */
+        }
+
+        .cultural-note strong {
+            color: #3f51b5;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            border-radius: 50%;
+            background-color: #8b5fbf; /* Primary: Purple */
+            color: white;
+            font-size: 24px; /* Slightly larger for visibility */
+            cursor: pointer;
+            margin-left: 8px;
+            vertical-align: middle;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a429b; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.98);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #fdf9e5; /* Secondary: Cream background */
+            padding: 25px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 2px dashed #8b5fbf; /* Primary: Purple */
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            border-bottom: none;
+            margin-top: 0;
+            padding-bottom: 0;
+            color: #8b5fbf; /* Primary: Purple */
+        }
+
+        .summary-section ul {
+            list-style-type: disc;
+            text-align: left;
+            margin: 20px auto;
+            max-width: 90%;
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            background-color: transparent;
+            border-left: none;
+            padding: 8px 0;
+            box-shadow: none;
+            color: #666666; /* Body Text */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            ul li {
+                padding: 10px 12px;
+            }
+            .audio-icon {
+                font-size: 22px;
+                width: 40px;
+                height: 40px;
+            }
+            .practice-option-button {
+                padding: 12px 15px;
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            h1 {
+                font-size: 1.6em;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            body {
+                font-size: 15px;
+            }
+            ul li {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+            .audio-icon {
+                margin-left: 0;
+                margin-top: 8px;
+                align-self: flex-end; /* Push icon to the right if needed */
+            }
+            .spanish-word {
+                margin-right: 0;
+                margin-bottom: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 6: Daily Activities and Routines</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+        </div>
+
+        <div class="section">
+            <p>¡Hola! Welcome to Chapter 6! Today, we're going to dive into the everyday activities that make up our lives. You'll learn how to talk about what you do, from waking up to going to bed, and introduce some essential verbs that are part of almost every conversation.</p>
+            <p>Get ready to express your daily routine in Spanish! ⏰</p>
+        </div>
+
+        <div class="section">
+            <h2>Common Verbs for Daily Life</h2>
+            <p>Let's start with some of the most common verbs you'll use to describe daily actions. These are all regular verbs, which makes them easier to learn!</p>
+            <ul>
+                <li>
+                    <span class="spanish-word">Comer</span>
+                    <span class="pronunciation-guide">(koh-MEHR)</span>
+                    <span class="translation">— to eat</span>
+                    <span class="audio-icon" data-audio-text="Comer">🔊</span>
+                </li>
+                <li>
+                    <span class="spanish-word">Beber</span>
+                    <span class="pronunciation-guide">(beh-BEHR)</span>
+                    <span class="translation">— to drink</span>
+                    <span class="audio-icon" data-audio-text="Beber">🔊</span>
+                </li>
+                <li>
+                    <span class="spanish-word">Dormir</span>
+                    <span class="pronunciation-guide">(dohr-MEER)</span>
+                    <span class="translation">— to sleep</span>
+                    <span class="audio-icon" data-audio-text="Dormir">🔊</span>
+                </li>
+                <li>
+                    <span class="spanish-word">Trabajar</span>
+                    <span class="pronunciation-guide">(trah-bah-HAR)</span>
+                    <span class="translation">— to work</span>
+                    <span class="audio-icon" data-audio-text="Trabajar">🔊</span>
+                </li>
+                <li>
+                    <span class="spanish-word">Estudiar</span>
+                    <span class="pronunciation-guide">(es-too-dee-AR)</span>
+                    <span class="translation">— to study</span>
+                    <span class="audio-icon" data-audio-text="Estudiar">🔊</span>
+                </li>
+                <li>
+                    <span class="spanish-word">Jugar</span>
+                    <span class="pronunciation-guide">(hoo-GAR)</span>
+                    <span class="translation">— to play</span>
+                    <span class="audio-icon" data-audio-text="Jugar">🔊</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Present Tense Basics: Talking About "I"</h2>
+            <p>To say "I eat" or "I work," we need to conjugate the verb. For now, we'll focus on the "I" (<strong>Yo</strong>) form, which is quite simple for regular verbs:</p>
+            <p>For most regular verbs, you just drop the -ar, -er, or -ir ending and add <strong>-o</strong>.</p>
+            <div class="example-block">
+                <p><span class="spanish">Comer</span> (to eat) ➡️ <span class="spanish">Yo com<strong>o</strong></span><span class="audio-icon" data-audio-text="Yo como">🔊</span><br><span class="english">I eat</span></p>
+                <p><span class="spanish">Trabajar</span> (to work) ➡️ <span class="spanish">Yo trabaj<strong>o</strong></span><span class="audio-icon" data-audio-text="Yo trabajo">🔊</span><br><span class="english">I work</span></p>
+                <p><span class="spanish">Dormir</span> (to sleep) ➡️ <span class="spanish">Yo duerm<strong>o</strong></span> <span class="pronunciation-guide">(This one is a stem-changing verb, but still ends in -o!)</span><span class="audio-icon" data-audio-text="Yo duermo">🔊</span><br><span class="english">I sleep</span></p>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <h3>Practice: "I" Forms</h3>
+            <p>Match the infinitive verb with its "Yo" (I) form:</p>
+            <div class="practice-question">1. Estudiar</div>
+            <div class="practice-options">
+                <button class="practice-option-button" data-answer="Incorrect">Estudias</button>
+                <button class="practice-option-button" data-answer="Correct">Estudio</button>
+                <button class="practice-option-button" data-answer="Incorrect">Estudia</button>
+            </div>
+
+            <div class="practice-question">2. Beber</div>
+            <div class="practice-options">
+                <button class="practice-option-button" data-answer="Incorrect">Bebes</button>
+                <button class="practice-option-button" data-answer="Correct">Bebo</button>
+                <button class="practice-option-button" data-answer="Incorrect">Bebe</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>"I eat..." / "I don't eat..."</h2>
+            <p>Making a statement affirmative is straightforward:</p>
+            <div class="example-block">
+                <p><span class="spanish">Yo como pan.</span><span class="audio-icon" data-audio-text="Yo como pan.">🔊</span><br><span class="english">I eat bread.</span></p>
+                <p><span class="spanish">Yo trabajo en la oficina.</span><span class="audio-icon" data-audio-text="Yo trabajo en la oficina.">🔊</span><br><span class="english">I work in the office.</span></p>
+            </div>
+            <p>To make a statement negative ("I don't eat"), you simply put <strong>no</strong> before the verb:</p>
+            <div class="example-block">
+                <p><span class="spanish">Yo <strong>no</strong> como carne.</span><span class="audio-icon" data-audio-text="Yo no como carne.">🔊</span><br><span class="english">I don't eat meat.</span></p>
+                <p><span class="spanish">Yo <strong>no</strong> bebo café.</span><span class="audio-icon" data-audio-text="Yo no bebo café.">🔊</span><br><span class="english">I don't drink coffee.</span></p>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <h3>Practice: Affirmative or Negative</h3>
+            <p>Translate the following sentences into Spanish:</p>
+            <div class="practice-question">1. I don't study.</div>
+            <input type="text" class="practice-input" placeholder="Type your answer here (e.g., Yo no estudio)">
+
+            <div class="practice-question">2. I play soccer.</div>
+            <input type="text" class="practice-input" placeholder="Type your answer here (e.g., Yo juego fútbol)">
+        </div>
+
+        <div class="section">
+            <h2>Daily Routine Vocabulary</h2>
+            <p>Now, let's learn some common verbs and phrases used to describe a typical day.</p>
+            <ul>
+                <li>
+                    <span class="spanish-word">Levantarse</span>
+                    <span class="pronunciation-guide">(leh-vahn-TAR-seh)</span>
+                    <span class="translation">— to get up / Yo me levanto (I get up)</span>
+                    <span class="audio-icon" data-audio-text="Levantarse">🔊</span>
+                </li>
+                <li>
+                    <span class="spanish-word">Ducharse</span>
+                    <span class="pronunciation-guide">(doo-CHAR-seh)</span>
+                    <span class="translation">— to shower / Yo me ducho (I shower)</span>
+                    <span class="audio-icon" data-audio-text="Ducharse">🔊</span>
+                </li>
+                <li>
+                    <span class="spanish-word">Desayunar</span>
+                    <span class="pronunciation-guide">(deh-sah-yoo-NAR)</span>
+                    <span class="translation">— to have breakfast / Yo desayuno (I have breakfast)</span>
+                    <span class="audio-icon" data-audio-text="Desayunar">🔊</span>
+                </li>
+                <li>
+                    <span class="spanish-word">Almorzar</span>
+                    <span class="pronunciation-guide">(ahl-mor-SAR)</span>
+                    <span class="translation">— to have lunch / Yo almuerzo (I have lunch)</span>
+                    <span class="audio-icon" data-audio-text="Almorzar">🔊</span>
+                </li>
+                <li>
+                    <span class="spanish-word">Cenar</span>
+                    <span class="pronunciation-guide">(seh-NAR)</span>
+                    <span class="translation">— to have dinner / Yo ceno (I have dinner)</span>
+                    <span class="audio-icon" data-audio-text="Cenar">🔊</span>
+                </li>
+                <li>
+                    <span class="spanish-word">Acostarse</span>
+                    <span class="pronunciation-guide">(ah-kohs-TAR-seh)</span>
+                    <span class="translation">— to go to bed / Yo me acuesto (I go to bed)</span>
+                    <span class="audio-icon" data-audio-text="Acostarse">🔊</span>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>Cultural Tip: Mealtimes!</strong> 🥘
+                <p>In many Spanish-speaking countries, especially Spain, dinner (cena) is eaten much later than in English-speaking countries, often around 9 PM or 10 PM. Lunch (almuerzo/comida) is usually the largest meal of the day!</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Time Expressions: Morning, Afternoon, Evening</h2>
+            <p>To specify when you do something, you'll use these handy phrases:</p>
+            <ul>
+                <li>
+                    <span class="spanish-word">por la mañana</span>
+                    <span class="pronunciation-guide">(por lah mah-NYAH-nah)</span>
+                    <span class="translation">— in the morning</span>
+                    <span class="audio-icon" data-audio-text="por la mañana">🔊</span>
+                </li>
+                <li>
+                    <span class="spanish-word">por la tarde</span>
+                    <span class="pronunciation-guide">(por lah TAR-deh)</span>
+                    <span class="translation">— in the afternoon</span>
+                    <span class="audio-icon" data-audio-text="por la tarde">🔊</span>
+                </li>
+                <li>
+                    <span class="spanish-word">por la noche</span>
+                    <span class="pronunciation-guide">(por lah NOH-cheh)</span>
+                    <span class="translation">— in the evening / at night</span>
+                    <span class="audio-icon" data-audio-text="por la noche">🔊</span>
+                </li>
+            </ul>
+            <div class="example-block">
+                <p><span class="spanish">Yo trabajo <strong>por la mañana</strong>.</span><span class="audio-icon" data-audio-text="Yo trabajo por la mañana.">🔊</span><br><span class="english">I work in the morning.</span></p>
+                <p><span class="spanish">Yo como fruta <strong>por la tarde</strong>.</span><span class="audio-icon" data-audio-text="Yo como fruta por la tarde.">🔊</span><br><span class="english">I eat fruit in the afternoon.</span></p>
+                <p><span class="spanish">Yo duermo <strong>por la noche</strong>.</span><span class="audio-icon" data-audio-text="Yo duermo por la noche.">🔊</span><br><span class="english">I sleep at night.</span></p>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <h3>Practice: Daily Routine Phrases</h3>
+            <p>Complete the sentences with the correct time expression.</p>
+            <div class="practice-question">1. Yo desayuno _______. (in the morning)</div>
+            <input type="text" class="practice-input" placeholder="Type your answer here">
+
+            <div class="practice-question">2. Yo ceno _______. (in the evening)</div>
+            <input type="text" class="practice-input" placeholder="Type your answer here">
+        </div>
+
+        <div class="section">
+            <h2>Putting It All Together: My Simple Routine</h2>
+            <p>Let's see how all these pieces fit into a short description of a daily routine:</p>
+            <div class="example-block">
+                <p><span class="spanish">Yo me levanto por la mañana.</span><span class="audio-icon" data-audio-text="Yo me levanto por la mañana.">🔊</span><br><span class="english">I get up in the morning.</span></p>
+                <p><span class="spanish">Yo desayuno y luego trabajo.</span><span class="audio-icon" data-audio-text="Yo desayuno y luego trabajo.">🔊</span><br><span class="english">I have breakfast and then I work.</span></p>
+                <p><span class="spanish">Por la tarde, yo almuerzo y estudio.</span><span class="audio-icon" data-audio-text="Por la tarde, yo almuerzo y estudio.">🔊</span><br><span class="english">In the afternoon, I have lunch and study.</span></p>
+                <p><span class="spanish">Por la noche, yo ceno y luego duermo.</span><span class="audio-icon" data-audio-text="Por la noche, yo ceno y luego duermo.">🔊</span><br><span class="english">In the evening, I have dinner and then I sleep.</span></p>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h2>Chapter 6 Summary</h2>
+            <p>¡Excelente trabajo! You've learned the building blocks for talking about your daily life in Spanish. Here's a quick recap of what we covered:</p>
+            <ul>
+                <li><strong>Common Verbs:</strong> You now know verbs like `comer` (to eat), `beber` (to drink), `dormir` (to sleep), `trabajar` (to work), `estudiar` (to study), and `jugar` (to play).</li>
+                <li><strong>Present Tense Basics:</strong> You've mastered how to say "I do something" by adding `-o` to the end of regular verbs (e.g., `Yo como`, `Yo trabajo`).</li>
+                <li><strong>Affirmative & Negative:</strong> You can form simple sentences like `Yo estudio` (I study) and `Yo no estudio` (I don't study).</li>
+                <li><strong>Daily Routine Vocabulary:</strong> You can describe actions like `desayunar` (to have breakfast) and `acostarse` (to go to bed).</li>
+                <li><strong>Time Expressions:</strong> You know how to use `por la mañana` (in the morning), `por la tarde` (in the afternoon), and `por la noche` (in the evening/at night).</li>
+            </ul>
+            <p>Keep practicing these phrases and try to describe your own day in Spanish!</p>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Places and Directions</title>
+    <style>
+        /* Base styles & Mobile-First Approach */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --text-heading-color: #2C3E50; /* Dark blue */
+            --text-body-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --padding-base: 16px;
+            --button-min-height: 44px; /* Minimum touch target size */
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* Default white background for body */
+            color: var(--text-body-color);
+            font-size: 16px; /* Minimum font size for body text */
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent text scaling on iOS */
+        }
+
+        /* General layout and spacing */
+        .container {
+            max-width: 800px; /* Limit content width on larger screens */
+            margin: 0 auto; /* Center container */
+            padding: 0 var(--padding-base); /* Horizontal padding */
+        }
+
+        section {
+            background-color: var(--secondary-color);
+            padding: var(--padding-base);
+            margin-bottom: var(--padding-base);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        h1, h2, h3 {
+            color: var(--text-heading-color);
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        h1.chapter-title {
+            text-align: center;
+            padding-top: var(--padding-base);
+            font-size: 2em; /* ~32px on 16px base */
+        }
+
+        h2 {
+            font-size: 1.5em; /* ~24px */
+        }
+
+        h3 {
+            font-size: 1.25em; /* ~20px */
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none; /* Remove default list style */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em; /* Indent for custom bullet */
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Header specific styles */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Interactive elements (Audio Icons) */
+        .audio-icon {
+            cursor: pointer;
+            font-size: 1.5em; /* Larger emoji size */
+            color: var(--primary-color);
+            margin-left: 8px;
+            display: inline-flex; /* Use flex for centering emoji */
+            align-items: center;
+            justify-content: center;
+            min-width: var(--button-min-height); /* Ensure min touch target */
+            min-height: var(--button-min-height); /* Ensure min touch target */
+            border-radius: 50%; /* Make it circular */
+            transition: background-color 0.2s ease;
+            text-decoration: none; /* In case it's used with an anchor */
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light primary hover */
+        }
+
+        /* Specific section styling */
+        .example-block {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: var(--padding-base);
+            margin: 1em 0;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+        }
+
+        .example-block p {
+            margin: 0.5em 0;
+        }
+
+        .spanish-text {
+            color: var(--text-heading-color);
+            font-weight: bold;
+        }
+
+        .english-translation {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #888888;
+        }
+
+        .pronunciation-guide {
+            font-size: 0.85em;
+            color: #AAAAAA;
+            margin-top: 0.2em;
+        }
+
+        .practice-question {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+            color: var(--text-heading-color);
+        }
+
+        .practice-answer {
+            margin-top: 0.5em;
+            margin-bottom: 1.5em;
+            padding: 12px;
+            background-color: #F0F0F0;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+        }
+
+        .cultural-note {
+            background-color: #E6EBF5; /* A light blue for contrast */
+            border-left: 5px solid var(--primary-color);
+            padding: var(--padding-base);
+            margin: 1.5em 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .cultural-note strong {
+            color: var(--text-heading-color);
+        }
+
+        .summary-section {
+            background-color: var(--text-heading-color); /* Dark background for summary */
+            color: #FFFFFF;
+            padding: var(--padding-base);
+            border-radius: 8px;
+            margin-top: var(--padding-base);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-section h2 {
+            color: #FFFFFF;
+            text-align: center;
+            margin-bottom: 1em;
+        }
+
+        .summary-section ul {
+            list-style: disc; /* Use discs for summary list */
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            margin-bottom: 0.8em;
+            position: relative;
+            padding-left: 0; /* Remove custom bullet */
+            color: #E0E0E0; /* Lighter text for list items in dark summary */
+        }
+
+        .summary-section li::before {
+            content: none; /* Remove custom bullet for summary */
+        }
+        .summary-section .spanish-text {
+            color: #FFFFFF; /* Ensure Spanish text is white on dark background */
+        }
+
+
+        /* Responsive adjustments for larger screens (e.g., tablets, desktops) */
+        @media (min-width: 600px) {
+            body {
+                font-size: 18px; /* Slightly larger base font on tablets/desktops */
+            }
+
+            .container {
+                padding: 0 24px;
+            }
+
+            section {
+                padding: 24px;
+            }
+
+            h1.chapter-title {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+
+            .audio-icon {
+                font-size: 1.7em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 8: Places and Directions</h1>
+        <div class="lesson-header">
+            <!-- As per requirements, this image path is expected to be handled by the mobile environment. -->
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>¡Hola, Explorer! 🌍</h2>
+            <p>Welcome to Chapter 8! Ever gotten lost? Not anymore! In this lesson, we'll learn how to talk about common places and give directions in Spanish. Get ready to navigate like a local!</p>
+            <p>By the end of this chapter, you'll be able to:</p>
+            <ul>
+                <li>Name common places in Spanish.</li>
+                <li>Use prepositions like "in," "on," and "near."</li>
+                <li>Ask and answer "Where is...?" questions.</li>
+                <li>Give basic directions like "left" and "right."</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📍 Common Places (Lugares Comunes)</h2>
+            <p>Let's start by learning some essential places you might encounter every day. Pay attention to the pronunciation!</p>
+
+            <div class="example-block">
+                <p><span class="spanish-text">La escuela</span> <span class="audio-icon" data-audio-text="La escuela">🔊</span></p>
+                <p class="english-translation">The school</p>
+                <p class="pronunciation-guide">(lah es-KWEH-lah)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">La casa</span> <span class="audio-icon" data-audio-text="La casa">🔊</span></p>
+                <p class="english-translation">The home/house</p>
+                <p class="pronunciation-guide">(lah KAH-sah)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">El trabajo</span> <span class="audio-icon" data-audio-text="El trabajo">🔊</span></p>
+                <p class="english-translation">The work</p>
+                <p class="pronunciation-guide">(el trah-BAH-ho)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">La tienda</span> <span class="audio-icon" data-audio-text="La tienda">🔊</span></p>
+                <p class="english-translation">The store</p>
+                <p class="pronunciation-guide">(lah tee-EN-dah)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">El parque</span> <span class="audio-icon" data-audio-text="El parque">🔊</span></p>
+                <p class="english-translation">The park</p>
+                <p class="pronunciation-guide">(el PAR-keh)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">El restaurante</span> <span class="audio-icon" data-audio-text="El restaurante">🔊</span></p>
+                <p class="english-translation">The restaurant</p>
+                <p class="pronunciation-guide">(el res-tow-RAHN-teh)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">El banco</span> <span class="audio-icon" data-audio-text="El banco">🔊</span></p>
+                <p class="english-translation">The bank</p>
+                <p class="pronunciation-guide">(el BAHN-koh)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🗺️ Prepositions of Place (Preposiciones de Lugar)</h2>
+            <p>Now that you know some places, let's learn how to say where things are. These little words are super helpful!</p>
+
+            <div class="example-block">
+                <h3><span class="spanish-text">En</span> <span class="audio-icon" data-audio-text="En">🔊</span> - In, On, At</h3>
+                <p>This is a versatile one! "<span class="spanish-text">En</span>" can mean "in," "on," or "at," depending on the context.</p>
+                <p><span class="spanish-text">Estoy en la casa.</span> <span class="audio-icon" data-audio-text="Estoy en la casa.">🔊</span></p>
+                <p class="english-translation">I am at home. / I am in the house.</p>
+                <p><span class="spanish-text">El libro está en la mesa.</span> <span class="audio-icon" data-audio-text="El libro está en la mesa.">🔊</span></p>
+                <p class="english-translation">The book is on the table.</p>
+            </div>
+
+            <div class="example-block">
+                <h3><span class="spanish-text">Cerca de</span> <span class="audio-icon" data-audio-text="Cerca de">🔊</span> - Near (to)</h3>
+                <p>Use "<span class="spanish-text">cerca de</span>" to say something is close by.</p>
+                <p><span class="spanish-text">La tienda está cerca del parque.</span> <span class="audio-icon" data-audio-text="La tienda está cerca del parque.">🔊</span></p>
+                <p class="english-translation">The store is near the park.</p>
+                <p class="pronunciation-guide">(SEHR-kah deh)</p>
+            </div>
+
+            <div class="example-block">
+                <h3><span class="spanish-text">Lejos de</span> <span class="audio-icon" data-audio-text="Lejos de">🔊</span> - Far from</h3>
+                <p>The opposite of "<span class="spanish-text">cerca de</span>."</p>
+                <p><span class="spanish-text">El banco está lejos de la escuela.</span> <span class="audio-icon" data-audio-text="El banco está lejos de la escuela.">🔊</span></p>
+                <p class="english-translation">The bank is far from the school.</p>
+                <p class="pronunciation-guide">(LEH-hos deh)</p>
+            </div>
+
+            <div class="example-block">
+                <h3><span class="spanish-text">Al lado de</span> <span class="audio-icon" data-audio-text="Al lado de">🔊</span> - Next to</h3>
+                <p>For when things are right beside each other.</p>
+                <p><span class="spanish-text">El restaurante está al lado del banco.</span> <span class="audio-icon" data-audio-text="El restaurante está al lado del banco.">🔊</span></p>
+                <p class="english-translation">The restaurant is next to the bank.</p>
+                <p class="pronunciation-guide">(ahl LAH-doh deh)</p>
+            </div>
+
+            <div class="example-block">
+                <h3><span class="spanish-text">Delante de</span> <span class="audio-icon" data-audio-text="Delante de">🔊</span> - In front of</h3>
+                <p><span class="spanish-text">El coche está delante de la casa.</span> <span class="audio-icon" data-audio-text="El coche está delante de la casa.">🔊</span></p>
+                <p class="english-translation">The car is in front of the house.</p>
+                <p class="pronunciation-guide">(deh-LAHN-teh deh)</p>
+            </div>
+
+            <div class="example-block">
+                <h3><span class="spanish-text">Detrás de</span> <span class="audio-icon" data-audio-text="Detrás de">🔊</span> - Behind</h3>
+                <p><span class="spanish-text">El perro está detrás del árbol.</span> <span class="audio-icon" data-audio-text="El perro está detrás del árbol.">🔊</span></p>
+                <p class="english-translation">The dog is behind the tree.</p>
+                <p class="pronunciation-guide">(deh-TRAHS deh)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>❓ Asking "Where is...?" (¿Dónde está...?)</h2>
+            <p>This is your key phrase for finding anything!</p>
+
+            <div class="example-block">
+                <p><span class="spanish-text">¿Dónde está la escuela?</span> <span class="audio-icon" data-audio-text="¿Dónde está la escuela?">🔊</span></p>
+                <p class="english-translation">Where is the school?</p>
+                <p class="pronunciation-guide">(DOHN-deh es-TAH lah es-KWEH-lah)</p>
+            </div>
+
+            <div class="example-block">
+                <p>To answer, you'll use "<span class="spanish-text">Está...</span>" (It is...) or "<span class="spanish-text">Está en...</span>" (It is in/at...).</p>
+                <p><span class="spanish-text">Está cerca del parque.</span> <span class="audio-icon" data-audio-text="Está cerca del parque.">🔊</span></p>
+                <p class="english-translation">It is near the park.</p>
+            </div>
+
+            <h3>Practice Time! 🚀</h3>
+            <p>Answer the questions using the prepositions you just learned. (Self-correct using the answers provided!)</p>
+
+            <div class="practice-question">
+                <p>1. The bank is <span style="color: var(--primary-color);">next to</span> the restaurant. (Translate this sentence to Spanish)</p>
+            </div>
+            <div class="practice-answer">
+                <p><span class="spanish-text">El banco está al lado del restaurante.</span></p>
+            </div>
+
+            <div class="practice-question">
+                <p>2. Where is the park? (The park is <span style="color: var(--primary-color);">far from</span> the school.)</p>
+            </div>
+            <div class="practice-answer">
+                <p><span class="spanish-text">¿Dónde está el parque?</span></p>
+                <p><span class="spanish-text">El parque está lejos de la escuela.</span></p>
+            </div>
+
+            <div class="practice-question">
+                <p>3. The car is <span style="color: var(--primary-color);">behind</span> the store. (Translate this sentence to Spanish)</p>
+            </div>
+            <div class="practice-answer">
+                <p><span class="spanish-text">El coche está detrás de la tienda.</span></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>⬅️ Basic Directions (Direcciones Básicas)</h2>
+            <p>You know where things are, now let's learn how to tell someone how to get there!</p>
+
+            <div class="example-block">
+                <p><span class="spanish-text">Izquierda</span> <span class="audio-icon" data-audio-text="Izquierda">🔊</span></p>
+                <p class="english-translation">Left</p>
+                <p class="pronunciation-guide">(ees-key-EHR-dah)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">Derecha</span> <span class="audio-icon" data-audio-text="Derecha">🔊</span></p>
+                <p class="english-translation">Right</p>
+                <p class="pronunciation-guide">(deh-REH-chah)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">Todo recto</span> <span class="audio-icon" data-audio-text="Todo recto">🔊</span></p>
+                <p class="english-translation">Straight ahead</p>
+                <p class="pronunciation-guide">(TOH-doh REK-toh)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">Gira a la izquierda.</span> <span class="audio-icon" data-audio-text="Gira a la izquierda.">🔊</span></p>
+                <p class="english-translation">Turn left. (Informal 'you')</p>
+                <p class="pronunciation-guide">(HEE-rah ah lah ees-key-EHR-dah)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">Gira a la derecha.</span> <span class="audio-icon" data-audio-text="Gira a la derecha.">🔊</span></p>
+                <p class="english-translation">Turn right. (Informal 'you')</p>
+                <p class="pronunciation-guide">(HEE-rah ah lah deh-REH-chah)</p>
+            </div>
+            <p>If you're addressing someone formally, you would use "<span class="spanish-text">Gire</span>" instead of "<span class="spanish-text">Gira</span>."</p>
+
+            <div class="example-block">
+                <p><span class="spanish-text">Sigue todo recto.</span> <span class="audio-icon" data-audio-text="Sigue todo recto.">🔊</span></p>
+                <p class="english-translation">Keep going straight. (Informal 'you')</p>
+                <p class="pronunciation-guide">(SEE-geh TOH-doh REK-toh)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Vocabulary Expansion 🗺️</h2>
+            <p>Here are a few more useful words for navigating:</p>
+
+            <div class="example-block">
+                <p><span class="spanish-text">La calle</span> <span class="audio-icon" data-audio-text="La calle">🔊</span></p>
+                <p class="english-translation">The street</p>
+                <p class="pronunciation-guide">(lah KAH-yeh)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">La esquina</span> <span class="audio-icon" data-audio-text="La esquina">🔊</span></p>
+                <p class="english-translation">The corner</p>
+                <p class="pronunciation-guide">(lah es-KEE-nah)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">La plaza</span> <span class="audio-icon" data-audio-text="La plaza">🔊</span></p>
+                <p class="english-translation">The plaza/square</p>
+                <p class="pronunciation-guide">(lah PLAH-sah)</p>
+            </div>
+
+            <div class="example-block">
+                <p><span class="spanish-text">La avenida</span> <span class="audio-icon" data-audio-text="La avenida">🔊</span></p>
+                <p class="english-translation">The avenue</p>
+                <p class="pronunciation-guide">(lah ah-veh-NEE-dah)</p>
+            </div>
+        </section>
+
+        <section class="cultural-note">
+            <h3>🌎 Cultural Note: Asking for Directions</h3>
+            <p>In many Spanish-speaking countries, people are generally very helpful when it comes to giving directions. Don't be afraid to ask! It's common to hear "<span class="spanish-text">¡Claro!</span>" (Of course!) or "<span class="spanish-text">Con gusto</span>" (With pleasure) before they start explaining.</p>
+            <p>Also, instead of "blocks" (like in English), you'll often hear "<span class="spanish-text">cuadras</span>" <span class="audio-icon" data-audio-text="cuadras">🔊</span> (KWAH-drahs), referring to city blocks.</p>
+            <p><span class="spanish-text">Sigue tres cuadras.</span> <span class="audio-icon" data-audio-text="Sigue tres cuadras.">🔊</span></p>
+            <p class="english-translation">Go three blocks.</p>
+        </section>
+
+        <section class="summary-section">
+            <h2>🎉 Chapter 8 Summary</h2>
+            <p>You've successfully navigated Chapter 8! Here's a quick recap of what you've learned:</p>
+            <ul>
+                <li><strong>Common Places:</strong> <span class="spanish-text">escuela</span> (school), <span class="spanish-text">casa</span> (home), <span class="spanish-text">trabajo</span> (work), <span class="spanish-text">tienda</span> (store), <span class="spanish-text">parque</span> (park).</li>
+                <li><strong>Prepositions:</strong> <span class="spanish-text">en</span> (in/on/at), <span class="spanish-text">cerca de</span> (near), <span class="spanish-text">lejos de</span> (far from), <span class="spanish-text">al lado de</span> (next to), <span class="spanish-text">delante de</span> (in front of), <span class="spanish-text">detrás de</span> (behind).</li>
+                <li><strong>Asking "Where is...?":</strong> <span class="spanish-text">¿Dónde está...?</span> (Where is...?), answer with <span class="spanish-text">Está...</span> (It is...).</li>
+                <li><strong>Basic Directions:</strong> <span class="spanish-text">izquierda</span> (left), <span class="spanish-text">derecha</span> (right), <span class="spanish-text">todo recto</span> (straight ahead). Use <span class="spanish-text">Gira a la...</span> (Turn to the...).</li>
+                <li><strong>Location Vocabulary:</strong> <span class="spanish-text">la calle</span> (street), <span class="spanish-text">la esquina</span> (corner), <span class="spanish-text">la plaza</span> (plaza), <span class="spanish-text">la avenida</span> (avenue).</li>
+            </ul>
+            <p>¡Excelente trabajo! You're now equipped to ask for and give basic directions in Spanish. Keep practicing these phrases, and soon you'll be giving directions like a native speaker!</p>
+        </section>
+    </div>
+</body>
+</html>

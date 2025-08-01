@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Basic Greetings and Introductions</title>
+    <style>
+        /* General Mobile-First Styles */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-bg-color: #FDF9E5;
+            --heading-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+            --light-cream: #FFFCEF; /* A slightly lighter variant for card backgrounds */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background-color: #FFFFFF; /* White background for the main body */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px; /* Minimum font size for body text */
+            margin: 0; /* Ensure no default body margin */
+        }
+
+        .lesson-container {
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto; /* Center the container on larger screens */
+            padding: 0 16px; /* Padding on sides for smaller screens */
+        }
+
+        /* Header Styles */
+        .chapter-title {
+            color: var(--heading-color);
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            padding: 24px 0 16px;
+            margin-top: 0; /* Remove default h1 top margin */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* As per requirement */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styles */
+        .lesson-section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .lesson-section h2, .lesson-section h3 {
+            color: var(--heading-color);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .lesson-section h2 {
+            font-size: 24px;
+        }
+
+        .lesson-section h3 {
+            font-size: 20px;
+        }
+
+        .lesson-section p {
+            margin-bottom: 12px;
+            color: var(--body-text-color);
+        }
+
+        .lesson-section ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 12px;
+        }
+
+        .lesson-section li {
+            margin-bottom: 8px;
+            color: var(--body-text-color);
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .lesson-section li::before {
+            content: '👉'; /* Unicode symbol for list item bullet */
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Vocab Item Styles */
+        .vocab-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: var(--light-cream);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            gap: 8px; /* Space between items if they wrap */
+        }
+
+        .vocab-item .spanish-word {
+            font-weight: bold;
+            color: var(--heading-color);
+            font-size: 18px;
+            flex-basis: 30%; /* Take up a third initially */
+            min-width: 80px; /* Minimum width for word */
+        }
+
+        .vocab-item .pronunciation {
+            font-style: italic;
+            color: #777;
+            font-size: 14px;
+            flex-basis: 35%;
+            min-width: 100px; /* Minimum width for pronunciation */
+        }
+
+        .vocab-item .english-translation {
+            color: var(--body-text-color);
+            font-size: 16px;
+            flex-basis: 25%;
+            min-width: 100px; /* Minimum width for translation */
+        }
+
+        /* Audio Icon Styles */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%; /* Circular button */
+            width: 44px; /* Minimum 44px for easy tapping */
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4299; /* Darker primary color on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Practice Section Styles */
+        .practice-section {
+            background-color: #E6EBF8; /* A slightly different background for practice */
+            border: 1px dashed var(--primary-color);
+        }
+
+        .practice-question {
+            margin-bottom: 16px;
+            padding: 12px;
+            background-color: #F8F9FB;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .practice-question p {
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--heading-color);
+        }
+
+        .choice-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column for mobile */
+            gap: 10px;
+        }
+
+        .choice-button {
+            background-color: white;
+            color: var(--heading-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px 20px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+            min-height: 48px; /* Ensure ample tap target */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .choice-button:hover {
+            background-color: var(--secondary-bg-color);
+            border-color: var(--primary-color);
+        }
+
+        .choice-button:active {
+            transform: scale(0.98);
+        }
+
+        /* Summary Section Styles */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .summary-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .summary-section ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .summary-section li {
+            margin-bottom: 10px;
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .summary-section li::before {
+            content: '✨';
+            position: static;
+        }
+
+        /* Responsive Adjustments for larger screens (e.g., tablets, desktops) */
+        @media (min-width: 600px) {
+            .lesson-container {
+                padding: 0 24px;
+            }
+
+            .chapter-title {
+                font-size: 34px;
+            }
+
+            .lesson-section {
+                padding: 30px;
+                margin-bottom: 30px;
+            }
+
+            .lesson-section h2 {
+                font-size: 28px;
+            }
+
+            .lesson-section h3 {
+                font-size: 22px;
+            }
+
+            .vocab-item {
+                flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+                justify-content: flex-start; /* Align to start */
+                gap: 16px; /* More space */
+            }
+
+            .vocab-item .spanish-word {
+                flex-basis: auto;
+                min-width: 120px; /* Adjust min-width */
+            }
+            .vocab-item .pronunciation {
+                flex-basis: auto;
+                min-width: 150px;
+            }
+            .vocab-item .english-translation {
+                flex-basis: auto;
+                flex-grow: 1; /* Allow it to grow */
+            }
+
+            .choice-grid {
+                grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+            }
+
+            .summary-section li {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chapter 2: Basic Greetings and Introductions</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section intro">
+            <h2>¡Hola! Welcome to Chapter 2! 👋</h2>
+            <p>Ready to start chatting in Spanish? In this chapter, we'll learn essential greetings, introductions, and polite phrases that you'll use every day to make new friends and navigate conversations.</p>
+        </section>
+
+        <!-- Section 1: Hello, Good morning, Good afternoon, Good evening -->
+        <section class="lesson-section">
+            <h3>Saying Hello & Good Day ☀️🌙</h3>
+            <p>Let's start with the basics! These are the first words you'll use when meeting someone or entering a place.</p>
+
+            <div class="vocab-item">
+                <span class="spanish-word">Hola</span>
+                <span class="pronunciation">[OH-lah]</span>
+                <span class="english-translation">Hello / Hi</span>
+                <button class="audio-icon" data-audio-text="Hola" aria-label="Play audio for Hola">🔊</button>
+            </div>
+
+            <div class="vocab-item">
+                <span class="spanish-word">Buenos días</span>
+                <span class="pronunciation">[BWEH-nohs DEE-ahs]</span>
+                <span class="english-translation">Good morning</span>
+                <button class="audio-icon" data-audio-text="Buenos días" aria-label="Play audio for Buenos días">🔊</button>
+            </div>
+
+            <div class="vocab-item">
+                <span class="spanish-word">Buenas tardes</span>
+                <span class="pronunciation">[BWEH-nahs TAR-dehs]</span>
+                <span class="english-translation">Good afternoon / Good early evening</span>
+                <button class="audio-icon" data-audio-text="Buenas tardes" aria-label="Play audio for Buenas tardes">🔊</button>
+            </div>
+
+            <div class="vocab-item">
+                <span class="spanish-word">Buenas noches</span>
+                <span class="pronunciation">[BWEH-nahs NOH-chehs]</span>
+                <span class="english-translation">Good evening / Good night</span>
+                <button class="audio-icon" data-audio-text="Buenas noches" aria-label="Play audio for Buenas noches">🔊</button>
+            </div>
+
+            <p><strong>Cultural Note:</strong> <em>Buenas tardes</em> is used from midday until dusk. <em>Buenas noches</em> is used from dusk onwards, for both "good evening" and "good night" (when going to bed).</p>
+        </section>
+
+        <!-- Practice 1: Match greeting to time -->
+        <section class="lesson-section practice-section">
+            <h3>Practice: Time of Day Greetings ⏰</h3>
+            <p>Choose the correct Spanish greeting for each situation!</p>
+
+            <div class="practice-question">
+                <p>1. It's 9:00 AM, and you're meeting a friend.</p>
+                <div class="choice-grid">
+                    <button class="choice-button" data-correct-answer="Buenos días">Buenos días</button>
+                    <button class="choice-button">Buenas noches</button>
+                    <button class="choice-button">Buenas tardes</button>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p>2. It's 7:30 PM, and you're entering a restaurant.</p>
+                <div class="choice-grid">
+                    <button class="choice-button">Buenos días</button>
+                    <button class="choice-button" data-correct-answer="Buenas noches">Buenas noches</button>
+                    <button class="choice-button">Hola</button>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p>3. It's 2:00 PM, and you're greeting a shopkeeper.</p>
+                <div class="choice-grid">
+                    <button class="choice-button">Hola</button>
+                    <button class="choice-button">Buenos días</button>
+                    <button class="choice-button" data-correct-answer="Buenas tardes">Buenas tardes</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Goodbye, Thank you, You're welcome -->
+        <section class="lesson-section">
+            <h3>Farewells & Gratitude 🙏</h3>
+            <p>Just as important as saying hello is knowing how to say goodbye and express thanks.</p>
+
+            <div class="vocab-item">
+                <span class="spanish-word">Adiós</span>
+                <span class="pronunciation">[ah-DYOHS]</span>
+                <span class="english-translation">Goodbye</span>
+                <button class="audio-icon" data-audio-text="Adiós" aria-label="Play audio for Adiós">🔊</button>
+            </div>
+
+            <div class="vocab-item">
+                <span class="spanish-word">Gracias</span>
+                <span class="pronunciation">[GRAH-syahs]</span>
+                <span class="english-translation">Thank you</span>
+                <button class="audio-icon" data-audio-text="Gracias" aria-label="Play audio for Gracias">🔊</button>
+            </div>
+
+            <div class="vocab-item">
+                <span class="spanish-word">De nada</span>
+                <span class="pronunciation">[deh NAH-dah]</span>
+                <span class="english-translation">You're welcome</span>
+                <button class="audio-icon" data-audio-text="De nada" aria-label="Play audio for De nada">🔊</button>
+            </div>
+        </section>
+
+        <!-- Practice 2: Simple completion -->
+        <section class="lesson-section practice-section">
+            <h3>Practice: Thanks & Goodbyes 👋</h3>
+            <p>Complete the mini-dialogues!</p>
+
+            <div class="practice-question">
+                <p>1. Someone helps you. You say: _______</p>
+                <div class="choice-grid">
+                    <button class="choice-button" data-correct-answer="Gracias">Gracias</button>
+                    <button class="choice-button">De nada</button>
+                    <button class="choice-button">Hola</button>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p>2. Someone says "Gracias" to you. You reply: _______</p>
+                <div class="choice-grid">
+                    <button class="choice-button">Adiós</button>
+                    <button class="choice-button" data-correct-answer="De nada">De nada</button>
+                    <button class="choice-button">Buenos días</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: My name is... / I'm... -->
+        <section class="lesson-section">
+            <h3>Introducing Yourself 👋</h3>
+            <p>Time to tell people who you are! Here are two common ways:</p>
+
+            <div class="vocab-item">
+                <span class="spanish-word">Me llamo...</span>
+                <span class="pronunciation">[meh YAH-moh]</span>
+                <span class="english-translation">My name is...</span>
+                <button class="audio-icon" data-audio-text="Me llamo" aria-label="Play audio for Me llamo">🔊</button>
+            </div>
+            <p style="margin-top: -5px; font-style: italic;">(Literally: "I call myself...")</p>
+
+            <div class="vocab-item">
+                <span class="spanish-word">Soy...</span>
+                <span class="pronunciation">[SOY]</span>
+                <span class="english-translation">I am...</span>
+                <button class="audio-icon" data-audio-text="Soy" aria-label="Play audio for Soy">🔊</button>
+            </div>
+            <p style="margin-top: -5px; font-style: italic;">(Use "Soy" for professions, nationalities, or a quicker introduction)</p>
+
+            <p><strong>Example:</strong></p>
+            <ul>
+                <li><strong>Me llamo Ana.</strong> (My name is Ana.) <button class="audio-icon" data-audio-text="Me llamo Ana" aria-label="Play audio for Me llamo Ana">🔊</button></li>
+                <li><strong>Soy David.</strong> (I am David.) <button class="audio-icon" data-audio-text="Soy David" aria-label="Play audio for Soy David">🔊</button></li>
+            </ul>
+        </section>
+
+        <!-- Practice 3: Introduce self -->
+        <section class="lesson-section practice-section">
+            <h3>Practice: Introduce Yourself! 🗣️</h3>
+            <p>Imagine you're meeting someone new. How would you introduce yourself?</p>
+            <div class="practice-question">
+                <p>Translate: "My name is [Your Name]"</p>
+                <div class="choice-grid">
+                    <button class="choice-button" data-correct-answer="Me llamo">Me llamo</button>
+                    <button class="choice-button">Soy</button>
+                    <button class="choice-button">Gracias</button>
+                </div>
+                <p style="margin-top: 10px; font-weight: normal; color: var(--body-text-color);"><em>(Remember to add your name after!)</em></p>
+            </div>
+        </section>
+
+        <!-- Section 4: Nice to meet you -->
+        <section class="lesson-section">
+            <h3>Making a Good Impression ✨</h3>
+            <p>After introductions, it's polite to say "Nice to meet you."</p>
+
+            <div class="vocab-item">
+                <span class="spanish-word">Mucho gusto</span>
+                <span class="pronunciation">[MOO-choh GOOS-toh]</span>
+                <span class="english-translation">Nice to meet you / Pleased to meet you</span>
+                <button class="audio-icon" data-audio-text="Mucho gusto" aria-label="Play audio for Mucho gusto">🔊</button>
+            </div>
+            <p style="margin-top: -5px; font-style: italic;">(Literally: "Much pleasure")</p>
+
+            <p><strong>Example Dialogue:</strong></p>
+            <ul>
+                <li><strong>Ana:</strong> Hola, me llamo Ana. <button class="audio-icon" data-audio-text="Hola, me llamo Ana" aria-label="Play audio for Hola, me llamo Ana">🔊</button></li>
+                <li><strong>David:</strong> Mucho gusto, Ana. Soy David. <button class="audio-icon" data-audio-text="Mucho gusto, Ana. Soy David" aria-label="Play audio for Mucho gusto, Ana. Soy David">🔊</button></li>
+            </ul>
+        </section>
+
+        <!-- Practice 4: Dialogue completion -->
+        <section class="lesson-section practice-section">
+            <h3>Practice: Nice to Meet You! 👋</h3>
+            <p>What would you say in response?</p>
+            <div class="practice-question">
+                <p><strong>Person 1:</strong> "Hola, me llamo Sofía."</p>
+                <p><strong>You:</strong> "_______, Sofía. Soy [Your Name]."</p>
+                <div class="choice-grid">
+                    <button class="choice-button">Adiós</button>
+                    <button class="choice-button" data-correct-answer="Mucho gusto">Mucho gusto</button>
+                    <button class="choice-button">Gracias</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Basic polite expressions -->
+        <section class="lesson-section">
+            <h3>Being Polite 😊</h3>
+            <p>Polite expressions are key to navigating any social situation.</p>
+
+            <div class="vocab-item">
+                <span class="spanish-word">Por favor</span>
+                <span class="pronunciation">[por fah-VOR]</span>
+                <span class="english-translation">Please</span>
+                <button class="audio-icon" data-audio-text="Por favor" aria-label="Play audio for Por favor">🔊</button>
+            </div>
+
+            <div class="vocab-item">
+                <span class="spanish-word">Permiso / Con permiso</span>
+                <span class="pronunciation">[per-MEE-soh / kon per-MEE-soh]</span>
+                <span class="english-translation">Excuse me (to pass by someone or if you need to briefly interrupt)</span>
+                <button class="audio-icon" data-audio-text="Permiso" aria-label="Play audio for Permiso">🔊</button>
+            </div>
+
+            <div class="vocab-item">
+                <span class="spanish-word">Lo siento</span>
+                <span class="pronunciation">[loh SYEN-toh]</span>
+                <span class="english-translation">I'm sorry</span>
+                <button class="audio-icon" data-audio-text="Lo siento" aria-label="Play audio for Lo siento">🔊</button>
+            </div>
+
+            <div class="vocab-item">
+                <span class="spanish-word">¡Salud!</span>
+                <span class="pronunciation">[sah-LOOD]</span>
+                <span class="english-translation">Bless you! (after a sneeze) / Cheers! (when toasting)</span>
+                <button class="audio-icon" data-audio-text="Salud" aria-label="Play audio for Salud">🔊</button>
+            </div>
+        </section>
+
+        <!-- Practice 5: Situation-based selection -->
+        <section class="lesson-section practice-section">
+            <h3>Practice: Polite Phrases ✅</h3>
+            <p>What would you say in these situations?</p>
+
+            <div class="practice-question">
+                <p>1. You accidentally bump into someone.</p>
+                <div class="choice-grid">
+                    <button class="choice-button" data-correct-answer="Lo siento">Lo siento</button>
+                    <button class="choice-button">Gracias</button>
+                    <button class="choice-button">Por favor</button>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p>2. You want to ask for a glass of water.</p>
+                <div class="choice-grid">
+                    <button class="choice-button">Adiós</button>
+                    <button class="choice-button" data-correct-answer="Por favor">Por favor</button>
+                    <button class="choice-button">Mucho gusto</button>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p>3. Someone sneezes.</p>
+                <div class="choice-grid">
+                    <button class="choice-button" data-correct-answer="¡Salud!">¡Salud!</button>
+                    <button class="choice-button">Permiso</button>
+                    <button class="choice-button">Lo siento</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section summary-section">
+            <h2>Chapter 2 Summary ✨</h2>
+            <p>You've learned how to greet, introduce yourself, and use essential polite expressions!</p>
+            <ul>
+                <li><strong>Hola:</strong> Hello / Hi</li>
+                <li><strong>Buenos días:</strong> Good morning</li>
+                <li><strong>Buenas tardes:</strong> Good afternoon / evening</li>
+                <li><strong>Buenas noches:</strong> Good evening / night</li>
+                <li><strong>Adiós:</strong> Goodbye</li>
+                <li><strong>Gracias:</strong> Thank you</li>
+                <li><strong>De nada:</strong> You're welcome</li>
+                <li><strong>Me llamo... / Soy...:</strong> My name is... / I am...</li>
+                <li><strong>Mucho gusto:</strong> Nice to meet you</li>
+                <li><strong>Por favor:</strong> Please</li>
+                <li><strong>Permiso / Con permiso:</strong> Excuse me (to pass)</li>
+                <li><strong>Lo siento:</strong> I'm sorry</li>
+                <li><strong>¡Salud!:</strong> Bless you / Cheers!</li>
+            </ul>
+            <p style="margin-top: 20px;">Keep practicing these phrases, and you'll be speaking Spanish confidently in no time!</p>
+        </section>
+
+    </div>
+</body>
+</html>

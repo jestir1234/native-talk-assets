@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 8: Adjetivos y Descripción</title>
+    <style>
+        /* Estilos Generales para el Cuerpo y Contenedor */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Fondo crema */
+            color: #666666; /* Body Text: Gris medio */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px; /* Tamaño de fuente mínimo */
+        }
+
+        .container {
+            padding: 0 15px; /* Padding para pantallas pequeñas */
+            max-width: 800px; /* Ancho máximo para pantallas grandes */
+            margin: 0 auto; /* Centrar el contenedor */
+        }
+
+        /* Estilos de Encabezados */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Azul oscuro */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Gris claro */
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-top: 25px;
+        }
+
+        /* Párrafos y Listas */
+        p {
+            margin-bottom: 1em;
+            font-size: 1em; /* 16px */
+        }
+
+        ul {
+            list-style: none; /* Eliminar viñetas por defecto */
+            padding: 0;
+            margin-bottom: 1.5em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Viñeta con emoji */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary: Morado */
+        }
+
+        /* Componentes Específicos de la Lección */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .section {
+            background-color: #FDF9E5; /* Secondary: Fondo crema */
+            padding: 20px 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight {
+            background-color: #F0E0FA; /* Tono más claro de morado */
+            padding: 10px 15px;
+            border-left: 5px solid #8B5FBF; /* Primary: Morado */
+            border-radius: 5px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+
+        .example {
+            background-color: #ffffff; /* Blanco para bloques de ejemplo */
+            border: 1px solid #E0E0E0; /* Borders: Gris claro */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Espacio entre elementos */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .example span.japanese {
+            font-weight: bold;
+            color: #2C3E50; /* Azul oscuro para texto japonés */
+            font-size: 1.1em;
+            flex-grow: 1; /* Permitir que ocupe espacio disponible */
+        }
+
+        .example span.translation {
+            color: #666666; /* Gris medio */
+            font-style: italic;
+            font-size: 0.95em;
+            text-align: right;
+        }
+
+        /* Icono de Audio */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Morado */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px; /* Tamaño mínimo para facilitar el toque */
+            height: 44px; /* Tamaño mínimo para facilitar el toque */
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Evitar que se encoja */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C4299; /* Morado más oscuro al pasar el ratón */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Sección de Práctica */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Fondo crema */
+            padding: 25px 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 1px dashed #8B5FBF; /* Borde primario punteado */
+            text-align: center;
+        }
+
+        .practice-question {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            text-align: left;
+        }
+
+        .practice-question p {
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .answer-options {
+            display: flex;
+            flex-direction: column; /* Apilar botones verticalmente */
+            gap: 10px; /* Espacio entre botones */
+        }
+
+        .answer-option-button {
+            background-color: #F0E0FA; /* Morado más claro */
+            color: #2C3E50;
+            border: 1px solid #8B5FBF; /* Primary: Morado */
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            text-align: left;
+            min-height: 44px; /* Asegurar tamaño de objetivo táctil */
+            display: flex; /* Para alinear ícono y texto */
+            align-items: center;
+            gap: 10px;
+        }
+
+        .answer-option-button:hover {
+            background-color: #D3BFF5; /* Un morado aún más claro al pasar el ratón */
+            transform: translateY(-2px);
+        }
+
+        .answer-option-button:active {
+            transform: translateY(0);
+        }
+
+        .feedback-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: none; /* Oculto por defecto, mostrado con JS */
+        }
+
+        .feedback-message.correct {
+            background-color: #D4EDDA; /* Verde claro */
+            color: #155724; /* Verde oscuro */
+            border: 1px solid #C3E6CB;
+        }
+
+        .feedback-message.incorrect {
+            background-color: #F8D7DA; /* Rojo claro */
+            color: #721C24; /* Rojo oscuro */
+            border: 1px solid #F5C6CB;
+        }
+
+        /* Sección de Resumen */
+        .summary-section {
+            background-color: #ffffff;
+            padding: 25px 15px;
+            margin-top: 30px;
+            border-radius: 10px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-section h2 {
+            border-bottom: none;
+            margin-top: 0;
+            padding-bottom: 0;
+            text-align: center;
+            color: #8B5FBF; /* Morado primario para el título del resumen */
+        }
+
+        .summary-section ul {
+            list-style: disc; /* Viñetas de disco */
+            padding-left: 20px;
+        }
+        .summary-section li::before {
+            content: ''; /* Eliminar viñeta por defecto del li */
+        }
+        .summary-section li {
+            margin-bottom: 0.8em;
+            padding-left: 0;
+            font-size: 0.95em;
+        }
+
+        /* Adaptaciones para Pantallas Más Grandes (Tablet/Desktop) */
+        @media (min-width: 600px) {
+            .container {
+                padding: 0 30px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            h3 {
+                font-size: 1.6em;
+            }
+            .example {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Capítulo 8: Adjetivos y Descripción</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section">
+            <h2>¡Hola, estudiante! 👋</h2>
+            <p>¡Bienvenido al Capítulo 8! Hoy vamos a desentrañar uno de los secretos para hablar y escribir de forma más interesante en japonés: ¡los <strong>adjetivos</strong>!</p>
+            <p>Con ellos, podrás describir todo lo que te rodea: desde el precio de esa tienda hasta la tranquilidad de una ciudad. ¡Vamos a darle vida a tus oraciones!</p>
+        </section>
+
+        <section class="section">
+            <h2>い-adjetivos vs. な-adjetivos: La Gran Diferencia</h2>
+            <p>En japonés, los adjetivos se dividen en dos grupos principales. Es crucial entender esta diferencia porque afecta cómo se usan en las oraciones.</p>
+
+            <h3>1. い-adjetivos (I-adjectives) 🎵</h3>
+            <p>Son adjetivos que siempre terminan en el carácter <span lang="ja">い</span> (i).</p>
+            <div class="highlight">
+                <strong>Regla de oro:</strong> Si un adjetivo termina en <span lang="ja">い</span>, ¡es un い-adjetivo! (Excepto por <span lang="ja">きれい</span> "kirei", que es una excepción y es un な-adjetivo).
+            </div>
+            <p>Aquí tienes algunos ejemplos muy comunes:</p>
+            <ul>
+                <li><div class="example">
+                    <button class="audio-icon" data-audio-text="たかい">🔊</button>
+                    <span class="japanese">たかい (takai)</span>
+                    <span class="translation">alto/caro</span>
+                </div></li>
+                <li><div class="example">
+                    <button class="audio-icon" data-audio-text="おいしい">🔊</button>
+                    <span class="japanese">おいしい (oishii)</span>
+                    <span class="translation">delicioso</span>
+                </div></li>
+                <li><div class="example">
+                    <button class="audio-icon" data-audio-text="あたらしい">🔊</button>
+                    <span class="japanese">あたらしい (atarashii)</span>
+                    <span class="translation">nuevo</span>
+                </div></li>
+                <li><div class="example">
+                    <button class="audio-icon" data-audio-text="ふるい">🔊</button>
+                    <span class="japanese">ふるい (furui)</span>
+                    <span class="translation">viejo</span>
+                </div></li>
+                <li><div class="example">
+                    <button class="audio-icon" data-audio-text="おおきい">🔊</button>
+                    <span class="japanese">おおきい (ookii)</span>
+                    <span class="translation">grande</span>
+                </div></li>
+            </ul>
+
+            <h3>2. な-adjetivos (Na-adjectives) 🌟</h3>
+            <p>Estos adjetivos no terminan en <span lang="ja">い</span> (con la excepción de <span lang="ja">きれい</span>) y <strong>necesitan la partícula <span lang="ja">な</span> cuando modifican directamente un sustantivo</strong>. Piensa en <span lang="ja">な</span> como un "conector" entre el adjetivo y el sustantivo.</p>
+            <p>Veamos algunos ejemplos:</p>
+            <ul>
+                <li><div class="example">
+                    <button class="audio-icon" data-audio-text="しずか">🔊</button>
+                    <span class="japanese">しずか (shizuka)</span>
+                    <span class="translation">tranquilo/silencioso</span>
+                </div></li>
+                <li><div class="example">
+                    <button class="audio-icon" data-audio-text="きれい">🔊</button>
+                    <span class="japanese">きれい (kirei)</span>
+                    <span class="translation">bonito/limpio (¡Excepción con い!)</span>
+                </div></li>
+                <li><div class="example">
+                    <button class="audio-icon" data-audio-text="げんき">🔊</button>
+                    <span class="japanese">げんき (genki)</span>
+                    <span class="translation">saludable/enérgico</span>
+                </div></li>
+                <li><div class="example">
+                    <button class="audio-icon" data-audio-text="ゆうめい">🔊</button>
+                    <span class="japanese">ゆうめい (yūmei)</span>
+                    <span class="translation">famoso</span>
+                </div></li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Estructura de Oraciones con Adjetivos 📝</h2>
+            <p>¡Ahora a la práctica! Así es como se usan en frases simples:</p>
+
+            <h3>Para い-adjetivos:</h3>
+            <p>La estructura es muy sencilla: <strong>Sustantivo は Adjetivo です。</strong></p>
+            <p>El い-adjetivo va directamente antes de <span lang="ja">です</span>.</p>
+            <div class="example">
+                <button class="audio-icon" data-audio-text="このみせはたかいです">🔊</button>
+                <span class="japanese">この みせ は たかい です。</span>
+                <span class="translation">Esta tienda es cara.</span>
+            </div>
+            <div class="example">
+                <button class="audio-icon" data-audio-text="このほんはおもしろいです">🔊</button>
+                <span class="japanese">この ほん は おもしろい です。</span>
+                <span class="translation">Este libro es interesante.</span>
+            </div>
+
+            <h3>Para な-adjetivos:</h3>
+            <p>Aquí hay dos maneras, dependiendo de si el adjetivo describe al sustantivo directamente o si es el predicado de la oración.</p>
+
+            <h4>1. Cuando el な-adjetivo modifica directamente un sustantivo:</h4>
+            <p>Usa: <strong>な-adjetivo な Sustantivo です。</strong></p>
+            <p>¡Recuerda esa <span lang="ja">な</span>! Actúa como un puente.</p>
+            <div class="example">
+                <button class="audio-icon" data-audio-text="しずかなまちです">🔊</button>
+                <span class="japanese">しずか な まち です。</span>
+                <span class="translation">Es una ciudad tranquila.</span>
+            </div>
+            <div class="example">
+                <button class="audio-icon" data-audio-text="きれいなはなです">🔊</button>
+                <span class="japanese">きれい な はな です。</span>
+                <span class="translation">Es una flor bonita.</span>
+            </div>
+
+            <h4>2. Cuando el な-adjetivo es el predicado de la oración:</h4>
+            <p>Usa: <strong>Sustantivo は な-adjetivo です。</strong></p>
+            <p>¡Atención! Cuando el な-adjetivo está al final de la oración con <span lang="ja">です</span>, <strong>la <span lang="ja">な</span> desaparece</strong>.</p>
+            <div class="example">
+                <button class="audio-icon" data-audio-text="このまちはしずかです">🔊</button>
+                <span class="japanese">この まち は しずか です。</span>
+                <span class="translation">Esta ciudad es tranquila.</span>
+            </div>
+            <div class="example">
+                <button class="audio-icon" data-audio-text="かのじょはげんきです">🔊</button>
+                <span class="japanese">かのじょ は げんき です。</span>
+                <span class="translation">Ella está saludable/con energía.</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Conectando Adjetivos: ¡Más Descripción! 🔗</h2>
+            <p>¿Quieres decir "grande y delicioso" o "bonito y tranquilo"? ¡Claro que sí! Así es como conectas dos o más adjetivos:</p>
+
+            <h3>Para い-adjetivos:</h3>
+            <p>Quita la <span lang="ja">い</span> final del primer adjetivo y añade <span lang="ja">くて</span> (kute).</p>
+            <div class="highlight">
+                い-adjetivo <span class="japanese">い</span> → い-adjetivo <span class="japanese">くて</span>
+            </div>
+            <div class="example">
+                <button class="audio-icon" data-audio-text="おおきくておいしい">🔊</button>
+                <span class="japanese">おおきい → おおき<strong>くて</strong> おいしい</span>
+                <span class="translation">grande y delicioso</span>
+            </div>
+            <div class="example">
+                <button class="audio-icon" data-audio-text="たかくてふるい">🔊</button>
+                <span class="japanese">たかい → たか<strong>くて</strong> ふるい</span>
+                <span class="translation">caro y viejo</span>
+            </div>
+
+            <h3>Para な-adjetivos:</h3>
+            <p>Añade <span lang="ja">で</span> (de) al final del primer adjetivo.</p>
+            <div class="highlight">
+                な-adjetivo → な-adjetivo <span class="japanese">で</span>
+            </div>
+            <div class="example">
+                <button class="audio-icon" data-audio-text="きれいでしずか">🔊</button>
+                <span class="japanese">きれい → きれい<strong>で</strong> しずか</span>
+                <span class="translation">bonito y tranquilo</span>
+            </div>
+            <div class="example">
+                <button class="audio-icon" data-audio-text="ゆうめいでべんり">🔊</button>
+                <span class="japanese">ゆうめい → ゆうめい<strong>で</strong> べんり</span>
+                <span class="translation">famoso y conveniente</span>
+            </div>
+            <p class="highlight">
+                <strong>💡 Nota Cultural:</strong> En japonés, usar adjetivos correctamente no solo es gramática, sino que también añade matices a tus descripciones. ¡Intenta usarlos para pintar una imagen más clara con tus palabras!
+            </p>
+        </section>
+
+        <section class="practice-section">
+            <h2>¡A Practicar! 💪</h2>
+            <p>Elige la opción correcta para completar cada oración.</p>
+
+            <div class="practice-question">
+                <p>1. この レストラン は _____ です。 (Este restaurante es delicioso.)</p>
+                <div class="answer-options">
+                    <button class="answer-option-button" data-answer="incorrect">しずか</button>
+                    <button class="answer-option-button" data-answer="correct">おいしい</button>
+                    <button class="answer-option-button" data-answer="incorrect">きれいな</button>
+                </div>
+                <div class="feedback-message" id="q1-feedback"></div>
+            </div>
+
+            <div class="practice-question">
+                <p>2. あれ は _____ えき です。 (Esa es una estación conveniente.)</p>
+                <div class="answer-options">
+                    <button class="answer-option-button" data-answer="incorrect">ふるい</button>
+                    <button class="answer-option-button" data-answer="incorrect">たかい</button>
+                    <button class="answer-option-button" data-answer="correct">べんりな</button>
+                </div>
+                <div class="feedback-message" id="q2-feedback"></div>
+            </div>
+
+            <div class="practice-question">
+                <p>3. この まちは _____、_____ です。 (Esta ciudad es limpia y tranquila.)</p>
+                <div class="answer-options">
+                    <button class="answer-option-button" data-answer="incorrect">きれいくて、しずか</button>
+                    <button class="answer-option-button" data-answer="incorrect">きれいなで、しずか</button>
+                    <button class="answer-option-button" data-answer="correct">きれい<strong>で</strong>、しずか</button>
+                </div>
+                <div class="feedback-message" id="q3-feedback"></div>
+            </div>
+
+            <div class="practice-question">
+                <p>4. あの Tシャツは _____、_____ です。 (Esa camiseta es nueva y cara.)</p>
+                <div class="answer-options">
+                    <button class="answer-option-button" data-answer="correct">あたらしい<strong>くて</strong>、たかい</button>
+                    <button class="answer-option-button" data-answer="incorrect">あたらしいで、たかい</button>
+                    <button class="answer-option-button" data-answer="incorrect">あたらしいな、たかい</button>
+                </div>
+                <div class="feedback-message" id="q4-feedback"></div>
+            </div>
+
+            <script>
+                // Script para la interactividad de las preguntas de práctica
+                document.querySelectorAll('.answer-option-button').forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Encuentra el elemento de feedback asociado a esta pregunta
+                        const feedbackId = this.closest('.practice-question').querySelector('.feedback-message').id;
+                        const feedbackElement = document.getElementById(feedbackId);
+                        
+                        // Reinicia cualquier feedback previo en la misma pregunta
+                        feedbackElement.style.display = 'none';
+                        feedbackElement.classList.remove('correct', 'incorrect');
+
+                        // Muestra el feedback según la respuesta
+                        if (this.dataset.answer === 'correct') {
+                            feedbackElement.textContent = '¡Correcto! 🎉';
+                            feedbackElement.classList.add('correct');
+                        } else {
+                            feedbackElement.textContent = '¡Incorrecto! 🤔 Inténtalo de nuevo.';
+                            feedbackElement.classList.add('incorrect');
+                        }
+                        feedbackElement.style.display = 'block'; // Hace visible el mensaje de feedback
+                    });
+                });
+            </script>
+        </section>
+
+        <section class="summary-section">
+            <h2>Resumen del Capítulo 8 📚</h2>
+            <ul>
+                <li>Los adjetivos japoneses se dividen en dos tipos: <strong>い-adjetivos</strong> y <strong>な-adjetivos</strong>.</li>
+                <li>Los <strong>い-adjetivos</strong> terminan en <span lang="ja">い</span> (e.g., <span lang="ja">たかい</span>, <span lang="ja">おいしい</span>). Se usan directamente antes de <span lang="ja">です</span> o de un sustantivo.</li>
+                <li>Los <strong>な-adjetivos</strong> no terminan en <span lang="ja">い</span> (o son la excepción como <span lang="ja">きれい</span>). Necesitan <span lang="ja">な</span> cuando modifican un sustantivo (<span lang="ja">しずか<strong>な</strong> まち</span>) pero no cuando son el predicado (<span lang="ja">まち は しずか です</span>).</li>
+                <li>Para conectar <strong>い-adjetivos</strong>, quita la <span lang="ja">い</span> y añade <span lang="ja">くて</span> (<span lang="ja">おおきい</span> → <span lang="ja">おおきくて</span>).</li>
+                <li>Para conectar <strong>な-adjetivos</strong>, añade <span lang="ja">で</span> (<span lang="ja">きれい</span> → <span lang="ja">きれいで</span>).</li>
+            </ul>
+            <p>¡Dominar los adjetivos te permitirá expresarte con mucha más riqueza en japonés! ¡Sigue practicando!</p>
+        </section>
+
+    </div>
+</body>
+</html>

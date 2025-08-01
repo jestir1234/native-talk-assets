@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Colors and Descriptions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-bg-color: #FDF9E5;
+            --heading-text-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+            --white: #FFFFFF;
+        }
+
+        /* Base styles for mobile-first */
+        html {
+            box-sizing: border-box;
+            font-size: 16px; /* Base for rem units */
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            padding: 1.25rem; /* 20px */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--heading-text-color);
+            margin-top: 1.5rem; /* 24px */
+            margin-bottom: 0.75rem; /* 12px */
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2.25rem; /* 36px */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.75rem; /* 28px */
+            padding-bottom: 0.5rem; /* 8px */
+            border-bottom: 1px solid var(--border-color);
+            margin-top: 2rem; /* 32px */
+        }
+
+        h3 {
+            font-size: 1.25rem; /* 20px */
+            margin-top: 1.5rem; /* 24px */
+        }
+
+        p {
+            margin-bottom: 1rem; /* 16px */
+            font-size: 1rem; /* 16px */
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem; /* 8px */
+            padding-left: 1.5rem; /* For custom bullet */
+            position: relative;
+        }
+
+        li::before {
+            content: '👉';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Section styling */
+        .lesson-section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            padding: 1.5rem; /* 24px */
+            margin-bottom: 1.5rem; /* 24px */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Practice sections */
+        .practice-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: var(--white);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .practice-card {
+            background-color: var(--white);
+            color: var(--body-text-color);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .practice-card p {
+            margin-bottom: 0.5rem;
+        }
+
+        .reveal-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            min-height: 44px;
+            min-width: 120px;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 1rem auto 0.5rem;
+        }
+
+        .reveal-button:hover {
+            background-color: #6a429b; /* Slightly darker purple */
+        }
+
+        .answer {
+            margin-top: 0.5rem;
+            font-style: italic;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Audio icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 1.5rem; /* 24px */
+            cursor: pointer;
+            color: var(--primary-color);
+            padding: 0.25rem; /* 4px */
+            margin-left: 0.5rem; /* 8px */
+            min-width: 44px;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            vertical-align: middle;
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple highlight */
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #e0f2f7; /* A light blue for distinction */
+            border-left: 5px solid #007bff; /* A nice blue accent */
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #333;
+        }
+        .cultural-note strong {
+            color: #007bff;
+        }
+
+        /* Summary */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: var(--white);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .summary-section ul {
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 600px;
+        }
+
+        .summary-section li {
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+        }
+        .summary-section li::before {
+            color: var(--white);
+            content: '⭐';
+        }
+
+        /* Responsive adjustments for larger screens */
+        @media (min-width: 600px) {
+            .container {
+                padding: 2rem; /* 32px */
+            }
+
+            h1 {
+                font-size: 3rem; /* 48px */
+            }
+
+            h2 {
+                font-size: 2rem; /* 32px */
+            }
+
+            h3 {
+                font-size: 1.5rem; /* 24px */
+            }
+
+            .lesson-section {
+                padding: 2rem; /* 32px */
+            }
+
+            .practice-card {
+                padding: 1.5rem;
+            }
+
+            .reveal-button {
+                min-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 4: Colors and Descriptions</h1>
+        <div class="lesson-header">
+            <!-- This image src is part of the required structure. No actual image content is provided by this lesson. -->
+            <img src="../header.webp" alt="Chapter 4 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>¡Hola! Welcome to Chapter 4!</h2>
+            <p>Today, we're diving into the vibrant world of Spanish colors and how to describe objects around you. Get ready to add some color to your vocabulary!</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🌈 Basic Colors (Colores Básicos)</h2>
+            <p>Let's start with some essential colors. Notice that in Spanish, colors are often treated as adjectives, which means their ending might change based on what they are describing (we'll get to that!).</p>
+
+            <ul>
+                <li><strong>Red:</strong> Rojo <button class="audio-icon" data-audio-text="rojo">🔊</button> (RO-ho)</li>
+                <li><strong>Blue:</strong> Azul <button class="audio-icon" data-audio-text="azul">🔊</button> (ah-SOOL)</li>
+                <li><strong>Green:</strong> Verde <button class="audio-icon" data-audio-text="verde">🔊</button> (VER-deh)</li>
+                <li><strong>Yellow:</strong> Amarillo <button class="audio-icon" data-audio-text="amarillo">🔊</button> (ah-mah-REE-yo)</li>
+                <li><strong>Black:</strong> Negro <button class="audio-icon" data-audio-text="negro">🔊</button> (NEH-gro)</li>
+                <li><strong>White:</strong> Blanco <button class="audio-icon" data-audio-text="blanco">🔊</button> (BLAHN-ko)</li>
+                <li><strong>Orange:</strong> Naranja <button class="audio-icon" data-audio-text="naranja">🔊</button> (nah-RAHN-hah)</li>
+                <li><strong>Purple:</strong> Morado <button class="audio-icon" data-audio-text="morado">🔊</button> (moh-RAH-doh)</li>
+                <li><strong>Pink:</strong> Rosado <button class="audio-icon" data-audio-text="rosado">🔊</button> (roh-SAH-doh)</li>
+                <li><strong>Brown:</strong> Marrón <button class="audio-icon" data-audio-text="marrón">🔊</button> (mah-RROHN) / Café <button class="audio-icon" data-audio-text="café">🔊</button> (kah-FEH) (used more for coffee-like brown)</li>
+                <li><strong>Gray:</strong> Gris <button class="audio-icon" data-audio-text="gris">🔊</button> (GREES)</li>
+            </ul>
+            <p>Great start! Remember, practice saying them out loud with the audio guide.</p>
+        </section>
+
+        <section class="practice-section">
+            <h3>Practice Time! 🎨 Color Match</h3>
+            <p>Tap the button to reveal the Spanish color!</p>
+
+            <div class="practice-card">
+                <p>English: Red</p>
+                <button class="reveal-button" data-question="red">Reveal</button>
+                <p class="answer" style="display: none;">Spanish: Rojo <button class="audio-icon" data-audio-text="rojo">🔊</button></p>
+            </div>
+            <div class="practice-card">
+                <p>English: Blue</p>
+                <button class="reveal-button" data-question="blue">Reveal</button>
+                <p class="answer" style="display: none;">Spanish: Azul <button class="audio-icon" data-audio-text="azul">🔊</button></p>
+            </div>
+            <div class="practice-card">
+                <p>English: Green</p>
+                <button class="reveal-button" data-question="green">Reveal</button>
+                <p class="answer" style="display: none;">Spanish: Verde <button class="audio-icon" data-audio-text="verde">🔊</button></p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>📏 Describing Objects: Size and Height</h2>
+            <p>Now, let's learn some common adjectives to describe how big or small things are, or how tall or short someone is. Like colors, these adjectives also agree in gender and number with the noun they describe.</p>
+
+            <ul>
+                <li><strong>Big / Large:</strong> Grande <button class="audio-icon" data-audio-text="grande">🔊</button> (GRAHN-deh)</li>
+                <li><strong>Small / Little:</strong> Pequeño <button class="audio-icon" data-audio-text="pequeño">🔊</button> (peh-KEH-nyo)</li>
+                <li><strong>Tall:</strong> Alto <button class="audio-icon" data-audio-text="alto">🔊</button> (AHL-toh)</li>
+                <li><strong>Short (height):</strong> Bajo <button class="audio-icon" data-audio-text="bajo">🔊</button> (BAH-ho)</li>
+                <li><strong>Short (length):</strong> Corto <button class="audio-icon" data-audio-text="corto">🔊</button> (KOR-toh)</li>
+            </ul>
+
+            <h3>Cultural Note: Gender Agreement</h3>
+            <div class="cultural-note">
+                <p>In Spanish, most adjectives change their ending to match the gender (masculine/feminine) and number (singular/plural) of the noun they describe.</p>
+                <p>For example:</p>
+                <ul>
+                    <li>A big dog (masculine singular): Un perro <strong>grande</strong> <button class="audio-icon" data-audio-text="un perro grande">🔊</button></li>
+                    <li>A small house (feminine singular): Una casa <strong>pequeña</strong> <button class="audio-icon" data-audio-text="una casa pequeña">🔊</button></li>
+                    <li>Tall boys (masculine plural): Los chicos <strong>altos</strong> <button class="audio-icon" data-audio-text="los chicos altos">🔊</button></li>
+                    <li>Short girls (feminine plural): Las chicas <strong>bajas</strong> <button class="audio-icon" data-audio-text="las chicas bajas">🔊</button></li>
+                </ul>
+                <p>Notice how 'pequeño', 'alto', and 'bajo' change their ending. 'Grande' and 'gris' are special: they don't change for gender in singular! More on this later, but it's good to keep an eye out!</p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>⬅️ This is... / That is... (Este es... / Ese es...)</h2>
+            <p>To point out things, we use demonstrative pronouns. For now, let's stick to the basic "this is" and "that is" for singular objects.</p>
+
+            <ul>
+                <li><strong>This is... (masculine):</strong> Este es... <button class="audio-icon" data-audio-text="este es">🔊</button> (ES-teh es)</li>
+                <li><strong>This is... (feminine):</strong> Esta es... <button class="audio-icon" data-audio-text="esta es">🔊</button> (ES-tah es)</li>
+                <li><strong>That is... (masculine):</strong> Ese es... <button class="audio-icon" data-audio-text="ese es">🔊</button> (EH-seh es)</li>
+                <li><strong>That is... (feminine):</strong> Esa es... <button class="audio-icon" data-audio-text="esa es">🔊</button> (EH-sah es)</li>
+            </ul>
+
+            <p><strong>Examples:</strong></p>
+            <ul>
+                <li>This is a blue car. <button class="audio-icon" data-audio-text="Este es un coche azul">🔊</button><br><em>Este es un coche azul.</em> (Car is masculine)</li>
+                <li>That is a small house. <button class="audio-icon" data-audio-text="Esa es una casa pequeña">🔊</button><br><em>Esa es una casa pequeña.</em> (House is feminine)</li>
+                <li>This is a tall boy. <button class="audio-icon" data-audio-text="Este es un chico alto">🔊</button><br><em>Este es un chico alto.</em></li>
+            </ul>
+        </section>
+
+        <section class="lesson-section">
+            <h2>❓ What color is it? It's... (¿De qué color es? Es...)</h2>
+            <p>Asking about colors is super useful! Here's how to do it:</p>
+
+            <ul>
+                <li><strong>What color is it?</strong> ¿De qué color es? <button class="audio-icon" data-audio-text="de qué color es">🔊</button> (deh KEH koh-LOR es)</li>
+                <li><strong>It is... / It's...</strong> Es... <button class="audio-icon" data-audio-text="es">🔊</button> (es)</li>
+            </ul>
+
+            <p><strong>Examples:</strong></p>
+            <ul>
+                <li>¿De qué color es la manzana? <button class="audio-icon" data-audio-text="de qué color es la manzana">🔊</button> (What color is the apple?)</li>
+                <li>Es roja. <button class="audio-icon" data-audio-text="es roja">🔊</button> (It's red.) 🍎</li>
+                <li>¿De qué color es el cielo? <button class="audio-icon" data-audio-text="de qué color es el cielo">🔊</button> (What color is the sky?)</li>
+                <li>Es azul. <button class="audio-icon" data-audio-text="es azul">🔊</button> (It's blue.) 🟦</li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h3>Practice Time! 🗣️ Ask and Answer</h3>
+            <p>Imagine you see these objects. How would you ask about their color and then answer?</p>
+
+            <div class="practice-card">
+                <p><strong>Object:</strong> A green tree (Un árbol verde)</p>
+                <p><strong>Your Question:</strong> ¿De qué color es el árbol?</p>
+                <button class="reveal-button" data-question="tree-color">Reveal Answer</button>
+                <p class="answer" style="display: none;"><strong>Your Answer:</strong> Es verde. <button class="audio-icon" data-audio-text="es verde">🔊</button></p>
+            </div>
+            <div class="practice-card">
+                <p><strong>Object:</strong> A yellow sun (Un sol amarillo)</p>
+                <p><strong>Your Question:</strong> ¿De qué color es el sol?</p>
+                <button class="reveal-button" data-question="sun-color">Reveal Answer</button>
+                <p class="answer" style="display: none;"><strong>Your Answer:</strong> Es amarillo. <button class="audio-icon" data-audio-text="es amarillo">🔊</button></p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>✍️ Adjectives and Basic Descriptions</h2>
+            <p>Finally, let's put it all together to form simple descriptions. Remember, in Spanish, the adjective usually comes *after* the noun it describes. And don't forget gender and number agreement!</p>
+
+            <p><strong>Formula:</strong> [Noun] + [Adjective]</p>
+
+            <p><strong>Examples:</strong></p>
+            <ul>
+                <li>A red apple: Una manzana <strong>roja</strong> <button class="audio-icon" data-audio-text="una manzana roja">🔊</button> (Apple is feminine, so "rojo" becomes "roja")</li>
+                <li>A big house: Una casa <strong>grande</strong> <button class="audio-icon" data-audio-text="una casa grande">🔊</button> (House is feminine)</li>
+                <li>A small car: Un coche <strong>pequeño</strong> <button class="audio-icon" data-audio-text="un coche pequeño">🔊</button> (Car is masculine, so "pequeño" stays "pequeño")</li>
+                <li>A black cat: Un gato <strong>negro</strong> <button class="audio-icon" data-audio-text="un gato negro">🔊</button> (Cat is masculine, so "negro" stays "negro")</li>
+                <li>Tall girls: Las chicas <strong>altas</strong> <button class="audio-icon" data-audio-text="las chicas altas">🔊</button> (Girls are feminine plural, so "alto" becomes "altas")</li>
+            </ul>
+            <p>This is a fundamental rule in Spanish! Keep practicing, and it will become second nature.</p>
+        </section>
+
+        <section class="summary-section">
+            <h2>¡En Resumen! 📚 Chapter 4 Recap</h2>
+            <p>You've made great progress in describing the world around you!</p>
+            <ul>
+                <li>You learned common Spanish colors like <strong>rojo, azul, verde, amarillo, negro, blanco</strong>.</li>
+                <li>You discovered adjectives for size and height: <strong>grande, pequeño, alto, bajo, corto</strong>.</li>
+                <li>You can now say "This is..." (<strong>Este es/Esta es</strong>) and "That is..." (<strong>Ese es/Esa es</strong>).</li>
+                <li>You know how to ask "What color is it?" (<strong>¿De qué color es?</strong>) and answer "It's..." (<strong>Es...</strong>).</li>
+                <li>Crucially, you started understanding that Spanish adjectives (like colors and descriptions) usually come <strong>after the noun</strong> and must <strong>agree in gender and number</strong>!</li>
+            </ul>
+            <p>¡Excelente trabajo! Keep observing the world in Spanish. What color is that tree? ¿De qué color es el árbol? What color is your shirt? ¿De qué color es tu camisa?</p>
+        </section>
+
+    </div>
+
+    <script>
+        // This script is purely for demonstrating the reveal button functionality in a browser.
+        // In the actual mobile app, this would be handled by the native frontend logic.
+        document.querySelectorAll('.reveal-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const answer = this.nextElementSibling; // The <p class="answer"> element
+                if (answer) {
+                    answer.style.display = 'block';
+                    this.style.display = 'none'; // Hide the button after revealing
+                }
+            });
+        });
+        // The audio-icon buttons are handled by the native app, no JS needed here.
+    </script>
+</body>
+</html>

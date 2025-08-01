@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: 家族と人間関係</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Hiragino Sans', 'ヒラギノ角ゴ ProN W3', 'Yu Gothic', 'メイリオ', Meiryo, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            box-sizing: border-box;
+            min-height: 100vh; /* Ensure full height for background */
+        }
+
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 16px; /* Minimum 16px for body text */
+            padding: 0 16px; /* Padding for mobile readability */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+        }
+
+        li {
+            padding: 8px 16px;
+            margin-bottom: 5px;
+            border-bottom: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        strong {
+            color: #2C3E50; /* Darker for emphasis */
+        }
+
+        /* Container for overall lesson content */
+        .lesson-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: 40px; /* Space at the bottom */
+        }
+
+        /* Header Specifics */
+        .chapter-title {
+            text-align: center;
+            padding: 20px 16px;
+            font-size: 28px;
+            margin-top: 0;
+            padding-top: 40px;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #FFFFFF; /* White for content sections */
+            margin: 20px 16px;
+            padding: 20px 0; /* Adjust padding for internal content */
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            overflow: hidden; /* Clear floats for inner elements */
+        }
+
+        section h2, section h3 {
+            padding: 0 16px; /* Align headings with section content */
+        }
+
+        .korean-word {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            border-bottom: 1px solid #E0E0E0;
+        }
+
+        .korean-word:last-of-type {
+            border-bottom: none;
+        }
+
+        .korean-word span {
+            font-size: 18px;
+            color: #2C3E50;
+            font-weight: bold;
+        }
+
+        .korean-pronunciation {
+            font-size: 14px;
+            color: #8B5FBF; /* Primary color for pronunciation */
+            margin-left: 8px;
+        }
+
+        .korean-translation {
+            font-size: 16px;
+            color: #666666;
+            margin-left: auto; /* Push translation to the right */
+        }
+
+        /* Audio Icon Styling */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px; /* Slightly larger for easier tapping */
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+            flex-shrink: 0; /* Prevent icon from shrinking */
+            margin-left: 10px;
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+            background-color: #6C429B; /* Darker purple on active */
+        }
+
+        .audio-icon:hover { /* For devices with hover */
+            background-color: #6C429B;
+        }
+
+        /* Examples */
+        .example-sentence {
+            background-color: #F8F8F8;
+            border-left: 4px solid #8B5FBF; /* Primary color accent */
+            padding: 12px 16px;
+            margin: 15px 16px;
+            border-radius: 6px;
+            font-style: italic;
+        }
+
+        .example-sentence p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Practice Section */
+        .practice-question {
+            background-color: #EBF5FF; /* Light blue for practice */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 16px;
+            border: 1px solid #D0E3F0;
+        }
+
+        .practice-question p {
+            font-weight: bold;
+            color: #2C3E50;
+            padding: 0;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .practice-option {
+            background-color: #FFFFFF;
+            border: 1px solid #8B5FBF;
+            color: #8B5FBF;
+            padding: 12px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            min-height: 44px; /* Ensure tap target size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .practice-option:active {
+            background-color: #8B5FBF;
+            color: #FFFFFF;
+        }
+
+        .practice-option:hover { /* For devices with hover */
+            background-color: #8B5FBF;
+            color: #FFFFFF;
+        }
+
+        .correct-answer {
+            color: #28a745; /* Green for correct */
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 0 16px;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-size: 14px;
+            padding: 0 16px;
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: #FFF3E0; /* Light orange for cultural notes */
+            border-left: 5px solid #F7A541; /* Orange accent */
+            padding: 15px 16px;
+            margin: 20px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #5C4F42;
+        }
+
+        .cultural-note strong {
+            color: #F7A541;
+        }
+
+        /* Summary */
+        .summary-list li {
+            background-color: #F8F8F8;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            padding: 12px 16px;
+            border-bottom: none; /* No border for summary list items */
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 600px) {
+            .chapter-title {
+                font-size: 36px;
+                padding-top: 60px;
+            }
+
+            p, ul, li, .korean-word span, .korean-translation, .practice-option {
+                font-size: 18px; /* Slightly larger on tablets/desktops */
+            }
+
+            .korean-pronunciation {
+                font-size: 16px;
+            }
+
+            .lesson-container {
+                padding-top: 20px;
+            }
+            
+            section {
+                margin: 20px auto; /* Center sections on wider screens */
+                padding: 25px 0;
+            }
+
+            .practice-option {
+                padding: 14px 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chapter 5: 家族と人間関係</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>✨ はじめに</h2>
+            <p>こんにちは！ このチャプターでは、韓国語の家族関係や身近な人々の呼び方について学びます。韓国では人間関係が非常に大切にされており、相手との関係性によって使う言葉が変わることがよくあります。一緒に楽しく学んでいきましょう！</p>
+        </section>
+
+        <section>
+            <h2>👨‍👩‍👧‍👦 家族メンバー (가족)</h2>
+            <p>まずは、家族を表す基本的な韓国語の単語を見ていきましょう。家族を呼ぶ際の敬称や、兄弟姉妹の呼び方が性別によって変わる点に注目してください。</p>
+
+            <ul>
+                <li class="korean-word">
+                    <span>아버지</span>
+                    <span class="korean-pronunciation">（アボジ）</span>
+                    <span class="korean-translation">父</span>
+                    <button class="audio-icon" data-audio-text="아버지">🔊</button>
+                </li>
+                <li class="korean-word">
+                    <span>어머니</span>
+                    <span class="korean-pronunciation">（オモニ）</span>
+                    <span class="korean-translation">母</span>
+                    <button class="audio-icon" data-audio-text="어머니">🔊</button>
+                </li>
+                <li class="korean-word">
+                    <span>형</span>
+                    <span class="korean-pronunciation">（ヒョン）</span>
+                    <span class="korean-translation">兄（男性が呼ぶ場合）</span>
+                    <button class="audio-icon" data-audio-text="형">🔊</button>
+                </li>
+                <li class="korean-word">
+                    <span>누나</span>
+                    <span class="korean-pronunciation">（ヌナ）</span>
+                    <span class="korean-translation">姉（男性が呼ぶ場合）</span>
+                    <button class="audio-icon" data-audio-text="누나">🔊</button>
+                </li>
+                <li class="korean-word">
+                    <span>오빠</span>
+                    <span class="korean-pronunciation">（オッパ）</span>
+                    <span class="korean-translation">兄（女性が呼ぶ場合）</span>
+                    <button class="audio-icon" data-audio-text="오빠">🔊</button>
+                </li>
+                <li class="korean-word">
+                    <span>언니</span>
+                    <span class="korean-pronunciation">（オンニ）</span>
+                    <span class="korean-translation">姉（女性が呼ぶ場合）</span>
+                    <button class="audio-icon" data-audio-text="언니">🔊</button>
+                </li>
+                <li class="korean-word">
+                    <span>동생</span>
+                    <span class="korean-pronunciation">（トンセン）</span>
+                    <span class="korean-translation">弟、妹（年下の兄弟姉妹）</span>
+                    <button class="audio-icon" data-audio-text="동생">🔊</button>
+                </li>
+                <li class="korean-word">
+                    <span>나</span>
+                    <span class="korean-pronunciation">（ナ）</span>
+                    <span class="korean-translation">私</span>
+                    <button class="audio-icon" data-audio-text="나">🔊</button>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>💡 文化ノート：兄弟姉妹の呼び方</strong><br>
+                韓国では、自分の性別によって兄や姉の呼び方が変わります。これは、年齢が重視される韓国社会において、目上の人への敬意を示すための重要なルールです。年下の兄弟姉妹は性別に関わらず「동생 (トンセン)」と呼びます。
+            </div>
+
+            <h3>例文を見てみましょう！</h3>
+            <div class="example-sentence">
+                <p><strong>저의 어머니입니다.</strong></p>
+                <p>（チョエ オモニイムニダ）</p>
+                <p>私の母です。</p>
+            </div>
+            <div class="example-sentence">
+                <p><strong>저는 누나가 한 명 있어요.</strong></p>
+                <p>（チョヌン ヌナガ ハン ミョン イッソヨ）</p>
+                <p>私（男性）には姉が一人います。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>👥 その他の大切な人間関係</h2>
+            <p>家族以外にも、日々の生活で出会う人たちを表す言葉を学びましょう。</p>
+
+            <ul>
+                <li class="korean-word">
+                    <span>친구</span>
+                    <span class="korean-pronunciation">（チング）</span>
+                    <span class="korean-translation">友達</span>
+                    <button class="audio-icon" data-audio-text="친구">🔊</button>
+                </li>
+                <li class="korean-word">
+                    <span>선생님</span>
+                    <span class="korean-pronunciation">（ソンセンニム）</span>
+                    <span class="korean-translation">先生</span>
+                    <button class="audio-icon" data-audio-text="선생님">🔊</button>
+                </li>
+                <li class="korean-word">
+                    <span>직장동료</span>
+                    <span class="korean-pronunciation">（チクチャン ドンリョ）</span>
+                    <span class="korean-translation">職場の同僚</span>
+                    <button class="audio-icon" data-audio-text="직장동료">🔊</button>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>💡 文化ノート：先生への敬意</strong><br>
+                「선생님 (ソンセンニム)」は、学校の先生だけでなく、知識や技術を教えてくれる人、あるいは単に尊敬する年長者に対しても使われる敬称です。韓国社会では先生に対する敬意が非常に厚いです。
+            </div>
+
+            <h3>例文</h3>
+            <div class="example-sentence">
+                <p><strong>제 친구는 한국 사람이에요.</strong></p>
+                <p>（チェ チングヌン ハングク サラミエヨ）</p>
+                <p>私の友達は韓国人です。</p>
+            </div>
+            <div class="example-sentence">
+                <p><strong>김 선생님, 안녕하세요?</strong></p>
+                <p>（キム ソンセンニム、アンニョンハセヨ？）</p>
+                <p>キム先生、こんにちは？</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🗣️ 敬語と丁寧語</h2>
+            <p>韓国語には、相手との関係性や年齢、社会的地位によって言葉遣いを変える「敬語」と「丁寧語」の概念があります。今回はその基本を少し見てみましょう。</p>
+            <ul>
+                <li><strong>-님 (-ニム)：</strong> 尊敬の接尾辞です。「선생님 (先生)」、「사장님 (社長)」、「손님 (お客様)」のように、名詞の後に付けて尊敬の意を表します。</li>
+                <li><strong>丁寧語 (〜어요/아요/해요)：</strong> 日常会話で最も一般的に使われる丁寧な語尾です。初対面の人や目上の人、親しくない人との会話に適しています。</li>
+                <li><strong>パンマル (반말)：</strong> 親しい友人や年下の人に対して使うくだけた表現です。適切な状況以外で使うと失礼にあたるので注意が必要です。</li>
+            </ul>
+            <p>家族内でも、親には丁寧語やより尊敬の念を込めた言葉を使い、年下の兄弟姉妹にはパンマルを使うのが一般的です。</p>
+        </section>
+
+        <section>
+            <h2>🎯 練習してみましょう！</h2>
+            <p>学んだ単語を使って、簡単な練習問題に挑戦しましょう。</p>
+
+            <div class="practice-question">
+                <p>以下の韓国語の単語は日本語で何という意味でしょう？</p>
+                <div class="korean-word">
+                    <span>어머니</span>
+                    <button class="audio-icon" data-audio-text="어머니">🔊</button>
+                </div>
+                <div class="practice-options">
+                    <button class="practice-option">父</button>
+                    <button class="practice-option">母</button>
+                    <button class="practice-option">友達</button>
+                </div>
+                <p class="correct-answer" style="display:none;">正解は「母」です！</p>
+            </div>
+
+            <div class="practice-question">
+                <p>男性が「お兄さん」と呼ぶ韓国語の単語は？</p>
+                <div class="practice-options">
+                    <button class="practice-option">오빠</button>
+                    <button class="practice-option">형</button>
+                    <button class="practice-option">언니</button>
+                </div>
+                <p class="correct-answer" style="display:none;">正解は「형」です！</p>
+            </div>
+
+            <div class="practice-question">
+                <p>「先生」という意味の韓国語の単語は？</p>
+                <div class="korean-word">
+                    <span>선생님</span>
+                    <button class="audio-icon" data-audio-text="선생님">🔊</button>
+                </div>
+                <div class="practice-options">
+                    <button class="practice-option">친구</button>
+                    <button class="practice-option">직장동료</button>
+                    <button class="practice-option">先生</button>
+                </div>
+                <p class="correct-answer" style="display:none;">正解は「先生」です！</p>
+            </div>
+            
+            <script>
+                // This is a simplified JS for demonstration.
+                // In a real mobile app, interaction logic would be handled by the native framework.
+                document.querySelectorAll('.practice-question').forEach(questionBlock => {
+                    const options = questionBlock.querySelectorAll('.practice-option');
+                    const correctAnswerElem = questionBlock.querySelector('.correct-answer');
+                    
+                    options.forEach(option => {
+                        option.addEventListener('click', () => {
+                            // Reset previous feedback
+                            options.forEach(opt => {
+                                opt.style.backgroundColor = '#FFFFFF';
+                                opt.style.color = '#8B5FBF';
+                            });
+                            correctAnswerElem.style.display = 'none';
+
+                            // Simulate checking answer (requires knowing correct answer in JS)
+                            // For simplicity, let's assume the second option is usually correct for these specific questions.
+                            // In a real app, this would be data-driven.
+                            let isCorrect = false;
+                            if (questionBlock.querySelector('span')?.textContent === '어머니' && option.textContent === '母') {
+                                isCorrect = true;
+                            } else if (questionBlock.querySelector('.korean-word') === null && option.textContent === '형') { // For the "male calls older brother" question
+                                isCorrect = true;
+                            } else if (questionBlock.querySelector('span')?.textContent === '선생님' && option.textContent === '先生') {
+                                isCorrect = true;
+                            }
+
+                            if (isCorrect) {
+                                option.style.backgroundColor = '#28a745'; /* Green */
+                                option.style.color = '#FFFFFF';
+                                correctAnswerElem.textContent = '🎉 正解です！';
+                                correctAnswerElem.style.color = '#28a745';
+                            } else {
+                                option.style.backgroundColor = '#dc3545'; /* Red */
+                                option.style.color = '#FFFFFF';
+                                correctAnswerElem.textContent = '残念、もう一度挑戦してみましょう。';
+                                correctAnswerElem.style.color = '#dc3545';
+                            }
+                            correctAnswerElem.style.display = 'block'; // Show feedback
+                        });
+                    });
+                });
+            </script>
+        </section>
+
+        <section>
+            <h2>🇰🇷 韓国の家族構造の文化的側面</h2>
+            <p>韓国社会において、家族は個人を形成する上で非常に重要な役割を担っています。いくつかの特徴を見てみましょう。</p>
+            <ul>
+                <li><strong>目上への尊敬：</strong>
+                    <p>家族内でも、親や年上の兄弟姉妹には常に尊敬の念を持ち、敬意を払うことが求められます。言葉遣いだけでなく、態度や行動にも表れます。</p>
+                </li>
+                <li><strong>集団主義：</strong>
+                    <p>欧米の個人主義とは異なり、韓国では家族全体が一つの単位として機能する集団主義の傾向が強いです。個人の成功や失敗は家族全体の評価にもつながると考えられます。</p>
+                </li>
+                <li><strong>親の役割と責任：</strong>
+                    <p>親は子供の教育や成長に対して大きな責任を持ち、子供も親孝行を重んじます。これは儒教思想の影響を強く受けています。</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📝 今日のまとめ</h2>
+            <p>このチャプターでは、韓国語の家族関係や人間関係の基礎を学びました。重要なポイントをおさらいしましょう！</p>
+            <ul class="summary-list">
+                <li>
+                    <strong>家族メンバーの呼び方：</strong>
+                    <p>아버지 (父), 어머니 (母), 형 (男性の兄), 누나 (男性の姉), 오빠 (女性の兄), 언니 (女性の姉), 동생 (弟/妹)。自分の性別によって兄や姉の呼び方が変わる点に注意。</p>
+                </li>
+                <li>
+                    <strong>その他の人間関係：</strong>
+                    <p>친구 (友達), 선생님 (先生), 직장동료 (職場の同僚) を学びました。</p>
+                </li>
+                <li>
+                    <strong>敬語と丁寧語の概念：</strong>
+                    <p>-님 (尊敬の接尾辞) や丁寧語・パンマルなど、相手との関係性で言葉遣いが変わることを理解しました。</p>
+                </li>
+                <li>
+                    <strong>文化的な側面：</strong>
+                    <p>韓国では家族の結束が非常に強く、目上への尊敬や集団主義の価値観が根付いています。</p>
+                </li>
+            </ul>
+            <p>これらの単語と概念を覚えて、韓国でのコミュニケーションに活かしてみてくださいね！</p>
+        </section>
+    </div>
+</body>
+</html>

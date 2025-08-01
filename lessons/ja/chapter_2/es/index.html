@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 2: Hiragana – Las Vocales</title>
+    <style>
+        /* Global Styles & Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* Color Scheme */
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-bg-color: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--white);
+            color: var(--body-text-color);
+            padding: 0 15px; /* Comfortable padding on mobile screens */
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        .lesson-container {
+            max-width: 600px; /* Max width for content on larger screens (tablets, desktops) */
+            margin: 0 auto; /* Center container */
+            padding-bottom: 30px; /* Space at the bottom of the lesson */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .chapter-title {
+            text-align: center;
+            font-size: 1.8em; /* Slightly larger for chapter title */
+            padding-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.5em; /* Responsive font size */
+            margin-top: 30px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.2em; /* Responsive font size */
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Lesson Header Specifics */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        section {
+            background-color: var(--secondary-bg-color);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Vowel Cards */
+        .vowel-card {
+            display: flex;
+            flex-direction: column; /* Stack vertically on small screens */
+            align-items: center; /* Center items when stacked */
+            justify-content: center;
+            padding: 15px;
+            background-color: var(--white);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            text-align: center; /* Center text within card for column layout */
+        }
+
+        @media (min-width: 480px) { /* Adjust for slightly larger phones or landscape orientation */
+            .vowel-card {
+                flex-direction: row; /* Layout horizontally on wider screens */
+                justify-content: space-around;
+                text-align: left; /* Align text left when horizontal */
+            }
+        }
+
+        .vowel-char {
+            font-size: 4em; /* Large character for prominence */
+            color: var(--primary-color);
+            margin-bottom: 10px; /* Space below character in column layout */
+            line-height: 1; /* Tight line height for large character */
+        }
+
+        @media (min-width: 480px) {
+            .vowel-char {
+                margin-right: 20px; /* Space to the right of character in row layout */
+                margin-bottom: 0; /* Remove bottom margin in row layout */
+            }
+        }
+
+        .vowel-info {
+            flex-grow: 1; /* Allow info section to take available space */
+        }
+
+        .pronunciation-guide {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-bottom: 8px;
+        }
+
+        .stroke-order {
+            font-family: 'Courier New', monospace; /* Monospace for ASCII art */
+            white-space: pre; /* Preserve spaces and newlines for text art */
+            background-color: #f8f8f8;
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            margin-top: 10px;
+            overflow-x: auto; /* Enable horizontal scrolling for narrow screens */
+            text-align: left;
+            align-self: stretch; /* Make it fill width in flex container */
+            max-width: 100%; /* Ensure it doesn't overflow parent */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%; /* Circle shape */
+            width: 48px; /* Minimum 44px for easy tapping */
+            height: 48px; /* Minimum 44px for easy tapping */
+            display: inline-flex; /* Use flex for centering icon */
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em; /* Icon size */
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            margin-left: 10px; /* Space from text */
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a469f; /* Darker primary on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95); /* Shrink on tap/click */
+        }
+
+        /* Word Examples */
+        .word-example {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space out elements */
+            background-color: var(--white);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .word-text {
+            flex-grow: 1; /* Allow text to take up most space */
+            font-size: 1.1em;
+            color: var(--heading-text-color);
+        }
+
+        .word-translation {
+            color: var(--body-text-color);
+            margin-left: 15px; /* Space between Japanese and Spanish */
+            flex-shrink: 0; /* Prevent translation from shrinking */
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--white); /* White background for practice */
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px dashed var(--border-color); /* Dotted border for interactive sections */
+        }
+
+        .practice-question {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color); /* Separator between questions */
+        }
+
+        .practice-question:last-child {
+            border-bottom: none; /* No border for the last question */
+            margin-bottom: 0;
+        }
+
+        .question-text {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: var(--heading-text-color);
+            font-weight: bold;
+        }
+
+        .answer-options {
+            display: flex;
+            flex-wrap: wrap; /* Allow options to wrap to the next line */
+            gap: 10px; /* Space between options */
+            justify-content: center; /* Center buttons when wrapped */
+        }
+
+        .option-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 25px; /* Pill shape */
+            padding: 12px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            min-height: 44px; /* Ensure tap target size */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1; /* Allow buttons to grow and fill space */
+            text-align: center;
+            flex-basis: calc(50% - 5px); /* Two buttons per row on wider screens, adjust for gap */
+            max-width: 200px; /* Limit button width on very wide screens */
+        }
+
+        @media (max-width: 360px) { /* Adjust for very small screens, single column for options */
+            .option-button {
+                flex-basis: 100%;
+            }
+        }
+
+        .option-button:hover {
+            background-color: #6a469f;
+            transform: translateY(-2px);
+        }
+
+        .option-button:active {
+            transform: translateY(0);
+        }
+
+        /* Summary Section */
+        .summary-section ul {
+            list-style: none; /* Remove default list bullets */
+            padding-left: 0;
+        }
+
+        .summary-section li {
+            margin-bottom: 10px;
+            padding-left: 25px; /* Space for custom bullet */
+            position: relative;
+        }
+
+        .summary-section li::before {
+            content: '✨'; /* Custom bullet point using emoji */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1.2em;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chapter 2: Hiragana – The Vowel Sounds</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>¡Hola, aspirante a hablante de japonés! 👋</h2>
+            <p>¡Bienvenido al Capítulo 2! Hoy daremos un paso gigante: ¡aprenderemos las <strong>vocales de Hiragana</strong>! Estas cinco letras son el esqueleto de toda la pronunciación japonesa y son la base para construir palabras.</p>
+            <p>El Hiragana es el silabario básico del japonés, usado para escribir palabras nativas. ¡Prepárate para dominar los primeros cinco caracteres y empezar a leer tus primeras palabras!</p>
+            <p>💡 <strong>Dato cultural:</strong> A diferencia del español, las vocales en japonés casi siempre tienen un sonido fijo y limpio. ¡Esto facilita mucho la pronunciación! Por ejemplo, la "u" nunca suena como "eu" ni la "o" como "ou".</p>
+        </section>
+
+        <section>
+            <h2>あ (a) – Como en "agua" 💧</h2>
+            <div class="vowel-card">
+                <span class="vowel-char">あ</span>
+                <div class="vowel-info">
+                    <p class="pronunciation-guide">Se pronuncia como la "a" en español de "agua" o "mama". Siempre abierta y clara.</p>
+                    <button class="audio-icon" data-audio-text="あ" aria-label="Pronunciar あ">🔊</button>
+                    <pre class="stroke-order">
+ １─┐
+   │
+   ◎┐
+  ／  │
+ ─┼─┘
+   │
+   ○</pre>
+                    <p><em>Orden de trazos:</em> Empieza con el trazo horizontal, luego el vertical con gancho, y finalmente el bucle inferior.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>い (i) – Como en "libro" 📚</h2>
+            <div class="vowel-card">
+                <span class="vowel-char">い</span>
+                <div class="vowel-info">
+                    <p class="pronunciation-guide">Se pronuncia como la "i" en español de "libro" o "miga". Corta y precisa.</p>
+                    <button class="audio-icon" data-audio-text="い" aria-label="Pronunciar い">🔊</button>
+                    <pre class="stroke-order">
+  ┐  
+  │ 
+  │
+ １┘   ２
+   \   /
+    \ /
+     ○</pre>
+                    <p><em>Orden de trazos:</em> El primer trazo es el gancho de la izquierda, el segundo es el trazo de la derecha que parece una "cola".</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>う (u) – Como en "luz" 💡</h2>
+            <div class="vowel-card">
+                <span class="vowel-char">う</span>
+                <div class="vowel-info">
+                    <p class="pronunciation-guide">Se pronuncia como la "u" en español de "luz" o "uva". Sin redondear mucho los labios.</p>
+                    <button class="audio-icon" data-audio-text="う" aria-label="Pronunciar う">🔊</button>
+                    <pre class="stroke-order">
+   １─┐
+       │
+     ─┘
+     ○
+     │
+     ２─</pre>
+                    <p><em>Orden de trazos:</em> Un trazo corto en la parte superior derecha, seguido de un trazo curvo que cruza y termina abajo a la izquierda.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>え (e) – Como en "elefante" 🐘</h2>
+            <div class="vowel-card">
+                <span class="vowel-char">え</span>
+                <div class="vowel-info">
+                    <p class="pronunciation-guide">Se pronuncia como la "e" en español de "elefante" o "mesa". Abierta y sin diptongar.</p>
+                    <button class="audio-icon" data-audio-text="え" aria-label="Pronunciar え">🔊</button>
+                    <pre class="stroke-order">
+ １──┐
+     │
+ ─┐  │
+ │  ／
+ │  ○
+ └─┘</pre>
+                    <p><em>Orden de trazos:</em> Empieza con el trazo horizontal superior, luego el trazo vertical con gancho, y finalmente la curva que parece una "z" incompleta.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>お (o) – Como en "oso" 🐻</h2>
+            <div class="vowel-card">
+                <span class="vowel-char">お</span>
+                <div class="vowel-info">
+                    <p class="pronunciation-guide">Se pronuncia como la "o" en español de "oso" o "foto". Redonda y pura.</p>
+                    <button class="audio-icon" data-audio-text="お" aria-label="Pronunciar お">🔊</button>
+                    <pre class="stroke-order">
+ １─┐
+   │
+   ◎─
+  ／  │
+ ─┼─┘
+   │
+   ○</pre>
+                    <p><em>Orden de trazos:</em> Similar a あ. Empieza con el trazo horizontal, luego el vertical con bucle, y finalmente un pequeño trazo diagonal arriba a la derecha.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>✨ Tus Primeras Palabras en Hiragana ✨</h2>
+            <p>¡Felicidades! Ahora que conoces las 5 vocales, ¡puedes formar tus primeras palabras reales en japonés! Escucha y repite:</p>
+
+            <div class="word-example">
+                <span class="word-text">あい</span>
+                <span class="word-translation">amor</span>
+                <button class="audio-icon" data-audio-text="あい" aria-label="Pronunciar あい">🔊</button>
+            </div>
+            <div class="word-example">
+                <span class="word-text">いえ</span>
+                <span class="word-translation">casa</span>
+                <button class="audio-icon" data-audio-text="いえ" aria-label="Pronunciar いえ">🔊</button>
+            </div>
+            <div class="word-example">
+                <span class="word-text">うみ</span>
+                <span class="word-translation">mar</span>
+                <button class="audio-icon" data-audio-text="うみ" aria-label="Pronunciar うみ">🔊</button>
+            </div>
+            <div class="word-example">
+                <span class="word-text">うえ</span>
+                <span class="word-translation">arriba / encima</span>
+                <button class="audio-icon" data-audio-text="うえ" aria-label="Pronunciar うえ">🔊</button>
+            </div>
+            <div class="word-example">
+                <span class="word-text">あお</span>
+                <span class="word-translation">azul</span>
+                <button class="audio-icon" data-audio-text="あお" aria-label="Pronunciar あお">🔊</button>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>💪 ¡A Practicar! 💪</h2>
+            <p>¡Es hora de poner a prueba lo aprendido! Elige la opción correcta para cada pregunta.</p>
+
+            <div class="practice-question">
+                <p class="question-text">¿Qué sonido corresponde a "い"?</p>
+                <div class="answer-options">
+                    <button class="option-button" data-correct="false">A</button>
+                    <button class="option-button" data-correct="true">I</button>
+                    <button class="option-button" data-correct="false">U</button>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p class="question-text">¿Cómo se lee "うえ"?</p>
+                <div class="answer-options">
+                    <button class="option-button" data-correct="false">Ao</button>
+                    <button class="option-button" data-correct="true">Ue</button>
+                    <button class="option-button" data-correct="false">Ie</button>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p class="question-text">¿Qué palabra significa "amor"?</p>
+                <div class="answer-options">
+                    <button class="option-button" data-correct="true">あい</button>
+                    <button class="option-button" data-correct="false">うみ</button>
+                    <button class="option-button" data-correct="false">いえ</button>
+                </div>
+            </div>
+
+            <p><em>(En una aplicación real, recibirías feedback instantáneo sobre tus respuestas aquí. ¡Sigue practicando!)</em></p>
+        </section>
+
+        <section class="summary-section">
+            <h2>📝 Resumen del Capítulo 2 📝</h2>
+            <p>¡Excelente trabajo! Has cubierto los fundamentos del Hiragana:</p>
+            <ul>
+                <li>✨ Has aprendido las <strong>5 vocales básicas de Hiragana</strong>: あ, い, う, え, お.</li>
+                <li>✨ Has comprendido su <strong>pronunciación fija y clara</strong>, similar a las vocales en español.</li>
+                <li>✨ Has visto el <strong>orden de los trazos</strong> para escribir cada carácter.</li>
+                <li>✨ Has leído y comprendido tus <strong>primeras palabras completas</strong> en japonés, como あい (amor) e いえ (casa).</li>
+                <li>✨ Has practicado la identificación de los caracteres y la lectura de palabras.</li>
+            </ul>
+            <p>¡Este es un gran primer paso en tu viaje con el japonés! Sigue repasando estas vocales y sus sonidos. ¡Pronto estaremos listos para combinar estas vocales con las consonantes y formar muchas más sílabas!</p>
+        </section>
+    </div>
+</body>
+</html>

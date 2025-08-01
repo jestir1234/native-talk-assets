@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Food and Drinks</title>
+    <style>
+        /* Global Styles & Variables */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-bg-color: #FDF9E5;
+            --heading-text-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+            --white-color: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--body-text-color);
+            background-color: var(--white-color);
+            min-height: 100vh;
+        }
+
+        /* Main container for lesson content */
+        .lesson-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px; /* Padding for mobile screens */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 1.8rem; /* Mobile first */
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            font-size: 1rem; /* Base font size, 16px */
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        strong {
+            color: var(--heading-text-color); /* Emphasize important words */
+        }
+
+        small {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        /* Lesson Header */
+        .chapter-title {
+            margin-top: 20px;
+            margin-bottom: 0; /* Align with required header structure */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            background-color: var(--white-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .lesson-section.light-bg {
+            background-color: var(--secondary-bg-color);
+        }
+
+        /* Vocabulary Lists */
+        .vocabulary-list li {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .vocabulary-list li:last-child {
+            border-bottom: none;
+        }
+
+        .vocabulary-list strong {
+            flex: 1; /* Take up available space */
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .vocabulary-list .audio-icon {
+            margin-left: 10px;
+        }
+
+        .example-phrases li {
+            background-color: var(--white-color);
+            padding: 10px 15px;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .example-phrases strong {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .example-phrases small {
+            margin-top: 5px;
+        }
+
+        /* Example Boxes */
+        .example-box {
+            background-color: var(--white-color);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .example-box.light-bg {
+            background-color: var(--secondary-bg-color);
+        }
+
+        .example-box p {
+            margin-bottom: 0.5rem;
+        }
+
+        .example-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #E6D2F2; /* A lighter shade of primary for contrast */
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 1px solid var(--primary-color);
+        }
+
+        .cultural-note h4 {
+            color: var(--heading-text-color);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .cultural-note p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 50%;
+            width: 44px; /* Min tap target size */
+            height: 44px; /* Min tap target size */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #6A3E99; /* Darker primary on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Text highlighting */
+        .text-primary {
+            color: var(--primary-color);
+        }
+
+        /* Exercises */
+        .exercise-card {
+            background-color: var(--white-color);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-top: 20px;
+        }
+
+        .exercise-list li {
+            background-color: var(--secondary-bg-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .translation-hint {
+            font-size: 0.9rem;
+            color: #A0A0A0;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .answer-reveal {
+            display: inline-flex; /* Use flex for centering content */
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 0 20px; /* Padding for horizontal spacing */
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            min-height: 44px; /* Ensure tap target size */
+            border: none; /* Buttons have default borders */
+        }
+
+        .answer-reveal:hover {
+            background-color: #6A3E99;
+            transform: translateY(-2px);
+        }
+
+        .answer-reveal:active {
+            transform: translateY(0);
+            background-color: #55337C;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--secondary-bg-color);
+            text-align: center;
+            padding: 30px 20px;
+            margin-bottom: 40px; /* More space at the bottom */
+        }
+
+        .summary-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .summary-section ul {
+            text-align: left;
+            display: inline-block; /* To center the ul itself */
+            margin-left: 20px; /* Indent the list items */
+            margin-right: 20px;
+        }
+
+        .summary-section li {
+            margin-bottom: 0.7rem;
+            font-size: 1.05rem;
+        }
+
+        /* Responsive Adjustments for larger screens (e.g., tablets and desktops) */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            h3 {
+                font-size: 1.7rem;
+            }
+
+            p, li {
+                font-size: 1.1rem; /* Slightly larger for larger screens */
+            }
+
+            .lesson-section {
+                padding: 30px;
+                margin-bottom: 30px;
+            }
+
+            .vocabulary-list strong {
+                font-size: 1.2rem;
+            }
+
+            .audio-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 1.3rem;
+            }
+
+            .summary-section {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="lesson-container">
+        <h1 class="chapter-title">Chapter 7: Food and Drinks</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>¡Hola, Comida! 👋</h2>
+            <p>Welcome to Chapter 7! Get ready to explore the delicious world of food and drinks in Spanish. You'll learn essential vocabulary for ordering, expressing your preferences, and navigating a Spanish menu. Let's dig in! 🥑</p>
+        </section>
+
+        <section class="lesson-section light-bg">
+            <h3>🍲 Common Foods: What's on Your Plate?</h3>
+            <p>Let's start with some everyday food items you'll definitely encounter.</p>
+            <ul class="vocabulary-list">
+                <li><strong>Bread:</strong> Pan <span class="audio-icon" data-audio-text="pan">🔊</span> <small>(pahn)</small></li>
+                <li><strong>Rice:</strong> Arroz <span class="audio-icon" data-audio-text="arroz">🔊</span> <small>(ah-RROHS)</small></li>
+                <li><strong>Meat:</strong> Carne <span class="audio-icon" data-audio-text="carne">🔊</span> <small>(KAR-neh)</small></li>
+                <li><strong>Vegetables:</strong> Verduras <span class="audio-icon" data-audio-text="verduras">🔊</span> <small>(ver-DOO-rahs)</small></li>
+                <li><strong>Fruit:</strong> Fruta <span class="audio-icon" data-audio-text="fruta">🔊</span> <small>(FROO-tah)</small></li>
+                <li><strong>Fish:</strong> Pescado <span class="audio-icon" data-audio-text="pescado">🔊</span> <small>(pes-KAH-doh)</small></li>
+                <li><strong>Chicken:</strong> Pollo <span class="audio-icon" data-audio-text="pollo">🔊</span> <small>(POH-yoh)</small></li>
+            </ul>
+        </section>
+
+        <section class="lesson-section">
+            <h3>💧 Thirsty? Essential Drinks!</h3>
+            <p>Staying hydrated is key! Here are some common drinks in Spanish.</p>
+            <ul class="vocabulary-list">
+                <li><strong>Water:</strong> Agua <span class="audio-icon" data-audio-text="agua">🔊</span> <small>(AH-gwah)</small></li>
+                <li><strong>Coffee:</strong> Café <span class="audio-icon" data-audio-text="café">🔊</span> <small>(kah-FEH)</small></li>
+                <li><strong>Tea:</strong> Té <span class="audio-icon" data-audio-text="té">🔊</span> <small>(teh)</small></li>
+                <li><strong>Juice:</strong> Jugo <span class="audio-icon" data-audio-text="jugo">🔊</span> <small>(HOO-goh) (In Spain, also <strong class="text-primary">Zumo</strong>)</small></li>
+                <li><strong>Milk:</strong> Leche <span class="audio-icon" data-audio-text="leche">🔊</span> <small>(LEH-cheh)</small></li>
+                <li><strong>Wine:</strong> Vino <span class="audio-icon" data-audio-text="vino">🔊</span> <small>(VEE-noh)</small></li>
+                <li><strong>Beer:</strong> Cerveza <span class="audio-icon" data-audio-text="cerveza">🔊</span> <small>(ser-VEH-sah)</small></li>
+            </ul>
+        </section>
+
+        <section class="lesson-section light-bg">
+            <h3>👍 I like... / I don't like... - Expressing Preferences</h3>
+            <p>Now, let's learn how to talk about what you enjoy (or don't enjoy!).</p>
+            <div class="example-box">
+                <p>To say "I like...", use: <strong class="text-primary">Me gusta...</strong></p>
+                <p>Example: <strong class="text-primary">Me gusta el café.</strong> <span class="audio-icon" data-audio-text="Me gusta el café">🔊</span><br><small>I like coffee.</small></p>
+                <p>To say "I don't like...", use: <strong class="text-primary">No me gusta...</strong></p>
+                <p>Example: <strong class="text-primary">No me gusta la carne.</strong> <span class="audio-icon" data-audio-text="No me gusta la carne">🔊</span><br><small>I don't like meat.</small></p>
+                <p class="note"><strong>💡 Tip:</strong> When talking about liking something in general, Spanish often uses "el" (the masculine "the") or "la" (the feminine "the") with the noun.</p>
+            </div>
+
+            <h4>Practice Time! 🤔</h4>
+            <div class="exercise-card">
+                <p>Translate these phrases into Spanish:</p>
+                <ul class="exercise-list">
+                    <li>
+                        I like water.
+                        <span class="translation-hint">Hint: "Agua" is feminine, but starts with a stressed 'a' sound, so it uses "el" for singular.</span>
+                        <button type="button" class="answer-reveal" data-answer="Me gusta el agua.">Show Answer</button>
+                    </li>
+                    <li>
+                        I don't like rice.
+                        <button type="button" class="answer-reveal" data-answer="No me gusta el arroz.">Show Answer</button>
+                    </li>
+                    <li>
+                        I like vegetables.
+                        <span class="translation-hint">Hint: "Vegetables" (verduras) is plural. Use "gustan" for plural things!</span>
+                        <button type="button" class="answer-reveal" data-answer="Me gustan las verduras.">Show Answer</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>🍽️ What do you like to eat? - Asking Preferences</h3>
+            <p>Want to ask someone about their food preferences? Here's how!</p>
+            <div class="example-box">
+                <p>To ask "What do you like to eat?", use: <strong class="text-primary">¿Qué te gusta comer?</strong> <span class="audio-icon" data-audio-text="¿Qué te gusta comer?">🔊</span></p>
+                <p><small>Pronunciation: (keh teh GOOS-tah koh-MEHR)</small></p>
+                <p>To ask "What do you like to drink?", use: <strong class="text-primary">¿Qué te gusta beber?</strong> <span class="audio-icon" data-audio-text="¿Qué te gusta beber?">🔊</span></p>
+                <p><small>Pronunciation: (keh teh GOOS-tah beh-BEHR)</small></p>
+            </div>
+
+            <h4>Mini-Dialogue Practice:</h4>
+            <div class="example-box light-bg">
+                <p><strong>A:</strong> <strong class="text-primary">¿Qué te gusta comer?</strong> <span class="audio-icon" data-audio-text="¿Qué te gusta comer?">🔊</span><br><small>What do you like to eat?</small></p>
+                <p><strong>B:</strong> <strong class="text-primary">Me gusta el pollo y las verduras.</strong> <span class="audio-icon" data-audio-text="Me gusta el pollo y las verduras.">🔊</span><br><small>I like chicken and vegetables.</small></p>
+            </div>
+        </section>
+
+        <section class="lesson-section light-bg">
+            <h3>👨‍🍳 At the Restaurant: Basic Phrases</h3>
+            <p>Time to put your new vocabulary to use! Here are some phrases for dining out.</p>
+            <ul class="vocabulary-list">
+                <li><strong>Menu:</strong> El menú <span class="audio-icon" data-audio-text="el menú">🔊</span> <small>(ehl meh-NOO)</small></li>
+                <li><strong>Table:</strong> La mesa <span class="audio-icon" data-audio-text="la mesa">🔊</span> <small>(lah MEH-sah)</small></li>
+                <li><strong>Waiter/Waitress:</strong> El camarero / La camarera <span class="audio-icon" data-audio-text="el camarero">🔊</span><span class="audio-icon" data-audio-text="la camarera">🔊</span> <small>(ehl kah-mah-REH-roh / lah kah-mah-REH-rah)</small></li>
+                <li><strong>To order:</strong> Pedir <span class="audio-icon" data-audio-text="pedir">🔊</span> <small>(peh-DEER)</small></li>
+                <li><strong>The bill/check:</strong> La cuenta <span class="audio-icon" data-audio-text="la cuenta">🔊</span> <small>(lah KWEN-tah)</small></li>
+                <li><strong>Delicious:</strong> Delicioso/a <span class="audio-icon" data-audio-text="delicioso">🔊</span> <small>(deh-lee-SYOH-soh/sah)</small></li>
+            </ul>
+
+            <h4>Useful Phrases:</h4>
+            <ul class="example-phrases">
+                <li><strong class="text-primary">Quisiera...</strong> <span class="audio-icon" data-audio-text="Quisiera">🔊</span> <br><small>I would like...</small> (Polite way to order)</li>
+                <li><strong class="text-primary">¿Me trae la cuenta, por favor?</strong> <span class="audio-icon" data-audio-text="¿Me trae la cuenta, por favor?">🔊</span> <br><small>Could you bring me the bill, please?</small></li>
+                <li><strong class="text-primary">¡Está delicioso!</strong> <span class="audio-icon" data-audio-text="Está delicioso">🔊</span> <br><small>It's delicious!</small></li>
+            </ul>
+
+            <div class="cultural-note">
+                <h4>Cultural Bite 🌍</h4>
+                <p>In many Spanish-speaking countries, lunch (<em>el almuerzo</em>) is the biggest meal of the day, often eaten later, around 2-3 PM. Dinner (<em>la cena</em>) is usually lighter and eaten much later, often after 9 PM!</p>
+            </div>
+        </section>
+
+        <section class="lesson-section summary-section">
+            <h3>✨ Chapter 7 Summary: Food & Drinks!</h3>
+            <p>You've successfully learned how to talk about food and drinks in Spanish! Here's a quick recap:</p>
+            <ul>
+                <li><strong>Common Foods & Drinks:</strong> <em>pan, arroz, carne, verduras, agua, café, té, leche.</em></li>
+                <li><strong>Preferences:</strong> Use <em>Me gusta...</em> (I like...) and <em>No me gusta...</em> (I don't like...). Remember <em>Me gustan...</em> for plural items!</li>
+                <li><strong>Asking Preferences:</strong> <em>¿Qué te gusta comer/beber?</em> (What do you like to eat/drink?)</li>
+                <li><strong>Restaurant Basics:</strong> <em>el menú, la cuenta, quisiera...</em></li>
+            </ul>
+            <p>¡Buen provecho! (Bon appétit!) Enjoy practicing your new vocabulary! 🥳</p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: 時間とスケジュール</title>
+    <style>
+        /* グローバルなフォントと背景色 */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* テキストサイズの自動調整防止 */
+            word-wrap: break-word; /* 長い単語の折り返し */
+        }
+
+        /* コンテンツのコンテナ */
+        .container {
+            padding: 16px;
+            max-width: 800px; /* PCなど大画面での最大幅 */
+            margin: 0 auto;
+        }
+
+        /* 見出しのスタイル */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 8px;
+            margin-top: 32px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 24px;
+            color: #8B5FBF; /* Primary: Purple for sub-headings for visual pop */
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        /* リストのスタイル */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+
+        li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            padding-left: 28px; /* アイコン分のスペース */
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow for list items */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 14px;
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        /* 強調テキスト */
+        strong {
+            color: #2C3E50; /* Dark blue for strong text */
+        }
+
+        em {
+            font-style: normal;
+            color: #8B5FBF; /* Primary: Purple for emphasis */
+        }
+
+        /* レッスンヘッダー */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* 各セクションの共通スタイル */
+        .lesson-section {
+            background-color: #FFFFFF; /* White background for sections */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* 韓国語単語の表示スタイル */
+        .korean-word {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 8px;
+        }
+
+        .korean-word .hangul {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-right: 4px;
+        }
+
+        .korean-word .pronunciation {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        /* 韓国語例文のスタイル */
+        .korean-example {
+            background-color: #F9F9F9;
+            border-left: 5px solid #8B5FBF;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .korean-example .korean-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 5px;
+        }
+
+        .korean-example .japanese-translation {
+            font-size: 16px;
+            color: #666666;
+        }
+
+        /* 音声アイコンのスタイル */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+            vertical-align: middle;
+            margin-left: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            flex-shrink: 0; /* フレックスコンテナ内で縮小しない */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4891; /* ホバーで少し暗いパープル */
+            transform: scale(1.05);
+        }
+
+        /* 練習問題セクション */
+        .practice-section {
+            background-color: #FDF9E5; /* Cream background */
+            border: 2px dashed #8B5FBF;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: #2C3E50;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .practice-button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            min-height: 44px; /* タッチターゲットのサイズ確保 */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .practice-button:hover {
+            background-color: #6a4891;
+            transform: translateY(-2px);
+        }
+
+        /* 文化ノート */
+        .cultural-note {
+            background-color: #F3ECF9; /* Lighter shade of primary for notes */
+            border-left: 5px solid #8B5FBF;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .cultural-note p {
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        .cultural-note strong {
+            color: #8B5FBF;
+        }
+
+        /* まとめセクション */
+        .summary-section {
+            background-color: #EBF7FE; /* Light blue, distinct from cream/white */
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            border-bottom: none;
+            margin-top: 0;
+            color: #8B5FBF;
+        }
+
+        .summary-section ul {
+            list-style: circle;
+            padding-left: 20px;
+        }
+
+        .summary-section li::before {
+            content: none; /* まとめリストではカスタム箇条書きを削除 */
+        }
+        .summary-section li {
+             padding-left: 0; /* パディングをリセット */
+        }
+
+        /* 韓国語と音声アイコンの複合表示用ユーティリティ */
+        .korean-audio-phrase {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap; /* 小画面で折り返す */
+        }
+
+        .korean-audio-phrase .text-group {
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+            flex-grow: 1; /* 残りのスペースを埋める */
+            min-width: calc(100% - 60px); /* オーディオアイコンとマージンを考慮した最小幅 */
+        }
+
+        .korean-audio-phrase .text-group .hangul {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .korean-audio-phrase .text-group .pronunciation {
+            font-size: 14px;
+            color: #666666;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 10: 時間とスケジュール</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>✨ はじめに：時間とスケジュールをマスターしよう！</h2>
+            <p>今回のチャプターでは、韓国語で時間、曜日、日付を尋ねたり答えたりする方法を学びます。さらに、待ち合わせの約束をするための便利なフレーズも習得しましょう。</p>
+            <p>旅行やビジネス、友達との交流で、時間に関するコミュニケーションはとても大切です。しっかりと学んで、ネイティブとの会話に自信をつけましょう！</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>⏰ 時間の基本：数字と単位</h2>
+            <p>韓国語で時間を言うには、固有数詞と漢字数詞の両方を使います。少し複雑に感じるかもしれませんが、ルールを覚えれば簡単ですよ！</p>
+
+            <h3>🕰️ 固有数詞を使うもの：時間 (時)</h3>
+            <p>「〜時」を表すには、固有数詞を使います。数字と「<span class="korean-word"><span class="hangul">시</span><span class="pronunciation">(シ)</span></span>」を組み合わせます。1時から12時まで覚えましょう。</p>
+            <ul>
+                <li>1時: <span class="korean-word"><span class="hangul">한 시</span><span class="pronunciation">(ハン シ)</span></span> <button class="audio-icon" data-audio-text="한 시">🔊</button></li>
+                <li>2時: <span class="korean-word"><span class="hangul">두 시</span><span class="pronunciation">(トゥ シ)</span></span> <button class="audio-icon" data-audio-text="두 시">🔊</button></li>
+                <li>3時: <span class="korean-word"><span class="hangul">세 시</span><span class="pronunciation">(セ シ)</span></span> <button class="audio-icon" data-audio-text="세 시">🔊</button></li>
+                <li>4時: <span class="korean-word"><span class="hangul">네 시</span><span class="pronunciation">(ネ シ)</span></span> <button class="audio-icon" data-audio-text="네 시">🔊</button></li>
+                <li>5時: <span class="korean-word"><span class="hangul">다섯 시</span><span class="pronunciation">(タソッ シ)</span></span> <button class="audio-icon" data-audio-text="다섯 시">🔊</button></li>
+                <li>6時: <span class="korean-word"><span class="hangul">여섯 시</span><span class="pronunciation">(ヨソッ シ)</span></span> <button class="audio-icon" data-audio-text="여섯 시">🔊</button></li>
+                <li>7時: <span class="korean-word"><span class="hangul">일곱 시</span><span class="pronunciation">(イルゴッ シ)</span></span> <button class="audio-icon" data-audio-text="일곱 시">🔊</button></li>
+                <li>8時: <span class="korean-word"><span class="hangul">여덟 시</span><span class="pronunciation">(ヨドル シ)</span></span> <button class="audio-icon" data-audio-text="여덟 시">🔊</button></li>
+                <li>9時: <span class="korean-word"><span class="hangul">아홉 시</span><span class="pronunciation">(アホッ シ)</span></span> <button class="audio-icon" data-audio-text="아홉 시">🔊</button></li>
+                <li>10時: <span class="korean-word"><span class="hangul">열 시</span><span class="pronunciation">(ヨル シ)</span></span> <button class="audio-icon" data-audio-text="열 시">🔊</button></li>
+                <li>11時: <span class="korean-word"><span class="hangul">열한 시</span><span class="pronunciation">(ヨルハン シ)</span></span> <button class="audio-icon" data-audio-text="열한 시">🔊</button></li>
+                <li>12時: <span class="korean-word"><span class="hangul">열두 시</span><span class="pronunciation">(ヨルトゥ シ)</span></span> <button class="audio-icon" data-audio-text="열두 시">🔊</button></li>
+            </ul>
+            <p>💡 <strong>ポイント</strong>: 固有数詞の「하나, 둘, 셋, 넷」は、数詞の後に「<span class="korean-word"><span class="hangul">시</span><span class="pronunciation">(シ)</span></span>」が来る場合、それぞれ「<span class="korean-word"><span class="hangul">한</span><span class="pronunciation">(ハン)</span></span>, <span class="korean-word"><span class="hangul">두</span><span class="pronunciation">(トゥ)</span></span>, <span class="korean-word"><span class="hangul">세</span><span class="pronunciation">(セ)</span></span>, <span class="korean-word"><span class="hangul">네</span><span class="pronunciation">(ネ)</span></span>」と形が変わることに注意しましょう。</p>
+
+            <h3>⏱️ 漢字数詞を使うもの：分</h3>
+            <p>「〜分」を表すには、漢字数詞を使います。数字と「<span class="korean-word"><span class="hangul">분</span><span class="pronunciation">(プン)</span></span>」を組み合わせます。</p>
+            <ul>
+                <li>1分: <span class="korean-word"><span class="hangul">일 분</span><span class="pronunciation">(イル プン)</span></span> <button class="audio-icon" data-audio-text="일 분">🔊</button></li>
+                <li>5分: <span class="korean-word"><span class="hangul">오 분</span><span class="pronunciation">(オ プン)</span></span> <button class="audio-icon" data-audio-text="오 분">🔊</button></li>
+                <li>30分: <span class="korean-word"><span class="hangul">삼십 분</span><span class="pronunciation">(サムシプ プン)</span></span> <button class="audio-icon" data-audio-text="삼십 분">🔊</button></li>
+            </ul>
+            <p>「午前 (<span class="korean-word"><span class="hangul">오전</span><span class="pronunciation">(オジョン)</span></span>)」と「午後 (<span class="korean-word"><span class="hangul">오후</span><span class="pronunciation">(オフ)</span></span>)」も漢字数詞です。</p>
+            <ul>
+                <li>午前10時: <span class="korean-word"><span class="hangul">오전 열 시</span><span class="pronunciation">(オジョン ヨル シ)</span></span> <button class="audio-icon" data-audio-text="오전 열 시">🔊</button></li>
+                <li>午後3時20分: <span class="korean-word"><span class="hangul">오후 세 시 이십 분</span><span class="pronunciation">(オフ セ シ イシプ プン)</span></span> <button class="audio-icon" data-audio-text="오후 세 시 이십 분">🔊</button></li>
+            </ul>
+            <p>「今何時ですか？」と尋ねる時は、<strong>「<span class="korean-word"><span class="hangul">지금 몇 시예요?</span><span class="pronunciation">(チグム ミョッ シエヨ？)</span></span>」</strong>と言います。</p>
+            <div class="korean-example">
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">지금 몇 시예요?</span>
+                        <span class="pronunciation">(チグム ミョッ シエヨ？)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="지금 몇 시예요?">🔊</button>
+                </div>
+                <p class="japanese-translation">今何時ですか？</p>
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">오전 아홉 시 오십 분이에요.</span>
+                        <span class="pronunciation">(オジョン アホッ シ オシプ プニエヨ。)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="오전 아홉 시 오십 분이에요.">🔊</button>
+                </div>
+                <p class="japanese-translation">午前9時50分です。</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 やってみよう！時間練習</h3>
+            <p>以下の時間を韓国語で言ってみましょう！</p>
+            <ul>
+                <li>午後2時15分</li>
+                <li>午前7時30分</li>
+                <li>11時5分</li>
+            </ul>
+            <button class="practice-button">答えを見る</button>
+            <!-- 実際のアプリでは、このボタンで答えの表示/非表示を切り替えたり、次の問題に進んだりします -->
+        </section>
+
+        <section class="lesson-section">
+            <h2>📅 曜日 (<span class="korean-word"><span class="hangul">요일</span><span class="pronunciation">(ヨイル)</span></span>)</h2>
+            <p>曜日は韓国語で「<span class="korean-word"><span class="hangul">요일</span><span class="pronunciation">(ヨイル)</span></span>」と言います。すべて漢字由来の言葉で、日本の曜日と似ているので覚えやすいですよ！</p>
+            <ul>
+                <li>月曜日: <span class="korean-word"><span class="hangul">월요일</span><span class="pronunciation">(ウォリョイル)</span></span> <button class="audio-icon" data-audio-text="월요일">🔊</button></li>
+                <li>火曜日: <span class="korean-word"><span class="hangul">화요일</span><span class="pronunciation">(ファヨイル)</span></span> <button class="audio-icon" data-audio-text="화요일">🔊</button></li>
+                <li>水曜日: <span class="korean-word"><span class="hangul">수요일</span><span class="pronunciation">(スヨイル)</span></span> <button class="audio-icon" data-audio-text="수요일">🔊</button></li>
+                <li>木曜日: <span class="korean-word"><span class="hangul">목요일</span><span class="pronunciation">(モギョイル)</span></span> <button class="audio-icon" data-audio-text="목요일">🔊</button></li>
+                <li>金曜日: <span class="korean-word"><span class="hangul">금요일</span><span class="pronunciation">(クミョイル)</span></span> <button class="audio-icon" data-audio-text="금요일">🔊</button></li>
+                <li>土曜日: <span class="korean-word"><span class="hangul">토요일</span><span class="pronunciation">(トヨイル)</span></span> <button class="audio-icon" data-audio-text="토요일">🔊</button></li>
+                <li>日曜日: <span class="korean-word"><span class="hangul">일요일</span><span class="pronunciation">(イリョイル)</span></span> <button class="audio-icon" data-audio-text="일요일">🔊</button></li>
+            </ul>
+            <p>「何曜日ですか？」と尋ねる時は、<strong>「<span class="korean-word"><span class="hangul">무슨 요일이에요?</span><span class="pronunciation">(ムスン ヨイリエヨ？)</span></span>」</strong>と言います。</p>
+            <div class="korean-example">
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">오늘 무슨 요일이에요?</span>
+                        <span class="pronunciation">(オヌル ムスン ヨイリエヨ？)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="오늘 무슨 요일이에요?">🔊</button>
+                </div>
+                <p class="japanese-translation">今日、何曜日ですか？</p>
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">금요일이에요.</span>
+                        <span class="pronunciation">(クミョイリエヨ。)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="금요일이에요.">🔊</button>
+                </div>
+                <p class="japanese-translation">金曜日です。</p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🗓️ 日付 (<span class="korean-word"><span class="hangul">날짜</span><span class="pronunciation">(ナルチャ)</span></span>)</h2>
+            <p>日付は「<span class="korean-word"><span class="hangul">날짜</span><span class="pronunciation">(ナルチャ)</span></span>」です。年、月、日、すべて漢字数詞を使います。</p>
+            <ul>
+                <li>年: <span class="korean-word"><span class="hangul">년</span><span class="pronunciation">(ニョン)</span></span></li>
+                <li>月: <span class="korean-word"><span class="hangul">월</span><span class="pronunciation">(ウォル)</span></span></li>
+                <li>日: <span class="korean-word"><span class="hangul">일</span><span class="pronunciation">(イル)</span></span></li>
+            </ul>
+            <p>日付の順序は「年 月 日」です。</p>
+            <div class="korean-example">
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">몇 년 몇 월 며칠이에요?</span>
+                        <span class="pronunciation">(ミョッ ニョン ミョッ ウォル ミョッチリエヨ？)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="몇 년 몇 월 며칠이에요?">🔊</button>
+                </div>
+                <p class="japanese-translation">何年何月何日ですか？</p>
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">이천이십사 년 시 월 이십일 일이에요.</span>
+                        <span class="pronunciation">(イチョンイシプサ ニョン シ ウォル イシビル イリエヨ。)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="이천이십사 년 시 월 이십일 일이에요.">🔊</button>
+                </div>
+                <p class="japanese-translation">2024年10月21日です。</p>
+            </div>
+            <p>月は数字の後に「<span class="korean-word"><span class="hangul">월</span><span class="pronunciation">(ウォル)</span></span>」をつけます。</p>
+            <ul>
+                <li>1月: <span class="korean-word"><span class="hangul">일월</span><span class="pronunciation">(イルウォル)</span></span></li>
+                <li>6月: <span class="korean-word"><span class="hangul">유월</span><span class="pronunciation">(ユウォル)</span></span> (※육월ではなく<strong>유월</strong>) <button class="audio-icon" data-audio-text="유월">🔊</button></li>
+                <li>10月: <span class="korean-word"><span class="hangul">시월</span><span class="pronunciation">(シウォル)</span></span> (※십월ではなく<strong>시월</strong>) <button class="audio-icon" data-audio-text="시월">🔊</button></li>
+            </ul>
+            <p>日は数字の後に「<span class="korean-word"><span class="hangul">일</span><span class="pronunciation">(イル)</span></span>」をつけます。「何日」は<strong>「<span class="korean-word"><span class="hangul">며칠</span><span class="pronunciation">(ミョッチル)</span></span>」</strong>です。</p>
+            <div class="korean-example">
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">오늘 며칠이에요?</span>
+                        <span class="pronunciation">(オヌル ミョッチリエヨ？)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="오늘 며칠이에요?">🔊</button>
+                </div>
+                <p class="japanese-translation">今日、何日ですか？</p>
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">구월 오 일이에요.</span>
+                        <span class="pronunciation">(クウォル オ イリエヨ。)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="구월 오 일이에요.">🔊</button>
+                </div>
+                <p class="japanese-translation">9月5日です。</p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🤝 約束 (<span class="korean-word"><span class="hangul">약속</span><span class="pronunciation">(ヤクソク)</span></span>)とスケジューリング</h2>
+            <p>誰かと会う約束をする時に使える表現を学びましょう。</p>
+            <ul>
+                <li>約束: <span class="korean-word"><span class="hangul">약속</span><span class="pronunciation">(ヤクソク)</span></span> <button class="audio-icon" data-audio-text="약속">🔊</button></li>
+            </ul>
+
+            <h3>「〜しましょうか？」と誘う表現</h3>
+            <p><strong>「〜(으)ㄹ까요?」</strong>を使います。相手の意向を尋ねる時や、提案する時に使います。</p>
+            <div class="korean-example">
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">내일 만날까요?</span>
+                        <span class="pronunciation">(ネイル マンナルカヨ？)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="내일 만날까요?">🔊</button>
+                </div>
+                <p class="japanese-translation">明日、会いましょうか？</p>
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">어디에서 만날까요?</span>
+                        <span class="pronunciation">(オディエソ マンナルカヨ？)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="어디에서 만날까요?">🔊</button>
+                </div>
+                <p class="japanese-translation">どこで会いましょうか？</p>
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">몇 시에 만날까요?</span>
+                        <span class="pronunciation">(ミョッ シエ マンナルカヨ？)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="몇 시에 만날까요?">🔊</button>
+                </div>
+                <p class="japanese-translation">何時に会いましょうか？</p>
+            </div>
+
+            <h3>提案・確認する表現</h3>
+            <p><strong>「〜(으)ㅂ시다 / 〜세요」</strong>は「〜しましょう」という提案、「<strong>〜 괜찮아요?</strong>」は「〜大丈夫ですか？」と尋ねる時に使います。</p>
+            <div class="korean-example">
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">두 시에 만나요.</span>
+                        <span class="pronunciation">(トゥ シエ マンナヨ。)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="두 시에 만나요.">🔊</button>
+                </div>
+                <p class="japanese-translation">2時に会いましょう。(丁寧な提案)</p>
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">월요일은 어때요?</span>
+                        <span class="pronunciation">(ウォリョイルン オッテヨ？)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="월요일은 어때요?">🔊</button>
+                </div>
+                <p class="japanese-translation">月曜日はどうですか？</p>
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">괜찮아요.</span>
+                        <span class="pronunciation">(クェンチャナヨ。)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="괜찮아요.">🔊</button>
+                </div>
+                <p class="japanese-translation">大丈夫です。</p>
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">죄송합니다. 그때는 약속이 있어요.</span>
+                        <span class="pronunciation">(チェソンハムニダ. クッテヌン ヤクソギ イッソヨ.)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="죄송합니다. 그때는 약속이 있어요.">🔊</button>
+                </div>
+                <p class="japanese-translation">すみません、その時間は約束があります。</p>
+            </div>
+            <div class="cultural-note">
+                <p>💡 <strong>文化ノート：丁寧語と敬語</strong></p>
+                <p>韓国語で約束をする際は、相手との関係性によって使う表現の丁寧さが変わります。このチャプターでは「〜해요体」という丁寧語を中心に学びましたが、目上の人にはさらに丁寧な「〜합니다体」を使います。</p>
+                <p>友達同士ならもっと砕けた表現も使いますが、最初は丁寧語を使うのが安全です。</p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🕰️ 時制表現：過去、現在、未来</h2>
+            <p>時間やスケジュールを話す時、いつのことなのかを明確にするための表現はとても重要です。</p>
+
+            <h3>過去の表現</h3>
+            <p>動詞や形容詞の語幹に<strong>「-았/었-」</strong>をつけて過去形にします。敬語体では<strong>「-았/었어요」</strong>となります。</p>
+            <ul>
+                <li>昨日: <span class="korean-word"><span class="hangul">어제</span><span class="pronunciation">(オジェ)</span></span> <button class="audio-icon" data-audio-text="어제">🔊</button></li>
+                <li>先週: <span class="korean-word"><span class="hangul">지난 주</span><span class="pronunciation">(チナン チュ)</span></span> <button class="audio-icon" data-audio-text="지난 주">🔊</button></li>
+                <li>去年: <span class="korean-word"><span class="hangul">작년</span><span class="pronunciation">(チャンニョン)</span></span> <button class="audio-icon" data-audio-text="작년">🔊</button></li>
+            </ul>
+            <div class="korean-example">
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">어제 영화를 봤어요.</span>
+                        <span class="pronunciation">(オジェ ヨンファルル パッソヨ。)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="어제 영화를 봤어요.">🔊</button>
+                </div>
+                <p class="japanese-translation">昨日、映画を見ました。</p>
+            </div>
+
+            <h3>現在の表現</h3>
+            <p>動詞の語幹に<strong>「-아요/어요」</strong>、現在進行形は<strong>「-고 있어요」</strong>です。</p>
+            <ul>
+                <li>今日: <span class="korean-word"><span class="hangul">오늘</span><span class="pronunciation">(オヌル)</span></span> <button class="audio-icon" data-audio-text="오늘">🔊</button></li>
+                <li>今週: <span class="korean-word"><span class="hangul">이번 주</span><span class="pronunciation">(イボン チュ)</span></span> <button class="audio-icon" data-audio-text="이번 주">🔊</button></li>
+                <li>今年: <span class="korean-word"><span class="hangul">올해</span><span class="pronunciation">(オレ)</span></span> <button class="audio-icon" data-audio-text="올해">🔊</button></li>
+            </ul>
+            <div class="korean-example">
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">지금 한국어를 공부하고 있어요.</span>
+                        <span class="pronunciation">(チグム ハングゴルル コンブハゴ イッソヨ。)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="지금 한국어를 공부하고 있어요.">🔊</button>
+                </div>
+                <p class="japanese-translation">今、韓国語を勉強しています。</p>
+            </div>
+
+            <h3>未来の表現</h3>
+            <p>動詞の語幹に<strong>「-(으)ㄹ 거예요」</strong>または<strong>「-겠어요」</strong>をつけます。</p>
+            <ul>
+                <li>明日: <span class="korean-word"><span class="hangul">내일</span><span class="pronunciation">(ネイル)</span></span> <button class="audio-icon" data-audio-text="내일">🔊</button></li>
+                <li>来週: <span class="korean-word"><span class="hangul">다음 주</span><span class="pronunciation">(タウム チュ)</span></span> <button class="audio-icon" data-audio-text="다음 주">🔊</button></li>
+                <li>来年: <span class="korean-word"><span class="hangul">내년</span><span class="pronunciation">(ネニョン)</span></span> <button class="audio-icon" data-audio-text="내년">🔊</button></li>
+            </ul>
+            <div class="korean-example">
+                <div class="korean-audio-phrase">
+                    <div class="text-group">
+                        <span class="hangul">내일 친구를 만날 거예요.</span>
+                        <span class="pronunciation">(ネイル チングルル マンナル コエヨ。)</span>
+                    </div>
+                    <button class="audio-icon" data-audio-text="내일 친구를 만날 거예요.">🔊</button>
+                </div>
+                <p class="japanese-translation">明日、友達に会うつもりです。</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 やってみよう！時制練習</h3>
+            <p>以下の文を韓国語にしてみましょう。</p>
+            <p>「来週、韓国に行くつもりです。」</p>
+            <p>「昨日、美味しいビビンバを食べました。」</p>
+            <button class="practice-button">答えを見る</button>
+            <!-- 実際のアプリでは、このボタンで答えの表示/非表示を切り替えたり、次の問題に進んだりします -->
+        </section>
+
+        <section class="summary-section">
+            <h2>🎉 まとめ</h2>
+            <p>このチャプターでは、時間とスケジュールに関する重要な表現を学びました。これらをマスターすれば、韓国語での日常会話がもっとスムーズになります！</p>
+            <ul>
+                <li>時間を言う時は「時」に固有数詞、「分」に漢字数詞を使う。</li>
+                <li>曜日は「월, 화, 수, 목, 금, 토, 일요일」で覚える。</li>
+                <li>日付は「년, 월, 일」で、すべて漢字数詞を使う。特に「6月 (<span class="korean-word"><span class="hangul">유월</span><span class="pronunciation">(ユウォル)</span></span>)」と「10月 (<span class="korean-word"><span class="hangul">시월</span><span class="pronunciation">(シウォル)</span></span>)」の発音に注意！</li>
+                <li>約束をする時のフレーズ「〜(으)ㄹ까요?」「〜ましょう」「〜大丈夫ですか？」を覚える。</li>
+                <li>過去、現在、未来の時制表現の基本を理解する。</li>
+            </ul>
+            <p>お疲れ様でした！繰り返し練習して、自信を持って使ってみてくださいね。</p>
+        </section>
+
+    </div>
+</body>
+</html>

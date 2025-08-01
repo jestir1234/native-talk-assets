@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1: El Sistema de Escritura Japonés</title>
+    <style>
+        /* General Reset & Mobile-First Base Styles */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --padding-base: 16px;
+            --button-min-height: 48px; /* Slightly more than 44px for good measure */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--body-text-color);
+            background-color: var(--secondary-color);
+            font-size: 16px; /* Minimum 16px for body text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: var(--padding-base); /* Overall page padding */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-bottom: 0.8em;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.6em; /* ~25.6px */
+            margin-top: 1.5em;
+            padding-bottom: 0.5em;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.3em; /* ~20.8px */
+            margin-top: 1.2em;
+        }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 1em;
+        }
+
+        ul li {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '•'; /* Bullet point */
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Layout & Spacing */
+        section {
+            background-color: #FFFFFF; /* White background for sections */
+            border-radius: 12px;
+            padding: calc(var(--padding-base) * 1.5);
+            margin-bottom: var(--padding-base);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Interactive Elements */
+        .button {
+            display: block;
+            width: 100%;
+            padding: var(--padding-base);
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: var(--padding-base);
+            min-height: var(--button-min-height);
+            text-decoration: none; /* For links styled as buttons */
+        }
+
+        .button:hover {
+            background-color: #6C4299; /* Slightly darker primary */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%; /* Circle shape */
+            width: var(--button-min-height); /* Ensure it's at least 44px */
+            height: var(--button-min-height); /* Ensure it's at least 44px */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 8px; /* Spacing from text */
+            vertical-align: middle; /* Align with text */
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C4299;
+            transform: scale(1.05);
+        }
+
+        .audio-text-container {
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Space between text and button */
+            margin-bottom: 0.5em;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .example-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap; /* Allow wrapping */
+        }
+
+        .example-line:last-child {
+            border-bottom: none;
+        }
+
+        .japanese-example {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--heading-text-color);
+            display: flex; /* For aligning text with audio button */
+            align-items: center;
+            gap: 5px;
+            flex-grow: 1; /* Allow example to take available space */
+            min-width: 150px; /* Ensure some minimum width before wrapping */
+        }
+
+        .spanish-translation {
+            font-style: italic;
+            color: var(--body-text-color);
+            text-align: right;
+            flex-grow: 1; /* Allow translation to take available space */
+            min-width: 100px; /* Ensure some minimum width before wrapping */
+        }
+
+        /* Practice Section Specifics */
+        .practice-question {
+            margin-bottom: var(--padding-base);
+            padding: var(--padding-base);
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .practice-question p {
+            font-weight: bold;
+            margin-bottom: 0.8em;
+            color: var(--heading-text-color);
+        }
+
+        .practice-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .practice-option {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 1rem;
+            color: var(--body-text-color);
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            min-height: var(--button-min-height);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .practice-option:hover {
+            background-color: #F0F0F0;
+            border-color: var(--primary-color);
+        }
+
+        .practice-option.correct {
+            background-color: #e6ffe6; /* Light green */
+            border-color: #4CAF50; /* Green */
+        }
+
+        .practice-option.incorrect {
+            background-color: #ffe6e6; /* Light red */
+            border-color: #F44336; /* Red */
+        }
+
+        .feedback-message {
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .feedback-message.correct {
+            color: #28a745; /* Green */
+        }
+
+        .feedback-message.incorrect {
+            color: #dc3545; /* Red */
+        }
+
+        /* Cultural Note Styling */
+        .cultural-note {
+            background-color: #f7f0e0; /* Slightly different cream */
+            border-left: 5px solid var(--primary-color);
+            padding: var(--padding-base);
+            margin-top: var(--padding-base);
+            margin-bottom: var(--padding-base);
+            border-radius: 0 8px 8px 0; /* Only right corners rounded */
+        }
+
+        .cultural-note strong {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Adjustments (min-width for mobile-first) */
+        @media (min-width: 600px) {
+            body {
+                padding: calc(var(--padding-base) * 2); /* More padding on larger screens */
+            }
+
+            section {
+                padding: calc(var(--padding-base) * 2);
+                max-width: 800px; /* Max width for content on tablets/desktops */
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1.4em;
+            }
+
+            .audio-text-container {
+                justify-content: flex-start; /* Align to start on wider screens */
+            }
+
+            .example-line {
+                flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+            }
+
+            .spanish-translation {
+                text-align: left; /* Align left for clarity */
+            }
+
+            .practice-options {
+                flex-direction: row; /* Options side-by-side on wider screens */
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .practice-option {
+                flex: 1 1 calc(50% - 16px); /* Two columns with gap */
+                max-width: calc(50% - 16px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Capítulo 1: El Sistema de Escritura Japonés</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+    </div>
+
+    <section>
+        <h2>¡Bienvenidos al Fascinante Mundo del Japonés! 🎌</h2>
+        <p>¡Hola, futuros políglotas! Están a punto de embarcarse en una aventura lingüística increíble. El japonés puede parecer un poco intimidante al principio, ¡especialmente por su sistema de escritura! Pero no se preocupen, lo desglosaremos paso a paso para que sea divertido y fácil de entender.</p>
+        <p>En este capítulo, vamos a descubrir los tres tipos de escritura que se usan en japonés y por qué son tan importantes. ¡Prepárense para una nueva forma de ver las palabras!</p>
+    </section>
+
+    <section>
+        <h2>Los Tres Guiones: Hiragana, Katakana y Kanji</h2>
+        <p>A diferencia del español que solo usa un alfabeto, el japonés utiliza <strong>tres sistemas de escritura diferentes</strong> de forma simultánea. ¡Sí, tres! Pero cada uno tiene su propósito especial y único. ¡Es como tener tres superpoderes de escritura!</p>
+
+        <h3>1. Hiragana: El Guion Nativo y Fluido 🌸</h3>
+        <p>El Hiragana (ひらがな) es el "abecedario" fonético básico del japonés. Cada símbolo representa una sílaba o un sonido (como "ka", "ki", "su", "mo"). Es la primera escritura que aprenden los niños japoneses y es la más común para palabras nativas japonesas, partículas gramaticales, conjugaciones verbales y adjetivales.</p>
+        <div class="cultural-note">
+            <strong>💡 Dato Cultural:</strong> El Hiragana se desarrolló a partir de la simplificación de caracteres Kanji durante el período Heian (siglos VIII-XII) para facilitar la escritura de poesía y literatura en japonés puro. Por eso tiene una forma "suave" y redondeada.
+        </div>
+        <p>¡Vamos a ver algunos ejemplos con su pronunciación y significado!</p>
+        <div class="example-line">
+            <span class="japanese-example">
+                こんにちは
+                <button class="audio-icon" data-audio-text="こんにちは">🔊</button>
+            </span>
+            <span class="spanish-translation">(konnichiwa) - Hola</span>
+        </div>
+        <div class="example-line">
+            <span class="japanese-example">
+                ありがとう
+                <button class="audio-icon" data-audio-text="ありがとう">🔊</button>
+            </span>
+            <span class="spanish-translation">(arigatoo) - Gracias</span>
+        </div>
+        <div class="example-line">
+            <span class="japanese-example">
+                さようなら
+                <button class="audio-icon" data-audio-text="さようなら">🔊</button>
+            </span>
+            <span class="spanish-translation">(sayoonara) - Adiós</span>
+        </div>
+
+        <h3>2. Katakana: El Guion Anguloso para lo Extranjero 📐</h3>
+        <p>El Katakana (カタカナ) también es un "abecedario" fonético, igual que el Hiragana, con los mismos sonidos. Pero, ¡sus caracteres son más angulosos y rectos! Su función principal es escribir palabras de origen extranjero (préstamos lingüísticos), nombres propios no japoneses, onomatopeyas, y a veces para dar énfasis o un efecto estilístico (como las mayúsculas en español).</p>
+        <div class="cultural-note">
+            <strong>💡 Dato Cultural:</strong> El Katakana fue creado por monjes budistas para anotar la pronunciación de textos sánscritos y chinos. Cada Katakana se derivó de una parte de un Kanji, de ahí su forma más geométrica.
+        </div>
+        <p>Veamos cómo se usan:</p>
+        <div class="example-line">
+            <span class="japanese-example">
+                コーヒー
+                <button class="audio-icon" data-audio-text="コーヒー">🔊</button>
+            </span>
+            <span class="spanish-translation">(koohii) - Café (del inglés "coffee")</span>
+        </div>
+        <div class="example-line">
+            <span class="japanese-example">
+                スマートフォン
+                <button class="audio-icon" data-audio-text="スマートフォン">🔊</button>
+            </span>
+            <span class="spanish-translation">(sumaato fon) - Smartphone</span>
+        </div>
+        <div class="example-line">
+            <span class="japanese-example">
+                メキシコ
+                <button class="audio-icon" data-audio-text="メキシコ">🔊</button>
+            </span>
+            <span class="spanish-translation">(mekishiko) - México</span>
+        </div>
+
+        <h3>3. Kanji: Los Símbolos con Significado Profundo ⛩️</h3>
+        <p>Los Kanji (漢字) son caracteres logográficos que se importaron de China hace muchos siglos. A diferencia del Hiragana y Katakana (que representan sonidos), cada Kanji tiene un significado propio y a menudo varias lecturas. Son fundamentales para los nombres, los verbos, los sustantivos y los adjetivos, y aportan concisión y claridad a la escritura japonesa.</p>
+        <div class="cultural-note">
+            <strong>💡 Dato Cultural:</strong> Los Kanji llegaron a Japón a través de Corea y China alrededor del siglo V. Inicialmente, el japonés no tenía un sistema de escritura, por lo que adoptaron los caracteres chinos y los adaptaron a su propio idioma.
+        </div>
+        <p>Algunos Kanji comunes:</p>
+        <div class="example-line">
+            <span class="japanese-example">
+                日本
+                <button class="audio-icon" data-audio-text="日本">🔊</button>
+            </span>
+            <span class="spanish-translation">(Nihon) - Japón (literalmente "origen del sol")</span>
+        </div>
+        <div class="example-line">
+            <span class="japanese-example">
+                人
+                <button class="audio-icon" data-audio-text="人">🔊</button>
+            </span>
+            <span class="spanish-translation">(hito) - Persona</span>
+        </div>
+        <div class="example-line">
+            <span class="japanese-example">
+                学
+                <button class="audio-icon" data-audio-text="学">🔊</button>
+            </span>
+            <span class="spanish-translation">(gaku) - Aprender, estudio (parte de 学生 - estudiante)</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>¿Por Qué el Japonés Usa los Tres? 🤔</h2>
+        <p>Podría parecer complicado usar tres sistemas, pero en realidad, ¡hace que la lectura sea más eficiente y clara! Aquí las razones principales:</p>
+        <ul>
+            <li><strong>Claridad y Concisión con Kanji:</strong> Los Kanji representan ideas o palabras completas, lo que permite escribir frases de forma más compacta y evitar ambigüedades (ya que muchas palabras tienen la misma pronunciación pero diferentes significados).</li>
+            <li><strong>Gramática con Hiragana:</strong> El Hiragana se encarga de las partículas gramaticales, las terminaciones de verbos y adjetivos, y las palabras nativas para las que no se usa Kanji. Esto hace que las oraciones sean fáciles de leer y entender su estructura.</li>
+            <li><strong>Préstamos y Énfasis con Katakana:</strong> El Katakana distingue claramente las palabras de origen extranjero, lo cual es muy útil en un idioma con tantos préstamos del inglés. También se usa para onomatopeyas y para dar un toque dramático.</li>
+        </ul>
+        <p>Veamos una frase común que usa los tres guiones:</p>
+        <div class="example-line">
+            <span class="japanese-example">
+                私は<strong>学生</strong>です。
+                <button class="audio-icon" data-audio-text="私は学生です">🔊</button>
+            </span>
+            <span class="spanish-translation">(Watashi wa gakusei desu.) - Yo soy estudiante.</span>
+        </div>
+        <p>Aquí:</p>
+        <ul>
+            <li><strong>私 (Watashi)</strong> es un <strong>Kanji</strong> (pronombre "yo").</li>
+            <li><strong>は (wa)</strong> y <strong>です (desu)</strong> son <strong>Hiragana</strong> (partículas gramaticales).</li>
+            <li><strong>学生 (gakusei)</strong> es un <strong>Kanji</strong> (sustantivo "estudiante").</li>
+            <li>(Aunque en este ejemplo no hay Katakana, ¡ya vieron que se usa para palabras como コーヒー!)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Flujo de Lectura: ¿Cómo se Lee el Japonés? 📖</h2>
+        <p>¡Buenas noticias! En los formatos modernos (como libros, sitios web y esta lección), el japonés se lee principalmente <strong>de izquierda a derecha y de arriba a abajo</strong>, ¡justo como en español!</p>
+        <p>🇯🇵 Texto en Japonés:</p>
+        <p style="text-align: center; font-size: 1.5em; font-weight: bold; margin: 20px 0;">
+            あいうえお<br>
+            かきくけこ
+        </p>
+        <p>Esto facilita mucho la adaptación. Sin embargo, en la escritura tradicional (usada en algunos libros, mangas o caligrafía), el texto se lee de arriba a abajo, con las columnas avanzando de derecha a izquierda. ¡Pero no te preocupes por eso ahora mismo!</p>
+    </section>
+
+    <section>
+        <h2>Introducción a las Sílabas y Escritura Fonética 🗣️</h2>
+        <p>Como mencionamos, Hiragana y Katakana son guiones <strong>fonéticos</strong>. Esto significa que cada símbolo representa un sonido específico, casi siempre una "sílaba" o, más precisamente, una "mora". Una mora es una unidad de sonido que tiene una duración fija, similar a una sílaba corta.</p>
+        <p>El japonés se basa en un sistema de vocales: <strong>a, i, u, e, o</strong>.</p>
+        <div class="example-line">
+            <span class="japanese-example">
+                あ
+                <button class="audio-icon" data-audio-text="あ">🔊</button>
+            </span>
+            <span class="spanish-translation">(a) - como la "a" en "padre"</span>
+        </div>
+        <div class="example-line">
+            <span class="japanese-example">
+                い
+                <button class="audio-icon" data-audio-text="い">🔊</button>
+            </span>
+            <span class="spanish-translation">(i) - como la "i" en "piso"</span>
+        </div>
+        <div class="example-line">
+            <span class="japanese-example">
+                う
+                <button class="audio-icon" data-audio-text="う">🔊</button>
+            </span>
+            <span class="spanish-translation">(u) - como la "u" en "luna" (pero labios menos redondeados)</span>
+        </div>
+        <div class="example-line">
+            <span class="japanese-example">
+                え
+                <button class="audio-icon" data-audio-text="え">🔊</button>
+            </span>
+            <span class="spanish-translation">(e) - como la "e" en "mesa"</span>
+        </div>
+        <div class="example-line">
+            <span class="japanese-example">
+                お
+                <button class="audio-icon" data-audio-text="お">🔊</button>
+            </span>
+            <span class="spanish-translation">(o) - como la "o" en "oso"</span>
+        </div>
+
+        <p>La mayoría de los demás sonidos en Hiragana y Katakana son combinaciones de una consonante y una de estas cinco vocales (ej: か "ka", き "ki", く "ku", け "ke", こ "ko").</p>
+        <p>¡Esto significa que una vez que aprendamos los sonidos de Hiragana y Katakana, seremos capaces de leer casi cualquier palabra japonesa fonéticamente! ¡Increíble, ¿verdad?!</p>
+    </section>
+
+    <section>
+        <h2>¡A Practicar! 💪</h2>
+        <p>Ahora, probemos si puedes identificar los guiones.</p>
+
+        <div class="practice-question" id="q1">
+            <p>¿Qué tipo de escritura es esta? 「ありがとう」</p>
+            <div class="practice-options">
+                <button class="practice-option" data-answer="hiragana" onclick="checkAnswer(this, 'q1', 'hiragana')">Hiragana</button>
+                <button class="practice-option" data-answer="katakana" onclick="checkAnswer(this, 'q1', 'katakana')">Katakana</button>
+                <button class="practice-option" data-answer="kanji" onclick="checkAnswer(this, 'q1', 'kanji')">Kanji</button>
+            </div>
+            <div class="feedback-message" id="feedback1"></div>
+        </div>
+
+        <div class="practice-question" id="q2">
+            <p>¿Qué tipo de escritura es esta? 「メキシコ」</p>
+            <div class="practice-options">
+                <button class="practice-option" data-answer="hiragana" onclick="checkAnswer(this, 'q2', 'hiragana')">Hiragana</button>
+                <button class="practice-option" data-answer="katakana" onclick="checkAnswer(this, 'q2', 'katakana')">Katakana</button>
+                <button class="practice-option" data-answer="kanji" onclick="checkAnswer(this, 'q2', 'kanji')">Kanji</button>
+            </div>
+            <div class="feedback-message" id="feedback2"></div>
+        </div>
+
+        <div class="practice-question" id="q3">
+            <p>¿Qué tipo de escritura es esta? 「日本」</p>
+            <div class="practice-options">
+                <button class="practice-option" data-answer="hiragana" onclick="checkAnswer(this, 'q3', 'hiragana')">Hiragana</button>
+                <button class="practice-option" data-answer="katakana" onclick="checkAnswer(this, 'q3', 'katakana')">Katakana</button>
+                <button class="practice-option" data-answer="kanji" onclick="checkAnswer(this, 'q3', 'kanji')">Kanji</button>
+            </div>
+            <div class="feedback-message" id="feedback3"></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Resumen del Capítulo 1 ✨</h2>
+        <p>¡Felicidades! Has completado la primera inmersión en el sistema de escritura japonés. Aquí están los puntos clave:</p>
+        <ul>
+            <li>El japonés utiliza <strong>tres sistemas de escritura</strong>:
+                <ul>
+                    <li><strong>Hiragana (ひらがな):</strong> Para palabras japonesas nativas y gramática (sonidos suaves).</li>
+                    <li><strong>Katakana (カタカナ):</strong> Para palabras de origen extranjero, onomatopeyas y énfasis (sonidos angulares).</li>
+                    <li><strong>Kanji (漢字):</strong> Caracteres con significado propio, importados de China, para sustantivos, verbos, etc. (concisión).</li>
+                </ul>
+            </li>
+            <li>La combinación de los tres guiones hace la escritura japonesa <strong>clara y eficiente</strong>.</li>
+            <li>El japonés moderno se lee principalmente <strong>de izquierda a derecha y de arriba a abajo</strong>.</li>
+            <li>Hiragana y Katakana son <strong>fonéticos</strong>, cada símbolo representa un sonido (mora), lo que facilita la lectura una vez que aprendas sus "sílabas".</li>
+        </ul>
+        <p>¡Estás listo para seguir explorando! En los próximos capítulos, profundizaremos en cada uno de estos guiones. ¡Ganbatte (¡Esfuérzate!)! 💪</p>
+    </section>
+
+    <script>
+        // Simple JavaScript for practice section interactivity
+        // In a real mobile app, this would be handled by the framework (e.g., React Native)
+        // and data would likely come from a state management system.
+        // For this static HTML example, we'll use basic DOM manipulation.
+
+        function checkAnswer(button, questionId, correctAnswer) {
+            const questionContainer = document.getElementById(questionId);
+            const options = questionContainer.querySelectorAll('.practice-option');
+            const feedbackMessage = questionContainer.querySelector('.feedback-message');
+
+            // Reset previous feedback
+            options.forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+                opt.disabled = false; // Re-enable for multiple attempts if desired, or keep disabled
+            });
+            feedbackMessage.textContent = '';
+            feedbackMessage.className = 'feedback-message'; // Reset class
+
+            // Check current answer
+            const selectedAnswer = button.dataset.answer;
+            if (selectedAnswer === correctAnswer) {
+                button.classList.add('correct');
+                feedbackMessage.textContent = '¡Correcto! 🎉';
+                feedbackMessage.classList.add('correct');
+            } else {
+                button.classList.add('incorrect');
+                feedbackMessage.textContent = '¡Incorrecto! Intenta de nuevo. 🤔';
+                feedbackMessage.classList.add('incorrect');
+                // Optionally highlight the correct answer if incorrect
+                options.forEach(opt => {
+                    if (opt.dataset.answer === correctAnswer) {
+                        opt.classList.add('correct');
+                    }
+                });
+            }
+
+            // Disable all options for this question after an attempt
+            options.forEach(opt => opt.disabled = true);
+        }
+    </script>
+</body>
+</html>

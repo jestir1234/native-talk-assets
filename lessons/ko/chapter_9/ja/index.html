@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: 天気と季節</title>
+    <style>
+        /* グローバルスタイル */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: クリーム背景 */
+            color: #666666; /* Body Text: ミディアムグレー */
+            line-height: 1.6;
+            font-size: 16px; /* 最小フォントサイズ */
+        }
+        .container {
+            padding: 15px;
+            max-width: 768px; /* コンテンツの最大幅を制限 */
+            margin: 0 auto;
+        }
+
+        /* ヘッダー固有のCSS */
+        .chapter-title {
+            color: #2C3E50; /* Text: ダークブルー */
+            text-align: center;
+            padding-top: 20px;
+            font-size: 2em; /* タイトルは大きめに */
+            margin-bottom: 0;
+        }
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* セクションのスタイル */
+        section {
+            background-color: #ffffff; /* 各セクションの背景を白に */
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: ライトグレー */
+        }
+        h2 {
+            color: #2C3E50; /* Text: ダークブルー */
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: ライトグレー */
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #2C3E50; /* Text: ダークブルー */
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+
+        /* リストのスタイル */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 8px;
+            padding-left: 25px; /* アイコン分のスペース */
+            position: relative;
+        }
+        li::before {
+            content: '👉'; /* 絵文字をリストマーカーに */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1em;
+        }
+
+        /* 例と練習問題のスタイル */
+        .example, .practice-item {
+            background-color: #f8f8f8; /* 例の背景を少し明るく */
+            border-left: 5px solid #8B5FBF; /* Primary: パープル */
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        .practice-answer {
+            color: #8B5FBF; /* Primary: パープル */
+            font-weight: bold;
+        }
+
+        /* 音声アイコンのスタイル */
+        .audio-icon {
+            background: #8B5FBF; /* Primary: パープル */
+            color: white;
+            border: none;
+            border-radius: 50%; /* 丸い形 */
+            width: 44px; /* 最小タッチターゲットサイズ */
+            height: 44px;
+            display: inline-flex; /* 中央揃えのため */
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-left: 10px;
+            vertical-align: middle; /* テキストとの位置調整 */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease; /* ホバーエフェクト */
+        }
+        .audio-icon:hover {
+            background-color: #6a469d; /* ホバー時の色 */
+            transform: scale(1.05); /* 少し拡大 */
+        }
+
+        /* 強調テキスト/韓国語単語 */
+        .korean-word {
+            font-weight: bold;
+            color: #2C3E50; /* Text: ダークブルー */
+        }
+        .pronunciation {
+            font-size: 0.9em;
+            color: #999;
+            margin-left: 5px;
+        }
+
+        /* 文化ノート */
+        .cultural-note {
+            background-color: #FDF9E5; /* Secondary: クリーム背景 */
+            border-left: 5px solid #8B5FBF; /* Primary: パープル */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .cultural-note h3 {
+            color: #8B5FBF; /* Primary: パープル */
+            margin-top: 0;
+        }
+
+        /* まとめセクション */
+        .summary {
+            background-color: #FDF9E5; /* Secondary: クリーム背景 */
+            border: 1px solid #E0E0E0; /* Borders: ライトグレー */
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .summary h2 {
+            color: #2C3E50; /* Text: ダークブルー */
+            border-bottom: none; /* 下線を削除 */
+        }
+        .summary ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+        .summary li::before {
+            content: '✅'; /* チェックマークの絵文字 */
+        }
+
+        /* レスポンシブ調整 (モバイルファースト) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 15px;
+            }
+            .container {
+                padding: 10px;
+            }
+            .chapter-title {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1em;
+            }
+            li {
+                padding-left: 20px;
+            }
+        }
+        @media (max-width: 320px) {
+            body {
+                font-size: 14px;
+            }
+            .container {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 9: Weather and Seasons (天気と季節)</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 9 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>はじめに (Introduction) 👋</h2>
+            <p>皆さん、こんにちは！今日のレッスンでは、韓国の「天気」と「季節」について学びます。旅行中に現地の天候を尋ねたり、季節の話題で会話を盛り上げたりするのに役立ちますよ！さあ、天気の話から始めましょう！</p>
+        </section>
+
+        <section>
+            <h2>1. 날씨 (天気) ☀️</h2>
+            <p>まずは、天気に関する基本的な言葉を覚えましょう。韓国語で「天気」は <span class="korean-word">날씨</span> と言います。</p>
+            <ul>
+                <li>
+                    <span class="korean-word">날씨</span> <span class="pronunciation">(ナルッシ / nal-ssi)</span>
+                    <button class="audio-icon" data-audio-text="날씨">🔊</button>
+                    : 天気
+                </li>
+            </ul>
+            <h3>今日の天気は？</h3>
+            <p>「今日の天気はどうですか？」と尋ねる時は、こう言います。</p>
+            <div class="example">
+                <p><span class="korean-word">오늘 날씨 어때요?</span> <span class="pronunciation">(オヌル ナルッシ オッテヨ？ / oneul nalssi eottaeyo?)</span> <button class="audio-icon" data-audio-text="오늘 날씨 어때요?">🔊</button></p>
+                <p>→ 今日の天気はどうですか？</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 맑다 / 흐리다 (晴れ / 曇り) ☁️☀️</h2>
+            <p>晴れや曇りを表す言葉です。形容詞なので、文末で「〜です」とするには <span class="korean-word">-아요/-어요</span> をつけます。</p>
+            <ul>
+                <li>
+                    <span class="korean-word">맑다</span> <span class="pronunciation">(マルクタ / mak-da)</span> <button class="audio-icon" data-audio-text="맑다">🔊</button>
+                    : 晴れる、澄む
+                    <br>→ 丁寧語：<span class="korean-word">맑아요</span> <span class="pronunciation">(マルガヨ / malg-ayo)</span> <button class="audio-icon" data-audio-text="맑아요">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">흐리다</span> <span class="pronunciation">(フリダ / heu-ri-da)</span> <button class="audio-icon" data-audio-text="흐리다">🔊</button>
+                    : 曇る
+                    <br>→ 丁寧語：<span class="korean-word">흐려요</span> <span class="pronunciation">(フレヨ / heu-ryeo-yo)</span> <button class="audio-icon" data-audio-text="흐려요">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">날씨가 맑아요.</span> <span class="pronunciation">(ナルッシガ マルガヨ / nalssiga malgayo.)</span> <button class="audio-icon" data-audio-text="날씨가 맑아요.">🔊</button></p>
+                <p>→ 天気が晴れています。</p>
+                <p><span class="korean-word">하늘이 흐려요.</span> <span class="pronunciation">(ハヌリ フレヨ / haneuri heuryeo-yo.)</span> <button class="audio-icon" data-audio-text="하늘이 흐려요.">🔊</button></p>
+                <p>→ 空が曇っています。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. 덥다 / 춥다 (暑い / 寒い) 🥵🥶</h2>
+            <p>気温に関する形容詞です。これらも <span class="korean-word">-아요/-어요</span> をつけて丁寧語にします。</p>
+            <ul>
+                <li>
+                    <span class="korean-word">덥다</span> <span class="pronunciation">(トプタ / deop-da)</span> <button class="audio-icon" data-audio-text="덥다">🔊</button>
+                    : 暑い
+                    <br>→ 丁寧語：<span class="korean-word">더워요</span> <span class="pronunciation">(トウォヨ / deo-wo-yo)</span> <button class="audio-icon" data-audio-text="더워요">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">춥다</span> <span class="pronunciation">(チュプタ / chup-da)</span> <button class="audio-icon" data-audio-text="춥다">🔊</button>
+                    : 寒い
+                    <br>→ 丁寧語：<span class="korean-word">추워요</span> <span class="pronunciation">(チュウォヨ / chu-wo-yo)</span> <button class="audio-icon" data-audio-text="추워요">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">오늘은 더워요.</span> <span class="pronunciation">(オヌルン トウォヨ / oneureun deo-wo-yo.)</span> <button class="audio-icon" data-audio-text="오늘은 더워요.">🔊</button></p>
+                <p>→ 今日は暑いです。</p>
+                <p><span class="korean-word">날씨가 너무 추워요.</span> <span class="pronunciation">(ナルッシガ ノム チュウォヨ / nalssiga neomu chu-wo-yo.)</span> <button class="audio-icon" data-audio-text="날씨가 너무 추워요.">🔊</button></p>
+                <p>→ 天気がとても寒いです。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. 비가 오다 / 눈이 오다 (雨が降る / 雪が降る) ☔️❄️</h2>
+            <p>雨や雪が降ることを表す動詞表現です。</p>
+            <ul>
+                <li>
+                    <span class="korean-word">비</span> <span class="pronunciation">(ピ / bi)</span> <button class="audio-icon" data-audio-text="비">🔊</button>
+                    : 雨
+                </li>
+                <li>
+                    <span class="korean-word">눈</span> <span class="pronunciation">(ヌン / nun)</span> <button class="audio-icon" data-audio-text="눈">🔊</button>
+                    : 雪
+                </li>
+                <li>
+                    <span class="korean-word">오다</span> <span class="pronunciation">(オダ / o-da)</span> <button class="audio-icon" data-audio-text="오다">🔊</button>
+                    : 来る、降る
+                    <br>→ 丁寧語：<span class="korean-word">와요</span> <span class="pronunciation">(ワヨ / wa-yo)</span> <button class="audio-icon" data-audio-text="와요">🔊</button>
+                </li>
+            </ul>
+            <p>「〜が降る」と言う時は、主格助詞 <span class="korean-word">가/이</span> を使って <span class="korean-word">비가 오다</span> (<span class="korean-word">雨が降る</span>)、<span class="korean-word">눈이 오다</span> (<span class="korean-word">雪が降る</span>) と表現します。</p>
+            <div class="example">
+                <p><span class="korean-word">비가 와요.</span> <span class="pronunciation">(ピガ ワヨ / biga wa-yo.)</span> <button class="audio-icon" data-audio-text="비가 와요.">🔊</button></p>
+                <p>→ 雨が降っています。</p>
+                <p><span class="korean-word">눈이 와요.</span> <span class="pronunciation">(ヌニ ワヨ / nuni wa-yo.)</span> <button class="audio-icon" data-audio-text="눈이 와요.">🔊</button></p>
+                <p>→ 雪が降っています。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. 봄, 여름, 가을, 겨울 (春、夏、秋、冬) 🌸🏖️🍂☃️</h2>
+            <p>韓国には美しい四季があります。それぞれの季節の名前を覚えましょう。</p>
+            <ul>
+                <li>
+                    <span class="korean-word">봄</span> <span class="pronunciation">(ポム / bom)</span> <button class="audio-icon" data-audio-text="봄">🔊</button>
+                    : 春 (3月〜5月)
+                </li>
+                <li>
+                    <span class="korean-word">여름</span> <span class="pronunciation">(ヨルム / yeo-reum)</span> <button class="audio-icon" data-audio-text="여름">🔊</button>
+                    : 夏 (6月〜8月)
+                </li>
+                <li>
+                    <span class="korean-word">가을</span> <span class="pronunciation">(カウル / ga-eul)</span> <button class="audio-icon" data-audio-text="가을">🔊</button>
+                    : 秋 (9月〜11月)
+                </li>
+                <li>
+                    <span class="korean-word">겨울</span> <span class="pronunciation">(キョウル / gyeo-ul)</span> <button class="audio-icon" data-audio-text="겨울">🔊</button>
+                    : 冬 (12月〜2月)
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">저는 봄을 좋아해요.</span> <span class="pronunciation">(チョヌン ポムル チョアヘヨ / jeoneun bomeul joahaeyo.)</span> <button class="audio-icon" data-audio-text="저는 봄을 좋아해요.">🔊</button></p>
+                <p>→ 私は春が好きです。</p>
+                <p><span class="korean-word">한국의 겨울은 추워요.</span> <span class="pronunciation">(ハングゲ キョウルン チュウォヨ / han-gugui gyeo-ureun chuwoyo.)</span> <button class="audio-icon" data-audio-text="한국의 겨울은 추워요.">🔊</button></p>
+                <p>→ 韓国の冬は寒いです。</p>
+            </div>
+            <div class="cultural-note">
+                <h3>💡文化ノート：韓国の四季</h3>
+                <p>韓国は日本と同じく四季がはっきりしており、それぞれの季節に美しい景色や行事があります。</p>
+                <ul>
+                    <li><strong>春 (봄):</strong> 桜やレンギョウ、ツツジが咲き乱れ、お花見が楽しめます。</li>
+                    <li><strong>夏 (여름):</strong> 非常に暑く、湿度も高いですが、海水浴や渓谷での休暇が人気です。</li>
+                    <li><strong>秋 (가을):</strong> 紅葉が美しく、最も過ごしやすい季節と言われます。澄んだ青空が特徴です。</li>
+                    <li><strong>冬 (겨울):</strong> 非常に寒く、雪も多く降ります。スキーやスノーボードを楽しむ人も多いです。</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>6. Temperature Expressions (気温の表現) 🌡️</h2>
+            <p>気温を尋ねたり答えたりする方法です。</p>
+            <ul>
+                <li>
+                    <span class="korean-word">몇 도예요?</span> <span class="pronunciation">(ミョットエヨ？ / myeot do-yeyo?)</span> <button class="audio-icon" data-audio-text="몇 도예요?">🔊</button>
+                    : 何度ですか？
+                </li>
+                <li>
+                    <span class="korean-word">~도예요.</span> <span class="pronunciation">(〜ドエヨ / ~do-yeyo.)</span> <button class="audio-icon" data-audio-text="이십 도예요.">🔊</button>
+                    : 〜度です。
+                    <br>(例: <span class="korean-word">20도예요.</span> <span class="pronunciation">(イシップ ドエヨ / iship do-yeyo.)</span> → 20度です。)
+                </li>
+            </ul>
+            <div class="example">
+                <p>A: <span class="korean-word">오늘 몇 도예요?</span> <span class="pronunciation">(オヌル ミョットエヨ？ / oneul myeot do-yeyo?)</span> <button class="audio-icon" data-audio-text="오늘 몇 도예요?">🔊</button></p>
+                <p>→ 今日は何度ですか？</p>
+                <p>B: <span class="korean-word">지금 10도예요.</span> <span class="pronunciation">(チグム シットエヨ / jigeum ship do-yeyo.)</span> <button class="audio-icon" data-audio-text="지금 십 도예요.">🔊</button></p>
+                <p>→ 今10度です。</p>
+            </div>
+            <p>※ 韓国語では「零下」は <span class="korean-word">영하 (ヨンハ / yeong-ha)</span> <button class="audio-icon" data-audio-text="영하">🔊</button>、「零上」は <span class="korean-word">영상 (ヨンサン / yeong-sang)</span> <button class="audio-icon" data-audio-text="영상">🔊</button> と言います。</p>
+            <div class="example">
+                <p><span class="korean-word">영하 5도예요.</span> <span class="pronunciation">(ヨンハ オドエヨ / yeongha o do-yeyo.)</span> <button class="audio-icon" data-audio-text="영하 오 도예요.">🔊</button></p>
+                <p>→ 零下5度です。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>7. Seasonal Activities and Clothing (季節の活動と服装) 👕🧣</h2>
+            <p>各季節によくする活動や着るものについて話す時に役立つ表現です。</p>
+            <h3>活動 (활동 / hwal-dong)</h3>
+            <ul>
+                <li>
+                    <span class="korean-word">꽃구경하다</span> <span class="pronunciation">(コックギョンハダ / kkot-gu-gyeong-hada)</span> <button class="audio-icon" data-audio-text="꽃구경하다">🔊</button>
+                    : お花見をする (春)
+                </li>
+                <li>
+                    <span class="korean-word">수영하다</span> <span class="pronunciation">(スヨンハダ / su-yeong-hada)</span> <button class="audio-icon" data-audio-text="수영하다">🔊</button>
+                    : 泳ぐ (夏)
+                </li>
+                <li>
+                    <span class="korean-word">단풍 구경하다</span> <span class="pronunciation">(タンプン グギョンハダ / dan-pung gu-gyeong-hada)</span> <button class="audio-icon" data-audio-text="단풍 구경하다">🔊</button>
+                    : 紅葉狩りをする (秋)
+                </li>
+                <li>
+                    <span class="korean-word">스키 타다</span> <span class="pronunciation">(スキ タダ / seu-ki ta-da)</span> <button class="audio-icon" data-audio-text="스키 타다">🔊</button>
+                    : スキーをする (冬)
+                </li>
+            </ul>
+            <h3>服装 (옷 / ot)</h3>
+            <ul>
+                <li>
+                    <span class="korean-word">반팔</span> <span class="pronunciation">(パンパル / ban-pal)</span> <button class="audio-icon" data-audio-text="반팔">🔊</button>
+                    : 半袖 (夏)
+                </li>
+                <li>
+                    <span class="korean-word">긴팔</span> <span class="pronunciation">(キンパル / gin-pal)</span> <button class="audio-icon" data-audio-text="긴팔">🔊</button>
+                    : 長袖 (春、秋)
+                </li>
+                <li>
+                    <span class="korean-word">외투</span> <span class="pronunciation">(ウェトゥ / oe-tu)</span> <button class="audio-icon" data-audio-text="외투">🔊</button>
+                    : コート (冬)
+                </li>
+                <li>
+                    <span class="korean-word">장갑</span> <span class="pronunciation">(チャンガプ / jang-gap)</span> <button class="audio-icon" data-audio-text="장갑">🔊</button>
+                    : 手袋 (冬)
+                </li>
+                <li>
+                    <span class="korean-word">목도리</span> <span class="pronunciation">(モクドリ / mok-do-ri)</span> <button class="audio-icon" data-audio-text="목도리">🔊</button>
+                    : マフラー (冬)
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">여름에는 수영해요.</span> <span class="pronunciation">(ヨルメヌン スヨンヘヨ / yeoreumeneun su-yeonghaeyo.)</span> <button class="audio-icon" data-audio-text="여름에는 수영해요.">🔊</button></p>
+                <p>→ 夏には泳ぎます。</p>
+                <p><span class="korean-word">겨울에는 외투를 입어요.</span> <span class="pronunciation">(キョウレヌン ウェトゥルル イボヨ / gyeouleneun oetoreul ibeoyo.)</span> <button class="audio-icon" data-audio-text="겨울에는 외투를 입어요.">🔊</button></p>
+                <p>→ 冬にはコートを着ます。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>練習してみましょう！ (Let's Practice!) ✍️</h2>
+            <p>学んだ表現を使って、以下の日本語の文を韓国語にしてみましょう。</p>
+
+            <div class="practice-item">
+                <p>1. 今日の天気は晴れです。</p>
+                <p>→ <span class="practice-answer">오늘 날씨는 맑아요.</span> <button class="audio-icon" data-audio-text="오늘 날씨는 맑아요.">🔊</button></p>
+            </div>
+
+            <div class="practice-item">
+                <p>2. 雨が降っています。</p>
+                <p>→ <span class="practice-answer">비가 와요.</span> <button class="audio-icon" data-audio-text="비가 와요.">🔊</button></p>
+            </div>
+
+            <div class="practice-item">
+                <p>3. 今、とても寒いです。</p>
+                <p>→ <span class="practice-answer">지금 너무 추워요.</span> <button class="audio-icon" data-audio-text="지금 너무 추워요.">🔊</button></p>
+            </div>
+
+            <div class="practice-item">
+                <p>4. 韓国は秋が美しいです。</p>
+                <p>→ <span class="practice-answer">한국은 가을이 예뻐요.</span> <button class="audio-icon" data-audio-text="한국은 가을이 예뻐요.">🔊</button></p>
+            </div>
+
+            <div class="practice-item">
+                <p>5. 明日は何度ですか？</p>
+                <p>→ <span class="practice-answer">내일 몇 도예요?</span> <button class="audio-icon" data-audio-text="내일 몇 도예요?">🔊</button></p>
+            </div>
+        </section>
+
+        <section class="summary">
+            <h2>今日のまとめ ✨</h2>
+            <p>Chapter 9では、天気と季節に関する重要な韓国語表現を学びました。</p>
+            <ul>
+                <li><strong>天気の表現:</strong> <span class="korean-word">날씨</span> (天気), <span class="korean-word">맑다</span> (晴れる), <span class="korean-word">흐리다</span> (曇る), <span class="korean-word">덥다</span> (暑い), <span class="korean-word">춥다</span> (寒い), <span class="korean-word">비가 오다</span> (雨が降る), <span class="korean-word">눈이 오다</span> (雪が降る)。</li>
+                <li><strong>四季:</strong> <span class="korean-word">봄</span> (春), <span class="korean-word">여름</span> (夏), <span class="korean-word">가을</span> (秋), <span class="korean-word">겨울</span> (冬)。</li>
+                <li><strong>気温:</strong> <span class="korean-word">몇 도예요?</span> (何度ですか？), <span class="korean-word">~도예요.</span> (〜度です)。</li>
+                <li><strong>関連語彙:</strong> 季節ごとの活動や服装。</li>
+            </ul>
+            <p>これで、韓国の方と天候や季節の話題で会話を楽しめるようになりましたね！日常生活でも積極的に使ってみてください。</p>
+        </section>
+
+    </div>
+</body>
+</html>

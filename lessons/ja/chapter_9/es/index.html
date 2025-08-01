@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 9: Vocabulario de la Vida Diaria y Peticiones Educadas</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Noto Sans JP', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        /* Responsive Container */
+        .container {
+            max-width: 600px; /* Standard mobile/tablet width */
+            margin: 0 auto;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            padding-top: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 30px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 25px;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1em;
+            padding: 0 5px; /* Slight padding for smaller screens */
+        }
+
+        /* List Styles */
+        ul {
+            list-style-type: none; /* No default bullet points */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            background-color: #FFFFFF; /* White background for list items */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        li .japanese-word {
+            flex-grow: 1;
+        }
+
+        /* Lesson Header */
+        .chapter-title {
+            color: #2C3E50;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 20px 10px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .example-box {
+            background-color: #ffffff;
+            border-left: 5px solid #8B5FBF; /* Primary: Purple */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+        }
+
+        .example-box p {
+            margin: 5px 0;
+            color: #2C3E50; /* Dark blue for example text */
+        }
+
+        .example-box .translation {
+            font-style: italic;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Make it round */
+            width: 44px; /* Minimum touch target size */
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 10px;
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .audio-icon:hover {
+            background-color: #714C9F; /* Slightly darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #E0E0E0;
+            margin-top: 20px;
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #E0E0E0;
+            padding-bottom: 15px;
+        }
+
+        .practice-question:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .practice-question p {
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column for mobile */
+            gap: 10px;
+        }
+
+        .option-button {
+            background-color: #FDF9E5; /* Cream */
+            color: #666666;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 12px 15px;
+            min-height: 44px; /* Ensure tap target size */
+            font-size: 16px;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .option-button:hover {
+            background-color: #EFE9D7;
+            border-color: #8B5FBF;
+        }
+
+        /* Answer Reveal */
+        .reveal-answer-button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 20px;
+            min-height: 44px;
+            width: 100%;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .reveal-answer-button:hover {
+            background-color: #714C9F;
+            transform: scale(1.02);
+        }
+
+        .answer {
+            background-color: #EFE9D7; /* Lighter cream for answers */
+            border-left: 4px solid #8B5FBF;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #2C3E50;
+            display: none; /* Hidden by default, JS would toggle this */
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FFF2CC; /* Light yellow for cultural notes */
+            border-left: 5px solid #FFD700; /* Gold color for accent */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #5C4033; /* Darker brown for readability */
+        }
+
+        .cultural-note strong {
+            color: #9C6C00;
+        }
+
+        /* Romaji Pronunciation */
+        .romaji {
+            font-size: 0.9em;
+            color: #A0A0A0; /* Lighter gray for pronunciation */
+            margin-left: 5px;
+            font-style: italic;
+        }
+
+        /* Summary Section */
+        .summary-list {
+            list-style-type: '👉 '; /* Custom bullet point */
+            padding-left: 20px;
+        }
+
+        .summary-list li {
+            background-color: #FDF9E5; /* Cream */
+            border: none;
+            box-shadow: none;
+            padding: 8px 0;
+            margin-bottom: 5px;
+        }
+
+        .summary-list li strong {
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        /* Responsive adjustments for larger screens */
+        @media (min-width: 480px) {
+            .options-grid {
+                grid-template-columns: 1fr 1fr; /* Two columns for wider mobiles/small tablets */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 20px 30px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            .options-grid {
+                grid-template-columns: 1fr 1fr; /* Still two columns, maybe wider buttons */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Capítulo 9: Vocabulario de la Vida Diaria y Peticiones Educadas</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 9 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>¡Hola, aventurero del japonés! 👋</h2>
+            <p>En este capítulo, vamos a sumergirnos en el vocabulario esencial para el día a día en Japón. Aprenderás a nombrar objetos y lugares comunes, ¡y lo más importante, cómo pedir cosas de forma educada! Prepárate para pedir tu café ☕ o preguntar por la estación del tren 🚉 sin problemas.</p>
+        </section>
+
+        <section>
+            <h2>📚 Vocabulario Esencial para el Día a Día</h2>
+            <p>Aquí tienes algunas palabras clave que te serán súper útiles en diversas situaciones.</p>
+
+            <h3>🍔 Comida y Bebida</h3>
+            <ul>
+                <li>
+                    <span class="japanese-word">水 <span class="romaji">(mizu)</span></span>
+                    <span>Agua</span>
+                    <button class="audio-icon" data-audio-text="水">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">コーヒー <span class="romaji">(kōhī)</span></span>
+                    <span>Café</span>
+                    <button class="audio-icon" data-audio-text="コーヒー">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">パン <span class="romaji">(pan)</span></span>
+                    <span>Pan</span>
+                    <button class="audio-icon" data-audio-text="パン">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">ごはん <span class="romaji">(gohan)</span></span>
+                    <span>Arroz (cocido) / Comida</span>
+                    <button class="audio-icon" data-audio-text="ごはん">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">ジュース <span class="romaji">(jūsu)</span></span>
+                    <span>Zumo / Jugo</span>
+                    <button class="audio-icon" data-audio-text="ジュース">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">肉 <span class="romaji">(niku)</span></span>
+                    <span>Carne</span>
+                    <button class="audio-icon" data-audio-text="肉">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">魚 <span class="romaji">(sakana)</span></span>
+                    <span>Pescado</span>
+                    <button class="audio-icon" data-audio-text="魚">🔊</button>
+                </li>
+            </ul>
+
+            <h3>📍 Lugares Comunes</h3>
+            <ul>
+                <li>
+                    <span class="japanese-word">駅 <span class="romaji">(eki)</span></span>
+                    <span>Estación (de tren/metro)</span>
+                    <button class="audio-icon" data-audio-text="駅">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">学校 <span class="romaji">(gakkō)</span></span>
+                    <span>Escuela</span>
+                    <button class="audio-icon" data-audio-text="学校">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">会社 <span class="romaji">(kaisha)</span></span>
+                    <span>Empresa / Oficina</span>
+                    <button class="audio-icon" data-audio-text="会社">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">スーパー <span class="romaji">(sūpā)</span></span>
+                    <span>Supermercado</span>
+                    <button class="audio-icon" data-audio-text="スーパー">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">レストラン <span class="romaji">(resutoran)</span></span>
+                    <span>Restaurante</span>
+                    <button class="audio-icon" data-audio-text="レストラン">🔊</button>
+                </li>
+            </ul>
+
+            <h3>🚗 Transporte</h3>
+            <ul>
+                <li>
+                    <span class="japanese-word">電車 <span class="romaji">(densha)</span></span>
+                    <span>Tren</span>
+                    <button class="audio-icon" data-audio-text="電車">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">バス <span class="romaji">(basu)</span></span>
+                    <span>Autobús</span>
+                    <button class="audio-icon" data-audio-text="バス">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">タクシー <span class="romaji">(takushī)</span></span>
+                    <span>Taxi</span>
+                    <button class="audio-icon" data-audio-text="タクシー">🔊</button>
+                </li>
+                <li>
+                    <span class="japanese-word">車 <span class="romaji">(kuruma)</span></span>
+                    <span>Coche / Vehículo</span>
+                    <button class="audio-icon" data-audio-text="車">🔊</button>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🙏 ¡Pide lo que Necesitas! - Estructuras de Petición</h2>
+            <p>Ahora que conoces algunas palabras, ¡es hora de aprender a pedir cosas! Veremos dos formas muy comunes y educadas.</p>
+
+            <h3>1. ～を ください (~ o kudasai) - "Por favor, dame/dame/haz..."</h3>
+            <p>Esta es una forma directa y educada de pedir un objeto. La partícula を <span class="romaji">(o)</span> marca el objeto directo.</p>
+            <div class="example-box">
+                <p><strong>Estructura:</strong> [Objeto] を ください。</p>
+                <p>水 を ください。</p>
+                <p class="translation">(Mizu o kudasai.) - Dame agua, por favor. / Agua, por favor.</p>
+                <button class="audio-icon" data-audio-text="水をください">🔊</button>
+            </div>
+            <div class="example-box">
+                <p>ペン を ください。</p>
+                <p class="translation">(Pen o kudasai.) - Dame un bolígrafo, por favor.</p>
+                <button class="audio-icon" data-audio-text="ペンをください">🔊</button>
+            </div>
+            <div class="example-box">
+                <p>メニュー を ください。</p>
+                <p class="translation">(Menyū o kudasai.) - El menú, por favor.</p>
+                <button class="audio-icon" data-audio-text="メニューをください">🔊</button>
+            </div>
+
+            <h3>2. ～を お願いします (~ o onegai shimasu) - "Me gustaría..., por favor." / "Lo pido, por favor."</h3>
+            <p>Esta expresión es aún más cortés y comúnmente usada en restaurantes, tiendas o cuando quieres solicitar un servicio o un objeto de manera más indirecta. También va con la partícula を <span class="romaji">(o)</span>.</p>
+            <div class="example-box">
+                <p><strong>Estructura:</strong> [Objeto] を お願いします。</p>
+                <p>コーヒー を 一つ お願いします。</p>
+                <p class="translation">(Kōhī o hitotsu onegai shimasu.) - Un café, por favor. (lit. "Un café, lo pido").</p>
+                <button class="audio-icon" data-audio-text="コーヒーを一つお願いします">🔊</button>
+            </div>
+            <div class="cultural-note">
+                <strong>💡 Nota Cultural: Contadores</strong><br>
+                En el ejemplo anterior, verás <span class="japanese-word">一つ <span class="romaji">(hitotsu)</span></span>. En japonés, para contar objetos, a menudo se usan "contadores". <span class="japanese-word">一つ <span class="romaji">(hitotsu)</span></span> significa "uno" para objetos generales, y <span class="japanese-word">二つ <span class="romaji">(futatsu)</span></span> significa "dos".
+            </div>
+            <div class="example-box">
+                <p>ビール を 二つ お願いします。</p>
+                <p class="translation">(Bīru o futatsu onegai shimasu.) - Dos cervezas, por favor.</p>
+                <button class="audio-icon" data-audio-text="ビールを二つお願いします">🔊</button>
+            </div>
+            <div class="example-box">
+                <p>これは お願いします。</p>
+                <p class="translation">(Kore wa onegai shimasu.) - Esto, por favor.</p>
+                <button class="audio-icon" data-audio-text="これはお願いします">🔊</button>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>✍️ ¡A Practicar!</h2>
+            <p>Pon a prueba lo que has aprendido. Intenta responder antes de ver las soluciones.</p>
+
+            <div class="practice-question">
+                <p><strong>Ejercicio 1: Completa la petición.</strong></p>
+                <p>¿Cómo pedirías "agua, por favor" usando 「～ください」?</p>
+                <div class="options-grid">
+                    <button class="option-button" data-correct="false">水 は ください。</button>
+                    <button class="option-button" data-correct="true">水 を ください。</button>
+                    <button class="option-button" data-correct="false">水 も ください。</button>
+                </div>
+                <button class="reveal-answer-button" data-target="answer1">Mostrar Respuesta</button>
+                <div id="answer1" class="answer">Respuesta: 水 を ください。 (Mizu o kudasai.)</div>
+            </div>
+
+            <div class="practice-question">
+                <p><strong>Ejercicio 2: ¿Cuál es la forma más educada para pedir un café en un restaurante?</strong></p>
+                <div class="options-grid">
+                    <button class="option-button" data-correct="false">コーヒー ください。</button>
+                    <button class="option-button" data-correct="true">コーヒーを一つお願いします。</button>
+                    <button class="option-button" data-correct="false">コーヒー ださい。</button>
+                </div>
+                <button class="reveal-answer-button" data-target="answer2">Mostrar Respuesta</button>
+                <div id="answer2" class="answer">Respuesta: コーヒーを一つお願いします。 (Kōhī o hitotsu onegai shimasu.)</div>
+            </div>
+
+            <div class="practice-question">
+                <p><strong>Ejercicio 3: ¿Cómo dirías "dos panes, por favor" en una panadería?</strong></p>
+                <div class="options-grid">
+                    <button class="option-button" data-correct="false">パンも二つください。</button>
+                    <button class="option-button" data-correct="true">パンを二つお願いします。</button>
+                    <button class="option-button" data-correct="false">パンは二つください。</button>
+                </div>
+                <button class="reveal-answer-button" data-target="answer3">Mostrar Respuesta</button>
+                <div id="answer3" class="answer">Respuesta: パンを二つお願いします。 (Pan o futatsu onegai shimasu.)</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>✨ Resumen del Capítulo</h2>
+            <p>¡Felicidades! Has completado el Capítulo 9. Aquí un rápido repaso de lo que hemos cubierto:</p>
+            <ul class="summary-list">
+                <li>Aprendiste vocabulario esencial para el día a día, incluyendo <strong>comida y bebida</strong> (水, コーヒー, パン, ごはん, ジュース, 肉, 魚), <strong>lugares comunes</strong> (駅, 学校, 会社, スーパー, レストラン) y <strong>transporte</strong> (電車, バス, タクシー, 車).</li>
+                <li>Dominaste dos formas clave para hacer <strong>peticiones educadas</strong>:
+                    <ul>
+                        <li><strong>～を ください</strong> (<span class="romaji">~ o kudasai</span>): Para pedir objetos directamente. Ejemplo: 水をください。(Agua, por favor.)</li>
+                        <li><strong>～を お願いします</strong> (<span class="romaji">~ o onegai shimasu</span>): Una forma más cortés, ideal para pedidos en tiendas o restaurantes. Ejemplo: コーヒーを一つお願いします。(Un café, por favor.)</li>
+                    </ul>
+                </li>
+                <li>Viste cómo se usan los <strong>contadores</strong> como <span class="japanese-word">一つ <span class="romaji">(hitotsu)</span></span> y <span class="japanese-word">二つ <span class="romaji">(futatsu)</span></span> con 「お願いします」.</li>
+            </ul>
+            <p>¡Sigue practicando estas palabras y frases en voz alta! Te ayudarán muchísimo en tus interacciones diarias.</p>
+        </section>
+
+        <!-- Script for basic answer reveal (no external JS, just structure for later integration) -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const revealButtons = document.querySelectorAll('.reveal-answer-button');
+                revealButtons.forEach(button => {
+                    // This part would be handled by the mobile frontend's JS
+                    // For pure HTML, we just make them look like buttons.
+                    // A real app would attach click listeners here.
+                    // For example, button.addEventListener('click', () => { ... });
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

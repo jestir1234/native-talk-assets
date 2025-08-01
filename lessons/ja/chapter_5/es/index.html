@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 5: Estructura Simple de Oraciones</title>
+    <style>
+        /* Base styles for mobile-first */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-bg-color: #FDF9E5;
+            --text-heading-color: #2C3E50;
+            --text-body-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* White background for the main body */
+            color: var(--text-body-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size */
+            -webkit-text-size-adjust: 100%;
+        }
+
+        .lesson-container {
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header styles */
+        .chapter-title {
+            color: var(--text-heading-color);
+            font-size: 1.8em; /* Responsive font size */
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Adheres to requirement */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section styling */
+        section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            color: var(--text-heading-color);
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: var(--text-heading-color);
+            font-size: 1.2em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 1em; /* Ensures 16px minimum */
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow for list items */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* Example and code block styling */
+        .example-block, .practice-item {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .example-block strong {
+            color: var(--primary-color);
+        }
+
+        .japanese-text {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--text-heading-color);
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #888888;
+            font-style: italic;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .translation {
+            font-size: 0.9em;
+            color: var(--text-body-color);
+            margin-top: 5px;
+        }
+
+        /* Audio icon styling */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 1.8em; /* Large enough for tap */
+            color: var(--primary-color);
+            cursor: pointer;
+            padding: 5px;
+            margin-left: 5px;
+            vertical-align: middle;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px; /* Touch friendly */
+            min-height: 44px; /* Touch friendly */
+            border-radius: 50%;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1);
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Practice section styling */
+        .practice-section {
+            margin-top: 25px;
+        }
+
+        .practice-item {
+            margin-bottom: 20px;
+        }
+
+        .practice-item p {
+            margin-bottom: 10px;
+        }
+
+        .practice-instructions {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Summary section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: #FFFFFF;
+            border-bottom-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .summary-section ul {
+            list-style: disc;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .summary-section li {
+            margin-bottom: 0.8em;
+            color: #FFFFFF;
+        }
+
+        .summary-section li::before {
+            content: ''; /* Remove specific arrow for summary list */
+        }
+
+
+        /* Responsive adjustments */
+        @media (min-width: 600px) {
+            .lesson-container {
+                padding: 30px;
+            }
+
+            section {
+                padding: 30px;
+            }
+
+            .chapter-title {
+                font-size: 2.2em;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            h3 {
+                font-size: 1.4em;
+            }
+
+            .audio-icon {
+                font-size: 2em;
+            }
+        }
+
+        /* Ensure proper spacing for touch targets */
+        button, .audio-icon {
+            touch-action: manipulation;
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chapter 5: Estructura Simple de Oraciones</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>¡Hola, estudiante de japonés! 👋</h2>
+            <p>En este capítulo, vamos a desentrañar uno de los aspectos más emocionantes del japonés: ¡cómo se construyen las oraciones! A diferencia del español, el japonés tiene un orden de palabras muy particular que te abrirá las puertas a la fluidez.</p>
+            <p>¡Prepárate para aprender a formar tus primeras oraciones completas!</p>
+        </section>
+
+        <section>
+            <h2>🇯🇵 Orden de Palabras: Sujeto – Objeto – Verbo (SOV)</h2>
+            <p>La diferencia más notable entre el japonés y el español es el orden de las palabras. Mientras que en español decimos <strong>Sujeto - Verbo - Objeto</strong> (SVO), en japonés es <strong>Sujeto - Objeto - Verbo</strong> (SOV).</p>
+            <ul>
+                <li><strong>Español (SVO):</strong> Yo (S) como (V) una manzana (O).</li>
+                <li><strong>Japonés (SOV):</strong> Yo (S) una manzana (O) como (V).</li>
+            </ul>
+            <p>¡El verbo siempre va al final de la oración! Esto es fundamental.</p>
+            <div class="example-block">
+                <p><span class="japanese-text">わたしは りんごを たべます。</span><button class="audio-icon" data-audio-text="わたしはりんごをたべます。">🔊</button></p>
+                <span class="pronunciation">(Watashi wa ringo o tabemasu.)</span>
+                <span class="translation">Yo como una manzana.</span>
+            </div>
+            <p>Observa cómo "たべます" (tabemasu - comer) está al final.</p>
+        </section>
+
+        <section>
+            <h2>✨ Las Partículas: を (o) y が (ga)</h2>
+            <p>En japonés, las "partículas" son pequeñas palabras que se colocan después de un sustantivo para indicar su función en la oración (sujeto, objeto, etc.). Son como las preposiciones en español, ¡pero van después de la palabra!</p>
+
+            <h3>を (o): La Partícula de Objeto Directo</h3>
+            <p>La partícula <strong>を (o)</strong> se usa para marcar el objeto directo de un verbo. Se coloca inmediatamente después del sustantivo que recibe la acción del verbo.</p>
+            <p><strong>Importante:</strong> Aunque se escribe を, siempre se pronuncia como "o" (como la "o" en "oso").</p>
+            <div class="example-block">
+                <p><span class="japanese-text">りんご<strong class="primary-color">を</strong> 食べます。</span><button class="audio-icon" data-audio-text="りんごを食べます。">🔊</button></p>
+                <span class="pronunciation">(Ringo <strong class="primary-color">o</strong> tabemasu.)</span>
+                <span class="translation">Como una manzana.</span>
+            </div>
+            <div class="example-block">
+                <p><span class="japanese-text">水<strong class="primary-color">を</strong> 飲みます。</span><button class="audio-icon" data-audio-text="水を飲みます。">🔊</button></p>
+                <span class="pronunciation">(Mizu <strong class="primary-color">o</strong> nomimasu.)</span>
+                <span class="translation">Bebo agua.</span>
+            </div>
+            <p>El sustantivo antes de を es siempre aquello sobre lo que recae la acción.</p>
+
+            <h3>が (ga): La Partícula de Sujeto (con Foco)</h3>
+            <p>La partícula <strong>が (ga)</strong> también marca el sujeto de una oración, pero se usa en situaciones específicas para dar énfasis o introducir nueva información. Es común cuando la información sobre el sujeto es lo más importante o desconocido.</p>
+            <p>A menudo, が se usa:</p>
+            <ul>
+                <li>Cuando el sujeto es nueva información.</li>
+                <li>Cuando se pregunta quién o qué es el sujeto (con palabras interrogativas).</li>
+                <li>Con verbos intransitivos (verbos que no necesitan un objeto directo).</li>
+                <li>Para enfatizar que "es ESTE sujeto y no otro" quien realiza la acción.</li>
+            </ul>
+            <div class="example-block">
+                <p><span class="japanese-text">ジョンさん<strong class="primary-color">が</strong> 来ます。</span><button class="audio-icon" data-audio-text="ジョンさんが来ます。">🔊</button></p>
+                <span class="pronunciation">(Jon-san <strong class="primary-color">ga</strong> kimasu.)</span>
+                <span class="translation">John viene. (Se enfatiza que es John quien viene)</span>
+            </div>
+            <div class="example-block">
+                <p><span class="japanese-text">雨<strong class="primary-color">が</strong> 降ります。</span><button class="audio-icon" data-audio-text="雨が降ります。">🔊</button></p>
+                <span class="pronunciation">(Ame <strong class="primary-color">ga</strong> furimasu.)</span>
+                <span class="translation">Llueve. (Lit. La lluvia cae. "Ame" es el sujeto)</span>
+            </div>
+            <div class="example-block">
+                <p><span class="japanese-text">誰<strong class="primary-color">が</strong> 来ますか。</span><button class="audio-icon" data-audio-text="誰が来ますか。">🔊</button></p>
+                <span class="pronunciation">(Dare <strong class="primary-color">ga</strong> kimasu ka?)</span>
+                <span class="translation">¿Quién viene? (Siempre con が en preguntas sobre el sujeto)</span>
+            </div>
+            <p>💡 <strong>Nota Cultural:</strong> La diferencia entre は (wa) y が (ga) es compleja, pero para empezar, piensa en は como un marcador de "tema" (de qué estamos hablando) y が como un marcador de "sujeto con foco" (quién/qué hace la acción específica, a menudo es nueva información o la respuesta a una pregunta). ¡No te preocupes si no lo captas perfectamente ahora, es algo que se asimila con la práctica!</p>
+        </section>
+
+        <section>
+            <h2>📋 Patrones de Oraciones Simples</h2>
+            <p>Ahora, ¡vamos a combinarlo todo para formar oraciones simples!</p>
+
+            <h3>Patrón 1: Sujeto (は/が) Objeto (を) Verbo</h3>
+            <div class="example-block">
+                <p><span class="japanese-text">わたし<strong class="primary-color">は</strong> りんご<strong class="primary-color">を</strong> たべます。</span><button class="audio-icon" data-audio-text="わたしはりんごをたべます。">🔊</button></p>
+                <span class="pronunciation">(Watashi <strong class="primary-color">wa</strong> ringo <strong class="primary-color">o</strong> tabemasu.)</span>
+                <span class="translation">Yo como una manzana.</span>
+            </div>
+            <div class="example-block">
+                <p><span class="japanese-text">かれ<strong class="primary-color">は</strong> 新聞<strong class="primary-color">を</strong> 読みます。</span><button class="audio-icon" data-audio-text="かれは新聞を読みます。">🔊</button></p>
+                <span class="pronunciation">(Kare <strong class="primary-color">wa</strong> shinbun <strong class="primary-color">o</strong> yomimasu.)</span>
+                <span class="translation">Él lee el periódico.</span>
+            </div>
+
+            <h3>Patrón 2: Sujeto (が) Verbo</h3>
+            <p>Este patrón se usa con verbos intransitivos o cuando el sujeto es el foco principal.</p>
+            <div class="example-block">
+                <p><span class="japanese-text">ジョンさん<strong class="primary-color">が</strong> 来ます。</span><button class="audio-icon" data-audio-text="ジョンさんが来ます。">🔊</button></p>
+                <span class="pronunciation">(Jon-san <strong class="primary-color">ga</strong> kimasu.)</span>
+                <span class="translation">John viene.</span>
+            </div>
+            <div class="example-block">
+                <p><span class="japanese-text">鳥<strong class="primary-color">が</strong> います。</span><button class="audio-icon" data-audio-text="鳥がいます。">🔊</button></p>
+                <span class="pronunciation">(Tori <strong class="primary-color">ga</strong> imasu.)</span>
+                <span class="translation">Hay un pájaro. (Lit. El pájaro está/existe.)</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>❓ El Marcador de Pregunta か (ka)</h2>
+            <p>¡Formar preguntas en japonés es sorprendentemente fácil! Simplemente añade la partícula <strong>か (ka)</strong> al final de una oración declarativa. La estructura de la oración no cambia, ¡solo añades か!</p>
+            <p>En el habla, sube el tono de voz al final de la oración, como harías en español.</p>
+            <div class="example-block">
+                <p><strong>Afirmación:</strong> <span class="japanese-text">あなたは 学生です。</span><button class="audio-icon" data-audio-text="あなたは学生です。">🔊</button><br>
+                <span class="pronunciation">(Anata wa gakusei desu.)</span><br>
+                <span class="translation">Tú eres estudiante.</span></p>
+                <p><strong>Pregunta:</strong> <span class="japanese-text">あなたは 学生です<strong class="primary-color">か</strong>。</span><button class="audio-icon" data-audio-text="あなたは学生ですか。">🔊</button><br>
+                <span class="pronunciation">(Anata wa gakusei desu <strong class="primary-color">ka</strong>?)</span><br>
+                <span class="translation">¿Eres estudiante?</span></p>
+            </div>
+            <div class="example-block">
+                <p><strong>Afirmación:</strong> <span class="japanese-text">ジョンさん<strong class="primary-color">が</strong> 来ます。</span><button class="audio-icon" data-audio-text="ジョンさんが来ます。">🔊</button><br>
+                <span class="pronunciation">(Jon-san <strong class="primary-color">ga</strong> kimasu.)</span><br>
+                <span class="translation">John viene.</span></p>
+                <p><strong>Pregunta:</strong> <span class="japanese-text">ジョンさん<strong class="primary-color">が</strong> 来ます<strong class="primary-color">か</strong>。</span><button class="audio-icon" data-audio-text="ジョンさんが来ますか。">🔊</button><br>
+                <span class="pronunciation">(Jon-san <strong class="primary-color">ga</strong> kimasu <strong class="primary-color">ka</strong>?)</span><br>
+                <span class="translation">¿Viene John?</span></p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>✍️ ¡A Practicar!</h2>
+            <p class="practice-instructions">Pon a prueba tus conocimientos con estos ejercicios. Intenta responder antes de ver la solución (¡piensa en ella o escríbela!).</p>
+
+            <h3>Ejercicio 1: Ordena la Oración</h3>
+            <p>Las palabras están desordenadas. Escríbelas en el orden correcto (Sujeto - Objeto - Verbo).</p>
+            <div class="practice-item">
+                <p>1. たべます (tabemasu / comer) / わたし (watashi / yo) / りんご (ringo / manzana) / を / は</p>
+                <p><strong>Respuesta:</strong> わたしは りんごを たべます。<button class="audio-icon" data-audio-text="わたしはりんごをたべます。">🔊</button></p>
+            </div>
+            <div class="practice-item">
+                <p>2. 読みます (yomimasu / leer) / 彼 (kare / él) / を / 新聞 (shinbun / periódico) / は</p>
+                <p><strong>Respuesta:</strong> 彼は 新聞を 読みます。<button class="audio-icon" data-audio-text="かれは新聞を読みます。">🔊</button></p>
+            </div>
+
+            <h3>Ejercicio 2: Completa con la Partícula Correcta (を o が)</h3>
+            <p>Elige la partícula adecuada para cada espacio.</p>
+            <div class="practice-item">
+                <p>1. わたしは お茶 (ocha / té) ____ 飲みます (nomimasu / beber)。</p>
+                <p><strong>Respuesta:</strong> わたしは お茶<strong>を</strong> 飲みます。<button class="audio-icon" data-audio-text="わたしはお茶を飲みます。">🔊</button></p>
+            </div>
+            <div class="practice-item">
+                <p>2. 猫 (neko / gato) ____ います (imasu / hay/estar)。</p>
+                <p><strong>Respuesta:</strong> 猫<strong>が</strong> います。<button class="audio-icon" data-audio-text="猫がいます。">🔊</button></p>
+            </div>
+            <div class="practice-item">
+                <p>3. 先生 (sensei / profesor) ____ 来ます (kimasu / venir)。</p>
+                <p><strong>Respuesta:</strong> 先生<strong>が</strong> 来ます。<button class="audio-icon" data-audio-text="先生が来ます。">🔊</button></p>
+            </div>
+
+            <h3>Ejercicio 3: Transforma a Pregunta</h3>
+            <p>Añade la partícula correcta para convertir estas afirmaciones en preguntas.</p>
+            <div class="practice-item">
+                <p>1. あなたは 日本人です (nihonjin desu / eres japonés)。</p>
+                <p><strong>Pregunta:</strong> あなたは 日本人です<strong>か</strong>。<button class="audio-icon" data-audio-text="あなたは日本人ですか。">🔊</button></p>
+            </div>
+            <div class="practice-item">
+                <p>2. 彼女は 寿司を食べます (sushi o tabemasu / ella come sushi)。</p>
+                <p><strong>Pregunta:</strong> 彼女は 寿司を食べます<strong>か</strong>。<button class="audio-icon" data-audio-text="かのじょは寿司を食べますか。">🔊</button></p>
+            </div>
+
+            <h3>Ejercicio 4: Traduce</h3>
+            <p>Traduce las siguientes oraciones al japonés.</p>
+            <div class="practice-item">
+                <p>1. Yo bebo café.</p>
+                <p><strong>Traducción:</strong> わたしは コーヒーを 飲みます。<button class="audio-icon" data-audio-text="わたしはコーヒーを飲みます。">🔊</button></p>
+            </div>
+            <div class="practice-item">
+                <p>2. ¿Viene el perro?</p>
+                <p><strong>Traducción:</strong> 犬が 来ますか。<button class="audio-icon" data-audio-text="犬が来ますか。">🔊</button></p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ Resumen del Capítulo 5 ✨</h2>
+            <p>¡Felicidades! Has dado un gran paso en la formación de oraciones. Aquí está lo que hemos cubierto:</p>
+            <ul>
+                <li>El orden de las palabras en japonés es <strong>Sujeto – Objeto – Verbo (SOV)</strong>. ¡El verbo siempre va al final!</li>
+                <li>La partícula <strong>を (o)</strong> marca el objeto directo de la oración.</li>
+                <li>La partícula <strong>が (ga)</strong> marca el sujeto, a menudo para enfatizarlo o para introducir nueva información. Es vital en preguntas con "quién/qué".</li>
+                <li>Para formar una pregunta, simplemente añade <strong>か (ka)</strong> al final de una oración.</li>
+            </ul>
+            <p>¡Sigue practicando estas estructuras y pronto formarás oraciones complejas con facilidad! 🚀</p>
+        </section>
+    </div>
+</body>
+</html>

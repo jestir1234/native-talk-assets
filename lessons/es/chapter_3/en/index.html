@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Numbers and Counting</title>
+    <style>
+        /* General Body and HTML styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            box-sizing: border-box;
+        }
+
+        /* Ensure box-sizing consistency */
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+        /* Responsive Container for content */
+        .container {
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto;
+            padding: 15px; /* Padding for mobile screens */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            font-weight: bold;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            word-wrap: break-word; /* Prevent long words from overflowing */
+        }
+
+        h1.chapter-title {
+            font-size: 2.4em; /* Larger for chapter title */
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            padding: 0 10px; /* Adjust padding for visual balance */
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #8B5FBF; /* Primary: Purple for sub-headings */
+            margin-top: 1.5em;
+        }
+
+        /* Paragraphs */
+        p {
+            font-size: 1.1em; /* Minimum 16px, 1.1em is approx 17.6px based on default 16px browser font */
+            margin-bottom: 1em;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 1em 0;
+        }
+
+        li {
+            background-color: #ffffff;
+            border-left: 5px solid #8B5FBF; /* Primary: Purple accent */
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            font-size: 1.1em;
+            flex-wrap: wrap; /* Allow content to wrap on small screens */
+            justify-content: space-between; /* Space out content and audio icon */
+        }
+        
+        li strong {
+            color: #2C3E50; /* Dark blue for strong text */
+            margin-right: 8px;
+        }
+
+        /* Semantic section styling */
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            overflow: hidden; /* Clear floats/contain content */
+        }
+
+        /* Lesson Header specific styles */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+            padding: 0 15px; /* Ensures padding around the image */
+        }
+        
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #E0E0E0;
+        }
+
+        /* Audio Icon styles */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum tap target size */
+            height: 44px; /* Minimum tap target size */
+            min-width: 44px; /* Ensure button doesn't shrink */
+            min-height: 44px; /* Ensure button doesn't shrink */
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.4em;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            margin-left: 10px; /* Space from text */
+            vertical-align: middle;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+            -webkit-tap-highlight-color: rgba(0,0,0,0); /* Remove tap highlight on mobile */
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.05);
+            background-color: #6F4A99; /* Slightly darker purple on hover */
+        }
+
+        /* Inline audio icon for words/phrases */
+        .word-audio {
+            display: inline-flex; /* Use inline-flex for word-level audio */
+            align-items: center;
+            gap: 5px; /* Space between word and icon */
+            flex-wrap: wrap; /* Allow word and icon to wrap if too long */
+        }
+
+        .word-audio .audio-icon {
+            width: 32px; /* Smaller size for inline words */
+            height: 32px;
+            font-size: 1em;
+            margin-left: 5px;
+            box-shadow: none; /* Less prominent shadow */
+        }
+
+        .word-audio .audio-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation {
+            font-size: 0.95em;
+            color: #A0A0A0; /* Lighter gray for pronunciation */
+            font-style: italic;
+            margin-top: 5px;
+            display: block; /* Ensures it's on a new line below the word */
+            width: 100%; /* Take full width below the word-audio */
+        }
+
+        /* Practice Section styles */
+        .practice-section {
+            background-color: #ffffff; /* White background for practice */
+            border: 1px dashed #8B5FBF; /* Primary: Purple dashed border */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF; /* Primary: Purple */
+            margin-top: 0;
+            margin-bottom: 1em;
+        }
+
+        .practice-exercise {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #FDF9E5; /* Secondary: Cream for individual exercise */
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+
+        .practice-exercise p {
+            font-size: 1.05em;
+            margin-bottom: 10px;
+            display: flex; /* Allow audio icon to sit next to text */
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .practice-exercise label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .practice-exercise input[type="text"],
+        .practice-exercise input[type="number"] {
+            width: 100%; /* Full width */
+            padding: 12px 10px;
+            margin-bottom: 15px;
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 5px;
+            font-size: 1em;
+            color: #666666;
+            -webkit-appearance: none; /* Remove default iOS styling for inputs */
+        }
+
+        .practice-exercise input[type="text"]:focus,
+        .practice-exercise input[type="number"]:focus {
+            outline: none;
+            border-color: #8B5FBF; /* Primary: Purple on focus */
+            box-shadow: 0 0 0 3px rgba(139, 95, 191, 0.2); /* Light purple shadow */
+        }
+
+        .exercise-options {
+            display: flex;
+            flex-wrap: wrap; /* Allow options to wrap on small screens */
+            gap: 10px; /* Space between buttons */
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .exercise-option {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px; /* Pill-shaped buttons */
+            font-size: 1.05em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            min-width: 100px; /* Ensure buttons are not too small */
+            min-height: 44px; /* Tap target size */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            flex: 1 1 auto; /* Allow buttons to grow/shrink, but not below min-width */
+            max-width: calc(50% - 5px); /* Two columns on larger mobile, but allows more if needed */
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+
+        @media (max-width: 480px) {
+            .exercise-option {
+                max-width: 100%; /* Stack buttons on very small screens */
+            }
+        }
+
+        .exercise-option:hover {
+            background-color: #6F4A99; /* Darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Translation display */
+        .translation {
+            font-size: 0.9em;
+            color: #999999;
+            margin-top: 5px;
+        }
+
+        /* Example box */
+        .example {
+            background-color: #f7f7f7; /* Lighter background for examples */
+            border-left: 4px solid #8B5FBF; /* Primary: Purple border */
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-style: italic;
+            font-size: 1.05em;
+            color: #2C3E50; /* Dark blue for example text */
+            display: flex;
+            align-items: flex-start; /* Align content to top if text wraps */
+            gap: 10px; /* Space between audio icon and text */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        
+        .example .audio-icon {
+            width: 38px;
+            height: 38px;
+            font-size: 1.2em;
+            flex-shrink: 0; /* Prevent icon from shrinking */
+        }
+
+        /* Cultural Note box */
+        .cultural-note {
+            background-color: #FFF3CD; /* Light yellow background */
+            border-left: 5px solid #FFC107; /* Amber for cultural note */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: #666666;
+            font-size: 0.95em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .cultural-note strong {
+            color: #2C3E50; /* Dark blue for bold text in cultural note */
+            margin-right: 5px;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #ffffff;
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: #8B5FBF; /* Primary: Purple */
+            border-bottom: none;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .summary-list {
+            list-style: disc; /* Bullet points for summary */
+            padding-left: 20px;
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .summary-list li {
+            background-color: transparent;
+            border-left: none;
+            box-shadow: none;
+            padding: 5px 0;
+            margin-bottom: 5px;
+            font-size: 1.05em;
+            color: #666666; /* Body text color */
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            h1.chapter-title {
+                font-size: 2em; /* Slightly smaller on small phones */
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            h3 {
+                font-size: 1.3em;
+            }
+            p, li, .example, .cultural-note, .summary-list li {
+                font-size: 1em; /* Ensure minimum 16px base font size */
+            }
+            .container {
+                padding: 10px; /* Less padding on very small screens */
+            }
+            .lesson-header {
+                padding: 0 10px;
+            }
+            section {
+                padding: 15px;
+            }
+            .practice-section {
+                padding: 15px;
+            }
+            .practice-exercise {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 3: Numbers and Counting</h1>
+        <div class="lesson-header">
+            <!-- The src="../header.webp" is a placeholder as required, but no external images are loaded. -->
+            <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>¡Hola! Let's Talk Numbers! 🔢</h2>
+            <p>Ready to count in Spanish? Numbers are super useful for everything from telling time to ordering food. In this chapter, we'll master numbers up to 20, learn how to talk about age, phone numbers, and even some basic math!</p>
+        </section>
+
+        <section>
+            <h2>Numbers 1-20</h2>
+            <p>Let's start with the basics! Listen carefully and repeat after each number. Pay attention to the pronunciation, especially for numbers like "cinco" and "dieciséis".</p>
+            <ul>
+                <li>
+                    <div class="word-audio">
+                        <strong>1. Uno</strong> <span class="audio-icon" data-audio-text="uno">🔊</span>
+                    </div>
+                    <span class="pronunciation">(OO-noh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>2. Dos</strong> <span class="audio-icon" data-audio-text="dos">🔊</span>
+                    </div>
+                    <span class="pronunciation">(dohs)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>3. Tres</strong> <span class="audio-icon" data-audio-text="tres">🔊</span>
+                    </div>
+                    <span class="pronunciation">(trehs)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>4. Cuatro</strong> <span class="audio-icon" data-audio-text="cuatro">🔊</span>
+                    </div>
+                    <span class="pronunciation">(KWAH-troh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>5. Cinco</strong> <span class="audio-icon" data-audio-text="cinco">🔊</span>
+                    </div>
+                    <span class="pronunciation">(SEEN-koh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>6. Seis</strong> <span class="audio-icon" data-audio-text="seis">🔊</span>
+                    </div>
+                    <span class="pronunciation">(seys)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>7. Siete</strong> <span class="audio-icon" data-audio-text="siete">🔊</span>
+                    </div>
+                    <span class="pronunciation">(SYEH-teh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>8. Ocho</strong> <span class="audio-icon" data-audio-text="ocho">🔊</span>
+                    </div>
+                    <span class="pronunciation">(OH-choh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>9. Nueve</strong> <span class="audio-icon" data-audio-text="nueve">🔊</span>
+                    </div>
+                    <span class="pronunciation">(NWEH-veh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>10. Diez</strong> <span class="audio-icon" data-audio-text="diez">🔊</span>
+                    </div>
+                    <span class="pronunciation">(dyes)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>11. Once</strong> <span class="audio-icon" data-audio-text="once">🔊</span>
+                    </div>
+                    <span class="pronunciation">(OHN-seh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>12. Doce</strong> <span class="audio-icon" data-audio-text="doce">🔊</span>
+                    </div>
+                    <span class="pronunciation">(DOH-seh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>13. Trece</strong> <span class="audio-icon" data-audio-text="trece">🔊</span>
+                    </div>
+                    <span class="pronunciation">(TREH-seh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>14. Catorce</strong> <span class="audio-icon" data-audio-text="catorce">🔊</span>
+                    </div>
+                    <span class="pronunciation">(kah-TOR-seh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>15. Quince</strong> <span class="audio-icon" data-audio-text="quince">🔊</span>
+                    </div>
+                    <span class="pronunciation">(KEEN-seh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>16. Dieciséis</strong> <span class="audio-icon" data-audio-text="dieciséis">🔊</span>
+                    </div>
+                    <span class="pronunciation">(dyeh-see-SEYS)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>17. Diecisiete</strong> <span class="audio-icon" data-audio-text="diecisiete">🔊</span>
+                    </div>
+                    <span class="pronunciation">(dyeh-see-SYEH-teh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>18. Dieciocho</strong> <span class="audio-icon" data-audio-text="dieciocho">🔊</span>
+                    </div>
+                    <span class="pronunciation">(dyeh-see-OH-choh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>19. Diecinueve</strong> <span class="audio-icon" data-audio-text="diecinueve">🔊</span>
+                    </div>
+                    <span class="pronunciation">(dyeh-see-NWEH-veh)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>20. Veinte</strong> <span class="audio-icon" data-audio-text="veinte">🔊</span>
+                    </div>
+                    <span class="pronunciation">(VAYN-teh)</span>
+                </li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>Practice: Numbers 1-20</h3>
+                <p>Listen to the number and select the correct Spanish word. (Note: These buttons are for display; actual interaction would be handled by the app's logic).</p>
+                <div class="practice-exercise">
+                    <p>Which number is it? <span class="audio-icon" data-audio-text="seis">🔊</span></p>
+                    <div class="exercise-options">
+                        <button class="exercise-option">Siete</button>
+                        <button class="exercise-option">Seis</button>
+                        <button class="exercise-option">Cinco</button>
+                    </div>
+                </div>
+                <div class="practice-exercise">
+                    <p>Which number is it? <span class="audio-icon" data-audio-text="quince">🔊</span></p>
+                    <div class="exercise-options">
+                        <button class="exercise-option">Catorce</button>
+                        <button class="exercise-option">Dieciséis</button>
+                        <button class="exercise-option">Quince</button>
+                    </div>
+                </div>
+                <div class="practice-exercise">
+                    <p>Type the Spanish word for the number '9':</p>
+                    <input type="text" placeholder="Your answer (e.g., nueve)">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Counting and Quantity Expressions</h2>
+            <p>To ask "how many?" in Spanish, you use <span class="word-audio"><strong>¿Cuántos?</strong> <span class="audio-icon" data-audio-text="cuántos">🔊</span></span> (for masculine nouns) or <span class="word-audio"><strong>¿Cuántas?</strong> <span class="audio-icon" data-audio-text="cuántas">🔊</span></span> (for feminine nouns).</p>
+            <p>To say "there is" or "there are", use <span class="word-audio"><strong>Hay</strong> <span class="audio-icon" data-audio-text="hay">🔊</span></span>.</p>
+            
+            <div class="example">
+                <span class="audio-icon" data-audio-text="¿Cuántos libros hay?">🔊</span>
+                <div>
+                    <strong>¿Cuántos libros hay?</strong><br>
+                    <span class="translation">How many books are there?</span>
+                </div>
+            </div>
+            <div class="example">
+                <span class="audio-icon" data-audio-text="Hay cinco libros.">🔊</span>
+                <div>
+                    <strong>Hay cinco libros.</strong><br>
+                    <span class="translation">There are five books.</span>
+                </div>
+            </div>
+            <div class="example">
+                <span class="audio-icon" data-audio-text="Hay una manzana.">🔊</span>
+                <div>
+                    <strong>Hay una manzana.</strong><br>
+                    <span class="translation">There is one apple.</span>
+                </div>
+            </div>
+
+            <div class="cultural-note">
+                <strong>Cultural Note:</strong> In Spanish, the number "one" (uno) changes form to agree with the gender of the noun. It's <span class="word-audio"><strong>uno</strong> <span class="audio-icon" data-audio-text="uno">🔊</span></span> for masculine nouns (e.g., <em>un libro</em> - one book) and <span class="word-audio"><strong>una</strong> <span class="audio-icon" data-audio-text="una">🔊</span></span> for feminine nouns (e.g., <em>una casa</em> - one house). Numbers from "dos" (2) to "veinte" (20) typically do not change for gender.
+            </div>
+
+            <div class="practice-section">
+                <h3>Practice: Quantity Expressions</h3>
+                <p>Fill in the blank with the correct Spanish word (number).</p>
+                <div class="practice-exercise">
+                    <p>Hay _____ perros. (There are 3 dogs)</p>
+                    <input type="text" placeholder="Your answer (e.g., tres)">
+                </div>
+                <div class="practice-exercise">
+                    <p>¿Cuántas sillas hay? Answer with "There are 10 chairs."</p>
+                    <input type="text" placeholder="Your answer (e.g., Hay diez sillas.)">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Age: How old are you?</h2>
+            <p>Asking someone's age in Spanish uses the verb <span class="word-audio"><strong>tener</strong> <span class="audio-icon" data-audio-text="tener">🔊</span></span> (to have), not "to be". So, you literally ask "How many years do you have?"</p>
+            
+            <div class="example">
+                <span class="audio-icon" data-audio-text="¿Cuántos años tienes?">🔊</span>
+                <div>
+                    <strong>¿Cuántos años tienes?</strong><br>
+                    <span class="translation">How many years do you have? (How old are you?)</span>
+                </div>
+            </div>
+            <div class="example">
+                <span class="audio-icon" data-audio-text="Tengo dieciocho años.">🔊</span>
+                <div>
+                    <strong>Tengo dieciocho años.</strong><br>
+                    <span class="translation">I have eighteen years. (I am eighteen years old.)</span>
+                </div>
+            </div>
+            <div class="example">
+                <span class="audio-icon" data-audio-text="Ella tiene doce años.">🔊</span>
+                <div>
+                    <strong>Ella tiene doce años.</strong><br>
+                    <span class="translation">She has twelve years. (She is twelve years old.)</span>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h3>Practice: Age</h3>
+                <p>Translate the following phrases into Spanish.</p>
+                <div class="practice-exercise">
+                    <p>He is 7 years old.</p>
+                    <input type="text" placeholder="Él tiene siete años.">
+                </div>
+                <div class="practice-exercise">
+                    <p>Are you 20 years old? (informal 'tú')</p>
+                    <input type="text" placeholder="¿Tienes veinte años?">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Phone Numbers and Addresses</h2>
+            <p>When giving a phone number, you usually say the digits individually. Addresses are also typically given out digit by digit for numbers.</p>
+            <p>The phrase for "My phone number is..." is <span class="word-audio"><strong>Mi número de teléfono es...</strong> <span class="audio-icon" data-audio-text="mi número de teléfono es">🔊</span></span></p>
+            <p>The phrase for "My address is..." is <span class="word-audio"><strong>Mi dirección es...</strong> <span class="audio-icon" data-audio-text="mi dirección es">🔊</span></span></p>
+
+            <div class="example">
+                <span class="audio-icon" data-audio-text="Mi número de teléfono es cinco, cinco, cinco, uno, dos, tres, cuatro.">🔊</span>
+                <div>
+                    <strong>Mi número de teléfono es 555-1234.</strong><br>
+                    <span class="translation">My phone number is five, five, five, one, two, three, four.</span>
+                </div>
+            </div>
+            <div class="example">
+                <span class="audio-icon" data-audio-text="Mi dirección es calle Primavera, número quince.">🔊</span>
+                <div>
+                    <strong>Mi dirección es Calle Primavera, #15.</strong><br>
+                    <span class="translation">My address is Spring Street, number fifteen.</span>
+                </div>
+            </div>
+
+            <div class="cultural-note">
+                <strong>Cultural Note:</strong> Addresses in Spanish-speaking countries often place the street name first, then the building number (e.g., "Calle Mayor, número 10" - Main Street, number 10). Phone numbers are typically given digit by digit, sometimes grouped in pairs or threes, with pauses.
+            </div>
+
+            <div class="practice-section">
+                <h3>Practice: Phone Numbers</h3>
+                <p>Listen to the number sequence and try to write it down as digits.</p>
+                <div class="practice-exercise">
+                    <p><span class="audio-icon" data-audio-text="ocho siete seis cero nueve">🔊</span></p>
+                    <input type="text" placeholder="e.g., 87609">
+                </div>
+                <div class="practice-exercise">
+                    <p><span class="audio-icon" data-audio-text="dos uno cuatro tres siete cinco">🔊</span></p>
+                    <input type="text" placeholder="e.g., 214375">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Basic Math Vocabulary</h2>
+            <p>Even basic math terms are useful for understanding prices, quantities, and more.</p>
+            <ul>
+                <li>
+                    <div class="word-audio">
+                        <strong>Plus: Más</strong> <span class="audio-icon" data-audio-text="más">🔊</span>
+                    </div>
+                    <span class="pronunciation">(mahs)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>Minus: Menos</strong> <span class="audio-icon" data-audio-text="menos">🔊</span>
+                    </div>
+                    <span class="pronunciation">(MEH-nohs)</span>
+                </li>
+                <li>
+                    <div class="word-audio">
+                        <strong>Equals: Es / Son</strong> <span class="audio-icon" data-audio-text="es">🔊</span> / <span class="audio-icon" data-audio-text="son">🔊</span>
+                    </div>
+                    <span class="pronunciation">(ehs / sohn)</span>
+                </li>
+            </ul>
+            <p>Use "es" for singular results (e.g., "uno más uno es dos"). Use "son" for plural results (e.g., "dos más dos son cuatro").</p>
+
+            <div class="example">
+                <span class="audio-icon" data-audio-text="Uno más uno es dos.">🔊</span>
+                <div>
+                    <strong>1 + 1 = 2</strong><br>
+                    <span class="translation">Uno más uno es dos.</span>
+                </div>
+            </div>
+            <div class="example">
+                <span class="audio-icon" data-audio-text="Cinco menos tres son dos.">🔊</span>
+                <div>
+                    <strong>5 - 3 = 2</strong><br>
+                    <span class="translation">Cinco menos tres son dos.</span>
+                </div>
+            </div>
+            <div class="example">
+                <span class="audio-icon" data-audio-text="Diez más cinco son quince.">🔊</span>
+                <div>
+                    <strong>10 + 5 = 15</strong><br>
+                    <span class="translation">Diez más cinco son quince.</span>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h3>Practice: Basic Math</h3>
+                <p>Translate these simple equations into Spanish words.</p>
+                <div class="practice-exercise">
+                    <p>8 + 2 = 10</p>
+                    <input type="text" placeholder="Ocho más dos son diez.">
+                </div>
+                <div class="practice-exercise">
+                    <p>15 - 5 = 10</p>
+                    <input type="text" placeholder="Quince menos cinco son diez.">
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>Chapter Summary: Numbers and Counting</h2>
+            <p>¡Felicidades! You've learned a lot about numbers in Spanish. Here's a quick recap of what you've covered:</p>
+            <ul class="summary-list">
+                <li>Mastered numbers <strong>uno (1)</strong> to <strong>veinte (20)</strong>.</li>
+                <li>Learned to ask and state quantities using <strong>¿Cuántos/Cuántas...?</strong> and <strong>Hay...</strong>.</li>
+                <li>Understood how to talk about age using the verb <strong>tener</strong> (to have): <strong>¿Cuántos años tienes?</strong> / <strong>Tengo... años.</strong></li>
+                <li>Practiced saying phone numbers and addresses using individual digits.</li>
+                <li>Introduced basic math vocabulary: <strong>más</strong> (plus), <strong>menos</strong> (minus), and <strong>es/son</strong> (equals).</li>
+                <li>Gained insight into cultural nuances for gender agreement and address formats.</li>
+            </ul>
+            <p>Keep practicing these numbers in your daily life. Try counting objects around you, saying your age in Spanish, or even practicing simple math problems!</p>
+        </section>
+
+    </div> <!-- End .container -->
+</body>
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Chapter 10: Time and Schedules</title>
+    <style>
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-background: #FDF9E5;
+            --heading-text-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* White background for the main body */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent text scaling on orientation change */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Header Specific Styles */
+        .chapter-title {
+            font-size: 2.2em; /* ~35px */
+            color: var(--heading-text-color);
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-size: 1.8em; /* ~29px */
+            color: var(--heading-text-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            display: inline-block; /* To make border-bottom only as wide as text */
+            margin-left: 5px; /* Adjust for padding on section */
+        }
+
+        h3 {
+            font-size: 1.3em; /* ~21px */
+            color: var(--heading-text-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 10px;
+        }
+
+        p {
+            font-size: 1em; /* ~16px */
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: italic;
+            color: var(--primary-color);
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        li {
+            background-color: #FFFFFF; /* White background for list items */
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            font-size: 1em; /* ~16px */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+        }
+
+        .vocabulary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .vocabulary-item span:first-child {
+            flex: 1;
+            padding-right: 10px;
+            font-weight: bold;
+            color: var(--heading-text-color);
+        }
+
+        .vocabulary-item span:last-child {
+            flex: 1;
+            text-align: right;
+            color: var(--body-text-color);
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: var(--body-text-color);
+            opacity: 0.8;
+            margin-left: 5px;
+            font-style: italic;
+        }
+
+        /* Audio Icon Styling */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px; /* Min 44px */
+            height: 48px; /* Min 44px */
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.4em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+            margin-left: 10px;
+        }
+
+        .audio-icon:hover {
+            background-color: #6C489C; /* Darker primary on hover */
+            transform: scale(1.05);
+        }
+
+        /* Example and Practice Styling */
+        .example-block, .practice-challenge {
+            background-color: #FFFFFF;
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            font-size: 0.95em;
+        }
+
+        .example-block p, .practice-challenge p {
+            margin: 5px 0;
+        }
+
+        .spanish-phrase {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .english-translation {
+            color: var(--body-text-color);
+            font-style: italic;
+            margin-left: 5px; /* Adjust if audio icon is present */
+        }
+
+        .practice-challenge .prompt {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-bottom: 10px;
+        }
+
+        .practice-challenge .answer {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        /* Table-like layout for vocabulary */
+        .vocabulary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns for Spanish and English */
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .vocabulary-grid div {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.95em;
+        }
+
+        .vocabulary-grid .spanish-word {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            flex-grow: 1; /* Allow word to take available space */
+        }
+
+        .vocabulary-grid .english-word {
+            color: var(--body-text-color);
+            text-align: right;
+            flex-shrink: 0; /* Don't let English word shrink */
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            padding: 25px 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .summary-section h2 {
+            color: #FFFFFF;
+            border-bottom-color: #FFFFFF;
+            margin-bottom: 15px;
+        }
+
+        .summary-section ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            background-color: transparent;
+            border: none;
+            padding: 5px 0;
+            margin-bottom: 5px;
+            color: #FFFFFF;
+            box-shadow: none;
+            align-items: flex-start;
+        }
+
+        .summary-section li strong {
+            color: #FFFFFF;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .chapter-title {
+                font-size: 1.8em; /* Smaller on very small screens */
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            p, li, .example-block, .practice-challenge {
+                font-size: 0.95em;
+            }
+            .audio-icon {
+                width: 44px; /* Min size */
+                height: 44px;
+                font-size: 1.2em;
+            }
+            .vocabulary-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens for readability */
+            }
+            .vocabulary-grid div {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .vocabulary-grid .english-word {
+                text-align: left;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 10: Time and Schedules</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>🕒 Telling Time: ¿Qué hora es?</h2>
+            <p>Learning to tell time is super practical! In Spanish, we mostly use the 12-hour clock, but the 24-hour format is also common, especially in official settings or when talking about schedules.</p>
+
+            <h3>Asking the Time</h3>
+            <ul>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>¿Qué hora es? <span class="pronunciation">[keh OH-rah es]</span></span>
+                        <span>What time is it?</span>
+                        <button class="audio-icon" data-audio-text="¿Qué hora es?">🔊</button>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>Answering the Time</h3>
+            <p>For <strong>1:00</strong>, we use <strong>singular</strong> "Es la...":</p>
+            <ul>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>Es la una. <span class="pronunciation">[es lah OO-nah]</span></span>
+                        <span>It's one o'clock.</span>
+                        <button class="audio-icon" data-audio-text="Es la una.">🔊</button>
+                    </div>
+                </li>
+            </ul>
+            <p>For <strong>all other hours</strong>, we use <strong>plural</strong> "Son las...":</p>
+            <ul>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>Son las dos. <span class="pronunciation">[sohn lahs dohs]</span></span>
+                        <span>It's two o'clock.</span>
+                        <button class="audio-icon" data-audio-text="Son las dos.">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>Son las diez. <span class="pronunciation">[sohn lahs dyehs]</span></span>
+                        <span>It's ten o'clock.</span>
+                        <button class="audio-icon" data-audio-text="Son las diez.">🔊</button>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>Minutes: Adding Detail</h3>
+            <p>After the hour, you add <strong>"y" (and)</strong> followed by the minutes. For example:</p>
+            <ul>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>Son las tres y cinco. <span class="pronunciation">[sohn lahs trehs ee SEEN-koh]</span></span>
+                        <span>It's 3:05.</span>
+                        <button class="audio-icon" data-audio-text="Son las tres y cinco.">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>Son las ocho y veinticinco. <span class="pronunciation">[sohn lahs OH-choh ee veyn-tee-SEEN-koh]</span></span>
+                        <span>It's 8:25.</span>
+                        <button class="audio-icon" data-audio-text="Son las ocho y veinticinco.">🔊</button>
+                    </div>
+                </li>
+            </ul>
+
+            <p>Special phrases for common times:</p>
+            <ul>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>y cuarto <span class="pronunciation">[ee KWAHR-toh]</span></span>
+                        <span>a quarter past (15 minutes)</span>
+                        <button class="audio-icon" data-audio-text="y cuarto">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>y media <span class="pronunciation">[ee MEH-dya]</span></span>
+                        <span>half past (30 minutes)</span>
+                        <button class="audio-icon" data-audio-text="y media">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>menos cuarto <span class="pronunciation">[MEH-nohs KWAHR-toh]</span></span>
+                        <span>a quarter to (15 minutes before the next hour)</span>
+                        <button class="audio-icon" data-audio-text="menos cuarto">🔊</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="example-block">
+                <p><span class="spanish-phrase">Son las siete y cuarto. <button class="audio-icon" data-audio-text="Son las siete y cuarto.">🔊</button></span></p>
+                <p class="english-translation">It's 7:15.</p>
+                <p><span class="spanish-phrase">Son las once y media. <button class="audio-icon" data-audio-text="Son las once y media.">🔊</button></span></p>
+                <p class="english-translation">It's 11:30.</p>
+                <p><span class="spanish-phrase">Son las ocho menos cuarto. <button class="audio-icon" data-audio-text="Son las ocho menos cuarto.">🔊</button></span></p>
+                <p class="english-translation">It's a quarter to eight (7:45).</p>
+            </div>
+
+            <h3>Morning, Afternoon, Evening</h3>
+            <ul>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>de la mañana <span class="pronunciation">[deh lah mah-NYAH-nah]</span></span>
+                        <span>in the morning (AM)</span>
+                        <button class="audio-icon" data-audio-text="de la mañana">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>de la tarde <span class="pronunciation">[deh lah TAHR-deh]</span></span>
+                        <span>in the afternoon (PM, generally until sunset)</span>
+                        <button class="audio-icon" data-audio-text="de la tarde">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>de la noche <span class="pronunciation">[deh lah NOH-cheh]</span></span>
+                        <span>in the evening/night (PM, from sunset onwards)</span>
+                        <button class="audio-icon" data-audio-text="de la noche">🔊</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="example-block">
+                <p><span class="spanish-phrase">Es la una de la tarde. <button class="audio-icon" data-audio-text="Es la una de la tarde.">🔊</button></span></p>
+                <p class="english-translation">It's 1:00 PM.</p>
+                <p><span class="spanish-phrase">Son las siete de la noche. <button class="audio-icon" data-audio-text="Son las siete de la noche.">🔊</button></span></p>
+                <p class="english-translation">It's 7:00 PM.</p>
+            </div>
+
+            <h3>Special Times</h3>
+            <ul>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>Mediodía <span class="pronunciation">[meh-dyoh-DEE-ah]</span></span>
+                        <span>Noon</span>
+                        <button class="audio-icon" data-audio-text="Mediodía">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>Medianoche <span class="pronunciation">[meh-dyah-NOH-cheh]</span></span>
+                        <span>Midnight</span>
+                        <button class="audio-icon" data-audio-text="Medianoche">🔊</button>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="practice-challenge">
+                <h3>Practice Time ⏰</h3>
+                <p class="prompt">How would you say these times in Spanish?</p>
+                <p>1. 4:00 AM</p>
+                <p>2. 1:30 PM</p>
+                <p>3. 9:45 PM</p>
+                <p>4. 6:10 AM</p>
+                <p class="answer">
+                    1. Son las cuatro de la mañana.
+                    2. Es la una y media de la tarde.
+                    3. Son las diez menos cuarto de la noche.
+                    4. Son las seis y diez de la mañana.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🗓️ Days of the Week</h2>
+            <p>In Spanish, the days of the week are not capitalized unless they start a sentence. They are also masculine, typically used with <strong>"el"</strong> (the) for a specific day, or <strong>"los"</strong> (the plural) for "on Mondays," "every Monday," etc.</p>
+
+            <div class="vocabulary-grid">
+                <div>
+                    <span class="spanish-word">lunes <span class="pronunciation">[LOO-nehs]</span></span>
+                    <span class="english-word">Monday</span>
+                    <button class="audio-icon" data-audio-text="lunes">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">martes <span class="pronunciation">[MAHR-tehs]</span></span>
+                    <span class="english-word">Tuesday</span>
+                    <button class="audio-icon" data-audio-text="martes">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">miércoles <span class="pronunciation">[MYEHR-koh-lehs]</span></span>
+                    <span class="english-word">Wednesday</span>
+                    <button class="audio-icon" data-audio-text="miércoles">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">jueves <span class="pronunciation">[HWEH-vehs]</span></span>
+                    <span class="english-word">Thursday</span>
+                    <button class="audio-icon" data-audio-text="jueves">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">viernes <span class="pronunciation">[VYEHR-nehs]</span></span>
+                    <span class="english-word">Friday</span>
+                    <button class="audio-icon" data-audio-text="viernes">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">sábado <span class="pronunciation">[SAH-bah-doh]</span></span>
+                    <span class="english-word">Saturday</span>
+                    <button class="audio-icon" data-audio-text="sábado">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">domingo <span class="pronunciation">[doh-MEEN-goh]</span></span>
+                    <span class="english-word">Sunday</span>
+                    <button class="audio-icon" data-audio-text="domingo">🔊</button>
+                </div>
+            </div>
+
+            <h3>Using Days in Sentences</h3>
+            <ul>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>Hoy es lunes. <span class="pronunciation">[oy es LOO-nehs]</span></span>
+                        <span>Today is Monday.</span>
+                        <button class="audio-icon" data-audio-text="Hoy es lunes.">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>Mañana es martes. <span class="pronunciation">[mah-NYAH-nah es MAHR-tehs]</span></span>
+                        <span>Tomorrow is Tuesday.</span>
+                        <button class="audio-icon" data-audio-text="Mañana es martes.">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>Ayer fue domingo. <span class="pronunciation">[ah-YEHR fweh doh-MEEN-goh]</span></span>
+                        <span>Yesterday was Sunday.</span>
+                        <button class="audio-icon" data-audio-text="Ayer fue domingo.">🔊</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="example-block">
+                <p><span class="spanish-phrase">El jueves tengo una reunión. <button class="audio-icon" data-audio-text="El jueves tengo una reunión.">🔊</button></span></p>
+                <p class="english-translation">On Thursday I have a meeting.</p>
+                <p><span class="spanish-phrase">Los domingos vamos a la playa. <button class="audio-icon" data-audio-text="Los domingos vamos a la playa.">🔊</button></span></p>
+                <p class="english-translation">On Sundays we go to the beach (or "Every Sunday we go to the beach").</p>
+            </div>
+
+            <div class="practice-challenge">
+                <h3>Practice Time 🗓️</h3>
+                <p class="prompt">Complete the sentences:</p>
+                <p>1. If today is Wednesday, yesterday was ________. (ayer fue)</p>
+                <p>2. I study Spanish on Fridays. (estudio español los ________)</p>
+                <p class="answer">
+                    1. If today is Wednesday, yesterday was <strong>martes</strong>.
+                    2. Estudio español los <strong>viernes</strong>.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>📅 Months of the Year</h2>
+            <p>Similar to days of the week, months in Spanish are not capitalized unless they start a sentence.</p>
+
+            <div class="vocabulary-grid">
+                <div>
+                    <span class="spanish-word">enero <span class="pronunciation">[eh-NEH-roh]</span></span>
+                    <span class="english-word">January</span>
+                    <button class="audio-icon" data-audio-text="enero">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">febrero <span class="pronunciation">[feh-BREH-roh]</span></span>
+                    <span class="english-word">February</span>
+                    <button class="audio-icon" data-audio-text="febrero">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">marzo <span class="pronunciation">[MAHR-soh]</span></span>
+                    <span class="english-word">March</span>
+                    <button class="audio-icon" data-audio-text="marzo">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">abril <span class="pronunciation">[ah-BREEL]</span></span>
+                    <span class="english-word">April</span>
+                    <button class="audio-icon" data-audio-text="abril">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">mayo <span class="pronunciation">[MAH-yoh]</span></span>
+                    <span class="english-word">May</span>
+                    <button class="audio-icon" data-audio-text="mayo">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">junio <span class="pronunciation">[HOO-nyoh]</span></span>
+                    <span class="english-word">June</span>
+                    <button class="audio-icon" data-audio-text="junio">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">julio <span class="pronunciation">[HOO-lyoh]</span></span>
+                    <span class="english-word">July</span>
+                    <button class="audio-icon" data-audio-text="julio">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">agosto <span class="pronunciation">[ah-GOHS-toh]</span></span>
+                    <span class="english-word">August</span>
+                    <button class="audio-icon" data-audio-text="agosto">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">septiembre <span class="pronunciation">[sehp-TYEHM-breh]</span></span>
+                    <span class="english-word">September</span>
+                    <button class="audio-icon" data-audio-text="septiembre">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">octubre <span class="pronunciation">[ohk-TOO-breh]</span></span>
+                    <span class="english-word">October</span>
+                    <button class="audio-icon" data-audio-text="octubre">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">noviembre <span class="pronunciation">[noh-VYEHM-breh]</span></span>
+                    <span class="english-word">November</span>
+                    <button class="audio-icon" data-audio-text="noviembre">🔊</button>
+                </div>
+                <div>
+                    <span class="spanish-word">diciembre <span class="pronunciation">[dee-SYEHM-breh]</span></span>
+                    <span class="english-word">December</span>
+                    <button class="audio-icon" data-audio-text="diciembre">🔊</button>
+                </div>
+            </div>
+
+            <p>To say "in [month]", use <strong>"en"</strong>:</p>
+            <div class="example-block">
+                <p><span class="spanish-phrase">Mi cumpleaños es en marzo. <button class="audio-icon" data-audio-text="Mi cumpleaños es en marzo.">🔊</button></span></p>
+                <p class="english-translation">My birthday is in March.</p>
+                <p><span class="spanish-phrase">Viajamos en julio. <button class="audio-icon" data-audio-text="Viajamos en julio.">🔊</button></span></p>
+                <p class="english-translation">We travel in July.</p>
+            </div>
+            <div class="practice-challenge">
+                <h3>Practice Time 🗓️</h3>
+                <p class="prompt">Which month is missing?</p>
+                <p>Enero, febrero, marzo, _________, mayo.</p>
+                <p class="answer">
+                    Abril.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🗓️ When is...? It's on...</h2>
+            <p>To ask "When is something?", you use <strong>"¿Cuándo es...?"</strong></p>
+            <ul>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>¿Cuándo es tu cumpleaños? <span class="pronunciation">[KWAHN-doh es too koom-pleh-AH-nyohs]</span></span>
+                        <span>When is your birthday?</span>
+                        <button class="audio-icon" data-audio-text="¿Cuándo es tu cumpleaños?">🔊</button>
+                    </div>
+                </li>
+            </ul>
+            <p>To state a date, you usually say "It's the [number] of [month]". Use "el" before the number.</p>
+            <p><strong>Es el + [number] + de + [month]</strong></p>
+            <div class="example-block">
+                <p><span class="spanish-phrase">¿Cuándo es la fiesta? <button class="audio-icon" data-audio-text="¿Cuándo es la fiesta?">🔊</button></span></p>
+                <p class="english-translation">When is the party?</p>
+                <p><span class="spanish-phrase">Es el veinte de mayo. <button class="audio-icon" data-audio-text="Es el veinte de mayo.">🔊</button></span></p>
+                <p class="english-translation">It's on May 20th.</p>
+                <p><span class="spanish-phrase">Mi cumpleaños es el siete de abril. <button class="audio-icon" data-audio-text="Mi cumpleaños es el siete de abril.">🔊</button></span></p>
+                <p class="english-translation">My birthday is on April 7th.</p>
+                <p><span class="spanish-phrase">La clase es el lunes, dos de octubre. <button class="audio-icon" data-audio-text="La clase es el lunes, dos de octubre.">🔊</button></span></p>
+                <p class="english-translation">The class is on Monday, October 2nd.</p>
+            </div>
+            <p><strong>Cultural Note:</strong> In Spanish-speaking countries, dates are often written day/month/year (e.g., 20/05/2024 for May 20, 2024).</p>
+
+            <div class="practice-challenge">
+                <h3>Practice Time 📅</h3>
+                <p class="prompt">How would you say "My appointment is on June 15th"?</p>
+                <p class="answer">
+                    Mi cita es el quince de junio.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🤝 Making Appointments and Schedules</h2>
+            <p>Here are some useful phrases for discussing plans and availability.</p>
+
+            <h3>Key Vocabulary</h3>
+            <ul>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>una cita <span class="pronunciation">[OO-nah SEE-tah]</span></span>
+                        <span>an appointment / a date</span>
+                        <button class="audio-icon" data-audio-text="una cita">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>tener una cita <span class="pronunciation">[teh-NEHR OO-nah SEE-tah]</span></span>
+                        <span>to have an appointment</span>
+                        <button class="audio-icon" data-audio-text="tener una cita">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>¿Estás libre? (informal) <span class="pronunciation">[es-TAHS LEE-breh]</span></span>
+                        <span>Are you free?</span>
+                        <button class="audio-icon" data-audio-text="¿Estás libre?">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>¿Está libre? (formal) <span class="pronunciation">[es-TAH LEE-breh]</span></span>
+                        <span>Are you free?</span>
+                        <button class="audio-icon" data-audio-text="¿Está libre?">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>Estoy libre. <span class="pronunciation">[es-TOY LEE-breh]</span></span>
+                        <span>I'm free.</span>
+                        <button class="audio-icon" data-audio-text="Estoy libre.">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>Estoy ocupado/a. <span class="pronunciation">[es-TOY oh-koo-PAH-doh/dah]</span></span>
+                        <span>I'm busy (m/f).</span>
+                        <button class="audio-icon" data-audio-text="Estoy ocupado.">🔊</button>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>Suggesting & Confirming</h3>
+            <ul>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>¿Te viene bien el martes? <span class="pronunciation">[teh VYEH-neh byehn el MAHR-tehs]</span></span>
+                        <span>Does Tuesday work for you?</span>
+                        <button class="audio-icon" data-audio-text="¿Te viene bien el martes?">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>¿A qué hora? <span class="pronunciation">[ah keh OH-rah]</span></span>
+                        <span>At what time?</span>
+                        <button class="audio-icon" data-audio-text="¿A qué hora?">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>A las tres. <span class="pronunciation">[ah lahs trehs]</span></span>
+                        <span>At three o'clock.</span>
+                        <button class="audio-icon" data-audio-text="A las tres.">🔊</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="vocabulary-item">
+                        <span>De acuerdo. <span class="pronunciation">[deh ah-KWEHR-doh]</span></span>
+                        <span>Agreed / Okay.</span>
+                        <button class="audio-icon" data-audio-text="De acuerdo.">🔊</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="example-block">
+                <p><span class="spanish-phrase">Quiero hacer una cita con el médico. <button class="audio-icon" data-audio-text="Quiero hacer una cita con el médico.">🔊</button></span></p>
+                <p class="english-translation">I want to make an appointment with the doctor.</p>
+                <p><span class="spanish-phrase">¿Estás libre el viernes por la tarde? <button class="audio-icon" data-audio-text="¿Estás libre el viernes por la tarde?">🔊</button></span></p>
+                <p class="english-translation">Are you free on Friday afternoon?</p>
+                <p><span class="spanish-phrase">Sí, estoy libre. ¿A qué hora? <button class="audio-icon" data-audio-text="Sí, estoy libre. ¿A qué hora?">🔊</button></span></p>
+                <p class="english-translation">Yes, I'm free. At what time?</p>
+                <p><span class="spanish-phrase">A las seis y media. <button class="audio-icon" data-audio-text="A las seis y media.">🔊</button></span></p>
+                <p class="english-translation">At 6:30.</p>
+                <p><span class="spanish-phrase">Perfecto. Nos vemos entonces. <button class="audio-icon" data-audio-text="Perfecto. Nos vemos entonces.">🔊</button></span></p>
+                <p class="english-translation">Perfect. See you then.</p>
+            </div>
+
+            <div class="practice-challenge">
+                <h3>Practice Time 🤝</h3>
+                <p class="prompt">How would you respond to "Are you free on Monday?" (formal) if you are busy?</p>
+                <p class="answer">
+                    No, estoy ocupado/a.
+                </p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ Chapter Summary</h2>
+            <p>You've mastered telling time and navigating schedules in Spanish! Here's a quick recap of what you learned:</p>
+            <ul>
+                <li><strong>Telling Time:</strong>
+                    <ul>
+                        <li>Ask <strong>¿Qué hora es?</strong></li>
+                        <li>Answer with <strong>Es la una...</strong> (for 1:00) or <strong>Son las...</strong> (for all other hours).</li>
+                        <li>Add minutes with <strong>y</strong>, and specific phrases like <strong>y cuarto</strong>, <strong>y media</strong>, <strong>menos cuarto</strong>.</li>
+                        <li>Specify time of day with <strong>de la mañana</strong>, <strong>de la tarde</strong>, <strong>de la noche</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Days of the Week:</strong>
+                    <ul>
+                        <li>Learned all seven days (lunes-domingo).</li>
+                        <li>Used with <strong>el</strong> for specific days, and <strong>los</strong> for recurring events ("on Mondays").</li>
+                    </ul>
+                </li>
+                <li><strong>Months of the Year:</strong>
+                    <ul>
+                        <li>Memorized all twelve months (enero-diciembre).</li>
+                        <li>Used <strong>en</strong> to say "in [month]".</li>
+                    </ul>
+                </li>
+                <li><strong>Dates:</strong>
+                    <ul>
+                        <li>Ask <strong>¿Cuándo es...?</strong></li>
+                        <li>State dates using <strong>Es el + [number] + de + [month]</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Appointments & Schedules:</strong>
+                    <ul>
+                        <li>Used phrases like <strong>una cita</strong>, <strong>estar libre/ocupado/a</strong>.</li>
+                        <li>Learned how to ask and suggest times for meetings and appointments.</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>¡Excelente trabajo! You're now equipped to manage your time like a pro in Spanish.</p>
+        </section>
+    </div>
+</body>
+</html>

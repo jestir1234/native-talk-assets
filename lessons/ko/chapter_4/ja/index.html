@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: 色と描写</title>
+    <style>
+        /* グローバルスタイルとリセット */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'ヒラギノ角ゴ ProN W3', 'Yu Gothic', '游ゴシック', Meiryo, 'メイリオ', sans-serif;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            padding: 0 16px 20px 16px; /* モバイルフレンドリーなパディング */
+            font-size: 16px; /* 最小フォントサイズ */
+        }
+
+        /* ヘッダー */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-bottom: 12px;
+        }
+
+        h1.chapter-title {
+            text-align: center;
+            padding: 24px 0 16px;
+            font-size: 28px;
+            letter-spacing: 0.5px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: #8B5FBF; /* Primary: Purple for sub-headings */
+        }
+
+        /* セクション */
+        section {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* PCでも大きすぎないように */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* テキストとリスト */
+        p {
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        li::before {
+            content: '✨'; /* リストアイテムの装飾 */
+            position: absolute;
+            left: 0;
+            font-size: 14px;
+            top: 2px;
+        }
+
+        strong {
+            color: #2C3E50; /* Strong text: Dark blue */
+        }
+
+        em {
+            font-style: normal;
+            color: #8B5FBF; /* Emphasized text: Purple */
+            font-weight: bold;
+        }
+
+        /* 韓国語と日本語の例 */
+        .example-pair {
+            background-color: #FDF9E5; /* Secondary color for examples */
+            border-left: 4px solid #8B5FBF; /* Primary color as accent */
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .example-pair .korean {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .example-pair .japanese {
+            font-size: 14px;
+            color: #666666;
+            margin-top: 5px;
+        }
+
+        .pronunciation {
+            font-size: 14px;
+            color: #8B5FBF;
+            margin-left: 8px;
+        }
+
+        /* 音声アイコン */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            -webkit-tap-highlight-color: transparent; /* タップ時のハイライトを無効化 */
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+            background-color: #6A449F; /* 少し濃い紫 */
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* 練習問題セクション */
+        .practice-section {
+            background-color: #FDF9E5;
+            border: 1px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .practice-question {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 15px;
+        }
+
+        .options-container {
+            display: flex;
+            flex-wrap: wrap; /* 小さい画面で折り返す */
+            justify-content: center;
+            gap: 10px; /* ボタン間のスペース */
+            margin-bottom: 15px;
+        }
+
+        .option-button {
+            background-color: #FFFFFF;
+            color: #666666;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            min-width: 120px; /* ボタンの最小幅 */
+            min-height: 44px; /* タップしやすい高さ */
+            transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .option-button:hover {
+            background-color: #f0f0f0;
+            border-color: #8B5FBF;
+        }
+
+        .option-button:active {
+            transform: scale(0.98);
+        }
+
+        .feedback-message {
+            margin-top: 15px;
+            font-weight: bold;
+            min-height: 20px; /* フィードバックが表示されるまでスペースを確保 */
+        }
+
+        /* 文化メモ */
+        .cultural-note {
+            background-color: #FFF3E0; /* 暖色系の背景 */
+            border-left: 5px solid #FF9800; /* オレンジ色のボーダー */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #555555;
+        }
+
+        .cultural-note strong {
+            color: #FF9800;
+        }
+
+        /* まとめセクション */
+        .summary-list li::before {
+            content: '✅'; /* チェックマーク */
+        }
+
+        /* レスポンシブ対応 */
+        @media (min-width: 600px) {
+            body {
+                padding: 0 40px 30px 40px;
+            }
+
+            section {
+                padding: 30px;
+            }
+
+            .chapter-title {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            .options-container {
+                gap: 15px;
+            }
+
+            .option-button {
+                padding: 15px 25px;
+                min-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Chapter 4: 色と描写</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 4 Header" class="lesson-header-image">
+    </div>
+
+    <section>
+        <h2>🎨 色を覚えよう (색을 배워요)</h2>
+        <p>韓国語で「色」は <strong>색깔</strong> (セッカル) またはシンプルに <strong>색</strong> (セク) と言います。基本的な色の名前を学びましょう！</p>
+
+        <div class="example-pair">
+            <div class="korean">
+                빨간색 <span class="pronunciation"> (パルガンセク)</span>
+                <button class="audio-icon" data-audio-text="빨간색">🔊</button>
+            </div>
+            <div class="japanese">赤色</div>
+        </div>
+
+        <div class="example-pair">
+            <div class="korean">
+                파란색 <span class="pronunciation"> (パランセク)</span>
+                <button class="audio-icon" data-audio-text="파란색">🔊</button>
+            </div>
+            <div class="japanese">青色</div>
+        </div>
+
+        <div class="example-pair">
+            <div class="korean">
+                노란색 <span class="pronunciation"> (ノランセク)</span>
+                <button class="audio-icon" data-audio-text="노란색">🔊</button>
+            </div>
+            <div class="japanese">黄色</div>
+        </div>
+
+        <div class="example-pair">
+            <div class="korean">
+                초록색 <span class="pronunciation"> (チョロクセク)</span>
+                <button class="audio-icon" data-audio-text="초록색">🔊</button>
+            </div>
+            <div class="japanese">緑色</div>
+        </div>
+
+        <div class="example-pair">
+            <div class="korean">
+                검은색 <span class="pronunciation"> (コムンセク)</span>
+                <button class="audio-icon" data-audio-text="검은색">🔊</button>
+            </div>
+            <div class="japanese">黒色</div>
+        </div>
+
+        <div class="example-pair">
+            <div class="korean">
+                흰색 <span class="pronunciation"> (ヒンセク)</span>
+                <button class="audio-icon" data-audio-text="흰색">🔊</button>
+            </div>
+            <div class="japanese">白色</div>
+        </div>
+
+        <h3>💡 「〜色です」と表現しよう</h3>
+        <p>「〜色です」と言うには、色に「입니다 (イムニダ)」または「이에요/예요 (イエヨ/イエヨ)」を付けます。</p>
+        <p>例：</p>
+        <div class="example-pair">
+            <div class="korean">
+                빨간색<strong>입니다.</strong> <span class="pronunciation">(パルガンセギムニダ)</span>
+                <button class="audio-icon" data-audio-text="빨간색입니다.">🔊</button>
+            </div>
+            <div class="japanese">赤色です。（丁寧な表現）</div>
+        </div>
+        <div class="example-pair">
+            <div class="korean">
+                파란색<strong>이에요.</strong> <span class="pronunciation">(パランセギエヨ)</span>
+                <button class="audio-icon" data-audio-text="파란색이에요.">🔊</button>
+            </div>
+            <div class="japanese">青色です。（日常的な表現）</div>
+        </div>
+
+        <div class="practice-section">
+            <div class="practice-question">「黄色です」を韓国語で言ってみましょう。</div>
+            <div class="options-container">
+                <button class="option-button" data-correct="false">파란색이에요</button>
+                <button class="option-button" data-correct="true">노란색이에요</button>
+                <button class="option-button" data-correct="false">검은색이에요</button>
+            </div>
+            <div class="feedback-message" id="color-feedback"></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>📏 形容詞で描写しよう (형용사로 묘사해요)</h2>
+        <p>物の大きさ、長さ、見た目などを表現する形容詞を学びましょう。</p>
+
+        <h3>크다 / 작다 (大きい / 小さい)</h3>
+        <div class="example-pair">
+            <div class="korean">
+                크다 <span class="pronunciation">(クダ)</span>
+                <button class="audio-icon" data-audio-text="크다">🔊</button>
+            </div>
+            <div class="japanese">大きい</div>
+        </div>
+        <div class="example-pair">
+            <div class="korean">
+                작다 <span class="pronunciation">(チャクタ)</span>
+                <button class="audio-icon" data-audio-text="작다">🔊</button>
+            </div>
+            <div class="japanese">小さい</div>
+        </div>
+        <p><strong>💡 名詞を修飾する形：</strong> 語幹に「-은 / -ㄴ」を付けます。語幹の最後にパッチムがない場合は「-ㄴ」、ある場合は「-은」を付けます。</p>
+        <ul>
+            <li>크다 → 큰 (大きい) <span class="pronunciation">(クン)</span></li>
+            <li>작다 → 작은 (小さい) <span class="pronunciation">(チャグン)</span></li>
+        </ul>
+        <p>例：</p>
+        <div class="example-pair">
+            <div class="korean">
+                큰 집 <span class="pronunciation">(クン チプ)</span>
+                <button class="audio-icon" data-audio-text="큰 집">🔊</button>
+            </div>
+            <div class="japanese">大きい家</div>
+        </div>
+        <div class="example-pair">
+            <div class="korean">
+                작은 가방 <span class="pronunciation">(チャグン カバン)</span>
+                <button class="audio-icon" data-audio-text="작은 가방">🔊</button>
+            </div>
+            <div class="japanese">小さいカバン</div>
+        </div>
+
+        <h3>길다 / 짧다 (長い / 短い)</h3>
+        <div class="example-pair">
+            <div class="korean">
+                길다 <span class="pronunciation">(キルダ)</span>
+                <button class="audio-icon" data-audio-text="길다">🔊</button>
+            </div>
+            <div class="japanese">長い</div>
+        </div>
+        <div class="example-pair">
+            <div class="korean">
+                짧다 <span class="pronunciation">(チャルプタ)</span>
+                <button class="audio-icon" data-audio-text="짧다">🔊</button>
+            </div>
+            <div class="japanese">短い</div>
+        </div>
+        <p><strong>💡 名詞を修飾する形：</strong></p>
+        <ul>
+            <li>길다 → 긴 (長い) <span class="pronunciation">(キン)</span></li>
+            <li>짧다 → 짧은 (短い) <span class="pronunciation">(チャルブン)</span></li>
+        </ul>
+        <p>例：</p>
+        <div class="example-pair">
+            <div class="korean">
+                긴 연필 <span class="pronunciation">(キン ヨンピル)</span>
+                <button class="audio-icon" data-audio-text="긴 연필">🔊</button>
+            </div>
+            <div class="japanese">長い鉛筆</div>
+        </div>
+        <div class="example-pair">
+            <div class="korean">
+                짧은 치마 <span class="pronunciation">(チャルブン チマ)</span>
+                <button class="audio-icon" data-audio-text="짧은 치마">🔊</button>
+            </div>
+            <div class="japanese">短いスカート</div>
+        </div>
+
+        <h3>예쁘다 / 못생기다 (綺麗だ / 醜い、ブサイクだ)</h3>
+        <div class="example-pair">
+            <div class="korean">
+                예쁘다 <span class="pronunciation">(イェップダ)</span>
+                <button class="audio-icon" data-audio-text="예쁘다">🔊</button>
+            </div>
+            <div class="japanese">綺麗だ、可愛い</div>
+        </div>
+        <div class="example-pair">
+            <div class="korean">
+                못생기다 <span class="pronunciation">(モッセンギダ)</span>
+                <button class="audio-icon" data-audio-text="못생기다">🔊</button>
+            </div>
+            <div class="japanese">醜い、ブサイクだ</div>
+        </div>
+        <p><strong>💡 名詞を修飾する形：</strong></p>
+        <ul>
+            <li>예쁘다 → 예쁜 (綺麗な) <span class="pronunciation">(イェップン)</span></li>
+            <li>못생기다 → 못생긴 (醜い) <span class="pronunciation">(モッセンギン)</span></li>
+        </ul>
+        <p>例：</p>
+        <div class="example-pair">
+            <div class="korean">
+                예쁜 꽃 <span class="pronunciation">(イェップン コッ)</span>
+                <button class="audio-icon" data-audio-text="예쁜 꽃">🔊</button>
+            </div>
+            <div class="japanese">綺麗な花</div>
+        </div>
+        <div class="example-pair">
+            <div class="korean">
+                못생긴 개구리 <span class="pronunciation">(モッセンギン ケグリ)</span>
+                <button class="audio-icon" data-audio-text="못생긴 개구리">🔊</button>
+            </div>
+            <div class="japanese">醜いカエル</div>
+        </div>
+        <div class="cultural-note">
+            <strong>文化ノート：</strong> 「못생기다 (モッセンギダ)」は直訳すると「醜い」となりますが、韓国語では友人同士で冗談を言い合う時や、キャラクターなどに対して、日本で言う「ブサイク」のような軽いニュアンスで使われることもあります。ただし、人に対して使う際は相手に配慮が必要です。
+        </div>
+
+        <h3>좋다 / 나쁘다 (良い / 悪い)</h3>
+        <div class="example-pair">
+            <div class="korean">
+                좋다 <span class="pronunciation">(チョッタ)</span>
+                <button class="audio-icon" data-audio-text="좋다">🔊</button>
+            </div>
+            <div class="japanese">良い</div>
+        </div>
+        <div class="example-pair">
+            <div class="korean">
+                나쁘다 <span class="pronunciation">(ナップダ)</span>
+                <button class="audio-icon" data-audio-text="나쁘다">🔊</button>
+            </div>
+            <div class="japanese">悪い</div>
+        </div>
+        <p><strong>💡 名詞を修飾する形：</strong></p>
+        <ul>
+            <li>좋다 → 좋은 (良い) <span class="pronunciation">(チョウン)</span></li>
+            <li>나쁘다 → 나쁜 (悪い) <span class="pronunciation">(ナップン)</span></li>
+        </ul>
+        <p>例：</p>
+        <div class="example-pair">
+            <div class="korean">
+                좋은 생각 <span class="pronunciation">(チョウン センガク)</span>
+                <button class="audio-icon" data-audio-text="좋은 생각">🔊</button>
+            </div>
+            <div class="japanese">良い考え</div>
+        </div>
+        <div class="example-pair">
+            <div class="korean">
+                나쁜 습관 <span class="pronunciation">(ナップン スプクァン)</span>
+                <button class="audio-icon" data-audio-text="나쁜 습관">🔊</button>
+            </div>
+            <div class="japanese">悪い習慣</div>
+        </div>
+
+        <div class="practice-section">
+            <div class="practice-question">「短い髪」を韓国語で何と言いますか？</div>
+            <div class="options-container">
+                <button class="option-button" data-correct="false">긴 머리</button>
+                <button class="option-button" data-correct="true">짧은 머리</button>
+                <button class="option-button" data-correct="false">예쁜 머리</button>
+            </div>
+            <div class="feedback-message" id="length-feedback"></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>📝 描写動詞を使った文 (묘사 동사를 사용한 문장)</h2>
+        <p>学んだ色と形容詞を組み合わせて、もっと豊かな表現をしてみましょう。</p>
+        <p><strong>「〜は〜です」</strong>の形： 名詞 + <strong>이/가</strong> + 形容詞の語幹 + <strong>-아요/어요</strong></p>
+        <p>例：</p>
+        <div class="example-pair">
+            <div class="korean">
+                빨간색 가방<strong>이</strong> 예뻐요. <span class="pronunciation">(パルガンセク カバンイ イェッポヨ)</span>
+                <button class="audio-icon" data-audio-text="빨간색 가방이 예뻐요.">🔊</button>
+            </div>
+            <div class="japanese">赤いカバンが綺麗です。</div>
+        </div>
+        <div class="example-pair">
+            <div class="korean">
+                파란색 하늘<strong>이</strong> 좋아요. <span class="pronunciation">(パランセク ハヌルリ チョアヨ)</span>
+                <button class="audio-icon" data-audio-text="파란색 하늘이 좋아요.">🔊</button>
+            </div>
+            <div class="japanese">青い空が良いです。</div>
+        </div>
+        <div class="example-pair">
+            <div class="korean">
+                검은색 신발<strong>이</strong> 작아요. <span class="pronunciation">(コムンセク シンバルリ チャガヨ)</span>
+                <button class="audio-icon" data-audio-text="검은색 신발이 작아요.">🔊</button>
+            </div>
+            <div class="japanese">黒い靴が小さいです。</div>
+        </div>
+
+        <div class="practice-section">
+            <div class="practice-question">「あの緑の木は大きいです。」を韓国語で何と言いますか？</div>
+            <div class="options-container">
+                <button class="option-button" data-correct="false">저 노란색 나무가 작아요.</button>
+                <button class="option-button" data-correct="true">저 초록색 나무가 커요.</button>
+                <button class="option-button" data-correct="false">저 흰색 나무가 좋아요.</button>
+            </div>
+            <div class="feedback-message" id="sentence-feedback"></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🌟 今日のまとめ (오늘의 요약)</h2>
+        <p>Chapter 4では、色と物を描写する言葉をたくさん学びましたね！</p>
+        <ul class="summary-list">
+            <li>基本的な色： <strong data-audio-text="빨간색">빨간색</strong> (赤), <strong data-audio-text="파란색">파란색</strong> (青), <strong data-audio-text="노란색">노란색</strong> (黄), <strong data-audio-text="초록색">초록색</strong> (緑), <strong data-audio-text="검은색">검은색</strong> (黒), <strong data-audio-text="흰색">흰색</strong> (白)</li>
+            <li>「〜色です」は <strong>~색이에요/입니다</strong> を使います。</li>
+            <li>物の形や性質を表す形容詞：
+                <ul>
+                    <li><strong data-audio-text="크다">크다</strong> (大きい) / <strong data-audio-text="작다">작다</strong> (小さい)</li>
+                    <li><strong data-audio-text="길다">길다</strong> (長い) / <strong data-audio-text="짧다">짧다</strong> (短い)</li>
+                    <li><strong data-audio-text="예쁘다">예쁘다</strong> (綺麗だ) / <strong data-audio-text="못생기다">못생기다</strong> (醜い)</li>
+                    <li><strong data-audio-text="좋다">좋다</strong> (良い) / <strong data-audio-text="나쁘다">나쁘다</strong> (悪い)</li>
+                </ul>
+            </li>
+            <li>名詞を修飾する時は、形容詞の語幹に <strong>-은/ㄴ</strong> を付けます。（例：큰, 작은, 예쁜）</li>
+            <li>「〜は〜です」と描写する文は、「名詞 + 이/가 + 形容詞-아요/어요」の形を使います。</li>
+        </ul>
+        <p>これらの言葉を使って、身の回りのものを描写する練習をしてみてくださいね！お疲れ様でした！</p>
+    </section>
+
+    <script>
+        // これはプレースホルダーのスクリプトであり、実際のオーディオ再生やインタラクティブな機能はモバイルアプリ側で注入されます。
+        // ここでは、ボタンのクリックイベントをシミュレートするだけで、ユーザーが視覚的にフィードバックを得られるようにします。
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // オーディオアイコンのインタラクション（ホバー効果はCSSで実現）
+            // 実際の音声再生はReact Native側で行われるため、ここでは何も追加しません。
+
+            // 練習問題のインタラクション
+            const practiceSections = [
+                {
+                    buttonsId: 'color-feedback',
+                    correctAnswer: '노란색이에요'
+                },
+                {
+                    buttonsId: 'length-feedback',
+                    correctAnswer: '짧은 머리'
+                },
+                {
+                    buttonsId: 'sentence-feedback',
+                    correctAnswer: '저 초록색 나무가 커요.'
+                }
+            ];
+
+            practiceSections.forEach(section => {
+                const feedbackDiv = document.getElementById(section.buttonsId);
+                const buttons = feedbackDiv.previousElementSibling.querySelectorAll('.option-button');
+
+                buttons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // 全てのボタンからスタイルをリセット
+                        buttons.forEach(btn => {
+                            btn.style.backgroundColor = '';
+                            btn.style.borderColor = '';
+                            btn.style.color = '#666666';
+                        });
+
+                        if (button.textContent === section.correctAnswer) {
+                            feedbackDiv.textContent = '✅ 正解です！素晴らしい！';
+                            feedbackDiv.style.color = '#28a745'; /* Green */
+                            button.style.backgroundColor = '#e6ffe6'; /* Light green */
+                            button.style.borderColor = '#28a745';
+                            button.style.color = '#28a745';
+                        } else {
+                            feedbackDiv.textContent = '❌ 残念！もう一度挑戦してみましょう。';
+                            feedbackDiv.style.color = '#dc3545'; /* Red */
+                            button.style.backgroundColor = '#ffe6e6'; /* Light red */
+                            button.style.borderColor = '#dc3545';
+                            button.style.color = '#dc3545';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

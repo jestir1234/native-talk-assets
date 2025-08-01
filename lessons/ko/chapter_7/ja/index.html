@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: 食事と飲み物</title>
+    <style>
+        /* Global Styles & Reset */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --text-heading-color: #2C3E50; /* Dark blue */
+            --text-body-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --accent-orange: #F5A623; /* For cultural notes accent */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'ヒラギノ角ゴ Pro W3', 'Yu Gothic', 'メイリオ', Meiryo, sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-body-color);
+            line-height: 1.6;
+            padding: 16px; /* Overall padding for content */
+            min-width: 320px; /* Ensure minimum width for mobile-first */
+            -webkit-text-size-adjust: 100%; /* Prevent text size adjustment on mobile */
+        }
+
+        /* Lesson Container */
+        .lesson-container {
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto;
+            background-color: #FFFFFF; /* White background for lesson content */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--text-heading-color);
+            margin-bottom: 1rem;
+        }
+
+        h1.chapter-title {
+            font-size: 1.8rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            text-align: left;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            text-align: left;
+            color: var(--primary-color);
+        }
+
+        /* Paragraphs & Lists */
+        p {
+            font-size: 1rem; /* Minimum 16px for body text */
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        ul {
+            list-style-type: none; /* Custom list styling */
+            padding-left: 0;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem; /* Space for custom bullet */
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.1rem;
+        }
+
+        /* Lesson Structure Sections */
+        section {
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+
+        /* Header Specific Styles */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Interactive Elements */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum tap target size */
+            height: 44px; /* Minimum tap target size */
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 8px;
+            vertical-align: middle;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+            border: none; /* Ensure no default button border */
+            outline: none; /* Remove outline on focus */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C4299; /* Slightly darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Specific Content Styles */
+        .korean-word {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 5px;
+            white-space: nowrap; /* Prevent line break within word + pronunciation */
+        }
+
+        .pronunciation {
+            font-size: 0.9rem;
+            color: #888888;
+            margin-right: 10px;
+            white-space: nowrap;
+        }
+
+        .example-block {
+            background-color: #F8F8F8; /* Slightly off-white for examples */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .example-block p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .example-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cultural-note {
+            background-color: #FFF2E5; /* Lighter cream for cultural notes */
+            border-left: 5px solid var(--accent-orange); /* Orange accent */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #555555;
+        }
+
+        .cultural-note strong {
+            color: var(--accent-orange);
+        }
+
+        .practice-question {
+            background-color: var(--secondary-color); /* Cream background for practice questions */
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .practice-question p {
+            margin-bottom: 0.5rem;
+        }
+
+        .answer-reveal {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border-color);
+            color: var(--text-heading-color);
+            font-weight: bold;
+        }
+
+        .summary-section {
+            background-color: #F0F8FF; /* Light blueish for summary */
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: var(--primary-color);
+            border-bottom: none;
+            text-align: center;
+        }
+
+        .summary-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .summary-section li {
+            position: relative;
+            padding-left: 1.8rem;
+            text-align: left;
+            margin-bottom: 0.7rem;
+            font-size: 1rem;
+            color: var(--text-body-color);
+        }
+
+        .summary-section li::before {
+            content: '✨'; /* Star bullet */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.1rem;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 600px) {
+            body {
+                padding: 12px;
+            }
+
+            .lesson-container {
+                padding: 15px;
+                border-radius: 0; /* No border-radius on very small screens to maximize content area */
+                box-shadow: none; /* No shadow */
+            }
+
+            h1.chapter-title {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            p, li {
+                font-size: 0.95rem; /* Slightly smaller on very small screens for better fit */
+            }
+
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
+        }
+
+        /* General utility classes */
+        .text-center { text-align: center; }
+        .text-strong { font-weight: bold; color: var(--text-heading-color); }
+        .text-highlight { color: var(--primary-color); font-weight: bold; }
+
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chapter 7: 食事と飲み物</h1>
+        <div class="lesson-header">
+            <!-- Note: The actual image will be provided by the app. This HTML structure is required. -->
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>🍴 食事の時間を楽しもう！</h2>
+            <p>皆さん、こんにちは！今回は、韓国語学習でとても楽しいテーマ、<strong>「食事と飲み物」</strong>について学びます。</p>
+            <p>韓国料理は世界中で大人気ですよね！お気に入りのK-POPアイドルが食べているあの料理も、今日から韓国語で言えるようになりますよ。注文の仕方までマスターして、韓国での食体験をより豊かにしましょう！</p>
+        </section>
+
+        <section>
+            <h2>🍚 基本的な食べ物</h2>
+            <p>まずは、韓国の食卓に欠かせない、代表的な食べ物の名前を覚えましょう。</p>
+
+            <h3>1. 밥 (bap) - ご飯、食事</h3>
+            <p>
+                「ご飯」という意味ですが、韓国では「食事」全体を指すことも多い言葉です。
+                <span class="korean-word">밥</span><span class="pronunciation">(パプ)</span>
+                <button class="audio-icon" data-audio-text="밥">🔊</button>
+            </p>
+            <div class="example-block">
+                <p><span class="korean-word">아침밥</span><span class="pronunciation">(アチムパプ)</span>: 朝ごはん <button class="audio-icon" data-audio-text="아침밥">🔊</button></p>
+                <p><span class="korean-word">점심밥</span><span class="pronunciation">(チョムシムパプ)</span>: 昼ごはん <button class="audio-icon" data-audio-text="점심밥">🔊</button></p>
+                <p><span class="korean-word">저녁밥</span><span class="pronunciation">(チョニョクパプ)</span>: 晩ごはん <button class="audio-icon" data-audio-text="저녁밥">🔊</button></p>
+            </div>
+
+            <h3>2. 김치 (kimchi) - キムチ</h3>
+            <p>
+                韓国の食卓には絶対に欠かせない、代表的な発酵食品です。
+                <span class="korean-word">김치</span><span class="pronunciation">(キムチ)</span>
+                <button class="audio-icon" data-audio-text="김치">🔊</button>
+            </p>
+            <div class="cultural-note">
+                <strong>💡 文化ノート：キムチ</strong><br>
+                韓国ではキムチはただのおかずではなく、食生活の中心にある大切な食べ物です。種類も豊富で、地域や家庭によって味も様々。ご飯と一緒に食べたり、チゲやポックム（炒め物）の材料になったりします。
+            </div>
+
+            <h3>3. 불고기 (bulgogi) - プルコギ</h3>
+            <p>
+                甘辛いタレに漬け込んだ肉を焼いた韓国の代表的な肉料理です。
+                <span class="korean-word">불고기</span><span class="pronunciation">(プルコギ)</span>
+                <button class="audio-icon" data-audio-text="불고기">🔊</button>
+            </p>
+
+            <h3>4. 비빔밥 (bibimbap) - ビビンバ</h3>
+            <p>
+                ご飯の上にナムルや肉、卵などの具材を乗せ、コチュジャンを加えて混ぜて食べる料理です。
+                <span class="korean-word">비빔밥</span><span class="pronunciation">(ビビンバプ)</span>
+                <button class="audio-icon" data-audio-text="비빔밥">🔊</button>
+            </p>
+        </section>
+
+        <section>
+            <h2>☕ 飲み物</h2>
+            <p>食事の後は、ちょっと一息。飲み物の名前も覚えましょう。</p>
+
+            <h3>1. 커피 (keopi) - コーヒー</h3>
+            <p>
+                韓国はカフェ文化が非常に発達しています。
+                <span class="korean-word">커피</span><span class="pronunciation">(コピ)</span>
+                <button class="audio-icon" data-audio-text="커피">🔊</button>
+            </p>
+            <div class="example-block">
+                <p><span class="korean-word">아메리카노</span><span class="pronunciation">(アメリカーノ)</span>: アメリカーノ <button class="audio-icon" data-audio-text="아메리카노">🔊</button></p>
+                <p><span class="korean-word">카페 라떼</span><span class="pronunciation">(カペラテ)</span>: カフェラテ <button class="audio-icon" data-audio-text="카페 라떼">🔊</button></p>
+            </div>
+
+            <h3>2. 차 (cha) - お茶</h3>
+            <p>
+                様々なお茶があります。
+                <span class="korean-word">차</span><span class="pronunciation">(チャ)</span>
+                <button class="audio-icon" data-audio-text="차">🔊</button>
+            </p>
+            <div class="example-block">
+                <p><span class="korean-word">녹차</span><span class="pronunciation">(ノクチャ)</span>: 緑茶 <button class="audio-icon" data-audio-text="녹차">🔊</button></p>
+                <p><span class="korean-word">보리차</span><span class="pronunciation">(ポリチャ)</span>: 麦茶 <button class="audio-icon" data-audio-text="보리차">🔊</button></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>😋 味の表現：おいしい / おいしくない</h2>
+            <p>食べたものの感想を伝えるのは、コミュニケーションの基本ですよね！</p>
+
+            <h3>1. 맛있다 (masitda) - おいしい</h3>
+            <p>
+                最高の褒め言葉です！
+                <span class="korean-word">맛있다</span><span class="pronunciation">(マシッタ)</span>
+                <button class="audio-icon" data-audio-text="맛있다">🔊</button>
+            </p>
+            <div class="example-block">
+                <p><span class="korean-word">김치 맛있어요.</span><span class="pronunciation">(キムチ マシッソヨ)</span>: キムチ、おいしいです。<button class="audio-icon" data-audio-text="김치 맛있어요.">🔊</button></p>
+                <p><span class="korean-word">이거 맛있어요!</span><span class="pronunciation">(イゴ マシッソヨ！)</span>: これ、おいしい！<button class="audio-icon" data-audio-text="이거 맛있어요!">🔊</button></p>
+            </div>
+            <div class="cultural-note">
+                <strong>💡 文化ノート：맛있어요 (マシッソヨ)</strong><br>
+                韓国のお店で「맛있어요! (マシッソヨ！)」と言うと、店員さんがとても喜んでくれます。ぜひ積極的に使ってみましょう！
+            </div>
+
+            <h3>2. 맛없다 (madeopda) - おいしくない</h3>
+            <p>
+                あまり使いたくない言葉ですが、知っておくと便利です。
+                <span class="korean-word">맛없다</span><span class="pronunciation">(マドプタ)</span>
+                <button class="audio-icon" data-audio-text="맛없다">🔊</button>
+            </p>
+            <div class="example-block">
+                <p><span class="korean-word">이거 맛없어요.</span><span class="pronunciation">(イゴ マドプソヨ)</span>: これ、おいしくないです。<button class="audio-icon" data-audio-text="이거 맛없어요.">🔊</button></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>🍽️ レストランで注文する</h2>
+            <p>いよいよ実践です！お店で使える便利なフレーズを学びましょう。</p>
+
+            <h3>入店時/店員さんを呼ぶとき</h3>
+            <ul>
+                <li>
+                    <span class="korean-word">안녕하세요.</span><span class="pronunciation">(アンニョンハセヨ)</span>: こんにちは。
+                    <button class="audio-icon" data-audio-text="안녕하세요.">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">저기요!</span><span class="pronunciation">(チョギヨ)</span>: すみません！（店員さんを呼ぶとき）
+                    <button class="audio-icon" data-audio-text="저기요!">🔊</button>
+                </li>
+            </ul>
+
+            <h3>注文するとき</h3>
+            <ul>
+                <li>
+                    <span class="korean-word">[料理名] 주세요.</span><span class="pronunciation">([料理名] チュセヨ)</span>: 〜をください。
+                    <button class="audio-icon" data-audio-text="주세요.">🔊</button><br>
+                    例: <span class="korean-word">비빔밥 주세요.</span><span class="pronunciation">(ビビンバプ チュセヨ)</span>: ビビンバをください。<button class="audio-icon" data-audio-text="비빔밥 주세요.">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">메뉴판 주세요.</span><span class="pronunciation">(メニューパン チュセヨ)</span>: メニューをください。
+                    <button class="audio-icon" data-audio-text="메뉴판 주세요.">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">추천해 주세요.</span><span class="pronunciation">(チュチョンヘ チュセヨ)</span>: おすすめしてください。
+                    <button class="audio-icon" data-audio-text="추천해 주세요.">🔊</button>
+                </li>
+            </ul>
+
+            <h3>食後/お会計</h3>
+            <ul>
+                <li>
+                    <span class="korean-word">잘 먹었습니다.</span><span class="pronunciation">(チャル モゴッスムニダ)</span>: ごちそうさまでした。
+                    <button class="audio-icon" data-audio-text="잘 먹었습니다.">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">계산해 주세요.</span><span class="pronunciation">(ケサンヘ チュセヨ)</span>: お会計してください。
+                    <button class="audio-icon" data-audio-text="계산해 주세요.">🔊</button>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>✍️ 練習問題</h2>
+            <p>学んだフレーズを使って、簡単な練習をしてみましょう！</p>
+
+            <div class="practice-question">
+                <p>1. 「キムチ、おいしいです」と韓国語で言ってみましょう。</p>
+                <p><span class="text-highlight">ヒント：キムチ + おいしいです</span></p>
+                <p class="answer-reveal">答え: <span class="korean-word">김치 맛있어요.</span> <button class="audio-icon" data-audio-text="김치 맛있어요.">🔊</button></p>
+            </div>
+
+            <div class="practice-question">
+                <p>2. レストランで店員さんを呼びたい時、何と言いますか？</p>
+                <p><span class="text-highlight">ヒント：すみません！</span></p>
+                <p class="answer-reveal">答え: <span class="korean-word">저기요!</span> <button class="audio-icon" data-audio-text="저기요!">🔊</button></p>
+            </div>
+
+            <div class="practice-question">
+                <p>3. 「プルコギをください」と韓国語で注文してみましょう。</p>
+                <p><span class="text-highlight">ヒント：プルコギ + ください</span></p>
+                <p class="answer-reveal">答え: <span class="korean-word">불고기 주세요.</span> <button class="audio-icon" data-audio-text="불고기 주세요.">🔊</button></p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ 今日のまとめ ✨</h2>
+            <ul>
+                <li><strong>食事の基本：</strong> <span class="korean-word">밥</span> (ご飯/食事)、<span class="korean-word">김치</span> (キムチ)、<span class="korean-word">불고기</span> (プルコギ)、<span class="korean-word">비빔밥</span> (ビビンバ)</li>
+                <li><strong>飲み物：</strong> <span class="korean-word">커피</span> (コーヒー)、<span class="korean-word">차</span> (お茶)</li>
+                <li><strong>味の表現：</strong> <span class="korean-word">맛있다</span> (おいしい)、<span class="korean-word">맛없다</span> (おいしくない)</li>
+                <li><strong>レストランで：</strong> <span class="korean-word">저기요!</span> (すみません)、<span class="korean-word">[料理名] 주세요.</span> (〜ください)、<span class="korean-word">계산해 주세요.</span> (お会計してください)、<span class="korean-word">잘 먹었습니다.</span> (ごちそうさまでした)</li>
+            </ul>
+            <p>これであなたも韓国料理マスターへの第一歩を踏み出しました！</p>
+            <p>実際に韓国を訪れた際は、ぜひ今日学んだ表現を使ってみてくださいね！</p>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Numbers and Counting</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size */
+        }
+
+        /* Container for content */
+        .container {
+            padding: 16px;
+            max-width: 768px; /* Max width for readability on larger screens */
+            margin: 0 auto;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 8px;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            color: #8B5FBF; /* Primary: Purple for sub-sections */
+            margin-top: 1.2em;
+            margin-bottom: 0.6em;
+        }
+
+        /* Chapter Header Image and Title */
+        .chapter-title {
+            margin: 20px 0;
+            text-align: center;
+            font-size: 2rem;
+            color: #2C3E50;
+            padding: 0 10px;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1em;
+            padding: 0 4px; /* Small horizontal padding for consistency */
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5em;
+        }
+
+        ul li {
+            background-color: #FDF9E5; /* Secondary: Cream */
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-left: 5px solid #8B5FBF; /* Primary: Purple accent */
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Examples and Notes */
+        .example-box, .note-box, .practice-box {
+            background-color: #FDF9E5; /* Secondary: Cream */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+        }
+
+        .example-box strong, .note-box strong {
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        .practice-box {
+            background-color: #f8f0dc; /* Slightly darker cream for practice */
+            border-color: #8B5FBF; /* Primary: Purple border */
+        }
+
+        .practice-question {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .practice-answer {
+            color: #666666;
+            margin-top: 5px;
+            padding: 8px 10px;
+            background-color: #f0ead2; /* Lighter cream */
+            border-left: 4px solid #8B5FBF;
+            border-radius: 4px;
+        }
+
+        /* Korean Text Styling */
+        .korean-word {
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue for Korean */
+            white-space: nowrap; /* Prevent line breaks within word + pronunciation */
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #8B5FBF; /* Primary: Purple for pronunciation */
+            margin-left: 5px;
+            white-space: nowrap;
+        }
+
+        .korean-example {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .korean-example .text {
+            flex-grow: 1;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex; /* Use flex for easy centering of emoji */
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Make it circular */
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent icon from shrinking in flex container */
+            margin-left: 10px; /* Space between text and icon */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4993; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden; /* Ensures rounded corners apply to content */
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #E0E0E0; /* Light gray border */
+        }
+
+        th {
+            background-color: #8B5FBF; /* Primary: Purple for header */
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #FDF9E5; /* Secondary: Cream for alternate rows */
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Horizontal rule for separation */
+        hr {
+            border: none;
+            border-top: 1px solid #E0E0E0; /* Light gray */
+            margin: 30px 0;
+        }
+
+        /* Summary Section */
+        .summary-box {
+            background-color: #FDF9E5; /* Secondary: Cream */
+            border: 2px solid #8B5FBF; /* Primary: Purple border */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .summary-box h2 {
+            border-bottom: none;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .summary-box ul {
+            text-align: left;
+            padding: 0 15px;
+        }
+
+        .summary-box ul li {
+            background-color: transparent;
+            border-left: none;
+            padding: 5px 0;
+            margin-bottom: 5px;
+            box-shadow: none;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            h3 {
+                font-size: 1.1rem;
+            }
+            .container {
+                padding: 10px;
+            }
+            ul li {
+                padding: 8px 12px;
+            }
+            th, td {
+                padding: 10px 12px;
+            }
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 3: 数と数え方</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+        </div>
+
+        <p>こんにちは！今日は、韓国語で数字の魔法を解き明かしましょう。韓国語の数字には、なんと2つのシステムがあるんです！😲 それぞれの数字がどんな場面で使われるのか、一緒に楽しく学んでいきましょう。</p>
+
+        <section>
+            <h2>1. 韓国語の基本数字 (漢数詞: Sino-Korean Numbers)</h2>
+            <p>まず、一番よく使われる「漢数詞（かんすうし）」から学びます。これは日本語の「一、二、三…」のように、中国語起源の数字です。</p>
+
+            <div class="example-box">
+                <h3>🔢 漢数詞 1〜10</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>数字</th>
+                            <th>韓国語</th>
+                            <th>発音</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="korean-word">일</span></td>
+                            <td><span class="pronunciation">(イル)</span></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="korean-word">이</span></td>
+                            <td><span class="pronunciation">(イー)</span></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><span class="korean-word">삼</span></td>
+                            <td><span class="pronunciation">(サム)</span></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><span class="korean-word">사</span></td>
+                            <td><span class="pronunciation">(サ)</span></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><span class="korean-word">오</span></td>
+                            <td><span class="pronunciation">(オ)</span></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><span class="korean-word">육</span></td>
+                            <td><span class="pronunciation">(ユク)</span></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><span class="korean-word">칠</span></td>
+                            <td><span class="pronunciation">(チル)</span></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><span class="korean-word">팔</span></td>
+                            <td><span class="pronunciation">(パル)</span></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><span class="korean-word">구</span></td>
+                            <td><span class="pronunciation">(ク)</span></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="korean-word">십</span></td>
+                            <td><span class="pronunciation">(シプ)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>🤔 漢数詞はいつ使うの？</h3>
+            <p>漢数詞は、以下のような場面で使われます。</p>
+            <ul>
+                <li>📞 電話番号 (전화번호)</li>
+                <li>💰 お金 (돈)</li>
+                <li>🗓️ 日付、曜日、月 (날짜, 요일, 월)</li>
+                <li>🕐 分、秒 (분, 초)</li>
+                <li>🏢 階数 (층)</li>
+                <li>🔢 番号、シリアル番号 (번호)</li>
+                <li>📏 長さ、重さ、温度など (길이, 무게, 온도 등)</li>
+            </ul>
+
+            <div class="practice-box">
+                <h3>やってみよう！ (練習問題) 💡</h3>
+                <p>次の数字を韓国語（漢数詞）で言ってみましょう。</p>
+                <div class="practice-question">
+                    1. 5
+                    <div class="audio-icon" data-audio-text="오">🔊</div>
+                </div>
+                <div class="practice-answer"><strong>答え：</strong> 오 (オ)</div>
+
+                <div class="practice-question">
+                    2. 8
+                    <div class="audio-icon" data-audio-text="팔">🔊</div>
+                </div>
+                <div class="practice-answer"><strong>答え：</strong> 팔 (パル)</div>
+
+                <div class="practice-question">
+                    3. 10
+                    <div class="audio-icon" data-audio-text="십">🔊</div>
+                </div>
+                <div class="practice-answer"><strong>答え：</strong> 십 (シプ)</div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>2. 固有数詞 (Pure Korean Numbers) の使い方</h2>
+            <p>もう一つの数字のシステムが「固有数詞（こゆうすうし）」です。これは韓国語固有の言葉で、日本語の「ひとつ、ふたつ、みっつ…」に似ています。</p>
+
+            <div class="example-box">
+                <h3>🗣️ 固有数詞 1〜10</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>数字</th>
+                            <th>韓国語</th>
+                            <th>発音</th>
+                            <th>備考</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="korean-word">하나</span></td>
+                            <td><span class="pronunciation">(ハナ)</span></td>
+                            <td>後述</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="korean-word">둘</span></td>
+                            <td><span class="pronunciation">(トゥル)</span></td>
+                            <td>後述</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><span class="korean-word">셋</span></td>
+                            <td><span class="pronunciation">(セッ)</span></td>
+                            <td>後述</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td><span class="korean-word">넷</span></td>
+                            <td><span class="pronunciation">(ネッ)</span></td>
+                            <td>後述</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td><span class="korean-word">다섯</span></td>
+                            <td><span class="pronunciation">(タソッ)</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td><span class="korean-word">여섯</span></td>
+                            <td><span class="pronunciation">(ヨソッ)</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td><span class="korean-word">일곱</span></td>
+                            <td><span class="pronunciation">(イルゴプ)</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td><span class="korean-word">여덟</span></td>
+                            <td><span class="pronunciation">(ヨドルプ)</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td><span class="korean-word">아홉</span></td>
+                            <td><span class="pronunciation">(アホプ)</span></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td><span class="korean-word">열</span></td>
+                            <td><span class="pronunciation">(ヨル)</span></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>🗣️ 固有数詞はいつ使うの？</h3>
+            <p>固有数詞は、主に以下のような場面で使われます。</p>
+            <ul>
+                <li>🍎 物の数を数える時 (個、冊、本など)</li>
+                <li>🧍 人数を数える時 (名)</li>
+                <li>🎂 年齢 (歳)</li>
+                <li>⏰ 時間 (時)</li>
+            </ul>
+
+            <div class="note-box">
+                <h4>⚠️ 要注意！固有数詞の短縮形</h4>
+                <p>固有数詞の <strong>하나 (1), 둘 (2), 셋 (3), 넷 (4)</strong>、そして <strong>스물 (20)</strong> は、助数詞（数を数える言葉）が続くときに語尾が変化します。</p>
+                <ul>
+                    <li><span class="korean-word">하나</span> → <span class="korean-word">한</span> (ハン)</li>
+                    <li><span class="korean-word">둘</span> → <span class="korean-word">두</span> (トゥ)</li>
+                    <li><span class="korean-word">셋</span> → <span class="korean-word">세</span> (セ)</li>
+                    <li><span class="korean-word">넷</span> → <span class="korean-word">네</span> (ネ)</li>
+                    <li><span class="korean-word">스물</span> → <span class="korean-word">스무</span> (スム)</li>
+                </ul>
+                <p>例：</p>
+                <p class="korean-example">
+                    <span class="text">リンゴ 1 個: <span class="korean-word">사과 한 개</span> <span class="pronunciation">(サグァ ハン ゲ)</span></span>
+                    <span class="audio-icon" data-audio-text="사과 한 개">🔊</span>
+                </p>
+                <p class="korean-example">
+                    <span class="text">2 人: <span class="korean-word">두 명</span> <span class="pronunciation">(トゥ ミョン)</span></span>
+                    <span class="audio-icon" data-audio-text="두 명">🔊</span>
+                </p>
+            </div>
+
+            <div class="practice-box">
+                <h3>やってみよう！ (練習問題) 💡</h3>
+                <p>次の数字を韓国語（固有数詞）で言ってみましょう。</p>
+                <div class="practice-question">
+                    1. 1 (数える時)
+                    <div class="audio-icon" data-audio-text="하나">🔊</div>
+                </div>
+                <div class="practice-answer"><strong>答え：</strong> 하나 (ハナ)</div>
+
+                <div class="practice-question">
+                    2. 3 (助数詞の前)
+                    <div class="audio-icon" data-audio-text="세">🔊</div>
+                </div>
+                <div class="practice-answer"><strong>答え：</strong> 세 (セ)</div>
+
+                <div class="practice-question">
+                    3. 7
+                    <div class="audio-icon" data-audio-text="일곱">🔊</div>
+                </div>
+                <div class="practice-answer"><strong>答え：</strong> 일곱 (イルゴプ)</div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>3. 年齢と人数を数える</h2>
+            <p>年齢や人数を数える時は、主に固有数詞を使います。</p>
+
+            <h3>🎂 年齢 (나이)</h3>
+            <p>韓国には「数え年（만 나이）」という文化があります。生まれた時に1歳と数え、新年を迎えるごとに1歳ずつ歳をとります。しかし、最近では国際的な「満年齢（만 나이）」の使用も増えています。</p>
+            <p class="korean-example">
+                <span class="text">何歳ですか？: <span class="korean-word">몇 살이에요?</span> <span class="pronunciation">(ミョッ サリエヨ？)</span></span>
+                <span class="audio-icon" data-audio-text="몇 살이에요?">🔊</span>
+            </p>
+            <p class="korean-example">
+                <span class="text">私は25歳です: <span class="korean-word">저는 스물다섯 살이에요.</span> <span class="pronunciation">(チョヌン スムルタソッ サリエヨ。)</span></span>
+                <span class="audio-icon" data-audio-text="저는 스물다섯 살이에요.">🔊</span>
+            </p>
+
+            <h3>🧍 人数 (사람 수)</h3>
+            <p>人を数える時は、固有数詞に助数詞の <span class="korean-word">명</span> (ミョン: 名) や <span class="korean-word">사람</span> (サラム: 人) を付けます。</p>
+            <p class="korean-example">
+                <span class="text">何人ですか？: <span class="korean-word">몇 명이에요?</span> <span class="pronunciation">(ミョッ ミョンイエヨ？)</span></span>
+                <span class="audio-icon" data-audio-text="몇 명이에요?">🔊</span>
+            </p>
+            <p class="korean-example">
+                <span class="text">3人います: <span class="korean-word">세 명 있어요.</span> <span class="pronunciation">(セ ミョン イッソヨ。)</span></span>
+                <span class="audio-icon" data-audio-text="세 명 있어요.">🔊</span>
+            </p>
+
+            <div class="practice-box">
+                <h3>やってみよう！ (練習問題) 💡</h3>
+                <p>次の状況で使う数字と表現を考えてみましょう。</p>
+                <div class="practice-question">
+                    1. 12歳です。
+                    <div class="audio-icon" data-audio-text="열두 살이에요.">🔊</div>
+                </div>
+                <div class="practice-answer"><strong>答え：</strong> 열두 살이에요. (ヨルドゥ サリエヨ。)</div>
+
+                <div class="practice-question">
+                    2. 4人家族です。
+                    <div class="audio-icon" data-audio-text="네 명 가족이에요.">🔊</div>
+                </div>
+                <div class="practice-answer"><strong>答え：</strong> 네 명 가족이에요. (ネ ミョン カジョギエヨ。)</div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section>
+            <h2>4. 基本的な算数用語</h2>
+            <p>日常生活で役立つ、簡単な算数の言葉も覚えましょう！</p>
+
+            <div class="example-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>日本語</th>
+                            <th>韓国語</th>
+                            <th>発音</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>足し算 (+)</td>
+                            <td><span class="korean-word">더하기</span></td>
+                            <td><span class="pronunciation">(トハギ)</span></td>
+                        </tr>
+                        <tr>
+                            <td>引き算 (-)</td>
+                            <td><span class="korean-word">빼기</span></td>
+                            <td><span class="pronunciation">(ペギ)</span></td>
+                        </tr>
+                        <tr>
+                            <td>掛け算 (×)</td>
+                            <td><span class="korean-word">곱하기</span></td>
+                            <td><span class="pronunciation">(コッパギ)</span></td>
+                        </tr>
+                        <tr>
+                            <td>割り算 (÷)</td>
+                            <td><span class="korean-word">나누기</span></td>
+                            <td><span class="pronunciation">(ナヌギ)</span></td>
+                        </tr>
+                        <tr>
+                            <td>イコール (=)</td>
+                            <td><span class="korean-word">은/는</span> (〜は) / <span class="korean-word">이다</span> (〜です) で表現することが多い</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p><strong>例:</strong></p>
+            <p class="korean-example">
+                <span class="text">1 + 2 = 3: <span class="korean-word">일 더하기 이는 삼.</span> <span class="pronunciation">(イル トハギ イヌン サム。)</span></span>
+                <span class="audio-icon" data-audio-text="일 더하기 이는 삼.">🔊</span>
+            </p>
+            <p class="korean-example">
+                <span class="text">5 - 3 = 2: <span class="korean-word">오 빼기 삼은 이.</span> <span class="pronunciation">(オ ペギ サムン イー。)</span></span>
+                <span class="audio-icon" data-audio-text="오 빼기 삼은 이.">🔊</span>
+            </p>
+
+            <div class="practice-box">
+                <h3>やってみよう！ (練習問題) 💡</h3>
+                <p>次の数式を韓国語で言ってみましょう。</p>
+                <div class="practice-question">
+                    1. 4 × 2 = 8
+                    <div class="audio-icon" data-audio-text="사 곱하기 이는 팔.">🔊</div>
+                </div>
+                <div class="practice-answer"><strong>答え：</strong> 사 곱하기 이는 팔. (サ コッパギ イーヌン パル。)</div>
+
+                <div class="practice-question">
+                    2. 10 ÷ 5 = 2
+                    <div class="audio-icon" data-audio-text="십 나누기 오는 이.">🔊</div>
+                </div>
+                <div class="practice-answer"><strong>答え：</strong> 십 나누기 오는 이. (シプ ナヌギ オヌン イー。)</div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="summary-box">
+            <h2>✨ 本日のまとめ ✨</h2>
+            <ul>
+                <li>韓国語には <strong>漢数詞</strong> (<span class="korean-word">일, 이, 삼...</span>) と <strong>固有数詞</strong> (<span class="korean-word">하나, 둘, 셋...</span>) の2つの数字システムがあります。</li>
+                <li><strong>漢数詞</strong> は、電話番号、お金、日付、分、秒、階数など、幅広い場面で使われます。</li>
+                <li><strong>固有数詞</strong> は、物の数、人数、年齢、時間を表す時に使われます。</li>
+                <li><strong>하나, 둘, 셋, 넷, 스물</strong> は、助数詞が続く時に形が変わる特殊な数字です。</li>
+                <li>年齢や人数は主に固有数詞を使い、それぞれ適切な助数詞（<span class="korean-word">살</span>, <span class="korean-word">명</span>）を付けます。</li>
+                <li><span class="korean-word">더하기</span> (足し算)、<span class="korean-word">빼기</span> (引き算)、<span class="korean-word">곱하기</span> (掛け算)、<span class="korean-word">나누기</span> (割り算) も覚えましたね！</li>
+            </ul>
+            <p>これで、韓国語の数字はばっちりです！日常生活で積極的に使ってみましょう。練習あるのみです！👏</p>
+        </section>
+
+    </div>
+</body>
+</html>

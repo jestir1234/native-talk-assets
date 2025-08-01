@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 7: Verbos Esenciales y Conjugación Básica</title>
+    <style>
+        /* Global Styles & Variables */
+        :root {
+            --primary-color: #8B5FBF;          /* Purple */
+            --secondary-background: #FDF9E5;   /* Cream background */
+            --heading-text-color: #2C3E50;     /* Dark blue */
+            --body-text-color: #666666;        /* Medium gray */
+            --border-color: #E0E0E0;           /* Light gray */
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-background); /* Cream background */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            box-sizing: border-box;
+        }
+
+        *, *::before, *::after {
+            box-sizing: inherit;
+        }
+
+        .lesson-container {
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto;
+            padding: 15px; /* Ample padding for mobile */
+        }
+
+        /* Header Specific Requirements */
+        .chapter-title {
+            color: var(--heading-text-color);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 1.8em; /* Responsive font size */
+            margin: 0;
+        }
+
+        .lesson-header {
+            margin: 20px 0; /* Required margin */
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%; /* Responsive width */
+            max-width: 600px; /* Max width constraint */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            background-color: white; /* Contrast against cream body */
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h2, h3 {
+            color: var(--heading-text-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.4em; /* Responsive font size */
+        }
+
+        h3 {
+            font-size: 1.2em; /* Slightly smaller for subheadings */
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: italic;
+            color: var(--primary-color);
+        }
+
+        /* Japanese text and audio icon styling */
+        .japanese-phrase {
+            display: flex;
+            align-items: center;
+            background-color: var(--secondary-background);
+            border-left: 5px solid var(--primary-color);
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .japanese-phrase span.japanese-text {
+            flex-grow: 1;
+            font-size: 1.1em;
+            color: var(--heading-text-color);
+            font-weight: bold;
+            line-height: 1.4; /* Improve readability */
+        }
+
+        .japanese-phrase span.spanish-translation {
+            font-size: 0.9em;
+            color: var(--body-text-color);
+            margin-left: 10px;
+            padding-left: 10px;
+            border-left: 1px solid var(--border-color);
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px; /* Minimum tap target size */
+            min-height: 44px; /* Minimum tap target size */
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.2s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex-shrink: 0; /* Prevent shrinking */
+            user-select: none; /* Prevent text selection */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C429D; /* Slightly darker primary color for hover */
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        ul li {
+            background-color: var(--secondary-background);
+            border-left: 4px solid var(--primary-color);
+            margin-bottom: 8px;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow content to wrap */
+        }
+
+        ul li strong {
+            color: var(--heading-text-color);
+            margin-right: 5px;
+        }
+
+        /* Tables for conjugation */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden; /* For rounded corners */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--secondary-background);
+        }
+
+        /* Practice Section Specifics */
+        .practice-question {
+            background-color: var(--secondary-background);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px dashed var(--primary-color);
+        }
+
+        .practice-question p {
+            font-size: 1.05em;
+            margin-bottom: 10px;
+            color: var(--heading-text-color);
+        }
+
+        /* Styling for the contenteditable input simulation */
+        .practice-input {
+            display: inline-block;
+            min-width: 100px; /* Ensures visible space for typing */
+            max-width: 100%;
+            padding: 8px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 1em;
+            background-color: white;
+            color: var(--heading-text-color);
+            margin: 0 5px;
+            vertical-align: middle;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+            min-height: 44px; /* Ensure tap target size */
+            line-height: 1.2;
+            flex-grow: 1; /* Allow it to grow in flex context */
+        }
+        .practice-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(139, 95, 191, 0.2);
+        }
+
+        /* Summary List specific styling */
+        .summary-list li {
+            background-color: white;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: block; /* Use block to allow nested list styling */
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            border-left: none; /* No border-left for top-level summary list */
+        }
+        .summary-list li strong {
+            display: block;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        .summary-list ul { /* Styling for nested lists inside summary */
+            list-style: disc; /* Use discs for nested lists */
+            padding-left: 20px;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+        .summary-list ul li {
+            background-color: transparent; /* No background for nested list items */
+            border: none;
+            box-shadow: none;
+            padding: 5px 0;
+            margin-bottom: 0;
+            font-size: 0.95em;
+            display: list-item;
+        }
+        .summary-list ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive Adjustments for larger screens (e.g., tablets) */
+        @media (min-width: 600px) {
+            .lesson-container {
+                padding: 30px;
+            }
+            .lesson-section {
+                padding: 30px;
+                margin-bottom: 20px;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            h3 {
+                font-size: 1.3em;
+            }
+            .chapter-title {
+                font-size: 2.2em;
+            }
+            .japanese-phrase span.spanish-translation {
+                margin-left: auto; /* Push translation to the right */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Capítulo 7: Verbos Esenciales y Conjugación Básica</h1>
+        <div class="lesson-header">
+            <!-- The src path is relative to the presumed location of the HTML file within the app's asset structure. -->
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>¡Hola, futuros políglotas! 👋</h2>
+            <p>¡Bienvenidos al Capítulo 7! Hoy daremos un paso gigante en tu viaje por el japonés: ¡vamos a dominar los verbos esenciales y las bases de su conjugación!</p>
+            <p>En japonés, los verbos son la clave para expresar acciones y estados. A diferencia del español, ¡no cambian según la persona! Es decir, el verbo para "yo como" es el mismo que para "él come". ¡Simplifica mucho las cosas!</p>
+            <p>Comenzaremos con cuatro verbos fundamentales y aprenderemos cómo convertirlos a su forma educada (Presente/Futuro) y a su forma negativa.</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>1. El Verbo 行く (<span lang="ja" data-audio-text="いく">いく</span> - iku) - Ir 🚶‍♀️</h2>
+            <p>El verbo <span class="japanese-word">行く</span> (<span lang="ja" data-audio-text="いく">いく</span> - <em>iku</em>) significa "ir". Es uno de los verbos más usados en el día a día.</p>
+            <h3>Forma Presente/Futuro Afirmativa (educada): 行きます (<span lang="ja" data-audio-text="いきます">いきます</span> - ikimasu)</h3>
+            <p>Para decir "voy", "irás", "va", o "iremos" de manera educada, usamos <span class="japanese-word">行きます</span>.</p>
+            <div class="japanese-phrase">
+                <span class="japanese-text">行きます</span>
+                <span class="audio-icon" data-audio-text="行きます">🔊</span>
+                <span class="spanish-translation"><em>(ikimasu)</em> Iré / Voy / Va</span>
+            </div>
+            <p><strong>Ejemplo:</strong></p>
+            <div class="japanese-phrase">
+                <span class="japanese-text">わたしはがっこうに<strong>行きます</strong>。</span>
+                <span class="audio-icon" data-audio-text="わたしはがっこうにいきます">🔊</span>
+                <span class="spanish-translation">Yo <strong>voy</strong> a la escuela.</span>
+            </div>
+
+            <h3>Forma Presente/Futuro Negativa (educada): 行きません (<span lang="ja" data-audio-text="いきません">いきません</span> - ikimasen)</h3>
+            <p>Para decir "no voy", "no irás", etc., usamos <span class="japanese-word">行きません</span>.</p>
+            <div class="japanese-phrase">
+                <span class="japanese-text">行きません</span>
+                <span class="audio-icon" data-audio-text="行きません">🔊</span>
+                <span class="spanish-translation"><em>(ikimasen)</em> No iré / No voy / No va</span>
+            </div>
+            <p><strong>Ejemplo:</strong></p>
+            <div class="japanese-phrase">
+                <span class="japanese-text">私はデパートに<strong>行きません</strong>。</span>
+                <span class="audio-icon" data-audio-text="わたしはデパートにいきません">🔊</span>
+                <span class="spanish-translation">Yo <strong>no voy</strong> a los grandes almacenes.</span>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>2. El Verbo 食べる (<span lang="ja" data-audio-text="たべる">たべる</span> - taberu) - Comer 🍜</h2>
+            <p>El verbo <span class="japanese-word">食べる</span> (<span lang="ja" data-audio-text="たべる">たべる</span> - <em>taberu</em>) significa "comer".</p>
+            <h3>Forma Presente/Futuro Afirmativa (educada): 食べます (<span lang="ja" data-audio-text="たべます">たべます</span> - tabemasu)</h3>
+            <div class="japanese-phrase">
+                <span class="japanese-text">食べます</span>
+                <span class="audio-icon" data-audio-text="食べます">🔊</span>
+                <span class="spanish-translation"><em>(tabemasu)</em> Comeré / Como / Come</span>
+            </div>
+            <p><strong>Ejemplo:</strong></p>
+            <div class="japanese-phrase">
+                <span class="japanese-text">ごはんを<strong>食べます</strong>。</span>
+                <span class="audio-icon" data-audio-text="ごはんをたべます">🔊</span>
+                <span class="spanish-translation"><strong>Como</strong> arroz. (O comida en general)</span>
+            </div>
+
+            <h3>Forma Presente/Futuro Negativa (educada): 食べません (<span lang="ja" data-audio-text="たべません">たべません</span> - tabemasen)</h3>
+            <div class="japanese-phrase">
+                <span class="japanese-text">食べません</span>
+                <span class="audio-icon" data-audio-text="食べません">🔊</span>
+                <span class="spanish-translation"><em>(tabemasen)</em> No comeré / No como / No come</span>
+            </div>
+            <p><strong>Ejemplo:</strong></p>
+            <div class="japanese-phrase">
+                <span class="japanese-text">パンを<strong>食べません</strong>。</span>
+                <span class="audio-icon" data-audio-text="パンをたべません">🔊</span>
+                <span class="spanish-translation"><strong>No como</strong> pan.</span>
+            </div>
+            <p class="note">💡 <strong>Nota cultural:</strong> En Japón, <strong>ごはん (gohan)</strong> significa tanto "arroz cocido" como "comida" en general. ¡Muy útil!</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3. El Verbo する (<span lang="ja" data-audio-text="する">する</span> - suru) - Hacer/Hacer deporte ⛹️‍♀️</h2>
+            <p>El verbo <span class="japanese-word">する</span> (<span lang="ja" data-audio-text="する">する</span> - <em>suru</em>) es un verbo muy versátil que significa "hacer". También se usa para formar muchos verbos nuevos añadiéndolo a sustantivos (ej: 勉強する - estudiar).</p>
+            <p>¡Es un verbo <strong>irregular</strong>! Su conjugación es única.</p>
+            <h3>Forma Presente/Futuro Afirmativa (educada): します (<span lang="ja" data-audio-text="します">します</span> - shimasu)</h3>
+            <div class="japanese-phrase">
+                <span class="japanese-text">します</span>
+                <span class="audio-icon" data-audio-text="します">🔊</span>
+                <span class="spanish-translation"><em>(shimasu)</em> Haré / Hago / Hace</span>
+            </div>
+            <p><strong>Ejemplo:</strong></p>
+            <div class="japanese-phrase">
+                <span class="japanese-text">しゅくだいを<strong>します</strong>。</span>
+                <span class="audio-icon" data-audio-text="しゅくだいをします">🔊</span>
+                <span class="spanish-translation"><strong>Hago</strong> los deberes.</span>
+            </div>
+
+            <h3>Forma Presente/Futuro Negativa (educada): しません (<span lang="ja" data-audio-text="しません">しません</span> - shimasen)</h3>
+            <div class="japanese-phrase">
+                <span class="japanese-text">しません</span>
+                <span class="audio-icon" data-audio-text="しません">🔊</span>
+                <span class="spanish-translation"><em>(shimasen)</em> No haré / No hago / No hace</span>
+            </div>
+            <p><strong>Ejemplo:</strong></p>
+            <div class="japanese-phrase">
+                <span class="japanese-text">スポーツを<strong>しません</strong>。</span>
+                <span class="audio-icon" data-audio-text="スポーツをしません">🔊</span>
+                <span class="spanish-translation"><strong>No hago</strong> deporte.</span>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>4. El Verbo 来る (<span lang="ja" data-audio-text="くる">くる</span> - kuru) - Venir 🚶‍♂️</h2>
+            <p>El verbo <span class="japanese-word">来る</span> (<span lang="ja" data-audio-text="くる">くる</span> - <em>kuru</em>) significa "venir". También es un verbo <strong>irregular</strong> como <span class="japanese-word">する</span>.</p>
+            <h3>Forma Presente/Futuro Afirmativa (educada): 来ます (<span lang="ja" data-audio-text="きます">きます</span> - kimasu)</h3>
+            <div class="japanese-phrase">
+                <span class="japanese-text">来ます</span>
+                <span class="audio-icon" data-audio-text="来ます">🔊</span>
+                <span class="spanish-translation"><em>(kimasu)</em> Vendré / Vengo / Viene</span>
+            </div>
+            <p><strong>Ejemplo:</strong></p>
+            <div class="japanese-phrase">
+                <span class="japanese-text">友達がうちへ<strong>来ます</strong>。</span>
+                <span class="audio-icon" data-audio-text="ともだちがうちへきます">🔊</span>
+                <span class="spanish-translation">Mi amigo <strong>viene</strong> a casa.</span>
+            </div>
+
+            <h3>Forma Presente/Futuro Negativa (educada): 来ません (<span lang="ja" data-audio-text="きません">きません</span> - kimasen)</h3>
+            <div class="japanese-phrase">
+                <span class="japanese-text">来ません</span>
+                <span class="audio-icon" data-audio-text="来ません">🔊</span>
+                <span class="spanish-translation"><em>(kimasen)</em> No vendré / No vengo / No viene</span>
+            </div>
+            <p><strong>Ejemplo:</strong></p>
+            <div class="japanese-phrase">
+                <span class="japanese-text">あした学校に<strong>来ません</strong>。</span>
+                <span class="audio-icon" data-audio-text="あしたがっこうにきません">🔊</span>
+                <span class="spanish-translation">Mañana <strong>no vengo</strong> a la escuela.</span>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>Tabla de Conjugación Rápida ⚡</h2>
+            <p>Aquí tienes un resumen de las formas educadas que hemos aprendido:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Verbo (Diccionario)</th>
+                        <th>Significado</th>
+                        <th>Afirmativo (-masu)</th>
+                        <th>Negativo (-masen)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>行く (<span lang="ja" data-audio-text="いく">いく</span>)</td>
+                        <td>Ir</td>
+                        <td>行きます (<span lang="ja" data-audio-text="いきます">いきます</span>)</td>
+                        <td>行きません (<span lang="ja" data-audio-text="いきません">いきません</span>)</td>
+                    </tr>
+                    <tr>
+                        <td>食べる (<span lang="ja" data-audio-text="たべる">たべる</span>)</td>
+                        <td>Comer</td>
+                        <td>食べます (<span lang="ja" data-audio-text="たべます">たべます</span>)</td>
+                        <td>食べません (<span lang="ja" data-audio-text="たべません">たべません</span>)</td>
+                    </tr>
+                    <tr>
+                        <td>する (<span lang="ja" data-audio-text="する">する</span>)</td>
+                        <td>Hacer</td>
+                        <td>します (<span lang="ja" data-audio-text="します">します</span>)</td>
+                        <td>しません (<span lang="ja" data-audio-text="しません">しません</span>)</td>
+                    </tr>
+                    <tr>
+                        <td>来る (<span lang="ja" data-audio-text="くる">くる</span>)</td>
+                        <td>Venir</td>
+                        <td>来ます (<span lang="ja" data-audio-text="きます">きます</span>)</td>
+                        <td>来ません (<span lang="ja" data-audio-text="きません">きません</span>)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="lesson-section">
+            <h2>¡Es hora de practicar! 💪</h2>
+            <p>Completa las siguientes frases. Escribe la conjugación correcta del verbo entre paréntesis en japonés.</p>
+            <div class="practice-question">
+                <p>1. わたしはパンを ______。(食べる - comer)</p>
+                <div class="japanese-phrase">
+                    <span class="japanese-text">わたしはパンを<span contenteditable="true" class="practice-input"></span>。</span>
+                    <span class="audio-icon" data-audio-text="わたしはパンをたべます">🔊</span>
+                </div>
+                <p class="spanish-translation">Yo como pan.</p>
+            </div>
+            <div class="practice-question">
+                <p>2. あした、がっこうに ______。(行く - ir, negativo)</p>
+                <div class="japanese-phrase">
+                    <span class="japanese-text">あした、がっこうに<span contenteditable="true" class="practice-input"></span>。</span>
+                    <span class="audio-icon" data-audio-text="あしたがっこうにいきません">🔊</span>
+                </div>
+                <p class="spanish-translation">Mañana no iré a la escuela.</p>
+            </div>
+            <div class="practice-question">
+                <p>3. 彼はスポーツを ______。(する - hacer)</p>
+                <div class="japanese-phrase">
+                    <span class="japanese-text">かれはスポーツを<span contenteditable="true" class="practice-input"></span>。</span>
+                    <span class="audio-icon" data-audio-text="かれはスポーツをします">🔊</span>
+                </div>
+                <p class="spanish-translation">Él hace deporte.</p>
+            </div>
+            <div class="practice-question">
+                <p>4. 友達が今日うちへ ______。(来る - venir, negativo)</p>
+                <div class="japanese-phrase">
+                    <span class="japanese-text">友達が今日うちへ<span contenteditable="true" class="practice-input"></span>。</span>
+                    <span class="audio-icon" data-audio-text="ともだちがきょううちへきません">🔊</span>
+                </div>
+                <p class="spanish-translation">Mi amigo no viene a casa hoy.</p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>Resumen del Capítulo 7 ✨</h2>
+            <p>¡Felicidades! Has dado un gran paso en tu aprendizaje de japonés. Aquí están los puntos clave de este capítulo:</p>
+            <ul class="summary-list">
+                <li>
+                    <strong>Verbos esenciales:</strong>
+                    <ul>
+                        <li><span class="japanese-word">行く</span> (<span lang="ja" data-audio-text="いく">いく</span>): ir</li>
+                        <li><span class="japanese-word">食べる</span> (<span lang="ja" data-audio-text="たべる">たべる</span>): comer</li>
+                        <li><span class="japanese-word">する</span> (<span lang="ja" data-audio-text="する">する</span>): hacer (irregular)</li>
+                        <li><span class="japanese-word">来る</span> (<span lang="ja" data-audio-text="くる">くる</span>): venir (irregular)</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Conjugación -masu (Presente/Futuro Afirmativo):</strong>
+                    <p>La forma educada que termina en <span class="japanese-word">-ます</span>.</p>
+                    <ul>
+                        <li><span class="japanese-word">行きます</span> (<span lang="ja" data-audio-text="いきます">ikimasu</span>) - Voy/Iré</li>
+                        <li><span class="japanese-word">食べます</span> (<span lang="ja" data-audio-text="たべます">tabemasu</span>) - Como/Comeré</li>
+                        <li><span class="japanese-word">します</span> (<span lang="ja" data-audio-text="します">shimasu</span>) - Hago/Haré</li>
+                        <li><span class="japanese-word">来ます</span> (<span lang="ja" data-audio-text="きます">kimasu</span>) - Vengo/Vendré</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Conjugación -masen (Presente/Futuro Negativo):</strong>
+                    <p>La forma educada negativa que termina en <span class="japanese-word">-ません</span>.</p>
+                    <ul>
+                        <li><span class="japanese-word">行きません</span> (<span lang="ja" data-audio-text="いきません">ikimasen</span>) - No voy/No iré</li>
+                        <li><span class="japanese-word">食べません</span> (<span lang="ja" data-audio-text="たべません">tabemasen</span>) - No como/No comeré</li>
+                        <li><span class="japanese-word">しません</span> (<span lang="ja" data-audio-text="しません">shimasen</span>) - No hago/No haré</li>
+                        <li><span class="japanese-word">来ません</span> (<span lang="ja" data-audio-text="きません">kimasen</span>) - No vengo/No vendré</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Las partículas:</strong> Recuerda que partículas como <span class="japanese-word">は (wa)</span>, <span class="japanese-word">に (ni)</span> y <span class="japanese-word">を (o)</span> son clave para indicar el sujeto, destino u objeto directo.
+                </li>
+            </ul>
+            <p>¡Sigue practicando estas formas y verás cómo tus oraciones en japonés empiezan a fluir! ¡Excelente trabajo! 🎉</p>
+        </section>
+    </div>
+</body>
+</html>
