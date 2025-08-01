@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 5: Family and Relationships</title>
+    <style>
+        /* Base styles */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-color: #FDF9E5;
+            --heading-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* Default background */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent text zoom on orientation change */
+        }
+
+        /* Ensure all content is readable and touch-friendly */
+        p, li, div, span, label {
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding: 20px 10px;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            padding: 15px 10px;
+        }
+
+        h3 {
+            font-size: 20px;
+            padding: 10px 10px;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        /* Mobile-first section styling */
+        section {
+            padding: 20px;
+            margin-bottom: 15px;
+            background-color: #FFFFFF;
+            border-bottom: 1px solid var(--border-color); /* Subtle divider */
+        }
+
+        .lesson-section {
+            background-color: var(--secondary-color); /* Cream background for main content sections */
+            border-radius: 8px;
+            margin: 15px; /* Spacing from screen edges */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+        }
+
+        .lesson-section:last-of-type {
+            margin-bottom: 20px; /* More space at the very bottom */
+        }
+
+        .container {
+            max-width: 600px; /* Max width for larger screens */
+            margin: 0 auto;
+            padding: 0 10px; /* Some padding on the sides */
+        }
+
+        /* Specific header requirements */
+        .chapter-title {
+            margin-top: 20px;
+            margin-bottom: 0;
+            font-size: 28px;
+            color: var(--heading-color);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Interactive elements - Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px; /* At least 44px tall for easy tapping */
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--primary-color); /* Purple */
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+            vertical-align: middle;
+            margin-left: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0; /* Prevent icon from shrinking on small screens */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C4A9E; /* Slightly darker purple on hover */
+            transform: scale(1.05);
+        }
+        
+        /* Styles for word lists and examples */
+        .vocabulary-list, ul {
+            list-style: none; /* Remove default list bullets */
+            padding: 0;
+            margin: 0;
+        }
+
+        .vocabulary-item, .example-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color); /* Light gray border */
+        }
+
+        .vocabulary-item:last-child, .example-item:last-child {
+            border-bottom: none; /* No border for the last item */
+        }
+
+        .vocabulary-item > div, .example-item > span {
+            flex: 1;
+            padding-right: 10px;
+        }
+
+        .english-word {
+            font-weight: bold;
+            color: var(--heading-color);
+            font-size: 18px;
+        }
+
+        .pronunciation-guide {
+            font-size: 14px;
+            color: #888;
+            margin-left: 5px;
+            font-style: italic;
+        }
+
+        .chinese-translation {
+            color: var(--body-text-color);
+            font-size: 16px;
+        }
+
+        .example-sentence {
+            font-style: italic;
+            margin-top: 5px;
+            display: block;
+        }
+
+        .example-sentence-chinese {
+            font-size: 14px;
+            color: #888;
+            margin-top: 2px;
+            display: block;
+        }
+
+        /* Practice section styles */
+        .practice-section {
+            background-color: #FFF;
+            border: 2px dashed var(--primary-color); /* Purple dashed border */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px; /* Consistent margin */
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .question:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .options label {
+            display: flex; /* Use flex for alignment */
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 8px;
+            background-color: var(--secondary-color);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            font-size: 16px;
+            border: 1px solid var(--border-color);
+            min-height: 44px; /* Ensure touch target size */
+            box-sizing: border-box; /* Include padding/border in element's total width and height */
+        }
+
+        .options label:hover {
+            background-color: #EAE6D6; /* Slightly darker secondary on hover */
+        }
+
+        .options input[type="radio"] {
+            margin-right: 10px;
+            width: 20px; /* Larger radio button for easier tap */
+            height: 20px;
+            flex-shrink: 0;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--primary-color); /* Purple for feedback */
+            font-size: 16px;
+            background-color: #F8F3FC; /* Very light purple background */
+            padding: 10px;
+            border-radius: 6px;
+        }
+
+        .feedback .audio-icon {
+            background-color: var(--heading-color); /* Darker audio icon in feedback */
+        }
+        .feedback .audio-icon:hover {
+            background-color: #4A5C70; /* Even darker */
+        }
+
+
+        .tip-box {
+            background-color: #E6F3F7; /* Light blue for tips */
+            border-left: 5px solid #007B8A; /* Darker blue border */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            color: #333;
+            font-size: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tip-box strong {
+            color: #005F6B;
+        }
+
+        .summary-box {
+            background-color: #F8F8F8; /* Light gray for summary */
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Responsive adjustments for larger screens */
+        @media (min-width: 600px) {
+            section {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 22px;
+            }
+            p, li, div, span, label {
+                font-size: 17px; /* Slightly larger text on larger screens */
+            }
+            .audio-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 5: Family and Relationships</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>🎉 欢迎来到第五章：家庭与人际关系！</h2>
+            <p>这一章，我们将一起学习如何用英语介绍你的家人，谈论你和他们的关系。家庭是我们生活中非常重要的一部分，学会用英语表达它会让你和世界各地的人们有更深入的交流。准备好了吗？我们开始吧！</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>👨‍👩‍👧‍👦 1. 家庭成员 (Family Members)</h2>
+            <p>首先，我们来学习一些最基本的家庭成员称呼。这些词汇非常常用，一定要牢牢记住哦！</p>
+
+            <div class="vocabulary-list">
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Mother</span> <span class="pronunciation-guide">(/'mʌðər/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">母亲；妈妈</span>
+                        <span class="audio-icon" data-audio-text="Mother">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Father</span> <span class="pronunciation-guide">(/'fɑːðər/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">父亲；爸爸</span>
+                        <span class="audio-icon" data-audio-text="Father">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Parents</span> <span class="pronunciation-guide">(/'peərənts/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">父母 (Mother + Father)</span>
+                        <span class="audio-icon" data-audio-text="Parents">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Brother</span> <span class="pronunciation-guide">(/'brʌðər/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">兄弟 (通常指哥哥或弟弟)</span>
+                        <span class="audio-icon" data-audio-text="Brother">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Sister</span> <span class="pronunciation-guide">(/'sɪstər/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">姐妹 (通常指姐姐或妹妹)</span>
+                        <span class="audio-icon" data-audio-text="Sister">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Son</span> <span class="pronunciation-guide">(/'sʌn/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">儿子</span>
+                        <span class="audio-icon" data-audio-text="Son">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Daughter</span> <span class="pronunciation-guide">(/'dɔːtər/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">女儿</span>
+                        <span class="audio-icon" data-audio-text="Daughter">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Grandfather</span> <span class="pronunciation-guide">(/'ɡrændfɑːðər/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">祖父；外祖父；爷爷；外公</span>
+                        <span class="audio-icon" data-audio-text="Grandfather">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Grandmother</span> <span class="pronunciation-guide">(/'ɡrændmʌðər/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">祖母；外祖母；奶奶；外婆</span>
+                        <span class="audio-icon" data-audio-text="Grandmother">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Grandparents</span> <span class="pronunciation-guide">(/'ɡrændpeərənts/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">祖父母；外祖父母</span>
+                        <span class="audio-icon" data-audio-text="Grandparents">🔊</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>💡 2. 物主代词 (Possessive Pronouns)</h2>
+            <p>当我们谈论“谁的”东西或“谁的”家人时，就需要用到物主代词。它们表示所有关系。</p>
+
+            <div class="tip-box">
+                <strong>小提示：</strong>物主代词后面通常会跟一个名词，例如 "my book" (我的书), "your car" (你的车)。
+            </div>
+
+            <div class="vocabulary-list">
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">My</span> <span class="pronunciation-guide">(/maɪ/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">我的</span>
+                        <span class="audio-icon" data-audio-text="My">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Your</span> <span class="pronunciation-guide">(/jɔːr/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">你的；你们的</span>
+                        <span class="audio-icon" data-audio-text="Your">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">His</span> <span class="pronunciation-guide">(/hɪz/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">他的</span>
+                        <span class="audio-icon" data-audio-text="His">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Her</span> <span class="pronunciation-guide">(/hɜːr/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">她的</span>
+                        <span class="audio-icon" data-audio-text="Her">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Its</span> <span class="pronunciation-guide">(/ɪts/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">它的</span>
+                        <span class="audio-icon" data-audio-text="Its">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Our</span> <span class="pronunciation-guide">(/aʊər/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">我们的</span>
+                        <span class="audio-icon" data-audio-text="Our">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Their</span> <span class="pronunciation-guide">(/ðer/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">他们的；她们的；它们的</span>
+                        <span class="audio-icon" data-audio-text="Their">🔊</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3>📝 示例 (Examples)</h3>
+            <ul>
+                <li class="example-item">
+                    <span class="english-word">This is <strong>my</strong> mother.</span>
+                    <span class="chinese-translation">这是我的妈妈。</span>
+                    <span class="audio-icon" data-audio-text="This is my mother.">🔊</span>
+                </li>
+                <li class="example-item">
+                    <span class="english-word">What is <strong>your</strong> brother's name?</span>
+                    <span class="chinese-translation">你哥哥叫什么名字？</span>
+                    <span class="audio-icon" data-audio-text="What is your brother's name?">🔊</span>
+                </li>
+                <li class="example-item">
+                    <span class="english-word"><strong>His</strong> sister is a doctor.</span>
+                    <span class="chinese-translation">他妹妹是医生。</span>
+                    <span class="audio-icon" data-audio-text="His sister is a doctor.">🔊</span>
+                </li>
+                <li class="example-item">
+                    <span class="english-word"><strong>Her</strong> grandparents live in Canada.</span>
+                    <span class="chinese-translation">她祖父母住在加拿大。</span>
+                    <span class="audio-icon" data-audio-text="Her grandparents live in Canada.">🔊</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🏠 3. 介绍我的家人: "This is my..." / "These are my..."</h2>
+            <p>当你向别人介绍你的家人时，可以使用这些句型。</p>
+
+            <h3>✨ 单数 (Singular): "This is my..."</h3>
+            <p>用于介绍一位家人。</p>
+            <ul>
+                <li class="example-item">
+                    <span class="english-word">This is my father.</span>
+                    <span class="chinese-translation">这是我的爸爸。</span>
+                    <span class="audio-icon" data-audio-text="This is my father.">🔊</span>
+                </li>
+                <li class="example-item">
+                    <span class="english-word">This is my sister.</span>
+                    <span class="chinese-translation">这是我的妹妹。</span>
+                    <span class="audio-icon" data-audio-text="This is my sister.">🔊</span>
+                </li>
+            </ul>
+
+            <h3>✨ 复数 (Plural): "These are my..."</h3>
+            <p>用于介绍两位或更多家人。</p>
+            <ul>
+                <li class="example-item">
+                    <span class="english-word">These are my parents.</span>
+                    <span class="chinese-translation">这是我的父母。</span>
+                    <span class="audio-icon" data-audio-text="These are my parents.">🔊</span>
+                </li>
+                <li class="example-item">
+                    <span class="english-word">These are my brothers.</span>
+                    <span class="chinese-translation">这是我的兄弟们。</span>
+                    <span class="audio-icon" data-audio-text="These are my brothers.">🔊</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h2>🧠 小练习：选择正确的物主代词</h2>
+            <p>请选择最合适的物主代词来完成句子。</p>
+
+            <div class="question">
+                <p>1. This is ___ car. (I have this car.)</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q1" value="a"> his
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="b"> my
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="c"> her
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>2. She is ___ sister. (It's her sister.)</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q2" value="a"> her
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="b"> your
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="c"> our
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>3. They are ___ grandparents. (They are grandparents of them.)</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q3" value="a"> his
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="b"> my
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="c"> their
+                    </label>
+                </div>
+            </div>
+            <p><strong>思考答案后，请自行核对：</strong></p>
+            <p class="feedback">1. B (my) <br> 2. A (her) <br> 3. C (their)</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🌍 4. 更多家庭词汇与关系 (More Family Vocabulary and Relationships)</h2>
+            <p>除了核心家庭成员，我们还有一些扩展的亲属称谓。</p>
+
+            <div class="vocabulary-list">
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Husband</span> <span class="pronunciation-guide">(/'hʌzbənd/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">丈夫</span>
+                        <span class="audio-icon" data-audio-text="Husband">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Wife</span> <span class="pronunciation-guide">(/waɪf/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">妻子</span>
+                        <span class="audio-icon" data-audio-text="Wife">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Uncle</span> <span class="pronunciation-guide">(/'ʌŋkl/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">叔叔；伯伯；舅舅；姑父；姨夫</span>
+                        <span class="audio-icon" data-audio-text="Uncle">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Aunt</span> <span class="pronunciation-guide">(/ɑːnt/ or /ænt/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">姑姑；姨妈；伯母；婶婶；舅妈</span>
+                        <span class="audio-icon" data-audio-text="Aunt">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Cousin</span> <span class="pronunciation-guide">(/'kʌzn/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">堂兄弟姐妹；表兄弟姐妹</span>
+                        <span class="audio-icon" data-audio-text="Cousin">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Nephew</span> <span class="pronunciation-guide">(/'nefjuː/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">侄子；外甥</span>
+                        <span class="audio-icon" data-audio-text="Nephew">🔊</span>
+                    </div>
+                </div>
+                <div class="vocabulary-item">
+                    <div>
+                        <span class="english-word">Niece</span> <span class="pronunciation-guide">(/niːs/)</span>
+                    </div>
+                    <div>
+                        <span class="chinese-translation">侄女；外甥女</span>
+                        <span class="audio-icon" data-audio-text="Niece">🔊</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <strong>文化小贴士：</strong> 在英语中，家庭称谓通常不如中文那样细致。例如，中文里有“伯伯”、“叔叔”、“舅舅”等区分，而英语一个“Uncle”就可以指代所有这些男性长辈。同样的，“Aunt”也涵盖了各种女性长辈。这在学习时可能会让你感到更简单一些！
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🗣️ 5. 谈论家庭成员 (Talking About Family Members)</h2>
+            <p>现在，我们来学习如何用简单的句子谈论你的家人。</p>
+
+            <h3>✨ 询问与回答 (Asking and Answering)</h3>
+            <ul>
+                <li class="example-item">
+                    <span class="english-word">Who is this?</span>
+                    <span class="chinese-translation">这是谁？</span>
+                    <span class="audio-icon" data-audio-text="Who is this?">🔊</span>
+                </li>
+                <li class="example-item">
+                    <span class="english-word">This is my brother, Tom.</span>
+                    <span class="chinese-translation">这是我哥哥，汤姆。</span>
+                    <span class="audio-icon" data-audio-text="This is my brother, Tom.">🔊</span>
+                </li>
+                <li class="example-item">
+                    <span class="english-word">How many brothers do you have?</span>
+                    <span class="chinese-translation">你有几个兄弟？</span>
+                    <span class="audio-icon" data-audio-text="How many brothers do you have?">🔊</span>
+                </li>
+                <li class="example-item">
+                    <span class="english-word">I have one brother.</span>
+                    <span class="chinese-translation">我有一个兄弟。</span>
+                    <span class="audio-icon" data-audio-text="I have one brother.">🔊</span>
+                </li>
+                <li class="example-item">
+                    <span class="english-word">Do you have any sisters?</span>
+                    <span class="chinese-translation">你有没有姐妹？</span>
+                    <span class="audio-icon" data-audio-text="Do you have any sisters?">🔊</span>
+                </li>
+                <li class="example-item">
+                    <span class="english-word">Yes, I have two sisters. / No, I don't.</span>
+                    <span class="chinese-translation">是的，我有两个姐妹。/ 不，我没有。</span>
+                    <span class="audio-icon" data-audio-text="Yes, I have two sisters. No, I don't.">🔊</span>
+                </li>
+            </ul>
+
+            <h3>✨ 简单描述 (Simple Descriptions)</h3>
+            <p>你可以用一些简单的形容词来描述你的家人：</p>
+            <ul>
+                <li class="example-item">
+                    <span class="english-word">My father is tall.</span>
+                    <span class="chinese-translation">我爸爸很高。</span>
+                    <span class="audio-icon" data-audio-text="My father is tall.">🔊</span>
+                </li>
+                <li class="example-item">
+                    <span class="english-word">My mother is kind.</span>
+                    <span class="chinese-translation">我妈妈很善良。</span>
+                    <span class="audio-icon" data-audio-text="My mother is kind.">🔊</span>
+                </li>
+                <li class="example-item">
+                    <span class="english-word">My sister is smart.</span>
+                    <span class="chinese-translation">我妹妹很聪明。</span>
+                    <span class="audio-icon" data-audio-text="My sister is smart.">🔊</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h2>✍️ 小练习：看场景说英语</h2>
+            <p>想象以下场景，并用英语说出对应的句子。</p>
+
+            <div class="question">
+                <p>1. 你想向朋友介绍你的妈妈，你会说什么？</p>
+                <p class="feedback">参考答案: <strong>This is my mother.</strong> <span class="audio-icon" data-audio-text="This is my mother.">🔊</span></p>
+            </div>
+
+            <div class="question">
+                <p>2. 你想介绍你的爷爷和奶奶，你会说什么？</p>
+                <p class="feedback">参考答案: <strong>These are my grandparents.</strong> <span class="audio-icon" data-audio-text="These are my grandparents.">🔊</span></p>
+            </div>
+
+            <div class="question">
+                <p>3. 你的朋友问你有没有兄弟姐妹，你想说你有一个弟弟，你会怎么回答？</p>
+                <p class="feedback">参考答案: <strong>Yes, I have one brother.</strong> <span class="audio-icon" data-audio-text="Yes, I have one brother.">🔊</span></p>
+            </div>
+        </section>
+
+        <section class="summary-box">
+            <h2>🚀 总结 (Summary)</h2>
+            <p>恭喜你完成了第五章！本章我们学习了：</p>
+            <ul>
+                <li><strong>核心家庭成员词汇：</strong> Mother, Father, Brother, Sister, Son, Daughter, Grandparents等。</li>
+                <li><strong>物主代词：</strong> My, Your, His, Her, Its, Our, Their，用于表达所有关系。</li>
+                <li><strong>介绍家人句型：</strong> 使用 "This is my..." (单数) 和 "These are my..." (复数)。</li>
+                <li><strong>更多亲属称谓：</strong> Husband, Wife, Uncle, Aunt, Cousin, Nephew, Niece。</li>
+                <li><strong>如何谈论家人：</strong> 学习了简单的提问和描述家人的方式。</li>
+            </ul>
+            <p>多加练习，尝试用今天学到的词汇和句型来介绍你自己的家人吧！相信你会越来越流利！</p>
+        </section>
+    </div>
+</body>
+</html>

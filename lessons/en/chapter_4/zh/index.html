@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 4: Colors and Descriptions</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary background */
+            color: #666666; /* Body Text */
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3 {
+            color: #2C3E50; /* Headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        /* Chapter Header Specifics */
+        .chapter-title {
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 2em;
+            margin-bottom: 0; /* Adjust margin to fit with lesson-header */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Layout and Sections */
+        .container {
+            padding: 0 15px;
+            max-width: 768px; /* Max width for content on larger screens */
+            margin: 0 auto;
+        }
+
+        .lesson-section {
+            padding: 20px;
+            margin-bottom: 15px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders */
+        }
+
+        /* Text and Typography */
+        p {
+            margin-bottom: 1em;
+        }
+
+        strong {
+            color: #2C3E50; /* Darker for emphasis */
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Interactive Elements */
+        .audio-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px; /* Slightly larger for easier tapping */
+            height: 48px; /* Slightly larger for easier tapping */
+            min-width: 48px; /* Ensure touch target */
+            min-height: 48px; /* Ensure touch target */
+            font-size: 1.3em;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-right: 10px; /* Space between icon and text */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            flex-shrink: 0; /* Prevent icon from shrinking */
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95); /* Visual feedback on tap */
+        }
+
+        .audio-icon:hover {
+            background-color: #6A3A9A; /* Darker primary for hover */
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #8B5FBF; /* Primary color */
+            font-style: italic;
+            margin-left: 5px;
+            white-space: nowrap; /* Prevent breaking for pronunciation */
+        }
+
+        .example {
+            background-color: #FDF9E5; /* Secondary background */
+            border-left: 5px solid #8B5FBF; /* Primary accent */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .example p {
+            margin: 5px 0;
+        }
+
+        .example .english-text {
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary background */
+            border: 1px solid #E0E0E0; /* Borders */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #E0E0E0;
+            padding-bottom: 15px;
+        }
+
+        .practice-question:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Space between options */
+            margin-top: 10px;
+        }
+
+        .option-button {
+            background-color: #E0E0E0; /* Light gray */
+            color: #2C3E50; /* Dark blue text */
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            min-height: 44px;
+            font-size: 1em;
+            cursor: pointer;
+            flex: 1 1 auto; /* Allow items to grow and shrink, minimum basis */
+            min-width: 120px; /* Ensure buttons don't get too small */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .option-button:hover {
+            background-color: #8B5FBF; /* Primary */
+            color: white;
+        }
+
+        /* Responsive Adjustments for smaller screens */
+        @media (max-width: 480px) {
+            .chapter-title {
+                font-size: 1.8em;
+            }
+            .lesson-section, .practice-section {
+                padding: 15px;
+            }
+            .audio-icon {
+                width: 44px;
+                height: 44px;
+                min-width: 44px;
+                min-height: 44px;
+                font-size: 1.2em;
+            }
+            .option-button {
+                flex-basis: 100%; /* Stack buttons vertically on very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="chapter-title">Chapter 4: Colors and Descriptions</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 4 Header" class="lesson-header-image">
+    </div>
+
+    <div class="container">
+        <section class="lesson-section">
+            <h2>🎉 欢迎来到第四章：颜色与描述！</h2>
+            <p>这一章我们将学习如何用英语描述物体的颜色和基本特征。准备好了吗？让我们开始吧！</p>
+        </section>
+
+        <section class="lesson-section">
+            <h3>🎨 1. 基本颜色 (Basic Colors)</h3>
+            <p>首先，我们来学习一些最常用的颜色词汇。</p>
+
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Red">🔊</button>
+                <p><strong>Red</strong> <span class="pronunciation">[rɛd]</span> - 红色</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Blue">🔊</button>
+                <p><strong>Blue</strong> <span class="pronunciation">[bluː]</span> - 蓝色</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Green">🔊</button>
+                <p><strong>Green</strong> <span class="pronunciation">[ɡriːn]</span> - 绿色</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Yellow">🔊</button>
+                <p><strong>Yellow</strong> <span class="pronunciation">[ˈjɛloʊ]</span> - 黄色</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Black">🔊</button>
+                <p><strong>Black</strong> <span class="pronunciation">[blæk]</span> - 黑色</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="White">🔊</button>
+                <p><strong>White</strong> <span class="pronunciation">[waɪt]</span> - 白色</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Orange">🔊</button>
+                <p><strong>Orange</strong> <span class="pronunciation">[ˈɔːrɪndʒ]</span> - 橙色</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Purple">🔊</button>
+                <p><strong>Purple</strong> <span class="pronunciation">[ˈpɜːrpl]</span> - 紫色</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Pink">🔊</button>
+                <p><strong>Pink</strong> <span class="pronunciation">[pɪŋk]</span> - 粉色</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Brown">🔊</button>
+                <p><strong>Brown</strong> <span class="pronunciation">[braʊn]</span> - 棕色</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Gray">🔊</button>
+                <p><strong>Gray</strong> <span class="pronunciation">[ɡreɪ]</span> - 灰色 (美式英语常用 grey)</p>
+            </div>
+
+            <h4>📝 练习一下 (Practice Time!)</h4>
+            <p>请选择正确的颜色名称：</p>
+            <div class="practice-section">
+                <div class="practice-question">
+                    <p>🍎 <strong>这个苹果是什么颜色？</strong></p>
+                    <div class="practice-options">
+                        <button class="option-button" data-answer="Green">Green</button>
+                        <button class="option-button" data-answer="Red">Red</button>
+                        <button class="option-button" data-answer="Yellow">Yellow</button>
+                    </div>
+                </div>
+                <div class="practice-question">
+                    <p>🌊 <strong>大海通常是什么颜色？</strong></p>
+                    <div class="practice-options">
+                        <button class="option-button" data-answer="Blue">Blue</button>
+                        <button class="option-button" data-answer="Brown">Brown</button>
+                        <button class="option-button" data-answer="Purple">Purple</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>📏 2. 描述物体大小和高矮 (Describing Objects)</h3>
+            <p>除了颜色，我们还可以用形容词来描述物体的大小、高矮等。</p>
+
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Big">🔊</button>
+                <p><strong>Big</strong> <span class="pronunciation">[bɪɡ]</span> - 大的</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Small">🔊</button>
+                <p><strong>Small</strong> <span class="pronunciation">[smɔːl]</span> - 小的</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Tall">🔊</button>
+                <p><strong>Tall</strong> <span class="pronunciation">[tɔːl]</span> - 高的 (通常指人或细高物体)</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Short">🔊</button>
+                <p><strong>Short</strong> <span class="pronunciation">[ʃɔːrt]</span> - 矮的/短的</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Long">🔊</button>
+                <p><strong>Long</strong> <span class="pronunciation">[lɔːŋ]</span> - 长的</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="New">🔊</button>
+                <p><strong>New</strong> <span class="pronunciation">[nuː]</span> - 新的</p>
+            </div>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="Old">🔊</button>
+                <p><strong>Old</strong> <span class="pronunciation">[oʊld]</span> - 旧的/老的</p>
+            </div>
+
+            <h4>句型应用：This is... / That is...</h4>
+            <p>我们用 <strong>This is...</strong> (这是...) 来指代<strong>近处</strong>的单个物体，用 <strong>That is...</strong> (那是...) 来指代<strong>远处</strong>的单个物体。</p>
+
+            <div class="example">
+                <div class="audio-container">
+                    <button class="audio-icon" data-audio-text="This is a big apple.">🔊</button>
+                    <p class="english-text">This is a big apple.</p>
+                </div>
+                <p>这是一个大苹果。</p>
+            </div>
+            <div class="example">
+                <div class="audio-container">
+                    <button class="audio-icon" data-audio-text="That is a small car.">🔊</button>
+                    <p class="english-text">That is a small car.</p>
+                </div>
+                <p>那是一辆小汽车。</p>
+            </div>
+            <div class="example">
+                <div class="audio-container">
+                    <button class="audio-icon" data-audio-text="This is a tall tree.">🔊</button>
+                    <p class="english-text">This is a tall tree.</p>
+                </div>
+                <p>这是一棵高大的树。</p>
+            </div>
+
+            <h4>📝 练习一下 (Practice Time!)</h4>
+            <p>请选择正确的描述：</p>
+            <div class="practice-section">
+                <div class="practice-question">
+                    <p>🐘 <strong>大象是 ____ 的动物。</strong></p>
+                    <div class="practice-options">
+                        <button class="option-button" data-answer="Small">Small</button>
+                        <button class="option-button" data-answer="Big">Big</button>
+                    </div>
+                </div>
+                <div class="practice-question">
+                    <p>📏 <strong>这支铅笔很____。</strong></p>
+                    <div class="practice-options">
+                        <button class="option-button" data-answer="Short">Short</button>
+                        <button class="option-button" data-answer="Long">Long</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>❓ 3. 询问颜色 (What color is it?)</h3>
+            <p>要询问物体的颜色，我们可以使用这个句型：</p>
+
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="What color is it?">🔊</button>
+                <p><strong>What color is it?</strong> - 它是什么颜色？</p>
+            </div>
+            <p>回答时，通常说：</p>
+            <div class="audio-container">
+                <button class="audio-icon" data-audio-text="It's red.">🔊</button>
+                <p><strong>It's red.</strong> - 它是红色的。</p>
+            </div>
+
+            <h4>结合颜色和描述</h4>
+            <p>我们可以将颜色和描述词结合起来，更详细地描述一个物体。形容词（如大小、高矮）通常放在颜色前面。</p>
+
+            <div class="example">
+                <div class="audio-container">
+                    <button class="audio-icon" data-audio-text="This is a big red apple.">🔊</button>
+                    <p class="english-text">This is a big red apple.</p>
+                </div>
+                <p>这是一个大红苹果。</p>
+            </div>
+            <div class="example">
+                <div class="audio-container">
+                    <button class="audio-icon" data-audio-text="That is a small blue car.">🔊</button>
+                    <p class="english-text">That is a small blue car.</p>
+                </div>
+                <p>那是一辆小蓝汽车。</p>
+            </div>
+            <div class="example">
+                <div class="audio-container">
+                    <button class="audio-icon" data-audio-text="It's a tall green tree.">🔊</button>
+                    <p class="english-text">It's a tall green tree.</p>
+                </div>
+                <p>它是一棵高大的绿树。</p>
+            </div>
+
+            <h4>📝 练习一下 (Practice Time!)</h4>
+            <p>请用英语描述以下物品：</p>
+            <div class="practice-section">
+                <div class="practice-question">
+                    <p>🍌 <strong>这是一根黄色香蕉。</strong></p>
+                    <div class="practice-options">
+                        <button class="option-button" data-answer="This is a yellow banana.">This is a yellow banana.</button>
+                        <button class="option-button" data-answer="This is yellow banana.">This is yellow banana.</button>
+                    </div>
+                </div>
+                <div class="practice-question">
+                    <p>🐻 <strong>那是一只棕色小熊。</strong></p>
+                    <div class="practice-options">
+                        <button class="option-button" data-answer="That is a small brown bear.">That is a small brown bear.</button>
+                        <button class="option-button" data-answer="That is a brown small bear.">That is a brown small bear.</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>🌍 文化小贴士：颜色在文化中的意义</h3>
+            <p>颜色不仅仅是视觉的感知，在不同的文化中也承载着特殊的意义哦！</p>
+            <ul>
+                <li>在中国，<strong>红色 (Red)</strong> 通常象征着好运、幸福和繁荣。过年过节时，红色随处可见。</li>
+                <li>在西方文化中，<strong>白色 (White)</strong> 常与纯洁、和平相关，婚礼上新娘通常穿白色婚纱。而<strong>黑色 (Black)</strong> 则常与悲伤、庄重相关。</li>
+                <li><strong>绿色 (Green)</strong> 在许多文化中都代表自然、生命和希望。</li>
+            </ul>
+        </section>
+
+        <section class="lesson-section">
+            <h3>🌟 本章总结 (Chapter Summary)</h3>
+            <p>恭喜你！你已经完成了第四章的学习。让我们回顾一下本章的重点：</p>
+            <ul>
+                <li>学习了多种<strong>基本颜色词汇</strong>：Red, Blue, Green, Yellow, Black, White, Orange, Purple, Pink, Brown, Gray。</li>
+                <li>学会了描述物体<strong>大小、高矮</strong>的词汇：Big, Small, Tall, Short, Long, New, Old。</li>
+                <li>掌握了表示“这是/那是”的句型：<strong>This is...</strong> 和 <strong>That is...</strong>。</li>
+                <li>学会了询问颜色的句型：<strong>What color is it?</strong>，以及回答：<strong>It's [color].</strong></li>
+                <li>了解了形容词在名词前的顺序：<strong>[大小/高矮] + [颜色] + [名词]</strong> (e.g., a big red apple)。</li>
+            </ul>
+            <p>继续练习，你会越来越棒的！</p>
+        </section>
+    </div>
+</body>
+</html>

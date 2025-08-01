@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Places and Directions</title>
+    <style>
+        /* Global Styles & Reset */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%; /* Prevent font size adjustment on mobile */
+        }
+
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 0.3em;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            color: #8B5FBF; /* Primary: Purple for accents */
+            margin-top: 1.5em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        strong {
+            color: #2C3E50; /* Darker emphasis */
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        a {
+            color: #8B5FBF; /* Primary: Purple */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Lesson Header Specifics */
+        .chapter-title {
+            margin-top: 20px;
+            margin-bottom: 0; /* Adjust as needed with lesson-header margin */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #FFFFFF; /* White background for content sections */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px dashed #E0E0E0;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        .word-item {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .word-english {
+            font-weight: bold;
+            color: #2C3E50;
+            font-size: 1.1em;
+        }
+
+        .word-pronunciation {
+            font-size: 0.9em;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-top: 2px;
+        }
+
+        .word-chinese {
+            font-size: 0.9em;
+            color: #666666;
+            margin-top: 2px;
+        }
+
+        /* Audio Icon Styling */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            cursor: pointer;
+            margin-left: 10px;
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .audio-icon:hover {
+            background-color: #6A489C; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Example and Practice Styling */
+        .example, .practice-item {
+            background-color: #FDF9E5; /* Secondary: Cream background for examples */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple accent */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .example p, .practice-item p {
+            margin: 0;
+            color: #2C3E50;
+        }
+
+        .example p strong, .practice-item p strong {
+            color: #8B5FBF;
+        }
+
+        .practice-question {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .practice-button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            min-height: 44px; /* Touch target size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .practice-button:hover {
+            background-color: #6A489C; /* Darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        .practice-button.correct {
+            background-color: #4CAF50; /* Green for correct */
+        }
+
+        .practice-button.incorrect {
+            background-color: #F44336; /* Red for incorrect */
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #2C3E50;
+            text-align: center;
+        }
+
+        .summary-list li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #E0E0E0;
+            font-size: 1.05em;
+        }
+
+        /* Cultural Note Styling */
+        .cultural-note {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-left: 5px solid #E0B35A; /* A warm, inviting color for cultural notes */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: #2C3E50;
+        }
+
+        .cultural-note h3 {
+            color: #E0B35A;
+            margin-top: 0;
+        }
+
+        /* Utility classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 8: Places and Directions</h1>
+        <div class="lesson-header">
+            <!-- IMPORTANT: DO NOT use external image URLs or placeholder images. Use ../header.webp as requested. -->
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>🎉 欢迎来到第八章：地点与方向！</h2>
+            <p>这一章我们将学习如何描述你周围的世界！无论是问路、告诉别人你在哪里，还是描述一个地方，本章都能帮到你。掌握这些基础词汇和短语，让你的英语交流更流畅！</p>
+            <p>准备好了吗？让我们开始吧！🚀</p>
+        </section>
+
+        <section>
+            <h2>📍 第一部分：常见地点</h2>
+            <p>首先，我们来学习一些日常生活中最常见的地点。</p>
+
+            <ul>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">school</span>
+                        <span class="word-pronunciation">[斯科尔]</span>
+                        <span class="word-chinese">学校</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="school">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">home</span>
+                        <span class="word-pronunciation">[后姆]</span>
+                        <span class="word-chinese">家</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="home">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">work</span>
+                        <span class="word-pronunciation">[沃克]</span>
+                        <span class="word-chinese">工作（地点）</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="work">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">store</span>
+                        <span class="word-pronunciation">[斯托尔]</span>
+                        <span class="word-chinese">商店</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="store">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">park</span>
+                        <span class="word-pronunciation">[帕克]</span>
+                        <span class="word-chinese">公园</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="park">🔊</button>
+                </li>
+            </ul>
+
+            <h3>📝 常用例句：</h3>
+            <div class="example">
+                <p>👩‍🏫 <strong>I go to school every day.</strong></p>
+                <p>我每天去学校。</p>
+            </div>
+            <div class="example">
+                <p>🏡 <strong>She is at home.</strong></p>
+                <p>她在家里。</p>
+            </div>
+            <div class="example">
+                <p>🏢 <strong>He works at the office.</strong></p>
+                <p>他在办公室工作。</p>
+            </div>
+            <div class="example">
+                <p>🛒 <strong>Let's go to the store.</strong></p>
+                <p>我们去商店吧。</p>
+            </div>
+            <div class="example">
+                <p>🌳 <strong>They play in the park.</strong></p>
+                <p>他们在公园里玩。</p>
+            </div>
+
+            <h3>💡 小练习：选择正确答案</h3>
+            <div class="practice-item">
+                <p class="practice-question">我去 ______ 学习。</p>
+                <p>I go to ______ to study.</p>
+                <div class="practice-options">
+                    <button class="practice-button" data-correct="false">park</button>
+                    <button class="practice-button" data-correct="true">school</button>
+                    <button class="practice-button" data-correct="false">store</button>
+                </div>
+                <div class="feedback"></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>🗺️ 第二部分：介词 (Prepositions of Place)</h2>
+            <p>介词用来描述物体或人相对于其他物体或人的位置。掌握它们非常重要！</p>
+
+            <ul>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">in</span>
+                        <span class="word-pronunciation">[因]</span>
+                        <span class="word-chinese">在…里面/在…之内 (用于大的空间、城市、国家、容器内)</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="in">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">on</span>
+                        <span class="word-pronunciation">[昂]</span>
+                        <span class="word-chinese">在…上面 (表面)</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="on">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">at</span>
+                        <span class="word-pronunciation">[艾特]</span>
+                        <span class="word-chinese">在… (指某个地点，点，或活动)</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="at">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">near</span>
+                        <span class="word-pronunciation">[尼尔]</span>
+                        <span class="word-chinese">在…附近</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="near">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">far from</span>
+                        <span class="word-pronunciation">[法尔 弗若姆]</span>
+                        <span class="word-chinese">离…很远</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="far from">🔊</button>
+                </li>
+            </ul>
+
+            <h3>📝 常用例句：</h3>
+            <div class="example">
+                <p>📦 <strong>The book is in the bag.</strong></p>
+                <p>书在包里。</p>
+            </div>
+            <div class="example">
+                <p>🍎 <strong>The apple is on the table.</strong></p>
+                <p>苹果在桌子上。</p>
+            </div>
+            <div class="example">
+                <p>☕ <strong>I am at the coffee shop.</strong></p>
+                <p>我在咖啡店。</p>
+            </div>
+            <div class="example">
+                <p>🏠 <strong>My house is near the park.</strong></p>
+                <p>我家在公园附近。</p>
+            </div>
+            <div class="example">
+                <p>🗺️ <strong>The airport is far from the city center.</strong></p>
+                <p>机场离市中心很远。</p>
+            </div>
+
+            <h3>💡 小练习：填空选择</h3>
+            <div class="practice-item">
+                <p class="practice-question">猫在沙发 ______。</p>
+                <p>The cat is ______ the sofa.</p>
+                <div class="practice-options">
+                    <button class="practice-button" data-correct="true">on</button>
+                    <button class="practice-button" data-correct="false">in</button>
+                    <button class="practice-button" data-correct="false">far from</button>
+                </div>
+                <div class="feedback"></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>❓ 第三部分：询问和描述地点 (Where is...?)</h2>
+            <p>学习如何询问一个地方在哪里，并回答它。</p>
+
+            <h3>询问句型：</h3>
+            <p><strong>Where is...?</strong></p>
+            <p>……在哪里？</p>
+            <p><strong>Where are...?</strong></p>
+            <p>……在哪里？ (复数)</p>
+
+            <h3>回答句型：</h3>
+            <p><strong>It's...</strong></p>
+            <p>它在……</p>
+            <p><strong>They're...</strong></p>
+            <p>它们在……</p>
+
+            <h3>📝 常用例句：</h3>
+            <div class="example">
+                <p>📍 <strong>Where is the library?</strong></p>
+                <p>图书馆在哪里？</p>
+                <p>📚 <strong>It's near the school.</strong></p>
+                <p>它在学校附近。</p>
+            </div>
+            <div class="example">
+                <p>🔑 <strong>Where are my keys?</strong></p>
+                <p>我的钥匙在哪里？</p>
+                <p>🛋️ <strong>They're on the table.</strong></p>
+                <p>它们在桌子上。</p>
+            </div>
+
+            <h3>💡 小练习：完成对话</h3>
+            <div class="practice-item">
+                <p class="practice-question">A: Where is the store?</p>
+                <p>B: ______ in the city center.</p>
+                <div class="practice-options">
+                    <button class="practice-button" data-correct="true">It's</button>
+                    <button class="practice-button" data-correct="false">They're</button>
+                    <button class="practice-button" data-correct="false">Is it</button>
+                </div>
+                <div class="feedback"></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>➡️ 第四部分：基本方向 (Basic Directions)</h2>
+            <p>学习这些词汇，你就能给别人指路了！</p>
+
+            <ul>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">left</span>
+                        <span class="word-pronunciation">[莱夫特]</span>
+                        <span class="word-chinese">左边；向左</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="left">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">right</span>
+                        <span class="word-pronunciation">[赖特]</span>
+                        <span class="word-chinese">右边；向右</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="right">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">straight</span>
+                        <span class="word-pronunciation">[斯特瑞特]</span>
+                        <span class="word-chinese">直行</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="straight">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">turn</span>
+                        <span class="word-pronunciation">[特恩]</span>
+                        <span class="word-chinese">转弯</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="turn">🔊</button>
+                </li>
+            </ul>
+
+            <h3>📝 常用例句：</h3>
+            <div class="example">
+                <p>🚶‍♀️ <strong>Turn left at the next corner.</strong></p>
+                <p>在下一个街角左转。</p>
+            </div>
+            <div class="example">
+                <p>🚶‍♂️ <strong>Go straight for two blocks.</strong></p>
+                <p>直走两个街区。</p>
+            </div>
+            <div class="example">
+                <p>➡️ <strong>The bank is on your right.</strong></p>
+                <p>银行在你的右边。</p>
+            </div>
+
+            <h3>💡 小练习：选择合适的词语</h3>
+            <div class="practice-item">
+                <p class="practice-question">如果你想笔直地走，你会说：</p>
+                <p>If you want to walk without turning, you say: Go ______.</p>
+                <div class="practice-options">
+                    <button class="practice-button" data-correct="true">straight</button>
+                    <button class="practice-button" data-correct="false">left</button>
+                    <button class="practice-button" data-correct="false">turn</button>
+                </div>
+                <div class="feedback"></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📚 第五部分：更多位置词汇 (Location Vocabulary)</h2>
+            <p>除了介词，还有一些常用的短语可以帮助你更精确地描述位置。</p>
+
+            <ul>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">across from</span>
+                        <span class="word-pronunciation">[阿克罗斯 弗若姆]</span>
+                        <span class="word-chinese">在…对面</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="across from">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">next to</span>
+                        <span class="word-pronunciation">[内克斯特 图]</span>
+                        <span class="word-chinese">在…旁边</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="next to">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">between</span>
+                        <span class="word-pronunciation">[比特温]</span>
+                        <span class="word-chinese">在…和…之间</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="between">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">behind</span>
+                        <span class="word-pronunciation">[比海德]</span>
+                        <span class="word-chinese">在…后面</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="behind">🔊</button>
+                </li>
+                <li>
+                    <span class="word-item">
+                        <span class="word-english">in front of</span>
+                        <span class="word-pronunciation">[因 弗朗特 奥夫]</span>
+                        <span class="word-chinese">在…前面</span>
+                    </span>
+                    <button class="audio-icon" data-audio-text="in front of">🔊</button>
+                </li>
+            </ul>
+
+            <h3>📝 常用例句：</h3>
+            <div class="example">
+                <p>🏪 <strong>The bank is across from the store.</strong></p>
+                <p>银行在商店对面。</p>
+            </div>
+            <div class="example">
+                <p>🛒 <strong>The supermarket is next to the park.</strong></p>
+                <p>超市在公园旁边。</p>
+            </div>
+            <div class="example">
+                <p>📍 <strong>The cafe is between the library and the cinema.</strong></p>
+                <p>咖啡馆在图书馆和电影院之间。</p>
+            </div>
+        </section>
+
+        <div class="cultural-note">
+            <h3>🌍 文化小贴士：英语国家如何指路？</h3>
+            <p>在英语国家，人们给方向时通常会结合地标 (landmarks) 和距离。例如，他们不会说“直走300米”，而是说“Go straight for two blocks” (直走两个街区) 或 "It's about a 5-minute walk" (大约步行5分钟)。</p>
+            <p>另外，当问路时，通常会先说“Excuse me, can you help me?” (打扰一下，您能帮我吗？) 这样更礼貌。</p>
+        </div>
+
+        <section>
+            <h2>🌟 本章总结</h2>
+            <p>恭喜你完成了第八章的学习！现在你已经掌握了描述地点和指路的基础知识。</让我们回顾一下本章的重点：</p>
+            <ul class="summary-list">
+                <li><strong>常用地点：</strong> school (学校), home (家), work (工作), store (商店), park (公园)。</li>
+                <li><strong>地点介词：</strong> in (在…内), on (在…上), at (在某点), near (在附近), far from (离…远)。</li>
+                <li><strong>询问地点：</strong> "Where is...?" 或 "Where are...?"。</li>
+                <li><strong>描述地点：</strong> "It's..." 或 "They're..."，后面接介词和地点。</li>
+                <li><strong>基本方向：</strong> left (左), right (右), straight (直行), turn (转弯)。</li>
+                <li><strong>更多位置词汇：</strong> across from (对面), next to (旁边), between (之间), behind (后面), in front of (前面)。</li>
+            </ul>
+            <p class="text-center mt-20">继续练习，你很快就能自信地在英语世界中“找路”了！👍</p>
+        </section>
+
+    </div>
+
+    <!-- This script is for basic interactivity on buttons, mimicking mobile app behavior. -->
+    <!-- In a real mobile app, this would be handled by native code (e.g., React Native). -->
+    <script>
+        document.querySelectorAll('.practice-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const parentItem = this.closest('.practice-item');
+                const feedbackDiv = parentItem.querySelector('.feedback');
+
+                // Reset previous feedback
+                parentItem.querySelectorAll('.practice-button').forEach(btn => {
+                    btn.classList.remove('correct', 'incorrect');
+                });
+                feedbackDiv.textContent = '';
+
+                if (this.dataset.correct === 'true') {
+                    this.classList.add('correct');
+                    feedbackDiv.textContent = '✅ 正确！太棒了！';
+                    feedbackDiv.style.color = '#4CAF50';
+                } else {
+                    this.classList.add('incorrect');
+                    feedbackDiv.textContent = '❌ 再试一次哦！';
+                    feedbackDiv.style.color = '#F44336';
+                    // Optionally, highlight the correct answer
+                    parentItem.querySelector('.practice-button[data-correct="true"]').classList.add('correct');
+                }
+            });
+        });
+
+        // NOTE: Audio functionality (audio-icon) is handled by the mobile frontend.
+        // No JS event listeners are needed here for audio.
+    </script>
+</body>
+</html>

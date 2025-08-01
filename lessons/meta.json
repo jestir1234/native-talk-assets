@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-07-31T14:53:31.758Z",
+  "lastUpdated": "2025-07-31T19:33:11.359Z",
   "totalLanguages": 5,
   "totalChapters": 50,
-  "totalAvailableChapters": 25,
+  "totalAvailableChapters": 33,
   "totalTargetLanguages": 4,
   "languages": {
     "en": {
@@ -68,9 +68,10 @@
             ]
           },
           "availableLanguages": [
-            "ja"
+            "ja",
+            "zh"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 3,
@@ -95,9 +96,10 @@
             ]
           },
           "availableLanguages": [
-            "ja"
+            "ja",
+            "zh"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 4,
@@ -122,9 +124,10 @@
             ]
           },
           "availableLanguages": [
-            "ja"
+            "ja",
+            "zh"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 5,
@@ -149,9 +152,10 @@
             ]
           },
           "availableLanguages": [
-            "ja"
+            "ja",
+            "zh"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 6,
@@ -176,9 +180,10 @@
             ]
           },
           "availableLanguages": [
-            "ja"
+            "ja",
+            "zh"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 7,
@@ -203,9 +208,10 @@
             ]
           },
           "availableLanguages": [
-            "ja"
+            "ja",
+            "zh"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 8,
@@ -230,9 +236,10 @@
             ]
           },
           "availableLanguages": [
-            "ja"
+            "ja",
+            "zh"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 9,
@@ -257,9 +264,10 @@
             ]
           },
           "availableLanguages": [
-            "ja"
+            "ja",
+            "zh"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         },
         {
           "number": 10,
@@ -284,9 +292,10 @@
             ]
           },
           "availableLanguages": [
-            "ja"
+            "ja",
+            "zh"
           ],
-          "totalLanguages": 1
+          "totalLanguages": 2
         }
       ]
     },
@@ -673,7 +682,7 @@
       "name": "Korean",
       "flag": "🇰🇷",
       "totalChapters": 10,
-      "availableChapters": 2,
+      "availableChapters": 10,
       "availableTargetLanguages": [
         "en",
         "ja"
@@ -757,8 +766,10 @@
               "基本的な数学の語彙（더하기、빼기、곱하기、나누기）"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 4,
@@ -782,8 +793,10 @@
               "좋다/나쁘다（良い/悪い）"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 5,
@@ -807,8 +820,10 @@
               "敬語と丁寧な話し方のレベル"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 6,
@@ -832,8 +847,10 @@
               "일하다（働く）"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 7,
@@ -857,8 +874,10 @@
               "커피（コーヒー）"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 8,
@@ -882,8 +901,10 @@
               "은행（銀行）"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 9,
@@ -907,8 +928,10 @@
               "봄、여름、가을、겨울（春、夏、秋、冬）"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 10,
@@ -932,8 +955,10 @@
               "월、화、수、목、금、토、일"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         }
       ]
     },
@@ -1439,6 +1464,87 @@
           }
         },
         {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 2,
+          "chapterTitle": {
+            "ja": "基本的な挨拶と自己紹介",
+            "zh": "基础问候和自我介绍"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 3,
+          "chapterTitle": {
+            "ja": "数字と数え方",
+            "zh": "数字和计数"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 4,
+          "chapterTitle": {
+            "ja": "色と描写",
+            "zh": "颜色和描述"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 5,
+          "chapterTitle": {
+            "ja": "家族と人間関係",
+            "zh": "家庭和人际关系"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 6,
+          "chapterTitle": {
+            "ja": "日常の活動とルーティン",
+            "zh": "日常活动和例行公事"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 7,
+          "chapterTitle": {
+            "ja": "食べ物と飲み物",
+            "zh": "食物和饮料"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 8,
+          "chapterTitle": {
+            "ja": "場所と方向",
+            "zh": "地点和方向"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 9,
+          "chapterTitle": {
+            "ja": "天気と季節",
+            "zh": "天气和季节"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 10,
+          "chapterTitle": {
+            "ja": "時間とスケジュール",
+            "zh": "时间和日程安排"
+          }
+        },
+        {
           "languageLearn": "ja",
           "languageLearnName": "Japanese",
           "chapterNumber": 1,
@@ -1661,6 +1767,78 @@
           "chapterTitle": {
             "en": "Basic Greetings and Introductions",
             "ja": "基本的な挨拶と自己紹介"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 3,
+          "chapterTitle": {
+            "en": "Numbers and Counting",
+            "ja": "数字と数え方"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 4,
+          "chapterTitle": {
+            "en": "Colors and Descriptions",
+            "ja": "色と描写"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 5,
+          "chapterTitle": {
+            "en": "Family and Relationships",
+            "ja": "家族と人間関係"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 6,
+          "chapterTitle": {
+            "en": "Daily Activities and Routines",
+            "ja": "日常の活動とルーティン"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 7,
+          "chapterTitle": {
+            "en": "Food and Drinks",
+            "ja": "食べ物と飲み物"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 8,
+          "chapterTitle": {
+            "en": "Places and Directions",
+            "ja": "場所と方向"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 9,
+          "chapterTitle": {
+            "en": "Weather and Seasons",
+            "ja": "天気と季節"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 10,
+          "chapterTitle": {
+            "en": "Time and Schedules",
+            "ja": "時間とスケジュール"
           }
         },
         {

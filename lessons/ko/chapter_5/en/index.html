@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Family and Relationships</title>
+    <style>
+        /* Base Styles for Mobile-First Design */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent text size adjustment on mobile Safari */
+        }
+
+        .container {
+            padding: 15px;
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto;
+        }
+
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 20px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            border-left: 5px solid #8B5FBF; /* Primary: Purple accent */
+            padding-left: 10px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 15px 0;
+        }
+
+        li {
+            font-size: 16px;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        strong {
+            color: #2C3E50;
+        }
+
+        em {
+            font-style: normal; /* Override default italic for emphasis */
+            color: #8B5FBF;
+            font-weight: bold;
+        }
+
+        /* Specific Header CSS Requirements */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Card and Section Styles */
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        .korean-word-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap; /* Allow wrapping on very small screens */
+        }
+
+        .korean-word {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .pronunciation {
+            font-size: 16px;
+            color: #8B5FBF; /* Primary: Purple */
+            font-style: italic;
+        }
+
+        .translation {
+            font-size: 16px;
+            color: #666666;
+            margin-left: auto; /* Push translation to the right */
+        }
+
+        .example {
+            background-color: #F9F9F9;
+            border-left: 4px solid #8B5FBF;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .example-line {
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .example-line span.korean {
+            font-weight: bold;
+            color: #2C3E50;
+        }
+        .example-line span.english {
+            color: #666666;
+            font-style: italic;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 28px; /* Make icon large for tapping */
+            cursor: pointer;
+            padding: 8px; /* Padding for touch target */
+            min-width: 44px; /* Minimum tap target size */
+            min-height: 44px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: #8B5FBF; /* Primary: Purple */
+            transition: transform 0.2s ease;
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            border: 1px dashed #8B5FBF; /* Primary: Purple for dashed border */
+        }
+
+        .practice-question {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #2C3E50;
+            font-weight: bold;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Responsive grid for options */
+            gap: 10px;
+        }
+
+        .option-button {
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 15px 10px;
+            font-size: 16px;
+            color: #666666;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-height: 44px; /* Ensure tap target size */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .option-button:hover {
+            background-color: #F0F0F0;
+            border-color: #8B5FBF;
+        }
+
+        .option-button.selected {
+            background-color: #E6E0F0; /* Lighter shade of purple */
+            border-color: #8B5FBF;
+            color: #2C3E50;
+        }
+
+        .option-button.correct {
+            background-color: #D4EDDA; /* Light green */
+            border-color: #28A745;
+            color: #28A745;
+            font-weight: bold;
+        }
+
+        .option-button.incorrect {
+            background-color: #F8D7DA; /* Light red */
+            border-color: #DC3545;
+            color: #DC3545;
+            font-weight: bold;
+        }
+
+        .answer-feedback {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .answer-feedback.correct {
+            color: #28A745;
+            background-color: #E2F0D9;
+        }
+
+        .answer-feedback.incorrect {
+            color: #DC3545;
+            background-color: #FDE0E0;
+        }
+
+        .cultural-note {
+            background-color: #F9F9F9;
+            border-left: 5px solid #FBC02D; /* A contrasting color for notes, like amber */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #555555;
+        }
+
+        .cultural-note strong {
+            color: #FBC02D;
+        }
+
+        .summary-card {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 2px solid #8B5FBF; /* Primary: Purple border */
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .summary-card h2 {
+            border-left: none;
+            padding-left: 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .summary-card p {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive adjustments for larger screens (e.g., tablets in landscape) */
+        @media (min-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 22px;
+            }
+            p, li, .korean-word, .pronunciation, .translation, .example-line, .practice-question, .option-button, .answer-feedback {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 5: Family and Relationships</h1>
+        <div class="lesson-header">
+            <!-- As per requirements, include this exact img tag. -->
+            <!-- Note: The actual image source "../header.webp" would be handled by the mobile app's asset system, not externally loaded by the browser. -->
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <section class="card">
+            <h2>👋 Welcome to Chapter 5!</h2>
+            <p>In this chapter, we're diving into the heart of Korean culture: <strong>family and relationships</strong>. Understanding how Koreans refer to family members and show respect is key to communicating effectively and appreciating their societal values. Let's get started!</p>
+        </section>
+
+        <section class="card">
+            <h2>👥 Family Members</h2>
+            <p>Koreans have specific terms for family members, especially older siblings, which change based on your gender. This reflects the importance of hierarchy and roles within the family!</p>
+
+            <h3>Parents</h3>
+            <div class="korean-word-container">
+                <span class="korean-word">아버지</span>
+                <span class="pronunciation">[a-beo-ji]</span>
+                <button class="audio-icon" data-audio-text="아버지" aria-label="Play audio for 아버지">🔊</button>
+                <span class="translation">Father</span>
+            </div>
+            <div class="korean-word-container">
+                <span class="korean-word">어머니</span>
+                <span class="pronunciation">[eo-meo-ni]</span>
+                <button class="audio-icon" data-audio-text="어머니" aria-label="Play audio for 어머니">🔊</button>
+                <span class="translation">Mother</span>
+            </div>
+
+            <h3>Older Siblings (Gender-Specific!)</h3>
+            <p>This is a unique and important aspect of Korean! The word you use for an older brother or sister depends on whether <em>you</em> are male or female.</p>
+
+            <h4>If YOU are male:</h4>
+            <div class="korean-word-container">
+                <span class="korean-word">형</span>
+                <span class="pronunciation">[hyeong]</span>
+                <button class="audio-icon" data-audio-text="형" aria-label="Play audio for 형">🔊</button>
+                <span class="translation">Older brother (used by males)</span>
+            </div>
+            <div class="korean-word-container">
+                <span class="korean-word">누나</span>
+                <span class="pronunciation">[nu-na]</span>
+                <button class="audio-icon" data-audio-text="누나" aria-label="Play audio for 누나">🔊</button>
+                <span class="translation">Older sister (used by males)</span>
+            </div>
+
+            <h4>If YOU are female:</h4>
+            <div class="korean-word-container">
+                <span class="korean-word">오빠</span>
+                <span class="pronunciation">[o-ppa]</span>
+                <button class="audio-icon" data-audio-text="오빠" aria-label="Play audio for 오빠">🔊</button>
+                <span class="translation">Older brother (used by females)</span>
+            </div>
+            <div class="korean-word-container">
+                <span class="korean-word">언니</span>
+                <span class="pronunciation">[eon-ni]</span>
+                <button class="audio-icon" data-audio-text="언니" aria-label="Play audio for 언니">🔊</button>
+                <span class="translation">Older sister (used by females)</span>
+            </div>
+
+            <div class="cultural-note">
+                <strong>Cultural Insight:</strong> Using the correct term for older siblings is crucial. It's not just a word; it's a sign of respect and acknowledges their position in the family hierarchy. It's even used among close friends who are older than you, to show affection and respect!
+            </div>
+
+            <h3>Younger Siblings</h3>
+            <div class="korean-word-container">
+                <span class="korean-word">동생</span>
+                <span class="pronunciation">[dong-saeng]</span>
+                <button class="audio-icon" data-audio-text="동생" aria-label="Play audio for 동생">🔊</button>
+                <span class="translation">Younger sibling (brother or sister)</span>
+            </div>
+            <p>Unlike older siblings, the term for a younger sibling is gender-neutral. If you need to specify, you can add 남 (nam - male) or 여 (yeo - female): 남동생 (younger brother) or 여동생 (younger sister).</p>
+
+            <div class="example">
+                <div class="example-line">
+                    <button class="audio-icon" data-audio-text="이분은 우리 어머니예요." aria-label="Play audio for 이분은 우리 어머니예요.">🔊</button>
+                    <span class="korean">이분은 우리 어머니예요.</span>
+                </div>
+                <div class="example-line">
+                    <span class="english">This person is my mother.</span>
+                </div>
+                <div class="example-line">
+                    <button class="audio-icon" data-audio-text="형, 잘 지냈어요?" aria-label="Play audio for 형, 잘 지냈어요?">🔊</button>
+                    <span class="korean">형, 잘 지냈어요?</span> (Male speaking)
+                </div>
+                <div class="example-line">
+                    <span class="english">Older brother, how have you been?</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 Try It! Practice Family Vocabulary</h3>
+            <p class="practice-question">Choose the correct English translation for the given Korean word.</p>
+
+            <div class="card">
+                <p class="practice-question">
+                    1. What does
+                    <button class="audio-icon" data-audio-text="누나" aria-label="Play audio for 누나">🔊</button>
+                    mean if YOU are male?
+                </p>
+                <div class="options-grid">
+                    <button class="option-button" data-correct="false">Younger brother</button>
+                    <button class="option-button" data-correct="true">Older sister</button>
+                    <button class="option-button" data-correct="false">Mother</button>
+                    <button class="option-button" data-correct="false">Older brother</button>
+                </div>
+                <div class="answer-feedback"></div>
+            </div>
+
+            <div class="card">
+                <p class="practice-question">
+                    2. Which word means "Older brother" if YOU are female?
+                    <button class="audio-icon" data-audio-text="오빠" aria-label="Play audio for 오빠">🔊</button>
+                </p>
+                <div class="options-grid">
+                    <button class="option-button" data-correct="false">형</button>
+                    <button class="option-button" data-correct="true">오빠</button>
+                    <button class="option-button" data-correct="false">누나</button>
+                    <button class="option-button" data-correct="false">언니</button>
+                </div>
+                <div class="answer-feedback"></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>🤝 Other Important Relationships</h2>
+            <p>Beyond family, these terms are essential for daily interactions:</p>
+
+            <div class="korean-word-container">
+                <span class="korean-word">친구</span>
+                <span class="pronunciation">[chin-gu]</span>
+                <button class="audio-icon" data-audio-text="친구" aria-label="Play audio for 친구">🔊</button>
+                <span class="translation">Friend</span>
+            </div>
+            <p>Used for friends who are roughly the same age as you.</p>
+
+            <div class="korean-word-container">
+                <span class="korean-word">선생님</span>
+                <span class="pronunciation">[seon-saeng-nim]</span>
+                <button class="audio-icon" data-audio-text="선생님" aria-label="Play audio for 선생님">🔊</button>
+                <span class="translation">Teacher / Sir / Madam</span>
+            </div>
+            <p>This is a very common honorific! It's used for teachers, but also for doctors, artists, or anyone in a respected profession, or simply to show respect to an older stranger whose specific title you don't know.</p>
+
+            <div class="korean-word-container">
+                <span class="korean-word">직장동료</span>
+                <span class="pronunciation">[jik-jang-dong-nyo]</span>
+                <button class="audio-icon" data-audio-text="직장동료" aria-label="Play audio for 직장동료">🔊</button>
+                <span class="translation">Colleague / Coworker</span>
+            </div>
+            <p>This term is specific to people you work with.</p>
+
+            <div class="example">
+                <div class="example-line">
+                    <button class="audio-icon" data-audio-text="이분은 제 친구예요." aria-label="Play audio for 이분은 제 친구예요.">🔊</button>
+                    <span class="korean">이분은 제 친구예요.</span>
+                </div>
+                <div class="example-line">
+                    <span class="english">This person is my friend.</span>
+                </div>
+                <div class="example-line">
+                    <button class="audio-icon" data-audio-text="선생님, 안녕하세요?" aria-label="Play audio for 선생님, 안녕하세요?">🔊</button>
+                    <span class="korean">선생님, 안녕하세요?</span>
+                </div>
+                <div class="example-line">
+                    <span class="english">Hello, Teacher (or Sir/Madam)?</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>✨ Honorifics and Polite Speech Levels</h2>
+            <p>Korean society places a high value on respect and hierarchy, which is deeply embedded in the language. This is where <strong>honorifics</strong> and <strong>speech levels</strong> come in!</p>
+
+            <h3>What are Honorifics?</h3>
+            <p>Honorifics are special words or grammatical endings used to show respect to the person you are talking to, or talking about. You've already seen an example: <strong>-님 (-nim)</strong>.</p>
+            <ul>
+                <li>Adding -님 makes a noun or title honorific.</li>
+                <li><strong>선생님 (seon-saeng-nim)</strong> is "teacher" + honorific suffix.</li>
+                <li><strong>부모님 (bu-mo-nim)</strong> means "parents" (honorific version of 부모).
+                    <button class="audio-icon" data-audio-text="부모님" aria-label="Play audio for 부모님">🔊</button>
+                </li>
+            </ul>
+            <p>Using -님 shows politeness and respect, especially towards elders or those in positions of authority.</p>
+
+            <h3>Polite Speech Levels</h3>
+            <p>While we'll dive deeper into specific speech levels in later chapters, it's important to know that Koreans adjust their speech based on who they're talking to. For beginners, it's always safest and most appropriate to use the <strong>polite (해요) speech level</strong>, which typically ends in -어요 or -아요. This is what you've been learning!</p>
+            <div class="cultural-note">
+                <strong>Cultural Insight:</strong> Always default to polite speech with strangers, elders, or people in higher social standing. Using casual speech (반말, banmal) too early can be seen as rude! It's reserved for close friends and those younger than you.
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>🇰🇷 Cultural Aspects of Korean Family Structure</h2>
+            <p>The family (가족, ga-jok <button class="audio-icon" data-audio-text="가족" aria-label="Play audio for 가족">🔊</button>) is the fundamental unit of Korean society, and its structure heavily influences social interactions.</p>
+
+            <h3>1. Respect for Elders (효, Hyo)</h3>
+            <ul>
+                <li><strong>Filial Piety:</strong> This is a core Confucian value, emphasizing deep respect, care, and obedience towards parents and elders.</li>
+                <li>Elders are highly respected, and their wisdom is valued. This is why honorifics and polite speech are so crucial.</li>
+            </ul>
+
+            <h3>2. Hierarchy within the Family</h3>
+            <ul>
+                <li>Age and gender traditionally play a role in family hierarchy. Older siblings, especially males, often have more responsibility and authority.</li>
+                <li>This is reflected in the gender-specific terms for older siblings (형, 오빠, 누나, 언니) which emphasize the age difference and relationship dynamics.</li>
+            </ul>
+
+            <h3>3. Importance of Family Bonds</h3>
+            <ul>
+                <li>Family loyalty and unity are paramount. Extended families often maintain close ties.</li>
+                <li>Family celebrations and gatherings are very important, reinforcing communal bonds.</li>
+            </ul>
+
+            <h3>4. Family Names (성, Seong)</h3>
+            <ul>
+                <li>Korean family names come first, followed by the given name (e.g., Kim Min-jun, where Kim is the family name).</li>
+                <li>The three most common family names are Kim (김), Lee (이), and Park (박).</li>
+            </ul>
+        </section>
+
+        <section class="summary-card">
+            <h2>✨ Chapter 5 Summary ✨</h2>
+            <p>Great job! You've learned essential vocabulary for family and relationships in Korean, and gained valuable insight into Korean culture.</p>
+            <ul>
+                <li><strong>Family Vocabulary:</strong> 아버지 (father), 어머니 (mother), 형 (older brother - male speaker), 오빠 (older brother - female speaker), 누나 (older sister - male speaker), 언니 (older sister - female speaker), 동생 (younger sibling).</li>
+                <li><strong>Other Relationships:</strong> 친구 (friend), 선생님 (teacher/sir/madam), 직장동료 (colleague).</li>
+                <li><strong>Honorifics:</strong> Remember to use <strong>-님</strong> for respect (e.g., 선생님, 부모님).</li>
+                <li><strong>Polite Speech:</strong> Always use polite speech with elders and strangers.</li>
+                <li><strong>Cultural Values:</strong> Respect for elders (효), family hierarchy, and strong family bonds are central to Korean society.</li>
+            </ul>
+            <p>Keep practicing these words and concepts. Understanding these relationships is fundamental to speaking Korean naturally and respectfully!</p>
+        </section>
+
+    </div>
+
+    <!-- JavaScript for practice section interactivity (example - this would be handled by the native mobile app's framework) -->
+    <script>
+        document.querySelectorAll('.practice-section').forEach(section => {
+            section.querySelectorAll('.card').forEach(card => {
+                const options = card.querySelectorAll('.option-button');
+                const feedbackDiv = card.querySelector('.answer-feedback');
+
+                options.forEach(option => {
+                    option.addEventListener('click', () => {
+                        // Reset previous selection and feedback
+                        options.forEach(opt => {
+                            opt.classList.remove('selected', 'correct', 'incorrect');
+                        });
+                        feedbackDiv.textContent = '';
+                        feedbackDiv.className = 'answer-feedback'; // Reset classes
+
+                        // Apply new selection
+                        option.classList.add('selected');
+
+                        // Provide feedback
+                        if (option.dataset.correct === 'true') {
+                            option.classList.add('correct');
+                            feedbackDiv.classList.add('correct');
+                            feedbackDiv.textContent = '✅ Correct!';
+                        } else {
+                            option.classList.add('incorrect');
+                            feedbackDiv.classList.add('incorrect');
+                            feedbackDiv.textContent = '❌ Incorrect. Try again!';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

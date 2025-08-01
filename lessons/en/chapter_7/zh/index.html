@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Food and Drinks</title>
+    <style>
+        /* CSS Variables for Color Scheme */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-background: #FDF9E5; /* Cream background */
+            --heading-text: #2C3E50; /* Dark blue */
+            --body-text: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* White background for general page */
+            color: var(--body-text);
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent text scaling issues */
+            text-size-adjust: 100%;
+        }
+
+        /* Responsive Container for content */
+        .container {
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto;
+            padding: 15px; /* Comfortable padding */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-text);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 28px; /* Mobile first font sizes */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 1.2em;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        li {
+            font-size: 16px;
+            margin-bottom: 0.5em;
+            padding-left: 25px; /* Space for custom bullet */
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 18px;
+            top: 0;
+        }
+
+        strong {
+            color: var(--heading-text);
+        }
+
+        em {
+            font-style: normal;
+            color: var(--primary-color);
+        }
+
+        /* Specific Header Styles */
+        .chapter-title {
+            margin-top: 20px;
+            font-size: 32px;
+            color: var(--heading-text);
+            text-align: center;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .section-block {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: 10px;
+            vertical-align: middle;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            border: none; /* Ensure no default button border */
+            padding: 0; /* Remove default button padding */
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.05);
+            background-color: darken(var(--primary-color), 10%); /* Simple darken effect */
+        }
+
+        .audio-icon span {
+            display: block;
+            line-height: 1; /* Adjust emoji vertical alignment */
+        }
+
+        /* Interactive Elements / Practice Boxes */
+        .interactive-box {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 18px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+        }
+
+        .interactive-box h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .example-block {
+            background-color: rgba(139, 95, 191, 0.08); /* Light tint of primary color */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .example-block p {
+            margin: 0;
+            font-size: 15px;
+            color: var(--heading-text);
+        }
+
+        .example-block strong {
+            color: var(--primary-color);
+        }
+
+        /* Buttons (for conceptual interaction) */
+        .button {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            padding: 12px 25px;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            min-height: 44px; /* Ensure tap target size */
+            display: flex; /* For centering content vertically */
+            align-items: center; /* For centering content vertically */
+            justify-content: center; /* For centering content horizontally */
+        }
+
+        .button:hover {
+            background-color: #7A4EAF; /* Slightly darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FFF8E1; /* Lighter cream */
+            border-left: 4px solid #FBC02D; /* A warm, inviting color */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #795548; /* Darker brown for contrast */
+        }
+
+        .cultural-note strong {
+            color: #E65100; /* Orange for emphasis */
+        }
+
+        /* Horizontal Rule for separation */
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 30px 0;
+        }
+
+        /* Responsive adjustments for larger screens (tablets and desktops) */
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            p, li, .cultural-note, .example-block p {
+                font-size: 17px;
+            }
+
+            .section-block {
+                padding: 30px;
+            }
+
+            .interactive-box {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 7: Food and Drinks</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-block">
+            <h2>🎉 欢迎来到第七章：食物与饮品！</h2>
+            <p>这一章我们将学习关于食物和饮品的英语词汇，以及如何表达你喜欢或不喜欢吃什么、喝什么。准备好开启美味的学习之旅了吗？ 😋</p>
+        </section>
+
+        <section class="section-block">
+            <h2>🍽️ 常见食物 Common Food Items</h2>
+            <p>我们先从日常最常见的食物开始学习。听一听，然后跟着读！</p>
+
+            <ul>
+                <li>
+                    <strong>Bread</strong> (面包)
+                    <button class="audio-icon" data-audio-text="Bread"><span>🔊</span></button>
+                    <p>我早上喜欢吃面包。 <br><em>I like to eat bread in the morning.</em></p>
+                </li>
+                <li>
+                    <strong>Rice</strong> (米饭)
+                    <button class="audio-icon" data-audio-text="Rice"><span>🔊</span></button>
+                    <p>米饭是中国人的主食。 <br><em>Rice is a staple food for Chinese people.</em></p>
+                </li>
+                <li>
+                    <strong>Meat</strong> (肉)
+                    <button class="audio-icon" data-audio-text="Meat"><span>🔊</span></button>
+                    <p>这顿饭有肉吗？ <br><em>Is there meat in this meal?</em></p>
+                </li>
+                <li>
+                    <strong>Vegetables</strong> (蔬菜)
+                    <button class="audio-icon" data-audio-text="Vegetables"><span>🔊</span></button>
+                    <p>多吃蔬菜对身体好。 <br><em>Eating more vegetables is good for your health.</em></p>
+                </li>
+            </ul>
+
+            <div class="interactive-box">
+                <h3>✍️ 练习一下！ Practice Time!</h3>
+                <p>将以下食物词汇与中文意思匹配：</p>
+                <p>1. Bread &nbsp; &nbsp; A. 蔬菜</p>
+                <p>2. Rice &nbsp; &nbsp; &nbsp; B. 肉</p>
+                <p>3. Meat &nbsp; &nbsp; &nbsp;C. 面包</p>
+                <p>4. Vegetables D. 米饭</p>
+                <p>答案：1. C, 2. D, 3. B, 4. A</p>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>🥤 饮品 Drinks</h2>
+            <p>除了食物，饮品也是我们日常生活中不可或缺的一部分。来学习这些词汇！</p>
+
+            <ul>
+                <li>
+                    <strong>Water</strong> (水)
+                    <button class="audio-icon" data-audio-text="Water"><span>🔊</span></button>
+                    <p>请给我一杯水。 <br><em>Could I have a glass of water, please?</em></p>
+                </li>
+                <li>
+                    <strong>Coffee</strong> (咖啡)
+                    <button class="audio-icon" data-audio-text="Coffee"><span>🔊</span></button>
+                    <p>我早上需要一杯咖啡。 <br><em>I need a cup of coffee in the morning.</em></p>
+                </li>
+                <li>
+                    <strong>Tea</strong> (茶)
+                    <button class="audio-icon" data-audio-text="Tea"><span>🔊</span></button>
+                    <p>我们一起喝茶吧。 <br><em>Let's drink tea together.</em></p>
+                </li>
+                <li>
+                    <strong>Juice</strong> (果汁)
+                    <button class="audio-icon" data-audio-text="Juice"><span>🔊</span></button>
+                    <p>我喜欢喝橙汁。 <br><em>I like orange juice.</em></p>
+                </li>
+                <li>
+                    <strong>Milk</strong> (牛奶)
+                    <button class="audio-icon" data-audio-text="Milk"><span>🔊</span></button>
+                    <p>牛奶对骨骼有好处。 <br><em>Milk is good for your bones.</em></p>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>💡 文化小贴士：茶 (Tea)</strong>
+                <p>在西方国家，"Tea" 通常指红茶（Black Tea），常与牛奶和糖一起饮用。而在中国文化中，"茶" 的种类非常丰富，如绿茶、乌龙茶、普洱茶等。如果你想特指某种茶，可以说 <em>Green Tea</em> (绿茶) 或 <em>Herbal Tea</em> (花草茶)。</p>
+            </div>
+
+            <div class="interactive-box">
+                <h3>🗣️ 大声读出来！ Read Aloud!</h3>
+                <p>选择你最喜欢的两种饮品，然后大声用英语说出来！</p>
+                <p>例如：I like <em>coffee</em> and <em>juice</em>. (我喜欢咖啡和果汁。)</p>
+                <p>你的句子是：I like ______ and ______.</p>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>👍👎 表达喜好 I like... / I don't like...</h2>
+            <p>学会了食物和饮品，现在我们来学习如何表达你喜欢或不喜欢它们。</p>
+
+            <h3>我喜欢... I like...</h3>
+            <p>结构：<strong>I like + [食物/饮品].</strong></p>
+            <div class="example-block">
+                <p><strong>I like rice.</strong> <button class="audio-icon" data-audio-text="I like rice."><span>🔊</span></button> (我喜欢米饭。)</p>
+                <p><strong>I like coffee.</strong> <button class="audio-icon" data-audio-text="I like coffee."><span>🔊</span></button> (我喜欢咖啡。)</p>
+                <p><strong>I like vegetables.</strong> <button class="audio-icon" data-audio-text="I like vegetables."><span>🔊</span></button> (我喜欢蔬菜。)</p>
+            </div>
+
+            <h3>我 D-O-N-'T- L-I-K-E... 我不喜欢... I don't like...</h3>
+            <p>结构：<strong>I don't like + [食物/饮品].</strong></p>
+            <div class="example-block">
+                <p><strong>I don't like meat.</strong> <button class="audio-icon" data-audio-text="I don't like meat."><span>🔊</span></button> (我不喜欢肉。)</p>
+                <p><strong>I don't like milk.</strong> <button class="audio-icon" data-audio-text="I don't like milk."><span>🔊</span></button> (我不喜欢牛奶。)</p>
+                <p><strong>I don't like tea.</strong> <button class="audio-icon" data-audio-text="I don't like tea."><span>🔊</span></button> (我不喜欢茶。)</p>
+            </div>
+
+            <div class="interactive-box">
+                <h3>📝 填空练习 Fill in the Blanks</h3>
+                <p>根据你的喜好，用 <em>like</em> 或 <em>don't like</em> 填空。</p>
+                <p>1. I ______ bread. (我喜欢面包)</p>
+                <p>2. I ______ coffee. (我不喜欢咖啡)</p>
+                <p>3. I ______ juice. (我喜欢果汁)</p>
+                <p>4. I ______ vegetables. (我不喜欢蔬菜)</p>
+                <p class="answer-key" style="margin-top: 15px; color: var(--primary-color);">答案：1. like, 2. don't like, 3. like, 4. don't like (答案取决于个人喜好，这里提供一种参考)</p>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>❓ 询问喜好 What do you like to eat/drink?</h2>
+            <p>当你和朋友聊天时，想知道他们喜欢什么，可以这样问：</p>
+
+            <h3>你喜欢吃什么？ What do you like to eat?</h3>
+            <p>发音：<strong style="color: var(--heading-text);">[wʌt duː juː laɪk tuː iːt]</strong></p>
+            <button class="audio-icon" data-audio-text="What do you like to eat?"><span>🔊</span></button>
+            <p>回答：<br><strong>I like rice.</strong> (我喜欢米饭。) <br><strong>I like bread.</strong> (我喜欢面包。)</p>
+
+            <h3>你喜欢喝什么？ What do you like to drink?</h3>
+            <p>发音：<strong style="color: var(--heading-text);">[wʌt duː juː laɪk tuː drɪŋk]</strong></p>
+            <button class="audio-icon" data-audio-text="What do you like to drink?"><span>🔊</span></button>
+            <p>回答：<br><strong>I like water.</strong> (我喜欢水。) <br><strong>I like juice.</strong> (我喜欢果汁。)</p>
+
+            <div class="interactive-box">
+                <h3>💬 对话练习 Dialogue Practice</h3>
+                <p>想象你正在和朋友聊天。请你提问并回答！</p>
+                <p>你：What do you like to eat?</p>
+                <p>朋友 (你来回答)：I like ______.</p>
+                <br>
+                <p>你：What do you like to drink?</p>
+                <p>朋友 (你来回答)：I like ______.</p>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <h2>🍽️ 餐厅基本词汇 Restaurant Vocabulary Basics</h2>
+            <p>下次你去国外餐厅，这些词汇能帮到你！</p>
+
+            <ul>
+                <li>
+                    <strong>Menu</strong> (菜单)
+                    <button class="audio-icon" data-audio-text="Menu"><span>🔊</span></button>
+                    <p>服务员，请给我菜单。 <br><em>Waiter, can I have the menu, please?</em></p>
+                </li>
+                <li>
+                    <strong>Order</strong> (点餐)
+                    <button class="audio-icon" data-audio-text="Order"><span>🔊</span></button>
+                    <p>我想点餐了。 <br><em>I'd like to order now.</em></p>
+                </li>
+                <li>
+                    <strong>Waiter / Waitress</strong> (服务员)
+                    <button class="audio-icon" data-audio-text="Waiter"><span>🔊</span></button> /
+                    <button class="audio-icon" data-audio-text="Waitress"><span>🔊</span></button>
+                    <p>（男服务员 / 女服务员，现在常用 Server 或直接称呼 Excuse me）</p>
+                </li>
+                <li>
+                    <strong>Bill</strong> (账单)
+                    <button class="audio-icon" data-audio-text="Bill"><span>🔊</span></button>
+                    <p>请给我账单。 <br><em>The bill, please.</em> 或者 <em>Can I have the bill, please?</em></p>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>💡 文化小贴士：小费 (Tipping)</strong>
+                <p>在很多西方国家，尤其北美，给餐厅服务员小费是一种文化习惯。通常是账单总额的15%-20%。这部分是服务员收入的重要组成部分。</p>
+            </div>
+
+            <div class="interactive-box">
+                <h3>场景模拟 Role-play</h3>
+                <p>想象你在餐厅：</p>
+                <p>你对服务员说：<em>"Excuse me, can I have the ______ , please?"</em> (请问，我可以要菜单吗？)</p>
+                <p>服务员来了，你已经想好了要点餐，对他说：<em>"I'd like to ______ ."</em> (我想点餐了。)</p>
+                <p>吃完饭，你准备结账：<em>"The ______ , please."</em> (请给我账单。)</p>
+                <p class="answer-key" style="margin-top: 15px; color: var(--primary-color);">答案：menu, order, bill</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="section-block">
+            <h2>✨ 本章总结 Chapter Summary ✨</h2>
+            <p>恭喜你完成了食物与饮品这一章的学习！让我们回顾一下本章的重点内容：</p>
+            <ul>
+                <li><strong>常见食物：</strong> Bread (面包), Rice (米饭), Meat (肉), Vegetables (蔬菜)</li>
+                <li><strong>常见饮品：</strong> Water (水), Coffee (咖啡), Tea (茶), Juice (果汁), Milk (牛奶)</li>
+                <li><strong>表达喜好：</strong>
+                    <ul>
+                        <li>I like... (我喜欢...)</li>
+                        <li>I don't like... (我不喜欢...)</li>
+                    </ul>
+                </li>
+                <li><strong>询问喜好：</strong>
+                    <ul>
+                        <li>What do you like to eat? (你喜欢吃什么？)</li>
+                        <li>What do you like to drink? (你喜欢喝什么？)</li>
+                    </ul>
+                </li>
+                <li><strong>餐厅基本词汇：</strong> Menu (菜单), Order (点餐), Waiter/Waitress (服务员), Bill (账单)</li>
+            </ul>
+            <p>多加练习这些词汇和短语，在日常生活中尝试使用它们，你会越来越流利！</p>
+            <p>保持学习的动力，下一章再见！Keep up the great work! 👋</p>
+        </section>
+
+        <div style="height: 30px;"></div> <!-- Add some space at the bottom -->
+    </div>
+</body>
+</html>

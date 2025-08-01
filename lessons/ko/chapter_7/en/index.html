@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Food and Drinks</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-color: #FDF9E5;
+            --heading-text-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* White background for the overall page */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body text size */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Container for overall lesson content */
+        .lesson-container {
+            max-width: 600px; /* Max width for mobile-first design */
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            font-weight: bold;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            text-align: center; /* Center align headings */
+        }
+
+        h1 {
+            font-size: 1.8em; /* Adjusted for mobile */
+        }
+
+        h2 {
+            font-size: 1.5em; /* Adjusted for mobile */
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.25em; /* Adjusted for mobile */
+            margin-top: 1.2em;
+            margin-bottom: 0.6em;
+        }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 1em;
+        }
+
+        /* Lesson Header */
+        .chapter-title {
+            margin-top: 25px;
+            font-size: 2em; /* Slightly larger for main chapter title */
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Korean Word & Pronunciation */
+        .korean-word {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(139, 95, 191, 0.1); /* Light primary color */
+            border-left: 5px solid var(--primary-color);
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+
+        .korean-word strong {
+            color: var(--heading-text-color);
+            font-size: 1.2em;
+            flex-grow: 1;
+        }
+
+        .korean-word .pronunciation {
+            color: var(--primary-color);
+            font-style: italic;
+            margin-left: 10px;
+            flex-shrink: 0;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-size: 2em; /* Large enough for touch */
+            cursor: pointer;
+            padding: 0; /* Remove default button padding */
+            min-width: 44px; /* Touch target size */
+            min-height: 44px; /* Touch target size */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; /* Make it round */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.15);
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Examples */
+        .example-block {
+            background-color: #F8F8F8; /* Lighter background for examples */
+            border-left: 4px solid var(--border-color);
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+
+        .example-block .korean-text {
+            color: var(--heading-text-color);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .example-block .english-text {
+            color: var(--body-text-color);
+            font-size: 0.95em;
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: rgba(139, 95, 191, 0.05); /* Very light primary background */
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+            border: 1px dashed var(--primary-color); /* Dashed border for practice */
+        }
+
+        .practice-section h3 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        .practice-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .practice-question {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .practice-answer-hint {
+            color: var(--primary-color);
+            font-style: italic;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: rgba(253, 249, 229, 0.7); /* Lighter secondary color */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+            font-size: 0.95em;
+            color: #555555;
+        }
+
+        .cultural-note strong {
+            color: var(--heading-text-color);
+        }
+
+        /* Lists */
+        ul {
+            list-style: none; /* Remove default bullets */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(224, 224, 224, 0.5);
+            display: flex;
+            align-items: center;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        li .korean-phrase {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-right: 10px;
+        }
+
+        li .english-translation {
+            color: var(--body-text-color);
+            font-size: 0.95em;
+            flex-grow: 1;
+        }
+
+        /* Buttons (if any, though audio-icon is the main interactive one) */
+        .button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            min-height: 44px; /* Touch target size */
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #6A449A; /* Slightly darker primary */
+            transform: translateY(-2px);
+        }
+
+        .button:active {
+            background-color: #55357F; /* Even darker */
+            transform: translateY(0);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-section h2 {
+            color: #FFFFFF;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .summary-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .summary-section li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 1em;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .summary-section li:last-child {
+            border-bottom: none;
+        }
+
+        .summary-section .korean-phrase {
+            color: #FFFFFF;
+            font-weight: bold;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        .summary-section .english-translation {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95em;
+        }
+
+        /* Responsive Adjustments (Mobile-first, so this is minimal) */
+        @media (min-width: 480px) {
+            .lesson-container {
+                padding: 20px;
+            }
+            .lesson-section, .practice-section, .summary-section {
+                padding: 25px 20px;
+            }
+            .korean-word, .example-block {
+                padding: 15px 20px;
+            }
+            h1 {
+                font-size: 2.2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+
+        <h1 class="chapter-title">Chapter 7: Food and Drinks</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <p>🍽️ Get ready to tantalize your taste buds! In this chapter, we're diving into the delicious world of Korean food and drinks. You'll learn essential vocabulary, common dishes, and how to express whether something is delicious (or not!).</p>
+
+        <section class="lesson-section">
+            <h2>🍚 밥 (bap) - Rice / Meal</h2>
+            <p><strong>밥 (bap)</strong> is one of the most fundamental words in Korean cuisine, meaning both "cooked rice" and "a meal." Rice is such an integral part of Korean meals that "have you eaten 밥?" is a common greeting, similar to "how are you?"</p>
+
+            <div class="korean-word">
+                <strong>밥</strong>
+                <span class="pronunciation">[bap]</span>
+                <button class="audio-icon" data-audio-text="밥" aria-label="Play pronunciation for 밥">🔊</button>
+            </div>
+
+            <div class="example-block">
+                <div class="korean-text">아침밥 먹었어요?</div>
+                <div class="english-text">Did you eat breakfast? (literally: Did you eat morning meal?)</div>
+            </div>
+            <div class="example-block">
+                <div class="korean-text">저녁밥 먹어요.</div>
+                <div class="english-text">I'm eating dinner. (literally: I'm eating evening meal.)</div>
+            </div>
+
+            <div class="cultural-note">
+                <strong>Cultural Note:</strong> In Korea, rice is not just a side dish; it's the center of almost every meal. It balances out the strong flavors of other dishes like kimchi and stews.
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🌶️ 김치 (kimchi)</h2>
+            <p>You can't talk about Korean food without mentioning <strong>김치 (kimchi)</strong>! It's a staple side dish made of fermented vegetables, most commonly napa cabbage, seasoned with chili powder, garlic, and other spices.</p>
+
+            <div class="korean-word">
+                <strong>김치</strong>
+                <span class="pronunciation">[kim-chi]</span>
+                <button class="audio-icon" data-audio-text="김치" aria-label="Play pronunciation for 김치">🔊</button>
+            </div>
+
+            <div class="example-block">
+                <div class="korean-text">저는 김치 좋아해요.</div>
+                <div class="english-text">I like kimchi.</div>
+            </div>
+
+            <div class="cultural-note">
+                <strong>Cultural Note:</strong> There are hundreds of varieties of kimchi! It's rich in probiotics and is considered incredibly healthy. Families often make large batches together during "Kimjang" season.
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🥩 불고기 (bulgogi)</h2>
+            <p><strong>불고기 (bulgogi)</strong> is one of Korea's most famous dishes, beloved worldwide! It consists of thinly sliced beef (or sometimes pork) marinated in a savory-sweet sauce and then grilled.</p>
+
+            <div class="korean-word">
+                <strong>불고기</strong>
+                <span class="pronunciation">[bul-go-gi]</span>
+                <button class="audio-icon" data-audio-text="불고기" aria-label="Play pronunciation for 불고기">🔊</button>
+            </div>
+
+            <div class="example-block">
+                <div class="korean-text">불고기 맛있어요.</div>
+                <div class="english-text">Bulgogi is delicious.</div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🥣 비빔밥 (bibimbap)</h2>
+            <p><strong>비빔밥 (bibimbap)</strong> literally means "mixed rice." It's a vibrant and healthy dish with a bowl of warm rice topped with various sautéed vegetables (나물 - namul), meat (often beef), a fried egg, and mixed with gochujang (Korean chili paste) before eating.</p>
+
+            <div class="korean-word">
+                <strong>비빔밥</strong>
+                <span class="pronunciation">[bi-bim-bap]</span>
+                <button class="audio-icon" data-audio-text="비빔밥" aria-label="Play pronunciation for 비빔밥">🔊</button>
+            </div>
+
+            <div class="example-block">
+                <div class="korean-text">비빔밥 하나 주세요.</div>
+                <div class="english-text">Please give me one bibimbap.</div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>☕ 커피 (keopi) & 🍵 차 (cha) - Coffee & Tea</h2>
+            <p>Koreans love their beverages! Coffee shops are everywhere, and tea is also very popular.</p>
+
+            <h3>커피 (keopi) - Coffee</h3>
+            <div class="korean-word">
+                <strong>커피</strong>
+                <span class="pronunciation">[keo-pi]</span>
+                <button class="audio-icon" data-audio-text="커피" aria-label="Play pronunciation for 커피">🔊</button>
+            </div>
+            <div class="example-block">
+                <div class="korean-text">커피 한 잔 주세요.</div>
+                <div class="english-text">Please give me one cup of coffee.</div>
+            </div>
+
+            <h3>차 (cha) - Tea</h3>
+            <div class="korean-word">
+                <strong>차</strong>
+                <span class="pronunciation">[cha]</span>
+                <button class="audio-icon" data-audio-text="차" aria-label="Play pronunciation for 차">🔊</button>
+            </div>
+            <div class="example-block">
+                <div class="korean-text">차 마셔요.</div>
+                <div class="english-text">I drink tea.</div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>😋 맛있다 / 맛없다 (mat-it-da / mat-eop-da) - Delicious / Not Delicious</h2>
+            <p>These two words are essential for expressing your culinary opinions! They are adjectives.</p>
+
+            <h3>맛있다 (mat-it-da) - Delicious</h3>
+            <div class="korean-word">
+                <strong>맛있다</strong>
+                <span class="pronunciation">[ma-sit-da]</span>
+                <button class="audio-icon" data-audio-text="맛있다" aria-label="Play pronunciation for 맛있다">🔊</button>
+            </div>
+            <p>Often used in its polite, conjugated form: <strong>맛있어요 (ma-si-sseo-yo)</strong>.</p>
+            <div class="example-block">
+                <div class="korean-text">이 음식 맛있어요!</div>
+                <div class="english-text">This food is delicious!</div>
+            </div>
+
+            <h3>맛없다 (mat-eop-da) - Not Delicious</h3>
+            <div class="korean-word">
+                <strong>맛없다</strong>
+                <span class="pronunciation">[ma-deop-da]</span>
+                <button class="audio-icon" data-audio-text="맛없다" aria-label="Play pronunciation for 맛없다">🔊</button>
+            </div>
+            <p>Often used in its polite, conjugated form: <strong>맛없어요 (ma-deop-sseo-yo)</strong>.</p>
+            <div class="example-block">
+                <div class="korean-text">이 김치 맛없어요.</div>
+                <div class="english-text">This kimchi is not delicious.</div>
+            </div>
+
+            <div class="practice-section">
+                <h3>✍️ Practice Time: Is it Delicious?</h3>
+                <p>Listen and say if it's delicious or not delicious in Korean (using the polite form).</p>
+
+                <div class="practice-item">
+                    <div class="practice-question">
+                        <span>1. 불고기</span>
+                        <button class="audio-icon" data-audio-text="불고기" aria-label="Play pronunciation for 불고기">🔊</button>
+                    </div>
+                    <div class="practice-answer-hint">Hint: Say "Bulgogi is delicious."</div>
+                    <div class="example-block">
+                        <div class="korean-text">불고기 맛있어요.</div>
+                        <div class="english-text">Bulgogi is delicious.</div>
+                    </div>
+                </div>
+
+                <div class="practice-item">
+                    <div class="practice-question">
+                        <span>2. 이 커피</span>
+                        <button class="audio-icon" data-audio-text="이 커피" aria-label="Play pronunciation for 이 커피">🔊</button>
+                    </div>
+                    <div class="practice-answer-hint">Hint: Say "This coffee is not delicious."</div>
+                    <div class="example-block">
+                        <div class="korean-text">이 커피 맛없어요.</div>
+                        <div class="english-text">This coffee is not delicious.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🍽️ Ordering Food at Restaurants</h2>
+            <p>Ready to order your meal in Korean? Here are some key phrases:</p>
+
+            <ul>
+                <li>
+                    <span class="korean-phrase">주세요 (ju-se-yo)</span>
+                    <button class="audio-icon" data-audio-text="주세요" aria-label="Play pronunciation for 주세요">🔊</button>
+                    <span class="english-translation"> - Please give me / I'll have... (attach to the item)</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">이거 (i-geo)</span>
+                    <button class="audio-icon" data-audio-text="이거" aria-label="Play pronunciation for 이거">🔊</button>
+                    <span class="english-translation"> - This (useful for pointing)</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">하나 (ha-na)</span>
+                    <button class="audio-icon" data-audio-text="하나" aria-label="Play pronunciation for 하나">🔊</button>
+                    <span class="english-translation"> - One (native Korean number)</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">몇 개 (myeot gae)</span>
+                    <button class="audio-icon" data-audio-text="몇 개" aria-label="Play pronunciation for 몇 개">🔊</button>
+                    <span class="english-translation"> - How many? (used with general counter '개')</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">메뉴 주세요. (me-nyu ju-se-yo)</span>
+                    <button class="audio-icon" data-audio-text="메뉴 주세요." aria-label="Play pronunciation for 메뉴 주세요.">🔊</button>
+                    <span class="english-translation"> - Menu, please.</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">물 주세요. (mul ju-se-yo)</span>
+                    <button class="audio-icon" data-audio-text="물 주세요." aria-label="Play pronunciation for 물 주세요.">🔊</button>
+                    <span class="english-translation"> - Water, please.</span>
+                </li>
+            </ul>
+
+            <h3>Putting it together:</h3>
+            <div class="example-block">
+                <div class="korean-text">김치 하나 주세요.</div>
+                <div class="english-text">Please give me one kimchi. / I'll have one kimchi.</div>
+            </div>
+            <div class="example-block">
+                <div class="korean-text">불고기 두 개 주세요.</div>
+                <div class="english-text">Please give me two bulgogi. (Use '두 개' for two general items)</div>
+            </div>
+            <div class="example-block">
+                <div class="korean-text">비빔밥 있어요?</div>
+                <div class="english-text">Do you have bibimbap? (Literally: Is bibimbap existing?)</div>
+            </div>
+
+            <div class="cultural-note">
+                <strong>Cultural Note: 반찬 (banchan)</strong>
+                When you eat at a Korean restaurant, you'll almost always be served an array of small side dishes called <strong>반찬 (banchan)</strong>, like kimchi, pickled radishes, and various vegetables. These are usually refillable for free! It's common to share food and side dishes with everyone at the table.
+            </div>
+
+            <div class="practice-section">
+                <h3>🗣️ Dialogue Practice: Ordering!</h3>
+                <p>Imagine you're at a Korean restaurant. How would you say these?</p>
+
+                <div class="practice-item">
+                    <div class="practice-question">
+                        <span>1. You: "Menu, please."</span>
+                        <button class="audio-icon" data-audio-text="메뉴 주세요." aria-label="Play pronunciation for 메뉴 주세요.">🔊</button>
+                    </div>
+                    <div class="practice-answer-hint">메뉴 주세요.</div>
+                </div>
+
+                <div class="practice-item">
+                    <div class="practice-question">
+                        <span>2. You: "I'll have one bibimbap."</span>
+                        <button class="audio-icon" data-audio-text="비빔밥 하나 주세요." aria-label="Play pronunciation for 비빔밥 하나 주세요.">🔊</button>
+                    </div>
+                    <div class="practice-answer-hint">비빔밥 하나 주세요.</div>
+                </div>
+
+                <div class="practice-item">
+                    <div class="practice-question">
+                        <span>3. You: "Water, please."</span>
+                        <button class="audio-icon" data-audio-text="물 주세요." aria-label="Play pronunciation for 물 주세요.">🔊</button>
+                    </div>
+                    <div class="practice-answer-hint">물 주세요.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ Chapter Summary</h2>
+            <p>You've just learned some fantastic vocabulary and phrases related to food and drinks in Korean! Let's recap what we covered:</p>
+            <ul>
+                <li>
+                    <span class="korean-phrase">밥</span>
+                    <span class="english-translation"> - Rice / Meal</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">김치</span>
+                    <span class="english-translation"> - Kimchi (staple fermented side dish)</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">불고기</span>
+                    <span class="english-translation"> - Bulgogi (marinated grilled beef)</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">비빔밥</span>
+                    <span class="english-translation"> - Bibimbap (mixed rice with vegetables)</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">커피</span>
+                    <span class="english-translation"> - Coffee</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">차</span>
+                    <span class="english-translation"> - Tea</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">맛있다 / 맛있어요</span>
+                    <span class="english-translation"> - Delicious / It's delicious</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">맛없다 / 맛없어요</span>
+                    <span class="english-translation"> - Not delicious / It's not delicious</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">[Item] 주세요.</span>
+                    <span class="english-translation"> - Please give me [Item]. / I'll have [Item].</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">메뉴 주세요.</span>
+                    <span class="english-translation"> - Menu, please.</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">물 주세요.</span>
+                    <span class="english-translation"> - Water, please.</span>
+                </li>
+            </ul>
+            <p>Practice these new words and phrases often, especially when you encounter Korean food! Enjoy your culinary adventures! 🍜</p>
+        </section>
+
+    </div>
+</body>
+</html>

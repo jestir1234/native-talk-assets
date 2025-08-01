@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Time and Schedules</title>
+    <style>
+        /* General Mobile-First Styles */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-background: #FDF9E5;
+            --heading-text-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Default background */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size */
+        }
+
+        .container {
+            padding: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header Specific Styles */
+        .chapter-title {
+            color: var(--heading-text-color);
+            text-align: center;
+            padding: 20px 0 10px;
+            font-size: 28px;
+            margin: 0;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            color: var(--heading-text-color);
+            font-size: 22px;
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--border-color);
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            color: var(--heading-text-color);
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        strong {
+            color: var(--heading-text-color);
+        }
+
+        em {
+            font-style: normal; /* Override default italic for emphasis */
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* List Styles */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        li {
+            background-color: #ffffff;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            gap: 10px;
+        }
+
+        li span {
+            flex-grow: 1; /* Allow text to take up available space */
+            word-break: break-word; /* Prevent long words from overflowing */
+        }
+
+        /* Example and Pronunciation Styles */
+        .example {
+            background-color: #f8f8f8;
+            border-left: 5px solid var(--primary-color);
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .example p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .pronunciation {
+            font-size: 14px;
+            color: #888;
+            font-style: italic;
+            margin-left: 5px;
+        }
+
+        /* Interactive Elements */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px; /* Make it easily tappable */
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; /* Make it circular */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            color: var(--primary-color);
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1);
+            transform: scale(1.05);
+        }
+
+        .practice-section {
+            background-color: #f4eef9;
+            border: 2px dashed var(--primary-color);
+            border-radius: 12px;
+            padding: 20px 15px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: var(--heading-text-color);
+            margin-bottom: 15px;
+            font-size: 20px;
+            border-bottom: none;
+        }
+
+        .practice-question {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            text-align: left;
+            position: relative;
+        }
+
+        .practice-question strong {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 17px;
+        }
+
+        .answer-reveal-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            min-width: 120px;
+            min-height: 44px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 10px;
+            display: inline-block; /* Ensure it respects padding and margin */
+        }
+
+        .answer-reveal-btn:hover {
+            background-color: #724da1;
+            transform: translateY(-2px);
+        }
+
+        .answer-box {
+            background-color: #e6e6fa; /* Light purple */
+            border: 1px dashed var(--primary-color);
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin-top: 15px;
+            font-size: 15px;
+            color: var(--heading-text-color);
+            display: none; /* Hidden by default */
+            text-align: left;
+        }
+
+        /* Utility classes for visual elements */
+        .highlight {
+            background-color: #fff9d7; /* Light yellow for emphasis */
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .note {
+            background-color: #e0f7fa; /* Light blue for notes */
+            border-left: 5px solid #00bcd4;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .tip {
+            font-size: 14px;
+            color: var(--primary-color);
+            margin-top: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+            margin-right: 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            section {
+                padding: 30px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            .chapter-title {
+                font-size: 36px;
+            }
+
+            .practice-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="chapter-title">Chapter 10: Time and Schedules</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2><span class="emoji">⏰</span> Telling Time in Korean</h2>
+            <p>Ready to master telling time in Korean? It's a bit unique! Korean uses two number systems for telling time: the <strong>Native Korean numbers</strong> for hours and the <strong>Sino-Korean numbers</strong> for minutes.</p>
+
+            <h3><span class="emoji">🔢</span> Native Korean Numbers for Hours (시 - <em>si</em>)</h3>
+            <p>When talking about the hour, we use Native Korean numbers (하나, 둘, 셋, 넷...). Remember, some change form when used with counters!</p>
+            <ul>
+                <li><span>1 o'clock: <strong>한 시</strong> (<em>han si</em>)</span><button class="audio-icon" data-audio-text="한 시">🔊</button></li>
+                <li><span>2 o'clock: <strong>두 시</strong> (<em>du si</em>)</span><button class="audio-icon" data-audio-text="두 시">🔊</button></li>
+                <li><span>3 o'clock: <strong>세 시</strong> (<em>se si</em>)</span><button class="audio-icon" data-audio-text="세 시">🔊</button></li>
+                <li><span>4 o'clock: <strong>네 시</strong> (<em>ne si</em>)</span><button class="audio-icon" data-audio-text="네 시">🔊</button></li>
+                <li><span>5 o'clock: <strong>다섯 시</strong> (<em>da-seot si</em>)</span><button class="audio-icon" data-audio-text="다섯 시">🔊</button></li>
+                <li><span>6 o'clock: <strong>여섯 시</strong> (<em>yeo-seot si</em>)</span><button class="audio-icon" data-audio-text="여섯 시">🔊</button></li>
+                <li><span>7 o'clock: <strong>일곱 시</strong> (<em>il-gob si</em>)</span><button class="audio-icon" data-audio-text="일곱 시">🔊</button></li>
+                <li><span>8 o'clock: <strong>여덟 시</strong> (<em>yeo-deolb si</em>)</span><button class="audio-icon" data-audio-text="여덟 시">🔊</button></li>
+                <li><span>9 o'clock: <strong>아홉 시</strong> (<em>a-hob si</em>)</span><button class="audio-icon" data-audio-text="아홉 시">🔊</button></li>
+                <li><span>10 o'clock: <strong>열 시</strong> (<em>yeol si</em>)</span><button class="audio-icon" data-audio-text="열 시">🔊</button></li>
+                <li><span>11 o'clock: <strong>열한 시</strong> (<em>yeol-han si</em>)</span><button class="audio-icon" data-audio-text="열한 시">🔊</button></li>
+                <li><span>12 o'clock: <strong>열두 시</strong> (<em>yeol-du si</em>)</span><button class="audio-icon" data-audio-text="열두 시">🔊</button></li>
+            </ul>
+            <p class="note"><span class="emoji">💡</span> Notice how 하나, 둘, 셋, 넷 change to 한, 두, 세, 네 when used with 시 (<em>si</em>).</p>
+
+            <h3><span class="emoji">🔢</span> Sino-Korean Numbers for Minutes (분 - <em>bun</em>)</h3>
+            <p>For minutes, we switch to Sino-Korean numbers. This is much simpler as the numbers don't change form!</p>
+            <ul>
+                <li><span>1 minute: <strong>일 분</strong> (<em>il bun</em>)</span><button class="audio-icon" data-audio-text="일 분">🔊</button></li>
+                <li><span>10 minutes: <strong>십 분</strong> (<em>sip bun</em>)</span><button class="audio-icon" data-audio-text="십 분">🔊</button></li>
+                <li><span>30 minutes: <strong>삼십 분</strong> (<em>sam-sip bun</em>)</span><button class="audio-icon" data-audio-text="삼십 분">🔊</button></li>
+                <li><span>55 minutes: <strong>오십오 분</strong> (<em>o-sip-o bun</em>)</span><button class="audio-icon" data-audio-text="오십오 분">🔊</button></li>
+            </ul>
+
+            <h3>Putting it Together: [Hour] 시 [Minute] 분</h3>
+            <p>The structure is Hour (Native Korean) + 시, then Minute (Sino-Korean) + 분.</p>
+            <div class="example">
+                <p>3:30 (three thirty)</p>
+                <p><strong>세 시 삼십 분</strong></p>
+                <p class="pronunciation"><em>se si sam-sip bun</em></p>
+                <button class="audio-icon" data-audio-text="세 시 삼십 분">🔊</button>
+            </div>
+            <div class="example">
+                <p>10:15 (ten fifteen)</p>
+                <p><strong>열 시 십오 분</strong></p>
+                <p class="pronunciation"><em>yeol si sip-o bun</em></p>
+                <button class="audio-icon" data-audio-text="열 시 십오 분">🔊</button>
+            </div>
+            <div class="example">
+                <p>7:05 (seven oh five)</p>
+                <p><strong>일곱 시 오 분</strong></p>
+                <p class="pronunciation"><em>il-gob si o bun</em></p>
+                <button class="audio-icon" data-audio-text="일곱 시 오 분">🔊</button>
+            </div>
+
+            <p class="note"><span class="emoji">✨</span> For "half past the hour," you can use <strong>반</strong> (<em>ban</em>), meaning "half."</p>
+            <div class="example">
+                <p>8:30 (eight thirty / half past eight)</p>
+                <p><strong>여덟 시 삼십 분</strong> OR <strong>여덟 시 반</strong></p>
+                <p class="pronunciation"><em>yeo-deolb si sam-sip bun / yeo-deolb si ban</em></p>
+                <button class="audio-icon" data-audio-text="여덟 시 삼십 분">🔊</button>
+                <button class="audio-icon" data-audio-text="여덟 시 반">🔊</button>
+            </div>
+
+            <div class="practice-section">
+                <h3><span class="emoji">📝</span> Practice: What time is it?</h3>
+                <div class="practice-question">
+                    <strong>1. 2:10</strong>
+                    <button class="answer-reveal-btn" onclick="document.getElementById('answer1').style.display = 'block';">Show Answer</button>
+                    <div id="answer1" class="answer-box">
+                        <strong>두 시 십 분</strong><br>
+                        <em>du si sip bun</em>
+                        <button class="audio-icon" data-audio-text="두 시 십 분">🔊</button>
+                    </div>
+                </div>
+                <div class="practice-question">
+                    <strong>2. 5:45</strong>
+                    <button class="answer-reveal-btn" onclick="document.getElementById('answer2').style.display = 'block';">Show Answer</button>
+                    <div id="answer2" class="answer-box">
+                        <strong>다섯 시 사십오 분</strong><br>
+                        <em>da-seot si sa-sip-o bun</em>
+                        <button class="audio-icon" data-audio-text="다섯 시 사십오 분">🔊</button>
+                    </div>
+                </div>
+                <div class="practice-question">
+                    <strong>3. 11:00</strong>
+                    <button class="answer-reveal-btn" onclick="document.getElementById('answer3').style.display = 'block';">Show Answer</button>
+                    <div id="answer3" class="answer-box">
+                        <strong>열한 시</strong><br>
+                        <em>yeol-han si</em>
+                        <button class="audio-icon" data-audio-text="열한 시">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="emoji">🗓️</span> Days of the Week (요일 - <em>yo-il</em>)</h2>
+            <p>Learning the days of the week is essential for scheduling!</p>
+            <ul>
+                <li><span>Monday: <strong>월요일</strong> (<em>wol-yo-il</em>)</span><button class="audio-icon" data-audio-text="월요일">🔊</button></li>
+                <li><span>Tuesday: <strong>화요일</strong> (<em>hwa-yo-il</em>)</span><button class="audio-icon" data-audio-text="화요일">🔊</button></li>
+                <li><span>Wednesday: <strong>수요일</strong> (<em>su-yo-il</em>)</span><button class="audio-icon" data-audio-text="수요일">🔊</button></li>
+                <li><span>Thursday: <strong>목요일</strong> (<em>mok-yo-il</em>)</span><button class="audio-icon" data-audio-text="목요일">🔊</button></li>
+                <li><span>Friday: <strong>금요일</strong> (<em>geum-yo-il</em>)</span><button class="audio-icon" data-audio-text="금요일">🔊</button></li>
+                <li><span>Saturday: <strong>토요일</strong> (<em>to-yo-il</em>)</span><button class="audio-icon" data-audio-text="토요일">🔊</button></li>
+                <li><span>Sunday: <strong>일요일</strong> (<em>il-yo-il</em>)</span><button class="audio-icon" data-audio-text="일요일">🔊</button></li>
+            </ul>
+            <p class="note"><span class="emoji">💡</span> The suffix <strong>-요일</strong> (<em>-yo-il</em>) means "day of the week." The first syllable of each day usually corresponds to an element or celestial body (e.g., 월 = moon/Monday, 화 = fire/Tuesday).</p>
+
+            <h3>Asking "What day is it?"</h3>
+            <div class="example">
+                <p>What day is it?</p>
+                <p><strong>무슨 요일이에요?</strong></p>
+                <p class="pronunciation"><em>mu-seun yo-il-i-e-yo?</em></p>
+                <button class="audio-icon" data-audio-text="무슨 요일이에요?">🔊</button>
+            </div>
+            <div class="example">
+                <p>It's Friday.</p>
+                <p><strong>금요일이에요.</strong></p>
+                <p class="pronunciation"><em>geum-yo-il-i-e-yo.</em></p>
+                <button class="audio-icon" data-audio-text="금요일이에요.">🔊</button>
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="emoji">📅</span> Dates (날짜 - <em>nal-jja</em>)</h2>
+            <p>Dates also use Sino-Korean numbers. The order is Year, Month, Day.</p>
+
+            <h3>Months (월 - <em>wol</em>)</h3>
+            <p>Just add Sino-Korean numbers before <strong>월</strong> (<em>wol</em> - month).</p>
+            <ul>
+                <li><span>January: <strong>일 월</strong> (<em>il wol</em>)</span><button class="audio-icon" data-audio-text="일 월">🔊</button></li>
+                <li><span>February: <strong>이 월</strong> (<em>i wol</em>)</span><button class="audio-icon" data-audio-text="이 월">🔊</button></li>
+                <li><span>June: <strong>유 월</strong> (<em>yu wol</em>) - <span class="highlight">Note the change!</span></span><button class="audio-icon" data-audio-text="유 월">🔊</button></li>
+                <li><span>October: <strong>시 월</strong> (<em>si wol</em>) - <span class="highlight">Note the change!</span></span><button class="audio-icon" data-audio-text="시 월">🔊</button></li>
+                <li><span>December: <strong>십이 월</strong> (<em>sip-i wol</em>)</span><button class="audio-icon" data-audio-text="십이 월">🔊</button></li>
+            </ul>
+            <p class="note"><span class="emoji">❗</span> For June (육월) and October (십월), the final consonant is dropped, becoming <strong>유월</strong> and <strong>시월</strong>.</p>
+
+            <h3>Days (일 - <em>il</em>)</h3>
+            <p>Simply use Sino-Korean numbers before <strong>일</strong> (<em>il</em> - day).</p>
+            <ul>
+                <li><span>Day 1: <strong>일 일</strong> (<em>il il</em>)</span><button class="audio-icon" data-audio-text="일 일">🔊</button></li>
+                <li><span>Day 15: <strong>십오 일</strong> (<em>sip-o il</em>)</span><button class="audio-icon" data-audio-text="십오 일">🔊</button></li>
+                <li><span>Day 31: <strong>삼십일 일</strong> (<em>sam-sip-il il</em>)</span><button class="audio-icon" data-audio-text="삼십일 일">🔊</button></li>
+            </ul>
+
+            <h3>Years (년 - <em>nyeon</em>)</h3>
+            <p>Sino-Korean numbers followed by <strong>년</strong> (<em>nyeon</em> - year).</p>
+            <div class="example">
+                <p>2023: <strong>이천이십삼 년</strong></p>
+                <p class="pronunciation"><em>i-cheon-i-sip-sam nyeon</em></p>
+                <button class="audio-icon" data-audio-text="이천이십삼 년">🔊</button>
+            </div>
+
+            <h3>Full Date Format: [Year]년 [Month]월 [Day]일</h3>
+            <div class="example">
+                <p>January 1st, 2024</p>
+                <p><strong>이천이십사 년 일 월 일 일</strong></p>
+                <p class="pronunciation"><em>i-cheon-i-sip-sa nyeon il wol il il</em></p>
+                <button class="audio-icon" data-audio-text="이천이십사 년 일 월 일 일">🔊</button>
+            </div>
+            <div class="example">
+                <p>July 25th</p>
+                <p><strong>칠 월 이십오 일</strong></p>
+                <p class="pronunciation"><em>chil wol i-sip-o il</em></p>
+                <button class="audio-icon" data-audio-text="칠 월 이십오 일">🔊</button>
+            </div>
+
+            <div class="practice-section">
+                <h3><span class="emoji">✍️</span> Practice: Write the Date!</h3>
+                <div class="practice-question">
+                    <strong>1. March 14th</strong>
+                    <button class="answer-reveal-btn" onclick="document.getElementById('date_answer1').style.display = 'block';">Show Answer</button>
+                    <div id="date_answer1" class="answer-box">
+                        <strong>삼 월 십사 일</strong><br>
+                        <em>sam wol sip-sa il</em>
+                        <button class="audio-icon" data-audio-text="삼 월 십사 일">🔊</button>
+                    </div>
+                </div>
+                <div class="practice-question">
+                    <strong>2. December 25th</strong>
+                    <button class="answer-reveal-btn" onclick="document.getElementById('date_answer2').style.display = 'block';">Show Answer</button>
+                    <div id="date_answer2" class="answer-box">
+                        <strong>십이 월 이십오 일</strong><br>
+                        <em>sip-i wol i-sip-o il</em>
+                        <button class="audio-icon" data-audio-text="십이 월 이십오 일">🔊</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="emoji">🤝</span> Appointments & Scheduling (약속 - <em>yak-sok</em>)</h2>
+            <p>Making plans and appointments is a key skill. The word for "appointment" or "promise" is <strong>약속</strong> (<em>yak-sok</em>).</p>
+
+            <h3>Useful Phrases for Scheduling</h3>
+            <ul>
+                <li><span>What time is it? (Polite)</span><br><strong>몇 시예요?</strong> (<em>myeot si-ye-yo?</em>)<button class="audio-icon" data-audio-text="몇 시예요?">🔊</button></li>
+                <li><span>What day is it? (Polite)</span><br><strong>무슨 요일이에요?</strong> (<em>mu-seun yo-il-i-e-yo?</em>)<button class="audio-icon" data-audio-text="무슨 요일이에요?">🔊</button></li>
+                <li><span>When?</span><br><strong>언제?</strong> (<em>eon-je?</em>)<button class="audio-icon" data-audio-text="언제?">🔊</button></li>
+                <li><span>I have an appointment.</span><br><strong>약속이 있어요.</strong> (<em>yak-sog-i i-sseo-yo.</em>)<button class="audio-icon" data-audio-text="약속이 있어요.">🔊</button></li>
+                <li><span>Do you have time? / Are you available?</span><br><strong>시간 있어요?</strong> (<em>si-gan i-sseo-yo?</em>)<button class="audio-icon" data-audio-text="시간 있어요?">🔊</button></li>
+                <li><span>How about [time/day]?</span><br><strong>[시간/요일] 어때요?</strong> (<em>[si-gan/yo-il] eo-ttae-yo?</em>)<button class="audio-icon" data-audio-text="어때요?">🔊</button></li>
+                <li><span>Let's meet at [time].</span><br><strong>[시간]에 만나요.</strong> (<em>[si-gan]-e man-na-yo.</em>)<button class="audio-icon" data-audio-text="만나요">🔊</button></li>
+                <li><span>See you on [day].</span><br><strong>[요일]에 봐요.</strong> (<em>[yo-il]-e bwa-yo.</em>)<button class="audio-icon" data-audio-text="봐요">🔊</button></li>
+            </ul>
+
+            <div class="example">
+                <p>A: When should we meet?</p>
+                <p><strong>A: 언제 만날까요?</strong> (<em>eon-je man-nal-kka-yo?</em>)<button class="audio-icon" data-audio-text="언제 만날까요?">🔊</button></p>
+                <p>B: How about Saturday at 3 PM?</p>
+                <p><strong>B: 토요일 오후 세 시 어때요?</strong> (<em>to-yo-il o-hu se si eo-ttae-yo?</em>)<button class="audio-icon" data-audio-text="토요일 오후 세 시 어때요?">🔊</button></p>
+            </div>
+            <div class="example">
+                <p>A: Do you have time on Tuesday?</p>
+                <p><strong>A: 화요일에 시간 있어요?</strong> (<em>hwa-yo-il-e si-gan i-sseo-yo?</em>)<button class="audio-icon" data-audio-text="화요일에 시간 있어요?">🔊</button></p>
+                <p>B: Yes, I have time.</p>
+                <p><strong>B: 네, 시간 있어요.</strong> (<em>ne, si-gan i-sseo-yo.</em>)<button class="audio-icon" data-audio-text="네, 시간 있어요.">🔊</button></p>
+            </div>
+            <p class="note"><span class="emoji">📍</span> <strong>오전</strong> (<em>o-jeon</em>) means AM and <strong>오후</strong> (<em>o-hu</em>) means PM. They come before the time, just like in English.</p>
+            <div class="example">
+                <p>10 AM: <strong>오전 열 시</strong> (<em>o-jeon yeol si</em>)</p>
+                <p><button class="audio-icon" data-audio-text="오전 열 시">🔊</button></p>
+                <p>3 PM: <strong>오후 세 시</strong> (<em>o-hu se si</em>)</p>
+                <p><button class="audio-icon" data-audio-text="오후 세 시">🔊</button></p>
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="emoji">⏳</span> Past, Present, Future Time Expressions</h2>
+            <p>These adverbs and phrases are crucial for talking about when something happened or will happen.</p>
+
+            <h3>General Time Adverbs</h3>
+            <ul>
+                <li><span>Now: <strong>지금</strong> (<em>ji-geum</em>)</span><button class="audio-icon" data-audio-text="지금">🔊</button></li>
+                <li><span>Today: <strong>오늘</strong> (<em>o-neul</em>)</span><button class="audio-icon" data-audio-text="오늘">🔊</button></li>
+                <li><span>Tomorrow: <strong>내일</strong> (<em>nae-il</em>)</span><button class="audio-icon" data-audio-text="내일">🔊</button></li>
+                <li><span>Yesterday: <strong>어제</strong> (<em>eo-je</em>)</span><button class="audio-icon" data-audio-text="어제">🔊</button></li>
+                <li><span>Every day: <strong>매일</strong> (<em>mae-il</em>)</span><button class="audio-icon" data-audio-text="매일">🔊</button></li>
+            </ul>
+
+            <h3>Past Time Expressions</h3>
+            <ul>
+                <li><span>Last week: <strong>지난 주</strong> (<em>ji-nan ju</em>)</span><button class="audio-icon" data-audio-text="지난 주">🔊</button></li>
+                <li><span>Last month: <strong>지난 달</strong> (<em>ji-nan dal</em>)</span><button class="audio-icon" data-audio-text="지난 달">🔊</button></li>
+                <li><span>Last year: <strong>작년</strong> (<em>jak-nyeon</em>)</span><button class="audio-icon" data-audio-text="작년">🔊</button></li>
+                <li><span>A while ago: <strong>아까</strong> (<em>a-kka</em>) - for very recent past</span><button class="audio-icon" data-audio-text="아까">🔊</button></li>
+            </ul>
+            <div class="example">
+                <p>I ate lunch yesterday.</p>
+                <p><strong>어제 점심 먹었어요.</strong></p>
+                <p class="pronunciation"><em>eo-je jeom-sim meog-eo-sseo-yo.</em></p>
+                <button class="audio-icon" data-audio-text="어제 점심 먹었어요.">🔊</button>
+            </div>
+
+            <h3>Future Time Expressions</h3>
+            <ul>
+                <li><span>Next week: <strong>다음 주</strong> (<em>da-eum ju</em>)</span><button class="audio-icon" data-audio-text="다음 주">🔊</button></li>
+                <li><span>Next month: <strong>다음 달</strong> (<em>da-eum dal</em>)</span><button class="audio-icon" data-audio-text="다음 달">🔊</button></li>
+                <li><span>Next year: <strong>내년</strong> (<em>nae-nyeon</em>)</span><button class="audio-icon" data-audio-text="내년">🔊</button></li>
+                <li><span>Later: <strong>나중에</strong> (<em>na-jung-e</em>)</span><button class="audio-icon" data-audio-text="나중에">🔊</button></li>
+                <li><span>In a moment / Soon: <strong>곧</strong> (<em>got</em>)</span><button class="audio-icon" data-audio-text="곧">🔊</button></li>
+            </ul>
+            <div class="example">
+                <p>I will travel next year.</p>
+                <p><strong>내년에는 여행 갈 거예요.</strong></p>
+                <p class="pronunciation"><em>nae-nyeon-e-neun yeo-haeng gal geo-ye-yo.</em></p>
+                <button class="audio-icon" data-audio-text="내년에는 여행 갈 거예요.">🔊</button>
+            </div>
+            <div class="example">
+                <p>I will eat later.</p>
+                <p><strong>나중에 먹을게요.</strong></p>
+                <p class="pronunciation"><em>na-jung-e meog-eul-ge-yo.</em></p>
+                <button class="audio-icon" data-audio-text="나중에 먹을게요.">🔊</button>
+            </div>
+            <p class="tip"><span class="emoji">💡</span> Remember to attach the time particle <strong>-에</strong> (<em>-e</em>) to specific times or days (e.g., <strong>세 시에</strong> - <em>at three o'clock</em>, <strong>월요일에</strong> - <em>on Monday</em>). However, it's generally omitted for "now," "today," "tomorrow," "yesterday," "every day," "when."</p>
+        </section>
+
+        <section class="summary-section">
+            <h2><span class="emoji">✨</span> Chapter 10 Summary</h2>
+            <p>You've successfully navigated the world of time and schedules in Korean! Here's a quick recap of what you learned:</p>
+            <ul>
+                <li><strong>Telling Time:</strong> Native Korean numbers for hours (<strong>시</strong>) and Sino-Korean numbers for minutes (<strong>분</strong>). Remember the special forms for 한, 두, 세, 네.</li>
+                <li><strong>Days of the Week:</strong> All end with <strong>-요일</strong> (<em>-yo-il</em>). From 월요일 (Monday) to 일요일 (Sunday).</li>
+                <li><strong>Dates:</strong> Sino-Korean numbers for years (<strong>년</strong>), months (<strong>월</strong>), and days (<strong>일</strong>). Don't forget the special cases for June (유월) and October (시월)!</li>
+                <li><strong>Making Plans:</strong> Key phrases like <strong>몇 시예요?</strong> (What time is it?), <strong>언제?</strong> (When?), and using <strong>약속</strong> (appointment).</li>
+                <li><strong>Time Expressions:</strong> Essential words for past (어제, 지난 주), present (지금, 오늘), and future (내일, 다음 주) events.</li>
+            </ul>
+            <p>Great job! Knowing how to talk about time will open up so many more conversations in Korean. Keep practicing and applying these new words and phrases in your daily life!</p>
+        </section>
+
+    </div>
+
+    <!-- Simple JS to handle answer reveals - in a real app, this would be handled by the framework -->
+    <script>
+        document.querySelectorAll('.answer-reveal-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const answerId = this.getAttribute('onclick').match(/'(.*?)'/)[1];
+                document.getElementById(answerId).style.display = 'block';
+                this.style.display = 'none'; // Hide button after click
+            });
+        });
+        // The actual audio interaction will be injected by the frontend (React Native TTS)
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Numbers and Counting</title>
+    <style>
+        /* Global Styles & Mobile-First Base */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-background: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            background-color: var(--secondary-background);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 1rem; /* Minimum 16px for body text */
+            padding: 15px; /* Overall padding for mobile screens */
+        }
+
+        .container {
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto; /* Center container */
+            background-color: var(--secondary-background); /* Cream background for the main content area */
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden; /* Ensures border-radius applies to children */
+            border: 1px solid var(--border-color); /* A subtle border for the container */
+        }
+
+        /* Required Header Structure & Styles */
+        .chapter-title {
+            color: var(--heading-text-color);
+            font-size: 1.8rem; /* Approx 28px for h1 */
+            text-align: center;
+            padding: 20px 15px 10px;
+            background-color: var(--secondary-background);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .lesson-header {
+            margin: 20px 0; /* Required margin */
+            text-align: center;
+            padding: 0 15px; /* Padding for image to not touch edges */
+        }
+
+        .lesson-header-image {
+            width: 100%; /* Required width */
+            max-width: 600px; /* Required max-width */
+            height: auto; /* Required height */
+            border-radius: 8px; /* Required border-radius */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Required box-shadow */
+            display: block; /* Required display */
+            margin: 0 auto; /* Required margin */
+            border: 1px solid var(--border-color); /* Added for better visual separation */
+        }
+
+        h2, h3 {
+            color: var(--heading-text-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            padding: 0 15px; /* Match section padding */
+        }
+        h2 { font-size: 1.5rem; /* Approx 24px */ }
+        h3 { font-size: 1.3rem; /* Approx 20px */ }
+
+        p {
+            margin-bottom: 15px;
+            padding: 0 15px; /* Match section padding */
+        }
+
+        ul {
+            list-style: none; /* No default bullets */
+            padding: 0 15px 0 30px; /* Indent for list items, but no bullet space */
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            position: relative; /* For custom bullets */
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: -20px;
+            color: var(--primary-color);
+            font-size: 0.9em;
+        }
+
+        strong {
+            color: var(--primary-color); /* Highlight important terms */
+            font-weight: bold;
+        }
+
+        em {
+            font-style: italic;
+            color: #555;
+        }
+
+        /* Lesson Sections */
+        .lesson-section, .lesson-summary {
+            background-color: var(--secondary-background); /* Cream background for sections */
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .lesson-section:last-of-type, .lesson-summary {
+            border-bottom: none; /* No border for the last section/summary */
+        }
+
+        .korean-example {
+            background-color: #F8F8F8; /* A lighter gray for example boxes */
+            border-left: 5px solid var(--primary-color);
+            padding: 10px 15px;
+            margin: 15px 15px 20px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        .korean-example p {
+            margin-bottom: 5px;
+            padding: 0; /* Remove extra padding inherited from p */
+        }
+        .korean-example p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation-guide {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 5px;
+            display: block; /* Ensure it takes full width below the word */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px; /* Minimum tappable area */
+            min-height: 44px; /* Minimum tappable area */
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            vertical-align: middle; /* Align with text */
+            margin-left: 8px;
+            border: none; /* Remove button default border */
+            outline: none; /* Remove outline on focus for a cleaner look */
+            padding: 0; /* Remove default button padding */
+        }
+        .audio-icon:hover {
+            background-color: #6A459C; /* Darker primary for hover */
+            transform: scale(1.05);
+        }
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #FFFFFF; /* White background for practice box to stand out */
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 15px; /* Margin from the sides of the lesson section */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: var(--heading-text-color);
+            padding: 0; /* Remove inherited padding */
+        }
+
+        .practice-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .practice-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%; /* Full width for mobile */
+            min-height: 44px; /* Ensure sufficient tap area */
+            max-width: 300px; /* Max width for larger screens */
+            margin: 0 auto; /* Center button */
+            display: block; /* Ensure block-level for centering */
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            text-align: center;
+        }
+        .practice-button:hover {
+            background-color: #6A459C; /* Darker primary for hover */
+            transform: translateY(-2px);
+        }
+        .practice-button:active {
+            transform: translateY(0);
+        }
+
+        /* Code snippets for math */
+        code {
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            background-color: #EEE;
+            padding: 2px 4px;
+            border-radius: 3px;
+            color: #444;
+        }
+
+        /* Responsive adjustments for larger screens */
+        @media (min-width: 768px) {
+            body {
+                padding: 30px;
+            }
+            .chapter-title {
+                font-size: 2.2rem; /* Larger for desktop */
+                padding: 30px 20px 15px;
+            }
+            h2 { font-size: 1.8rem; }
+            h3 { font-size: 1.5rem; }
+            p, ul {
+                font-size: 1.05rem; /* Slightly larger text */
+            }
+            .lesson-section, .lesson-summary {
+                padding: 30px 0;
+            }
+            .practice-section {
+                padding: 30px;
+                margin: 30px 25px;
+            }
+            .practice-options {
+                flex-direction: row; /* Options side-by-side */
+                justify-content: center;
+                gap: 20px;
+            }
+            .practice-button {
+                width: auto; /* Allow buttons to size based on content */
+                min-width: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 3: Numbers and Counting</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>Welcome to Chapter 3: Mastering Numbers! 🔢</h2>
+            <p>Ready to count like a pro in Korean? This chapter is your go-to guide for all things numbers, from simple counting to tackling dates, money, and even basic math. You'll learn that Korean uses <em>two</em> different sets of numbers – don't worry, we'll make it crystal clear!</p>
+            <p>Let's dive in!</p>
+        </section>
+
+        <section class="lesson-section">
+            <h3>Part 1: The Basics - Korean Numbers 1-10</h3>
+            <p>Before we explore the two main number systems, let's get familiar with the fundamental Korean numbers from 1 to 10. These forms are often the building blocks for larger numbers in both systems.</p>
+            <ul>
+                <li><strong>일</strong> (il) <span class="pronunciation-guide">"eel"</span> <button class="audio-icon" data-audio-text="일">🔊</button> - One</li>
+                <li><strong>이</strong> (i) <span class="pronunciation-guide">"ee"</span> <button class="audio-icon" data-audio-text="이">🔊</button> - Two</li>
+                <li><strong>삼</strong> (sam) <span class="pronunciation-guide">"sahm"</span> <button class="audio-icon" data-audio-text="삼">🔊</button> - Three</li>
+                <li><strong>사</strong> (sa) <span class="pronunciation-guide">"sah"</span> <button class="audio-icon" data-audio-text="사">🔊</button> - Four</li>
+                <li><strong>오</strong> (o) <span class="pronunciation-guide">"oh"</span> <button class="audio-icon" data-audio-text="오">🔊</button> - Five</li>
+                <li><strong>육</strong> (yuk) <span class="pronunciation-guide">"yook"</span> <button class="audio-icon" data-audio-text="육">🔊</button> - Six</li>
+                <li><strong>칠</strong> (chil) <span class="pronunciation-guide">"cheel"</span> <button class="audio-icon" data-audio-text="칠">🔊</button> - Seven</li>
+                <li><strong>팔</strong> (pal) <span class="pronunciation-guide">"pahl"</span> <button class="audio-icon" data-audio-text="팔">🔊</button> - Eight</li>
+                <li><strong>구</strong> (gu) <span class="pronunciation-guide">"goo"</span> <button class="audio-icon" data-audio-text="구">🔊</button> - Nine</li>
+                <li><strong>십</strong> (sip) <span class="pronunciation-guide">"sheep"</span> <button class="audio-icon" data-audio-text="십">🔊</button> - Ten</li>
+            </ul>
+        </section>
+
+        <section class="lesson-section">
+            <h3>Part 2: Sino-Korean Numbers - For Dates, Money, Phone Numbers 💰</h3>
+            <p>The <strong>Sino-Korean</strong> number system is derived from Chinese characters. You'll primarily use these numbers for:</p>
+            <ul>
+                <li><strong>Money</strong> (e.g., Won 💰)</li>
+                <li><strong>Dates</strong> (years, months, days 📅)</li>
+                <li><strong>Phone numbers</strong> (📱)</li>
+                <li><strong>Minutes</strong> (⏰)</li>
+                <li><strong>Floors</strong>, <strong>address numbers</strong>, and numbers <strong>over 100</strong>.</li>
+            </ul>
+            <p>Sino-Korean numbers build up logically, similar to English:</p>
+            <ul>
+                <li><strong>11:</strong> 십일 (sib-il) <span class="pronunciation-guide">"sheep-eel"</span> <button class="audio-icon" data-audio-text="십일">🔊</button> <em>(10 + 1)</em></li>
+                <li><strong>20:</strong> 이십 (i-sip) <span class="pronunciation-guide">"ee-sheep"</span> <button class="audio-icon" data-audio-text="이십">🔊</button> <em>(2 x 10)</em></li>
+                <li><strong>35:</strong> 삼십오 (sam-sip-o) <span class="pronunciation-guide">"sahm-sheep-oh"</span> <button class="audio-icon" data-audio-text="삼십오">🔊</button> <em>(3 x 10 + 5)</em></li>
+                <li><strong>100:</strong> 백 (baek) <span class="pronunciation-guide">"baek"</span> <button class="audio-icon" data-audio-text="백">🔊</button></li>
+                <li><strong>1,000:</strong> 천 (cheon) <span class="pronunciation-guide">"chun"</span> <button class="audio-icon" data-audio-text="천">🔊</button></li>
+                <li><strong>10,000:</strong> 만 (man) <span class="pronunciation-guide">"mahn"</span> <button class="audio-icon" data-audio-text="만">🔊</button></li>
+            </ul>
+
+            <h4>Practical Examples:</h4>
+            <div class="korean-example">
+                <p><strong>오천 원</strong></p>
+                <p>O-cheon won</p>
+                <p>Five thousand won (money)</p>
+                <button class="audio-icon" data-audio-text="오천 원">🔊</button>
+            </div>
+            <div class="korean-example">
+                <p><strong>이천이십사 년</strong></p>
+                <p>I-cheon-i-sip-sa nyeon</p>
+                <p>Year 2024 (2000 + 20 + 4 + year)</p>
+                <button class="audio-icon" data-audio-text="이천이십사 년">🔊</button>
+            </div>
+            <div class="korean-example">
+                <p><strong>삼십오 분</strong></p>
+                <p>Sam-sip-o bun</p>
+                <p>35 minutes</p>
+                <button class="audio-icon" data-audio-text="삼십오 분">🔊</button>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-question">Practice: How would you say "15,000 Won" using Sino-Korean numbers?</div>
+                <div class="practice-options">
+                    <button class="practice-button" data-answer="Incorrect">십오천 원</button>
+                    <button class="practice-button" data-answer="Correct">만오천 원</button>
+                    <button class="practice-button" data-answer="Incorrect">하나 오천 원</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>Part 3: Pure Korean Numbers - For Counting Objects 🍎</h3>
+            <p>The <strong>Pure Korean</strong> number system is used for counting objects, people, age, and hours. It's used for numbers up to 99, after which Sino-Korean takes over. You'll notice a special change for numbers 1-4 when a counter word follows them!</p>
+
+            <h4>Pure Korean Numbers 1-10:</h4>
+            <ul>
+                <li><strong>하나</strong> (hana) <span class="pronunciation-guide">"hah-nah"</span> <button class="audio-icon" data-audio-text="하나">🔊</button> - One</li>
+                <li><strong>둘</strong> (dul) <span class="pronunciation-guide">"dool"</span> <button class="audio-icon" data-audio-text="둘">🔊</button> - Two</li>
+                <li><strong>셋</strong> (set) <span class="pronunciation-guide">"set"</span> <button class="audio-icon" data-audio-text="셋">🔊</button> - Three</li>
+                <li><strong>넷</strong> (net) <span class="pronunciation-guide">"net"</span> <button class="audio-icon" data-audio-text="넷">🔊</button> - Four</li>
+                <li><strong>다섯</strong> (daseot) <span class="pronunciation-guide">"dah-seot"</span> <button class="audio-icon" data-audio-text="다섯">🔊</button> - Five</li>
+                <li><strong>여섯</strong> (yeoseot) <span class="pronunciation-guide">"yuh-seot"</span> <button class="audio-icon" data-audio-text="여섯">🔊</button> - Six</li>
+                <li><strong>일곱</strong> (ilgop) <span class="pronunciation-guide">"eel-gop"</span> <button class="audio-icon" data-audio-text="일곱">🔊</button> - Seven</li>
+                <li><strong>여덟</strong> (yeodeol) <span class="pronunciation-guide">"yuh-deol"</span> <button class="audio-icon" data-audio-text="여덟">🔊</button> - Eight</li>
+                <li><strong>아홉</strong> (ahop) <span class="pronunciation-guide">"ah-hop"</span> <button class="audio-icon" data-audio-text="아홉">🔊</button> - Nine</li>
+                <li><strong>열</strong> (yeol) <span class="pronunciation-guide">"yul"</span> <button class="audio-icon" data-audio-text="열">🔊</button> - Ten</li>
+            </ul>
+
+            <h4>Pure Korean Tens (and Special Forms!):</h4>
+            <p>When used with a counter, <strong>하나, 둘, 셋, 넷,</strong> and <strong>스물</strong> (20) shorten their forms:</p>
+            <ul>
+                <li>하나 ➡️ <strong>한</strong> (han)</li>
+                <li>둘 ➡️ <strong>두</strong> (du)</li>
+                <li>셋 ➡️ <strong>세</strong> (se)</li>
+                <li>넷 ➡️ <strong>네</strong> (ne)</li>
+                <li>스물 (seumul - 20) ➡️ <strong>스무</strong> (seumu)</li>
+            </ul>
+            <p>Other tens are regular:</p>
+            <ul>
+                <li><strong>서른</strong> (seoreun) <span class="pronunciation-guide">"suh-reun"</span> <button class="audio-icon" data-audio-text="서른">🔊</button> - 30</li>
+                <li><strong>마흔</strong> (maheun) <span class="pronunciation-guide">"mah-heun"</span> <button class="audio-icon" data-audio-text="마흔">🔊</button> - 40</li>
+                <li><strong>쉰</strong> (swin) <span class="pronunciation-guide">"shwin"</span> <button class="audio-icon" data-audio-text="쉰">🔊</button> - 50</li>
+                <li>... all the way up to <strong>아흔</strong> (aheun) <span class="pronunciation-guide">"ah-heun"</span> <button class="audio-icon" data-audio-text="아흔">🔊</button> - 90</li>
+            </ul>
+
+            <h4>Common Counter Words:</h4>
+            <ul>
+                <li><strong>개</strong> (gae) <span class="pronunciation-guide">"gae"</span> <button class="audio-icon" data-audio-text="개">🔊</button> - general counter (for most objects)</li>
+                <li><strong>명</strong> (myeong) <span class="pronunciation-guide">"myung"</span> <button class="audio-icon" data-audio-text="명">🔊</button> - for people</li>
+                <li><strong>마리</strong> (mari) <span class="pronunciation-guide">"mah-ree"</span> <button class="audio-icon" data-audio-text="마리">🔊</button> - for animals</li>
+                <li><strong>잔</strong> (jan) <span class="pronunciation-guide">"jahn"</span> <button class="audio-icon" data-audio-text="잔">🔊</button> - for glasses/cups</li>
+            </ul>
+
+            <h4>Practical Examples:</h4>
+            <div class="korean-example">
+                <p><strong>사과 세 개</strong></p>
+                <p>Sagwa se gae</p>
+                <p>Three apples (note '셋' becomes '세' before '개')</p>
+                <button class="audio-icon" data-audio-text="사과 세 개">🔊</button>
+            </div>
+            <div class="korean-example">
+                <p><strong>커피 한 잔</strong></p>
+                <p>Keopi han jan</p>
+                <p>One cup of coffee (note '하나' becomes '한' before '잔')</p>
+                <button class="audio-icon" data-audio-text="커피 한 잔">🔊</button>
+            </div>
+            <div class="korean-example">
+                <p><strong>강아지 두 마리</strong></p>
+                <p>Gang-aji du mari</p>
+                <p>Two dogs (note '둘' becomes '두' before '마리')</p>
+                <button class="audio-icon" data-audio-text="강아지 두 마리">🔊</button>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-question">Practice: How would you say "four pens" using the Pure Korean system? (Use '개' for pens.)</div>
+                <div class="practice-options">
+                    <button class="practice-button" data-answer="Incorrect">펜 넷 개</button>
+                    <button class="practice-button" data-answer="Correct">펜 네 개</button>
+                    <button class="practice-button" data-answer="Incorrect">펜 사 개</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>Part 4: Age and Counting People 👶</h3>
+            <p>For counting <strong>age</strong> and <strong>people</strong>, you'll almost always use Pure Korean numbers!</p>
+
+            <h4>Counting Age: 살 (sal)</h4>
+            <p>Use Pure Korean numbers + <strong>살</strong> (sal), which means "years old". Remember the shortened forms for 1-4 and 20!</p>
+            <div class="korean-example">
+                <p><strong>스무 살</strong></p>
+                <p>Seumu sal</p>
+                <p>20 years old (note '스물' becomes '스무')</p>
+                <button class="audio-icon" data-audio-text="스무 살">🔊</button>
+            </div>
+            <div class="korean-example">
+                <p><strong>서른다섯 살</strong></p>
+                <p>Seoreun-daseot sal</p>
+                <p>35 years old</p>
+                <button class="audio-icon" data-audio-text="서른다섯 살">🔊</button>
+            </div>
+            <p class="cultural-note"><strong>Cultural Note: Korean Age!</strong> 🇰🇷 In Korea, you are generally considered 1 year old at birth, and everyone gains a year on New Year's Day. So, you're usually 1 or 2 years older in Korean age than your international age. For example, if you were born in 1990 and it's 2024, your international age is 34. But in Korean age, you might be 35 or 36!</p>
+
+            <h4>Counting People: 명 (myeong)</h4>
+            <p>Similar to objects, use Pure Korean numbers + <strong>명</strong> (myeong) for counting people. The shortened forms for 1-4 apply here too.</p>
+            <div class="korean-example">
+                <p><strong>한 명</strong></p>
+                <p>Han myeong</p>
+                <p>One person</p>
+                <button class="audio-icon" data-audio-text="한 명">🔊</button>
+            </div>
+            <div class="korean-example">
+                <p><strong>두 명</strong></p>
+                <p>Du myeong</p>
+                <p>Two people</p>
+                <button class="audio-icon" data-audio-text="두 명">🔊</button>
+            </div>
+            <div class="korean-example">
+                <p><strong>세 명</strong></p>
+                <p>Se myeong</p>
+                <p>Three people</p>
+                <button class="audio-icon" data-audio-text="세 명">🔊</button>
+            </div>
+            <div class="korean-example">
+                <p><strong>네 명</strong></p>
+                <p>Ne myeong</p>
+                <p>Four people</p>
+                <button class="audio-icon" data-audio-text="네 명">🔊</button>
+            </div>
+            <div class="korean-example">
+                <p><strong>다섯 명</strong></p>
+                <p>Daseot myeong</p>
+                <p>Five people</p>
+                <button class="audio-icon" data-audio-text="다섯 명">🔊</button>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-question">Practice: How would you ask "How many people are there?" (informal)</div>
+                <div class="practice-options">
+                    <button class="practice-button" data-answer="Incorrect">몇 살이에요?</button>
+                    <button class="practice-button" data-answer="Correct">몇 명이에요?</button>
+                    <button class="practice-button" data-answer="Incorrect">몇 개예요?</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h3>Part 5: Basic Math Vocabulary ➕➖✖️➗</h3>
+            <p>You'll primarily use <strong>Sino-Korean</strong> numbers for mathematical calculations. Here's some basic vocabulary:</p>
+            <ul>
+                <li><strong>더하기</strong> (deohagi) <span class="pronunciation-guide">"duh-hah-gee"</span> <button class="audio-icon" data-audio-text="더하기">🔊</button> - Addition (+)</li>
+                <li><strong>빼기</strong> (ppaegi) <span class="pronunciation-guide">"ppae-gee"</span> <button class="audio-icon" data-audio-text="빼기">🔊</button> - Subtraction (-)</li>
+                <li><strong>곱하기</strong> (gopagi) <span class="pronunciation-guide">"goh-pah-gee"</span> <button class="audio-icon" data-audio-text="곱하기">🔊</button> - Multiplication (×)</li>
+                <li><strong>나누기</strong> (nanugi) <span class="pronunciation-guide">"nah-noo-gee"</span> <button class="audio-icon" data-audio-text="나누기">🔊</button> - Division (÷)</li>
+            </ul>
+            <p>To say "equals," you can simply use the topic marker <code>-은/는</code> or just state the numbers and the result. For simple equations, it's often understood.</p>
+
+            <h4>Examples:</h4>
+            <div class="korean-example">
+                <p><strong>이 더하기 이 는 사</strong></p>
+                <p>I deohagi i neun sa</p>
+                <p>2 + 2 = 4</p>
+                <button class="audio-icon" data-audio-text="이 더하기 이 는 사">🔊</button>
+            </div>
+            <div class="korean-example">
+                <p><strong>십 빼기 오 는 오</strong></p>
+                <p>Sip ppaegi o neun o</p>
+                <p>10 - 5 = 5</p>
+                <button class="audio-icon" data-audio-text="십 빼기 오 는 오">🔊</button>
+            </div>
+            <div class="korean-example">
+                <p><strong>삼 곱하기 삼 은 구</strong></p>
+                <p>Sam gopagi sam eun gu</p>
+                <p>3 × 3 = 9</p>
+                <button class="audio-icon" data-audio-text="삼 곱하기 삼 은 구">🔊</button>
+            </div>
+            <div class="korean-example">
+                <p><strong>육 나누기 이 는 삼</strong></p>
+                <p>Yuk nanugi i neun sam</p>
+                <p>6 ÷ 2 = 3</p>
+                <button class="audio-icon" data-audio-text="육 나누기 이 는 삼">🔊</button>
+            </div>
+
+            <div class="practice-section">
+                <div class="practice-question">Practice: How would you say "Seven plus three equals ten" in Korean?</div>
+                <div class="practice-options">
+                    <button class="practice-button" data-answer="Incorrect">일곱 더하기 셋은 열</button>
+                    <button class="practice-button" data-answer="Correct">칠 더하기 삼은 십</button>
+                    <button class="practice-button" data-answer="Incorrect">일곱 더하기 삼은 열</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-summary">
+            <h2>Chapter Summary 🎓</h2>
+            <p>Phew! You've just conquered Korean numbers! Here are the key takeaways from this chapter:</p>
+            <ul>
+                <li>🇰🇷 There are <strong>two main number systems</strong> in Korean:
+                    <ul>
+                        <li><strong>Sino-Korean (일, 이, 삼...)</strong>: Used for dates, money, phone numbers, minutes, and numbers over 99.</li>
+                        <li><strong>Pure Korean (하나, 둘, 셋...)</strong>: Used for counting objects, people, age, and hours (up to 99).</li>
+                    </ul>
+                </li>
+                <li>🔢 Remember the <strong>special short forms</strong> for Pure Korean numbers 1-4 (한, 두, 세, 네) and 20 (스무) when followed by a counter word.</li>
+                <li>🔄 Common <strong>counter words</strong> like <strong>개</strong> (general objects), <strong>명</strong> (people), and <strong>마리</strong> (animals) are essential.</li>
+                <li>👶 Age is counted using <strong>Pure Korean numbers + 살</strong> (sal), with a unique "Korean age" system.</li>
+                <li>➕ Basic <strong>math vocabulary</strong> like <strong>더하기</strong> (addition), <strong>빼기</strong> (subtraction), <strong>곱하기</strong> (multiplication), and <strong>나누기</strong> (division) primarily use Sino-Korean numbers.</li>
+            </ul>
+            <p>You're now equipped to handle a wide range of numbering situations in Korean. Keep practicing and soon counting will feel totally natural!</p>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4: Colors and Descriptions</title>
+    <style>
+        /* Global Styles & Resets */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-background: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --success-color: #4CAF50; /* Green for answers */
+            --info-background: rgba(139, 95, 191, 0.1); /* Light primary for questions */
+            --cultural-note-border: #F0C419; /* A warm yellow for cultural notes */
+            --cultural-note-emphasis: #C19A00; /* Darker yellow for emphasis */
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--body-text-color);
+            background-color: #FFFFFF; /* Base white background for the whole app */
+            padding: 0;
+            margin: 0;
+            font-size: 16px; /* Minimum body text size */
+            -webkit-text-size-adjust: 100%; /* Prevent text scaling on iOS */
+        }
+
+        /* Responsive Container */
+        .container {
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto;
+            padding: 15px; /* Ample padding for mobile touch */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 30px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        /* Lesson Header */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Lesson Sections */
+        .lesson-section {
+            background-color: var(--secondary-background);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        ul li {
+            padding: 8px 0;
+            border-bottom: 1px dashed var(--border-color);
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Korean Word Styling */
+        .korean-word {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1em;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .romanization {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #888;
+        }
+        
+        .pronunciation-guide {
+            font-size: 0.85em;
+            color: #777;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px; /* Minimum tappable area */
+            height: 44px; /* Minimum tappable area */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a469b; /* Slightly darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Practice Sections */
+        .practice-container {
+            background-color: var(--secondary-background);
+            border: 2px solid var(--primary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .exercise-question {
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            background-color: var(--info-background);
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+            font-weight: bold;
+            color: var(--heading-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            line-height: 1.4;
+        }
+
+        .exercise-answer {
+            margin-top: 5px;
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            background-color: #E6F3E6; /* Light green for answers */
+            border-left: 5px solid var(--success-color); /* Green border */
+            border-radius: 8px;
+            color: #333;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            line-height: 1.4;
+        }
+
+        .exercise-question:last-of-type, .exercise-answer:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: rgba(253, 249, 229, 0.7); /* Lighter secondary background */
+            border-left: 4px solid var(--cultural-note-border);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 0.95em;
+            color: #555;
+        }
+        .cultural-note strong {
+            color: var(--cultural-note-emphasis);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .summary-section h2 {
+            color: white;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .summary-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 17px;
+        }
+        .summary-section ul {
+            text-align: left;
+            margin-top: 15px;
+            padding-left: 20px;
+            list-style: disc;
+        }
+        .summary-section ul li {
+            color: rgba(255, 255, 255, 0.9);
+            border-bottom: none;
+            padding: 5px 0;
+            display: list-item;
+        }
+        .summary-section ul li strong {
+            color: white;
+        }
+
+        /* Responsive Adjustments for larger screens (e.g., tablets, landscape phones) */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 36px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 22px;
+            }
+            .lesson-section, .practice-container {
+                padding: 30px;
+            }
+            ul li {
+                flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 4: Colors and Descriptions</h1>
+        <div class="lesson-header">
+            <!-- As per requirement, using the exact image path for the header -->
+            <img src="../header.webp" alt="Chapter 4 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>Welcome to Chapter 4! 🎉</h2>
+            <p>Ready to add some vibrant details to your Korean? In this chapter, we're diving into the world of colors and learning how to describe things using common Korean adjectives (which often function as descriptive verbs!).</p>
+            <p>You'll learn to say if something is big, small, pretty, or even a little bit "ugly" (though we hope most things are 예뻐요! 🥰).</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🎨 Basic Colors in Korean</h2>
+            <p>Colors in Korean usually end with <strong>-색</strong> (<span class="romanization">saek</span>), which means "color." So, <span class="korean-word">빨간색</span> literally means "red color."</p>
+
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="빨간색" aria-label="Play audio for 빨간색">🔊</button>
+                    <span class="korean-word">빨간색</span> <span class="romanization">(ppal-gan-saek)</span>
+                    <span class="pronunciation-guide">[ppal-gan-saek]</span> – <strong>Red</strong> 🔴
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="파란색" aria-label="Play audio for 파란색">🔊</button>
+                    <span class="korean-word">파란색</span> <span class="romanization">(pa-ran-saek)</span>
+                    <span class="pronunciation-guide">[pa-ran-saek]</span> – <strong>Blue</strong> 🔵
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="노란색" aria-label="Play audio for 노란색">🔊</button>
+                    <span class="korean-word">노란색</span> <span class="romanization">(no-ran-saek)</span>
+                    <span class="pronunciation-guide">[no-ran-saek]</span> – <strong>Yellow</strong> 🟡
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="초록색" aria-label="Play audio for 초록색">🔊</button>
+                    <span class="korean-word">초록색</span> <span class="romanization">(cho-rok-saek)</span>
+                    <span class="pronunciation-guide">[cho-rok-saek]</span> – <strong>Green</strong> 🟢
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="검은색" aria-label="Play audio for 검은색">🔊</button>
+                    <span class="korean-word">검은색</span> <span class="romanization">(geom-eun-saek)</span>
+                    <span class="pronunciation-guide">[geom-eun-saek]</span> – <strong>Black</strong> ⚫
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="흰색" aria-label="Play audio for 흰색">🔊</button>
+                    <span class="korean-word">흰색</span> <span class="romanization">(hin-saek)</span>
+                    <span class="pronunciation-guide">[hin-saek]</span> – <strong>White</strong> ⚪
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>💡 Cultural Note:</strong> In Korea, white (<span class="korean-word">흰색</span>) often symbolizes purity and is traditionally worn at weddings. Red (<span class="korean-word">빨간색</span>) is associated with good luck and passion, while black (<span class="korean-word">검은색</span>) can signify solemnity or modernity. Blue (<span class="korean-word">파란색</span>) can often represent hope or tranquility.
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>✨ Descriptive Verbs (Adjectives)</h2>
+            <p>In Korean, what we call "adjectives" in English often function as <strong>descriptive verbs</strong>. They describe the state or quality of a noun. When used at the end of a sentence, they conjugate like verbs.</p>
+            <p>Let's learn some common ones in their dictionary form (ending in -다) and their polite present tense form (-아요/어요).</p>
+
+            <h3>📏 크다 / 작다 (Big / Small)</h3>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="크다" aria-label="Play audio for 크다">🔊</button>
+                    <span class="korean-word">크다</span> <span class="romanization">(keu-da)</span>
+                    <span class="pronunciation-guide">[kʰɯ-da]</span> – To be big
+                    <br>Polite present tense: <button class="audio-icon" data-audio-text="커요" aria-label="Play audio for 커요">🔊</button> <span class="korean-word">커요</span> <span class="romanization">(keo-yo)</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="작다" aria-label="Play audio for 작다">🔊</button>
+                    <span class="korean-word">작다</span> <span class="romanization">(jak-da)</span>
+                    <span class="pronunciation-guide">[tɕak-ta]</span> – To be small
+                    <br>Polite present tense: <button class="audio-icon" data-audio-text="작아요" aria-label="Play audio for 작아요">🔊</button> <span class="korean-word">작아요</span> <span class="romanization">(ja-ga-yo)</span>
+                </li>
+            </ul>
+            <p><strong>Example Sentences:</strong></p>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="집이 커요." aria-label="Play audio for 집이 커요.">🔊</button>
+                    <strong>집이 커요.</strong> <span class="romanization">(Jibi keo-yo.)</span><br>The house is big. 🏡
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="차가 작아요." aria-label="Play audio for 차가 작아요.">🔊</button>
+                    <strong>차가 작아요.</strong> <span class="romanization">(Chaga ja-ga-yo.)</span><br>The car is small. 🚗
+                </li>
+            </ul>
+
+            <h3>📏 길다 / 짧다 (Long / Short)</h3>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="길다" aria-label="Play audio for 길다">🔊</button>
+                    <span class="korean-word">길다</span> <span class="romanization">(gil-da)</span>
+                    <span class="pronunciation-guide">[kil-da]</span> – To be long
+                    <br>Polite present tense: <button class="audio-icon" data-audio-text="길어요" aria-label="Play audio for 길어요">🔊</button> <span class="korean-word">길어요</span> <span class="romanization">(gi-reo-yo)</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="짧다" aria-label="Play audio for 짧다">🔊</button>
+                    <span class="korean-word">짧다</span> <span class="romanization">(jjalb-da)</span>
+                    <span class="pronunciation-guide">[tɕ͈alb-ta]</span> – To be short
+                    <br>Polite present tense: <button class="audio-icon" data-audio-text="짧아요" aria-label="Play audio for 짧아요">🔊</button> <span class="korean-word">짧아요</span> <span class="romanization">(jjal-ba-yo)</span>
+                </li>
+            </ul>
+            <p><strong>Example Sentences:</strong></p>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="머리가 길어요." aria-label="Play audio for 머리가 길어요.">🔊</button>
+                    <strong>머리가 길어요.</strong> <span class="romanization">(Meoriga gi-reo-yo.)</span><br>The hair is long. 👱‍♀️
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="치마가 짧아요." aria-label="Play audio for 치마가 짧아요.">🔊</button>
+                    <strong>치마가 짧아요.</strong> <span class="romanization">(Chimaga jjal-ba-yo.)</span><br>The skirt is short. 👗
+                </li>
+            </ul>
+
+            <h3>😍 예쁘다 / 못생기다 (Pretty / Ugly)</h3>
+            <p><strong>Important Note:</strong> While <span class="korean-word">못생기다</span> means "ugly," it's generally avoided when describing people directly, as it can be offensive. It's more commonly used for objects or in a playful, self-deprecating way.</p>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="예쁘다" aria-label="Play audio for 예쁘다">🔊</button>
+                    <span class="korean-word">예쁘다</span> <span class="romanization">(ye-ppeu-da)</span>
+                    <span class="pronunciation-guide">[je-p͈ɯ-da]</span> – To be pretty / beautiful
+                    <br>Polite present tense: <button class="audio-icon" data-audio-text="예뻐요" aria-label="Play audio for 예뻐요">🔊</button> <span class="korean-word">예뻐요</span> <span class="romanization">(ye-ppeo-yo)</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="못생기다" aria-label="Play audio for 못생기다">🔊</button>
+                    <span class="korean-word">못생기다</span> <span class="romanization">(mot-saeng-gi-da)</span>
+                    <span class="pronunciation-guide">[mot-sɛŋ-gi-da]</span> – To be ugly (lit. to be poorly formed)
+                    <br>Polite present tense: <button class="audio-icon" data-audio-text="못생겼어요" aria-label="Play audio for 못생겼어요">🔊</button> <span class="korean-word">못생겼어요</span> <span class="romanization">(mot-saeng-gyeo-sseo-yo)</span>
+                    <span class="pronunciation-guide">(often uses past tense form for current state)</span>
+                </li>
+            </ul>
+            <p><strong>Example Sentences:</strong></p>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="꽃이 예뻐요." aria-label="Play audio for 꽃이 예뻐요.">🔊</button>
+                    <strong>꽃이 예뻐요.</strong> <span class="romanization">(Kkochi ye-ppeo-yo.)</span><br>The flower is pretty. 🌸
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="인형이 못생겼어요." aria-label="Play audio for 인형이 못생겼어요.">🔊</button>
+                    <strong>인형이 못생겼어요.</strong> <span class="romanization">(Inhyeongi mot-saeng-gyeo-sseo-yo.)</span><br>The doll is ugly. 🧸 (Using "doll" for a safer example!)
+                </li>
+            </ul>
+
+            <h3>👍 좋다 / 나쁘다 (Good / Bad)</h3>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="좋다" aria-label="Play audio for 좋다">🔊</button>
+                    <span class="korean-word">좋다</span> <span class="romanization">(jo-ta)</span>
+                    <span class="pronunciation-guide">[tɕo-tʰa]</span> – To be good
+                    <br>Polite present tense: <button class="audio-icon" data-audio-text="좋아요" aria-label="Play audio for 좋아요">🔊</button> <span class="korean-word">좋아요</span> <span class="romanization">(jo-a-yo)</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="나쁘다" aria-label="Play audio for 나쁘다">🔊</button>
+                    <span class="korean-word">나쁘다</span> <span class="romanization">(na-ppeu-da)</span>
+                    <span class="pronunciation-guide">[na-p͈ɯ-da]</span> – To be bad
+                    <br>Polite present tense: <button class="audio-icon" data-audio-text="나빠요" aria-label="Play audio for 나빠요">🔊</button> <span class="korean-word">나빠요</span> <span class="romanization">(na-ppa-yo)</span>
+                </li>
+            </ul>
+            <p><strong>Example Sentences:</strong></p>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="책이 좋아요." aria-label="Play audio for 책이 좋아요.">🔊</button>
+                    <strong>책이 좋아요.</strong> <span class="romanization">(Chaegi jo-a-yo.)</span><br>The book is good. 📚
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="날씨가 나빠요." aria-label="Play audio for 날씨가 나빠요.">🔊</button>
+                    <strong>날씨가 나빠요.</strong> <span class="romanization">(Nalssiga na-ppa-yo.)</span><br>The weather is bad. 🌧️
+                </li>
+            </ul>
+        </section>
+
+        <section class="lesson-section">
+            <h2>📝 Using Descriptive Verbs to Modify Nouns</h2>
+            <p>When you want to use these descriptive verbs <strong>before a noun</strong> (like "a red car" instead of "the car is red"), you need to change their form. This is called the <strong>adjective form</strong> or <strong>attributive form</strong>.</p>
+            <p>For most descriptive verbs, you remove <strong>-다</strong> and add <strong>-(으)ㄴ</strong>:</p>
+            <ul>
+                <li>If the stem ends in a <strong>vowel</strong>, add <strong>-ㄴ</strong>. (e.g., <span class="korean-word">예쁘다</span> → <span class="korean-word">예쁜</span>)</li>
+                <li>If the stem ends in a <strong>consonant</strong>, add <strong>-은</strong>. (e.g., <span class="korean-word">작다</span> → <span class="korean-word">작은</span>)</li>
+            </ul>
+            <p>Let's look at how our words change:</p>
+            <ul>
+                <li><strong class="korean-word">크다</strong> → <button class="audio-icon" data-audio-text="큰" aria-label="Play audio for 큰">🔊</button> <span class="korean-word">큰</span> <span class="romanization">(keun)</span> (big)</li>
+                <li><strong class="korean-word">작다</strong> → <button class="audio-icon" data-audio-text="작은" aria-label="Play audio for 작은">🔊</button> <span class="korean-word">작은</span> <span class="romanization">(ja-geun)</span> (small)</li>
+                <li><strong class="korean-word">길다</strong> → <button class="audio-icon" data-audio-text="긴" aria-label="Play audio for 긴">🔊</button> <span class="korean-word">긴</span> <span class="romanization">(gin)</span> (long)</li>
+                <li><strong class="korean-word">짧다</strong> → <button class="audio-icon" data-audio-text="짧은" aria-label="Play audio for 짧은">🔊</button> <span class="korean-word">짧은</span> <span class="romanization">(jjal-beun)</span> (short)</li>
+                <li><strong class="korean-word">예쁘다</strong> → <button class="audio-icon" data-audio-text="예쁜" aria-label="Play audio for 예쁜">🔊</button> <span class="korean-word">예쁜</span> <span class="romanization">(ye-ppeun)</span> (pretty)</li>
+                <li><strong class="korean-word">좋다</strong> → <button class="audio-icon" data-audio-text="좋은" aria-label="Play audio for 좋은">🔊</button> <span class="korean-word">좋은</span> <span class="romanization">(jo-eun)</span> (good)</li>
+                <li><strong class="korean-word">나쁘다</strong> → <button class="audio-icon" data-audio-text="나쁜" aria-label="Play audio for 나쁜">🔊</button> <span class="korean-word">나쁜</span> <span class="romanization">(na-ppeun)</span> (bad)</li>
+            </ul>
+            <p><strong>Colors also follow a similar pattern when used directly before a noun, or simply use the -색 form:</strong></p>
+            <ul>
+                <li><strong class="korean-word">빨갛다</strong> → <button class="audio-icon" data-audio-text="빨간" aria-label="Play audio for 빨간">🔊</button> <span class="korean-word">빨간</span> <span class="romanization">(ppal-gan)</span> (red) - <em>used more often than <span class="korean-word">빨간색</span> + noun directly.</em></li>
+                <li><strong class="korean-word">파랗다</strong> → <button class="audio-icon" data-audio-text="파란" aria-label="Play audio for 파란">🔊</button> <span class="korean-word">파란</span> <span class="romanization">(pa-ran)</span> (blue)</li>
+                <li><strong class="korean-word">노랗다</strong> → <button class="audio-icon" data-audio-text="노란" aria-label="Play audio for 노란">🔊</button> <span class="korean-word">노란</span> <span class="romanization">(no-ran)</span> (yellow)</li>
+                <li><strong class="korean-word">초록색</strong> <span class="romanization">(cho-rok-saek)</span> (green) - <em>often used as is before noun.</em></li>
+                <li><strong class="korean-word">검다</strong> → <button class="audio-icon" data-audio-text="검은" aria-label="Play audio for 검은">🔊</button> <span class="korean-word">검은</span> <span class="romanization">(geom-eun)</span> (black)</li>
+                <li><strong class="korean-word">희다</strong> → <button class="audio-icon" data-audio-text="흰" aria-label="Play audio for 흰">🔊</button> <span class="korean-word">흰</span> <span class="romanization">(hin)</span> (white)</li>
+            </ul>
+
+            <p><strong>Combined Examples:</strong></p>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="빨간 사과" aria-label="Play audio for 빨간 사과">🔊</button>
+                    <strong>빨간 사과</strong> <span class="romanization">(ppal-gan sa-gwa)</span><br>Red apple 🍎
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="파란 하늘" aria-label="Play audio for 파란 하늘">🔊</button>
+                    <strong>파란 하늘</strong> <span class="romanization">(pa-ran ha-neul)</span><br>Blue sky ☁️
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="작은 개" aria-label="Play audio for 작은 개">🔊</button>
+                    <strong>작은 개</strong> <span class="romanization">(ja-geun gae)</span><br>Small dog 🐕
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="긴 머리" aria-label="Play audio for 긴 머리">🔊</button>
+                    <strong>긴 머리</strong> <span class="romanization">(gin meo-ri)</span><br>Long hair 👧
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="좋은 친구" aria-label="Play audio for 좋은 친구">🔊</button>
+                    <strong>좋은 친구</strong> <span class="romanization">(jo-eun chin-gu)</span><br>Good friend 🤗
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="예쁜 옷" aria-label="Play audio for 예쁜 옷">🔊</button>
+                    <strong>예쁜 옷</strong> <span class="romanization">(ye-ppeun ot)</span><br>Pretty clothes 👗
+                </li>
+            </ul>
+        </section>
+
+        <section class="practice-container">
+            <h2>🧠 Practice Time!</h2>
+            <p>Let's test what you've learned. Try to translate these phrases into Korean, then check your answer!</p>
+
+            <h3>Exercise 1: Translate to Korean</h3>
+            <div class="exercise-question">
+                1. Red car
+            </div>
+            <div class="exercise-answer">
+                <button class="audio-icon" data-audio-text="빨간 차" aria-label="Play audio for 빨간 차">🔊</button>
+                빨간 차
+            </div>
+
+            <div class="exercise-question">
+                2. The flower is pretty.
+            </div>
+            <div class="exercise-answer">
+                <button class="audio-icon" data-audio-text="꽃이 예뻐요." aria-label="Play audio for 꽃이 예뻐요.">🔊</button>
+                꽃이 예뻐요.
+            </div>
+
+            <div class="exercise-question">
+                3. Good coffee
+            </div>
+            <div class="exercise-answer">
+                <button class="audio-icon" data-audio-text="좋은 커피" aria-label="Play audio for 좋은 커피">🔊</button>
+                좋은 커피
+            </div>
+
+            <div class="exercise-question">
+                4. The bag is small.
+            </div>
+            <div class="exercise-answer">
+                <button class="audio-icon" data-audio-text="가방이 작아요." aria-label="Play audio for 가방이 작아요.">🔊</button>
+                가방이 작아요.
+            </div>
+
+            <div class="exercise-question">
+                5. Short hair
+            </div>
+            <div class="exercise-answer">
+                <button class="audio-icon" data-audio-text="짧은 머리" aria-label="Play audio for 짧은 머리">🔊</button>
+                짧은 머리
+            </div>
+
+            <h3>Exercise 2: Match the Korean to English</h3>
+            <div class="exercise-question">
+                1. 노란색
+            </div>
+            <div class="exercise-answer">
+                Yellow
+            </div>
+
+            <div class="exercise-question">
+                2. 흰색
+            </div>
+            <div class="exercise-answer">
+                White
+            </div>
+
+            <div class="exercise-question">
+                3. 검은색
+            </div>
+            <div class="exercise-answer">
+                Black
+            </div>
+
+            <div class="exercise-question">
+                4. 초록색
+            </div>
+            <div class="exercise-answer">
+                Green
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ Chapter 4 Summary ✨</h2>
+            <p>You've done a fantastic job learning colors and essential descriptive verbs in Korean! Remember:</p>
+            <ul>
+                <li><strong>Colors:</strong> Generally end with <strong>-색</strong> (e.g., <span class="korean-word">빨간색</span> - red).</li>
+                <li><strong>Descriptive Verbs:</strong> Function like adjectives. They conjugate at the end of a sentence (e.g., <span class="korean-word">예뻐요</span> - it's pretty).</li>
+                <li><strong>Modifying Nouns:</strong> Change the descriptive verb to its adjective form (e.g., <span class="korean-word">예쁜</span> - pretty) before the noun (<span class="korean-word">예쁜 꽃</span> - pretty flower).</li>
+            </ul>
+            <p>Keep practicing these words and phrases in context, and soon you'll be describing the world around you in beautiful Korean! Keep up the great work! 💪</p>
+        </section>
+
+    </div>
+</body>
+</html>

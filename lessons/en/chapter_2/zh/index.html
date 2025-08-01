@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: 基本问候与介绍</title>
+    <style>
+        /* Global Styles & Color Scheme */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        body {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+            -webkit-text-size-adjust: 100%; /* Prevent text scaling on iOS */
+            box-sizing: border-box;
+        }
+
+        /* Container for content to ensure proper spacing and max-width */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        /* List styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dotted var(--border-color);
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+
+        /* Specific Header Structure */
+        .chapter-title {
+            margin: 20px 0; /* Ensures consistent margin as per .lesson-header */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            vertical-align: middle;
+            margin-left: 8px;
+            flex-shrink: 0;
+            box-sizing: border-box; /* Ensure padding/border don't affect size */
+        }
+        .audio-icon:hover {
+            background-color: #6C3D9F; /* Manually darkened #8B5FBF */
+            transform: scale(1.05);
+        }
+
+        /* Example Box */
+        .example-box {
+            background-color: #fff; /* Changed to white for better contrast with cream body */
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .example-box p {
+            margin: 5px 0;
+        }
+        .example-box strong {
+            color: var(--heading-color);
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: var(--secondary-color); /* Cream background for the note itself */
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            font-style: italic;
+            font-size: 15px;
+            color: #555;
+        }
+        .cultural-note strong {
+            color: var(--primary-color);
+            font-style: normal;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #fff; /* Changed to white for better contrast with cream body */
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        .practice-section h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--heading-color);
+            text-align: center;
+        }
+
+        .practice-question {
+            background-color: #f8f8f8; /* Slightly different background for questions */
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        .practice-question p {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--heading-color); /* Question text color */
+        }
+
+        .practice-options button {
+            display: block; /* Stack buttons vertically */
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 8px;
+            background-color: #fff;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            min-height: 44px; /* Ensure touch target size */
+            text-align: left; /* Align text to left */
+            box-sizing: border-box; /* Include padding in width */
+        }
+        .practice-options button:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .practice-options button:active {
+            transform: translateY(1px); /* Simple press effect */
+        }
+
+        /* Phrase Styling for pronunciation */
+        .phrase {
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Vertically align items */
+            margin-bottom: 5px; /* Less space between phrase and its translation */
+            font-size: 17px;
+            font-weight: bold;
+            color: var(--heading-color);
+            flex-wrap: wrap; /* Allow wrapping on small screens if text is long */
+        }
+        .phrase .english-text {
+            flex-grow: 1; /* Allow English text to take available space */
+            margin-right: 8px; /* Space before audio icon */
+        }
+        .phrase .pinyin {
+            font-weight: normal;
+            font-size: 14px; /* Slightly smaller for pinyin */
+            color: #888;
+            margin-left: 5px; /* Space after English word */
+        }
+        p.chinese-translation {
+            font-weight: normal;
+            font-size: 15px;
+            color: var(--body-text-color);
+            margin-top: 0; /* Align closer to the phrase */
+            margin-bottom: 10px;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        .summary-section h2 {
+            text-align: center;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 20px;
+        }
+        .summary-section ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+        .summary-section li {
+            font-size: 16px;
+            padding: 5px 0;
+            border-bottom: none; /* No borders in summary list */
+        }
+        .summary-section li strong {
+            color: var(--primary-color);
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 380px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+            .phrase .english-text {
+                font-size: 16px;
+            }
+            .phrase .pinyin {
+                font-size: 13px;
+            }
+            p.chinese-translation {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 2: 基本问候与介绍</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+        </div>
+
+        <section class="intro-section">
+            <h2>✨ 欢迎来到第二章：基础问候与介绍！✨</h2>
+            <p>这一章我们将学习如何在英语中进行简单的问候，询问他人的近况，以及如何介绍自己。这些都是日常交流中必不可少的基础技能哦！准备好了吗？让我们开始吧！</p>
+        </section>
+
+        <section>
+            <h2>1. 基础问候语 (Basic Greetings) 👋</h2>
+            <p>每天我们都会遇到各种各样的人，学会打招呼是建立良好第一步的关键！</p>
+
+            <h3>1.1 “Hello” 和 “Hi”</h3>
+            <div class="example-box">
+                <div class="phrase">
+                    <span class="english-text">Hello <span class="pinyin">(哈喽)</span></span>
+                    <span class="audio-icon" data-audio-text="Hello">🔊</span>
+                </div>
+                <p class="chinese-translation">你好；您好 (适用于任何场合，正式或非正式)</p>
+            </div>
+            <div class="example-box">
+                <div class="phrase">
+                    <span class="english-text">Hi <span class="pinyin">(嗨)</span></span>
+                    <span class="audio-icon" data-audio-text="Hi">🔊</span>
+                </div>
+                <p class="chinese-translation">你好 (更随意，常用于朋友或熟悉的人之间)</p>
+            </div>
+            <p><strong>用法小贴士：</strong></p>
+            <ul>
+                <li>在第一次见到某人时，或者在比较正式的场合，用 <strong>Hello</strong> 总没错。</li>
+                <li>和朋友、家人或同事打招呼时，<strong>Hi</strong> 更常用，显得更亲切。</li>
+            </ul>
+
+            <h3>1.2 不同时间段的问候</h3>
+            <p>根据一天中的不同时间，问候语也会有所不同。</p>
+            <div class="example-box">
+                <div class="phrase">
+                    <span class="english-text">Good morning <span class="pinyin">(古德 莫宁)</span></span>
+                    <span class="audio-icon" data-audio-text="Good morning">🔊</span>
+                </div>
+                <p class="chinese-translation">早上好 (通常用于中午12点之前)</p>
+            </div>
+            <div class="example-box">
+                <div class="phrase">
+                    <span class="english-text">Good afternoon <span class="pinyin">(古德 阿夫特农)</span></span>
+                    <span class="audio-icon" data-audio-text="Good afternoon">🔊</span>
+                </div>
+                <p class="chinese-translation">下午好 (通常用于中午12点至傍晚)</p>
+            </div>
+            <div class="example-box">
+                <div class="phrase">
+                    <span class="english-text">Good evening <span class="pinyin">(古德 伊夫宁)</span></span>
+                    <span class="audio-icon" data-audio-text="Good evening">🔊</span>
+                </div>
+                <p class="chinese-translation">晚上好 (通常用于傍晚至深夜)</p>
+            </div>
+            <div class="cultural-note">
+                <strong>💡 文化小贴士：</strong>
+                <p>虽然有“Good night”，但它通常表示“晚安，再见”或“睡觉了”，而不是“晚上好”的问候。在晚上见面时，我们用“Good evening”来打招呼。</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 练习一下：选出正确的问候语</h3>
+            <div class="practice-question">
+                <p>1. 如果是早上8点，你会说什么？</p>
+                <div class="practice-options">
+                    <button data-answer="wrong">Good evening</button>
+                    <button data-answer="correct">Good morning</button>
+                    <button data-answer="wrong">Good afternoon</button>
+                </div>
+            </div>
+            <div class="practice-question">
+                <p>2. 和一位新认识的老师打招呼，用哪个更合适？</p>
+                <div class="practice-options">
+                    <button data-answer="correct">Hello</button>
+                    <button data-answer="wrong">Hi</button>
+                    <button data-answer="wrong">Good night</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 询问近况与回应 (Asking & Responding How Someone Is) 😊</h2>
+            <p>在打完招呼后，通常会询问对方过得怎么样。</p>
+
+            <h3>2.1 “How are you?”</h3>
+            <div class="example-box">
+                <div class="phrase">
+                    <span class="english-text">How are you? <span class="pinyin">(豪 啊 尤)</span></span>
+                    <span class="audio-icon" data-audio-text="How are you?">🔊</span>
+                </div>
+                <p class="chinese-translation">你好吗？你怎么样？</p>
+            </div>
+            <p>这是最常见也是最标准的询问近况的问法。</p>
+
+            <h3>2.2 回应与反问</h3>
+            <p>当别人问你“How are you?”时，你可以这样回答：</p>
+            <div class="example-box">
+                <div class="phrase">
+                    <span class="english-text">I'm fine, thank you. <span class="pinyin">(艾姆 范，桑克 尤)</span></span>
+                    <span class="audio-icon" data-audio-text="I'm fine, thank you.">🔊</span>
+                </div>
+                <p class="chinese-translation">我很好，谢谢你。</p>
+            </div>
+            <div class="example-box">
+                <div class="phrase">
+                    <span class="english-text">And you? <span class="pinyin">(安德 尤)</span></span>
+                    <span class="audio-icon" data-audio-text="And you?">🔊</span>
+                </div>
+                <p class="chinese-translation">你呢？ (反问对方)</p>
+            </div>
+            <p><strong>完整对话示例：</strong></p>
+            <div class="example-box">
+                <p><strong>A:</strong> Hello! How are you? <span class="audio-icon" data-audio-text="Hello! How are you?">🔊</span></p>
+                <p><strong>B:</strong> I'm fine, thank you. And you? <span class="audio-icon" data-audio-text="I'm fine, thank you. And you?">🔊</span></p>
+                <p><strong>A:</strong> I'm fine, too! <span class="audio-icon" data-audio-text="I'm fine, too!">🔊</span></p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>🗣️ 口语练习：补全对话</h3>
+            <p>请尝试补全下面的对话，并大声朗读。</p>
+            <div class="example-box">
+                <p><strong>Person A:</strong> Hi! How are you? <span class="audio-icon" data-audio-text="Hi! How are you?">🔊</span></p>
+                <p><strong>Person B:</strong> I'm fine, <span style="color:var(--primary-color);">________</span>. <span style="color:var(--primary-color);">________</span> you? <span class="audio-icon" data-audio-text="I'm fine, thank you. And you?">🔊</span></p>
+                <p><strong>Person A:</strong> I'm good! <span class="audio-icon" data-audio-text="I'm good!">🔊</span></p>
+                <p class="chinese-translation">（提示：第一空填“谢谢”，第二空填“你呢”）</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. 自我介绍 (Introducing Yourself) 🙋‍♀️🙋‍♂️</h2>
+            <p>认识新朋友时，第一步就是介绍自己。</p>
+
+            <h3>3.1 介绍姓名</h3>
+            <p>你可以用以下两种方式介绍你的名字：</p>
+            <div class="example-box">
+                <div class="phrase">
+                    <span class="english-text">My name is [Your Name]. <span class="pinyin">(迈 乃姆 依斯 [你的名字])</span></span>
+                    <span class="audio-icon" data-audio-text="My name is John.">🔊</span>
+                </div>
+                <p class="chinese-translation">我的名字是[你的名字]。</p>
+            </div>
+            <div class="example-box">
+                <div class="phrase">
+                    <span class="english-text">I'm [Your Name]. <span class="pinyin">(艾姆 [你的名字])</span></span>
+                    <span class="audio-icon" data-audio-text="I'm Jane.">🔊</span>
+                </div>
+                <p class="chinese-translation">我是[你的名字]。</p>
+            </div>
+            <p><strong>示例：</strong></p>
+            <div class="example-box">
+                <p>My name is Li Lei. <span class="audio-icon" data-audio-text="My name is Li Lei.">🔊</span> (我的名字是李雷。)</p>
+                <p>I'm Han Meimei. <span class="audio-icon" data-audio-text="I'm Han Meimei.">🔊</span> (我是韩梅梅。)</p>
+            </div>
+
+            <h3>3.2 很高兴认识你</h3>
+            <p>在介绍自己后，或者听到对方介绍自己后，可以说：</p>
+            <div class="example-box">
+                <div class="phrase">
+                    <span class="english-text">Nice to meet you. <span class="pinyin">(奈斯 图 米特 尤)</span></span>
+                    <span class="audio-icon" data-audio-text="Nice to meet you.">🔊</span>
+                </div>
+                <p class="chinese-translation">很高兴认识你。</p>
+            </div>
+            <p>如果对方也说了“Nice to meet you.”，你可以回应：</p>
+            <div class="example-box">
+                <div class="phrase">
+                    <span class="english-text">Nice to meet you, too. <span class="pinyin">(奈斯 图 米特 尤, 图)</span></span>
+                    <span class="audio-icon" data-audio-text="Nice to meet you, too.">🔊</span>
+                </div>
+                <p class="chinese-translation">我也很高兴认识你。</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>💬 角色扮演：自我介绍</h3>
+            <p>想象你正在和一位新朋友见面。试着完成下面的对话。</p>
+            <div class="example-box">
+                <p><strong>You:</strong> Hello! My name is <span style="color:var(--primary-color);">________</span>. <span class="audio-icon" data-audio-text="Hello! My name is.">🔊</span> (用你的英文名或拼音名)</p>
+                <p><strong>New Friend:</strong> Hi [Your Name]! I'm John. <span class="audio-icon" data-audio-text="Hi there! I'm John.">🔊</span></p>
+                <p><strong>You:</strong> <span style="color:var(--primary-color);">________</span> to meet you, John. <span class="audio-icon" data-audio-text="Nice to meet you, John.">🔊</span></p>
+                <p><strong>New Friend:</strong> Nice to meet you, <span style="color:var(--primary-color);">________</span>! <span class="audio-icon" data-audio-text="Nice to meet you, too!">🔊</span></p>
+                <p class="chinese-translation">（提示：第二空填“很高兴”，第四空填“也”）</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. 简单对话场景 (Basic Conversation Scenarios) 🗣️</h2>
+            <p>现在，让我们把所学的问候和介绍串联起来，进行一个简单的对话。</p>
+            <h3>场景：第一次见面</h3>
+            <div class="example-box">
+                <p><strong>Amy:</strong> Good morning! <span class="audio-icon" data-audio-text="Good morning!">🔊</span></p>
+                <p><strong>Ben:</strong> Good morning! How are you? <span class="audio-icon" data-audio-text="Good morning! How are you?">🔊</span></p>
+                <p><strong>Amy:</strong> I'm fine, thank you. And you? <span class="audio-icon" data-audio-text="I'm fine, thank you. And you?">🔊</span></p>
+                <p><strong>Ben:</strong> I'm fine, too. My name is Ben. <span class="audio-icon" data-audio-text="I'm fine, too. My name is Ben.">🔊</span></p>
+                <p><strong>Amy:</strong> Nice to meet you, Ben! I'm Amy. <span class="audio-icon" data-audio-text="Nice to meet you, Ben! I'm Amy.">🔊</span></p>
+                <p><strong>Ben:</strong> Nice to meet you, too, Amy. <span class="audio-icon" data-audio-text="Nice to meet you, too, Amy.">🔊</span></p>
+            </div>
+            <p>试着大声朗读这段对话，扮演不同角色，感受真实的交流场景。</p>
+        </section>
+
+        <section class="summary-section">
+            <h2>🎉 本章小结 🎉</h2>
+            <p>恭喜你！你已经完成了第二章的学习。让我们回顾一下本章的重点内容：</p>
+            <ul>
+                <li><strong>基础问候语：</strong>
+                    <ul>
+                        <li><div class="phrase"><span class="english-text">Hello / Hi</span> <span class="audio-icon" data-audio-text="Hello Hi">🔊</span></div></li>
+                        <li><div class="phrase"><span class="english-text">Good morning / afternoon / evening</span> <span class="audio-icon" data-audio-text="Good morning Good afternoon Good evening">🔊</span></div></li>
+                    </ul>
+                </li>
+                <li><strong>询问近况与回应：</strong>
+                    <ul>
+                        <li><div class="phrase"><span class="english-text">How are you?</span> <span class="audio-icon" data-audio-text="How are you?">🔊</span></div></li>
+                        <li><div class="phrase"><span class="english-text">I'm fine, thank you. And you?</span> <span class="audio-icon" data-audio-text="I'm fine, thank you. And you?">🔊</span></div></li>
+                    </ul>
+                </li>
+                <li><strong>自我介绍：</strong>
+                    <ul>
+                        <li><div class="phrase"><span class="english-text">My name is... / I'm...</span> <span class="audio-icon" data-audio-text="My name is I'm">🔊</span></div></li>
+                        <li><div class="phrase"><span class="english-text">Nice to meet you. / Nice to meet you, too.</span> <span class="audio-icon" data-audio-text="Nice to meet you Nice to meet you too">🔊</span></div></li>
+                    </ul>
+                </li>
+            </ul>
+            <p>这些短语是英语交流的基石。多听、多说、多练习，你会越来越流利！期待在下一章与你相遇！</p>
+        </section>
+
+    </div>
+</body>
+</html>

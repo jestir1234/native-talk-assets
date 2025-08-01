@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Chapter 6: Daily Activities and Routines</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-color: #FDF9E5;
+            --heading-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+            --white-color: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white-color); /* Overall app background */
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent text scaling issues */
+        }
+
+        /* Container for content width */
+        .container {
+            max-width: 768px; /* Max width for tablet landscape */
+            margin: 0 auto;
+            padding: 0 15px; /* Padding for mobile screens */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        h1.chapter-title {
+            font-size: 28px;
+            text-align: center;
+            padding-top: 20px;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 22px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 16px;
+        }
+
+        li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode symbol for bullet */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 14px;
+            top: 2px;
+        }
+
+        /* Lesson Header */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Limits width on larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            object-fit: cover; /* Ensures image covers area if dimensions mismatch */
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        .section-background {
+            background-color: var(--secondary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Text Highlighting & Pronunciation */
+        .korean-word {
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .pronunciation {
+            font-size: 14px;
+            color: #888;
+            font-style: italic;
+            display: block;
+            margin-top: 4px;
+        }
+
+        /* Example Sentences */
+        .example-sentence {
+            background-color: var(--white-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 12px;
+            margin: 16px 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-sentence p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .example-sentence .translation {
+            color: #777;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 50%; /* Make it round */
+            width: 48px; /* Minimum 44px for easy tap */
+            height: 48px; /* Minimum 44px for easy tap */
+            font-size: 20px;
+            display: inline-flex; /* For centering content */
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            vertical-align: middle;
+            margin-left: 8px;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4896; /* Darker shade on hover */
+            transform: scale(1.05);
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: #e6f7ff; /* Light blue for cultural notes */
+            border-left: 4px solid #4a90e2; /* Blue accent */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .cultural-note strong {
+            color: #4a90e2;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--secondary-color);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: var(--heading-color);
+            margin-bottom: 20px;
+        }
+
+        .practice-question {
+            background-color: var(--white-color);
+            padding: 18px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            font-size: 17px;
+        }
+
+        .practice-question strong {
+            color: var(--primary-color);
+        }
+
+        .practice-options button {
+            background-color: var(--white-color);
+            color: var(--heading-color);
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+            min-height: 44px; /* Ensure tap target size */
+            width: calc(50% - 10px); /* For 2 columns on mobile */
+            max-width: 200px; /* Limit button width on larger screens */
+            box-sizing: border-box; /* Include padding/border in width */
+        }
+
+        .practice-options button:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border-color: var(--primary-color);
+        }
+
+        .practice-options button.correct {
+            background-color: #4CAF50; /* Green for correct */
+            color: var(--white-color);
+            border-color: #4CAF50;
+        }
+
+        .practice-options button.incorrect {
+            background-color: #F44336; /* Red for incorrect */
+            color: var(--white-color);
+            border-color: #F44336;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .feedback.correct {
+            color: #4CAF50;
+        }
+
+        .feedback.incorrect {
+            color: #F44336;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: var(--white-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 20px;
+        }
+
+        .summary-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .summary-section li {
+            font-size: 16px;
+            margin-bottom: 10px;
+            padding-left: 0; /* Remove specific bullet for summary list */
+        }
+        .summary-section li::before {
+            content: '✨'; /* Different unicode for summary */
+            color: var(--white-color);
+            font-size: 14px;
+        }
+
+
+        /* Responsive Adjustments */
+        @media (min-width: 600px) {
+            h1.chapter-title {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 26px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            p, li, .example-sentence p, .example-sentence .translation,
+            .cultural-note, .practice-question, .practice-options button {
+                font-size: 17px;
+            }
+            .audio-icon {
+                width: 52px;
+                height: 52px;
+                font-size: 22px;
+            }
+            .practice-options button {
+                width: calc(33% - 10px); /* 3 columns on wider screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 6: Daily Activities and Routines</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+        </div>
+
+        <div class="lesson-section">
+            <p>Hey there, language learners! 👋 In this chapter, we're diving into the everyday actions that make up our day. From waking up to sleeping, you'll learn essential Korean verbs and time expressions to talk about your routine!</p>
+            <p>Let's get started and make your Korean conversations about daily life super smooth!</p>
+        </div>
+
+        <div class="section-background">
+            <h2>Essential Daily Verbs</h2>
+            <p>These are core verbs you'll use constantly to describe what you do throughout the day. Remember, Korean verbs often end with <span class="korean-word">-다</span> in their dictionary form.</p>
+
+            <h3>1. 일어나다 (to wake up / to get up)</h3>
+            <p><span class="korean-word">일어나다</span> <span class="pronunciation">[ee-luh-nah-dah]</span></p>
+            <p>This verb means 'to wake up' or 'to get up'. Use it when you're talking about starting your day!</p>
+            <div class="example-sentence">
+                <p>저는 아침에 일찍 <strong>일어나요</strong>. <button class="audio-icon" data-audio-text="저는 아침에 일찍 일어나요">🔊</button></p>
+                <p class="translation">I wake up early in the morning.</p>
+            </div>
+            <div class="example-sentence">
+                <p>몇 시에 <strong>일어나세요</strong>? <button class="audio-icon" data-audio-text="몇 시에 일어나세요">🔊</button></p>
+                <p class="translation">What time do you wake up?</p>
+            </div>
+
+            <h3>2. 먹다 (to eat)</h3>
+            <p><span class="korean-word">먹다</span> <span class="pronunciation">[muhk-dah]</span></p>
+            <p>One of the most important verbs! <span class="korean-word">먹다</span> means 'to eat'. You'll use this several times a day!</p>
+            <div class="example-sentence">
+                <p>저는 아침을 <strong>먹어요</strong>. <button class="audio-icon" data-audio-text="저는 아침을 먹어요">🔊</button></p>
+                <p class="translation">I eat breakfast.</p>
+            </div>
+            <div class="example-sentence">
+                <p>점심에 뭘 <strong>먹고</strong> 싶어요? <button class="audio-icon" data-audio-text="점심에 뭘 먹고 싶어요">🔊</button></p>
+                <p class="translation">What do you want to eat for lunch?</p>
+            </div>
+
+            <h3>3. 마시다 (to drink)</h3>
+            <p><span class="korean-word">마시다</span> <span class="pronunciation">[mah-shee-dah]</span></p>
+            <p>Just like 'eat', 'drink' is essential. <span class="korean-word">마시다</span> is your go-to verb for beverages.</p>
+            <div class="example-sentence">
+                <p>저는 물을 많이 <strong>마셔요</strong>. <button class="audio-icon" data-audio-text="저는 물을 많이 마셔요">🔊</button></p>
+                <p class="translation">I drink a lot of water.</p>
+            </div>
+            <div class="example-sentence">
+                <p>커피 <strong>마실래요</strong>? <button class="audio-icon" data-audio-text="커피 마실래요">🔊</button></p>
+                <p class="translation">Do you want to drink coffee?</p>
+            </div>
+
+            <h3>4. 공부하다 (to study)</h3>
+            <p><span class="korean-word">공부하다</span> <span class="pronunciation">[gong-boo-hah-dah]</span></p>
+            <p>If you're learning Korean, you're definitely doing this! <span class="korean-word">공부하다</span> means 'to study'.</p>
+            <div class="example-sentence">
+                <p>저는 한국어를 <strong>공부해요</strong>. <button class="audio-icon" data-audio-text="저는 한국어를 공부해요">🔊</button></p>
+                <p class="translation">I study Korean.</p>
+            </div>
+            <div class="example-sentence">
+                <p>매일 <strong>공부해야</strong> 해요. <button class="audio-icon" data-audio-text="매일 공부해야 해요">🔊</button></p>
+                <p class="translation">I have to study every day.</p>
+            </div>
+
+            <h3>5. 일하다 (to work)</h3>
+            <p><span class="korean-word">일하다</span> <span class="pronunciation">[eel-hah-dah]</span></p>
+            <p>For your job or task, use <span class="korean-word">일하다</span>, which means 'to work'.</p>
+            <div class="example-sentence">
+                <p>저는 회사에서 <strong>일해요</strong>. <button class="audio-icon" data-audio-text="저는 회사에서 일해요">🔊</button></p>
+                <p class="translation">I work at a company.</p>
+            </div>
+            <div class="example-sentence">
+                <p>오늘은 안 <strong>일해요</strong>. <button class="audio-icon" data-audio-text="오늘은 안 일해요">🔊</button></p>
+                <p class="translation">I don't work today.</p>
+            </div>
+
+            <h3>6. 자다 (to sleep)</h3>
+            <p><span class="korean-word">자다</span> <span class="pronunciation">[jah-dah]</span></p>
+            <p>At the end of a long day, you <span class="korean-word">자다</span>! This verb means 'to sleep'.</p>
+            <div class="example-sentence">
+                <p>저는 밤에 늦게 <strong>자요</strong>. <button class="audio-icon" data-audio-text="저는 밤에 늦게 자요">🔊</button></p>
+                <p class="translation">I sleep late at night.</p>
+            </div>
+            <div class="example-sentence">
+                <p>잘 <strong>자요</strong>! <button class="audio-icon" data-audio-text="잘 자요">🔊</button></p>
+                <p class="translation">Sleep well! (Good night!)</p>
+            </div>
+        </div>
+
+        <div class="lesson-section">
+            <h2>Time Expressions: Your Day in Korean ☀️</h2>
+            <p>Now that you know some verbs, let's learn how to specify *when* these actions happen!</p>
+
+            <ul>
+                <li>
+                    <span class="korean-word">아침</span> <span class="pronunciation">[ah-chim]</span>: <strong>Morning / Breakfast</strong>
+                    <p>Often used for "breakfast" when combined with "eat" (<span class="korean-word">아침을 먹다</span>).</p>
+                    <div class="example-sentence">
+                        <p><strong>아침</strong>에 운동해요. <button class="audio-icon" data-audio-text="아침에 운동해요">🔊</button></p>
+                        <p class="translation">I exercise in the morning.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="korean-word">점심</span> <span class="pronunciation">[jum-shim]</span>: <strong>Lunch / Noon</strong>
+                    <p>Usually refers to the midday meal.</p>
+                    <div class="example-sentence">
+                        <p><strong>점심</strong>은 1시에 먹어요. <button class="audio-icon" data-audio-text="점심은 1시에 먹어요">🔊</button></p>
+                        <p class="translation">I eat lunch at 1 o'clock.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="korean-word">저녁</span> <span class="pronunciation">[juh-nyuk]</span>: <strong>Evening / Dinner</strong>
+                    <p>Covers both the evening time and the dinner meal.</p>
+                    <div class="example-sentence">
+                        <p><strong>저녁</strong>에 친구를 만나요. <button class="audio-icon" data-audio-text="저녁에 친구를 만나요">🔊</button></p>
+                        <p class="translation">I meet a friend in the evening.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="korean-word">밤</span> <span class="pronunciation">[bahm]</span>: <strong>Night</strong>
+                    <p>From late evening until morning. Don't confuse with <span class="korean-word">저녁</span> (early evening).</p>
+                    <div class="example-sentence">
+                        <p><strong>밤</strong>에 책을 읽어요. <button class="audio-icon" data-audio-text="밤에 책을 읽어요">🔊</button></p>
+                        <p class="translation">I read a book at night.</p>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>Cultural Insight: Meal Names!</strong>
+                In Korean, the words for 'breakfast' (<span class="korean-word">아침</span>), 'lunch' (<span class="korean-word">점심</span>), and 'dinner' (<span class="korean-word">저녁</span>) are the same as the words for 'morning', 'noon', and 'evening' respectively! So, to say "I eat breakfast", you say <span class="korean-word">아침을 먹어요</span> (literally "I eat morning").
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <h3>📝 Practice Time!</h3>
+            <p>Let's check your understanding. Pick the best word to complete the sentences!</p>
+
+            <div class="practice-question">
+                <p>1. 저는 ____에 커피를 마셔요.</p>
+                <p>I drink coffee in the ____.</p>
+                <div class="practice-options">
+                    <button data-correct="true" data-answer="아침">아침 (morning)</button>
+                    <button data-correct="false" data-answer="자다">자다 (to sleep)</button>
+                    <button data-correct="false" data-answer="일하다">일하다 (to work)</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="practice-question">
+                <p>2. 학생들은 학교에서 한국어를 ____.</p>
+                <p>Students ____ Korean at school.</p>
+                <div class="practice-options">
+                    <button data-correct="false" data-answer="먹다">먹다 (to eat)</button>
+                    <button data-correct="true" data-answer="공부해요">공부해요 (study)</button>
+                    <button data-correct="false" data-answer="일어나다">일어나다 (to wake up)</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="practice-question">
+                <p>3. 우리는 ____에 저녁을 먹어요.</p>
+                <p>We eat dinner in the ____.</p>
+                <div class="practice-options">
+                    <button data-correct="false" data-answer="아침">아침 (morning)</button>
+                    <button data-correct="false" data-answer="점심">점심 (lunch)</button>
+                    <button data-correct="true" data-answer="저녁">저녁 (evening)</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+
+            <div class="practice-question">
+                <p>4. 피곤하면 일찍 ____.</p>
+                <p>If you're tired, ____ early.</p>
+                <div class="practice-options">
+                    <button data-correct="false" data-answer="마셔요">마셔요 (drink)</button>
+                    <button data-correct="false" data-answer="일해요">일해요 (work)</button>
+                    <button data-correct="true" data-answer="자요">자요 (sleep)</button>
+                </div>
+                <p class="feedback"></p>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h2>Chapter 6: Daily Routines Summary 🌟</h2>
+            <p>You've learned some super useful vocabulary for talking about your daily life in Korean!</p>
+            <ul>
+                <li>✨ <strong>Verbs:</strong>
+                    <ul>
+                        <li><span class="korean-word">일어나다</span> (to wake up)</li>
+                        <li><span class="korean-word">먹다</span> (to eat)</li>
+                        <li><span class="korean-word">마시다</span> (to drink)</li>
+                        <li><span class="korean-word">공부하다</span> (to study)</li>
+                        <li><span class="korean-word">일하다</span> (to work)</li>
+                        <li><span class="korean-word">자다</span> (to sleep)</li>
+                    </ul>
+                </li>
+                <li>✨ <strong>Time Expressions:</strong>
+                    <ul>
+                        <li><span class="korean-word">아침</span> (morning / breakfast)</li>
+                        <li><span class="korean-word">점심</span> (noon / lunch)</li>
+                        <li><span class="korean-word">저녁</span> (evening / dinner)</li>
+                        <li><span class="korean-word">밤</span> (night)</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Great job! Keep practicing these words and try to form simple sentences about your own day. You're doing amazing! 🥳</p>
+        </div>
+    </div>
+
+    <!-- This script is for the practice section interactivity only and will be replaced by native mobile functionality -->
+    <script>
+        document.querySelectorAll('.practice-options button').forEach(button => {
+            button.addEventListener('click', function() {
+                const parentQuestion = this.closest('.practice-question');
+                const feedbackElement = parentQuestion.querySelector('.feedback');
+                const options = parentQuestion.querySelectorAll('.practice-options button');
+
+                // Reset previous selections and feedback
+                options.forEach(btn => {
+                    btn.classList.remove('correct', 'incorrect');
+                    btn.disabled = false; // Re-enable for multiple attempts or different questions
+                });
+                feedbackElement.textContent = ''; // Clear previous feedback
+
+                // Check answer
+                if (this.dataset.correct === 'true') {
+                    this.classList.add('correct');
+                    feedbackElement.textContent = '✅ Correct! Well done!';
+                    feedbackElement.classList.remove('incorrect');
+                    feedbackElement.classList.add('correct');
+                } else {
+                    this.classList.add('incorrect');
+                    feedbackElement.textContent = '❌ Not quite. Try again!';
+                    feedbackElement.classList.remove('correct');
+                    feedbackElement.classList.add('incorrect');
+                    // Optionally, highlight correct answer
+                    // parentQuestion.querySelector('button[data-correct="true"]').classList.add('correct');
+                }
+
+                // Disable all buttons for this question after an attempt
+                options.forEach(btn => btn.disabled = true);
+            });
+        });
+
+        // The audio-icon click functionality will be injected by the mobile frontend.
+        // No JavaScript event listeners should be explicitly added here for audio.
+    </script>
+</body>
+</html>

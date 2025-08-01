@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Daily Activities and Routines</title>
+    <style>
+        /* CSS Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* Color Scheme */
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --text-heading-color: #2C3E50; /* Dark blue */
+            --text-body-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+            background-color: var(--white);
+            color: var(--text-body-color);
+            line-height: 1.6;
+            padding: 15px;
+            font-size: 16px; /* Minimum font size for body text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Responsive Layout Container */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 10px; /* Padding for very small screens */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--text-heading-color);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        h2 span {
+            margin-right: 10px; /* Space between emoji and text */
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        ul {
+            list-style: none; /* Remove default list bullets */
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 25px; /* Space for custom bullet */
+            position: relative;
+            font-size: 16px;
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet point using emoji */
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        strong {
+            color: var(--text-heading-color);
+        }
+
+        em {
+            font-style: normal;
+            color: var(--primary-color);
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .example-box {
+            background-color: var(--white);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+        }
+        .example-box p {
+            margin-bottom: 5px;
+            font-style: italic;
+            color: var(--text-body-color);
+        }
+        .example-box p strong {
+            color: var(--text-heading-color);
+        }
+
+
+        /* Header Specific Styles (Required) */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Specific shadow added */
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Interactive Elements - Audio Icon (Required) */
+        .audio-icon {
+            display: inline-flex; /* Use flexbox for centering content */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%; /* Make it round */
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            font-size: 20px; /* Size of the emoji/icon */
+            cursor: pointer;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            vertical-align: middle; /* Align with text */
+            margin-left: 8px; /* Space from text */
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+            background-color: #724DA2; /* A slightly darker purple for hover */
+        }
+        
+        /* Practice Section Styling */
+        .practice-section {
+            background-color: var(--white); /* Lighter background for practice */
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 2px dashed var(--border-color);
+        }
+
+        .practice-section h3 {
+            color: var(--text-heading-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .practice-section h3 span {
+            margin-right: 10px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            border: 1px solid var(--primary-color);
+        }
+        .question p {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: var(--text-heading-color);
+        }
+        .question .hint {
+            font-size: 14px;
+            color: var(--text-body-color);
+            margin-top: 5px;
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .fill-in-the-blank {
+            display: block;
+            width: calc(100% - 20px); /* Adjust width to account for padding/margin */
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            font-size: 16px;
+            color: var(--text-heading-color);
+            background-color: var(--white);
+        }
+        .fill-in-the-blank:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(139, 95, 191, 0.2);
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 12px 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            min-height: 44px; /* Ensure tap target size */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .submit-button:hover {
+            background-color: #724DA2; /* Slightly darker purple */
+            transform: translateY(-2px);
+        }
+
+        .feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            display: none; /* Hidden by default, shown by JS */
+        }
+        .feedback.correct {
+            background-color: #e6ffe6; /* Light green */
+            color: #28a745; /* Dark green */
+        }
+        .feedback.incorrect {
+            background-color: #ffe6e6; /* Light red */
+            color: #dc3545; /* Dark red */
+        }
+        .feedback.visible {
+            display: block;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .summary-section h2 {
+            color: var(--white);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+        .summary-section ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .summary-section li {
+            margin-bottom: 10px;
+            font-size: 17px;
+            color: var(--white);
+            padding-left: 30px;
+            position: relative;
+        }
+        .summary-section li::before {
+            content: '✅'; /* Checkmark emoji for list items */
+            position: absolute;
+            left: 0;
+            color: var(--white);
+            font-size: 20px;
+        }
+        .summary-section p {
+            color: var(--white);
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        /* Media Queries for larger screens (Tablet/Desktop) */
+        @media screen and (min-width: 768px) {
+            body {
+                font-size: 17px;
+            }
+            h1 {
+                font-size: 36px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 22px;
+            }
+            p, li {
+                font-size: 17px;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            section, .practice-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER STRUCTURE REQUIREMENT -->
+        <h1 class="chapter-title">Chapter 6: Daily Activities and Routines</h1>
+        <div class="lesson-header">
+            <!-- Note: src="../header.webp" is a relative path, implying it's an asset bundled with the mobile app -->
+            <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2><span>👋</span>欢迎来到第六章：日常活动与作息！</h2>
+            <p>在这一章，我们将学习如何用英语描述你每天都做的事情。从早上起床到晚上睡觉，你将掌握最常用的一些动词、时态以及时间表达。</p>
+            <p>掌握这些，就能轻松分享你的“一天”啦！</p>
+        </section>
+
+        <section>
+            <h2><span>🗣️</span>核心动词：每天都在用！</h2>
+            <p>先来认识一些描述日常活动最最基础的动词。它们就像乐高积木，是构建句子必不可少的部分！</p>
+
+            <h3>1. Eat (吃) <span class="audio-icon" data-audio-text="eat">🔊</span></h3>
+            <p>这个词非常常用！可以指吃任何东西。</p>
+            <div class="example-box">
+                <p><strong>English:</strong> I <strong>eat</strong> breakfast at 7 AM.</p>
+                <p><strong>Chinese:</strong> 我早上7点<strong>吃</strong>早餐。</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> We <strong>eat</strong> dinner together.</p>
+                <p><strong>Chinese:</strong> 我们一起<strong>吃</strong>晚饭。</p>
+            </div>
+
+            <h3>2. Drink (喝) <span class="audio-icon" data-audio-text="drink">🔊</span></h3>
+            <p>指喝水、饮料等。</p>
+            <div class="example-box">
+                <p><strong>English:</strong> She <strong>drinks</strong> coffee every morning.</p>
+                <p><strong>Chinese:</strong> 她每天早上都<strong>喝</strong>咖啡。</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> Do you <strong>drink</strong> enough water?</p>
+                <p><strong>Chinese:</strong> 你喝足够的水了吗？</p>
+            </div>
+
+            <h3>3. Sleep (睡觉) <span class="audio-icon" data-audio-text="sleep">🔊</span></h3>
+            <p>指休息、睡觉。</p>
+            <div class="example-box">
+                <p><strong>English:</strong> I usually <strong>sleep</strong> eight hours a night.</p>
+                <p><strong>Chinese:</strong> 我通常每晚<strong>睡</strong>八个小时。</p>
+            </div>
+
+            <h3>4. Work (工作) <span class="audio-icon" data-audio-text="work">🔊</span></h3>
+            <p>指工作、上班。</p>
+            <div class="example-box">
+                <p><strong>English:</strong> He <strong>works</strong> in an office.</p>
+                <p><strong>Chinese:</strong> 他在办公室<strong>工作</strong>。</p>
+            </div>
+
+            <h3>5. Study (学习) <span class="audio-icon" data-audio-text="study">🔊</span></h3>
+            <p>指学习、读书。</p>
+            <div class="example-box">
+                <p><strong>English:</strong> We <strong>study</strong> English every day.</p>
+                <p><strong>Chinese:</strong> 我们每天都<strong>学习</strong>英语。</p>
+            </div>
+
+            <h3>6. Play (玩耍/玩乐) <span class="audio-icon" data-audio-text="play">🔊</span></h3>
+            <p>可以指玩耍、玩游戏，也可以指打球、演奏乐器等。</p>
+            <div class="example-box">
+                <p><strong>English:</strong> Children often <strong>play</strong> in the park.</p>
+                <p><strong>Chinese:</strong> 孩子们经常在公园<strong>玩耍</strong>。</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> I <strong>play</strong> basketball on weekends.</p>
+                <p><strong>Chinese:</strong> 我周末<strong>打</strong>篮球。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2><span>⏰</span>现在简单时：日常必备时态！</h2>
+            <p>要描述日常活动，我们必须使用“现在简单时” (Present Simple Tense)。它用来表示：</p>
+            <ul>
+                <li><strong>重复性的动作或习惯</strong>：你每天都做的事情。</li>
+                <li><strong>普遍事实或真理</strong>：不变的事实。</li>
+            </ul>
+
+            <h3>结构很简单：</h3>
+            <p><strong>主语 + 动词原形</strong></p>
+            <p>但有一个重要例外：当主语是<strong>第三人称单数</strong> (he, she, it) 时，动词后面要加 <strong>-s 或 -es</strong>。</p>
+
+            <div class="example-box">
+                <p><strong>I / You / We / They</strong> <strong>eat</strong> lunch.</p>
+                <p>我/你/我们/他们 吃午饭。</p>
+                <p><strong>He / She / It</strong> <strong>eats</strong> lunch.</p>
+                <p>他/她/它 吃午饭。</p>
+            </div>
+            <p>看，这里的 <em>eat</em> 变成了 <em>eats</em>！记住这个“S”很重要哦！</p>
+        </section>
+
+        <section>
+            <h2><span>👍👎</span>肯定与否定：我说... / 我没说...</h2>
+            <p>学会了现在简单时，我们来看看怎么表达肯定和否定。</p>
+
+            <h3>肯定句 (Positive Sentences)</h3>
+            <p>直接使用上面的结构：</p>
+            <ul>
+                <li><strong>I eat</strong> breakfast. <span class="audio-icon" data-audio-text="I eat breakfast.">🔊</span> (我吃早餐。)</li>
+                <li><strong>You study</strong> English. <span class="audio-icon" data-audio-text="You study English.">🔊</span> (你学习英语。)</li>
+                <li><strong>He works</strong> in a bank. <span class="audio-icon" data-audio-text="He works in a bank.">🔊</span> (他在银行工作。)</li>
+            </ul>
+
+            <h3>否定句 (Negative Sentences)</h3>
+            <p>我们需要借助助动词 <strong>do / does</strong> 和 <strong>not</strong>。</p>
+            <ul>
+                <li><strong>I / You / We / They + do not (don't) + 动词原形</strong></li>
+                <li><strong>He / She / It + does not (doesn't) + 动词原形</strong></li>
+            </ul>
+            <p>注意！变成否定句时，第三人称单数动词的 -s/-es 要去掉，因为 <em>does</em> 已经承担了这个变化。</p>
+
+            <div class="example-box">
+                <p><strong>English:</strong> I <strong>don't eat</strong> meat.</p>
+                <p><strong>Chinese:</strong> 我不吃肉。</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> She <strong>doesn't drink</strong> coffee.</p>
+                <p><strong>Chinese:</strong> 她不喝咖啡。</p>
+            </div>
+            <div class="example-box">
+                <p><strong>English:</strong> They <strong>don't work</strong> on Sundays.</p>
+                <p><strong>Chinese:</strong> 他们周日不工作。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2><span>📅</span>日常活动词汇：你的每一天</h2>
+            <p>掌握这些词汇，就能串联起一整天的活动了！</p>
+            <ul>
+                <li><strong>wake up</strong> <span class="audio-icon" data-audio-text="wake up">🔊</span> (醒来)</li>
+                <li><strong>get up</strong> <span class="audio-icon" data-audio-text="get up">🔊</span> (起床)</li>
+                <li><strong>brush teeth</strong> <span class="audio-icon" data-audio-text="brush teeth">🔊</span> (刷牙)</li>
+                <li><strong>have breakfast / lunch / dinner</strong> <span class="audio-icon" data-audio-text="have breakfast, have lunch, have dinner">🔊</span> (吃早饭/午饭/晚饭)</li>
+                <li><strong>go to school / work</strong> <span class="audio-icon" data-audio-text="go to school, go to work">🔊</span> (上学/上班)</li>
+                <li><strong>come home</strong> <span class="audio-icon" data-audio-text="come home">🔊</span> (回家)</li>
+                <li><strong>take a shower</strong> <span class="audio-icon" data-audio-text="take a shower">🔊</span> (洗澡)</li>
+                <li><strong>go to bed</strong> <span class="audio-icon" data-audio-text="go to bed">🔊</span> (睡觉)</li>
+            </ul>
+
+            <h3>你的日常可能长这样：</h3>
+            <div class="example-box">
+                <p>I <strong>wake up</strong> at 6 AM.</p>
+                <p>I <strong>brush my teeth</strong> and then <strong>have breakfast</strong>.</p>
+                <p>I <strong>go to work</strong> at 8 AM.</p>
+                <p>I <strong>come home</strong> in the evening.</p>
+                <p>Finally, I <strong>go to bed</strong> at 10 PM.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2><span>🕒</span>时间表达：精准描述！</h2>
+            <p>要让你的日常描述更清晰，少不了时间表达！</p>
+            <ul>
+                <li><strong>in the morning</strong> <span class="audio-icon" data-audio-text="in the morning">🔊</span> (在早上)</li>
+                <li><strong>in the afternoon</strong> <span class="audio-icon" data-audio-text="in the afternoon">🔊</span> (在下午)</li>
+                <li><strong>in the evening</strong> <span class="audio-icon" data-audio-text="in the evening">🔊</span> (在晚上/傍晚)</li>
+                <li><strong>at night</strong> <span class="audio-icon" data-audio-text="at night">🔊</span> (在夜里，指深夜或笼统的夜晚)</li>
+                <li><strong>at [具体时间]</strong> <span class="audio-icon" data-audio-text="at 7 o'clock">🔊</span> (在…点)：比如 <strong>at 7 o'clock</strong> (7点), <strong>at noon</strong> (中午), <strong>at midnight</strong> (午夜)</li>
+            </ul>
+            <div class="example-box">
+                <p>I read books <strong>in the evening</strong>.</p>
+                <p>我在<strong>晚上</strong>读书。</p>
+            </div>
+            <div class="example-box">
+                <p>She goes to school <strong>in the morning</strong>.</p>
+                <p>她<strong>早上</strong>去上学。</p>
+            </div>
+            <div class="example-box">
+                <p>We have lunch <strong>at 12 PM</strong>.</p>
+                <p>我们<strong>中午12点</strong>吃午饭。</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3><span>✍️</span>实践一下！</h3>
+            <p>现在，用你学到的知识来完成下面的句子吧！填入正确的动词形式或时间表达。</p>
+
+            <div class="question">
+                <p>1. My sister usually _________ (drink) tea.</p>
+                <p class="hint">提示：主语是第三人称单数！</p>
+                <input type="text" class="fill-in-the-blank" id="q1" placeholder="填入答案">
+            </div>
+
+            <div class="question">
+                <p>2. I _________ (not / work) on Saturdays.</p>
+                <p class="hint">提示：使用否定形式。</p>
+                <input type="text" class="fill-in-the-blank" id="q2" placeholder="填入答案">
+            </div>
+
+            <div class="question">
+                <p>3. We have dinner _________ the evening.</p>
+                <p class="hint">提示：在“早上/下午/晚上”前用哪个介词？</p>
+                <input type="text" class="fill-in-the-blank" id="q3" placeholder="填入答案">
+            </div>
+
+            <div class="question">
+                <p>4. He _________ (go) to bed at 10 PM.</p>
+                <p class="hint">提示：主语是第三人称单数，动词 'go' 的特殊变化。</p>
+                <input type="text" class="fill-in-the-blank" id="q4" placeholder="填入答案">
+            </div>
+
+            <!-- This button is for a hypothetical JavaScript functionality that provides instant feedback. -->
+            <!-- Note: The prompt states that click handlers for audio-icons will be injected. -->
+            <!-- For other interactive elements like this button, a basic JS function is provided for demonstration. -->
+            <button class="submit-button" onclick="checkAnswers()">检查答案</button>
+            <div id="feedback" class="feedback"></div>
+
+            <script>
+                // This JavaScript function is for providing instant feedback for the practice section.
+                // In a real mobile app, this logic might be handled natively.
+                function checkAnswers() {
+                    const answers = {
+                        q1: "drinks",
+                        q2: "don't work",
+                        q3: "in",
+                        q4: "goes"
+                    };
+                    let allCorrect = true;
+
+                    for (const id in answers) {
+                        const input = document.getElementById(id);
+                        // Ensure answer is compared case-insensitively and trimmed
+                        const userAnswer = input.value.trim().toLowerCase();
+                        if (userAnswer === answers[id].toLowerCase()) {
+                            input.style.borderColor = "#28a745"; // Green border for correct
+                        } else {
+                            allCorrect = false;
+                            input.style.borderColor = "#dc3545"; // Red border for incorrect
+                        }
+                    }
+
+                    const feedbackDiv = document.getElementById('feedback');
+                    feedbackDiv.classList.add('visible'); // Make feedback visible
+
+                    if (allCorrect) {
+                        feedbackDiv.classList.remove('incorrect');
+                        feedbackDiv.classList.add('correct');
+                        feedbackDiv.textContent = "🎉 太棒了！所有答案都正确！";
+                    } else {
+                        feedbackDiv.classList.remove('correct');
+                        feedbackDiv.classList.add('incorrect');
+                        feedbackDiv.textContent = "😕 再试一次，有些答案不对哦！";
+                    }
+                }
+            </script>
+        </section>
+
+        <section class="summary-section">
+            <h2><span>✨</span>本章总结</h2>
+            <p>恭喜你！你已经完成了“日常活动与作息”这一章的学习。我们一起探索了：</p>
+            <ul>
+                <li><strong>核心动词</strong>：eat, drink, sleep, work, study, play 等。</li>
+                <li><strong>现在简单时</strong>：用于描述日常习惯和事实（别忘了第三人称单数动词加-s/-es！）。</li>
+                <li><strong>肯定句与否定句</strong>：学会了用 do/don't 和 does/doesn't 来表达。</li>
+                <li><strong>日常活动词汇</strong>：get up, brush teeth, go to work 等，串联你的每一天。</li>
+                <li><strong>时间表达</strong>：in the morning/afternoon/evening, at night, at [time]。</li>
+            </ul>
+            <p>现在，你可以尝试用英语描述你自己的日常活动了！不断练习，让这些表达自然流利地从你口中说出吧！</p>
+            <!-- DO NOT include a button to go to the next chapter as per requirement -->
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Numbers and Counting</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling on orientation change */
+        }
+
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            padding: 0 15px; /* Add padding for small screens */
+        }
+
+        h1 {
+            font-size: 2em; /* Approx 32px */
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.6em; /* Approx 26px */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 1.3em; /* Approx 21px */
+            margin-top: 20px;
+        }
+
+        p, ul, ol {
+            font-size: 1em; /* Approx 16px */
+            padding: 0 15px;
+            margin-bottom: 1em;
+        }
+
+        strong {
+            color: #2C3E50; /* Dark blue for emphasis */
+        }
+
+        em {
+            font-style: italic;
+            color: #8B5FBF; /* Primary: Purple for examples/highlights */
+        }
+
+        /* Lesson Header */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Constrain max width for larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 15px 0; /* Vertical padding, horizontal handled by p/ul */
+            margin-bottom: 20px;
+            border-bottom: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* List Styling */
+        ul {
+            list-style-type: none; /* Remove default bullet */
+            padding: 0 15px;
+            margin: 0;
+        }
+
+        ul li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #E0E0E0; /* Subtle divider */
+            display: flex; /* For aligning icon and text */
+            align-items: center;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Circular button */
+            width: 44px; /* Minimum touch target size */
+            height: 44px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em; /* Icon size */
+            cursor: pointer;
+            margin-right: 10px;
+            flex-shrink: 0; /* Prevent icon from shrinking */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15); /* Soft shadow */
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .audio-icon:hover {
+            background-color: #6A4499; /* Darker purple on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple tint */
+            padding: 20px 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid rgba(139, 95, 191, 0.3);
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF;
+            margin-top: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 1.4em;
+        }
+
+        .exercise-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #FDF9E5;
+            border-radius: 6px;
+            border: 1px solid #E0E0E0;
+        }
+
+        .exercise-item p {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Cultural Notes and Tips */
+        .tip, .cultural-note {
+            background-color: rgba(224, 224, 224, 0.3); /* Lighter gray tint */
+            padding: 15px;
+            margin: 15px;
+            border-left: 5px solid #8B5FBF; /* Accent border */
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+
+        .tip strong, .cultural-note strong {
+            color: #8B5FBF; /* Purple for highlights */
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            padding: 25px 15px;
+            margin-top: 30px;
+            border-radius: 0; /* No border-radius for full width sections */
+        }
+
+        .summary-section h2 {
+            color: white;
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            margin-top: 0;
+            padding-bottom: 10px;
+        }
+
+        .summary-section ul {
+            list-style-type: disc;
+            padding-left: 35px; /* Indent for disc bullets */
+        }
+
+        .summary-section li {
+            padding: 5px 0;
+            border-bottom: none;
+            display: list-item;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 600px) {
+            body {
+                max-width: 800px;
+                margin: 0 auto;
+                box-shadow: 0 0 15px rgba(0,0,0,0.05); /* Soft shadow for larger screens */
+                border-left: 1px solid #E0E0E0;
+                border-right: 1px solid #E0E0E0;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            h3 {
+                font-size: 1.5em;
+            }
+
+            p, ul, ol, .tip, .cultural-note, .practice-section {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            .summary-section {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Chapter 3: Numbers and Counting</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+    </div>
+
+    <section>
+        <h2>🔢 数字 1-20 (Numbers 1-20)</h2>
+        <p>学习数字是英语学习的基础！让我们从1到20开始。</p>
+        <p>每个数字都有一个发音按钮，点击聆听并跟着读！</p>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="one">🔊</button>
+                <strong>1</strong>: one (“万”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="two">🔊</button>
+                <strong>2</strong>: two (“兔”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="three">🔊</button>
+                <strong>3</strong>: three (“丝瑞” - 注意舌头放门牙中间发音)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="four">🔊</button>
+                <strong>4</strong>: four (“佛”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="five">🔊</button>
+                <strong>5</strong>: five (“法五”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="six">🔊</button>
+                <strong>6</strong>: six (“四颗思”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="seven">🔊</button>
+                <strong>7</strong>: seven (“赛文”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="eight">🔊</button>
+                <strong>8</strong>: eight (“哎特”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="nine">🔊</button>
+                <strong>9</strong>: nine (“乃恩”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="ten">🔊</button>
+                <strong>10</strong>: ten (“探”)
+            </li>
+        </ul>
+        <h3>✨ 11-20 的数字</h3>
+        <p>11到20的数字有些是特殊单词，有些则以 <em>-teen</em> 结尾。</p>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="eleven">🔊</button>
+                <strong>11</strong>: eleven (“伊莱文”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="twelve">🔊</button>
+                <strong>12</strong>: twelve (“吐奥夫”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="thirteen">🔊</button>
+                <strong>13</strong>: thirteen (“赛丁” - 注意尾音)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="fourteen">🔊</button>
+                <strong>14</strong>: fourteen (“佛丁”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="fifteen">🔊</button>
+                <strong>15</strong>: fifteen (“飞芙丁”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="sixteen">🔊</button>
+                <strong>16</strong>: sixteen (“丝颗思丁”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="seventeen">🔊</button>
+                <strong>17</strong>: seventeen (“赛文丁”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="eighteen">🔊</button>
+                <strong>18</strong>: eighteen (“哎丁”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="nineteen">🔊</button>
+                <strong>19</strong>: nineteen (“乃恩丁”)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="twenty">🔊</button>
+                <strong>20</strong>: twenty (“吞梯” 或 “吞尼”)
+            </li>
+        </ul>
+
+        <div class="practice-section">
+            <h3>📖 练习：读出数字</h3>
+            <p>点击数字旁边的发音按钮，然后自己大声读出来！</p>
+            <div class="exercise-item">
+                <button class="audio-icon" data-audio-text="seven">🔊</button> <strong>7</strong>
+            </div>
+            <div class="exercise-item">
+                <button class="audio-icon" data-audio-text="thirteen">🔊</button> <strong>13</strong>
+            </div>
+            <div class="exercise-item">
+                <button class="audio-icon" data-audio-text="eighteen">🔊</button> <strong>18</strong>
+            </div>
+            <div class="exercise-item">
+                <button class="audio-icon" data-audio-text="two">🔊</button> <strong>2</strong>
+            </div>
+            <div class="exercise-item">
+                <button class="audio-icon" data-audio-text="twenty">🔊</button> <strong>20</strong>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🍎 计数物品 (Counting Objects)</h2>
+        <p>学会了数字，就可以开始数东西了！</p>
+        <p>在英语中，当数量是“一”时，我们用名词的<strong>单数</strong>形式。当数量大于“一”时，我们用名词的<strong>复数</strong>形式（通常加 <em>-s</em>）。</p>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="one apple">🔊</button>
+                One apple 🍎 (一个苹果)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="two apples">🔊</button>
+                Two apples 🍎🍎 (两个苹果)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="three books">🔊</button>
+                Three books 📚📚📚 (三本书)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="five cats">🔊</button>
+                Five cats 🐱🐱🐱🐱🐱 (五只猫)
+            </li>
+        </ul>
+
+        <div class="practice-section">
+            <h3>📖 练习：数一数</h3>
+            <p>看看下面的表情符号，然后说出它们的数量和对应的英文单词。</p>
+            <div class="exercise-item">
+                <p>🍩🍩🍩🍩 👉 <button class="audio-icon" data-audio-text="four donuts">🔊</button> (four donuts)</p>
+            </div>
+            <div class="exercise-item">
+                <p>✏️✏️✏️✏️✏️✏️ 👉 <button class="audio-icon" data-audio-text="six pencils">🔊</button> (six pencils)</p>
+            </div>
+            <div class="exercise-item">
+                <p>🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗🚗 👉 <button class="audio-icon" data-audio-text="twelve cars">🔊</button> (twelve cars)</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🎂 年龄：你多大了？ (Age: How old are you?)</h2>
+        <p>询问和回答年龄是日常交流中非常常见的话题。</p>
+        <h3>询问年龄：</h3>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="How old are you?">🔊</button>
+                <strong>How old are you?</strong> (你多大了？)
+            </li>
+        </ul>
+        <h3>回答年龄：</h3>
+        <p>回答年龄的常见句型是 <em>"I'm ___ years old."</em> 或简单地说 <em>"I'm ___."</em></p>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="I'm ten years old.">🔊</button>
+                I'm <strong>ten</strong> years old. (我十岁了。)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="I'm twenty.">🔊</button>
+                I'm <strong>twenty</strong>. (我二十岁。)
+            </li>
+        </ul>
+        <div class="cultural-note">
+            <strong>文化小贴士 💡：</strong>
+            <p>在一些西方文化中，直接询问他人的年龄，尤其是成年女性的年龄，有时会被认为不礼貌。除非关系非常亲近或在特定场合（如儿童之间），否则要谨慎。</p>
+        </div>
+
+        <div class="practice-section">
+            <h3>📖 练习：谈论年龄</h3>
+            <p>设想你在和朋友交流，尝试说出下面的对话。</p>
+            <div class="exercise-item">
+                <p>问：你朋友问你多大了，用英语问：<button class="audio-icon" data-audio-text="How old are you?">🔊</button></p>
+                <p>答：如果你15岁，用英语回答：<button class="audio-icon" data-audio-text="I'm fifteen years old.">🔊</button></p>
+            </div>
+            <div class="exercise-item">
+                <p>问：你遇到了一个9岁的小朋友，你问他多大了：<button class="audio-icon" data-audio-text="How old are you?">🔊</button></p>
+                <p>答：他回答他9岁：<button class="audio-icon" data-audio-text="I'm nine years old.">🔊</button></p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>📞 电话号码和地址 (Phone Numbers and Addresses)</h2>
+        <p>在英语中，电话号码和地址的数字通常是<strong>逐位念出</strong>的。</p>
+        <h3>电话号码：</h3>
+        <ul>
+            <li>数字“0”通常读作 <button class="audio-icon" data-audio-text="oh">🔊</button> <strong>"oh"</strong> (像字母O)，而不是 <button class="audio-icon" data-audio-text="zero">🔊</button> <strong>"zero"</strong>。</li>
+            <li>如果连续出现相同的数字，可以用 <strong>"double"</strong> 或 <strong>"triple"</strong>。</li>
+        </ul>
+        <p><strong>例子:</strong></p>
+        <ul>
+            <li>
+                电话号码：<em>555-1234</em>
+                <br> 读作：<button class="audio-icon" data-audio-text="five five five, one two three four">🔊</button> Five five five, one two three four.
+            </li>
+            <li>
+                电话号码：<em>22-876-0099</em>
+                <br> 读作：<button class="audio-icon" data-audio-text="double two, eight seven six, oh oh double nine">🔊</button> Double two, eight seven six, oh oh double nine.
+            </li>
+        </ul>
+        <h3>地址：</h3>
+        <p>地址中的门牌号和邮编也是逐位念出的。</p>
+        <ul>
+            <li>
+                地址：<em>123 Main Street</em> (主街123号)
+                <br> 读作：<button class="audio-icon" data-audio-text="one two three Main Street">🔊</button> One two three Main Street.
+            </li>
+            <li>
+                邮编 (Zip Code)：<em>90210</em>
+                <br> 读作：<button class="audio-icon" data-audio-text="nine oh two one oh">🔊</button> Nine oh two one oh.
+            </li>
+        </ul>
+
+        <div class="practice-section">
+            <h3>📖 练习：读出号码</h3>
+            <p>尝试读出以下电话号码和地址信息。</p>
+            <div class="exercise-item">
+                <p>电话号码：800-456-7890<br> 
+                <button class="audio-icon" data-audio-text="eight oh oh, four five six, seven eight nine oh">🔊</button> (Eight oh oh, four five six, seven eight nine oh)</p>
+            </div>
+            <div class="exercise-item">
+                <p>电话号码：773-1122<br> 
+                <button class="audio-icon" data-audio-text="double seven three, double one double two">🔊</button> (Double seven three, double one double two)</p>
+            </div>
+            <div class="exercise-item">
+                <p>门牌号：201 Baker Street<br> 
+                <button class="audio-icon" data-audio-text="two oh one Baker Street">🔊</button> (Two oh one Baker Street)</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>➕ 基础数学词汇 (Basic Math Vocabulary)</h2>
+        <p>学习一些基本的数学运算词汇，可以帮助你表达简单的加减法。</p>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="plus">🔊</button>
+                <strong>plus</strong> (加号 +)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="minus">🔊</button>
+                <strong>minus</strong> (减号 -)
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="equals">🔊</button>
+                <strong>equals</strong> (等于 =)
+            </li>
+        </ul>
+        <p><strong>数学例句：</strong></p>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="One plus one equals two.">🔊</button>
+                1 + 1 = 2: <em>One plus one equals two.</em>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="Five minus three equals two.">🔊</button>
+                5 - 3 = 2: <em>Five minus three equals two.</em>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="Ten plus seven equals seventeen.">🔊</button>
+                10 + 7 = 17: <em>Ten plus seven equals seventeen.</em>
+            </li>
+        </ul>
+
+        <div class="practice-section">
+            <h3>📖 练习：简单算术</h3>
+            <p>读出下面的算术表达式。</p>
+            <div class="exercise-item">
+                <p>3 + 4 = 7 👉 <button class="audio-icon" data-audio-text="Three plus four equals seven.">🔊</button> (Three plus four equals seven.)</p>
+            </div>
+            <div class="exercise-item">
+                <p>9 - 5 = 4 👉 <button class="audio-icon" data-audio-text="Nine minus five equals four.">🔊</button> (Nine minus five equals four.)</p>
+            </div>
+            <div class="exercise-item">
+                <p>12 + 8 = 20 👉 <button class="audio-icon" data-audio-text="Twelve plus eight equals twenty.">🔊</button> (Twelve plus eight equals twenty.)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="summary-section">
+        <h2>🎉 本章小结 (Chapter Summary)</h2>
+        <p>恭喜你！在本章中，你学习了英语中关于数字和计数的关键概念：</p>
+        <ul>
+            <li>认识并学会了<strong>数字 1-20</strong> 的读法。</li>
+            <li>理解了如何<strong>计数物品</strong>，并注意名词的单数和复数形式。</li>
+            <li>掌握了询问和回答年龄的常用句型：<em>"How old are you?"</em> 和 <em>"I'm ___ years old."</em>。</li>
+            <li>学会了如何逐位念出<strong>电话号码和地址</strong>中的数字。</li>
+            <li>学习了基本的数学词汇：<strong>plus (加), minus (减), equals (等于)</strong>。</li>
+        </ul>
+        <p>通过这些知识，你现在可以更好地理解和使用英语中的数字了！继续练习，你会越来越流利！</p>
+    </section>
+
+</body>
+</html>

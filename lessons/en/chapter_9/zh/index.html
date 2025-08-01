@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chapter 9: Weather and Seasons</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0 15px; /* Add horizontal padding for mobile */
+            box-sizing: border-box;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        /* Responsive Design - Mobile First */
+        /* Base styles are for mobile (320px+) */
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 25px;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            text-align: center;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #E0E0E0; /* Light gray border */
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #8B5FBF; /* Primary color for sub-headings */
+        }
+
+        /* Lesson Header Specific Styles */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Using a placeholder for the image since external images are not allowed.
+               In a real app, this would be a local asset or a generated text/emoji image. */
+            background-color: #8B5FBF; /* Placeholder background */
+            color: white;
+            font-size: 24px;
+            padding: 40px 0;
+            box-sizing: border-box;
+            line-height: 1.2;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 20px 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid #E0E0E0; /* Light gray border */
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 15px;
+            color: #666666;
+        }
+
+        strong {
+            color: #2C3E50; /* Dark blue for strong text */
+        }
+
+        /* List Styling */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 10px 0;
+            border-bottom: 1px dashed #E0E0E0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation {
+            font-size: 0.9em;
+            color: #8B5FBF; /* Primary color */
+            font-style: italic;
+        }
+
+        /* Audio Icon Styling */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 24px; /* Icon size */
+            cursor: pointer;
+            padding: 10px; /* Ensure touch-friendly area */
+            min-width: 44px; /* Minimum tap target size */
+            min-height: 44px; /* Minimum tap target size */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #8B5FBF; /* Primary color */
+            transition: transform 0.2s ease-in-out;
+            border-radius: 50%;
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+            background-color: rgba(139, 95, 191, 0.1); /* Light hover background */
+        }
+
+        /* Example and Translation Styling */
+        .example {
+            background-color: #FDF9E5; /* Secondary background */
+            border-left: 4px solid #8B5FBF; /* Primary color for accent */
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-style: italic;
+        }
+
+        .example p {
+            margin: 5px 0;
+            color: #666666;
+        }
+
+        .example .english {
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .example .chinese {
+            font-size: 0.9em;
+            color: #8B5FBF;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary background */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 1px dashed #E0E0E0; /* Light gray dashed border */
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF; /* Primary color */
+            margin-bottom: 20px;
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #ffffff; /* White background for items */
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .practice-question {
+            margin-bottom: 10px;
+            color: #2C3E50;
+            font-weight: bold;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .option-button {
+            background-color: #ffffff;
+            color: #666666;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            min-height: 44px; /* Ensures tap target size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .option-button:hover {
+            background-color: #F0F0F0;
+            border-color: #8B5FBF;
+        }
+
+        .option-button.selected {
+            background-color: #8B5FBF;
+            color: white;
+            border-color: #8B5FBF;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #FDF9E5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .summary-section ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            border-bottom: none;
+            padding: 5px 0;
+            color: #666666;
+        }
+
+        /* Media Queries for larger screens (e.g., tablets, desktops) */
+        @media (min-width: 600px) {
+            body {
+                padding: 0 30px;
+            }
+
+            section {
+                padding: 30px;
+                margin-bottom: 30px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            h3 {
+                font-size: 22px;
+            }
+
+            .lesson-header-image {
+                padding: 60px 0;
+                font-size: 32px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            body {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Chapter 9: Weather and Seasons</h1>
+    <div class="lesson-header">
+        <!-- Placeholder for header image - as per instructions, no external image URLs -->
+        <!-- In a real app, this would be a local asset. Here, it's styled text to match requirements. -->
+        <div class="lesson-header-image" style="background-color: #8B5FBF; color: white;">
+            天气与季节 ☀️🌧️🌸❄️
+        </div>
+    </div>
+
+    <section>
+        <h2>引言 (Introduction)</h2>
+        <p>欢迎来到第九章！本章我们将学习如何用英语描述天气和季节。这在日常交流中非常实用，无论是计划出行还是与朋友聊天，你都会用到这些词汇和表达。让我们开始吧！</p>
+    </section>
+
+    <section>
+        <h2>天气词汇 (Weather Vocabulary)</h2>
+        <p>掌握这些基本词汇，你就能描述各种天气情况了！</p>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="sunny">🔊</button>
+                <strong>Sunny</strong> <span class="pronunciation">(ˈsʌni)</span> ☀️ - 晴朗的
+                <div class="example">
+                    <p class="english">It's sunny today.</p>
+                    <p class="chinese">今天天气晴朗。</p>
+                </div>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="rainy">🔊</button>
+                <strong>Rainy</strong> <span class="pronunciation">(ˈreɪni)</span> ☔ - 下雨的
+                <div class="example">
+                    <p class="english">Don't forget your umbrella, it's rainy.</p>
+                    <p class="chinese">别忘了你的雨伞，外面下雨了。</p>
+                </div>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="cloudy">🔊</button>
+                <strong>Cloudy</strong> <span class="pronunciation">(ˈklaʊdi)</span> ☁️ - 多云的
+                <div class="example">
+                    <p class="english">The sky is cloudy, but it won't rain.</p>
+                    <p class="chinese">天空多云，但不会下雨。</p>
+                </div>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="snowy">🔊</button>
+                <strong>Snowy</strong> <span class="pronunciation">(ˈsnoʊi)</span> 🌨️ - 下雪的
+                <div class="example">
+                    <p class="english">It's snowy outside, let's build a snowman!</p>
+                    <p class="chinese">外面下雪了，我们去堆雪人吧！</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="practice-section">
+        <h3>小练习：选一选 (Practice: Choose the Right Word)</h3>
+        <p>根据天气描述选择正确的词汇。</p>
+        <div class="practice-item">
+            <p class="practice-question">1. When the sun is shining brightly. (当太阳普照时)</p>
+            <div class="options-grid">
+                <button class="option-button" data-answer="cloudy">Cloudy</button>
+                <button class="option-button selected" data-answer="sunny">Sunny</button>
+                <button class="option-button" data-answer="rainy">Rainy</button>
+            </div>
+        </div>
+        <div class="practice-item">
+            <p class="practice-question">2. When water falls from the sky. (当水从天空中落下时)</p>
+            <div class="options-grid">
+                <button class="option-button" data-answer="snowy">Snowy</button>
+                <button class="option-button" data-answer="sunny">Sunny</button>
+                <button class="option-button selected" data-answer="rainy">Rainy</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>季节 (Seasons)</h2>
+        <p>地球一年有四个季节，每个季节都有其独特之处。</p>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="spring">🔊</button>
+                <strong>Spring</strong> <span class="pronunciation">(sprɪŋ)</span> 🌸 - 春天
+                <div class="example">
+                    <p class="english">Flowers bloom in spring.</p>
+                    <p class="chinese">春天鲜花盛开。</p>
+                </div>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="summer">🔊</button>
+                <strong>Summer</strong> <span class="pronunciation">(ˈsʌmər)</span> ☀️ - 夏天
+                <div class="example">
+                    <p class="english">Summer is a good time for swimming.</p>
+                    <p class="chinese">夏天是游泳的好时节。</p>
+                </div>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="fall">🔊</button>
+                <strong>Fall</strong> <span class="pronunciation">(fɔːl)</span> / <strong>Autumn</strong> <span class="pronunciation">(ˈɔːtəm)</span> 🍂 - 秋天
+                <div class="example">
+                    <p class="english">The leaves turn yellow in fall.</p>
+                    <p class="chinese">秋天树叶变黄。</p>
+                </div>
+                <p>💡 <strong>文化小贴士:</strong> 在北美，人们常说 "Fall"；在英国及其他地区，"Autumn" 更常用。</p>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="winter">🔊</button>
+                <strong>Winter</strong> <span class="pronunciation">(ˈwɪntər)</span> ❄️ - 冬天
+                <div class="example">
+                    <p class="english">It often snows in winter.</p>
+                    <p class="chinese">冬天经常下雪。</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>询问天气 (Asking About the Weather)</h2>
+        <p>想知道天气怎么样？用这个句型：</p>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="What's the weather like?">🔊</button>
+                <strong>What's the weather like?</strong> <span class="pronunciation">(wʌts ðə ˈwɛðər laɪk?)</span> - 天气怎么样？
+                <div class="example">
+                    <p class="english">A: What's the weather like in Beijing?</p>
+                    <p class="chinese">A: 北京天气怎么样？</p>
+                    <p class="english">B: It's sunny and warm.</p>
+                    <p class="chinese">B: 天气晴朗，很温暖。</p>
+                </div>
+            </li>
+        </ul>
+        <p>回答时，你可以说：<strong>It's [天气词汇].</strong></p>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="It's sunny.">🔊</button>
+                <strong>It's sunny.</strong> - 天气晴朗。
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="It's rainy.">🔊</button>
+                <strong>It's rainy.</strong> - 下雨了。
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="It's cloudy.">🔊</button>
+                <strong>It's cloudy.</strong> - 天多云。
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>温度 (Temperature)</h2>
+        <p>除了描述天气现象，我们还可以描述温度感受：</p>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="hot">🔊</button>
+                <strong>Hot</strong> <span class="pronunciation">(hɑːt)</span> 🔥 - 热的
+                <div class="example">
+                    <p class="english">It's very hot in summer in Chongqing.</p>
+                    <p class="chinese">重庆的夏天非常热。</p>
+                </div>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="warm">🔊</button>
+                <strong>Warm</strong> <span class="pronunciation">(wɔːrm)</span> 🌡️ - 温暖的
+                <div class="example">
+                    <p class="english">Spring days are usually warm and pleasant.</p>
+                    <p class="chinese">春天的日子通常温暖宜人。</p>
+                </div>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="cool">🔊</button>
+                <strong>Cool</strong> <span class="pronunciation">(kuːl)</span> 🌬️ - 凉爽的
+                <div class="example">
+                    <p class="english">The evenings in fall are cool.</p>
+                    <p class="chinese">秋天的夜晚很凉爽。</p>
+                </div>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="cold">🔊</button>
+                <strong>Cold</strong> <span class="pronunciation">(koʊld)</span> 🥶 - 寒冷的
+                <div class="example">
+                    <p class="english">Wear a coat, it's cold outside!</p>
+                    <p class="chinese">穿上外套，外面很冷！</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="practice-section">
+        <h3>小练习：描述温度 (Practice: Describe the Temperature)</h3>
+        <p>选择合适的词语来描述每个季节的典型温度。</p>
+        <div class="practice-item">
+            <p class="practice-question">1. In summer, the weather is often... (夏天，天气常常很...)</p>
+            <div class="options-grid">
+                <button class="option-button" data-answer="cold">cold</button>
+                <button class="option-button selected" data-answer="hot">hot</button>
+                <button class="option-button" data-answer="cool">cool</button>
+            </div>
+        </div>
+        <div class="practice-item">
+            <p class="practice-question">2. In winter, the weather is usually... (冬天，天气通常很...)</p>
+            <div class="options-grid">
+                <button class="option-button" data-answer="warm">warm</button>
+                <button class="option-button" data-answer="hot">hot</button>
+                <button class="option-button selected" data-answer="cold">cold</button>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>与天气相关的活动 (Weather-Related Activities)</h2>
+        <p>不同的天气和季节适合不同的活动。学习如何表达这些联系：</p>
+        <ul>
+            <li>
+                <button class="audio-icon" data-audio-text="When it's sunny, I like to go for a walk.">🔊</button>
+                <strong>When it's sunny, I like to go for a walk.</strong>
+                <p class="chinese">当天气晴朗时，我喜欢去散步。</p>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="When it's rainy, I usually read books indoors.">🔊</button>
+                <strong>When it's rainy, I usually read books indoors.</strong>
+                <p class="chinese">下雨时，我通常在室内看书。</p>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="In summer, people often go swimming.">🔊</button>
+                <strong>In summer, people often go swimming.</strong>
+                <p class="chinese">夏天人们经常去游泳。</p>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="In winter, some people enjoy skiing.">🔊</button>
+                <strong>In winter, some people enjoy skiing.</strong>
+                <p class="chinese">冬天有些人喜欢滑雪。</p>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="In spring, many people like to go hiking.">🔊</button>
+                <strong>In spring, many people like to go hiking.</strong>
+                <p class="chinese">春天很多人喜欢去徒步。</p>
+            </li>
+            <li>
+                <button class="audio-icon" data-audio-text="In fall, it's nice to have a picnic outside.">🔊</button>
+                <strong>In fall, it's nice to have a picnic outside.</strong>
+                <p class="chinese">秋天在外面野餐很不错。</p>
+            </li>
+        </ul>
+    </section>
+
+    <section class="summary-section">
+        <h2>总结 (Summary)</h2>
+        <p>恭喜你！你已经完成了本章的学习。让我们回顾一下所学的主要内容：</p>
+        <ul>
+            <li>学会了描述天气的词汇：<strong>sunny</strong> (晴朗), <strong>rainy</strong> (下雨), <strong>cloudy</strong> (多云), <strong>snowy</strong> (下雪)。</li>
+            <li>掌握了四个季节的名称：<strong>spring</strong> (春天), <strong>summer</strong> (夏天), <strong>fall/autumn</strong> (秋天), <strong>winter</strong> (冬天)。</li>
+            <li>学会了询问天气并回答：<strong>"What's the weather like? It's..."</strong> (天气怎么样？它是...)。</li>
+            <li>学习了描述温度的词汇：<strong>hot</strong> (热), <strong>warm</strong> (温暖), <strong>cool</strong> (凉爽), <strong>cold</strong> (寒冷)。</li>
+            <li>了解了与不同天气和季节相关的活动。</li>
+        </ul>
+        <p>继续练习这些词汇和句型，你会发现用英语谈论天气变得越来越自然！</p>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Weather and Seasons</title>
+    <style>
+        /* Global Styles & Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            min-width: 320px; /* Ensures readability on small screens */
+        }
+
+        /* Container for main content */
+        .container {
+            max-width: 600px; /* Optimized for mobile and tablet */
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-top: 24px;
+            border-bottom: 2px solid #E0E0E0; /* Light gray border */
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #8B5FBF; /* Primary: Purple for sub-headings */
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            font-size: 16px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 16px;
+        }
+
+        li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow as bullet point */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Purple for bullet */
+        }
+
+        strong {
+            color: #2C3E50;
+        }
+
+        em {
+            font-style: italic;
+            color: #8B5FBF;
+        }
+
+        /* Lesson Header */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background-color: #FFFFFF; /* White for cards */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid #E0E0E0; /* Light gray border */
+        }
+
+        /* Korean Word Styling */
+        .korean-word {
+            font-size: 18px;
+            font-weight: bold;
+            color: #8B5FBF; /* Primary */
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .pronunciation {
+            font-size: 14px;
+            color: #8B5FBF;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        .translation {
+            font-size: 16px;
+            color: #666666;
+            margin-left: 5px;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum touch target size */
+            min-height: 44px; /* Minimum touch target size */
+            padding: 8px;
+            background-color: #8B5FBF; /* Primary */
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%; /* Circle shape */
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            margin-left: 10px;
+            vertical-align: middle;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        .audio-icon:hover {
+            background-color: #7A4EA5; /* Slightly darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Example Sentences */
+        .example-block {
+            background-color: #FDF9E5; /* Secondary */
+            border-left: 4px solid #8B5FBF; /* Primary accent */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .example-korean {
+            font-size: 17px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .example-english {
+            font-size: 15px;
+            color: #666666;
+            line-height: 1.5;
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary */
+            border: 1px solid #E0E0E0; /* Light gray border */
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .practice-question {
+            font-size: 17px;
+            color: #2C3E50;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .practice-option-button {
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            color: #666666;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            min-height: 44px;
+            transition: background-color 0.2s, border-color 0.2s;
+            flex-grow: 1; /* Allows buttons to grow and fill space */
+            text-align: center;
+        }
+
+        .practice-option-button:hover {
+            background-color: #F0F0F0;
+            border-color: #8B5FBF;
+        }
+
+        .practice-option-button.correct {
+            background-color: #D4EDDA; /* Light green */
+            border-color: #28A745; /* Darker green */
+            color: #155724;
+            font-weight: bold;
+        }
+
+        .practice-option-button.incorrect {
+            background-color: #F8D7DA; /* Light red */
+            border-color: #DC3545; /* Darker red */
+            color: #721C24;
+            font-weight: bold;
+        }
+
+        .feedback {
+            margin-top: 15px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .feedback.correct {
+            color: #28A745;
+        }
+
+        .feedback.incorrect {
+            color: #DC3545;
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: #FDF9E5; /* Secondary */
+            border: 1px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 15px;
+            color: #2C3E50;
+        }
+        .cultural-note strong {
+            color: #8B5FBF;
+        }
+
+        /* Summary */
+        .summary-section {
+            background-color: #FFFFFF; /* White for cards */
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border: 1px solid #E0E0E0; /* Light gray border */
+        }
+        .summary-section h2 {
+            border-bottom: none;
+            text-align: center;
+        }
+        .summary-section ul {
+            margin-top: 15px;
+        }
+        .summary-section li::before {
+            content: '✨';
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 480px) {
+            .practice-options {
+                justify-content: center; /* Center buttons on slightly wider screens */
+            }
+            .practice-option-button {
+                flex-basis: 45%; /* Two buttons per row */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 24px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 22px;
+            }
+            p, li {
+                font-size: 17px;
+            }
+            .example-korean {
+                font-size: 18px;
+            }
+            .example-english {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 9: Weather and Seasons</h1>
+        <div class="lesson-header">
+            <!-- DO NOT change this image URL, it's a placeholder handled by the system -->
+            <img src="../header.webp" alt="Chapter 9 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-card">
+            <h2>Hello, Language Explorer! 👋</h2>
+            <p>Welcome to Chapter 9! Today, we're diving into the wonderful world of weather and seasons in Korea. Whether you're planning a trip, chatting with a Korean friend, or just want to expand your vocabulary, knowing how to talk about the weather is super useful!</p>
+            <p>Ready to master how to ask "How's the weather?" and describe sunny, rainy, hot, and cold days? Let's go! ☀️🌧️🥶🌸</p>
+        </section>
+
+        <section class="section-card">
+            <h2>Understanding Weather: 날씨 (nal-ssi)</h2>
+            <p>Let's start with the basics: "weather."</p>
+            <ul>
+                <li>
+                    <span class="korean-word">날씨</span> <span class="pronunciation">(nal-ssi)</span> <span class="translation">Weather</span>
+                    <button class="audio-icon" data-audio-text="날씨">🔊</button>
+                </li>
+            </ul>
+            <p>To ask "How's the weather today?", you'd say:</p>
+            <div class="example-block">
+                <div class="example-korean">오늘 날씨 어때요?</div>
+                <button class="audio-icon" data-audio-text="오늘 날씨 어때요?">🔊</button>
+                <div class="example-english">Today's weather, how is it? / How's the weather today?</div>
+            </div>
+            <p>Let's learn some common weather descriptions!</p>
+        </section>
+
+        <section class="section-card">
+            <h2>Clear vs. Cloudy: 맑다 & 흐리다</h2>
+            <p>These two words describe whether the sky is clear or covered in clouds.</p>
+            <h3>🌞 Clear/Sunny: 맑다 (mak-tta)</h3>
+            <ul>
+                <li>
+                    <span class="korean-word">맑다</span> <span class="pronunciation">(mak-tta)</span> <span class="translation">To be clear/sunny</span>
+                    <button class="audio-icon" data-audio-text="맑다">🔊</button>
+                </li>
+            </ul>
+            <p>When conjugated for politeness (present tense), it becomes <strong>맑아요 (mal-ga-yo)</strong>.</p>
+            <div class="example-block">
+                <div class="example-korean">오늘 날씨가 맑아요.</div>
+                <button class="audio-icon" data-audio-text="오늘 날씨가 맑아요.">🔊</button>
+                <div class="example-english">Today's weather is clear/sunny.</div>
+            </div>
+
+            <h3>☁️ Cloudy: 흐리다 (heu-ri-da)</h3>
+            <ul>
+                <li>
+                    <span class="korean-word">흐리다</span> <span class="pronunciation">(heu-ri-da)</span> <span class="translation">To be cloudy</span>
+                    <button class="audio-icon" data-audio-text="흐리다">🔊</button>
+                </li>
+            </ul>
+            <p>In polite present tense, it becomes <strong>흐려요 (heu-ryeo-yo)</strong>.</p>
+            <div class="example-block">
+                <div class="example-korean">날씨가 흐려요.</div>
+                <button class="audio-icon" data-audio-text="날씨가 흐려요.">🔊</button>
+                <div class="example-english">The weather is cloudy.</div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>Hot vs. Cold: 덥다 & 춥다</h2>
+            <p>These are essential for describing temperatures!</p>
+            <h3>🥵 Hot: 덥다 (deop-tta)</h3>
+            <ul>
+                <li>
+                    <span class="korean-word">덥다</span> <span class="pronunciation">(deop-tta)</span> <span class="translation">To be hot</span>
+                    <button class="audio-icon" data-audio-text="덥다">🔊</button>
+                </li>
+            </ul>
+            <p>Conjugated: <strong>더워요 (deo-wo-yo)</strong>.</p>
+            <div class="example-block">
+                <div class="example-korean">여름은 더워요.</div>
+                <button class="audio-icon" data-audio-text="여름은 더워요.">🔊</button>
+                <div class="example-english">Summer is hot.</div>
+            </div>
+
+            <h3>🥶 Cold: 춥다 (chup-tta)</h3>
+            <ul>
+                <li>
+                    <span class="korean-word">춥다</span> <span class="pronunciation">(chup-tta)</span> <span class="translation">To be cold</span>
+                    <button class="audio-icon" data-audio-text="춥다">🔊</button>
+                </li>
+            </ul>
+            <p>Conjugated: <strong>추워요 (chu-wo-yo)</strong>.</p>
+            <div class="example-block">
+                <div class="example-korean">겨울은 추워요.</div>
+                <button class="audio-icon" data-audio-text="겨울은 추워요.">🔊</button>
+                <div class="example-english">Winter is cold.</div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>Raining vs. Snowing: 비가 오다 & 눈이 오다</h2>
+            <p>When the sky decides to send down some precipitation, we use these expressions. Notice the particle <strong>가/이</strong> is used with "비" (rain) and "눈" (snow) because they are the subject, and <strong>오다</strong> (to come) is the verb, meaning "rain/snow is coming."</p>
+            <h3>☔ To Rain: 비가 오다 (bi-ga o-da)</h3>
+            <ul>
+                <li>
+                    <span class="korean-word">비</span> <span class="pronunciation">(bi)</span> <span class="translation">Rain</span>
+                    <button class="audio-icon" data-audio-text="비">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">오다</span> <span class="pronunciation">(o-da)</span> <span class="translation">To come</span>
+                    <button class="audio-icon" data-audio-text="오다">🔊</button>
+                </li>
+            </ul>
+            <p>Conjugated: <strong>비가 와요 (bi-ga wa-yo)</strong>.</p>
+            <div class="example-block">
+                <div class="example-korean">지금 비가 와요.</div>
+                <button class="audio-icon" data-audio-text="지금 비가 와요.">🔊</button>
+                <div class="example-english">It's raining now.</div>
+            </div>
+
+            <h3>❄️ To Snow: 눈이 오다 (nun-i o-da)</h3>
+            <ul>
+                <li>
+                    <span class="korean-word">눈</span> <span class="pronunciation">(nun)</span> <span class="translation">Snow / Eye</span> (Context is key!)
+                    <button class="audio-icon" data-audio-text="눈">🔊</button>
+                </li>
+            </ul>
+            <p>Conjugated: <strong>눈이 와요 (nun-i wa-yo)</strong>.</p>
+            <div class="example-block">
+                <div class="example-korean">겨울에 눈이 많이 와요.</div>
+                <button class="audio-icon" data-audio-text="겨울에 눈이 많이 와요.">🔊</button>
+                <div class="example-english">It snows a lot in winter.</div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>The Four Seasons: 봄, 여름, 가을, 겨울</h2>
+            <p>Korea experiences four distinct seasons, each with its unique charm!</p>
+            <ul>
+                <li>
+                    <span class="korean-word">봄</span> <span class="pronunciation">(bom)</span> <span class="translation">Spring</span>
+                    <button class="audio-icon" data-audio-text="봄">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">여름</span> <span class="pronunciation">(yeo-reum)</span> <span class="translation">Summer</span>
+                    <button class="audio-icon" data-audio-text="여름">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">가을</span> <span class="pronunciation">(ga-eul)</span> <span class="translation">Fall/Autumn</span>
+                    <button class="audio-icon" data-audio-text="가을">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">겨울</span> <span class="pronunciation">(gyeo-ul)</span> <span class="translation">Winter</span>
+                    <button class="audio-icon" data-audio-text="겨울">🔊</button>
+                </li>
+            </ul>
+
+            <p>Let's add two more useful adjectives for weather:</p>
+            <ul>
+                <li>
+                    <span class="korean-word">따뜻하다</span> <span class="pronunciation">(ttat-teut-ha-da)</span> <span class="translation">To be warm</span>
+                    <button class="audio-icon" data-audio-text="따뜻하다">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">시원하다</span> <span class="pronunciation">(si-won-ha-da)</span> <span class="translation">To be cool/refreshing</span>
+                    <button class="audio-icon" data-audio-text="시원하다">🔊</button>
+                </li>
+            </ul>
+            <p>These conjugate as <strong>따뜻해요 (ttat-teut-hae-yo)</strong> and <strong>시원해요 (si-won-hae-yo)</strong>.</p>
+
+            <div class="example-block">
+                <div class="example-korean">봄은 따뜻해요.</div>
+                <button class="audio-icon" data-audio-text="봄은 따뜻해요.">🔊</button>
+                <div class="example-english">Spring is warm.</div>
+            </div>
+            <div class="example-block">
+                <div class="example-korean">가을은 시원해요.</div>
+                <button class="audio-icon" data-audio-text="가을은 시원해요.">🔊</button>
+                <div class="example-english">Fall is cool.</div>
+            </div>
+
+            <div class="cultural-note">
+                <strong>Cultural Note: Distinct Seasons!</strong><br>
+                Korea is famous for its very distinct four seasons. Spring brings beautiful cherry blossoms, summer is hot and humid, autumn boasts stunning fall foliage, and winter is cold with snow. This makes weather a very common topic of conversation!
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>Temperature Expressions</h2>
+            <p>To talk about exact temperatures, Koreans use Celsius (도, do).</p>
+            <ul>
+                <li>
+                    <span class="korean-word">몇 도예요?</span> <span class="pronunciation">(myeot do-ye-yo?)</span> <span class="translation">What's the temperature?</span>
+                    <button class="audio-icon" data-audio-text="몇 도예요?">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">~도</span> <span class="pronunciation">(~do)</span> <span class="translation">~degrees Celsius</span>
+                    <button class="audio-icon" data-audio-text="도">🔊</button>
+                </li>
+            </ul>
+            <p>You'll need to know Korean numbers to use this properly. Here are a few examples:</p>
+            <ul>
+                <li>
+                    <span class="korean-word">10도</span> <span class="pronunciation">(sip-do)</span> <span class="translation">10 degrees</span>
+                    <button class="audio-icon" data-audio-text="십도">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-word">25도</span> <span class="pronunciation">(i-sip-o-do)</span> <span class="translation">25 degrees</span>
+                    <button class="audio-icon" data-audio-text="이십오도">🔊</button>
+                </li>
+            </ul>
+            <p>For temperatures below zero, we add <span class="korean-word">영하 (yeong-ha)</span> meaning "below zero" or "minus." For above zero, you can use <span class="korean-word">영상 (yeong-sang)</span>, meaning "above zero," though it's often omitted.</p>
+            <div class="example-block">
+                <div class="example-korean">오늘 기온이 20도예요.</div>
+                <button class="audio-icon" data-audio-text="오늘 기온이 이십도예요.">🔊</button>
+                <div class="example-english">Today's temperature is 20 degrees Celsius.</div>
+            </div>
+            <div class="example-block">
+                <div class="example-korean">영하 5도예요.</div>
+                <button class="audio-icon" data-audio-text="영하 오도예요.">🔊</button>
+                <div class="example-english">It's minus 5 degrees Celsius.</div>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>Seasonal Activities and Clothing 👗🏂</h2>
+            <p>What do Koreans do, and what do they wear in different seasons?</p>
+            <h3>🌸 Spring (봄)</h3>
+            <ul>
+                <li><strong>Weather:</strong> 따뜻해요 (warm), sometimes 흐려요 (cloudy) due to fine dust.</li>
+                <li><strong>Activities:</strong> 꽃놀이 (kkot-nol-i - flower viewing), picnicking.</li>
+                <li><strong>Clothing:</strong> 얇은 옷 (yal-beun ot - thin clothes), 가디건 (ga-di-geon - cardigan), 점퍼 (jeom-peo - jacket).</li>
+            </ul>
+
+            <h3>☀️ Summer (여름)</h3>
+            <ul>
+                <li><strong>Weather:</strong> 더워요 (hot), 비가 많이 와요 (bi-ga man-i wa-yo - it rains a lot) during monsoon season (장마, jang-ma).</li>
+                <li><strong>Activities:</strong> 해수욕 (hae-su-yok - swimming at the beach), 계곡 (gye-gok - valley) visits.</li>
+                <li><strong>Clothing:</strong> 반바지 (ban-ba-ji - shorts), 반팔 티셔츠 (ban-pal ti-syeo-cheu - short-sleeved t-shirt).</li>
+            </ul>
+
+            <h3>🍂 Fall (가을)</h3>
+            <ul>
+                <li><strong>Weather:</strong> 시원해요 (cool), 맑아요 (clear/sunny). Often considered the best season!</li>
+                <li><strong>Activities:</strong> 단풍놀이 (dan-pung-nol-i - fall foliage viewing), hiking.</li>
+                <li><strong>Clothing:</strong> 스웨터 (seu-we-teo - sweater), 긴팔 옷 (gin-pal ot - long-sleeved clothes).</li>
+            </ul>
+
+            <h3>🌨️ Winter (겨울)</h3>
+            <ul>
+                <li><strong>Weather:</strong> 추워요 (cold), 눈이 와요 (it snows).</li>
+                <li><strong>Activities:</strong> 스키 (seu-ki - skiing), 스노보드 (seu-no-bo-deu - snowboarding), 눈싸움 (nun-ssa-um - snowball fight).</li>
+                <li><strong>Clothing:</strong> 두꺼운 옷 (du-kkeo-un ot - thick clothes), 코트 (ko-teu - coat), 장갑 (jang-gap - gloves), 목도리 (mok-do-ri - scarf).</li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h2>Practice Time! ✏️</h2>
+            <p>Choose the best Korean word or phrase to complete the sentence.</p>
+
+            <div class="practice-question">
+                1. 한국의 ___은 눈이 많이 와요. (Korea's ___ has a lot of snow.)
+                <div class="practice-options">
+                    <button class="practice-option-button" data-correct="false">봄</button>
+                    <button class="practice-option-button" data-correct="false">여름</button>
+                    <button class="practice-option-button" data-correct="true">겨울</button>
+                    <button class="practice-option-button" data-correct="false">가을</button>
+                </div>
+                <div class="feedback" id="q1-feedback"></div>
+            </div>
+
+            <div class="practice-question">
+                2. 오늘 날씨가 아주 _____. (Today's weather is very sunny/clear.)
+                <div class="practice-options">
+                    <button class="practice-option-button" data-correct="false">추워요</button>
+                    <button class="practice-option-button" data-correct="true">맑아요</button>
+                    <button class="practice-option-button" data-correct="false">비가 와요</button>
+                    <button class="practice-option-button" data-correct="false">더워요</button>
+                </div>
+                <div class="feedback" id="q2-feedback"></div>
+            </div>
+
+            <div class="practice-question">
+                3. 여름에는 날씨가 _____. (In summer, the weather is _____.)
+                <div class="practice-options">
+                    <button class="practice-option-button" data-correct="true">더워요</button>
+                    <button class="practice-option-button" data-correct="false">시원해요</button>
+                    <button class="practice-option-button" data-correct="false">추워요</button>
+                    <button class="practice-option-button" data-correct="false">맑아요</button>
+                </div>
+                <div class="feedback" id="q3-feedback"></div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>Chapter 9 Summary 🎓</h2>
+            <p>You've learned how to talk about the weather and seasons in Korean! Here's a quick recap of the key terms:</p>
+            <ul>
+                <li><strong>날씨 (nal-ssi):</strong> Weather</li>
+                <li><strong>오늘 날씨 어때요? (o-neul nal-ssi eo-ttae-yo?):</strong> How's the weather today?</li>
+                <li><strong>맑다 (mak-tta) / 맑아요 (mal-ga-yo):</strong> To be clear/sunny</li>
+                <li><strong>흐리다 (heu-ri-da) / 흐려요 (heu-ryeo-yo):</strong> To be cloudy</li>
+                <li><strong>덥다 (deop-tta) / 더워요 (deo-wo-yo):</strong> To be hot</li>
+                <li><strong>춥다 (chup-tta) / 추워요 (chu-wo-yo):</strong> To be cold</li>
+                <li><strong>따뜻하다 (ttat-teut-ha-da) / 따뜻해요 (ttat-teut-hae-yo):</strong> To be warm</li>
+                <li><strong>시원하다 (si-won-ha-da) / 시원해요 (si-won-hae-yo):</strong> To be cool</li>
+                <li><strong>비가 오다 (bi-ga o-da) / 비가 와요 (bi-ga wa-yo):</strong> To rain</li>
+                <li><strong>눈이 오다 (nun-i o-da) / 눈이 와요 (nun-i wa-yo):</strong> To snow</li>
+                <li><strong>봄 (bom):</strong> Spring</li>
+                <li><strong>여름 (yeo-reum):</strong> Summer</li>
+                <li><strong>가을 (ga-eul):</strong> Fall</li>
+                <li><strong>겨울 (gyeo-ul):</strong> Winter</li>
+                <li><strong>~도 (~do):</strong> ~degrees (Celsius)</li>
+                <li><strong>영하 (yeong-ha):</strong> Below zero</li>
+            </ul>
+            <p>Great job! You're now equipped to chat about the weather like a local. Keep practicing, and you'll soon be describing every type of day with ease!</p>
+        </section>
+    </div>
+
+    <!-- JavaScript for practice section interactivity (will be handled by mobile app framework, but including for illustrative purposes if this were a web page) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const practiceSections = document.querySelectorAll('.practice-question');
+
+            practiceSections.forEach(section => {
+                const options = section.querySelectorAll('.practice-option-button');
+                const feedbackDiv = section.querySelector('.feedback');
+
+                options.forEach(option => {
+                    option.addEventListener('click', () => {
+                        // Reset previous selections and feedback
+                        options.forEach(opt => {
+                            opt.classList.remove('correct', 'incorrect');
+                        });
+                        feedbackDiv.textContent = '';
+                        feedbackDiv.classList.remove('correct', 'incorrect');
+
+                        // Apply new selection feedback
+                        if (option.dataset.correct === 'true') {
+                            option.classList.add('correct');
+                            feedbackDiv.textContent = '✅ Correct!';
+                            feedbackDiv.classList.add('correct');
+                        } else {
+                            option.classList.add('incorrect');
+                            feedbackDiv.textContent = '❌ Incorrect. Try again!';
+                            feedbackDiv.classList.add('incorrect');
+                        }
+                    });
+                });
+            });
+
+            // Note: Audio icons will be handled by the mobile framework (react-native-tts)
+            // No explicit JavaScript click handlers needed here for audio.
+        });
+    </script>
+</body>
+</html>

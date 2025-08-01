@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Time and Schedules</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Cream background */
+            color: #666666; /* Medium gray for body text */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body text font size */
+        }
+
+        h1, h2, h3 {
+            color: #2C3E50; /* Dark blue for headings */
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h2 {
+            font-size: 22px;
+            padding: 12px 0;
+            border-bottom: 2px solid #E0E0E0; /* Light gray border */
+            margin: 20px 20px 15px 20px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin: 20px 20px 10px 20px;
+        }
+
+        p {
+            margin: 10px 20px;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0 20px;
+            margin: 10px 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 10px;
+        }
+
+        strong {
+            color: #2C3E50; /* Dark blue for strong text */
+        }
+
+        /* Specific Component Styles */
+        .chapter-title {
+            margin-top: 0; /* Override default h1 margin-top */
+            padding-top: 30px; /* Add padding for visual spacing from top of screen */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .lesson-section {
+            background-color: #FDF9E5; /* Cream background */
+            padding: 15px 0;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .example-box {
+            background-color: #fff;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-box {
+            background-color: #FDF9E5;
+            border: 2px dashed #8B5FBF; /* Purple dashed border */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            text-align: left;
+        }
+
+        .practice-box .question {
+            margin-bottom: 10px;
+            color: #2C3E50;
+            font-weight: bold;
+        }
+
+        .practice-box .answer {
+            color: #8B5FBF; /* Primary purple for answers */
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary Purple */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 48px; /* At least 44px */
+            height: 48px; /* At least 44px */
+            font-size: 24px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            margin-left: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            vertical-align: middle;
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4697; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        .dialogue {
+            background-color: #e6eef2;
+            border-left: 5px solid #8B5FBF;
+            padding: 15px;
+            margin: 15px 20px;
+            border-radius: 8px;
+        }
+
+        .dialogue p {
+            margin: 5px 0;
+            padding: 0;
+            color: #2C3E50;
+        }
+
+        .summary-box {
+            background-color: #e6eef2;
+            border: 1px solid #8B5FBF;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .summary-box h3 {
+            color: #8B5FBF;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .summary-box ul {
+            padding: 0;
+            margin: 0;
+            list-style: disc;
+            text-align: left;
+            display: inline-block; /* For centering the list itself */
+        }
+
+        .summary-box li {
+            margin-bottom: 10px;
+            color: #666666;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 16px;
+            }
+            body {
+                font-size: 15px;
+            }
+            .audio-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Chapter 10: Time and Schedules</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+    </div>
+
+    <section class="lesson-section">
+        <h2>👋 欢迎来到第10章：时间和日程安排！</h2>
+        <p>时间是我们日常生活中不可或缺的一部分，无论是约朋友、上班还是规划旅行，都需要用到时间。本章我们将学习如何在英语中谈论时间、日期和制定计划！</p>
+    </section>
+
+    <section class="lesson-section">
+        <h2>⏰ 1. 告诉时间: What time is it? It's...</h2>
+        <p>在英语中询问时间最常见的问题是：</p>
+        <p><strong>What time is it?</strong> <button class="audio-icon" data-audio-text="What time is it?">🔊</button> (现在几点了？)</p>
+        <p>回答时，我们通常说：</p>
+        <p><strong>It's...</strong> <button class="audio-icon" data-audio-text="It's">🔊</button> (现在是……)</p>
+
+        <h3>💡 关键时间表达：</h3>
+        <ul>
+            <li><strong>整点 (O'clock)</strong><br>
+                当时间是整点时，我们用 <strong>o'clock</strong>。
+                <div class="example-box">
+                    <p><strong>It's 8 o'clock.</strong> <button class="audio-icon" data-audio-text="It's 8 o'clock.">🔊</button> (现在是8点整。)</p>
+                    <p><strong>It's 12 o'clock.</strong> <button class="audio-icon" data-audio-text="It's 12 o'clock.">🔊</button> (现在是12点整。)</p>
+                </div>
+            </li>
+            <li><strong>半点 (Half past / Thirty)</strong><br>
+                当时间是半小时时，可以用 <strong>half past</strong> 或直接说分钟数。
+                <div class="example-box">
+                    <p><strong>It's half past eight.</strong> <button class="audio-icon" data-audio-text="It's half past eight.">🔊</button> (现在是八点半。)</p>
+                    <p><em>或者</em> <strong>It's eight thirty.</strong> <button class="audio-icon" data-audio-text="It's eight thirty.">🔊</button></p>
+                </div>
+            </li>
+            <li><strong>一刻钟 / 三刻钟 (Quarter past / Quarter to)</strong><br>
+                一刻钟（15分钟）可以用 <strong>quarter past</strong> (过了一刻) 或 <strong>quarter to</strong> (差一刻到)。
+                <div class="example-box">
+                    <p><strong>It's a quarter past nine.</strong> <button class="audio-icon" data-audio-text="It's a quarter past nine.">🔊</button> (现在是九点一刻。)</p>
+                    <p><em>或者</em> <strong>It's nine fifteen.</strong> <button class="audio-icon" data-audio-text="It's nine fifteen.">🔊</button></p>
+                    <p><strong>It's a quarter to three.</strong> <button class="audio-icon" data-audio-text="It's a quarter to three.">🔊</button> (现在差一刻三点 / 两点四十五。)</p>
+                    <p><em>或者</em> <strong>It's two forty-five.</strong> <button class="audio-icon" data-audio-text="It's two forty-five.">🔊</button></p>
+                </div>
+            </li>
+            <li><strong>其他分钟数</strong><br>
+                过半小时以内，用 <strong>past</strong>；过半小时以外，用 <strong>to</strong>。或者直接说数字。
+                <div class="example-box">
+                    <p><strong>It's ten past seven.</strong> <button class="audio-icon" data-audio-text="It's ten past seven.">🔊</button> (七点十分。)</p>
+                    <p><em>或者</em> <strong>It's seven ten.</strong> <button class="audio-icon" data-audio-text="It's seven ten.">🔊</button></p>
+                    <p><strong>It's five to four.</strong> <button class="audio-icon" data-audio-text="It's five to four.">🔊</button> (差五分四点 / 三点五十五。)</p>
+                    <p><em>或者</em> <strong>It's three fifty-five.</strong> <button class="audio-icon" data-audio-text="It's three fifty-five.">🔊</button></p>
+                </div>
+            </li>
+            <li><strong>上午/下午 (AM/PM)</strong><br>
+                上午用 <strong>AM</strong> (Ante Meridiem)，下午用 <strong>PM</strong> (Post Meridiem)。
+                <div class="example-box">
+                    <p><strong>It's 7 AM.</strong> <button class="audio-icon" data-audio-text="It's 7 AM.">🔊</button> (早上7点。)</p>
+                    <p><strong>It's 7 PM.</strong> <button class="audio-icon" data-audio-text="It's 7 PM.">🔊</button> (晚上7点。)</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3>📝 小练习：现在几点了？</h3>
+        <div class="practice-box">
+            <p class="question">1. 10:00 AM</p>
+            <p class="answer">It's ten o'clock AM. <button class="audio-icon" data-audio-text="It's ten o'clock AM.">🔊</button></p>
+            <p class="question">2. 3:30 PM</p>
+            <p class="answer">It's half past three PM. / It's three thirty PM. <button class="audio-icon" data-audio-text="It's half past three PM.">🔊</button></p>
+            <p class="question">3. 1:15 PM</p>
+            <p class="answer">It's a quarter past one PM. / It's one fifteen PM. <button class="audio-icon" data-audio-text="It's a quarter past one PM.">🔊</button></p>
+            <p class="question">4. 6:45 AM</p>
+            <p class="answer">It's a quarter to seven AM. / It's six forty-five AM. <button class="audio-icon" data-audio-text="It's a quarter to seven AM.">🔊</button></p>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>🗓️ 2. 一周七天: Days of the week</h2>
+        <p>学习一周的七天是安排日程的基础。请注意，所有的星期的首字母都要大写！</p>
+        <ul>
+            <li><strong>Monday</strong> <button class="audio-icon" data-audio-text="Monday">🔊</button> (星期一)</li>
+            <li><strong>Tuesday</strong> <button class="audio-icon" data-audio-text="Tuesday">🔊</button> (星期二)</li>
+            <li><strong>Wednesday</strong> <button class="audio-icon" data-audio-text="Wednesday">🔊</button> (星期三)</li>
+            <li><strong>Thursday</strong> <button class="audio-icon" data-audio-text="Thursday">🔊</button> (星期四)</li>
+            <li><strong>Friday</strong> <button class="audio-icon" data-audio-text="Friday">🔊</button> (星期五)</li>
+            <li><strong>Saturday</strong> <button class="audio-icon" data-audio-text="Saturday">🔊</button> (星期六)</li>
+            <li><strong>Sunday</strong> <button class="audio-icon" data-audio-text="Sunday">🔊</button> (星期日)</li>
+        </ul>
+        <p>当我们谈论在某一天发生的事情时，我们使用介词 <strong>on</strong>。</p>
+        <div class="example-box">
+            <p><strong>I have a meeting on Monday.</strong> <button class="audio-icon" data-audio-text="I have a meeting on Monday.">🔊</button> (我星期一有个会议。)</p>
+            <p><strong>Let's go hiking on Saturday.</strong> <button class="audio-icon" data-audio-text="Let's go hiking on Saturday.">🔊</button> (我们星期六去徒步吧。)</p>
+        </div>
+        <p>我们还可以用以下短语来指代今天、昨天和明天：</p>
+        <ul>
+            <li><strong>Today is...</strong> <button class="audio-icon" data-audio-text="Today is">🔊</button> (今天是……)</li>
+            <li><strong>Tomorrow is...</strong> <button class="audio-icon" data-audio-text="Tomorrow is">🔊</button> (明天是……)</li>
+            <li><strong>Yesterday was...</strong> <button class="audio-icon" data-audio-text="Yesterday was">🔊</button> (昨天是……)</li>
+        </ul>
+
+        <h3>📝 小练习：填空</h3>
+        <div class="practice-box">
+            <p class="question">1. My favorite day is ______ because I don't work.</p>
+            <p class="answer">Sunday <button class="audio-icon" data-audio-text="Sunday">🔊</button></p>
+            <p class="question">2. If today is Tuesday, tomorrow is ______. </p>
+            <p class="answer">Wednesday <button class="audio-icon" data-audio-text="Wednesday">🔊</button></p>
+            <p class="question">3. I usually go to the gym on ______ and ______. (选择两天)</p>
+            <p class="answer">Monday, Thursday (答案不唯一) <button class="audio-icon" data-audio-text="Monday, Thursday">🔊</button></p>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>🌸 3. 一年十二月: Months of the year</h2>
+        <p>学习一年中的月份，它们的拼写和发音都很重要。同样，月份的首字母也要大写！</p>
+        <ul>
+            <li><strong>January</strong> <button class="audio-icon" data-audio-text="January">🔊</button> (一月)</li>
+            <li><strong>February</strong> <button class="audio-icon" data-audio-text="February">🔊</button> (二月)</li>
+            <li><strong>March</strong> <button class="audio-icon" data-audio-text="March">🔊</button> (三月)</li>
+            <li><strong>April</strong> <button class="audio-icon" data-audio-text="April">🔊</button> (四月)</li>
+            <li><strong>May</strong> <button class="audio-icon" data-audio-text="May">🔊</button> (五月)</li>
+            <li><strong>June</strong> <button class="audio-icon" data-audio-text="June">🔊</button> (六月)</li>
+            <li><strong>July</strong> <button class="audio-icon" data-audio-text="July">🔊</button> (七月)</li>
+            <li><strong>August</strong> <button class="audio-icon" data-audio-text="August">🔊</button> (八月)</li>
+            <li><strong>September</strong> <button class="audio-icon" data-audio-text="September">🔊</button> (九月)</li>
+            <li><strong>October</strong> <button class="audio-icon" data-audio-text="October">🔊</button> (十月)</li>
+            <li><strong>November</strong> <button class="audio-icon" data-audio-text="November">🔊</button> (十一月)</li>
+            <li><strong>December</strong> <button class="audio-icon" data-audio-text="December">🔊</button> (十二月)</li>
+        </ul>
+        <p>当我们谈论在某个月份发生的事情时，我们使用介词 <strong>in</strong>。</p>
+        <div class="example-box">
+            <p><strong>My birthday is in August.</strong> <button class="audio-icon" data-audio-text="My birthday is in August.">🔊</button> (我的生日在八月。)</p>
+            <p><strong>Christmas is in December.</strong> <button class="audio-icon" data-audio-text="Christmas is in December.">🔊</button> (圣诞节在十二月。)</p>
+        </div>
+
+        <h3>📝 小练习：哪个月份？</h3>
+        <div class="practice-box">
+            <p class="question">1. The first month of the year is ______.</p>
+            <p class="answer">January <button class="audio-icon" data-audio-text="January">🔊</button></p>
+            <p class="question">2. Halloween is in ______.</p>
+            <p class="answer">October <button class="audio-icon" data-audio-text="October">🔊</button></p>
+            <p class="question">3. Which month has 28 or 29 days?</p>
+            <p class="answer">February <button class="audio-icon" data-audio-text="February">🔊</button></p>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>📆 4. “When is...?” & “It's on...”</h2>
+        <p>当我们想询问一个事件具体发生的时间（包括日期）时，我们使用 <strong>When is...?</strong> 来提问。</p>
+        <p><strong>When is your presentation?</strong> <button class="audio-icon" data-audio-text="When is your presentation?">🔊</button> (你的演示是什么时候？)</p>
+        <p>回答时，我们通常使用介词 <strong>on</strong> 来指明具体的日期。</p>
+        <div class="example-box">
+            <p><strong>It's on Monday.</strong> <button class="audio-icon" data-audio-text="It's on Monday.">🔊</button> (在星期一。)</p>
+            <p><strong>It's on December 25th.</strong> <button class="audio-icon" data-audio-text="It's on December 25th.">🔊</button> (在12月25日。)</p>
+            <p><strong>It's on Friday, January 1st.</strong> <button class="audio-icon" data-audio-text="It's on Friday, January 1st.">🔊</button> (在1月1日星期五。)</p>
+        </div>
+        <p>当时间包含<strong>年份</strong>时，我们通常使用 <strong>in</strong>。</p>
+        <div class="example-box">
+            <p><strong>The Olympics are in 2024.</strong> <button class="audio-icon" data-audio-text="The Olympics are in 2024.">🔊</button> (奥运会在2024年。)</p>
+            <p><strong>I was born in 1990.</strong> <button class="audio-icon" data-audio-text="I was born in 1990.">🔊</button> (我出生在1990年。)</p>
+        </div>
+        <p>总结一下介词的用法：</p>
+        <ul>
+            <li><strong>at</strong>：用于具体时间点 (e.g., at 7 o'clock)</li>
+            <li><strong>on</strong>：用于日期和星期几 (e.g., on Monday, on May 5th)</li>
+            <li><strong>in</strong>：用于月份、年份、季节 (e.g., in July, in 2023, in summer)</li>
+        </ul>
+
+        <h3>📝 小练习：选择正确的介词</h3>
+        <div class="practice-box">
+            <p class="question">1. The party is ______ Saturday night.</p>
+            <p class="answer">on <button class="audio-icon" data-audio-text="on">🔊</button></p>
+            <p class="question">2. My flight leaves ______ 5:30 AM.</p>
+            <p class="answer">at <button class="audio-icon" data-audio-text="at">🔊</button></p>
+            <p class="question">3. I love to travel ______ spring.</p>
+            <p class="answer">in <button class="audio-icon" data-audio-text="in">🔊</button></p>
+            <p class="question">4. We're going on vacation ______ July.</p>
+            <p class="answer">in <button class="audio-icon" data-audio-text="in">🔊</button></p>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>🤝 5. 制定约会和日程 (Making appointments and schedules)</h2>
+        <p>制定计划和约会是日常交流中非常实用的一部分。</p>
+
+        <h3>常用短语：</h3>
+        <ul>
+            <li><strong>Are you free on...?</strong> <button class="audio-icon" data-audio-text="Are you free on...?">🔊</button> (你……有空吗？)</li>
+            <li><strong>What time works for you?</strong> <button class="audio-icon" data-audio-text="What time works for you?">🔊</button> (你什么时间方便？)</li>
+            <li><strong>How about...?</strong> <button class="audio-icon" data-audio-text="How about...?">🔊</button> (……怎么样？)</li>
+            <li><strong>Let's meet at...</strong> <button class="audio-icon" data-audio-text="Let's meet at...">🔊</button> (我们……见面吧。)</li>
+            <li><strong>I'm available at...</strong> <button class="audio-icon" data-audio-text="I'm available at...">🔊</button> (我……有空。)</li>
+            <li><strong>I'm busy on...</strong> <button class="audio-icon" data-audio-text="I'm busy on...">🔊</button> (我……很忙。)</li>
+            <li><strong>Can we reschedule?</strong> <button class="audio-icon" data-audio-text="Can we reschedule?">🔊</button> (我们能改期吗？)</li>
+            <li><strong>Confirm an appointment</strong> <button class="audio-icon" data-audio-text="Confirm an appointment">🔊</button> (确认预约)</li>
+        </ul>
+
+        <h3>对话示例：</h3>
+        <div class="dialogue">
+            <p><strong>A:</strong> Hi Mike, <strong data-audio-text="Are you free on Friday morning?">Are you free on Friday morning?</strong> <button class="audio-icon" data-audio-text="Are you free on Friday morning?">🔊</button> (迈克，你周五上午有空吗？)</p>
+            <p><strong>B:</strong> Hmm, <strong data-audio-text="I'm busy then. How about Friday afternoon?">I'm busy then. How about Friday afternoon?</strong> <button class="audio-icon" data-audio-text="I'm busy then. How about Friday afternoon?">🔊</button> (嗯，那时我有点忙。周五下午怎么样？)</p>
+            <p><strong>A:</strong> <strong data-audio-text="Friday afternoon works for me. Let's meet at 2 PM.">Friday afternoon works for me. Let's meet at 2 PM.</strong> <button class="audio-icon" data-audio-text="Friday afternoon works for me. Let's meet at 2 PM.">🔊</button> (周五下午我方便。我们下午2点见面吧。)</p>
+            <p><strong>B:</strong> <strong data-audio-text="Great! See you then.">Great! See you then.</strong> <button class="audio-icon" data-audio-text="Great! See you then.">🔊</button> (太好了！到时见。)</p>
+        </div>
+
+        <h3>📝 小练习：对话练习 (试着在心里或大声说出你的回答)</h3>
+        <div class="practice-box">
+            <p class="question">1. 你的朋友问你：<span style="color:#2C3E50;">"Are you free on Sunday afternoon?"</span> (周日下午你有空吗？)</p>
+            <p class="answer">如果你有空，可以回答：<span style="color:#8B5FBF;">"Yes, I am. What time?"</span> (是的，有空。几点？)</p>
+            <p class="answer">如果你没空，可以回答：<span style="color:#8B5FBF;">"No, I'm busy. How about Monday evening?"</span> (不，我忙。周一晚上怎么样？)</p>
+            <p class="question">2. 你们已经决定周二下午3点见面。你要确认一下：</p>
+            <p class="answer">你可以说：<span style="color:#8B5FBF;">"So, we're meeting on Tuesday at 3 PM, right?"</span> (所以，我们周二下午3点见面，对吗？)</p>
+        </div>
+    </section>
+
+    <section class="lesson-section">
+        <h2>🌍 文化小贴士：12小时制 vs. 24小时制</h2>
+        <p>在英语国家，尤其是美国和加拿大，人们普遍使用12小时制（带AM/PM）。而在欧洲和亚洲，24小时制（军事时间）也很常用。当你和外国人交流时，如果对方没有明确说明AM/PM，最好问清楚，以避免混淆！</p>
+        <p>例如：</p>
+        <ul>
+            <li>下午3点：<strong>3 PM</strong> (12小时制) 或 <strong>15:00</strong> (24小时制)</li>
+            <li>晚上10点：<strong>10 PM</strong> (12小时制) 或 <strong>22:00</strong> (24小时制)</li>
+        </ul>
+    </section>
+
+    <section class="lesson-section">
+        <div class="summary-box">
+            <h3>✨ 本章总结</h3>
+            <p>恭喜你完成本章学习！现在你应该能够：</p>
+            <ul>
+                <li>询问并回答现在的时间。</li>
+                <li>说出一周的七天和一年的十二个月。</li>
+                <li>使用正确的介词 (at, on, in) 来谈论时间、日期和年份。</li>
+                <li>用简单的英语提出和确认约会。</li>
+            </ul>
+            <p>多加练习，将这些短语融入你的日常对话中吧！</p>
+        </div>
+    </section>
+
+</body>
+</html>

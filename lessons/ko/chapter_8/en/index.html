@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Places and Directions</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        /* Lesson Container */
+        .lesson-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1.chapter-title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 1em;
+            padding: 20px 0;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-top: 25px;
+            color: #8B5FBF; /* Primary: Purple for sub-section headings */
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1em;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 0.8em;
+            padding-left: 10px;
+        }
+
+        /* Strong emphasis */
+        strong {
+            color: #2C3E50; /* Dark blue for emphasis */
+        }
+
+        /* Code/Korean text styling */
+        .korean-word {
+            font-weight: bold;
+            color: #8B5FBF; /* Primary: Purple for Korean words */
+            margin-right: 5px;
+        }
+
+        .pronunciation {
+            font-style: italic;
+            color: #666666;
+            font-size: 0.9em;
+        }
+
+        .translation {
+            color: #666666;
+            font-size: 0.95em;
+        }
+
+        /* Example sentences */
+        .example {
+            background-color: #f7f3e8; /* Slightly lighter cream for examples */
+            border-left: 4px solid #8B5FBF; /* Primary: Purple accent */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-left: 10px;
+            vertical-align: middle;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .audio-icon:hover {
+            background-color: #6a449c; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Interactive Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF; /* Primary: Purple */
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .practice-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #E0E0E0;
+        }
+
+        .practice-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .question {
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue */
+            margin-bottom: 10px;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-button {
+            background-color: #ffffff;
+            color: #666666;
+            border: 1px solid #E0E0E0;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.2s, border-color 0.2s;
+            min-height: 44px; /* Minimum touch target size */
+            box-sizing: border-box;
+        }
+
+        .option-button:hover {
+            background-color: #f0f0f0;
+            border-color: #8B5FBF; /* Primary: Purple */
+        }
+
+        .option-button.correct {
+            background-color: #d1e7dd; /* Light green for correct */
+            border-color: #28a745; /* Green */
+        }
+
+        .option-button.incorrect {
+            background-color: #f8d7da; /* Light red for incorrect */
+            border-color: #dc3545; /* Red */
+        }
+
+        .reveal-answer-button {
+            display: block;
+            width: fit-content;
+            margin: 15px auto 0;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            min-height: 44px; /* Minimum touch target size */
+            box-sizing: border-box;
+        }
+
+        .reveal-answer-button:hover {
+            background-color: #6a449c; /* Darker purple on hover */
+        }
+
+        .answer-feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #8B5FBF; /* Primary: Purple */
+            text-align: center;
+            padding: 10px;
+            background-color: #f7f3e8;
+            border-radius: 5px;
+            display: none; /* Hidden by default, shown via JS */
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #f7f3e8;
+            border: 1px solid #E0E0E0;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .summary-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .summary-section li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Mobile-First Adjustments (ensure styles work well on small screens) */
+        @media (max-width: 768px) {
+            .lesson-container {
+                padding: 15px;
+            }
+
+            h1.chapter-title {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.3em;
+            }
+
+            h3 {
+                font-size: 1.1em;
+            }
+
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1em;
+            }
+
+            .option-button, .reveal-answer-button {
+                padding: 10px 12px;
+                font-size: 0.95em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 15px;
+            }
+            .lesson-container {
+                padding: 10px;
+            }
+            h1.chapter-title {
+                font-size: 1.6em;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+            h3 {
+                font-size: 1em;
+            }
+            .audio-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 1em;
+            }
+            .option-button, .reveal-answer-button {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* Specific header image styling */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: block;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chapter 8: Places and Directions</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>👋 Welcome to Chapter 8!</h2>
+            <p>Ready to explore the world in Korean? In this chapter, we're going on a journey! You'll learn essential vocabulary for common places and how to describe directions. Plus, we'll dive into two super important particles, <strong>에 (e)</strong> and <strong>에서 (eseo)</strong>, that help you talk about where things are and where actions happen.</p>
+            <p>Let's get going! 🚀</p>
+        </section>
+
+        <section>
+            <h2>📍 Common Places (장소 - jangso)</h2>
+            <p>Let's start by learning some everyday places you might visit!</p>
+
+            <h3>🏠 집 (jip) - House/Home</h3>
+            <ul>
+                <li><span class="korean-word">집</span> <span class="pronunciation">[jip]</span> <span class="translation">- house/home</span>
+                    <button class="audio-icon" data-audio-text="집">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">우리 집은 서울에 있어요.</span> <button class="audio-icon" data-audio-text="우리 집은 서울에 있어요.">🔊</button></p>
+                <p><span class="translation">Our house is in Seoul.</span></p>
+            </div>
+
+            <h3>🏫 학교 (hakgyo) - School</h3>
+            <ul>
+                <li><span class="korean-word">학교</span> <span class="pronunciation">[hak-gyo]</span> <span class="translation">- school</span>
+                    <button class="audio-icon" data-audio-text="학교">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">저는 학교에 가요.</span> <button class="audio-icon" data-audio-text="저는 학교에 가요.">🔊</button></p>
+                <p><span class="translation">I go to school.</span></p>
+            </div>
+
+            <h3>🏢 회사 (hoesa) - Company/Office</h3>
+            <ul>
+                <li><span class="korean-word">회사</span> <span class="pronunciation">[hoe-sa]</span> <span class="translation">- company/office</span>
+                    <button class="audio-icon" data-audio-text="회사">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">아빠는 회사에서 일해요.</span> <button class="audio-icon" data-audio-text="아빠는 회사에서 일해요.">🔊</button></p>
+                <p><span class="translation">Dad works at the company.</span></p>
+            </div>
+
+            <h3>🏥 병원 (byeongwon) - Hospital</h3>
+            <ul>
+                <li><span class="korean-word">병원</span> <span class="pronunciation">[byeong-won]</span> <span class="translation">- hospital</span>
+                    <button class="audio-icon" data-audio-text="병원">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">아파서 병원에 갔어요.</span> <button class="audio-icon" data-audio-text="아파서 병원에 갔어요.">🔊</button></p>
+                <p><span class="translation">I went to the hospital because I was sick.</span></p>
+            </div>
+
+            <h3>🏦 은행 (eunhaeng) - Bank</h3>
+            <ul>
+                <li><span class="korean-word">은행</span> <span class="pronunciation">[eun-haeng]</span> <span class="translation">- bank</span>
+                    <button class="audio-icon" data-audio-text="은행">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">은행이 어디에 있어요?</span> <button class="audio-icon" data-audio-text="은행이 어디에 있어요?">🔊</button></p>
+                <p><span class="translation">Where is the bank?</span></p>
+            </div>
+
+            <h3>📮 우체국 (ucheguk) - Post Office</h3>
+            <ul>
+                <li><span class="korean-word">우체국</span> <span class="pronunciation">[u-che-guk]</span> <span class="translation">- post office</span>
+                    <button class="audio-icon" data-audio-text="우체국">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">우체국에서 편지를 보냈어요.</span> <button class="audio-icon" data-audio-text="우체국에서 편지를 보냈어요.">🔊</button></p>
+                <p><span class="translation">I sent a letter at the post office.</span></p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 Quick Check: Places</h3>
+            <div class="practice-item">
+                <p class="question">Match the Korean word to its English meaning.</p>
+                <p><strong>1. 회사</strong></p>
+                <div class="options-container">
+                    <button class="option-button">a) Hospital</button>
+                    <button class="option-button correct-option" data-correct-answer="b">b) Company/Office</button>
+                    <button class="option-button">c) School</button>
+                </div>
+                <button class="reveal-answer-button" onclick="this.nextElementSibling.style.display='block'">Reveal Answer</button>
+                <div class="answer-feedback">Answer: b) Company/Office</div>
+            </div>
+            <div class="practice-item">
+                <p class="question">Which word means "Hospital"?</p>
+                <div class="options-container">
+                    <button class="option-button">a) 우체국</button>
+                    <button class="option-button">b) 은행</button>
+                    <button class="option-button correct-option" data-correct-answer="c">c) 병원</button>
+                </div>
+                <button class="reveal-answer-button" onclick="this.nextElementSibling.style.display='block'">Reveal Answer</button>
+                <div class="answer-feedback">Answer: c) 병원</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>⬆️⬇️ Directions (방향 - banghyang)</h2>
+            <p>Now let's learn how to describe where things are relative to each other.</p>
+
+            <h3>➡️ 앞 (ap) - Front</h3>
+            <ul>
+                <li><span class="korean-word">앞</span> <span class="pronunciation">[ap]</span> <span class="translation">- front/in front of</span>
+                    <button class="audio-icon" data-audio-text="앞">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">학교 앞에 버스 정류장이 있어요.</span> <button class="audio-icon" data-audio-text="학교 앞에 버스 정류장이 있어요.">🔊</button></p>
+                <p><span class="translation">There's a bus stop in front of the school.</span></p>
+            </div>
+
+            <h3>⬅️ 뒤 (dwi) - Back</h3>
+            <ul>
+                <li><span class="korean-word">뒤</span> <span class="pronunciation">[dwi]</span> <span class="translation">- back/behind</span>
+                    <button class="audio-icon" data-audio-text="뒤">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">저의 뒤에 서세요.</span> <button class="audio-icon" data-audio-text="저의 뒤에 서세요.">🔊</button></p>
+                <p><span class="translation">Stand behind me.</span></p>
+            </div>
+
+            <h3>↙️ 왼쪽 (oenjjok) - Left</h3>
+            <ul>
+                <li><span class="korean-word">왼쪽</span> <span class="pronunciation">[wen-jjok]</span> <span class="translation">- left side/left</span>
+                    <button class="audio-icon" data-audio-text="왼쪽">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">왼쪽으로 가세요.</span> <button class="audio-icon" data-audio-text="왼쪽으로 가세요.">🔊</button></p>
+                <p><span class="translation">Please go to the left.</span></p>
+            </div>
+
+            <h3>↘️ 오른쪽 (oreunjjok) - Right</h3>
+            <ul>
+                <li><span class="korean-word">오른쪽</span> <span class="pronunciation">[o-reun-jjok]</span> <span class="translation">- right side/right</span>
+                    <button class="audio-icon" data-audio-text="오른쪽">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">오른쪽에 편의점이 있어요.</span> <button class="audio-icon" data-audio-text="오른쪽에 편의점이 있어요.">🔊</button></p>
+                <p><span class="translation">There's a convenience store on the right.</span></p>
+            </div>
+
+            <h3>⬆️ 위 (wi) - Up/Above</h3>
+            <ul>
+                <li><span class="korean-word">위</span> <span class="pronunciation">[wi]</span> <span class="translation">- up/above/on top of</span>
+                    <button class="audio-icon" data-audio-text="위">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">책상 위에 책이 있어요.</span> <button class="audio-icon" data-audio-text="책상 위에 책이 있어요.">🔊</button></p>
+                <p><span class="translation">There's a book on the desk.</span></p>
+            </div>
+
+            <h3>⬇️ 아래 (arae) - Down/Below</h3>
+            <ul>
+                <li><span class="korean-word">아래</span> <span class="pronunciation">[a-rae]</span> <span class="translation">- down/below/underneath</span>
+                    <button class="audio-icon" data-audio-text="아래">🔊</button>
+                </li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">의자 아래에 가방이 있어요.</span> <button class="audio-icon" data-audio-text="의자 아래에 가방이 있어요.">🔊</button></p>
+                <p><span class="translation">There's a bag under the chair.</span></p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 Quick Check: Directions</h3>
+            <div class="practice-item">
+                <p class="question">The cat is ____ the box. (고양이가 상자 ____ 있어요.) Which Korean direction word fits?</p>
+                <p>📦 🐈 (Imagine cat is in front of the box)</p>
+                <div class="options-container">
+                    <button class="option-button">a) 뒤</button>
+                    <button class="option-button correct-option" data-correct-answer="b">b) 앞</button>
+                    <button class="option-button">c) 위</button>
+                </div>
+                <button class="reveal-answer-button" onclick="this.nextElementSibling.style.display='block'">Reveal Answer</button>
+                <div class="answer-feedback">Answer: b) 앞 (front)</div>
+            </div>
+            <div class="practice-item">
+                <p class="question">Which word means "right"?</p>
+                <div class="options-container">
+                    <button class="option-button">a) 왼쪽</button>
+                    <button class="option-button correct-option" data-correct-answer="b">b) 오른쪽</button>
+                    <button class="option-button">c) 아래</button>
+                </div>
+                <button class="reveal-answer-button" onclick="this.nextElementSibling.style.display='block'">Reveal Answer</button>
+                <div class="answer-feedback">Answer: b) 오른쪽</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📍 Location Particles: 에 (e) and 에서 (eseo)</h2>
+            <p>These two particles are super important for talking about locations in Korean. They look similar, but have different uses!</p>
+
+            <h3>✨ 에 (e) - Static Location / Destination</h3>
+            <p>Use <span class="korean-word">에</span> when you're talking about:</p>
+            <ul>
+                <li><strong>Where something IS (static location):</strong> This indicates the location where something exists or is situated. Think of it as "at," "in," or "on" where there's no movement involved from the subject.</li>
+                <li><strong>A destination (where you're GOING):</strong> This indicates the place you are going TO.</li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">책이 책상에 있어요.</span> <button class="audio-icon" data-audio-text="책이 책상에 있어요.">🔊</button></p>
+                <p><span class="translation">The book <strong>is on</strong> the desk. (Static location)</span></p>
+            </div>
+            <div class="example">
+                <p><span class="korean-word">저는 학교에 가요.</span> <button class="audio-icon" data-audio-text="저는 학교에 가요.">🔊</button></p>
+                <p><span class="translation">I <strong>go to</strong> school. (Destination)</span></p>
+            </div>
+            <div class="example">
+                <p><span class="korean-word">한국에 살아요.</span> <button class="audio-icon" data-audio-text="한국에 살아요.">🔊</button></p>
+                <p><span class="translation">I live <strong>in</strong> Korea. (Static state of living)</span></p>
+            </div>
+
+            <h3>✨ 에서 (eseo) - Location of Action / Starting Point</h3>
+            <p>Use <span class="korean-word">에서</span> when you're talking about:</p>
+            <ul>
+                <li><strong>Where an action HAPPENS:</strong> This is the most common use. It indicates the place where an activity or event takes place.</li>
+                <li><strong>A starting point (from where something BEGINS):</strong> This indicates the place from which you are coming or starting.</li>
+            </ul>
+            <div class="example">
+                <p><span class="korean-word">저는 학교에서 공부해요.</span> <button class="audio-icon" data-audio-text="저는 학교에서 공부해요.">🔊</button></p>
+                <p><span class="translation">I study <strong>at</strong> school. (Action: studying happens at school)</span></p>
+            </div>
+            <div class="example">
+                <p><span class="korean-word">카페에서 커피를 마셨어요.</span> <button class="audio-icon" data-audio-text="카페에서 커피를 마셨어요.">🔊</button></p>
+                <p><span class="translation">I drank coffee <strong>at</strong> the cafe. (Action: drinking happens at the cafe)</span></p>
+            </div>
+            <div class="example">
+                <p><span class="korean-word">집에서 왔어요.</span> <button class="audio-icon" data-audio-text="집에서 왔어요.">🔊</button></p>
+                <p><span class="translation">I came <strong>from</strong> home. (Starting point)</span></p>
+            </div>
+
+            <p><strong>💡 Key Distinction:</strong> If the verb describes a state of being (있다/없다 - to be/not be, 살다 - to live) or movement to a destination (가다 - to go, 오다 - to come), use <strong>에</strong>. If the verb describes an action taking place (공부하다 - to study, 먹다 - to eat, 일하다 - to work), use <strong>에서</strong>.</p>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 Try It! 에 or 에서?</h3>
+            <div class="practice-item">
+                <p class="question">Choose the correct particle:</p>
+                <p>저는 한국 ____ 살아요. (I live in Korea.)</p>
+                <div class="options-container">
+                    <button class="option-button correct-option" data-correct-answer="a">a) 에</button>
+                    <button class="option-button">b) 에서</button>
+                </div>
+                <button class="reveal-answer-button" onclick="this.nextElementSibling.style.display='block'">Reveal Answer</button>
+                <div class="answer-feedback">Answer: a) 에 (살다 "to live" is a state of being verb)</div>
+            </div>
+            <div class="practice-item">
+                <p class="question">Choose the correct particle:</p>
+                <p>도서관 ____ 책을 읽어요. (I read a book at the library.)</p>
+                <div class="options-container">
+                    <button class="option-button">a) 에</button>
+                    <button class="option-button correct-option" data-correct-answer="b">b) 에서</button>
+                </div>
+                <button class="reveal-answer-button" onclick="this.nextElementSibling.style.display='block'">Reveal Answer</button>
+                <div class="answer-feedback">Answer: b) 에서 (읽다 "to read" is an action verb)</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>✨ Cultural Note: Asking for Directions</h2>
+            <p>Koreans are generally very helpful! If you're lost, you can try asking:</p>
+            <div class="example">
+                <p><span class="korean-word">~이/가 어디에 있어요?</span> <button class="audio-icon" data-audio-text="~이/가 어디에 있어요?">🔊</button></p>
+                <p><span class="translation">Where is ~? (Replace ~ with the place you're looking for, e.g., <span class="korean-word">은행이</span> 어디에 있어요?)</span></p>
+            </div>
+            <p>Or, to simply ask for directions:</p>
+            <div class="example">
+                <p><span class="korean-word">길 좀 가르쳐 주세요.</span> <button class="audio-icon" data-audio-text="길 좀 가르쳐 주세요.">🔊</button></p>
+                <p><span class="translation">Please teach me the way. (Can you give me directions?)</span></p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>🎉 Chapter 8 Summary</h2>
+            <p>You've learned so much about navigating places in Korean! Here's a quick recap:</p>
+            <ul>
+                <li><strong>Common Places:</strong>
+                    <ul>
+                        <li><span class="korean-word">집</span> (jip) - house/home</li>
+                        <li><span class="korean-word">학교</span> (hakgyo) - school</li>
+                        <li><span class="korean-word">회사</span> (hoesa) - company/office</li>
+                        <li><span class="korean-word">병원</span> (byeongwon) - hospital</li>
+                        <li><span class="korean-word">은행</span> (eunhaeng) - bank</li>
+                        <li><span class="korean-word">우체국</span> (ucheguk) - post office</li>
+                    </ul>
+                </li>
+                <li><strong>Direction Words:</strong>
+                    <ul>
+                        <li><span class="korean-word">앞</span> (ap) - front</li>
+                        <li><span class="korean-word">뒤</span> (dwi) - back</li>
+                        <li><span class="korean-word">왼쪽</span> (oenjjok) - left</li>
+                        <li><span class="korean-word">오른쪽</span> (oreunjjok) - right</li>
+                        <li><span class="korean-word">위</span> (wi) - up/above</li>
+                        <li><span class="korean-word">아래</span> (arae) - down/below</li>
+                    </ul>
+                </li>
+                <li><strong>Location Particles:</strong>
+                    <ul>
+                        <li><span class="korean-word">에</span> (e): For static location (where something IS) or destination (where you're GOING).</li>
+                        <li><span class="korean-word">에서</span> (eseo): For location of action (where something HAPPENS) or starting point (where something BEGINS/FROM).</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Great job! Keep practicing these words and particles, and you'll be giving and receiving directions like a pro in no time! 👍</p>
+        </section>
+    </div>
+
+    <script>
+        // Simple client-side JS for "Reveal Answer" buttons
+        // In a real mobile app, this would be handled by the native UI logic
+        document.querySelectorAll('.reveal-answer-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const feedbackDiv = this.nextElementSibling;
+                if (feedbackDiv) {
+                    feedbackDiv.style.display = 'block';
+                }
+            });
+        });
+
+        document.querySelectorAll('.option-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // For simplicity, this client-side JS just highlights the clicked button
+                // and for correct option it just shows a green/red effect.
+                // Actual answer checking would be handled by the mobile app's logic.
+                const parentOptions = this.closest('.options-container');
+                parentOptions.querySelectorAll('.option-button').forEach(btn => {
+                    btn.classList.remove('correct', 'incorrect');
+                });
+
+                if (this.classList.contains('correct-option')) {
+                    this.classList.add('correct');
+                } else {
+                    this.classList.add('incorrect');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
