@@ -1,0 +1,141 @@
+{
+  "title": "Japanese Chapter 5 Quiz: Simple Sentence Structure",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "What is the basic word order in Japanese?",
+      "explanation": "Japanese follows Subject-Object-Verb (SOV) word order, unlike English which uses Subject-Verb-Object (SVO).",
+      "correctAnswer": "Subject-Object-Verb",
+      "options": [
+        "Subject-Verb-Object",
+        "Subject-Object-Verb",
+        "Object-Subject-Verb",
+        "Verb-Subject-Object"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "What particle is used to mark the direct object in Japanese?",
+      "explanation": "The particle を (wo) marks the direct object of the verb.",
+      "correctAnswer": "を",
+      "options": [
+        "は",
+        "を",
+        "が",
+        "に"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "What particle is used to mark the subject with focus in Japanese?",
+      "explanation": "The particle が (ga) marks the subject with focus or emphasis.",
+      "correctAnswer": "が",
+      "options": [
+        "は",
+        "を",
+        "が",
+        "に"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "What does わたしはりんごをたべます mean?",
+      "explanation": "わたしはりんごをたべます (watashi wa ringo wo tabemasu) means \"I eat an apple.\"",
+      "correctAnswer": "I eat an apple",
+      "options": [
+        "I eat an apple",
+        "I drink water",
+        "I go to school",
+        "I read a book"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "What does ジョンさんがきます mean?",
+      "explanation": "ジョンさんがきます (John-san ga kimasu) means \"John is coming.\"",
+      "correctAnswer": "John is coming",
+      "options": [
+        "John is coming",
+        "John is going",
+        "John is eating",
+        "John is reading"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence \"I eat bread\"",
+      "explanation": "This follows the SOV pattern: Subject (私) + は + Object (パン) + を + Verb (食べます).",
+      "correctAnswer": "私はパンを食べます",
+      "draggableItems": [
+        "私",
+        "は",
+        "パン",
+        "を",
+        "食べます"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "What is the question marker in Japanese?",
+      "explanation": "The particle か (ka) is used at the end of a sentence to make it a question.",
+      "correctAnswer": "か",
+      "options": [
+        "か",
+        "ね",
+        "よ",
+        "わ"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese question \"Do you eat rice?\"",
+      "explanation": "This question uses the particle か (ka) at the end to make it interrogative.",
+      "correctAnswer": "あなたはご飯を食べますか",
+      "draggableItems": [
+        "あなた",
+        "は",
+        "ご飯",
+        "を",
+        "食べます",
+        "か"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "multipleChoice",
+      "question": "What is the difference between は and が particles?",
+      "explanation": "は (wa) marks the topic of conversation, while が (ga) marks the subject with focus or emphasis.",
+      "correctAnswer": "は marks topic, が marks subject with focus",
+      "options": [
+        "は marks topic, が marks subject with focus",
+        "は marks object, が marks subject",
+        "は marks location, が marks time",
+        "は marks possession, が marks direction"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence \"I read a book\"",
+      "explanation": "This follows the standard Japanese sentence structure: Subject + は + Object + を + Verb.",
+      "correctAnswer": "私は本を読みます",
+      "draggableItems": [
+        "私",
+        "は",
+        "本",
+        "を",
+        "読みます"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:51:49.318Z"
+}

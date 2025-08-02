@@ -1,0 +1,142 @@
+{
+  "title": "Japanese Chapter 6 Quiz: Numbers, Time, and Counters",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "What does いま なんじですか mean?",
+      "explanation": "いま なんじですか (ima nanji desu ka) means \"What time is it now?\"",
+      "correctAnswer": "What time is it now?",
+      "options": [
+        "What time is it now?",
+        "What day is it?",
+        "What month is it?",
+        "What year is it?"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "What is the Japanese word for \"time\"?",
+      "explanation": "じかん (jikan) means \"time\" in Japanese.",
+      "correctAnswer": "じかん",
+      "options": [
+        "じかん",
+        "とき",
+        "まい",
+        "ねん"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "What does 月曜日 mean?",
+      "explanation": "月曜日 (getsuyoubi) means \"Monday\" in Japanese.",
+      "correctAnswer": "Monday",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "What does 火曜日 mean?",
+      "explanation": "火曜日 (kayoubi) means \"Tuesday\" in Japanese.",
+      "correctAnswer": "Tuesday",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "What particle is used for time and location in Japanese?",
+      "explanation": "The particle に (ni) is used to mark time and location.",
+      "correctAnswer": "に",
+      "options": [
+        "は",
+        "を",
+        "に",
+        "が"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence \"I go to school at 8 o'clock\"",
+      "explanation": "This sentence uses the particle に (ni) for both time (8時) and location (学校).",
+      "correctAnswer": "私は8時に学校に行きます",
+      "draggableItems": [
+        "私",
+        "は",
+        "8時",
+        "に",
+        "学校",
+        "に",
+        "行きます"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "What is the basic counter for counting objects in Japanese?",
+      "explanation": "～つ (～tsu) is a general counter for counting objects.",
+      "correctAnswer": "～つ",
+      "options": [
+        "～つ",
+        "～個",
+        "～本",
+        "～枚"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "How do you say \"one\" in Japanese?",
+      "explanation": "いち (ichi) means \"one\" in Japanese.",
+      "correctAnswer": "いち",
+      "options": [
+        "いち",
+        "に",
+        "さん",
+        "よん"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence \"I study at 9 o'clock\"",
+      "explanation": "This sentence uses the particle に (ni) to mark the time (9時).",
+      "correctAnswer": "私は9時に勉強します",
+      "draggableItems": [
+        "私",
+        "は",
+        "9時",
+        "に",
+        "勉強",
+        "します"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "What does 水曜日 mean?",
+      "explanation": "水曜日 (suiyoubi) means \"Wednesday\" in Japanese.",
+      "correctAnswer": "Wednesday",
+      "options": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:51:49.318Z"
+}

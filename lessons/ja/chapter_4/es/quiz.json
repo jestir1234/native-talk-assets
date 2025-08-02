@@ -1,0 +1,137 @@
+{
+  "title": "Japanese Chapter 4 Quiz: Katakana – Palabras Prestadas",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "¿Qué script japonés se usa para préstamos lingüísticos extranjeros?",
+      "explanation": "Katakana se usa para préstamos lingüísticos extranjeros y expresiones onomatopéyicas.",
+      "correctAnswer": "Katakana",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "¿Qué significa コーヒー?",
+      "explanation": "コーヒー (koohii) es la palabra japonesa para \"café\" tomada prestada del inglés.",
+      "correctAnswer": "Café",
+      "options": [
+        "Café",
+        "Té",
+        "Agua",
+        "Leche"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "¿Qué significa パン?",
+      "explanation": "パン (pan) es la palabra japonesa para \"pan\" tomada prestada del portugués.",
+      "correctAnswer": "Pan",
+      "options": [
+        "Arroz",
+        "Pan",
+        "Fideos",
+        "Carne"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "¿Qué significa コンピューター?",
+      "explanation": "コンピューター (konpyuutaa) es la palabra japonesa para \"computadora\" tomada prestada del inglés.",
+      "correctAnswer": "Computadora",
+      "options": [
+        "Computadora",
+        "Televisión",
+        "Radio",
+        "Teléfono"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "¿Qué significa ピカピカ?",
+      "explanation": "ピカピカ (pikapika) es una palabra onomatopéyica que significa \"brillante\" o \"resplandeciente.\"",
+      "correctAnswer": "Brillante/Resplandeciente",
+      "options": [
+        "Brillante/Resplandeciente",
+        "Fuerte",
+        "Silencioso",
+        "Rápido"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Forma la palabra japonesa para \"pizza\" usando katakana",
+      "explanation": "ピザ (piza) es la palabra japonesa para \"pizza\" tomada prestada del italiano.",
+      "correctAnswer": "ピザ",
+      "draggableItems": [
+        "ピ",
+        "ザ"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "¿Qué significa ドキドキ?",
+      "explanation": "ドキドキ (dokidoki) es una palabra onomatopéyica que representa el latido del corazón.",
+      "correctAnswer": "Latido del corazón",
+      "options": [
+        "Latido del corazón",
+        "Risa",
+        "Llanto",
+        "Sueño"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "¿Para qué se usa la partícula の en japonés?",
+      "explanation": "La partícula の (no) se usa para mostrar posesión o conexión entre sustantivos.",
+      "correctAnswer": "Mostrar posesión",
+      "options": [
+        "Mostrar posesión",
+        "Marcar el sujeto",
+        "Marcar el objeto",
+        "Marcar la ubicación"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa \"Mi nombre es Tanaka\"",
+      "explanation": "Esta oración usa la partícula の (no) para mostrar posesión: \"mi nombre.\"",
+      "correctAnswer": "私の名前は田中です",
+      "draggableItems": [
+        "私",
+        "の",
+        "名前",
+        "は",
+        "田中",
+        "です"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "¿Cuál de estos NO se escribe típicamente en katakana?",
+      "explanation": "私 (watashi) es una palabra nativa japonesa escrita en kanji, no un préstamo extranjero en katakana.",
+      "correctAnswer": "私 (yo/mí)",
+      "options": [
+        "コーヒー (café)",
+        "パン (pan)",
+        "私 (yo/mí)",
+        "ピザ (pizza)"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:55:46.418Z"
+}

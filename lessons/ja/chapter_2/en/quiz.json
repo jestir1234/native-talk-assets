@@ -1,0 +1,131 @@
+{
+  "title": "Japanese Chapter 2 Quiz: Hiragana – The Vowel Sounds",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "Which hiragana character represents the sound \"a\"?",
+      "explanation": "あ (a) is the first vowel in the Japanese hiragana syllabary.",
+      "correctAnswer": "あ",
+      "options": [
+        "あ",
+        "い",
+        "う",
+        "え"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "Which hiragana character represents the sound \"i\"?",
+      "explanation": "い (i) is the second vowel in the Japanese hiragana syllabary.",
+      "correctAnswer": "い",
+      "options": [
+        "あ",
+        "い",
+        "う",
+        "え"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "Which hiragana character represents the sound \"u\"?",
+      "explanation": "う (u) is the third vowel in the Japanese hiragana syllabary.",
+      "correctAnswer": "う",
+      "options": [
+        "い",
+        "う",
+        "え",
+        "お"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "Which hiragana character represents the sound \"e\"?",
+      "explanation": "え (e) is the fourth vowel in the Japanese hiragana syllabary.",
+      "correctAnswer": "え",
+      "options": [
+        "う",
+        "え",
+        "お",
+        "あ"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "Which hiragana character represents the sound \"o\"?",
+      "explanation": "お (o) is the fifth and final vowel in the Japanese hiragana syllabary.",
+      "correctAnswer": "お",
+      "options": [
+        "え",
+        "お",
+        "あ",
+        "い"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese word for \"love\" using hiragana",
+      "explanation": "あい (ai) means \"love\" in Japanese.",
+      "correctAnswer": "あい",
+      "draggableItems": [
+        "あ",
+        "い"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "What does the Japanese word いえ mean?",
+      "explanation": "いえ (ie) means \"house\" in Japanese.",
+      "correctAnswer": "House",
+      "options": [
+        "Love",
+        "House",
+        "Sea",
+        "Book"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese word for \"sea\" using hiragana",
+      "explanation": "うみ (umi) means \"sea\" in Japanese.",
+      "correctAnswer": "うみ",
+      "draggableItems": [
+        "う",
+        "み"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "multipleChoice",
+      "question": "How many vowel sounds are there in Japanese hiragana?",
+      "explanation": "Japanese has five vowel sounds: a, i, u, e, o (あ, い, う, え, お).",
+      "correctAnswer": "5",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese word for \"blue\" using hiragana",
+      "explanation": "あお (ao) means \"blue\" in Japanese.",
+      "correctAnswer": "あお",
+      "draggableItems": [
+        "あ",
+        "お"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:51:49.315Z"
+}

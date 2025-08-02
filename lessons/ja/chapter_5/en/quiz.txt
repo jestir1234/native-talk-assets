@@ -1,0 +1,115 @@
+# Japanese Chapter 5 Quiz: Simple Sentence Structure
+
+## Question 1
+type: multipleChoice
+question: What is the basic word order in Japanese?
+options:
+  - Subject-Verb-Object
+  - Subject-Object-Verb
+  - Object-Subject-Verb
+  - Verb-Subject-Object
+correctAnswer: Subject-Object-Verb
+explanation: Japanese follows Subject-Object-Verb (SOV) word order, unlike English which uses Subject-Verb-Object (SVO).
+
+## Question 2
+type: multipleChoice
+question: What particle is used to mark the direct object in Japanese?
+options:
+  - は
+  - を
+  - が
+  - に
+correctAnswer: を
+explanation: The particle を (wo) marks the direct object of the verb.
+
+## Question 3
+type: multipleChoice
+question: What particle is used to mark the subject with focus in Japanese?
+options:
+  - は
+  - を
+  - が
+  - に
+correctAnswer: が
+explanation: The particle が (ga) marks the subject with focus or emphasis.
+
+## Question 4
+type: multipleChoice
+question: What does わたしはりんごをたべます mean?
+options:
+  - I eat an apple
+  - I drink water
+  - I go to school
+  - I read a book
+correctAnswer: I eat an apple
+explanation: わたしはりんごをたべます (watashi wa ringo wo tabemasu) means "I eat an apple."
+
+## Question 5
+type: multipleChoice
+question: What does ジョンさんがきます mean?
+options:
+  - John is coming
+  - John is going
+  - John is eating
+  - John is reading
+correctAnswer: John is coming
+explanation: ジョンさんがきます (John-san ga kimasu) means "John is coming."
+
+## Question 6
+type: dragAndDrop
+question: Form the Japanese sentence "I eat bread"
+draggableItems:
+  - 私
+  - は
+  - パン
+  - を
+  - 食べます
+correctAnswer: 私はパンを食べます
+explanation: This follows the SOV pattern: Subject (私) + は + Object (パン) + を + Verb (食べます).
+
+## Question 7
+type: multipleChoice
+question: What is the question marker in Japanese?
+options:
+  - か
+  - ね
+  - よ
+  - わ
+correctAnswer: か
+explanation: The particle か (ka) is used at the end of a sentence to make it a question.
+
+## Question 8
+type: dragAndDrop
+question: Form the Japanese question "Do you eat rice?"
+draggableItems:
+  - あなた
+  - は
+  - ご飯
+  - を
+  - 食べます
+  - か
+correctAnswer: あなたはご飯を食べますか
+explanation: This question uses the particle か (ka) at the end to make it interrogative.
+
+## Question 9
+type: multipleChoice
+question: What is the difference between は and が particles?
+options:
+  - は marks topic, が marks subject with focus
+  - は marks object, が marks subject
+  - は marks location, が marks time
+  - は marks possession, が marks direction
+correctAnswer: は marks topic, が marks subject with focus
+explanation: は (wa) marks the topic of conversation, while が (ga) marks the subject with focus or emphasis.
+
+## Question 10
+type: dragAndDrop
+question: Form the Japanese sentence "I read a book"
+draggableItems:
+  - 私
+  - は
+  - 本
+  - を
+  - 読みます
+correctAnswer: 私は本を読みます
+explanation: This follows the standard Japanese sentence structure: Subject + は + Object + を + Verb. 

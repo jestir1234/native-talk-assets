@@ -1,0 +1,115 @@
+# Japanese Chapter 5 Quiz: Estructura Simple de Oraciones
+
+## Question 1
+type: multipleChoice
+question: ¿Cuál es el orden básico de palabras en japonés?
+options:
+  - Sujeto-Verbo-Objeto
+  - Sujeto-Objeto-Verbo
+  - Objeto-Sujeto-Verbo
+  - Verbo-Sujeto-Objeto
+correctAnswer: Sujeto-Objeto-Verbo
+explanation: El japonés sigue el orden Sujeto-Objeto-Verbo (SOV), a diferencia del español que usa Sujeto-Verbo-Objeto (SVO).
+
+## Question 2
+type: multipleChoice
+question: ¿Qué partícula se usa para marcar el objeto directo en japonés?
+options:
+  - は
+  - を
+  - が
+  - に
+correctAnswer: を
+explanation: La partícula を (wo) marca el objeto directo del verbo.
+
+## Question 3
+type: multipleChoice
+question: ¿Qué partícula se usa para marcar el sujeto con énfasis en japonés?
+options:
+  - は
+  - を
+  - が
+  - に
+correctAnswer: が
+explanation: La partícula が (ga) marca el sujeto con énfasis o enfoque.
+
+## Question 4
+type: multipleChoice
+question: ¿Qué significa わたしはりんごをたべます?
+options:
+  - Yo como una manzana
+  - Yo bebo agua
+  - Yo voy a la escuela
+  - Yo leo un libro
+correctAnswer: Yo como una manzana
+explanation: わたしはりんごをたべます (watashi wa ringo wo tabemasu) significa "Yo como una manzana."
+
+## Question 5
+type: multipleChoice
+question: ¿Qué significa ジョンさんがきます?
+options:
+  - Juan viene
+  - Juan va
+  - Juan come
+  - Juan lee
+correctAnswer: Juan viene
+explanation: ジョンさんがきます (John-san ga kimasu) significa "Juan viene."
+
+## Question 6
+type: dragAndDrop
+question: Forma la oración japonesa "Yo como pan"
+draggableItems:
+  - 私
+  - は
+  - パン
+  - を
+  - 食べます
+correctAnswer: 私はパンを食べます
+explanation: Esto sigue el patrón SOV: Sujeto (私) + は + Objeto (パン) + を + Verbo (食べます).
+
+## Question 7
+type: multipleChoice
+question: ¿Cuál es el marcador de pregunta en japonés?
+options:
+  - か
+  - ね
+  - よ
+  - わ
+correctAnswer: か
+explanation: La partícula か (ka) se usa al final de una oración para hacerla interrogativa.
+
+## Question 8
+type: dragAndDrop
+question: Forma la pregunta japonesa "¿Comes arroz?"
+draggableItems:
+  - あなた
+  - は
+  - ご飯
+  - を
+  - 食べます
+  - か
+correctAnswer: あなたはご飯を食べますか
+explanation: Esta pregunta usa la partícula か (ka) al final para hacerla interrogativa.
+
+## Question 9
+type: multipleChoice
+question: ¿Cuál es la diferencia entre las partículas は y が?
+options:
+  - は marca el tema, が marca el sujeto con énfasis
+  - は marca el objeto, が marca el sujeto
+  - は marca la ubicación, が marca el tiempo
+  - は marca la posesión, が marca la dirección
+correctAnswer: は marca el tema, が marca el sujeto con énfasis
+explanation: は (wa) marca el tema de conversación, mientras que が (ga) marca el sujeto con énfasis o enfoque.
+
+## Question 10
+type: dragAndDrop
+question: Forma la oración japonesa "Yo leo un libro"
+draggableItems:
+  - 私
+  - は
+  - 本
+  - を
+  - 読みます
+correctAnswer: 私は本を読みます
+explanation: Esto sigue la estructura estándar de oración japonesa: Sujeto + は + Objeto + を + Verbo. 

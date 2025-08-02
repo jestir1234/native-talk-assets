@@ -1,0 +1,112 @@
+# Japanese Chapter 1 Quiz: El Sistema de Escritura Japonés
+
+## Question 1
+type: multipleChoice
+question: ¿Cuántos sistemas de escritura usa el japonés?
+options:
+  - 1
+  - 2
+  - 3
+  - 4
+correctAnswer: 3
+explanation: El japonés usa tres sistemas de escritura: Hiragana, Katakana y Kanji.
+
+## Question 2
+type: multipleChoice
+question: ¿Qué script japonés se usa para palabras nativas japonesas y elementos gramaticales?
+options:
+  - Hiragana
+  - Katakana
+  - Kanji
+  - Romaji
+correctAnswer: Hiragana
+explanation: Hiragana se usa para palabras nativas japonesas y partículas gramaticales.
+
+## Question 3
+type: multipleChoice
+question: ¿Qué script japonés se usa para palabras extranjeras y onomatopeyas?
+options:
+  - Hiragana
+  - Katakana
+  - Kanji
+  - Romaji
+correctAnswer: Katakana
+explanation: Katakana se usa para préstamos lingüísticos extranjeros y expresiones onomatopéyicas.
+
+## Question 4
+type: multipleChoice
+question: ¿Qué script japonés se tomó prestado de los caracteres chinos?
+options:
+  - Hiragana
+  - Katakana
+  - Kanji
+  - Romaji
+correctAnswer: Kanji
+explanation: Los caracteres Kanji fueron tomados prestados del chino y representan significado.
+
+## Question 5
+type: multipleChoice
+question: ¿En qué dirección leen típicamente los japoneses el texto?
+options:
+  - Derecha a izquierda, de arriba a abajo
+  - Izquierda a derecha, de arriba a abajo
+  - De arriba a abajo, de derecha a izquierda
+  - De abajo a arriba, de izquierda a derecha
+correctAnswer: Izquierda a derecha, de arriba a abajo
+explanation: El japonés moderno típicamente se lee de izquierda a derecha, de arriba a abajo, aunque la escritura vertical tradicional aún existe.
+
+## Question 6
+type: dragAndDrop
+question: Forma la oración japonesa para "Soy estudiante"
+draggableItems:
+  - 私
+  - は
+  - 学生
+  - です
+correctAnswer: 私は学生です
+explanation: Esta es una oración básica japonesa usando la cópula です (desu) que significa "ser."
+
+## Question 7
+type: multipleChoice
+question: ¿Cuál es el propósito principal del Hiragana en la escritura japonesa?
+options:
+  - Escribir palabras extranjeras
+  - Escribir palabras nativas japonesas y gramática
+  - Escribir préstamos chinos
+  - Escribir números
+correctAnswer: Escribir palabras nativas japonesas y gramática
+explanation: Hiragana se usa para palabras nativas japonesas y partículas gramaticales como は, を, に, etc.
+
+## Question 8
+type: dragAndDrop
+question: Forma la oración japonesa para "Esto es un libro"
+draggableItems:
+  - これ
+  - は
+  - 本
+  - です
+correctAnswer: これは本です
+explanation: これ (kore) significa "esto" y 本 (hon) significa "libro."
+
+## Question 9
+type: multipleChoice
+question: ¿Cuál de los siguientes NO es un sistema de escritura japonés?
+options:
+  - Hiragana
+  - Katakana
+  - Kanji
+  - Romaji
+correctAnswer: Romaji
+explanation: Romaji es la romanización del japonés usando el alfabeto latino, no un sistema de escritura nativo japonés.
+
+## Question 10
+type: dragAndDrop
+question: Forma la oración japonesa para "Voy a la escuela"
+draggableItems:
+  - 私
+  - は
+  - 学校
+  - に
+  - 行きます
+correctAnswer: 私は学校に行きます
+explanation: Esto sigue la estructura básica de oración japonesa: Sujeto + は + Objeto + に + Verbo. 

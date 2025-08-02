@@ -1,0 +1,140 @@
+{
+  "title": "Japanese Chapter 8 Quiz: Adjetivos y Descripción",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "¿Qué significa たかい?",
+      "explanation": "たかい (takai) significa \"caro\" en japonés.",
+      "correctAnswer": "Caro",
+      "options": [
+        "Caro",
+        "Barato",
+        "Grande",
+        "Pequeño"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "¿Qué significa しずか?",
+      "explanation": "しずか (shizuka) significa \"silencioso\" en japonés.",
+      "correctAnswer": "Silencioso",
+      "options": [
+        "Fuerte",
+        "Silencioso",
+        "Rápido",
+        "Lento"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "¿Qué tipo de adjetivo es たかい?",
+      "explanation": "たかい (takai) es un adjetivo い porque termina en い.",
+      "correctAnswer": "Adjetivo い",
+      "options": [
+        "Adjetivo い",
+        "Adjetivo な",
+        "Verbo",
+        "Sustantivo"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "¿Qué tipo de adjetivo es しずか?",
+      "explanation": "しずか (shizuka) es un adjetivo な porque requiere な cuando modifica sustantivos.",
+      "correctAnswer": "Adjetivo な",
+      "options": [
+        "Adjetivo い",
+        "Adjetivo な",
+        "Verbo",
+        "Sustantivo"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "¿Qué significa この みせは たかいです?",
+      "explanation": "この みせは たかいです (kono mise wa takai desu) significa \"Esta tienda es cara.\"",
+      "correctAnswer": "Esta tienda es cara",
+      "options": [
+        "Esta tienda es cara",
+        "Esta tienda es barata",
+        "Esta tienda es grande",
+        "Esta tienda es pequeña"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa \"Este libro es caro\"",
+      "explanation": "Esta oración usa el demostrativo この (kono) que significa \"este\" y el adjetivo い 高い (takai).",
+      "correctAnswer": "この本は高いです",
+      "draggableItems": [
+        "この",
+        "本",
+        "は",
+        "高い",
+        "です"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "¿Qué significa しずかな まちです?",
+      "explanation": "しずかな まちです (shizuka na machi desu) significa \"Es una ciudad silenciosa.\"",
+      "correctAnswer": "Es una ciudad silenciosa",
+      "options": [
+        "Es una ciudad silenciosa",
+        "Es una ciudad ruidosa",
+        "Es una ciudad grande",
+        "Es una ciudad pequeña"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "¿Cómo conectas dos adjetivos en japonés?",
+      "explanation": "Los adjetivos い se conectan usando la forma くて (ej., たかくて おおきい - caro y grande).",
+      "correctAnswer": "Usar くて",
+      "options": [
+        "Usar と",
+        "Usar や",
+        "Usar くて",
+        "Usar で"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa \"Este es un lugar silencioso\"",
+      "explanation": "Esta oración usa el adjetivo な 静か (shizuka) con la partícula な para modificar el sustantivo 場所 (basho).",
+      "correctAnswer": "これは静かな場所です",
+      "draggableItems": [
+        "これ",
+        "は",
+        "静か",
+        "な",
+        "場所",
+        "です"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "¿Cuál es la diferencia entre adjetivos い y adjetivos な?",
+      "explanation": "Los adjetivos い terminan en い y pueden modificar sustantivos directamente, mientras que los adjetivos な necesitan la partícula な para modificar sustantivos.",
+      "correctAnswer": "Los adjetivos い terminan en い, los adjetivos な necesitan な",
+      "options": [
+        "Los adjetivos い terminan en い, los adjetivos な necesitan な",
+        "Los adjetivos い son verbos, los adjetivos な son sustantivos",
+        "Los adjetivos い son cortos, los adjetivos な son largos",
+        "No hay diferencia"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:55:46.421Z"
+}

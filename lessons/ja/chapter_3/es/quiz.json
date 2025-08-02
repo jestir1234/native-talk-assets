@@ -1,0 +1,137 @@
+{
+  "title": "Japanese Chapter 3 Quiz: Saludos Básicos e Introducciones",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "¿Qué significa こんにちは?",
+      "explanation": "こんにちは (konnichiwa) es un saludo usado durante el día.",
+      "correctAnswer": "Buenas tardes",
+      "options": [
+        "Buenos días",
+        "Buenas tardes",
+        "Buenas noches",
+        "Adiós"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "¿Qué significa おはよう?",
+      "explanation": "おはよう (ohayou) es un saludo usado por la mañana.",
+      "correctAnswer": "Buenos días",
+      "options": [
+        "Buenas tardes",
+        "Buenos días",
+        "Buenas noches",
+        "Adiós"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "¿Qué significa こんばんは?",
+      "explanation": "こんばんは (konbanwa) es un saludo usado por la noche.",
+      "correctAnswer": "Buenas noches",
+      "options": [
+        "Buenos días",
+        "Buenas tardes",
+        "Buenas noches",
+        "Adiós"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "¿Qué significa さようなら?",
+      "explanation": "さようなら (sayounara) significa \"adiós\" en japonés.",
+      "correctAnswer": "Adiós",
+      "options": [
+        "Hola",
+        "Gracias",
+        "Adiós",
+        "Por favor"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "¿Para qué se usa la partícula は en japonés?",
+      "explanation": "La partícula は (wa) marca el tema o sujeto de la oración.",
+      "correctAnswer": "Marcar el sujeto",
+      "options": [
+        "Marcar el sujeto",
+        "Marcar el objeto",
+        "Marcar la ubicación",
+        "Marcar el tiempo"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa \"Soy Tanaka\"",
+      "explanation": "Esta es una introducción básica usando la cópula です (desu).",
+      "correctAnswer": "私は田中です",
+      "draggableItems": [
+        "私",
+        "は",
+        "田中",
+        "です"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "¿Qué significa はじめまして?",
+      "explanation": "はじめまして (hajimemashite) significa \"encantado de conocerte\" cuando conoces a alguien por primera vez.",
+      "correctAnswer": "Encantado de conocerte",
+      "options": [
+        "Encantado de conocerte",
+        "Gracias",
+        "Adiós",
+        "Por favor"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "dragAndDrop",
+      "question": "Forma la frase japonesa \"Encantado de conocerte, por favor trátame bien\"",
+      "explanation": "Esta es una frase de introducción educada que significa \"Encantado de conocerte, por favor trátame bien.\"",
+      "correctAnswer": "はじめましてよろしくおねがいします",
+      "draggableItems": [
+        "はじめまして",
+        "よろしく",
+        "おねがい",
+        "します"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "multipleChoice",
+      "question": "¿Qué significa la cópula です?",
+      "explanation": "です (desu) es la cópula educada que significa \"ser\" en japonés.",
+      "correctAnswer": "Ser",
+      "options": [
+        "Ser",
+        "Tener",
+        "Ir",
+        "Venir"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa \"Soy estudiante\"",
+      "explanation": "Esta es una estructura básica de oración usando la cópula です (desu) para describir lo que eres.",
+      "correctAnswer": "私は学生です",
+      "draggableItems": [
+        "私",
+        "は",
+        "学生",
+        "です"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:55:46.417Z"
+}

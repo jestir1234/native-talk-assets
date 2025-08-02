@@ -1,0 +1,140 @@
+{
+  "title": "Japanese Chapter 8 Quiz: Adjectives and Description",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "What does たかい mean?",
+      "explanation": "たかい (takai) means \"expensive\" in Japanese.",
+      "correctAnswer": "Expensive",
+      "options": [
+        "Expensive",
+        "Cheap",
+        "Big",
+        "Small"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "What does しずか mean?",
+      "explanation": "しずか (shizuka) means \"quiet\" in Japanese.",
+      "correctAnswer": "Quiet",
+      "options": [
+        "Loud",
+        "Quiet",
+        "Fast",
+        "Slow"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "What type of adjective is たかい?",
+      "explanation": "たかい (takai) is an い-adjective because it ends in い.",
+      "correctAnswer": "い-adjective",
+      "options": [
+        "い-adjective",
+        "な-adjective",
+        "Verb",
+        "Noun"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "What type of adjective is しずか?",
+      "explanation": "しずか (shizuka) is a な-adjective because it requires な when modifying nouns.",
+      "correctAnswer": "な-adjective",
+      "options": [
+        "い-adjective",
+        "な-adjective",
+        "Verb",
+        "Noun"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "What does この みせは たかいです mean?",
+      "explanation": "この みせは たかいです (kono mise wa takai desu) means \"This shop is expensive.\"",
+      "correctAnswer": "This shop is expensive",
+      "options": [
+        "This shop is expensive",
+        "This shop is cheap",
+        "This shop is big",
+        "This shop is small"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence \"This book is expensive\"",
+      "explanation": "This sentence uses the demonstrative この (kono) meaning \"this\" and the い-adjective 高い (takai).",
+      "correctAnswer": "この本は高いです",
+      "draggableItems": [
+        "この",
+        "本",
+        "は",
+        "高い",
+        "です"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "What does しずかな まちです mean?",
+      "explanation": "しずかな まちです (shizuka na machi desu) means \"It's a quiet town.\"",
+      "correctAnswer": "It's a quiet town",
+      "options": [
+        "It's a quiet town",
+        "It's a loud town",
+        "It's a big town",
+        "It's a small town"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "How do you connect two adjectives in Japanese?",
+      "explanation": "い-adjectives are connected using the くて form (e.g., たかくて おおきい - expensive and big).",
+      "correctAnswer": "Use くて",
+      "options": [
+        "Use と",
+        "Use や",
+        "Use くて",
+        "Use で"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence \"This is a quiet place\"",
+      "explanation": "This sentence uses the な-adjective 静か (shizuka) with the particle な to modify the noun 場所 (basho).",
+      "correctAnswer": "これは静かな場所です",
+      "draggableItems": [
+        "これ",
+        "は",
+        "静か",
+        "な",
+        "場所",
+        "です"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "What is the difference between い-adjectives and な-adjectives?",
+      "explanation": "い-adjectives end in い and can directly modify nouns, while な-adjectives need the particle な to modify nouns.",
+      "correctAnswer": "い-adjectives end in い, な-adjectives need な",
+      "options": [
+        "い-adjectives end in い, な-adjectives need な",
+        "い-adjectives are verbs, な-adjectives are nouns",
+        "い-adjectives are short, な-adjectives are long",
+        "There is no difference"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:51:49.321Z"
+}

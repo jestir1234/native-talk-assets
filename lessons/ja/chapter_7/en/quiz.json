@@ -1,0 +1,139 @@
+{
+  "title": "Japanese Chapter 7 Quiz: Essential Verbs & Conjugation Basics",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "What does いく mean?",
+      "explanation": "いく (iku) means \"to go\" in Japanese.",
+      "correctAnswer": "To go",
+      "options": [
+        "To go",
+        "To come",
+        "To eat",
+        "To do"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "What does たべる mean?",
+      "explanation": "たべる (taberu) means \"to eat\" in Japanese.",
+      "correctAnswer": "To eat",
+      "options": [
+        "To go",
+        "To come",
+        "To eat",
+        "To do"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "What does する mean?",
+      "explanation": "する (suru) means \"to do\" in Japanese.",
+      "correctAnswer": "To do",
+      "options": [
+        "To go",
+        "To come",
+        "To eat",
+        "To do"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "What does くる mean?",
+      "explanation": "くる (kuru) means \"to come\" in Japanese.",
+      "correctAnswer": "To come",
+      "options": [
+        "To go",
+        "To come",
+        "To eat",
+        "To do"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "What does わたしはがっこうにいきます mean?",
+      "explanation": "わたしはがっこうにいきます (watashi wa gakkou ni ikimasu) means \"I go to school.\"",
+      "correctAnswer": "I go to school",
+      "options": [
+        "I go to school",
+        "I come to school",
+        "I eat at school",
+        "I do homework at school"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence \"I eat bread\"",
+      "explanation": "This is the polite form of \"to eat\" using 食べます (tabemasu).",
+      "correctAnswer": "私はパンを食べます",
+      "draggableItems": [
+        "私",
+        "は",
+        "パン",
+        "を",
+        "食べます"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "What does パンをたべません mean?",
+      "explanation": "パンをたべません (pan wo tabemasen) is the negative form meaning \"I don't eat bread.\"",
+      "correctAnswer": "I don't eat bread",
+      "options": [
+        "I eat bread",
+        "I don't eat bread",
+        "I will eat bread",
+        "I ate bread"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "What is the polite form of いく (to go)?",
+      "explanation": "いきます (ikimasu) is the polite present/future form of いく (iku).",
+      "correctAnswer": "いきます",
+      "options": [
+        "いきます",
+        "いきません",
+        "いった",
+        "いかない"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence \"I don't go to school\"",
+      "explanation": "This is the negative polite form using 行きません (ikimasen).",
+      "correctAnswer": "私は学校に行きません",
+      "draggableItems": [
+        "私",
+        "は",
+        "学校",
+        "に",
+        "行きません"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "What is the negative form of たべる (to eat)?",
+      "explanation": "たべません (tabemasen) is the polite negative form of たべる (taberu).",
+      "correctAnswer": "たべません",
+      "options": [
+        "たべます",
+        "たべません",
+        "たべた",
+        "たべない"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:51:49.320Z"
+}

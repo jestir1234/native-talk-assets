@@ -1,0 +1,138 @@
+{
+  "title": "Japanese Chapter 1 Quiz: El Sistema de Escritura Japonés",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "¿Cuántos sistemas de escritura usa el japonés?",
+      "explanation": "El japonés usa tres sistemas de escritura: Hiragana, Katakana y Kanji.",
+      "correctAnswer": "3",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "¿Qué script japonés se usa para palabras nativas japonesas y elementos gramaticales?",
+      "explanation": "Hiragana se usa para palabras nativas japonesas y partículas gramaticales.",
+      "correctAnswer": "Hiragana",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "¿Qué script japonés se usa para palabras extranjeras y onomatopeyas?",
+      "explanation": "Katakana se usa para préstamos lingüísticos extranjeros y expresiones onomatopéyicas.",
+      "correctAnswer": "Katakana",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "¿Qué script japonés se tomó prestado de los caracteres chinos?",
+      "explanation": "Los caracteres Kanji fueron tomados prestados del chino y representan significado.",
+      "correctAnswer": "Kanji",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "¿En qué dirección leen típicamente los japoneses el texto?",
+      "explanation": "El japonés moderno típicamente se lee de izquierda a derecha, de arriba a abajo, aunque la escritura vertical tradicional aún existe.",
+      "correctAnswer": "Izquierda a derecha, de arriba a abajo",
+      "options": [
+        "Derecha a izquierda, de arriba a abajo",
+        "Izquierda a derecha, de arriba a abajo",
+        "De arriba a abajo, de derecha a izquierda",
+        "De abajo a arriba, de izquierda a derecha"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa para \"Soy estudiante\"",
+      "explanation": "Esta es una oración básica japonesa usando la cópula です (desu) que significa \"ser.\"",
+      "correctAnswer": "私は学生です",
+      "draggableItems": [
+        "私",
+        "は",
+        "学生",
+        "です"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "¿Cuál es el propósito principal del Hiragana en la escritura japonesa?",
+      "explanation": "Hiragana se usa para palabras nativas japonesas y partículas gramaticales como は, を, に, etc.",
+      "correctAnswer": "Escribir palabras nativas japonesas y gramática",
+      "options": [
+        "Escribir palabras extranjeras",
+        "Escribir palabras nativas japonesas y gramática",
+        "Escribir préstamos chinos",
+        "Escribir números"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa para \"Esto es un libro\"",
+      "explanation": "これ (kore) significa \"esto\" y 本 (hon) significa \"libro.\"",
+      "correctAnswer": "これは本です",
+      "draggableItems": [
+        "これ",
+        "は",
+        "本",
+        "です"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "multipleChoice",
+      "question": "¿Cuál de los siguientes NO es un sistema de escritura japonés?",
+      "explanation": "Romaji es la romanización del japonés usando el alfabeto latino, no un sistema de escritura nativo japonés.",
+      "correctAnswer": "Romaji",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa para \"Voy a la escuela\"",
+      "explanation": "Esto sigue la estructura básica de oración japonesa: Sujeto + は + Objeto + に + Verbo.",
+      "correctAnswer": "私は学校に行きます",
+      "draggableItems": [
+        "私",
+        "は",
+        "学校",
+        "に",
+        "行きます"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:55:46.410Z"
+}

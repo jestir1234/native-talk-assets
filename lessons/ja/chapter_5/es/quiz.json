@@ -1,0 +1,141 @@
+{
+  "title": "Japanese Chapter 5 Quiz: Estructura Simple de Oraciones",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "¿Cuál es el orden básico de palabras en japonés?",
+      "explanation": "El japonés sigue el orden Sujeto-Objeto-Verbo (SOV), a diferencia del español que usa Sujeto-Verbo-Objeto (SVO).",
+      "correctAnswer": "Sujeto-Objeto-Verbo",
+      "options": [
+        "Sujeto-Verbo-Objeto",
+        "Sujeto-Objeto-Verbo",
+        "Objeto-Sujeto-Verbo",
+        "Verbo-Sujeto-Objeto"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "¿Qué partícula se usa para marcar el objeto directo en japonés?",
+      "explanation": "La partícula を (wo) marca el objeto directo del verbo.",
+      "correctAnswer": "を",
+      "options": [
+        "は",
+        "を",
+        "が",
+        "に"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "¿Qué partícula se usa para marcar el sujeto con énfasis en japonés?",
+      "explanation": "La partícula が (ga) marca el sujeto con énfasis o enfoque.",
+      "correctAnswer": "が",
+      "options": [
+        "は",
+        "を",
+        "が",
+        "に"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "¿Qué significa わたしはりんごをたべます?",
+      "explanation": "わたしはりんごをたべます (watashi wa ringo wo tabemasu) significa \"Yo como una manzana.\"",
+      "correctAnswer": "Yo como una manzana",
+      "options": [
+        "Yo como una manzana",
+        "Yo bebo agua",
+        "Yo voy a la escuela",
+        "Yo leo un libro"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "¿Qué significa ジョンさんがきます?",
+      "explanation": "ジョンさんがきます (John-san ga kimasu) significa \"Juan viene.\"",
+      "correctAnswer": "Juan viene",
+      "options": [
+        "Juan viene",
+        "Juan va",
+        "Juan come",
+        "Juan lee"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa \"Yo como pan\"",
+      "explanation": "Esto sigue el patrón SOV: Sujeto (私) + は + Objeto (パン) + を + Verbo (食べます).",
+      "correctAnswer": "私はパンを食べます",
+      "draggableItems": [
+        "私",
+        "は",
+        "パン",
+        "を",
+        "食べます"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "¿Cuál es el marcador de pregunta en japonés?",
+      "explanation": "La partícula か (ka) se usa al final de una oración para hacerla interrogativa.",
+      "correctAnswer": "か",
+      "options": [
+        "か",
+        "ね",
+        "よ",
+        "わ"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "dragAndDrop",
+      "question": "Forma la pregunta japonesa \"¿Comes arroz?\"",
+      "explanation": "Esta pregunta usa la partícula か (ka) al final para hacerla interrogativa.",
+      "correctAnswer": "あなたはご飯を食べますか",
+      "draggableItems": [
+        "あなた",
+        "は",
+        "ご飯",
+        "を",
+        "食べます",
+        "か"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "multipleChoice",
+      "question": "¿Cuál es la diferencia entre las partículas は y が?",
+      "explanation": "は (wa) marca el tema de conversación, mientras que が (ga) marca el sujeto con énfasis o enfoque.",
+      "correctAnswer": "は marca el tema, が marca el sujeto con énfasis",
+      "options": [
+        "は marca el tema, が marca el sujeto con énfasis",
+        "は marca el objeto, が marca el sujeto",
+        "は marca la ubicación, が marca el tiempo",
+        "は marca la posesión, が marca la dirección"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa \"Yo leo un libro\"",
+      "explanation": "Esto sigue la estructura estándar de oración japonesa: Sujeto + は + Objeto + を + Verbo.",
+      "correctAnswer": "私は本を読みます",
+      "draggableItems": [
+        "私",
+        "は",
+        "本",
+        "を",
+        "読みます"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:55:46.419Z"
+}

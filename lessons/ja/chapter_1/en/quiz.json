@@ -1,0 +1,138 @@
+{
+  "title": "Japanese Chapter 1 Quiz: The Japanese Writing System",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "How many writing systems does Japanese use?",
+      "explanation": "Japanese uses three writing systems: Hiragana, Katakana, and Kanji.",
+      "correctAnswer": "3",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "Which Japanese script is used for native Japanese words and grammatical elements?",
+      "explanation": "Hiragana is used for native Japanese words and grammatical particles.",
+      "correctAnswer": "Hiragana",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "Which Japanese script is used for foreign words and onomatopoeia?",
+      "explanation": "Katakana is used for foreign loanwords and onomatopoeic expressions.",
+      "correctAnswer": "Katakana",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "Which Japanese script is borrowed from Chinese characters?",
+      "explanation": "Kanji characters were borrowed from Chinese and represent meaning.",
+      "correctAnswer": "Kanji",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "In which direction do Japanese people typically read text?",
+      "explanation": "Modern Japanese is typically read left to right, top to bottom, though traditional vertical writing still exists.",
+      "correctAnswer": "Left to right, top to bottom",
+      "options": [
+        "Right to left, top to bottom",
+        "Left to right, top to bottom",
+        "Top to bottom, right to left",
+        "Bottom to top, left to right"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence for \"I am a student\"",
+      "explanation": "This is a basic Japanese sentence using the copula です (desu) meaning \"to be.\"",
+      "correctAnswer": "私は学生です",
+      "draggableItems": [
+        "私",
+        "は",
+        "学生",
+        "です"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "What is the main purpose of Hiragana in Japanese writing?",
+      "explanation": "Hiragana is used for native Japanese words and grammatical particles like は, を, に, etc.",
+      "correctAnswer": "To write native Japanese words and grammar",
+      "options": [
+        "To write foreign words",
+        "To write native Japanese words and grammar",
+        "To write Chinese loanwords",
+        "To write numbers"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence for \"This is a book\"",
+      "explanation": "これ (kore) means \"this\" and 本 (hon) means \"book.\"",
+      "correctAnswer": "これは本です",
+      "draggableItems": [
+        "これ",
+        "は",
+        "本",
+        "です"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "multipleChoice",
+      "question": "Which of the following is NOT a Japanese writing system?",
+      "explanation": "Romaji is the romanization of Japanese using Latin alphabet, not a native Japanese writing system.",
+      "correctAnswer": "Romaji",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence for \"I am going to school\"",
+      "explanation": "This follows the basic Japanese sentence structure: Subject + は + Object + に + Verb.",
+      "correctAnswer": "私は学校に行きます",
+      "draggableItems": [
+        "私",
+        "は",
+        "学校",
+        "に",
+        "行きます"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:51:49.308Z"
+}

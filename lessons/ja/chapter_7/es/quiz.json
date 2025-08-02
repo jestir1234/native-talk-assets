@@ -1,0 +1,139 @@
+{
+  "title": "Japanese Chapter 7 Quiz: Verbos Esenciales y Conceptos Básicos de Conjugación",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "¿Qué significa いく?",
+      "explanation": "いく (iku) significa \"ir\" en japonés.",
+      "correctAnswer": "Ir",
+      "options": [
+        "Ir",
+        "Venir",
+        "Comer",
+        "Hacer"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "¿Qué significa たべる?",
+      "explanation": "たべる (taberu) significa \"comer\" en japonés.",
+      "correctAnswer": "Comer",
+      "options": [
+        "Ir",
+        "Venir",
+        "Comer",
+        "Hacer"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "¿Qué significa する?",
+      "explanation": "する (suru) significa \"hacer\" en japonés.",
+      "correctAnswer": "Hacer",
+      "options": [
+        "Ir",
+        "Venir",
+        "Comer",
+        "Hacer"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "¿Qué significa くる?",
+      "explanation": "くる (kuru) significa \"venir\" en japonés.",
+      "correctAnswer": "Venir",
+      "options": [
+        "Ir",
+        "Venir",
+        "Comer",
+        "Hacer"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "¿Qué significa わたしはがっこうにいきます?",
+      "explanation": "わたしはがっこうにいきます (watashi wa gakkou ni ikimasu) significa \"Yo voy a la escuela.\"",
+      "correctAnswer": "Yo voy a la escuela",
+      "options": [
+        "Yo voy a la escuela",
+        "Yo vengo a la escuela",
+        "Yo como en la escuela",
+        "Yo hago tarea en la escuela"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa \"Yo como pan\"",
+      "explanation": "Esta es la forma educada de \"comer\" usando 食べます (tabemasu).",
+      "correctAnswer": "私はパンを食べます",
+      "draggableItems": [
+        "私",
+        "は",
+        "パン",
+        "を",
+        "食べます"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "¿Qué significa パンをたべません?",
+      "explanation": "パンをたべません (pan wo tabemasen) es la forma negativa que significa \"Yo no como pan.\"",
+      "correctAnswer": "Yo no como pan",
+      "options": [
+        "Yo como pan",
+        "Yo no como pan",
+        "Yo comeré pan",
+        "Yo comí pan"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "¿Cuál es la forma educada de いく (ir)?",
+      "explanation": "いきます (ikimasu) es la forma educada presente/futura de いく (iku).",
+      "correctAnswer": "いきます",
+      "options": [
+        "いきます",
+        "いきません",
+        "いった",
+        "いかない"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa \"Yo no voy a la escuela\"",
+      "explanation": "Esta es la forma negativa educada usando 行きません (ikimasen).",
+      "correctAnswer": "私は学校に行きません",
+      "draggableItems": [
+        "私",
+        "は",
+        "学校",
+        "に",
+        "行きません"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "¿Cuál es la forma negativa de たべる (comer)?",
+      "explanation": "たべません (tabemasen) es la forma negativa educada de たべる (taberu).",
+      "correctAnswer": "たべません",
+      "options": [
+        "たべます",
+        "たべません",
+        "たべた",
+        "たべない"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:55:46.420Z"
+}

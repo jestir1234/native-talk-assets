@@ -1,0 +1,137 @@
+{
+  "title": "Japanese Chapter 3 Quiz: Basic Greetings & Introductions",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "What does こんにちは mean?",
+      "explanation": "こんにちは (konnichiwa) is a greeting used during the day.",
+      "correctAnswer": "Good afternoon",
+      "options": [
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Goodbye"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "What does おはよう mean?",
+      "explanation": "おはよう (ohayou) is a greeting used in the morning.",
+      "correctAnswer": "Good morning",
+      "options": [
+        "Good afternoon",
+        "Good morning",
+        "Good evening",
+        "Goodbye"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "What does こんばんは mean?",
+      "explanation": "こんばんは (konbanwa) is a greeting used in the evening.",
+      "correctAnswer": "Good evening",
+      "options": [
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Goodbye"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "What does さようなら mean?",
+      "explanation": "さようなら (sayounara) means \"goodbye\" in Japanese.",
+      "correctAnswer": "Goodbye",
+      "options": [
+        "Hello",
+        "Thank you",
+        "Goodbye",
+        "Please"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "What is the particle は used for in Japanese?",
+      "explanation": "The particle は (wa) marks the topic or subject of the sentence.",
+      "correctAnswer": "To mark the subject",
+      "options": [
+        "To mark the subject",
+        "To mark the object",
+        "To mark location",
+        "To mark time"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence \"I am Tanaka\"",
+      "explanation": "This is a basic self-introduction using the copula です (desu).",
+      "correctAnswer": "私は田中です",
+      "draggableItems": [
+        "私",
+        "は",
+        "田中",
+        "です"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "What does はじめまして mean?",
+      "explanation": "はじめまして (hajimemashite) means \"nice to meet you\" when meeting someone for the first time.",
+      "correctAnswer": "Nice to meet you",
+      "options": [
+        "Nice to meet you",
+        "Thank you",
+        "Goodbye",
+        "Please"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese phrase \"Nice to meet you, please treat me well\"",
+      "explanation": "This is a polite introduction phrase meaning \"Nice to meet you, please treat me well.\"",
+      "correctAnswer": "はじめましてよろしくおねがいします",
+      "draggableItems": [
+        "はじめまして",
+        "よろしく",
+        "おねがい",
+        "します"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "multipleChoice",
+      "question": "What does the copula です mean?",
+      "explanation": "です (desu) is the polite copula meaning \"to be\" in Japanese.",
+      "correctAnswer": "To be",
+      "options": [
+        "To be",
+        "To have",
+        "To go",
+        "To come"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence \"I am a student\"",
+      "explanation": "This is a basic sentence structure using the copula です (desu) to describe what you are.",
+      "correctAnswer": "私は学生です",
+      "draggableItems": [
+        "私",
+        "は",
+        "学生",
+        "です"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:51:49.316Z"
+}

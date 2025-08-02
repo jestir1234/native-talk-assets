@@ -1,0 +1,142 @@
+{
+  "title": "Japanese Chapter 6 Quiz: Números, Tiempo y Contadores",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "¿Qué significa いま なんじですか?",
+      "explanation": "いま なんじですか (ima nanji desu ka) significa \"¿Qué hora es ahora?\"",
+      "correctAnswer": "¿Qué hora es ahora?",
+      "options": [
+        "¿Qué hora es ahora?",
+        "¿Qué día es?",
+        "¿Qué mes es?",
+        "¿Qué año es?"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "¿Cuál es la palabra japonesa para \"tiempo\"?",
+      "explanation": "じかん (jikan) significa \"tiempo\" en japonés.",
+      "correctAnswer": "じかん",
+      "options": [
+        "じかん",
+        "とき",
+        "まい",
+        "ねん"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "¿Qué significa 月曜日?",
+      "explanation": "月曜日 (getsuyoubi) significa \"lunes\" en japonés.",
+      "correctAnswer": "Lunes",
+      "options": [
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Jueves"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "¿Qué significa 火曜日?",
+      "explanation": "火曜日 (kayoubi) significa \"martes\" en japonés.",
+      "correctAnswer": "Martes",
+      "options": [
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Jueves"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "¿Qué partícula se usa para tiempo y ubicación en japonés?",
+      "explanation": "La partícula に (ni) se usa para marcar tiempo y ubicación.",
+      "correctAnswer": "に",
+      "options": [
+        "は",
+        "を",
+        "に",
+        "が"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa \"Voy a la escuela a las 8 en punto\"",
+      "explanation": "Esta oración usa la partícula に (ni) tanto para tiempo (8時) como ubicación (学校).",
+      "correctAnswer": "私は8時に学校に行きます",
+      "draggableItems": [
+        "私",
+        "は",
+        "8時",
+        "に",
+        "学校",
+        "に",
+        "行きます"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "¿Cuál es el contador básico para contar objetos en japonés?",
+      "explanation": "～つ (～tsu) es un contador general para contar objetos.",
+      "correctAnswer": "～つ",
+      "options": [
+        "～つ",
+        "～個",
+        "～本",
+        "～枚"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "¿Cómo se dice \"uno\" en japonés?",
+      "explanation": "いち (ichi) significa \"uno\" en japonés.",
+      "correctAnswer": "いち",
+      "options": [
+        "いち",
+        "に",
+        "さん",
+        "よん"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "Forma la oración japonesa \"Estudio a las 9 en punto\"",
+      "explanation": "Esta oración usa la partícula に (ni) para marcar el tiempo (9時).",
+      "correctAnswer": "私は9時に勉強します",
+      "draggableItems": [
+        "私",
+        "は",
+        "9時",
+        "に",
+        "勉強",
+        "します"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "¿Qué significa 水曜日?",
+      "explanation": "水曜日 (suiyoubi) significa \"miércoles\" en japonés.",
+      "correctAnswer": "Miércoles",
+      "options": [
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Jueves"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:55:46.419Z"
+}

@@ -1,0 +1,112 @@
+# Japanese Chapter 1 Quiz: The Japanese Writing System
+
+## Question 1
+type: multipleChoice
+question: How many writing systems does Japanese use?
+options:
+  - 1
+  - 2
+  - 3
+  - 4
+correctAnswer: 3
+explanation: Japanese uses three writing systems: Hiragana, Katakana, and Kanji.
+
+## Question 2
+type: multipleChoice
+question: Which Japanese script is used for native Japanese words and grammatical elements?
+options:
+  - Hiragana
+  - Katakana
+  - Kanji
+  - Romaji
+correctAnswer: Hiragana
+explanation: Hiragana is used for native Japanese words and grammatical particles.
+
+## Question 3
+type: multipleChoice
+question: Which Japanese script is used for foreign words and onomatopoeia?
+options:
+  - Hiragana
+  - Katakana
+  - Kanji
+  - Romaji
+correctAnswer: Katakana
+explanation: Katakana is used for foreign loanwords and onomatopoeic expressions.
+
+## Question 4
+type: multipleChoice
+question: Which Japanese script is borrowed from Chinese characters?
+options:
+  - Hiragana
+  - Katakana
+  - Kanji
+  - Romaji
+correctAnswer: Kanji
+explanation: Kanji characters were borrowed from Chinese and represent meaning.
+
+## Question 5
+type: multipleChoice
+question: In which direction do Japanese people typically read text?
+options:
+  - Right to left, top to bottom
+  - Left to right, top to bottom
+  - Top to bottom, right to left
+  - Bottom to top, left to right
+correctAnswer: Left to right, top to bottom
+explanation: Modern Japanese is typically read left to right, top to bottom, though traditional vertical writing still exists.
+
+## Question 6
+type: dragAndDrop
+question: Form the Japanese sentence for "I am a student"
+draggableItems:
+  - 私
+  - は
+  - 学生
+  - です
+correctAnswer: 私は学生です
+explanation: This is a basic Japanese sentence using the copula です (desu) meaning "to be."
+
+## Question 7
+type: multipleChoice
+question: What is the main purpose of Hiragana in Japanese writing?
+options:
+  - To write foreign words
+  - To write native Japanese words and grammar
+  - To write Chinese loanwords
+  - To write numbers
+correctAnswer: To write native Japanese words and grammar
+explanation: Hiragana is used for native Japanese words and grammatical particles like は, を, に, etc.
+
+## Question 8
+type: dragAndDrop
+question: Form the Japanese sentence for "This is a book"
+draggableItems:
+  - これ
+  - は
+  - 本
+  - です
+correctAnswer: これは本です
+explanation: これ (kore) means "this" and 本 (hon) means "book."
+
+## Question 9
+type: multipleChoice
+question: Which of the following is NOT a Japanese writing system?
+options:
+  - Hiragana
+  - Katakana
+  - Kanji
+  - Romaji
+correctAnswer: Romaji
+explanation: Romaji is the romanization of Japanese using Latin alphabet, not a native Japanese writing system.
+
+## Question 10
+type: dragAndDrop
+question: Form the Japanese sentence for "I am going to school"
+draggableItems:
+  - 私
+  - は
+  - 学校
+  - に
+  - 行きます
+correctAnswer: 私は学校に行きます
+explanation: This follows the basic Japanese sentence structure: Subject + は + Object + に + Verb. 

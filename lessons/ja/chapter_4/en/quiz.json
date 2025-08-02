@@ -1,0 +1,137 @@
+{
+  "title": "Japanese Chapter 4 Quiz: Katakana – Borrowed Words",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "Which Japanese script is used for foreign loanwords?",
+      "explanation": "Katakana is used for foreign loanwords and onomatopoeic expressions.",
+      "correctAnswer": "Katakana",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "What does コーヒー mean?",
+      "explanation": "コーヒー (koohii) is the Japanese word for \"coffee\" borrowed from English.",
+      "correctAnswer": "Coffee",
+      "options": [
+        "Coffee",
+        "Tea",
+        "Water",
+        "Milk"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "What does パン mean?",
+      "explanation": "パン (pan) is the Japanese word for \"bread\" borrowed from Portuguese.",
+      "correctAnswer": "Bread",
+      "options": [
+        "Rice",
+        "Bread",
+        "Noodles",
+        "Meat"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "What does コンピューター mean?",
+      "explanation": "コンピューター (konpyuutaa) is the Japanese word for \"computer\" borrowed from English.",
+      "correctAnswer": "Computer",
+      "options": [
+        "Computer",
+        "Television",
+        "Radio",
+        "Phone"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "What does ピカピカ mean?",
+      "explanation": "ピカピカ (pikapika) is an onomatopoeic word meaning \"shiny\" or \"sparkling.\"",
+      "correctAnswer": "Shiny/Sparkling",
+      "options": [
+        "Shiny/Sparkling",
+        "Loud",
+        "Quiet",
+        "Fast"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese word for \"pizza\" using katakana",
+      "explanation": "ピザ (piza) is the Japanese word for \"pizza\" borrowed from Italian.",
+      "correctAnswer": "ピザ",
+      "draggableItems": [
+        "ピ",
+        "ザ"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "What does ドキドキ mean?",
+      "explanation": "ドキドキ (dokidoki) is an onomatopoeic word representing a heart beating.",
+      "correctAnswer": "Heart beating",
+      "options": [
+        "Heart beating",
+        "Laughing",
+        "Crying",
+        "Sleeping"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "What is the particle の used for in Japanese?",
+      "explanation": "The particle の (no) is used to show possession or connection between nouns.",
+      "correctAnswer": "To show possession",
+      "options": [
+        "To show possession",
+        "To mark the subject",
+        "To mark the object",
+        "To mark location"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "Form the Japanese sentence \"My name is Tanaka\"",
+      "explanation": "This sentence uses the particle の (no) to show possession: \"my name.\"",
+      "correctAnswer": "私の名前は田中です",
+      "draggableItems": [
+        "私",
+        "の",
+        "名前",
+        "は",
+        "田中",
+        "です"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "Which of these is NOT typically written in katakana?",
+      "explanation": "私 (watashi) is a native Japanese word written in kanji, not a foreign loanword in katakana.",
+      "correctAnswer": "私 (I/me)",
+      "options": [
+        "コーヒー (coffee)",
+        "パン (bread)",
+        "私 (I/me)",
+        "ピザ (pizza)"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-02T15:51:49.317Z"
+}
