@@ -322,7 +322,11 @@ Do not include the episode title in the story.`;
 
         // Generate episode image
         console.log('🔮 Generating episode image...');
-        execSync(`node scripts/generate-episode-image.js ${STORY_NAME}`, { stdio: 'inherit' });
+        if (IS_EPISODES) {
+            execSync(`node scripts/generate-episode-image.js ${STORY_NAME} ${episodeNum}`, { stdio: 'inherit' });
+        } else {
+            execSync(`node scripts/generate-episode-image.js ${STORY_NAME}`, { stdio: 'inherit' });
+        }
 
         // Process and convert image to WebP
         console.log('🖼️ Processing episode image...');
