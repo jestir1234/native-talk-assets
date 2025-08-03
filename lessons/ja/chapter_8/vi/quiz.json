@@ -1,0 +1,140 @@
+{
+  "title": "Japanese Chapter 8 Quiz: Tính Từ và Mô Tả",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "たかい có nghĩa là gì?",
+      "explanation": "たかい (takai) có nghĩa là \"đắt\" trong tiếng Nhật.",
+      "correctAnswer": "Đắt",
+      "options": [
+        "Đắt",
+        "Rẻ",
+        "To",
+        "Nhỏ"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "しずか có nghĩa là gì?",
+      "explanation": "しずか (shizuka) có nghĩa là \"yên tĩnh\" trong tiếng Nhật.",
+      "correctAnswer": "Yên tĩnh",
+      "options": [
+        "To",
+        "Yên tĩnh",
+        "Nhanh",
+        "Chậm"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "たかい là loại tính từ gì?",
+      "explanation": "たかい (takai) là tính từ い vì kết thúc bằng い.",
+      "correctAnswer": "Tính từ い",
+      "options": [
+        "Tính từ い",
+        "Tính từ な",
+        "Động từ",
+        "Danh từ"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "しずか là loại tính từ gì?",
+      "explanation": "しずか (shizuka) là tính từ な vì cần な khi bổ nghĩa cho danh từ.",
+      "correctAnswer": "Tính từ な",
+      "options": [
+        "Tính từ い",
+        "Tính từ な",
+        "Động từ",
+        "Danh từ"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "この みせは たかいです có nghĩa là gì?",
+      "explanation": "この みせは たかいです (kono mise wa takai desu) có nghĩa là \"Cửa hàng này đắt.\"",
+      "correctAnswer": "Cửa hàng này đắt",
+      "options": [
+        "Cửa hàng này đắt",
+        "Cửa hàng này rẻ",
+        "Cửa hàng này to",
+        "Cửa hàng này nhỏ"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Tạo câu tiếng Nhật \"Quyển sách này đắt\"",
+      "explanation": "Câu này sử dụng từ chỉ định この (kono) có nghĩa là \"này\" và tính từ い 高い (takai).",
+      "correctAnswer": "この本は高いです",
+      "draggableItems": [
+        "この",
+        "本",
+        "は",
+        "高い",
+        "です"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "しずかな まちです có nghĩa là gì?",
+      "explanation": "しずかな まちです (shizuka na machi desu) có nghĩa là \"Đó là một thành phố yên tĩnh.\"",
+      "correctAnswer": "Đó là một thành phố yên tĩnh",
+      "options": [
+        "Đó là một thành phố yên tĩnh",
+        "Đó là một thành phố ồn ào",
+        "Đó là một thành phố to",
+        "Đó là một thành phố nhỏ"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "Làm thế nào để kết nối hai tính từ trong tiếng Nhật?",
+      "explanation": "Tính từ い được kết nối bằng dạng くて (ví dụ: たかくて おおきい - đắt và to).",
+      "correctAnswer": "Sử dụng くて",
+      "options": [
+        "Sử dụng と",
+        "Sử dụng や",
+        "Sử dụng くて",
+        "Sử dụng で"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "Tạo câu tiếng Nhật \"Đây là một nơi yên tĩnh\"",
+      "explanation": "Câu này sử dụng tính từ な 静か (shizuka) với hạt な để bổ nghĩa cho danh từ 場所 (basho).",
+      "correctAnswer": "これは静かな場所です",
+      "draggableItems": [
+        "これ",
+        "は",
+        "静か",
+        "な",
+        "場所",
+        "です"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "Sự khác biệt giữa tính từ い và tính từ な là gì?",
+      "explanation": "Tính từ い kết thúc bằng い và có thể bổ nghĩa trực tiếp cho danh từ, trong khi tính từ な cần hạt な để bổ nghĩa cho danh từ.",
+      "correctAnswer": "Tính từ い kết thúc bằng い, tính từ な cần な",
+      "options": [
+        "Tính từ い kết thúc bằng い, tính từ な cần な",
+        "Tính từ い là động từ, tính từ な là danh từ",
+        "Tính từ い ngắn, tính từ な dài",
+        "Không có sự khác biệt"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-03T16:21:52.904Z"
+}

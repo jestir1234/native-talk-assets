@@ -1,0 +1,112 @@
+# Japanese Chapter 1 Quiz: Hệ Thống Chữ Viết Tiếng Nhật
+
+## Question 1
+type: multipleChoice
+question: Tiếng Nhật sử dụng bao nhiêu hệ thống chữ viết?
+options:
+  - 1
+  - 2
+  - 3
+  - 4
+correctAnswer: 3
+explanation: Tiếng Nhật sử dụng ba hệ thống chữ viết: Hiragana, Katakana và Kanji.
+
+## Question 2
+type: multipleChoice
+question: Hệ thống chữ nào được sử dụng cho từ ngữ bản địa Nhật và các yếu tố ngữ pháp?
+options:
+  - Hiragana
+  - Katakana
+  - Kanji
+  - Romaji
+correctAnswer: Hiragana
+explanation: Hiragana được sử dụng cho từ ngữ bản địa Nhật và các hạt ngữ pháp.
+
+## Question 3
+type: multipleChoice
+question: Hệ thống chữ nào được sử dụng cho từ mượn nước ngoài và từ tượng thanh?
+options:
+  - Hiragana
+  - Katakana
+  - Kanji
+  - Romaji
+correctAnswer: Katakana
+explanation: Katakana được sử dụng cho từ mượn nước ngoài và các biểu hiện tượng thanh.
+
+## Question 4
+type: multipleChoice
+question: Hệ thống chữ nào được mượn từ chữ Hán?
+options:
+  - Hiragana
+  - Katakana
+  - Kanji
+  - Romaji
+correctAnswer: Kanji
+explanation: Các ký tự Kanji được mượn từ chữ Hán và biểu thị ý nghĩa.
+
+## Question 5
+type: multipleChoice
+question: Người Nhật thường đọc văn bản theo hướng nào?
+options:
+  - Phải sang trái, trên xuống dưới
+  - Trái sang phải, trên xuống dưới
+  - Trên xuống dưới, phải sang trái
+  - Dưới lên trên, trái sang phải
+correctAnswer: Trái sang phải, trên xuống dưới
+explanation: Tiếng Nhật hiện đại thường được đọc từ trái sang phải, từ trên xuống dưới, mặc dù văn bản dọc truyền thống vẫn tồn tại.
+
+## Question 6
+type: dragAndDrop
+question: Tạo câu tiếng Nhật "Tôi là sinh viên"
+draggableItems:
+  - 私
+  - は
+  - 学生
+  - です
+correctAnswer: 私は学生です
+explanation: Đây là câu tiếng Nhật cơ bản sử dụng copula です (desu) có nghĩa là "là."
+
+## Question 7
+type: multipleChoice
+question: Mục đích chính của Hiragana trong văn viết tiếng Nhật là gì?
+options:
+  - Viết từ nước ngoài
+  - Viết từ ngữ bản địa Nhật và ngữ pháp
+  - Viết từ mượn Trung Quốc
+  - Viết số
+correctAnswer: Viết từ ngữ bản địa Nhật và ngữ pháp
+explanation: Hiragana được sử dụng cho từ ngữ bản địa Nhật và các hạt ngữ pháp như は, を, に, v.v.
+
+## Question 8
+type: dragAndDrop
+question: Tạo câu tiếng Nhật "Đây là quyển sách"
+draggableItems:
+  - これ
+  - は
+  - 本
+  - です
+correctAnswer: これは本です
+explanation: これ (kore) có nghĩa là "đây" và 本 (hon) có nghĩa là "sách."
+
+## Question 9
+type: multipleChoice
+question: Cái nào sau đây KHÔNG phải là hệ thống chữ viết tiếng Nhật?
+options:
+  - Hiragana
+  - Katakana
+  - Kanji
+  - Romaji
+correctAnswer: Romaji
+explanation: Romaji là cách phiên âm tiếng Nhật bằng bảng chữ cái Latin, không phải hệ thống chữ viết bản địa tiếng Nhật.
+
+## Question 10
+type: dragAndDrop
+question: Tạo câu tiếng Nhật "Tôi đi học"
+draggableItems:
+  - 私
+  - は
+  - 学校
+  - に
+  - 行きます
+correctAnswer: 私は学校に行きます
+explanation: Đây theo cấu trúc câu tiếng Nhật cơ bản: Chủ ngữ + は + Tân ngữ + に + Động từ. 

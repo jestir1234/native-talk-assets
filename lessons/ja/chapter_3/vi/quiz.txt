@@ -1,0 +1,111 @@
+# Japanese Chapter 3 Quiz: Chào Hỏi Cơ Bản và Giới Thiệu
+
+## Question 1
+type: multipleChoice
+question: こんにちは có nghĩa là gì?
+options:
+  - Chào buổi sáng
+  - Chào buổi chiều
+  - Chào buổi tối
+  - Tạm biệt
+correctAnswer: Chào buổi chiều
+explanation: こんにちは (konnichiwa) là lời chào được sử dụng trong ngày.
+
+## Question 2
+type: multipleChoice
+question: おはよう có nghĩa là gì?
+options:
+  - Chào buổi chiều
+  - Chào buổi sáng
+  - Chào buổi tối
+  - Tạm biệt
+correctAnswer: Chào buổi sáng
+explanation: おはよう (ohayou) là lời chào được sử dụng vào buổi sáng.
+
+## Question 3
+type: multipleChoice
+question: こんばんは có nghĩa là gì?
+options:
+  - Chào buổi sáng
+  - Chào buổi chiều
+  - Chào buổi tối
+  - Tạm biệt
+correctAnswer: Chào buổi tối
+explanation: こんばんは (konbanwa) là lời chào được sử dụng vào buổi tối.
+
+## Question 4
+type: multipleChoice
+question: さようなら có nghĩa là gì?
+options:
+  - Xin chào
+  - Cảm ơn
+  - Tạm biệt
+  - Xin vui lòng
+correctAnswer: Tạm biệt
+explanation: さようなら (sayounara) có nghĩa là "tạm biệt" trong tiếng Nhật.
+
+## Question 5
+type: multipleChoice
+question: Hạt は được sử dụng để làm gì trong tiếng Nhật?
+options:
+  - Đánh dấu chủ ngữ
+  - Đánh dấu tân ngữ
+  - Đánh dấu địa điểm
+  - Đánh dấu thời gian
+correctAnswer: Đánh dấu chủ ngữ
+explanation: Hạt は (wa) đánh dấu chủ đề hoặc chủ ngữ của câu.
+
+## Question 6
+type: dragAndDrop
+question: Tạo câu tiếng Nhật "Tôi là Tanaka"
+draggableItems:
+  - 私
+  - は
+  - 田中
+  - です
+correctAnswer: 私は田中です
+explanation: Đây là lời giới thiệu cơ bản sử dụng copula です (desu).
+
+## Question 7
+type: multipleChoice
+question: はじめまして có nghĩa là gì?
+options:
+  - Rất vui được gặp bạn
+  - Cảm ơn
+  - Tạm biệt
+  - Xin vui lòng
+correctAnswer: Rất vui được gặp bạn
+explanation: はじめまして (hajimemashite) có nghĩa là "rất vui được gặp bạn" khi gặp ai đó lần đầu tiên.
+
+## Question 8
+type: dragAndDrop
+question: Tạo cụm từ tiếng Nhật "Rất vui được gặp bạn, xin hãy đối xử tốt với tôi"
+draggableItems:
+  - はじめまして
+  - よろしく
+  - おねがい
+  - します
+correctAnswer: はじめましてよろしくおねがいします
+explanation: Đây là cụm từ giới thiệu lịch sự có nghĩa là "Rất vui được gặp bạn, xin hãy đối xử tốt với tôi."
+
+## Question 9
+type: multipleChoice
+question: Copula です có nghĩa là gì?
+options:
+  - Là
+  - Có
+  - Đi
+  - Đến
+correctAnswer: Là
+explanation: です (desu) là copula lịch sự có nghĩa là "là" trong tiếng Nhật.
+
+## Question 10
+type: dragAndDrop
+question: Tạo câu tiếng Nhật "Tôi là sinh viên"
+draggableItems:
+  - 私
+  - は
+  - 学生
+  - です
+correctAnswer: 私は学生です
+explanation: Đây là cấu trúc câu cơ bản sử dụng copula です (desu) để mô tả bạn là gì. 

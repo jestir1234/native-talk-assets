@@ -1,0 +1,131 @@
+{
+  "title": "Japanese Chapter 2 Quiz: Hiragana – Âm Nguyên Âm",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "Ký tự hiragana nào biểu thị âm \"a\"?",
+      "explanation": "あ (a) là nguyên âm đầu tiên trong bảng chữ cái hiragana tiếng Nhật.",
+      "correctAnswer": "あ",
+      "options": [
+        "あ",
+        "い",
+        "う",
+        "え"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "Ký tự hiragana nào biểu thị âm \"i\"?",
+      "explanation": "い (i) là nguyên âm thứ hai trong bảng chữ cái hiragana tiếng Nhật.",
+      "correctAnswer": "い",
+      "options": [
+        "あ",
+        "い",
+        "う",
+        "え"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "Ký tự hiragana nào biểu thị âm \"u\"?",
+      "explanation": "う (u) là nguyên âm thứ ba trong bảng chữ cái hiragana tiếng Nhật.",
+      "correctAnswer": "う",
+      "options": [
+        "い",
+        "う",
+        "え",
+        "お"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "Ký tự hiragana nào biểu thị âm \"e\"?",
+      "explanation": "え (e) là nguyên âm thứ tư trong bảng chữ cái hiragana tiếng Nhật.",
+      "correctAnswer": "え",
+      "options": [
+        "う",
+        "え",
+        "お",
+        "あ"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "Ký tự hiragana nào biểu thị âm \"o\"?",
+      "explanation": "お (o) là nguyên âm thứ năm và cuối cùng trong bảng chữ cái hiragana tiếng Nhật.",
+      "correctAnswer": "お",
+      "options": [
+        "え",
+        "お",
+        "あ",
+        "い"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Tạo từ tiếng Nhật \"tình yêu\" bằng hiragana",
+      "explanation": "あい (ai) có nghĩa là \"tình yêu\" trong tiếng Nhật.",
+      "correctAnswer": "あい",
+      "draggableItems": [
+        "あ",
+        "い"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "Từ tiếng Nhật いえ có nghĩa là gì?",
+      "explanation": "いえ (ie) có nghĩa là \"nhà\" trong tiếng Nhật.",
+      "correctAnswer": "Nhà",
+      "options": [
+        "Tình yêu",
+        "Nhà",
+        "Biển",
+        "Sách"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "dragAndDrop",
+      "question": "Tạo từ tiếng Nhật \"biển\" bằng hiragana",
+      "explanation": "うみ (umi) có nghĩa là \"biển\" trong tiếng Nhật.",
+      "correctAnswer": "うみ",
+      "draggableItems": [
+        "う",
+        "み"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "multipleChoice",
+      "question": "Có bao nhiêu âm nguyên âm trong hiragana tiếng Nhật?",
+      "explanation": "Tiếng Nhật có năm âm nguyên âm: a, i, u, e, o (あ, い, う, え, お).",
+      "correctAnswer": "5",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "dragAndDrop",
+      "question": "Tạo từ tiếng Nhật \"xanh\" bằng hiragana",
+      "explanation": "あお (ao) có nghĩa là \"xanh\" trong tiếng Nhật.",
+      "correctAnswer": "あお",
+      "draggableItems": [
+        "あ",
+        "お"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-03T16:21:52.886Z"
+}

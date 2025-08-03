@@ -1,0 +1,139 @@
+{
+  "title": "Japanese Chapter 7 Quiz: Động Từ Cơ Bản và Khái Niệm Chia Động Từ",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "いく có nghĩa là gì?",
+      "explanation": "いく (iku) có nghĩa là \"đi\" trong tiếng Nhật.",
+      "correctAnswer": "Đi",
+      "options": [
+        "Đi",
+        "Đến",
+        "Ăn",
+        "Làm"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "たべる có nghĩa là gì?",
+      "explanation": "たべる (taberu) có nghĩa là \"ăn\" trong tiếng Nhật.",
+      "correctAnswer": "Ăn",
+      "options": [
+        "Đi",
+        "Đến",
+        "Ăn",
+        "Làm"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "する có nghĩa là gì?",
+      "explanation": "する (suru) có nghĩa là \"làm\" trong tiếng Nhật.",
+      "correctAnswer": "Làm",
+      "options": [
+        "Đi",
+        "Đến",
+        "Ăn",
+        "Làm"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "くる có nghĩa là gì?",
+      "explanation": "くる (kuru) có nghĩa là \"đến\" trong tiếng Nhật.",
+      "correctAnswer": "Đến",
+      "options": [
+        "Đi",
+        "Đến",
+        "Ăn",
+        "Làm"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "わたしはがっこうにいきます có nghĩa là gì?",
+      "explanation": "わたしはがっこうにいきます (watashi wa gakkou ni ikimasu) có nghĩa là \"Tôi đi học.\"",
+      "correctAnswer": "Tôi đi học",
+      "options": [
+        "Tôi đi học",
+        "Tôi đến trường",
+        "Tôi ăn ở trường",
+        "Tôi làm bài tập ở trường"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Tạo câu tiếng Nhật \"Tôi ăn bánh mì\"",
+      "explanation": "Đây là dạng lịch sự của \"ăn\" sử dụng 食べます (tabemasu).",
+      "correctAnswer": "私はパンを食べます",
+      "draggableItems": [
+        "私",
+        "は",
+        "パン",
+        "を",
+        "食べます"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "パンをたべません có nghĩa là gì?",
+      "explanation": "パンをたべません (pan wo tabemasen) là dạng phủ định có nghĩa là \"Tôi không ăn bánh mì.\"",
+      "correctAnswer": "Tôi không ăn bánh mì",
+      "options": [
+        "Tôi ăn bánh mì",
+        "Tôi không ăn bánh mì",
+        "Tôi sẽ ăn bánh mì",
+        "Tôi đã ăn bánh mì"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "Dạng lịch sự của いく (đi) là gì?",
+      "explanation": "いきます (ikimasu) là dạng lịch sự hiện tại/tương lai của いく (iku).",
+      "correctAnswer": "いきます",
+      "options": [
+        "いきます",
+        "いきません",
+        "いった",
+        "いかない"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "Tạo câu tiếng Nhật \"Tôi không đi học\"",
+      "explanation": "Đây là dạng phủ định lịch sự sử dụng 行きません (ikimasen).",
+      "correctAnswer": "私は学校に行きません",
+      "draggableItems": [
+        "私",
+        "は",
+        "学校",
+        "に",
+        "行きません"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "Dạng phủ định của たべる (ăn) là gì?",
+      "explanation": "たべません (tabemasen) là dạng phủ định lịch sự của たべる (taberu).",
+      "correctAnswer": "たべません",
+      "options": [
+        "たべます",
+        "たべません",
+        "たべた",
+        "たべない"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-03T16:21:52.901Z"
+}

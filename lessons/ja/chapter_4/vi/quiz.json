@@ -1,0 +1,137 @@
+{
+  "title": "Japanese Chapter 4 Quiz: Katakana – Từ Mượn",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "Hệ thống chữ nào được sử dụng cho từ mượn nước ngoài?",
+      "explanation": "Katakana được sử dụng cho từ mượn nước ngoài và các biểu hiện tượng thanh.",
+      "correctAnswer": "Katakana",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "コーヒー có nghĩa là gì?",
+      "explanation": "コーヒー (koohii) là từ tiếng Nhật cho \"cà phê\" mượn từ tiếng Anh.",
+      "correctAnswer": "Cà phê",
+      "options": [
+        "Cà phê",
+        "Trà",
+        "Nước",
+        "Sữa"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "パン có nghĩa là gì?",
+      "explanation": "パン (pan) là từ tiếng Nhật cho \"bánh mì\" mượn từ tiếng Bồ Đào Nha.",
+      "correctAnswer": "Bánh mì",
+      "options": [
+        "Gạo",
+        "Bánh mì",
+        "Mì",
+        "Thịt"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "コンピューター có nghĩa là gì?",
+      "explanation": "コンピューター (konpyuutaa) là từ tiếng Nhật cho \"máy tính\" mượn từ tiếng Anh.",
+      "correctAnswer": "Máy tính",
+      "options": [
+        "Máy tính",
+        "Tivi",
+        "Radio",
+        "Điện thoại"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "ピカピカ có nghĩa là gì?",
+      "explanation": "ピカピカ (pikapika) là từ tượng thanh có nghĩa là \"sáng\" hoặc \"lấp lánh.\"",
+      "correctAnswer": "Sáng lấp lánh",
+      "options": [
+        "Sáng lấp lánh",
+        "To",
+        "Yên tĩnh",
+        "Nhanh"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Tạo từ tiếng Nhật \"pizza\" bằng katakana",
+      "explanation": "ピザ (piza) là từ tiếng Nhật cho \"pizza\" mượn từ tiếng Ý.",
+      "correctAnswer": "ピザ",
+      "draggableItems": [
+        "ピ",
+        "ザ"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "ドキドキ có nghĩa là gì?",
+      "explanation": "ドキドキ (dokidoki) là từ tượng thanh biểu thị tim đập.",
+      "correctAnswer": "Tim đập",
+      "options": [
+        "Tim đập",
+        "Cười",
+        "Khóc",
+        "Ngủ"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "Hạt の được sử dụng để làm gì trong tiếng Nhật?",
+      "explanation": "Hạt の (no) được sử dụng để chỉ sở hữu hoặc kết nối giữa các danh từ.",
+      "correctAnswer": "Chỉ sở hữu",
+      "options": [
+        "Chỉ sở hữu",
+        "Đánh dấu chủ ngữ",
+        "Đánh dấu tân ngữ",
+        "Đánh dấu địa điểm"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "Tạo câu tiếng Nhật \"Tên tôi là Tanaka\"",
+      "explanation": "Câu này sử dụng hạt の (no) để chỉ sở hữu: \"tên tôi.\"",
+      "correctAnswer": "私の名前は田中です",
+      "draggableItems": [
+        "私",
+        "の",
+        "名前",
+        "は",
+        "田中",
+        "です"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "Cái nào sau đây KHÔNG thường được viết bằng katakana?",
+      "explanation": "私 (watashi) là từ tiếng Nhật bản địa viết bằng kanji, không phải từ mượn nước ngoài bằng katakana.",
+      "correctAnswer": "私 (tôi/tôi)",
+      "options": [
+        "コーヒー (cà phê)",
+        "パン (bánh mì)",
+        "私 (tôi/tôi)",
+        "ピザ (pizza)"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-03T16:21:52.889Z"
+}

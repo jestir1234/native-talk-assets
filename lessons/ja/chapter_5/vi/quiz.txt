@@ -1,0 +1,115 @@
+# Japanese Chapter 5 Quiz: Cấu Trúc Câu Đơn Giản
+
+## Question 1
+type: multipleChoice
+question: Thứ tự từ cơ bản trong tiếng Nhật là gì?
+options:
+  - Chủ ngữ-Động từ-Tân ngữ
+  - Chủ ngữ-Tân ngữ-Động từ
+  - Tân ngữ-Chủ ngữ-Động từ
+  - Động từ-Chủ ngữ-Tân ngữ
+correctAnswer: Chủ ngữ-Tân ngữ-Động từ
+explanation: Tiếng Nhật theo thứ tự Chủ ngữ-Tân ngữ-Động từ (SOV), khác với tiếng Việt sử dụng Chủ ngữ-Động từ-Tân ngữ (SVO).
+
+## Question 2
+type: multipleChoice
+question: Hạt nào được sử dụng để đánh dấu tân ngữ trực tiếp trong tiếng Nhật?
+options:
+  - は
+  - を
+  - が
+  - に
+correctAnswer: を
+explanation: Hạt を (wo) đánh dấu tân ngữ trực tiếp của động từ.
+
+## Question 3
+type: multipleChoice
+question: Hạt nào được sử dụng để đánh dấu chủ ngữ với trọng tâm trong tiếng Nhật?
+options:
+  - は
+  - を
+  - が
+  - に
+correctAnswer: が
+explanation: Hạt が (ga) đánh dấu chủ ngữ với trọng tâm hoặc nhấn mạnh.
+
+## Question 4
+type: multipleChoice
+question: わたしはりんごをたべます có nghĩa là gì?
+options:
+  - Tôi ăn táo
+  - Tôi uống nước
+  - Tôi đi học
+  - Tôi đọc sách
+correctAnswer: Tôi ăn táo
+explanation: わたしはりんごをたべます (watashi wa ringo wo tabemasu) có nghĩa là "Tôi ăn táo."
+
+## Question 5
+type: multipleChoice
+question: ジョンさんがきます có nghĩa là gì?
+options:
+  - John đến
+  - John đi
+  - John ăn
+  - John đọc
+correctAnswer: John đến
+explanation: ジョンさんがきます (John-san ga kimasu) có nghĩa là "John đến."
+
+## Question 6
+type: dragAndDrop
+question: Tạo câu tiếng Nhật "Tôi ăn bánh mì"
+draggableItems:
+  - 私
+  - は
+  - パン
+  - を
+  - 食べます
+correctAnswer: 私はパンを食べます
+explanation: Đây theo mẫu SOV: Chủ ngữ (私) + は + Tân ngữ (パン) + を + Động từ (食べます).
+
+## Question 7
+type: multipleChoice
+question: Dấu hiệu câu hỏi trong tiếng Nhật là gì?
+options:
+  - か
+  - ね
+  - よ
+  - わ
+correctAnswer: か
+explanation: Hạt か (ka) được sử dụng ở cuối câu để tạo thành câu hỏi.
+
+## Question 8
+type: dragAndDrop
+question: Tạo câu hỏi tiếng Nhật "Bạn có ăn cơm không?"
+draggableItems:
+  - あなた
+  - は
+  - ご飯
+  - を
+  - 食べます
+  - か
+correctAnswer: あなたはご飯を食べますか
+explanation: Câu hỏi này sử dụng hạt か (ka) ở cuối để tạo thành câu hỏi.
+
+## Question 9
+type: multipleChoice
+question: Sự khác biệt giữa hạt は và が là gì?
+options:
+  - は đánh dấu chủ đề, が đánh dấu chủ ngữ với trọng tâm
+  - は đánh dấu tân ngữ, が đánh dấu chủ ngữ
+  - は đánh dấu địa điểm, が đánh dấu thời gian
+  - は đánh dấu sở hữu, が đánh dấu hướng
+correctAnswer: は đánh dấu chủ đề, が đánh dấu chủ ngữ với trọng tâm
+explanation: は (wa) đánh dấu chủ đề của cuộc trò chuyện, trong khi が (ga) đánh dấu chủ ngữ với trọng tâm hoặc nhấn mạnh.
+
+## Question 10
+type: dragAndDrop
+question: Tạo câu tiếng Nhật "Tôi đọc sách"
+draggableItems:
+  - 私
+  - は
+  - 本
+  - を
+  - 読みます
+correctAnswer: 私は本を読みます
+explanation: Đây theo cấu trúc câu tiếng Nhật chuẩn: Chủ ngữ + は + Tân ngữ + を + Động từ. 

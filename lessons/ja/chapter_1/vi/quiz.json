@@ -1,0 +1,138 @@
+{
+  "title": "Japanese Chapter 1 Quiz: Hệ Thống Chữ Viết Tiếng Nhật",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "Tiếng Nhật sử dụng bao nhiêu hệ thống chữ viết?",
+      "explanation": "Tiếng Nhật sử dụng ba hệ thống chữ viết: Hiragana, Katakana và Kanji.",
+      "correctAnswer": "3",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "Hệ thống chữ nào được sử dụng cho từ ngữ bản địa Nhật và các yếu tố ngữ pháp?",
+      "explanation": "Hiragana được sử dụng cho từ ngữ bản địa Nhật và các hạt ngữ pháp.",
+      "correctAnswer": "Hiragana",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "Hệ thống chữ nào được sử dụng cho từ mượn nước ngoài và từ tượng thanh?",
+      "explanation": "Katakana được sử dụng cho từ mượn nước ngoài và các biểu hiện tượng thanh.",
+      "correctAnswer": "Katakana",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "Hệ thống chữ nào được mượn từ chữ Hán?",
+      "explanation": "Các ký tự Kanji được mượn từ chữ Hán và biểu thị ý nghĩa.",
+      "correctAnswer": "Kanji",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "Người Nhật thường đọc văn bản theo hướng nào?",
+      "explanation": "Tiếng Nhật hiện đại thường được đọc từ trái sang phải, từ trên xuống dưới, mặc dù văn bản dọc truyền thống vẫn tồn tại.",
+      "correctAnswer": "Trái sang phải, trên xuống dưới",
+      "options": [
+        "Phải sang trái, trên xuống dưới",
+        "Trái sang phải, trên xuống dưới",
+        "Trên xuống dưới, phải sang trái",
+        "Dưới lên trên, trái sang phải"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Tạo câu tiếng Nhật \"Tôi là sinh viên\"",
+      "explanation": "Đây là câu tiếng Nhật cơ bản sử dụng copula です (desu) có nghĩa là \"là.\"",
+      "correctAnswer": "私は学生です",
+      "draggableItems": [
+        "私",
+        "は",
+        "学生",
+        "です"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "Mục đích chính của Hiragana trong văn viết tiếng Nhật là gì?",
+      "explanation": "Hiragana được sử dụng cho từ ngữ bản địa Nhật và các hạt ngữ pháp như は, を, に, v.v.",
+      "correctAnswer": "Viết từ ngữ bản địa Nhật và ngữ pháp",
+      "options": [
+        "Viết từ nước ngoài",
+        "Viết từ ngữ bản địa Nhật và ngữ pháp",
+        "Viết từ mượn Trung Quốc",
+        "Viết số"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "dragAndDrop",
+      "question": "Tạo câu tiếng Nhật \"Đây là quyển sách\"",
+      "explanation": "これ (kore) có nghĩa là \"đây\" và 本 (hon) có nghĩa là \"sách.\"",
+      "correctAnswer": "これは本です",
+      "draggableItems": [
+        "これ",
+        "は",
+        "本",
+        "です"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "multipleChoice",
+      "question": "Cái nào sau đây KHÔNG phải là hệ thống chữ viết tiếng Nhật?",
+      "explanation": "Romaji là cách phiên âm tiếng Nhật bằng bảng chữ cái Latin, không phải hệ thống chữ viết bản địa tiếng Nhật.",
+      "correctAnswer": "Romaji",
+      "options": [
+        "Hiragana",
+        "Katakana",
+        "Kanji",
+        "Romaji"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "dragAndDrop",
+      "question": "Tạo câu tiếng Nhật \"Tôi đi học\"",
+      "explanation": "Đây theo cấu trúc câu tiếng Nhật cơ bản: Chủ ngữ + は + Tân ngữ + に + Động từ.",
+      "correctAnswer": "私は学校に行きます",
+      "draggableItems": [
+        "私",
+        "は",
+        "学校",
+        "に",
+        "行きます"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-03T16:21:52.854Z"
+}

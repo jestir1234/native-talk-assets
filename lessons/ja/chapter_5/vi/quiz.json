@@ -1,0 +1,141 @@
+{
+  "title": "Japanese Chapter 5 Quiz: Cấu Trúc Câu Đơn Giản",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "Thứ tự từ cơ bản trong tiếng Nhật là gì?",
+      "explanation": "Tiếng Nhật theo thứ tự Chủ ngữ-Tân ngữ-Động từ (SOV), khác với tiếng Việt sử dụng Chủ ngữ-Động từ-Tân ngữ (SVO).",
+      "correctAnswer": "Chủ ngữ-Tân ngữ-Động từ",
+      "options": [
+        "Chủ ngữ-Động từ-Tân ngữ",
+        "Chủ ngữ-Tân ngữ-Động từ",
+        "Tân ngữ-Chủ ngữ-Động từ",
+        "Động từ-Chủ ngữ-Tân ngữ"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "Hạt nào được sử dụng để đánh dấu tân ngữ trực tiếp trong tiếng Nhật?",
+      "explanation": "Hạt を (wo) đánh dấu tân ngữ trực tiếp của động từ.",
+      "correctAnswer": "を",
+      "options": [
+        "は",
+        "を",
+        "が",
+        "に"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "Hạt nào được sử dụng để đánh dấu chủ ngữ với trọng tâm trong tiếng Nhật?",
+      "explanation": "Hạt が (ga) đánh dấu chủ ngữ với trọng tâm hoặc nhấn mạnh.",
+      "correctAnswer": "が",
+      "options": [
+        "は",
+        "を",
+        "が",
+        "に"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "わたしはりんごをたべます có nghĩa là gì?",
+      "explanation": "わたしはりんごをたべます (watashi wa ringo wo tabemasu) có nghĩa là \"Tôi ăn táo.\"",
+      "correctAnswer": "Tôi ăn táo",
+      "options": [
+        "Tôi ăn táo",
+        "Tôi uống nước",
+        "Tôi đi học",
+        "Tôi đọc sách"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "ジョンさんがきます có nghĩa là gì?",
+      "explanation": "ジョンさんがきます (John-san ga kimasu) có nghĩa là \"John đến.\"",
+      "correctAnswer": "John đến",
+      "options": [
+        "John đến",
+        "John đi",
+        "John ăn",
+        "John đọc"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "Tạo câu tiếng Nhật \"Tôi ăn bánh mì\"",
+      "explanation": "Đây theo mẫu SOV: Chủ ngữ (私) + は + Tân ngữ (パン) + を + Động từ (食べます).",
+      "correctAnswer": "私はパンを食べます",
+      "draggableItems": [
+        "私",
+        "は",
+        "パン",
+        "を",
+        "食べます"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "Dấu hiệu câu hỏi trong tiếng Nhật là gì?",
+      "explanation": "Hạt か (ka) được sử dụng ở cuối câu để tạo thành câu hỏi.",
+      "correctAnswer": "か",
+      "options": [
+        "か",
+        "ね",
+        "よ",
+        "わ"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "dragAndDrop",
+      "question": "Tạo câu hỏi tiếng Nhật \"Bạn có ăn cơm không?\"",
+      "explanation": "Câu hỏi này sử dụng hạt か (ka) ở cuối để tạo thành câu hỏi.",
+      "correctAnswer": "あなたはご飯を食べますか",
+      "draggableItems": [
+        "あなた",
+        "は",
+        "ご飯",
+        "を",
+        "食べます",
+        "か"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "multipleChoice",
+      "question": "Sự khác biệt giữa hạt は và が là gì?",
+      "explanation": "は (wa) đánh dấu chủ đề của cuộc trò chuyện, trong khi が (ga) đánh dấu chủ ngữ với trọng tâm hoặc nhấn mạnh.",
+      "correctAnswer": "は đánh dấu chủ đề, が đánh dấu chủ ngữ với trọng tâm",
+      "options": [
+        "は đánh dấu chủ đề, が đánh dấu chủ ngữ với trọng tâm",
+        "は đánh dấu tân ngữ, が đánh dấu chủ ngữ",
+        "は đánh dấu địa điểm, が đánh dấu thời gian",
+        "は đánh dấu sở hữu, が đánh dấu hướng"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "dragAndDrop",
+      "question": "Tạo câu tiếng Nhật \"Tôi đọc sách\"",
+      "explanation": "Đây theo cấu trúc câu tiếng Nhật chuẩn: Chủ ngữ + は + Tân ngữ + を + Động từ.",
+      "correctAnswer": "私は本を読みます",
+      "draggableItems": [
+        "私",
+        "は",
+        "本",
+        "を",
+        "読みます"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-03T16:21:52.893Z"
+}
