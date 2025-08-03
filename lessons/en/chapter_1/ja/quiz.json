@@ -1,0 +1,136 @@
+{
+  "title": "English Chapter 1 Quiz: 英語のアルファベットと音声",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "英語のアルファベットは何文字ありますか？",
+      "explanation": "英語のアルファベットは26文字あります：AからZまで。",
+      "correctAnswer": "26文字",
+      "options": [
+        "24文字",
+        "25文字",
+        "26文字",
+        "27文字"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "英語の母音は何個ありますか？",
+      "explanation": "英語の母音は5個あります：A、E、I、O、Uです。",
+      "correctAnswer": "5個",
+      "options": [
+        "4個",
+        "5個",
+        "6個",
+        "7個"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "どの文字が英語の最初の母音ですか？",
+      "explanation": "Aは英語のアルファベットの最初の文字で、最初の母音です。",
+      "correctAnswer": "A",
+      "options": [
+        "E",
+        "A",
+        "I",
+        "O"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "英語の子音は何個ありますか？",
+      "explanation": "英語には21個の子音があります（26文字から5個の母音を引いた数）。",
+      "correctAnswer": "21個",
+      "options": [
+        "19個",
+        "20個",
+        "21個",
+        "22個"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "フォニックスとは何ですか？",
+      "explanation": "フォニックスは文字が表す音を学ぶ方法です。",
+      "correctAnswer": "文字の音",
+      "options": [
+        "文字の名前",
+        "文字の音",
+        "文字の形",
+        "文字の順番"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "英語の単語「cat」を正しい順序で並べてください",
+      "explanation": "catは「猫」を意味する英語の単語です。",
+      "correctAnswer": "cat",
+      "draggableItems": [
+        "c",
+        "a",
+        "t"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "英語の単語「dog」は何を意味しますか？",
+      "explanation": "dogは「犬」を意味する英語の単語です。",
+      "correctAnswer": "犬",
+      "options": [
+        "猫",
+        "犬",
+        "鳥",
+        "魚"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "dragAndDrop",
+      "question": "英語の単語「book」を正しい順序で並べてください",
+      "explanation": "bookは「本」を意味する英語の単語です。",
+      "correctAnswer": "book",
+      "draggableItems": [
+        "b",
+        "o",
+        "o",
+        "k"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "multipleChoice",
+      "question": "英語のアルファベットの最後の文字は何ですか？",
+      "explanation": "Zは英語のアルファベットの最後の文字です。",
+      "correctAnswer": "Z",
+      "options": [
+        "X",
+        "Y",
+        "Z",
+        "W"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "英語の単語「house」は何を意味しますか？",
+      "explanation": "houseは「家」を意味する英語の単語です。",
+      "correctAnswer": "家",
+      "options": [
+        "車",
+        "家",
+        "学校",
+        "店"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-03T01:30:46.891Z"
+}

@@ -1,0 +1,142 @@
+{
+  "title": "English Chapter 3 Quiz: 数字と数え方",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "英語で「1」は何と言いますか？",
+      "explanation": "英語で「1」はoneと言います。",
+      "correctAnswer": "one",
+      "options": [
+        "one",
+        "two",
+        "three",
+        "four"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "英語で「10」は何と言いますか？",
+      "explanation": "英語で「10」はtenと言います。",
+      "correctAnswer": "ten",
+      "options": [
+        "eight",
+        "nine",
+        "ten",
+        "eleven"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "「How old are you?」は何を意味しますか？",
+      "explanation": "How old are you?は「何歳ですか？」を意味する英語の質問です。",
+      "correctAnswer": "何歳ですか？",
+      "options": [
+        "お名前は？",
+        "何歳ですか？",
+        "どこに住んでいますか？",
+        "何時ですか？"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "「I'm 20 years old」は何を意味しますか？",
+      "explanation": "I'm 20 years oldは「私は20歳です」を意味する英語の返答です。",
+      "correctAnswer": "私は20歳です",
+      "options": [
+        "私は20歳です",
+        "私は21歳です",
+        "私は19歳です",
+        "私は22歳です"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "英語で「5」は何と言いますか？",
+      "explanation": "英語で「5」はfiveと言います。",
+      "correctAnswer": "five",
+      "options": [
+        "three",
+        "four",
+        "five",
+        "six"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "英語の数字「twenty」を正しい順序で並べてください",
+      "explanation": "twentyは「20」を意味する英語の数字です。",
+      "correctAnswer": "twenty",
+      "draggableItems": [
+        "t",
+        "w",
+        "e",
+        "n",
+        "t",
+        "y"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "「What's your phone number?」は何を意味しますか？",
+      "explanation": "What's your phone number?は「あなたの電話番号は何ですか？」を意味する英語の質問です。",
+      "correctAnswer": "あなたの電話番号は何ですか？",
+      "options": [
+        "あなたの電話番号は何ですか？",
+        "あなたの住所はどこですか？",
+        "あなたの名前は何ですか？",
+        "あなたの年齢は何歳ですか？"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "英語で「plus」は何を意味しますか？",
+      "explanation": "plusは「プラス」を意味する英語の数学用語です。",
+      "correctAnswer": "プラス",
+      "options": [
+        "マイナス",
+        "プラス",
+        "イコール",
+        "掛ける"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "英語の数字「fifteen」を正しい順序で並べてください",
+      "explanation": "fifteenは「15」を意味する英語の数字です。",
+      "correctAnswer": "fifteen",
+      "draggableItems": [
+        "f",
+        "i",
+        "f",
+        "t",
+        "e",
+        "e",
+        "n"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "英語で「minus」は何を意味しますか？",
+      "explanation": "minusは「マイナス」を意味する英語の数学用語です。",
+      "correctAnswer": "マイナス",
+      "options": [
+        "プラス",
+        "マイナス",
+        "イコール",
+        "掛ける"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-03T01:30:46.902Z"
+}

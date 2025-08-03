@@ -1,0 +1,134 @@
+{
+  "title": "English Chapter 2 Quiz: 基本的な挨拶と自己紹介",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multipleChoice",
+      "question": "「Hello」は何を意味しますか？",
+      "explanation": "Helloは「こんにちは」を意味する英語の挨拶です。",
+      "correctAnswer": "こんにちは",
+      "options": [
+        "さようなら",
+        "こんにちは",
+        "おはよう",
+        "こんばんは"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "「Good morning」は何を意味しますか？",
+      "explanation": "Good morningは「おはよう」を意味する英語の挨拶です。",
+      "correctAnswer": "おはよう",
+      "options": [
+        "こんにちは",
+        "おはよう",
+        "こんばんは",
+        "さようなら"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "multipleChoice",
+      "question": "「How are you?」は何を意味しますか？",
+      "explanation": "How are you?は「お元気ですか？」を意味する英語の挨拶です。",
+      "correctAnswer": "お元気ですか？",
+      "options": [
+        "お元気ですか？",
+        "お名前は？",
+        "何歳ですか？",
+        "どこに住んでいますか？"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "「I'm fine, thank you」は何を意味しますか？",
+      "explanation": "I'm fine, thank youは「元気です、ありがとう」を意味する英語の返答です。",
+      "correctAnswer": "元気です、ありがとう",
+      "options": [
+        "元気です、ありがとう",
+        "元気ではありません",
+        "分かりません",
+        "さようなら"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "multipleChoice",
+      "question": "「My name is...」は何を意味しますか？",
+      "explanation": "My name is...は「私の名前は...」を意味する英語の自己紹介です。",
+      "correctAnswer": "私の名前は...",
+      "options": [
+        "私の名前は...",
+        "あなたの名前は？",
+        "彼の名前は...",
+        "彼女の名前は..."
+      ]
+    },
+    {
+      "id": 6,
+      "type": "dragAndDrop",
+      "question": "英語の挨拶「Good afternoon」を正しい順序で並べてください",
+      "explanation": "Good afternoonは「こんにちは」を意味する英語の挨拶です。",
+      "correctAnswer": "Good afternoon",
+      "draggableItems": [
+        "Good",
+        "afternoon"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "multipleChoice",
+      "question": "「Nice to meet you」は何を意味しますか？",
+      "explanation": "Nice to meet youは「はじめまして」を意味する英語の挨拶です。",
+      "correctAnswer": "はじめまして",
+      "options": [
+        "はじめまして",
+        "さようなら",
+        "ありがとう",
+        "お疲れ様でした"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "「Good evening」は何を意味しますか？",
+      "explanation": "Good eveningは「こんばんは」を意味する英語の挨拶です。",
+      "correctAnswer": "こんばんは",
+      "options": [
+        "おはよう",
+        "こんにちは",
+        "こんばんは",
+        "おやすみ"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "dragAndDrop",
+      "question": "英語の自己紹介「I am John」を正しい順序で並べてください",
+      "explanation": "I am Johnは「私はジョンです」を意味する英語の自己紹介です。",
+      "correctAnswer": "I am John",
+      "draggableItems": [
+        "I",
+        "am",
+        "John"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "「And you?」は何を意味しますか？",
+      "explanation": "And you?は「そしてあなたは？」を意味する英語の返答です。",
+      "correctAnswer": "そしてあなたは？",
+      "options": [
+        "そしてあなたは？",
+        "あなたの名前は？",
+        "あなたはどこに住んでいますか？",
+        "あなたは何歳ですか？"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-03T01:30:46.901Z"
+}
