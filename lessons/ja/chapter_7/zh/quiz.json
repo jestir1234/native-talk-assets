@@ -1,6 +1,215 @@
 {
   "title": "日语第七章测验：基本动词和活用基础",
-  "questions": [],
-  "totalQuestions": 0,
-  "createdAt": "2025-08-03T16:31:16.392Z"
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "以下哪个动词的意思是\"去\"？",
+      "explanation": "行く（iku）意思是\"去\"。",
+      "correctAnswer": "行く",
+      "options": [
+        "来る",
+        "行く",
+        "食べる",
+        "する"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"私は学校に___ます。\"（我去学校）",
+      "explanation": "行きます（ikimasu）是\"去\"的礼貌形式。",
+      "correctAnswer": "行き",
+      "options": [
+        "行き",
+        "来",
+        "帰り",
+        "食べ"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"食べる\"的正确含义是什么？",
+      "explanation": "食べる（taberu）意思是\"吃\"。",
+      "correctAnswer": "吃",
+      "options": [
+        "喝",
+        "吃",
+        "看",
+        "听"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"パンを___ません。\"（我不吃面包）",
+      "explanation": "食べません（tabemasen）是\"吃\"的否定形式。",
+      "correctAnswer": "食べ",
+      "options": [
+        "食べ",
+        "飲み",
+        "見",
+        "聞き"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "\"する\"在日语中的作用是什么？",
+      "explanation": "する（suru）可以作为辅助动词，与名词结合形成动词。",
+      "correctAnswer": "作为辅助动词，可以与其他名词结合",
+      "options": [
+        "只用于表示\"做\"",
+        "作为辅助动词，可以与其他名词结合",
+        "只用于表示\"学习\"",
+        "只用于表示\"工作\""
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"勉強を___ます。\"（我学习）",
+      "explanation": "勉強をします（benkyou wo shimasu）意思是\"学习\"。",
+      "correctAnswer": "し",
+      "options": [
+        "し",
+        "食べ",
+        "行き",
+        "来"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "\"来る\"的正确含义是什么？",
+      "explanation": "来る（kuru）意思是\"来\"。",
+      "correctAnswer": "来",
+      "options": [
+        "去",
+        "来",
+        "回",
+        "走"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"田中さんが___ます。\"（田中来）",
+      "explanation": "来ます（kimasu）是\"来\"的礼貌形式。",
+      "correctAnswer": "来",
+      "options": [
+        "来",
+        "行き",
+        "帰り",
+        "食べ"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "日语动词的礼貌形式通常以什么结尾？",
+      "explanation": "ます（masu）是动词的礼貌形式结尾。",
+      "correctAnswer": "ます",
+      "options": [
+        "る",
+        "ます",
+        "だ",
+        "です"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"私は毎日___時に起きます。\"（我每天6点起床）",
+      "explanation": "六時に（rokuji ni）意思是\"在6点\"。",
+      "correctAnswer": "ろく",
+      "options": [
+        "ろく",
+        "しち",
+        "はち",
+        "く"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "动词否定形式通常以什么结尾？",
+      "explanation": "ません（masen）是动词否定形式的礼貌表达。",
+      "correctAnswer": "ません",
+      "options": [
+        "ます",
+        "ません",
+        "ない",
+        "です"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"私はコーヒーを___ません。\"（我不喝咖啡）",
+      "explanation": "飲みません（nomimasen）是\"喝\"的否定形式。",
+      "correctAnswer": "飲み",
+      "options": [
+        "飲み",
+        "食べ",
+        "見",
+        "聞き"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "以下哪个句子结构正确？",
+      "explanation": "学校に（gakkou ni）表示\"去学校\"。",
+      "correctAnswer": "私は学校に行きます",
+      "options": [
+        "私は学校に行きます",
+        "私は学校を行きます",
+        "私は学校が行きます",
+        "私は学校にを行きます"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"私は本を___ます。\"（我读书）",
+      "explanation": "読みます（yomimasu）是\"读\"的礼貌形式。",
+      "correctAnswer": "読み",
+      "options": [
+        "読み",
+        "食べ",
+        "飲み",
+        "見"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "日语动词活用有什么特点？",
+      "explanation": "日语动词根据时态、礼貌程度和语气进行活用变化。",
+      "correctAnswer": "根据时态和礼貌程度变化",
+      "options": [
+        "和英语完全相同",
+        "根据时态和礼貌程度变化",
+        "只有现在时和过去时",
+        "只有肯定和否定形式"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"私は___を食べます。\"（我吃苹果）",
+      "explanation": "りんごを（ringo wo）意思是\"吃苹果\"。",
+      "correctAnswer": "りんご",
+      "options": [
+        "りんご",
+        "コーヒー",
+        "本",
+        "机"
+      ]
+    }
+  ],
+  "totalQuestions": 16,
+  "createdAt": "2025-08-03T16:41:11.000Z"
 }

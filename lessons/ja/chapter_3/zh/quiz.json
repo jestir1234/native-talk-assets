@@ -1,6 +1,189 @@
 {
   "title": "日语第三章测验：基本问候和自我介绍",
-  "questions": [],
-  "totalQuestions": 0,
-  "createdAt": "2025-08-03T16:31:16.390Z"
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "\"こんにちは\"在什么时候使用？",
+      "explanation": "こんにちは（konnichiwa）是下午的问候语，意思是\"下午好\"。",
+      "correctAnswer": "下午",
+      "options": [
+        "早上",
+        "下午",
+        "晚上",
+        "深夜"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "完成问候语：\"お___よう\"（早上好）",
+      "explanation": "おはよう（ohayou）意思是\"早上好\"。",
+      "correctAnswer": "は",
+      "options": [
+        "は",
+        "ひ",
+        "ふ",
+        "へ"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"こんばんは\"的正确含义是什么？",
+      "explanation": "こんばんは（konbanwa）意思是\"晚上好\"。",
+      "correctAnswer": "晚上好",
+      "options": [
+        "早上好",
+        "下午好",
+        "晚上好",
+        "再见"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "完成告别语：\"さような___\"（再见）",
+      "explanation": "さようなら（sayounara）意思是\"再见\"。",
+      "correctAnswer": "ら",
+      "options": [
+        "ら",
+        "り",
+        "る",
+        "れ"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "自我介绍时使用的标准句型是什么？",
+      "explanation": "私は〇〇です（watashi wa 〇〇 desu）是标准的自我介绍句型。",
+      "correctAnswer": "私は〇〇です",
+      "options": [
+        "私は〇〇です",
+        "私は〇〇だ",
+        "私は〇〇である",
+        "私は〇〇だよ"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "完成自我介绍：\"___は田中です。\"（我是田中）",
+      "explanation": "私（watashi）意思是\"我\"。",
+      "correctAnswer": "私",
+      "options": [
+        "私",
+        "あなた",
+        "彼",
+        "彼女"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "\"はじめまして\"的正确含义是什么？",
+      "explanation": "はじめまして（hajimemashite）意思是\"初次见面\"。",
+      "correctAnswer": "初次见面",
+      "options": [
+        "再见",
+        "谢谢",
+        "初次见面",
+        "对不起"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "完成礼貌用语：\"よろしくお___します。\"（请多关照）",
+      "explanation": "よろしくおねがいします（yoroshiku onegaishimasu）意思是\"请多关照\"。",
+      "correctAnswer": "ねがい",
+      "options": [
+        "ねがい",
+        "ねがえ",
+        "ねがう",
+        "ねがえ"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "在日语中，助词\"は\"的主要作用是什么？",
+      "explanation": "助词は（wa）用于标记句子的主语。",
+      "correctAnswer": "表示主语",
+      "options": [
+        "表示主语",
+        "表示宾语",
+        "表示时间",
+        "表示地点"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"___は学生です。\"（我是学生）",
+      "explanation": "这是基本的自我介绍句型。",
+      "correctAnswer": "私",
+      "options": [
+        "私",
+        "あなた",
+        "彼",
+        "彼女"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "助动词\"です\"在日语中的作用是什么？",
+      "explanation": "です（desu）是礼貌的助动词，相当于\"是\"。",
+      "correctAnswer": "表示礼貌的\"是\"",
+      "options": [
+        "表示过去时",
+        "表示礼貌的\"是\"",
+        "表示否定",
+        "表示疑问"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "完成问候语：\"こん___は\"（下午好）",
+      "explanation": "こんにちは（konnichiwa）意思是\"下午好\"。",
+      "correctAnswer": "にち",
+      "options": [
+        "にち",
+        "ばん",
+        "あさ",
+        "よる"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "日语中礼貌程度的重要性体现在哪里？",
+      "explanation": "日语中的礼貌程度在所有社交场合都很重要，体现了日本文化的特点。",
+      "correctAnswer": "在所有社交场合都很重要",
+      "options": [
+        "只在正式场合重要",
+        "在所有社交场合都很重要",
+        "只在商务场合重要",
+        "只在家庭中重要"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "完成完整的自我介绍：\"はじめまして。___は田中です。よろしくおねがいします。\"",
+      "explanation": "这是完整的自我介绍：初次见面，我是田中，请多关照。",
+      "correctAnswer": "私",
+      "options": [
+        "私",
+        "あなた",
+        "彼",
+        "彼女"
+      ]
+    }
+  ],
+  "totalQuestions": 14,
+  "createdAt": "2025-08-03T16:41:10.992Z"
 }

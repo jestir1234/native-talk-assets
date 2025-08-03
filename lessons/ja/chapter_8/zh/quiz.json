@@ -1,6 +1,215 @@
 {
   "title": "日语第八章测验：形容词和描述",
-  "questions": [],
-  "totalQuestions": 0,
-  "createdAt": "2025-08-03T16:31:16.393Z"
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "日语中形容词分为哪两种类型？",
+      "explanation": "日语形容词分为い形容词和な形容词两种类型。",
+      "correctAnswer": "い形容词和な形容词",
+      "options": [
+        "い形容词和な形容词",
+        "动词形容词和名词形容词",
+        "过去时形容词和现在时形容词",
+        "肯定形容词和否定形容词"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"この店は___です。\"（这个店很贵）",
+      "explanation": "たかい（takai）是い形容词，意思是\"贵的\"。",
+      "correctAnswer": "たかい",
+      "options": [
+        "たかい",
+        "しずか",
+        "きれい",
+        "べんり"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"高い\"属于哪种形容词？",
+      "explanation": "高い（takai）是い形容词，以い结尾。",
+      "correctAnswer": "い形容词",
+      "options": [
+        "い形容词",
+        "な形容词",
+        "动词形容词",
+        "名词形容词"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"静かな___です。\"（安静的城市）",
+      "explanation": "静かな町（shizuka na machi）意思是\"安静的城市\"。",
+      "correctAnswer": "まち",
+      "options": [
+        "まち",
+        "いえ",
+        "がっこう",
+        "みせ"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "\"静か\"属于哪种形容词？",
+      "explanation": "静か（shizuka）是な形容词，修饰名词时加な。",
+      "correctAnswer": "な形容词",
+      "options": [
+        "い形容词",
+        "な形容词",
+        "动词形容词",
+        "名词形容词"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"この本は___です。\"（这本书很有趣）",
+      "explanation": "おもしろい（omoshiroi）是い形容词，意思是\"有趣的\"。",
+      "correctAnswer": "おもしろい",
+      "options": [
+        "おもしろい",
+        "むずかしい",
+        "やさしい",
+        "たのしい"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "い形容词修饰名词时如何变化？",
+      "explanation": "い形容词直接修饰名词，不需要加助词。",
+      "correctAnswer": "直接修饰，不变",
+      "options": [
+        "直接修饰，不变",
+        "加な",
+        "加の",
+        "加に"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"___な部屋です。\"（漂亮的房间）",
+      "explanation": "きれい（kirei）是な形容词，修饰名词时加な。",
+      "correctAnswer": "きれい",
+      "options": [
+        "きれい",
+        "たかい",
+        "おおきい",
+        "ちいさい"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "な形容词修饰名词时需要加什么？",
+      "explanation": "な形容词修饰名词时需要加な。",
+      "correctAnswer": "な",
+      "options": [
+        "い",
+        "な",
+        "の",
+        "に"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"この車は___です。\"（这辆车很快）",
+      "explanation": "はやい（hayai）是い形容词，意思是\"快的\"。",
+      "correctAnswer": "はやい",
+      "options": [
+        "はやい",
+        "おそい",
+        "おおきい",
+        "ちいさい"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "以下哪个是い形容词？",
+      "explanation": "大きい（ookii）是い形容词，以い结尾。",
+      "correctAnswer": "大きい",
+      "options": [
+        "きれい",
+        "静か",
+        "便利",
+        "大きい"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"___な学校です。\"（方便的学校）",
+      "explanation": "べんり（benri）是な形容词，意思是\"方便的\"。",
+      "correctAnswer": "べんり",
+      "options": [
+        "べんり",
+        "たかい",
+        "おおきい",
+        "ちいさい"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "形容词连接时需要注意什么？",
+      "explanation": "形容词连接时通常使用て形式。",
+      "correctAnswer": "需要加て连接",
+      "options": [
+        "不需要任何变化",
+        "需要加て连接",
+        "需要加と连接",
+        "需要加に连接"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"この部屋は___で___です。\"（这个房间又大又干净）",
+      "explanation": "大きい变成大きく，きれい是な形容词。",
+      "correctAnswer": "おおきく、きれい",
+      "options": [
+        "おおきく、きれい",
+        "おおきい、きれい",
+        "おおきく、きれいな",
+        "おおきい、きれいな"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "い形容词的否定形式如何构成？",
+      "explanation": "い形容词的否定形式是将い变成くない。",
+      "correctAnswer": "加くない",
+      "options": [
+        "加ない",
+        "加ません",
+        "加くない",
+        "加ではない"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"この本は___です。\"（这本书不贵）",
+      "explanation": "高い（takai）的否定形式是高くない（takakunai）。",
+      "correctAnswer": "たかくない",
+      "options": [
+        "たかくない",
+        "たかいない",
+        "たかくありません",
+        "たかいではありません"
+      ]
+    }
+  ],
+  "totalQuestions": 16,
+  "createdAt": "2025-08-03T16:41:11.001Z"
 }

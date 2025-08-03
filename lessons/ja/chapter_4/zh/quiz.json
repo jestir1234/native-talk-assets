@@ -1,6 +1,189 @@
 {
   "title": "日语第四章测验：片假名 - 外来词",
-  "questions": [],
-  "totalQuestions": 0,
-  "createdAt": "2025-08-03T16:31:16.391Z"
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "片假名主要用于书写什么类型的词汇？",
+      "explanation": "片假名主要用于书写外来词和拟声词。",
+      "correctAnswer": "外来词和拟声词",
+      "options": [
+        "本土日语词汇",
+        "外来词和拟声词",
+        "语法助词",
+        "数字"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "完成外来词：\"コーヒ___\"（咖啡）",
+      "explanation": "コーヒー（koohii）意思是\"咖啡\"。",
+      "correctAnswer": "い",
+      "options": [
+        "い",
+        "う",
+        "え",
+        "お"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"パン\"的正确含义是什么？",
+      "explanation": "パン（pan）意思是\"面包\"，来自葡萄牙语。",
+      "correctAnswer": "面包",
+      "options": [
+        "面包",
+        "米饭",
+        "面条",
+        "蛋糕"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "完成外来词：\"コンピュー___\"（电脑）",
+      "explanation": "コンピューター（konpyuutaa）意思是\"电脑\"。",
+      "correctAnswer": "た",
+      "options": [
+        "た",
+        "て",
+        "と",
+        "つ"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "以下哪个是拟声词？",
+      "explanation": "ピカピカ（pikapika）是拟声词，表示闪闪发光。",
+      "correctAnswer": "ピカピカ",
+      "options": [
+        "コーヒー",
+        "パン",
+        "ピカピカ",
+        "コンピューター"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "完成拟声词：\"ドキド___\"（心跳声）",
+      "explanation": "ドキドキ（dokidoki）是拟声词，表示心跳声。",
+      "correctAnswer": "き",
+      "options": [
+        "き",
+        "く",
+        "け",
+        "こ"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "助词\"の\"在日语中的主要作用是什么？",
+      "explanation": "の（no）用于表示所有格，相当于\"的\"。",
+      "correctAnswer": "表示所有格",
+      "options": [
+        "表示主语",
+        "表示宾语",
+        "表示所有格",
+        "表示时间"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"私___名前は田中です。\"（我的名字是田中）",
+      "explanation": "私の（watashi no）意思是\"我的\"。",
+      "correctAnswer": "の",
+      "options": [
+        "の",
+        "は",
+        "を",
+        "に"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "片假名\"カ\"的发音是什么？",
+      "explanation": "カ（ka）是片假名的\"ka\"音。",
+      "correctAnswer": "ka",
+      "options": [
+        "ka",
+        "ki",
+        "ku",
+        "ke"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "完成片假名：\"キ___\"（ki）",
+      "explanation": "キイ（kii）是片假名的\"ki\"音。",
+      "correctAnswer": "イ",
+      "options": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "以下哪个外来词来自英语？",
+      "explanation": "コンピューター（computer）来自英语。",
+      "correctAnswer": "コンピューター",
+      "options": [
+        "パン",
+        "コーヒー",
+        "コンピューター",
+        "すべて"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"これは私___本です。\"（这是我的书）",
+      "explanation": "私の（watashi no）意思是\"我的\"。",
+      "correctAnswer": "の",
+      "options": [
+        "の",
+        "は",
+        "を",
+        "に"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "拟声词在日语中的作用是什么？",
+      "explanation": "拟声词在日语中广泛使用，能够增强语言的生动性和表现力。",
+      "correctAnswer": "增强语言的生动性和表现力",
+      "options": [
+        "只用于儿童读物",
+        "增强语言的生动性和表现力",
+        "只用于漫画",
+        "只用于诗歌"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "完成外来词：\"テレビ___\"（电视）",
+      "explanation": "テレビ（terebi）意思是\"电视\"，来自英语\"television\"。",
+      "correctAnswer": "イ",
+      "options": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ"
+      ]
+    }
+  ],
+  "totalQuestions": 14,
+  "createdAt": "2025-08-03T16:41:10.994Z"
 }

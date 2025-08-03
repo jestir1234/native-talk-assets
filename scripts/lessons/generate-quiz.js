@@ -60,7 +60,9 @@ function extractTitle(content) {
  */
 function parseQuizContent(content) {
   const questions = [];
-  const sections = content.split('## Question ');
+  
+  // Split by both English "Question" and Chinese "问题"
+  const sections = content.split(/## (Question |问题 )/);
   
   // Skip the first section (title/header)
   for (let i = 1; i < sections.length; i++) {
@@ -153,7 +155,7 @@ function parseQuestionSection(section, questionNumber) {
   }
   
   // Validate question type
-  if (!['multipleChoice', 'dragAndDrop'].includes(question.type)) {
+  if (!['multipleChoice', 'dragAndDrop', 'fillInTheBlank'].includes(question.type)) {
     console.warn(`⚠️  Question ${questionNumber}: invalid type "${question.type}"`);
     return null;
   }
@@ -177,6 +179,17 @@ function parseQuestionSection(section, questionNumber) {
     }
     if (!question.correctAnswer) {
       console.warn(`⚠️  Question ${questionNumber}: drag and drop needs correct answer`);
+      return null;
+    }
+  }
+  
+  if (question.type === 'fillInTheBlank') {
+    if (!question.options || question.options.length < 2) {
+      console.warn(`⚠️  Question ${questionNumber}: fill in the blank needs at least 2 options`);
+      return null;
+    }
+    if (!question.correctAnswer) {
+      console.warn(`⚠️  Question ${questionNumber}: fill in the blank needs correct answer`);
       return null;
     }
   }

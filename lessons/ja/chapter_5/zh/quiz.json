@@ -1,6 +1,189 @@
 {
   "title": "日语第五章测验：简单句子结构",
-  "questions": [],
-  "totalQuestions": 0,
-  "createdAt": "2025-08-03T16:31:16.392Z"
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "日语的基本语序是什么？",
+      "explanation": "日语的基本语序是主语-宾语-谓语（SOV）。",
+      "correctAnswer": "主语-宾语-谓语",
+      "options": [
+        "主语-谓语-宾语",
+        "主语-宾语-谓语",
+        "宾语-主语-谓语",
+        "谓语-主语-宾语"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"私はりんご___食べます。\"（我吃苹果）",
+      "explanation": "を（wo）是宾语助词，用于标记动作的对象。",
+      "correctAnswer": "を",
+      "options": [
+        "は",
+        "を",
+        "に",
+        "が"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "助词\"を\"的主要作用是什么？",
+      "explanation": "を（wo）用于标记句子的宾语。",
+      "correctAnswer": "表示宾语",
+      "options": [
+        "表示主语",
+        "表示宾语",
+        "表示时间",
+        "表示地点"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"ジョンさん___来ます。\"（约翰来）",
+      "explanation": "が（ga）用于标记句子的主语，强调主语。",
+      "correctAnswer": "が",
+      "options": [
+        "は",
+        "を",
+        "に",
+        "が"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "助词\"が\"和\"は\"的区别是什么？",
+      "explanation": "が强调主语，は标记句子的主题。",
+      "correctAnswer": "が强调主语，は标记主题",
+      "options": [
+        "没有区别",
+        "が强调主语，は标记主题",
+        "が用于否定句，は用于肯定句",
+        "が用于过去时，は用于现在时"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"これは___ですか？\"（这是什么？）",
+      "explanation": "なに（nani）意思是\"什么\"，か是疑问助词。",
+      "correctAnswer": "なに",
+      "options": [
+        "なに",
+        "どこ",
+        "いつ",
+        "だれ"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "疑问助词\"か\"的作用是什么？",
+      "explanation": "か（ka）用于将陈述句变成疑问句。",
+      "correctAnswer": "表示疑问",
+      "options": [
+        "表示否定",
+        "表示疑问",
+        "表示过去时",
+        "表示礼貌"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"あなたは___ですか？\"（你是谁？）",
+      "explanation": "だれ（dare）意思是\"谁\"。",
+      "correctAnswer": "だれ",
+      "options": [
+        "なに",
+        "どこ",
+        "いつ",
+        "だれ"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "以下哪个句子结构正确？",
+      "explanation": "に（ni）表示方向，用于\"去某地\"。",
+      "correctAnswer": "私は学校に行きます",
+      "options": [
+        "私は学校に行きます",
+        "私は学校を行きます",
+        "私は学校が行きます",
+        "私は学校にを行きます"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"私は本___読みます。\"（我读书）",
+      "explanation": "本を（hon wo）意思是\"读书\"，を标记宾语。",
+      "correctAnswer": "を",
+      "options": [
+        "は",
+        "を",
+        "に",
+        "が"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "日语中动词通常放在句子的什么位置？",
+      "explanation": "日语中动词通常放在句子的末尾。",
+      "correctAnswer": "句末",
+      "options": [
+        "句首",
+        "句中",
+        "句末",
+        "句首和句末"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"田中さん___学生です。\"（田中是学生）",
+      "explanation": "田中さんは（tanaka san wa）标记主题。",
+      "correctAnswer": "は",
+      "options": [
+        "は",
+        "を",
+        "に",
+        "が"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "以下哪个是正确的Question形式？",
+      "explanation": "ですか（desu ka）是礼貌的疑问形式。",
+      "correctAnswer": "あなたは学生ですか",
+      "options": [
+        "あなたは学生です",
+        "あなたは学生ですか",
+        "あなたは学生ですか",
+        "あなたは学生ですか？"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"これは___ですか？\"（这是书吗？）",
+      "explanation": "これは本ですか（kore wa hon desu ka）意思是\"这是书吗？\"。",
+      "correctAnswer": "本",
+      "options": [
+        "本",
+        "ペン",
+        "机",
+        "椅子"
+      ]
+    }
+  ],
+  "totalQuestions": 14,
+  "createdAt": "2025-08-03T16:41:10.996Z"
 }

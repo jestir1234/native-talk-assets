@@ -1,6 +1,189 @@
 {
   "title": "日语第二章测验：平假名 - 元音",
-  "questions": [],
-  "totalQuestions": 0,
-  "createdAt": "2025-08-03T16:31:16.389Z"
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "日语有多少个元音？",
+      "explanation": "日语有五个元音：あ、い、う、え、お。",
+      "correctAnswer": "5个",
+      "options": [
+        "3个",
+        "4个",
+        "5个",
+        "6个"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "以下哪个是日语元音\"あ\"的正确发音？",
+      "explanation": "あ的发音类似于英语\"father\"中的\"a\"音。",
+      "correctAnswer": "像英语的\"a\"在\"father\"中",
+      "options": [
+        "像英语的\"a\"在\"cat\"中",
+        "像英语的\"a\"在\"father\"中",
+        "像英语的\"a\"在\"make\"中",
+        "像英语的\"a\"在\"about\"中"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "fillInTheBlank",
+      "question": "完成单词：\"あ___\"（爱）",
+      "explanation": "あい（ai）意思是\"爱\"。",
+      "correctAnswer": "い",
+      "options": [
+        "い",
+        "う",
+        "え",
+        "お"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "以下哪个平假名表示元音\"い\"？",
+      "explanation": "い是日语元音\"i\"的平假名。",
+      "correctAnswer": "い",
+      "options": [
+        "あ",
+        "い",
+        "う",
+        "え"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "fillInTheBlank",
+      "question": "完成单词：\"い___\"（家）",
+      "explanation": "いえ（ie）意思是\"家\"。",
+      "correctAnswer": "え",
+      "options": [
+        "あ",
+        "う",
+        "え",
+        "お"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "multipleChoice",
+      "question": "元音\"う\"的发音最接近英语中的哪个音？",
+      "explanation": "う的发音类似于英语\"boot\"中的\"oo\"音。",
+      "correctAnswer": "\"oo\"在\"boot\"中",
+      "options": [
+        "\"oo\"在\"boot\"中",
+        "\"u\"在\"put\"中",
+        "\"u\"在\"cup\"中",
+        "\"u\"在\"rule\"中"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "fillInTheBlank",
+      "question": "完成单词：\"う___\"（海）",
+      "explanation": "うみ（umi）意思是\"海\"。",
+      "correctAnswer": "み",
+      "options": [
+        "あ",
+        "い",
+        "え",
+        "み"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "multipleChoice",
+      "question": "以下哪个平假名表示元音\"え\"？",
+      "explanation": "え是日语元音\"e\"的平假名。",
+      "correctAnswer": "え",
+      "options": [
+        "あ",
+        "い",
+        "う",
+        "え"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "fillInTheBlank",
+      "question": "完成单词：\"え___\"（画）",
+      "explanation": "えが（ega）意思是\"画\"。",
+      "correctAnswer": "が",
+      "options": [
+        "あ",
+        "い",
+        "う",
+        "が"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "multipleChoice",
+      "question": "元音\"お\"的发音最接近英语中的哪个音？",
+      "explanation": "お的发音类似于英语\"go\"中的\"o\"音。",
+      "correctAnswer": "\"o\"在\"go\"中",
+      "options": [
+        "\"o\"在\"go\"中",
+        "\"o\"在\"hot\"中",
+        "\"o\"在\"note\"中",
+        "\"o\"在\"book\"中"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "fillInTheBlank",
+      "question": "完成单词：\"お___\"（大）",
+      "explanation": "おおき（ooki）意思是\"大\"。",
+      "correctAnswer": "き",
+      "options": [
+        "あ",
+        "い",
+        "う",
+        "き"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "multipleChoice",
+      "question": "以下哪个是正确的平假名元音顺序？",
+      "explanation": "这是日语元音的标准顺序。",
+      "correctAnswer": "あ、い、う、え、お",
+      "options": [
+        "あ、い、う、え、お",
+        "あ、う、い、え、お",
+        "あ、い、え、う、お",
+        "あ、え、い、う、お"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "fillInTheBlank",
+      "question": "完成句子：\"これは___です。\"（这是爱）",
+      "explanation": "あい（ai）意思是\"爱\"。",
+      "correctAnswer": "あい",
+      "options": [
+        "あい",
+        "いえ",
+        "うみ",
+        "えが"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "multipleChoice",
+      "question": "平假名元音在日语中的主要作用是什么？",
+      "explanation": "元音是构成所有日语词汇的基础，与其他辅音结合形成完整的音节。",
+      "correctAnswer": "构成所有日语词汇的基础",
+      "options": [
+        "只用于书写外来词",
+        "构成所有日语词汇的基础",
+        "只用于语法助词",
+        "只用于数字"
+      ]
+    }
+  ],
+  "totalQuestions": 14,
+  "createdAt": "2025-08-03T16:41:10.989Z"
 }
