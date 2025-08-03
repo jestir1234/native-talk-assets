@@ -1,0 +1,215 @@
+{
+  "title": "Bài Kiểm Tra Chương 7: Thức Ăn và Đồ Uống",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "\"Bread\" có nghĩa là gì?",
+      "explanation": "\"Bread\" có nghĩa là \"bánh mì\" trong tiếng Anh.",
+      "correctAnswer": "Bánh mì",
+      "options": [
+        "Cơm",
+        "Bánh mì",
+        "Thịt",
+        "Rau"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành từ: \"___\" (cơm)",
+      "explanation": "\"Rice\" có nghĩa là \"cơm\" trong tiếng Anh.",
+      "correctAnswer": "Rice",
+      "options": [
+        "Bread",
+        "Rice",
+        "Meat",
+        "Vegetable"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"Meat\" có nghĩa là gì?",
+      "explanation": "\"Meat\" có nghĩa là \"thịt\" trong tiếng Anh.",
+      "correctAnswer": "Thịt",
+      "options": [
+        "Bánh mì",
+        "Cơm",
+        "Thịt",
+        "Rau"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành từ: \"___\" (rau)",
+      "explanation": "\"Vegetable\" có nghĩa là \"rau\" trong tiếng Anh.",
+      "correctAnswer": "Vegetable",
+      "options": [
+        "Bread",
+        "Rice",
+        "Meat",
+        "Vegetable"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "\"Water\" có nghĩa là gì?",
+      "explanation": "\"Water\" có nghĩa là \"nước\" trong tiếng Anh.",
+      "correctAnswer": "Nước",
+      "options": [
+        "Cà phê",
+        "Trà",
+        "Nước",
+        "Nước ép"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành đồ uống: \"___\" (cà phê)",
+      "explanation": "\"Coffee\" có nghĩa là \"cà phê\" trong tiếng Anh.",
+      "correctAnswer": "Coffee",
+      "options": [
+        "Water",
+        "Coffee",
+        "Tea",
+        "Juice"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "\"Tea\" có nghĩa là gì?",
+      "explanation": "\"Tea\" có nghĩa là \"trà\" trong tiếng Anh.",
+      "correctAnswer": "Trà",
+      "options": [
+        "Nước",
+        "Cà phê",
+        "Trà",
+        "Nước ép"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành đồ uống: \"___\" (nước ép)",
+      "explanation": "\"Juice\" có nghĩa là \"nước ép\" trong tiếng Anh.",
+      "correctAnswer": "Juice",
+      "options": [
+        "Water",
+        "Coffee",
+        "Tea",
+        "Juice"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "\"I like\" có nghĩa là gì?",
+      "explanation": "\"I like\" có nghĩa là \"Tôi thích\" trong tiếng Anh.",
+      "correctAnswer": "Tôi thích",
+      "options": [
+        "Tôi thích",
+        "Tôi likes",
+        "Tôi liking",
+        "Tôi liked"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành câu: \"I ___ coffee\" (Tôi thích cà phê)",
+      "explanation": "\"I like coffee\" có nghĩa là \"Tôi thích cà phê\".",
+      "correctAnswer": "like",
+      "options": [
+        "like",
+        "likes",
+        "liking",
+        "liked"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "\"I don't like\" có nghĩa là gì?",
+      "explanation": "\"I don't like\" có nghĩa là \"Tôi không thích\" trong tiếng Anh.",
+      "correctAnswer": "Tôi không thích",
+      "options": [
+        "Tôi không thích",
+        "Tôi don't thích",
+        "Tôi no thích",
+        "Tôi not liking"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành câu phủ định: \"I ___ like tea\" (Tôi không thích trà)",
+      "explanation": "\"I don't like tea\" có nghĩa là \"Tôi không thích trà\".",
+      "correctAnswer": "don't",
+      "options": [
+        "not",
+        "don't",
+        "no",
+        "not"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "\"What do you like to eat?\" có nghĩa là gì?",
+      "explanation": "\"What do you like to eat?\" là cách hỏi đúng.",
+      "correctAnswer": "Bạn thích ăn gì?",
+      "options": [
+        "Bạn thích ăn gì?",
+        "Bạn thích ăn gì?",
+        "Bạn thích ăn gì?",
+        "Bạn thích ăn gì?"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành câu hỏi: \"What do you like to ___?\" (Bạn thích uống gì?)",
+      "explanation": "\"What do you like to drink?\" có nghĩa là \"Bạn thích uống gì?\".",
+      "correctAnswer": "drink",
+      "options": [
+        "eat",
+        "drink",
+        "sleep",
+        "work"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "\"Restaurant\" có nghĩa là gì?",
+      "explanation": "\"Restaurant\" có nghĩa là \"nhà hàng\" trong tiếng Anh.",
+      "correctAnswer": "Nhà hàng",
+      "options": [
+        "Nhà hàng",
+        "Quán cà phê",
+        "Quán bar",
+        "Cửa hàng"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành câu: \"I like to ___ at restaurants\" (Tôi thích ăn ở nhà hàng)",
+      "explanation": "\"I like to eat at restaurants\" có nghĩa là \"Tôi thích ăn ở nhà hàng\".",
+      "correctAnswer": "eat",
+      "options": [
+        "eat",
+        "drink",
+        "sleep",
+        "work"
+      ]
+    }
+  ],
+  "totalQuestions": 16,
+  "createdAt": "2025-08-03T23:35:03.584Z"
+}

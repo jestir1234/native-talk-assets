@@ -1,0 +1,215 @@
+{
+  "title": "Bài Kiểm Tra Chương 9: Thời Tiết và Mùa",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "\"Sunny\" có nghĩa là gì?",
+      "explanation": "\"Sunny\" có nghĩa là \"nắng\" trong tiếng Anh.",
+      "correctAnswer": "Nắng",
+      "options": [
+        "Mưa",
+        "Nắng",
+        "Nhiều mây",
+        "Tuyết"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành thời tiết: \"___\" (mưa)",
+      "explanation": "\"Rainy\" có nghĩa là \"mưa\" trong tiếng Anh.",
+      "correctAnswer": "Rainy",
+      "options": [
+        "Sunny",
+        "Rainy",
+        "Cloudy",
+        "Snowy"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"Cloudy\" có nghĩa là gì?",
+      "explanation": "\"Cloudy\" có nghĩa là \"nhiều mây\" trong tiếng Anh.",
+      "correctAnswer": "Nhiều mây",
+      "options": [
+        "Nắng",
+        "Mưa",
+        "Nhiều mây",
+        "Tuyết"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành thời tiết: \"___\" (tuyết)",
+      "explanation": "\"Snowy\" có nghĩa là \"tuyết\" trong tiếng Anh.",
+      "correctAnswer": "Snowy",
+      "options": [
+        "Sunny",
+        "Rainy",
+        "Cloudy",
+        "Snowy"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "\"Spring\" có nghĩa là gì?",
+      "explanation": "\"Spring\" có nghĩa là \"mùa xuân\" trong tiếng Anh.",
+      "correctAnswer": "Mùa xuân",
+      "options": [
+        "Mùa hè",
+        "Mùa xuân",
+        "Mùa thu",
+        "Mùa đông"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành mùa: \"___\" (mùa hè)",
+      "explanation": "\"Summer\" có nghĩa là \"mùa hè\" trong tiếng Anh.",
+      "correctAnswer": "Summer",
+      "options": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "\"Fall\" có nghĩa là gì?",
+      "explanation": "\"Fall\" có nghĩa là \"mùa thu\" trong tiếng Anh.",
+      "correctAnswer": "Mùa thu",
+      "options": [
+        "Mùa xuân",
+        "Mùa hè",
+        "Mùa thu",
+        "Mùa đông"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành mùa: \"___\" (mùa đông)",
+      "explanation": "\"Winter\" có nghĩa là \"mùa đông\" trong tiếng Anh.",
+      "correctAnswer": "Winter",
+      "options": [
+        "Spring",
+        "Summer",
+        "Fall",
+        "Winter"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "\"What's the weather like?\" có nghĩa là gì?",
+      "explanation": "\"What's the weather like?\" là cách hỏi thời tiết đúng.",
+      "correctAnswer": "Thời tiết như thế nào?",
+      "options": [
+        "Thời tiết như thế nào?",
+        "Thời tiết ra sao?",
+        "Thời tiết gì?",
+        "Thời tiết thế nào?"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành câu trả lời: \"It's ___\" (Trời nắng)",
+      "explanation": "\"It's sunny\" có nghĩa là \"Trời nắng\".",
+      "correctAnswer": "sunny",
+      "options": [
+        "sunny",
+        "rainy",
+        "cloudy",
+        "snowy"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "\"Hot\" có nghĩa là gì?",
+      "explanation": "\"Hot\" có nghĩa là \"nóng\" trong tiếng Anh.",
+      "correctAnswer": "Nóng",
+      "options": [
+        "Lạnh",
+        "Nóng",
+        "Ấm",
+        "Mát"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành nhiệt độ: \"___\" (lạnh)",
+      "explanation": "\"Cold\" có nghĩa là \"lạnh\" trong tiếng Anh.",
+      "correctAnswer": "Cold",
+      "options": [
+        "Hot",
+        "Cold",
+        "Warm",
+        "Cool"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "\"Warm\" có nghĩa là gì?",
+      "explanation": "\"Warm\" có nghĩa là \"ấm\" trong tiếng Anh.",
+      "correctAnswer": "Ấm",
+      "options": [
+        "Nóng",
+        "Lạnh",
+        "Ấm",
+        "Mát"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành nhiệt độ: \"___\" (mát)",
+      "explanation": "\"Cool\" có nghĩa là \"mát\" trong tiếng Anh.",
+      "correctAnswer": "Cool",
+      "options": [
+        "Hot",
+        "Cold",
+        "Warm",
+        "Cool"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "\"Weather-related activities\" có nghĩa là gì?",
+      "explanation": "\"Weather-related activities\" có nghĩa là \"hoạt động liên quan đến thời tiết\".",
+      "correctAnswer": "Hoạt động liên quan đến thời tiết",
+      "options": [
+        "Hoạt động thời tiết",
+        "Hoạt động khí hậu",
+        "Hoạt động liên quan đến thời tiết",
+        "Hoạt động liên quan đến khí hậu"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành câu: \"I like ___ weather\" (Tôi thích thời tiết ấm)",
+      "explanation": "\"I like warm weather\" có nghĩa là \"Tôi thích thời tiết ấm\".",
+      "correctAnswer": "warm",
+      "options": [
+        "hot",
+        "cold",
+        "warm",
+        "cool"
+      ]
+    }
+  ],
+  "totalQuestions": 16,
+  "createdAt": "2025-08-03T23:35:03.586Z"
+}

@@ -1,0 +1,215 @@
+{
+  "title": "Bài Kiểm Tra Chương 8: Địa Điểm và Hướng Đi",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "\"School\" có nghĩa là gì?",
+      "explanation": "\"School\" có nghĩa là \"trường học\" trong tiếng Anh.",
+      "correctAnswer": "Trường học",
+      "options": [
+        "Nhà",
+        "Công việc",
+        "Trường học",
+        "Cửa hàng"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành từ: \"___\" (nhà)",
+      "explanation": "\"Home\" có nghĩa là \"nhà\" trong tiếng Anh.",
+      "correctAnswer": "Home",
+      "options": [
+        "School",
+        "Home",
+        "Work",
+        "Store"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"Work\" có nghĩa là gì?",
+      "explanation": "\"Work\" có nghĩa là \"công việc\" trong tiếng Anh.",
+      "correctAnswer": "Công việc",
+      "options": [
+        "Trường học",
+        "Nhà",
+        "Công việc",
+        "Cửa hàng"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành từ: \"___\" (cửa hàng)",
+      "explanation": "\"Store\" có nghĩa là \"cửa hàng\" trong tiếng Anh.",
+      "correctAnswer": "Store",
+      "options": [
+        "School",
+        "Home",
+        "Work",
+        "Store"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "\"Park\" có nghĩa là gì?",
+      "explanation": "\"Park\" có nghĩa là \"công viên\" trong tiếng Anh.",
+      "correctAnswer": "Công viên",
+      "options": [
+        "Trường học",
+        "Nhà",
+        "Công việc",
+        "Công viên"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành giới từ: \"___ the school\" (ở trường học)",
+      "explanation": "\"At the school\" có nghĩa là \"ở trường học\".",
+      "correctAnswer": "At",
+      "options": [
+        "In",
+        "On",
+        "At",
+        "For"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "\"In\" có nghĩa là gì?",
+      "explanation": "\"In\" có nghĩa là \"ở\" (bên trong) trong tiếng Anh.",
+      "correctAnswer": "Ở",
+      "options": [
+        "Trên",
+        "Ở",
+        "Tại",
+        "Cho"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành giới từ: \"___ the table\" (trên bàn)",
+      "explanation": "\"On the table\" có nghĩa là \"trên bàn\".",
+      "correctAnswer": "On",
+      "options": [
+        "In",
+        "On",
+        "At",
+        "For"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "\"Near\" có nghĩa là gì?",
+      "explanation": "\"Near\" có nghĩa là \"gần\" trong tiếng Anh.",
+      "correctAnswer": "Gần",
+      "options": [
+        "Xa",
+        "Gần",
+        "Bên cạnh",
+        "Phía sau"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành giới từ: \"___ from\" (xa)",
+      "explanation": "\"Far from\" có nghĩa là \"xa\" trong tiếng Anh.",
+      "correctAnswer": "Far",
+      "options": [
+        "Near",
+        "Far",
+        "Next",
+        "Behind"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "\"Where is...?\" có nghĩa là gì?",
+      "explanation": "\"Where is...?\" có nghĩa là \"Ở đâu là...?\" trong tiếng Anh.",
+      "correctAnswer": "Ở đâu là...?",
+      "options": [
+        "Ở đâu là...?",
+        "Cái gì là...?",
+        "Như thế nào là...?",
+        "Khi nào là...?"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành câu trả lời: \"It's ___\" (Nó ở đây)",
+      "explanation": "\"It's here\" có nghĩa là \"Nó ở đây\".",
+      "correctAnswer": "here",
+      "options": [
+        "here",
+        "there",
+        "near",
+        "far"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "\"Left\" có nghĩa là gì?",
+      "explanation": "\"Left\" có nghĩa là \"trái\" trong tiếng Anh.",
+      "correctAnswer": "Trái",
+      "options": [
+        "Phải",
+        "Trái",
+        "Thẳng",
+        "Rẽ"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành hướng: \"___\" (phải)",
+      "explanation": "\"Right\" có nghĩa là \"phải\" trong tiếng Anh.",
+      "correctAnswer": "Right",
+      "options": [
+        "Left",
+        "Right",
+        "Straight",
+        "Turn"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "\"Straight\" có nghĩa là gì?",
+      "explanation": "\"Straight\" có nghĩa là \"thẳng\" trong tiếng Anh.",
+      "correctAnswer": "Thẳng",
+      "options": [
+        "Trái",
+        "Phải",
+        "Thẳng",
+        "Rẽ"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "fillInTheBlank",
+      "question": "Hoàn thành hướng: \"___ left\" (rẽ trái)",
+      "explanation": "\"Turn left\" có nghĩa là \"rẽ trái\".",
+      "correctAnswer": "Turn",
+      "options": [
+        "Go",
+        "Turn",
+        "Walk",
+        "Run"
+      ]
+    }
+  ],
+  "totalQuestions": 16,
+  "createdAt": "2025-08-03T23:35:03.585Z"
+}
