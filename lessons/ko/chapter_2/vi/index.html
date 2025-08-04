@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 2: Lời Chào & Giới Thiệu Cơ Bản</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent font boosting on mobile */
+        }
+
+        /* Lesson Container */
+        .lesson-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            padding: 0 20px; /* Consistent padding */
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 0.5em;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        p {
+            font-size: 1rem; /* Minimum 16px */
+            padding: 0 20px; /* Consistent padding */
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0 20px 0 30px; /* Adjusted padding for list items */
+            margin-bottom: 1em;
+        }
+
+        li {
+            font-size: 1rem; /* Minimum 16px */
+            margin-bottom: 0.5em;
+            position: relative;
+            padding-left: 1.5em; /* Space for custom bullet */
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary: Purple */
+            font-size: 0.8em;
+            top: 0.2em;
+        }
+
+        strong {
+            color: #2C3E50; /* Dark blue for emphasis */
+        }
+
+        /* Specific Header Requirement */
+        .chapter-title {
+            margin: 20px 0 0; /* Adjusted margin for top */
+            text-align: center;
+            font-size: 2rem; /* Larger for chapter title */
+            color: #2C3E50;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .lesson-section, .summary-section, .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            margin: 15px 15px;
+            padding: 20px 0; /* Padding inside the section, content will have own padding */
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            border: 1px solid #E0E0E0; /* Light gray border */
+        }
+
+        /* Korean Text & Pronunciation */
+        .korean-phrase {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #8B5FBF; /* Primary: Purple */
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        .pronunciation {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #999999; /* Lighter gray for pronunciation */
+        }
+
+        .translation {
+            font-size: 1rem;
+            color: #666666;
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px; /* Min 44px */
+            height: 48px; /* Min 44px */
+            border-radius: 50%;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            vertical-align: middle;
+            text-decoration: none; /* For accessibility if it's an anchor */
+        }
+
+        .audio-icon:hover {
+            background-color: #6A4899; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Example Dialogue */
+        .example-dialogue {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .dialogue-line {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .dialogue-line strong {
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: rgba(139, 95, 191, 0.1); /* Light primary purple */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple */
+            padding: 15px 20px;
+            margin: 15px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #2C3E50;
+        }
+
+        .cultural-note strong {
+            color: #8B5FBF;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #F8F5E0; /* Slightly different cream for practice */
+            margin-top: 25px;
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            padding: 0 20px;
+            font-weight: bold;
+            color: #2C3E50;
+            font-size: 1.05rem;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0 20px;
+        }
+
+        .practice-option {
+            background-color: white;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 12px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            min-height: 44px; /* Ensure tap target size */
+            display: flex;
+            align-items: center;
+        }
+
+        .practice-option:hover {
+            background-color: #F5F5F5;
+            border-color: #8B5FBF; /* Primary: Purple */
+        }
+
+        .practice-option.correct {
+            background-color: #e6ffe6; /* Light green */
+            border-color: #4CAF50; /* Green */
+            font-weight: bold;
+        }
+
+        .practice-option.incorrect {
+            background-color: #ffe6e6; /* Light red */
+            border-color: #F44336; /* Red */
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-top: 3px solid #8B5FBF; /* Primary: Purple */
+            padding-top: 20px;
+            margin-bottom: 0; /* Remove bottom margin if it's the last section */
+        }
+
+        .summary-section h2 {
+            border-bottom: none;
+            text-align: center;
+        }
+
+        .summary-section ul {
+            list-style-type: '🌟 '; /* Star bullet for summary */
+        }
+
+        .summary-section li::before {
+            content: '🌟';
+            color: #8B5FBF;
+            font-size: 0.9em;
+            top: 0.1em;
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 601px) {
+            .lesson-container {
+                margin: 20px auto;
+                border-radius: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chương 2: Lời Chào & Giới Thiệu Cơ Bản</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 2 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>👋 Lời Chào Phổ Biến Nhất: 안녕하세요</h2>
+            <p><strong>안녕하세요</strong> là cách chào hỏi cơ bản và phổ biến nhất trong tiếng Hàn. Bạn có thể dùng nó để nói "xin chào" hoặc "tạm biệt" trong hầu hết các tình huống.</p>
+            <p>
+                <span class="korean-phrase">안녕하세요</span>
+                <span class="pronunciation">[An-nyeong-ha-se-yo]</span>
+                <a href="#" class="audio-icon" data-audio-text="안녕하세요">🔊</a>
+            </p>
+            <p class="translation">Nghĩa: Xin chào / Tạm biệt (Lịch sự)</p>
+
+            <div class="example-dialogue">
+                <div class="dialogue-line"><strong>A:</strong> 안녕하세요! <span class="pronunciation">[An-nyeong-ha-se-yo!]</span><a href="#" class="audio-icon" data-audio-text="안녕하세요">🔊</a></div>
+                <div class="dialogue-line"><em>(Xin chào!)</em></div>
+                <div class="dialogue-line"><strong>B:</strong> 안녕하세요! <span class="pronunciation">[An-nyeong-ha-se-yo!]</span><a href="#" class="audio-icon" data-audio-text="안녕하세요">🔊</a></div>
+                <div class="dialogue-line"><em>(Chào bạn!)</em></div>
+            </div>
+
+            <div class="cultural-note">
+                <strong>💡 Lưu ý Văn hóa:</strong> Khi chào bằng "안녕하세요", người Hàn Quốc thường hơi cúi đầu. Cúi đầu càng sâu thể hiện sự tôn trọng càng lớn, đặc biệt khi chào người lớn tuổi hơn hoặc có địa vị cao hơn.
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>👋 Tạm Biệt Đúng Cách: 안녕히 가세요 / 안녕히 계세요</h2>
+            <p>Khi nói "tạm biệt" trong tiếng Hàn, có hai cách chính tùy thuộc vào việc người nói hoặc người nghe đang đi hay ở lại:</p>
+            <h3>1. 안녕히 가세요 (Tạm biệt - Dành cho người rời đi)</h3>
+            <p>
+                <span class="korean-phrase">안녕히 가세요</span>
+                <span class="pronunciation">[An-nyeong-hi ga-se-yo]</span>
+                <a href="#" class="audio-icon" data-audio-text="안녕히 가세요">🔊</a>
+            </p>
+            <p class="translation">Nghĩa: Tạm biệt (Người ở lại nói với người đi)</p>
+            <p>Câu này nghĩa đen là "Hãy đi bình an nhé". Bạn dùng nó khi <strong>bạn ở lại</strong> và <strong>người kia rời đi</strong>.</p>
+
+            <h3>2. 안녕히 계세요 (Tạm biệt - Dành cho người ở lại)</h3>
+            <p>
+                <span class="korean-phrase">안녕히 계세요</span>
+                <span class="pronunciation">[An-nyeong-hi gye-se-yo]</span>
+                <a href="#" class="audio-icon" data-audio-text="안녕히 계세요">🔊</a>
+            </p>
+            <p class="translation">Nghĩa: Tạm biệt (Người đi nói với người ở lại)</p>
+            <p>Câu này nghĩa đen là "Hãy ở lại bình an nhé". Bạn dùng nó khi <strong>bạn rời đi</strong> và <strong>người kia ở lại</strong>.</p>
+
+            <div class="example-dialogue">
+                <div class="dialogue-line"><strong>Tình huống:</strong> Bạn đang ở nhà bạn của mình và ra về.</div>
+                <div class="dialogue-line"><strong>Bạn:</strong> 안녕히 계세요! <span class="pronunciation">[An-nyeong-hi gye-se-yo!]</span><a href="#" class="audio-icon" data-audio-text="안녕히 계세요">🔊</a></div>
+                <div class="dialogue-line"><em>(Tạm biệt nhé!)</em></div>
+                <div class="dialogue-line"><strong>Bạn của bạn:</strong> 안녕히 가세요! <span class="pronunciation">[An-nyeong-hi ga-se-yo!]</span><a href="#" class="audio-icon" data-audio-text="안녕히 가세요">🔊</a></div>
+                <div class="dialogue-line"><em>(Tạm biệt nhé!)</em></div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🤝 Rất Vui Được Gặp: 만나서 반갑습니다</h2>
+            <p>Khi bạn gặp ai đó lần đầu, đây là cách lịch sự để bày tỏ niềm vui được gặp họ.</p>
+            <p>
+                <span class="korean-phrase">만나서 반갑습니다</span>
+                <span class="pronunciation">[Man-na-seo ban-gap-seup-ni-da]</span>
+                <a href="#" class="audio-icon" data-audio-text="만나서 반갑습니다">🔊</a>
+            </p>
+            <p class="translation">Nghĩa: Rất vui được gặp bạn / Rất hân hạnh được gặp.</p>
+
+            <div class="example-dialogue">
+                <div class="dialogue-line"><strong>A:</strong> 안녕하세요. 만나서 반갑습니다. <span class="pronunciation">[An-nyeong-ha-se-yo. Man-na-seo ban-gap-seup-ni-da.]</span><a href="#" class="audio-icon" data-audio-text="만나서 반갑습니다">🔊</a></div>
+                <div class="dialogue-line"><em>(Xin chào. Rất vui được gặp bạn.)</em></div>
+                <div class="dialogue-line"><strong>B:</strong> 네, 만나서 반갑습니다. <span class="pronunciation">[Ne, man-na-seo ban-gap-seup-ni-da.]</span><a href="#" class="audio-icon" data-audio-text="네, 만나서 반갑습니다">🔊</a></div>
+                <div class="dialogue-line"><em>(Vâng, tôi cũng rất vui được gặp bạn.)</em></div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>🗣️ Giới Thiệu Bản Thân: 저는 [이름]입니다</h2>
+            <p>Đây là cách cơ bản và lịch sự nhất để giới thiệu tên của bạn trong tiếng Hàn.</p>
+            <p>
+                <span class="korean-phrase">저는 [Tên của bạn]입니다</span>
+                <span class="pronunciation">[Jeo-neun [i-reum] im-ni-da]</span>
+                <a href="#" class="audio-icon" data-audio-text="저는 [이름]입니다">🔊</a>
+            </p>
+            <p class="translation">Nghĩa: Tên của tôi là [Tên của bạn].</p>
+            <ul>
+                <li><strong>저 (jeo):</strong> Tôi (dạng khiêm tốn, lịch sự)</li>
+                <li><strong>-는 (-neun):</strong> Trợ từ chủ ngữ (giới thiệu chủ đề)</li>
+                <li><strong>[Tên của bạn]:</strong> Đặt tên của bạn vào đây</li>
+                <li><strong>입니다 (im-ni-da):</strong> Là (dạng lịch sự)</li>
+            </ul>
+
+            <div class="example-dialogue">
+                <div class="dialogue-line"><strong>Bạn:</strong> 안녕하세요. 저는 민지입니다. <span class="pronunciation">[An-nyeong-ha-se-yo. Jeo-neun Min-ji im-ni-da.]</span><a href="#" class="audio-icon" data-audio-text="안녕하세요. 저는 민지입니다">🔊</a></div>
+                <div class="dialogue-line"><em>(Xin chào. Tên tôi là Minji.)</em></div>
+                <div class="dialogue-line"><strong>Người kia:</strong> 만나서 반갑습니다, 민지 씨. <span class="pronunciation">[Man-na-seo ban-gap-seup-ni-da, Min-ji ssi.]</span><a href="#" class="audio-icon" data-audio-text="만나서 반갑습니다, 민지 씨">🔊</a></div>
+                <div class="dialogue-line"><em>(Rất vui được gặp bạn, Minji.)</em></div>
+            </div>
+            <div class="cultural-note">
+                <strong>💡 Lưu ý Văn hóa:</strong> Hậu tố "씨" (ssi) được thêm vào sau tên để thể hiện sự lịch sự, tương tự như "Mr." hoặc "Ms." trong tiếng Anh, nhưng dùng được cho cả nam và nữ.
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>💬 Các Biểu Thức Lịch Sự Cơ Bản Khác</h2>
+            <p>Ngoài các lời chào, đây là một số cụm từ lịch sự bạn sẽ dùng thường xuyên:</p>
+
+            <h3>1. Cảm ơn</h3>
+            <p>
+                <span class="korean-phrase">감사합니다</span>
+                <span class="pronunciation">[Gam-sa-ham-ni-da]</span>
+                <a href="#" class="audio-icon" data-audio-text="감사합니다">🔊</a>
+            </p>
+            <p class="translation">Nghĩa: Xin cảm ơn (lịch sự)</p>
+
+            <h3>2. Xin lỗi</h3>
+            <p>Có hai cách chính để nói "xin lỗi" tùy mức độ trang trọng:</p>
+            <ul>
+                <li>
+                    <span class="korean-phrase">죄송합니다</span>
+                    <span class="pronunciation">[Joe-song-ham-ni-da]</span>
+                    <a href="#" class="audio-icon" data-audio-text="죄송합니다">🔊</a>
+                    <span class="translation">(Rất xin lỗi, trang trọng, dùng khi hối lỗi hoặc gây phiền phức)</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">미안합니다</span>
+                    <span class="pronunciation">[Mi-an-ham-ni-da]</span>
+                    <a href="#" class="audio-icon" data-audio-text="미안합니다">🔊</a>
+                    <span class="translation">(Xin lỗi, ít trang trọng hơn, dùng cho lỗi nhỏ, thường giữa bạn bè thân hoặc khi bạn là người lớn tuổi hơn)</span>
+                </li>
+            </ul>
+
+            <h3>3. Vâng / Không</h3>
+            <ul>
+                <li>
+                    <span class="korean-phrase">네</span>
+                    <span class="pronunciation">[Ne]</span>
+                    <a href="#" class="audio-icon" data-audio-text="네">🔊</a>
+                    <span class="translation">(Vâng / Dạ / Đúng vậy)</span>
+                </li>
+                <li>
+                    <span class="korean-phrase">아니요</span>
+                    <span class="pronunciation">[A-ni-yo]</span>
+                    <a href="#" class="audio-icon" data-audio-text="아니요">🔊</a>
+                    <span class="translation">(Không)</span>
+                </li>
+            </ul>
+
+            <h3>4. Không sao đâu / Ổn rồi</h3>
+            <p>
+                <span class="korean-phrase">괜찮아요</span>
+                <span class="pronunciation">[Gwaen-chan-a-yo]</span>
+                <a href="#" class="audio-icon" data-audio-text="괜찮아요">🔊</a>
+            </p>
+            <p class="translation">Nghĩa: Không sao đâu / Tôi ổn / Tốt thôi</p>
+        </section>
+
+        <section class="practice-section">
+            <h2>📝 Luyện Tập!</h2>
+            <div class="practice-question">Chọn câu trả lời đúng nhất cho các tình huống sau:</div>
+
+            <div class="practice-question">1. Bạn đang rời khỏi một cửa hàng và muốn nói tạm biệt với người bán hàng. Bạn sẽ nói gì?</div>
+            <div class="practice-options">
+                <div class="practice-option" data-answer="incorrect">안녕히 가세요</div>
+                <div class="practice-option" data-answer="correct">안녕히 계세요</div>
+                <div class="practice-option" data-answer="incorrect">만나서 반갑습니다</div>
+            </div>
+
+            <div class="practice-question">2. Bạn gặp một người bạn mới tại lớp học tiếng Hàn. Bạn sẽ nói gì sau khi được giới thiệu?</div>
+            <div class="practice-options">
+                <div class="practice-option" data-answer="incorrect">감사합니다</div>
+                <div class="practice-option" data-answer="correct">만나서 반갑습니다</div>
+                <div class="practice-option" data-answer="incorrect">죄송합니다</div>
+            </div>
+
+            <div class="practice-question">3. Ai đó làm đổ cà phê lên áo bạn và nói "죄송합니다". Bạn muốn nói "Không sao đâu". Bạn sẽ nói gì?</div>
+            <div class="practice-options">
+                <div class="practice-option" data-answer="incorrect">아니요</div>
+                <div class="practice-option" data-answer="incorrect">안녕하세요</div>
+                <div class="practice-option" data-answer="correct">괜찮아요</div>
+            </div>
+            <p style="text-align: center; font-size: 0.9em; margin-top: 20px; padding: 0 20px;"><em>(Chạm vào một lựa chọn để xem đáp án!)</em></p>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ Tổng Kết Chương 2</h2>
+            <p>Chúc mừng bạn đã hoàn thành Chương 2! Bạn đã học được những cụm từ quan trọng để bắt đầu giao tiếp bằng tiếng Hàn:</p>
+            <ul>
+                <li><strong>안녕하세요:</strong> Chào hỏi phổ biến nhất, dùng cho cả "xin chào" và "tạm biệt".</li>
+                <li><strong>안녕히 가세요 / 안녕히 계세요:</strong> Hai cách nói "tạm biệt" tùy thuộc vào việc người nói hay người nghe rời đi/ở lại.</li>
+                <li><strong>만나서 반갑습니다:</strong> Cách lịch sự để nói "rất vui được gặp bạn".</li>
+                <li><strong>저는 [이름]입니다:</strong> Cách giới thiệu tên của mình.</li>
+                <li>Các cụm từ lịch sự khác như <strong>감사합니다</strong> (cảm ơn), <strong>죄송합니다/미안합니다</strong> (xin lỗi), <strong>네/아니요</strong> (vâng/không), và <strong>괜찮아요</strong> (không sao).</li>
+                <li>Hiểu được tầm quan trọng của việc <strong>cúi đầu</strong> và <strong>tính lịch sự</strong> trong văn hóa chào hỏi của Hàn Quốc.</li>
+            </ul>
+            <p style="text-align: center; margin-top: 20px; font-weight: bold;">Bạn đã sẵn sàng cho những cuộc hội thoại cơ bản rồi đó! 💪</p>
+        </section>
+    </div>
+
+    <script>
+        // Basic interactivity for practice section (for demonstration purposes)
+        // In a real mobile app, this would be handled by the native framework (e.g., React Native)
+        document.querySelectorAll('.practice-options').forEach(optionsContainer => {
+            optionsContainer.addEventListener('click', (event) => {
+                const clickedOption = event.target.closest('.practice-option');
+                if (clickedOption) {
+                    // Clear previous results for this question
+                    optionsContainer.querySelectorAll('.practice-option').forEach(option => {
+                        option.classList.remove('correct', 'incorrect');
+                    });
+
+                    // Apply new result
+                    if (clickedOption.dataset.answer === 'correct') {
+                        clickedOption.classList.add('correct');
+                    } else {
+                        clickedOption.classList.add('incorrect');
+                    }
+                }
+            });
+        });
+
+        // The audio playback is handled by the mobile frontend,
+        // so no JavaScript for audio here, only the data-audio-text attribute.
+    </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-08-02T15:02:45.210Z",
+  "lastUpdated": "2025-08-04T00:11:34.568Z",
   "totalLanguages": 6,
   "totalChapters": 60,
   "totalAvailableChapters": 50,
@@ -1155,14 +1155,16 @@
       "availableChapters": 10,
       "availableTargetLanguages": [
         "en",
-        "ja"
+        "ja",
+        "vi"
       ],
       "chapters": [
         {
           "number": 1,
           "title": {
             "en": "한글 (Hangul) - The Korean Alphabet",
-            "ja": "한글（ハングル）- 韓国語のアルファベット"
+            "ja": "한글（ハングル）- 韓国語のアルファベット",
+            "vi": "한글 (Hangul) - Bảng chữ cái tiếng Hàn"
           },
           "keyPoints": {
             "en": [
@@ -1178,19 +1180,28 @@
               "基本子音（ㄱ、ㄴ、ㄷ、ㄹ、ㅁ、ㅂ、ㅅ、ㅇ、ㅈ、ㅊ、ㅋ、ㅌ、ㅍ、ㅎ）",
               "簡単な音節の形成",
               "基本単語での読解練習"
+            ],
+            "vi": [
+              "Giới thiệu về Hangul và lịch sử hình thành",
+              "Nguyên âm cơ bản (ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, ㅣ)",
+              "Phụ âm cơ bản (ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ)",
+              "Cách tạo âm tiết đơn giản",
+              "Luyện đọc với các từ cơ bản"
             ]
           },
           "availableLanguages": [
             "en",
-            "ja"
+            "ja",
+            "vi"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         },
         {
           "number": 2,
           "title": {
             "en": "Basic Greetings and Introductions",
-            "ja": "基本的な挨拶と自己紹介"
+            "ja": "基本的な挨拶と自己紹介",
+            "vi": "Chào hỏi và giới thiệu cơ bản"
           },
           "keyPoints": {
             "en": [
@@ -1206,19 +1217,28 @@
               "만나서 반갑습니다（はじめまして）",
               "저는 [이름]입니다（私の名前は...です）",
               "基本的な丁寧な表現"
+            ],
+            "vi": [
+              "안녕하세요 (Xin chào/Tạm biệt)",
+              "안녕히 가세요 / 안녕히 계세요 (Tạm biệt)",
+              "만나서 반갑습니다 (Rất vui được gặp bạn)",
+              "저는 [이름]입니다 (Tôi tên là...)",
+              "Các cách nói lịch sự cơ bản"
             ]
           },
           "availableLanguages": [
             "en",
-            "ja"
+            "ja",
+            "vi"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         },
         {
           "number": 3,
           "title": {
             "en": "Numbers and Counting",
-            "ja": "数字と数え方"
+            "ja": "数字と数え方",
+            "vi": "Số đếm và đếm số"
           },
           "keyPoints": {
             "en": [
@@ -1234,19 +1254,28 @@
               "物を数えるための純粋韓国語数字",
               "年齢と人の数え方",
               "基本的な数学の語彙（더하기、빼기、곱하기、나누기）"
+            ],
+            "vi": [
+              "Số Hàn Quốc (일, 이, 삼, 사, 오, 육, 칠, 팔, 구, 십)",
+              "Số Hán-Hàn cho ngày tháng, tiền, số điện thoại",
+              "Số thuần Hàn để đếm đồ vật",
+              "Tuổi và đếm người",
+              "Từ vựng toán học cơ bản (더하기, 빼기, 곱하기, 나누기)"
             ]
           },
           "availableLanguages": [
             "en",
-            "ja"
+            "ja",
+            "vi"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         },
         {
           "number": 4,
           "title": {
             "en": "Colors and Descriptions",
-            "ja": "色と描写"
+            "ja": "色と描写",
+            "vi": "Màu sắc và mô tả"
           },
           "keyPoints": {
             "en": [
@@ -1262,19 +1291,28 @@
               "길다/짧다（長い/短い）",
               "예쁘다/못생기다（きれい/醜い）",
               "좋다/나쁘다（良い/悪い）"
+            ],
+            "vi": [
+              "Màu sắc cơ bản (빨간색, 파란색, 노란색, 초록색, 검은색, 흰색)",
+              "크다/작다 (to/lớn - nhỏ)",
+              "길다/짧다 (dài/ngắn)",
+              "예쁘다/못생기다 (đẹp/xấu)",
+              "좋다/나쁘다 (tốt/xấu)"
             ]
           },
           "availableLanguages": [
             "en",
-            "ja"
+            "ja",
+            "vi"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         },
         {
           "number": 5,
           "title": {
             "en": "Family and Relationships",
-            "ja": "家族と人間関係"
+            "ja": "家族と人間関係",
+            "vi": "Gia đình và mối quan hệ"
           },
           "keyPoints": {
             "en": [
@@ -1290,19 +1328,28 @@
               "선생님（先生）",
               "직장동료（同僚）",
               "敬語と丁寧な話し方のレベル"
+            ],
+            "vi": [
+              "Thành viên gia đình (아버지, 어머니, 형, 누나, 동생)",
+              "친구 (bạn)",
+              "선생님 (thầy/cô giáo)",
+              "직장동료 (đồng nghiệp)",
+              "Kính ngữ và các mức độ lịch sự"
             ]
           },
           "availableLanguages": [
             "en",
-            "ja"
+            "ja",
+            "vi"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         },
         {
           "number": 6,
           "title": {
             "en": "Daily Activities and Routines",
-            "ja": "日常の活動とルーティン"
+            "ja": "日常の活動とルーティン",
+            "vi": "Hoạt động hàng ngày và thói quen"
           },
           "keyPoints": {
             "en": [
@@ -1318,19 +1365,28 @@
               "마시다（飲む）",
               "공부하다（勉強する）",
               "일하다（働く）"
+            ],
+            "vi": [
+              "일어나다 (thức dậy)",
+              "먹다 (ăn)",
+              "마시다 (uống)",
+              "공부하다 (học)",
+              "일하다 (làm việc)"
             ]
           },
           "availableLanguages": [
             "en",
-            "ja"
+            "ja",
+            "vi"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         },
         {
           "number": 7,
           "title": {
             "en": "Food and Drinks",
-            "ja": "食べ物と飲み物"
+            "ja": "食べ物と飲み物",
+            "vi": "Thức ăn và đồ uống"
           },
           "keyPoints": {
             "en": [
@@ -1346,19 +1402,28 @@
               "불고기（プルゴギ）",
               "비빔밥（ビビンバ）",
               "커피（コーヒー）"
+            ],
+            "vi": [
+              "밥 (cơm/bữa ăn)",
+              "김치 (kimchi)",
+              "불고기 (bulgogi)",
+              "비빔밥 (bibimbap)",
+              "커피 (cà phê)"
             ]
           },
           "availableLanguages": [
             "en",
-            "ja"
+            "ja",
+            "vi"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         },
         {
           "number": 8,
           "title": {
             "en": "Places and Directions",
-            "ja": "場所と方向"
+            "ja": "場所と方向",
+            "vi": "Địa điểm và phương hướng"
           },
           "keyPoints": {
             "en": [
@@ -1374,19 +1439,28 @@
               "회사（会社/オフィス）",
               "병원（病院）",
               "은행（銀行）"
+            ],
+            "vi": [
+              "집 (nhà)",
+              "학교 (trường học)",
+              "회사 (công ty/văn phòng)",
+              "병원 (bệnh viện)",
+              "은행 (ngân hàng)"
             ]
           },
           "availableLanguages": [
             "en",
-            "ja"
+            "ja",
+            "vi"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         },
         {
           "number": 9,
           "title": {
             "en": "Weather and Seasons",
-            "ja": "天気と季節"
+            "ja": "天気と季節",
+            "vi": "Thời tiết và mùa"
           },
           "keyPoints": {
             "en": [
@@ -1402,19 +1476,28 @@
               "덥다/춥다（暑い/寒い）",
               "비가 오다/눈이 오다（雨が降る/雪が降る）",
               "봄、여름、가을、겨울（春、夏、秋、冬）"
+            ],
+            "vi": [
+              "날씨 (thời tiết)",
+              "맑다/흐리다 (trời quang/mây mù)",
+              "덥다/춥다 (nóng/lạnh)",
+              "비가 오다/눈이 오다 (mưa/tuyết rơi)",
+              "봄, 여름, 가을, 겨울 (xuân, hè, thu, đông)"
             ]
           },
           "availableLanguages": [
             "en",
-            "ja"
+            "ja",
+            "vi"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         },
         {
           "number": 10,
           "title": {
             "en": "Time and Schedules",
-            "ja": "時間とスケジュール"
+            "ja": "時間とスケジュール",
+            "vi": "Thời gian và lịch trình"
           },
           "keyPoints": {
             "en": [
@@ -1430,13 +1513,21 @@
               "시（時）",
               "요일（曜日）",
               "월、화、수、목、금、토、일"
+            ],
+            "vi": [
+              "시간 (thời gian)",
+              "분 (phút)",
+              "시 (giờ)",
+              "요일 (ngày trong tuần)",
+              "월, 화, 수, 목, 금, 토, 일"
             ]
           },
           "availableLanguages": [
             "en",
-            "ja"
+            "ja",
+            "vi"
           ],
-          "totalLanguages": 2
+          "totalLanguages": 3
         }
       ]
     },
@@ -2450,7 +2541,8 @@
           "chapterNumber": 1,
           "chapterTitle": {
             "en": "한글 (Hangul) - The Korean Alphabet",
-            "ja": "한글（ハングル）- 韓国語のアルファベット"
+            "ja": "한글（ハングル）- 韓国語のアルファベット",
+            "vi": "한글 (Hangul) - Bảng chữ cái tiếng Hàn"
           }
         },
         {
@@ -2459,7 +2551,8 @@
           "chapterNumber": 2,
           "chapterTitle": {
             "en": "Basic Greetings and Introductions",
-            "ja": "基本的な挨拶と自己紹介"
+            "ja": "基本的な挨拶と自己紹介",
+            "vi": "Chào hỏi và giới thiệu cơ bản"
           }
         },
         {
@@ -2468,7 +2561,8 @@
           "chapterNumber": 3,
           "chapterTitle": {
             "en": "Numbers and Counting",
-            "ja": "数字と数え方"
+            "ja": "数字と数え方",
+            "vi": "Số đếm và đếm số"
           }
         },
         {
@@ -2477,7 +2571,8 @@
           "chapterNumber": 4,
           "chapterTitle": {
             "en": "Colors and Descriptions",
-            "ja": "色と描写"
+            "ja": "色と描写",
+            "vi": "Màu sắc và mô tả"
           }
         },
         {
@@ -2486,7 +2581,8 @@
           "chapterNumber": 5,
           "chapterTitle": {
             "en": "Family and Relationships",
-            "ja": "家族と人間関係"
+            "ja": "家族と人間関係",
+            "vi": "Gia đình và mối quan hệ"
           }
         },
         {
@@ -2495,7 +2591,8 @@
           "chapterNumber": 6,
           "chapterTitle": {
             "en": "Daily Activities and Routines",
-            "ja": "日常の活動とルーティン"
+            "ja": "日常の活動とルーティン",
+            "vi": "Hoạt động hàng ngày và thói quen"
           }
         },
         {
@@ -2504,7 +2601,8 @@
           "chapterNumber": 7,
           "chapterTitle": {
             "en": "Food and Drinks",
-            "ja": "食べ物と飲み物"
+            "ja": "食べ物と飲み物",
+            "vi": "Thức ăn và đồ uống"
           }
         },
         {
@@ -2513,7 +2611,8 @@
           "chapterNumber": 8,
           "chapterTitle": {
             "en": "Places and Directions",
-            "ja": "場所と方向"
+            "ja": "場所と方向",
+            "vi": "Địa điểm và phương hướng"
           }
         },
         {
@@ -2522,7 +2621,8 @@
           "chapterNumber": 9,
           "chapterTitle": {
             "en": "Weather and Seasons",
-            "ja": "天気と季節"
+            "ja": "天気と季節",
+            "vi": "Thời tiết và mùa"
           }
         },
         {
@@ -2531,7 +2631,8 @@
           "chapterNumber": 10,
           "chapterTitle": {
             "en": "Time and Schedules",
-            "ja": "時間とスケジュール"
+            "ja": "時間とスケジュール",
+            "vi": "Thời gian và lịch trình"
           }
         },
         {
@@ -2859,6 +2960,106 @@
             "es": "Tu Primer Párrafo en Japonés",
             "vi": "Thời gian và lịch trình",
             "zh": "Your First Japanese Paragraph"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 1,
+          "chapterTitle": {
+            "en": "한글 (Hangul) - The Korean Alphabet",
+            "ja": "한글（ハングル）- 韓国語のアルファベット",
+            "vi": "한글 (Hangul) - Bảng chữ cái tiếng Hàn"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 2,
+          "chapterTitle": {
+            "en": "Basic Greetings and Introductions",
+            "ja": "基本的な挨拶と自己紹介",
+            "vi": "Chào hỏi và giới thiệu cơ bản"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 3,
+          "chapterTitle": {
+            "en": "Numbers and Counting",
+            "ja": "数字と数え方",
+            "vi": "Số đếm và đếm số"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 4,
+          "chapterTitle": {
+            "en": "Colors and Descriptions",
+            "ja": "色と描写",
+            "vi": "Màu sắc và mô tả"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 5,
+          "chapterTitle": {
+            "en": "Family and Relationships",
+            "ja": "家族と人間関係",
+            "vi": "Gia đình và mối quan hệ"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 6,
+          "chapterTitle": {
+            "en": "Daily Activities and Routines",
+            "ja": "日常の活動とルーティン",
+            "vi": "Hoạt động hàng ngày và thói quen"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 7,
+          "chapterTitle": {
+            "en": "Food and Drinks",
+            "ja": "食べ物と飲み物",
+            "vi": "Thức ăn và đồ uống"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 8,
+          "chapterTitle": {
+            "en": "Places and Directions",
+            "ja": "場所と方向",
+            "vi": "Địa điểm và phương hướng"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 9,
+          "chapterTitle": {
+            "en": "Weather and Seasons",
+            "ja": "天気と季節",
+            "vi": "Thời tiết và mùa"
+          }
+        },
+        {
+          "languageLearn": "ko",
+          "languageLearnName": "Korean",
+          "chapterNumber": 10,
+          "chapterTitle": {
+            "en": "Time and Schedules",
+            "ja": "時間とスケジュール",
+            "vi": "Thời gian và lịch trình"
           }
         }
       ]
@@ -3283,7 +3484,8 @@
           "chapterNumber": 1,
           "chapterTitle": {
             "en": "한글 (Hangul) - The Korean Alphabet",
-            "ja": "한글（ハングル）- 韓国語のアルファベット"
+            "ja": "한글（ハングル）- 韓国語のアルファベット",
+            "vi": "한글 (Hangul) - Bảng chữ cái tiếng Hàn"
           }
         },
         {
@@ -3292,7 +3494,8 @@
           "chapterNumber": 2,
           "chapterTitle": {
             "en": "Basic Greetings and Introductions",
-            "ja": "基本的な挨拶と自己紹介"
+            "ja": "基本的な挨拶と自己紹介",
+            "vi": "Chào hỏi và giới thiệu cơ bản"
           }
         },
         {
@@ -3301,7 +3504,8 @@
           "chapterNumber": 3,
           "chapterTitle": {
             "en": "Numbers and Counting",
-            "ja": "数字と数え方"
+            "ja": "数字と数え方",
+            "vi": "Số đếm và đếm số"
           }
         },
         {
@@ -3310,7 +3514,8 @@
           "chapterNumber": 4,
           "chapterTitle": {
             "en": "Colors and Descriptions",
-            "ja": "色と描写"
+            "ja": "色と描写",
+            "vi": "Màu sắc và mô tả"
           }
         },
         {
@@ -3319,7 +3524,8 @@
           "chapterNumber": 5,
           "chapterTitle": {
             "en": "Family and Relationships",
-            "ja": "家族と人間関係"
+            "ja": "家族と人間関係",
+            "vi": "Gia đình và mối quan hệ"
           }
         },
         {
@@ -3328,7 +3534,8 @@
           "chapterNumber": 6,
           "chapterTitle": {
             "en": "Daily Activities and Routines",
-            "ja": "日常の活動とルーティン"
+            "ja": "日常の活動とルーティン",
+            "vi": "Hoạt động hàng ngày và thói quen"
           }
         },
         {
@@ -3337,7 +3544,8 @@
           "chapterNumber": 7,
           "chapterTitle": {
             "en": "Food and Drinks",
-            "ja": "食べ物と飲み物"
+            "ja": "食べ物と飲み物",
+            "vi": "Thức ăn và đồ uống"
           }
         },
         {
@@ -3346,7 +3554,8 @@
           "chapterNumber": 8,
           "chapterTitle": {
             "en": "Places and Directions",
-            "ja": "場所と方向"
+            "ja": "場所と方向",
+            "vi": "Địa điểm và phương hướng"
           }
         },
         {
@@ -3355,7 +3564,8 @@
           "chapterNumber": 9,
           "chapterTitle": {
             "en": "Weather and Seasons",
-            "ja": "天気と季節"
+            "ja": "天気と季節",
+            "vi": "Thời tiết và mùa"
           }
         },
         {
@@ -3364,7 +3574,8 @@
           "chapterNumber": 10,
           "chapterTitle": {
             "en": "Time and Schedules",
-            "ja": "時間とスケジュール"
+            "ja": "時間とスケジュール",
+            "vi": "Thời gian và lịch trình"
           }
         },
         {

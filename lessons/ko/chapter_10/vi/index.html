@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Thời gian và Lịch trình</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        /* Responsive Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.5em; /* ~24px */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 1.2em; /* ~19.2px */
+            margin-top: 20px;
+        }
+
+        /* Chapter Header Specific Styles */
+        .chapter-title {
+            margin: 20px 0;
+            text-align: center;
+            color: #2C3E50; /* Dark blue */
+            font-size: 28px; /* Slightly larger for main chapter title */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+            padding: 0 15px; /* Add some padding to prevent image from touching edges on small screens */
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Constrain max width for larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            display: block; /* Ensures margin auto works horizontally */
+            margin: 0 auto; /* Centers the image */
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none; /* Remove default bullet points */
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #E0E0E0;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+
+        /* Highlighted Text */
+        .highlight {
+            color: #8B5FBF; /* Primary: Purple */
+            font-weight: bold;
+        }
+
+        .korean-word {
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue for Korean terms */
+        }
+
+        .pronunciation {
+            font-style: italic;
+            color: #888; /* Slightly lighter for pronunciation guide */
+            font-size: 0.9em;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #8B5FBF; /* Primary: Purple */
+            vertical-align: middle;
+            padding: 10px; /* For touch target */
+            min-width: 44px; /* Ensure touch friendliness */
+            min-height: 44px; /* Ensure touch friendliness */
+            display: inline-flex; /* To center icon if it were smaller */
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease-in-out;
+            margin-left: 5px; /* Space from text */
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Examples Section */
+        .example-box {
+            background-color: #f0f0f0; /* A slightly lighter gray for examples */
+            border-left: 5px solid #8B5FBF; /* Primary color accent */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .example-box p {
+            margin: 0;
+            padding: 5px 0;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #fcfcfc; /* A very light color for practice sections */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #E0E0E0;
+        }
+
+        .practice-question:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .practice-question strong {
+            color: #2C3E50;
+        }
+
+        .answer-hint {
+            margin-top: 10px;
+            font-style: italic;
+            color: #8B5FBF; /* Primary color for hint */
+            border-top: 1px dotted #e0e0e0;
+            padding-top: 8px;
+        }
+
+        .note {
+            font-style: italic;
+            color: #777;
+            font-size: 0.95em;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-left: 3px solid #E0E0E0;
+            border-radius: 4px;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #f8f8f8;
+            border-top: 2px solid #8B5FBF;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+        }
+
+        .summary-section h2 {
+            border-bottom: none;
+            text-align: center;
+        }
+
+        .summary-section ul {
+            padding-left: 20px;
+            list-style-type: disc; /* Use standard disc bullets for summary list */
+        }
+
+        .summary-section li {
+            border-bottom: none;
+            padding: 5px 0;
+        }
+
+        /* Small screen adjustments */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.3em;
+            }
+            h3 {
+                font-size: 1.1em;
+            }
+            .example-box, .practice-section {
+                padding: 12px;
+            }
+            .audio-icon {
+                font-size: 20px;
+                min-width: 40px;
+                min-height: 40px;
+                padding: 8px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 10: Thời gian và Lịch trình</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>Chào mừng đến với Chương 10: Thời gian và Lịch trình! ⏳🗓️</h2>
+            <p>Trong chương này, chúng ta sẽ khám phá cách nói về thời gian, ngày tháng và cách lên kế hoạch trong tiếng Hàn. Nắm vững chủ đề này sẽ giúp bạn dễ dàng hẹn hò, đặt lịch và giao tiếp hàng ngày hơn rất nhiều!</p>
+            <p>Hãy cùng bắt đầu nhé!</p>
+        </section>
+
+        <section>
+            <h2>1. Thời gian: 시 (giờ) và 분 (phút)</h2>
+            <p>Để nói về thời gian trong tiếng Hàn, chúng ta sử dụng kết hợp số <strong class="highlight">thuần Hàn</strong> cho giờ (<span class="korean-word">시</span>) và số <strong class="highlight">Hán-Hàn</strong> cho phút (<span class="korean-word">분</span>).</p>
+
+            <h3>✨ Giờ (<span class="korean-word">시</span> - <span class="pronunciation">[si]</span>)</h3>
+            <p>Sử dụng số thuần Hàn cho giờ (1-12). Hãy nhớ lại cách đếm số thuần Hàn!</p>
+            <ul>
+                <li><span class="korean-word">한 시</span> <button class="audio-icon" data-audio-text="한 시">🔊</button> - Một giờ</li>
+                <li><span class="korean-word">두 시</span> <button class="audio-icon" data-audio-text="두 시">🔊</button> - Hai giờ</li>
+                <li><span class="korean-word">세 시</span> <button class="audio-icon" data-audio-text="세 시">🔊</button> - Ba giờ</li>
+                <li><span class="korean-word">네 시</span> <button class="audio-icon" data-audio-text="네 시">🔊</button> - Bốn giờ</li>
+                <li><span class="korean-word">다섯 시</span> <button class="audio-icon" data-audio-text="다섯 시">🔊</button> - Năm giờ</li>
+                <li><span class="korean-word">여섯 시</span> <button class="audio-icon" data-audio-text="여섯 시">🔊</button> - Sáu giờ</li>
+                <li>... và tiếp tục đến <span class="korean-word">열두 시</span> (mười hai giờ).</li>
+            </ul>
+            <p class="note">⚠️ Lưu ý: Khi nói 1, 2, 3, 4 giờ, số thuần Hàn <span class="korean-word">하나, 둘, 셋, 넷</span> sẽ biến đổi thành <span class="korean-word">한, 두, 세, 네</span> khi đi kèm với <span class="korean-word">시</span>.</p>
+
+            <h3>✨ Phút (<span class="korean-word">분</span> - <span class="pronunciation">[bun]</span>)</h3>
+            <p>Sử dụng số Hán-Hàn cho phút. Đây là lúc các số Hán-Hàn phát huy tác dụng!</p>
+            <ul>
+                <li><span class="korean-word">일 분</span> <button class="audio-icon" data-audio-text="일 분">🔊</button> - Một phút</li>
+                <li><span class="korean-word">십 분</span> <button class="audio-icon" data-audio-text="십 분">🔊</button> - Mười phút</li>
+                <li><span class="korean-word">삼십 분</span> <button class="audio-icon" data-audio-text="삼십 분">🔊</button> - Ba mươi phút</li>
+            </ul>
+
+            <h3>➡️ Ví dụ về cách nói giờ đầy đủ:</h3>
+            <div class="example-box">
+                <p><span class="korean-word">오전 아홉 시 삼십 오 분</span> <button class="audio-icon" data-audio-text="오전 아홉 시 삼십 오 분">🔊</button> - 9:35 sáng</p>
+                <p><span class="korean-word">오후 두 시</span> <button class="audio-icon" data-audio-text="오후 두 시">🔊</button> - 2:00 chiều</p>
+                <p><span class="korean-word">다섯 시 십 분</span> <button class="audio-icon" data-audio-text="다섯 시 십 분">🔊</button> - 5:10</p>
+                <p><span class="korean-word">여덟 시 오십 분</span> <button class="audio-icon" data-audio-text="여덟 시 오십 분">🔊</button> - 8:50</p>
+            </div>
+            <p>Để chỉ sáng/chiều, bạn dùng <span class="korean-word">오전</span> (<span class="pronunciation">[o-jeon]</span> - AM) và <span class="korean-word">오후</span> (<span class="pronunciation">[o-hu]</span> - PM).</p>
+
+            <h3>✨ Thời lượng (<span class="korean-word">시간</span> - <span class="pronunciation">[si-gan]</span>)</h3>
+            <p>Khi nói về <strong class="highlight">khoảng thời gian</strong> (ví dụ: 2 tiếng, 30 phút), chúng ta cũng dùng số <strong class="highlight">thuần Hàn</strong> cho giờ và số <strong class="highlight">Hán-Hàn</strong> cho phút, và thêm từ <span class="korean-word">시간</span> (thời gian) sau số giờ.</p>
+            <ul>
+                <li><span class="korean-word">두 시간</span> <button class="audio-icon" data-audio-text="두 시간">🔊</button> - Hai tiếng</li>
+                <li><span class="korean-word">삼십 분</span> <button class="audio-icon" data-audio-text="삼십 분">🔊</button> - Ba mươi phút</li>
+                <li><span class="korean-word">한 시간 반</span> <button class="audio-icon" data-audio-text="한 시간 반">🔊</button> - Một tiếng rưỡi (반 <span class="pronunciation">[ban]</span> = một nửa)</li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h2>Luyện tập 1: Nói giờ</h2>
+            <p>Hãy thử nói các giờ sau bằng tiếng Hàn. Nhấn nút 🔊 để nghe cách đọc đúng nhé!</p>
+
+            <div class="practice-question">
+                <strong>1. 3:00 chiều</strong>
+                <p class="answer-hint">Đáp án: <span class="korean-word">오후 세 시</span> <button class="audio-icon" data-audio-text="오후 세 시">🔊</button></p>
+            </div>
+
+            <div class="practice-question">
+                <strong>2. 7:45 sáng</strong>
+                <p class="answer-hint">Đáp án: <span class="korean-word">오전 일곱 시 사십오 분</span> <button class="audio-icon" data-audio-text="오전 일곱 시 사십오 분">🔊</button></p>
+            </div>
+
+            <div class="practice-question">
+                <strong>3. 10:05 tối</strong>
+                <p class="answer-hint">Đáp án: <span class="korean-word">오후 열 시 오 분</span> <button class="audio-icon" data-audio-text="오후 열 시 오 분">🔊</button></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Ngày trong tuần (<span class="korean-word">요일</span> - <span class="pronunciation">[yo-il]</span>)</h2>
+            <p>Các ngày trong tuần trong tiếng Hàn được đặt tên theo các yếu tố tự nhiên (mặt trăng, lửa, nước, cây, kim loại, đất, mặt trời).</p>
+            <ul>
+                <li><span class="korean-word">월요일</span> <button class="audio-icon" data-audio-text="월요일">🔊</button> - Thứ Hai (월: trăng/tháng)</li>
+                <li><span class="korean-word">화요일</span> <button class="audio-icon" data-audio-text="화요일">🔊</button> - Thứ Ba (화: lửa)</li>
+                <li><span class="korean-word">수요일</span> <button class="audio-icon" data-audio-text="수요일">🔊</button> - Thứ Tư (수: nước)</li>
+                <li><span class="korean-word">목요일</span> <button class="audio-icon" data-audio-text="목요일">🔊</button> - Thứ Năm (목: cây/gỗ)</li>
+                <li><span class="korean-word">금요일</span> <button class="audio-icon" data-audio-text="금요일">🔊</button> - Thứ Sáu (금: kim loại/vàng)</li>
+                <li><span class="korean-word">토요일</span> <button class="audio-icon" data-audio-text="토요일">🔊</button> - Thứ Bảy (토: đất)</li>
+                <li><span class="korean-word">일요일</span> <button class="audio-icon" data-audio-text="일요일">🔊</button> - Chủ Nhật (일: mặt trời/ngày)</li>
+            </ul>
+            <p>Để hỏi "Hôm nay là thứ mấy?", bạn dùng <span class="korean-word">오늘 무슨 요일이에요?</span> <button class="audio-icon" data-audio-text="오늘 무슨 요일이에요?">🔊</button></p>
+        </section>
+
+        <section>
+            <h2>3. Ngày tháng (<span class="korean-word">날짜</span> - <span class="pronunciation">[nal-jja]</span>)</h2>
+            <p>Nói ngày tháng trong tiếng Hàn cũng dùng số Hán-Hàn và theo thứ tự Năm - Tháng - Ngày.</p>
+            <ul>
+                <li>Năm: <span class="korean-word">년</span> (<span class="pronunciation">[nyeon]</span>)</li>
+                <li>Tháng: <span class="korean-word">월</span> (<span class="pronunciation">[wol]</span>)</li>
+                <li>Ngày: <span class="korean-word">일</span> (<span class="pronunciation">[il]</span>)</li>
+            </ul>
+
+            <h3>➡️ Ví dụ:</h3>
+            <div class="example-box">
+                <p><span class="korean-word">이천이십삼 년 시월 이십육 일</span> <button class="audio-icon" data-audio-text="이천이십삼 년 시월 이십육 일">🔊</button></p>
+                <p>2023년 10월 26일 - Ngày 26 tháng 10 năm 2023</p>
+                <p><span class="korean-word">육월 오 일</span> <button class="audio-icon" data-audio-text="육월 오 일">🔊</button></p>
+                <p>6월 5일 - Ngày 5 tháng 6</p>
+            </div>
+            <p class="note">⚠️ Lưu ý đặc biệt: Tháng 6 (<span class="korean-word">육월</span>) và Tháng 10 (<span class="korean-word">십월</span>) khi nói sẽ rút gọn thành <span class="korean-word">유월</span> và <span class="korean-word">시월</span>. Đây là một ngoại lệ cần nhớ!</p>
+            <ul>
+                <li><span class="korean-word">유월</span> <button class="audio-icon" data-audio-text="유월">🔊</button> - Tháng 6</li>
+                <li><span class="korean-word">시월</span> <button class="audio-icon" data-audio-text="시월">🔊</button> - Tháng 10</li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h2>Luyện tập 2: Ngày và Ngày tháng</h2>
+            <p>Hãy thử nói các ngày và ngày tháng sau bằng tiếng Hàn.</p>
+
+            <div class="practice-question">
+                <strong>1. Thứ Tư</strong>
+                <p class="answer-hint">Đáp án: <span class="korean-word">수요일</span> <button class="audio-icon" data-audio-text="수요일">🔊</button></p>
+            </div>
+
+            <div class="practice-question">
+                <strong>2. Ngày 1 tháng 1 năm 2024</strong>
+                <p class="answer-hint">Đáp án: <span class="korean-word">이천이십사 년 일월 일 일</span> <button class="audio-icon" data-audio-text="이천이십사 년 일월 일 일">🔊</button></p>
+            </div>
+
+            <div class="practice-question">
+                <strong>3. Ngày 15 tháng 6 (lưu ý ngoại lệ!)</strong>
+                <p class="answer-hint">Đáp án: <span class="korean-word">유월 십오 일</span> <button class="audio-icon" data-audio-text="유월 십오 일">🔊</button></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Hẹn hò và lên kế hoạch (<span class="korean-word">약속</span> - <span class="pronunciation">[yak-sok]</span>)</h2>
+            <p><span class="korean-word">약속</span> có nghĩa là "cuộc hẹn", "lời hứa" hoặc "cam kết". Đây là một từ rất quan trọng trong việc sắp xếp lịch trình!</p>
+
+            <h3>Các cụm từ hữu ích:</h3>
+            <ul>
+                <li><span class="korean-word">시간 있어요?</span> <button class="audio-icon" data-audio-text="시간 있어요?">🔊</button> - Bạn có thời gian không? (Có rảnh không?)</li>
+                <li><span class="korean-word">언제 만날까요?</span> <button class="audio-icon" data-audio-text="언제 만날까요?">🔊</button> - Chúng ta gặp nhau khi nào?</li>
+                <li><span class="korean-word">몇 시에 만날까요?</span> <button class="audio-icon" data-audio-text="몇 시에 만날까요?">🔊</button> - Chúng ta gặp nhau lúc mấy giờ?</li>
+                <li><span class="korean-word">어디에서 만날까요?</span> <button class="audio-icon" data-audio-text="어디에서 만날까요?">🔊</button> - Chúng ta gặp nhau ở đâu?</li>
+                <li><span class="korean-word">약속을 정하다</span> <button class="audio-icon" data-audio-text="약속을 정하다">🔊</button> - Đặt lịch hẹn</li>
+                <li><span class="korean-word">약속을 취소하다</span> <button class="audio-icon" data-audio-text="약속을 취소하다">🔊</button> - Hủy lịch hẹn</li>
+                <li><span class="korean-word">예약하다</span> <button class="audio-icon" data-audio-text="예약하다">🔊</button> - Đặt chỗ (nhà hàng, khách sạn...)</li>
+            </ul>
+
+            <h3>➡️ Ví dụ hội thoại:</h3>
+            <div class="example-box">
+                <p>A: <span class="korean-word">주말에 시간 있어요?</span> <button class="audio-icon" data-audio-text="주말에 시간 있어요?">🔊</button> - Cuối tuần bạn có rảnh không?</p>
+                <p>B: <span class="korean-word">네, 있어요. 왜요?</span> <button class="audio-icon" data-audio-text="네, 있어요. 왜요?">🔊</button> - Có, có rảnh. Sao vậy?</p>
+                <p>A: <span class="korean-word">그럼, 토요일 오후 두 시에 만날까요?</span> <button class="audio-icon" data-audio-text="그럼, 토요일 오후 두 시에 만날까요?">🔊</button> - Vậy, chúng ta gặp nhau vào 2 giờ chiều thứ Bảy nhé?</p>
+                <p>B: <span class="korean-word">좋아요!</span> <button class="audio-icon" data-audio-text="좋아요!">🔊</button> - Tốt thôi!</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. Các biểu đạt thời gian: Quá khứ, Hiện tại, Tương lai</h2>
+            <p>Để dễ dàng nói về các sự kiện đã, đang hoặc sẽ xảy ra, hãy nắm vững các từ chỉ thời gian này!</p>
+            <ul>
+                <li><strong>Hôm nay:</strong> <span class="korean-word">오늘</span> <button class="audio-icon" data-audio-text="오늘">🔊</button> <span class="pronunciation">[o-neul]</span></li>
+                <li><strong>Hôm qua:</strong> <span class="korean-word">어제</span> <button class="audio-icon" data-audio-text="어제">🔊</button> <span class="pronunciation">[eo-je]</span></li>
+                <li><strong>Ngày mai:</strong> <span class="korean-word">내일</span> <button class="audio-icon" data-audio-text="내일">🔊</button> <span class="pronunciation">[nae-il]</span></li>
+                <li><strong>Sáng nay:</strong> <span class="korean-word">오늘 아침</span> <button class="audio-icon" data-audio-text="오늘 아침">🔊</button></li>
+                <li><strong>Tối nay:</strong> <span class="korean-word">오늘 저녁</span> <button class="audio-icon" data-audio-text="오늘 저녁">🔊</button></li>
+            </ul>
+
+            <ul>
+                <li><strong>Tuần này:</strong> <span class="korean-word">이번 주</span> <button class="audio-icon" data-audio-text="이번 주">🔊</button> <span class="pronunciation">[i-beon ju]</span></li>
+                <li><strong>Tuần trước:</strong> <span class="korean-word">지난 주</span> <button class="audio-icon" data-audio-text="지난 주">🔊</button> <span class="pronunciation">[ji-nan ju]</span></li>
+                <li><strong>Tuần sau:</strong> <span class="korean-word">다음 주</span> <button class="audio-icon" data-audio-text="다음 주">🔊</button> <span class="pronunciation">[da-eum ju]</span></li>
+            </ul>
+
+            <ul>
+                <li><strong>Tháng này:</strong> <span class="korean-word">이번 달</span> <button class="audio-icon" data-audio-text="이번 달">🔊</button> <span class="pronunciation">[i-beon dal]</span></li>
+                <li><strong>Tháng trước:</strong> <span class="korean-word">지난 달</span> <button class="audio-icon" data-audio-text="지난 달">🔊</button> <span class="pronunciation">[ji-nan dal]</span></li>
+                <li><strong>Tháng sau:</strong> <span class="korean-word">다음 달</span> <button class="audio-icon" data-audio-text="다음 달">🔊</button> <span class="pronunciation">[da-eum dal]</span></li>
+            </ul>
+
+            <ul>
+                <li><strong>Năm nay:</strong> <span class="korean-word">올해</span> <button class="audio-icon" data-audio-text="올해">🔊</button> <span class="pronunciation">[ol-hae]</span></li>
+                <li><strong>Năm ngoái:</strong> <span class="korean-word">작년</span> <button class="audio-icon" data-audio-text="작년">🔊</button> <span class="pronunciation">[jak-nyeon]</span></li>
+                <li><strong>Năm sau:</strong> <span class="korean-word">내년</span> <button class="audio-icon" data-audio-text="내년">🔊</button> <span class="pronunciation">[nae-nyeon]</span></li>
+            </ul>
+
+            <h3>➡️ Ví dụ câu:</h3>
+            <div class="example-box">
+                <p><span class="korean-word">저는 어제 영화를 봤어요.</span> <button class="audio-icon" data-audio-text="저는 어제 영화를 봤어요.">🔊</button></p>
+                <p>Tôi đã xem phim ngày hôm qua.</p>
+                <p><span class="korean-word">다음 주에 한국에 갈 거예요.</span> <button class="audio-icon" data-audio-text="다음 주에 한국에 갈 거예요.">🔊</button></p>
+                <p>Tôi sẽ đi Hàn Quốc vào tuần tới.</p>
+                <p><span class="korean-word">오늘 저녁에 뭐 할 거예요?</span> <button class="audio-icon" data-audio-text="오늘 저녁에 뭐 할 거예요?">🔊</button></p>
+                <p>Tối nay bạn sẽ làm gì?</p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>🎉 Tóm tắt Chương 10 🎉</h2>
+            <p>Tuyệt vời! Bạn đã hoàn thành Chương 10!</p>
+            <p>Trong chương này, chúng ta đã học được:</p>
+            <ul>
+                <li>Cách nói <span class="highlight">giờ (<span class="korean-word">시</span>)</span> bằng số thuần Hàn và <span class="highlight">phút (<span class="korean-word">분</span>)</span> bằng số Hán-Hàn.</li>
+                <li>Các ngày trong tuần từ <span class="highlight">Thứ Hai (<span class="korean-word">월요일</span>)</span> đến <span class="highlight">Chủ Nhật (<span class="korean-word">일요일</span>)</span>.</li>
+                <li>Cách nói <span class="highlight">ngày tháng (<span class="korean-word">년, 월, 일</span>)</span> và các ngoại lệ như <span class="korean-word">유월, 시월</span>.</li>
+                <li>Các cụm từ cần thiết để <span class="highlight">lên kế hoạch và hẹn hò (<span class="korean-word">약속</span>)</span>.</li>
+                <li>Các biểu đạt thời gian cho <span class="highlight">quá khứ, hiện tại và tương lai</span>.</li>
+            </ul>
+            <p>Hãy tiếp tục luyện tập các từ và cụm từ này để sử dụng chúng một cách tự tin hơn trong giao tiếp hàng ngày nhé! 🌟</p>
+        </section>
+    </div>
+</body>
+</html>

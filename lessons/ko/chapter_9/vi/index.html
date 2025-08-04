@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 9: Thời tiết và Mùa</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #666666; /* Body Text: Medium gray */
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling on orientation change */
+            text-rendering: optimizeLegibility;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .container {
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto;
+            padding: 15px;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Header Structure */
+        .chapter-title {
+            font-size: 28px; /* Slightly larger for main title */
+            color: #2C3E50; /* Text: Dark blue */
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            padding: 0 10px; /* Add padding for small screens */
+            box-sizing: border-box;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Lesson Sections */
+        .lesson-section {
+            background-color: #FFFFFF; /* White background for sections */
+            padding: 20px 15px; /* Ample padding for touch */
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            box-sizing: border-box;
+        }
+
+        .lesson-section h2, .lesson-section h3, .lesson-section h4 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 22px; /* Base for h2 */
+        }
+
+        .lesson-section h3 {
+            font-size: 20px; /* Base for h3 */
+        }
+
+        .lesson-section h4 {
+            font-size: 18px; /* Base for h4 */
+        }
+
+        .lesson-section p {
+            font-size: 16px; /* Minimum 16px for body text */
+            margin-bottom: 10px;
+            color: #666666; /* Body Text: Medium gray */
+        }
+
+        .lesson-section ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: 15px;
+        }
+
+        .lesson-section ul li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+            color: #666666;
+        }
+
+        .lesson-section ul li::before {
+            content: '👉'; /* Unicode arrow or other suitable bullet */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary color for bullets */
+        }
+
+        /* Korean text and pronunciation */
+        .korean {
+            font-weight: bold;
+            color: #2C3E50; /* Darker to stand out */
+        }
+
+        .pronunciation {
+            font-style: italic;
+            color: #999999; /* Lighter gray for pronunciation guide */
+            font-size: 15px;
+        }
+
+        /* Example boxes */
+        .example-box {
+            background-color: #F8F8F8; /* Lighter background for examples */
+            border-left: 5px solid #8B5FBF; /* Primary color border */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            position: relative;
+        }
+        .example-box p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        /* Notes */
+        .note {
+            background-color: #FFF3E0; /* A soft orange/yellow for notes */
+            border-left: 5px solid #FFC107; /* A contrasting color for warning/note */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #555555;
+        }
+
+        /* Audio icon */
+        .audio-icon {
+            display: inline-flex; /* Use flex for centering emoji */
+            align-items: center;
+            justify-content: center;
+            width: 44px; /* Min 44px for touch */
+            height: 44px; /* Min 44px for touch */
+            border-radius: 50%; /* Circle shape */
+            background-color: #8B5FBF; /* Primary color */
+            color: #FFFFFF;
+            font-size: 20px; /* Size of the emoji/icon */
+            cursor: pointer;
+            margin-left: 10px;
+            vertical-align: middle;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .audio-icon:hover {
+            background-color: #6F499B; /* Darker shade on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Seasonal Info */
+        .seasonal-info {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #FDF9E5; /* Secondary color for inner sections */
+            border-radius: 10px;
+            border: 1px dashed #E0E0E0;
+        }
+        .seasonal-info h4 {
+            margin-top: 0;
+            color: #8B5FBF; /* Primary color for seasonal titles */
+            font-size: 18px;
+        }
+        .seasonal-info p {
+            font-size: 15px;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #E8F5E9; /* A light green tint for practice */
+            border: 1px solid #C8E6C9; /* A matching lighter border */
+        }
+
+        .practice-item {
+            background-color: #FFFFFF;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-item p {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .reveal-answer-container {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .reveal-answer-btn {
+            background-color: #8B5FBF; /* Primary color */
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 25px; /* Ample padding */
+            border-radius: 25px; /* Pill shape */
+            font-size: 16px;
+            cursor: pointer;
+            min-height: 44px; /* Min 44px for touch */
+            min-width: 120px; /* Ensure button is wide enough */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            -webkit-appearance: none; /* For iOS button styling */
+        }
+
+        .reveal-answer-btn:hover {
+            background-color: #6F499B; /* Darker shade on hover */
+            transform: translateY(-2px);
+        }
+
+        .practice-item .answer {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue for answers */
+            text-align: center;
+            padding: 5px 0;
+            /* display: none; */ /* This will be toggled by JS on mobile app side */
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #E0F2F7; /* A light blue tint for summary */
+            border: 1px solid #B2EBF2; /* A matching lighter border */
+        }
+
+        .summary-section h3 {
+            color: #2C3E50;
+            text-align: center;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 480px) {
+            .chapter-title {
+                font-size: 24px;
+            }
+            .lesson-section {
+                padding: 15px 10px;
+                margin-bottom: 15px;
+            }
+            .lesson-section h2 {
+                font-size: 20px;
+            }
+            .lesson-section h3 {
+                font-size: 18px;
+            }
+            .lesson-section p, .lesson-section ul li, .example-box p, .note, .seasonal-info p {
+                font-size: 15px;
+            }
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+                margin-left: 8px;
+            }
+            .reveal-answer-btn {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+            .practice-item .answer {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 9: Thời tiết và Mùa</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 9 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>Chào mừng đến với Chương 9: Thời tiết và Mùa! 👋</h2>
+            <p>Trong chương này, chúng ta sẽ cùng khám phá cách nói về thời tiết, các mùa trong năm và cách diễn đạt nhiệt độ bằng tiếng Hàn. Hãy sẵn sàng để nói về nắng, mưa, nóng, lạnh và nhiều hơn nữa nhé!</p>
+        </section>
+
+        <section class="lesson-section">
+            <h3>1. Từ vựng cơ bản về Thời tiết: 날씨</h3>
+            <p>Từ <span class="korean">날씨</span> (<span class="pronunciation">nal-ssi</span>) có nghĩa là "thời tiết".</p>
+            <p>Khi hỏi "Thời tiết thế nào?", chúng ta dùng:</p>
+            <p class="example-box">
+                <span class="korean">오늘 날씨가 어때요?</span> <span class="audio-icon" data-audio-text="오늘 날씨가 어때요?">🔊</span><br>
+                (<span class="pronunciation">o-neul nal-ssi-ga eo-ttae-yo?</span>)<br>
+                Thời tiết hôm nay thế nào?
+            </p>
+        </section>
+
+        <section class="lesson-section">
+            <h3>2. Trời quang mây và Trời nhiều mây: 맑다 / 흐리다</h3>
+            <ul>
+                <li><strong><span class="korean">맑다</span></strong> (<span class="pronunciation">mak-tta</span>): Trời quang đãng, trong xanh ☀️</li>
+                <li><strong><span class="korean">흐리다</span></strong> (<span class="pronunciation">heu-ri-da</span>): Trời nhiều mây, âm u ☁️</li>
+            </ul>
+            <p>Để diễn tả, ta thường dùng dạng đuôi <span class="korean">-아요/어요</span> của tính từ.</p>
+            <p class="example-box">
+                <span class="korean">날씨가 맑아요.</span> <span class="audio-icon" data-audio-text="날씨가 맑아요.">🔊</span><br>
+                (<span class="pronunciation">nal-ssi-ga mal-ga-yo</span>)<br>
+                Thời tiết trong xanh/Trời quang đãng.
+            </p>
+            <p class="example-box">
+                <span class="korean">하늘이 흐려요.</span> <span class="audio-icon" data-audio-text="하늘이 흐려요.">🔊</span><br>
+                (<span class="pronunciation">ha-neul-i heu-ryeo-yo</span>)<br>
+                Trời âm u/nhiều mây.
+            </p>
+        </section>
+
+        <section class="lesson-section">
+            <h3>3. Nóng và Lạnh: 덥다 / 춥다</h3>
+            <ul>
+                <li><strong><span class="korean">덥다</span></strong> (<span class="pronunciation">deop-tta</span>): Nóng 🥵</li>
+                <li><strong><span class="korean">춥다</span></strong> (<span class="pronunciation">chup-tta</span>): Lạnh 🥶</li>
+            </ul>
+            <p>Khi sử dụng với thời tiết, chúng ta chia các tính từ này thành dạng đuôi <span class="korean">-아요/어요</span>.</p>
+            <p class="example-box">
+                <span class="korean">오늘은 정말 더워요.</span> <span class="audio-icon" data-audio-text="오늘은 정말 더워요.">🔊</span><br>
+                (<span class="pronunciation">o-neul-eun jeong-mal deo-wo-yo</span>)<br>
+                Hôm nay trời thật sự nóng.
+            </p>
+            <p class="example-box">
+                <span class="korean">겨울은 아주 추워요.</span> <span class="audio-icon" data-audio-text="겨울은 아주 추워요.">🔊</span><br>
+                (<span class="pronunciation">gyeo-ul-eun a-ju chu-wo-yo</span>)<br>
+                Mùa đông rất lạnh.
+            </p>
+        </section>
+
+        <section class="lesson-section">
+            <h3>4. Mưa và Tuyết: 비가 오다 / 눈이 오다</h3>
+            <p>Cụm từ <span class="korean">~가 오다</span> có nghĩa là "đến" hoặc "rơi xuống".</p>
+            <ul>
+                <li><strong><span class="korean">비가 오다</span></strong> (<span class="pronunciation">bi-ga o-da</span>): Trời mưa 🌧️ (nghĩa đen: mưa đến)</li>
+                <li><strong><span class="korean">눈이 오다</span></strong> (<span class="pronunciation">nun-i o-da</span>): Trời tuyết 🌨️ (nghĩa đen: tuyết đến)</li>
+            </ul>
+            <p class="example-box">
+                <span class="korean">지금 비가 와요.</span> <span class="audio-icon" data-audio-text="지금 비가 와요.">🔊</span><br>
+                (<span class="pronunciation">ji-geum bi-ga wa-yo</span>)<br>
+                Bây giờ trời đang mưa.
+            </p>
+            <p class="example-box">
+                <span class="korean">겨울에 눈이 많이 와요.</span> <span class="audio-icon" data-audio-text="겨울에 눈이 많이 와요.">🔊</span><br>
+                (<span class="pronunciation">gyeo-ul-e nun-i man-i wa-yo</span>)<br>
+                Mùa đông tuyết rơi nhiều.
+            </p>
+        </section>
+
+        <section class="lesson-section">
+            <h3>5. Các Mùa trong Năm: 봄, 여름, 가을, 겨울</h3>
+            <p>Hàn Quốc có bốn mùa rõ rệt, mỗi mùa mang một vẻ đẹp và hoạt động đặc trưng:</p>
+            <ul>
+                <li><strong><span class="korean">봄</span></strong> (<span class="pronunciation">bom</span>): Mùa xuân 🌸</li>
+                <li><strong><span class="korean">여름</span></strong> (<span class="pronunciation">yeo-reum</span>): Mùa hè ☀️</li>
+                <li><strong><span class="korean">가을</span></strong> (<span class="pronunciation">ga-eul</span>): Mùa thu 🍂</li>
+                <li><strong><span class="korean">겨울</span></strong> (<span class="pronunciation">gyeo-ul</span>): Mùa đông ❄️</li>
+            </ul>
+            <p class="example-box">
+                <span class="korean">한국의 봄은 따뜻해요.</span> <span class="audio-icon" data-audio-text="한국의 봄은 따뜻해요.">🔊</span><br>
+                (<span class="pronunciation">han-gu-ge bom-eun tta-tteut-hae-yo</span>)<br>
+                Mùa xuân ở Hàn Quốc ấm áp.
+            </p>
+            <p class="example-box">
+                <span class="korean">저는 가을을 가장 좋아해요.</span> <span class="audio-icon" data-audio-text="저는 가을을 가장 좋아해요.">🔊</span><br>
+                (<span class="pronunciation">jeo-neun ga-eul-eul ga-jang jo-a-hae-yo</span>)<br>
+                Tôi thích mùa thu nhất.
+            </p>
+        </section>
+
+        <section class="lesson-section">
+            <h3>6. Diễn đạt Nhiệt độ</h3>
+            <p>Để nói về nhiệt độ, chúng ta sử dụng <span class="korean">몇 도예요?</span> (Mấy độ?) và con số kèm theo <span class="korean">도</span> (độ C).</p>
+            <ul>
+                <li><span class="korean"><strong>몇 도예요?</strong></span> (<span class="pronunciation">myeot do-ye-yo?</span>): Mấy độ?</li>
+                <li><span class="korean"><strong>~도</strong></span> (<span class="pronunciation">~do</span>): ~ độ (Celsius)</li>
+            </ul>
+            <p class="example-box">
+                <span class="korean">오늘 기온이 몇 도예요?</span> <span class="audio-icon" data-audio-text="오늘 기온이 몇 도예요?">🔊</span><br>
+                (<span class="pronunciation">o-neul gi-on-i myeot do-ye-yo?</span>)<br>
+                Nhiệt độ hôm nay là bao nhiêu?
+            </p>
+            <p class="example-box">
+                <span class="korean">15도예요.</span> <span class="audio-icon" data-audio-text="15도예요.">🔊</span><br>
+                (<span class="pronunciation">sip-o-do-ye-yo</span>)<br>
+                Là 15 độ (C).
+            </p>
+            <p class="example-box">
+                <span class="korean">영하 5도예요.</span> <span class="audio-icon" data-audio-text="영하 5도예요.">🔊</span><br>
+                (<span class="pronunciation">yeong-ha o-do-ye-yo</span>)<br>
+                Là âm 5 độ (C).
+            </p>
+            <p class="note">⚠️ <strong>Lưu ý:</strong> Hàn Quốc sử dụng độ C (Celsius). <span class="korean">영하</span> (<span class="pronunciation">yeong-ha</span>) nghĩa là "dưới không/âm".</p>
+        </section>
+
+        <section class="lesson-section">
+            <h3>7. Hoạt động và Trang phục theo Mùa</h3>
+            <p>Mỗi mùa đều có những hoạt động và trang phục đặc trưng ở Hàn Quốc. Đây cũng là một phần thú vị của văn hóa mà bạn nên biết!</p>
+            <div class="seasonal-info">
+                <h4>🌸 Mùa xuân (<span class="korean">봄</span>)</h4>
+                <p>Thời tiết ấm áp, hoa nở rộ (đặc biệt là hoa anh đào 벚꽃). <strong>Hoạt động:</strong> đi dã ngoại, ngắm hoa. <strong>Trang phục:</strong> áo khoác mỏng, áo cardigan.</p>
+                <p class="example-box">
+                    <span class="korean">봄에 벚꽃을 구경해요.</span> <span class="audio-icon" data-audio-text="봄에 벚꽃을 구경해요.">🔊</span><br>
+                    (<span class="pronunciation">bom-e beot-kko-cheul gu-gyeong-hae-yo</span>)<br>
+                    Mùa xuân ngắm hoa anh đào.
+                </p>
+            </div>
+            <div class="seasonal-info">
+                <h4>☀️ Mùa hè (<span class="korean">여름</span>)</h4>
+                <p>Nóng và ẩm, thường có mưa rào. <strong>Hoạt động:</strong> đi biển, bơi lội. <strong>Trang phục:</strong> áo phông, quần short, váy.</p>
+                <p class="example-box">
+                    <span class="korean">여름에는 바다에 가요.</span> <span class="audio-icon" data-audio-text="여름에는 바다에 가요.">🔊</span><br>
+                    (<span class="pronunciation">yeo-reum-e-neun ba-da-e ga-yo</span>)<br>
+                    Mùa hè đi biển.
+                </p>
+            </div>
+            <div class="seasonal-info">
+                <h4>🍂 Mùa thu (<span class="korean">가을</span>)</h4>
+                <p>Mát mẻ, trời trong xanh, lá vàng lá đỏ (<span class="korean">단풍</span>). <strong>Hoạt động:</strong> leo núi, đi bộ ngắm cảnh. <strong>Trang phục:</strong> áo len, áo khoác gió.</p>
+                <p class="example-box">
+                    <span class="korean">가을에는 등산을 해요.</span> <span class="audio-icon" data-audio-text="가을에는 등산을 해요.">🔊</span><br>
+                    (<span class="pronunciation">ga-eul-e-neun deung-san-eul hae-yo</span>)<br>
+                    Mùa thu đi leo núi.
+                </p>
+            </div>
+            <div class="seasonal-info">
+                <h4>❄️ Mùa đông (<span class="korean">겨울</span>)</h4>
+                <p>Rất lạnh, có tuyết rơi. <strong>Hoạt động:</strong> trượt tuyết, trượt băng. <strong>Trang phục:</strong> áo khoác dày, găng tay, khăn choàng.</p>
+                <p class="example-box">
+                    <span class="korean">겨울에는 스키를 타요.</span> <span class="audio-icon" data-audio-text="겨울에는 스키를 타요.">🔊</span><br>
+                    (<span class="pronunciation">gyeo-ul-e-neun seu-ki-reul ta-yo</span>)<br>
+                    Mùa đông trượt tuyết.
+                </p>
+            </div>
+        </section>
+
+        <section class="lesson-section practice-section">
+            <h3>Luyện tập: Hoàn thành câu! 📝</h3>
+            <p>Hãy chọn từ thích hợp để hoàn thành các câu sau. Bạn có thể tự viết câu trả lời và so sánh với gợi ý!</p>
+
+            <div class="practice-item">
+                <p>1. Trời hôm nay rất lạnh. (춥다)</p>
+                <p>오늘 날씨가 정말 ________.</p>
+                <div class="reveal-answer-container">
+                    <button class="reveal-answer-btn">Xem đáp án</button>
+                    <p class="answer" style="display: none;">추워요</p>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p>2. Mùa thu lá đỏ rất đẹp. (가을)</p>
+                <p>___________ 단풍이 아주 예뻐요.</p>
+                <div class="reveal-answer-container">
+                    <button class="reveal-answer-btn">Xem đáp án</button>
+                    <p class="answer" style="display: none;">가을에</p>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p>3. Tuyết đang rơi. (눈이 오다)</p>
+                <p>지금 ___________.</p>
+                <div class="reveal-answer-container">
+                    <button class="reveal-answer-btn">Xem đáp án</button>
+                    <p class="answer" style="display: none;">눈이 와요</p>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <p>4. Nhiệt độ hôm nay là 25 độ. (25도)</p>
+                <p>오늘 기온은 ___________.</p>
+                <div class="reveal-answer-container">
+                    <button class="reveal-answer-btn">Xem đáp án</button>
+                    <p class="answer" style="display: none;">25도예요</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section summary-section">
+            <h3>Tóm tắt Chương 9 ✨</h3>
+            <p>Chúc mừng! Bạn đã hoàn thành Chương 9 về Thời tiết và Các mùa. Hãy cùng điểm lại những gì chúng ta đã học:</p>
+            <ul>
+                <li><strong>Thời tiết:</strong> <span class="korean">날씨</span></li>
+                <li><strong>Trời quang/Trời âm u:</strong> <span class="korean">맑다</span> / <span class="korean">흐리다</span></li>
+                <li><strong>Nóng/Lạnh:</strong> <span class="korean">덥다</span> / <span class="korean">춥다</span></li>
+                <li><strong>Mưa/Tuyết:</strong> <span class="korean">비가 오다</span> / <span class="korean">눈이 오다</span></li>
+                <li><strong>Bốn mùa:</strong> <span class="korean">봄</span> (xuân), <span class="korean">여름</span> (hè), <span class="korean">가을</span> (thu), <span class="korean">겨울</span> (đông)</li>
+                <li><strong>Nhiệt độ:</strong> <span class="korean">~도</span> (độ C), <span class="korean">영하</span> (âm)</li>
+                <li>Tìm hiểu về các hoạt động và trang phục theo mùa ở Hàn Quốc.</li>
+            </ul>
+            <p>Bạn đã tiến bộ rất nhiều! Hãy tiếp tục luyện tập và sử dụng các từ vựng này trong giao tiếp hàng ngày nhé.</p>
+        </section>
+    </div>
+</body>
+</html>

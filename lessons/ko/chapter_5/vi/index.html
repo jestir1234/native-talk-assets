@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 5: Gia đình và Các mối quan hệ</title>
+    <style>
+        /* Global Styles & Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 768px; /* Max width for general content */
+            margin: 0 auto;
+            padding: 16px; /* Padding for mobile screens */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .chapter-title {
+            font-size: 2rem; /* Larger for chapter title */
+            text-align: center;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            margin-top: 24px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 20px;
+            color: #8B5FBF; /* Primary: Purple for sub-headings/accents */
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style: none; /* Remove default list style */
+            padding: 0;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary color */
+        }
+
+        /* Lesson Header */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Lesson Sections */
+        .lesson-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 16px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation {
+            font-style: italic;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-left: 8px;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px; /* Slightly larger for touch */
+            height: 48px; /* Slightly larger for touch */
+            border-radius: 50%;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            font-size: 1.4rem; /* Larger icon */
+            cursor: pointer;
+            vertical-align: middle;
+            margin-left: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4097; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: #f7f0e3; /* Lighter cream for notes */
+            border-left: 5px solid #8B5FBF; /* Primary color accent */
+            padding: 12px 16px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-style: italic;
+            color: #2C3E50; /* Dark blue for emphasis */
+        }
+
+        .cultural-note strong {
+            color: #8B5FBF;
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #EBF3F8; /* Light blueish background for practice */
+            border: 1px solid #BCCBD6;
+            padding: 20px;
+            margin-bottom: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: #2C3E50;
+            margin-bottom: 16px;
+        }
+
+        .practice-item {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+            text-align: left;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .practice-question {
+            font-weight: bold;
+            color: #2C3E50;
+            margin-right: 10px;
+            flex-basis: 60%; /* Take more space on small screens */
+            word-wrap: break-word; /* Ensure text wraps */
+        }
+        
+        .practice-question .korean-term {
+            font-size: 1.1em;
+            color: #8B5FBF;
+        }
+
+        .practice-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+            flex-basis: 100%; /* Full width on small screens */
+            justify-content: center;
+        }
+
+        .option-button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            min-height: 44px; /* Minimum height for easy tapping */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex: 1 1 auto; /* Allow buttons to grow and shrink */
+            max-width: 150px; /* Max width to prevent overly wide buttons */
+        }
+
+        .option-button:hover {
+            background-color: #6a4097;
+            transform: translateY(-2px);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 20px;
+            margin-top: 30px;
+            border-top: 2px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 12px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            color: #2C3E50;
+            margin-bottom: 20px;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 600px) {
+            .container {
+                padding: 24px;
+            }
+
+            .chapter-title {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            .lesson-section, .practice-section, .summary-section {
+                padding: 24px;
+            }
+
+            .practice-item {
+                flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+            }
+
+            .practice-question {
+                flex-basis: auto;
+            }
+            .practice-options {
+                flex-basis: auto;
+                margin-top: 0;
+            }
+
+            .option-button {
+                flex: 0 0 auto; /* Do not grow/shrink on larger screens */
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chương 5: Gia đình và Các mối quan hệ</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section">
+            <h2>Chào mừng bạn đến với Chương 5! 👋</h2>
+            <p>Trong văn hóa Hàn Quốc, gia đình và các mối quan hệ xã hội đóng vai trò vô cùng quan trọng. Việc biết cách gọi tên các thành viên trong gia đình và xưng hô đúng mực không chỉ là phép lịch sự mà còn thể hiện sự tôn trọng. Trong chương này, chúng ta sẽ cùng khám phá các từ vựng thiết yếu và những khía cạnh văn hóa thú vị xoay quanh chủ đề này nhé!</p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>1. Thành viên trong Gia đình 👨‍👩‍👧‍👦</h2>
+            <p>Học cách gọi các thành viên cơ bản trong gia đình là bước đầu tiên để hiểu về văn hóa Hàn Quốc.</p>
+            <ul>
+                <li>
+                    <strong>아버지</strong> <span class="pronunciation">(A-bo-ji)</span>
+                    <span class="audio-icon" data-audio-text="아버지">🔊</span>
+                    <br>
+                    Nghĩa: Bố/Cha
+                    <p>Ví dụ: 우리 아버지는 선생님이세요. <span class="pronunciation">(U-ri a-bo-ji-neun seon-saeng-nim-i-se-yo.)</span></p>
+                    <p><em>(Bố tôi là giáo viên.)</em></p>
+                </li>
+                <li>
+                    <strong>어머니</strong> <span class="pronunciation">(Eo-meo-ni)</span>
+                    <span class="audio-icon" data-audio-text="어머니">🔊</span>
+                    <br>
+                    Nghĩa: Mẹ
+                    <p>Ví dụ: 어머니는 요리를 잘 하세요. <span class="pronunciation">(Eo-meo-ni-neun yo-ri-reul jal ha-se-yo.)</span></p>
+                    <p><em>(Mẹ tôi nấu ăn rất ngon.)</em></p>
+                </li>
+                <li>
+                    <strong>형</strong> <span class="pronunciation">(Hyeong)</span>
+                    <span class="audio-icon" data-audio-text="형">🔊</span>
+                    <br>
+                    Nghĩa: Anh trai (dùng khi người nói là nam)
+                    <p>Ví dụ: 제 형은 대학생이에요. <span class="pronunciation">(Je hyeong-eun dae-hak-saeng-i-e-yo.)</span></p>
+                    <p><em>(Anh trai tôi là sinh viên đại học.)</em></p>
+                </li>
+                <li>
+                    <strong>오빠</strong> <span class="pronunciation">(O-ppa)</span>
+                    <span class="audio-icon" data-audio-text="오빠">🔊</span>
+                    <br>
+                    Nghĩa: Anh trai (dùng khi người nói là nữ)
+                    <p>Ví dụ: 오빠, 뭐 해요? <span class="pronunciation">(O-ppa, mwo hae-yo?)</span></p>
+                    <p><em>(Anh ơi, đang làm gì vậy?)</em></p>
+                </li>
+                <li>
+                    <strong>누나</strong> <span class="pronunciation">(Nu-na)</span>
+                    <span class="audio-icon" data-audio-text="누나">🔊</span>
+                    <br>
+                    Nghĩa: Chị gái (dùng khi người nói là nam)
+                    <p>Ví dụ: 우리 누나는 의사예요. <span class="pronunciation">(U-ri nu-na-neun ui-sa-ye-yo.)</span></p>
+                    <p><em>(Chị gái tôi là bác sĩ.)</em></p>
+                </li>
+                <li>
+                    <strong>언니</strong> <span class="pronunciation">(Eon-ni)</span>
+                    <span class="audio-icon" data-audio-text="언니">🔊</span>
+                    <br>
+                    Nghĩa: Chị gái (dùng khi người nói là nữ)
+                    <p>Ví dụ: 언니랑 같이 영화 볼래요. <span class="pronunciation">(Eon-ni-rang ga-chi yeong-hwa bol-lae-yo.)</span></p>
+                    <p><em>(Em muốn xem phim cùng chị.)</em></p>
+                </li>
+                <li>
+                    <strong>동생</strong> <span class="pronunciation">(Dong-saeng)</span>
+                    <span class="audio-icon" data-audio-text="동생">🔊</span>
+                    <br>
+                    Nghĩa: Em (trai hoặc gái, dùng chung)
+                    <p>Ví dụ: 저는 동생이 한 명 있어요. <span class="pronunciation">(Jeo-neun dong-saeng-i han myeong i-sseo-yo.)</span></p>
+                    <p><em>(Tôi có một em.)</em></p>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>💡 Lưu ý Văn hóa:</strong> Trong tiếng Hàn, cách gọi anh/chị trai/gái phụ thuộc vào giới tính của người nói. Người nói nam gọi anh là '형' và chị là '누나'. Người nói nữ gọi anh là '오빠' và chị là '언니'. Điều này rất quan trọng để sử dụng đúng và thể hiện sự tôn trọng trong giao tiếp.
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>2. Các Mối Quan hệ Khác 🤝</h2>
+            <p>Ngoài gia đình, chúng ta còn có những mối quan hệ xã hội khác cũng rất quan trọng.</p>
+            <ul>
+                <li>
+                    <strong>친구</strong> <span class="pronunciation">(Chin-gu)</span>
+                    <span class="audio-icon" data-audio-text="친구">🔊</span>
+                    <br>
+                    Nghĩa: Bạn bè
+                    <p>Ví dụ: 제 친구는 한국 사람이에요. <span class="pronunciation">(Je chin-gu-neun han-guk sa-ram-i-e-yo.)</span></p>
+                    <p><em>(Bạn tôi là người Hàn Quốc.)</em></p>
+                </li>
+                <li>
+                    <strong>선생님</strong> <span class="pronunciation">(Seon-saeng-nim)</span>
+                    <span class="audio-icon" data-audio-text="선생님">🔊</span>
+                    <br>
+                    Nghĩa: Giáo viên, thầy/cô giáo (và cũng có thể dùng để chỉ những người có chuyên môn cao như bác sĩ, luật sư)
+                    <p>Ví dụ: 안녕하세요, 선생님! <span class="pronunciation">(An-nyeong-ha-se-yo, seon-saeng-nim!)</span></p>
+                    <p><em>(Chào thầy/cô ạ!)</em></p>
+                </li>
+                <li>
+                    <strong>직장동료</strong> <span class="pronunciation">(Jik-jang-dong-nyeo)</span>
+                    <span class="audio-icon" data-audio-text="직장동료">🔊</span>
+                    <br>
+                    Nghĩa: Đồng nghiệp
+                    <p>Ví dụ: 직장동료와 같이 점심을 먹었어요. <span class="pronunciation">(Jik-jang-dong-nyeo-wa ga-chi jeom-sim-eul meo-geo-sseo-yo.)</span></p>
+                    <p><em>(Tôi đã ăn trưa cùng đồng nghiệp.)</em></p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3. Kính ngữ và Các cấp độ Ngôn ngữ ✨</h2>
+            <p>Tiếng Hàn nổi tiếng với hệ thống kính ngữ phức tạp, thể hiện sự tôn trọng đối với người lớn tuổi hơn hoặc có địa vị cao hơn.</p>
+            <ul>
+                <li>
+                    <strong>Hậu tố kính ngữ -님 (-nim)</strong>
+                    <p>-님 được thêm vào sau một danh từ để thể hiện sự tôn trọng. Ví dụ: `선생님` (giáo viên + kính ngữ), `사장님` (giám đốc + kính ngữ), `고객님` (khách hàng + kính ngữ).</p>
+                    <p>Điều này nhấn mạnh sự tôn kính đối với nghề nghiệp hoặc vai trò của người đó.</p>
+                </li>
+                <li>
+                    <strong>Hậu tố lịch sự -씨 (-ssi)</strong>
+                    <p>-씨 được thêm vào sau tên riêng (thường là tên đầy đủ hoặc chỉ tên) để gọi một cách lịch sự nhưng không quá trang trọng. Thường dùng cho người ngang hàng hoặc nhỏ tuổi hơn một chút mà bạn muốn thể hiện sự tôn trọng. Ví dụ: 민준 씨 (Min-jun-ssi).</p>
+                </li>
+                <li>
+                    <strong>Các cấp độ Ngôn ngữ</strong>
+                    <p>Tiếng Hàn có nhiều cấp độ trang trọng khác nhau, phổ biến nhất là:</p>
+                    <ul>
+                        <li><strong>Trang trọng/Lịch sự cao (-습니다/ㅂ니다)</strong>: Dùng trong các bài phát biểu, tin tức, tình huống trang trọng.</li>
+                        <li><strong>Lịch sự thông thường (-아요/어요)</strong>: Dùng phổ biến nhất trong giao tiếp hàng ngày, với những người bạn muốn thể hiện sự tôn trọng (người lớn tuổi hơn, người không quá thân quen).</li>
+                        <li><strong>Thân mật (-아/어)</strong>: Dùng với bạn bè thân thiết hoặc người nhỏ tuổi hơn.</li>
+                    </ul>
+                    <p>Trong chương này, chúng ta tập trung vào các từ vựng. Hệ thống cấp độ ngôn ngữ sẽ được học kỹ hơn ở các chương sau, nhưng điều quan trọng là bạn cần biết rằng người Hàn Quốc luôn cân nhắc cấp độ ngôn ngữ khi giao tiếp!</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="lesson-section">
+            <h2>4. Văn hóa Gia đình Hàn Quốc 🇰🇷</h2>
+            <p>Gia đình là nền tảng của xã hội Hàn Quốc. Dưới đây là một số khía cạnh văn hóa đặc trưng:</p>
+            <ul>
+                <li>
+                    <strong>Thứ bậc và Tôn trọng người lớn tuổi:</strong>
+                    <p>Thứ bậc trong gia đình (và xã hội) rất rõ ràng. Con cái luôn phải thể hiện sự tôn trọng tuyệt đối với cha mẹ và ông bà. Người nhỏ tuổi hơn phải tôn kính và nghe lời người lớn tuổi hơn.</p>
+                </li>
+                <li>
+                    <strong>Vai trò của con cả:</strong>
+                    <p>Con trai cả (장남 - jang-nam) và con gái cả (장녀 - jang-nyeo) thường có vai trò và trách nhiệm lớn hơn trong gia đình, đặc biệt là trong các nghi lễ thờ cúng tổ tiên.</p>
+                </li>
+                <li>
+                    <strong>Cách xưng hô (호칭 - Ho-ching):</strong>
+                    <p>Thay vì gọi tên, người Hàn Quốc thường dùng các từ xưng hô theo mối quan hệ (ví dụ: "anh", "chị", "cô", "chú"). Điều này cũng áp dụng trong gia đình. Ví dụ, em sẽ gọi anh trai là '형' (nếu là nam) hoặc '오빠' (nếu là nữ) thay vì gọi tên.</p>
+                </li>
+                <li>
+                    <strong>Họ trước tên sau:</strong>
+                    <p>Tên đầy đủ của người Hàn Quốc thường được viết theo thứ tự họ trước, tên sau (ví dụ: 김민준 - Kim Min-jun, họ là Kim, tên là Min-jun).</p>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>💡 Văn hóa quan trọng:</strong> Khi gặp người Hàn Quốc lớn tuổi hơn, bạn không nên gọi họ bằng tên riêng mà không có hậu tố kính ngữ hoặc chức danh. Hãy sử dụng các từ xưng hô phù hợp hoặc kính ngữ để thể hiện sự tôn trọng.
+            </div>
+        </section>
+
+        <div class="practice-section">
+            <h3>Luyện tập: Nối từ ✏️</h3>
+            <p>Hãy chọn từ tiếng Hàn phù hợp với ý nghĩa tiếng Việt.</p>
+
+            <div class="practice-item">
+                <span class="practice-question">Bố:</span>
+                <div class="practice-options">
+                    <button class="option-button" data-correct="false">어머니</button>
+                    <button class="option-button" data-correct="true">아버지</button>
+                    <button class="option-button" data-correct="false">동생</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <span class="practice-question">Mẹ:</span>
+                <div class="practice-options">
+                    <button class="option-button" data-correct="true">어머니</button>
+                    <button class="option-button" data-correct="false">아버지</button>
+                    <button class="option-button" data-correct="false">누나</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <span class="practice-question">Bạn bè:</span>
+                <div class="practice-options">
+                    <button class="option-button" data-correct="false">선생님</button>
+                    <button class="option-button" data-correct="true">친구</button>
+                    <button class="option-button" data-correct="false">직장동료</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <span class="practice-question">Anh trai (nam gọi):</span>
+                <div class="practice-options">
+                    <button class="option-button" data-correct="true">형</button>
+                    <button class="option-button" data-correct="false">오빠</button>
+                    <button class="option-button" data-correct="false">동생</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <span class="practice-question">Chị gái (nữ gọi):</span>
+                <div class="practice-options">
+                    <button class="option-button" data-correct="false">누나</button>
+                    <button class="option-button" data-correct="true">언니</button>
+                    <button class="option-button" data-correct="false">어머니</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <h3>Luyện tập: Nghe và chọn (tưởng tượng) 🎧</h3>
+            <p>Hãy nghe từ và chọn nghĩa tiếng Việt đúng. (Tưởng tượng bạn đang nhấp vào biểu tượng loa để nghe)</p>
+
+            <div class="practice-item">
+                <span class="practice-question">Từ nghe được: <span class="audio-icon" data-audio-text="동생">🔊</span></span>
+                <div class="practice-options">
+                    <button class="option-button" data-correct="false">Anh trai</button>
+                    <button class="option-button" data-correct="false">Chị gái</button>
+                    <button class="option-button" data-correct="true">Em</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <span class="practice-question">Từ nghe được: <span class="audio-icon" data-audio-text="선생님">🔊</span></span>
+                <div class="practice-options">
+                    <button class="option-button" data-correct="true">Giáo viên</button>
+                    <button class="option-button" data-correct="false">Bạn bè</button>
+                    <button class="option-button" data-correct="false">Đồng nghiệp</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="summary-section">
+            <h2>Tóm tắt Chương 5 📚</h2>
+            <p>Chúc mừng bạn đã hoàn thành Chương 5! Chúng ta đã học được rất nhiều điều quan trọng:</p>
+            <ul>
+                <li><strong>Từ vựng gia đình:</strong> 아버지 (bố), 어머니 (mẹ), 형/오빠 (anh trai), 누나/언니 (chị gái), 동생 (em). Hãy nhớ cách dùng khác nhau dựa trên giới tính người nói!</li>
+                <li><strong>Từ vựng xã hội:</strong> 친구 (bạn bè), 선생님 (giáo viên), 직장동료 (đồng nghiệp).</li>
+                <li><strong>Kính ngữ cơ bản:</strong> Hiểu về hậu tố kính ngữ -님 và hậu tố lịch sự -씨, cùng với sự tồn tại của các cấp độ ngôn ngữ khác nhau trong tiếng Hàn.</li>
+                <li><strong>Văn hóa gia đình:</strong> Nắm được tầm quan trọng của thứ bậc, sự tôn trọng người lớn tuổi và cách xưng hô theo mối quan hệ trong gia đình Hàn Quốc.</li>
+            </ul>
+            <p>Gia đình và các mối quan hệ là một phần không thể thiếu của cuộc sống ở Hàn Quốc. Việc hiểu và sử dụng đúng các từ vựng này sẽ giúp bạn giao tiếp tự tin và hòa nhập tốt hơn với văn hóa nơi đây. Hãy tiếp tục luyện tập và đừng ngại sử dụng những gì bạn đã học nhé!</p>
+        </section>
+    </div>
+</body>
+</html>

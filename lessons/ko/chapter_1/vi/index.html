@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1: 한글 (Hangul) - The Korean Alphabet</title>
+    <style>
+        /* Global Styles & Colors */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            font-size: 16px; /* Minimum 16px for body text */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-weight: bold;
+        }
+
+        h1 { 
+            font-size: 2em; 
+            text-align: center; 
+            padding-top: 20px;
+        }
+        h2 { 
+            font-size: 1.5em; 
+            padding-left: 5px; /* Slight padding for headings inside sections */
+        }
+        h3 { 
+            font-size: 1.2em; 
+            padding-left: 5px;
+        }
+
+        a {
+            color: #8B5FBF; /* Primary: Purple */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout & Spacing */
+        .container {
+            max-width: 600px; /* Optimal width for mobile content */
+            margin: 0 auto;
+            padding: 15px; /* Padding for content inside container */
+        }
+
+        section {
+            background-color: #FFFFFF; /* White background for content sections */
+            border-radius: 10px;
+            padding: 20px; /* Internal padding for sections */
+            margin-bottom: 20px; /* Space between sections */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+        }
+
+        p {
+            margin-bottom: 1em; /* Space between paragraphs */
+        }
+
+        /* Specific CSS Requirements */
+        .lesson-header {
+            margin: 20px 0; /* Required margin */
+            text-align: center; /* Required text alignment */
+        }
+
+        .lesson-header-image {
+            width: 100%; /* Required width */
+            max-width: 600px; /* Required max-width */
+            height: auto; /* Required height */
+            border-radius: 8px; /* Required border-radius */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Required box-shadow */
+            display: block; /* Required display */
+            margin: 0 auto; /* Required margin */
+        }
+
+        /* Interactive Elements - Audio */
+        .audio-icon {
+            display: inline-flex; /* Use flex to align icon and text */
+            align-items: center;
+            justify-content: center;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 22px; /* For a circular/pill shape button */
+            padding: 10px 15px;
+            min-width: 44px; /* Minimum tappable area for mobile */
+            min-height: 44px; /* Minimum tappable area for mobile */
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            margin-left: 10px; /* Space from text/element */
+            vertical-align: middle; /* Align with text baseline */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            flex-shrink: 0; /* Prevent shrinking on smaller screens */
+        }
+
+        .audio-icon:hover {
+            background-color: #6F4A99; /* Darker purple on hover */
+            transform: translateY(-2px); /* Slight lift on hover */
+        }
+
+        .audio-icon span {
+            margin-right: 5px; /* Space between icon and text if text is inside */
+        }
+
+        /* Specific text styles */
+        .korean-text {
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue for Korean words */
+            margin-right: 5px;
+            font-size: 1.1em; /* Slightly larger for Korean characters */
+        }
+
+        /* Lists */
+        ul {
+            list-style: none; /* Remove default bullet points */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 15px; /* Space between list items */
+            padding: 10px 0; /* Padding inside list items */
+            border-bottom: 1px solid #E0E0E0; /* Borders: Light gray */
+            display: flex; /* Use flex for alignment of text and audio button */
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow items to wrap on small screens */
+        }
+
+        li:last-child {
+            border-bottom: none; /* No border for the last item */
+        }
+
+        li > div {
+            flex-grow: 1; /* Allow text content to take up available space */
+            padding-right: 10px; /* Space between text and button */
+        }
+
+        li p {
+            margin: 5px 0 0 0; /* Adjust margin for description under Korean text */
+            font-size: 0.95em;
+            color: #666666;
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background for practice section */
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px dashed #8B5FBF; /* Purple dashed border */
+        }
+
+        .practice-question {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dotted #E0E0E0;
+        }
+
+        .practice-question:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .practice-question p {
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .input-field {
+            width: calc(100% - 22px); /* Full width minus padding and border */
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 8px;
+            font-size: 1em;
+            color: #2C3E50;
+            box-sizing: border-box; /* Include padding and border in width */
+            min-height: 44px; /* Ensure input field is tappable */
+        }
+
+        .answer-reveal-btn {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin-top: 15px; /* Space above button */
+            font-size: 1em;
+            cursor: pointer;
+            min-height: 44px; /* Minimum tappable area */
+            width: 100%; /* Full width button */
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .answer-reveal-btn:hover {
+            background-color: #6F4A99; /* Darker purple on hover */
+            transform: translateY(-1px);
+        }
+
+        .answer {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #2C3E50;
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple background */
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: none; /* Hidden by default, app will reveal */
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple background */
+            border-left: 5px solid #8B5FBF; /* Purple border on left */
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-style: italic;
+            color: #666666;
+        }
+
+        .cultural-note strong {
+            color: #2C3E50;
+            font-style: normal;
+        }
+
+        /* Responsive adjustments for larger screens (e.g., tablets in portrait) */
+        @media (min-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            section {
+                padding: 30px;
+            }
+            .audio-icon {
+                padding: 12px 18px; /* Slightly larger padding for larger screens */
+            }
+            .answer-reveal-btn {
+                width: auto; /* Auto width on larger screens */
+                min-width: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 1: 한글 (Hangul) - The Korean Alphabet</h1>
+        <div class="lesson-header">
+            <!-- This image path is a placeholder for the mobile app's internal asset management -->
+            <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>🌟 Chào Mừng Đến Với Tiếng Hàn!</h2>
+            <p>Chào bạn! Rất vui được đồng hành cùng bạn trên hành trình khám phá tiếng Hàn. Trong chương đầu tiên này, chúng ta sẽ làm quen với một phần quan trọng nhất: <strong>한글 (Hangul)</strong> - Bảng chữ cái tiếng Hàn.</p>
+            <p>Hangul nổi tiếng là một hệ thống chữ viết logic và dễ học. Bạn sẽ ngạc nhiên khi thấy mình có thể đọc được các từ tiếng Hàn chỉ trong thời gian ngắn! 🚀</p>
+
+            <div class="cultural-note">
+                <strong>💡 Góc Văn Hóa:</strong> Hangul được tạo ra bởi <strong>Vua Sejong Đại đế</strong> vào thế kỷ 15. Mục đích của ông là tạo ra một hệ thống chữ viết đơn giản để mọi người dân đều có thể học đọc và viết, không chỉ giới quý tộc. Đây là một điều rất độc đáo và đáng tự hào trong lịch sử Hàn Quốc! 🇰🇷
+            </div>
+        </section>
+
+        <section>
+            <h2>🌈 Âm Nguyên Âm Cơ Bản (Basic Vowels)</h2>
+            <p>Trong tiếng Hàn, các nguyên âm là những âm thanh được tạo ra khi luồng không khí đi qua miệng mà không bị cản trở. Có 6 nguyên âm cơ bản bạn cần học:</p>
+            <ul>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅏ</span>
+                        <p><strong>(a)</strong> Giống âm 'a' trong 'cha' (tiếng Việt), miệng mở rộng.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="아">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅓ</span>
+                        <p><strong>(eo)</strong> Giống âm 'ơ' trong 'bơ' (tiếng Việt), hoặc 'aw' trong 'saw' (tiếng Anh).</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="어">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅗ</span>
+                        <p><strong>(o)</strong> Giống âm 'ô' trong 'ô tô' (tiếng Việt), môi tròn lại.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="오">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅜ</span>
+                        <p><strong>(u)</strong> Giống âm 'u' trong 'cú' (tiếng Việt), môi tròn ra phía trước.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="우">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅡ</span>
+                        <p><strong>(eu)</strong> Âm 'ư' trong 'tư' (tiếng Việt). Môi bẹt ra, răng hơi khít.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="으">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅣ</span>
+                        <p><strong>(i)</strong> Giống âm 'i' trong 'đi' (tiếng Việt). Miệng hơi kéo sang hai bên.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="이">🔊</button>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🚀 Âm Phụ Âm Cơ Bản (Basic Consonants)</h2>
+            <p>Các phụ âm trong tiếng Hàn có cách phát âm tương đối giống tiếng Việt, nhưng có một vài điểm cần lưu ý. Bạn sẽ thấy các phụ âm kết hợp với nguyên âm để tạo thành âm tiết.</p>
+            <ul>
+                <li>
+                    <div>
+                        <span class="korean-text">ㄱ</span>
+                        <p><strong>(g/k)</strong> Khi đứng đầu âm tiết, giống 'k' nhẹ (kẹo). Khi ở giữa/cuối, giống 'g' (ga).</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="기역">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㄴ</span>
+                        <p><strong>(n)</strong> Giống âm 'n' trong 'nay'.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="니은">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㄷ</span>
+                        <p><strong>(d/t)</strong> Khi đứng đầu, giống 't' nhẹ (tôi). Khi ở giữa/cuối, giống 'd' (danh).</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="디귿">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㄹ</span>
+                        <p><strong>(r/l)</strong> Khi đứng đầu/giữa, giống 'r' lướt (rồi). Khi ở cuối, giống 'l' (lời).</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="리을">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅁ</span>
+                        <p><strong>(m)</strong> Giống âm 'm' trong 'mai'.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="미음">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅂ</span>
+                        <p><strong>(b/p)</strong> Khi đứng đầu, giống 'p' nhẹ (phố). Khi ở giữa/cuối, giống 'b' (bà).</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="비읍">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅅ</span>
+                        <p><strong>(s)</strong> Giống âm 's' trong 'sen'. Khi đứng trước ㅣ, giống 'sh' (she).</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="시옷">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅇ</span>
+                        <p><strong>(ng / âm câm)</strong> Khi đứng đầu âm tiết, nó là âm câm (không phát âm). Khi ở cuối âm tiết, nó giống 'ng' (ngang).</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="이응">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅈ</span>
+                        <p><strong>(j/ch)</strong> Giống 'ch' trong 'chờ'.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="지읒">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅊ</span>
+                        <p><strong>(ch')</strong> Giống 'ch' bật hơi mạnh hơn ㅈ.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="치읓">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅋ</span>
+                        <p><strong>(k')</strong> Giống 'k' bật hơi mạnh hơn ㄱ.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="키읔">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅌ</span>
+                        <p><strong>(t')</strong> Giống 't' bật hơi mạnh hơn ㄷ.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="티읕">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅍ</span>
+                        <p><strong>(p')</strong> Giống 'p' bật hơi mạnh hơn ㅂ.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="피읖">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">ㅎ</span>
+                        <p><strong>(h)</strong> Giống âm 'h' trong 'hoa'.</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="히읗">🔊</button>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🏗️ Ghép Vần Cơ Bản (Simple Syllable Formation)</h2>
+            <p>Hangul được ghép lại thành các khối âm tiết (syllable blocks). Mỗi khối âm tiết chứa ít nhất một phụ âm và một nguyên âm.</p>
+            <p>Các nguyên tắc cơ bản:</p>
+            <ul>
+                <li><strong>Phụ âm + Nguyên âm ngang:</strong> Phụ âm đứng trên, nguyên âm đứng dưới. ⬇️</li>
+                <li><strong>Phụ âm + Nguyên âm dọc:</strong> Phụ âm đứng trái, nguyên âm đứng phải. ➡️</li>
+                <li><strong>Phụ âm + Nguyên âm + Phụ âm cuối:</strong> Phụ âm đứng trên, nguyên âm ở giữa, phụ âm cuối (patchim) đứng dưới cùng. 📦</li>
+            </ul>
+            <p><strong>Lưu ý quan trọng:</strong> Tất cả các âm tiết trong tiếng Hàn phải bắt đầu bằng một phụ âm. Nếu một âm tiết bắt đầu bằng nguyên âm, chúng ta phải thêm phụ âm câm <strong>ㅇ</strong> vào vị trí phụ âm đầu.</p>
+            <p>Ví dụ:</p>
+            <ul>
+                <li>
+                    <span class="korean-text">ㅏ</span> (a) ➡️ Không thể đứng một mình. Phải viết thành <span class="korean-text">아</span>
+                    <button class="audio-icon" data-audio-text="아">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-text">ㄱ</span> + <span class="korean-text">ㅏ</span> = <span class="korean-text">가</span> (ga)
+                    <button class="audio-icon" data-audio-text="가">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-text">ㄴ</span> + <span class="korean-text">ㅗ</span> = <span class="korean-text">노</span> (no)
+                    <button class="audio-icon" data-audio-text="노">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-text">ㄷ</span> + <span class="korean-text">ㅜ</span> = <span class="korean-text">두</span> (du)
+                    <button class="audio-icon" data-audio-text="두">🔊</button>
+                </li>
+                <li>
+                    <span class="korean-text">ㅁ</span> + <span class="korean-text">ㅣ</span> = <span class="korean-text">미</span> (mi)
+                    <button class="audio-icon" data-audio-text="미">🔊</button>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📖 Luyện Đọc Các Từ Cơ Bản (Reading Practice)</h2>
+            <p>Bây giờ hãy thử đọc một số từ đơn giản nhé! Hãy cố gắng ghép các chữ cái lại và phát âm theo.</p>
+            <ul>
+                <li>
+                    <div>
+                        <span class="korean-text">오이</span> (o-i)
+                        <p>Dưa chuột 🥒</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="오이">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">아이</span> (a-i)
+                        <p>Em bé / Đứa trẻ 👶</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="아이">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">나무</span> (na-mu)
+                        <p>Cây 🌳</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="나무">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">다리</span> (da-ri)
+                        <p>Chân / Cầu 🌉</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="다리">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <span class="korean-text">바다</span> (ba-da)
+                        <p>Biển 🏖️</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="바다">🔊</button>
+                </li>
+            </ul>
+        </section>
+
+        <section class="practice-section">
+            <h2>✍️ Luyện Tập (Exercises)</h2>
+            <p>Hãy thử ghép các chữ cái sau đây để tạo thành từ và viết phiên âm Latin (hoặc nhớ cách đọc) nhé!</p>
+
+            <div class="practice-question">
+                <p>1. ㄱ + ㅣ = ?</p>
+                <input type="text" class="input-field" placeholder="Ví dụ: 기 (gi)">
+                <button class="answer-reveal-btn">Hiện đáp án</button>
+                <div class="answer">Đáp án: 기 (gi) <button class="audio-icon" data-audio-text="기">🔊</button></div>
+            </div>
+
+            <div class="practice-question">
+                <p>2. ㄴ + 아 = ?</p>
+                <input type="text" class="input-field" placeholder="Ví dụ: 나 (na)">
+                <button class="answer-reveal-btn">Hiện đáp án</button>
+                <div class="answer">Đáp án: 나 (na) <button class="audio-icon" data-audio-text="나">🔊</button></div>
+            </div>
+
+            <div class="practice-question">
+                <p>3. ㅁ + 오 = ?</p>
+                <input type="text" class="input-field" placeholder="Ví dụ: 모 (mo)">
+                <button class="answer-reveal-btn">Hiện đáp án</button>
+                <div class="answer">Đáp án: 모 (mo) <button class="audio-icon" data-audio-text="모">🔊</button></div>
+            </div>
+
+            <div class="practice-question">
+                <p>4. ㅂ + ㅓ = ?</p>
+                <input type="text" class="input-field" placeholder="Ví dụ: 버 (beo)">
+                <button class="answer-reveal-btn">Hiện đáp án</button>
+                <div class="answer">Đáp án: 버 (beo) <button class="audio-icon" data-audio-text="버">🔊</button></div>
+            </div>
+
+            <div class="practice-question">
+                <p>5. Viết 'u' (âm tiết nguyên âm) bằng Hangul: ?</p>
+                <input type="text" class="input-field" placeholder="Gợi ý: Dùng ㅇ">
+                <button class="answer-reveal-btn">Hiện đáp án</button>
+                <div class="answer">Đáp án: 우 (u) <button class="audio-icon" data-audio-text="우">🔊</button></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📚 Tóm Tắt Chapter 1</h2>
+            <p>Chúc mừng bạn đã hoàn thành chương đầu tiên về Hangul!</p>
+            <ul>
+                <li>Bạn đã học về lịch sử ra đời của Hangul dưới thời <strong>Vua Sejong Đại đế</strong>.</li>
+                <li>Bạn đã làm quen với <strong>6 nguyên âm cơ bản</strong> (ㅏ, ㅓ, ㅗ, ㅜ, ㅡ, ㅣ).</li>
+                <li>Bạn đã tìm hiểu về <strong>14 phụ âm cơ bản</strong> (ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ, ㅅ, ㅇ, ㅈ, ㅊ, ㅋ, ㅌ, ㅍ, ㅎ).</li>
+                <li>Bạn đã hiểu cách <strong>ghép các phụ âm và nguyên âm</strong> để tạo thành các khối âm tiết.</li>
+                <li>Và bạn đã luyện đọc một số <strong>từ đơn giản</strong> đầu tiên! 🎉</li>
+            </ul>
+            <p>Đừng lo lắng nếu bạn chưa nhớ hết tất cả. Hãy ôn tập thường xuyên và thực hành viết, đọc để làm quen với các chữ cái. Việc luyện tập sẽ giúp bạn thành thạo Hangul nhanh chóng!</p>
+            <p>Bạn đã có một khởi đầu tuyệt vời rồi đó! Tiếp tục cố gắng nhé! 💪</p>
+        </section>
+    </div>
+</body>
+</html>

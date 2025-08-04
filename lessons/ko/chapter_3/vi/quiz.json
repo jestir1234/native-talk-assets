@@ -1,0 +1,202 @@
+{
+  "title": "Bài Kiểm Tra Chương 3: Số Đếm và Đếm Số",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "\"일\" có nghĩa là gì?",
+      "explanation": "\"일\" có nghĩa là \"Một\" trong tiếng Hàn.",
+      "correctAnswer": "Một",
+      "options": [
+        "Hai",
+        "Một",
+        "Ba",
+        "Bốn"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Hai\" trong tiếng Hàn?",
+      "explanation": "\"이\" có nghĩa là \"Hai\" trong tiếng Hàn.",
+      "correctAnswer": "이",
+      "options": [
+        "일",
+        "이",
+        "삼",
+        "사"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"삼\" có nghĩa là gì?",
+      "explanation": "\"삼\" có nghĩa là \"Ba\" trong tiếng Hàn.",
+      "correctAnswer": "Ba",
+      "options": [
+        "Hai",
+        "Ba",
+        "Bốn",
+        "Năm"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Bốn\" trong tiếng Hàn?",
+      "explanation": "\"사\" có nghĩa là \"Bốn\" trong tiếng Hàn.",
+      "correctAnswer": "사",
+      "options": [
+        "삼",
+        "사",
+        "오",
+        "육"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "\"오\" có nghĩa là gì?",
+      "explanation": "\"오\" có nghĩa là \"Năm\" trong tiếng Hàn.",
+      "correctAnswer": "Năm",
+      "options": [
+        "Bốn",
+        "Năm",
+        "Sáu",
+        "Bảy"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Sáu\" trong tiếng Hàn?",
+      "explanation": "\"육\" có nghĩa là \"Sáu\" trong tiếng Hàn.",
+      "correctAnswer": "육",
+      "options": [
+        "오",
+        "육",
+        "칠",
+        "팔"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "\"칠\" có nghĩa là gì?",
+      "explanation": "\"칠\" có nghĩa là \"Bảy\" trong tiếng Hàn.",
+      "correctAnswer": "Bảy",
+      "options": [
+        "Sáu",
+        "Bảy",
+        "Tám",
+        "Chín"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Tám\" trong tiếng Hàn?",
+      "explanation": "\"팔\" có nghĩa là \"Tám\" trong tiếng Hàn.",
+      "correctAnswer": "팔",
+      "options": [
+        "칠",
+        "팔",
+        "구",
+        "십"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "\"구\" có nghĩa là gì?",
+      "explanation": "\"구\" có nghĩa là \"Chín\" trong tiếng Hàn.",
+      "correctAnswer": "Chín",
+      "options": [
+        "Tám",
+        "Chín",
+        "Mười",
+        "Một"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Mười\" trong tiếng Hàn?",
+      "explanation": "\"십\" có nghĩa là \"Mười\" trong tiếng Hàn.",
+      "correctAnswer": "십",
+      "options": [
+        "구",
+        "십",
+        "백",
+        "천"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "\"더하기\" có nghĩa là gì?",
+      "explanation": "\"더하기\" có nghĩa là \"Cộng\" trong tiếng Hàn.",
+      "correctAnswer": "Cộng",
+      "options": [
+        "Trừ",
+        "Cộng",
+        "Nhân",
+        "Chia"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Trừ\" trong tiếng Hàn?",
+      "explanation": "\"빼기\" có nghĩa là \"Trừ\" trong tiếng Hàn.",
+      "correctAnswer": "빼기",
+      "options": [
+        "더하기",
+        "빼기",
+        "곱하기",
+        "나누기"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "\"곱하기\" có nghĩa là gì?",
+      "explanation": "\"곱하기\" có nghĩa là \"Nhân\" trong tiếng Hàn.",
+      "correctAnswer": "Nhân",
+      "options": [
+        "Cộng",
+        "Trừ",
+        "Nhân",
+        "Chia"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Chia\" trong tiếng Hàn?",
+      "explanation": "\"나누기\" có nghĩa là \"Chia\" trong tiếng Hàn.",
+      "correctAnswer": "나누기",
+      "options": [
+        "더하기",
+        "빼기",
+        "곱하기",
+        "나누기"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "\"몇 살이에요?\" có nghĩa là gì?",
+      "explanation": "\"몇 살이에요?\" có nghĩa là \"Bạn bao nhiêu tuổi?\" trong tiếng Hàn.",
+      "correctAnswer": "Bạn bao nhiêu tuổi?",
+      "options": [
+        "Bạn bao nhiêu tuổi?",
+        "Bạn tên gì?",
+        "Bạn từ đâu đến?",
+        "Bạn khỏe không?"
+      ]
+    }
+  ],
+  "totalQuestions": 15,
+  "createdAt": "2025-08-04T00:11:43.768Z"
+}

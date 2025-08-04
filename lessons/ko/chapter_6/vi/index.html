@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 6: Các Hoạt Động Hàng Ngày</title>
+    <style>
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%; /* Prevent text zoom on orientation change */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* General Headings */
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 2.5em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: var(--primary-color);
+            margin-top: 1.8em;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            font-size: 1.1em; /* Minimum 16px */
+            margin-bottom: 1em;
+            line-height: 1.7;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5em;
+        }
+
+        li {
+            padding: 8px 0;
+            font-size: 1.1em;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            font-style: italic;
+            color: var(--primary-color);
+        }
+
+        /* Specific Lesson Components */
+        .chapter-title {
+            font-size: 2.2em;
+            text-align: center;
+            margin: 20px 0;
+            color: var(--heading-color);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .section-intro, .summary-content {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-box {
+            background-color: var(--white);
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-box p {
+            margin: 5px 0;
+            font-size: 1em;
+        }
+
+        .korean-text {
+            color: var(--heading-color);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .vietnamese-translation {
+            color: var(--body-text-color);
+            font-style: italic;
+            font-size: 0.95em;
+        }
+
+        .pronunciation-guide {
+            font-size: 0.9em;
+            color: #888;
+            margin-left: 5px;
+        }
+
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            vertical-align: middle;
+            margin-left: 10px;
+            padding: 0;
+        }
+
+        .audio-icon:hover {
+            background-color: #6a429b; /* Darker primary */
+            transform: scale(1.05);
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .question-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--heading-color);
+            font-size: 1.1em;
+        }
+
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .option-item {
+            margin-bottom: 8px;
+        }
+
+        .option-button {
+            display: block;
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #f0f0f0;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            text-align: left;
+            font-size: 1em;
+            color: var(--body-text-color);
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            min-height: 44px; /* Ensure touch friendliness */
+            box-sizing: border-box;
+        }
+
+        .option-button:hover {
+            background-color: #e5e5e5;
+            border-color: #c9c9c9;
+        }
+
+        .answer-button {
+            display: block;
+            width: 100%;
+            padding: 12px 20px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 15px;
+            min-height: 44px; /* Ensure touch friendliness */
+            box-sizing: border-box;
+        }
+
+        .answer-button:hover {
+            background-color: #6a429b; /* Darker primary */
+        }
+
+        .answer-text {
+            margin-top: 10px;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1em;
+            display: none; /* Will be toggled by JS on the app side */
+        }
+
+        /* Summary Section */
+        .summary-content ul {
+            list-style: circle;
+            margin-left: 20px;
+        }
+
+        .summary-content li {
+            padding: 5px 0;
+            font-size: 1em;
+            color: var(--body-text-color);
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            p, li, .option-button {
+                font-size: 1em;
+            }
+            .container {
+                padding: 15px;
+            }
+            .section-intro, .practice-section, .summary-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chương 6: Các Hoạt Động Hàng Ngày và Thói Quen</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-intro">
+            <h2>Chào mừng bạn đến với Chương 6! 👋</h2>
+            <p>Trong bài học này, chúng ta sẽ cùng khám phá các động từ cơ bản để nói về các hoạt động hàng ngày của bạn trong tiếng Hàn. Từ việc thức dậy, ăn uống cho đến đi ngủ, bạn sẽ học cách diễn đạt những hành động này một cách tự tin. Chúng ta cũng sẽ học các cụm từ chỉ thời gian trong ngày nữa đấy!</p>
+            <p>Hãy cùng bắt đầu nhé! 🚀</p>
+        </section>
+
+        <section>
+            <h2>Các Động Từ Hoạt Động Hàng Ngày</h2>
+            <p>Dưới đây là một số động từ quan trọng mà bạn sẽ sử dụng rất thường xuyên:</p>
+
+            <h3>1. 일어나다 (Thức dậy)</h3>
+            <p>
+                <span class="korean-text">일어나다</span>
+                <span class="pronunciation-guide">[il-eo-na-da]</span>
+                <button class="audio-icon" data-audio-text="일어나다">🔊</button>
+                : <em>Thức dậy / Ngủ dậy</em>
+            </p>
+            <div class="example-box">
+                <p><span class="korean-text">아침에 일찍 일어나요.</span> <button class="audio-icon" data-audio-text="아침에 일찍 일어나요.">🔊</button></p>
+                <p><span class="vietnamese-translation">Tôi dậy sớm vào buổi sáng.</span></p>
+            </div>
+
+            <h3>2. 먹다 (Ăn)</h3>
+            <p>
+                <span class="korean-text">먹다</span>
+                <span class="pronunciation-guide">[meok-da]</span>
+                <button class="audio-icon" data-audio-text="먹다">🔊</button>
+                : <em>Ăn</em>
+            </p>
+            <div class="example-box">
+                <p><span class="korean-text">밥을 먹어요.</span> <button class="audio-icon" data-audio-text="밥을 먹어요.">🔊</button></p>
+                <p><span class="vietnamese-translation">Tôi ăn cơm.</span></p>
+                <p><span class="korean-text">점심을 먹어요.</span> <button class="audio-icon" data-audio-text="점심을 먹어요.">🔊</button></p>
+                <p><span class="vietnamese-translation">Tôi ăn trưa.</span></p>
+            </div>
+
+            <h3>3. 마시다 (Uống)</h3>
+            <p>
+                <span class="korean-text">마시다</span>
+                <span class="pronunciation-guide">[ma-si-da]</span>
+                <button class="audio-icon" data-audio-text="마시다">🔊</button>
+                : <em>Uống</em>
+            </p>
+            <div class="example-box">
+                <p><span class="korean-text">물을 마셔요.</span> <button class="audio-icon" data-audio-text="물을 마셔요.">🔊</button></p>
+                <p><span class="vietnamese-translation">Tôi uống nước.</span></p>
+                <p><span class="korean-text">커피를 마셔요.</span> <button class="audio-icon" data-audio-text="커피를 마셔요.">🔊</button></p>
+                <p><span class="vietnamese-translation">Tôi uống cà phê.</span></p>
+            </div>
+
+            <h3>4. 공부하다 (Học)</h3>
+            <p>
+                <span class="korean-text">공부하다</span>
+                <span class="pronunciation-guide">[gong-bu-ha-da]</span>
+                <button class="audio-icon" data-audio-text="공부하다">🔊</button>
+                : <em>Học / Học bài</em>
+            </p>
+            <div class="example-box">
+                <p><span class="korean-text">한국어를 공부해요.</span> <button class="audio-icon" data-audio-text="한국어를 공부해요.">🔊</button></p>
+                <p><span class="vietnamese-translation">Tôi học tiếng Hàn.</span></p>
+            </div>
+
+            <h3>5. 일하다 (Làm việc)</h3>
+            <p>
+                <span class="korean-text">일하다</span>
+                <span class="pronunciation-guide">[il-ha-da]</span>
+                <button class="audio-icon" data-audio-text="일하다">🔊</button>
+                : <em>Làm việc</em>
+            </p>
+            <div class="example-box">
+                <p><span class="korean-text">회사에서 일해요.</span> <button class="audio-icon" data-audio-text="회사에서 일해요.">🔊</button></p>
+                <p><span class="vietnamese-translation">Tôi làm việc ở công ty.</span></p>
+            </div>
+
+            <h3>6. 자다 (Ngủ)</h3>
+            <p>
+                <span class="korean-text">자다</span>
+                <span class="pronunciation-guide">[ja-da]</span>
+                <button class="audio-icon" data-audio-text="자다">🔊</button>
+                : <em>Ngủ</em>
+            </p>
+            <div class="example-box">
+                <p><span class="korean-text">밤에 일찍 자요.</span> <button class="audio-icon" data-audio-text="밤에 일찍 자요.">🔊</button></p>
+                <p><span class="vietnamese-translation">Tôi ngủ sớm vào buổi tối.</span></p>
+            </div>
+
+            <p>💡 <strong>Ghi chú ngữ pháp nhỏ:</strong> Bạn có thể thấy các động từ trên được chia ở dạng đuôi <strong>-아요/어요</strong>. Đây là dạng chia thì hiện tại lịch sự trong tiếng Hàn, được dùng rất phổ biến trong giao tiếp hàng ngày. Chúng ta sẽ tìm hiểu sâu hơn về cách chia động từ trong các chương tiếp theo nhé!</p>
+        </section>
+
+        <section>
+            <h2>Các Cụm Từ Chỉ Thời Gian Trong Ngày</h2>
+            <p>Để nói về thời gian thực hiện các hoạt động, chúng ta có thể kết hợp với các từ sau:</p>
+
+            <h3>1. 아침 (Buổi sáng)</h3>
+            <p>
+                <span class="korean-text">아침</span>
+                <span class="pronunciation-guide">[a-chim]</span>
+                <button class="audio-icon" data-audio-text="아침">🔊</button>
+                : <em>Buổi sáng</em>
+            </p>
+            <div class="example-box">
+                <p><span class="korean-text">아침에 운동해요.</span> <button class="audio-icon" data-audio-text="아침에 운동해요.">🔊</button></p>
+                <p><span class="vietnamese-translation">Tôi tập thể dục vào buổi sáng.</span></p>
+            </div>
+
+            <h3>2. 점심 (Buổi trưa)</h3>
+            <p>
+                <span class="korean-text">점심</span>
+                <span class="pronunciation-guide">[jeom-sim]</span>
+                <button class="audio-icon" data-audio-text="점심">🔊</button>
+                : <em>Buổi trưa</em>
+            </p>
+            <div class="example-box">
+                <p><span class="korean-text">점심에 친구를 만나요.</span> <button class="audio-icon" data-audio-text="점심에 친구를 만나요.">🔊</button></p>
+                <p><span class="vietnamese-translation">Tôi gặp bạn vào buổi trưa.</span></p>
+            </div>
+
+            <h3>3. 저녁 (Buổi tối / Bữa tối)</h3>
+            <p>
+                <span class="korean-text">저녁</span>
+                <span class="pronunciation-guide">[jeo-nyeok]</span>
+                <button class="audio-icon" data-audio-text="저녁">🔊</button>
+                : <em>Buổi tối / Bữa tối</em>
+            </p>
+            <div class="example-box">
+                <p><span class="korean-text">저녁을 먹어요.</span> <button class="audio-icon" data-audio-text="저녁을 먹어요.">🔊</button></p>
+                <p><span class="vietnamese-translation">Tôi ăn tối.</span></p>
+            </div>
+
+            <h3>4. 밤 (Đêm)</h3>
+            <p>
+                <span class="korean-text">밤</span>
+                <span class="pronunciation-guide">[bam]</span>
+                <button class="audio-icon" data-audio-text="밤">🔊</button>
+                : <em>Đêm</em>
+            </p>
+            <div class="example-box">
+                <p><span class="korean-text">밤에 영화를 봐요.</span> <button class="audio-icon" data-audio-text="밤에 영화를 봐요.">🔊</button></p>
+                <p><span class="vietnamese-translation">Tôi xem phim vào buổi tối (đêm).</span></p>
+            </div>
+            <p>
+                💡 <strong>Lưu ý:</strong> Để nói "vào buổi...", bạn thêm trợ từ <span class="korean-text">에</span> (e) sau từ chỉ thời gian:
+                <br>
+                <span class="korean-text">아침에</span> (vào buổi sáng), <span class="korean-text">점심에</span> (vào buổi trưa), <span class="korean-text">저녁에</span> (vào buổi tối/chiều), <span class="korean-text">밤에</span> (vào ban đêm).
+            </p>
+        </section>
+
+        <section class="practice-section">
+            <h2>Luyện Tập! 💪</h2>
+            <p>Hãy chọn đáp án đúng để hoàn thành các câu sau. Nhấn vào nút "Đáp án" để kiểm tra nhé!</p>
+
+            <div class="question-item">
+                <p class="question-text">1. Để nói "Tôi ăn sáng" trong tiếng Hàn, bạn sẽ nói là:</p>
+                <ul class="options-list">
+                    <li class="option-item"><button class="option-button">a) 아침을 마셔요.</button></li>
+                    <li class="option-item"><button class="option-button">b) 아침을 먹어요.</button></li>
+                    <li class="option-item"><button class="option-button">c) 아침을 공부해요.</button></li>
+                </ul>
+                <button class="answer-button">Đáp án</button>
+                <p class="answer-text" data-answer="b">Đáp án đúng là: b) 아침을 먹어요. (Tôi ăn sáng).</p>
+            </div>
+
+            <div class="question-item">
+                <p class="question-text">2. Từ nào có nghĩa là "Làm việc"?</p>
+                <ul class="options-list">
+                    <li class="option-item"><button class="option-button">a) 자다</button></li>
+                    <li class="option-item"><button class="option-button">b) 일어나다</button></li>
+                    <li class="option-item"><button class="option-button">c) 일하다</button></li>
+                </ul>
+                <button class="answer-button">Đáp án</button>
+                <p class="answer-text" data-answer="c">Đáp án đúng là: c) 일하다.</p>
+            </div>
+
+            <div class="question-item">
+                <p class="question-text">3. "Tôi uống nước vào buổi trưa" là câu nào trong tiếng Hàn?</p>
+                <ul class="options-list">
+                    <li class="option-item"><button class="option-button">a) 밤에 물을 마셔요.</button></li>
+                    <li class="option-item"><button class="option-button">b) 점심에 물을 마셔요.</button></li>
+                    <li class="option-item"><button class="option-button">c) 아침에 물을 마셔요.</button></li>
+                </ul>
+                <button class="answer-button">Đáp án</button>
+                <p class="answer-text" data-answer="b">Đáp án đúng là: b) 점심에 물을 마셔요.</p>
+            </div>
+
+            <div class="question-item">
+                <p class="question-text">4. Từ "밤" có nghĩa là gì?</p>
+                <ul class="options-list">
+                    <li class="option-item"><button class="option-button">a) Buổi sáng</button></li>
+                    <li class="option-item"><button class="option-button">b) Buổi trưa</button></li>
+                    <li class="option-item"><button class="option-button">c) Đêm</button></li>
+                </ul>
+                <button class="answer-button">Đáp án</button>
+                <p class="answer-text" data-answer="c">Đáp án đúng là: c) Đêm.</p>
+            </div>
+        </section>
+
+        <section class="summary-content">
+            <h2>Tóm Tắt Chương 6 📝</h2>
+            <p>Bạn đã làm rất tốt! Dưới đây là những gì chúng ta đã học được trong chương này:</p>
+            <ul>
+                <li>✨ Các động từ chỉ hoạt động hàng ngày:
+                    <ul>
+                        <li><span class="korean-text">일어나다</span> (thức dậy)</li>
+                        <li><span class="korean-text">먹다</span> (ăn)</li>
+                        <li><span class="korean-text">마시다</span> (uống)</li>
+                        <li><span class="korean-text">공부하다</span> (học)</li>
+                        <li><span class="korean-text">일하다</span> (làm việc)</li>
+                        <li><span class="korean-text">자다</span> (ngủ)</li>
+                    </ul>
+                </li>
+                <li>✨ Các cụm từ chỉ thời gian trong ngày:
+                    <ul>
+                        <li><span class="korean-text">아침</span> (buổi sáng)</li>
+                        <li><span class="korean-text">점심</span> (buổi trưa)</li>
+                        <li><span class="korean-text">저녁</span> (buổi tối / bữa tối)</li>
+                        <li><span class="korean-text">밤</span> (ban đêm)</li>
+                    </ul>
+                </li>
+                <li>✨ Cách sử dụng trợ từ <span class="korean-text">에</span> để chỉ thời gian (ví dụ: <span class="korean-text">아침에</span>).</li>
+            </ul>
+            <p>Hãy luyện tập sử dụng những từ này trong các câu đơn giản hàng ngày của bạn nhé. Hẹn gặp lại bạn trong chương tiếp theo! Ghi nhớ, thực hành là chìa khóa để thành thạo! 💪</p>
+        </section>
+
+    </div>
+</body>
+</html>

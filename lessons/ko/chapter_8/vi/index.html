@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Nơi chốn và Phương hướng</title>
+    <style>
+        /* Global Styles & Mobile-First Base */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white: #FFFFFF;
+            --black: #000000;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            -webkit-text-size-adjust: 100%; /* Prevent text size adjustment on iOS */
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto;
+        }
+
+        /* Headings */
+        h1, h2, h3, h4 {
+            color: var(--heading-color);
+            margin-top: 24px;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 24px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 32px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 24px;
+        }
+        
+        /* Specific Header Structure Requirement */
+        .chapter-title {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 0; /* Remove default margin to ensure header image positioning */
+        }
+
+        .lesson-header {
+            margin: 20px 0; /* Required */
+            text-align: center; /* Required */
+        }
+
+        /* The .lesson-header-image will display placeholder text as per requirement to avoid external image URLs */
+        .lesson-header-image {
+            width: 100%; /* Required */
+            max-width: 600px; /* Required */
+            height: auto; /* Required */
+            border-radius: 8px; /* Required */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Required */
+            display: block; /* Required */
+            margin: 0 auto; /* Required */
+            
+            /* Visual styling for the placeholder image */
+            background-color: var(--border-color); 
+            color: var(--heading-color);
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px; 
+            text-align: center;
+            overflow: hidden; 
+            word-break: break-word;
+            /* Content for placeholder image */
+            content: "🧭 Địa điểm & Phương hướng 🗺️"; 
+            /* Note: 'content' property on <img> tag is not standard. For display purposes, it's better to wrap in a div or use pseudo-elements for an image placeholder that displays text. For direct `<img>` tag, it would need the image to exist. Sticking to the prompt, I'll keep it as `<img>` and ensure styling makes it visible if image fails to load. */
+        }
+        /* A fallback for browsers that don't display content on <img>: */
+        .lesson-header-image::before {
+            content: attr(alt); /* Display alt text if image doesn't load */
+            padding: 10px;
+        }
+
+
+        /* Section Styling */
+        section {
+            background-color: var(--white);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            position: relative;
+        }
+        li::before {
+            content: '👉'; /* Unicode arrow */
+            position: absolute;
+            left: -10px;
+            color: var(--primary-color);
+            font-size: 14px;
+            top: 4px; /* Adjust vertical alignment */
+        }
+        /* Specific list styling for vocab and grammar items to align content */
+        .vocab-item, .grammar-item {
+            display: flex;
+            flex-direction: column; /* Stack vertically for mobile */
+            padding: 15px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .vocab-item:last-child, .grammar-item:last-child {
+            border-bottom: none;
+        }
+        .vocab-item .korean-word,
+        .grammar-item .korean-example {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .vocab-item .korean-word strong,
+        .grammar-item .korean-example strong {
+            font-size: 20px;
+            color: var(--heading-color);
+            margin-right: 10px;
+            line-height: 1; /* For better alignment with audio icon */
+        }
+        .vocab-item .pronunciation {
+            font-style: italic;
+            color: #888;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+        .vocab-item .vietnamese-translation,
+        .grammar-item .vietnamese-translation {
+            color: var(--body-text-color);
+            margin-top: 5px; /* Spacing for stacked layout on mobile */
+            font-size: 16px;
+        }
+        .grammar-rule {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .grammar-rule strong {
+            color: var(--primary-color);
+            font-size: 1.1em;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 24px; /* Icon size */
+            cursor: pointer;
+            color: var(--primary-color);
+            padding: 10px; /* Make it large for tapping */
+            min-width: 44px; /* Required */
+            min-height: 44px; /* Required */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%; /* Make it round */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            vertical-align: middle; /* Align with text */
+            box-sizing: border-box; /* Include padding in dimensions */
+        }
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light hover effect */
+            transform: scale(1.05);
+        }
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Practice Section */
+        .practice-question {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+        .practice-question p {
+            font-size: 17px;
+            margin-bottom: 10px;
+            color: var(--heading-color); /* Make question text stand out */
+        }
+        .practice-options button {
+            background-color: var(--white);
+            color: var(--heading-color);
+            border: 1px solid var(--primary-color);
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            min-height: 44px; /* Required */
+            width: calc(100% - 10px); /* Adjust for margin */
+            max-width: 300px; /* Prevent stretching too wide on large screens */
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+            box-sizing: border-box;
+            display: block; /* Stack buttons vertically on mobile */
+        }
+        .practice-options button:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        .practice-options button:active {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+        .correct-answer {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 16px;
+            display: block; /* Ensure it's on its own line */
+            padding: 5px 0;
+        }
+        .note {
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple background */
+            padding: 15px;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 15px;
+        }
+        .note strong {
+            color: var(--primary-color);
+        }
+
+        /* Summary Section */
+        .summary-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        .summary-item strong {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design (for larger screens) */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 36px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 24px;
+            }
+            .container {
+                padding: 30px;
+            }
+            section {
+                padding: 25px;
+            }
+            .vocab-item, .grammar-item {
+                flex-direction: row; /* Layout horizontally on larger screens */
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0;
+            }
+            .vocab-item .korean-word,
+            .grammar-item .korean-example {
+                margin-bottom: 0;
+            }
+            .vocab-item .vietnamese-translation,
+            .grammar-item .vietnamese-translation {
+                text-align: right;
+                margin-top: 0;
+            }
+            .practice-options button {
+                width: auto; /* Allow buttons to size based on content */
+                min-width: 150px;
+                display: inline-block; /* Display side-by-side */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 8: Địa điểm và Phương hướng</h1>
+        <div class="lesson-header">
+            <!-- As per requirement, using src="../header.webp" and class "lesson-header-image". 
+                 The visual content will be represented by alt text or pseudo-element styling 
+                 since external image URLs are forbidden. -->
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>👋 Chào mừng đến với Bài 8!</h2>
+            <p>Trong bài học này, chúng ta sẽ khám phá các từ vựng về địa điểm và phương hướng trong tiếng Hàn. Bạn sẽ học cách nói về những nơi quen thuộc như nhà, trường học, bệnh viện, và cách diễn tả vị trí của chúng. Hãy bắt đầu nhé!</p>
+        </section>
+
+        <section>
+            <h2>🏠 Các Địa điểm Quan trọng</h2>
+            <p>Hãy cùng học những từ vựng cơ bản về các địa điểm thường gặp nhé. Đừng quên lắng nghe cách phát âm!</p>
+
+            <ul>
+                <li class="vocab-item">
+                    <div class="korean-word">
+                        <strong>집</strong> <span class="pronunciation">[chip]</span>
+                        <button class="audio-icon" data-audio-text="집">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Nhà / Mái ấm</span>
+                </li>
+                <li class="vocab-item">
+                    <div class="korean-word">
+                        <strong>학교</strong> <span class="pronunciation">[hak-gyo]</span>
+                        <button class="audio-icon" data-audio-text="학교">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Trường học</span>
+                </li>
+                <li class="vocab-item">
+                    <div class="korean-word">
+                        <strong>회사</strong> <span class="pronunciation">[hoe-sa]</span>
+                        <button class="audio-icon" data-audio-text="회사">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Công ty / Văn phòng</span>
+                </li>
+                <li class="vocab-item">
+                    <div class="korean-word">
+                        <strong>병원</strong> <span class="pronunciation">[byeong-won]</span>
+                        <button class="audio-icon" data-audio-text="병원">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Bệnh viện</span>
+                </li>
+                <li class="vocab-item">
+                    <div class="korean-word">
+                        <strong>은행</strong> <span class="pronunciation">[eun-haeng]</span>
+                        <button class="audio-icon" data-audio-text="은행">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Ngân hàng</span>
+                </li>
+                <li class="vocab-item">
+                    <div class="korean-word">
+                        <strong>우체국</strong> <span class="pronunciation">[u-che-guk]</span>
+                        <button class="audio-icon" data-audio-text="우체국">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Bưu điện</span>
+                </li>
+            </ul>
+
+            <h3>💡 Ví dụ với Địa điểm</h3>
+            <ul>
+                <li class="grammar-item">
+                    <div class="korean-example">
+                        <strong>저는 집에 갑니다.</strong> <button class="audio-icon" data-audio-text="저는 집에 갑니다.">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Tôi đi về nhà.</span>
+                </li>
+                <li class="grammar-item">
+                    <div class="korean-example">
+                        <strong>학생들은 학교에 있어요.</strong> <button class="audio-icon" data-audio-text="학생들은 학교에 있어요.">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Học sinh đang ở trường học.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>⬆️ Các Từ Chỉ Phương hướng</h2>
+            <p>Để chỉ vị trí của đồ vật hoặc địa điểm, chúng ta cần biết các từ chỉ phương hướng này!</p>
+
+            <ul>
+                <li class="vocab-item">
+                    <div class="korean-word">
+                        <strong>앞</strong> <span class="pronunciation">[ap]</span>
+                        <button class="audio-icon" data-audio-text="앞">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Phía trước</span>
+                </li>
+                <li class="vocab-item">
+                    <div class="korean-word">
+                        <strong>뒤</strong> <span class="pronunciation">[dwi]</span>
+                        <button class="audio-icon" data-audio-text="뒤">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Phía sau</span>
+                </li>
+                <li class="vocab-item">
+                    <div class="korean-word">
+                        <strong>왼쪽</strong> <span class="pronunciation">[wen-jjok]</span>
+                        <button class="audio-icon" data-audio-text="왼쪽">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Bên trái</span>
+                </li>
+                <li class="vocab-item">
+                    <div class="korean-word">
+                        <strong>오른쪽</strong> <span class="pronunciation">[o-reun-jjok]</span>
+                        <button class="audio-icon" data-audio-text="오른쪽">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Bên phải</span>
+                </li>
+                <li class="vocab-item">
+                    <div class="korean-word">
+                        <strong>위</strong> <span class="pronunciation">[wi]</span>
+                        <button class="audio-icon" data-audio-text="위">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Bên trên</span>
+                </li>
+                <li class="vocab-item">
+                    <div class="korean-word">
+                        <strong>아래</strong> <span class="pronunciation">[a-rae]</span>
+                        <button class="audio-icon" data-audio-text="아래">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Bên dưới</span>
+                </li>
+            </ul>
+
+            <h3>💡 Ví dụ với Phương hướng</h3>
+            <ul>
+                <li class="grammar-item">
+                    <div class="korean-example">
+                        <strong>책이 책상 위에 있어요.</strong> <button class="audio-icon" data-audio-text="책이 책상 위에 있어요.">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Cuốn sách ở trên bàn.</span>
+                </li>
+                <li class="grammar-item">
+                    <div class="korean-example">
+                        <strong>제 차는 건물 뒤에 있습니다.</strong> <button class="audio-icon" data-audio-text="제 차는 건물 뒤에 있습니다.">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Xe của tôi ở phía sau tòa nhà.</span>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>📍 Tiểu Từ Vị Trí: 에 và 에서</h2>
+            <p>Để nói 'ở đâu' hoặc 'đến đâu' trong tiếng Hàn, chúng ta sử dụng các tiểu từ vị trí. Hai tiểu từ quan trọng nhất là <strong>에</strong> và <strong>에서</strong>.</p>
+
+            <h3>1. Tiểu từ 에 (E) - "tại, ở, đến"</h3>
+            <div class="grammar-rule">
+                <p>Tiểu từ <strong>에</strong> được gắn vào danh từ chỉ địa điểm để diễn tả:</p>
+                <ul>
+                    <li><p><strong>Điểm đến:</strong> Khi bạn di chuyển đến một địa điểm. Thường đi với các động từ di chuyển như 가다 (đi), 오다 (đến), 다니다 (thường xuyên đi).</p></li>
+                    <li><p><strong>Vị trí tĩnh:</strong> Khi một vật/người đang ở một địa điểm nào đó (không có hành động xảy ra tại đó). Thường đi với các động từ tồn tại như 있다 (có, ở), 없다 (không có, không ở).</p></li>
+                </ul>
+            </div>
+
+            <h3>💡 Ví dụ với 에</h3>
+            <ul>
+                <li class="grammar-item">
+                    <div class="korean-example">
+                        <strong>저는 서울에 갑니다.</strong> <button class="audio-icon" data-audio-text="저는 서울에 갑니다.">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Tôi đi đến Seoul. (Điểm đến)</span>
+                </li>
+                <li class="grammar-item">
+                    <div class="korean-example">
+                        <strong>책이 가방에 있어요.</strong> <button class="audio-icon" data-audio-text="책이 가방에 있어요.">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Cuốn sách ở trong cặp. (Vị trí tĩnh)</span>
+                </li>
+                <li class="grammar-item">
+                    <div class="korean-example">
+                        <strong>저는 회사에 다닙니다.</strong> <button class="audio-icon" data-audio-text="저는 회사에 다닙니다.">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Tôi đi làm ở công ty. (Thường xuyên đi đến)</span>
+                </li>
+            </ul>
+
+            <h3>2. Tiểu từ 에서 (E-seo) - "tại, ở, từ"</h3>
+            <div class="grammar-rule">
+                <p>Tiểu từ <strong>에서</strong> được gắn vào danh từ chỉ địa điểm để diễn tả:</p>
+                <ul>
+                    <li><p><strong>Nơi diễn ra hành động:</strong> Khi một hành động nào đó đang xảy ra tại địa điểm đó.</p></li>
+                    <li><p><strong>Điểm xuất phát:</strong> Khi bạn bắt đầu di chuyển "từ" một địa điểm nào đó (ít phổ biến hơn trong bài này).</p></li>
+                </ul>
+            </div>
+
+            <h3>💡 Ví dụ với 에서</h3>
+            <ul>
+                <li class="grammar-item">
+                    <div class="korean-example">
+                        <strong>저는 학교에서 공부해요.</strong> <button class="audio-icon" data-audio-text="저는 학교에서 공부해요.">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Tôi học ở trường. (Hành động 'học' xảy ra ở trường)</span>
+                </li>
+                <li class="grammar-item">
+                    <div class="korean-example">
+                        <strong>친구를 카페에서 만났어요.</strong> <button class="audio-icon" data-audio-text="친구를 카페에서 만났어요.">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Tôi đã gặp bạn ở quán cà phê. (Hành động 'gặp' xảy ra ở quán cà phê)</span>
+                </li>
+                <li class="grammar-item">
+                    <div class="korean-example">
+                        <strong>병원에서 약을 샀어요.</strong> <button class="audio-icon" data-audio-text="병원에서 약을 샀어요.">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Tôi đã mua thuốc ở bệnh viện. (Hành động 'mua' xảy ra ở bệnh viện)</span>
+                </li>
+            </ul>
+
+            <h3>So sánh 에 và 에서</h3>
+            <div class="note">
+                <p>Hãy nhớ:</p>
+                <ul>
+                    <li><strong>에</strong> dùng cho vị trí tĩnh (<strong>있어요/없어요</strong>) hoặc điểm đến (<strong>가다/오다/다니다</strong>).</li>
+                    <li><strong>에서</strong> dùng cho nơi mà một <strong>hành động</strong> đang diễn ra.</li>
+                </ul>
+                <p>Ví dụ so sánh:</p>
+                <li class="grammar-item">
+                    <div class="korean-example">
+                        <strong>저는 집에 있어요.</strong> <button class="audio-icon" data-audio-text="저는 집에 있어요.">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Tôi đang ở nhà. (Tĩnh)</span>
+                </li>
+                <li class="grammar-item">
+                    <div class="korean-example">
+                        <strong>저는 집에서 밥을 먹어요.</strong> <button class="audio-icon" data-audio-text="저는 집에서 밥을 먹어요.">🔊</button>
+                    </div>
+                    <span class="vietnamese-translation">Tôi ăn cơm ở nhà. (Hành động 'ăn' diễn ra ở nhà)</span>
+                </li>
+            </div>
+        </section>
+
+        <section>
+            <h2>✍️ Luyện tập</h2>
+            <p>Hãy cùng thực hành những gì chúng ta vừa học nhé!</p>
+
+            <h3>Bài 1: Chọn từ thích hợp</h3>
+            <div class="practice-question">
+                <p>1. Tôi đi đến _____. (Trường học)</p>
+                <div class="practice-options">
+                    <button>회사</button>
+                    <button>학교</button>
+                    <button>병원</button>
+                </div>
+                <span class="correct-answer">Đáp án: 학교 (hak-gyo)</span>
+            </div>
+
+            <div class="practice-question">
+                <p>2. Cuốn sách ở _____ bàn. (Trên)</p>
+                <div class="practice-options">
+                    <button>아래</button>
+                    <button>뒤</button>
+                    <button>위</button>
+                </div>
+                <span class="correct-answer">Đáp án: 위 (wi)</span>
+            </div>
+
+            <h3>Bài 2: Điền tiểu từ 에 hoặc 에서</h3>
+            <div class="practice-question">
+                <p>1. 저는 은행 ____ 돈을 찾아요. (Tôi rút tiền ở ngân hàng.)</p>
+                <div class="practice-options">
+                    <button>에</button>
+                    <button>에서</button>
+                </div>
+                <span class="correct-answer">Đáp án: 에서 (Hành động rút tiền xảy ra ở ngân hàng)</span>
+            </div>
+
+            <div class="practice-question">
+                <p>2. 공원이 집 ____ 가까워요. (Công viên gần nhà.)</p>
+                <div class="practice-options">
+                    <button>에</button>
+                    <button>에서</button>
+                </div>
+                <span class="correct-answer">Đáp án: 에 (Chỉ vị trí tĩnh, không có hành động cụ thể)</span>
+            </div>
+
+            <div class="practice-question">
+                <p>3. 우리는 우체국 ____ 편지를 보냈어요. (Chúng tôi đã gửi thư ở bưu điện.)</p>
+                <div class="practice-options">
+                    <button>에</button>
+                    <button>에서</button>
+                </div>
+                <span class="correct-answer">Đáp án: 에서 (Hành động gửi thư xảy ra ở bưu điện)</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>🇰🇷 Văn hóa Hàn Quốc: Cách hỏi đường</h2>
+            <div class="note">
+                <p>Ở Hàn Quốc, khi hỏi đường, bạn thường nghe những câu như "여기 어디예요?" (Đây là đâu?) hoặc "은행이 어디에 있어요?" (Ngân hàng ở đâu?). Người Hàn thường sử dụng các điểm mốc lớn như ga tàu điện ngầm, các cửa hàng tiện lợi hoặc các tòa nhà nổi bật để chỉ đường.</p>
+                <p>Nếu bạn muốn hỏi đường, hãy nói: <strong>"죄송하지만, [Địa điểm]이 어디에 있어요?"</strong> <button class="audio-icon" data-audio-text="죄송하지만, 은행이 어디에 있어요?">🔊</button> (Xin lỗi, [Địa điểm] ở đâu ạ?)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>✨ Tóm tắt bài học</h2>
+            <p>Tuyệt vời! Bạn đã hoàn thành bài học về địa điểm và phương hướng. Hãy cùng ôn lại những điểm chính:</p>
+            <ul>
+                <li class="summary-item"><strong>Các Địa điểm:</strong>
+                    <ul>
+                        <li>집 [chip] - Nhà</li>
+                        <li>학교 [hak-gyo] - Trường học</li>
+                        <li>회사 [hoe-sa] - Công ty</li>
+                        <li>병원 [byeong-won] - Bệnh viện</li>
+                        <li>은행 [eun-haeng] - Ngân hàng</li>
+                        <li>우체국 [u-che-guk] - Bưu điện</li>
+                    </ul>
+                </li>
+                <li class="summary-item"><strong>Các Từ Chỉ Phương hướng:</strong>
+                    <ul>
+                        <li>앞 [ap] - Phía trước</li>
+                        <li>뒤 [dwi] - Phía sau</li>
+                        <li>왼쪽 [wen-jjok] - Bên trái</li>
+                        <li>오른쪽 [o-reun-jjok] - Bên phải</li>
+                        <li>위 [wi] - Bên trên</li>
+                        <li>아래 [a-rae] - Bên dưới</li>
+                    </ul>
+                </li>
+                <li class="summary-item"><strong>Tiểu Từ Vị Trí:</strong>
+                    <ul>
+                        <li><strong>에:</strong> Dùng cho điểm đến (가다, 오다) hoặc vị trí tĩnh (있다, 없다).</li>
+                        <li><strong>에서:</strong> Dùng cho nơi diễn ra một hành động (공부하다, 먹다, 만나다).</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Bạn đã làm rất tốt! Hãy tiếp tục luyện tập để ghi nhớ những kiến thức này nhé. 💪</p>
+        </section>
+    </div>
+</body>
+</html>

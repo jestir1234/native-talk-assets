@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chương 3: Số và Cách Đếm trong Tiếng Hàn</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+            margin-top: 2em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #8B5FBF; /* Primary: Purple - for accent on subheadings */
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1em 0;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        li::before {
+            content: '⭐'; /* Unicode star for list items */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        strong {
+            color: #2C3E50; /* Dark blue for strong text */
+        }
+
+        em {
+            font-style: italic;
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        /* Lesson Header */
+        .chapter-title {
+            margin-top: 30px; /* More space for top */
+            margin-bottom: 10px;
+            padding: 0 10px;
+        }
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation-guide {
+            display: inline-block;
+            background-color: #E0E0E0; /* Light gray */
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-style: italic;
+            color: #2C3E50; /* Dark blue */
+            margin-left: 5px;
+        }
+
+        /* Example Box */
+        .example-box {
+            background-color: #F8F8F8; /* Lighter background for examples */
+            border-left: 4px solid #8B5FBF; /* Primary: Purple */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+
+        .example-box p {
+            margin: 0;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Circle shape */
+            width: 44px; /* Minimum touch target */
+            height: 44px; /* Minimum touch target */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+        .audio-icon:hover {
+            background-color: #6C499D; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #8B5FBF; /* Primary: Purple border for practice */
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF;
+            margin-top: 0;
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+        .practice-options button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            width: calc(50% - 16px); /* Two buttons per row on mobile */
+            min-height: 44px; /* Minimum touch target */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .practice-options button:hover {
+            background-color: #6C499D; /* Darker purple on hover */
+            transform: translateY(-2px);
+        }
+
+        .practice-input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        .practice-button {
+            background-color: #8B5FBF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            min-height: 44px;
+            width: auto;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .practice-button:hover {
+            background-color: #6C499D;
+            transform: translateY(-2px);
+        }
+
+        .feedback-message {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .feedback-message.correct {
+            color: #28a745; /* Green for correct */
+        }
+
+        .feedback-message.incorrect {
+            color: #dc3545; /* Red for incorrect */
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #FDF9E5;
+            border: 1px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 1em;
+        }
+
+        .summary-section ul {
+            padding-left: 20px;
+            list-style-type: '👉 '; /* Custom bullet for summary */
+        }
+
+        .summary-section li {
+            position: static; /* Remove absolute positioning from global li */
+            padding-left: 0;
+            margin-bottom: 0.8em;
+        }
+        .summary-section li::before {
+            content: none; /* Remove default star bullet */
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 480px) {
+            .practice-options button {
+                width: calc(33.33% - 16px); /* Three buttons per row on wider mobile screens */
+            }
+        }
+
+        @media (min-width: 768px) {
+            .practice-options button {
+                width: calc(25% - 16px); /* Four buttons per row on tablet/desktop */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 3: Số và Cách Đếm</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-card">
+            <h2>Chào mừng đến với bài học về Số và Cách Đếm! 🔢</h2>
+            <p>Trong tiếng Hàn, bạn sẽ gặp <strong>hai hệ thống số</strong> khác nhau, mỗi hệ thống được sử dụng cho các mục đích riêng biệt. Đừng lo lắng, chúng ta sẽ cùng khám phá từng loại một cách chi tiết và thực hành để bạn có thể sử dụng chúng thành thạo!</p>
+            <p>Hôm nay, chúng ta sẽ học:</p>
+            <ul>
+                <li>Hệ thống số Hán-Hàn (Sino-Korean)</li>
+                <li>Hệ thống số Thuần Hàn (Pure Korean)</li>
+                <li>Cách nói tuổi và đếm người</li>
+                <li>Các phép toán cơ bản</li>
+            </ul>
+        </section>
+
+        <section class="section-card">
+            <h2>1. Hệ thống số Hán-Hàn (Sino-Korean) 🚀</h2>
+            <p>Hệ thống số Hán-Hàn có nguồn gốc từ tiếng Trung và được sử dụng rộng rãi cho nhiều mục đích. Hãy bắt đầu với các số cơ bản từ 1 đến 10:</p>
+            <div class="example-box">
+                <p>1: <strong>일</strong> <button class="audio-icon" data-audio-text="일">🔊</button> <span class="pronunciation-guide">[il]</span></p>
+                <p>2: <strong>이</strong> <button class="audio-icon" data-audio-text="이">🔊</button> <span class="pronunciation-guide">[i]</span></p>
+                <p>3: <strong>삼</strong> <button class="audio-icon" data-audio-text="삼">🔊</button> <span class="pronunciation-guide">[sam]</span></p>
+                <p>4: <strong>사</strong> <button class="audio-icon" data-audio-text="사">🔊</button> <span class="pronunciation-guide">[sa]</span></p>
+                <p>5: <strong>오</strong> <button class="audio-icon" data-audio-text="오">🔊</button> <span class="pronunciation-guide">[o]</span></p>
+                <p>6: <strong>육</strong> <button class="audio-icon" data-audio-text="육">🔊</button> <span class="pronunciation-guide">[yuk]</span></p>
+                <p>7: <strong>칠</strong> <button class="audio-icon" data-audio-text="칠">🔊</button> <span class="pronunciation-guide">[chil]</span></p>
+                <p>8: <strong>팔</strong> <button class="audio-icon" data-audio-text="팔">🔊</button> <span class="pronunciation-guide">[pal]</span></p>
+                <p>9: <strong>구</strong> <button class="audio-icon" data-audio-text="구">🔊</button> <span class="pronunciation-guide">[gu]</span></p>
+                <p>10: <strong>십</strong> <button class="audio-icon" data-audio-text="십">🔊</button> <span class="pronunciation-guide">[ship]</span></p>
+            </div>
+
+            <h3>Ứng dụng của số Hán-Hàn:</h3>
+            <p>Bạn sẽ dùng số Hán-Hàn cho:</p>
+            <ul>
+                <li><strong>Ngày, tháng, năm:</strong></li>
+                <div class="example-box">
+                    <p>Ngày 15 tháng 8: 팔월 십오일 <button class="audio-icon" data-audio-text="팔월 십오일">🔊</button></p>
+                    <p>Năm 2023: 이천 이십삼년 <button class="audio-icon" data-audio-text="이천 이십삼년">🔊</button></p>
+                </div>
+
+                <li><strong>Tiền tệ:</strong></li>
+                <div class="example-box">
+                    <p>1.000 won: 천 원 <button class="audio-icon" data-audio-text="천 원">🔊</button></p>
+                    <p>5.500 won: 오천 오백 원 <button class="audio-icon" data-audio-text="오천 오백 원">🔊</button></p>
+                </div>
+
+                <li><strong>Số điện thoại:</strong></li>
+                <div class="example-box">
+                    <p>Số 123-4567: 일 이 삼 에 사 오 육 칠 <button class="audio-icon" data-audio-text="일 이 삼 에 사 오 육 칠">🔊</button></p>
+                    <p>(Lưu ý: "에" được dùng để đọc dấu gạch ngang)</p>
+                </div>
+
+                <li><strong>Phút, giây và thời gian (trừ giờ):</strong></li>
+                <div class="example-box">
+                    <p>10 phút: 십 분 <button class="audio-icon" data-audio-text="십 분">🔊</button></p>
+                    <p>30 giây: 삼십 초 <button class="audio-icon" data-audio-text="삼십 초">🔊</button></p>
+                </div>
+            </ul>
+        </section>
+
+        <div class="practice-section">
+            <h3>📝 Luyện tập: Số Hán-Hàn</h3>
+            <div class="practice-question">Số nào là "bảy" (7) trong Hán-Hàn?</div>
+            <div class="practice-options">
+                <button data-answer="사">사</button>
+                <button data-answer="육">육</button>
+                <button data-answer="칠">칠</button>
+                <button data-answer="팔">팔</button>
+            </div>
+            <div class="feedback-message" id="sinoKoreanFeedback"></div>
+        </div>
+
+        <section class="section-card">
+            <h2>2. Hệ thống số Thuần Hàn (Pure Korean) ✨</h2>
+            <p>Hệ thống số Thuần Hàn (hoặc còn gọi là hệ thống số bản địa) được sử dụng để đếm số lượng vật thể, người, hoặc giờ đồng hồ. Hệ thống này chỉ được dùng đến số 99. Nếu muốn nói số lớn hơn, bạn sẽ chuyển sang Hán-Hàn.</p>
+            <div class="example-box">
+                <p>1: <strong>하나</strong> <button class="audio-icon" data-audio-text="하나">🔊</button> <span class="pronunciation-guide">[ha-na]</span></p>
+                <p>2: <strong>둘</strong> <button class="audio-icon" data-audio-text="둘">🔊</button> <span class="pronunciation-guide">[dul]</span></p>
+                <p>3: <strong>셋</strong> <button class="audio-icon" data-audio-text="셋">🔊</button> <span class="pronunciation-guide">[set]</span></p>
+                <p>4: <strong>넷</strong> <button class="audio-icon" data-audio-text="넷">🔊</button> <span class="pronunciation-guide">[net]</span></p>
+                <p>5: <strong>다섯</strong> <button class="audio-icon" data-audio-text="다섯">🔊</button> <span class="pronunciation-guide">[da-seot]</span></p>
+                <p>6: <strong>여섯</strong> <button class="audio-icon" data-audio-text="여섯">🔊</button> <span class="pronunciation-guide">[yeo-seot]</span></p>
+                <p>7: <strong>일곱</strong> <button class="audio-icon" data-audio-text="일곱">🔊</button> <span class="pronunciation-guide">[il-gob]</span></p>
+                <p>8: <strong>여덟</strong> <button class="audio-icon" data-audio-text="여덟">🔊</button> <span class="pronunciation-guide">[yeo-deolb]</span></p>
+                <p>9: <strong>아홉</strong> <button class="audio-icon" data-audio-text="아홉">🔊</button> <span class="pronunciation-guide">[a-hob]</span></p>
+                <p>10: <strong>열</strong> <button class="audio-icon" data-audio-text="열">🔊</button> <span class="pronunciation-guide">[yeol]</span></p>
+            </div>
+
+            <p>Các số chục tròn (20, 30,...) cũng có dạng đặc biệt:</p>
+            <div class="example-box">
+                <p>20: <strong>스무</strong> <button class="audio-icon" data-audio-text="스무">🔊</button> <span class="pronunciation-guide">[seu-mu]</span></p>
+                <p>30: <strong>서른</strong> <button class="audio-icon" data-audio-text="서른">🔊</button> <span class="pronunciation-guide">[seo-reun]</span></p>
+                <p>40: <strong>마흔</strong> <button class="audio-icon" data-audio-text="마흔">🔊</button> <span class="pronunciation-guide">[ma-heun]</span></p>
+                <p>50: <strong>쉰</strong> <button class="audio-icon" data-audio-text="쉰">🔊</button> <span class="pronunciation-guide">[swin]</span></p>
+            </div>
+            <p><em>(Các số 60-90 cũng có dạng Thuần Hàn riêng như 예순 (60), 일흔 (70), nhưng chúng ít thông dụng hơn và thường được thay thế bằng số Hán-Hàn nếu cần số lớn.)</em></p>
+
+            <h3>Ứng dụng của số Thuần Hàn:</h3>
+            <p>Bạn sẽ dùng số Thuần Hàn cho:</p>
+            <ul>
+                <li><strong>Đếm vật thể:</strong> (kèm theo từ chỉ đơn vị)</li>
+                <div class="example-box">
+                    <p>Hai quả táo: 사과 두 개 <button class="audio-icon" data-audio-text="사과 두 개">🔊</button></p>
+                    <p>Ba quyển sách: 책 세 권 <button class="audio-icon" data-audio-text="책 세 권">🔊</button></p>
+                    <p><em>(Lưu ý: 하나, 둘, 셋, 넷 khi đi với đơn vị sẽ rút gọn thành 한, 두, 세, 네)</em></p>
+                </div>
+
+                <li><strong>Đếm giờ đồng hồ:</strong></li>
+                <div class="example-box">
+                    <p>2 giờ: 두 시 <button class="audio-icon" data-audio-text="두 시">🔊</button></p>
+                    <p>7 giờ: 일곱 시 <button class="audio-icon" data-audio-text="일곱 시">🔊</button></p>
+                </div>
+            </ul>
+        </section>
+
+        <div class="practice-section">
+            <h3>📝 Luyện tập: Số Thuần Hàn</h3>
+            <div class="practice-question">Bạn muốn nói "bốn chiếc xe hơi". Số "bốn" sẽ là gì?</div>
+            <div class="practice-options">
+                <button data-answer="사">사</button>
+                <button data-answer="셋">셋</button>
+                <button data-answer="넷">넷</button>
+                <button data-answer="구">구</button>
+            </div>
+            <div class="feedback-message" id="pureKoreanFeedback"></div>
+        </div>
+
+        <section class="section-card">
+            <h2>3. Tuổi và Đếm người 👥</h2>
+            <p>Khi nói về tuổi, chúng ta thường sử dụng hệ thống số Thuần Hàn kết hợp với đơn vị <strong>살</strong> <button class="audio-icon" data-audio-text="살">🔊</button> (tuổi).</p>
+            <ul>
+                <li>Giống như khi đếm vật, số Thuần Hàn cũng có dạng rút gọn khi đi với 살:
+                    <ul>
+                        <li>1 tuổi: <strong>한 살</strong> <button class="audio-icon" data-audio-text="한 살">🔊</button></li>
+                        <li>2 tuổi: <strong>두 살</strong> <button class="audio-icon" data-audio-text="두 살">🔊</button></li>
+                        <li>3 tuổi: <strong>세 살</strong> <button class="audio-icon" data-audio-text="세 살">🔊</button></li>
+                        <li>4 tuổi: <strong>네 살</strong> <button class="audio-icon" data-audio-text="네 살">🔊</button></li>
+                        <li>20 tuổi: <strong>스무 살</strong> <button class="audio-icon" data-audio-text="스무 살">🔊</button></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="example-box">
+                <p>Tôi 25 tuổi: 저는 스물다섯 살이에요. <button class="audio-icon" data-audio-text="저는 스물다섯 살이에요.">🔊</button></p>
+                <p>Em bé đó 1 tuổi: 그 아기는 한 살이에요. <button class="audio-icon" data-audio-text="그 아기는 한 살이에요.">🔊</button></p>
+            </div>
+
+            <p><strong>Văn hóa Hàn Quốc: Cách tính tuổi</strong> 🇰🇷</p>
+            <p>Ở Hàn Quốc, mọi người thường lớn hơn 1 hoặc 2 tuổi so với tuổi quốc tế của họ. Khi sinh ra, em bé đã được coi là 1 tuổi, và tất cả mọi người sẽ cộng thêm 1 tuổi vào ngày 1 tháng 1 hàng năm (Tết Dương lịch). Tuy nhiên, kể từ tháng 6 năm 2023, Hàn Quốc đã chính thức chuyển sang hệ thống tính tuổi quốc tế cho các mục đích hành chính, nhưng trong giao tiếp hàng ngày, tuổi Hàn Quốc vẫn rất phổ biến.</p>
+
+            <h3>Đếm người:</h3>
+            <p>Để đếm người, chúng ta cũng sử dụng số Thuần Hàn với đơn vị <strong>명</strong> <button class="audio-icon" data-audio-text="명">🔊</button> (người).</p>
+            <div class="example-box">
+                <p>Có ba người: 세 명 있어요. <button class="audio-icon" data-audio-text="세 명 있어요.">🔊</button></p>
+                <p>Chúng tôi có năm học sinh: 저희는 학생이 다섯 명 있어요. <button class="audio-icon" data-audio-text="저희는 학생이 다섯 명 있어요.">🔊</button></p>
+            </div>
+            <p><em>(Một số trường hợp đặc biệt dùng 분 <button class="audio-icon" data-audio-text="분">🔊</button> (vị) để chỉ người một cách kính trọng, ví dụ 다섯 분 <button class="audio-icon" data-audio-text="다섯 분">🔊</button> (năm vị).)</em></p>
+        </section>
+
+        <div class="practice-section">
+            <h3>📝 Luyện tập: Tuổi và Người</h3>
+            <div class="practice-question">Bạn muốn nói "có 2 người". Cách nói đúng là gì? (Viết bằng tiếng Hàn)</div>
+            <input type="text" id="agePeopleInput" class="practice-input" placeholder="Ví dụ: 두 명">
+            <button class="practice-button" onclick="checkAgePeople()">Kiểm tra</button>
+            <div class="feedback-message" id="agePeopleFeedback"></div>
+        </div>
+
+        <section class="section-card">
+            <h2>4. Các phép toán cơ bản ➕➖✖️➗</h2>
+            <p>Dưới đây là một số từ vựng toán học cơ bản mà bạn có thể cần:</p>
+            <div class="example-box">
+                <p>Cộng: <strong>더하기</strong> <button class="audio-icon" data-audio-text="더하기">🔊</button></p>
+                <p>Trừ: <strong>빼기</strong> <button class="audio-icon" data-audio-text="빼기">🔊</button></p>
+                <p>Nhân: <strong>곱하기</strong> <button class="audio-icon" data-audio-text="곱하기">🔊</button></p>
+                <p>Chia: <strong>나누기</strong> <button class="audio-icon" data-audio-text="나누기">🔊</button></p>
+                <p>Bằng: <strong>은/는</strong> <button class="audio-icon" data-audio-text="은는">🔊</button> hoặc <strong>입니다</strong> <button class="audio-icon" data-audio-text="입니다">🔊</button> (thường kết thúc câu)</p>
+            </div>
+            <p>Ví dụ:</p>
+            <div class="example-box">
+                <p>Một cộng một là hai:</p>
+                <p>일 더하기 일은 이입니다. <button class="audio-icon" data-audio-text="일 더하기 일은 이입니다.">🔊</button></p>
+                <p>Năm trừ hai là ba:</p>
+                <p>오 빼기 이는 삼입니다. <button class="audio-icon" data-audio-text="오 빼기 이는 삼입니다.">🔊</button></p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>Tóm tắt Chương 3: Số và Cách Đếm 💡</h2>
+            <p>Tuyệt vời! Bạn đã hoàn thành bài học về số và cách đếm trong tiếng Hàn. Hãy cùng nhìn lại những điểm chính:</p>
+            <ul>
+                <li><strong>Hệ thống số Hán-Hàn</strong> (일, 이, 삼...): Dùng cho ngày, tháng, năm, tiền tệ, số điện thoại, phút, giây.</li>
+                <li><strong>Hệ thống số Thuần Hàn</strong> (하나, 둘, 셋...): Dùng để đếm vật, đếm người, và giờ đồng hồ. Lưu ý các dạng rút gọn của 하나, 둘, 셋, 넷 (thành 한, 두, 세, 네) khi đi kèm đơn vị.</li>
+                <li><strong>Tuổi và đếm người:</strong> Thường dùng số Thuần Hàn (살, 명). Ví dụ: 한 살, 세 명.</li>
+                <li><strong>Toán học cơ bản:</strong> 더하기 (cộng), 빼기 (trừ), 곱하기 (nhân), 나누기 (chia).</li>
+            </ul>
+            <p>Hãy tiếp tục luyện tập để nắm vững cách sử dụng hai hệ thống số này nhé! Bạn đã làm rất tốt!</p>
+        </section>
+    </div>
+
+    <script>
+        // Practice Section Logic (Simplified for static HTML demonstration)
+        // In a real mobile app, framework-specific methods would handle these interactions.
+
+        // Sino-Korean Practice
+        const sinoKoreanOptions = document.querySelectorAll('#sinoKoreanFeedback + .practice-options button');
+        sinoKoreanOptions.forEach(button => {
+            button.addEventListener('click', () => {
+                const feedbackDiv = document.getElementById('sinoKoreanFeedback');
+                if (button.dataset.answer === '칠') {
+                    feedbackDiv.textContent = 'Chính xác! 🎉';
+                    feedbackDiv.className = 'feedback-message correct';
+                } else {
+                    feedbackDiv.textContent = 'Chưa đúng, hãy thử lại nhé! 🤔';
+                    feedbackDiv.className = 'feedback-message incorrect';
+                }
+            });
+        });
+
+        // Pure Korean Practice
+        const pureKoreanOptions = document.querySelectorAll('#pureKoreanFeedback + .practice-options button');
+        pureKoreanOptions.forEach(button => {
+            button.addEventListener('click', () => {
+                const feedbackDiv = document.getElementById('pureKoreanFeedback');
+                if (button.dataset.answer === '넷') {
+                    feedbackDiv.textContent = 'Hoàn hảo! ✨';
+                    feedbackDiv.className = 'feedback-message correct';
+                } else {
+                    feedbackDiv.textContent = 'Sai rồi, đừng bỏ cuộc nhé! 😅';
+                    feedbackDiv.className = 'feedback-message incorrect';
+                }
+            });
+        });
+
+        // Age and People Practice
+        function checkAgePeople() {
+            const inputElement = document.getElementById('agePeopleInput');
+            const feedbackDiv = document.getElementById('agePeopleFeedback');
+            const userAnswer = inputElement.value.trim(); // Do not convert to lowercase for Korean
+            const correctAnswer = '두 명';
+
+            // Check for common variations if needed, but for strict practice, exact match.
+            if (userAnswer === correctAnswer) {
+                feedbackDiv.textContent = 'Tuyệt vời! Chính xác là "두 명". ✅';
+                feedbackDiv.className = 'feedback-message correct';
+            } else {
+                feedbackDiv.textContent = 'Chưa chính xác. Câu trả lời đúng là "두 명". Cố gắng lên nhé! 💡';
+                feedbackDiv.className = 'feedback-message incorrect';
+            }
+        }
+
+        // Note: Audio icon clicks (class="audio-icon") are designed to be handled by the mobile frontend
+        // (e.g., react-native-tts) and do not require explicit JavaScript event listeners here.
+    </script>
+</body>
+</html>

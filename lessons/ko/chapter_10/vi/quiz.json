@@ -1,0 +1,202 @@
+{
+  "title": "Bài Kiểm Tra Chương 10: Thời Gian và Lịch Trình",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "\"시간\" có nghĩa là gì?",
+      "explanation": "\"시간\" có nghĩa là \"Thời gian\" trong tiếng Hàn.",
+      "correctAnswer": "Thời gian",
+      "options": [
+        "Thời gian",
+        "Phút",
+        "Giờ",
+        "Ngày"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Phút\" trong tiếng Hàn?",
+      "explanation": "\"분\" có nghĩa là \"Phút\" trong tiếng Hàn.",
+      "correctAnswer": "분",
+      "options": [
+        "시간",
+        "분",
+        "시",
+        "일"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"시\" có nghĩa là gì?",
+      "explanation": "\"시\" có nghĩa là \"Giờ\" trong tiếng Hàn.",
+      "correctAnswer": "Giờ",
+      "options": [
+        "Phút",
+        "Giờ",
+        "Ngày",
+        "Tuần"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Ngày trong tuần\" trong tiếng Hàn?",
+      "explanation": "\"요일\" có nghĩa là \"Ngày trong tuần\" trong tiếng Hàn.",
+      "correctAnswer": "요일",
+      "options": [
+        "시간",
+        "요일",
+        "월",
+        "일"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "\"월요일\" có nghĩa là gì?",
+      "explanation": "\"월요일\" có nghĩa là \"Thứ Hai\" trong tiếng Hàn.",
+      "correctAnswer": "Thứ Hai",
+      "options": [
+        "Thứ Ba",
+        "Thứ Hai",
+        "Thứ Tư",
+        "Thứ Năm"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Thứ Ba\" trong tiếng Hàn?",
+      "explanation": "\"화요일\" có nghĩa là \"Thứ Ba\" trong tiếng Hàn.",
+      "correctAnswer": "화요일",
+      "options": [
+        "월요일",
+        "화요일",
+        "수요일",
+        "목요일"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "\"수요일\" có nghĩa là gì?",
+      "explanation": "\"수요일\" có nghĩa là \"Thứ Tư\" trong tiếng Hàn.",
+      "correctAnswer": "Thứ Tư",
+      "options": [
+        "Thứ Ba",
+        "Thứ Tư",
+        "Thứ Năm",
+        "Thứ Sáu"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Thứ Năm\" trong tiếng Hàn?",
+      "explanation": "\"목요일\" có nghĩa là \"Thứ Năm\" trong tiếng Hàn.",
+      "correctAnswer": "목요일",
+      "options": [
+        "수요일",
+        "목요일",
+        "금요일",
+        "토요일"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "\"금요일\" có nghĩa là gì?",
+      "explanation": "\"금요일\" có nghĩa là \"Thứ Sáu\" trong tiếng Hàn.",
+      "correctAnswer": "Thứ Sáu",
+      "options": [
+        "Thứ Năm",
+        "Thứ Sáu",
+        "Thứ Bảy",
+        "Chủ Nhật"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Thứ Bảy\" trong tiếng Hàn?",
+      "explanation": "\"토요일\" có nghĩa là \"Thứ Bảy\" trong tiếng Hàn.",
+      "correctAnswer": "토요일",
+      "options": [
+        "금요일",
+        "토요일",
+        "일요일",
+        "월요일"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "\"일요일\" có nghĩa là gì?",
+      "explanation": "\"일요일\" có nghĩa là \"Chủ Nhật\" trong tiếng Hàn.",
+      "correctAnswer": "Chủ Nhật",
+      "options": [
+        "Thứ Bảy",
+        "Chủ Nhật",
+        "Thứ Hai",
+        "Thứ Ba"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Cuộc hẹn\" trong tiếng Hàn?",
+      "explanation": "\"약속\" có nghĩa là \"Cuộc hẹn\" trong tiếng Hàn.",
+      "correctAnswer": "약속",
+      "options": [
+        "시간",
+        "약속",
+        "일정",
+        "계획"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "\"몇 시예요?\" có nghĩa là gì?",
+      "explanation": "\"몇 시예요?\" có nghĩa là \"Bây giờ mấy giờ?\" trong tiếng Hàn.",
+      "correctAnswer": "Bây giờ mấy giờ?",
+      "options": [
+        "Bây giờ mấy giờ?",
+        "Bạn có thời gian không?",
+        "Khi nào bạn rảnh?",
+        "Bạn có lịch không?"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Tôi có cuộc hẹn lúc 3 giờ\" trong tiếng Hàn?",
+      "explanation": "\"3시에 약속이 있어요\" có nghĩa là \"Tôi có cuộc hẹn lúc 3 giờ\" trong tiếng Hàn.",
+      "correctAnswer": "3시에 약속이 있어요",
+      "options": [
+        "3시에 약속이 있어요",
+        "3시에 시간이 있어요",
+        "3시에 일정이 있어요",
+        "3시에 계획이 있어요"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "\"일정\" có nghĩa là gì?",
+      "explanation": "\"일정\" có nghĩa là \"Lịch trình\" trong tiếng Hàn.",
+      "correctAnswer": "Lịch trình",
+      "options": [
+        "Lịch trình",
+        "Cuộc hẹn",
+        "Kế hoạch",
+        "Thời gian"
+      ]
+    }
+  ],
+  "totalQuestions": 15,
+  "createdAt": "2025-08-04T00:11:43.932Z"
+}

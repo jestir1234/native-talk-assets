@@ -1,0 +1,202 @@
+{
+  "title": "Bài Kiểm Tra Chương 8: Địa Điểm và Phương Hướng",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "\"집\" có nghĩa là gì?",
+      "explanation": "\"집\" có nghĩa là \"Nhà\" trong tiếng Hàn.",
+      "correctAnswer": "Nhà",
+      "options": [
+        "Trường học",
+        "Nhà",
+        "Công ty",
+        "Bệnh viện"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Trường học\" trong tiếng Hàn?",
+      "explanation": "\"학교\" có nghĩa là \"Trường học\" trong tiếng Hàn.",
+      "correctAnswer": "학교",
+      "options": [
+        "집",
+        "학교",
+        "회사",
+        "병원"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"회사\" có nghĩa là gì?",
+      "explanation": "\"회사\" có nghĩa là \"Công ty/văn phòng\" trong tiếng Hàn.",
+      "correctAnswer": "Công ty/văn phòng",
+      "options": [
+        "Nhà",
+        "Trường học",
+        "Công ty/văn phòng",
+        "Bệnh viện"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Bệnh viện\" trong tiếng Hàn?",
+      "explanation": "\"병원\" có nghĩa là \"Bệnh viện\" trong tiếng Hàn.",
+      "correctAnswer": "병원",
+      "options": [
+        "학교",
+        "회사",
+        "병원",
+        "은행"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "\"은행\" có nghĩa là gì?",
+      "explanation": "\"은행\" có nghĩa là \"Ngân hàng\" trong tiếng Hàn.",
+      "correctAnswer": "Ngân hàng",
+      "options": [
+        "Bệnh viện",
+        "Ngân hàng",
+        "Bưu điện",
+        "Siêu thị"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Bưu điện\" trong tiếng Hàn?",
+      "explanation": "\"우체국\" có nghĩa là \"Bưu điện\" trong tiếng Hàn.",
+      "correctAnswer": "우체국",
+      "options": [
+        "은행",
+        "우체국",
+        "병원",
+        "학교"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "\"앞\" có nghĩa là gì?",
+      "explanation": "\"앞\" có nghĩa là \"Trước\" trong tiếng Hàn.",
+      "correctAnswer": "Trước",
+      "options": [
+        "Sau",
+        "Trước",
+        "Trái",
+        "Phải"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Sau\" trong tiếng Hàn?",
+      "explanation": "\"뒤\" có nghĩa là \"Sau\" trong tiếng Hàn.",
+      "correctAnswer": "뒤",
+      "options": [
+        "앞",
+        "뒤",
+        "왼쪽",
+        "오른쪽"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "\"왼쪽\" có nghĩa là gì?",
+      "explanation": "\"왼쪽\" có nghĩa là \"Trái\" trong tiếng Hàn.",
+      "correctAnswer": "Trái",
+      "options": [
+        "Phải",
+        "Trái",
+        "Trên",
+        "Dưới"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Phải\" trong tiếng Hàn?",
+      "explanation": "\"오른쪽\" có nghĩa là \"Phải\" trong tiếng Hàn.",
+      "correctAnswer": "오른쪽",
+      "options": [
+        "왼쪽",
+        "오른쪽",
+        "위",
+        "아래"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "\"위\" có nghĩa là gì?",
+      "explanation": "\"위\" có nghĩa là \"Trên\" trong tiếng Hàn.",
+      "correctAnswer": "Trên",
+      "options": [
+        "Dưới",
+        "Trên",
+        "Trong",
+        "Ngoài"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Dưới\" trong tiếng Hàn?",
+      "explanation": "\"아래\" có nghĩa là \"Dưới\" trong tiếng Hàn.",
+      "correctAnswer": "아래",
+      "options": [
+        "위",
+        "아래",
+        "안",
+        "밖"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "\"에\" có nghĩa là gì?",
+      "explanation": "\"에\" có nghĩa là \"Ở\" trong tiếng Hàn.",
+      "correctAnswer": "Ở",
+      "options": [
+        "Ở",
+        "Tại",
+        "Trong",
+        "Ngoài"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Tôi ở nhà\" trong tiếng Hàn?",
+      "explanation": "\"집에 있어요\" có nghĩa là \"Tôi ở nhà\" trong tiếng Hàn.",
+      "correctAnswer": "집에 있어요",
+      "options": [
+        "집에 있어요",
+        "집에서 있어요",
+        "집에 가요",
+        "집에 와요"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "\"어디에 있어요?\" có nghĩa là gì?",
+      "explanation": "\"어디에 있어요?\" có nghĩa là \"Bạn ở đâu?\" trong tiếng Hàn.",
+      "correctAnswer": "Bạn ở đâu?",
+      "options": [
+        "Bạn ở đâu?",
+        "Bạn đi đâu?",
+        "Bạn đến đâu?",
+        "Bạn từ đâu đến?"
+      ]
+    }
+  ],
+  "totalQuestions": 15,
+  "createdAt": "2025-08-04T00:11:43.895Z"
+}

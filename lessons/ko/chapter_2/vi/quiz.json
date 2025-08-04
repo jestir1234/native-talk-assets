@@ -1,0 +1,137 @@
+{
+  "title": "Bài Kiểm Tra Chương 2: Chào Hỏi và Giới Thiệu Cơ Bản",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "\"안녕하세요\" có nghĩa là gì?",
+      "explanation": "\"안녕하세요\" là cách nói lịch sự để chào \"Xin chào\" trong tiếng Hàn.",
+      "correctAnswer": "Xin chào",
+      "options": [
+        "Tạm biệt",
+        "Xin chào",
+        "Cảm ơn",
+        "Làm ơn"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Tôi tên là\" trong tiếng Hàn?",
+      "explanation": "\"저는 ___입니다\" có nghĩa là \"Tôi tên là ___\" trong tiếng Hàn.",
+      "correctAnswer": "저는 ___입니다",
+      "options": [
+        "저는 ___입니다",
+        "안녕하세요",
+        "감사합니다",
+        "네"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"만나서 반갑습니다\" có nghĩa là gì?",
+      "explanation": "\"만나서 반갑습니다\" có nghĩa là \"Rất vui được gặp bạn\" trong tiếng Hàn.",
+      "correctAnswer": "Rất vui được gặp bạn",
+      "options": [
+        "Rất vui được gặp bạn",
+        "Bạn khỏe không?",
+        "Bạn từ đâu đến?",
+        "Tên bạn là gì?"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để hỏi \"Tên bạn là gì?\" trong tiếng Hàn?",
+      "explanation": "\"이름이 뭐예요?\" có nghĩa là \"Tên bạn là gì?\" trong tiếng Hàn.",
+      "correctAnswer": "이름이 뭐예요?",
+      "options": [
+        "이름이 뭐예요?",
+        "어디에서 왔어요?",
+        "안녕하세요",
+        "감사합니다"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "\"어디에서 왔어요?\" có nghĩa là gì?",
+      "explanation": "\"어디에서 왔어요?\" có nghĩa là \"Bạn từ đâu đến?\" trong tiếng Hàn.",
+      "correctAnswer": "Bạn từ đâu đến?",
+      "options": [
+        "Tên bạn là gì?",
+        "Bạn khỏe không?",
+        "Bạn từ đâu đến?",
+        "Rất vui được gặp bạn"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Tôi từ Mỹ đến\" trong tiếng Hàn?",
+      "explanation": "\"미국에서 왔어요\" có nghĩa là \"Tôi từ Mỹ đến\" trong tiếng Hàn.",
+      "correctAnswer": "미국에서 왔어요",
+      "options": [
+        "미국에서 왔어요",
+        "한국에서 왔어요",
+        "일본에서 왔어요",
+        "중국에서 왔어요"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "\"안녕히 계세요\" có nghĩa là gì?",
+      "explanation": "\"안녕히 계세요\" có nghĩa là \"Tạm biệt\" (nói với người đang ở lại).",
+      "correctAnswer": "Tạm biệt (nói với người ở lại)",
+      "options": [
+        "Xin chào",
+        "Tạm biệt (nói với người ở lại)",
+        "Cảm ơn",
+        "Làm ơn"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Bạn khỏe không?\" trong tiếng Hàn?",
+      "explanation": "\"어떻게 지내세요?\" có nghĩa là \"Bạn khỏe không?\" trong tiếng Hàn.",
+      "correctAnswer": "어떻게 지내세요?",
+      "options": [
+        "안녕하세요",
+        "어떻게 지내세요?",
+        "감사합니다",
+        "네"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "\"저는 학생입니다\" có nghĩa là gì?",
+      "explanation": "\"저는 학생입니다\" có nghĩa là \"Tôi là học sinh\" trong tiếng Hàn.",
+      "correctAnswer": "Tôi là học sinh",
+      "options": [
+        "Tôi là giáo viên",
+        "Tôi là học sinh",
+        "Tôi là bác sĩ",
+        "Tôi là kỹ sư"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "Làm thế nào để nói \"Tôi là sinh viên\" trong tiếng Hàn?",
+      "explanation": "\"저는 대학생입니다\" có nghĩa là \"Tôi là sinh viên\" trong tiếng Hàn.",
+      "correctAnswer": "저는 대학생입니다",
+      "options": [
+        "저는 대학생입니다",
+        "저는 선생님입니다",
+        "저는 의사입니다",
+        "저는 엔지니어입니다"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-04T00:11:43.739Z"
+}

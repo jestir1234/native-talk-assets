@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Đồ ăn và thức uống</title>
+    <style>
+        /* Global Styles & Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        .container {
+            max-width: 768px; /* Max width for content on larger screens */
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Chapter Header Structure */
+        .chapter-title {
+            font-size: 1.8rem; /* Larger font size for main title */
+            color: #2C3E50; /* Text: Dark blue */
+            text-align: center;
+            margin: 25px 0 15px;
+            padding: 0 10px; /* Add padding to prevent text from touching edges */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Ensure image scales down on smaller screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .lesson-section {
+            background-color: #FFFFFF; /* White background for sections */
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        .section-title {
+            font-size: 1.5rem; /* Heading size for sections */
+            color: #2C3E50; /* Text: Dark blue */
+            margin-bottom: 18px;
+            text-align: left;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #FDF9E5; /* Light cream underline */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: #2C3E50; /* Dark blue for headings */
+        }
+
+        p, li {
+            margin-bottom: 10px;
+            font-size: 1rem; /* Base font size for paragraphs and lists */
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style-type: none; /* Remove default bullet points */
+            padding-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 25px; /* Space for custom bullet */
+            margin-bottom: 8px;
+        }
+
+        ul li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary color */
+            font-size: 0.9em;
+            top: 2px;
+        }
+
+        strong {
+            color: #2C3E50; /* Dark blue for strong text */
+        }
+
+        em {
+            font-style: italic;
+            color: #666666;
+        }
+
+        /* Korean Word & Pronunciation Styling */
+        .korean-word {
+            font-weight: bold;
+            color: #8B5FBF; /* Primary: Purple */
+            white-space: nowrap; /* Keep word and icon on one line */
+            display: inline-flex; /* Align text and audio icon */
+            align-items: center;
+        }
+
+        .pronunciation {
+            font-style: italic;
+            color: #666666;
+            margin-left: 5px;
+        }
+
+        /* Audio Icon Styling */
+        .audio-icon {
+            cursor: pointer;
+            font-size: 1.3rem; /* Make emoji large enough for tapping */
+            color: #8B5FBF; /* Primary: Purple */
+            margin-left: 8px;
+            transition: transform 0.2s ease-in-out;
+            display: inline-flex; /* Ensure it respects padding/sizing */
+            align-items: center;
+            justify-content: center;
+            min-width: 44px; /* Minimum touch target size */
+            min-height: 44px; /* Minimum touch target size */
+            padding: 5px; /* Add padding for easier tapping */
+            border-radius: 50%; /* Make it round */
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+            opacity: 0.8;
+        }
+
+        /* Example Box */
+        .example-box {
+            background-color: #F8F8F8; /* Lighter background for examples */
+            border-left: 5px solid #8B5FBF; /* Primary color accent */
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+        }
+
+        .example-box p {
+            margin-bottom: 8px;
+        }
+
+        .example-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: #2C3E50; /* Dark blue for emphasis */
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .cultural-note p {
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        .cultural-note::before {
+            content: '💡';
+            font-size: 1.5rem;
+            margin-right: 10px;
+            flex-shrink: 0;
+            line-height: 1; /* Adjust line-height for emoji alignment */
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #EEF3F8; /* Slightly different background for practice */
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        .question-box {
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+        }
+
+        .question-box p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .choice-buttons {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            justify-content: center;
+            gap: 12px; /* Space between buttons */
+            margin-top: 15px;
+        }
+
+        .choice-button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px; /* More rounded */
+            font-size: 1.05rem;
+            cursor: pointer;
+            min-height: 48px; /* Ensure minimum height for tapping */
+            min-width: 140px; /* Ensure minimum width for tapping */
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex-grow: 1; /* Allow buttons to grow */
+            max-width: 200px; /* Max width to prevent overly wide buttons */
+        }
+
+        .choice-button:hover {
+            background-color: #7A4EA5; /* Slightly darker purple on hover */
+        }
+
+        .choice-button:active {
+            background-color: #6A449A; /* Even darker on active */
+            transform: translateY(1px); /* Simple press effect */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .answer-feedback {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue */
+            /* This will be managed by JS to show/hide */
+        }
+
+        .type-in-question .scrambled-words {
+            font-style: italic;
+            color: #8B5FBF; /* Primary color */
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .type-in-question .correct-answer-display {
+            margin-top: 20px;
+            background-color: #e6ffe6; /* Light green for correct answer hint */
+            border: 1px dashed #8B5FBF; /* Primary color dashed border */
+            padding: 12px 18px;
+            border-radius: 8px;
+            display: inline-block; /* Fit content */
+            font-weight: bold;
+            color: #2C3E50;
+            font-size: 1.05rem;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #FFFFFF;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0;
+            text-align: center;
+        }
+
+        .summary-section .section-title {
+            text-align: center;
+            border-bottom: none;
+            margin-bottom: 10px;
+        }
+
+        .summary-section ul {
+            text-align: left; /* Align list items left within summary */
+            margin: 0 auto;
+            max-width: 400px; /* Constrain list width for readability */
+        }
+
+        .summary-section ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            .chapter-title {
+                font-size: 1.6rem;
+                margin-top: 20px;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .lesson-section, .practice-section {
+                padding: 20px;
+                border-radius: 10px;
+            }
+            .choice-button {
+                font-size: 0.95rem;
+                padding: 10px 20px;
+                min-height: 44px;
+                min-width: unset; /* Let flex-grow handle width */
+            }
+            .choice-buttons {
+                flex-direction: column; /* Stack buttons vertically on very small screens */
+            }
+            .choice-button {
+                max-width: 100%; /* Take full width when stacked */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 7: Đồ ăn và thức uống 🍎☕</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <section class="lesson-section intro">
+            <h2 class="section-title">Chào mừng đến với Bài 7! 🎉</h2>
+            <p>Trong bài học này, chúng ta sẽ cùng khám phá thế giới ẩm thực Hàn Quốc phong phú và học cách gọi món tại nhà hàng. Hãy cùng bắt đầu nhé!</p>
+        </section>
+
+        <!-- Topic: 밥 (rice/meal) -->
+        <section class="lesson-section">
+            <h3 class="section-title">1. 밥 (bap) - Cơm/Bữa ăn 🍚</h3>
+            <p>Trong tiếng Hàn, <span class="korean-word" data-audio-text="밥">밥</span><span class="audio-icon" data-audio-text="밥">🔊</span> (bap) không chỉ có nghĩa là "cơm" mà còn mang ý nghĩa "bữa ăn" nói chung. Nó là linh hồn của mọi bữa ăn Hàn Quốc!</p>
+            <div class="example-box">
+                <p><span class="korean-word" data-audio-text="아침밥">아침밥</span><span class="audio-icon" data-audio-text="아침밥">🔊</span> (a-chim-bap): Bữa sáng (cơm sáng) 🌅</p>
+                <p><span class="korean-word" data-audio-text="점심밥">점심밥</span><span class="audio-icon" data-audio-text="점심밥">🔊</span> (jeom-sim-bap): Bữa trưa (cơm trưa) ☀️</p>
+                <p><span class="korean-word" data-audio-text="저녁밥">저녁밥</span><span class="audio-icon" data-audio-text="저녁밥">🔊</span> (jeo-nyeok-bap): Bữa tối (cơm tối) 🌙</p>
+            </div>
+            <div class="cultural-note">
+                <p><strong style="color: #2C3E50;">Ghi chú văn hóa:</strong> Người Hàn Quốc rất coi trọng bữa ăn, đặc biệt là ăn cơm. Khi hỏi "Bạn đã ăn cơm chưa?" (<span class="korean-word" data-audio-text="밥 먹었어요?">밥 먹었어요?</span><span class="audio-icon" data-audio-text="밥 먹었어요?">🔊</span>), đôi khi nó cũng giống như lời chào "Bạn khỏe không?" đó!</p>
+            </div>
+        </section>
+
+        <!-- Topic: 김치 (kimchi) -->
+        <section class="lesson-section">
+            <h3 class="section-title">2. 김치 (kimchi) - Kimchi 🌶️</h3>
+            <p><span class="korean-word" data-audio-text="김치">김치</span><span class="audio-icon" data-audio-text="김치">🔊</span> (kimchi) là món ăn kèm quốc dân của Hàn Quốc, được làm từ cải thảo lên men. Hầu hết các bữa ăn Hàn đều không thể thiếu kimchi.</p>
+            <div class="example-box">
+                <p>Ví dụ: <span class="korean-word" data-audio-text="김치찌개">김치찌개</span><span class="audio-icon" data-audio-text="김치찌개">🔊</span> (kim-chi-jji-gae): Canh Kimchi</p>
+                <p>Ví dụ: <span class="korean-word" data-audio-text="김치볶음밥">김치볶음밥</span><span class="audio-icon" data-audio-text="김치볶음밥">🔊</span> (kim-chi-bok-keum-bap): Cơm rang Kimchi</p>
+            </div>
+        </section>
+
+        <!-- Topic: 불고기 (bulgogi) -->
+        <section class="lesson-section">
+            <h3 class="section-title">3. 불고기 (bulgogi) - Thịt bò nướng Bulgogi 🥩</h3>
+            <p><span class="korean-word" data-audio-text="불고기">불고기</span><span class="audio-icon" data-audio-text="불고기">🔊</span> (bulgogi) là món thịt bò (hoặc thịt heo) thái lát mỏng, ướp gia vị và nướng. Đây là một trong những món ăn nổi tiếng nhất của Hàn Quốc, được nhiều người yêu thích.</p>
+            <div class="example-box">
+                <p>Tôi thích Bulgogi. <span class="korean-word" data-audio-text="불고기를 좋아해요.">불고기를 좋아해요.</span><span class="audio-icon" data-audio-text="불고기를 좋아해요.">🔊</span> (bul-go-gi-reul jo-a-hae-yo.)</p>
+            </div>
+        </section>
+
+        <!-- Topic: 비빔밥 (bibimbap) -->
+        <section class="lesson-section">
+            <h3 class="section-title">4. 비빔밥 (bibimbap) - Cơm trộn Bibimbap 🥣</h3>
+            <p><span class="korean-word" data-audio-text="비빔밥">비빔밥</span><span class="audio-icon" data-audio-text="비빔밥">🔊</span> (bibimbap) nghĩa đen là "cơm trộn". Món này bao gồm cơm trắng, các loại rau xào, thịt (thường là thịt bò), trứng, và tương ớt Gochujang, tất cả được trộn đều trước khi ăn.</p>
+            <div class="example-box">
+                <p>Hãy cùng ăn Bibimbap nào! <span class="korean-word" data-audio-text="비빔밥 먹읍시다!">비빔밥 먹읍시다!</span><span class="audio-icon" data-audio-text="비빔밥 먹읍시다!">🔊</span> (bi-bim-bap meo-geup-si-da!)</p>
+            </div>
+        </section>
+
+        <!-- Topic: 커피 (coffee) & 차 (tea) -->
+        <section class="lesson-section">
+            <h3 class="section-title">5. 커피 (keopi) & 차 (cha) - Cà phê & Trà ☕🍵</h3>
+            <p>Hàn Quốc có nền văn hóa cà phê rất phát triển. <span class="korean-word" data-audio-text="커피">커피</span><span class="audio-icon" data-audio-text="커피">🔊</span> (keopi) được dùng phổ biến hàng ngày.</p>
+            <p>Bên cạnh đó, <span class="korean-word" data-audio-text="차">차</span><span class="audio-icon" data-audio-text="차">🔊</span> (cha) là "trà". Có nhiều loại trà truyền thống như trà gừng (<span class="korean-word" data-audio-text="생강차">생강차</span><span class="audio-icon" data-audio-text="생강차">🔊</span>) hay trà thanh yên (<span class="korean-word" data-audio-text="유자차">유자차</span><span class="audio-icon" data-audio-text="유자차">🔊</span>).</p>
+            <div class="example-box">
+                <p>Một ly cà phê đá. <span class="korean-word" data-audio-text="아이스 커피 한 잔 주세요.">아이스 커피 한 잔 주세요.</span><span class="audio-icon" data-audio-text="아이스 커피 한 잔 주세요.">🔊</span> (a-i-seu keo-pi han jan ju-se-yo.)</p>
+                <p>Tôi muốn uống trà. <span class="korean-word" data-audio-text="차 마시고 싶어요.">차 마시고 싶어요.</span><span class="audio-icon" data-audio-text="차 마시고 싶어요.">🔊</span> (cha ma-si-go sip-eo-yo.)</p>
+            </div>
+        </section>
+
+        <!-- Topic: 맛있다/맛없다 (delicious/not delicious) -->
+        <section class="lesson-section">
+            <h3 class="section-title">6. 맛있다/맛없다 - Ngon/Không ngon 😋🤢</h3>
+            <p>Đây là hai từ cực kỳ quan trọng để diễn tả cảm nhận của bạn về món ăn!</p>
+            <ul>
+                <li><span class="korean-word" data-audio-text="맛있다">맛있다</span><span class="audio-icon" data-audio-text="맛있다">🔊</span> (ma-sit-da): Ngon, có vị ngon.</li>
+                <li><span class="korean-word" data-audio-text="맛없다">맛없다</span><span class="audio-icon" data-audio-text="맛없다">🔊</span> (ma-teop-da): Không ngon, dở, không có vị ngon.</li>
+            </ul>
+            <div class="example-box">
+                <p>Món ăn này ngon quá! <span class="korean-word" data-audio-text="이 음식은 맛있어요!">이 음식은 맛있어요!</span><span class="audio-icon" data-audio-text="이 음식은 맛있어요!">🔊</span> (i eum-sik-eun ma-sit-eo-yo!)</p>
+                <p>Món ăn này không ngon. <span class="korean-word" data-audio-text="이 음식은 맛없어요.">이 음식은 맛없어요.</span><span class="audio-icon" data-audio-text="이 음식은 맛없어요.">🔊</span> (i eum-sik-eun ma-teop-seo-yo.)</p>
+            </div>
+            <div class="cultural-note">
+                <p><strong style="color: #2C3E50;">Mẹo giao tiếp:</strong> Khi ăn món gì đó rất ngon, bạn có thể nói <span class="korean-word" data-audio-text="진짜 맛있어요!">진짜 맛있어요!</span><span class="audio-icon" data-audio-text="진짜 맛있어요!">🔊</span> (jin-jja ma-sit-eo-yo! - Thật sự rất ngon!).</p>
+            </div>
+        </section>
+
+        <!-- Practice Section: Ngon hay không ngon? -->
+        <section class="practice-section">
+            <h3 class="section-title">Luyện tập: Ngon hay không ngon? 🤔</h3>
+            <p>Hoàn thành câu sau với từ phù hợp (chọn vào nút để xem đáp án):</p>
+            <div class="question-box">
+                <p>Kimchi _______. (ngon)</p>
+                <div class="choice-buttons">
+                    <button class="choice-button" data-correct="false">맛없어요</button>
+                    <button class="choice-button" data-correct="true">맛있어요</button>
+                </div>
+                <p class="answer-feedback"></p>
+            </div>
+            <div class="question-box">
+                <p>Cà phê này _______. (không ngon)</p>
+                <div class="choice-buttons">
+                    <button class="choice-button" data-correct="false">맛있어요</button>
+                    <button class="choice-button" data-correct="true">맛없어요</button>
+                </div>
+                <p class="answer-feedback"></p>
+            </div>
+        </section>
+
+        <!-- Ordering food at restaurants -->
+        <section class="lesson-section">
+            <h3 class="section-title">7. Đặt món tại nhà hàng 🍽️</h3>
+            <p>Khi bạn đi ăn ở Hàn Quốc, đây là một số cụm từ và câu bạn cần biết:</p>
+            <ul>
+                <li><strong>Để gọi món:</strong></li>
+                <li><span class="korean-word" data-audio-text="메뉴판 주세요.">메뉴판 주세요.</span><span class="audio-icon" data-audio-text="메뉴판 주세요.">🔊</span> (me-nyu-pan ju-se-yo.) - Cho tôi thực đơn.</li>
+                <li><span class="korean-word" data-audio-text="불고기 하나 주세요.">불고기 하나 주세요.</span><span class="audio-icon" data-audio-text="불고기 하나 주세요.">🔊</span> (bul-go-gi ha-na ju-se-yo.) - Cho tôi một phần Bulgogi. (하나 - một cái/một phần)</li>
+                <li><span class="korean-word" data-audio-text="물 주세요.">물 주세요.</span><span class="audio-icon" data-audio-text="물 주세요.">🔊</span> (mul ju-se-yo.) - Cho tôi nước. (Nước lọc thường miễn phí)</li>
+                <li><strong>Khi gọi thêm món phụ (반찬 - banchan):</strong></li>
+                <li><span class="korean-word" data-audio-text="김치 더 주세요.">김치 더 주세요.</span><span class="audio-icon" data-audio-text="김치 더 주세요.">🔊</span> (kim-chi deo ju-se-yo.) - Cho tôi thêm kimchi. (더 - thêm)</li>
+                <li><strong>Để hỏi giá:</strong></li>
+                <li><span class="korean-word" data-audio-text="얼마예요?">얼마예요?</span><span class="audio-icon" data-audio-text="얼마예요?">🔊</span> (eol-ma-ye-yo?) - Bao nhiêu tiền?</li>
+                <li><strong>Để thanh toán:</strong></li>
+                <li><span class="korean-word" data-audio-text="계산해 주세요.">계산해 주세요.</span><span class="audio-icon" data-audio-text="계산해 주세요.">🔊</span> (gye-san-hae ju-se-yo.) - Thanh toán cho tôi.</li>
+            </ul>
+        </section>
+
+        <!-- Practice Section: Gọi món -->
+        <section class="practice-section">
+            <h3 class="section-title">Luyện tập: Gọi món 🗣️</h3>
+            <p>Bạn muốn gọi một phần Bibimbap và hỏi giá. Hãy xem các từ gợi ý và xem đáp án đúng nhé!</p>
+            <div class="question-box type-in-question">
+                <p>Câu 1: Gọi một phần Bibimbap.</p>
+                <p class="scrambled-words">💡 Gợi ý: 주세요 / 하나 / 비빔밥</p>
+                <p class="correct-answer-display">Đáp án: <span class="korean-word" data-audio-text="비빔밥 하나 주세요.">비빔밥 하나 주세요.</span><span class="audio-icon" data-audio-text="비빔밥 하나 주세요.">🔊</span></p>
+            </div>
+            <div class="question-box type-in-question">
+                <p>Câu 2: Hỏi giá bao nhiêu tiền.</p>
+                <p class="scrambled-words">💡 Gợi ý: 얼마예요?</p>
+                <p class="correct-answer-display">Đáp án: <span class="korean-word" data-audio-text="얼마예요?">얼마예요?</span><span class="audio-icon" data-audio-text="얼마예요?">🔊</span></p>
+            </div>
+        </section>
+
+        <section class="lesson-section summary-section">
+            <h2 class="section-title">Tóm tắt Chương 7 💡</h2>
+            <p>Chúc mừng! Bạn đã hoàn thành Chương 7 về Đồ ăn và thức uống!</p>
+            <p>Chúng ta đã học:</p>
+            <ul>
+                <li>Các món ăn và đồ uống phổ biến: <span class="korean-word" data-audio-text="밥">밥</span><span class="audio-icon" data-audio-text="밥">🔊</span> (cơm), <span class="korean-word" data-audio-text="김치">김치</span><span class="audio-icon" data-audio-text="김치">🔊</span> (kimchi), <span class="korean-word" data-audio-text="불고기">불고기</span><span class="audio-icon" data-audio-text="불고기">🔊</span> (bulgogi), <span class="korean-word" data-audio-text="비빔밥">비빔밥</span><span class="audio-icon" data-audio-text="비빔밥">🔊</span> (bibimbap), <span class="korean-word" data-audio-text="커피">커피</span><span class="audio-icon" data-audio-text="커피">🔊</span> (cà phê), <span class="korean-word" data-audio-text="차">차</span><span class="audio-icon" data-audio-text="차">🔊</span> (trà).</li>
+                <li>Cách diễn tả "ngon" (<span class="korean-word" data-audio-text="맛있다">맛있다</span><span class="audio-icon" data-audio-text="맛있다">🔊</span>) và "không ngon" (<span class="korean-word" data-audio-text="맛없다">맛없다</span><span class="audio-icon" data-audio-text="맛없다">🔊</span>).</li>
+                <li>Những cụm từ cơ bản để đặt món và thanh toán tại nhà hàng.</li>
+            </ul>
+            <p>Hãy luyện tập thường xuyên để các từ vựng và mẫu câu này trở nên quen thuộc nhé!</p>
+        </section>
+    </div>
+</body>
+</html>
