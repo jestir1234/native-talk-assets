@@ -18,7 +18,7 @@ function sleep(ms) {
 }
 
 async function callGemini(prompt) {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
     try {
         const response = await axios.post(url, {
             contents: [
@@ -80,7 +80,7 @@ Important: Return ONLY the JSON object, no other text or explanations.`;
     }
 }
 
-async function processDictionaryInBatches(dictionary, sourceLanguage, targetLanguage) {
+async function processDictionaryInBatches(dictionary, sourceLanguage, targetLanguage, targetPath) {
     const entries = Object.entries(dictionary);
     const processedDictionary = { ...dictionary }; // Start with a copy of the original
     
@@ -117,7 +117,9 @@ async function processDictionaryInBatches(dictionary, sourceLanguage, targetLang
                 }
             }
             
-            console.log(`✅ Successfully processed batch ${Math.floor(i / BATCH_SIZE) + 1}`);
+            // Save progress after each successful batch
+            fs.writeFileSync(targetPath, JSON.stringify(processedDictionary, null, 4), 'utf8');
+            console.log(`✅ Successfully processed batch ${Math.floor(i / BATCH_SIZE) + 1} and saved progress`);
             
             // Add delay between batches to avoid rate limiting
             if (i + BATCH_SIZE < entries.length) {
@@ -241,22 +243,7 @@ async function copyAndTranslateDictionary(sourcePath, targetPath, sourceLanguage
 
         // Now translate the dictionary using Gemini
         console.log('\nStarting translation with Gemini API...');
-        const translatedDictionary = await processDictionaryInBatches(entriesNeedingTranslation, sourceLanguage, targetLanguage);
-        
-        // Merge translated entries back with existing entries
-        const finalDictionary = { ...entriesToProcess };
-        for (const [key, translation] of Object.entries(translatedDictionary)) {
-            if (finalDictionary[key]) {
-                // Update existing entry with translations
-                if (translation.reading) finalDictionary[key].reading = translation.reading;
-                if (translation.meaning) finalDictionary[key].meaning = translation.meaning;
-                if (translation.type) finalDictionary[key].type = translation.type;
-                if (translation.form) finalDictionary[key].form = translation.form;
-            }
-        }
-        
-        // Write the final dictionary back to the target file
-        fs.writeFileSync(targetPath, JSON.stringify(finalDictionary, null, 4), 'utf8');
+        const translatedDictionary = await processDictionaryInBatches(entriesNeedingTranslation, sourceLanguage, targetLanguage, targetPath);
         
         console.log('\n✅ Translation completed successfully!');
         console.log(`Final dictionary saved to: ${targetPath}`);
