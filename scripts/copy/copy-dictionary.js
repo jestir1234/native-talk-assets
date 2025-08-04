@@ -144,29 +144,64 @@ async function copyAndTranslateDictionary(sourcePath, targetPath, sourceLanguage
 
         // Read the source dictionary
         const sourceData = fs.readFileSync(sourcePath, 'utf8');
-        const dictionary = JSON.parse(sourceData);
+        const sourceDictionary = JSON.parse(sourceData);
 
-        // Create a copy and clear the specified fields
-        const clearedDictionary = {};
+        // Check if target file exists and load existing entries
+        let existingDictionary = {};
+        if (fs.existsSync(targetPath)) {
+            try {
+                const targetData = fs.readFileSync(targetPath, 'utf8');
+                existingDictionary = JSON.parse(targetData);
+                console.log(`Found existing target file with ${Object.keys(existingDictionary).length} entries`);
+            } catch (error) {
+                console.error(`Error reading existing target file: ${error.message}`);
+                console.log('Will create new target file');
+            }
+        }
+
+        // Filter out entries that already have translations
+        const entriesToProcess = {};
+        const skippedEntries = [];
         
-        for (const [key, value] of Object.entries(dictionary)) {
-            const clearedEntry = { ...value };
+        for (const [key, value] of Object.entries(sourceDictionary)) {
+            const existingEntry = existingDictionary[key];
             
-            // Clear reading, meaning, and type fields if they exist
-            if ('reading' in clearedEntry) {
-                clearedEntry.reading = '';
+            // Check if entry already exists and has translations
+            if (existingEntry && 
+                existingEntry.reading && 
+                existingEntry.meaning && 
+                existingEntry.type) {
+                // Entry already has translations, skip it
+                skippedEntries.push(key);
+                entriesToProcess[key] = existingEntry; // Keep existing translation
+            } else {
+                // Entry needs translation or doesn't exist
+                const clearedEntry = { ...value };
+                
+                // Clear reading, meaning, and type fields if they exist
+                if ('reading' in clearedEntry) {
+                    clearedEntry.reading = '';
+                }
+                if ('meaning' in clearedEntry) {
+                    clearedEntry.meaning = '';
+                }
+                if ('type' in clearedEntry) {
+                    clearedEntry.type = '';
+                }
+                if ('form' in clearedEntry) {
+                    clearedEntry.form = '';
+                }
+                
+                entriesToProcess[key] = clearedEntry;
             }
-            if ('meaning' in clearedEntry) {
-                clearedEntry.meaning = '';
-            }
-            if ('type' in clearedEntry) {
-                clearedEntry.type = '';
-            }
-            if ('form' in clearedEntry) {
-                clearedEntry.form = '';
-            }
-            
-            clearedDictionary[key] = clearedEntry;
+        }
+
+        console.log(`Total source entries: ${Object.keys(sourceDictionary).length}`);
+        console.log(`Entries to process: ${Object.keys(entriesToProcess).length - skippedEntries.length}`);
+        console.log(`Entries skipped (already translated): ${skippedEntries.length}`);
+
+        if (skippedEntries.length > 0) {
+            console.log(`Skipped entries: ${skippedEntries.slice(0, 10).join(', ')}${skippedEntries.length > 10 ? '...' : ''}`);
         }
 
         // Ensure target directory exists
@@ -175,22 +210,53 @@ async function copyAndTranslateDictionary(sourcePath, targetPath, sourceLanguage
             fs.mkdirSync(targetDir, { recursive: true });
         }
 
-        // Write the cleared dictionary to target file first
-        fs.writeFileSync(targetPath, JSON.stringify(clearedDictionary, null, 4), 'utf8');
+        // If no entries need processing, just save the existing dictionary
+        if (Object.keys(entriesToProcess).length === skippedEntries.length) {
+            console.log('All entries already have translations. No processing needed.');
+            fs.writeFileSync(targetPath, JSON.stringify(entriesToProcess, null, 4), 'utf8');
+            return;
+        }
+
+        // Write the current state to target file
+        fs.writeFileSync(targetPath, JSON.stringify(entriesToProcess, null, 4), 'utf8');
         
-        console.log(`Successfully copied and cleared dictionary:`);
+        console.log(`Successfully prepared dictionary:`);
         console.log(`Source: ${sourcePath}`);
         console.log(`Target: ${targetPath}`);
         console.log(`Source Language: ${sourceLanguage}`);
         console.log(`Target Language: ${targetLanguage}`);
-        console.log(`Entries to process: ${Object.keys(clearedDictionary).length}`);
+
+        // Now translate only the entries that need translation
+        const entriesNeedingTranslation = {};
+        for (const [key, value] of Object.entries(entriesToProcess)) {
+            if (!skippedEntries.includes(key)) {
+                entriesNeedingTranslation[key] = value;
+            }
+        }
+
+        if (Object.keys(entriesNeedingTranslation).length === 0) {
+            console.log('No entries need translation. Dictionary is complete.');
+            return;
+        }
 
         // Now translate the dictionary using Gemini
         console.log('\nStarting translation with Gemini API...');
-        const translatedDictionary = await processDictionaryInBatches(clearedDictionary, sourceLanguage, targetLanguage);
+        const translatedDictionary = await processDictionaryInBatches(entriesNeedingTranslation, sourceLanguage, targetLanguage);
         
-        // Write the translated dictionary back to the target file
-        fs.writeFileSync(targetPath, JSON.stringify(translatedDictionary, null, 4), 'utf8');
+        // Merge translated entries back with existing entries
+        const finalDictionary = { ...entriesToProcess };
+        for (const [key, translation] of Object.entries(translatedDictionary)) {
+            if (finalDictionary[key]) {
+                // Update existing entry with translations
+                if (translation.reading) finalDictionary[key].reading = translation.reading;
+                if (translation.meaning) finalDictionary[key].meaning = translation.meaning;
+                if (translation.type) finalDictionary[key].type = translation.type;
+                if (translation.form) finalDictionary[key].form = translation.form;
+            }
+        }
+        
+        // Write the final dictionary back to the target file
+        fs.writeFileSync(targetPath, JSON.stringify(finalDictionary, null, 4), 'utf8');
         
         console.log('\n✅ Translation completed successfully!');
         console.log(`Final dictionary saved to: ${targetPath}`);
