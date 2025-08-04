@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: Weather and Seasons</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size */
+        }
+
+        /* Container for overall lesson content */
+        .lesson-container {
+            max-width: 800px; /* Max width for larger screens */
+            margin: 0 auto; /* Center on larger screens */
+            padding: 20px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.5em; /* ~24px */
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.2em; /* ~19px */
+            color: #8B5FBF; /* Primary: Purple for accents */
+            margin-bottom: 10px;
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Lesson Header Specifics */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Constrain width for larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        /* Chinese Words & Pinyin */
+        .chinese-word {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 10px;
+            background-color: #f0f0f0; /* Slightly different background for individual words */
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-right: 10px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .chinese-char {
+            font-size: 1.4em; /* Larger Chinese characters */
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue for characters */
+            margin-right: 8px;
+        }
+
+        .pinyin {
+            font-style: normal; /* Override default italic */
+            color: #8B5FBF; /* Primary: Purple */
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .translation {
+            color: #666666;
+            font-size: 0.9em;
+            margin-left: auto; /* Push translation to the right */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border-radius: 50%; /* Make it round */
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            display: inline-flex; /* For centering content */
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 8px;
+            vertical-align: middle; /* Align with text */
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4495; /* Darker purple on hover */
+            transform: scale(1.05); /* Slight scale effect */
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #fff; /* White background for questions */
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+        }
+
+        /* Details/Summary for Answer Reveal */
+        details {
+            margin-top: 10px;
+            background-color: #f7f7f7; /* Lighter background for answers */
+            border-radius: 8px;
+            padding: 10px;
+            border: 1px solid #E0E0E0;
+        }
+
+        summary {
+            font-weight: bold;
+            color: #8B5FBF; /* Primary: Purple */
+            cursor: pointer;
+            padding: 5px 0;
+            list-style: none; /* Remove default marker */
+            position: relative;
+        }
+
+        summary::-webkit-details-marker {
+            display: none; /* Remove default marker for WebKit browsers */
+        }
+
+        summary::before {
+            content: '👇 Show Answer';
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 0.9em;
+        }
+
+        details[open] summary::before {
+            content: '👆 Hide Answer';
+        }
+
+        .answer-text {
+            color: #2C3E50; /* Dark blue for answers */
+            font-weight: normal;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #E0E0E0;
+        }
+
+        .example-sentence {
+            background-color: #fff;
+            padding: 12px;
+            border-left: 5px solid #8B5FBF; /* Accent border */
+            border-radius: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .example-sentence p {
+            margin: 0;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #fbf0e8; /* A slightly warmer secondary for notes */
+            border-left: 5px solid #8B5FBF; /* Primary color accent */
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: #2C3E50; /* Dark blue for note text */
+        }
+
+        .cultural-note strong {
+            color: #8B5FBF;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+        }
+
+        .summary-section ul {
+            list-style-type: none; /* Remove default bullets */
+            padding: 0;
+        }
+
+        .summary-section li {
+            margin-bottom: 10px;
+            padding-left: 25px; /* Space for custom bullet */
+            position: relative;
+        }
+
+        .summary-section li::before {
+            content: '⭐'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary: Purple */
+            font-size: 1.1em;
+        }
+
+        /* Responsive Adjustments (Mobile-first, so these are for larger screens) */
+        @media (min-width: 600px) {
+            .lesson-container {
+                padding: 30px;
+            }
+            .section-card, .practice-section, .summary-section {
+                padding: 25px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+        <h1 class="chapter-title">Chapter 9: Weather and Seasons</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 9 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-card">
+            <h2>Welcome to Chapter 9! 🌦️</h2>
+            <p>Ready to talk about the weather in Chinese? From sunny days to snowy nights, and the beauty of all four seasons, this chapter will equip you with essential vocabulary and phrases to describe the world around you.</p>
+            <p>Let's dive in and make your Chinese conversations more vibrant!</p>
+        </section>
+
+        <section class="section-card">
+            <h2>Weather Vocabulary ☀️🌧️☁️❄️</h2>
+            <p>Let's start with some basic words to describe different types of weather.</p>
+
+            <h3>Sunny - 晴天 (qíngtiān)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">晴天</span>
+                <span class="pinyin">qíngtiān</span>
+                <span class="audio-icon" data-audio-text="晴天">🔊</span>
+                <span class="translation">sunny day / clear sky</span>
+            </div>
+            <p><strong>晴 (qíng)</strong> means 'clear' or 'fine', and <strong>天 (tiān)</strong> means 'sky' or 'day'.</p>
+
+            <h3>Rainy - 下雨 (xiàyǔ)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">下雨</span>
+                <span class="pinyin">xiàyǔ</span>
+                <span class="audio-icon" data-audio-text="下雨">🔊</span>
+                <span class="translation">to rain / raining</span>
+            </div>
+            <p><strong>下 (xià)</strong> means 'down' or 'to fall', and <strong>雨 (yǔ)</strong> means 'rain'. So, "rain falls down."</p>
+
+            <h3>Cloudy - 多云 (duōyún)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">多云</span>
+                <span class="pinyin">duōyún</span>
+                <span class="audio-icon" data-audio-text="多云">🔊</span>
+                <span class="translation">cloudy / many clouds</span>
+            </div>
+            <p><strong>多 (duō)</strong> means 'many' or 'much', and <strong>云 (yún)</strong> means 'cloud'.</p>
+
+            <h3>Snowy - 下雪 (xiàxuě)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">下雪</span>
+                <span class="pinyin">xiàxuě</span>
+                <span class="audio-icon" data-audio-text="下雪">🔊</span>
+                <span class="translation">to snow / snowing</span>
+            </div>
+            <p>Similar to 下雨, <strong>下 (xià)</strong> means 'to fall', and <strong>雪 (xuě)</strong> means 'snow'.</p>
+        </section>
+
+        <section class="practice-section">
+            <h2>Let's Practice! Weather Words 📝</h2>
+            <p>Match the Chinese weather word to its English meaning. Tap to reveal the answer!</p>
+
+            <div class="practice-question">
+                <p>1. <strong>下雪 (xiàxuě)</strong></p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">Meaning: Snowy / To snow</p>
+                </details>
+            </div>
+
+            <div class="practice-question">
+                <p>2. <strong>晴天 (qíngtiān)</strong></p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">Meaning: Sunny day / Clear sky</p>
+                </details>
+            </div>
+
+            <div class="practice-question">
+                <p>3. <strong>多云 (duōyún)</strong></p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">Meaning: Cloudy / Many clouds</p>
+                </details>
+            </div>
+
+            <div class="practice-question">
+                <p>4. <strong>下雨 (xiàyǔ)</strong></p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">Meaning: Rainy / To rain</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>Seasons - 季节 (jìjié) 🌸☀️🍂❄️</h2>
+            <p>Now, let's learn the names of the four seasons.</p>
+
+            <h3>Spring - 春天 (chūntiān)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">春天</span>
+                <span class="pinyin">chūntiān</span>
+                <span class="audio-icon" data-audio-text="春天">🔊</span>
+                <span class="translation">spring</span>
+            </div>
+
+            <h3>Summer - 夏天 (xiàtiān)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">夏天</span>
+                <span class="pinyin">xiàtiān</span>
+                <span class="audio-icon" data-audio-text="夏天">🔊</span>
+                <span class="translation">summer</span>
+            </div>
+
+            <h3>Fall / Autumn - 秋天 (qiūtiān)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">秋天</span>
+                <span class="pinyin">qiūtiān</span>
+                <span class="audio-icon" data-audio-text="秋天">🔊</span>
+                <span class="translation">fall / autumn</span>
+            </div>
+
+            <h3>Winter - 冬天 (dōngtiān)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">冬天</span>
+                <span class="pinyin">dōngtiān</span>
+                <span class="audio-icon" data-audio-text="冬天">🔊</span>
+                <span class="translation">winter</span>
+            </div>
+            <p>Notice that all seasons end with <strong>天 (tiān)</strong>, meaning 'day' or 'sky'. This is a common pattern for seasons in Chinese.</p>
+        </section>
+
+        <section class="practice-section">
+            <h2>Let's Practice! Seasons 📅</h2>
+            <p>Which season is it? Choose the correct Chinese word.</p>
+
+            <div class="practice-question">
+                <p>1. The season of blooming flowers.</p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">Answer: <strong>春天 (chūntiān)</strong></p>
+                </details>
+            </div>
+
+            <div class="practice-question">
+                <p>2. The hottest season.</p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">Answer: <strong>夏天 (xiàtiān)</strong></p>
+                </details>
+            </div>
+
+            <div class="practice-question">
+                <p>3. The season when leaves change color.</p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">Answer: <strong>秋天 (qiūtiān)</strong></p>
+                </details>
+            </div>
+
+            <div class="practice-question">
+                <p>4. The coldest season, often with snow.</p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">Answer: <strong>冬天 (dōngtiān)</strong></p>
+                </details>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>Asking "What's the weather like?" ❓</h2>
+            <p>The most common way to ask about the weather is:</p>
+            <h3>今天天气怎么样？ (Jīntiān tiānqì zěnmeyàng?)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">今天</span>
+                <span class="pinyin">jīntiān</span>
+                <span class="translation">today</span>
+            </div>
+            <div class="chinese-word">
+                <span class="chinese-char">天气</span>
+                <span class="pinyin">tiānqì</span>
+                <span class="audio-icon" data-audio-text="天气">🔊</span>
+                <span class="translation">weather</span>
+            </div>
+            <div class="chinese-word">
+                <span class="chinese-char">怎么样</span>
+                <span class="pinyin">zěnmeyàng</span>
+                <span class="audio-icon" data-audio-text="怎么样">🔊</span>
+                <span class="translation">how is it? / what about it?</span>
+            </div>
+            <p>So, literally: "Today weather how is it?"</p>
+
+            <h3>How to Answer: "It's..." ☀️</h3>
+            <p>To answer, you typically use the structure: <strong>今天天气 [weather word]</strong> or just <strong>[weather word]</strong>.</p>
+
+            <div class="example-sentence">
+                <p><span class="chinese-char">A: 今天天气怎么样？</span> <span class="pinyin">Jīntiān tiānqì zěnmeyàng?</span> <span class="audio-icon" data-audio-text="今天天气怎么样？">🔊</span></p>
+                <p class="translation">A: What's the weather like today?</p>
+                <p><span class="chinese-char">B: 晴天。</span> <span class="pinyin">Qíngtiān.</span> <span class="audio-icon" data-audio-text="晴天">🔊</span></p>
+                <p class="translation">B: It's sunny.</p>
+            </div>
+
+            <div class="example-sentence">
+                <p><span class="chinese-char">A: 今天天气怎么样？</span> <span class="pinyin">Jīntiān tiānqì zěnmeyàng?</span> <span class="audio-icon" data-audio-text="今天天气怎么样？">🔊</span></p>
+                <p class="translation">A: What's the weather like today?</p>
+                <p><span class="chinese-char">B: 下雨。</span> <span class="pinyin">Xiàyǔ.</span> <span class="audio-icon" data-audio-text="下雨">🔊</span></p>
+                <p class="translation">B: It's raining.</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>Let's Practice! What's the weather? 🗣️</h2>
+            <p>Respond to the question based on the emoji.</p>
+
+            <div class="practice-question">
+                <p>A: 今天天气怎么样？ (Jīntiān tiānqì zěnmeyàng?)</p>
+                <p>B: ☁️</p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">B: 多云 (Duōyún)</p>
+                </details>
+            </div>
+
+            <div class="practice-question">
+                <p>A: 今天天气怎么样？ (Jīntiān tiānqì zěnmeyàng?)</p>
+                <p>B: ❄️</p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">B: 下雪 (Xiàxuě)</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>Temperature: Hot, Cold, Warm, Cool 🌡️</h2>
+            <p>Describing temperature adds more detail to your weather reports.</p>
+
+            <h3>Hot - 热 (rè)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">热</span>
+                <span class="pinyin">rè</span>
+                <span class="audio-icon" data-audio-text="热">🔊</span>
+                <span class="translation">hot</span>
+            </div>
+
+            <h3>Cold - 冷 (lěng)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">冷</span>
+                <span class="pinyin">lěng</span>
+                <span class="audio-icon" data-audio-text="冷">🔊</span>
+                <span class="translation">cold</span>
+            </div>
+
+            <h3>Warm - 暖和 (nuǎnhuo)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">暖和</span>
+                <span class="pinyin">nuǎnhuo</span>
+                <span class="audio-icon" data-audio-text="暖和">🔊</span>
+                <span class="translation">warm</span>
+            </div>
+
+            <h3>Cool - 凉快 (liángkuai)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">凉快</span>
+                <span class="pinyin">liángkuai</span>
+                <span class="audio-icon" data-audio-text="凉快">🔊</span>
+                <span class="translation">cool (pleasantly cool)</span>
+            </div>
+
+            <h3>Using Temperature Words</h3>
+            <p>You can say <strong>很 (hěn)</strong> before these words to mean "very," or simply use them alone.</p>
+            <div class="example-sentence">
+                <p><span class="chinese-char">今天很热。</span> <span class="pinyin">Jīntiān hěn rè.</span> <span class="audio-icon" data-audio-text="今天很热。">🔊</span></p>
+                <p class="translation">It's very hot today.</p>
+            </div>
+            <div class="example-sentence">
+                <p><span class="chinese-char">秋天很凉快。</span> <span class="pinyin">Qiūtiān hěn liángkuai.</span> <span class="audio-icon" data-audio-text="秋天很凉快。">🔊</span></p>
+                <p class="translation">Autumn is very cool.</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>Let's Practice! Temperature 🥶🥵</h2>
+            <p>Fill in the blank with the correct temperature word.</p>
+
+            <div class="practice-question">
+                <p>1. 夏天很 ______。</p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">Answer: 热 (rè) - Summer is very hot.</p>
+                </details>
+            </div>
+
+            <div class="practice-question">
+                <p>2. 冬天很 ______。</p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">Answer: 冷 (lěng) - Winter is very cold.</p>
+                </details>
+            </div>
+
+            <div class="practice-question">
+                <p>3. 春天很 ______。</p>
+                <details>
+                    <summary></summary>
+                    <p class="answer-text">Answer: 暖和 (nuǎnhuo) - Spring is very warm.</p>
+                </details>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>Weather-Related Activities 🏃‍♀️☔</h2>
+            <p>Weather often influences our activities. Here are a few common phrases:</p>
+
+            <h3>To go out - 出去 (chūqù)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">出去</span>
+                <span class="pinyin">chūqù</span>
+                <span class="audio-icon" data-audio-text="出去">🔊</span>
+                <span class="translation">to go out</span>
+            </div>
+            <p>You might say this if the weather is nice.</p>
+            <div class="example-sentence">
+                <p><span class="chinese-char">今天天气很好，我们出去玩吧！</span> <span class="pinyin">Jīntiān tiānqì hěn hǎo, wǒmen chūqù wán ba!</span> <span class="audio-icon" data-audio-text="今天天气很好，我们出去玩吧！">🔊</span></p>
+                <p class="translation">The weather is great today, let's go out and play!</p>
+            </div>
+
+            <h3>To stay home - 待在家里 (dāi zài jiālǐ)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">待在家里</span>
+                <span class="pinyin">dāi zài jiālǐ</span>
+                <span class="audio-icon" data-audio-text="待在家里">🔊</span>
+                <span class="translation">to stay at home</span>
+            </div>
+            <p>When it's raining or snowing heavily, staying home is a good option!</p>
+            <div class="example-sentence">
+                <p><span class="chinese-char">下雨了，我们待在家里看电影。</span> <span class="pinyin">Xiàyǔ le, wǒmen dāi zài jiālǐ kàn diànyǐng.</span> <span class="audio-icon" data-audio-text="下雨了，我们待在家里看电影。">🔊</span></p>
+                <p class="translation">It's raining, let's stay home and watch movies.</p>
+            </div>
+
+            <div class="cultural-note">
+                <strong>Cultural Note: Weather's Impact in China</strong> 🇨🇳
+                <p>China is vast, so weather varies significantly by region! For example, northern cities like Beijing experience very cold, dry winters with snow, and hot, humid summers. Southern cities like Guangzhou have mild winters and extremely hot, humid summers with heavy rainfall.</p>
+                <p>Weather forecasts are very popular on news and apps, as they often dictate daily plans, especially concerning travel and outdoor activities. People often discuss the weather as a common polite greeting or small talk.</p>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>Chapter 9 Summary 🌟</h2>
+            <p>Great job! You've learned how to talk about the weather and seasons in Chinese. Here's a quick recap:</p>
+            <ul>
+                <li>⭐ <strong>Weather Vocabulary:</strong>
+                    <ul>
+                        <li>晴天 (qíngtiān) - sunny</li>
+                        <li>下雨 (xiàyǔ) - rainy</li>
+                        <li>多云 (duōyún) - cloudy</li>
+                        <li>下雪 (xiàxuě) - snowy</li>
+                    </ul>
+                </li>
+                <li>⭐ <strong>Seasons:</strong>
+                    <ul>
+                        <li>春天 (chūntiān) - spring</li>
+                        <li>夏天 (xiàtiān) - summer</li>
+                        <li>秋天 (qiūtiān) - fall/autumn</li>
+                        <li>冬天 (dōngtiān) - winter</li>
+                    </ul>
+                </li>
+                <li>⭐ <strong>Asking about Weather:</strong>
+                    <ul>
+                        <li>今天天气怎么样？ (Jīntiān tiānqì zěnmeyàng?) - What's the weather like today?</li>
+                    </ul>
+                </li>
+                <li>⭐ <strong>Temperature:</strong>
+                    <ul>
+                        <li>热 (rè) - hot</li>
+                        <li>冷 (lěng) - cold</li>
+                        <li>暖和 (nuǎnhuo) - warm</li>
+                        <li>凉快 (liángkuai) - cool</li>
+                    </ul>
+                </li>
+                <li>⭐ <strong>Weather-Related Activities:</strong>
+                    <ul>
+                        <li>出去 (chūqù) - to go out</li>
+                        <li>待在家里 (dāi zài jiālǐ) - to stay at home</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Keep practicing these words and phrases to confidently discuss the weather in Chinese!</p>
+        </section>
+
+    </div>
+</body>
+</html>

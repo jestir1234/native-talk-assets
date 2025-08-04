@@ -1,0 +1,293 @@
+{
+  "title": "Capítulo 3 Quiz: Números y Conteo",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"一\"?",
+      "explanation": "\"一\" (yī) significa \"Uno\" en chino.",
+      "correctAnswer": "Uno",
+      "options": [
+        "Dos",
+        "Uno",
+        "Tres",
+        "Cuatro"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Dos\" en chino?",
+      "explanation": "\"二\" (èr) significa \"Dos\" en chino.",
+      "correctAnswer": "二",
+      "options": [
+        "一",
+        "二",
+        "三",
+        "四"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"三\"?",
+      "explanation": "\"三\" (sān) significa \"Tres\" en chino.",
+      "correctAnswer": "Tres",
+      "options": [
+        "Dos",
+        "Tres",
+        "Cuatro",
+        "Cinco"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Cuatro\" en chino?",
+      "explanation": "\"四\" (sì) significa \"Cuatro\" en chino.",
+      "correctAnswer": "四",
+      "options": [
+        "三",
+        "四",
+        "五",
+        "六"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"五\"?",
+      "explanation": "\"五\" (wǔ) significa \"Cinco\" en chino.",
+      "correctAnswer": "Cinco",
+      "options": [
+        "Cuatro",
+        "Cinco",
+        "Seis",
+        "Siete"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Seis\" en chino?",
+      "explanation": "\"六\" (liù) significa \"Seis\" en chino.",
+      "correctAnswer": "六",
+      "options": [
+        "五",
+        "六",
+        "七",
+        "八"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"七\"?",
+      "explanation": "\"七\" (qī) significa \"Siete\" en chino.",
+      "correctAnswer": "Siete",
+      "options": [
+        "Seis",
+        "Siete",
+        "Ocho",
+        "Nueve"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Ocho\" en chino?",
+      "explanation": "\"八\" (bā) significa \"Ocho\" en chino.",
+      "correctAnswer": "八",
+      "options": [
+        "七",
+        "八",
+        "九",
+        "十"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"九\"?",
+      "explanation": "\"九\" (jiǔ) significa \"Nueve\" en chino.",
+      "correctAnswer": "Nueve",
+      "options": [
+        "Ocho",
+        "Nueve",
+        "Diez",
+        "Once"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Diez\" en chino?",
+      "explanation": "\"十\" (shí) significa \"Diez\" en chino.",
+      "correctAnswer": "十",
+      "options": [
+        "九",
+        "十",
+        "十一",
+        "十二"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"十一\"?",
+      "explanation": "\"十一\" (shí yī) significa \"Once\" en chino (10 + 1).",
+      "correctAnswer": "Once",
+      "options": [
+        "Diez",
+        "Once",
+        "Doce",
+        "Veinte"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Doce\" en chino?",
+      "explanation": "\"十二\" (shí èr) significa \"Doce\" en chino (10 + 2).",
+      "correctAnswer": "十二",
+      "options": [
+        "十一",
+        "十二",
+        "二十",
+        "十三"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"二十\"?",
+      "explanation": "\"二十\" (èr shí) significa \"Veinte\" en chino (2 x 10).",
+      "correctAnswer": "Veinte",
+      "options": [
+        "Doce",
+        "Trece",
+        "Veinte",
+        "Treinta"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Quince\" en chino?",
+      "explanation": "\"十五\" (shí wǔ) significa \"Quince\" en chino (10 + 5).",
+      "correctAnswer": "十五",
+      "options": [
+        "十三",
+        "十四",
+        "十五",
+        "十六"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"两\"?",
+      "explanation": "\"两\" (liǎng) significa \"Dos\" y se usa para contar cantidades.",
+      "correctAnswer": "Dos",
+      "options": [
+        "Uno",
+        "Dos",
+        "Tres",
+        "Cuatro"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"una persona\" en chino?",
+      "explanation": "\"一个人\" (yī ge rén) significa \"una persona\" en chino.",
+      "correctAnswer": "一个人",
+      "options": [
+        "一个人",
+        "两个人",
+        "三个人",
+        "四个人"
+      ]
+    },
+    {
+      "id": 34,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"你几岁？\"?",
+      "explanation": "\"你几岁？\" (Nǐ jǐ suì?) significa \"¿Cuántos años tienes?\" (informal).",
+      "correctAnswer": "¿Cuántos años tienes?",
+      "options": [
+        "¿Cuántos años tienes?",
+        "¿Qué edad tienes?",
+        "¿Cuántos años tiene usted?",
+        "¿Cuál es tu edad?"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"¿Qué edad tienes?\" en chino?",
+      "explanation": "\"你多大？\" (Nǐ duō dà?) significa \"¿Qué edad tienes?\" (más común).",
+      "correctAnswer": "你多大？",
+      "options": [
+        "你几岁？",
+        "你多大？",
+        "您多大年纪了？",
+        "你多大年纪？"
+      ]
+    },
+    {
+      "id": 38,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"加\"?",
+      "explanation": "\"加\" (jiā) significa \"Más\" o \"Sumar\" en chino.",
+      "correctAnswer": "Más",
+      "options": [
+        "Menos",
+        "Más",
+        "Igual",
+        "Por"
+      ]
+    },
+    {
+      "id": 40,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Menos\" en chino?",
+      "explanation": "\"减\" (jiǎn) significa \"Menos\" o \"Restar\" en chino.",
+      "correctAnswer": "减",
+      "options": [
+        "加",
+        "减",
+        "等于",
+        "乘"
+      ]
+    },
+    {
+      "id": 42,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"等于\"?",
+      "explanation": "\"等于\" (děngyú) significa \"Igual a\" en chino.",
+      "correctAnswer": "Igual a",
+      "options": [
+        "Más",
+        "Menos",
+        "Igual a",
+        "Por"
+      ]
+    },
+    {
+      "id": 44,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Uno más uno es igual a dos\" en chino?",
+      "explanation": "\"一加一等于二\" (Yī jiā yī děngyú èr) significa \"Uno más uno es igual a dos\" en chino.",
+      "correctAnswer": "一加一等于二",
+      "options": [
+        "一加一等于二",
+        "二加一等于三",
+        "一减一等于零",
+        "一加二等于三"
+      ]
+    }
+  ],
+  "totalQuestions": 22,
+  "createdAt": "2025-08-04T02:46:54.873Z"
+}

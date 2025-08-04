@@ -1,0 +1,319 @@
+{
+  "title": "Capítulo 9 Quiz: El Clima y las Estaciones",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"晴天\"?",
+      "explanation": "\"晴天\" (qíngtiān) significa \"Soleado\" en chino.",
+      "correctAnswer": "Soleado",
+      "options": [
+        "Llover",
+        "Soleado",
+        "Nublado",
+        "Nevar"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Llover\" en chino?",
+      "explanation": "\"下雨\" (xiàyǔ) significa \"Llover\" en chino.",
+      "correctAnswer": "下雨",
+      "options": [
+        "晴天",
+        "下雨",
+        "多云",
+        "下雪"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"多云\"?",
+      "explanation": "\"多云\" (duōyún) significa \"Nublado\" en chino.",
+      "correctAnswer": "Nublado",
+      "options": [
+        "Soleado",
+        "Llover",
+        "Nublado",
+        "Nevar"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Nevar\" en chino?",
+      "explanation": "\"下雪\" (xiàxuě) significa \"Nevar\" en chino.",
+      "correctAnswer": "下雪",
+      "options": [
+        "晴天",
+        "下雨",
+        "多云",
+        "下雪"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"刮风\"?",
+      "explanation": "\"刮风\" (guāfēng) significa \"Hacer viento\" en chino.",
+      "correctAnswer": "Hacer viento",
+      "options": [
+        "Soleado",
+        "Llover",
+        "Hacer viento",
+        "Nevar"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"¿Qué tiempo hace hoy?\" en chino?",
+      "explanation": "\"今天天气怎么样？\" (Jīntiān tiānqì zěnmeyàng?) significa \"¿Qué tiempo hace hoy?\" en chino.",
+      "correctAnswer": "今天天气怎么样",
+      "options": [
+        "今天天气怎么样",
+        "今天下雨",
+        "今天是晴天",
+        "今天很热"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"今天是晴天\"?",
+      "explanation": "\"今天是晴天\" (Jīntiān shì qíngtiān) significa \"Hoy está soleado\" en chino.",
+      "correctAnswer": "Hoy está soleado",
+      "options": [
+        "Hoy llueve",
+        "Hoy está soleado",
+        "Hoy está nublado",
+        "Hoy nieva"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Hoy llueve\" en chino?",
+      "explanation": "\"今天下雨\" (Jīntiān xiàyǔ) significa \"Hoy llueve\" en chino.",
+      "correctAnswer": "今天下雨",
+      "options": [
+        "今天是晴天",
+        "今天下雨",
+        "今天多云",
+        "今天下雪"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"春天\"?",
+      "explanation": "\"春天\" (chūntiān) significa \"Primavera\" en chino.",
+      "correctAnswer": "Primavera",
+      "options": [
+        "Verano",
+        "Primavera",
+        "Otoño",
+        "Invierno"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Verano\" en chino?",
+      "explanation": "\"夏天\" (xiàtiān) significa \"Verano\" en chino.",
+      "correctAnswer": "夏天",
+      "options": [
+        "春天",
+        "夏天",
+        "秋天",
+        "冬天"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"秋天\"?",
+      "explanation": "\"秋天\" (qiūtiān) significa \"Otoño\" en chino.",
+      "correctAnswer": "Otoño",
+      "options": [
+        "Primavera",
+        "Verano",
+        "Otoño",
+        "Invierno"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Invierno\" en chino?",
+      "explanation": "\"冬天\" (dōngtiān) significa \"Invierno\" en chino.",
+      "correctAnswer": "冬天",
+      "options": [
+        "春天",
+        "夏天",
+        "秋天",
+        "冬天"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"你喜欢什么季节？\"?",
+      "explanation": "\"你喜欢什么季节？\" (Nǐ xǐhuan shénme jìjié?) significa \"¿Qué estación te gusta?\" en chino.",
+      "correctAnswer": "¿Qué estación te gusta?",
+      "options": [
+        "¿Qué tiempo hace hoy?",
+        "¿Qué estación te gusta?",
+        "¿Qué clima prefieres?",
+        "¿Qué temperatura hace?"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Me gusta la primavera\" en chino?",
+      "explanation": "\"我喜欢春天\" (Wǒ xǐhuan chūntiān) significa \"Me gusta la primavera\" en chino.",
+      "correctAnswer": "我喜欢春天",
+      "options": [
+        "我喜欢夏天",
+        "我喜欢春天",
+        "我喜欢秋天",
+        "我喜欢冬天"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"热\"?",
+      "explanation": "\"热\" (rè) significa \"Caliente\" en chino.",
+      "correctAnswer": "Caliente",
+      "options": [
+        "Frío",
+        "Caliente",
+        "Cálido",
+        "Fresco"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Frío\" en chino?",
+      "explanation": "\"冷\" (lěng) significa \"Frío\" en chino.",
+      "correctAnswer": "冷",
+      "options": [
+        "热",
+        "冷",
+        "暖和",
+        "凉快"
+      ]
+    },
+    {
+      "id": 34,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"暖和\"?",
+      "explanation": "\"暖和\" (nuǎnhuo) significa \"Cálido\" en chino.",
+      "correctAnswer": "Cálido",
+      "options": [
+        "Caliente",
+        "Frío",
+        "Cálido",
+        "Fresco"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Fresco\" en chino?",
+      "explanation": "\"凉快\" (liángkuai) significa \"Fresco\" en chino.",
+      "correctAnswer": "凉快",
+      "options": [
+        "热",
+        "冷",
+        "暖和",
+        "凉快"
+      ]
+    },
+    {
+      "id": 38,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"游泳\"?",
+      "explanation": "\"游泳\" (yóuyǒng) significa \"Nadar\" en chino.",
+      "correctAnswer": "Nadar",
+      "options": [
+        "Esquiar",
+        "Nadar",
+        "Caminar",
+        "Ir a la playa"
+      ]
+    },
+    {
+      "id": 40,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Esquiar\" en chino?",
+      "explanation": "\"滑雪\" (huáxuě) significa \"Esquiar\" en chino.",
+      "correctAnswer": "滑雪",
+      "options": [
+        "游泳",
+        "滑雪",
+        "散步",
+        "去海边"
+      ]
+    },
+    {
+      "id": 42,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"散步\"?",
+      "explanation": "\"散步\" (sànbù) significa \"Dar un paseo / Caminar\" en chino.",
+      "correctAnswer": "Dar un paseo / Caminar",
+      "options": [
+        "Nadar",
+        "Esquiar",
+        "Dar un paseo / Caminar",
+        "Ir a la playa"
+      ]
+    },
+    {
+      "id": 44,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Ir a la playa\" en chino?",
+      "explanation": "\"去海边\" (qù hǎibiān) significa \"Ir a la playa\" en chino.",
+      "correctAnswer": "去海边",
+      "options": [
+        "游泳",
+        "滑雪",
+        "散步",
+        "去海边"
+      ]
+    },
+    {
+      "id": 46,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"夏天可以游泳\"?",
+      "explanation": "\"夏天可以游泳\" (Xiàtiān kěyǐ yóuyǒng) significa \"En verano se puede nadar\" en chino.",
+      "correctAnswer": "En verano se puede nadar",
+      "options": [
+        "En verano se puede nadar",
+        "En invierno me gusta esquiar",
+        "Cuando el tiempo esté fresco, vayamos a caminar",
+        "En primavera hace calor"
+      ]
+    },
+    {
+      "id": 48,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"En invierno me gusta esquiar\" en chino?",
+      "explanation": "\"冬天我喜欢滑雪\" (Dōngtiān wǒ xǐhuan huáxuě) significa \"En invierno me gusta esquiar\" en chino.",
+      "correctAnswer": "冬天我喜欢滑雪",
+      "options": [
+        "夏天可以游泳",
+        "冬天我喜欢滑雪",
+        "天气凉快的时候，我们去散步吧",
+        "春天很暖和"
+      ]
+    }
+  ],
+  "totalQuestions": 24,
+  "createdAt": "2025-08-04T02:46:55.123Z"
+}

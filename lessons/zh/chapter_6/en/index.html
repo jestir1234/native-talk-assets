@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Daily Activities and Routines</title>
+    <style>
+        /* General Mobile-First Styles */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --button-text-color: #FFFFFF; /* White */
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--body-text-color);
+            background-color: var(--secondary-color);
+            padding: var(--spacing-unit);
+            font-size: 16px; /* Minimum body font size */
+        }
+
+        /* Responsive Container */
+        .container {
+            max-width: 768px; /* Max width for larger screens */
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            overflow: hidden;
+            padding: var(--spacing-unit);
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: var(--spacing-unit) * 2;
+            }
+            .container {
+                padding: var(--spacing-unit) * 2;
+            }
+        }
+
+        /* Chapter Header */
+        .chapter-title {
+            color: var(--heading-color);
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: var(--spacing-unit);
+            padding-top: var(--spacing-unit);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* As per requirement */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px var(--shadow-color);
+            display: block;
+            margin: 0 auto;
+            /* Placeholder for image, no actual image URL */
+            background-color: var(--border-color); /* Visual placeholder */
+            color: var(--body-text-color);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px; /* Provide some height for the placeholder */
+            overflow: hidden; /* Ensure any text within is clipped */
+        }
+        .lesson-header-image::before {
+            content: "⏰ Daily Activities 🗓️"; /* Text-based visual */
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #FFFFFF;
+            padding: var(--spacing-unit);
+            margin-bottom: var(--spacing-unit);
+            border-radius: 8px;
+            box-shadow: 0 2px 6px var(--shadow-color);
+        }
+
+        h2 {
+            color: var(--heading-color);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-unit);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: var(--spacing-unit) / 2;
+        }
+
+        h3 {
+            color: var(--heading-color);
+            font-size: 1.2rem;
+            margin-top: var(--spacing-unit);
+            margin-bottom: var(--spacing-unit) / 2;
+        }
+
+        p {
+            margin-bottom: var(--spacing-unit);
+            font-size: 1rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: var(--spacing-unit);
+        }
+
+        li {
+            margin-bottom: var(--spacing-unit) / 2;
+            font-size: 1rem;
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+
+        em {
+            font-style: normal;
+            color: var(--heading-color);
+        }
+
+        /* Chinese Word Display */
+        .chinese-word {
+            display: flex;
+            align-items: center;
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: var(--spacing-unit) / 2 var(--spacing-unit);
+            margin: var(--spacing-unit) 0;
+            border-radius: 4px;
+        }
+        .chinese-char {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-right: var(--spacing-unit) / 2;
+        }
+        .pinyin {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-right: var(--spacing-unit);
+        }
+        .english-translation {
+            font-size: 1rem;
+            color: var(--body-text-color);
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px; /* Minimum touch target size */
+            min-height: 44px; /* Minimum touch target size */
+            padding: 8px;
+            background-color: var(--primary-color);
+            color: var(--button-text-color);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-left: var(--spacing-unit) / 2;
+            box-shadow: 0 2px 4px var(--shadow-color);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            vertical-align: middle; /* Align with text */
+        }
+
+        .audio-icon:hover {
+            background-color: var(--heading-color);
+            transform: scale(1.05);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--secondary-color);
+            padding: var(--spacing-unit);
+            margin-top: var(--spacing-unit);
+            border-radius: 8px;
+            border: 1px dashed var(--border-color);
+            color: var(--body-text-color);
+        }
+
+        .practice-section h3 {
+            color: var(--heading-color);
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .practice-item {
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--heading-color);
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background-color: var(--primary-color);
+            color: var(--button-text-color);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: var(--spacing-unit);
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            min-height: 44px; /* Minimum touch target size */
+        }
+
+        .button:hover {
+            background-color: var(--heading-color);
+            transform: translateY(-2px);
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: rgba(139, 95, 191, 0.1); /* Light tint of primary color */
+            border-left: 4px solid var(--primary-color);
+            padding: var(--spacing-unit) / 2 var(--spacing-unit);
+            margin: var(--spacing-unit) 0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            color: var(--body-text-color);
+        }
+        .cultural-note strong {
+            color: var(--primary-color);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--secondary-color);
+            padding: var(--spacing-unit);
+            border-radius: 8px;
+            margin-top: var(--spacing-unit) * 2;
+            border: 1px solid var(--border-color);
+        }
+        .summary-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+            border-bottom: none;
+        }
+        .summary-section ul {
+            list-style-type: disc;
+            padding-left: var(--spacing-unit) * 1.5;
+        }
+        .summary-section li {
+            margin-bottom: var(--spacing-unit) / 2;
+        }
+
+        /* Utility classes for spacing */
+        .mb-1 { margin-bottom: var(--spacing-unit) / 2; }
+        .mb-2 { margin-bottom: var(--spacing-unit); }
+        .mt-2 { margin-top: var(--spacing-unit); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 6: Daily Activities and Routines</h1>
+        <div class="lesson-header">
+            <div class="lesson-header-image" role="img" aria-label="Stylized image representing daily activities with a clock and calendar icon."></div>
+        </div>
+
+        <section>
+            <h2>👋 Welcome to Your Day in Chinese!</h2>
+            <p>Ready to talk about what you do every day? In this chapter, we'll learn common verbs, how to say what you eat (or don't!), and how to talk about your routine from morning till night. Let's make your Chinese conversation skills part of your daily life!</p>
+        </section>
+
+        <section>
+            <h2>📚 Common Verbs for Daily Life</h2>
+            <p>These are the building blocks for talking about your activities. Listen carefully and practice saying them!</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">吃</span>
+                <span class="pinyin">chī</span>
+                <span class="english-translation">eat</span>
+                <button class="audio-icon" data-audio-text="吃">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我吃。<br><em>Wǒ chī.</em><br>I eat.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">喝</span>
+                <span class="pinyin">hē</span>
+                <span class="english-translation">drink</span>
+                <button class="audio-icon" data-audio-text="喝">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我喝。<br><em>Wǒ hē.</em><br>I drink.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">睡</span>
+                <span class="pinyin">shuì</span>
+                <span class="english-translation">sleep</span>
+                <button class="audio-icon" data-audio-text="睡">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我睡。<br><em>Wǒ shuì.</em><br>I sleep.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">工作</span>
+                <span class="pinyin">gōngzuò</span>
+                <span class="english-translation">work</span>
+                <button class="audio-icon" data-audio-text="工作">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我工作。<br><em>Wǒ gōngzuò.</em><br>I work.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">学习</span>
+                <span class="pinyin">xuéxí</span>
+                <span class="english-translation">study</span>
+                <button class="audio-icon" data-audio-text="学习">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我学习。<br><em>Wǒ xuéxí.</em><br>I study.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">玩</span>
+                <span class="pinyin">wán</span>
+                <span class="english-translation">play / have fun</span>
+                <button class="audio-icon" data-audio-text="玩">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我玩。<br><em>Wǒ wán.</em><br>I play.</p>
+
+            <div class="practice-section">
+                <h3>✍️ Practice: Match the Verb!</h3>
+                <p class="mb-2">Drag the English meaning to the Chinese word (mentally or on paper!)</p>
+                <div class="practice-item">
+                    <p><strong>吃</strong> <span class="pinyin">(chī)</span> - ?</p>
+                </div>
+                <div class="practice-item">
+                    <p><strong>工作</strong> <span class="pinyin">(gōngzuò)</span> - ?</p>
+                </div>
+                <div class="practice-item">
+                    <p><strong>睡</strong> <span class="pinyin">(shuì)</span> - ?</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>💬 Present Tense Basics: I do... / I don't do...</h2>
+            <p>Good news! Chinese verbs don't change based on who is doing the action or when. So, saying "I eat" is simply <strong>Subject + Verb</strong>.</p>
+            <h3>I eat... (我吃...)</h3>
+            <div class="chinese-word">
+                <span class="chinese-char">我</span>
+                <span class="pinyin">wǒ</span>
+                <span class="english-translation">I / me</span>
+                <button class="audio-icon" data-audio-text="我">🔊</button>
+            </div>
+            <p>To say "I eat", you just combine <strong>我 (wǒ)</strong> and <strong>吃 (chī)</strong>:</p>
+            <p><strong>我吃。</strong><br><em>Wǒ chī.</em><br>I eat.</p>
+            <p>It works for all the verbs we just learned!</p>
+            <ul>
+                <li>我喝。 <em>Wǒ hē.</em> (I drink.) <button class="audio-icon" data-audio-text="我喝">🔊</button></li>
+                <li>我学习。 <em>Wǒ xuéxí.</em> (I study.) <button class="audio-icon" data-audio-text="我学习">🔊</button></li>
+                <li>我工作。 <em>Wǒ gōngzuò.</em> (I work.) <button class="audio-icon" data-audio-text="我工作">🔊</button></li>
+            </ul>
+
+            <h3>I don't eat... (我不吃...)</h3>
+            <p>To make a sentence negative, you simply add <strong>不 (bù)</strong> before the verb. It means "not" or "no".</p>
+            <div class="chinese-word">
+                <span class="chinese-char">不</span>
+                <span class="pinyin">bù</span>
+                <span class="english-translation">not / no</span>
+                <button class="audio-icon" data-audio-text="不">🔊</button>
+            </div>
+            <p>So, "I don't eat" becomes:</p>
+            <p><strong>我不吃。</strong><br><em>Wǒ bù chī.</em><br>I don't eat.</p>
+            <ul>
+                <li>我不想。 <em>Wǒ bù hē.</em> (I don't drink.) <button class="audio-icon" data-audio-text="我不想">🔊</button></li>
+                <li>我不睡。 <em>Wǒ bù shuì.</em> (I don't sleep.) <button class="audio-icon" data-audio-text="我不睡">🔊</button></li>
+                <li>我不工作。 <em>Wǒ bù gōngzuò.</em> (I don't work.) <button class="audio-icon" data-audio-text="我不工作">🔊</button></li>
+            </ul>
+
+            <div class="practice-section">
+                <h3>✍️ Practice: Negate It!</h3>
+                <p class="mb-2">Translate these sentences into Chinese.</p>
+                <div class="practice-item">
+                    <p>1. I don't study.</p>
+                    <input type="text" class="input-field" placeholder="Type Chinese here (e.g., 我不学习)">
+                </div>
+                <div class="practice-item">
+                    <p>2. I don't play.</p>
+                    <input type="text" class="input-field" placeholder="Type Chinese here">
+                </div>
+                <div class="practice-item">
+                    <p>3. I don't drink.</p>
+                    <input type="text" class="input-field" placeholder="Type Chinese here">
+                </div>
+                <button class="button">Check My Answers</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>⏰ Daily Routine Vocabulary</h2>
+            <p>Now let's add some common daily activities to our vocabulary!</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">起床</span>
+                <span class="pinyin">qǐchuáng</span>
+                <span class="english-translation">wake up / get up</span>
+                <button class="audio-icon" data-audio-text="起床">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我起床。<br><em>Wǒ qǐchuáng.</em><br>I wake up.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">洗澡</span>
+                <span class="pinyin">xǐzǎo</span>
+                <span class="english-translation">take a bath/shower</span>
+                <button class="audio-icon" data-audio-text="洗澡">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我洗澡。<br><em>Wǒ xǐzǎo.</em><br>I take a shower.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">刷牙</span>
+                <span class="pinyin">shuāyá</span>
+                <span class="english-translation">brush teeth</span>
+                <button class="audio-icon" data-audio-text="刷牙">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我刷牙。<br><em>Wǒ shuāyá.</em><br>I brush teeth.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">做饭</span>
+                <span class="pinyin">zuòfàn</span>
+                <span class="english-translation">cook (make food)</span>
+                <button class="audio-icon" data-audio-text="做饭">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我做饭。<br><em>Wǒ zuòfàn.</em><br>I cook.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">吃饭</span>
+                <span class="pinyin">chīfàn</span>
+                <span class="english-translation">eat a meal</span>
+                <button class="audio-icon" data-audio-text="吃饭">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我吃饭。<br><em>Wǒ chīfàn.</em><br>I eat a meal.</p>
+            <p class="cultural-note">💡 <strong>Cultural Note:</strong> While <strong>吃 (chī)</strong> means "eat", <strong>吃饭 (chīfàn)</strong> is specifically "to eat a meal" or "to have a meal." It's a very common phrase!</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">上班</span>
+                <span class="pinyin">shàngbān</span>
+                <span class="english-translation">go to work / start work</span>
+                <button class="audio-icon" data-audio-text="上班">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我上班。<br><em>Wǒ shàngbān.</em><br>I go to work.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">下班</span>
+                <span class="pinyin">xiàbān</span>
+                <span class="english-translation">get off work / finish work</span>
+                <button class="audio-icon" data-audio-text="下班">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我下班。<br><em>Wǒ xiàbān.</em><br>I get off work.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">回家</span>
+                <span class="pinyin">huíjiā</span>
+                <span class="english-translation">go home / return home</span>
+                <button class="audio-icon" data-audio-text="回家">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我回家。<br><em>Wǒ huíjiā.</em><br>I go home.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">睡觉</span>
+                <span class="pinyin">shuìjiào</span>
+                <span class="english-translation">sleep / go to bed</span>
+                <button class="audio-icon" data-audio-text="睡觉">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我睡觉。<br><em>Wǒ shuìjiào.</em><br>I sleep.</p>
+            <p class="cultural-note">💡 <strong>Cultural Note:</strong> You learned <strong>睡 (shuì)</strong> as "sleep." <strong>睡觉 (shuìjiào)</strong> is a more complete way to say "to sleep" or "to go to bed," often used as a verb-object phrase. Both are correct, but 睡觉 is more common for the action of sleeping.</p>
+
+            <div class="practice-section">
+                <h3>✍️ Practice: What do you do?</h3>
+                <p class="mb-2">Translate these phrases.</p>
+                <div class="practice-item">
+                    <p>1. I get up.</p>
+                    <input type="text" class="input-field" placeholder="Type Chinese here (e.g., 我起床)">
+                </div>
+                <div class="practice-item">
+                    <p>2. I cook.</p>
+                    <input type="text" class="input-field" placeholder="Type Chinese here">
+                </div>
+                <div class="practice-item">
+                    <p>3. I don't go to work.</p>
+                    <input type="text" class="input-field" placeholder="Type Chinese here">
+                </div>
+                <button class="button">Check My Answers</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>☀️ Time Expressions: Morning, Afternoon, Evening</h2>
+            <p>Now, let's learn how to say *when* you do these activities. These words go <em>before</em> the verb (or before the subject+verb phrase).</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">早上</span>
+                <span class="pinyin">zǎoshang</span>
+                <span class="english-translation">morning (early morning)</span>
+                <button class="audio-icon" data-audio-text="早上">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我早上起床。<br><em>Wǒ zǎoshang qǐchuáng.</em><br>I wake up in the morning.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">上午</span>
+                <span class="pinyin">shàngwǔ</span>
+                <span class="english-translation">morning (late morning / forenoon)</span>
+                <button class="audio-icon" data-audio-text="上午">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我上午工作。<br><em>Wǒ shàngwǔ gōngzuò.</em><br>I work in the late morning.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">中午</span>
+                <span class="pinyin">zhōngwǔ</span>
+                <span class="english-translation">noon</span>
+                <button class="audio-icon" data-audio-text="中午">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我中午吃饭。<br><em>Wǒ zhōngwǔ chīfàn.</em><br>I eat a meal at noon.</p>
+            <p class="cultural-note">💡 <strong>Cultural Note:</strong> Lunch is often the biggest meal of the day for Chinese people, especially workers and students. It's common to have a substantial meal around noon, sometimes with a short nap (午休 wǔxiū) afterwards.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">下午</span>
+                <span class="pinyin">xiàwǔ</span>
+                <span class="english-translation">afternoon</span>
+                <button class="audio-icon" data-audio-text="下午">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我下午学习。<br><em>Wǒ xiàwǔ xuéxí.</em><br>I study in the afternoon.</p>
+
+            <div class="chinese-word">
+                <span class="chinese-char">晚上</span>
+                <span class="pinyin">wǎnshang</span>
+                <span class="english-translation">evening / night</span>
+                <button class="audio-icon" data-audio-text="晚上">🔊</button>
+            </div>
+            <p><strong>Example:</strong> 我晚上睡觉。<br><em>Wǒ wǎnshang shuìjiào.</em><br>I sleep at night.</p>
+
+            <div class="practice-section">
+                <h3>✍️ Practice: My Daily Routine</h3>
+                <p class="mb-2">Combine what you've learned. Translate these sentences into Chinese.</p>
+                <div class="practice-item">
+                    <p>1. I wake up in the morning.</p>
+                    <input type="text" class="input-field" placeholder="Type Chinese here">
+                </div>
+                <div class="practice-item">
+                    <p>2. I don't work in the afternoon.</p>
+                    <input type="text" class="input-field" placeholder="Type Chinese here">
+                </div>
+                <div class="practice-item">
+                    <p>3. I eat a meal at noon.</p>
+                    <input type="text" class="input-field" placeholder="Type Chinese here">
+                </div>
+                <div class="practice-item">
+                    <p>4. I go home in the evening.</p>
+                    <input type="text" class="input-field" placeholder="Type Chinese here">
+                </div>
+                <button class="button">Check My Answers</button>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ Chapter 6: Summary ✨</h2>
+            <p>You've learned how to describe your basic daily activities in Chinese! Here’s a quick recap:</p>
+            <ul>
+                <li><strong>Common Verbs:</strong>
+                    <ul>
+                        <li><strong>吃</strong> (chī) - eat</li>
+                        <li><strong>喝</strong> (hē) - drink</li>
+                        <li><strong>睡</strong> (shuì) - sleep</li>
+                        <li><strong>工作</strong> (gōngzuò) - work</li>
+                        <li><strong>学习</strong> (xuéxí) - study</li>
+                        <li><strong>玩</strong> (wán) - play</li>
+                    </ul>
+                </li>
+                <li><strong>Basic Sentence Structure:</strong>
+                    <ul>
+                        <li><strong>Subject + Verb</strong> (e.g., 我吃 - Wǒ chī - I eat)</li>
+                        <li><strong>Negation: Subject + 不 (bù) + Verb</strong> (e.g., 我不吃 - Wǒ bù chī - I don't eat)</li>
+                    </ul>
+                </li>
+                <li><strong>Daily Routine Vocabulary:</strong>
+                    <ul>
+                        <li><strong>起床</strong> (qǐchuáng) - wake up</li>
+                        <li><strong>洗澡</strong> (xǐzǎo) - take a bath/shower</li>
+                        <li><strong>刷牙</strong> (shuāyá) - brush teeth</li>
+                        <li><strong>做饭</strong> (zuòfàn) - cook</li>
+                        <li><strong>吃饭</strong> (chīfàn) - eat a meal</li>
+                        <li><strong>上班</strong> (shàngbān) - go to work</li>
+                        <li><strong>下班</strong> (xiàbān) - get off work</li>
+                        <li><strong>回家</strong> (huíjiā) - go home</li>
+                        <li><strong>睡觉</strong> (shuìjiào) - sleep / go to bed</li>
+                    </ul>
+                </li>
+                <li><strong>Time Expressions:</strong>
+                    <ul>
+                        <li><strong>早上</strong> (zǎoshang) - morning</li>
+                        <li><strong>上午</strong> (shàngwǔ) - late morning</li>
+                        <li><strong>中午</strong> (zhōngwǔ) - noon</li>
+                        <li><strong>下午</strong> (xiàwǔ) - afternoon</li>
+                        <li><strong>晚上</strong> (wǎnshang) - evening/night</li>
+                        <li>These come <em>before</em> the verb: e.g., 我早上吃饭 (Wǒ zǎoshang chīfàn - I eat in the morning).</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Keep practicing these phrases and try to describe your own daily activities in Chinese! You're doing great! 👍</p>
+        </section>
+    </div>
+</body>
+</html>

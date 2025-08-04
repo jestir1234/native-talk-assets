@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: Places and Directions</title>
+    <style>
+        /* General Body & Root Styles */
+        :root {
+            --primary-color: #8B5FBF;
+            --secondary-background: #FDF9E5;
+            --heading-text-color: #2C3E50;
+            --body-text-color: #666666;
+            --border-color: #E0E0E0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-background);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        /* Container for overall lesson content */
+        .lesson-container {
+            max-width: 600px; /* Max width for larger screens */
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 2.2em; /* Larger for chapter title */
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-bottom: 1em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: var(--primary-color);
+            margin-top: 1.2em;
+            margin-bottom: 0.8em;
+        }
+
+        /* Lesson Header Specific Styles */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #FFFFFF;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1em;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-bottom: 1em;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        /* Chinese Word Styling (Pinyin + Characters + English) */
+        .chinese-word {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        .chinese-word .character {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-right: 10px;
+            color: var(--heading-text-color);
+        }
+
+        .chinese-word .pinyin {
+            font-style: italic;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .chinese-word .translation {
+            color: var(--body-text-color);
+            flex: 1; /* Allows it to take remaining space */
+        }
+
+        /* Audio Icon Styling */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%; /* Make it circular */
+            width: 44px; /* Minimum size for touch */
+            height: 44px; /* Minimum size for touch */
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            margin-left: 10px;
+            flex-shrink: 0; /* Prevent shrinking on small screens */
+        }
+
+        .audio-icon:hover {
+            background-color: #6C4299; /* Slightly darker purple on hover */
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        /* Practice Section Styling */
+        .practice-section {
+            background-color: var(--secondary-background);
+            border: 1px dashed var(--border-color);
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: flex-start; /* Align text to the left */
+        }
+
+        .practice-item .question {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-bottom: 5px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .practice-item .answer-prompt {
+            color: var(--primary-color);
+            font-style: italic;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+        
+        /* Flex utility for example lines */
+        .example-line {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .example-line span {
+            margin-right: 5px;
+        }
+        .example-line .chinese-text {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: var(--heading-text-color);
+        }
+        .example-line .english-translation {
+            font-style: italic;
+            color: var(--body-text-color);
+            flex: 1;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: #FFFFFF;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            padding-bottom: 10px;
+        }
+
+        .summary-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .summary-section li {
+            border-bottom: none;
+            padding: 5px 0;
+        }
+
+        /* Responsive Adjustments for smaller screens (mobile-first) */
+        @media (min-width: 320px) {
+            .lesson-container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            body {
+                font-size: 16px;
+            }
+            .chinese-word .character {
+                font-size: 1.3em;
+            }
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1em;
+            }
+            .example-line {
+                flex-direction: column; /* Stack on smaller screens */
+                align-items: flex-start;
+            }
+            .example-line .chinese-text {
+                margin-bottom: 5px;
+            }
+            .example-line .english-translation {
+                margin-left: 0;
+            }
+        }
+
+        @media (min-width: 480px) {
+            .lesson-container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            h3 {
+                font-size: 1.3em;
+            }
+            .chinese-word .character {
+                font-size: 1.4em;
+            }
+            .audio-icon {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2em;
+            }
+            .example-line {
+                flex-direction: row; /* Back to row on slightly larger mobile */
+                align-items: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="lesson-container">
+
+        <h1 class="chapter-title">Chapter 8: Places and Directions</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>🗺️ Welcome to Chapter 8! 📍</h2>
+            <p>Ready to navigate the Chinese-speaking world? In this chapter, we'll learn how to talk about common places, where things are, and how to give or understand basic directions. Let's get going!</p>
+        </section>
+
+        <section>
+            <h2>📍 Common Places (常用地方 - chángyòng dìfang)</h2>
+            <p>Let's start by learning some essential places you might want to talk about in Chinese.</p>
+
+            <h3>🏡 Home (家 - jiā)</h3>
+            <div class="chinese-word">
+                <span class="character">家</span>
+                <span class="pinyin">jiā</span>
+                <span class="translation">home / family</span>
+                <button class="audio-icon" data-audio-text="家" aria-label="Play audio for jiā">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">我家</span>
+                <span class="english-translation">My home</span>
+                <button class="audio-icon" data-audio-text="我家" aria-label="Play audio for wǒ jiā">🔊</button>
+            </div>
+
+            <h3>🏫 School (学校 - xuéxiào)</h3>
+            <div class="chinese-word">
+                <span class="character">学校</span>
+                <span class="pinyin">xuéxiào</span>
+                <span class="translation">school</span>
+                <button class="audio-icon" data-audio-text="学校" aria-label="Play audio for xuéxiào">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">我去学校。</span>
+                <span class="english-translation">I go to school.</span>
+                <button class="audio-icon" data-audio-text="我去学校" aria-label="Play audio for wǒ qù xuéxiào">🔊</button>
+            </div>
+
+            <h3>🏢 Work / Company (公司 - gōngsī)</h3>
+            <div class="chinese-word">
+                <span class="character">公司</span>
+                <span class="pinyin">gōngsī</span>
+                <span class="translation">company / work</span>
+                <button class="audio-icon" data-audio-text="公司" aria-label="Play audio for gōngsī">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">他在公司工作。</span>
+                <span class="english-translation">He works at the company.</span>
+                <button class="audio-icon" data-audio-text="他在公司工作" aria-label="Play audio for tā zài gōngsī gōngzuò">🔊</button>
+            </div>
+
+            <h3>🛍️ Store / Shop (商店 - shāngdiàn)</h3>
+            <div class="chinese-word">
+                <span class="character">商店</span>
+                <span class="pinyin">shāngdiàn</span>
+                <span class="translation">store / shop</span>
+                <button class="audio-icon" data-audio-text="商店" aria-label="Play audio for shāngdiàn">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">这个商店很好。</span>
+                <span class="english-translation">This store is good.</span>
+                <button class="audio-icon" data-audio-text="这个商店很好" aria-label="Play audio for zhège shāngdiàn hěn hǎo">🔊</button>
+            </div>
+
+            <h3>🌳 Park (公园 - gōngyuán)</h3>
+            <div class="chinese-word">
+                <span class="character">公园</span>
+                <span class="pinyin">gōngyuán</span>
+                <span class="translation">park</span>
+                <button class="audio-icon" data-audio-text="公园" aria-label="Play audio for gōngyuán">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">我们去公园。</span>
+                <span class="english-translation">We go to the park.</span>
+                <button class="audio-icon" data-audio-text="我们去公园" aria-label="Play audio for wǒmen qù gōngyuán">🔊</button>
+            </div>
+
+            <div class="practice-section">
+                <h3>Practice Time! 🎯</h3>
+                <p>Listen and identify the place. Tap the audio icon, then think of the place!</p>
+                <div class="practice-item">
+                    <div class="question">Which place is it?</div>
+                    <div class="answer-prompt">
+                        <button class="audio-icon" data-audio-text="学校" aria-label="Play audio for xuéxiào">🔊</button>
+                        <span>(Hint: 🏫)</span>
+                    </div>
+                </div>
+                <div class="practice-item">
+                    <div class="question">Which place is it?</div>
+                    <div class="answer-prompt">
+                        <button class="audio-icon" data-audio-text="商店" aria-label="Play audio for shāngdiàn">🔊</button>
+                        <span>(Hint: 🛍️)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>📏 Prepositions (介词 - jiècí)</h2>
+            <p>Prepositions tell us about relationships between words, like location or direction. In Chinese, they often work a bit differently than in English.</p>
+
+            <h3>At / In (在 - zài)</h3>
+            <p>This is a super common word! It means "at" or "in" and indicates a location.</p>
+            <div class="chinese-word">
+                <span class="character">在</span>
+                <span class="pinyin">zài</span>
+                <span class="translation">at / in / on / to be located at</span>
+                <button class="audio-icon" data-audio-text="在" aria-label="Play audio for zài">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">我在家。</span>
+                <span class="english-translation">I am at home.</span>
+                <button class="audio-icon" data-audio-text="我在家" aria-label="Play audio for wǒ zài jiā">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">他在学校。</span>
+                <span class="english-translation">He is at school.</span>
+                <button class="audio-icon" data-audio-text="他在学校" aria-label="Play audio for tā zài xuéxiào">🔊</button>
+            </div>
+
+            <h3>To / Go to (去 - qù)</h3>
+            <p>This verb means "to go" or "to go to" a place.</p>
+            <div class="chinese-word">
+                <span class="character">去</span>
+                <span class="pinyin">qù</span>
+                <span class="translation">to go / to go to</span>
+                <button class="audio-icon" data-audio-text="去" aria-label="Play audio for qù">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">你去公司吗？</span>
+                <span class="english-translation">Are you going to the company?</span>
+                <button class="audio-icon" data-audio-text="你去公司吗" aria-label="Play audio for nǐ qù gōngsī ma">🔊</button>
+            </div>
+
+            <h3>From (从 - cóng)</h3>
+            <p>Use this to say "from" a place.</p>
+            <div class="chinese-word">
+                <span class="character">从</span>
+                <span class="pinyin">cóng</span>
+                <span class="translation">from</span>
+                <button class="audio-icon" data-audio-text="从" aria-label="Play audio for cóng">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">我从学校来。</span>
+                <span class="english-translation">I come from school.</span>
+                <button class="audio-icon" data-audio-text="我从学校来" aria-label="Play audio for wǒ cóng xuéxiào lái">🔊</button>
+            </div>
+
+            <h3>Near (在...附近 - zài...fùjìn)</h3>
+            <p>The structure "在...附近" means "near..." or "in the vicinity of...".</p>
+            <div class="chinese-word">
+                <span class="character">附近</span>
+                <span class="pinyin">fùjìn</span>
+                <span class="translation">nearby / vicinity</span>
+                <button class="audio-icon" data-audio-text="附近" aria-label="Play audio for fùjìn">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">商店在公园附近。</span>
+                <span class="english-translation">The store is near the park.</span>
+                <button class="audio-icon" data-audio-text="商店在公园附近" aria-label="Play audio for shāngdiàn zài gōngyuán fùjìn">🔊</button>
+            </div>
+
+            <h3>Far (远 - yuǎn)</h3>
+            <p>This adjective means "far".</p>
+            <div class="chinese-word">
+                <span class="character">远</span>
+                <span class="pinyin">yuǎn</span>
+                <span class="translation">far</span>
+                <button class="audio-icon" data-audio-text="远" aria-label="Play audio for yuǎn">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">学校很远。</span>
+                <span class="english-translation">The school is far.</span>
+                <button class="audio-icon" data-audio-text="学校很远" aria-label="Play audio for xuéxiào hěn yuǎn">🔊</button>
+            </div>
+
+            <div class="practice-section">
+                <h3>Practice Time! 🎯</h3>
+                <p>Fill in the blank with the correct preposition (在, 去, 从).</p>
+                <div class="practice-item">
+                    <div class="question">她 ____ 家。 (She is at home.)</div>
+                    <div class="answer-prompt">Think: <span class="chinese-text">在</span></div>
+                </div>
+                <div class="practice-item">
+                    <div class="question">我 ____ 公司。 (I go to the company.)</div>
+                    <div class="answer-prompt">Think: <span class="chinese-text">去</span></div>
+                </div>
+                <div class="practice-item">
+                    <div class="question">他 ____ 商店来。 (He comes from the store.)</div>
+                    <div class="answer-prompt">Think: <span class="chinese-text">从</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>❓ Where is...? (在哪儿？ - Zài nǎr?)</h2>
+            <p>Now, let's put it all together to ask and state locations.</p>
+
+            <h3>Asking "Where is X?"</h3>
+            <p>The pattern is simple: <strong>[Place/Person] 在哪儿？</strong></p>
+            <div class="chinese-word">
+                <span class="character">哪儿</span>
+                <span class="pinyin">nǎr</span>
+                <span class="translation">where</span>
+                <button class="audio-icon" data-audio-text="哪儿" aria-label="Play audio for nǎr">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">洗手间在哪儿？</span>
+                <span class="english-translation">Where is the restroom?</span>
+                <button class="audio-icon" data-audio-text="洗手间在哪儿" aria-label="Play audio for xǐshǒujiān zài nǎr">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">你的家在哪儿？</span>
+                <span class="english-translation">Where is your home?</span>
+                <button class="audio-icon" data-audio-text="你的家在哪儿" aria-label="Play audio for nǐ de jiā zài nǎr">🔊</button>
+            </div>
+
+            <h3>Stating "X is at Y."</h3>
+            <p>The pattern is: <strong>[Place/Person] 在 [Location].</strong></p>
+            <div class="example-line">
+                <span class="chinese-text">它在商店。</span>
+                <span class="english-translation">It is at the store.</span>
+                <button class="audio-icon" data-audio-text="它在商店" aria-label="Play audio for tā zài shāngdiàn">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">我的书在学校。</span>
+                <span class="english-translation">My book is at school.</span>
+                <button class="audio-icon" data-audio-text="我的书在学校" aria-label="Play audio for wǒ de shū zài xuéxiào">🔊</button>
+            </div>
+
+            <div class="practice-section">
+                <h3>Practice Time! 🎯</h3>
+                <p>Translate the following sentences into Chinese (or imagine translating them!).</p>
+                <div class="practice-item">
+                    <div class="question">Where is the park?</div>
+                    <div class="answer-prompt">Think: <span class="chinese-text">公园在哪儿？</span></div>
+                    <button class="audio-icon" data-audio-text="公园在哪儿" aria-label="Play audio for gōngyuán zài nǎr">🔊</button>
+                </div>
+                <div class="practice-item">
+                    <div class="question">The company is near my home.</div>
+                    <div class="answer-prompt">Think: <span class="chinese-text">公司在我家附近。</span></div>
+                    <button class="audio-icon" data-audio-text="公司在我家附近" aria-label="Play audio for gōngsī zài wǒ jiā fùjìn">🔊</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>↩️ Basic Directions (基本方向 - jīběn fāngxiàng)</h2>
+            <p>Now, let's learn how to tell someone which way to go!</p>
+
+            <h3>Left (左边 - zuǒbiān) & Right (右边 - yòubiān)</h3>
+            <div class="chinese-word">
+                <span class="character">左边</span>
+                <span class="pinyin">zuǒbiān</span>
+                <span class="translation">left side</span>
+                <button class="audio-icon" data-audio-text="左边" aria-label="Play audio for zuǒbiān">🔊</button>
+            </div>
+            <div class="chinese-word">
+                <span class="character">右边</span>
+                <span class="pinyin">yòubiān</span>
+                <span class="translation">right side</span>
+                <button class="audio-icon" data-audio-text="右边" aria-label="Play audio for yòubiān">🔊</button>
+            </div>
+            <p>To say "turn left" or "turn right," we use the verb <strong>转 (zhuǎn - to turn)</strong>.</p>
+            <div class="chinese-word">
+                <span class="character">转</span>
+                <span class="pinyin">zhuǎn</span>
+                <span class="translation">to turn</span>
+                <button class="audio-icon" data-audio-text="转" aria-label="Play audio for zhuǎn">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">请左转。</span>
+                <span class="english-translation">Please turn left.</span>
+                <button class="audio-icon" data-audio-text="请左转" aria-label="Play audio for qǐng zuǒ zhuǎn">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">右转。</span>
+                <span class="english-translation">Turn right.</span>
+                <button class="audio-icon" data-audio-text="右转" aria-label="Play audio for yòu zhuǎn">🔊</button>
+            </div>
+
+            <h3>Straight (直走 - zhízǒu)</h3>
+            <p>When someone tells you to go straight, they'll use this phrase.</p>
+            <div class="chinese-word">
+                <span class="character">直走</span>
+                <span class="pinyin">zhízǒu</span>
+                <span class="translation">go straight</span>
+                <button class="audio-icon" data-audio-text="直走" aria-label="Play audio for zhízǒu">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">你直走。</span>
+                <span class="english-translation">You go straight.</span>
+                <button class="audio-icon" data-audio-text="你直走" aria-label="Play audio for nǐ zhízǒu">🔊</button>
+            </div>
+
+            <h3>🌏 Cultural Note: Giving Directions in China</h3>
+            <p>In China, people often use landmarks rather than precise street names, especially in older areas or smaller towns. Don't be surprised if directions involve "turn left at the big tree" or "it's next to the red building"! Using visual cues is very common.</p>
+
+            <div class="practice-section">
+                <h3>Practice Time! 🎯</h3>
+                <p>Imagine you're giving directions. What would you say?</p>
+                <div class="practice-item">
+                    <div class="question">Tell someone to "Turn left."</div>
+                    <div class="answer-prompt">Think: <span class="chinese-text">左转。</span></div>
+                    <button class="audio-icon" data-audio-text="左转" aria-label="Play audio for zuǒ zhuǎn">🔊</button>
+                </div>
+                <div class="practice-item">
+                    <div class="question">Tell someone to "Go straight."</div>
+                    <div class="answer-prompt">Think: <span class="chinese-text">直走。</span></div>
+                    <button class="audio-icon" data-audio-text="直走" aria-label="Play audio for zhízǒu">🔊</button>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>⬆️ Location Vocabulary (位置词汇 - wèizhì cíhuì)</h2>
+            <p>These words help describe where something is relative to another object.</p>
+
+            <h3>Front (前面 - qiánmiàn) & Back (后面 - hòumiàn)</h3>
+            <div class="chinese-word">
+                <span class="character">前面</span>
+                <span class="pinyin">qiánmiàn</span>
+                <span class="translation">front / in front of</span>
+                <button class="audio-icon" data-audio-text="前面" aria-label="Play audio for qiánmiàn">🔊</button>
+            </div>
+            <div class="chinese-word">
+                <span class="character">后面</span>
+                <span class="pinyin">hòumiàn</span>
+                <span class="translation">back / behind</span>
+                <button class="audio-icon" data-audio-text="后面" aria-label="Play audio for hòumiàn">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">商店在前面。</span>
+                <span class="english-translation">The store is in front.</span>
+                <button class="audio-icon" data-audio-text="商店在前面" aria-label="Play audio for shāngdiàn zài qiánmiàn">🔊</button>
+            </div>
+
+            <h3>Top / Up (上面 - shàngmiàn) & Bottom / Down (下面 - xiàmiàn)</h3>
+            <div class="chinese-word">
+                <span class="character">上面</span>
+                <span class="pinyin">shàngmiàn</span>
+                <span class="translation">on top / above</span>
+                <button class="audio-icon" data-audio-text="上面" aria-label="Play audio for shàngmiàn">🔊</button>
+            </div>
+            <div class="chinese-word">
+                <span class="character">下面</span>
+                <span class="pinyin">xiàmiàn</span>
+                <span class="translation">underneath / below</span>
+                <button class="audio-icon" data-audio-text="下面" aria-label="Play audio for xiàmiàn">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">书在桌子上面。</span>
+                <span class="english-translation">The book is on the table.</span>
+                <button class="audio-icon" data-audio-text="书在桌子上面" aria-label="Play audio for shū zài zhuōzi shàngmiàn">🔊</button>
+            </div>
+
+            <h3>Inside (里面 - lǐmiàn) & Outside (外面 - wàimiàn)</h3>
+            <div class="chinese-word">
+                <span class="character">里面</span>
+                <span class="pinyin">lǐmiàn</span>
+                <span class="translation">inside</span>
+                <button class="audio-icon" data-audio-text="里面" aria-label="Play audio for lǐmiàn">🔊</button>
+            </div>
+            <div class="chinese-word">
+                <span class="character">外面</span>
+                <span class="pinyin">wàimiàn</span>
+                <span class="translation">outside</span>
+                <button class="audio-icon" data-audio-text="外面" aria-label="Play audio for wàimiàn">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">他在房间里面。</span>
+                <span class="english-translation">He is inside the room.</span>
+                <button class="audio-icon" data-audio-text="他在房间里面" aria-label="Play audio for tā zài fángjiān lǐmiàn">🔊</button>
+            </div>
+
+            <h3>Between (中间 - zhōngjiān)</h3>
+            <div class="chinese-word">
+                <span class="character">中间</span>
+                <span class="pinyin">zhōngjiān</span>
+                <span class="translation">middle / between</span>
+                <button class="audio-icon" data-audio-text="中间" aria-label="Play audio for zhōngjiān">🔊</button>
+            </div>
+            <div class="example-line">
+                <span class="chinese-text">它在学校和商店中间。</span>
+                <span class="english-translation">It is between the school and the store.</span>
+                <button class="audio-icon" data-audio-text="它在学校和商店中间" aria-label="Play audio for tā zài xuéxiào hé shāngdiàn zhōngjiān">🔊</button>
+            </div>
+
+            <div class="practice-section">
+                <h3>Practice Time! 🎯</h3>
+                <p>Describe the location using new vocabulary.</p>
+                <div class="practice-item">
+                    <div class="question">The cat is under the chair.</div>
+                    <div class="answer-prompt">Think: <span class="chinese-text">猫在椅子下面。</span></div>
+                    <button class="audio-icon" data-audio-text="猫在椅子下面" aria-label="Play audio for māo zài yǐzi xiàmiàn">🔊</button>
+                </div>
+                <div class="practice-item">
+                    <div class="question">The car is in front of the house.</div>
+                    <div class="answer-prompt">Think: <span class="chinese-text">车在房子前面。</span></div>
+                    <button class="audio-icon" data-audio-text="车在房子前面" aria-label="Play audio for chē zài fángzi qiánmiàn">🔊</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>🎉 Chapter 8 Summary 🎉</h2>
+            <p>You've learned a lot about getting around in Chinese! Here’s a quick recap of what we covered:</p>
+            <ul>
+                <li><strong>Common Places:</strong> 家 (jiā - home), 学校 (xuéxiào - school), 公司 (gōngsī - company/work), 商店 (shāngdiàn - store), 公园 (gōngyuán - park).</li>
+                <li><strong>Prepositions:</strong> 在 (zài - at/in), 去 (qù - to go to), 从 (cóng - from), 附近 (fùjìn - near), 远 (yuǎn - far).</li>
+                <li><strong>Asking & Stating Location:</strong> [Place/Person] 在哪儿？ ([Place/Person] zài nǎr?) and [Place/Person] 在 [Location]. ([Place/Person] zài [Location].)</li>
+                <li><strong>Basic Directions:</strong> 左转 (zuǒ zhuǎn - turn left), 右转 (yòu zhuǎn - turn right), 直走 (zhízǒu - go straight).</li>
+                <li><strong>Location Vocabulary:</strong> 前面 (qiánmiàn - front), 后面 (hòumiàn - back), 上面 (shàngmiàn - top), 下面 (xiàmiàn - bottom), 里面 (lǐmiàn - inside), 外面 (wàimiàn - outside), 中间 (zhōngjiān - between).</li>
+                <li><strong>Cultural Tip:</strong> Directions in China often rely on landmarks.</li>
+            </ul>
+            <p>Keep practicing these phrases and you'll be navigating like a local in no time! Great job!</p>
+        </section>
+
+    </div>
+</body>
+</html>

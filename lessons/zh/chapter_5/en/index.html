@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Family and Relationships - Chinese Language Lesson</title>
+    <style>
+        /* Global Styles & Reset */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            min-width: 320px; /* Ensure readability on smallest screens */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            color: #8B5FBF; /* Primary: Purple */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #6A4499; /* Slightly darker purple for hover */
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding: 16px 8px;
+        }
+
+        h2 {
+            font-size: 22px;
+            padding: 12px 0;
+            border-bottom: 1px solid #E0E0E0; /* Borders: Light gray */
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 16px;
+            padding: 0 16px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0 16px;
+            margin: 0;
+        }
+
+        li {
+            font-size: 16px;
+            margin-bottom: 8px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode symbol for list item */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 14px;
+        }
+
+        strong {
+            color: #2C3E50;
+        }
+
+        em {
+            font-style: italic;
+            color: #8B5FBF;
+        }
+
+        /* Layout & Structure */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 8px; /* Small padding on the sides */
+        }
+
+        section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            margin-bottom: 24px;
+            padding: 16px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Specific Header Requirement */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Chinese and Pinyin Display */
+        .chinese-phrase {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding: 8px 16px;
+            background-color: #F8F8F8; /* Light gray background for phrases */
+            border-left: 4px solid #8B5FBF; /* Primary color accent */
+            border-radius: 4px;
+        }
+
+        .chinese-char {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-right: 8px;
+        }
+
+        .pinyin {
+            font-size: 18px;
+            color: #8B5FBF; /* Primary color for pinyin */
+            margin-right: 8px;
+        }
+
+        .translation {
+            font-size: 16px;
+            color: #666666;
+            flex-grow: 1; /* Allows it to take remaining space */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            font-size: 24px;
+            cursor: pointer;
+            display: inline-flex; /* Use flexbox for centering content */
+            align-items: center;
+            justify-content: center;
+            min-width: 44px; /* Minimum tap target size */
+            min-height: 44px; /* Minimum tap target size */
+            line-height: 1; /* Reset line-height to allow flexbox to center */
+            text-align: center;
+            border-radius: 50%;
+            background-color: #E0E0E0; /* Borders: Light gray */
+            color: #2C3E50; /* Dark blue for icon */
+            margin-left: 12px;
+            vertical-align: middle;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.1s ease;
+        }
+
+        .audio-icon:hover {
+            background-color: #C0C0C0; /* Slightly darker on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FFFFFF; /* White background for practice sections */
+            border: 1px solid #E0E0E0; /* Light gray border */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 24px 16px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: #8B5FBF; /* Primary color for practice headings */
+            text-align: center;
+            border-bottom: none; /* Remove border from H2 style */
+            padding-bottom: 0;
+        }
+
+        .practice-question {
+            margin-bottom: 16px;
+            font-size: 17px;
+            color: #2C3E50;
+        }
+
+        .practice-input {
+            width: calc(100% - 32px); /* Adjust for padding */
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #E0E0E0;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #2C3E50;
+        }
+
+        .practice-button {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 300px; /* Limit button width on larger screens */
+            min-height: 48px; /* Ensure tap target size */
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .practice-button:hover {
+            background-color: #6A4499; /* Slightly darker purple on hover */
+            transform: translateY(-1px);
+        }
+
+        .practice-button:active {
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .feedback.correct {
+            color: #28a745; /* Green for correct */
+        }
+
+        .feedback.incorrect {
+            color: #dc3545; /* Red for incorrect */
+        }
+
+        /* Example Sentences */
+        .example-sentence {
+            background-color: #FFF;
+            border-left: 4px solid #E0E0E0;
+            padding: 10px 16px;
+            margin: 12px 16px;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .example-sentence .chinese-char,
+        .example-sentence .pinyin {
+            font-size: 20px;
+        }
+
+        .example-sentence .translation {
+            font-style: italic;
+            margin-top: 4px;
+            font-size: 15px;
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: #F8F0FC; /* Lighter shade of purple for cultural notes */
+            border-left: 4px solid #8B5FBF;
+            padding: 15px;
+            margin: 24px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #2C3E50; /* Dark blue for cultural note text */
+        }
+
+        .cultural-note strong {
+            color: #8B5FBF;
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #EFE6F7; /* A lighter purple for the summary */
+            padding: 20px;
+            margin: 24px 16px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            color: #8B5FBF; /* Primary color */
+            border-bottom: none;
+        }
+
+        .summary-section ul {
+            padding-left: 20px; /* Indent for summary list */
+            list-style: disc; /* Use standard disc bullets */
+        }
+        .summary-section li {
+            position: relative;
+            padding-left: 0;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .summary-section li::before {
+            content: ''; /* Remove custom bullet */
+        }
+
+        /* Responsive Adjustments (for slightly larger mobile screens and tablets) */
+        @media (min-width: 480px) {
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            p, li {
+                font-size: 17px;
+            }
+            .chinese-char {
+                font-size: 32px;
+            }
+            .pinyin {
+                font-size: 20px;
+            }
+            .translation {
+                font-size: 17px;
+            }
+            .audio-icon {
+                min-width: 50px;
+                min-height: 50px;
+                font-size: 28px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+            section {
+                padding: 20px 0;
+            }
+            h1 {
+                font-size: 36px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            h3 {
+                font-size: 22px;
+            }
+            p, li {
+                font-size: 18px;
+            }
+            .chinese-char {
+                font-size: 36px;
+            }
+            .pinyin {
+                font-size: 22px;
+            }
+            .translation {
+                font-size: 18px;
+            }
+            .practice-section, .cultural-note, .summary-section {
+                padding: 25px;
+                margin: 24px auto; /* Center sections on larger screens */
+                max-width: 600px;
+            }
+            .practice-button {
+                max-width: 250px; /* Slightly smaller for better proportion */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 5: Family and Relationships</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>👋 Welcome to Your Family!</h2>
+            <p>In this chapter, you'll learn how to talk about your family members in Chinese. Family is super important in Chinese culture, so knowing these terms will help you connect with people and show respect. Let's get started!</p>
+        </section>
+
+        <section>
+            <h2>👨‍👩‍👧‍👦 Family Members</h2>
+            <p>Let's learn the basic vocabulary for immediate family members. Pay close attention to the tones and practice saying them aloud!</p>
+
+            <h3>Father</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">爸爸</span>
+                <span class="pinyin">bàba</span>
+                <span class="translation">father / dad</span>
+                <span class="audio-icon" data-audio-text="爸爸">🔊</span>
+            </div>
+            <p>Notice that 爸爸 (bàba) uses the same character twice. This is common for many family terms and makes them sound affectionate!</p>
+
+            <h3>Mother</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">妈妈</span>
+                <span class="pinyin">māma</span>
+                <span class="translation">mother / mom</span>
+                <span class="audio-icon" data-audio-text="妈妈">🔊</span>
+            </div>
+
+            <h3>Older Brother</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">哥哥</span>
+                <span class="pinyin">gēge</span>
+                <span class="translation">older brother</span>
+                <span class="audio-icon" data-audio-text="哥哥">🔊</span>
+            </div>
+
+            <h3>Older Sister</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">姐姐</span>
+                <span class="pinyin">jiějie</span>
+                <span class="translation">older sister</span>
+                <span class="audio-icon" data-audio-text="姐姐">🔊</span>
+            </div>
+
+            <h3>Younger Brother</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">弟弟</span>
+                <span class="pinyin">dìdi</span>
+                <span class="translation">younger brother</span>
+                <span class="audio-icon" data-audio-text="弟弟">🔊</span>
+            </div>
+
+            <h3>Younger Sister</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">妹妹</span>
+                <span class="pinyin">mèimei</span>
+                <span class="translation">younger sister</span>
+                <span class="audio-icon" data-audio-text="妹妹">🔊</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>🏷️ Possessive Pronouns: My, Your, His/Her</h2>
+            <p>To say "my," "your," or "his/her," we use the particle <strong>的 (de)</strong> after the pronoun.</p>
+
+            <h3>The Particle 的 (de)</h3>
+            <p>的 (de) is a possessive particle. It's like adding an apostrophe 's' or "of" in English. It connects the possessor to the thing being possessed.</p>
+            <div class="chinese-phrase">
+                <span class="chinese-char">的</span>
+                <span class="pinyin">de</span>
+                <span class="translation">possessive particle ('s, of)</span>
+                <span class="audio-icon" data-audio-text="的">🔊</span>
+            </div>
+
+            <h3>My / 我的 (wǒ de)</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">我的</span>
+                <span class="pinyin">wǒ de</span>
+                <span class="translation">my / mine</span>
+                <span class="audio-icon" data-audio-text="我的">🔊</span>
+            </div>
+            <p><strong>Example:</strong></p>
+            <div class="example-sentence">
+                <div class="chinese-phrase">
+                    <span class="chinese-char">我的爸爸</span>
+                    <span class="pinyin">wǒ de bàba</span>
+                    <span class="audio-icon" data-audio-text="我的爸爸">🔊</span>
+                </div>
+                <div class="translation">my father</div>
+            </div>
+
+            <h3>Your / 你的 (nǐ de)</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">你的</span>
+                <span class="pinyin">nǐ de</span>
+                <span class="translation">your / yours</span>
+                <span class="audio-icon" data-audio-text="你的">🔊</span>
+            </div>
+            <p><strong>Example:</strong></p>
+            <div class="example-sentence">
+                <div class="chinese-phrase">
+                    <span class="chinese-char">你的妈妈</span>
+                    <span class="pinyin">nǐ de māma</span>
+                    <span class="audio-icon" data-audio-text="你的妈妈">🔊</span>
+                </div>
+                <div class="translation">your mother</div>
+            </div>
+
+            <h3>His / Her / 他的 (tā de) / 她的 (tā de)</h3>
+            <p>Chinese has different characters for "he" (他 tā) and "she" (她 tā), but they sound exactly the same! The possessive form also sounds the same.</p>
+            <div class="chinese-phrase">
+                <span class="chinese-char">他的</span>
+                <span class="pinyin">tā de</span>
+                <span class="translation">his</span>
+                <span class="audio-icon" data-audio-text="他的">🔊</span>
+            </div>
+            <div class="chinese-phrase">
+                <span class="chinese-char">她的</span>
+                <span class="pinyin">tā de</span>
+                <span class="translation">her / hers</span>
+                <span class="audio-icon" data-audio-text="她的">🔊</span>
+            </div>
+            <p><strong>Example:</strong></p>
+            <div class="example-sentence">
+                <div class="chinese-phrase">
+                    <span class="chinese-char">她的弟弟</span>
+                    <span class="pinyin">tā de dìdi</span>
+                    <span class="audio-icon" data-audio-text="她的弟弟">🔊</span>
+                </div>
+                <div class="translation">her younger brother</div>
+            </div>
+
+            <h3>Their / 他们的 (tāmen de)</h3>
+            <p>To say "they" or "their," we add 们 (men) to 他 (tā). This makes it plural.</p>
+            <div class="chinese-phrase">
+                <span class="chinese-char">他们的</span>
+                <span class="pinyin">tāmen de</span>
+                <span class="translation">their / theirs</span>
+                <span class="audio-icon" data-audio-text="他们的">🔊</span>
+            </div>
+            <p><strong>Example:</strong></p>
+            <div class="example-sentence">
+                <div class="chinese-phrase">
+                    <span class="chinese-char">他们的哥哥</span>
+                    <span class="pinyin">tāmen de gēge</span>
+                    <span class="audio-icon" data-audio-text="他们的哥哥">🔊</span>
+                </div>
+                <div class="translation">their older brother</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>✨ "This is my..." / "These are my..."</h2>
+            <p>To introduce someone, you can use the structure: <strong>这 (zhè) 是 (shì) [possessive pronoun] [family member].</strong></p>
+
+            <h3>This is... / 这 是 (zhè shì)</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">这</span>
+                <span class="pinyin">zhè</span>
+                <span class="translation">this</span>
+                <span class="audio-icon" data-audio-text="这">🔊</span>
+            </div>
+            <div class="chinese-phrase">
+                <span class="chinese-char">是</span>
+                <span class="pinyin">shì</span>
+                <span class="translation">is / am / are (to be)</span>
+                <span class="audio-icon" data-audio-text="是">🔊</span>
+            </div>
+            <p><strong>Example Sentences:</strong></p>
+            <div class="example-sentence">
+                <div class="chinese-phrase">
+                    <span class="chinese-char">这是我的爸爸。</span>
+                    <span class="pinyin">Zhè shì wǒ de bàba.</span>
+                    <span class="audio-icon" data-audio-text="这是我的爸爸">🔊</span>
+                </div>
+                <div class="translation">This is my father.</div>
+            </div>
+            <div class="example-sentence">
+                <div class="chinese-phrase">
+                    <span class="chinese-char">这是她的姐姐。</span>
+                    <span class="pinyin">Zhè shì tā de jiějie.</span>
+                    <span class="audio-icon" data-audio-text="这是她的姐姐">🔊</span>
+                </div>
+                <div class="translation">This is her older sister.</div>
+            </div>
+            <p><strong>Note on "These are":</strong> In Chinese, you often use "这 是" (zhè shì) for both "this is" and "these are" when referring to people. The context usually makes it clear, or you might refer to them individually.</p>
+        </section>
+
+        <div class="practice-section">
+            <h3>Practice Time 1: Build Your Sentences!</h3>
+            <p>Translate the following phrases into Chinese. Use Pinyin in your answer.</p>
+
+            <div class="practice-question">
+                <p>1. my younger sister</p>
+                <div class="chinese-phrase">
+                    <span class="chinese-char">我的妹妹</span>
+                    <span class="pinyin">wǒ de mèimei</span>
+                    <span class="audio-icon" data-audio-text="我的妹妹">🔊</span>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p>2. This is his older brother.</p>
+                <div class="chinese-phrase">
+                    <span class="chinese-char">这是他的哥哥。</span>
+                    <span class="pinyin">Zhè shì tā de gēge.</span>
+                    <span class="audio-icon" data-audio-text="这是他的哥哥">🔊</span>
+                </div>
+            </div>
+
+            <p>Can you say "your mother"? (Hint: 你的妈妈)</p>
+        </div>
+
+        <section>
+            <h2>🏠 More Family Vocabulary</h2>
+            <p>Let's expand our family tree a little!</p>
+
+            <h3>Grandfather (Paternal)</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">爷爷</span>
+                <span class="pinyin">yéye</span>
+                <span class="translation">paternal grandfather</span>
+                <span class="audio-icon" data-audio-text="爷爷">🔊</span>
+            </div>
+
+            <h3>Grandfather (Maternal)</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">外公</span>
+                <span class="pinyin">wàigōng</span>
+                <span class="translation">maternal grandfather</span>
+                <span class="audio-icon" data-audio-text="外公">🔊</span>
+            </div>
+            <p class="cultural-note">
+                <strong>Cultural Note:</strong> In Chinese, there are different terms for paternal and maternal grandparents. <strong>爷爷 (yéye)</strong> is your father's father, and <strong>外公 (wàigōng)</strong> is your mother's father. This distinction is important!
+            </p>
+
+            <h3>Grandmother (Paternal)</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">奶奶</span>
+                <span class="pinyin">nǎinai</span>
+                <span class="translation">paternal grandmother</span>
+                <span class="audio-icon" data-audio-text="奶奶">🔊</span>
+            </div>
+
+            <h3>Grandmother (Maternal)</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">外婆</span>
+                <span class="pinyin">wàipó</span>
+                <span class="translation">maternal grandmother</span>
+                <span class="audio-icon" data-audio-text="外婆">🔊</span>
+            </div>
+
+            <h3>Son</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">儿子</span>
+                <span class="pinyin">érzi</span>
+                <span class="translation">son</span>
+                <span class="audio-icon" data-audio-text="儿子">🔊</span>
+            </div>
+
+            <h3>Daughter</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">女儿</span>
+                <span class="pinyin">nǚ'ér</span>
+                <span class="translation">daughter</span>
+                <span class="audio-icon" data-audio-text="女儿">🔊</span>
+            </div>
+
+            <h3>Child / Children</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">孩子</span>
+                <span class="pinyin">háizi</span>
+                <span class="translation">child / children</span>
+                <span class="audio-icon" data-audio-text="孩子">🔊</span>
+            </div>
+
+            <h3>Family (the group of people)</h3>
+            <div class="chinese-phrase">
+                <span class="chinese-char">家人</span>
+                <span class="pinyin">jiārén</span>
+                <span class="translation">family members</span>
+                <span class="audio-icon" data-audio-text="家人">🔊</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>🗣️ Talking About Family Members</h2>
+            <p>Now let's put it all together to ask and answer simple questions about family!</p>
+
+            <h3>Is this your...? / 这 是 你的... 吗？</h3>
+            <p>To ask a yes/no question, simply add <strong>吗 (ma)</strong> at the end of a statement.</p>
+            <div class="chinese-phrase">
+                <span class="chinese-char">吗</span>
+                <span class="pinyin">ma</span>
+                <span class="translation">question particle (yes/no)</span>
+                <span class="audio-icon" data-audio-text="吗">🔊</span>
+            </div>
+
+            <p><strong>Example Question:</strong></p>
+            <div class="example-sentence">
+                <div class="chinese-phrase">
+                    <span class="chinese-char">这是你的妹妹吗？</span>
+                    <span class="pinyin">Zhè shì nǐ de mèimei ma?</span>
+                    <span class="audio-icon" data-audio-text="这是你的妹妹吗">🔊</span>
+                </div>
+                <div class="translation">Is this your younger sister?</div>
+            </div>
+
+            <p><strong>Answering Yes:</strong></p>
+            <div class="example-sentence">
+                <div class="chinese-phrase">
+                    <span class="chinese-char">是，这是我的妹妹。</span>
+                    <span class="pinyin">Shì, zhè shì wǒ de mèimei.</span>
+                    <span class="audio-icon" data-audio-text="是，这是我的妹妹">🔊</span>
+                </div>
+                <div class="translation">Yes, this is my younger sister.</div>
+                <p>You can also simply say: <strong>是 (Shì)</strong> - Yes, it is.</p>
+            </div>
+
+            <p><strong>Answering No:</strong></p>
+            <div class="example-sentence">
+                <div class="chinese-phrase">
+                    <span class="chinese-char">不是，这不是我的妹妹。</span>
+                    <span class="pinyin">Bú shì, zhè bú shì wǒ de mèimei.</span>
+                    <span class="audio-icon" data-audio-text="不是，这不是我的妹妹">🔊</span>
+                </div>
+                <div class="translation">No, this is not my younger sister.</div>
+                <p>You can also simply say: <strong>不是 (Bú shì)</strong> - No, it's not.</p>
+            </div>
+
+            <h3>Who is this? / 这 是 谁？</h3>
+            <p>To ask "who," we use <strong>谁 (shéi)</strong>.</p>
+            <div class="chinese-phrase">
+                <span class="chinese-char">谁</span>
+                <span class="pinyin">shéi</span>
+                <span class="translation">who</span>
+                <span class="audio-icon" data-audio-text="谁">🔊</span>
+            </div>
+            <p><strong>Example Question:</strong></p>
+            <div class="example-sentence">
+                <div class="chinese-phrase">
+                    <span class="chinese-char">这是谁？</span>
+                    <span class="pinyin">Zhè shì shéi?</span>
+                    <span class="audio-icon" data-audio-text="这是谁">🔊</span>
+                </div>
+                <div class="translation">Who is this?</div>
+            </div>
+            <p><strong>Example Answer:</strong></p>
+            <div class="example-sentence">
+                <div class="chinese-phrase">
+                    <span class="chinese-char">这是我的妈妈。</span>
+                    <span class="pinyin">Zhè shì wǒ de māma.</span>
+                    <span class="audio-icon" data-audio-text="这是我的妈妈">🔊</span>
+                </div>
+                <div class="translation">This is my mother.</div>
+            </div>
+        </section>
+
+        <div class="practice-section">
+            <h3>Practice Time 2: Dialogue Fun!</h3>
+            <p>Try to answer these questions in Chinese (Pinyin).</p>
+
+            <div class="practice-question">
+                <p>1. Question: 这是你的哥哥吗？ (Zhè shì nǐ de gēge ma?)<br>
+                    Answer: (Yes, this is my older brother.)</p>
+                <div class="chinese-phrase">
+                    <span class="chinese-char">是，这是我的哥哥。</span>
+                    <span class="pinyin">Shì, zhè shì wǒ de gēge.</span>
+                    <span class="audio-icon" data-audio-text="是，这是我的哥哥">🔊</span>
+                </div>
+            </div>
+
+            <div class="practice-question">
+                <p>2. Question: 这是谁？ (Zhè shì shéi?)<br>
+                    Answer: (This is her younger brother.)</p>
+                <div class="chinese-phrase">
+                    <span class="chinese-char">这是她的弟弟。</span>
+                    <span class="pinyin">Zhè shì tā de dìdi.</span>
+                    <span class="audio-icon" data-audio-text="这是她的弟弟">🔊</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="cultural-note">
+            <strong>Cultural Insight: Respect for Elders</strong><br>
+            In Chinese culture, family is the cornerstone of society, and respect for elders (尊重长辈 zūnzhòng zhǎngbèi) is a core value. Using the correct terms for older and younger siblings, and distinguishing between paternal and maternal grandparents, shows your understanding and respect for these cultural nuances. When greeting older family members, a slight bow or a respectful tone is often appreciated.
+        </div>
+
+        <div class="summary-section">
+            <h2>🎉 Chapter 5 Summary</h2>
+            <p>Great job! You've learned a lot about talking about family in Chinese. Here's a quick recap:</p>
+            <ul>
+                <li><strong>Family Members:</strong> 爸爸 (bàba), 妈妈 (māma), 哥哥 (gēge), 姐姐 (jiějie), 弟弟 (dìdi), 妹妹 (mèimei), 爷爷 (yéye), 奶奶 (nǎinai), 外公 (wàigōng), 外婆 (wàipó), 儿子 (érzi), 女儿 (nǚ'ér), 孩子 (háizi), 家人 (jiārén).</li>
+                <li><strong>Possessive Pronoun:</strong> Use 的 (de) after a pronoun to show possession (e.g., 我的 wǒ de - my).</li>
+                <li><strong>Introducing Family:</strong> Use 这 是 (zhè shì) + [possessive pronoun] + [family member] to say "This is my...".</li>
+                <li><strong>Asking Questions:</strong> Add 吗 (ma) at the end for yes/no questions, or use 谁 (shéi) for "who."</li>
+                <li><strong>Answering:</strong> Use 是 (shì) for "yes" and 不是 (bú shì) for "no."</li>
+            </ul>
+            <p>Keep practicing these terms and phrases. Talking about family is a fantastic way to connect with Chinese speakers!</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,397 @@
+{
+  "title": "Capítulo 10 Quiz: Tiempo y Horarios",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"几点？\"?",
+      "explanation": "\"几点？\" (jǐ diǎn?) significa \"¿Qué hora es?\" en chino.",
+      "correctAnswer": "¿Qué hora es?",
+      "options": [
+        "¿Qué hora es?",
+        "¿Qué día es?",
+        "¿Qué mes es?",
+        "¿Qué año es?"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Ahora\" en chino?",
+      "explanation": "\"现在\" (xiàn zài) significa \"Ahora\" en chino.",
+      "correctAnswer": "现在",
+      "options": [
+        "几点",
+        "现在",
+        "点",
+        "分"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"点\"?",
+      "explanation": "\"点\" (diǎn) significa \"O'clock (en punto)\" en chino.",
+      "correctAnswer": "O'clock (en punto)",
+      "options": [
+        "Minuto",
+        "O'clock (en punto)",
+        "Y media",
+        "Cuarto de hora"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Minuto\" en chino?",
+      "explanation": "\"分\" (fēn) significa \"Minuto\" en chino.",
+      "correctAnswer": "分",
+      "options": [
+        "点",
+        "分",
+        "半",
+        "刻"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"半\"?",
+      "explanation": "\"半\" (bàn) significa \"Y media (30 minutos)\" en chino.",
+      "correctAnswer": "Y media (30 minutos)",
+      "options": [
+        "Minuto",
+        "O'clock",
+        "Y media (30 minutos)",
+        "Cuarto de hora"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Cuarto de hora\" en chino?",
+      "explanation": "\"刻\" (kè) significa \"Cuarto de hora (15 minutos)\" en chino.",
+      "correctAnswer": "刻",
+      "options": [
+        "点",
+        "分",
+        "半",
+        "刻"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"现在几点？\"?",
+      "explanation": "\"现在几点？\" (Xiàn zài jǐ diǎn?) significa \"¿Qué hora es ahora?\" en chino.",
+      "correctAnswer": "¿Qué hora es ahora?",
+      "options": [
+        "¿Qué hora es ahora?",
+        "¿Qué día es hoy?",
+        "¿Qué mes es?",
+        "¿Qué año es?"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Ahora son las tres en punto\" en chino?",
+      "explanation": "\"现在三点\" (Xiàn zài sān diǎn) significa \"Ahora son las tres en punto\" en chino.",
+      "correctAnswer": "现在三点",
+      "options": [
+        "现在几点",
+        "现在三点",
+        "七点半",
+        "九点十五分"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"七点半\"?",
+      "explanation": "\"七点半\" (Qī diǎn bàn) significa \"Las siete y media\" en chino.",
+      "correctAnswer": "Las siete y media",
+      "options": [
+        "Las siete en punto",
+        "Las siete y media",
+        "Las siete y cuarto",
+        "Las siete y diez"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Las nueve y cuarto\" en chino?",
+      "explanation": "\"九点一刻\" (Jiǔ diǎn yī kè) significa \"Las nueve y cuarto\" en chino.",
+      "correctAnswer": "九点一刻",
+      "options": [
+        "九点十五分",
+        "九点一刻",
+        "十点三刻",
+        "两点零五分"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"星期一\"?",
+      "explanation": "\"星期一\" (xīng qī yī) significa \"Lunes\" en chino.",
+      "correctAnswer": "Lunes",
+      "options": [
+        "Martes",
+        "Lunes",
+        "Miércoles",
+        "Jueves"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Martes\" en chino?",
+      "explanation": "\"星期二\" (xīng qī èr) significa \"Martes\" en chino.",
+      "correctAnswer": "星期二",
+      "options": [
+        "星期一",
+        "星期二",
+        "星期三",
+        "星期四"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"星期三\"?",
+      "explanation": "\"星期三\" (xīng qī sān) significa \"Miércoles\" en chino.",
+      "correctAnswer": "Miércoles",
+      "options": [
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Jueves"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Jueves\" en chino?",
+      "explanation": "\"星期四\" (xīng qī sì) significa \"Jueves\" en chino.",
+      "correctAnswer": "星期四",
+      "options": [
+        "星期二",
+        "星期三",
+        "星期四",
+        "星期五"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"星期五\"?",
+      "explanation": "\"星期五\" (xīng qī wǔ) significa \"Viernes\" en chino.",
+      "correctAnswer": "Viernes",
+      "options": [
+        "Jueves",
+        "Viernes",
+        "Sábado",
+        "Domingo"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Sábado\" en chino?",
+      "explanation": "\"星期六\" (xīng qī liù) significa \"Sábado\" en chino.",
+      "correctAnswer": "星期六",
+      "options": [
+        "星期四",
+        "星期五",
+        "星期六",
+        "星期天"
+      ]
+    },
+    {
+      "id": 34,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"星期天\"?",
+      "explanation": "\"星期天\" (xīng qī tiān) significa \"Domingo\" en chino.",
+      "correctAnswer": "Domingo",
+      "options": [
+        "Viernes",
+        "Sábado",
+        "Domingo",
+        "Lunes"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Hoy\" en chino?",
+      "explanation": "\"今天\" (jīn tiān) significa \"Hoy\" en chino.",
+      "correctAnswer": "今天",
+      "options": [
+        "昨天",
+        "今天",
+        "明天",
+        "年"
+      ]
+    },
+    {
+      "id": 38,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"昨天\"?",
+      "explanation": "\"昨天\" (zuó tiān) significa \"Ayer\" en chino.",
+      "correctAnswer": "Ayer",
+      "options": [
+        "Hoy",
+        "Ayer",
+        "Mañana",
+        "Año"
+      ]
+    },
+    {
+      "id": 40,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Mañana\" en chino?",
+      "explanation": "\"明天\" (míng tiān) significa \"Mañana\" en chino.",
+      "correctAnswer": "明天",
+      "options": [
+        "今天",
+        "昨天",
+        "明天",
+        "年"
+      ]
+    },
+    {
+      "id": 42,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"一月\"?",
+      "explanation": "\"一月\" (yī yuè) significa \"Enero\" en chino.",
+      "correctAnswer": "Enero",
+      "options": [
+        "Febrero",
+        "Enero",
+        "Marzo",
+        "Diciembre"
+      ]
+    },
+    {
+      "id": 44,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Febrero\" en chino?",
+      "explanation": "\"二月\" (èr yuè) significa \"Febrero\" en chino.",
+      "correctAnswer": "二月",
+      "options": [
+        "一月",
+        "二月",
+        "三月",
+        "十二月"
+      ]
+    },
+    {
+      "id": 46,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"年\"?",
+      "explanation": "\"年\" (nián) significa \"Año\" en chino.",
+      "correctAnswer": "Año",
+      "options": [
+        "Mes",
+        "Año",
+        "Día",
+        "Semana"
+      ]
+    },
+    {
+      "id": 48,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Día\" en chino?",
+      "explanation": "\"日\" (rì) significa \"Día\" en chino.",
+      "correctAnswer": "日",
+      "options": [
+        "年",
+        "月",
+        "日",
+        "星期"
+      ]
+    },
+    {
+      "id": 50,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"什么时候\"?",
+      "explanation": "\"什么时候\" (shénme shíhou) significa \"¿Cuándo?\" en chino.",
+      "correctAnswer": "¿Cuándo?",
+      "options": [
+        "¿Qué hora es?",
+        "¿Cuándo?",
+        "¿Qué día es?",
+        "¿Qué mes es?"
+      ]
+    },
+    {
+      "id": 52,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"¿Cuándo nos vemos?\" en chino?",
+      "explanation": "\"我们什么时候见面？\" (Wǒmen shénme shíhou jiànmiàn?) significa \"¿Cuándo nos vemos?\" en chino.",
+      "correctAnswer": "我们什么时候见面",
+      "options": [
+        "现在几点",
+        "我们什么时候见面",
+        "今天星期几",
+        "你明天有时间吗"
+      ]
+    },
+    {
+      "id": 54,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"有时间\"?",
+      "explanation": "\"有时间\" (yǒu shí jiān) significa \"Tener tiempo\" en chino.",
+      "correctAnswer": "Tener tiempo",
+      "options": [
+        "No tener tiempo",
+        "Tener tiempo",
+        "Estar ocupado",
+        "Estar libre"
+      ]
+    },
+    {
+      "id": 56,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"No tener tiempo\" en chino?",
+      "explanation": "\"没时间\" (méi shí jiān) significa \"No tener tiempo\" en chino.",
+      "correctAnswer": "没时间",
+      "options": [
+        "有时间",
+        "没时间",
+        "约会",
+        "预约"
+      ]
+    },
+    {
+      "id": 58,
+      "type": "multipleChoice",
+      "question": "¿Qué significa \"约会\"?",
+      "explanation": "\"约会\" (yuē huì) significa \"Hacer una cita\" en chino.",
+      "correctAnswer": "Hacer una cita",
+      "options": [
+        "Hacer una cita",
+        "Tener tiempo",
+        "No tener tiempo",
+        "Horario"
+      ]
+    },
+    {
+      "id": 60,
+      "type": "fillInTheBlank",
+      "question": "¿Cómo se dice \"Horario\" en chino?",
+      "explanation": "\"时间表\" (shí jiān biǎo) significa \"Horario\" en chino.",
+      "correctAnswer": "时间表",
+      "options": [
+        "约会",
+        "预约",
+        "时间表",
+        "上午"
+      ]
+    }
+  ],
+  "totalQuestions": 30,
+  "createdAt": "2025-08-04T02:46:55.128Z"
+}

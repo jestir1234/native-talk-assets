@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Food and Drinks</title>
+    <style>
+        /* Global Styles & Reset */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px; /* Minimum for body text */
+        }
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue for headings */
+        }
+        h1 { font-size: 2.2em; margin-bottom: 0.5em; }
+        h2 { font-size: 1.8em; margin-top: 1.5em; margin-bottom: 0.8em; }
+        h3 { font-size: 1.5em; margin-top: 1.2em; margin-bottom: 0.6em; }
+
+        /* Mobile-First Layout */
+        .container {
+            padding: 15px;
+            max-width: 600px; /* Constrain content width for readability */
+            margin: 0 auto;
+        }
+
+        /* Specific CSS Requirements */
+        .chapter-title {
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        .lesson-header {
+            margin: 20px 0; /* Required margin */
+            text-align: center;
+        }
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Required max-width */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: #FFFFFF; /* White for content sections */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden; /* Clear floats */
+        }
+
+        /* Interactive Elements - Audio */
+        .audio-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border-radius: 50%;
+            width: 44px; /* Touch-friendly size */
+            height: 44px; /* Touch-friendly size */
+            font-size: 24px;
+            cursor: pointer;
+            vertical-align: middle;
+            margin-left: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+        .audio-icon:active {
+            background-color: #7A4EA5; /* Darker primary on tap */
+        }
+
+        /* Text & List Styling */
+        .pronunciation {
+            font-style: italic;
+            color: #8B5FBF; /* Primary: Purple */
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        .chinese-example {
+            display: block;
+            margin: 15px 0;
+            padding: 10px 15px;
+            background-color: #FDF9E5; /* Secondary for examples */
+            border-left: 4px solid #8B5FBF; /* Primary border */
+            border-radius: 4px;
+            line-height: 1.4;
+        }
+        .chinese-example strong {
+            color: #2C3E50; /* Dark blue for Chinese text */
+            font-size: 1.1em;
+            display: block; /* Ensures Chinese text is on its own line */
+            margin-bottom: 5px;
+        }
+        .chinese-example em {
+            color: #666666; /* Body text for translation */
+            font-style: normal; /* Override default italic for emphasis */
+            display: block; /* Ensures translation is on its own line */
+        }
+        .chinese-example p {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            padding: 12px 0;
+            border-bottom: 1px solid #E0E0E0; /* Borders: Light gray */
+            display: flex; /* For aligning text and audio icon */
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping for long lines */
+            gap: 5px; /* Spacing between items */
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        li strong {
+            color: #2C3E50; /* Dark blue for emphasized words */
+            flex-shrink: 0;
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #EEF7FC; /* Light blueish for practice background */
+            border: 1px solid #D0E7F5;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 25px;
+        }
+        .practice-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+        }
+        .practice-question {
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #2C3E50;
+            font-size: 1.1em;
+        }
+        .practice-options {
+            display: flex;
+            flex-wrap: wrap; /* Allows buttons to wrap on small screens */
+            gap: 10px; /* Spacing between buttons */
+            justify-content: center; /* Center buttons if there's space */
+        }
+        .practice-options button {
+            flex-grow: 1; /* Allows buttons to grow and fill space */
+            flex-basis: calc(50% - 10px); /* Roughly 2 buttons per row, adjusted for gap */
+            background-color: #F0F0F0;
+            color: #2C3E50;
+            border: 1px solid #D0D0D0;
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin: 0; /* Margin handled by gap */
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            min-height: 44px; /* Touch-friendly */
+            font-size: 16px;
+            text-align: center;
+            line-height: 1.2;
+        }
+        @media (max-width: 400px) { /* On very small screens, make buttons full width */
+            .practice-options button {
+                flex-basis: 100%;
+            }
+        }
+        .practice-options button:active {
+            background-color: #E0E0E0;
+            border-color: #C0C0C0;
+        }
+        .feedback {
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+            min-height: 1.5em; /* Reserve space for feedback */
+        }
+        .feedback.correct {
+            color: #28a745; /* Green */
+        }
+        .feedback.incorrect {
+            color: #dc3545; /* Red */
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border-left: 5px solid #8B5FBF; /* Primary border */
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-style: italic;
+            color: #666666; /* Body Text */
+        }
+        .cultural-note strong {
+            color: #2C3E50; /* Dark blue */
+            font-style: normal; /* Override italic for strong text */
+        }
+
+        /* General Spacing */
+        p {
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <h1 class="chapter-title">Chapter 7: Food and Drinks</h1>
+        <div class="lesson-header">
+            <!-- As per requirements, src is "../header.webp" -->
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <!-- Introduction -->
+        <section>
+            <h2>🍴 Welcome to the Delicious World of Chinese Food!</h2>
+            <p>Ready to talk about your favorite foods and drinks in Chinese? This chapter will equip you with all the essential vocabulary and phrases to order, express your preferences, and navigate a Chinese restaurant like a pro!</p>
+        </section>
+
+        <!-- Common Foods -->
+        <section>
+            <h2>🍚 Common Foods (食物 - <span class="pronunciation">Shíwù</span>)</h2>
+            <p>Let's start with some staples you'll find everywhere in China.</p>
+            <ul>
+                <li>
+                    <strong>Rice</strong>: 饭 <span class="pronunciation">fàn</span> <span class="audio-icon" data-audio-text="饭">🔊</span>
+                    <div class="chinese-example">
+                        <strong>米饭</strong> <span class="pronunciation">mǐfàn</span><br>
+                        <em>(cooked rice)</em>
+                    </div>
+                </li>
+                <li>
+                    <strong>Noodles</strong>: 面 <span class="pronunciation">miàn</span> <span class="audio-icon" data-audio-text="面">🔊</span>
+                    <div class="chinese-example">
+                        <strong>面条</strong> <span class="pronunciation">miàntiáo</span><br>
+                        <em>(noodles - common way to say it)</em>
+                    </div>
+                </li>
+                <li>
+                    <strong>Meat</strong>: 肉 <span class="pronunciation">ròu</span> <span class="audio-icon" data-audio-text="肉">🔊</span>
+                    <div class="chinese-example">
+                        <strong>猪肉</strong> <span class="pronunciation">zhūròu</span> <em>(pork)</em><br>
+                        <strong>牛肉</strong> <span class="pronunciation">niúròu</span> <em>(beef)</em><br>
+                        <strong>鸡肉</strong> <span class="pronunciation">jīròu</span> <em>(chicken)</em>
+                    </div>
+                </li>
+                <li>
+                    <strong>Vegetables</strong>: 菜 <span class="pronunciation">cài</span> <span class="audio-icon" data-audio-text="菜">🔊</span>
+                    <p><em>"Cài" can also mean "dishes" in general!</em></p>
+                    <div class="chinese-example">
+                        <strong>青菜</strong> <span class="pronunciation">qīngcài</span><br>
+                        <em>(green vegetables)</em>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Drinks -->
+        <section>
+            <h2>🥤 Drinks (饮料 - <span class="pronunciation">Yǐnliào</span>)</h2>
+            <p>Stay hydrated with these essential drink words.</p>
+            <ul>
+                <li>
+                    <strong>Water</strong>: 水 <span class="pronunciation">shuǐ</span> <span class="audio-icon" data-audio-text="水">🔊</span>
+                </li>
+                <li>
+                    <strong>Coffee</strong>: 咖啡 <span class="pronunciation">kāfēi</span> <span class="audio-icon" data-audio-text="咖啡">🔊</span>
+                </li>
+                <li>
+                    <strong>Tea</strong>: 茶 <span class="pronunciation">chá</span> <span class="audio-icon" data-audio-text="茶">🔊</span>
+                </li>
+                <li>
+                    <strong>Juice</strong>: 果汁 <span class="pronunciation">guǒzhī</span> <span class="audio-icon" data-audio-text="果汁">🔊</span>
+                </li>
+                <li>
+                    <strong>Milk</strong>: 牛奶 <span class="pronunciation">niúnǎi</span> <span class="audio-icon" data-audio-text="牛奶">🔊</span>
+                </li>
+            </ul>
+            <div class="cultural-note">
+                <strong>Cultural Tip:</strong> In China, hot water (热水 - <span class="pronunciation">rèshuǐ</span>) is often served by default in restaurants, especially outside of big cities. People believe it aids digestion! 🍵
+            </div>
+        </section>
+
+        <!-- I like... / I don't like... -->
+        <section>
+            <h2>👍 I Like... / 👎 I Don't Like...</h2>
+            <p>Time to express your preferences using 喜欢 (<span class="pronunciation">xǐhuan</span> - to like) and 不喜欢 (<span class="pronunciation">bù xǐhuan</span> - not like).</p>
+            <div class="chinese-example">
+                <strong>我喜欢米饭。</strong><span class="pronunciation">Wǒ xǐhuan mǐfàn.</span><br>
+                <em>I like rice.</em> <span class="audio-icon" data-audio-text="我喜欢米饭。">🔊</span>
+            </div>
+            <div class="chinese-example">
+                <strong>我喜欢喝茶。</strong><span class="pronunciation">Wǒ xǐhuan hē chá.</span><br>
+                <em>I like to drink tea.</em> <span class="audio-icon" data-audio-text="我喜欢喝茶。">🔊</span>
+                <p><em>(Note: "喝 - <span class="pronunciation">hē</span>" means 'to drink')</em></p>
+            </div>
+            <div class="chinese-example">
+                <strong>我<strong>不喜欢</strong>咖啡。</strong><span class="pronunciation">Wǒ <strong>bù xǐhuan</strong> kāfēi.</span><br>
+                <em>I <strong>don't like</strong> coffee.</em> <span class="audio-icon" data-audio-text="我不喜欢咖啡。">🔊</span>
+            </div>
+            <p>Remember that "不" (<span class="pronunciation">bù</span>) negates verbs!</p>
+        </section>
+
+        <!-- What do you like to eat? -->
+        <section>
+            <h2>❓ What do you like to eat/drink?</h2>
+            <p>To ask someone what they like to eat or drink, you can use "什么" (<span class="pronunciation">shénme</span> - what).</p>
+            <div class="chinese-example">
+                <strong>你喜欢吃什么？</strong><span class="pronunciation">Nǐ xǐhuan chī shénme?</span><br>
+                <em>What do you like to eat?</em> <span class="audio-icon" data-audio-text="你喜欢吃什么？">🔊</span>
+                <p><em>("吃 - <span class="pronunciation">chī</span>" means 'to eat')</em></p>
+            </div>
+            <div class="chinese-example">
+                <strong>你喜欢喝什么？</strong><span class="pronunciation">Nǐ xǐhuan hē shénme?</span><br>
+                <em>What do you like to drink?</em> <span class="audio-icon" data-audio-text="你喜欢喝什么？">🔊</span>
+            </div>
+            <p><strong>Possible answers:</strong></p>
+            <div class="chinese-example">
+                <strong>我喜欢吃面条。</strong><span class="pronunciation">Wǒ xǐhuan chī miàntiáo.</span><br>
+                <em>I like to eat noodles.</em> <span class="audio-icon" data-audio-text="我喜欢吃面条。">🔊</span>
+            </div>
+            <div class="chinese-example">
+                <strong>我喜欢喝牛奶。</strong><span class="pronunciation">Wǒ xǐhuan hē niúnǎi.</span><br>
+                <em>I like to drink milk.</em> <span class="audio-icon" data-audio-text="我喜欢喝牛奶。">🔊</span>
+            </div>
+        </section>
+
+        <!-- Restaurant Basic Vocabulary -->
+        <section>
+            <h2>🍜 Restaurant Basics</h2>
+            <p>Ready to order? Here are some crucial phrases for dining out!</p>
+            <ul>
+                <li>
+                    <strong>Menu</strong>: 菜单 <span class="pronunciation">càidān</span> <span class="audio-icon" data-audio-text="菜单">🔊</span>
+                </li>
+                <li>
+                    <strong>Order food</strong>: 点菜 <span class="pronunciation">diǎncài</span> <span class="audio-icon" data-audio-text="点菜">🔊</span>
+                </li>
+                <li>
+                    <strong>I want... / I'd like...</strong>: 我要... <span class="pronunciation">Wǒ yào...</span> <span class="audio-icon" data-audio-text="我要">🔊</span>
+                    <div class="chinese-example">
+                        <strong>我要米饭。</strong><span class="pronunciation">Wǒ yào mǐfàn.</span><br>
+                        <em>(I want rice.)</em> <span class="audio-icon" data-audio-text="我要米饭。">🔊</span>
+                    </div>
+                </li>
+                <li>
+                    <strong>How much? / How much is it?</strong>: 多少钱？ <span class="pronunciation">Duōshao qián?</span> <span class="audio-icon" data-audio-text="多少钱？">🔊</span>
+                </li>
+                <li>
+                    <strong>Bill / Check</strong>: 买单 <span class="pronunciation">mǎidān</span> <span class="audio-icon" data-audio-text="买单">🔊</span>
+                    <p><em>(Often said at the end of the meal to ask for the bill)</em></p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Practice Section -->
+        <section class="practice-section">
+            <h2>✍️ Practice Time!</h2>
+            <p>Choose the correct Chinese word or phrase for each question.
+               <br><em>(Note: Tapping on options would provide feedback in a real app)</em></p>
+
+            <div class="practice-item">
+                <p class="practice-question">1. How do you say "rice"?</p>
+                <div class="practice-options">
+                    <button data-answer="incorrect">面条</button>
+                    <button data-answer="correct">米饭</button>
+                    <button data-answer="incorrect">水</button>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">2. What does "我不喜欢咖啡" mean?</p>
+                <div class="practice-options">
+                    <button data-answer="incorrect">I like coffee.</button>
+                    <button data-answer="correct">I don't like coffee.</button>
+                    <button data-answer="incorrect">Do you like coffee?</button>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">3. How would you ask for the bill?</p>
+                <div class="practice-options">
+                    <button data-answer="incorrect">我要水</button>
+                    <button data-answer="incorrect">你喜欢吃什么？</button>
+                    <button data-answer="correct">买单</button>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">4. Which word means "to drink"?</p>
+                <div class="practice-options">
+                    <button data-answer="correct">喝</button>
+                    <button data-answer="incorrect">吃</button>
+                    <button data-answer="incorrect">要</button>
+                </div>
+                <div class="feedback"></div>
+            </div>
+        </section>
+
+        <!-- Summary -->
+        <section>
+            <h2>🎉 Chapter 7 Summary</h2>
+            <p>Great job! You've learned how to talk about food and drinks in Chinese. Here's a quick recap:</p>
+            <ul>
+                <li><strong>Common Foods:</strong> 饭 (<span class="pronunciation">fàn</span> - rice), 面 (<span class="pronunciation">miàn</span> - noodles), 肉 (<span class="pronunciation">ròu</span> - meat), 菜 (<span class="pronunciation">cài</span> - vegetables/dishes).</li>
+                <li><strong>Drinks:</strong> 水 (<span class="pronunciation">shuǐ</span> - water), 咖啡 (<span class="pronunciation">kāfēi</span> - coffee), 茶 (<span class="pronunciation">chá</span> - tea), 果汁 (<span class="pronunciation">guǒzhī</span> - juice), 牛奶 (<span class="pronunciation">niúnǎi</span> - milk).</li>
+                <li><strong>Preferences:</strong> 喜欢 (<span class="pronunciation">xǐhuan</span> - like), 不喜欢 (<span class="pronunciation">bù xǐhuan</span> - don't like).</li>
+                <li><strong>Asking Questions:</strong> 你喜欢吃什么？ (<span class="pronunciation">Nǐ xǐhuan chī shénme?</span> - What do you like to eat?).</li>
+                <li><strong>Restaurant Phrases:</strong> 我要... (<span class="pronunciation">Wǒ yào...</span> - I want...), 菜单 (<span class="pronunciation">càidān</span> - menu), 买单 (<span class="pronunciation">mǎidān</span> - bill).</li>
+            </ul>
+            <p>Keep practicing these words and phrases in your daily life. The more you use them, the more natural they'll become!</p>
+        </section>
+
+    </div>
+</body>
+</html>
