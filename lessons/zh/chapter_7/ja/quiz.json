@@ -1,0 +1,202 @@
+{
+  "title": "第7章クイズ：食べ物と飲み物",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "「米饭」は何を意味しますか？",
+      "explanation": "「米饭」（mǐfàn）は「ご飯」を意味します。",
+      "correctAnswer": "ご飯",
+      "options": [
+        "麺",
+        "ご飯",
+        "パン",
+        "肉"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "「麺」を中国語でどう言いますか？",
+      "explanation": "「面条」（miàntiáo）は「麺」を意味します。",
+      "correctAnswer": "面条",
+      "options": [
+        "米饭",
+        "面条",
+        "面包",
+        "肉"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "「肉」は何を意味しますか？",
+      "explanation": "「肉」（ròu）は「肉」を意味します。",
+      "correctAnswer": "肉",
+      "options": [
+        "ご飯",
+        "麺",
+        "肉",
+        "野菜"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "「野菜」を中国語でどう言いますか？",
+      "explanation": "「蔬菜」（shūcài）は「野菜」を意味します。",
+      "correctAnswer": "蔬菜",
+      "options": [
+        "肉",
+        "蔬菜",
+        "水果",
+        "面包"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "「水」は何を意味しますか？",
+      "explanation": "「水」（shuǐ）は「水」を意味します。",
+      "correctAnswer": "水",
+      "options": [
+        "コーヒー",
+        "お茶",
+        "水",
+        "牛乳"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "「コーヒー」を中国語でどう言いますか？",
+      "explanation": "「咖啡」（kāfēi）は「コーヒー」を意味します。",
+      "correctAnswer": "咖啡",
+      "options": [
+        "水",
+        "咖啡",
+        "茶",
+        "牛奶"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "「茶」は何を意味しますか？",
+      "explanation": "「茶」（chá）は「お茶」を意味します。",
+      "correctAnswer": "お茶",
+      "options": [
+        "水",
+        "コーヒー",
+        "お茶",
+        "牛乳"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "「牛乳」を中国語でどう言いますか？",
+      "explanation": "「牛奶」（niúnǎi）は「牛乳」を意味します。",
+      "correctAnswer": "牛奶",
+      "options": [
+        "水",
+        "咖啡",
+        "茶",
+        "牛奶"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "「好吃」は何を意味しますか？",
+      "explanation": "「好吃」（hǎochī）は「おいしい」を意味します。",
+      "correctAnswer": "おいしい",
+      "options": [
+        "まずい",
+        "おいしい",
+        "普通",
+        "悪い"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "「まずい」を中国語でどう言いますか？",
+      "explanation": "「不好吃」（bù hǎochī）は「まずい」を意味します。",
+      "correctAnswer": "不好吃",
+      "options": [
+        "好吃",
+        "不好吃",
+        "普通",
+        "坏"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "「餐厅」は何を意味しますか？",
+      "explanation": "「餐厅」（cāntīng）は「レストラン」を意味します。",
+      "correctAnswer": "レストラン",
+      "options": [
+        "レストラン",
+        "キッチン",
+        "カフェ",
+        "市場"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "「私は中国料理が好きです」を中国語でどう言いますか？",
+      "explanation": "「我喜欢中国菜」（wǒ xǐhuan zhōngguó cài）は「私は中国料理が好きです」を意味します。",
+      "correctAnswer": "我喜欢中国菜",
+      "options": [
+        "我喜欢中国菜",
+        "我不喜欢中国菜",
+        "我吃中国菜",
+        "我喝中国茶"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "「菜单」は何を意味しますか？",
+      "explanation": "「菜单」（càidān）は「メニュー」を意味します。",
+      "correctAnswer": "メニュー",
+      "options": [
+        "食べ物",
+        "メニュー",
+        "テーブル",
+        "注文"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "「何が食べたいですか？」を中国語でどう聞きますか？",
+      "explanation": "「你喜欢吃什么？」（nǐ xǐhuan chī shénme?）は「何が食べたいですか？」を意味します。",
+      "correctAnswer": "你喜欢吃什么？",
+      "options": [
+        "你喜欢吃什么？",
+        "你吃什么？",
+        "你喝什么？",
+        "你喜欢什么？"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "「水果」は何を意味しますか？",
+      "explanation": "「水果」（shuǐguǒ）は「果物」を意味します。",
+      "correctAnswer": "果物",
+      "options": [
+        "野菜",
+        "果物",
+        "肉",
+        "パン"
+      ]
+    }
+  ],
+  "totalQuestions": 15,
+  "createdAt": "2025-08-04T00:53:33.577Z"
+}

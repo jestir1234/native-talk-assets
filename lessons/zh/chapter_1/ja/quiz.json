@@ -1,0 +1,202 @@
+{
+  "title": "第1章クイズ：中国語ピンインと声調",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "中国語の音標文字は何と呼ばれますか？",
+      "explanation": "中国語の音標文字は「ピンイン」（拼音）と呼ばれます。",
+      "correctAnswer": "ピンイン",
+      "options": [
+        "漢字",
+        "ピンイン",
+        "ひらがな",
+        "カタカナ"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "中国語には何個の声調がありますか？",
+      "explanation": "中国語には4つの声調があります：第一声（ā）、第二声（á）、第三声（ǎ）、第四声（à）。",
+      "correctAnswer": "4",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "「你好」は何を意味しますか？",
+      "explanation": "「你好」（nǐ hǎo）は「こんにちは」を意味します。",
+      "correctAnswer": "こんにちは",
+      "options": [
+        "ありがとう",
+        "こんにちは",
+        "さようなら",
+        "お願いします"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "この声調は何ですか：「ā」？",
+      "explanation": "「ā」は中国語の第一声です。",
+      "correctAnswer": "第一声",
+      "options": [
+        "第一声",
+        "第二声",
+        "第三声",
+        "第四声"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "「谢谢」は何を意味しますか？",
+      "explanation": "「谢谢」（xièxie）は「ありがとう」を意味します。",
+      "correctAnswer": "ありがとう",
+      "options": [
+        "こんにちは",
+        "ありがとう",
+        "さようなら",
+        "お願いします"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "この声調は何ですか：「á」？",
+      "explanation": "「á」は中国語の第二声です。",
+      "correctAnswer": "第二声",
+      "options": [
+        "第一声",
+        "第二声",
+        "第三声",
+        "第四声"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "「再见」は何を意味しますか？",
+      "explanation": "「再见」（zàijiàn）は「さようなら」を意味します。",
+      "correctAnswer": "さようなら",
+      "options": [
+        "こんにちは",
+        "ありがとう",
+        "さようなら",
+        "お願いします"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "この声調は何ですか：「ǎ」？",
+      "explanation": "「ǎ」は中国語の第三声です。",
+      "correctAnswer": "第三声",
+      "options": [
+        "第一声",
+        "第二声",
+        "第三声",
+        "第四声"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "「是」は何を意味しますか？",
+      "explanation": "「是」（shì）は「はい」を意味します。",
+      "correctAnswer": "はい",
+      "options": [
+        "いいえ",
+        "はい",
+        "たぶん",
+        "お願いします"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "この声調は何ですか：「à」？",
+      "explanation": "「à」は中国語の第四声です。",
+      "correctAnswer": "第四声",
+      "options": [
+        "第一声",
+        "第二声",
+        "第三声",
+        "第四声"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "「不」は何を意味しますか？",
+      "explanation": "「不」（bù）は「いいえ」を意味します。",
+      "correctAnswer": "いいえ",
+      "options": [
+        "はい",
+        "いいえ",
+        "たぶん",
+        "お願いします"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "「私は〜です」を中国語でどう言いますか？",
+      "explanation": "「我是」（wǒ shì）は「私は〜です」を意味します。",
+      "correctAnswer": "我是",
+      "options": [
+        "我是",
+        "你是",
+        "他是",
+        "她是"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "「我」は何を意味しますか？",
+      "explanation": "「我」（wǒ）は「私」を意味します。",
+      "correctAnswer": "私",
+      "options": [
+        "あなた",
+        "私",
+        "彼",
+        "彼女"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "「あなた」を中国語でどう言いますか？",
+      "explanation": "「你」（nǐ）は「あなた」を意味します。",
+      "correctAnswer": "你",
+      "options": [
+        "我",
+        "你",
+        "他",
+        "她"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "「请」は何を意味しますか？",
+      "explanation": "「请」（qǐng）は「お願いします」を意味します。",
+      "correctAnswer": "お願いします",
+      "options": [
+        "ありがとう",
+        "お願いします",
+        "こんにちは",
+        "さようなら"
+      ]
+    }
+  ],
+  "totalQuestions": 15,
+  "createdAt": "2025-08-04T00:53:33.567Z"
+}

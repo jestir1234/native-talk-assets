@@ -1,0 +1,202 @@
+{
+  "title": "第4章クイズ：色と描写",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "「红色」は何を意味しますか？",
+      "explanation": "「红色」（hóngsè）は「赤」を意味します。",
+      "correctAnswer": "赤",
+      "options": [
+        "青",
+        "赤",
+        "黄",
+        "緑"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "「青」を中国語でどう言いますか？",
+      "explanation": "「蓝色」（lánsè）は「青」を意味します。",
+      "correctAnswer": "蓝色",
+      "options": [
+        "红色",
+        "蓝色",
+        "黄色",
+        "绿色"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "「绿色」は何を意味しますか？",
+      "explanation": "「绿色」（lǜsè）は「緑」を意味します。",
+      "correctAnswer": "緑",
+      "options": [
+        "赤",
+        "青",
+        "緑",
+        "黄"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "「黄」を中国語でどう言いますか？",
+      "explanation": "「黄色」（huángsè）は「黄」を意味します。",
+      "correctAnswer": "黄色",
+      "options": [
+        "红色",
+        "蓝色",
+        "绿色",
+        "黄色"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "「大」は何を意味しますか？",
+      "explanation": "「大」（dà）は「大きい」を意味します。",
+      "correctAnswer": "大きい",
+      "options": [
+        "小さい",
+        "大きい",
+        "高い",
+        "低い"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "「小さい」を中国語でどう言いますか？",
+      "explanation": "「小」（xiǎo）は「小さい」を意味します。",
+      "correctAnswer": "小",
+      "options": [
+        "大",
+        "小",
+        "高",
+        "矮"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "「高」は何を意味しますか？",
+      "explanation": "「高」（gāo）は「高い」を意味します。",
+      "correctAnswer": "高い",
+      "options": [
+        "低い",
+        "高い",
+        "大きい",
+        "小さい"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "「低い」を中国語でどう言いますか？",
+      "explanation": "「矮」（ǎi）は「低い」を意味します。",
+      "correctAnswer": "矮",
+      "options": [
+        "高",
+        "矮",
+        "大",
+        "小"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "「美」は何を意味しますか？",
+      "explanation": "「美」（měi）は「美しい」を意味します。",
+      "correctAnswer": "美しい",
+      "options": [
+        "醜い",
+        "美しい",
+        "良い",
+        "悪い"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "「醜い」を中国語でどう言いますか？",
+      "explanation": "「丑」（chǒu）は「醜い」を意味します。",
+      "correctAnswer": "丑",
+      "options": [
+        "美",
+        "丑",
+        "好",
+        "坏"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "「好」は何を意味しますか？",
+      "explanation": "「好」（hǎo）は「良い」を意味します。",
+      "correctAnswer": "良い",
+      "options": [
+        "悪い",
+        "良い",
+        "美しい",
+        "醜い"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "「悪い」（品質について）を中国語でどう言いますか？",
+      "explanation": "「坏」（huài）は「悪い」（品質について）を意味します。",
+      "correctAnswer": "坏",
+      "options": [
+        "好",
+        "坏",
+        "美",
+        "丑"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "「这是什么颜色？」は何を意味しますか？",
+      "explanation": "「这是什么颜色？」（zhè shì shénme yánsè?）は「これは何色ですか？」を意味します。",
+      "correctAnswer": "これは何色ですか？",
+      "options": [
+        "これは何ですか？",
+        "これは何色ですか？",
+        "あれは何ですか？",
+        "あれは何色ですか？"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "「これは赤です」を中国語でどう言いますか？",
+      "explanation": "「这是红色」（zhè shì hóngsè）は「これは赤です」を意味します。",
+      "correctAnswer": "这是红色",
+      "options": [
+        "这是红色",
+        "这是蓝色",
+        "这是绿色",
+        "这是黄色"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "「那个」は何を意味しますか？",
+      "explanation": "「那个」（nàge）は「あれ」を意味します。",
+      "correctAnswer": "あれ",
+      "options": [
+        "これ",
+        "あれ",
+        "これら",
+        "あれら"
+      ]
+    }
+  ],
+  "totalQuestions": 15,
+  "createdAt": "2025-08-04T00:53:33.573Z"
+}
