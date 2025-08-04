@@ -1,0 +1,136 @@
+{
+  "title": "English Chapter 2 Quiz: 基础问候和自我介绍",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "在英语中，最常用的问候语是什么？",
+      "explanation": "Hello是英语中最常用和最通用的问候语。",
+      "correctAnswer": "Hello",
+      "options": [
+        "Good morning",
+        "Hello",
+        "Good night",
+        "Thank you"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "早上8点见面时，应该说什么？",
+      "explanation": "早上见面时应该用Good morning来问候。",
+      "correctAnswer": "Good morning",
+      "options": [
+        "Good afternoon",
+        "Good morning",
+        "Good evening",
+        "Good night"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"How are you?\"的中文意思是什么？",
+      "explanation": "How are you?是询问对方近况的常用表达。",
+      "correctAnswer": "你好吗？",
+      "options": [
+        "你叫什么名字？",
+        "你好吗？",
+        "你几岁了？",
+        "你住在哪里？"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "当别人问你\"How are you?\"时，你应该怎么回答？",
+      "explanation": "I'm fine, thank you是对\"How are you?\"的标准回答。",
+      "correctAnswer": "I'm fine, thank you",
+      "options": [
+        "I'm fine, thank you",
+        "Good morning",
+        "Nice to meet you",
+        "Goodbye"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "\"My name is...\"的中文意思是什么？",
+      "explanation": "My name is...是介绍自己名字的标准表达。",
+      "correctAnswer": "我的名字是...",
+      "options": [
+        "我很好",
+        "我的名字是...",
+        "很高兴见到你",
+        "再见"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "dragAndDrop",
+      "question": "请按正确顺序排列这个问候对话",
+      "explanation": "这是标准的英语问候对话流程。",
+      "correctAnswer": "Hello! How are you?|I'm fine, thank you. And you?|I'm fine, too!",
+      "draggableItems": [
+        "Hello! How are you?",
+        "I'm fine, thank you. And you?",
+        "I'm fine, too!"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "\"Nice to meet you\"的中文意思是什么？",
+      "explanation": "Nice to meet you是初次见面时的礼貌表达。",
+      "correctAnswer": "很高兴见到你",
+      "options": [
+        "你好",
+        "再见",
+        "很高兴见到你",
+        "谢谢"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "multipleChoice",
+      "question": "下午3点见面时，应该说什么？",
+      "explanation": "下午见面时应该用Good afternoon来问候。",
+      "correctAnswer": "Good afternoon",
+      "options": [
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Good night"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "\"I'm [名字]\"和\"My name is [名字]\"的区别是什么？",
+      "explanation": "两种表达方式都可以用来介绍自己的名字。",
+      "correctAnswer": "没有区别，都是介绍名字",
+      "options": [
+        "没有区别，都是介绍名字",
+        "一个正式一个不正式",
+        "一个用于书面一个用于口语",
+        "一个用于男性一个用于女性"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "multipleChoice",
+      "question": "在英语对话中，询问对方近况后通常会做什么？",
+      "explanation": "在回答\"How are you?\"后，通常会反问\"And you?\"来表示礼貌。",
+      "correctAnswer": "反问对方\"And you?\"",
+      "options": [
+        "直接说再见",
+        "反问对方\"And you?\"",
+        "开始介绍自己",
+        "谈论天气"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-04T19:18:43.405Z"
+}

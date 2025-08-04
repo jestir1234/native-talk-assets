@@ -1,0 +1,136 @@
+{
+  "title": "English Chapter 1 Quiz: 英语字母表和发音",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "英语字母表有多少个字母？",
+      "explanation": "英语字母表有26个字母：从A到Z。",
+      "correctAnswer": "26个",
+      "options": [
+        "24个",
+        "25个",
+        "26个",
+        "27个"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "英语中有多少个元音字母？",
+      "explanation": "英语中有5个元音字母：A、E、I、O、U。",
+      "correctAnswer": "5个",
+      "options": [
+        "4个",
+        "5个",
+        "6个",
+        "7个"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "哪个字母是英语字母表的第一个元音？",
+      "explanation": "A是英语字母表的第一个字母，也是第一个元音。",
+      "correctAnswer": "A",
+      "options": [
+        "E",
+        "A",
+        "I",
+        "O"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "英语中有多少个辅音字母？",
+      "explanation": "英语中有21个辅音字母（26个字母减去5个元音）。",
+      "correctAnswer": "21个",
+      "options": [
+        "19个",
+        "20个",
+        "21个",
+        "22个"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "音标（Phonics）是什么？",
+      "explanation": "音标是学习字母发音的方法。",
+      "correctAnswer": "字母的发音",
+      "options": [
+        "字母的名称",
+        "字母的发音",
+        "字母的形状",
+        "字母的顺序"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "dragAndDrop",
+      "question": "请按正确顺序排列英语单词\"cat\"的字母",
+      "explanation": "cat是英语中\"猫\"的意思。",
+      "correctAnswer": "cat",
+      "draggableItems": [
+        "c",
+        "a",
+        "t"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "英语单词\"dog\"是什么意思？",
+      "explanation": "dog是英语中\"狗\"的意思。",
+      "correctAnswer": "狗",
+      "options": [
+        "猫",
+        "狗",
+        "鸟",
+        "鱼"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "dragAndDrop",
+      "question": "请按正确顺序排列英语单词\"book\"的字母",
+      "explanation": "book是英语中\"书\"的意思。",
+      "correctAnswer": "book",
+      "draggableItems": [
+        "b",
+        "o",
+        "o",
+        "k"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "英语字母表的最后一个字母是什么？",
+      "explanation": "Z是英语字母表的最后一个字母。",
+      "correctAnswer": "Z",
+      "options": [
+        "X",
+        "Y",
+        "Z",
+        "W"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "multipleChoice",
+      "question": "英语单词\"house\"是什么意思？",
+      "explanation": "house是英语中\"房子\"的意思。",
+      "correctAnswer": "房子",
+      "options": [
+        "车",
+        "房子",
+        "学校",
+        "商店"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-04T19:18:43.404Z"
+}

@@ -1,0 +1,138 @@
+{
+  "title": "English Chapter 3 Quiz: 数字和计数",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "英语中数字1到20，哪个数字是第一个以\"-teen\"结尾的？",
+      "explanation": "13 (thirteen)是第一个以\"-teen\"结尾的数字。",
+      "correctAnswer": "13",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "multipleChoice",
+      "question": "英语中数字\"0\"在电话号码中通常读作什么？",
+      "explanation": "在电话号码中，数字\"0\"通常读作\"oh\"而不是\"zero\"。",
+      "correctAnswer": "oh",
+      "options": [
+        "zero",
+        "oh",
+        "null",
+        "none"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "英语中\"double\"是什么意思？",
+      "explanation": "double可以表示两个、重复或双倍的意思。",
+      "correctAnswer": "以上都是",
+      "options": [
+        "两个",
+        "重复",
+        "双倍",
+        "以上都是"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "multipleChoice",
+      "question": "英语中数字\"15\"的正确读法是什么？",
+      "explanation": "15的正确读法是fifteen。",
+      "correctAnswer": "fifteen",
+      "options": [
+        "fifteen",
+        "fiveteen",
+        "fifteen",
+        "fiveteen"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "英语中询问年龄的标准问法是什么？",
+      "explanation": "\"How old are you?\"是询问年龄的标准表达。",
+      "correctAnswer": "How old are you?",
+      "options": [
+        "What is your age?",
+        "How old are you?",
+        "What age are you?",
+        "How many years are you?"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "dragAndDrop",
+      "question": "请按正确顺序排列英语数字1-5",
+      "explanation": "这是英语中数字1到5的正确顺序。",
+      "correctAnswer": "one|two|three|four|five",
+      "draggableItems": [
+        "one",
+        "two",
+        "three",
+        "four",
+        "five"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "英语中数字\"20\"的正确读法是什么？",
+      "explanation": "20的正确读法是twenty。",
+      "correctAnswer": "twenty",
+      "options": [
+        "twenty",
+        "twoty",
+        "twenteen",
+        "twentee"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "multipleChoice",
+      "question": "英语中电话号码\"555-0123\"应该如何读？",
+      "explanation": "电话号码可以用多种方式读，都是正确的。",
+      "correctAnswer": "以上都可以",
+      "options": [
+        "five five five zero one two three",
+        "five five five oh one two three",
+        "triple five oh one two three",
+        "以上都可以"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "英语中数字\"11\"的正确读法是什么？",
+      "explanation": "11的正确读法是eleven，这是一个特殊单词。",
+      "correctAnswer": "eleven",
+      "options": [
+        "eleven",
+        "oneteen",
+        "oneone",
+        "onety-one"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "multipleChoice",
+      "question": "英语中回答年龄的标准表达是什么？",
+      "explanation": "\"I am [数字] years old\"是回答年龄的标准表达。",
+      "correctAnswer": "I am [数字] years old",
+      "options": [
+        "I am [数字] years old",
+        "I have [数字] years",
+        "My age is [数字]",
+        "I am [数字] age"
+      ]
+    }
+  ],
+  "totalQuestions": 10,
+  "createdAt": "2025-08-04T19:18:43.406Z"
+}
