@@ -10,7 +10,7 @@ const axios = require('axios');
 require('dotenv').config();
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-const BATCH_SIZE = 50; // Process 10 entries at a time
+const BATCH_SIZE = 100; // Process 50 entries at a time
 const DELAY_BETWEEN_BATCHES = 5000; // 2 seconds delay between batches
 
 function sleep(ms) {
@@ -18,7 +18,7 @@ function sleep(ms) {
 }
 
 async function callGemini(prompt) {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
     try {
         const response = await axios.post(url, {
             contents: [
@@ -80,9 +80,9 @@ Important: Return ONLY the JSON object, no other text or explanations.`;
     }
 }
 
-async function processDictionaryInBatches(dictionary, sourceLanguage, targetLanguage, targetPath) {
+async function processDictionaryInBatches(dictionary, sourceLanguage, targetLanguage, targetPath, existingDictionary = {}) {
     const entries = Object.entries(dictionary);
-    const processedDictionary = { ...dictionary }; // Start with a copy of the original
+    const processedDictionary = { ...existingDictionary, ...dictionary }; // Start with existing translations + new entries
     
     console.log(`Processing ${entries.length} entries in batches of ${BATCH_SIZE}...`);
     
@@ -243,7 +243,7 @@ async function copyAndTranslateDictionary(sourcePath, targetPath, sourceLanguage
 
         // Now translate the dictionary using Gemini
         console.log('\nStarting translation with Gemini API...');
-        const translatedDictionary = await processDictionaryInBatches(entriesNeedingTranslation, sourceLanguage, targetLanguage, targetPath);
+        const translatedDictionary = await processDictionaryInBatches(entriesNeedingTranslation, sourceLanguage, targetLanguage, targetPath, existingDictionary);
         
         console.log('\n✅ Translation completed successfully!');
         console.log(`Final dictionary saved to: ${targetPath}`);
