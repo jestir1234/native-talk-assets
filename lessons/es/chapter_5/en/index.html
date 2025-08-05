@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Family and Relationships</title>
+    <style>
+        /* Global Styles & Reset */
+        body {
+            font-family: 'Avenir', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /* Basic Layout & Containers */
+        .container {
+            max-width: 600px; /* Optimal width for mobile content */
+            margin: 0 auto;
+            padding: 0 15px; /* Padding for the sides */
+        }
+
+        /* Headings */
+        h1, h2, h3, h4, h5, h6 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+            padding-top: 20px; /* Space from top of screen */
+            margin-bottom: 0; /* Adjust spacing with lesson-header */
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #E0E0E0; /* Light gray border */
+            padding-bottom: 8px;
+            margin-top: 2.5em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #8B5FBF; /* Primary: Purple for sub-sections */
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1em;
+            font-size: 1em; /* 16px default */
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1em 0;
+        }
+
+        li {
+            padding: 8px 0;
+            border-bottom: 1px dotted #E0E0E0;
+            display: flex;
+            align-items: flex-start; /* Align items to the start for wrapping text */
+            flex-wrap: wrap; /* Allow content to wrap */
+            gap: 5px; /* Small gap between audio icon and text */
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+
+        /* Strong & Emphasized Text */
+        strong {
+            color: #2C3E50;
+        }
+
+        em {
+            font-style: italic;
+            color: #8B5FBF;
+        }
+
+        /* Custom Classes for Lesson Structure */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .section-card {
+            background-color: #FFFFFF; /* White for cards */
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Light gray border */
+        }
+
+        .example-box {
+            background-color: #FDF9E5; /* Cream background for examples */
+            border-left: 5px solid #8B5FBF; /* Primary color accent */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .example-box p {
+            margin: 0;
+            font-style: italic;
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Space between audio icon and text in examples */
+            flex-wrap: wrap;
+        }
+
+        .example-box .translation {
+            color: #666666;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: block; /* Ensures translation is on its own line */
+            width: 100%; /* Take full width below Spanish text */
+            padding-left: 52px; /* Align translation with Spanish text if audio icon is present */
+        }
+        .example-box p .spanish-word {
+            display: inline; /* Keep spanish word and pronunciation on same line if space */
+        }
+
+        /* Pronunciation Guides */
+        .pronunciation {
+            font-size: 0.85em;
+            color: #8B5FBF; /* Primary color */
+            font-weight: bold;
+            display: inline; /* Keeps it naturally flowing with text */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: #8B5FBF; /* Primary color */
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%; /* Make it circular */
+            width: 44px; /* Minimum touch target size */
+            height: 44px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking on small screens */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+        }
+
+        .audio-icon:hover {
+            background-color: #6A449C; /* Darker primary on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0;
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted #E0E0E0;
+        }
+
+        .practice-question:last-child {
+            border-bottom: none;
+        }
+
+        .question-text {
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column on mobile */
+            gap: 10px;
+        }
+
+        .option-button {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: #FDF9E5; /* Cream for options */
+            color: #2C3E50;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 1em;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            min-height: 44px; /* Min tap size */
+        }
+
+        .option-button:hover {
+            background-color: #E0E0E0;
+            border-color: #8B5FBF;
+        }
+
+        .option-button.correct {
+            background-color: #D4EDDA; /* Light green */
+            border-color: #28A745; /* Darker green */
+            color: #2C3E50;
+        }
+
+        .option-button.incorrect {
+            background-color: #F8D7DA; /* Light red */
+            border-color: #DC3545; /* Darker red */
+            color: #2C3E50;
+        }
+
+        /* Media Queries for Larger Screens (Tablets/Desktops) */
+        @media (min-width: 480px) {
+            .options-grid {
+                grid-template-columns: 1fr 1fr; /* Two columns for wider screens */
+            }
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #FDF9E5;
+            border-top: 2px solid #8B5FBF;
+            padding: 25px 20px;
+            margin-top: 30px;
+            border-radius: 12px;
+            margin-bottom: 20px; /* Space at the bottom */
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-top: 0;
+            color: #8B5FBF; /* Primary color for summary title */
+        }
+
+        .summary-section ul {
+            list-style: disc; /* Use bullets for summary */
+            padding-left: 20px;
+            margin-top: 15px;
+        }
+
+        .summary-section li {
+            border-bottom: none;
+            padding: 5px 0;
+        }
+
+        /* Helper for Spanish words */
+        .spanish-word {
+            color: #8B5FBF;
+            font-weight: bold;
+        }
+
+        .english-translation {
+            color: #666666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 5: Family and Relationships</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-card">
+            <h2>¡Hola, familia! 👋</h2>
+            <p>Welcome to Chapter 5! Today, we're going to talk about something super important in Spanish culture: family! You'll learn how to introduce your family members and describe your relationships.</p>
+            <p>Get ready to expand your vocabulary and speak about your loved ones in Spanish!</p>
+        </section>
+
+        <section class="section-card">
+            <h2>👨‍👩‍👧‍👦 Family Members: Basic Vocabulary</h2>
+            <p>Let's start with the core family members. Remember, in Spanish, nouns have gender (masculine or feminine) and number (singular or plural), and adjectives must agree!</p>
+
+            <h3>Masculine Nouns (ending in -o, generally)</h3>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="el padre">🔊</button>
+                    <span class="spanish-word">el padre</span> <span class="pronunciation">(ehl PAH-dray)</span> <span class="english-translation">- the father</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="el hermano">🔊</button>
+                    <span class="spanish-word">el hermano</span> <span class="pronunciation">(ehl er-MAH-noh)</span> <span class="english-translation">- the brother</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="el hijo">🔊</button>
+                    <span class="spanish-word">el hijo</span> <span class="pronunciation">(ehl EE-hoh)</span> <span class="english-translation">- the son</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="el abuelo">🔊</button>
+                    <span class="spanish-word">el abuelo</span> <span class="pronunciation">(ehl ah-BWEH-loh)</span> <span class="english-translation">- the grandfather</span>
+                </li>
+            </ul>
+
+            <h3>Feminine Nouns (ending in -a, generally)</h3>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="la madre">🔊</button>
+                    <span class="spanish-word">la madre</span> <span class="pronunciation">(lah MAH-dray)</span> <span class="english-translation">- the mother</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="la hermana">🔊</button>
+                    <span class="spanish-word">la hermana</span> <span class="pronunciation">(lah er-MAH-nah)</span> <span class="english-translation">- the sister</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="la hija">🔊</button>
+                    <span class="spanish-word">la hija</span> <span class="pronunciation">(lah EE-hah)</span> <span class="english-translation">- the daughter</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="la abuela">🔊</button>
+                    <span class="spanish-word">la abuela</span> <span class="pronunciation">(lah ah-BWEH-lah)</span> <span class="english-translation">- the grandmother</span>
+                </li>
+            </ul>
+
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="Mi padre es alto.">🔊</button> <span class="spanish-word">Mi padre es alto.</span><span class="translation">My father is tall.</span></p>
+                <p><button class="audio-icon" data-audio-text="Mi hermana es joven.">🔊</button> <span class="spanish-word">Mi hermana es joven.</span><span class="translation">My sister is young.</span></p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>🙋‍♀️ Possessive Adjectives: My, Your, His/Her/Its</h2>
+            <p>To talk about <strong>whose</strong> family member it is, we use possessive adjectives. These words change depending on the <strong>noun</strong> they describe (its gender and number), not the owner!</p>
+
+            <h3>Singular Possessive Adjectives</h3>
+            <ul>
+                <li>
+                    <span class="spanish-word">mi</span> <span class="pronunciation">(mee)</span> - <strong>my</strong> (for singular nouns, no gender change)
+                    <div class="example-box">
+                        <p><button class="audio-icon" data-audio-text="Mi perro.">🔊</button> <span class="spanish-word">Mi perro.</span><span class="translation">My dog (masculine).</span></p>
+                        <p><button class="audio-icon" data-audio-text="Mi casa.">🔊</button> <span class="spanish-word">Mi casa.</span><span class="translation">My house (feminine).</span></p>
+                    </div>
+                </li>
+                <li>
+                    <span class="spanish-word">tu</span> <span class="pronunciation">(too)</span> - <strong>your</strong> (informal, singular nouns)
+                    <div class="example-box">
+                        <p><button class="audio-icon" data-audio-text="Tu libro.">🔊</button> <span class="spanish-word">Tu libro.</span><span class="translation">Your book.</span></p>
+                    </div>
+                </li>
+                <li>
+                    <span class="spanish-word">su</span> <span class="pronunciation">(soo)</span> - <strong>his/her/its/your (formal)/their</strong> (singular nouns)
+                    <p>This one is versatile! Context usually clarifies who "su" refers to. If needed, you can use "de él" (of him), "de ella" (of her), etc.</p>
+                    <div class="example-box">
+                        <p><button class="audio-icon" data-audio-text="Su madre.">🔊</button> <span class="spanish-word">Su madre.</span><span class="translation">His/Her/Your (formal) mother.</span></p>
+                    </div>
+                </li>
+            </ul>
+
+            <h3>Plural Possessive Adjectives</h3>
+            <ul>
+                <li>
+                    <span class="spanish-word">mis</span> <span class="pronunciation">(mees)</span> - <strong>my</strong> (for plural nouns)
+                    <div class="example-box">
+                        <p><button class="audio-icon" data-audio-text="Mis padres.">🔊</button> <span class="spanish-word">Mis padres.</span><span class="translation">My parents (lit. my fathers, often used for both).</span></p>
+                    </div>
+                </li>
+                <li>
+                    <span class="spanish-word">tus</span> <span class="pronunciation">(toos)</span> - <strong>your</strong> (informal, plural nouns)
+                </li>
+                <li>
+                    <span class="spanish-word">sus</span> <span class="pronunciation">(soos)</span> - <strong>his/her/its/your (formal)/their</strong> (plural nouns)
+                </li>
+            </ul>
+
+            <p>And for "our" and "your" (plural, informal):</p>
+            <ul>
+                <li>
+                    <span class="spanish-word">nuestro/a/os/as</span> <span class="pronunciation">(NWEHS-troh/trah/tros/tras)</span> - <strong>our</strong> (agrees in gender and number)
+                    <div class="example-box">
+                        <p><button class="audio-icon" data-audio-text="Nuestro padre.">🔊</button> <span class="spanish-word">Nuestro padre.</span><span class="translation">Our father.</span></p>
+                        <p><button class="audio-icon" data-audio-text="Nuestras hermanas.">🔊</button> <span class="spanish-word">Nuestras hermanas.</span><span class="translation">Our sisters.</span></p>
+                    </div>
+                </li>
+                <li>
+                    <span class="spanish-word">vuestro/a/os/as</span> <span class="pronunciation">(BWES-troh/trah/tros/tras)</span> - <strong>your</strong> (informal, plural - mainly used in Spain)
+                </li>
+            </ul>
+        </section>
+
+        <section class="section-card">
+            <h2>💬 This is my... / These are my...</h2>
+            <p>Now let's put it all together to introduce family members! We use <strong>"Este/Esta es..."</strong> for singular and <strong>"Estos/Estas son..."</strong> for plural. Remember, "este/esta/estos/estas" must agree with the noun's gender and number.</p>
+
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="Este es mi padre.">🔊</button>
+                    <span class="spanish-word">Este es mi padre.</span> <span class="english-translation">- This is my father.</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Esta es mi madre.">🔊</button>
+                    <span class="spanish-word">Esta es mi madre.</span> <span class="english-translation">- This is my mother.</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Estos son mis hermanos.">🔊</button>
+                    <span class="spanish-word">Estos son mis hermanos.</span> <span class="english-translation">- These are my brothers (or siblings, if mixed gender).</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="Estas son mis hermanas.">🔊</button>
+                    <span class="spanish-word">Estas son mis hermanas.</span> <span class="english-translation">- These are my sisters.</span>
+                </li>
+            </ul>
+
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="Esta es su abuela.">🔊</button> <span class="spanish-word">Esta es su abuela.</span><span class="translation">This is his/her/their grandmother.</span></p>
+                <p><button class="audio-icon" data-audio-text="Estos son nuestros hijos.">🔊</button> <span class="spanish-word">Estos son nuestros hijos.</span><span class="translation">These are our children/sons.</span></p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>🏡 Expanding Family Vocabulary & Relationships</h2>
+            <p>Let's learn a few more common family terms:</p>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="los padres">🔊</button>
+                    <span class="spanish-word">los padres</span> <span class="pronunciation">(lohs PAH-dres)</span> <span class="english-translation">- the parents (literally 'the fathers', but commonly used for both)</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="los hijos">🔊</button>
+                    <span class="spanish-word">los hijos</span> <span class="pronunciation">(lohs EE-hos)</span> <span class="english-translation">- the children/sons</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="los abuelos">🔊</button>
+                    <span class="spanish-word">los abuelos</span> <span class="pronunciation">(lohs ah-BWEH-los)</span> <span class="english-translation">- the grandparents</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="el tío / la tía">🔊</button>
+                    <span class="spanish-word">el tío / la tía</span> <span class="pronunciation">(ehl TEE-oh / lah TEE-ah)</span> <span class="english-translation">- the uncle / the aunt</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="el primo / la prima">🔊</button>
+                    <span class="spanish-word">el primo / la prima</span> <span class="pronunciation">(ehl PREE-moh / lah PREE-mah)</span> <span class="english-translation">- the cousin (male / female)</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="el nieto / la nieta">🔊</button>
+                    <span class="spanish-word">el nieto / la nieta</span> <span class="pronunciation">(ehl NYEH-toh / lah NYEH-tah)</span> <span class="english-translation">- the grandson / the granddaughter</span>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="el esposo / la esposa">🔊</button>
+                    <span class="spanish-word">el esposo / la esposa</span> <span class="pronunciation">(ehl es-POH-soh / lah es-POH-sah)</span> <span class="english-translation">- the husband / the wife</span>
+                </li>
+            </ul>
+
+            <p><strong>Cultural Note:</strong> Family is often central in Spanish-speaking cultures. Extended family gatherings are common, and maintaining close ties with aunts, uncles, and cousins is very important! You'll often hear "mi familia" referring to a large, inclusive group beyond just immediate relatives.</p>
+        </section>
+
+        <section class="section-card">
+            <h2>🗣️ Talking About Family Members</h2>
+            <p>Let's combine everything you've learned to talk about your family!</p>
+
+            <div class="example-box">
+                <p><button class="audio-icon" data-audio-text="Mi familia es grande.">🔊</button> <span class="spanish-word">Mi familia es grande.</span><span class="translation">My family is big.</span></p>
+                <p><button class="audio-icon" data-audio-text="Tengo una hermana y dos hermanos.">🔊</button> <span class="spanish-word">Tengo una hermana y dos hermanos.</span><span class="translation">I have one sister and two brothers.</span></p>
+                <p><button class="audio-icon" data-audio-text="Su abuela vive en México.">🔊</button> <span class="spanish-word">Su abuela vive en México.</span><span class="translation">His/Her/Their grandmother lives in Mexico.</span></p>
+                <p><button class="audio-icon" data-audio-text="Nuestros primos son divertidos.">🔊</button> <span class="spanish-word">Nuestros primos son divertidos.</span><span class="translation">Our cousins are fun.</span></p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>✍️ Family Challenge!</h2>
+            <div class="practice-question">
+                <p class="question-text">How would you say: "This is my brother."?</p>
+                <div class="options-grid">
+                    <button class="option-button" data-correct="false">Esta es mi hermano.</button>
+                    <button class="option-button" data-correct="true">Este es mi hermano.</button>
+                    <button class="option-button" data-correct="false">Estos son mi hermano.</button>
+                </div>
+            </div>
+            <div class="practice-question">
+                <p class="question-text">Translate: "Our mother is kind."</p>
+                <div class="options-grid">
+                    <button class="option-button" data-correct="false">Mi madre es amable.</button>
+                    <button class="option-button" data-correct="true">Nuestra madre es amable.</button>
+                    <button class="option-button" data-correct="false">Nuestro madre es amable.</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>📝 Chapter 5 Summary</h2>
+            <p>Great job! You've learned a lot about talking about family in Spanish. Here's a quick recap:</p>
+            <ul>
+                <li><strong>Core Family Vocabulary:</strong> Words like <span class="spanish-word">padre, madre, hermano, hermana, hijo, hija</span>.</li>
+                <li><strong>Gender & Number:</strong> Spanish nouns are masculine (<span class="spanish-word">el</span>) or feminine (<span class="spanish-word">la</span>), and pluralize with <span class="spanish-word">-s</span> or <span class="spanish-word">-es</span>.</li>
+                <li><strong>Possessive Adjectives:</strong> <span class="spanish-word">mi/mis</span> (my), <span class="spanish-word">tu/tus</span> (your informal), <span class="spanish-word">su/sus</span> (his/her/its/your formal/their), <span class="spanish-word">nuestro/a/os/as</span> (our), <span class="spanish-word">vuestro/a/os/as</span> (your plural informal). They agree with the <strong>noun</strong> they describe.</li>
+                <li><strong>Introducing Family:</strong> Use <span class="spanish-word">Este/Esta es mi...</span> (This is my...) for singular and <span class="spanish-word">Estos/Estas son mis...</span> (These are my...) for plural, matching gender and number.</li>
+                <li><strong>Extended Family:</strong> Terms like <span class="spanish-word">tío/tía, primo/prima, abuelo/abuela, nieto/nieta</span>.</li>
+            </ul>
+            <p>Keep practicing, and soon you'll be chatting about your entire family in Spanish! ¡Bien hecho! (Well done!)</p>
+        </section>
+    </div>
+
+    <!-- Mini-JS to simulate feedback for practice questions -->
+    <script>
+        document.querySelectorAll('.options-grid').forEach(grid => {
+            grid.querySelectorAll('.option-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const isCorrect = this.dataset.correct === 'true';
+                    // Reset previous feedback for all buttons in this specific question's grid
+                    grid.querySelectorAll('.option-button').forEach(btn => {
+                        btn.classList.remove('correct', 'incorrect');
+                    });
+
+                    if (isCorrect) {
+                        this.classList.add('correct');
+                    } else {
+                        this.classList.add('incorrect');
+                        // Highlight the correct answer if the user got it wrong
+                        grid.querySelector('[data-correct="true"]').classList.add('correct');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

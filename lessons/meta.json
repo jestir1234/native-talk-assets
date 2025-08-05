@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-08-04T15:12:09.396Z",
+  "lastUpdated": "2025-08-04T23:35:24.064Z",
   "totalLanguages": 6,
   "totalChapters": 60,
-  "totalAvailableChapters": 50,
+  "totalAvailableChapters": 51,
   "totalTargetLanguages": 5,
   "languages": {
     "en": {
@@ -486,7 +486,7 @@
       "name": "Spanish",
       "flag": "🇪🇸",
       "totalChapters": 10,
-      "availableChapters": 9,
+      "availableChapters": 10,
       "availableTargetLanguages": [
         "en"
       ],
@@ -581,8 +581,10 @@
               "Talking about family members"
             ]
           },
-          "availableLanguages": [],
-          "totalLanguages": 0
+          "availableLanguages": [
+            "en"
+          ],
+          "totalLanguages": 1
         },
         {
           "number": 6,
@@ -3334,6 +3336,14 @@
           "chapterNumber": 4,
           "chapterTitle": {
             "en": "Colors and Descriptions"
+          }
+        },
+        {
+          "languageLearn": "es",
+          "languageLearnName": "Spanish",
+          "chapterNumber": 5,
+          "chapterTitle": {
+            "en": "Family and Relationships"
           }
         },
         {

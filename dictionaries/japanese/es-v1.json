@@ -2,711 +2,667 @@
     "台所": {
         "reading": "だいどころ",
         "meaning": "cocina",
-        "type": "sustantivo"
-    },
-    "だ": {
-        "meaning": "es / ser",
-        "form": "informal, presente afirmativo",
-        "type": "copulativo"
-    },
-    "だった": {
-        "meaning": "fue / era",
-        "form": "informal, pasado afirmativo",
-        "type": "copulativo"
+        "type": "noun"
     },
     "私": {
         "reading": "わたし",
         "meaning": "yo",
-        "type": "pronombre"
+        "type": "pronoun"
     },
     "は": {
-        "reading": "わ",
-        "meaning": "partícula de tema/tópico",
-        "type": "partícula"
+        "reading": "は",
+        "meaning": "partícula de tópico",
+        "type": "particle"
     },
     "学生": {
         "reading": "がくせい",
         "meaning": "estudiante",
-        "type": "sustantivo"
-    },
-    "です": {
-        "meaning": "es / ser",
-        "form": "educado, presente afirmativo",
-        "type": "copulativo"
+        "type": "noun"
     },
     "今日": {
         "reading": "きょう",
         "meaning": "hoy",
-        "type": "sustantivo / adverbio"
+        "type": "noun"
     },
     "天気": {
         "reading": "てんき",
-        "meaning": "tiempo (clima)",
-        "type": "sustantivo"
+        "meaning": "tiempo",
+        "type": "noun"
     },
     "が": {
         "reading": "が",
         "meaning": "partícula de sujeto",
-        "type": "partícula"
-    },
-    "いい": {
-        "reading": "",
-        "meaning": "bueno/a",
-        "type": "adjetivo-i",
-        "form": "forma básica"
-    },
-    "とても": {
-        "reading": "",
-        "meaning": "muy",
-        "type": "adverbio"
+        "type": "particle"
     },
     "美しい": {
         "reading": "うつくしい",
-        "meaning": "hermoso/a, bello/a",
-        "type": "adjetivo-i",
-        "form": "forma básica"
+        "meaning": "hermoso/a",
+        "type": "adjective (i-adjective)"
     },
     "日": {
         "reading": "ひ",
         "meaning": "día",
-        "type": "sustantivo"
+        "type": "noun"
     },
     "朝": {
         "reading": "あさ",
         "meaning": "mañana",
-        "type": "sustantivo / adverbio"
+        "type": "noun"
     },
     "起きました": {
         "reading": "おきました",
-        "meaning": "me levanté / desperté",
-        "type": "verbo",
-        "form": "educado, pasado afirmativo"
+        "meaning": "me levanté",
+        "type": "verb",
+        "form": "past tense"
     },
     "食べます": {
         "reading": "たべます",
-        "meaning": "comeré / come",
-        "type": "verbo",
-        "form": "educado, presente/futuro afirmativo"
+        "meaning": "como",
+        "type": "verb",
+        "form": "present tense"
     },
     "パン": {
         "reading": "パン",
         "meaning": "pan",
-        "type": "sustantivo"
+        "type": "noun"
     },
     "を": {
-        "reading": "お",
+        "reading": "を",
         "meaning": "partícula de objeto directo",
-        "type": "partícula"
+        "type": "particle"
     },
     "飲みます": {
         "reading": "のみます",
-        "meaning": "beberé / bebe",
-        "type": "verbo",
-        "form": "educado, presente/futuro afirmativo"
+        "meaning": "bebo",
+        "type": "verb",
+        "form": "present tense"
     },
     "コーヒー": {
         "reading": "コーヒー",
         "meaning": "café",
-        "type": "sustantivo"
+        "type": "noun"
     },
     "行きます": {
         "reading": "いきます",
-        "meaning": "iré / va",
-        "type": "verbo",
-        "form": "educado, presente/futuro afirmativo"
+        "meaning": "voy",
+        "type": "verb",
+        "form": "present tense"
     },
     "学校": {
         "reading": "がっこう",
         "meaning": "escuela",
-        "type": "sustantivo"
+        "type": "noun"
     },
     "に": {
         "reading": "に",
-        "meaning": "partícula de dirección/ubicación/tiempo",
-        "type": "partícula"
+        "meaning": "partícula de lugar o tiempo",
+        "type": "particle"
     },
     "友達": {
         "reading": "ともだち",
         "meaning": "amigo/a",
-        "type": "sustantivo"
+        "type": "noun"
     },
     "と": {
         "reading": "と",
-        "meaning": "y / con / partícula de cita",
-        "type": "partícula"
+        "meaning": "partícula de compañía o conjunción",
+        "type": "particle"
     },
     "話します": {
         "reading": "はなします",
-        "meaning": "hablaré / habla",
-        "type": "verbo",
-        "form": "educado, presente/futuro afirmativo"
+        "meaning": "hablo",
+        "type": "verb",
+        "form": "present tense"
     },
     "楽しい": {
         "reading": "たのしい",
-        "meaning": "divertido/a, agradable",
-        "type": "adjetivo-i",
-        "form": "forma básica"
+        "meaning": "divertido/a",
+        "type": "adjective (i-adjective)"
     },
     "時間": {
         "reading": "じかん",
-        "meaning": "tiempo, hora",
-        "type": "sustantivo"
+        "meaning": "tiempo",
+        "type": "noun"
     },
     "過ごしました": {
         "reading": "すごしました",
-        "meaning": "pasé (tiempo), disfruté",
-        "type": "verbo",
-        "form": "educado, pasado afirmativo"
+        "meaning": "pasé",
+        "type": "verb",
+        "form": "past tense"
     },
     "ゆうた": {
         "reading": "ゆうた",
-        "meaning": "Yuta (nombre propio)",
-        "type": "sustantivo propio"
+        "meaning": "Yuuta (nombre propio)",
+        "type": "proper noun"
     },
     "サボり": {
         "reading": "サボり",
-        "meaning": "holgazanear, hacer novillos",
-        "type": "sustantivo verbal"
+        "meaning": "ausencia,  hacer novillos",
+        "type": "noun"
     },
     "テスト": {
         "reading": "テスト",
-        "meaning": "examen, prueba",
-        "type": "sustantivo"
+        "meaning": "examen",
+        "type": "noun"
     },
     "算数": {
         "reading": "さんすう",
-        "meaning": "aritmética, matemáticas (primaria)",
-        "type": "sustantivo"
+        "meaning": "aritmética",
+        "type": "noun"
     },
     "小学": {
         "reading": "しょうがく",
-        "meaning": "primaria (abreviación de escuela primaria)",
-        "type": "sustantivo"
+        "meaning": "primaria",
+        "type": "noun"
     },
     "五年生": {
         "reading": "ごねんせい",
-        "meaning": "alumno de quinto año/grado",
-        "type": "sustantivo"
+        "meaning": "alumno de quinto grado",
+        "type": "noun"
     },
     "ふとん": {
         "reading": "ふとん",
         "meaning": "futón",
-        "type": "sustantivo"
+        "type": "noun"
     },
     "中": {
         "reading": "なか",
-        "meaning": "dentro, en",
-        "type": "sustantivo"
+        "meaning": "dentro",
+        "type": "noun"
     },
     "つぶやいた": {
         "reading": "つぶやいた",
-        "meaning": "murmuró / masculló / tuiteó",
-        "type": "verbo",
-        "form": "informal, pasado afirmativo"
+        "meaning": "murmuró",
+        "type": "verb",
+        "form": "past tense"
     },
     "また": {
         "reading": "また",
-        "meaning": "de nuevo, otra vez, también",
-        "type": "adverbio"
+        "meaning": "otra vez",
+        "type": "adverb"
     },
     "かよ": {
         "reading": "かよ",
-        "meaning": "(partícula de exclamación, sorpresa o resignación)",
-        "type": "partícula de final de oración"
+        "meaning": "sufijo informal",
+        "type": "particle"
     },
     "ある": {
         "reading": "ある",
-        "meaning": "haber, existir (para objetos inanimados)",
-        "type": "verbo",
-        "form": "forma básica"
+        "meaning": "hay (para cosas inanimadas)",
+        "type": "verb"
     },
     "昨日": {
         "reading": "きのう",
         "meaning": "ayer",
-        "type": "sustantivo / adverbio"
+        "type": "noun"
     },
     "夜": {
         "reading": "よる",
         "meaning": "noche",
-        "type": "sustantivo / adverbio"
+        "type": "noun"
     },
     "ゲーム": {
         "reading": "ゲーム",
         "meaning": "juego",
-        "type": "sustantivo"
+        "type": "noun"
     },
     "ばかり": {
         "reading": "ばかり",
-        "meaning": "solo, solamente, nada más que",
-        "type": "partícula adverbial"
+        "meaning": "sólo, nada más que",
+        "type": "particle"
     },
     "まったく": {
         "reading": "まったく",
-        "meaning": "completamente, de verdad (a menudo con connotación negativa)",
-        "type": "adverbio"
+        "meaning": "completamente, en absoluto",
+        "type": "adverb"
     },
     "勉強": {
         "reading": "べんきょう",
         "meaning": "estudio",
-        "type": "sustantivo / sustantivo verbal"
+        "type": "noun"
     },
     "行きたくない": {
         "reading": "いきたくない",
         "meaning": "no quiero ir",
-        "type": "adjetivo (derivado de verbo)",
-        "form": "informal, negativo, deseo"
+        "type": "verb",
+        "form": "negative volitional"
     },
     "なぁ": {
         "reading": "なぁ",
-        "meaning": "(partícula de final de oración que expresa sentimiento, reflexión o énfasis)",
-        "type": "partícula de final de oración"
+        "meaning": "partícula final informal",
+        "type": "particle"
     },
     "ぜったい": {
         "reading": "ぜったい",
-        "meaning": "absolutamente, sin falta, nunca (con negación)",
-        "type": "adverbio, sustantivo"
+        "meaning": "absolutamente",
+        "type": "adverb"
     },
     "できない": {
         "reading": "できない",
-        "meaning": "no poder (hacer), ser incapaz de",
-        "type": "verbo",
-        "form": "forma negativa de 'できる' (poder)"
+        "meaning": "no puedo",
+        "type": "verb",
+        "form": "negative potential"
     },
     "よ": {
         "reading": "よ",
-        "meaning": "partícula de énfasis (para dar información o una advertencia), ¿verdad?",
-        "type": "partícula",
-        "form": "partícula final de frase"
+        "meaning": "partícula final enfática",
+        "type": "particle"
     },
     "お母さん": {
         "reading": "おかあさん",
-        "meaning": "madre (respetuoso)",
-        "type": "sustantivo"
+        "meaning": "mamá",
+        "type": "noun"
     },
     "朝ごはん": {
         "reading": "あさごはん",
         "meaning": "desayuno",
-        "type": "sustantivo"
+        "type": "noun"
     },
     "作って": {
         "reading": "つくって",
-        "meaning": "preparando, haciendo (forma -te de '作る')",
-        "type": "verbo",
-        "form": "forma -te de '作る' (tsukuru - hacer, preparar)"
+        "meaning": "hecho, creado",
+        "type": "verb",
+        "form": "te form"
     },
     "いる": {
         "reading": "いる",
-        "meaning": "estar (para seres vivos), haber, existir",
-        "type": "verbo",
-        "form": "forma diccionario"
+        "meaning": "estar, existir",
+        "type": "verb",
+        "form": "present tense"
     },
     "あいだ": {
         "reading": "あいだ",
-        "meaning": "mientras, durante, entre",
-        "type": "sustantivo, adverbio"
+        "meaning": "mientras, durante",
+        "type": "noun"
     },
     "そっと": {
         "reading": "そっと",
-        "meaning": "suavemente, discretamente, en silencio",
-        "type": "adverbio"
+        "meaning": "suavemente, silenciosamente",
+        "type": "adverb"
     },
     "おなか": {
         "reading": "おなか",
-        "meaning": "estómago, barriga",
-        "type": "sustantivo"
+        "meaning": "estómago",
+        "type": "noun"
     },
     "おさえた": {
         "reading": "おさえた",
-        "meaning": "apretó, sujetó, contuvo (forma pasada de '抑える')",
-        "type": "verbo",
-        "form": "forma pasada de '抑える' (osaeru - apretar, contener)"
+        "meaning": "suprimió, contuvo",
+        "type": "verb",
+        "form": "past tense"
     },
     "少し": {
         "reading": "すこし",
-        "meaning": "un poco, poco",
-        "type": "adverbio"
+        "meaning": "un poco, ligeramente",
+        "type": "adverb"
     },
     "だけ": {
         "reading": "だけ",
-        "meaning": "solo, solamente",
-        "type": "partícula",
-        "form": "partícula limitadora"
+        "meaning": "sólo, solamente",
+        "type": "particle"
     },
     "苦しそう": {
         "reading": "くるしそう",
-        "meaning": "que parece doloroso/sufrido, con aspecto de dolor",
-        "type": "adjetivo (na-adjective)",
-        "form": "forma 'そう' (parece) de '苦しい' (kurushii - doloroso, difícil)"
+        "meaning": "parecer sufrir, con aspecto de dolor",
+        "type": "adjective"
     },
     "な": {
         "reading": "な",
-        "meaning": "(partícula que conecta un adjetivo -na con un sustantivo); (partícula final de frase para énfasis, acuerdo, o prohibición)",
-        "type": "partícula, auxiliar",
-        "form": "partícula conectora, partícula final de frase"
+        "meaning": "copula (es)",
+        "type": "particle"
     },
     "声": {
         "reading": "こえ",
         "meaning": "voz",
-        "type": "sustantivo"
+        "type": "noun"
     },
     "出して": {
         "reading": "だして",
-        "meaning": "sacando, emitiendo (forma -te de '出す')",
-        "type": "verbo",
-        "form": "forma -te de '出す' (dasu - sacar, emitir)"
+        "meaning": "sacando, emitiendo",
+        "type": "verb",
+        "form": "te form"
     },
     "みた": {
         "reading": "みた",
-        "meaning": "intentó (hacer) (forma pasada de '見る', usado como auxiliar para 'te miru')",
-        "type": "verbo",
-        "form": "forma pasada de '見る' (miru - ver), auxiliar de 'てみる' (temiru - intentar hacer)"
+        "meaning": "miró, probó",
+        "type": "verb",
+        "form": "past tense"
     },
     "なんか": {
         "reading": "なんか",
-        "meaning": "algo así, qué sé yo, de algún modo (coloquial de '何か')",
-        "type": "adverbio, interjección",
-        "form": "coloquial"
+        "meaning": "algo, alguna cosa",
+        "type": "pronoun"
     },
     "いたい": {
         "reading": "いたい",
-        "meaning": "doloroso, me duele",
-        "type": "adjetivo (i-adjective)"
+        "meaning": "doler",
+        "type": "adjective"
     },
     "心配そう": {
         "reading": "しんぱいそう",
-        "meaning": "que parece preocupado, con aspecto de preocupación",
-        "type": "adjetivo (na-adjective)",
-        "form": "forma 'そう' (parece) de '心配' (shinpai - preocupación)"
+        "meaning": "parecer preocupado",
+        "type": "adjective"
     },
     "ほう": {
         "reading": "ほう",
-        "meaning": "dirección, lado, manera, la forma (de algo)",
-        "type": "sustantivo, sufijo"
+        "meaning": "lado, dirección",
+        "type": "noun"
     },
     "え": {
         "reading": "え",
-        "meaning": "¿eh?, ¡qué! (expresión de sorpresa o interrogación)",
-        "type": "interjección"
+        "meaning": "eh?, ¿qué?",
+        "type": "interjection"
     },
     "大丈夫": {
         "reading": "だいじょうぶ",
-        "meaning": "todo bien, no hay problema, seguro",
-        "type": "adjetivo (na-adjective), adverbio"
+        "meaning": "está bien, no hay problema",
+        "type": "adjective"
     },
     "何か": {
         "reading": "なにか",
         "meaning": "algo",
-        "type": "pronombre indefinido"
+        "type": "pronoun"
     },
     "変な": {
-        "reading": "へんな",
+        "reading": "へん な",
         "meaning": "extraño, raro",
-        "type": "adjetivo (na-adjective)",
-        "form": "forma atributiva"
+        "type": "adjective"
     },
     "もの": {
         "reading": "もの",
         "meaning": "cosa, objeto",
-        "type": "sustantivo"
+        "type": "noun"
     },
     "食べた": {
         "reading": "たべた",
-        "meaning": "comió, ha comido (forma pasada de '食べる')",
-        "type": "verbo",
-        "form": "forma pasada de '食べる' (taberu - comer)"
+        "meaning": "comió",
+        "type": "verb",
+        "form": "past tense"
     },
     "ううん": {
         "reading": "ううん",
-        "meaning": "no (informal, dubitativo)",
-        "type": "interjección"
+        "meaning": "no, no, no",
+        "type": "interjection"
     },
     "わかんない": {
         "reading": "わかんない",
-        "meaning": "no sé, no entiendo (coloquial de '分からない')",
-        "type": "verbo",
-        "form": "forma negativa coloquial de '分かる' (wakaru - saber, entender)"
+        "meaning": "no entiendo, no lo sé",
+        "type": "verb",
+        "form": "negative informal form"
     },
     "じゃあ": {
         "reading": "じゃあ",
-        "meaning": "entonces, bien, en ese caso",
-        "type": "conjunción, adverbio"
+        "meaning": "entonces, bueno",
+        "type": "particle"
     },
     "休もう": {
         "reading": "やすもう",
-        "meaning": "descansemos, vamos a descansar (forma volitiva de '休む')",
-        "type": "verbo",
-        "form": "forma volitiva de '休む' (yasumu - descansar)"
+        "meaning": "descansemos",
+        "type": "verb",
+        "form": "volitional form"
     },
     "か": {
         "reading": "か",
-        "meaning": "partícula de pregunta; (con forma volitiva: '¿vamos a...?')",
-        "type": "partícula",
-        "form": "partícula final de frase"
+        "meaning": "o, o quizás",
+        "type": "particle"
     },
     "無理": {
         "reading": "むり",
-        "meaning": "imposible, irrazonable, forzar",
-        "type": "sustantivo, adjetivo (na-adjective)"
+        "meaning": "imposible, no se puede",
+        "type": "noun/adjective"
     },
     "しないで": {
         "reading": "しないで",
-        "meaning": "no hagas, sin hacer (forma -te negativa de 'する')",
-        "type": "verbo",
-        "form": "forma -te negativa de 'する' (suru - hacer)"
+        "meaning": "sin hacer",
+        "type": "verb",
+        "form": "negative te-form"
     },
     "ね": {
         "reading": "ね",
-        "meaning": "partícula de confirmación, acuerdo, o ruego suave, ¿verdad?",
-        "type": "partícula",
-        "form": "partícula final de frase"
+        "meaning": "verdad?, ¿no es así?",
+        "type": "particle"
     },
     "作戦": {
         "reading": "さくせん",
-        "meaning": "estrategia, plan, táctica",
-        "type": "sustantivo"
+        "meaning": "estrategia, plan",
+        "type": "noun"
     },
     "成功": {
         "reading": "せいこう",
         "meaning": "éxito",
-        "type": "sustantivo, verbo (suru verb)"
+        "type": "noun"
     },
     "もぐりこみ": {
         "reading": "もぐりこみ",
-        "meaning": "deslizarse, escabullirse, meterse (nominalización de la raíz del verbo)",
-        "type": "sustantivo",
-        "form": "sustantivación de la raíz de '潜り込む' (mogurikomu - meterse, colarse)"
+        "meaning": "infiltración, meterse a escondidas",
+        "type": "noun"
     },
     "にやり": {
         "reading": "にやり",
-        "meaning": "con una sonrisa irónica/maliciosa/satisfecha",
-        "type": "adverbio (onomatopeya)"
+        "meaning": "sonrisa pícara, sonrisa enigmática",
+        "type": "adverb/noun"
     },
     "笑った": {
-        "reading": "わらった",
-        "meaning": "rió, se rio (forma pasada de '笑う')",
-        "type": "verbo",
-        "form": "forma pasada de '笑う' (warau - reír)"
+        "reading": "わった",
+        "meaning": "rió, se rió",
+        "type": "verb",
+        "form": "past tense"
     },
     "でも": {
         "reading": "でも",
         "meaning": "pero, sin embargo",
-        "type": "conjunción"
+        "type": "conjunction"
     },
     "心": {
         "reading": "こころ",
-        "meaning": "corazón, mente, espíritu",
-        "type": "sustantivo"
+        "meaning": "corazón, mente",
+        "type": "noun"
     },
     "どこか": {
         "reading": "どこか",
-        "meaning": "en algún lugar, de alguna manera",
-        "type": "adverbio, pronombre indefinido"
+        "meaning": "algún lugar",
+        "type": "pronoun"
     },
     "で": {
         "reading": "で",
-        "meaning": "en (lugar), con (medio), por (causa)",
-        "type": "partícula",
-        "form": "partícula de lugar, medio, causa"
+        "meaning": "en, con, por",
+        "type": "particle"
     },
     "ちょっと": {
         "reading": "ちょっと",
         "meaning": "un poco, un momento",
-        "type": "adverbio"
+        "type": "adverb"
     },
     "罪悪感": {
         "reading": "ざいあくかん",
-        "meaning": "sentimiento de culpa, remordimiento",
-        "type": "sustantivo"
+        "meaning": "culpa, sentimiento de culpa",
+        "type": "noun"
     },
     "も": {
         "reading": "も",
-        "meaning": "también, incluso; ni (con negación)",
-        "type": "partícula",
-        "form": "partícula de inclusión"
+        "meaning": "también, incluso",
+        "type": "particle"
     },
     "あった": {
         "reading": "あった",
-        "meaning": "había, hubo (forma pasada de 'ある')",
-        "type": "verbo",
-        "form": "forma pasada de 'ある' (aru - haber, existir para inanimados)"
+        "meaning": "había, existió",
+        "type": "verb",
+        "form": "past tense"
     },
     "して": {
         "reading": "して",
-        "meaning": "haciendo, y luego, para hacer (forma -te de 'する')",
-        "type": "verbo",
-        "form": "forma -te de 'する' (suru - hacer)"
+        "meaning": "haciendo",
+        "type": "verb",
+        "form": "te-form"
     },
     "仕事": {
         "reading": "しごと",
-        "meaning": "trabajo, empleo",
-        "type": "sustantivo"
+        "meaning": "trabajo",
+        "type": "noun"
     },
     "出かけた": {
         "reading": "でかけた",
-        "meaning": "salió (de casa, de paseo)",
-        "type": "verbo",
-        "form": "pasado, forma corta (de 出かける)"
+        "meaning": "salió, se fue",
+        "type": "verb",
+        "form": "past tense"
     },
     "やった": {
         "reading": "やった",
-        "meaning": "hizo, realizado (informal)",
-        "type": "verbo",
-        "form": "pasado, forma corta (de やる)"
+        "meaning": "hizo, realizó",
+        "type": "verb",
+        "form": "past tense"
     },
     "ぼうけん": {
         "reading": "ぼうけん",
         "meaning": "aventura",
-        "type": "sustantivo"
+        "type": "noun"
     },
     "ランドセル": {
         "reading": "ランドセル",
-        "meaning": "mochila escolar (japonesa)",
-        "type": "sustantivo"
+        "meaning": "mochila escolar",
+        "type": "noun"
     },
     "ではなく": {
         "reading": "ではなく",
-        "meaning": "no es... sino, en lugar de",
-        "type": "partícula/conjunción",
-        "form": "negativo conjuntivo (de ではない)"
+        "meaning": "no es",
+        "type": "partícula"
     },
     "小さな": {
         "reading": "ちいさな",
-        "meaning": "pequeño/a",
-        "type": "adjetivo",
-        "form": "adjetivo atributivo"
+        "meaning": "pequeño",
+        "type": "adjetivo i",
+        "form": "forma adjectiva"
     },
     "かばん": {
         "reading": "かばん",
-        "meaning": "bolso, cartera, mochila",
+        "meaning": "bolso",
         "type": "sustantivo"
     },
     "持って": {
         "reading": "もって",
-        "meaning": "llevando, teniendo",
+        "meaning": "teniendo",
         "type": "verbo",
-        "form": "forma -te (de 持つ)"
+        "form": "forma -te"
     },
     "家": {
         "reading": "いえ",
-        "meaning": "casa, hogar",
+        "meaning": "casa",
         "type": "sustantivo"
     },
     "出た": {
         "reading": "でた",
-        "meaning": "salió (de), dejó",
+        "meaning": "salió",
         "type": "verbo",
-        "form": "pasado, forma corta (de 出る)"
+        "form": "forma -ta"
     },
     "には": {
         "reading": "には",
-        "meaning": "para, en cuanto a (partícula de propósito/énfasis)",
-        "type": "partícula",
-        "form": "combinación de に y は"
+        "meaning": "para, en",
+        "type": "partícula"
     },
     "行かず": {
         "reading": "いかず",
-        "meaning": "sin ir, no yendo",
+        "meaning": "sin ir",
         "type": "verbo",
-        "form": "forma -zu (negativa conjuntiva) (de 行く)"
+        "form": "forma -zu"
     },
     "自由": {
         "reading": "じゆう",
-        "meaning": "libertad; libre",
-        "type": "sustantivo/adjetivo-na"
+        "meaning": "libertad",
+        "type": "sustantivo"
     },
     "楽しむ": {
         "reading": "たのしむ",
         "meaning": "disfrutar",
-        "type": "verbo",
-        "form": "forma diccionario"
+        "type": "verbo"
     },
     "つもり": {
         "reading": "つもり",
-        "meaning": "intención, plan",
+        "meaning": "intención",
         "type": "sustantivo"
     },
     "うろうろ": {
         "reading": "うろうろ",
-        "meaning": "vagando, deambulando",
+        "meaning": "deambulando",
         "type": "adverbio"
     },
     "知らない": {
         "reading": "しらない",
-        "meaning": "no saber, desconocido",
+        "meaning": "no saber",
         "type": "verbo",
-        "form": "negativo, forma corta, presente (de 知る)"
+        "form": "forma -nai"
     },
     "お兄さん": {
         "reading": "おにいさん",
-        "meaning": "hermano mayor; joven",
+        "meaning": "hermano mayor",
         "type": "sustantivo"
     },
     "近づいて": {
         "reading": "ちかづいて",
         "meaning": "acercándose",
         "type": "verbo",
-        "form": "forma -te (de 近づく)"
+        "form": "forma -te"
     },
     "きた": {
         "reading": "きた",
-        "meaning": "vino, llegó",
+        "meaning": "vino",
         "type": "verbo",
-        "form": "pasado, forma corta (de 来る)"
+        "form": "forma -ta"
     },
     "黒い": {
         "reading": "くろい",
-        "meaning": "negro/a",
-        "type": "adjetivo",
-        "form": "forma diccionario (i-adjective)"
+        "meaning": "negro",
+        "type": "adjetivo i",
+        "form": "forma adjectiva"
     },
     "服": {
         "reading": "ふく",
-        "meaning": "ropa, vestimenta",
+        "meaning": "ropa",
         "type": "sustantivo"
     },
     "着て": {
         "reading": "きて",
-        "meaning": "vistiendo, llevando puesto",
+        "meaning": "vistiendo",
         "type": "verbo",
-        "form": "forma -te (de 着る)"
+        "form": "forma -te"
     },
     "顔": {
         "reading": "かお",
-        "meaning": "cara, rostro",
+        "meaning": "cara",
         "type": "sustantivo"
     },
     "こわい": {
         "reading": "こわい",
-        "meaning": "aterrador, miedoso",
-        "type": "adjetivo",
-        "form": "forma diccionario (i-adjective)"
+        "meaning": "da miedo",
+        "type": "adjetivo i",
+        "form": "forma adjectiva"
     },
     "心臓": {
         "reading": "しんぞう",
-        "meaning": "corazón (órgano)",
+        "meaning": "corazón",
         "type": "sustantivo"
     },
     "ドキドキ": {
         "reading": "ドキドキ",
-        "meaning": "palpitación, latido (onomatopeya)",
-        "type": "adverbio/sustantivo"
+        "meaning": "latido del corazón",
+        "type": "onomatopeya"
     },
     "足": {
         "reading": "あし",
-        "meaning": "pie, pierna",
+        "meaning": "pie",
         "type": "sustantivo"
     },
     "ふるえた": {
         "reading": "ふるえた",
-        "meaning": "tembló",
+        "meaning": "temblaba",
         "type": "verbo",
-        "form": "pasado, forma corta (de ふるえる)"
+        "form": "forma -ta"
     },
     "くれて": {
         "reading": "くれて",
-        "meaning": "dando (a uno, a mí)",
-        "type": "verbo auxiliar",
-        "form": "forma -te (de くれる)"
+        "meaning": "dando",
+        "type": "verbo",
+        "form": "forma -te"
     },
     "空": {
         "reading": "そら",
@@ -715,7 +671,7 @@
     },
     "オレンジ色": {
         "reading": "オレンジいろ",
-        "meaning": "color naranja",
+        "meaning": "naranja",
         "type": "sustantivo"
     },
     "風": {
@@ -725,365 +681,344 @@
     },
     "寒く": {
         "reading": "さむく",
-        "meaning": "frío (forma adverbial)",
-        "type": "adjetivo",
-        "form": "forma conjuntiva/adverbial (de 寒い)"
+        "meaning": "frío",
+        "type": "adjetivo na",
+        "form": "forma adjectiva"
     },
     "帰りたい": {
         "reading": "かえりたい",
-        "meaning": "querer volver/regresar",
+        "meaning": "quiero volver",
         "type": "verbo",
-        "form": "forma de deseo (de 帰る)"
+        "form": "forma -tai"
     },
     "道": {
         "reading": "みち",
-        "meaning": "camino, carretera",
+        "meaning": "camino",
         "type": "sustantivo"
     },
     "わからない": {
         "reading": "わからない",
-        "meaning": "no saber, no entender",
+        "meaning": "no entiendo",
         "type": "verbo",
-        "form": "negativo, forma corta, presente (de わかる)"
+        "form": "forma -nai"
     },
     "電話": {
         "reading": "でんわ",
-        "meaning": "teléfono, llamada telefónica",
+        "meaning": "teléfono",
         "type": "sustantivo"
     },
     "したく": {
         "reading": "したく",
-        "meaning": "querer hacer (negativo/adverbial)",
-        "type": "verbo",
-        "form": "forma conjuntiva (de したい, deseo de する)"
+        "meaning": "deseo",
+        "type": "sustantivo"
     },
     "ても": {
         "reading": "ても",
-        "meaning": "incluso si, aunque",
-        "type": "partícula",
-        "form": "conecta a la forma -te"
+        "meaning": "aunque",
+        "type": "partícula"
     },
     "スマホ": {
         "reading": "スマホ",
-        "meaning": "smartphone",
+        "meaning": "teléfono inteligente",
         "type": "sustantivo"
     },
     "まいご": {
         "reading": "まいご",
-        "meaning": "niño/a perdido/a, persona extraviada",
+        "meaning": "perdido",
         "type": "sustantivo"
     },
     "店": {
         "reading": "みせ",
-        "meaning": "tienda, comercio",
+        "meaning": "tienda",
         "type": "sustantivo"
     },
     "わっと": {
         "reading": "わっと",
-        "meaning": "de repente, de golpe (sonido de estallido)",
-        "type": "adverbio"
+        "meaning": "de repente",
+        "type": "onomatopeya"
     },
     "泣きだした": {
         "reading": "なきだした",
         "meaning": "empezó a llorar",
         "type": "verbo",
-        "form": "pasado, forma corta (de 泣きだす)"
+        "form": "forma -ta"
     },
     "ごめんなさい": {
         "reading": "ごめんなさい",
-        "meaning": "lo siento, perdón",
+        "meaning": "lo siento",
         "type": "expresión"
     },
     "行きたく": {
         "reading": "いきたく",
-        "meaning": "querer ir (negativo/adverbial)",
-        "type": "verbo",
-        "form": "forma conjuntiva (de 行きたい, deseo de 行く)"
+        "meaning": "deseo ir",
+        "type": "verbo"
     },
     "なかった": {
         "reading": "なかった",
-        "meaning": "no hubo, no existió; (auxiliar) no... (pasado)",
-        "type": "auxiliar",
-        "form": "pasado, forma corta, negativa (de ない)"
+        "meaning": "no había",
+        "type": "verbo",
+        "form": "forma -nakatta"
     },
     "きびしい": {
         "reading": "きびしい",
-        "meaning": "estricto, severo, duro",
-        "type": "adjetivo",
-        "form": "forma diccionario (i-adjective)"
+        "meaning": "severo",
+        "type": "adjetivo i",
+        "form": "forma adjectiva"
     },
     "しながら": {
         "reading": "しながら",
-        "meaning": "mientras (haciendo), al mismo tiempo que",
-        "type": "partícula conjuntiva",
-        "form": "se adjunta a la raíz de un verbo (forma masu sin masu) o sustantivo"
+        "meaning": "mientras",
+        "type": "partícula"
     },
     "やさしく": {
         "reading": "やさしく",
-        "meaning": "suavemente, amablemente, gentilmente",
-        "type": "adverbio",
-        "form": "forma adverbial de un adjetivo い"
+        "meaning": "suavemente",
+        "type": "adverbio"
     },
     "抱きしめた": {
         "reading": "だきしめた",
-        "meaning": "abrazó, abracé",
+        "meaning": "abrazó",
         "type": "verbo",
-        "form": "forma pasada (た形)"
+        "form": "forma -ta"
     },
     "次": {
         "reading": "つぎ",
-        "meaning": "siguiente, próxima vez, turno",
+        "meaning": "próximo",
         "type": "sustantivo"
     },
     "行った": {
         "reading": "いった",
-        "meaning": "fue, fui",
+        "meaning": "fue",
         "type": "verbo",
-        "form": "forma pasada (た形)"
+        "form": "forma -ta"
     },
     "久しぶり": {
         "reading": "ひさしぶり",
-        "meaning": "¡Cuánto tiempo!, desde hace mucho tiempo",
-        "type": "sustantivo/interjección"
+        "meaning": "hace mucho tiempo",
+        "type": "expresión"
     },
     "友だち": {
         "reading": "ともだち",
-        "meaning": "amigo/a",
+        "meaning": "amigo",
         "type": "sustantivo"
     },
     "会えて": {
-        "reading": "あえて",
-        "meaning": "habiendo podido ver/encontrar, pudiendo reunirse",
+        "reading": "あって",
+        "meaning": "poder reunirse",
         "type": "verbo",
-        "form": "forma -te (て形) potencial"
+        "form": "forma te-form"
     },
     "うれしかった": {
         "reading": "うれしかった",
-        "meaning": "estaba contento/a, fue una alegría",
+        "meaning": "estaba feliz",
         "type": "adjetivo",
-        "form": "forma pasada (かった形)"
+        "form": "forma pasada"
     },
     "まあまあ": {
         "reading": "まあまあ",
-        "meaning": "así así, más o menos, regular",
-        "type": "adverbio/interjección"
+        "meaning": "más o menos",
+        "type": "adverbio"
     },
     "思えば": {
         "reading": "おもえば",
-        "meaning": "si lo pienso, si uno piensa en",
+        "meaning": "pensando",
         "type": "verbo",
-        "form": "forma condicional (ば形)"
+        "form": "forma -ba"
     },
     "まじめ": {
         "reading": "まじめ",
-        "meaning": "serio, formal, diligente",
-        "type": "adjetivo な / sustantivo"
+        "meaning": "serio",
+        "type": "adjetivo"
     },
     "受けた": {
         "reading": "うけた",
-        "meaning": "recibió, tomé (un examen), experimentó",
+        "meaning": "recibió",
         "type": "verbo",
-        "form": "forma pasada (た形)"
+        "form": "forma pasada"
     },
     "がんばった": {
         "reading": "がんばった",
-        "meaning": "se esforzó, me esforcé",
+        "meaning": "lo hizo bien",
         "type": "verbo",
-        "form": "forma pasada (た形)"
+        "form": "forma pasada"
     },
     "思った": {
         "reading": "おもった",
-        "meaning": "pensó, pensé",
+        "meaning": "pensé",
         "type": "verbo",
-        "form": "forma pasada (た形)"
+        "form": "forma pasada"
     },
     "行きたくないなぁ": {
         "reading": "いきたくないなぁ",
-        "meaning": "¡No quiero ir!, Qué ganas de no ir",
-        "type": "frase",
-        "form": "forma negativa de deseo + partícula de énfasis/emoción"
+        "meaning": "no quiero ir",
+        "type": "verbo",
+        "form": "forma negativa + partícula"
     },
     "ぜったいに": {
         "reading": "ぜったいに",
-        "meaning": "absolutamente, definitivamente, bajo ninguna circunstancia",
+        "meaning": "absolutamente",
         "type": "adverbio"
     },
     "できないよ": {
         "reading": "できないよ",
-        "meaning": "no puedo (hacerlo), no se puede hacer",
-        "type": "frase verbal",
-        "form": "forma potencial negativa + partícula de énfasis/explicación"
+        "meaning": "no puedo",
+        "type": "verbo",
+        "form": "forma negativa + partícula"
     },
     "作っている": {
         "reading": "つくっている",
-        "meaning": "está haciendo, está creando, está produciendo",
+        "meaning": "está haciendo",
         "type": "verbo",
-        "form": "forma progresiva/estado (ている形)"
+        "form": "forma -teiru"
     },
     "出してみた": {
         "reading": "だしてみた",
-        "meaning": "intentó sacar/presentar/proponer, probó a sacar",
+        "meaning": "lo probé",
         "type": "verbo",
-        "form": "forma -te (て形) + auxiliar de intento (みる) en pasado"
+        "form": "forma -te-mimasu"
     },
     "しばらくして": {
         "reading": "しばらくして",
-        "meaning": "después de un rato, al poco tiempo",
-        "type": "frase adverbial"
-    },
-    "！": {
-        "reading": "",
-        "meaning": "¡Exclamación!",
-        "type": "signo de puntuación"
+        "meaning": "después de un rato",
+        "type": "adverbio"
     },
     "学校には": {
         "reading": "がっこうには",
-        "meaning": "a la escuela (con énfasis o contraste)",
-        "type": "frase nominal con partículas",
-        "form": "sustantivo + partícula de dirección (に) + partícula de tópico/contraste (は)"
+        "meaning": "a la escuela",
+        "type": "sustantivo + partícula"
     },
     "つもりだった": {
         "reading": "つもりだった",
-        "meaning": "tenía intención de, se suponía que",
-        "type": "expresión gramatical",
+        "meaning": "tenía la intención de",
+        "type": "verbo",
         "form": "forma pasada"
-    },
-    "……": {
-        "reading": "",
-        "meaning": "Puntos suspensivos (pausa, omisión, etc.)",
-        "type": "signo de puntuación"
     },
     "そして": {
         "reading": "そして",
-        "meaning": "y, entonces, además",
+        "meaning": "y entonces",
         "type": "conjunción"
-    },
-    "？": {
-        "reading": "",
-        "meaning": "¿Interrogación?",
-        "type": "signo de puntuación"
     },
     "商店街": {
         "reading": "しょうてんがい",
-        "meaning": "calle comercial, galería comercial",
+        "meaning": "calle comercial",
         "type": "sustantivo"
     },
     "気持ちよくて": {
         "reading": "きもちよくて",
-        "meaning": "sintiendo/siendo cómodo/agradable",
+        "meaning": "porque me sentí bien",
         "type": "adjetivo",
-        "form": "forma -te (て形)"
+        "form": "forma -te"
     },
     "気分": {
         "reading": "きぶん",
-        "meaning": "estado de ánimo, sensación, ambiente",
+        "meaning": "estado de ánimo",
         "type": "sustantivo"
     },
     "心をおどらせる": {
         "reading": "こころをおどらせる",
-        "meaning": "hacer que el corazón palpite de emoción, emocionar el corazón",
-        "type": "frase verbal",
-        "form": "forma causativa"
+        "meaning": "emocionar el corazón",
+        "type": "verbo"
     },
     "たい焼き": {
         "reading": "たいやき",
-        "meaning": "taiyaki (pastel japonés en forma de pez)",
+        "meaning": "pastel de pescado",
         "type": "sustantivo"
     },
     "おこづかい": {
         "reading": "おこづかい",
-        "meaning": "dinero de bolsillo, paga, mesada",
+        "meaning": "dinero para gastos",
         "type": "sustantivo"
     },
     "あんこ": {
         "reading": "あんこ",
-        "meaning": "anko (pasta de judías rojas dulces)",
+        "meaning": "pasta de judías rojas",
         "type": "sustantivo"
     },
     "カリカリ": {
         "reading": "カリカリ",
-        "meaning": "crujiente, crocante (onomatopeya)",
-        "type": "adverbio/onomatopeya"
+        "meaning": "crujiente",
+        "type": "onomatopeya"
     },
     "ゲームセンター": {
         "reading": "ゲームセンター",
-        "meaning": "salón de juegos recreativos, centro de juegos",
+        "meaning": "sala de juegos",
         "type": "sustantivo"
     },
     "早くて": {
         "reading": "はやくて",
-        "meaning": "siendo rápido, rápidamente",
+        "meaning": "porque era rápido",
         "type": "adjetivo",
-        "form": "forma -te (て形)"
+        "form": "forma -te"
     },
     "クレーンゲーム": {
         "reading": "クレーンゲーム",
-        "meaning": "juego de la grúa, máquina de garras",
+        "meaning": "juego de grúa",
         "type": "sustantivo"
     },
     "チャレンジ": {
         "reading": "チャレンジ",
-        "meaning": "desafío, reto",
+        "meaning": "desafío",
         "type": "sustantivo"
     },
     "ぬいぐるみ": {
         "reading": "ぬいぐるみ",
-        "meaning": "peluche, animal de peluche",
+        "meaning": "peluche",
         "type": "sustantivo"
     },
     "結局": {
         "reading": "けっきょく",
-        "meaning": "al final, en definitiva, después de todo",
+        "meaning": "finalmente",
         "type": "adverbio"
     },
     "取れなかった": {
         "reading": "とれなかった",
-        "meaning": "no pudo conseguir/coger/atrapar",
+        "meaning": "no pude conseguirlo",
         "type": "verbo",
-        "form": "forma potencial negativa pasada"
+        "form": "forma negativa pasada"
     },
     "楽しかった": {
         "reading": "たのしかった",
-        "meaning": "fue divertido, lo pasé bien",
+        "meaning": "fue divertido",
         "type": "adjetivo",
-        "form": "forma pasada (かった形)"
+        "form": "forma pasada"
     },
     "見たことのない": {
         "reading": "みたことのない",
-        "meaning": "nunca antes visto, que no ha visto",
-        "type": "frase adjetival"
+        "meaning": "que nunca había visto",
+        "type": "verbo",
+        "form": "forma nominal + de"
     },
     "歩いてみる": {
         "reading": "あるいてみる",
-        "meaning": "intentar caminar, probar a caminar",
+        "meaning": "intentar caminar",
         "type": "verbo",
-        "form": "forma -te (て形) + auxiliar de intento (みる)"
+        "form": "-te miru"
     },
     "探検家": {
         "reading": "たんけんか",
-        "meaning": "explorador/a",
+        "meaning": "explorador",
         "type": "sustantivo"
     },
     "だんだんと": {
         "reading": "だんだんと",
-        "meaning": "gradualmente, poco a poco",
+        "meaning": "gradualmente",
         "type": "adverbio"
     },
     "風景": {
         "reading": "ふうけい",
-        "meaning": "paisaje, vista",
+        "meaning": "paisaje",
         "type": "sustantivo"
     },
     "神社": {
         "reading": "じんじゃ",
-        "meaning": "santuario sintoísta",
+        "meaning": "santuario",
         "type": "sustantivo"
     },
     "見つけたり": {
         "reading": "みつけたり",
-        "meaning": "(como) encontrar, etc. (enumerando acciones)",
+        "meaning": "encontré",
         "type": "verbo",
-        "form": "forma たり (tari)"
+        "form": "forma -tari"
     },
     "猫": {
         "reading": "ねこ",
@@ -1097,664 +1032,3960 @@
     },
     "している": {
         "reading": "している",
-        "meaning": "estar haciendo",
+        "meaning": "está haciendo",
         "type": "verbo",
-        "form": "forma -ている"
+        "form": "forma -teiru"
     },
     "わくわく": {
         "reading": "わくわく",
-        "meaning": "emocionado/a, con entusiasmo (onomatopeya de emoción o expectativa)",
-        "type": "adverbio / onomatopeya"
+        "meaning": "emocionado",
+        "type": "onomatopeya"
     },
     "していた": {
         "reading": "していた",
         "meaning": "estaba haciendo",
         "type": "verbo",
-        "form": "forma -ていた"
+        "form": "forma -te ita"
     },
     "しばらくすると": {
         "reading": "しばらくすると",
-        "meaning": "después de un rato, al poco tiempo",
-        "type": "frase adverbial"
+        "meaning": "después de un tiempo",
+        "type": "adverbio"
     },
     "わからなくなってしまった": {
         "reading": "わからなくなってしまった",
-        "meaning": "se me hizo incomprensible, se me olvidó, ya no lo entendí",
+        "meaning": "me perdí",
         "type": "verbo",
-        "form": "forma -てしまう (arrepentimiento/finalización)"
+        "form": "forma -te shimau (pasado)"
     },
     "どこだろう": {
         "reading": "どこだろう",
-        "meaning": "¿dónde estará?, ¿dónde será?",
-        "type": "frase interrogativa"
+        "meaning": "dónde estará",
+        "type": "verbo",
+        "form": "forma interrogativa"
     },
     "なんとなく": {
         "reading": "なんとなく",
-        "meaning": "de alguna manera, por alguna razón, sin motivo aparente, vagamente",
-        "type": "adverbio"
+        "meaning": "De alguna manera, vagamente",
+        "type": "Adverb"
     },
     "近く": {
         "reading": "ちかく",
-        "meaning": "cerca, proximidad",
-        "type": "sustantivo / adverbio"
+        "meaning": "Cerca",
+        "type": "Noun/Adverb"
     },
     "向かった": {
         "reading": "むかった",
-        "meaning": "se dirigió, fue hacia",
-        "type": "verbo",
-        "form": "forma pasada"
+        "meaning": "Se dirigió a",
+        "type": "Verb",
+        "form": "Past tense"
     },
     "光": {
         "reading": "ひかり",
-        "meaning": "luz",
-        "type": "sustantivo"
+        "meaning": "Luz",
+        "type": "Noun"
     },
     "おどらせる": {
         "reading": "おどらせる",
-        "meaning": "hacer bailar, hacer que baile",
-        "type": "verbo",
-        "form": "forma causativa"
+        "meaning": "Asustar, intimidar",
+        "type": "Verb"
     },
     "まずは": {
         "reading": "まずは",
-        "meaning": "primero que nada, para empezar",
-        "type": "frase adverbial"
+        "meaning": "Primero, antes que nada",
+        "type": "Adverb"
     },
     "いつも": {
         "reading": "いつも",
-        "meaning": "siempre",
-        "type": "adverbio"
+        "meaning": "Siempre",
+        "type": "Adverb"
     },
     "帰り": {
         "reading": "かえり",
-        "meaning": "regreso, vuelta",
-        "type": "sustantivo"
+        "meaning": "Regreso, vuelta",
+        "type": "Noun"
     },
     "気に": {
         "reading": "きに",
-        "meaning": "en mente, preocuparse por, interesarse por (parte de 気になる/気にする)",
-        "type": "sustantivo + partícula"
+        "meaning": "A la mente, en cuanto a",
+        "type": "Noun"
     },
     "なって": {
         "reading": "なって",
-        "meaning": "convirtiéndose en, llegando a ser",
-        "type": "verbo",
-        "form": "forma -て"
+        "meaning": "Convertido en, llegado a ser",
+        "type": "Verb",
+        "form": "Condicional/Gerundio"
     },
     "いた": {
         "reading": "いた",
-        "meaning": "estaba (pasado de いる)",
-        "type": "verbo",
-        "form": "forma pasada"
+        "meaning": "Estaba, se encontraba",
+        "type": "Verb",
+        "form": "Past tense"
     },
     "たい焼き屋さん": {
-        "reading": "たいやきやさん",
-        "meaning": "tienda de taiyaki",
-        "type": "sustantivo"
+        "reading": "たい焼き屋さん",
+        "meaning": "Tienda de taiyaki",
+        "type": "Noun"
     },
     "入って": {
         "reading": "はいって",
-        "meaning": "entrando, haber entrado",
-        "type": "verbo",
-        "form": "forma -て"
+        "meaning": "Entrando, habiendo entrado",
+        "type": "Verb",
+        "form": "Te-form"
     },
     "買った": {
         "reading": "かった",
-        "meaning": "compró, compré",
-        "type": "verbo",
-        "form": "forma pasada"
+        "meaning": "Compró",
+        "type": "Verb",
+        "form": "Past tense"
     },
     "ずっと": {
         "reading": "ずっと",
-        "meaning": "todo el tiempo, siempre, mucho (más)",
-        "type": "adverbio"
+        "meaning": "Siempre, todo el rato",
+        "type": "Adverb"
     },
     "少なかった": {
         "reading": "すくなかった",
-        "meaning": "era poco, había poco",
-        "type": "adjetivo",
-        "form": "forma pasada"
+        "meaning": "Era poco, había poco",
+        "type": "Adjective",
+        "form": "Past negative"
     },
     "あと": {
         "reading": "あと",
-        "meaning": "después, luego, restante",
-        "type": "sustantivo / adverbio"
+        "meaning": "Después, luego",
+        "type": "Noun/Adverb"
     },
     "一回": {
         "reading": "いっかい",
-        "meaning": "una vez",
-        "type": "sustantivo / clasificador"
+        "meaning": "Una vez",
+        "type": "Noun"
     },
     "何回": {
         "reading": "なんかい",
-        "meaning": "¿cuántas veces?",
-        "type": "sustantivo / clasificador interrogativo"
+        "meaning": "Cuántas veces",
+        "type": "Noun"
     },
     "やって": {
         "reading": "やって",
-        "meaning": "haciendo, habiendo hecho",
-        "type": "verbo",
-        "form": "forma -て"
+        "meaning": "Haciendo, habiendo hecho",
+        "type": "Verb",
+        "form": "Te-form"
     },
     "けど": {
         "reading": "けど",
-        "meaning": "pero, aunque",
-        "type": "partícula conjuntiva"
+        "meaning": "Pero, sin embargo",
+        "type": "Conjunction"
     },
     "それから": {
         "reading": "それから",
-        "meaning": "después de eso, entonces",
-        "type": "conjunción / adverbio"
+        "meaning": "Después de eso, entonces",
+        "type": "Adverb/Conjunction"
     },
     "の": {
         "reading": "の",
-        "meaning": "de, posesivo, nominalizador, explicativo",
-        "type": "partícula"
+        "meaning": "De, posesivo",
+        "type": "Particle"
     },
     "ない": {
         "reading": "ない",
-        "meaning": "no hay, no existe, no- (negación)",
-        "type": "auxiliar / adjetivo",
-        "form": "forma negativa"
+        "meaning": "No hay, no está",
+        "type": "Verb",
+        "form": "Negative"
     },
     "こと": {
         "reading": "こと",
-        "meaning": "cosa (abstracta), hecho, asunto",
-        "type": "sustantivo"
+        "meaning": "Cosa, hecho",
+        "type": "Noun"
     },
     "今": {
         "reading": "いま",
-        "meaning": "ahora",
-        "type": "sustantivo / adverbio"
+        "meaning": "Ahora",
+        "type": "Noun/Adverb"
     },
     "いく": {
         "reading": "いく",
-        "meaning": "ir",
-        "type": "verbo",
-        "form": "forma diccionario"
+        "meaning": "Ir",
+        "type": "Verb"
     },
     "する": {
         "reading": "する",
-        "meaning": "hacer",
-        "type": "verbo",
-        "form": "forma diccionario"
+        "meaning": "Hacer",
+        "type": "Verb"
     },
     "わからなく": {
         "reading": "わからなく",
-        "meaning": "sin entender, de manera incomprensible",
-        "type": "adjetivo",
-        "form": "forma adverbial"
+        "meaning": "Sin saber, volviéndose incomprensible",
+        "type": "Verb",
+        "form": "Condicional/Gerundio"
     },
     "しまった": {
         "reading": "しまった",
-        "meaning": "(verbo auxiliar que indica finalización o arrepentimiento)",
-        "type": "verbo auxiliar",
-        "form": "forma pasada"
+        "meaning": "Se terminó haciendo (con arrepentimiento)",
+        "type": "Verb",
+        "form": "Past tense"
     },
     "してきた": {
         "reading": "してきた",
-        "meaning": "ha estado haciendo, ha hecho y ha venido",
-        "type": "verbo",
-        "form": "forma -てくる"
+        "meaning": "Ha estado haciendo, ha venido haciendo",
+        "type": "Verb",
+        "form": "Perfective"
     },
     "着ていて": {
         "reading": "きていて",
-        "meaning": "llevando puesto (ropa), habiendo vestido",
-        "type": "verbo",
-        "form": "forma -ている en -て"
+        "meaning": "Llevando puesto, estando puesto",
+        "type": "Verb",
+        "form": "Present continuos"
     },
     "なあ": {
         "reading": "なあ",
-        "meaning": "¿verdad?, ¡eh!, (exclamación de acuerdo/énfasis)",
-        "type": "partícula final"
+        "meaning": "Interjección (expresando sorpresa, etc.)",
+        "type": "Interjection"
     },
     "金": {
-        "reading": "かね",
-        "meaning": "dinero",
-        "type": "sustantivo"
+        "reading": "きん",
+        "meaning": "Dinero, oro",
+        "type": "Noun"
     },
     "あ": {
         "reading": "あ",
-        "meaning": "¡ah!, ¡oh! (interjección)",
-        "type": "interjección"
+        "meaning": "Ah, oh (interjección)",
+        "type": "Interjection"
     },
     "うそ": {
         "reading": "うそ",
-        "meaning": "mentira, ¡no puede ser!",
-        "type": "sustantivo / interjección"
+        "meaning": "Mentira",
+        "type": "Noun"
     },
     "だろ": {
         "reading": "だろ",
-        "meaning": "¿verdad?, ¿no?, probablemente (contracción coloquial de だろう)",
-        "type": "partícula final"
+        "meaning": "Cierto?, ¿no?",
+        "type": "Particle"
     },
     "その": {
         "reading": "その",
-        "meaning": "ese/esa (modificador pre-sustantivo)",
-        "type": "pronombre demostrativo / adjetivo"
+        "meaning": "Ese, esa, eso",
+        "type": "Pronoun"
     },
     "見せて": {
         "reading": "みせて",
-        "meaning": "mostrando, por favor, muestra",
-        "type": "verbo",
-        "form": "forma -て"
+        "meaning": "Mostrando, habiendo mostrado",
+        "type": "Verb",
+        "form": "Te-form"
     },
     "み": {
         "reading": "み",
-        "meaning": "(parte de frase que implica 'probar a hacer' o 'ver')",
-        "type": "verbo",
-        "form": "forma -ます-stem / conjuntiva"
+        "meaning": "Vista, apariencia",
+        "type": "Noun"
     },
     "こわく": {
         "reading": "こわく",
-        "meaning": "dando miedo, de manera aterradora",
-        "type": "adjetivo",
-        "form": "forma adverbial"
+        "meaning": "Miedo",
+        "type": "Noun"
     },
     "ふいに": {
         "reading": "ふいに",
-        "meaning": "de repente, de improviso",
-        "type": "adverbio"
+        "meaning": "De repente, inesperadamente",
+        "type": "Adverb"
     },
     "走り出した": {
-        "reading": "はしりだした",
-        "meaning": "empezó a correr, echó a correr",
-        "type": "Verbo",
-        "form": "Pasado (forma -dasu)"
+        "reading": "はしり出した",
+        "meaning": "Empezó a correr",
+        "type": "Verb",
+        "form": "Past tense"
     },
     "うわああああああっ": {
         "reading": "うわああああああっ",
-        "meaning": "¡Uwaaa! (exclamación de sorpresa, miedo o angustia)",
-        "type": "Interjección"
+        "meaning": "Aaaaah! (grito de sorpresa/miedo)",
+        "type": "Interjection"
     },
     "全力": {
         "reading": "ぜんりょく",
-        "meaning": "con todas las fuerzas, a toda velocidad, todo el esfuerzo",
-        "type": "Sustantivo / Adverbio"
+        "meaning": "Esfuerzo total, con todas las fuerzas",
+        "type": "Noun"
     },
     "走って": {
         "reading": "はしって",
-        "meaning": "corriendo (forma -te de correr)",
-        "type": "Verbo",
-        "form": "Forma -te"
+        "meaning": "Corriendo, habiendo corrido",
+        "type": "Verb",
+        "form": "Te-form"
     },
     "公園": {
         "reading": "こうえん",
-        "meaning": "parque",
-        "type": "Sustantivo"
+        "meaning": "Parque",
+        "type": "Noun"
     },
     "逃げ込んだ": {
         "reading": "にげこんだ",
-        "meaning": "se refugió, se metió (corriendo)",
-        "type": "Verbo",
-        "form": "Pasado"
+        "meaning": "Huyó, se refugió",
+        "type": "Verb",
+        "form": "Past tense"
     },
     "はぁ": {
         "reading": "はぁ",
-        "meaning": "Uf / Ah (suspiro de alivio, cansancio o realización)",
-        "type": "Interjección"
+        "meaning": "Uf, ah (suspiro de alivio)",
+        "type": "Interjection"
     },
     "こわかった": {
         "reading": "こわかった",
-        "meaning": "tenía miedo, fue aterrador",
-        "type": "Adjetivo -i",
-        "form": "Pasado"
+        "meaning": "Tuve miedo, daba miedo",
+        "type": "Adjective",
+        "form": "Past tense"
     },
     "ポケット": {
         "reading": "ポケット",
         "meaning": "bolsillo",
-        "type": "Sustantivo"
+        "type": "noun"
     },
     "さわって": {
         "reading": "さわって",
-        "meaning": "tocando (forma -te de tocar)",
-        "type": "Verbo",
-        "form": "Forma -te"
+        "meaning": "tocando",
+        "type": "verb",
+        "form": "te form"
     },
     "気がついた": {
         "reading": "きがついた",
-        "meaning": "se dio cuenta, notó",
-        "type": "Verbo",
-        "form": "Pasado"
+        "meaning": "me di cuenta",
+        "type": "verb",
+        "form": "past tense"
     },
     "財布": {
         "reading": "さいふ",
-        "meaning": "cartera, billetera",
-        "type": "Sustantivo"
+        "meaning": "billetera",
+        "type": "noun"
     },
     "落とした": {
         "reading": "おとした",
-        "meaning": "dejó caer, perdió",
-        "type": "Verbo",
-        "form": "Pasado"
+        "meaning": "dejé caer",
+        "type": "verb",
+        "form": "past tense"
     },
     "のか": {
         "reading": "のか",
-        "meaning": "¿es que...?",
-        "type": "Partícula",
-        "form": "Partícula explicativa/interrogativa"
+        "meaning": "¿o no?",
+        "type": "particle"
     },
     "走っている": {
         "reading": "はしっている",
         "meaning": "está corriendo",
-        "type": "Verbo",
-        "form": "Forma -te iru (progresivo)"
+        "type": "verb",
+        "form": "present continuous"
     },
     "途中": {
         "reading": "とちゅう",
-        "meaning": "en el camino, a medio camino, durante",
-        "type": "Sustantivo"
+        "meaning": "a mitad de camino",
+        "type": "noun"
     },
     "全部": {
         "reading": "ぜんぶ",
         "meaning": "todo",
-        "type": "Sustantivo / Adverbio"
+        "type": "pronoun"
     },
     "入ってた": {
         "reading": "はいってた",
-        "meaning": "estaba dentro, había (informal)",
-        "type": "Verbo",
-        "form": "Pasado informal (contracción de 入っていた)"
+        "meaning": "estaba dentro",
+        "type": "verb",
+        "form": "past tense"
     },
     "のに": {
         "reading": "のに",
-        "meaning": "a pesar de que, aunque, ¡qué pena que...!",
-        "type": "Partícula",
-        "form": "Partícula conectiva (expresa lamento o contradicción)"
+        "meaning": "a pesar de que",
+        "type": "particle"
     },
     "涙": {
         "reading": "なみだ",
         "meaning": "lágrimas",
-        "type": "Sustantivo"
+        "type": "noun"
     },
     "出てきた": {
         "reading": "でてきた",
-        "meaning": "salieron, aparecieron",
-        "type": "Verbo",
-        "form": "Pasado"
+        "meaning": "salió",
+        "type": "verb",
+        "form": "past tense"
     },
     "もう": {
         "reading": "もう",
-        "meaning": "ya, más, otro",
-        "type": "Adverbio"
+        "meaning": "ya",
+        "type": "adverb"
     },
     "したくても": {
         "reading": "したくても",
-        "meaning": "incluso si quiero hacerlo, aunque quiera hacerlo",
-        "type": "Verbo (auxiliar)",
-        "form": "Forma -te + mo (condicional)"
+        "meaning": "aunque quiera hacerlo",
+        "type": "verb",
+        "form": "conditional te-form + demo"
     },
     "いない": {
         "reading": "いない",
-        "meaning": "no está (para seres animados)",
-        "type": "Verbo (auxiliar)",
-        "form": "Negativo (de いる)"
+        "meaning": "no está",
+        "type": "verb",
+        "form": "negative present"
     },
     "ベンチ": {
         "reading": "ベンチ",
         "meaning": "banco",
-        "type": "Sustantivo"
+        "type": "noun"
     },
     "座って": {
         "reading": "すわって",
-        "meaning": "sentándose, sentado (forma -te de sentarse)",
-        "type": "Verbo",
-        "form": "Forma -te"
+        "meaning": "sentado",
+        "type": "verb",
+        "form": "te form"
     },
     "ぽろぽろ": {
         "reading": "ぽろぽろ",
-        "meaning": "a chorros, goteando (refiriéndose a las lágrimas)",
-        "type": "Onomatopeya / Adverbio"
+        "meaning": "gota a gota; a torrentes",
+        "type": "adverb"
     },
     "泣き出した": {
         "reading": "なきだした",
-        "meaning": "rompió a llorar, empezó a llorar",
-        "type": "Verbo",
-        "form": "Pasado (forma -dasu)"
+        "meaning": "empezó a llorar",
+        "type": "verb",
+        "form": "past tense"
     },
     "とき": {
         "reading": "とき",
-        "meaning": "cuando, en el momento",
-        "type": "Sustantivo / Partícula conectiva"
+        "meaning": "cuando",
+        "type": "conjunction/noun"
     },
     "花屋さん": {
         "reading": "はなやさん",
-        "meaning": "florista, floristería",
-        "type": "Sustantivo"
+        "meaning": "floristería",
+        "type": "noun"
     },
     "から": {
         "reading": "から",
-        "meaning": "de, desde, por",
-        "type": "Partícula"
+        "meaning": "desde; de",
+        "type": "particle"
     },
     "おばあさん": {
         "reading": "おばあさん",
-        "meaning": "abuela, señora mayor",
-        "type": "Sustantivo"
+        "meaning": "abuela",
+        "type": "noun"
     },
     "かけて": {
         "reading": "かけて",
-        "meaning": "llamando (por teléfono); dirigiéndose (la palabra); (forma -te de かける)",
-        "type": "Verbo",
-        "form": "Forma -te"
+        "meaning": "poniendo; colgando",
+        "type": "verb",
+        "form": "te form"
     },
     "くれた": {
         "reading": "くれた",
-        "meaning": "me dio, hizo (un favor a mi/nosotros)",
-        "type": "Verbo (auxiliar)",
-        "form": "Pasado (indicando acción para el beneficio del hablante)"
+        "meaning": "me dio",
+        "type": "verb",
+        "form": "past tense"
     },
     "どうした": {
         "reading": "どうした",
-        "meaning": "¿qué te pasa?, ¿qué pasó?",
-        "type": "Expresión interrogativa",
-        "form": "Pasado"
+        "meaning": "¿qué pasó?",
+        "type": "verb",
+        "form": "past tense"
     },
     "ぼうや": {
         "reading": "ぼうや",
-        "meaning": "niño pequeño, chico",
-        "type": "Sustantivo"
+        "meaning": "niño",
+        "type": "noun"
     },
     "やさしい": {
         "reading": "やさしい",
-        "meaning": "amable, tierno, suave",
-        "type": "Adjetivo -i",
-        "form": "Forma de diccionario"
+        "meaning": "amable; gentil",
+        "type": "adjective (i-adjective)"
     },
     "目": {
         "reading": "め",
         "meaning": "ojo",
-        "type": "Sustantivo"
+        "type": "noun"
     },
     "あたたかい": {
         "reading": "あたたかい",
-        "meaning": "cálido, tibio",
-        "type": "Adjetivo -i",
-        "form": "Forma de diccionario"
+        "meaning": "cálido; caliente",
+        "type": "adjective (i-adjective)"
     },
     "お茶": {
         "reading": "おちゃ",
         "meaning": "té",
-        "type": "Sustantivo"
+        "type": "noun"
     },
     "お店": {
         "reading": "おみせ",
-        "meaning": "tienda, establecimiento",
-        "type": "Sustantivo"
+        "meaning": "tienda",
+        "type": "noun"
     },
     "入れて": {
         "reading": "いれて",
-        "meaning": "poniendo dentro, sirviendo (forma -te de poner/servir)",
-        "type": "Verbo",
-        "form": "Forma -te"
+        "meaning": "poniendo; echando",
+        "type": "verb",
+        "form": "te form"
     },
     "電話番号": {
         "reading": "でんわばんごう",
         "meaning": "número de teléfono",
-        "type": "Sustantivo"
+        "type": "noun"
     },
     "わかる": {
         "reading": "わかる",
-        "meaning": "entender, saber",
-        "type": "Verbo",
-        "form": "Forma de diccionario"
+        "meaning": "entiendo; comprender",
+        "type": "verb"
     },
     "うん": {
         "reading": "うん",
-        "meaning": "sí (informal)",
-        "type": "Interjección"
+        "meaning": "sí",
+        "type": "interjection"
     },
     "貸して": {
         "reading": "かして",
-        "meaning": "prestando; por favor, préstame (forma -te de prestar)",
-        "type": "Verbo",
-        "form": "Forma -te"
+        "meaning": "préstame",
+        "type": "verb",
+        "form": "te form"
     },
     "かけた": {
         "reading": "かけた",
-        "meaning": "hizo (una llamada), colgó, puso",
-        "type": "Verbo",
-        "form": "Pasado"
+        "meaning": "colgué; hice una llamada",
+        "type": "verb",
+        "form": "past tense"
     },
     "まで": {
         "reading": "まで",
         "meaning": "hasta",
-        "type": "Partícula"
+        "type": "particle"
     },
     "来た": {
         "reading": "きた",
-        "meaning": "vino, llegó",
-        "type": "Verbo",
-        "form": "Pasado"
+        "meaning": "vino; llegó",
+        "type": "verb",
+        "form": "past tense"
     },
     "帰る": {
         "reading": "かえる",
-        "meaning": "regresar, volver a casa",
-        "type": "Verbo",
-        "form": "Forma de diccionario"
+        "meaning": "volver; regresar a casa",
+        "type": "verb"
     },
     "お姉ちゃん": {
         "reading": "おねえちゃん",
-        "meaning": "hermana mayor (término afectuoso)",
-        "type": "sustantivo"
+        "meaning": "hermana mayor",
+        "type": "noun"
     },
     "玄関": {
         "reading": "げんかん",
-        "meaning": "entrada, vestíbulo, recibidor",
-        "type": "sustantivo"
+        "meaning": "entrada; vestíbulo",
+        "type": "noun"
     },
     "待っていた": {
         "reading": "まっていた",
         "meaning": "estaba esperando",
-        "type": "verbo",
-        "form": "pasado continuo"
+        "type": "verb",
+        "form": "past continuous"
     },
     "ばかだね〜": {
         "reading": "ばかだね〜",
-        "meaning": "¡Qué tonto(a) eres! / Eres tan tonto(a), ¿verdad?",
-        "type": "frase adjetival"
+        "meaning": "¡qué tonto!",
+        "type": "exclamation"
     },
     "サボらない": {
         "reading": "サボらない",
-        "meaning": "no holgazanear, no saltarse (clase/trabajo)",
-        "type": "verbo",
-        "form": "forma negativa"
+        "meaning": "no hago novillos",
+        "type": "verb",
+        "form": "negative"
     },
     "お風呂": {
-        "reading": "おふろ",
-        "meaning": "baño, bañera",
-        "type": "sustantivo"
+        "reading": "お風呂",
+        "meaning": "baño",
+        "type": "noun"
     },
     "ごはん": {
         "reading": "ごはん",
-        "meaning": "arroz cocido; comida",
-        "type": "sustantivo"
+        "meaning": "comida; arroz cocido",
+        "type": "noun"
     },
     "食べて": {
         "reading": "たべて",
-        "meaning": "come (forma te); comiendo",
-        "type": "verbo",
-        "form": "forma te"
+        "meaning": "comiendo",
+        "type": "verb",
+        "form": "te form"
     },
     "早め": {
         "reading": "はやめ",
-        "meaning": "algo temprano, más bien temprano",
-        "type": "sustantivo adjetival"
+        "meaning": "temprano; antes de tiempo",
+        "type": "adverb"
     },
     "寝た": {
         "reading": "ねた",
-        "meaning": "durmió",
-        "type": "verbo",
-        "form": "pasado"
+        "meaning": "se durmió; durmió",
+        "type": "verb",
+        "form": "past tense"
     },
     "明日": {
         "reading": "あした",
         "meaning": "mañana",
-        "type": "sustantivo"
+        "type": "noun"
     },
     "ちゃんと学校行こう": {
         "reading": "ちゃんとがっこういこう",
-        "meaning": "vamos a la escuela correctamente/bien",
-        "type": "frase verbal"
+        "meaning": "vayamos a la escuela correctamente; vamos a la escuela como es debido",
+        "type": "sentence"
     },
     "先生": {
         "reading": "せんせい",
-        "meaning": "profesor(a), maestro(a)",
-        "type": "sustantivo"
+        "meaning": "maestro; profesor",
+        "type": "noun"
     },
     "言った": {
         "reading": "いった",
-        "meaning": "dijo",
-        "type": "verbo",
-        "form": "pasado"
+        "meaning": "dijo; mencionó",
+        "type": "verb",
+        "form": "past tense"
     },
     "よく": {
         "reading": "よく",
-        "meaning": "bien; a menudo, frecuentemente",
-        "type": "adverbio"
+        "meaning": "bien; a menudo; frecuentemente",
+        "type": "adverb"
     },
     "ゆうたくん": {
         "reading": "ゆうたくん",
-        "meaning": "Yuta (nombre propio de niño/hombre joven) + sufijo honorífico",
-        "type": "nombre propio"
+        "meaning": "Yuuta-kun (nombre propio)",
+        "type": "proper noun"
     },
     "うなずいた": {
         "reading": "うなずいた",
-        "meaning": "asintió (con la cabeza)",
-        "type": "verbo",
-        "form": "pasado"
+        "meaning": "asintió; asintió con la cabeza",
+        "type": "verb",
+        "form": "past tense"
     },
     "つぎ": {
         "reading": "つぎ",
-        "meaning": "siguiente",
-        "type": "sustantivo"
+        "meaning": "siguiente; próximo",
+        "type": "noun/adverb"
     },
     "もっと": {
         "reading": "もっと",
-        "meaning": "más",
-        "type": "adverbio"
+        "meaning": "más; aún más",
+        "type": "adverb"
     },
     "がんばる": {
         "reading": "がんばる",
-        "meaning": "esforzarse, dar lo mejor de sí, persistir",
-        "type": "verbo",
-        "form": "forma de diccionario"
+        "meaning": "esforzarse; luchar; dar lo mejor de sí",
+        "type": "verb"
     },
     "青く": {
         "reading": "あおく",
-        "meaning": "azul (forma adverbial)",
-        "type": "adjetivo i",
-        "form": "forma adverbial"
+        "meaning": "azul; de color azul",
+        "type": "adjective",
+        "form": "adverbial form"
     },
     "気持ち": {
         "reading": "きもち",
-        "meaning": "sentimiento, sensación, estado de ánimo",
-        "type": "sustantivo"
+        "meaning": "sentimiento; emoción; ánimo",
+        "type": "noun"
     },
     "よい": {
         "reading": "よい",
-        "meaning": "bueno, bien (variante de いい)",
-        "type": "adjetivo i",
-        "form": "forma de diccionario"
+        "meaning": "bueno; bien",
+        "type": "adjective"
+    },
+    "ー": {
+        "reading": "",
+        "meaning": "guion; raya",
+        "type": "punctuation"
+    },
+    "entries": {
+        "0": {
+            "word": {
+                "reading": "eto",
+                "meaning": "Well, uhm... (used as a filler word)",
+                "type": "interjection"
+            }
+        },
+        "1": {
+            "word": {
+                "reading": "mae",
+                "meaning": "front; before; previous",
+                "type": "noun/adverb"
+            }
+        },
+        "2": {
+            "word": {
+                "reading": "tsutsuma",
+                "meaning": "to wrap; to enclose; to contain",
+                "type": "verb"
+            }
+        },
+        "3": {
+            "word": {
+                "reading": "nagai",
+                "meaning": "long",
+                "type": "adjective"
+            }
+        },
+        "4": {
+            "word": {
+                "reading": "saigetsu",
+                "meaning": "years; time; long period",
+                "type": "noun"
+            }
+        },
+        "5": {
+            "word": {
+                "reading": "kei",
+                "meaning": "to pass; to elapse; to experience",
+                "type": "verb"
+            }
+        },
+        "6": {
+            "word": {
+                "reading": "urayami",
+                "meaning": "sorrow; worry; anxiety",
+                "type": "noun"
+            }
+        },
+        "7": {
+            "word": {
+                "reading": "obi",
+                "meaning": "to have (a characteristic); to be tinged with",
+                "type": "verb"
+            }
+        },
+        "8": {
+            "word": {
+                "reading": "toshite",
+                "meaning": "as; in the capacity of",
+                "type": "particle"
+            }
+        },
+        "9": {
+            "word": {
+                "reading": "amata",
+                "meaning": "many; numerous; countless",
+                "type": "adjective/noun"
+            }
+        },
+        "10": {
+            "word": {
+                "reading": "uke",
+                "meaning": "to receive; to accept",
+                "type": "verb"
+            }
+        },
+        "11": {
+            "word": {
+                "reading": "kokoromiru",
+                "meaning": "to attempt; to try; to endeavor",
+                "type": "verb"
+            }
+        },
+        "12": {
+            "word": {
+                "reading": "hajimete",
+                "meaning": "for the first time",
+                "type": "adverb"
+            }
+        },
+        "13": {
+            "word": {
+                "reading": "shin kokyuu",
+                "meaning": "deep breath",
+                "type": "noun"
+            }
+        },
+        "14": {
+            "word": {
+                "reading": "kuraianto",
+                "meaning": "client",
+                "type": "noun"
+            }
+        },
+        "15": {
+            "word": {
+                "reading": "shotaimen",
+                "meaning": "first meeting",
+                "type": "noun"
+            }
+        },
+        "16": {
+            "word": {
+                "reading": "atari障り",
+                "meaning": "offensive; inappropriate; problematic",
+                "type": "adjective"
+            }
+        },
+        "17": {
+            "word": {
+                "reading": "aisatsu",
+                "meaning": "greeting",
+                "type": "noun"
+            }
+        },
+        "18": {
+            "word": {
+                "reading": "hairu",
+                "meaning": "to enter; to go in",
+                "type": "verb"
+            }
+        },
+        "19": {
+            "word": {
+                "reading": "konnichiwa",
+                "meaning": "hello",
+                "type": "greeting"
+            }
+        },
+        "20": {
+            "word": {
+                "reading": "ojousan",
+                "meaning": "young lady; miss",
+                "type": "noun"
+            }
+        },
+        "21": {
+            "word": {
+                "reading": "yoi",
+                "meaning": "good",
+                "type": "adjective"
+            }
+        },
+        "22": {
+            "word": {
+                "reading": "kuchi",
+                "meaning": "mouth",
+                "type": "noun"
+            }
+        },
+        "23": {
+            "word": {
+                "reading": "kotoba",
+                "meaning": "word; language",
+                "type": "noun"
+            }
+        },
+        "24": {
+            "word": {
+                "reading": "karimonono",
+                "meaning": "borrowed item",
+                "type": "noun"
+            }
+        },
+        "25": {
+            "word": {
+                "reading": "gikochi nakatta",
+                "meaning": "was awkward; felt stiff",
+                "type": "adjective (past tense)"
+            }
+        },
+        "26": {
+            "word": {
+                "reading": "touzen",
+                "meaning": "naturally; of course",
+                "type": "adverb"
+            }
+        },
+        "27": {
+            "word": {
+                "reading": "hanou",
+                "meaning": "reaction; response",
+                "type": "noun"
+            }
+        },
+        "28": {
+            "word": {
+                "reading": "shimesa",
+                "meaning": "to show; to indicate",
+                "type": "verb"
+            }
+        },
+        "29": {
+            "word": {
+                "reading": "chinmoku",
+                "meaning": "silence",
+                "type": "noun"
+            }
+        },
+        "30": {
+            "word": {
+                "reading": "kaette",
+                "meaning": "on the contrary; instead",
+                "type": "adverb"
+            }
+        },
+        "31": {
+            "word": {
+                "reading": "zawatsuka",
+                "meaning": "to be in an uproar; to become noisy",
+                "type": "verb"
+            }
+        },
+        "32": {
+            "word": {
+                "reading": "se",
+                "meaning": "to do; to make",
+                "type": "verb"
+            }
+        },
+        "33": {
+            "word": {
+                "reading": "kouki",
+                "meaning": "curiosity",
+                "type": "noun"
+            }
+        },
+        "34": {
+            "word": {
+                "reading": "michi",
+                "meaning": "to be filled; to be full",
+                "type": "verb"
+            }
+        },
+        "35": {
+            "word": {
+                "reading": "jitto",
+                "meaning": "fixedly; intently",
+                "type": "adverb"
+            }
+        },
+        "36": {
+            "word": {
+                "reading": "tama",
+                "meaning": "soul; spirit",
+                "type": "noun"
+            }
+        },
+        "37": {
+            "word": {
+                "reading": "nukitora",
+                "meaning": "to extract; to take out",
+                "type": "verb"
+            }
+        },
+        "38": {
+            "word": {
+                "reading": "naishin",
+                "meaning": "inner heart; inner feelings",
+                "type": "noun"
+            }
+        },
+        "39": {
+            "word": {
+                "reading": "shitauchi",
+                "meaning": "to click one's tongue",
+                "type": "noun/verb"
+            }
+        },
+        "40": {
+            "word": {
+                "reading": "baka ge",
+                "meaning": "absurd; ridiculous",
+                "type": "adjective"
+            }
+        },
+        "41": {
+            "word": {
+                "reading": "daga",
+                "meaning": "but",
+                "type": "conjunction"
+            }
+        },
+        "42": {
+            "word": {
+                "reading": "koinu",
+                "meaning": "puppy",
+                "type": "noun"
+            }
+        },
+        "43": {
+            "word": {
+                "reading": "tame",
+                "meaning": "for the sake of; in order to",
+                "type": "particle"
+            }
+        },
+        "44": {
+            "word": {
+                "reading": "jibun",
+                "meaning": "oneself; self",
+                "type": "pronoun"
+            }
+        },
+        "45": {
+            "word": {
+                "reading": "iikikase",
+                "meaning": "to tell oneself; to persuade oneself",
+                "type": "verb"
+            }
+        },
+        "46": {
+            "word": {
+                "reading": "futatabi",
+                "meaning": "again; once more",
+                "type": "adverb"
+            }
+        },
+        "47": {
+            "word": {
+                "reading": "akai",
+                "meaning": "to open",
+                "type": "verb"
+            }
+        },
+        "48": {
+            "word": {
+                "reading": "damarikond",
+                "meaning": "to fall silent; to become speechless",
+                "type": "verb"
+            }
+        },
+        "49": {
+            "word": {
+                "reading": "shimai",
+                "meaning": "to finish; to end",
+                "type": "verb"
+            }
+        }
+    },
+    "てる": {
+        "reading": "てる",
+        "meaning": "sufijo verbal que indica acción continua en el presente",
+        "type": "verbal suffix"
+    },
+    "たり": {
+        "reading": "たり",
+        "meaning": "sufijo verbal que indica una acción entre varias",
+        "type": "verbal suffix"
+    },
+    "・": {
+        "reading": "",
+        "meaning": "punto; viñeta",
+        "type": "punctuation"
+    },
+    "られ": {
+        "reading": "られ",
+        "meaning": "sufijo verbal que indica posibilidad o capacidad pasiva",
+        "type": "verbal suffix"
+    },
+    "られる": {
+        "reading": "られる",
+        "meaning": "sufijo verbal que indica posibilidad o capacidad pasiva",
+        "type": "verbal suffix"
+    },
+    "かかる": {
+        "reading": "かかる",
+        "meaning": "colgar; costar; tomar (tiempo)",
+        "type": "verb"
+    },
+    "子供": {
+        "reading": "こども",
+        "meaning": "niño; niña; hijo; hija",
+        "type": "noun"
+    },
+    "可哀想": {
+        "reading": "かわいそう",
+        "meaning": "pobrecito; qué pena; lamentable",
+        "type": "adjective"
+    },
+    "再建": {
+        "reading": "さいけん",
+        "meaning": "reconstrucción",
+        "type": "noun"
+    },
+    "市": {
+        "reading": "し",
+        "meaning": "ciudad; municipio",
+        "type": "noun"
+    },
+    "掛け合わ": {
+        "reading": "かけあわ",
+        "meaning": "consulta; negociación; cooperación",
+        "type": "noun/verb"
+    },
+    "ボランティア": {
+        "reading": "ボランティア",
+        "meaning": "voluntario",
+        "type": "noun"
+    },
+    "募っ": {
+        "reading": "つの",
+        "meaning": "reclutar; solicitar; pedir",
+        "type": "verb",
+        "form": "stem"
+    },
+    "実用": {
+        "reading": "じつよう",
+        "meaning": "uso práctico; utilidad",
+        "type": "noun"
+    },
+    "届か": {
+        "reading": "とどか",
+        "meaning": "llegar; alcanzar",
+        "type": "verb",
+        "form": "stem"
+    },
+    "崩壊": {
+        "reading": "ほうかい",
+        "meaning": "colapso; derrumbe; desintegración",
+        "type": "noun"
+    },
+    "中央": {
+        "reading": "ちゅうおう",
+        "meaning": "centro; central",
+        "type": "noun"
+    },
+    "下": {
+        "reading": "した",
+        "meaning": "abajo; inferior; parte inferior",
+        "type": "noun/adverb"
+    },
+    "埋もれ": {
+        "reading": "うもれ",
+        "meaning": "enterrado; sepultado; oculto",
+        "type": "verb",
+        "form": "stem"
+    },
+    "母さん": {
+        "reading": "かあさん",
+        "meaning": "mamá",
+        "type": "noun"
+    },
+    "病床": {
+        "reading": "びょうしょう",
+        "meaning": "lecho de enfermo; cama de hospital",
+        "type": "noun"
+    },
+    "立てる": {
+        "reading": "たてる",
+        "meaning": "ponerse de pie; construir; establecer",
+        "type": "verb"
+    },
+    "こだま": {
+        "reading": "こだま",
+        "meaning": "eco",
+        "type": "noun"
+    },
+    "託さ": {
+        "reading": "たくさ",
+        "meaning": "confiar; encargar; encomendar",
+        "type": "verb",
+        "form": "stem"
+    },
+    "背負っ": {
+        "reading": "しょっ",
+        "meaning": "llevar a la espalda; cargar; asumir",
+        "type": "verb",
+        "form": "stem"
+    },
+    "追い": {
+        "reading": "おい",
+        "meaning": "perseguir; seguir; alcanzar",
+        "type": "verb",
+        "form": "stem"
+    },
+    "跡形": {
+        "reading": "あとがた",
+        "meaning": "vestigio; rastro; huella",
+        "type": "noun"
+    },
+    "消え去っ": {
+        "reading": "きえさっ",
+        "meaning": "desaparecer; desvanecerse",
+        "type": "verb",
+        "form": "stem"
+    },
+    "場": {
+        "reading": "ば",
+        "meaning": "lugar; sitio; ocasión",
+        "type": "noun"
+    },
+    "状況": {
+        "reading": "じょうきょう",
+        "meaning": "situación; estado de cosas",
+        "type": "noun"
+    },
+    "目指せ": {
+        "reading": "めざせ",
+        "meaning": "apuntar a; aspirar a; luchar por",
+        "type": "verb",
+        "form": "imperative"
+    },
+    "いう": {
+        "reading": "いう",
+        "meaning": "decir; hablar; mencionar",
+        "type": "verb"
+    },
+    "す": {
+        "reading": "す",
+        "meaning": "sufijo verbal que indica respeto o cortesía",
+        "type": "verbal suffix"
+    },
+    "べき": {
+        "reading": "べき",
+        "meaning": "deber",
+        "type": "sufijo verbal"
+    },
+    "話し合い": {
+        "reading": "はなしあい",
+        "meaning": "conversación, discusión",
+        "type": "sustantivo"
+    },
+    "立ち尽くし": {
+        "reading": "たちつくし",
+        "meaning": "quedarse de pie inmóvil",
+        "type": "verbo",
+        "form": "forma -i"
+    },
+    "地元": {
+        "reading": "じもと",
+        "meaning": "lugar natal, localidad",
+        "type": "sustantivo"
+    },
+    "話し": {
+        "reading": "はなし",
+        "meaning": "conversación, charla",
+        "type": "sustantivo"
+    },
+    "山": {
+        "reading": "やま",
+        "meaning": "montaña",
+        "type": "sustantivo"
+    },
+    "背": {
+        "reading": "せ",
+        "meaning": "espalda",
+        "type": "sustantivo"
+    },
+    "雲": {
+        "reading": "くも",
+        "meaning": "nube",
+        "type": "sustantivo"
+    },
+    "真っ青": {
+        "reading": "まっさお",
+        "meaning": "completamente azul, pálido de miedo",
+        "type": "adjetivo",
+        "form": "forma -i"
+    },
+    "無限": {
+        "reading": "むげん",
+        "meaning": "infinito",
+        "type": "adjetivo/sustantivo"
+    },
+    "広がり": {
+        "reading": "ひろがり",
+        "meaning": "extensión, expansión",
+        "type": "sustantivo"
+    },
+    "すれ": {
+        "reading": "すれ",
+        "meaning": "rozamiento, roce",
+        "type": "verbo",
+        "form": "forma -e"
+    },
+    "守れる": {
+        "reading": "まもれる",
+        "meaning": "puede proteger, puede guardar",
+        "type": "verbo",
+        "form": "forma -raru"
+    },
+    "ひかり": {
+        "reading": "ひかり",
+        "meaning": "luz",
+        "type": "sustantivo"
+    },
+    "弱": {
+        "reading": "よわ",
+        "meaning": "débil",
+        "type": "adjetivo",
+        "form": "forma -i"
+    },
+    "ぼく": {
+        "reading": "ぼく",
+        "meaning": "yo (masculino)",
+        "type": "pronombre"
+    },
+    "なま": {
+        "reading": "なま",
+        "meaning": "crudo, fresco",
+        "type": "adjetivo"
+    },
+    "なか": {
+        "reading": "なか",
+        "meaning": "dentro, interior",
+        "type": "sustantivo/partícula"
+    },
+    "むら": {
+        "reading": "むら",
+        "meaning": "pueblo, aldea",
+        "type": "sustantivo"
+    },
+    "歳": {
+        "reading": "さい",
+        "meaning": "año (edad)",
+        "type": "sufijo"
+    },
+    "さい": {
+        "reading": "さい",
+        "meaning": "año (edad)",
+        "type": "sustantivo"
+    },
+    "小": {
+        "reading": "しょう/こ",
+        "meaning": "pequeño",
+        "type": "adjetivo"
+    },
+    "しっかり": {
+        "reading": "しっかり",
+        "meaning": "firmemente, sólidamente",
+        "type": "adverbio"
+    },
+    "キャッチ": {
+        "reading": "キャッチ",
+        "meaning": "catch (inglés)",
+        "type": "sustantivo/verbo"
+    },
+    "柔らかく": {
+        "reading": "やわらかく",
+        "meaning": "suavemente",
+        "type": "adverbio"
+    },
+    "添える": {
+        "reading": "そえる",
+        "meaning": "añadir, agregar",
+        "type": "verbo"
+    },
+    "教え": {
+        "reading": "おしえ",
+        "meaning": "enseñanza, instrucción",
+        "type": "sustantivo"
+    },
+    "散々": {
+        "reading": "さんざん",
+        "meaning": "mucho, completamente",
+        "type": "adverbio"
+    },
+    "リング": {
+        "reading": "リング",
+        "meaning": "ring (inglés)",
+        "type": "sustantivo"
+    },
+    "加減": {
+        "reading": "かげん",
+        "meaning": "grado, medida",
+        "type": "sustantivo"
+    },
+    "通り過ぎる": {
+        "reading": "とおりすぎる",
+        "meaning": "pasar por, sobrepasar",
+        "type": "verbo"
+    },
+    "抜か": {
+        "reading": "ぬか",
+        "meaning": "sobrepasar, adelantar",
+        "type": "verbo",
+        "form": "forma -a"
+    },
+    "有利": {
+        "reading": "ゆうり",
+        "meaning": "ventajoso, favorable",
+        "type": "adjetivo",
+        "form": "forma -i"
+    },
+    "たん": {
+        "reading": "たん",
+        "meaning": "estanque, lago",
+        "type": "sustantivo"
+    },
+    "持久": {
+        "reading": "じく",
+        "meaning": "resistencia, perseverancia",
+        "type": "sustantivo"
+    },
+    "羨ましい": {
+        "reading": "うらやましい",
+        "meaning": "envidiable",
+        "type": "adjetivo",
+        "form": "forma -i"
+    },
+    "往復": {
+        "reading": "おうふく",
+        "meaning": "viaje de ida y vuelta",
+        "type": "sustantivo"
+    },
+    "上がら": {
+        "reading": "あがら",
+        "meaning": "subir",
+        "type": "verbo",
+        "form": "forma -a"
+    },
+    "培っ": {
+        "reading": "つちか",
+        "meaning": "cultivar, desarrollar",
+        "type": "verbo",
+        "form": "forma -te"
+    },
+    "幹": {
+        "reading": "みき",
+        "meaning": "tronco (de árbol)",
+        "type": "sustantivo"
+    },
+    "役立つ": {
+        "reading": "やくたつ",
+        "meaning": "ser útil, servir",
+        "type": "verbo"
+    },
+    "フォーム": {
+        "reading": "フォーム",
+        "meaning": "forma (inglés)",
+        "type": "sustantivo"
+    },
+    "丁寧": {
+        "reading": "ていねい",
+        "meaning": "cortés, atento",
+        "type": "adjetivo",
+        "form": "forma -i"
+    },
+    "肘": {
+        "reading": "ひじ",
+        "meaning": "codo",
+        "type": "sustantivo"
+    },
+    "内側": {
+        "reading": "うちがわ",
+        "meaning": "interior, lado interior",
+        "type": "sustantivo"
+    },
+    "曲げ": {
+        "reading": "まげ",
+        "meaning": "doblar, curvar",
+        "type": "sustantivo/verbo"
+    },
+    "ジャンプ": {
+        "reading": "ジャンプ",
+        "meaning": "salto (inglés)",
+        "type": "sustantivo/verbo"
+    },
+    "真似": {
+        "reading": "まね",
+        "meaning": "imitación",
+        "type": "sustantivo/verbo"
+    },
+    "反復": {
+        "reading": "はんぷく",
+        "meaning": "repetición",
+        "type": "sustantivo"
+    },
+    "ずつ": {
+        "reading": "ずつ",
+        "meaning": "cada uno, por cada uno",
+        "type": "partícula"
+    },
+    "ぎこちない": {
+        "reading": "ぎこちない",
+        "meaning": "torpe, incómodo, desmañado",
+        "type": "adjective",
+        "form": "i-adjective"
+    },
+    "抜き": {
+        "reading": "ぬき",
+        "meaning": "extracción, eliminación, exclusión",
+        "type": "noun"
+    },
+    "去ろ": {
+        "reading": "さろ",
+        "meaning": "vámonos",
+        "type": "verb",
+        "form": "imperativo"
+    },
+    "長い": {
+        "reading": "ながい",
+        "meaning": "largo",
+        "type": "adjective",
+        "form": "i-adjective"
+    },
+    "軌道": {
+        "reading": "きどう",
+        "meaning": "vía, órbita, trayectoria",
+        "type": "noun"
+    },
+    "ナイス": {
+        "reading": "ナイス",
+        "meaning": "genial, excelente",
+        "type": "interjection"
+    },
+    "ディフェンス": {
+        "reading": "ディフェンス",
+        "meaning": "defensa",
+        "type": "noun"
+    },
+    "弾け": {
+        "reading": "はじけ",
+        "meaning": "estallar, saltar, reventar",
+        "type": "verb",
+        "form": "masu-stem"
+    },
+    "近い": {
+        "reading": "ちかい",
+        "meaning": "cerca, próximo",
+        "type": "adjective",
+        "form": "i-adjective"
+    },
+    "跳ん": {
+        "reading": "とぶ",
+        "meaning": "saltar",
+        "type": "verb",
+        "form": "ren'youkei (continuative form)"
+    },
+    "放つ": {
+        "reading": "はなつ",
+        "meaning": "lanzar, liberar, soltar",
+        "type": "verb"
+    },
+    "スッ": {
+        "reading": "スッ",
+        "meaning": "silenciosamente, rápidamente",
+        "type": "adverb"
+    },
+    "揺れる": {
+        "reading": "ゆれる",
+        "meaning": "oscilar, mecerse, balancearse",
+        "type": "verb"
+    },
+    "不思議": {
+        "reading": "ふしぎ",
+        "meaning": "misterio, maravilla, extraño",
+        "type": "noun"
+    },
+    "弾む": {
+        "reading": "はずむ",
+        "meaning": "rebotar, brincar",
+        "type": "verb"
+    },
+    "ドクドク": {
+        "reading": "ドクドク",
+        "meaning": "latido del corazón (onomatopeya)",
+        "type": "onomatopeya"
+    },
+    "高": {
+        "reading": "たか",
+        "meaning": "alto",
+        "type": "adjective",
+        "form": "na-adjective"
+    },
+    "あるいは": {
+        "reading": "あるいは",
+        "meaning": "o, o quizás",
+        "type": "conjunction"
+    },
+    "寝静まっ": {
+        "reading": "ねじずま",
+        "meaning": "quedarse dormido",
+        "type": "verb",
+        "form": "ren'youkei (continuative form)"
+    },
+    "バスケット": {
+        "reading": "バスケット",
+        "meaning": "baloncesto",
+        "type": "noun"
+    },
+    "知ら": {
+        "reading": "しら",
+        "meaning": "saber",
+        "type": "verb",
+        "form": "ren'youkei (continuative form)"
+    },
+    "習得": {
+        "reading": "しゅうとく",
+        "meaning": "adquisición, aprendizaje, dominio",
+        "type": "noun"
+    },
+    "張り詰め": {
+        "reading": "はりつめ",
+        "meaning": "tensión, tirantez",
+        "type": "noun"
+    },
+    "今回": {
+        "reading": "こんかい",
+        "meaning": "esta vez, en esta ocasión",
+        "type": "noun"
+    },
+    "参加": {
+        "reading": "さんか",
+        "meaning": "participación",
+        "type": "noun"
+    },
+    "来年度": {
+        "reading": "らいねんど",
+        "meaning": "próximo año fiscal",
+        "type": "noun"
+    },
+    "部員": {
+        "reading": "ぶいん",
+        "meaning": "miembro del club",
+        "type": "noun"
+    },
+    "発表": {
+        "reading": "はっぴょう",
+        "meaning": "presentación, anuncio",
+        "type": "noun"
+    },
+    "手元": {
+        "reading": "てもと",
+        "meaning": "a mano, cerca",
+        "type": "noun"
+    },
+    "リスト": {
+        "reading": "リスト",
+        "meaning": "lista",
+        "type": "noun"
+    },
+    "悔し": {
+        "reading": "くやし",
+        "meaning": "frustración, pesar",
+        "type": "noun"
+    },
+    "暴れ": {
+        "reading": "あばれ",
+        "meaning": "alboroto, furia",
+        "type": "noun"
+    },
+    "まわる": {
+        "reading": "まわる",
+        "meaning": "girar, rotar",
+        "type": "verb"
+    },
+    "疑っ": {
+        "reading": "うたが",
+        "meaning": "sospechar, dudar",
+        "type": "verb",
+        "form": "ren'youkei (continuative form)"
+    },
+    "バス": {
+        "reading": "バス",
+        "meaning": "autobús",
+        "type": "noun"
+    },
+    "字": {
+        "reading": "じ",
+        "meaning": "carácter, letra",
+        "type": "noun"
+    },
+    "何より": {
+        "reading": "なにより",
+        "meaning": "sobre todo, más que nada",
+        "type": "adverbial phrase"
+    },
+    "育て": {
+        "reading": "そだて",
+        "meaning": "criar, educar, cultivar",
+        "type": "verb",
+        "form": "masu-stem"
+    },
+    "来年": {
+        "reading": "らいねん",
+        "meaning": "el próximo año",
+        "type": "noun"
+    },
+    "全国": {
+        "reading": "ぜんこく",
+        "meaning": "nacional",
+        "type": "noun"
+    },
+    "目指そ": {
+        "reading": "めざそ",
+        "meaning": "apuntaremos a",
+        "type": "verb",
+        "form": "volitional form"
+    },
+    "射し": {
+        "reading": "さし",
+        "meaning": "rayo de sol",
+        "type": "noun"
+    },
+    "清冽": {
+        "reading": "せいれつ",
+        "meaning": "limpio, puro, cristalino",
+        "type": "adjective",
+        "form": "na-adjective"
+    },
+    "研ぎ澄ませ": {
+        "reading": "とぎすませ",
+        "meaning": "afilar, perfeccionar",
+        "type": "verb",
+        "form": "imperativo"
+    },
+    "開始": {
+        "reading": "かいし",
+        "meaning": "inicio, comienzo",
+        "type": "noun"
+    },
+    "遅く": {
+        "reading": "おそく",
+        "meaning": "tarde",
+        "type": "adverb"
+    },
+    "学び": {
+        "reading": "まなび",
+        "meaning": "aprendizaje, estudio",
+        "type": "noun"
+    },
+    "連続": {
+        "reading": "れんぞく",
+        "meaning": "continuación, serie",
+        "type": "noun"
+    },
+    "個人": {
+        "reading": "こじん",
+        "meaning": "individuo, persona",
+        "type": "noun"
+    },
+    "技術": {
+        "reading": "ぎじゅつ",
+        "meaning": "técnica, tecnología",
+        "type": "noun"
+    },
+    "チーム": {
+        "reading": "ちーむ",
+        "meaning": "equipo",
+        "type": "noun"
+    },
+    "連携": {
+        "reading": "れんけい",
+        "meaning": "cooperación, colaboración",
+        "type": "noun"
+    },
+    "判断": {
+        "reading": "はんだん",
+        "meaning": "juicio, decisión",
+        "type": "noun"
+    },
+    "求め": {
+        "reading": "もとめ",
+        "meaning": "petición, demanda",
+        "type": "noun",
+        "form": "nominal form of verb 求める (motomeru)"
+    },
+    "精密": {
+        "reading": "せいみつ",
+        "meaning": "preciso, exacto",
+        "type": "adjective (i-adjective)"
+    },
+    "送る": {
+        "reading": "おくる",
+        "meaning": "enviar, mandar",
+        "type": "verb"
+    },
+    "追求": {
+        "reading": "ついきゅう",
+        "meaning": "persecución, búsqueda",
+        "type": "noun"
+    },
+    "分解": {
+        "reading": "ぶんかい",
+        "meaning": "descomposición, desmantelamiento",
+        "type": "noun"
+    },
+    "徹底的": {
+        "reading": "てっていてき",
+        "meaning": "radical, exhaustivo",
+        "type": "adjective (na-adjective)"
+    },
+    "叩き込ん": {
+        "reading": "たたきこん",
+        "meaning": "martillar, practicar intensamente",
+        "type": "verb",
+        "form": "past tense, -te form of verb 叩き込む (tatakikomu)"
+    },
+    "追う": {
+        "reading": "おう",
+        "meaning": "perseguir, seguir",
+        "type": "verb"
+    },
+    "得意": {
+        "reading": "とくい",
+        "meaning": "habilidad, talento",
+        "type": "noun"
+    },
+    "苦労": {
+        "reading": "くろう",
+        "meaning": "dificultad, esfuerzo",
+        "type": "noun"
+    },
+    "瞬発": {
+        "reading": "しゅんぱつ",
+        "meaning": "explosivo, repentino",
+        "type": "noun"
+    },
+    "ハンドリング": {
+        "reading": "ハンドリング",
+        "meaning": "manejo, control",
+        "type": "noun"
+    },
+    "朝練": {
+        "reading": "あされん",
+        "meaning": "entrenamiento matutino",
+        "type": "noun"
+    },
+    "フットワーク": {
+        "reading": "フットワーク",
+        "meaning": "trabajo de pies, movilidad",
+        "type": "noun"
+    },
+    "没頭": {
+        "reading": "ぼっとう",
+        "meaning": "inmersión, absorción",
+        "type": "noun"
+    },
+    "初め": {
+        "reading": "はじめ",
+        "meaning": "principio, comienzo",
+        "type": "noun"
+    },
+    "呆れ": {
+        "reading": "あきれ",
+        "meaning": "desánimo, desesperación",
+        "type": "noun"
+    },
+    "シューティング": {
+        "reading": "シューティング",
+        "meaning": "tiro, lanzamiento",
+        "type": "noun"
+    },
+    "自主": {
+        "reading": "じしゅ",
+        "meaning": "autonomía, independencia",
+        "type": "noun"
+    },
+    "キュッ": {
+        "reading": "キュッ",
+        "meaning": "sonido onomatopéyico (ajuste, apriete)",
+        "type": "onomatopeya"
+    },
+    "ロッカー": {
+        "reading": "ロッカー",
+        "meaning": "casillero",
+        "type": "noun"
+    },
+    "ルーム": {
+        "reading": "ルーム",
+        "meaning": "habitación",
+        "type": "noun"
+    },
+    "着替え": {
+        "reading": "きがえ",
+        "meaning": "cambio de ropa",
+        "type": "noun"
+    },
+    "加わる": {
+        "reading": "くわわる",
+        "meaning": "unirse, añadirse",
+        "type": "verb"
+    },
+    "知り合い": {
+        "reading": "しりあい",
+        "meaning": "conocido",
+        "type": "noun"
+    },
+    "協力": {
+        "reading": "きょうりょく",
+        "meaning": "cooperación",
+        "type": "noun"
+    },
+    "いこ": {
+        "reading": "いこ",
+        "meaning": "vamos (informal)",
+        "type": "verb",
+        "form": "informal imperative of 行く (iku)"
+    },
+    "混じる": {
+        "reading": "まじる",
+        "meaning": "mezclarse, unirse",
+        "type": "verb"
+    },
+    "先日": {
+        "reading": "せんじつ",
+        "meaning": "recientemente, el otro día",
+        "type": "adverb"
+    },
+    "ストリート": {
+        "reading": "ストリート",
+        "meaning": "calle",
+        "type": "noun"
+    },
+    "出会っ": {
+        "reading": "であっ",
+        "meaning": "encontrar, conocer",
+        "type": "verb",
+        "form": "past tense, -te form of 出会う (deau)"
+    },
+    "口角": {
+        "reading": "こうかく",
+        "meaning": "comisura de los labios",
+        "type": "noun"
+    },
+    "会っ": {
+        "reading": "あっ",
+        "meaning": "conocer, reunirse",
+        "type": "verb",
+        "form": "past tense, -te form of 会う (au)"
+    },
+    "疑念": {
+        "reading": "ぎねん",
+        "meaning": "duda, sospecha",
+        "type": "noun"
+    },
+    "漂っ": {
+        "reading": "ただよっ",
+        "meaning": "flota, se extiende",
+        "type": "verb",
+        "form": "past tense, -te form of 漂う (tadayou)"
+    },
+    "雰囲気": {
+        "reading": "ふんいき",
+        "meaning": "atmósfera",
+        "type": "noun"
+    },
+    "既存": {
+        "reading": "きぞん",
+        "meaning": "existente",
+        "type": "adjective (na-adjective)"
+    },
+    "メンバー": {
+        "reading": "メンバー",
+        "meaning": "miembro",
+        "type": "noun"
+    },
+    "ポジション": {
+        "reading": "ポジション",
+        "meaning": "posición",
+        "type": "noun"
+    },
+    "脅かさ": {
+        "reading": "おびやかさ",
+        "meaning": "amenaza, intimidación",
+        "type": "noun",
+        "form": "nominal form of verb 脅かす (oyakasu)"
+    },
+    "去年": {
+        "reading": "きょねん",
+        "meaning": "año pasado",
+        "type": "noun"
+    },
+    "レギュラー": {
+        "reading": "レギュラー",
+        "meaning": "regular, titular",
+        "type": "noun"
+    },
+    "拓海": {
+        "reading": "たくみ",
+        "meaning": "Takumi (nombre propio)",
+        "type": "proper noun"
+    },
+    "不": {
+        "reading": "ふ",
+        "meaning": "no, in-",
+        "type": "prefix"
+    },
+    "機嫌": {
+        "reading": "きげん",
+        "meaning": "humor, estado de ánimo",
+        "type": "noun"
+    },
+    "噂": {
+        "reading": "うわさ",
+        "meaning": "rumor",
+        "type": "noun"
+    },
+    "圧倒的": {
+        "reading": "あっとうてき",
+        "meaning": "aplastante, abrumador",
+        "type": "adjective (na-adjective)"
+    },
+    "レンジ": {
+        "reading": "レンジ",
+        "meaning": "microondas",
+        "type": "noun"
+    },
+    "違っ": {
+        "reading": "ちが",
+        "meaning": "diferente (forma del verbo 'chigau')",
+        "type": "verb",
+        "form": "diccionario"
+    },
+    "奪い": {
+        "reading": "うばい",
+        "meaning": "robo, arrebatamiento",
+        "type": "verb",
+        "form": "forma nominal"
+    },
+    "得点": {
+        "reading": "とくてん",
+        "meaning": "puntuación, puntos",
+        "type": "noun"
+    },
+    "イライラ": {
+        "reading": "イライラ",
+        "meaning": "irritación, frustración",
+        "type": "noun"
+    },
+    "手加減": {
+        "reading": "てかげん",
+        "meaning": "clemencia, consideración",
+        "type": "noun"
+    },
+    "荒": {
+        "reading": "あら",
+        "meaning": "áspero, salvaje, rudo",
+        "type": "adjective (keiyoushi)"
+    },
+    "本気": {
+        "reading": "ほんき",
+        "meaning": "seriedad, en serio",
+        "type": "noun"
+    },
+    "なきゃ": {
+        "reading": "なきゃ",
+        "meaning": "tengo que, necesito",
+        "type": "particle",
+        "form": "contracción de 'nakereba'"
+    },
+    "最高潮": {
+        "reading": "さいこうちょう",
+        "meaning": "clímax, punto culminante",
+        "type": "noun"
+    },
+    "達し": {
+        "reading": "たっし",
+        "meaning": "(forma del verbo 'tassuru') alcanzar, llegar",
+        "type": "verb",
+        "form": "diccionario"
+    },
+    "あまり": {
+        "reading": "あまり",
+        "meaning": "no mucho, poco",
+        "type": "adverb"
+    },
+    "ストレート": {
+        "reading": "ストレート",
+        "meaning": "directo, recto",
+        "type": "adjective (loanword)"
+    },
+    "態度": {
+        "reading": "たいど",
+        "meaning": "actitud, comportamiento",
+        "type": "noun"
+    },
+    "反発": {
+        "reading": "はんぱつ",
+        "meaning": "reacción, rebote",
+        "type": "noun"
+    },
+    "収める": {
+        "reading": "おさめる",
+        "meaning": "poner en orden, calmar",
+        "type": "verb"
+    },
+    "待っ": {
+        "reading": "ま",
+        "meaning": "esperando (forma del verbo 'matsu')",
+        "type": "verb",
+        "form": "diccionario"
+    },
+    "割っ": {
+        "reading": "わ",
+        "meaning": "rompiendo (forma del verbo 'waru')",
+        "type": "verb",
+        "form": "diccionario"
+    },
+    "コミュニケーション": {
+        "reading": "コミュニケーション",
+        "meaning": "comunicación",
+        "type": "noun"
+    },
+    "取ら": {
+        "reading": "とら",
+        "meaning": "tomando (forma del verbo 'toru')",
+        "type": "verb",
+        "form": "diccionario"
+    },
+    "うまく": {
+        "reading": "うまく",
+        "meaning": "bien, con éxito",
+        "type": "adverb"
+    },
+    "冷まし": {
+        "reading": "ひやし",
+        "meaning": "burla, broma",
+        "type": "noun",
+        "form": "forma nominal"
+    },
+    "根本": {
+        "reading": "こんぽん",
+        "meaning": "raíz, base",
+        "type": "noun"
+    },
+    "溝": {
+        "reading": "みぞ",
+        "meaning": "zanja, brecha",
+        "type": "noun"
+    },
+    "埋まら": {
+        "reading": "うまる",
+        "meaning": "enterrado, cubierto (forma del verbo 'umareru')",
+        "type": "verb",
+        "form": "diccionario"
+    },
+    "休憩": {
+        "reading": "きゅうけい",
+        "meaning": "descanso, pausa",
+        "type": "noun"
+    },
+    "甘い": {
+        "reading": "あまい",
+        "meaning": "dulce, ingenuo",
+        "type": "adjective (keiyoushi)"
+    },
+    "問いかけ": {
+        "reading": "といかけ",
+        "meaning": "pregunta, cuestionamiento",
+        "type": "noun"
+    },
+    "きつい": {
+        "reading": "きつい",
+        "meaning": "duro, difícil, severo",
+        "type": "adjective (keiyoushi)"
+    },
+    "ライバル": {
+        "reading": "ライバル",
+        "meaning": "rival",
+        "type": "noun"
+    },
+    "押し上げる": {
+        "reading": "おしあげる",
+        "meaning": "elevar, impulsar",
+        "type": "verb"
+    },
+    "すごい": {
+        "reading": "すごい",
+        "meaning": "increíble, asombroso",
+        "type": "adjective (keiyoushi)"
+    },
+    "活かす": {
+        "reading": "いかす",
+        "meaning": "aprovechar, utilizar",
+        "type": "verb"
+    },
+    "積極": {
+        "reading": "せっきょく",
+        "meaning": "proactivo, positivo",
+        "type": "noun/adjective (keiyoushi)"
+    },
+    "連係": {
+        "reading": "れんけい",
+        "meaning": "enlace, cooperación",
+        "type": "noun"
+    },
+    "機会": {
+        "reading": "きかい",
+        "meaning": "oportunidad, ocasión",
+        "type": "noun"
+    },
+    "増やし": {
+        "reading": "まし",
+        "meaning": "aumentar (forma nominal del verbo 'masu')",
+        "type": "verb",
+        "form": "forma nominal"
+    },
+    "互い": {
+        "reading": "たがい",
+        "meaning": "mutuo, recíproco",
+        "type": "noun/pronoun"
+    },
+    "単独": {
+        "reading": "たんどく",
+        "meaning": "solo, individual",
+        "type": "noun/adjective (keiyoushi)"
+    },
+    "余裕": {
+        "reading": "よゆう",
+        "meaning": "holgura, margen",
+        "type": "noun"
+    },
+    "絶妙": {
+        "reading": "ぜつみょう",
+        "meaning": "exquisito, perfecto",
+        "type": "adjective (keiyoushi)"
+    },
+    "アシスト": {
+        "reading": "アシスト",
+        "meaning": "asistencia, ayuda",
+        "type": "noun/verb (loanword)"
+    },
+    "送っ": {
+        "reading": "おく",
+        "meaning": "enviando (forma del verbo 'okuru')",
+        "type": "verb",
+        "form": "diccionario"
+    },
+    "見合わせ": {
+        "reading": "みあわせ",
+        "meaning": "posponer, suspender",
+        "type": "noun/verb"
+    },
+    "緩ん": {
+        "reading": "ゆるん",
+        "meaning": "relajado (forma del verbo 'yurumu')",
+        "type": "verb",
+        "form": "diccionario"
+    },
+    "独特": {
+        "reading": "どくとく",
+        "meaning": "único, peculiar",
+        "type": "adjective (keiyoushi)"
+    },
+    "使え": {
+        "reading": "つかえ",
+        "meaning": "útil (forma del verbo 'tsukau')",
+        "type": "verb",
+        "form": "diccionario"
+    },
+    "賞賛": {
+        "reading": "しょうさん",
+        "meaning": "elogio, alabanza",
+        "type": "noun"
+    },
+    "そういう": {
+        "reading": "そういう",
+        "meaning": "ese tipo de, así",
+        "type": "pronoun/adverb"
+    },
+    "嫌い": {
+        "reading": "きらい",
+        "meaning": "odio, aversión",
+        "type": "noun/adjective (keiyoushi)"
+    },
+    "手強い": {
+        "reading": "てごわい",
+        "meaning": "difícil, duro, resistente",
+        "type": "adjective"
+    },
+    "レベル": {
+        "reading": "レベル",
+        "meaning": "nivel",
+        "type": "noun"
+    },
+    "訪れる": {
+        "reading": "おとずれる",
+        "meaning": "visitar, llegar",
+        "type": "verb"
+    },
+    "破片": {
+        "reading": "はへん",
+        "meaning": "fragmento, pedazo",
+        "type": "noun"
+    },
+    "錆び": {
+        "reading": "さび",
+        "meaning": "óxido, herrumbre",
+        "type": "noun"
+    },
+    "鉄骨": {
+        "reading": "てっこう",
+        "meaning": "estructura de acero, armazón de hierro",
+        "type": "noun"
+    },
+    "剥き出し": {
+        "reading": "むきだし",
+        "meaning": "desnudo, al descubierto",
+        "type": "adjective"
+    },
+    "汚れ": {
+        "reading": "よごれ",
+        "meaning": "suciedad, mancha",
+        "type": "noun"
+    },
+    "溜まり": {
+        "reading": "たまり",
+        "meaning": "acumulación, charco",
+        "type": "noun"
+    },
+    "化し": {
+        "reading": "ばし",
+        "meaning": "conversión, cambio",
+        "type": "noun/verb suffix"
+    },
+    "言いよう": {
+        "reading": "いいよう",
+        "meaning": "manera de decir, expresión",
+        "type": "noun"
+    },
+    "後悔": {
+        "reading": "こうかい",
+        "meaning": "arrepentimiento, remordimiento",
+        "type": "noun"
+    },
+    "避け": {
+        "reading": "よけ",
+        "meaning": "evitación, esquivar",
+        "type": "noun/verb stem"
+    },
+    "近づい": {
+        "reading": "ちかづい",
+        "meaning": "acercamiento (verbo, forma -i)",
+        "type": "verb",
+        "form": "stem"
+    },
+    "蒼白く": {
+        "reading": "あおざゆく",
+        "meaning": "pálido, blanquecino",
+        "type": "adverb"
+    },
+    "時期": {
+        "reading": "じき",
+        "meaning": "época, período, temporada",
+        "type": "noun"
+    },
+    "手放す": {
+        "reading": "てばなす",
+        "meaning": "soltar, renunciar, dejar ir",
+        "type": "verb"
+    },
+    "漏れ": {
+        "reading": "もれ",
+        "meaning": "fuga, filtración",
+        "type": "noun"
+    },
+    "洪水": {
+        "reading": "こうずい",
+        "meaning": "inundación, crecida",
+        "type": "noun"
+    },
+    "使命": {
+        "reading": "しめい",
+        "meaning": "misión, deber",
+        "type": "noun"
+    },
+    "幻影": {
+        "reading": "げんえい",
+        "meaning": "fantasma, ilusión",
+        "type": "noun"
+    },
+    "出会い": {
+        "reading": "であい",
+        "meaning": "encuentro, encuentro casual",
+        "type": "noun"
+    },
+    "真実": {
+        "reading": "しんじつ",
+        "meaning": "verdad, realidad",
+        "type": "noun"
+    },
+    "冷気": {
+        "reading": "れいき",
+        "meaning": "frío, aire frío",
+        "type": "noun"
+    },
+    "表し": {
+        "reading": "あらわし",
+        "meaning": "expresión, manifestación",
+        "type": "noun/verb stem"
+    },
+    "吸い込み": {
+        "reading": "すいこみ",
+        "meaning": "aspiración, inhalación",
+        "type": "noun"
+    },
+    "潜っ": {
+        "reading": "くぐっ",
+        "meaning": "sumergirse, esconderse (verbo, forma -i)",
+        "type": "verb",
+        "form": "stem"
+    },
+    "澄ん": {
+        "reading": "すん",
+        "meaning": "claro, puro (verbo, forma -i)",
+        "type": "verb",
+        "form": "stem"
+    },
+    "それで": {
+        "reading": "それで",
+        "meaning": "por eso, entonces",
+        "type": "particle/adverb"
+    },
+    "贈り物": {
+        "reading": "おくりもの",
+        "meaning": "regalo, presente",
+        "type": "noun"
+    },
+    "旅立ち": {
+        "reading": "たびだち",
+        "meaning": "partida, salida",
+        "type": "noun"
+    },
+    "糧": {
+        "reading": "かて",
+        "meaning": "sustento, alimento, provisiones",
+        "type": "noun"
+    },
+    "漂う": {
+        "reading": "ただよう",
+        "meaning": "flotar, vagar",
+        "type": "verb"
+    },
+    "交わす": {
+        "reading": "かわす",
+        "meaning": "intercambiar, cruzar",
+        "type": "verb"
+    },
+    "さようなら": {
+        "reading": "さようなら",
+        "meaning": "adiós",
+        "type": "expression"
+    },
+    "流れ込み": {
+        "reading": "ながれこみ",
+        "meaning": "flujo, corriente",
+        "type": "noun"
+    },
+    "クリア": {
+        "reading": "クリア",
+        "meaning": "claro, limpio",
+        "type": "adjective/noun"
+    },
+    "冷え": {
+        "reading": "ひえ",
+        "meaning": "frío, enfriamiento",
+        "type": "noun"
+    },
+    "向き合い": {
+        "reading": "むきあい",
+        "meaning": "enfrentamiento, confrontación",
+        "type": "noun"
+    },
+    "戻り": {
+        "reading": "もどり",
+        "meaning": "regreso, vuelta",
+        "type": "noun"
+    },
+    "濡れ": {
+        "reading": "ぬれ",
+        "meaning": "mojado, humedad",
+        "type": "noun"
+    },
+    "さらさ": {
+        "reading": "さらさ",
+        "meaning": "simpleza, sencillez",
+        "type": "noun"
+    },
+    "地域": {
+        "reading": "ちいき",
+        "meaning": "región, área",
+        "type": "noun"
+    },
+    "会場": {
+        "reading": "かいじょう",
+        "meaning": "lugar, recinto",
+        "type": "noun"
+    },
+    "むせ返っ": {
+        "reading": "むせかえっ",
+        "meaning": "sofocante (verbo, forma -i)",
+        "type": "verb",
+        "form": "stem"
+    },
+    "注が": {
+        "reading": "そそが",
+        "meaning": "vertido, derramado (verbo, forma -i)",
+        "type": "verb",
+        "form": "stem"
+    },
+    "擦れる": {
+        "reading": "するれる",
+        "meaning": "frotar, rozar",
+        "type": "verb"
+    },
+    "生き物": {
+        "reading": "いきもの",
+        "meaning": "ser vivo, criatura",
+        "type": "noun"
+    },
+    "蠢い": {
+        "reading": "うごめい",
+        "meaning": "movimiento, agitación",
+        "type": "noun"
+    },
+    "全速力": {
+        "reading": "ぜんそくりょく",
+        "meaning": "velocidad máxima, a toda velocidad",
+        "type": "noun"
+    },
+    "プレッシャー": {
+        "reading": "プレッシャー",
+        "meaning": "presión",
+        "type": "noun"
+    },
+    "電流": {
+        "reading": "でんりゅう",
+        "meaning": "corriente eléctrica",
+        "type": "noun"
+    },
+    "証": {
+        "reading": "しょう",
+        "meaning": "prueba, testimonio",
+        "type": "noun"
+    },
+    "神様": {
+        "reading": "かみさま",
+        "meaning": "Dios",
+        "type": "noun"
+    },
+    "微笑み": {
+        "reading": "ほほえみ",
+        "meaning": "sonrisa",
+        "type": "noun"
+    },
+    "重ね": {
+        "reading": "かさね",
+        "meaning": "superposición, acumulación",
+        "type": "noun"
+    },
+    "目標": {
+        "reading": "もくひょう",
+        "meaning": "objetivo, meta",
+        "type": "noun"
+    },
+    "制し": {
+        "reading": "せいし",
+        "meaning": "controlar, dominar",
+        "type": "verb",
+        "form": "masu-form"
+    },
+    "階段": {
+        "reading": "かいだん",
+        "meaning": "escalera",
+        "type": "noun"
+    },
+    "上っ": {
+        "reading": "うわっ",
+        "meaning": "arriba",
+        "type": "particle/adverb"
+    },
+    "初戦": {
+        "reading": "しょせん",
+        "meaning": "primera batalla, primera ronda",
+        "type": "noun"
+    },
+    "強豪": {
+        "reading": "きょうごう",
+        "meaning": "fuerte rival",
+        "type": "noun"
+    },
+    "淀み": {
+        "reading": "よどみ",
+        "meaning": "estancamiento, calma",
+        "type": "noun"
+    },
+    "繋がり": {
+        "reading": "つながり",
+        "meaning": "conexión, vínculo",
+        "type": "noun"
+    },
+    "瞬時": {
+        "reading": "しゅんじ",
+        "meaning": "instante",
+        "type": "noun"
+    },
+    "守る": {
+        "reading": "まもる",
+        "meaning": "proteger, guardar",
+        "type": "verb"
+    },
+    "巨人": {
+        "reading": "きょじん",
+        "meaning": "gigante",
+        "type": "noun"
+    },
+    "攻撃": {
+        "reading": "こうげき",
+        "meaning": "ataque",
+        "type": "noun"
+    },
+    "ブレイク": {
+        "reading": "ブレイク",
+        "meaning": "descanso, ruptura",
+        "type": "noun"
+    },
+    "繋げる": {
+        "reading": "つなげる",
+        "meaning": "conectar, enlazar",
+        "type": "verb"
+    },
+    "導い": {
+        "reading": "みちびき",
+        "meaning": "guía, dirección",
+        "type": "noun/verb (stem)"
+    },
+    "結果": {
+        "reading": "けっか",
+        "meaning": "resultado",
+        "type": "noun"
+    },
+    "対": {
+        "reading": "たい",
+        "meaning": "contra, versus",
+        "type": "particle/preposition"
+    },
+    "付け入る": {
+        "reading": "つけいる",
+        "meaning": "aprovecharse de",
+        "type": "verb"
+    },
+    "隙": {
+        "reading": "すき",
+        "meaning": "oportunidad, grieta",
+        "type": "noun"
+    },
+    "圧勝": {
+        "reading": "あっしょう",
+        "meaning": "victoria aplastante",
+        "type": "noun"
+    },
+    "回戦": {
+        "reading": "かいせん",
+        "meaning": "ronda (de competición)",
+        "type": "noun"
+    },
+    "アグレッシブ": {
+        "reading": "アグレッシブ",
+        "meaning": "agresivo",
+        "type": "adjective"
+    },
+    "ドライブ": {
+        "reading": "ドライブ",
+        "meaning": "conducción, impulso",
+        "type": "noun"
+    },
+    "タクミ": {
+        "reading": "タクミ",
+        "meaning": "habilidad, artesanía",
+        "type": "noun"
+    },
+    "メイク": {
+        "reading": "メイク",
+        "meaning": "maquillaje, arreglo",
+        "type": "noun"
+    },
+    "間にあっ": {
+        "reading": "まにあっ",
+        "meaning": "a tiempo",
+        "type": "verb (past tense)"
+    },
+    "ぎこちな": {
+        "reading": "ぎこちな",
+        "meaning": "torpeza, incomodidad",
+        "type": "noun"
+    },
+    "お互い": {
+        "reading": "お互い",
+        "meaning": "el uno al otro, mutuamente",
+        "type": "pronoun"
+    },
+    "信頼": {
+        "reading": "しんらい",
+        "meaning": "confianza",
+        "type": "noun"
+    },
+    "受け取り": {
+        "reading": "うけとり",
+        "meaning": "recepción",
+        "type": "noun/verb (stem)"
+    },
+    "難なく": {
+        "reading": "なんなく",
+        "meaning": "sin dificultad",
+        "type": "adverb"
+    },
+    "決める": {
+        "reading": "きめる",
+        "meaning": "decidir, determinar",
+        "type": "verb"
+    },
+    "どよめき": {
+        "reading": "どよめき",
+        "meaning": "murmullo, susurro",
+        "type": "noun"
+    },
+    "起こる": {
+        "reading": "おこる",
+        "meaning": "ocurrir, suceder",
+        "type": "verb"
+    },
+    "スタイル": {
+        "reading": "スタイル",
+        "meaning": "estilo",
+        "type": "noun"
+    },
+    "繰り出さ": {
+        "reading": "くりださ",
+        "meaning": "sacar, lanzar (algo)",
+        "type": "verb (stem)"
+    },
+    "バネ": {
+        "reading": "バネ",
+        "meaning": "resorte, elasticidad",
+        "type": "noun"
+    },
+    "脅威": {
+        "reading": "きょうい",
+        "meaning": "amenaza",
+        "type": "noun"
+    },
+    "面持ち": {
+        "reading": "つらもち",
+        "meaning": "expresión facial",
+        "type": "noun"
+    },
+    "別格": {
+        "reading": "べっかく",
+        "meaning": "categoría aparte, excepcional",
+        "type": "noun"
+    },
+    "新聞": {
+        "reading": "しんぶん",
+        "meaning": "periódico",
+        "type": "noun"
+    },
+    "取材": {
+        "reading": "しゅざい",
+        "meaning": "entrevista, reportaje",
+        "type": "noun"
+    },
+    "スイマー": {
+        "reading": "スイマー",
+        "meaning": "nadador",
+        "type": "noun"
+    },
+    "注目": {
+        "reading": "ちゅうもく",
+        "meaning": "atención, enfoque",
+        "type": "noun"
+    },
+    "増す": {
+        "reading": "ます",
+        "meaning": "aumentar",
+        "type": "verbo"
+    },
+    "番": {
+        "reading": "ばん",
+        "meaning": "número, turno",
+        "type": "sustantivo"
+    },
+    "マーク": {
+        "reading": "マーク",
+        "meaning": "marca",
+        "type": "sustantivo"
+    },
+    "取らせる": {
+        "reading": "とらせる",
+        "meaning": "hacer que alguien tome, dejar que alguien tome",
+        "type": "verbo",
+        "form": "causativo"
+    },
+    "豪快": {
+        "reading": "ごうかい",
+        "meaning": "impetuoso, espléndido",
+        "type": "adjetivo",
+        "form": "adjetivo i"
+    },
+    "ダンク": {
+        "reading": "ダンク",
+        "meaning": "mate (baloncesto)",
+        "type": "sustantivo"
+    },
+    "沸か": {
+        "reading": "わか",
+        "meaning": "hervir",
+        "type": "verbo"
+    },
+    "インターセプト": {
+        "reading": "インターセプト",
+        "meaning": "intercepción",
+        "type": "sustantivo"
+    },
+    "速攻": {
+        "reading": "そっこう",
+        "meaning": "contraataque",
+        "type": "sustantivo"
+    },
+    "声援": {
+        "reading": "せいえん",
+        "meaning": "ánimo, apoyo",
+        "type": "sustantivo"
+    },
+    "記者": {
+        "reading": "きしゃ",
+        "meaning": "reportero",
+        "type": "sustantivo"
+    },
+    "フラッシュ": {
+        "reading": "フラッシュ",
+        "meaning": "flash",
+        "type": "sustantivo"
+    },
+    "質問": {
+        "reading": "しつもん",
+        "meaning": "pregunta",
+        "type": "sustantivo"
+    },
+    "攻め": {
+        "reading": "せめ",
+        "meaning": "ataque",
+        "type": "sustantivo/verbo"
+    },
+    "あう": {
+        "reading": "あう",
+        "meaning": "encontrar, coincidir",
+        "type": "verbo"
+    },
+    "活かさ": {
+        "reading": "いかさ",
+        "meaning": "aprovechar",
+        "type": "verbo"
+    },
+    "将来": {
+        "reading": "しょうらい",
+        "meaning": "futuro",
+        "type": "sustantivo"
+    },
+    "手応え": {
+        "reading": "てごたえ",
+        "meaning": "sensación, respuesta",
+        "type": "sustantivo"
+    },
+    "士気": {
+        "reading": "しき",
+        "meaning": "moral",
+        "type": "sustantivo"
+    },
+    "連勝": {
+        "reading": "れんしょう",
+        "meaning": "racha de victorias",
+        "type": "sustantivo"
+    },
+    "街道": {
+        "reading": "かいどう",
+        "meaning": "carretera, camino",
+        "type": "sustantivo"
+    },
+    "突き進み": {
+        "reading": "つきすすみ",
+        "meaning": "avance, progreso",
+        "type": "sustantivo"
+    },
+    "準決勝": {
+        "reading": "じゅんけっしょう",
+        "meaning": "semifinal",
+        "type": "sustantivo"
+    },
+    "進出": {
+        "reading": "しんしゅつ",
+        "meaning": "avance, progreso",
+        "type": "sustantivo"
+    },
+    "抱き合い": {
+        "reading": "だきあい",
+        "meaning": "abrazo mutuo",
+        "type": "sustantivo"
+    },
+    "爆発": {
+        "reading": "ばくはつ",
+        "meaning": "explosión",
+        "type": "sustantivo"
+    },
+    "自信": {
+        "reading": "じしん",
+        "meaning": "confianza",
+        "type": "sustantivo"
+    },
+    "ぬ": {
+        "reading": "ぬ",
+        "meaning": "partícula (condicional)",
+        "type": "partícula"
+    },
+    "二度と": {
+        "reading": "にどと",
+        "meaning": "nunca más",
+        "type": "adverbio"
+    },
+    "快": {
+        "reading": "かい",
+        "meaning": "agradable, placentero",
+        "type": "adjetivo"
+    },
+    "進撃": {
+        "reading": "しんげき",
+        "meaning": "avance, ataque",
+        "type": "sustantivo"
+    },
+    "恐れる": {
+        "reading": "おそれる",
+        "meaning": "temer",
+        "type": "verbo"
+    },
+    "包ま": {
+        "reading": "つつま",
+        "meaning": "envoltura, envolver",
+        "type": "verbo"
+    },
+    "セミ": {
+        "reading": "セミ",
+        "meaning": "cigarra",
+        "type": "sustantivo"
+    },
+    "ファイナル": {
+        "reading": "ファイナル",
+        "meaning": "final",
+        "type": "sustantivo"
+    },
+    "フロア": {
+        "reading": "フロア",
+        "meaning": "piso",
+        "type": "sustantivo"
+    },
+    "振動": {
+        "reading": "しんどう",
+        "meaning": "vibración",
+        "type": "sustantivo"
+    },
+    "共鳴": {
+        "reading": "きょうめい",
+        "meaning": "resonancia",
+        "type": "sustantivo"
+    },
+    "僕ら": {
+        "reading": "ぼくら",
+        "meaning": "nosotros",
+        "type": "pronombre"
+    },
+    "飢え": {
+        "reading": "うえ",
+        "meaning": "hambre",
+        "type": "sustantivo"
+    },
+    "宿し": {
+        "reading": "やどし",
+        "meaning": "alojar",
+        "type": "verbo"
+    },
+    "勝て": {
+        "reading": "かて",
+        "meaning": "poder ganar",
+        "type": "verbo"
+    },
+    "決勝": {
+        "reading": "けっしょう",
+        "meaning": "final",
+        "type": "sustantivo"
+    },
+    "みせる": {
+        "reading": "みせる",
+        "meaning": "mostrar",
+        "type": "verbo"
+    },
+    "序盤": {
+        "reading": "じょばん",
+        "meaning": "inicio, comienzo",
+        "type": "sustantivo"
+    },
+    "攻防": {
+        "reading": "こうぼう",
+        "meaning": "ataque y defensa",
+        "type": "sustantivo"
+    },
+    "繰り広げ": {
+        "reading": "くりひろげ",
+        "meaning": "desarrollar, desplegar",
+        "type": "verbo"
+    },
+    "フィジカル": {
+        "reading": "フィジカル",
+        "meaning": "físico",
+        "type": "adjetivo/sustantivo"
+    },
+    "封じ込め": {
+        "reading": "ふじこめ",
+        "meaning": "contención",
+        "type": "sustantivo"
+    },
+    "鍛錬": {
+        "reading": "たんれん",
+        "meaning": "entrenamiento",
+        "type": "sustantivo"
+    },
+    "何とか": {
+        "reading": "なんとか",
+        "meaning": "de alguna manera, como sea",
+        "type": "adverbial phrase"
+    },
+    "対応": {
+        "reading": "たいおう",
+        "meaning": "respuesta, correspondencia, gestión",
+        "type": "noun"
+    },
+    "匠": {
+        "reading": "たくみ",
+        "meaning": "artesano, maestro",
+        "type": "noun"
+    },
+    "たくみ": {
+        "reading": "たくみ",
+        "meaning": "artesano, experto",
+        "type": "noun"
+    },
+    "泥臭く": {
+        "reading": "どろくさく",
+        "meaning": "con tesón, con esfuerzo",
+        "type": "adverb"
+    },
+    "出し合っ": {
+        "reading": "だしあっ",
+        "meaning": "compartiendo, intercambiando",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "点差": {
+        "reading": "てんさ",
+        "meaning": "diferencia de puntos",
+        "type": "noun"
+    },
+    "一進一退": {
+        "reading": "いっしんいったい",
+        "meaning": "avance y retroceso, tira y afloja",
+        "type": "noun"
+    },
+    "点": {
+        "reading": "てん",
+        "meaning": "punto",
+        "type": "noun"
+    },
+    "取り返さ": {
+        "reading": "とりかえさ",
+        "meaning": "recuperar, recuperar terreno",
+        "type": "verb",
+        "form": "stem"
+    },
+    "スリー": {
+        "reading": "スリー",
+        "meaning": "tres",
+        "type": "noun"
+    },
+    "決めれ": {
+        "reading": "きめれ",
+        "meaning": "poder decidir, poder determinar",
+        "type": "verb",
+        "form": "condicional"
+    },
+    "切り込ん": {
+        "reading": "きりこん",
+        "meaning": "atacando, lanzándose a",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "カウント": {
+        "reading": "カウント",
+        "meaning": "cuenta",
+        "type": "noun"
+    },
+    "第": {
+        "reading": "だい",
+        "meaning": "número ordinal (prefijo)",
+        "type": "prefix"
+    },
+    "クォーター": {
+        "reading": "クォーター",
+        "meaning": "cuarto (de un partido)",
+        "type": "noun"
+    },
+    "終盤": {
+        "reading": "しゅうばん",
+        "meaning": "etapa final",
+        "type": "noun"
+    },
+    "リード": {
+        "reading": "リード",
+        "meaning": "ventaja",
+        "type": "noun"
+    },
+    "嫌わ": {
+        "reading": "いやわ",
+        "meaning": "ser odiado, ser rechazado",
+        "type": "verb",
+        "form": "passive"
+    },
+    "跳ね上がっ": {
+        "reading": "はねあがっ",
+        "meaning": "saltando, elevándose",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "センター": {
+        "reading": "センター",
+        "meaning": "centro",
+        "type": "noun"
+    },
+    "飛び上がる": {
+        "reading": "とびあがる",
+        "meaning": "saltar, brincar",
+        "type": "verb"
+    },
+    "ウォォォラァァ": {
+        "reading": "ウォォォラァァ",
+        "meaning": "onomatopeya de alegría o emoción",
+        "type": "onomatopeya"
+    },
+    "空中": {
+        "reading": "くうちゅう",
+        "meaning": "aire, en el aire",
+        "type": "noun"
+    },
+    "衝突": {
+        "reading": "しょうとつ",
+        "meaning": "colisión, choque",
+        "type": "noun"
+    },
+    "グニャリ": {
+        "reading": "グニャリ",
+        "meaning": "onomatopeya de algo que se dobla o tuerce",
+        "type": "onomatopeya"
+    },
+    "不自然": {
+        "reading": "ふしぜん",
+        "meaning": "antinatural, artificial",
+        "type": "adjective"
+    },
+    "曲がっ": {
+        "reading": "まがっ",
+        "meaning": "doblado, torcido",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "激痛": {
+        "reading": "げきつう",
+        "meaning": "dolor intenso",
+        "type": "noun"
+    },
+    "しかめる": {
+        "reading": "しかめる",
+        "meaning": "fruncir el ceño",
+        "type": "verb"
+    },
+    "手中": {
+        "reading": "しゅちゅう",
+        "meaning": "en manos de, bajo el control de",
+        "type": "noun"
+    },
+    "収まっ": {
+        "reading": "おさまっ",
+        "meaning": "calmando, asentándose",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "着地": {
+        "reading": "ちゃくち",
+        "meaning": "aterrizaje, caída",
+        "type": "noun"
+    },
+    "離し": {
+        "reading": "はな",
+        "meaning": "soltar, liberar",
+        "type": "verb",
+        "form": "stem"
+    },
+    "出さ": {
+        "reading": "ださ",
+        "meaning": "sacar, dejar salir",
+        "type": "verb",
+        "form": "stem"
+    },
+    "痛む": {
+        "reading": "いたむ",
+        "meaning": "doler",
+        "type": "verb"
+    },
+    "右": {
+        "reading": "みぎ",
+        "meaning": "derecha",
+        "type": "noun"
+    },
+    "手の甲": {
+        "reading": "てのこう",
+        "meaning": "dorso de la mano",
+        "type": "noun"
+    },
+    "にかけて": {
+        "reading": "にかけて",
+        "meaning": "sobre, durante, a lo largo de",
+        "type": "particle"
+    },
+    "腫れ": {
+        "reading": "はれ",
+        "meaning": "hinchazón, inflamación",
+        "type": "noun"
+    },
+    "戻れ": {
+        "reading": "もどれ",
+        "meaning": "poder regresar, poder volver",
+        "type": "verb",
+        "form": "condicional"
+    },
+    "落とす": {
+        "reading": "おとす",
+        "meaning": "dejar caer, soltar",
+        "type": "verb"
+    },
+    "つき": {
+        "reading": "つき",
+        "meaning": "mes",
+        "type": "noun"
+    },
+    "付け加え": {
+        "reading": "つけくわえ",
+        "meaning": "adición, añadido",
+        "type": "noun"
+    },
+    "頷く": {
+        "reading": "うなずく",
+        "meaning": "asentir con la cabeza",
+        "type": "verb"
+    },
+    "ブレ": {
+        "reading": "ブレ",
+        "meaning": "inestabilidad, fluctuación",
+        "type": "noun"
+    },
+    "打つ": {
+        "reading": "うつ",
+        "meaning": "golpear, pegar",
+        "type": "verb"
+    },
+    "回っ": {
+        "reading": "まわっ",
+        "meaning": "girando, dando vueltas",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "カット": {
+        "reading": "カット",
+        "meaning": "corte",
+        "type": "noun"
+    },
+    "狙い": {
+        "reading": "ねらい",
+        "meaning": "objetivo, meta",
+        "type": "noun"
+    },
+    "張っ": {
+        "reading": "はっ",
+        "meaning": "tenso, estirado",
+        "type": "verbo",
+        "form": "forma -te"
+    },
+    "ファウル": {
+        "reading": "ファウル",
+        "meaning": "falta",
+        "type": "nombre"
+    },
+    "誘い": {
+        "reading": "いざない",
+        "meaning": "invitación, tentación",
+        "type": "nombre"
+    },
+    "フリー": {
+        "reading": "フリー",
+        "meaning": "libre",
+        "type": "adjetivo"
+    },
+    "スロー": {
+        "reading": "スロー",
+        "meaning": "lento",
+        "type": "adjetivo"
+    },
+    "思い出す": {
+        "reading": "おもいだす",
+        "meaning": "recordar",
+        "type": "verbo"
+    },
+    "とも": {
+        "reading": "とも",
+        "meaning": "también, incluso",
+        "type": "partícula"
+    },
+    "差": {
+        "reading": "さ",
+        "meaning": "diferencia",
+        "type": "nombre"
+    },
+    "打た": {
+        "reading": "うた",
+        "meaning": "golpeado",
+        "type": "verbo",
+        "form": "forma pasiva"
+    },
+    "回り": {
+        "reading": "まわり",
+        "meaning": "alrededor",
+        "type": "nombre"
+    },
+    "切れ込ん": {
+        "reading": "きれこん",
+        "meaning": "se abrió paso",
+        "type": "verbo",
+        "form": "forma -te"
+    },
+    "ぶつかり": {
+        "reading": "ぶつかり",
+        "meaning": "colisión",
+        "type": "nombre"
+    },
+    "弾か": {
+        "reading": "はじか",
+        "meaning": "rebotar, repeler",
+        "type": "verbo"
+    },
+    "球": {
+        "reading": "きゅう",
+        "meaning": "bola",
+        "type": "nombre"
+    },
+    "倒れ込み": {
+        "reading": "たおれこみ",
+        "meaning": "caída",
+        "type": "nombre"
+    },
+    "すかさず": {
+        "reading": "すかさず",
+        "meaning": "inmediatamente",
+        "type": "adverbio"
+    },
+    "インバウンドパス": {
+        "reading": "インバウンドパス",
+        "meaning": "pase de entrada",
+        "type": "nombre"
+    },
+    "フェイク": {
+        "reading": "フェイク",
+        "meaning": "engaño, finta",
+        "type": "nombre"
+    },
+    "かわし": {
+        "reading": "かわし",
+        "meaning": "esquivar",
+        "type": "verbo",
+        "form": "forma -i"
+    },
+    "ミドルシュート": {
+        "reading": "ミドルシュート",
+        "meaning": "tiro medio",
+        "type": "nombre"
+    },
+    "割れん": {
+        "reading": "われん",
+        "meaning": "a punto de romperse",
+        "type": "verbo",
+        "form": "forma -ren"
+    },
+    "渡る": {
+        "reading": "わたる",
+        "meaning": "cruzar",
+        "type": "verbo"
+    },
+    "駆け寄っ": {
+        "reading": "かけよっ",
+        "meaning": "corrió hacia",
+        "type": "verbo",
+        "form": "forma -te"
+    },
+    "抱きしめ": {
+        "reading": "だきしめ",
+        "meaning": "abrazo",
+        "type": "nombre"
+    },
+    "忘れ": {
+        "reading": "わすれ",
+        "meaning": "olvido",
+        "type": "nombre"
+    },
+    "噛み締め": {
+        "reading": "かみしめ",
+        "meaning": "apretar los dientes, saborear",
+        "type": "nombre"
+    },
+    "歓喜": {
+        "reading": "かんき",
+        "meaning": "alegría, júbilo",
+        "type": "nombre"
+    },
+    "沸く": {
+        "reading": "わく",
+        "meaning": "hervir, bullir",
+        "type": "verbo"
+    },
+    "裏腹": {
+        "reading": "うら腹",
+        "meaning": "doble intención, hipocresía",
+        "type": "nombre"
+    },
+    "ズキズキ": {
+        "reading": "ズキズキ",
+        "meaning": "punzante, dolor punzante",
+        "type": "adverbio onomatopéyico"
+    },
+    "戦": {
+        "reading": "いくさ/たたかい",
+        "meaning": "batalla, guerra",
+        "type": "nombre"
+    },
+    "眩しく": {
+        "reading": "まぶしく",
+        "meaning": "deslumbrantemente",
+        "type": "adverbio"
+    },
+    "満員": {
+        "reading": "まんいん",
+        "meaning": "lleno, completo",
+        "type": "adjetivo"
+    },
+    "轟音": {
+        "reading": "ごうおん",
+        "meaning": "ruido ensordecedor",
+        "type": "nombre"
+    },
+    "切符": {
+        "reading": "きっぷ",
+        "meaning": "billete",
+        "type": "nombre"
+    },
+    "いけ": {
+        "reading": "いけ",
+        "meaning": "ve",
+        "type": "verbo",
+        "form": "forma imperativa"
+    },
+    "包帯": {
+        "reading": "ほうたい",
+        "meaning": "vendaje",
+        "type": "nombre"
+    },
+    "ズキリ": {
+        "reading": "ズキリ",
+        "meaning": "dolor agudo",
+        "type": "adverbio onomatopéyico"
+    },
+    "痛ん": {
+        "reading": "いたん",
+        "meaning": "dolorido",
+        "type": "verbo",
+        "form": "forma -te"
+    },
+    "痛め": {
+        "reading": "いため",
+        "meaning": "herir, lastimar",
+        "type": "verbo"
+    },
+    "全身全霊": {
+        "reading": "しんしんぜんれい",
+        "meaning": "con todo el corazón y el alma",
+        "type": "nombre"
+    },
+    "戦う": {
+        "reading": "たたかう",
+        "meaning": "luchar, pelear",
+        "type": "verbo"
+    },
+    "ホイッスル": {
+        "reading": "ホイッスル",
+        "meaning": "silbato",
+        "type": "nombre"
+    },
+    "鳴り響く": {
+        "reading": "なりひびく",
+        "meaning": "resonar, retumbar",
+        "type": "verbo"
+    },
+    "組織": {
+        "reading": "そしき",
+        "meaning": "organización",
+        "type": "nombre"
+    },
+    "個々": {
+        "reading": "ここ",
+        "meaning": "individualmente",
+        "type": "adverbio"
+    },
+    "変幻": {
+        "reading": "へんげん",
+        "meaning": "cambio, transformación",
+        "type": "nombre"
+    },
+    "自在": {
+        "reading": "じざい",
+        "meaning": "libremente, a voluntad",
+        "type": "adjetivo"
+    },
+    "接触": {
+        "reading": "せっしょく",
+        "meaning": "contacto",
+        "type": "nombre"
+    },
+    "転倒": {
+        "reading": "てんとう",
+        "meaning": "caída, vuelco",
+        "type": "nombre"
+    },
+    "揺らぎ": {
+        "reading": "ゆらぎ",
+        "meaning": "vacilación, fluctuación, temblor",
+        "type": "noun"
+    },
+    "うめき声": {
+        "reading": "うめきごえ",
+        "meaning": "gemido, quejido",
+        "type": "noun"
+    },
+    "食いしばっ": {
+        "reading": "くいしばっ",
+        "meaning": "apretando (los dientes)",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "立ち上がっ": {
+        "reading": "たちあがっ",
+        "meaning": "poniéndose de pie",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "かける": {
+        "reading": "かける",
+        "meaning": "poner, colgar, echar, gastar (tiempo/dinero)",
+        "type": "verb"
+    },
+    "痛かっ": {
+        "reading": "いたかっ",
+        "meaning": "dolía",
+        "type": "adjective",
+        "form": "past negative"
+    },
+    "下がる": {
+        "reading": "さがる",
+        "meaning": "bajar, descender",
+        "type": "verb"
+    },
+    "微塵": {
+        "reading": "みじん",
+        "meaning": "partícula, pizca, vestigio",
+        "type": "noun"
+    },
+    "後半": {
+        "reading": "こうはん",
+        "meaning": "segunda mitad",
+        "type": "noun"
+    },
+    "ヒートアップ": {
+        "reading": "ヒートアップ",
+        "meaning": "calentamiento, intensificación",
+        "type": "noun"
+    },
+    "奪い合い": {
+        "reading": "うばいあい",
+        "meaning": "lucha, disputa, competencia",
+        "type": "noun"
+    },
+    "ぶつけ": {
+        "reading": "ぶつけ",
+        "meaning": "golpear, chocar, lanzar",
+        "type": "verb",
+        "form": "stem"
+    },
+    "猛攻": {
+        "reading": "もうこう",
+        "meaning": "ataque feroz, ofensiva implacable",
+        "type": "noun"
+    },
+    "仕掛け": {
+        "reading": "しかけ",
+        "meaning": "estrategia, artimaña, dispositivo",
+        "type": "noun"
+    },
+    "ついに": {
+        "reading": "ついに",
+        "meaning": "finalmente, por fin",
+        "type": "adverb"
+    },
+    "逆転": {
+        "reading": "ぎゃくてん",
+        "meaning": "cambio, inversión, remontada",
+        "type": "noun"
+    },
+    "反撃": {
+        "reading": "はんげき",
+        "meaning": "contraataque, réplica",
+        "type": "noun"
+    },
+    "再": {
+        "reading": "さい",
+        "meaning": "re-, de nuevo",
+        "type": "prefix"
+    },
+    "持ち": {
+        "reading": "もち",
+        "meaning": "tenencia, posesión",
+        "type": "noun"
+    },
+    "引きつける": {
+        "reading": "ひきつける",
+        "meaning": "atraer, cautivar",
+        "type": "verb"
+    },
+    "無情": {
+        "reading": "むじょう",
+        "meaning": "implacabilidad, crueldad, despiadado",
+        "type": "noun/adjective"
+    },
+    "戻ら": {
+        "reading": "もどら",
+        "meaning": "regresar, volver",
+        "type": "verb",
+        "form": "negative"
+    },
+    "負け": {
+        "reading": "まけ",
+        "meaning": "derrota",
+        "type": "noun"
+    },
+    "そっ": {
+        "reading": "そっ",
+        "meaning": "suavemente, silenciosamente",
+        "type": "adverb"
+    },
+    "止めど": {
+        "reading": "とめど",
+        "meaning": "sin parar, sin fin",
+        "type": "noun"
+    },
+    "寄せ": {
+        "reading": "よせ",
+        "meaning": "acercamiento, envío",
+        "type": "noun"
+    },
+    "さすっ": {
+        "reading": "さすっ",
+        "meaning": "acariciar, tocar ligeramente",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "歪ん": {
+        "reading": "ゆがん",
+        "meaning": "torcido, deformado",
+        "type": "verb",
+        "form": "past"
+    },
+    "責める": {
+        "reading": "せめる",
+        "meaning": "reprender, culpar, criticar",
+        "type": "verb"
+    },
+    "戦い": {
+        "reading": "たたかい",
+        "meaning": "batalla, lucha, combate",
+        "type": "noun"
+    },
+    "抜い": {
+        "reading": "ぬい",
+        "meaning": "sacando, extrayendo",
+        "type": "verb",
+        "form": "stem"
+    },
+    "拭っ": {
+        "reading": "ぬぐっ",
+        "meaning": "limpiando, secando",
+        "type": "verb",
+        "form": "te-form"
+    },
+    "たった": {
+        "reading": "たった",
+        "meaning": "sólo, solamente",
+        "type": "adverb"
+    },
+    "敗れ": {
+        "reading": "やぶれ",
+        "meaning": "derrota",
+        "type": "noun"
+    },
+    "敗北": {
+        "reading": "はいぼく",
+        "meaning": "derrota",
+        "type": "noun"
+    },
+    "張れ": {
+        "reading": "はり",
+        "meaning": "tensión, tirantez",
+        "type": "noun"
+    },
+    "染みる": {
+        "reading": "しみる",
+        "meaning": "calar, penetrar, empapar",
+        "type": "verb"
+    },
+    "悔しかっ": {
+        "reading": "くやしかっ",
+        "meaning": "sentía rabia, me arrepentía",
+        "type": "adjective",
+        "form": "past negative"
+    },
+    "大柄": {
+        "reading": "おおがら",
+        "meaning": "de gran tamaño, corpulento",
+        "type": "adjective"
+    },
+    "見慣れ": {
+        "reading": "みなら",
+        "meaning": "familiar, acostumbrado",
+        "type": "verb",
+        "form": "stem"
+    },
+    "年齢": {
+        "reading": "ねんれい",
+        "meaning": "edad",
+        "type": "noun"
+    },
+    "代": {
+        "reading": "だい",
+        "meaning": "generación, época, en lugar de",
+        "type": "noun/counter"
+    },
+    "眼差し": {
+        "reading": "まなざし",
+        "meaning": "mirada, expresión",
+        "type": "noun"
+    },
+    "流暢": {
+        "reading": "りゅうちょう",
+        "meaning": "fluido, elocuente",
+        "type": "adjective"
+    },
+    "日本語": {
+        "reading": "にほんご",
+        "meaning": "japonés",
+        "type": "noun"
+    },
+    "尋ね": {
+        "reading": "たずね",
+        "meaning": "preguntar, inquirir",
+        "type": "verb"
+    },
+    "レイ・ジェンキンス": {
+        "reading": "レイ・ジェンキンス",
+        "meaning": "Ray Jenkins",
+        "type": "proper noun"
+    },
+    "アメリカ": {
+        "reading": "アメリカ",
+        "meaning": "Estados Unidos",
+        "type": "proper noun"
+    },
+    "スカウト": {
+        "reading": "スカウト",
+        "meaning": "explorador, ojeador",
+        "type": "noun"
+    },
+    "実に": {
+        "reading": "じつに",
+        "meaning": "verdaderamente, realmente",
+        "type": "adverb"
+    },
+    "興味深い": {
+        "reading": "きょうみぶかい",
+        "meaning": "interesante",
+        "type": "adjetivo i"
+    },
+    "学習": {
+        "reading": "がくしゅう",
+        "meaning": "aprendizaje",
+        "type": "sustantivo"
+    },
+    "聞い": {
+        "reading": "きい",
+        "meaning": "oído (forma irregular del verbo 'oir')",
+        "type": "verbo",
+        "form": "forma -i (condicional o pasado)"
+    },
+    "見て取れる": {
+        "reading": "みてとれる",
+        "meaning": "se puede ver, se puede discernir",
+        "type": "verbo",
+        "form": "forma potencial pasiva"
+    },
+    "怪我": {
+        "reading": "けが",
+        "meaning": "herida, lesión",
+        "type": "sustantivo"
+    },
+    "性": {
+        "reading": "せい",
+        "meaning": "naturaleza, sexo, género",
+        "type": "sustantivo"
+    },
+    "本題": {
+        "reading": "ほんだい",
+        "meaning": "tema principal",
+        "type": "sustantivo"
+    },
+    "入ろう": {
+        "reading": "はいろう",
+        "meaning": "entremos",
+        "type": "verbo",
+        "form": "forma volitiva"
+    },
+    "学ぶ": {
+        "reading": "まなぶ",
+        "meaning": "aprender",
+        "type": "verbo"
+    },
+    "提供": {
+        "reading": "ていきょう",
+        "meaning": "oferta, provisión",
+        "type": "sustantivo/verbo"
+    },
+    "奨学": {
+        "reading": "しょうがく",
+        "meaning": "beca, ayuda económica para estudios",
+        "type": "sustantivo"
+    },
+    "制度": {
+        "reading": "せいど",
+        "meaning": "sistema, institución",
+        "type": "sustantivo"
+    },
+    "ロサンゼルス": {
+        "reading": "ロサンゼルス",
+        "meaning": "Los Ángeles",
+        "type": "nombre propio"
+    },
+    "アカデミー": {
+        "reading": "アカデミー",
+        "meaning": "academia",
+        "type": "nombre propio/sustantivo"
+    },
+    "全米": {
+        "reading": "ぜんべい",
+        "meaning": "Estados Unidos",
+        "type": "sustantivo"
+    },
+    "有望": {
+        "reading": "ゆうぼう",
+        "meaning": "prometedor",
+        "type": "adjetivo na"
+    },
+    "本格": {
+        "reading": "ほんかく",
+        "meaning": "auténtico, a fondo",
+        "type": "adjetivo na/sustantivo"
+    },
+    "磨か": {
+        "reading": "みがか",
+        "meaning": "pulir, perfeccionar (forma -ka del verbo)",
+        "type": "verbo",
+        "form": "forma -ka (condicional, etc.)"
+    },
+    "真っ白": {
+        "reading": "まっしろ",
+        "meaning": "blanco puro, completamente blanco",
+        "type": "adjetivo"
+    },
+    "計り": {
+        "reading": "はかり",
+        "meaning": "medida, balanza",
+        "type": "sustantivo"
+    },
+    "辞め": {
+        "reading": "や(め)",
+        "meaning": "renunciar, dejar (forma -e del verbo)",
+        "type": "verbo",
+        "form": "forma -e (condicional, etc.)"
+    },
+    "一時": {
+        "reading": "いちじ",
+        "meaning": "un tiempo, temporalmente",
+        "type": "sustantivo/adverbio"
+    },
+    "夕暮れ": {
+        "reading": "ゆうぐれ",
+        "meaning": "atardecer",
+        "type": "sustantivo"
+    },
+    "海面": {
+        "reading": "かいめん",
+        "meaning": "superficie del mar",
+        "type": "sustantivo"
+    },
+    "鮫": {
+        "reading": "さめ",
+        "meaning": "tiburón",
+        "type": "sustantivo"
+    },
+    "に対する": {
+        "reading": "にたいする",
+        "meaning": "con respecto a, hacia",
+        "type": "partícula"
+    },
+    "返す": {
+        "reading": "かえす",
+        "meaning": "devolver, regresar",
+        "type": "verbo"
+    },
+    "重なる": {
+        "reading": "かさなる",
+        "meaning": "superponerse, coincidir",
+        "type": "verbo"
+    },
+    "包み込ん": {
+        "reading": "つつみこん",
+        "meaning": "envolviendo, abrazando (forma -n del verbo)",
+        "type": "verbo",
+        "form": "forma -n (condicional, etc.)"
+    },
+    "進め": {
+        "reading": "すすめ",
+        "meaning": "avanzar, proceder (forma -e del verbo)",
+        "type": "verbo",
+        "form": "forma -e (condicional, etc.)"
+    },
+    "安らぎ": {
+        "reading": "やすらぎ",
+        "meaning": "tranquilidad, paz",
+        "type": "sustantivo"
+    },
+    "器": {
+        "reading": "うつわ",
+        "meaning": "recipiente, vasija, capacidad",
+        "type": "sustantivo"
+    },
+    "注ぎ込ま": {
+        "reading": "つぎこま",
+        "meaning": "vertido, vertido en (forma -a del verbo)",
+        "type": "verbo",
+        "form": "forma -a (condicional, etc.)"
+    },
+    "再生": {
+        "reading": "さいせい",
+        "meaning": "reproducción, regeneración",
+        "type": "sustantivo/verbo"
+    },
+    "恐れ": {
+        "reading": "おそれ",
+        "meaning": "miedo, temor",
+        "type": "sustantivo"
+    },
+    "彼方": {
+        "reading": "かなた",
+        "meaning": "lejanía, más allá",
+        "type": "sustantivo"
+    },
+    "歩ん": {
+        "reading": "ある",
+        "meaning": "caminando (forma -n del verbo)",
+        "type": "verbo",
+        "form": "forma -n (condicional, etc.)"
     }
 }
