@@ -1,1 +1,1536 @@
-{}
+{
+    "필터": {
+        "reading": "フィルター",
+        "meaning": "フィルター",
+        "type": "noun"
+    },
+    "뒤의": {
+        "reading": "うしろの",
+        "meaning": "後ろの",
+        "type": "adjective (possessive/attributive)",
+        "form": "attributive form"
+    },
+    "나": {
+        "reading": "わたし",
+        "meaning": "私",
+        "type": "pronoun"
+    },
+    "오늘도": {
+        "reading": "きょうも",
+        "meaning": "今日も",
+        "type": "adverbial phrase"
+    },
+    "고양이": {
+        "reading": "ねこ",
+        "meaning": "猫",
+        "type": "noun"
+    },
+    "카페에서": {
+        "reading": "カフェで",
+        "meaning": "カフェで",
+        "type": "noun + particle"
+    },
+    "온종일": {
+        "reading": "いちにちじゅう",
+        "meaning": "一日中",
+        "type": "adverb"
+    },
+    "고양이털과": {
+        "reading": "ねこげと",
+        "meaning": "猫の毛と",
+        "type": "noun + particle"
+    },
+    "씨름하고": {
+        "reading": "しーるむして",
+        "meaning": "格闘して、苦戦して",
+        "type": "verb",
+        "form": "connective form (-고)"
+    },
+    "돌아왔다.": {
+        "reading": "もどってきた",
+        "meaning": "戻ってきた",
+        "type": "verb",
+        "form": "past tense"
+    },
+    "푸딩이는": {
+        "reading": "プディンは",
+        "meaning": "プディンは",
+        "type": "proper noun + topic particle"
+    },
+    "내": {
+        "reading": "わたしの",
+        "meaning": "私の",
+        "type": "possessive pronoun"
+    },
+    "침대": {
+        "reading": "ベッド",
+        "meaning": "ベッド",
+        "type": "noun"
+    },
+    "위에서": {
+        "reading": "うえで",
+        "meaning": "上で",
+        "type": "noun + particle"
+    },
+    "뚱한": {
+        "reading": "むっつりした",
+        "meaning": "むっつりした、不機嫌な",
+        "type": "adjective",
+        "form": "attributive form"
+    },
+    "표정으로": {
+        "reading": "ひょうじょうで",
+        "meaning": "表情で",
+        "type": "noun + particle"
+    },
+    "날": {
+        "reading": "わたしを",
+        "meaning": "私を",
+        "type": "pronoun",
+        "form": "object form"
+    },
+    "맞았다.": {
+        "reading": "むかえた",
+        "meaning": "迎えた",
+        "type": "verb",
+        "form": "past tense"
+    },
+    "유일한": {
+        "reading": "ゆいいつな",
+        "meaning": "唯一の",
+        "type": "adjective",
+        "form": "attributive form"
+    },
+    "진짜": {
+        "reading": "ほんとうの",
+        "meaning": "本当の、本物の",
+        "type": "adjective/adverb/noun"
+    },
+    "'남자친구'지.": {
+        "reading": "だんしんゆうだね",
+        "meaning": "「彼氏」だよね。",
+        "type": "noun + ending particle",
+        "form": "informal ending"
+    },
+    "하지만": {
+        "reading": "しかし",
+        "meaning": "しかし、だけど",
+        "type": "conjunction"
+    },
+    "인스타그램": {
+        "reading": "インスタグラム",
+        "meaning": "インスタグラム",
+        "type": "noun"
+    },
+    "속": {
+        "reading": "なか",
+        "meaning": "中、〜の中",
+        "type": "noun"
+    },
+    "나는": {
+        "reading": "わたしは",
+        "meaning": "私は",
+        "type": "pronoun + topic particle"
+    },
+    "달랐다.": {
+        "reading": "ちがった",
+        "meaning": "違った",
+        "type": "adjective",
+        "form": "past tense"
+    },
+    "완벽한": {
+        "reading": "かんぺきな",
+        "meaning": "完璧な",
+        "type": "adjective",
+        "form": "attributive form"
+    },
+    "사랑을": {
+        "reading": "あいを",
+        "meaning": "愛を",
+        "type": "noun + object particle"
+    },
+    "하는": {
+        "reading": "する",
+        "meaning": "する",
+        "type": "verb",
+        "form": "attributive form"
+    },
+    "'로맨틱": {
+        "reading": "ロマンチック",
+        "meaning": "ロマンチックな",
+        "type": "noun/adjective"
+    },
+    "보미'였다.": {
+        "reading": "ボミだった",
+        "meaning": "ボミ」だった。",
+        "type": "proper noun + copula",
+        "form": "past tense copula"
+    },
+    "익숙하게": {
+        "reading": "なれたてつきで",
+        "meaning": "慣れた手つきで",
+        "type": "adverb"
+    },
+    "포토샵을": {
+        "reading": "フォトショップを",
+        "meaning": "フォトショップを",
+        "type": "noun + object particle"
+    },
+    "켰다.": {
+        "reading": "つけた",
+        "meaning": "点けた、起動した",
+        "type": "verb",
+        "form": "past tense"
+    },
+    "이번에는": {
+        "reading": "こんどは",
+        "meaning": "今回は",
+        "type": "noun + topic particle"
+    },
+    "푸딩이를": {
+        "reading": "プディンを",
+        "meaning": "プディンを",
+        "type": "proper noun + object particle"
+    },
+    "턱시도": {
+        "reading": "タキシード",
+        "meaning": "タキシード",
+        "type": "noun"
+    },
+    "입은": {
+        "reading": "きた",
+        "meaning": "着た",
+        "type": "verb",
+        "form": "attributive form (past)"
+    },
+    "남자친구": {
+        "reading": "だんしんゆう",
+        "meaning": "彼氏",
+        "type": "noun"
+    },
+    "옆에": {
+        "reading": "よこに",
+        "meaning": "横に",
+        "type": "noun + particle"
+    },
+    "합성했다.": {
+        "reading": "ごうせいした",
+        "meaning": "合成した",
+        "type": "verb",
+        "form": "past tense"
+    },
+    "배경은": {
+        "reading": "はいけいは",
+        "meaning": "背景は",
+        "type": "noun + topic particle"
+    },
+    "이탈리아": {
+        "reading": "イタリア",
+        "meaning": "イタリア",
+        "type": "proper noun"
+    },
+    "베네치아의": {
+        "reading": "ヴェネツィアの",
+        "meaning": "ベネチアの",
+        "type": "proper noun + possessive particle"
+    },
+    "낭만적인": {
+        "reading": "ロマンチックな",
+        "meaning": "ロマンチックな",
+        "type": "adjective",
+        "form": "attributive form"
+    },
+    "다리": {
+        "reading": "はし",
+        "meaning": "橋",
+        "type": "noun"
+    },
+    "위.": {
+        "reading": "うえ",
+        "meaning": "上。",
+        "type": "noun"
+    },
+    "'사랑하는": {
+        "reading": "あいする",
+        "meaning": "「愛する",
+        "type": "verb",
+        "form": "attributive form"
+    },
+    "자기와": {
+        "reading": "じぶんとおのれと",
+        "meaning": "愛しい人と、あなたと",
+        "type": "pronoun + particle"
+    },
+    "베네치아에서": {
+        "reading": "ヴェネツィアで",
+        "meaning": "ベネチアで",
+        "type": "proper noun + particle"
+    },
+    "잊지": {
+        "reading": "わすれない",
+        "meaning": "忘れない",
+        "type": "verb",
+        "form": "negative stem"
+    },
+    "못할": {
+        "reading": "できない",
+        "meaning": "できないだろう",
+        "type": "auxiliary verb",
+        "form": "attributive form"
+    },
+    "밤": {
+        "reading": "よる",
+        "meaning": "夜",
+        "type": "noun"
+    },
+    "캡션을": {
+        "reading": "キャプションを",
+        "meaning": "キャプションを",
+        "type": "noun + object particle"
+    },
+    "달고": {
+        "reading": "つけて",
+        "meaning": "付けて、書いて",
+        "type": "verb",
+        "form": "connective form (-고)"
+    },
+    "하트": {
+        "reading": "ハート",
+        "meaning": "ハート",
+        "type": "noun"
+    },
+    "이모티콘을": {
+        "reading": "えもじを",
+        "meaning": "絵文字を",
+        "type": "noun + object particle"
+    },
+    "세": {
+        "reading": "みっつ",
+        "meaning": "三つ",
+        "type": "numeral"
+    },
+    "개나": {
+        "reading": "こも",
+        "meaning": "個も",
+        "type": "counter + emphasizing particle"
+    },
+    "붙였다.": {
+        "reading": "つけた",
+        "meaning": "付けた、貼った",
+        "type": "verb",
+        "form": "past tense"
+    },
+    "완벽하게": {
+        "reading": "かんぺきに",
+        "meaning": "完璧に",
+        "type": "adverb"
+    },
+    "가짜인": {
+        "reading": "にせものな",
+        "meaning": "偽物である",
+        "type": "adjective (attributive)",
+        "form": "attributive form"
+    },
+    "사진이": {
+        "reading": "しゃしんが",
+        "meaning": "写真が",
+        "type": "noun + subject particle"
+    },
+    "업로드되자마자": {
+        "reading": "アップロードされるとすぐに",
+        "meaning": "アップロードされるやいなや、アップロードされるとすぐに",
+        "type": "verb + suffix",
+        "form": "immediately after (-자마자)"
+    },
+    "수천": {
+        "reading": "すうせん",
+        "meaning": "数千",
+        "type": "numeral"
+    },
+    "개의": {
+        "reading": "この",
+        "meaning": "個の",
+        "type": "counter + possessive particle"
+    },
+    "'좋아요'가": {
+        "reading": "いいねが",
+        "meaning": "「いいね」が",
+        "type": "noun + subject particle"
+    },
+    "쏟아졌다.": {
+        "reading": "そそがれた",
+        "meaning": "殺到した、降り注いだ",
+        "type": "verb",
+        "form": "past tense"
+    },
+    "'언니!": {
+        "reading": "おねえさん",
+        "meaning": "「お姉さん！",
+        "type": "noun (vocative)",
+        "form": "vocative"
+    },
+    "연애의": {
+        "reading": "れんあいの",
+        "meaning": "恋愛の",
+        "type": "noun + possessive particle"
+    },
+    "신인가요?'": {
+        "reading": "かみかな",
+        "meaning": "神ですか？",
+        "type": "noun + copula + interrogative ending",
+        "form": "polite interrogative"
+    },
+    "'진짜,": {
+        "reading": "ほんとうに",
+        "meaning": "「本当に、",
+        "type": "adverb"
+    },
+    "너무,": {
+        "reading": "とても",
+        "meaning": "とても、すごく",
+        "type": "adverb"
+    },
+    "예쁜": {
+        "reading": "きれいな",
+        "meaning": "美しい、きれいな",
+        "type": "adjective",
+        "form": "attributive form"
+    },
+    "사랑이에요,,": {
+        "reading": "あいです",
+        "meaning": "愛ですね、、",
+        "type": "noun + copula",
+        "form": "polite copula"
+    },
+    "부러워": {
+        "reading": "うらやましくて",
+        "meaning": "羨ましくて",
+        "type": "adjective",
+        "form": "connective form"
+    },
+    "죽겠어요!'": {
+        "reading": "しにそうです",
+        "meaning": "死にそうです！",
+        "type": "verb + auxiliary",
+        "form": "polite future/conjecture"
+    },
+    "댓글들이": {
+        "reading": "コメントが",
+        "meaning": "コメントが",
+        "type": "noun + plural marker + subject particle",
+        "form": "plural"
+    },
+    "터져": {
+        "reading": "はじけて",
+        "meaning": "爆発するように、溢れて",
+        "type": "verb",
+        "form": "connective form"
+    },
+    "나왔다.": {
+        "reading": "でてきた",
+        "meaning": "出てきた",
+        "type": "verb",
+        "form": "past tense"
+    },
+    "그럴수록": {
+        "reading": "そうすればするほど",
+        "meaning": "そうすればするほど",
+        "type": "adverbial expression"
+    },
+    "안의": {
+        "reading": "なかの",
+        "meaning": "中の",
+        "type": "noun + possessive particle",
+        "form": "attributive"
+    },
+    "공허함은": {
+        "reading": "こうきょかんは",
+        "meaning": "空虚さは、空虚感は",
+        "type": "noun + topic particle"
+    },
+    "커졌다.": {
+        "reading": "おおきくなった",
+        "meaning": "大きくなった",
+        "type": "adjective",
+        "form": "past tense"
+    },
+    "이": {
+        "reading": "この",
+        "meaning": "この",
+        "type": "demonstrative adjective"
+    },
+    "모든": {
+        "reading": "すべての",
+        "meaning": "全ての、あらゆる",
+        "type": "adjective",
+        "form": "attributive form"
+    },
+    "게": {
+        "reading": "ことが",
+        "meaning": "ことが",
+        "type": "particle (short for 것이)",
+        "form": "short form of subject particle"
+    },
+    "거짓말인데.": {
+        "reading": "うそなのに",
+        "meaning": "嘘なのに。",
+        "type": "noun + copula + connective ending",
+        "form": "connective ending (-인데)"
+    },
+    "그때였다.": {
+        "reading": "そのときだった",
+        "meaning": "その時だった。",
+        "type": "noun + copula",
+        "form": "past tense copula"
+    },
+    "딩동!": {
+        "reading": "ピンポン",
+        "meaning": "ピンポン！",
+        "type": "onomatopoeia"
+    },
+    "알림음과": {
+        "reading": "アラームおんと",
+        "meaning": "通知音と",
+        "type": "noun + particle"
+    },
+    "함께,": {
+        "reading": "いっしょに",
+        "meaning": "一緒に、",
+        "type": "adverb"
+    },
+    "DM이": {
+        "reading": "DMが",
+        "meaning": "DMが",
+        "type": "noun + subject particle"
+    },
+    "도착했다.": {
+        "reading": "とうちゃくした",
+        "meaning": "到着した",
+        "type": "verb",
+        "form": "past tense"
+    },
+    "'보미님!": {
+        "reading": "ボミさん",
+        "meaning": "「ボミさん！",
+        "type": "proper noun + honorific + vocative",
+        "form": "vocative"
+    },
+    "안녕하세요!": {
+        "reading": "こんにちは",
+        "meaning": "こんにちは！",
+        "type": "interjection",
+        "form": "polite"
+    },
+    "저희": {
+        "reading": "わたしたちの",
+        "meaning": "私たちの",
+        "type": "pronoun (humble)",
+        "form": "attributive form"
+    },
+    "커플": {
+        "reading": "カップル",
+        "meaning": "カップル",
+        "type": "noun"
+    },
+    "계정": {
+        "reading": "アカウント",
+        "meaning": "アカウント",
+        "type": "noun"
+    },
+    "팔로우하는데": {
+        "reading": "フォローしているのですが",
+        "meaning": "フォローしているのですが",
+        "type": "verb + connective ending",
+        "form": "connective form (-는데)"
+    },
+    "혹시": {
+        "reading": "もしかしたら",
+        "meaning": "もし、ひょっとして",
+        "type": "副詞"
+    },
+    "저희랑": {
+        "reading": "わたしたちと",
+        "meaning": "私達と (謙譲語の「私たち」+「～と」)",
+        "type": "代名詞+助詞",
+        "form": "謙譲語+助詞"
+    },
+    "담에": {
+        "reading": "つぎに",
+        "meaning": "次に、今度 (다음에の縮約形)",
+        "type": "名詞+助詞",
+        "form": "縮約形"
+    },
+    "더블": {
+        "reading": "ダブル",
+        "meaning": "ダブル",
+        "type": "名詞"
+    },
+    "데이트": {
+        "reading": "デート",
+        "meaning": "デート",
+        "type": "名詞"
+    },
+    "어떠세요?": {
+        "reading": "いかがですか？",
+        "meaning": "いかがですか？どうですか？ (어떠하다の尊敬語)",
+        "type": "形容詞",
+        "form": "尊敬語, 疑問形"
+    },
+    "잘": {
+        "reading": "うまく",
+        "meaning": "よく、うまく",
+        "type": "副詞"
+    },
+    "어울리셔서": {
+        "reading": "おにあいなので",
+        "meaning": "お似合いなので、調和がとれていらっしゃるので (어울리다の尊敬語の理由形)",
+        "type": "動詞",
+        "form": "尊敬語, 理由形"
+    },
+    "꼭": {
+        "reading": "きっと",
+        "meaning": "必ず、きっと、ぜひ",
+        "type": "副詞"
+    },
+    "뵙고": {
+        "reading": "おめにかかって",
+        "meaning": "お目にかかって (뵙다の連結形)",
+        "type": "動詞",
+        "form": "謙譲語, 連結形"
+    },
+    "싶어요!": {
+        "reading": "したいです！",
+        "meaning": "～したいです！",
+        "type": "補助形容詞",
+        "form": "해요体"
+    },
+    "머릿속이": {
+        "reading": "あたまのなかが",
+        "meaning": "頭の中が",
+        "type": "名詞+助詞"
+    },
+    "새하얘졌다.": {
+        "reading": "まっしろになった",
+        "meaning": "真っ白になった",
+        "type": "形容詞",
+        "form": "過去形"
+    },
+    "심장이": {
+        "reading": "しんぞうが",
+        "meaning": "心臓が",
+        "type": "名詞+助詞"
+    },
+    "발끝으로": {
+        "reading": "つまさきまで",
+        "meaning": "つま先まで、足元に",
+        "type": "名詞+助詞"
+    },
+    "곤두박질쳤다.": {
+        "reading": "まっさかさまになった",
+        "meaning": "転げ落ちた、まっさかさまになった、急落した",
+        "type": "動詞",
+        "form": "過去形"
+    },
+    "온라인의": {
+        "reading": "オンラインの",
+        "meaning": "オンラインの",
+        "type": "名詞+助詞"
+    },
+    "보미'는": {
+        "reading": "ボミは",
+        "meaning": "ボミは (名前'보미' + 助詞'는')",
+        "type": "固有名詞+助詞"
+    },
+    "미소": {
+        "reading": "えがお",
+        "meaning": "微笑み、笑顔",
+        "type": "名詞"
+    },
+    "짓고": {
+        "reading": "つくって",
+        "meaning": "(笑顔を)作って (짓다の連結形)",
+        "type": "動詞",
+        "form": "連結形"
+    },
+    "있었지만,": {
+        "reading": "いたけれど",
+        "meaning": "～いたけれど、～あったけれど (있다の過去継続の逆接形)",
+        "type": "補助動詞",
+        "form": "過去形, 逆接連結形"
+    },
+    "현실의": {
+        "reading": "げんじつの",
+        "meaning": "現実の",
+        "type": "名詞+助詞"
+    },
+    "위": {
+        "reading": "うえ",
+        "meaning": "上",
+        "type": "名詞"
+    },
+    "푸딩이처럼": {
+        "reading": "プリンのように",
+        "meaning": "プリンのように (名前'푸딩이' + 助詞'처럼')",
+        "type": "固有名詞+助詞"
+    },
+    "얼어붙었다.": {
+        "reading": "こおりついた",
+        "meaning": "凍りついた",
+        "type": "動詞",
+        "form": "過去形"
+    },
+    "자연스럽게": {
+        "reading": "しぜんに",
+        "meaning": "自然に",
+        "type": "副詞"
+    },
+    "잡아주고...": {
+        "reading": "つかんであげて...",
+        "meaning": "握ってあげて... (잡아주다の連結形)",
+        "type": "動詞",
+        "form": "補助動詞, 連結形"
+    },
+    "눈은": {
+        "reading": "めは",
+        "meaning": "目は",
+        "type": "名詞+助詞"
+    },
+    "마주보고": {
+        "reading": "むきあって",
+        "meaning": "向き合って、見つめ合って (마주보다の連結形)",
+        "type": "動詞",
+        "form": "連結形"
+    },
+    "달달하게": {
+        "reading": "あまく",
+        "meaning": "甘く、甘ったるく",
+        "type": "副詞"
+    },
+    "웃어봐!": {
+        "reading": "わらってみて！",
+        "meaning": "笑ってみて！",
+        "type": "動詞",
+        "form": "命令形 (試み)"
+    },
+    "민석은": {
+        "reading": "ミンソクは",
+        "meaning": "ミンソクは (名前'민석' + 助詞'은')",
+        "type": "固有名詞+助詞"
+    },
+    "어색하게": {
+        "reading": "ぎこちなく",
+        "meaning": "ぎこちなく、不自然に",
+        "type": "副詞"
+    },
+    "손을": {
+        "reading": "てを",
+        "meaning": "手を",
+        "type": "名詞+助詞"
+    },
+    "내밀었고,": {
+        "reading": "さしのべたが、",
+        "meaning": "差し伸べたが、出したけれど (내밀다の過去形の連結形)",
+        "type": "動詞",
+        "form": "過去形, 連結形"
+    },
+    "보미의": {
+        "reading": "ボミの",
+        "meaning": "ボミの (名前'보미' + 助詞'의')",
+        "type": "固有名詞+助詞"
+    },
+    "손이": {
+        "reading": "てが",
+        "meaning": "手が",
+        "type": "名詞+助詞"
+    },
+    "닿자마자": {
+        "reading": "ふれるやいなや",
+        "meaning": "触れるやいなや",
+        "type": "連結語尾"
+    },
+    "흠칫": {
+        "reading": "びくっと",
+        "meaning": "びくっと、ぞっと",
+        "type": "副詞"
+    },
+    "놀라,": {
+        "reading": "おどろいて",
+        "meaning": "驚いて (놀라다の連結形)",
+        "type": "動詞",
+        "form": "連結形"
+    },
+    "풀어버렸다.": {
+        "reading": "はなしてしまった",
+        "meaning": "離してしまった、解いてしまった (풀어버리다の過去形)",
+        "type": "動詞",
+        "form": "過去形"
+    },
+    "억지": {
+        "reading": "むりやり",
+        "meaning": "無理やり、こじつけ",
+        "type": "名詞"
+    },
+    "미소는": {
+        "reading": "えがおは",
+        "meaning": "笑顔は",
+        "type": "名詞+助詞"
+    },
+    "마치": {
+        "reading": "まるで",
+        "meaning": "まるで、あたかも",
+        "type": "副詞"
+    },
+    "메탈": {
+        "reading": "メタル",
+        "meaning": "メタル (音楽ジャンル)",
+        "type": "名詞"
+    },
+    "밴드의": {
+        "reading": "バンドの",
+        "meaning": "バンドの",
+        "type": "名詞+助詞"
+    },
+    "악마": {
+        "reading": "",
+        "meaning": "",
+        "type": ""
+    },
+    "표정": {
+        "reading": "ひょうじょう",
+        "meaning": "表情",
+        "type": "名詞"
+    },
+    "같았다.": {
+        "reading": "のようだった",
+        "meaning": "～のようだった (같다の過去形)",
+        "type": "形容詞",
+        "form": "過去形"
+    },
+    "화면": {
+        "reading": "がめん",
+        "meaning": "画面",
+        "type": "名詞"
+    },
+    "연인들의": {
+        "reading": "こいびとたちの",
+        "meaning": "恋人たちの",
+        "type": "名詞+助詞"
+    },
+    "모습과": {
+        "reading": "すがたと",
+        "meaning": "姿と",
+        "type": "名詞+助詞"
+    },
+    "눈앞의": {
+        "reading": "めのまえの",
+        "meaning": "目の前の",
+        "type": "名詞+助詞"
+    },
+    "불편한": {
+        "reading": "ふべんな",
+        "meaning": "不便な、不快な、気まずい (불편하다の連体形)",
+        "type": "形容詞",
+        "form": "連体形"
+    },
+    "현실": {
+        "reading": "げんじつ",
+        "meaning": "現実",
+        "type": "名詞"
+    },
+    "사이의": {
+        "reading": "あいだの",
+        "meaning": "間の",
+        "type": "名詞+助詞"
+    },
+    "간극에": {
+        "reading": "かんかくに",
+        "meaning": "間隔に、隔たりに",
+        "type": "名詞+助詞"
+    },
+    "아득해졌다.": {
+        "reading": "ぼうぜんとした",
+        "meaning": "遠のいた、途方に暮れた、ぼうぜんとした",
+        "type": "形容詞",
+        "form": "過去形"
+    },
+    "\"하...,": {
+        "reading": "はぁ...",
+        "meaning": "はぁ… (ため息)",
+        "type": "感嘆詞"
+    },
+    "망했다.\"": {
+        "reading": "だめになった",
+        "meaning": "終わった、だめになった (망하다の過去形)",
+        "type": "動詞",
+        "form": "過去形"
+    },
+    "날,": {
+        "reading": "ひ、を",
+        "meaning": "日、を",
+        "type": "名詞/助詞"
+    },
+    "보미는": {
+        "reading": "ボミは",
+        "meaning": "ボミは (名前'보미' + 助詞'는')",
+        "type": "固有名詞+助詞"
+    },
+    "발끝까지": {
+        "reading": "つまさきまで",
+        "meaning": "つま先まで",
+        "type": "名詞+助詞"
+    },
+    "내려앉는": {
+        "reading": "おちこむような",
+        "meaning": "落ち込むような、沈み込むような (내려앉다の連体形)",
+        "type": "動詞",
+        "form": "現在連体形"
+    },
+    "기분이었다.": {
+        "reading": "きぶんだった",
+        "meaning": "気分だった",
+        "type": "名詞+動詞",
+        "form": "過去形"
+    },
+    "약속": {
+        "reading": "やくそく",
+        "meaning": "約束",
+        "type": "名詞"
+    },
+    "장소인": {
+        "reading": "ばしょである",
+        "meaning": "場所である、場所であるところの (장소이다の連体形)",
+        "type": "名詞+動詞",
+        "form": "現在連体形"
+    },
+    "브런치": {
+        "reading": "ブランチ",
+        "meaning": "ブランチ",
+        "type": "名詞"
+    },
+    "옆": {
+        "reading": "よこ",
+        "meaning": "横、隣",
+        "type": "名詞"
+    },
+    "테이블의": {
+        "reading": "テーブルの",
+        "meaning": "テーブルの",
+        "type": "名詞+助詞"
+    },
+    "비건": {
+        "reading": "ヴィーガン",
+        "meaning": "ヴィーガン",
+        "type": "名詞"
+    },
+    "메뉴를": {
+        "reading": "メニューを",
+        "meaning": "メニューを",
+        "type": "名詞+助詞"
+    },
+    "분석하는": {
+        "reading": "ぶんせきする",
+        "meaning": "分析する (분석하다の連体形)",
+        "type": "動詞",
+        "form": "現在連体形"
+    },
+    "로봇처럼": {
+        "reading": "ロボットのように",
+        "meaning": "ロボットのように",
+        "type": "名詞+助詞"
+    },
+    "앉아": {
+        "reading": "すわって",
+        "meaning": "座って (앉다の連結形)",
+        "type": "動詞",
+        "form": "連結形"
+    },
+    "있었다.": {
+        "reading": "いた",
+        "meaning": "いた、あった",
+        "type": "補助動詞",
+        "form": "過去形"
+    },
+    "선아와": {
+        "reading": "ソナと",
+        "meaning": "ソナと (名前'선아' + 助詞'와')",
+        "type": "固有名詞+助詞"
+    },
+    "준은": {
+        "reading": "ジュンは",
+        "meaning": "ジュンは (名前'준' + 助詞'은')",
+        "type": "固有名詞+助詞"
+    },
+    "눈을": {
+        "reading": "めを",
+        "meaning": "目を",
+        "type": "名詞+助詞"
+    },
+    "반짝이며": {
+        "reading": "きらめかせながら",
+        "meaning": "輝かせながら、目を輝かせながら (반짝이다の連結形)",
+        "type": "動詞",
+        "form": "連結形"
+    },
+    "\"두,": {
+        "reading": "おふたり",
+        "meaning": "お二人、二つ",
+        "type": "数詞",
+        "form": "連体形"
+    },
+    "분은": {
+        "reading": "かたは",
+        "meaning": "方は (분 + 助詞'은')",
+        "type": "依存名詞+助詞"
+    },
+    "어떻게,": {
+        "reading": "どのように",
+        "meaning": "どのように、どうやって",
+        "type": "副詞"
+    },
+    "만나셨어요?": {
+        "reading": "",
+        "meaning": "",
+        "type": ""
+    },
+    "인스타에서,": {
+        "reading": "インスタで",
+        "meaning": "インスタグラムで",
+        "type": "名詞+助詞"
+    },
+    "정말,": {
+        "reading": "ほんとうに",
+        "meaning": "本当に、実に",
+        "type": "副詞"
+    },
+    "어울리던데요!\"라고,": {
+        "reading": "おにあいでしたよ！と",
+        "meaning": "お似合いでしたよ！と",
+        "type": "動詞+助詞",
+        "form": "回想/感嘆語尾, 終助詞, 引用助詞"
+    },
+    "물었다.": {
+        "reading": "きいた",
+        "meaning": "尋ねた、聞いた",
+        "type": "動詞",
+        "form": "過去形"
+    },
+    "무표정하게,": {
+        "reading": "むひょうじょうに",
+        "meaning": "無表情に",
+        "type": "副詞"
+    },
+    "\"아,,": {
+        "reading": "あ、",
+        "meaning": "ああ、あー (感嘆詞)",
+        "type": "感嘆詞"
+    },
+    "옆집,": {
+        "reading": "となり",
+        "meaning": "隣の家",
+        "type": "名詞"
+    },
+    "삽니다.": {
+        "reading": "すんでいます",
+        "meaning": "住んでいます (살다の丁寧形)",
+        "type": "動詞",
+        "form": "丁寧形"
+    },
+    "한,": {
+        "reading": "ひと、いちど",
+        "meaning": "一つ、一度",
+        "type": "数詞"
+    },
+    "번,": {
+        "reading": "かい",
+        "meaning": "～回、～度",
+        "type": "依存名詞"
+    },
+    "인사한": {
+        "reading": "あいさつした",
+        "meaning": "挨拶した (인사하다の連体形)",
+        "type": "動詞",
+        "form": "過去連体形"
+    },
+    "적,": {
+        "reading": "こと、とき",
+        "meaning": "経験、時 (～したことがある、～な時)",
+        "type": "依存名詞"
+    },
+    "있습니다\"라고,": {
+        "reading": "あります」と",
+        "meaning": "あります」と (있다の丁寧形 + 引用助詞)",
+        "type": "動詞+助詞",
+        "form": "丁寧形, 引用助詞"
+    },
+    "답했고,": {
+        "reading": "こたえ、",
+        "meaning": "答えたが、答えて (답하다の過去形の連結形)",
+        "type": "動詞",
+        "form": "過去形, 連結形"
+    },
+    "황급히,": {
+        "reading": "いそいで",
+        "meaning": "慌ただしく、急いで",
+        "type": "副詞"
+    },
+    "운명,": {
+        "reading": "",
+        "meaning": "",
+        "type": ""
+    },
+    "같지": {
+        "reading": "おなじではない",
+        "meaning": "～ではない、～と違わない",
+        "type": "Adjective + ending",
+        "form": "connective/interrogative ending"
+    },
+    "않나요?": {
+        "reading": "ではないですか",
+        "meaning": "～ではないですか？",
+        "type": "Auxiliary verb + ending",
+        "form": "polite interrogative ending"
+    },
+    "집,": {
+        "reading": "いえ",
+        "meaning": "家",
+        "type": "Noun"
+    },
+    "앞에서,": {
+        "reading": "まえで",
+        "meaning": "～の前で",
+        "type": "Noun + particle",
+        "form": "locative particle"
+    },
+    "우연히": {
+        "reading": "ぐうぜんに",
+        "meaning": "偶然に",
+        "type": "Adverb",
+        "form": "adverbial form"
+    },
+    "마주치다니!": {
+        "reading": "でくわすとは",
+        "meaning": "出くわすとは！、鉢合わせするなんて！",
+        "type": "Verb + ending",
+        "form": "exclamatory ending"
+    },
+    "그날부터,": {
+        "reading": "そのひから",
+        "meaning": "その日から",
+        "type": "Noun + particle",
+        "form": "starting point particle"
+    },
+    "뭔가": {
+        "reading": "なにか",
+        "meaning": "何か、何となく",
+        "type": "Pronoun"
+    },
+    "특별한": {
+        "reading": "とくべつな",
+        "meaning": "特別な",
+        "type": "Adjective + ending",
+        "form": "adnominal form (present tense)"
+    },
+    "인연임을": {
+        "reading": "えんであることを",
+        "meaning": "縁であることを",
+        "type": "Noun + suffix + particle",
+        "form": "noun form + object particle"
+    },
+    "수": {
+        "reading": "こと",
+        "meaning": "こと、方法、場合",
+        "type": "Dependent Noun"
+    },
+    "없어요!\"라며": {
+        "reading": "ありませんといいながら",
+        "meaning": "ありません！と言いながら",
+        "type": "Adjective + ending + quotation particle",
+        "form": "polite informal + quotation particle"
+    },
+    "필사적으로": {
+        "reading": "ひっしに",
+        "meaning": "必死に、必死になって",
+        "type": "Adverb",
+        "form": "adverbial form"
+    },
+    "말을": {
+        "reading": "ことばを",
+        "meaning": "言葉を、話を",
+        "type": "Noun + particle",
+        "form": "object particle"
+    },
+    "이었다.": {
+        "reading": "つづけた",
+        "meaning": "続けた、継いだ",
+        "type": "Verb + ending",
+        "form": "past declarative"
+    },
+    "로맨스와": {
+        "reading": "ロマンスと",
+        "meaning": "ロマンスと",
+        "type": "Noun + particle",
+        "form": "conjunction particle"
+    },
+    "어색한": {
+        "reading": "きまずい",
+        "meaning": "気まずい、ぎこちない",
+        "type": "Adjective + ending",
+        "form": "adnominal form (present tense)"
+    },
+    "공기": {
+        "reading": "くうき",
+        "meaning": "空気、雰囲気",
+        "type": "Noun"
+    },
+    "사이에서": {
+        "reading": "あいだで",
+        "meaning": "間で",
+        "type": "Noun + particle",
+        "form": "locative particle"
+    },
+    "숨이": {
+        "reading": "いきが",
+        "meaning": "息が",
+        "type": "Noun + particle",
+        "form": "subject particle"
+    },
+    "막혔다.": {
+        "reading": "つまった",
+        "meaning": "詰まった、息が詰まった",
+        "type": "Verb + ending",
+        "form": "past declarative"
+    },
+    "민석이": {
+        "reading": "ミンソクが",
+        "meaning": "ミンソクが",
+        "type": "Proper Noun + particle",
+        "form": "subject particle"
+    },
+    "포크로": {
+        "reading": "フォークで",
+        "meaning": "フォークで",
+        "type": "Noun + particle",
+        "form": "instrumental particle"
+    },
+    "토마토를": {
+        "reading": "トマトを",
+        "meaning": "トマトを",
+        "type": "Noun + particle",
+        "form": "object particle"
+    },
+    "집어": {
+        "reading": "つまんで",
+        "meaning": "つまんで、拾って",
+        "type": "Verb + ending",
+        "form": "connective form"
+    },
+    "들다": {
+        "reading": "もつ",
+        "meaning": "持つ、上げる",
+        "type": "Verb",
+        "form": "dictionary form"
+    },
+    "접시에": {
+        "reading": "さらに",
+        "meaning": "皿に",
+        "type": "Noun + particle",
+        "form": "locative/directional particle"
+    },
+    "떨어뜨리는": {
+        "reading": "おとす",
+        "meaning": "落とす、落としている",
+        "type": "Verb + ending",
+        "form": "adnominal form (present tense)"
+    },
+    "순간,": {
+        "reading": "しゅんかん",
+        "meaning": "瞬間、とたんに",
+        "type": "Noun"
+    },
+    "가짜": {
+        "reading": "にせもの",
+        "meaning": "偽りの、偽物の",
+        "type": "Adnominal"
+    },
+    "연애가": {
+        "reading": "れんあいが",
+        "meaning": "恋愛が",
+        "type": "Noun + particle",
+        "form": "subject particle"
+    },
+    "오늘": {
+        "reading": "きょう",
+        "meaning": "今日",
+        "type": "Noun"
+    },
+    "끝날지도": {
+        "reading": "おわるかもしれない",
+        "meaning": "終わるかもしれない",
+        "type": "Verb + ending",
+        "form": "conjecture/possibility ending"
+    },
+    "모른다는": {
+        "reading": "しらないという",
+        "meaning": "知らないという",
+        "type": "Verb + ending",
+        "form": "adnominal form (indirect quotation)"
+    },
+    "불안감에": {
+        "reading": "ふあんかんに",
+        "meaning": "不安感に",
+        "type": "Noun + particle",
+        "form": "locative/cause particle"
+    },
+    "휩싸였다.": {
+        "reading": "つつまれた",
+        "meaning": "包まれた、襲われた",
+        "type": "Verb + ending",
+        "form": "past declarative"
+    },
+    "팬들의": {
+        "reading": "ファンたちの",
+        "meaning": "ファンたちの",
+        "type": "Noun + particle",
+        "form": "plural possessive particle"
+    },
+    "기대와": {
+        "reading": "きたいと",
+        "meaning": "期待と",
+        "type": "Noun + particle",
+        "form": "conjunction particle"
+    },
+    "시선이": {
+        "reading": "しせんが",
+        "meaning": "視線が",
+        "type": "Noun + particle",
+        "form": "subject particle"
+    },
+    "그녀를": {
+        "reading": "かのじょを",
+        "meaning": "彼女を",
+        "type": "Pronoun + particle",
+        "form": "object particle"
+    },
+    "짓눌렀다.": {
+        "reading": "おしつぶした",
+        "meaning": "押しつぶした、圧迫した",
+        "type": "Verb + ending",
+        "form": "past declarative"
+    },
+    "메시지를": {
+        "reading": "メッセージを",
+        "meaning": "メッセージを",
+        "type": "Noun + particle",
+        "form": "object particle"
+    },
+    "읽는": {
+        "reading": "よむ",
+        "meaning": "読む、読んでいる",
+        "type": "Verb + ending",
+        "form": "adnominal form (present tense)"
+    },
+    "순간": {
+        "reading": "しゅんかん",
+        "meaning": "瞬間",
+        "type": "Noun"
+    },
+    "얼굴에서": {
+        "reading": "かおから",
+        "meaning": "顔から",
+        "type": "Noun + particle",
+        "form": "source particle"
+    },
+    "핏기가": {
+        "reading": "ちのけが",
+        "meaning": "血の気が",
+        "type": "Noun + particle",
+        "form": "subject particle"
+    },
+    "가셨다.": {
+        "reading": "ひいた",
+        "meaning": "引いた、消えた",
+        "type": "Verb + ending",
+        "form": "past declarative"
+    },
+    "'라이브'라고?": {
+        "reading": "",
+        "meaning": "",
+        "type": ""
+    },
+    "실시간으로": {
+        "reading": "リアルタイムで",
+        "meaning": "リアルタイムで",
+        "type": "Noun + particle",
+        "form": "instrumental particle"
+    },
+    "민석과": {
+        "reading": "ミンソクと",
+        "meaning": "ミンソクと",
+        "type": "Proper Noun + particle",
+        "form": "conjunction particle"
+    },
+    "연기해야": {
+        "reading": "えんじなければならない",
+        "meaning": "演じなければならない",
+        "type": "Verb + ending",
+        "form": "obligation (connective)"
+    },
+    "한다고?": {
+        "reading": "するのか",
+        "meaning": "するって？、するというのか？",
+        "type": "Verb + ending",
+        "form": "interrogative indirect quotation"
+    },
+    "포토샵으로": {
+        "reading": "フォトショップで",
+        "meaning": "フォトショップで",
+        "type": "Noun + particle",
+        "form": "instrumental particle"
+    },
+    "꾸며낸": {
+        "reading": "つくりあげた",
+        "meaning": "作り上げた、でっち上げた",
+        "type": "Verb + ending",
+        "form": "adnominal form (past tense)"
+    },
+    "환상의": {
+        "reading": "げんそうの",
+        "meaning": "幻想の",
+        "type": "Noun + particle",
+        "form": "possessive particle"
+    },
+    "세계가,,": {
+        "reading": "せかいが",
+        "meaning": "世界が",
+        "type": "Noun + particle",
+        "form": "subject particle"
+    },
+    "이제는": {
+        "reading": "いまはもう",
+        "meaning": "今はもう",
+        "type": "Adverb + particle",
+        "form": "topic particle"
+    },
+    "실시간": {
+        "reading": "リアルタイム",
+        "meaning": "リアルタイム",
+        "type": "Noun"
+    },
+    "영상": {
+        "reading": "えいぞう",
+        "meaning": "映像",
+        "type": "Noun"
+    },
+    "앞에서": {
+        "reading": "まえで",
+        "meaning": "前で",
+        "type": "Noun + particle",
+        "form": "locative particle"
+    },
+    "처참하게": {
+        "reading": "みじめに",
+        "meaning": "惨めに、悲惨に",
+        "type": "Adverb",
+        "form": "adverbial form"
+    },
+    "무너질": {
+        "reading": "くずれる",
+        "meaning": "崩れる、崩れてしまうような",
+        "type": "Verb + ending",
+        "form": "adnominal form (future/potential)"
+    },
+    "위기에": {
+        "reading": "ききに",
+        "meaning": "危機に",
+        "type": "Noun + particle",
+        "form": "locative particle"
+    },
+    "처했다.": {
+        "reading": "おちいった",
+        "meaning": "陥った、直面した",
+        "type": "Verb + ending",
+        "form": "past declarative"
+    },
+    "팔로워들의": {
+        "reading": "フォロワーたちの",
+        "meaning": "フォロワーたちの",
+        "type": "Noun + particle",
+        "form": "plural possessive particle"
+    },
+    "뜨거운": {
+        "reading": "あつい",
+        "meaning": "熱い、熱烈な",
+        "type": "Adjective + ending",
+        "form": "adnominal form (present tense)"
+    },
+    "칼날처럼": {
+        "reading": "はのように",
+        "meaning": "刃のように",
+        "type": "Noun + particle",
+        "form": "similarity particle"
+    },
+    "느껴졌다.": {
+        "reading": "かんじられた",
+        "meaning": "感じられた",
+        "type": "Verb + ending",
+        "form": "past declarative"
+    },
+    "손발이": {
+        "reading": "てあしが",
+        "meaning": "手足が",
+        "type": "Noun + particle",
+        "form": "subject particle"
+    },
+    "차가워졌다.": {
+        "reading": "つめたくなった",
+        "meaning": "冷たくなった",
+        "type": "Adjective + auxiliary verb + ending",
+        "form": "past declarative (inchoative)"
+    },
+    "그녀의": {
+        "reading": "かのじょの",
+        "meaning": "彼女の",
+        "type": "Pronoun + particle",
+        "form": "possessive particle"
+    },
+    "'완벽한": {
+        "reading": "かんぺきな",
+        "meaning": "「完璧な",
+        "type": "Adjective + ending",
+        "form": "adnominal form (present tense)"
+    },
+    "연애'는": {
+        "reading": "れんあいは",
+        "meaning": "恋愛」は",
+        "type": "Noun + particle",
+        "form": "topic particle"
+    },
+    "과연": {
+        "reading": "はたして",
+        "meaning": "果たして、やはり",
+        "type": "Adverb"
+    },
+    "라이브": {
+        "reading": "ライブ",
+        "meaning": "ライブ",
+        "type": "Noun"
+    },
+    "지옥을": {
+        "reading": "じごくを",
+        "meaning": "地獄を",
+        "type": "Noun + particle",
+        "form": "object particle"
+    },
+    "견뎌낼": {
+        "reading": "たえぬく",
+        "meaning": "耐え抜く、耐えることができる",
+        "type": "Verb + ending",
+        "form": "adnominal form (future/potential)"
+    },
+    "있을까?": {
+        "reading": "あるだろうか",
+        "meaning": "あるだろうか？、できるだろうか？",
+        "type": "Verb + ending",
+        "form": "interrogative (conjecture)"
+    }
+}
