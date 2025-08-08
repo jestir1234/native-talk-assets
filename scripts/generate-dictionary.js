@@ -18,7 +18,7 @@ const targetLang = args[1];
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const INPUT_FILE = path.resolve(__dirname, './missing_words.txt');
 const OUTPUT_FILE = path.resolve(__dirname, `./dictionary_entries_output_${targetLang}.json`);
-const BATCH_SIZE = 50;
+const BATCH_SIZE = 100;
 
 console.log(`🔄 Generating dictionary from ${sourceLang} to ${targetLang}`);
 console.log('GEMINI_API_KEY', GEMINI_API_KEY);

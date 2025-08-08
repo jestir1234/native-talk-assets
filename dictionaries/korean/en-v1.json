@@ -421,8 +421,8 @@
   },
   "이": {
     "reading": "i",
-    "meaning": "this",
-    "type": "pronoun/determiner"
+    "meaning": "subject particle",
+    "type": "particle"
   },
   "모든": {
     "reading": "modeun",
@@ -456,8 +456,8 @@
   },
   "함께,": {
     "reading": "hamkke",
-    "meaning": "together; with",
-    "type": "adverb"
+    "meaning": "together",
+    "type": "Adverb"
   },
   "DM이": {
     "reading": "DM-i",
@@ -480,9 +480,9 @@
     "type": "greeting"
   },
   "저희": {
-    "reading": "jeohi",
-    "meaning": "our (humble); we (humble)",
-    "type": "pronoun/determiner"
+    "reading": "jeohui",
+    "meaning": "we, us, our (humble form)",
+    "type": "pronoun"
   },
   "커플": {
     "reading": "keopeul",
@@ -590,7 +590,7 @@
     "type": "proper noun"
   },
   "미소": {
-    "reading": "mi-so",
+    "reading": "miso",
     "meaning": "smile",
     "type": "noun"
   },
@@ -736,7 +736,7 @@
   },
   "표정": {
     "reading": "pyojeong",
-    "meaning": "expression (facial)",
+    "meaning": "facial expression",
     "type": "noun"
   },
   "같았다.": {
@@ -1388,5 +1388,1415 @@
     "reading": "isseulkka",
     "meaning": "will (it) be able to? (interrogative)",
     "type": "verb (interrogative)"
+  },
+  "민석을": {
+    "reading": "min-seo-geul",
+    "meaning": "Minseok (proper noun) + object marker",
+    "type": "proper noun + particle"
+  },
+  "앉혀놓고": {
+    "reading": "an-chyeo-no-go",
+    "meaning": "having someone sit down and [then do something else]; having seated [someone]",
+    "type": "compound verb + connective ending"
+  },
+  "'커플": {
+    "reading": "keo-peul",
+    "meaning": "couple",
+    "type": "noun"
+  },
+  "문답'": {
+    "reading": "mun-dap",
+    "meaning": "Q&A; question and answer",
+    "type": "noun"
+  },
+  "예상": {
+    "reading": "ye-sang",
+    "meaning": "expectation; prediction; guess",
+    "type": "noun"
+  },
+  "질문지를": {
+    "reading": "jil-mun-ji-reul",
+    "meaning": "questionnaire (질문지) + object marker (를)",
+    "type": "noun + particle"
+  },
+  "달달": {
+    "reading": "dal-dal",
+    "meaning": "thoroughly; completely (often used with memorizing)",
+    "type": "adverb"
+  },
+  "외우게": {
+    "reading": "oe-u-ge",
+    "meaning": "to make someone memorize; so that one memorizes (from 외우다)",
+    "type": "verb + ending"
+  },
+  "했다.": {
+    "reading": "haet-da",
+    "meaning": "did (past tense of 하다)",
+    "type": "verb"
+  },
+  "\"만약": {
+    "reading": "man-yak",
+    "meaning": "if; in case",
+    "type": "conjunction / adverb"
+  },
+  "'가장": {
+    "reading": "ga-jang",
+    "meaning": "most; very",
+    "type": "adverb"
+  },
+  "좋아하는": {
+    "reading": "jo-a-ha-neun",
+    "meaning": "favorite; liking; that one likes (from 좋아하다)",
+    "type": "adjective"
+  },
+  "장소는?": {
+    "reading": "jang-so-neun",
+    "meaning": "place (장소) + topic marker (는) + question mark",
+    "type": "noun + particle"
+  },
+  "물으면,": {
+    "reading": "mur-eu-myeon",
+    "meaning": "if one asks (from 묻다 + -(으)면)",
+    "type": "verb ending (conditional)"
+  },
+  "'한강!": {
+    "reading": "han-gang",
+    "meaning": "Han River (a river in Korea)",
+    "type": "proper noun"
+  },
+  "알았죠?": {
+    "reading": "a-rat-jyo",
+    "meaning": "Got it?; Understood? (from 알다)",
+    "type": "verb + ending"
+  },
+  "'집": {
+    "reading": "jip",
+    "meaning": "home; house",
+    "type": "noun"
+  },
+  "같은": {
+    "reading": "gat-eun",
+    "meaning": "like; such as; similar to (from 같다)",
+    "type": "adjective"
+  },
+  "소리": {
+    "reading": "so-ri",
+    "meaning": "sound; talk; nonsense (in this context)",
+    "type": "noun"
+  },
+  "하지": {
+    "reading": "ha-ji",
+    "meaning": "do not; don't (from 하다 + -지)",
+    "type": "verb stem + negative particle"
+  },
+  "말고!\"": {
+    "reading": "mal-go",
+    "meaning": "don't; without (from 말다 + -고)",
+    "type": "auxiliary verb + connective ending"
+  },
+  "무표정으로": {
+    "reading": "mu-pyo-jeong-eu-ro",
+    "meaning": "with a poker face; expressionlessly (무표정 + -(으)로)",
+    "type": "noun + particle"
+  },
+  "고개를": {
+    "reading": "go-gae-reul",
+    "meaning": "head (고개) + object marker (를)",
+    "type": "noun + particle"
+  },
+  "끄덕였다.": {
+    "reading": "kkeu-deok-yeot-da",
+    "meaning": "nodded (past tense of 끄덕이다)",
+    "type": "verb"
+  },
+  "드디어": {
+    "reading": "deu-di-eo",
+    "meaning": "finally; at last",
+    "type": "adverb"
+  },
+  "방송": {
+    "reading": "bang-song",
+    "meaning": "broadcast; program",
+    "type": "noun"
+  },
+  "시간.": {
+    "reading": "si-gan",
+    "meaning": "time",
+    "type": "noun"
+  },
+  "휴대폰": {
+    "reading": "hyu-dae-pon",
+    "meaning": "cell phone; mobile phone",
+    "type": "noun"
+  },
+  "화면에,": {
+    "reading": "hwa-myeon-e",
+    "meaning": "on the screen (화면 + -에)",
+    "type": "noun + particle"
+  },
+  "'시청자": {
+    "reading": "si-cheong-ja",
+    "meaning": "viewer; audience",
+    "type": "noun"
+  },
+  "N명'": {
+    "reading": "N-myeong",
+    "meaning": "N people; N number of people (명 is a counter for people)",
+    "type": "number + counter"
+  },
+  "숫자가": {
+    "reading": "sut-ja-ga",
+    "meaning": "number; figure (숫자) + subject marker (가)",
+    "type": "noun + particle"
+  },
+  "무섭게": {
+    "reading": "mu-seop-ge",
+    "meaning": "frighteningly; tremendously; rapidly (from 무섭다)",
+    "type": "adverb"
+  },
+  "올라갔다.": {
+    "reading": "ol-la-gat-da",
+    "meaning": "went up; ascended; rose (past tense of 올라가다)",
+    "type": "verb"
+  },
+  "애써": {
+    "reading": "ae-sseo",
+    "meaning": "with effort; painstakingly; hard",
+    "type": "adverb"
+  },
+  "지었지만,": {
+    "reading": "ji-eot-ji-man",
+    "meaning": "although one built/formed/made (from 짓다 + -지만)",
+    "type": "verb + ending"
+  },
+  "손에서는": {
+    "reading": "son-e-seo-neun",
+    "meaning": "from one's hands (손 + -에서 + -는)",
+    "type": "noun + particles"
+  },
+  "땀이": {
+    "reading": "ttam-i",
+    "meaning": "sweat (땀) + subject marker (이)",
+    "type": "noun + particle"
+  },
+  "났다.": {
+    "reading": "nat-da",
+    "meaning": "appeared; broke out; occurred (past tense of 나다)",
+    "type": "verb"
+  },
+  "첫": {
+    "reading": "cheot",
+    "meaning": "first",
+    "type": "adjective / determiner"
+  },
+  "질문,": {
+    "reading": "jil-mun",
+    "meaning": "question",
+    "type": "noun"
+  },
+  "\"두": {
+    "reading": "du",
+    "meaning": "two",
+    "type": "numeral"
+  },
+  "분의": {
+    "reading": "bun-ui",
+    "meaning": "person (honorific, 분) + possessive particle (의)",
+    "type": "noun + particle"
+  },
+  "만남은": {
+    "reading": "man-nam-eun",
+    "meaning": "meeting; encounter (만남) + topic marker (은)",
+    "type": "noun + particle"
+  },
+  "어떻게": {
+    "reading": "eo-tteo-ke",
+    "meaning": "how",
+    "type": "adverb"
+  },
+  "되나요?": {
+    "reading": "doe-na-yo",
+    "meaning": "is it?; how is it?; what happens? (from 되다 + -나요)",
+    "type": "verb + ending"
+  },
+  "보미가": {
+    "reading": "bo-mi-ga",
+    "meaning": "Bomi (proper noun) + subject marker (가)",
+    "type": "proper noun + particle"
+  },
+  "로맨틱한": {
+    "reading": "ro-maen-tik-han",
+    "meaning": "romantic (from 로맨틱하다)",
+    "type": "adjective"
+  },
+  "스토리를": {
+    "reading": "seu-to-ri-reul",
+    "meaning": "story (스토리) + object marker (를)",
+    "type": "noun + particle"
+  },
+  "기대하는": {
+    "reading": "gi-dae-ha-neun",
+    "meaning": "expecting; hoping for (from 기대하다)",
+    "type": "verb (present participle form)"
+  },
+  "눈빛으로": {
+    "reading": "nunbicheuro",
+    "meaning": "with a gaze; with a look",
+    "type": "noun + particle"
+  },
+  "봤다.": {
+    "reading": "bwatda",
+    "meaning": "saw; looked; watched",
+    "type": "verb (past tense)"
+  },
+  "잠시": {
+    "reading": "jamsi",
+    "meaning": "for a moment; briefly",
+    "type": "adverb"
+  },
+  "침묵하더니,": {
+    "reading": "chimmukhadeoni",
+    "meaning": "became silent and then; after being silent",
+    "type": "verb (conjunctive form)"
+  },
+  "\"음...,": {
+    "reading": "eum",
+    "meaning": "um, uh (interjection of hesitation)",
+    "type": "Interjection"
+  },
+  "옆집에": {
+    "reading": "yeopjibe",
+    "meaning": "to/at the house next door",
+    "type": "noun + particle"
+  },
+  "이사": {
+    "reading": "isa",
+    "meaning": "moving (house); relocation",
+    "type": "noun"
+  },
+  "왔을": {
+    "reading": "wasseul",
+    "meaning": "(when/that) came (descriptive past form)",
+    "type": "verb (past participial)"
+  },
+  "때요.": {
+    "reading": "ttaeyo",
+    "meaning": "it was the time; when it was (polite)",
+    "type": "noun + polite ending"
+  },
+  "복도에서": {
+    "reading": "bokdoesoe",
+    "meaning": "in the hallway; at the corridor",
+    "type": "noun + particle"
+  },
+  "마주쳤습니다.": {
+    "reading": "majuchyeotseupnida",
+    "meaning": "ran into (each other); encountered (polite past tense)",
+    "type": "verb (polite past tense)"
+  },
+  "채팅창이": {
+    "reading": "chaetingchangi",
+    "meaning": "the chat window (subject)",
+    "type": "noun + particle"
+  },
+  "'ㅋㅋㅋ'와": {
+    "reading": "keukeukeuwa",
+    "meaning": "'ㅋㅋㅋ' (sound of laughter, like 'lol') and",
+    "type": "onomatopoeia + particle"
+  },
+  "'너무": {
+    "reading": "neomu",
+    "meaning": "too; very; excessively",
+    "type": "adverb"
+  },
+  "현실적!'으로": {
+    "reading": "hyeonsiljeogeuro",
+    "meaning": "realistically; in a realistic way; as 'realistic!'",
+    "type": "adjective + particle"
+  },
+  "뒤덮였다.": {
+    "reading": "dwideopyeotda",
+    "meaning": "was covered; became swamped/overrun",
+    "type": "verb (past tense, passive)"
+  },
+  "웃으며": {
+    "reading": "useumyeo",
+    "meaning": "smiling; while laughing",
+    "type": "verb (conjunctive form)"
+  },
+  "\"민석": {
+    "reading": "Minseok",
+    "meaning": "Minseok (a given name)",
+    "type": "proper noun"
+  },
+  "씨가": {
+    "reading": "ssiga",
+    "meaning": "Mr./Ms. (subject)",
+    "type": "title + particle"
+  },
+  "좀": {
+    "reading": "jom",
+    "meaning": "a little; a bit; please (informal)",
+    "type": "adverb"
+  },
+  "쿨하죠?\"라고": {
+    "reading": "kulhajyo-rago",
+    "meaning": "saying, \"isn't he/she cool?\" (quoted)",
+    "type": "adjective + ending + particle"
+  },
+  "수습했지만,": {
+    "reading": "susupetjiman",
+    "meaning": "although managed/handled (the situation)",
+    "type": "verb (conjunctive form)"
+  },
+  "이미": {
+    "reading": "imi",
+    "meaning": "already",
+    "type": "adverb"
+  },
+  "늦었다.": {
+    "reading": "neujeotda",
+    "meaning": "was late; it was too late",
+    "type": "adjective/verb (past tense)"
+  },
+  "두": {
+    "reading": "du",
+    "meaning": "two",
+    "type": "numeral"
+  },
+  "번째": {
+    "reading": "beonjjae",
+    "meaning": "the (ordinal) time/turn",
+    "type": "dependent noun"
+  },
+  "\"서로에게": {
+    "reading": "seoro-ege",
+    "meaning": "to each other; to one another",
+    "type": "pronoun/adverb + particle"
+  },
+  "반한": {
+    "reading": "banhan",
+    "meaning": "fell in love with; was charmed by (modifier)",
+    "type": "verb (adjectival form)"
+  },
+  "순간은?\"": {
+    "reading": "sunganeun",
+    "meaning": "the moment (topic) was?",
+    "type": "noun + particle"
+  },
+  "속으로": {
+    "reading": "sogeuro",
+    "meaning": "inwardly; to oneself; in one's mind",
+    "type": "noun + particle"
+  },
+  "'묘하게": {
+    "reading": "myohage",
+    "meaning": "strangely; peculiarly; subtly",
+    "type": "adjective (adverbial form)"
+  },
+  "순간!'을": {
+    "reading": "sungan-eul",
+    "meaning": "the moment (object)",
+    "type": "noun + particle"
+  },
+  "외쳤지만,": {
+    "reading": "oechitjiman",
+    "meaning": "although (I) shouted/cried out",
+    "type": "verb (conjunctive form)"
+  },
+  "아무": {
+    "reading": "amu",
+    "meaning": "any (used with negatives for 'no')",
+    "type": "determiner/pronoun"
+  },
+  "생각": {
+    "reading": "saenggak",
+    "meaning": "thought; idea; opinion",
+    "type": "noun"
+  },
+  "없이": {
+    "reading": "eopshi",
+    "meaning": "without; lacking",
+    "type": "adverb"
+  },
+  "\"고양이": {
+    "reading": "goyangi",
+    "meaning": "cat",
+    "type": "noun"
+  },
+  "간식": {
+    "reading": "gansik",
+    "meaning": "snack; treat",
+    "type": "noun"
+  },
+  "주다가요.\"라고": {
+    "reading": "judagayo-rago",
+    "meaning": "saying, \"while giving (them) snacks, you know.\"",
+    "type": "verb (conjunctive form) + polite ending + particle"
+  },
+  "명의": {
+    "reading": "myeong-ui",
+    "meaning": "of people; 'number of people'",
+    "type": "counter + particle"
+  },
+  "시청자": {
+    "reading": "sicheongja",
+    "meaning": "viewer; audience",
+    "type": "noun"
+  },
+  "가상": {
+    "reading": "gasang",
+    "meaning": "virtual; imaginary; hypothetical",
+    "type": "noun/adjective"
+  },
+  "산산조각": {
+    "reading": "sansanjoak",
+    "meaning": "shattered to pieces; in fragments",
+    "type": "noun/adverb"
+  },
+  "민석": {
+    "reading": "Minseok",
+    "meaning": "Minseok (a common Korean male given name)",
+    "type": "proper noun"
+  },
+  "의": {
+    "reading": "ui",
+    "meaning": "possessive particle ('s, of)",
+    "type": "particle"
+  },
+  "기묘하다": {
+    "reading": "gimyohada",
+    "meaning": "to be strange, bizarre, peculiar",
+    "type": "adjective"
+  },
+  "답변": {
+    "reading": "dapbyeon",
+    "meaning": "answer, reply",
+    "type": "noun"
+  },
+  "에": {
+    "reading": "e",
+    "meaning": "particle (to, at, in, on)",
+    "type": "particle"
+  },
+  "식은땀": {
+    "reading": "sigeunttam",
+    "meaning": "cold sweat",
+    "type": "noun"
+  },
+  "을": {
+    "reading": "eul",
+    "meaning": "object particle",
+    "type": "particle"
+  },
+  "흘리다": {
+    "reading": "heullida",
+    "meaning": "to shed, to flow, to drop",
+    "type": "verb"
+  },
+  "카메라": {
+    "reading": "kamera",
+    "meaning": "camera",
+    "type": "noun"
+  },
+  "향하다": {
+    "reading": "hyanghada",
+    "meaning": "to face, to head towards",
+    "type": "verb"
+  },
+  "해맑다": {
+    "reading": "haemakda",
+    "meaning": "to be innocent, clear and bright (of a smile or face)",
+    "type": "adjective"
+  },
+  "웃다": {
+    "reading": "utda",
+    "meaning": "to smile, to laugh",
+    "type": "verb"
+  },
+  "어머": {
+    "reading": "eomeo",
+    "meaning": "Oh my, Goodness gracious (exclamation of surprise or shock)",
+    "type": "interjection"
+  },
+  "씨": {
+    "reading": "ssi",
+    "meaning": "Mr., Ms. (polite suffix for names)",
+    "type": "suffix"
+  },
+  "는": {
+    "reading": "neun",
+    "meaning": "topic particle",
+    "type": "particle"
+  },
+  "원래": {
+    "reading": "wonrae",
+    "meaning": "originally, by nature, naturally",
+    "type": "adverb"
+  },
+  "엉뚱하다": {
+    "reading": "eongttunghada",
+    "meaning": "to be eccentric, odd, quirky",
+    "type": "adjective"
+  },
+  "매력": {
+    "reading": "maeryeok",
+    "meaning": "charm, appeal, attractiveness",
+    "type": "noun"
+  },
+  "넘치다": {
+    "reading": "neomchida",
+    "meaning": "to overflow, to be full of",
+    "type": "verb"
+  },
+  "연애": {
+    "reading": "yeonae",
+    "meaning": "romantic relationship, dating",
+    "type": "noun"
+  },
+  "초": {
+    "reading": "cho",
+    "meaning": "beginning, early stage",
+    "type": "noun"
+  },
+  "워낙": {
+    "reading": "wonak",
+    "meaning": "very, so much, by nature",
+    "type": "adverb"
+  },
+  "부끄러움": {
+    "reading": "bukkeureoum",
+    "meaning": "shyness, embarrassment",
+    "type": "noun"
+  },
+  "많다": {
+    "reading": "manta",
+    "meaning": "to be many, much, abundant",
+    "type": "adjective"
+  },
+  "저렇게": {
+    "reading": "jeoreoke",
+    "meaning": "like that, in that way",
+    "type": "adverb"
+  },
+  "솔직하다": {
+    "reading": "soljikhada",
+    "meaning": "to be honest, frank, candid",
+    "type": "adjective"
+  },
+  "못하다": {
+    "reading": "mothada",
+    "meaning": "to be unable to do; to be poor at",
+    "type": "verb"
+  },
+  "기상천외하다": {
+    "reading": "gisangcheonoehada",
+    "meaning": "to be extraordinary, bizarre, outlandish",
+    "type": "adjective"
+  },
+  "표현": {
+    "reading": "pyohyeon",
+    "meaning": "expression",
+    "type": "noun"
+  },
+  "밖에": {
+    "reading": "bakke",
+    "meaning": "particle (only, nothing but, no other than - used with negative verb)",
+    "type": "particle"
+  },
+  "그것": {
+    "reading": "geugeot",
+    "meaning": "that thing, that",
+    "type": "pronoun"
+  },
+  "또": {
+    "reading": "tto",
+    "meaning": "again, also, moreover",
+    "type": "adverb"
+  },
+  "만": {
+    "reading": "man",
+    "meaning": "particle (only, just)",
+    "type": "particle"
+  },
+  "비밀스럽다": {
+    "reading": "bimilseureopda",
+    "meaning": "to be secretive, mysterious",
+    "type": "adjective"
+  },
+  "방식": {
+    "reading": "bangshik",
+    "meaning": "method, way, style",
+    "type": "noun"
+  },
+  "정말": {
+    "reading": "jeongmal",
+    "meaning": "really, truly, indeed",
+    "type": "adverb"
+  },
+  "귀엽다": {
+    "reading": "gwiyeopda",
+    "meaning": "to be cute, adorable",
+    "type": "adjective"
+  },
+  "않다": {
+    "reading": "anta",
+    "meaning": "to not do, to not be (auxiliary verb)",
+    "type": "verb"
+  },
+  "그녀": {
+    "reading": "geunyeo",
+    "meaning": "she, her",
+    "type": "pronoun"
+  },
+  "오글거리다": {
+    "reading": "ogeulgeorida",
+    "meaning": "to be cringey, cheesy; to squirm (from awkwardness)",
+    "type": "verb"
+  },
+  "넘어서다": {
+    "reading": "neomaseoda",
+    "meaning": "to go beyond, to exceed, to overcome",
+    "type": "verb"
+  },
+  "멘트": {
+    "reading": "menteu",
+    "meaning": "comment, remark, line (from English 'ment')",
+    "type": "noun"
+  },
+  "쉬다": {
+    "reading": "swida",
+    "meaning": "to rest, to take a break",
+    "type": "verb"
+  },
+  "새": {
+    "reading": "sae",
+    "meaning": "gap, space, opportunity (often in '쉴 새 없이' - without a break)",
+    "type": "noun"
+  },
+  "쏟아내다": {
+    "reading": "ssodanaeda",
+    "meaning": "to pour out, to blurt out, to gush (words)",
+    "type": "verb"
+  },
+  "댓글창": {
+    "reading": "daetgeulchang",
+    "meaning": "comment section/window (on a website/app)",
+    "type": "noun"
+  },
+  "반전": {
+    "reading": "banjeon",
+    "meaning": "reversal, twist (plot twist, unexpected turn)",
+    "type": "noun"
+  },
+  "알다": {
+    "reading": "alda",
+    "meaning": "to know, to understand",
+    "type": "verb"
+  },
+  "보다": {
+    "reading": "boda",
+    "meaning": "to see, to look, to watch; to try (auxiliary verb)",
+    "type": "verb"
+  },
+  "순정남": {
+    "reading": "sunjeongnam",
+    "meaning": "a man with pure and devoted love (often to one person)",
+    "type": "noun"
+  },
+  "등": {
+    "reading": "deung",
+    "meaning": "etc., and so on, for example",
+    "type": "noun"
+  },
+  "도배되다": {
+    "reading": "dobaedoeda",
+    "meaning": "to be covered, to be plastered (e.g., with posts, advertisements)",
+    "type": "verb"
+  },
+  "팬": {
+    "reading": "paen",
+    "meaning": "fan (of a celebrity, sport, etc.)",
+    "type": "noun"
+  },
+  "미묘하다": {
+    "reading": "mimyohada",
+    "meaning": "to be subtle, delicate, nuanced",
+    "type": "adjective"
+  },
+  "의심": {
+    "reading": "uisim",
+    "meaning": "doubt, suspicion",
+    "type": "noun"
+  },
+  "품다": {
+    "reading": "pumda",
+    "meaning": "to harbor (feelings), to embrace, to hold",
+    "type": "verb"
+  },
+  "특히": {
+    "reading": "teukhi",
+    "meaning": "especially, particularly",
+    "type": "adverb"
+  },
+  "윤아": {
+    "reading": "Yuna",
+    "meaning": "Yuna (a common Korean female given name)",
+    "type": "proper noun"
+  },
+  "뚫어지다": {
+    "reading": "ttureojida",
+    "meaning": "to be pierced; to stare intently/fixedly",
+    "type": "verb"
+  },
+  "묘하다": {
+    "reading": "myohada",
+    "meaning": "to be mysterious, strange, peculiar",
+    "type": "adjective"
+  },
+  "짓다": {
+    "reading": "jitda",
+    "meaning": "to make, to build, to form (a smile, face)",
+    "type": "verb"
+  },
+  "말하다": {
+    "reading": "malhada",
+    "meaning": "to speak, to say",
+    "type": "verb"
+  },
+  "네": {
+    "reading": "ne",
+    "meaning": "Yes, I see (polite affirmative)",
+    "type": "interjection"
+  },
+  "독특하다": {
+    "reading": "dokteukhada",
+    "meaning": "to be unique, peculiar, distinctive",
+    "type": "adjective"
+  },
+  "분": {
+    "reading": "bun",
+    "meaning": "person (honorific counter/noun)",
+    "type": "noun"
+  },
+  "세계": {
+    "reading": "segye",
+    "meaning": "world",
+    "type": "noun"
+  },
+  "확고하다": {
+    "reading": "hwakgohada",
+    "meaning": "to be firm, solid, well-established",
+    "type": "adjective"
+  },
+  "것": {
+    "reading": "geot",
+    "meaning": "thing, fact, what",
+    "type": "noun"
+  },
+  "같다": {
+    "reading": "gatda",
+    "meaning": "to be like, to seem, to be similar",
+    "type": "adjective"
+  },
+  "감히": {
+    "reading": "gamhi",
+    "meaning": "daringly, presumptuously",
+    "type": "adverb"
+  },
+  "끼어들다": {
+    "reading": "kkieodeulda",
+    "meaning": "to interrupt, to cut in, to intervene",
+    "type": "verb"
+  },
+  "없다": {
+    "reading": "eopda",
+    "meaning": "to not exist, to not have",
+    "type": "adjective"
+  },
+  "단어": {
+    "reading": "daneo",
+    "meaning": "word, vocabulary",
+    "type": "noun"
+  },
+  "담기다": {
+    "reading": "damgida",
+    "meaning": "to be contained, to be put into",
+    "type": "verb"
+  },
+  "억양": {
+    "reading": "eogyang",
+    "meaning": "intonation, accent",
+    "type": "noun"
+  },
+  "심장": {
+    "reading": "simjang",
+    "meaning": "heart",
+    "type": "noun"
+  },
+  "쿵": {
+    "reading": "kung",
+    "meaning": "thump, thud (onomatopoeia for heavy impact or heartbeat)",
+    "type": "adverb"
+  },
+  "떨어뜨리다": {
+    "reading": "tteoreotteurida",
+    "meaning": "to drop, to let fall",
+    "type": "verb"
+  },
+  "등골": {
+    "reading": "deunggol",
+    "meaning": "spine, backbone (often used in '등골이 서늘하다' for 'chills down one's spine')",
+    "type": "noun"
+  },
+  "서늘하다": {
+    "reading": "seoneulhada",
+    "meaning": "to be cool, chilly",
+    "type": "adjective"
+  },
+  "눈초리": {
+    "reading": "nunchori",
+    "meaning": "look, gaze (often implying a specific expression, e.g., suspicious)",
+    "type": "noun"
+  },
+  "점점": {
+    "reading": "jeomjeom",
+    "meaning": "gradually, increasingly",
+    "type": "adverb"
+  },
+  "선명하다": {
+    "reading": "seonmyeonghada",
+    "meaning": "to be clear, vivid, distinct",
+    "type": "adjective"
+  },
+  "느끼다": {
+    "reading": "neukkida",
+    "meaning": "to feel, to sense",
+    "type": "verb"
+  },
+  "다음": {
+    "reading": "daeum",
+    "meaning": "next, following",
+    "type": "noun"
+  },
+  "관계": {
+    "reading": "gwangye",
+    "meaning": "relationship, connection",
+    "type": "noun"
+  },
+  "파고들다": {
+    "reading": "pagodeulda",
+    "meaning": "to dig into, to probe deeply, to delve into",
+    "type": "verb"
+  },
+  "질문": {
+    "reading": "jilmun",
+    "meaning": "question",
+    "type": "noun"
+  },
+  "오다": {
+    "reading": "oda",
+    "meaning": "to come",
+    "type": "verb"
+  },
+  "봐": {
+    "reading": "bwa",
+    "meaning": "Look; See; Try; Let's see.",
+    "type": "verb (imperative/exclamatory/casual)"
+  },
+  "소름": {
+    "reading": "soreum",
+    "meaning": "Goosebumps; goose pimples.",
+    "type": "noun"
+  },
+  "끼치도록": {
+    "reading": "kkichidorok",
+    "meaning": "So much so that it causes; chillingly; horrifyingly.",
+    "type": "adverbial form"
+  },
+  "두려웠다": {
+    "reading": "duryeowotda",
+    "meaning": "Was afraid; was fearful.",
+    "type": "descriptive verb (past tense)"
+  },
+  "이대로라면": {
+    "reading": "idaeroramyeon",
+    "meaning": "If things continue like this; at this rate.",
+    "type": "conditional phrase"
+  },
+  "다": {
+    "reading": "da",
+    "meaning": "All; entirely; completely.",
+    "type": "adverb"
+  },
+  "들통날": {
+    "reading": "deultongnal",
+    "meaning": "Will be exposed; will be found out.",
+    "type": "verb (future attributive form)"
+  },
+  "분명했다": {
+    "reading": "bunmyeonghaetda",
+    "meaning": "Was clear; was obvious.",
+    "type": "descriptive verb (past tense)"
+  },
+  "방송의": {
+    "reading": "bangsong-ui",
+    "meaning": "of broadcast, of broadcasting",
+    "type": "Noun + Particle"
+  },
+  "후폭풍이": {
+    "reading": "hupokpung-i",
+    "meaning": "aftermath (subject particle attached)",
+    "type": "Noun + Particle"
+  },
+  "가라앉기도": {
+    "reading": "garaanjgido",
+    "meaning": "even before subsiding / calming down (from 가라앉다: to subside)",
+    "type": "Verb + Suffix"
+  },
+  "전에,": {
+    "reading": "jeone",
+    "meaning": "before",
+    "type": "Noun + Particle"
+  },
+  "윤아에게서": {
+    "reading": "Yuna-egeseo",
+    "meaning": "from Yuna",
+    "type": "Proper Noun + Particle"
+  },
+  "또다시": {
+    "reading": "ttodasi",
+    "meaning": "again, once more",
+    "type": "Adverb"
+  },
+  "\"보미님,": {
+    "reading": "Bominim",
+    "meaning": "Ms. Bomi (honorific)",
+    "type": "Proper Noun + Honorific"
+  },
+  "커플과": {
+    "reading": "keopeulgwa",
+    "meaning": "with a couple / couple and",
+    "type": "Noun + Particle"
+  },
+  "커플,,": {
+    "reading": "keopeul",
+    "meaning": "couple",
+    "type": "Noun"
+  },
+  "이번엔,": {
+    "reading": "ibeonen",
+    "meaning": "this time",
+    "type": "Noun + Particle"
+  },
+  "편하게,": {
+    "reading": "pyeonhage",
+    "meaning": "comfortably, at ease (from 편하다: to be comfortable)",
+    "type": "Adverb"
+  },
+  "'우정,": {
+    "reading": "ujeong",
+    "meaning": "friendship",
+    "type": "Noun"
+  },
+  "데이트',": {
+    "reading": "deiteu",
+    "meaning": "date (romantic rendezvous)",
+    "type": "Noun"
+  },
+  "손끝이,": {
+    "reading": "sonkkeut-i",
+    "meaning": "fingertip (subject particle attached)",
+    "type": "Noun + Particle"
+  },
+  "우정?": {
+    "reading": "ujeong",
+    "meaning": "friendship?",
+    "type": "Noun"
+  },
+  "그들은,": {
+    "reading": "geudeul-eun",
+    "meaning": "they (topic particle attached)",
+    "type": "Pronoun + Particle"
+  },
+  "자신들의,": {
+    "reading": "jasindeul-ui",
+    "meaning": "their own, of themselves",
+    "type": "Pronoun + Particle"
+  },
+  "관계를,": {
+    "reading": "gwangye-reul",
+    "meaning": "relationship (object particle attached)",
+    "type": "Noun + Particle"
+  },
+  "의심하고,": {
+    "reading": "uisimhago",
+    "meaning": "doubting and (from 의심하다: to doubt)",
+    "type": "Verb + Suffix"
+  },
+  "이건,": {
+    "reading": "igeon",
+    "meaning": "this (short for 이것은: this thing + topic particle)",
+    "type": "Pronoun + Particle"
+  },
+  "명백한,": {
+    "reading": "myeongbaekhan",
+    "meaning": "clear, obvious, unmistakable (from 명백하다: to be obvious)",
+    "type": "Adjective (Adnominal)"
+  },
+  "함정이었다.,": {
+    "reading": "hamjeong-ieotda",
+    "meaning": "it was a trap (함정: trap + 이다: to be, past tense)",
+    "type": "Noun + Verb (Past Tense)"
+  },
+  "불안감을,": {
+    "reading": "burangam-eul",
+    "meaning": "anxiety (object particle attached)",
+    "type": "Noun + Particle"
+  },
+  "감추고,": {
+    "reading": "gamchugo",
+    "meaning": "hiding and (from 감추다: to hide)",
+    "type": "Verb + Suffix"
+  },
+  "나간,": {
+    "reading": "nagan",
+    "meaning": "having gone out (adnominal form of 나가다: to go out)",
+    "type": "Verb (Adnominal)"
+  },
+  "카페.,": {
+    "reading": "kape",
+    "meaning": "cafe, coffee shop",
+    "type": "Noun"
+  },
+  "윤아는,": {
+    "reading": "Yuna-neun",
+    "meaning": "Yuna (topic particle attached)",
+    "type": "Proper Noun + Particle"
+  },
+  "시종일관,": {
+    "reading": "sijongil-gwan",
+    "meaning": "consistently, throughout",
+    "type": "Adverb"
+  },
+  "미소를,": {
+    "reading": "miso-reul",
+    "meaning": "smile (object particle attached)",
+    "type": "Noun + Particle"
+  },
+  "띠었지만,,": {
+    "reading": "ttieotjiman",
+    "meaning": "although she wore / although she had (from 띠다: to wear, have)",
+    "type": "Verb + Suffix"
+  },
+  "매,": {
+    "reading": "mae",
+    "meaning": "every, each",
+    "type": "Determiner"
+  },
+  "보미와": {
+    "reading": "Bomiwa",
+    "meaning": "Bomi and / with Bomi",
+    "type": "Proper Noun + Particle"
+  },
+  "민석의": {
+    "reading": "Minseok-ui",
+    "meaning": "Minseok's, of Minseok",
+    "type": "Proper Noun + Particle"
+  },
+  "움직임과": {
+    "reading": "umjigim-gwa",
+    "meaning": "movement and / with movement",
+    "type": "Noun + Particle"
+  },
+  "시선을": {
+    "reading": "siseon-eul",
+    "meaning": "gaze, line of sight (object particle attached)",
+    "type": "Noun + Particle"
+  },
+  "끈질기게": {
+    "reading": "kkeunjilgi-ge",
+    "meaning": "persistently, tenaciously (from 끈질기다: to be persistent)",
+    "type": "Adverb"
+  },
+  "쫓았다.,": {
+    "reading": "jjochatda",
+    "meaning": "chased, followed, pursued (past tense of 쫓다: to chase)",
+    "type": "Verb (Past Tense)"
+  },
+  "\"민석님은,": {
+    "reading": "Minseok-nim-eun",
+    "meaning": "Mr. Minseok (honorific + topic particle)",
+    "type": "Proper Noun + Honorific + Particle"
+  },
+  "보미님,": {
+    "reading": "Bominim",
+    "meaning": "Ms. Bomi (honorific)",
+    "type": "Proper Noun + Honorific"
+  },
+  "어떤,": {
+    "reading": "eotteon",
+    "meaning": "what kind of, some",
+    "type": "Determiner"
+  },
+  "점에,": {
+    "reading": "jeome",
+    "meaning": "at what point / aspect",
+    "type": "Noun + Particle"
+  },
+  "반하셨어요?\"": {
+    "reading": "banhasyeosseoyo?",
+    "meaning": "Did you fall for / were you charmed by? (honorific, polite, past interrogative of 반하다: to fall for)",
+    "type": "Verb (Honorific, Polite, Past, Interrogative)"
+  },
+  "윤아가": {
+    "reading": "Yuna-ga",
+    "meaning": "Yuna (subject particle attached)",
+    "type": "Proper Noun + Particle"
+  },
+  "달콤한": {
+    "reading": "dalkomhan",
+    "meaning": "sweet (adnominal form of 달콤하다: to be sweet)",
+    "type": "Adjective (Adnominal)"
+  },
+  "목소리로": {
+    "reading": "moksoriro",
+    "meaning": "with a voice / in a voice",
+    "type": "Noun + Particle"
+  },
+  "천장을": {
+    "reading": "cheonjang-eul",
+    "meaning": "ceiling (object particle attached)",
+    "type": "Noun + Particle"
+  },
+  "보더니,,": {
+    "reading": "bodeoni",
+    "meaning": "seeing (it) and then / after looking (from 보다: to see)",
+    "type": "Verb + Suffix"
+  },
+  "털,": {
+    "reading": "teol",
+    "meaning": "fur, hair (animal)",
+    "type": "Noun"
+  },
+  "알레르기가,": {
+    "reading": "allereugi-ga",
+    "meaning": "allergy (subject particle attached)",
+    "type": "Noun + Particle"
+  },
+  "없다는,": {
+    "reading": "eopdaneun",
+    "meaning": "that (one) doesn't have / that there isn't (from 없다: to not exist/have)",
+    "type": "Adjective + Suffix"
+  },
+  "점이요?,": {
+    "reading": "jeomiyo?",
+    "meaning": "that point/aspect? / Is it that point? (점: point, aspect + 이다: to be, polite interrogative)",
+    "type": "Noun + Polite Ending"
+  },
+  "제가": {
+    "reading": "jega",
+    "meaning": "I (humble subject particle attached)",
+    "type": "Pronoun + Particle"
+  },
+  "고양이를": {
+    "reading": "goyang-i-reul",
+    "meaning": "cat (object particle attached)",
+    "type": "Noun + Particle"
+  },
+  "좋아해서...\":": {
+    "reading": "joahaeseo",
+    "meaning": "because I like / liking (it) (from 좋아하다: to like)",
+    "type": "Verb + Suffix"
+  },
+  "그의": {
+    "reading": "geu-ui",
+    "meaning": "his",
+    "type": "Pronoun + Particle"
+  },
+  "진지한": {
+    "reading": "jinji-han",
+    "meaning": "serious, earnest (adnominal form of 진지하다: to be serious)",
+    "type": "Adjective (Adnominal)"
+  },
+  "대답에": {
+    "reading": "daedap-e",
+    "meaning": "at his answer / to his answer",
+    "type": "Noun + Particle"
+  },
+  "억지로": {
+    "reading": "eokjiro",
+    "meaning": "reluctantly, by force, against one's will",
+    "type": "Adverb"
+  },
+  "속으로는,": {
+    "reading": "sog-euroneun",
+    "meaning": "inwardly, in one's mind (topic particle attached)",
+    "type": "Noun + Particle"
+  },
+  "비명을": {
+    "reading": "bimyeong-eul",
+    "meaning": "scream, shriek (object particle attached)",
+    "type": "Noun + Particle"
+  },
+  "질렀다.,": {
+    "reading": "jilleotda",
+    "meaning": "screamed, shrieked (past tense of 지르다: to shout/scream)",
+    "type": "Verb (Past Tense)"
+  },
+  "웃었지만,,": {
+    "reading": "useotjiman",
+    "meaning": "although she laughed/smiled (from 웃다: to laugh/smile)",
+    "type": "Verb + Suffix"
+  },
+  "눈빛은,": {
+    "reading": "nunbit-eun",
+    "meaning": "gaze, look in one's eyes (topic particle attached)",
+    "type": "Noun + Particle"
+  },
+  "한층,": {
+    "reading": "hanching",
+    "meaning": "even more, much more",
+    "type": "Adverb"
+  },
+  "더,": {
+    "reading": "deo",
+    "meaning": "more",
+    "type": "Adverb"
+  },
+  "예리해졌다.,": {
+    "reading": "yerihajyeotda",
+    "meaning": "became sharp/keen (past tense of 예리해지다: to become sharp)",
+    "type": "Adjective + Auxiliary Verb (Past Tense)"
+  },
+  "평소에,": {
+    "reading": "pyeongso-e",
+    "meaning": "usually, ordinarily",
+    "type": "Noun + Particle"
+  },
+  "데이트를,": {
+    "reading": "deiteu-reul",
+    "meaning": "date (object particle attached)",
+    "type": "Noun + Particle"
+  },
+  "주로,": {
+    "reading": "juro",
+    "meaning": "mainly, mostly",
+    "type": "Adverb"
+  },
+  "하시나요?\"라는,": {
+    "reading": "hasinayo?raneun",
+    "meaning": "asking 'do you usually do?' (honorific, polite, interrogative + quoting particle)",
+    "type": "Verb + Honorific + Interrogative + Quoting Particle"
+  },
+  "질문에는,": {
+    "reading": "jilmun-eneun",
+    "meaning": "to the question / regarding the question (topic particle attached)",
+    "type": "Noun + Particle"
+  },
+  "\"주로,": {
+    "reading": "juro",
+    "meaning": "mainly, mostly",
+    "type": "Adverb"
+  },
+  "제,": {
+    "reading": "je",
+    "meaning": "my (humble form)",
+    "type": "Pronoun (Possessive, Humble)"
+  },
+  "방에서,": {
+    "reading": "bang-eseo",
+    "meaning": "in my room / from my room",
+    "type": "Noun + Particle"
+  },
+  "기타,": {
+    "reading": "gita",
+    "meaning": "guitar",
+    "type": "Noun"
+  },
+  "연습하고,": {
+    "reading": "yeonseupago",
+    "meaning": "practice and (from 연습하다: to practice)",
+    "type": "Verb + Suffix"
+  },
+  "보미님은,": {
+    "reading": "Bominim-eun",
+    "meaning": "Ms. Bomi (honorific + topic particle)",
+    "type": "Proper Noun + Honorific + Particle"
+  },
+  "주십니다\"라고": {
+    "reading": "jusimnida-rago",
+    "meaning": "saying 'she gives/does for me' (honorific, formal polite + quoting particle)",
+    "type": "Verb + Honorific + Polite + Quoting Particle"
+  },
+  "답했다.,": {
+    "reading": "dapaetda",
+    "meaning": "answered, replied (past tense of 답하다: to answer)",
+    "type": "Verb (Past Tense)"
+  },
+  "식은땀이": {
+    "reading": "sigeunttam-i",
+    "meaning": "cold sweat (subject particle attached)",
+    "type": "Noun + Particle"
+  },
+  "등줄기를": {
+    "reading": "deungjulgi-reul",
+    "meaning": "spine, backbone (object particle attached)",
+    "type": "Noun + Particle"
+  },
+  "타고": {
+    "reading": "tago",
+    "meaning": "flowing down / running along (from 타다: to ride, flow along)",
+    "type": "Verb + Suffix"
+  },
+  "흘렀다.,": {
+    "reading": "heulleotda",
+    "meaning": "flowed, ran (past tense of 흐르다: to flow)",
+    "type": "Verb (Past Tense)"
+  },
+  "데이트'는,": {
+    "reading": "deiteu-neun",
+    "meaning": "the date (topic particle attached)",
+    "type": "Noun + Particle"
+  },
+  "편안함과는,": {
+    "reading": "pyeonanham-gwa-neun",
+    "meaning": "compared to comfort / comfort (topic/contrastive particle attached)",
+    "type": "Noun + Particle"
+  },
+  "거리가,": {
+    "reading": "geori-ga",
+    "meaning": "distance (subject particle attached)",
+    "type": "Noun + Particle"
+  },
+  "먼,,": {
+    "reading": "meon",
+    "meaning": "distant, far (adnominal form of 멀다: to be far)",
+    "type": "Adjective (Adnominal)"
+  },
+  "살얼음판,": {
+    "reading": "sareoreumpan",
+    "meaning": "thin ice, precarious situation",
+    "type": "Noun"
+  },
+  "위를,": {
+    "reading": "wi-reul",
+    "meaning": "on top of (object/directional particle attached)",
+    "type": "Noun + Particle"
+  },
+  "걷는,": {
+    "reading": "geonneun",
+    "meaning": "walking (present participle/adnominal form of 걷다: to walk)",
+    "type": "Verb (Adnominal)"
+  },
+  "듯한,": {
+    "reading": "deuthan",
+    "meaning": "seeming like, as if (adnominal form of 듯하다: to seem)",
+    "type": "Auxiliary Adjective (Adnominal)"
+  },
+  "심문이었다.": {
+    "reading": "simmun-ieotda",
+    "meaning": "it was an interrogation (심문: interrogation + 이다: to be, past tense)",
+    "type": "Noun + Verb (Past Tense)"
   }
 }

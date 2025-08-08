@@ -91,10 +91,10 @@ function parseSentences(text, language) {
                 .filter(sentence => !/^\s*$/.test(sentence));
         
         case "ko":
-            // Korean uses similar punctuation to Japanese
+            // Korean uses both Korean and English punctuation
             return text
                 .replace(/\r?\n/g, ' ')  // Replace newlines with spaces
-                .replace(/([。！？]+)\s*/g, '$1|')  // Add separator after Korean sentence endings
+                .replace(/([。！？.!?]+)\s*/g, '$1|')  // Add separator after Korean and English sentence endings
                 .split('|')
                 .map(sentence => sentence.trim())
                 .filter(sentence => sentence.length > 0)
@@ -148,19 +148,26 @@ Please provide only the ${targetConfig.name} translation, no additional text or 
 }
 
 async function translateSentences(sentences, episodeNum, title, description) {
-    const sentencesList = sentences.map(sentence => `"${sentence}"`).join(',\n');
+    // Escape Korean text properly for JSON
+    const sentencesList = sentences.map(sentence => {
+        // Escape quotes and special characters
+        const escaped = sentence.replace(/"/g, '\\"').replace(/\n/g, '\\n');
+        return `"${escaped}"`;
+    }).join(',\n');
     
     const prompt = `You are a professional translator. Translate the following ${sourceConfig.name} sentences into natural ${targetConfig.name}.
 
 Please translate each sentence into natural, fluent ${targetConfig.name}. Return the result as a JSON object where the keys are the original ${sourceConfig.name} sentences and the values are the ${targetConfig.name} translations.
+
+IMPORTANT: Handle quotes and special characters carefully. Escape any quotes in the Korean text with backslashes.
 
 Sentences to translate:
 ${sentencesList}
 
 Return only the JSON object, no additional text or explanations. Format like this:
 {
-  "${sourceConfig.name} sentence 1": "${targetConfig.name} translation 1",
-  "${sourceConfig.name} sentence 2": "${targetConfig.name} translation 2"
+  "Korean sentence 1": "English translation 1",
+  "Korean sentence 2": "English translation 2"
 }`;
 
     const raw = await callGemini(prompt);
@@ -178,6 +185,26 @@ Return only the JSON object, no additional text or explanations. Format like thi
     } catch (e) {
         console.error('❌ Failed to parse translation response:', e.message);
         console.error('Raw:', raw);
+        
+        // Try to extract translations manually if JSON parsing fails
+        console.log('🔄 Attempting manual extraction...');
+        const manualTranslations = {};
+        
+        // Split by lines and try to extract key-value pairs
+        const lines = cleaned.split('\n');
+        for (const line of lines) {
+            const match = line.match(/"([^"]+)":\s*"([^"]+)"/);
+            if (match) {
+                const [, key, value] = match;
+                manualTranslations[key] = value;
+            }
+        }
+        
+        if (Object.keys(manualTranslations).length > 0) {
+            console.log(`✅ Manually extracted ${Object.keys(manualTranslations).length} translations`);
+            return manualTranslations;
+        }
+        
         return null;
     }
 }
