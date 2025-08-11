@@ -13,22 +13,26 @@
     {
         "id": "still-dead-still-bored",
         "language": "english",
-        "translatedLanguages": ["ja"]
+        "translatedLanguages": ["ja"],
+        "weekly": true
      },
      {
         "id": "the-barista",
         "language": "english",
-        "translatedLanguages": ["ja", "es"]
+        "translatedLanguages": ["ja", "es"],
+        "weekly": true
      },
      {
         "id": "for-rent",
         "language": "japanese",
-        "translatedLanguages": ["en", "vi"]
+        "translatedLanguages": ["en", "vi"],
+        "weekly": true
      },
      {
         "id": "taipei-blues",
         "language": "chinese",
-        "translatedLanguages": ["en", "ja"]
+        "translatedLanguages": ["en", "ja"],
+        "weekly": true
      },
      {
         "id": "waves-and-hoops",
@@ -38,12 +42,14 @@
      {
         "id": "lotus-bloom",
         "language": "vietnamese",
-        "translatedLanguages": ["en"]
+        "translatedLanguages": ["en"],
+        "weekly": true
      },
      {
         "id": "not-that-kind-of-influencer",
         "language": "korean",
-        "translatedLanguages": ["en", "ja"]
+        "translatedLanguages": ["en", "ja"],
+        "weekly": true
      }
     ]
 }
