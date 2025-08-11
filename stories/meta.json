@@ -37,7 +37,7 @@
      {
         "id": "waves-and-hoops",
         "language": "japanese",
-        "translatedLanguages": ["en", "vi", "zh"]
+        "translatedLanguages": ["en", "vi", "zh", "es"]
      },
      {
         "id": "lotus-bloom",
@@ -48,7 +48,13 @@
      {
         "id": "not-that-kind-of-influencer",
         "language": "korean",
-        "translatedLanguages": ["en", "ja"],
+        "translatedLanguages": ["en", "ja", "vi"],
+        "ongoingSeries": true
+     },
+     {
+        "id": "lost-subway",
+        "language": "korean",
+        "translatedLanguages": ["en"],
         "ongoingSeries": true
      }
     ]

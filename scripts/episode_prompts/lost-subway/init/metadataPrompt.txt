@@ -1,0 +1,18 @@
+You are a creative assistant helping write a serialized Korean-language story about Mina, a 16-year-old high school student in Seoul who is navigating the subway system for the first time alone.
+
+The story is continuous and should evolve naturally.
+
+Now, come up with the first episode idea. It should introduce the audience to Mina and her first subway adventure in an interesting way. 
+
+Return:
+- A creative episode title
+- A short plot hook (1–2 sentences) describing what happens in the episode
+- A very short (10 words or fewer) description of the episode
+
+The tone should feel organic and evolving — you can make it warm, dramatic, mysterious, funny, or bittersweet depending on what fits best.  
+Format your response as JSON:
+{
+  "title": "Your Title",
+  "hook": "Your Plot Hook",
+  "description": "Your Description"
+}

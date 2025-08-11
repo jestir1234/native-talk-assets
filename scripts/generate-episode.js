@@ -8,9 +8,9 @@ const axios = require('axios');
 const STORY_NAME = process.argv[2] || 'still-dead-still-bored';
 const SOURCE_LANG = process.argv[3] || 'en';
 const TARGET_LANG = process.argv[4] || 'ja';
-const IS_SERIALIZED = process.argv.includes('--serialized');
-const IS_INIT = process.argv.includes('--init');
-const IS_EPISODES = process.argv.includes('--episodes');
+const IS_SERIALIZED = process.argv.includes('--serialized'); // add this flag for stories that maintain continuity across episodes
+const IS_INIT = process.argv.includes('--init'); // add this flag to generate episode using init prompts
+const IS_EPISODES = process.argv.includes('--episodes'); // add this flag to generate episodes from the /episodes/ directory
 
 const sourceLangToDictMap = {
     'en': 'english',
