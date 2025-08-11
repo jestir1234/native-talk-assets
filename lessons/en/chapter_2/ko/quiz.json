@@ -1,0 +1,215 @@
+{
+  "title": "2장 퀴즈: 기본 인사와 자기소개",
+  "questions": [
+    {
+      "id": 2,
+      "type": "multipleChoice",
+      "question": "영어에서 가장 일반적인 인사말은 무엇인가요?",
+      "explanation": "\"Hello\"는 영어에서 가장 일반적이고 보편적인 인사말입니다.",
+      "correctAnswer": "Hello",
+      "options": [
+        "Goodbye",
+        "Hello",
+        "Thank you",
+        "Please"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "fillInTheBlank",
+      "question": "인사말을 완성하세요: \"Good ___\" (좋은 아침)",
+      "explanation": "\"Good morning\"은 영어로 \"좋은 아침\"을 의미합니다.",
+      "correctAnswer": "morning",
+      "options": [
+        "morning",
+        "afternoon",
+        "evening",
+        "night"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "multipleChoice",
+      "question": "\"어떻게 지내세요?\"를 영어로 어떻게 말하나요?",
+      "explanation": "\"How are you?\"는 \"어떻게 지내세요?\"를 묻는 올바른 방법입니다.",
+      "correctAnswer": "How are you?",
+      "options": [
+        "How are you?",
+        "What is your name?",
+        "Where are you from?",
+        "How old are you?"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "fillInTheBlank",
+      "question": "대답을 완성하세요: \"I'm ___\" (저는 괜찮습니다)",
+      "explanation": "\"I'm fine\"은 영어로 \"저는 괜찮습니다\"를 의미합니다.",
+      "correctAnswer": "fine",
+      "options": [
+        "fine",
+        "bad",
+        "tired",
+        "hungry"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "multipleChoice",
+      "question": "\"제 이름은...\"을 영어로 어떻게 말하나요?",
+      "explanation": "\"My name is...\"는 영어에서 자신을 소개하는 올바른 방법입니다.",
+      "correctAnswer": "My name is...",
+      "options": [
+        "My name is...",
+        "I am...",
+        "I call...",
+        "My name..."
+      ]
+    },
+    {
+      "id": 12,
+      "type": "fillInTheBlank",
+      "question": "자기소개를 완성하세요: \"___ to meet you\" (만나서 반갑습니다)",
+      "explanation": "\"Nice to meet you\"는 \"만나서 반갑습니다\"를 의미합니다.",
+      "correctAnswer": "Nice",
+      "options": [
+        "Nice",
+        "Good",
+        "Happy",
+        "Glad"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "multipleChoice",
+      "question": "\"Hello\"의 비격식적인 표현은 무엇인가요?",
+      "explanation": "\"Hi\"는 \"Hello\"의 비격식적인 표현입니다.",
+      "correctAnswer": "Hi",
+      "options": [
+        "Hi",
+        "Goodbye",
+        "Thanks",
+        "Please"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "fillInTheBlank",
+      "question": "질문을 완성하세요: \"___ are you?\" (어디서 오셨나요?)",
+      "explanation": "\"Where are you from?\"은 \"어디서 오셨나요?\"를 의미합니다.",
+      "correctAnswer": "Where",
+      "options": [
+        "Where",
+        "What",
+        "How",
+        "When"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "multipleChoice",
+      "question": "\"감사합니다\"를 영어로 어떻게 말하나요?",
+      "explanation": "\"Thank you\"는 영어로 \"감사합니다\"를 의미합니다.",
+      "correctAnswer": "Thank you",
+      "options": [
+        "Please",
+        "Thank you",
+        "Sorry",
+        "Excuse me"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "fillInTheBlank",
+      "question": "대화를 완성하세요: \"And ___?\" (그리고 당신은요?)",
+      "explanation": "\"And you?\"는 \"그리고 당신은요?\"를 의미합니다.",
+      "correctAnswer": "you",
+      "options": [
+        "you",
+        "me",
+        "us",
+        "them"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "multipleChoice",
+      "question": "\"안녕하세요\"를 영어로 어떻게 말하나요?",
+      "explanation": "\"Hello\"는 \"안녕하세요\"를 의미합니다.",
+      "correctAnswer": "Hello",
+      "options": [
+        "Goodbye",
+        "Hello",
+        "Thank you",
+        "Please"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "fillInTheBlank",
+      "question": "시간대별 인사를 완성하세요: \"Good ___\" (좋은 오후)",
+      "explanation": "\"Good afternoon\"은 \"좋은 오후\"를 의미합니다.",
+      "correctAnswer": "afternoon",
+      "options": [
+        "morning",
+        "afternoon",
+        "evening",
+        "night"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "multipleChoice",
+      "question": "\"만나서 반갑습니다\"를 영어로 어떻게 말하나요?",
+      "explanation": "\"Nice to meet you\"는 \"만나서 반갑습니다\"를 의미합니다.",
+      "correctAnswer": "Nice to meet you",
+      "options": [
+        "Nice to meet you",
+        "Good to see you",
+        "Happy to know you",
+        "Glad to meet you"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "fillInTheBlank",
+      "question": "자기소개를 완성하세요: \"I ___ John\" (저는 John입니다)",
+      "explanation": "\"I am John\"은 \"저는 John입니다\"를 의미합니다.",
+      "correctAnswer": "am",
+      "options": [
+        "am",
+        "is",
+        "are",
+        "be"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "multipleChoice",
+      "question": "\"어떻게 지내세요?\"에 대한 긍정적인 대답은 무엇인가요?",
+      "explanation": "\"I'm fine\"은 \"저는 괜찮습니다\"라는 긍정적인 대답입니다.",
+      "correctAnswer": "I'm fine",
+      "options": [
+        "I'm bad",
+        "I'm fine",
+        "I'm tired",
+        "I'm sick"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "fillInTheBlank",
+      "question": "인사말을 완성하세요: \"Good ___\" (좋은 저녁)",
+      "explanation": "\"Good evening\"은 \"좋은 저녁\"을 의미합니다.",
+      "correctAnswer": "evening",
+      "options": [
+        "morning",
+        "afternoon",
+        "evening",
+        "night"
+      ]
+    }
+  ],
+  "totalQuestions": 16,
+  "createdAt": "2025-08-11T07:53:56.929Z"
+}

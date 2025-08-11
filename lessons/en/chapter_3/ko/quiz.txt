@@ -1,0 +1,177 @@
+# 3장 퀴즈: 숫자와 셈하기
+
+## Question 1
+type: multipleChoice
+question: 영어에서 1부터 10까지 세는 방법은 무엇인가요?
+options:
+  - One, two, three, four, five, six, seven, eight, nine, ten
+  - First, second, third, fourth, fifth, sixth, seventh, eighth, ninth, tenth
+  - Once, twice, thrice, four times, five times
+  - Single, double, triple, quadruple, quintuple
+correctAnswer: One, two, three, four, five, six, seven, eight, nine, ten
+explanation: 1부터 10까지는 one, two, three, four, five, six, seven, eight, nine, ten으로 셉니다.
+
+## Question 2
+type: fillInTheBlank
+question: 숫자를 완성하세요: "___" (5)
+options:
+  - Five
+  - Four
+  - Six
+  - Seven
+correctAnswer: Five
+explanation: "Five"는 영어로 5를 의미합니다.
+
+## Question 3
+type: multipleChoice
+question: "몇 살이세요?"를 영어로 어떻게 말하나요?
+options:
+  - How old are you?
+  - What is your age?
+  - How many years are you?
+  - What year are you?
+correctAnswer: How old are you?
+explanation: "How old are you?"는 "몇 살이세요?"를 묻는 올바른 방법입니다.
+
+## Question 4
+type: fillInTheBlank
+question: 나이를 말할 때: "I'm ___ years old" (저는 20살입니다)
+options:
+  - twenty
+  - two
+  - twelve
+  - two hundred
+correctAnswer: twenty
+explanation: "I'm twenty years old"는 "저는 20살입니다"를 의미합니다.
+
+## Question 5
+type: multipleChoice
+question: 영어에서 11부터 20까지의 숫자 패턴은 무엇인가요?
+options:
+  - 모두 -teen으로 끝남
+  - 모두 -ty로 끝남
+  - 11-19는 -teen, 20은 -ty
+  - 규칙이 없음
+correctAnswer: 11-19는 -teen, 20은 -ty
+explanation: 11-19는 -teen으로 끝나고 (eleven, twelve, thirteen...), 20은 twenty로 -ty로 끝납니다.
+
+## Question 6
+type: fillInTheBlank
+question: 전화번호를 말할 때: "My number is ___" (제 번호는 123-4567입니다)
+options:
+  - one two three, four five six seven
+  - one hundred twenty-three, four thousand five hundred sixty-seven
+  - twelve three, forty-five sixty-seven
+  - one twenty-three, four fifty-six seven
+correctAnswer: one two three, four five six seven
+explanation: 전화번호는 각 숫자를 개별적으로 발음합니다.
+
+## Question 7
+type: multipleChoice
+question: "몇 개가 있나요?"를 영어로 어떻게 말하나요?
+options:
+  - How many are there?
+  - How much is there?
+  - What number is there?
+  - How many do you have?
+correctAnswer: How many are there?
+explanation: "How many are there?"는 "몇 개가 있나요?"를 묻는 방법입니다.
+
+## Question 8
+type: fillInTheBlank
+question: 수학 기호를 완성하세요: "Two ___ three equals five" (2 더하기 3은 5)
+options:
+  - plus
+  - minus
+  - times
+  - divided by
+correctAnswer: plus
+explanation: "Two plus three equals five"는 "2 더하기 3은 5"를 의미합니다.
+
+## Question 9
+type: multipleChoice
+question: 영어에서 0을 어떻게 읽나요?
+options:
+  - Zero
+  - Oh
+  - Nothing
+  - Null
+correctAnswer: Zero
+explanation: 영어에서 0은 "zero"로 읽습니다.
+
+## Question 10
+type: fillInTheBlank
+question: 숫자를 완성하세요: "___" (15)
+options:
+  - Fifteen
+  - Five teen
+  - Ten five
+  - Fifty
+correctAnswer: Fifteen
+explanation: "Fifteen"은 영어로 15를 의미합니다.
+
+## Question 11
+type: multipleChoice
+question: "몇 명이 있나요?"를 영어로 어떻게 말하나요?
+options:
+  - How many people are there?
+  - How much people are there?
+  - What people are there?
+  - How many person are there?
+correctAnswer: How many people are there?
+explanation: "How many people are there?"는 "몇 명이 있나요?"를 묻는 방법입니다.
+
+## Question 12
+type: fillInTheBlank
+question: 수학 기호를 완성하세요: "Ten ___ two equals five" (10 나누기 2는 5)
+options:
+  - plus
+  - minus
+  - times
+  - divided by
+correctAnswer: divided by
+explanation: "Ten divided by two equals five"는 "10 나누기 2는 5"를 의미합니다.
+
+## Question 13
+type: multipleChoice
+question: 영어에서 100을 어떻게 읽나요?
+options:
+  - One hundred
+  - Hundred
+  - One zero zero
+  - Ten ten
+correctAnswer: One hundred
+explanation: 영어에서 100은 "one hundred"로 읽습니다.
+
+## Question 14
+type: fillInTheBlank
+question: 숫자를 완성하세요: "___" (30)
+options:
+  - Thirty
+  - Three ten
+  - Ten three
+  - Three zero
+correctAnswer: Thirty
+explanation: "Thirty"은 영어로 30을 의미합니다.
+
+## Question 15
+type: multipleChoice
+question: "몇 시인가요?"를 영어로 어떻게 말하나요?
+options:
+  - What time is it?
+  - How time is it?
+  - What hour is it?
+  - How many time is it?
+correctAnswer: What time is it?
+explanation: "What time is it?"는 "몇 시인가요?"를 묻는 방법입니다.
+
+## Question 16
+type: fillInTheBlank
+question: 수학 기호를 완성하세요: "Five ___ three equals two" (5 빼기 3은 2)
+options:
+  - plus
+  - minus
+  - times
+  - divided by
+correctAnswer: minus
+explanation: "Five minus three equals two"는 "5 빼기 3은 2"를 의미합니다.
