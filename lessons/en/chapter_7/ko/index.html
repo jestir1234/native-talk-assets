@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7: Food and Drinks</title>
+    <style>
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --text-heading-color: #2C3E50; /* Dark blue */
+            --text-body-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* White background for overall page */
+            color: var(--text-body-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        h1, h2, h3, h4 {
+            color: var(--text-heading-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--border-color);
+            margin-top: 35px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        section {
+            background-color: var(--secondary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        strong {
+            color: var(--text-heading-color);
+        }
+
+        .example-box {
+            background-color: #F0F0F0; /* Light gray for examples */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example-box p {
+            margin: 5px 0;
+        }
+
+        .practice-section {
+            background-color: #E8F5E9; /* Light green for practice */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px dashed var(--primary-color);
+        }
+
+        .practice-section h3 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #FFFFFF;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+        }
+
+        .practice-item p {
+            margin-bottom: 5px;
+        }
+
+        .answer-box {
+            margin-top: 10px;
+            font-style: italic;
+            color: var(--primary-color);
+        }
+
+        .cultural-note {
+            background-color: #FFFDE7; /* Very light yellow for cultural notes */
+            border-left: 5px solid #FFC107; /* Amber for cultural notes */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            color: var(--text-heading-color);
+        }
+
+        .cultural-note strong {
+            color: #FFC107;
+        }
+
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50%;
+            width: 44px; /* Minimum 44px for touch targets */
+            height: 44px; /* Minimum 44px for touch targets */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #7A4EA5; /* Slightly darker purple on hover */
+            transform: scale(1.05);
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Placeholder for image visual - will not load an actual image */
+            background-color: #DDA0DD; /* A lighter purple to represent an image */
+            min-height: 150px; /* Give it some height if no image loads */
+            object-fit: cover; /* Ensures image covers area if it were real */
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: #E1F5FE; /* Light blue for summary */
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 8px;
+            border: 1px solid #90CAF9; /* Medium blue border */
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: #1976D2; /* Darker blue for summary heading */
+            border-bottom: none;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .summary-section ul {
+            list-style: disc;
+            padding-left: 20px;
+            text-align: left;
+            display: inline-block; /* Center the list itself */
+        }
+
+        .summary-section li {
+            margin-bottom: 8px;
+            color: var(--text-body-color);
+            display: list-item; /* Override flex for simple list items */
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 7: Food and Drinks</h1>
+        <div class="lesson-header">
+            <!-- This image path is for structural requirement. No actual image content is provided as per instructions. -->
+            <img src="../header.webp" alt="Chapter 7 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>✨ 시작하기 (Let's Begin) ✨</h2>
+            <p>안녕하세요! 여러분의 영어 선생님입니다. 😊</p>
+            <p>오늘은 우리 일상생활에서 빼놓을 수 없는 주제, 바로 <strong>'음식과 음료 (Food and Drinks)'</strong>에 대해 배울 거예요. 맛있는 음식을 영어로 말하고, 좋아하는 것을 표현하는 방법을 함께 익혀봅시다!</p>
+            <p>준비되셨나요? 그럼 시작해볼까요?</p>
+        </section>
+
+        <section>
+            <h2>🍽️ 1. 흔한 음식들 (Common Food Items)</h2>
+            <p>매일 보는 음식들을 영어로 어떻게 말하는지 알아볼까요? 발음도 함께 연습해봐요!</p>
+
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="bread">🔊</button>
+                    <strong>Bread</strong> [브레드] - 빵 🍞
+                    <p>Example: I eat <strong>bread</strong> for breakfast. (나는 아침 식사로 <strong>빵</strong>을 먹어요.)</p>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="rice">🔊</button>
+                    <strong>Rice</strong> [라이스] - 쌀밥, 밥 🍚
+                    <p>Example: Koreans eat <strong>rice</strong> every day. (한국 사람들은 매일 <strong>밥</strong>을 먹어요.)</p>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="meat">🔊</button>
+                    <strong>Meat</strong> [미트] - 고기 🥩
+                    <p>Example: Do you like <strong>meat</strong>? (<strong>고기</strong> 좋아하세요?)</p>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="vegetables">🔊</button>
+                    <strong>Vegetables</strong> [베지터블즈] - 채소, 야채 🥦🥕
+                    <p>Example: I try to eat more <strong>vegetables</strong>. (나는 <strong>채소</strong>를 더 많이 먹으려고 노력해요.)</p>
+                </li>
+            </ul>
+
+            <h3>💡 단어 더 알아보기 (More Words)</h3>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="fruit">🔊</button>
+                    <strong>Fruit</strong> [프루트] - 과일 🍎
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="egg">🔊</button>
+                    <strong>Egg</strong> [에그] - 달걀 🥚
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="fish">🔊</button>
+                    <strong>Fish</strong> [피쉬] - 생선 🐟
+                </li>
+            </ul>
+        </section>
+
+        <div class="practice-section">
+            <h3>📝 연습 문제 1 (Practice 1)</h3>
+            <p>괄호 안에 알맞은 단어를 넣어 문장을 완성해 보세요. (영어로 작성)</p>
+            <div class="practice-item">
+                <p>1. I had ________________ for dinner. (나는 저녁으로 고기를 먹었다.)</p>
+                <div class="answer-box">정답: meat</div>
+            </div>
+            <div class="practice-item">
+                <p>2. We usually eat ________________ with kimchi. (우리는 보통 김치와 밥을 먹는다.)</p>
+                <div class="answer-box">정답: rice</div>
+            </div>
+            <div class="practice-item">
+                <p>3. Do you want some ________________? (빵 좀 먹을래?)</p>
+                <div class="answer-box">정답: bread</div>
+            </div>
+        </div>
+
+        <section>
+            <h2>🥛 2. 음료 (Drinks)</h2>
+            <p>갈증 날 때 마시는 음료들을 영어로 배워볼까요?</p>
+
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="water">🔊</button>
+                    <strong>Water</strong> [워터] - 물 💧
+                    <p>Example: Can I have some <strong>water</strong>, please? (<strong>물</strong> 좀 주시겠어요?)</p>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="coffee">🔊</button>
+                    <strong>Coffee</strong> [커피] - 커피 ☕
+                    <p>Example: I drink <strong>coffee</strong> every morning. (나는 매일 아침 <strong>커피</strong>를 마셔요.)</p>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="tea">🔊</button>
+                    <strong>Tea</strong> [티] - 차 🍵
+                    <p>Example: Would you like <strong>tea</strong> or coffee? (<strong>차</strong> 드릴까요, 커피 드릴까요?)</p>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="juice">🔊</button>
+                    <strong>Juice</strong> [쥬스] - 주스 🍹
+                    <p>Example: My favorite is orange <strong>juice</strong>. (제가 가장 좋아하는 것은 오렌지 <strong>주스</strong>예요.)</p>
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="milk">🔊</button>
+                    <strong>Milk</strong> [밀크] - 우유 🥛
+                    <p>Example: Children often drink <strong>milk</strong>. (아이들은 종종 <strong>우유</strong>를 마셔요.)</p>
+                </li>
+            </ul>
+        </section>
+
+        <div class="practice-section">
+            <h3>📝 연습 문제 2 (Practice 2)</h3>
+            <p>사진에 해당하는 영어 단어를 연결해 보세요.</p>
+            <div class="practice-item">
+                <p>1. ☕ ________________</p>
+                <div class="answer-box">정답: coffee</div>
+            </div>
+            <div class="practice-item">
+                <p>2. 💧 ________________</p>
+                <div class="answer-box">정답: water</div>
+            </div>
+            <div class="practice-item">
+                <p>3. 🥛 ________________</p>
+                <div class="answer-box">정답: milk</div>
+            </div>
+        </div>
+
+        <section>
+            <h2>❤️ 3. I like... / I don't like... (나는 ~를 좋아한다 / 나는 ~를 좋아하지 않는다)</h2>
+            <p>자신이 좋아하는 음식이나 싫어하는 음식을 말할 때 사용하는 아주 유용한 표현이에요.</p>
+
+            <h3>✅ 좋아할 때: I like [음식/음료].</h3>
+            <p>
+                <button class="audio-icon" data-audio-text="I like chicken.">🔊</button>
+                <strong>I like chicken.</strong> (나는 치킨을 좋아해요.)
+            </p>
+            <p>
+                <button class="audio-icon" data-audio-text="I like coffee.">🔊</button>
+                <strong>I like coffee.</strong> (나는 커피를 좋아해요.)
+            </p>
+
+            <h3>❌ 좋아하지 않을 때: I don't like [음식/음료].</h3>
+            <p>
+                <button class="audio-icon" data-audio-text="I don't like natto.">🔊</button>
+                <strong>I don't like natto.</strong> (나는 낫토를 좋아하지 않아요.)
+            </p>
+            <p>
+                <button class="audio-icon" data-audio-text="I don't like bitter tea.">🔊</button>
+                <strong>I don't like bitter tea.</strong> (나는 쓴 차를 좋아하지 않아요.)
+            </p>
+            <p><strong>💡Tip:</strong> 'don't like' 대신 'dislike'도 사용할 수 있지만, 'don't like'가 더 일반적이에요.</p>
+        </section>
+
+        <div class="practice-section">
+            <h3>📝 연습 문제 3 (Practice 3)</h3>
+            <p>당신이 좋아하는 것과 좋아하지 않는 것을 영어 문장으로 써보세요.</p>
+            <div class="practice-item">
+                <p>1. 나는 피자를 좋아해요.</p>
+                <div class="answer-box">예시 정답: I like pizza.</div>
+            </div>
+            <div class="practice-item">
+                <p>2. 나는 고수를 좋아하지 않아요.</p>
+                <div class="answer-box">예시 정답: I don't like cilantro.</div>
+            </div>
+        </div>
+
+        <section>
+            <h2>❓ 4. What do you like to eat? (무엇을 먹는 것을 좋아하세요?)</h2>
+            <p>상대방에게 좋아하는 음식을 물어볼 때 쓰는 질문이에요. 대답하는 방법도 알아봅시다!</p>
+
+            <h3>질문 (Question):</h3>
+            <p>
+                <button class="audio-icon" data-audio-text="What do you like to eat?">🔊</button>
+                <strong>What do you like to eat?</strong> (무엇을 먹는 것을 좋아하세요?)
+            </p>
+            <p>
+                <button class="audio-icon" data-audio-text="What do you like to drink?">🔊</button>
+                <strong>What do you like to drink?</strong> (무엇을 마시는 것을 좋아하세요?)
+            </p>
+
+            <h3>대답 (Answer):</h3>
+            <p>
+                <button class="audio-icon" data-audio-text="I like to eat pasta.">🔊</button>
+                <strong>I like to eat pasta.</strong> (나는 파스타 먹는 것을 좋아해요.)
+            </p>
+            <p>
+                <button class="audio-icon" data-audio-text="I like to drink juice.">🔊</button>
+                <strong>I like to drink juice.</strong> (나는 주스 마시는 것을 좋아해요.)
+            </p>
+            <p>
+                <strong>💡Tip:</strong> 'to eat' 또는 'to drink'를 생략하고 그냥 "I like pasta."처럼 말해도 괜찮아요. 더 자연스럽게 들릴 수도 있습니다!
+            </p>
+        </section>
+
+        <div class="practice-section">
+            <h3>📝 연습 문제 4 (Practice 4)</h3>
+            <p>다음 질문에 영어로 대답해 보세요.</p>
+            <div class="practice-item">
+                <p><strong>Question:</strong> What do you like to eat?</p>
+                <p><strong>Your Answer:</strong> ____________________________________</p>
+                <div class="answer-box">예시 정답: I like to eat ramen.</div>
+            </div>
+            <div class="practice-item">
+                <p><strong>Question:</strong> What do you like to drink?</p>
+                <p><strong>Your Answer:</strong> ____________________________________</p>
+                <div class="answer-box">예시 정답: I like to drink milk.</div>
+            </div>
+        </div>
+
+        <section>
+            <h2>🍕 5. 식당 기본 어휘 (Restaurant Vocabulary Basics)</h2>
+            <p>식당에서 유용하게 사용할 수 있는 기본 어휘와 표현들을 배워볼까요?</p>
+
+            <h3>기본 어휘 (Basic Vocabulary):</h3>
+            <ul>
+                <li>
+                    <button class="audio-icon" data-audio-text="waiter">🔊</button>
+                    <strong>Waiter</strong> [웨이터] - 남자 종업원 🧑‍🍳
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="waitress">🔊</button>
+                    <strong>Waitress</strong> [웨이트리스] - 여자 종업원 👩‍🍳
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="menu">🔊</button>
+                    <strong>Menu</strong> [메뉴] - 메뉴판 📖
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="order">🔊</button>
+                    <strong>Order</strong> [오더] - 주문하다, 주문 ✍️
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="bill">🔊</button>
+                    <strong>Bill</strong> [빌] - 계산서 (영국 영어), 청구서 💸
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="check">🔊</button>
+                    <strong>Check</strong> [체크] - 계산서 (미국 영어) 💸
+                </li>
+                <li>
+                    <button class="audio-icon" data-audio-text="table">🔊</button>
+                    <strong>Table</strong> [테이블] - 테이블, 식탁 🍽️
+                </li>
+            </ul>
+
+            <h3>유용한 표현 (Useful Phrases):</h3>
+            <div class="example-box">
+                <p>
+                    <button class="audio-icon" data-audio-text="Can I get the menu, please?">🔊</button>
+                    <strong>Can I get the menu, please?</strong> (메뉴판 좀 주시겠어요?)
+                </p>
+                <p>
+                    <button class="audio-icon" data-audio-text="I'd like to order.">🔊</button>
+                    <strong>I'd like to order.</strong> (주문하고 싶어요.)
+                </p>
+                <p>
+                    <button class="audio-icon" data-audio-text="I'd like a hamburger, please.">🔊</button>
+                    <strong>I'd like a hamburger, please.</strong> (햄버거 하나 부탁해요.)
+                </p>
+                <p>
+                    <button class="audio-icon" data-audio-text="The bill, please.">🔊</button>
+                    <strong>The bill, please.</strong> (계산서 주세요.) <br>
+                    or <button class="audio-icon" data-audio-text="Check, please.">🔊</button>
+                    <strong>Check, please.</strong> (미국)
+                </p>
+            </div>
+
+            <div class="cultural-note">
+                <strong>🌍 문화 노트: 팁 (Tipping)</strong>
+                <p>북미(미국, 캐나다)에서는 식당에서 서비스에 대한 감사의 표시로 <strong>팁(Tip)</strong>을 주는 것이 일반적입니다. 보통 계산서 금액의 15~20% 정도를 팁으로 줍니다. 유럽이나 다른 나라들은 팁 문화가 다르거나 아예 없는 경우도 많으니 여행 전에 확인해 보세요!</p>
+            </div>
+        </section>
+
+        <div class="practice-section">
+            <h3>📝 연습 문제 5 (Practice 5)</h3>
+            <p>상황에 맞는 표현을 골라보세요.</p>
+            <div class="practice-item">
+                <p>1. 메뉴판을 받고 싶을 때:</p>
+                <p>a) I'd like to order. &nbsp;&nbsp; b) Can I get the menu, please?</p>
+                <div class="answer-box">정답: b) Can I get the menu, please?</div>
+            </div>
+            <div class="practice-item">
+                <p>2. 계산하고 싶을 때 (미국에서):</p>
+                <p>a) The bill, please. &nbsp;&nbsp; b) Check, please.</p>
+                <div class="answer-box">정답: b) Check, please. (a도 가능하지만 미국에서는 'check'이 더 흔합니다.)</div>
+            </div>
+        </div>
+
+        <div class="summary-section">
+            <h2>✨ 요약 (Summary) ✨</h2>
+            <p>오늘 배운 내용을 다시 한번 정리해 볼까요?</p>
+            <ul>
+                <li><strong>음식과 음료 이름:</strong> bread, rice, meat, vegetables, water, coffee, tea, juice, milk 등</li>
+                <li><strong>선호도 표현:</strong> "I like ~" (좋아한다), "I don't like ~" (좋아하지 않는다)</li>
+                <li><strong>좋아하는 것 묻고 답하기:</strong> "What do you like to eat/drink?" 에 "I like to eat/drink ~." 로 대답하기</li>
+                <li><strong>식당 기본 어휘:</strong> waiter, menu, order, bill/check 등</li>
+                <li><strong>식당 기본 표현:</strong> 메뉴 요청, 주문하기, 계산서 요청</li>
+            </ul>
+            <p>일상에서 자주 사용하는 단어들이니 꾸준히 연습해서 자연스럽게 사용할 수 있도록 노력해 보세요! 수고하셨습니다! 👍</p>
+        </div>
+
+    </div>
+</body>
+</html>

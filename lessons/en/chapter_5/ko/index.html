@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5: Family and Relationships</title>
+    <style>
+        /* Global Mobile-First Styles */
+        :root {
+            font-size: 16px; /* Base font size for rem units */
+        }
+
+        *, *:before, *:after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans CJK KR', 'Nanum Gothic', sans-serif;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+            -webkit-text-size-adjust: 100%; /* Prevent font size adjustment on orientation change */
+        }
+
+        .container {
+            max-width: 600px; /* Max width for content on larger screens */
+            margin: 0 auto; /* Center container */
+            padding: 15px; /* Padding for mobile screens */
+        }
+
+        /* Specific Color Scheme & Typography */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 25px;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        li {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow for list items */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        strong {
+            color: #2C3E50; /* Dark blue for emphasis */
+        }
+
+        /* Lesson Header Structure */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Light gray border */
+        }
+
+        .section-highlight {
+            background-color: #FFF; /* Slightly different background for visual separation */
+            border: 1px solid #E0E0E0;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Example and Note Boxes */
+        .example-box {
+            background-color: rgba(139, 95, 191, 0.08); /* Primary color with transparency */
+            border-left: 5px solid #8B5FBF; /* Primary: Purple */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .note-box {
+            background-color: rgba(224, 224, 224, 0.3); /* Light gray with transparency */
+            border-left: 5px solid #666666; /* Medium gray */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #2C3E50;
+        }
+
+        /* Pronunciation and Translation */
+        .pronunciation {
+            font-size: 0.9rem;
+            color: #8B5FBF; /* Primary: Purple */
+            font-style: italic;
+            margin-left: 5px;
+        }
+
+        .korean-translation {
+            font-size: 0.95rem;
+            color: #666666; /* Body Text: Medium gray */
+            margin-top: 5px;
+            display: block;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 1.5rem; /* ~24px */
+            cursor: pointer;
+            padding: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px; /* Minimum touch target size */
+            min-height: 44px; /* Minimum touch target size */
+            color: #8B5FBF; /* Primary: Purple */
+            transition: transform 0.2s ease-in-out;
+            vertical-align: middle;
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: #FDF9E5;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 12px;
+            border: 2px dashed #8B5FBF; /* Dashed primary border */
+        }
+
+        .practice-item {
+            background-color: #FFFFFF;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #E0E0E0;
+        }
+
+        .practice-question {
+            font-weight: bold;
+            color: #2C3E50;
+            margin-bottom: 10px;
+        }
+
+        .answer-prompt {
+            color: #8B5FBF;
+            font-weight: bold;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        /* Summary Section */
+        .summary-box {
+            background-color: #FFFFFF;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 12px;
+            border: 1px solid #8B5FBF;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .summary-box ul {
+            list-style: disc; /* Use discs for summary list */
+            padding-left: 25px;
+        }
+
+        .summary-box li::before {
+            content: ''; /* Remove custom bullet */
+        }
+
+        .summary-box li {
+            margin-bottom: 5px;
+            padding-left: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 601px) {
+            .container {
+                padding: 30px; /* More padding on wider screens */
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.7rem;
+            }
+            h3 {
+                font-size: 1.3rem;
+            }
+            p, li {
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 5: Family and Relationships</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 5 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section">
+            <h2>🎉 환영합니다! 가족과 관계에 대해 배워볼까요?</h2>
+            <p>안녕하세요! 오늘 우리는 영어로 <strong>가족 (Family)</strong> 구성원들을 어떻게 부르고, 그들과의 <strong>관계 (Relationships)</strong>를 어떻게 표현하는지 알아볼 거예요. 기본적인 가족 어휘부터 소유격 대명사, 그리고 가족을 소개하는 방법까지, 실생활에서 유용하게 사용할 수 있는 표현들을 배울 준비가 되셨나요? Let's get started! 🚀</p>
+        </section>
+
+        <section class="section-highlight">
+            <h2>👨‍👩‍👧‍👦 1. 가족 구성원 (Family Members)</h2>
+            <p>가장 기본적인 가족 구성원부터 시작해볼까요? 발음과 함께 익혀보세요!</p>
+
+            <h3>핵심 가족 (Immediate Family)</h3>
+            <ul>
+                <li><strong>Mother</strong> <button class="audio-icon" data-audio-text="Mother">🔊</button> <span class="pronunciation">[마더]</span>
+                    <span class="korean-translation">엄마 / 어머니</span></li>
+                <li><strong>Father</strong> <button class="audio-icon" data-audio-text="Father">🔊</button> <span class="pronunciation">[파더]</span>
+                    <span class="korean-translation">아빠 / 아버지</span></li>
+                <li><strong>Parents</strong> <button class="audio-icon" data-audio-text="Parents">🔊</button> <span class="pronunciation">[페어런츠]</span>
+                    <span class="korean-translation">부모님 (Mother + Father)</span></li>
+                <li><strong>Son</strong> <button class="audio-icon" data-audio-text="Son">🔊</button> <span class="pronunciation">[선]</span>
+                    <span class="korean-translation">아들</span></li>
+                <li><strong>Daughter</strong> <button class="audio-icon" data-audio-text="Daughter">🔊</button> <span class="pronunciation">[도터]</span>
+                    <span class="korean-translation">딸</span></li>
+                <li><strong>Children</strong> <button class="audio-icon" data-audio-text="Children">🔊</button> <span class="pronunciation">[칠드런]</span>
+                    <span class="korean-translation">자녀들 (Son + Daughter)</span></li>
+                <li><strong>Brother</strong> <button class="audio-icon" data-audio-text="Brother">🔊</button> <span class="pronunciation">[브라더]</span>
+                    <span class="korean-translation">형 / 오빠 / 남동생</span></li>
+                <li><strong>Sister</strong> <button class="audio-icon" data-audio-text="Sister">🔊</button> <span class="pronunciation">[시스터]</span>
+                    <span class="korean-translation">누나 / 언니 / 여동생</span></li>
+                <li><strong>Siblings</strong> <button class="audio-icon" data-audio-text="Siblings">🔊</button> <span class="pronunciation">[시블링스]</span>
+                    <span class="korean-translation">형제자매 (Brother + Sister)</span></li>
+            </ul>
+
+            <div class="note-box">
+                <strong>💡 문화 팁:</strong> 영어에서는 '형', '오빠', '누나', '언니'처럼 나이에 따른 호칭 구분이 없고, 남성은 <strong>brother</strong>, 여성은 <strong>sister</strong>로 통일해서 부릅니다.
+            </div>
+
+            <h3>확장 가족 (Extended Family)</h3>
+            <ul>
+                <li><strong>Grandfather</strong> <button class="audio-icon" data-audio-text="Grandfather">🔊</button> <span class="pronunciation">[그랜파더]</span>
+                    <span class="korean-translation">할아버지</span></li>
+                <li><strong>Grandmother</strong> <button class="audio-icon" data-audio-text="Grandmother">🔊</button> <span class="pronunciation">[그랜마더]</span>
+                    <span class="korean-translation">할머니</span></li>
+                <li><strong>Grandparents</strong> <button class="audio-icon" data-audio-text="Grandparents">🔊</button> <span class="pronunciation">[그랜페어런츠]</span>
+                    <span class="korean-translation">조부모님 (Grandfather + Grandmother)</span></li>
+                <li><strong>Grandson</strong> <button class="audio-icon" data-audio-text="Grandson">🔊</button> <span class="pronunciation">[그랜선]</span>
+                    <span class="korean-translation">손자</span></li>
+                <li><strong>Granddaughter</strong> <button class="audio-icon" data-audio-text="Granddaughter">🔊</button> <span class="pronunciation">[그랜도터]</span>
+                    <span class="korean-translation">손녀</span></li>
+                <li><strong>Grandchildren</strong> <button class="audio-icon" data-audio-text="Grandchildren">🔊</button> <span class="pronunciation">[그랜칠드런]</span>
+                    <span class="korean-translation">손자녀 (Grandson + Granddaughter)</span></li>
+                <li><strong>Aunt</strong> <button class="audio-icon" data-audio-text="Aunt">🔊</button> <span class="pronunciation">[앤트]</span>
+                    <span class="korean-translation">이모 / 고모 / 숙모</span></li>
+                <li><strong>Uncle</strong> <button class="audio-icon" data-audio-text="Uncle">🔊</button> <span class="pronunciation">[엉클]</span>
+                    <span class="korean-translation">삼촌 / 이모부 / 고모부</span></li>
+                <li><strong>Cousin</strong> <button class="audio-icon" data-audio-text="Cousin">🔊</button> <span class="pronunciation">[커즌]</span>
+                    <span class="korean-translation">사촌</span></li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>📝 2. 소유격 대명사 (Possessive Pronouns)</h2>
+            <p>가족 구성원이 '누구의' 가족인지 말할 때 사용하는 표현입니다. 꼭 알아두세요!</p>
+
+            <div class="example-box">
+                <p><strong>My</strong> <button class="audio-icon" data-audio-text="My">🔊</button> <span class="pronunciation">[마이]</span> : 나의</p>
+                <p><strong>Your</strong> <button class="audio-icon" data-audio-text="Your">🔊</button> <span class="pronunciation">[유어]</span> : 너의 / 당신의</p>
+                <p><strong>His</strong> <button class="audio-icon" data-audio-text="His">🔊</button> <span class="pronunciation">[히즈]</span> : 그의</p>
+                <p><strong>Her</strong> <button class="audio-icon" data-audio-text="Her">🔊</button> <span class="pronunciation">[허]</span> : 그녀의</p>
+                <p><strong>Our</strong> <button class="audio-icon" data-audio-text="Our">🔊</button> <span class="pronunciation">[아워]</span> : 우리의</p>
+                <p><strong>Their</strong> <button class="audio-icon" data-audio-text="Their">🔊</button> <span class="pronunciation">[데어]</span> : 그들의</p>
+            </div>
+
+            <p>예시를 통해 어떻게 사용되는지 볼까요?</p>
+            <ul>
+                <li><strong>My mother</strong> <button class="audio-icon" data-audio-text="My mother">🔊</button>
+                    <span class="korean-translation">나의 엄마</span></li>
+                <li><strong>Your brother</strong> <button class="audio-icon" data-audio-text="Your brother">🔊</button>
+                    <span class="korean-translation">너의 형/오빠/남동생</span></li>
+                <li><strong>His sister</strong> <button class="audio-icon" data-audio-text="His sister">🔊</button>
+                    <span class="korean-translation">그의 누나/언니/여동생</span></li>
+                <li><strong>Her parents</strong> <button class="audio-icon" data-audio-text="Her parents">🔊</button>
+                    <span class="korean-translation">그녀의 부모님</span></li>
+                <li><strong>Our children</strong> <button class="audio-icon" data-audio-text="Our children">🔊</button>
+                    <span class="korean-translation">우리의 자녀들</span></li>
+            </ul>
+        </section>
+
+        <section class="section-highlight">
+            <h2>👋 3. 가족 소개하기: This is my... / These are my...</h2>
+            <p>누군가에게 가족을 소개할 때 쓰는 아주 유용한 표현입니다. 단수와 복수에 따라 달라져요.</p>
+
+            <h3>단수 (한 명을 소개할 때): <strong>This is my...</strong></h3>
+            <div class="example-box">
+                <p><strong>This is my mother.</strong> <button class="audio-icon" data-audio-text="This is my mother.">🔊</button>
+                    <span class="korean-translation">이분은 제 엄마입니다.</span></p>
+                <p><strong>This is my brother.</strong> <button class="audio-icon" data-audio-text="This is my brother.">🔊</button>
+                    <span class="korean-translation">이 친구는 제 동생(형/오빠)입니다.</span></p>
+                <p><strong>This is my daughter.</strong> <button class="audio-icon" data-audio-text="This is my daughter.">🔊</button>
+                    <span class="korean-translation">이 아이는 제 딸입니다.</span></p>
+            </div>
+
+            <h3>복수 (두 명 이상을 소개할 때): <strong>These are my...</strong></h3>
+            <div class="example-box">
+                <p><strong>These are my parents.</strong> <button class="audio-icon" data-audio-text="These are my parents.">🔊</button>
+                    <span class="korean-translation">이분들은 제 부모님입니다.</span></p>
+                <p><strong>These are my siblings.</strong> <button class="audio-icon" data-audio-text="These are my siblings.">🔊</button>
+                    <span class="korean-translation">이 친구들은 제 형제자매입니다.</span></p>
+                <p><strong>These are my children.</strong> <button class="audio-icon" data-audio-text="These are my children.">🔊</button>
+                    <span class="korean-translation">이 아이들은 제 자녀들입니다.</span></p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🗣️ 4. 가족에 대해 이야기하기 (Talking about family members)</h2>
+            <p>가족 구성원들을 소개한 후, 그들에 대해 조금 더 이야기하는 연습을 해볼까요?</p>
+
+            <ul>
+                <li><strong>Do you have any siblings?</strong> <button class="audio-icon" data-audio-text="Do you have any siblings?">🔊</button>
+                    <span class="korean-translation">형제자매가 있나요?</span></li>
+                <li><strong>How many brothers do you have?</strong> <button class="audio-icon" data-audio-text="How many brothers do you have?">🔊</button>
+                    <span class="korean-translation">남자 형제는 몇 명 있나요?</span></li>
+                <li><strong>I have one brother and two sisters.</strong> <button class="audio-icon" data-audio-text="I have one brother and two sisters.">🔊</button>
+                    <span class="korean-translation">저는 형제 한 명과 자매 두 명이 있습니다.</span></li>
+                <li><strong>She is a doctor.</strong> <button class="audio-icon" data-audio-text="She is a doctor.">🔊</button>
+                    <span class="korean-translation">그녀는 의사입니다.</span></li>
+                <li><strong>He is tall.</strong> <button class="audio-icon" data-audio-text="He is tall.">🔊</button>
+                    <span class="korean-translation">그는 키가 큽니다.</span></li>
+            </ul>
+
+            <div class="note-box">
+                <strong>💡 추가 어휘:</strong>
+                <ul>
+                    <li><strong>Husband</strong> <button class="audio-icon" data-audio-text="Husband">🔊</button> <span class="pronunciation">[허즈번드]</span>: 남편</li>
+                    <li><strong>Wife</strong> <button class="audio-icon" data-audio-text="Wife">🔊</button> <span class="pronunciation">[와이프]</span>: 아내</li>
+                    <li><strong>Relatives</strong> <button class="audio-icon" data-audio-text="Relatives">🔊</button> <span class="pronunciation">[렐러티브즈]</span>: 친척</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>💪 연습해봐요! (Let's Practice!)</h2>
+            <p>배운 내용을 바탕으로 직접 말해보거나 생각해 보는 연습을 해봅시다!</p>
+
+            <div class="practice-item">
+                <p class="practice-question">1. 다음 한국어 문장을 영어로 말해보세요.</p>
+                <p><strong>"이분은 제 아버지입니다."</strong></p>
+                <p class="answer-prompt">👉 생각해보세요: "This is my ____."</p>
+                <p><button class="audio-icon" data-audio-text="This is my father.">🔊 정답 듣기</button></p>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">2. 빈칸에 알맞은 소유격 대명사를 넣어 문장을 완성하고 말해보세요.</p>
+                <p>"She is ____ sister." (그녀는 <strong>나의</strong> 여동생입니다.)</p>
+                <p class="answer-prompt">👉 생각해보세요: '나의'는 영어로 무엇일까요?</p>
+                <p><button class="audio-icon" data-audio-text="She is my sister.">🔊 정답 듣기</button></p>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">3. 다음 문장의 의미는 무엇일까요?</p>
+                <p><strong>"These are my grandparents."</strong></p>
+                <p class="answer-prompt">👉 생각해보세요: "These are"와 "grandparents"의 의미를 합쳐보세요.</p>
+                <p><button class="audio-icon" data-audio-text="These are my grandparents.">🔊 정답 듣기 (영어)</button> <span class="korean-translation">이분들은 제 조부모님입니다.</span></p>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">4. 당신의 가족에 대해 영어로 한두 문장 말해보세요.</p>
+                <p class="answer-prompt">예시: "I have one brother. This is my mother."</p>
+                <p>👉 직접 소리 내어 말해보세요! 연습이 중요합니다.</p>
+            </div>
+        </section>
+
+        <section class="summary-box">
+            <h2>✨ 요약 (Summary)</h2>
+            <p>Chapter 5에서 우리는 가족과 관계에 대해 다음과 같은 중요한 내용을 배웠습니다:</p>
+            <ul>
+                <li>다양한 가족 구성원들의 영어 이름과 발음 (Mother, Father, Brother, Sister, etc.)</li>
+                <li>소유격 대명사 (my, your, his, her, their)를 사용하여 '누구의' 가족인지 표현하는 방법</li>
+                <li>가족을 소개할 때 사용하는 <strong>'This is my...'</strong> (단수) 와 <strong>'These are my...'</strong> (복수)</li>
+                <li>가족 구성원에 대해 질문하고 간단히 이야기하는 표현들</li>
+            </ul>
+            <p>이제 자신 있게 가족에 대해 영어로 이야기할 수 있을 거예요! 꾸준히 연습하여 자연스럽게 익히는 것이 중요합니다. 다음 챕터에서 만나요! 😊</p>
+        </section>
+    </div>
+</body>
+</html>

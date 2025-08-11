@@ -1,10 +1,10 @@
 {
   "version": "1.0.0",
-  "lastUpdated": "2025-08-05T05:49:14.578Z",
+  "lastUpdated": "2025-08-11T07:27:02.706Z",
   "totalLanguages": 6,
   "totalChapters": 60,
   "totalAvailableChapters": 51,
-  "totalTargetLanguages": 5,
+  "totalTargetLanguages": 6,
   "languages": {
     "en": {
       "code": "en",
@@ -15,6 +15,7 @@
       "availableTargetLanguages": [
         "es",
         "ja",
+        "ko",
         "vi",
         "zh"
       ],
@@ -24,6 +25,7 @@
           "title": {
             "es": "The English Alphabet and Sounds",
             "ja": "英語のアルファベットと音声",
+            "ko": "영어 알파벳과 발음",
             "vi": "The English Alphabet and Sounds",
             "zh": "英语字母表和发音"
           },
@@ -41,6 +43,13 @@
               "子音の音と発音",
               "基本的なフォニックスと音の組み合わせ",
               "簡単な単語の読み方の紹介"
+            ],
+            "ko": [
+              "영어 알파벳 26개 글자",
+              "모음 발음: A, E, I, O, U (한국어와 다른 발음)",
+              "자음 발음과 한국어와의 차이점",
+              "기본 음성학과 소리 조합",
+              "간단한 단어 읽기 소개"
             ],
             "vi": [
               "The 26 letters of the English alphabet",
@@ -60,16 +69,18 @@
           "availableLanguages": [
             "es",
             "ja",
+            "ko",
             "vi",
             "zh"
           ],
-          "totalLanguages": 4
+          "totalLanguages": 5
         },
         {
           "number": 2,
           "title": {
             "es": "Basic Greetings and Introductions",
             "ja": "基本的な挨拶と自己紹介",
+            "ko": "기본 인사와 자기소개",
             "vi": "Basic Greetings and Introductions",
             "zh": "基础问候和自我介绍"
           },
@@ -87,6 +98,13 @@
               "My name is... / I'm...",
               "Nice to meet you",
               "基本的な会話の始め方"
+            ],
+            "ko": [
+              "Hello, Hi, Good morning, Good afternoon, Good evening",
+              "How are you? I'm fine, thank you. And you?",
+              "My name is... / I'm...",
+              "Nice to meet you",
+              "기본 대화 시작하기"
             ],
             "vi": [
               "Hello, Hi, Good morning, Good afternoon, Good evening",
@@ -106,16 +124,18 @@
           "availableLanguages": [
             "es",
             "ja",
+            "ko",
             "vi",
             "zh"
           ],
-          "totalLanguages": 4
+          "totalLanguages": 5
         },
         {
           "number": 3,
           "title": {
             "es": "Numbers and Counting",
             "ja": "数字と数え方",
+            "ko": "숫자와 셈하기",
             "vi": "Numbers and Counting",
             "zh": "数字和计数"
           },
@@ -133,6 +153,13 @@
               "年齢：How old are you? I'm ___ years old",
               "電話番号と住所",
               "基本的な数学の語彙：plus、minus、equals"
+            ],
+            "ko": [
+              "1부터 20까지의 숫자",
+              "물건 세기",
+              "나이: How old are you? I'm ___ years old",
+              "전화번호와 주소",
+              "기본 수학 용어: plus, minus, equals"
             ],
             "vi": [
               "Numbers 1-20",
@@ -152,16 +179,18 @@
           "availableLanguages": [
             "es",
             "ja",
+            "ko",
             "vi",
             "zh"
           ],
-          "totalLanguages": 4
+          "totalLanguages": 5
         },
         {
           "number": 4,
           "title": {
             "es": "Colors and Descriptions",
             "ja": "色と描写",
+            "ko": "색깔과 묘사",
             "vi": "Colors and Descriptions",
             "zh": "颜色和描述"
           },
@@ -179,6 +208,13 @@
               "This is... / That is...",
               "What color is it? It's...",
               "形容詞と基本的な描写"
+            ],
+            "ko": [
+              "기본 색깔: red, blue, green, yellow 등",
+              "물건 묘사: big, small, tall, short",
+              "This is... / That is...",
+              "What color is it? It's...",
+              "형용사와 기본 묘사"
             ],
             "vi": [
               "Basic colors: red, blue, green, yellow, etc.",
@@ -198,16 +234,18 @@
           "availableLanguages": [
             "es",
             "ja",
+            "ko",
             "vi",
             "zh"
           ],
-          "totalLanguages": 4
+          "totalLanguages": 5
         },
         {
           "number": 5,
           "title": {
             "es": "Family and Relationships",
             "ja": "家族と人間関係",
+            "ko": "가족과 관계",
             "vi": "Family and Relationships",
             "zh": "家庭和人际关系"
           },
@@ -225,6 +263,13 @@
               "This is my... / These are my...",
               "家族の語彙と人間関係",
               "家族のメンバーについて話す"
+            ],
+            "ko": [
+              "가족 구성원: mother, father, sister, brother 등",
+              "소유격 대명사: my, your, his, her, their",
+              "This is my... / These are my...",
+              "가족 관련 어휘와 관계",
+              "가족 구성원에 대해 말하기"
             ],
             "vi": [
               "Family members: mother, father, sister, brother, etc.",
@@ -244,16 +289,18 @@
           "availableLanguages": [
             "es",
             "ja",
+            "ko",
             "vi",
             "zh"
           ],
-          "totalLanguages": 4
+          "totalLanguages": 5
         },
         {
           "number": 6,
           "title": {
             "es": "Daily Activities and Routines",
             "ja": "日常の活動とルーティン",
+            "ko": "일상 활동과 루틴",
             "vi": "Daily Activities and Routines",
             "zh": "日常活动和例行公事"
           },
@@ -271,6 +318,13 @@
               "I eat... / I don't eat...",
               "日常のルーティンの語彙",
               "時間表現：in the morning、afternoon、evening"
+            ],
+            "ko": [
+              "일반적인 동사: eat, drink, sleep, work, study, play",
+              "현재시제 기본 개념",
+              "I eat... / I don't eat...",
+              "일상 루틴 어휘",
+              "시간 표현: in the morning, afternoon, evening"
             ],
             "vi": [
               "Common verbs: eat, drink, sleep, work, study, play",
@@ -290,16 +344,18 @@
           "availableLanguages": [
             "es",
             "ja",
+            "ko",
             "vi",
             "zh"
           ],
-          "totalLanguages": 4
+          "totalLanguages": 5
         },
         {
           "number": 7,
           "title": {
             "es": "Food and Drinks",
             "ja": "食べ物と飲み物",
+            "ko": "음식과 음료",
             "vi": "Food and Drinks",
             "zh": "食物和饮料"
           },
@@ -317,6 +373,13 @@
               "I like... / I don't like...",
               "What do you like to eat?",
               "レストランの基本的な語彙"
+            ],
+            "ko": [
+              "일반적인 음식: bread, rice, meat, vegetables",
+              "음료: water, coffee, tea, juice, milk",
+              "I like... / I don't like...",
+              "What do you like to eat?",
+              "기본 레스토랑 어휘"
             ],
             "vi": [
               "Common food items: bread, rice, meat, vegetables",
@@ -336,16 +399,18 @@
           "availableLanguages": [
             "es",
             "ja",
+            "ko",
             "vi",
             "zh"
           ],
-          "totalLanguages": 4
+          "totalLanguages": 5
         },
         {
           "number": 8,
           "title": {
             "es": "Places and Directions",
             "ja": "場所と方向",
+            "ko": "장소와 방향",
             "vi": "Places and Directions",
             "zh": "地点和方向"
           },
@@ -363,6 +428,13 @@
               "Where is...? It's...",
               "基本的な方向：left、right、straight、turn",
               "場所の語彙"
+            ],
+            "ko": [
+              "일반적인 장소: school, home, work, store, park",
+              "전치사: in, on, at, near, far from",
+              "Where is...? It's...",
+              "기본 방향: left, right, straight, turn",
+              "위치 관련 어휘"
             ],
             "vi": [
               "Common places: school, home, work, store, park",
@@ -382,16 +454,18 @@
           "availableLanguages": [
             "es",
             "ja",
+            "ko",
             "vi",
             "zh"
           ],
-          "totalLanguages": 4
+          "totalLanguages": 5
         },
         {
           "number": 9,
           "title": {
             "es": "Weather and Seasons",
             "ja": "天気と季節",
+            "ko": "날씨와 계절",
             "vi": "Weather and Seasons",
             "zh": "天气和季节"
           },
@@ -409,6 +483,13 @@
               "What's the weather like? It's...",
               "温度：hot、cold、warm、cool",
               "天気に関連する活動"
+            ],
+            "ko": [
+              "날씨 어휘: sunny, rainy, cloudy, snowy",
+              "계절: spring, summer, fall, winter",
+              "What's the weather like? It's...",
+              "온도: hot, cold, warm, cool",
+              "날씨 관련 활동"
             ],
             "vi": [
               "Weather vocabulary: sunny, rainy, cloudy, snowy",
@@ -428,16 +509,18 @@
           "availableLanguages": [
             "es",
             "ja",
+            "ko",
             "vi",
             "zh"
           ],
-          "totalLanguages": 4
+          "totalLanguages": 5
         },
         {
           "number": 10,
           "title": {
             "es": "Time and Schedules",
             "ja": "時間とスケジュール",
+            "ko": "시간과 일정",
             "vi": "Time and Schedules",
             "zh": "时间和日程安排"
           },
@@ -455,6 +538,13 @@
               "月の名前",
               "When is...? It's on...",
               "約束やスケジュールの立て方"
+            ],
+            "ko": [
+              "시간 말하기: What time is it? It's...",
+              "요일: Monday, Tuesday 등",
+              "월",
+              "When is...? It's on...",
+              "약속 잡기와 일정"
             ],
             "vi": [
               "Telling time: What time is it? It's...",
@@ -474,10 +564,11 @@
           "availableLanguages": [
             "es",
             "ja",
+            "ko",
             "vi",
             "zh"
           ],
-          "totalLanguages": 4
+          "totalLanguages": 5
         }
       ]
     },
@@ -2115,6 +2206,7 @@
           "chapterTitle": {
             "es": "The English Alphabet and Sounds",
             "ja": "英語のアルファベットと音声",
+            "ko": "영어 알파벳과 발음",
             "vi": "The English Alphabet and Sounds",
             "zh": "英语字母表和发音"
           }
@@ -2126,6 +2218,7 @@
           "chapterTitle": {
             "es": "Basic Greetings and Introductions",
             "ja": "基本的な挨拶と自己紹介",
+            "ko": "기본 인사와 자기소개",
             "vi": "Basic Greetings and Introductions",
             "zh": "基础问候和自我介绍"
           }
@@ -2137,6 +2230,7 @@
           "chapterTitle": {
             "es": "Numbers and Counting",
             "ja": "数字と数え方",
+            "ko": "숫자와 셈하기",
             "vi": "Numbers and Counting",
             "zh": "数字和计数"
           }
@@ -2148,6 +2242,7 @@
           "chapterTitle": {
             "es": "Colors and Descriptions",
             "ja": "色と描写",
+            "ko": "색깔과 묘사",
             "vi": "Colors and Descriptions",
             "zh": "颜色和描述"
           }
@@ -2159,6 +2254,7 @@
           "chapterTitle": {
             "es": "Family and Relationships",
             "ja": "家族と人間関係",
+            "ko": "가족과 관계",
             "vi": "Family and Relationships",
             "zh": "家庭和人际关系"
           }
@@ -2170,6 +2266,7 @@
           "chapterTitle": {
             "es": "Daily Activities and Routines",
             "ja": "日常の活動とルーティン",
+            "ko": "일상 활동과 루틴",
             "vi": "Daily Activities and Routines",
             "zh": "日常活动和例行公事"
           }
@@ -2181,6 +2278,7 @@
           "chapterTitle": {
             "es": "Food and Drinks",
             "ja": "食べ物と飲み物",
+            "ko": "음식과 음료",
             "vi": "Food and Drinks",
             "zh": "食物和饮料"
           }
@@ -2192,6 +2290,7 @@
           "chapterTitle": {
             "es": "Places and Directions",
             "ja": "場所と方向",
+            "ko": "장소와 방향",
             "vi": "Places and Directions",
             "zh": "地点和方向"
           }
@@ -2203,6 +2302,7 @@
           "chapterTitle": {
             "es": "Weather and Seasons",
             "ja": "天気と季節",
+            "ko": "날씨와 계절",
             "vi": "Weather and Seasons",
             "zh": "天气和季节"
           }
@@ -2214,6 +2314,7 @@
           "chapterTitle": {
             "es": "Time and Schedules",
             "ja": "時間とスケジュール",
+            "ko": "시간과 일정",
             "vi": "Time and Schedules",
             "zh": "时间和日程安排"
           }
@@ -2442,6 +2543,7 @@
           "chapterTitle": {
             "es": "The English Alphabet and Sounds",
             "ja": "英語のアルファベットと音声",
+            "ko": "영어 알파벳과 발음",
             "vi": "The English Alphabet and Sounds",
             "zh": "英语字母表和发音"
           }
@@ -2453,6 +2555,7 @@
           "chapterTitle": {
             "es": "Basic Greetings and Introductions",
             "ja": "基本的な挨拶と自己紹介",
+            "ko": "기본 인사와 자기소개",
             "vi": "Basic Greetings and Introductions",
             "zh": "基础问候和自我介绍"
           }
@@ -2464,6 +2567,7 @@
           "chapterTitle": {
             "es": "Numbers and Counting",
             "ja": "数字と数え方",
+            "ko": "숫자와 셈하기",
             "vi": "Numbers and Counting",
             "zh": "数字和计数"
           }
@@ -2475,6 +2579,7 @@
           "chapterTitle": {
             "es": "Colors and Descriptions",
             "ja": "色と描写",
+            "ko": "색깔과 묘사",
             "vi": "Colors and Descriptions",
             "zh": "颜色和描述"
           }
@@ -2486,6 +2591,7 @@
           "chapterTitle": {
             "es": "Family and Relationships",
             "ja": "家族と人間関係",
+            "ko": "가족과 관계",
             "vi": "Family and Relationships",
             "zh": "家庭和人际关系"
           }
@@ -2497,6 +2603,7 @@
           "chapterTitle": {
             "es": "Daily Activities and Routines",
             "ja": "日常の活動とルーティン",
+            "ko": "일상 활동과 루틴",
             "vi": "Daily Activities and Routines",
             "zh": "日常活动和例行公事"
           }
@@ -2508,6 +2615,7 @@
           "chapterTitle": {
             "es": "Food and Drinks",
             "ja": "食べ物と飲み物",
+            "ko": "음식과 음료",
             "vi": "Food and Drinks",
             "zh": "食物和饮料"
           }
@@ -2519,6 +2627,7 @@
           "chapterTitle": {
             "es": "Places and Directions",
             "ja": "場所と方向",
+            "ko": "장소와 방향",
             "vi": "Places and Directions",
             "zh": "地点和方向"
           }
@@ -2530,6 +2639,7 @@
           "chapterTitle": {
             "es": "Weather and Seasons",
             "ja": "天気と季節",
+            "ko": "날씨와 계절",
             "vi": "Weather and Seasons",
             "zh": "天气和季节"
           }
@@ -2541,6 +2651,7 @@
           "chapterTitle": {
             "es": "Time and Schedules",
             "ja": "時間とスケジュール",
+            "ko": "시간과 일정",
             "vi": "Time and Schedules",
             "zh": "时间和日程安排"
           }
@@ -2747,6 +2858,133 @@
         }
       ]
     },
+    "ko": {
+      "code": "ko",
+      "name": "Korean",
+      "flag": "🇰🇷",
+      "availableLessons": [
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 1,
+          "chapterTitle": {
+            "es": "The English Alphabet and Sounds",
+            "ja": "英語のアルファベットと音声",
+            "ko": "영어 알파벳과 발음",
+            "vi": "The English Alphabet and Sounds",
+            "zh": "英语字母表和发音"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 2,
+          "chapterTitle": {
+            "es": "Basic Greetings and Introductions",
+            "ja": "基本的な挨拶と自己紹介",
+            "ko": "기본 인사와 자기소개",
+            "vi": "Basic Greetings and Introductions",
+            "zh": "基础问候和自我介绍"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 3,
+          "chapterTitle": {
+            "es": "Numbers and Counting",
+            "ja": "数字と数え方",
+            "ko": "숫자와 셈하기",
+            "vi": "Numbers and Counting",
+            "zh": "数字和计数"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 4,
+          "chapterTitle": {
+            "es": "Colors and Descriptions",
+            "ja": "色と描写",
+            "ko": "색깔과 묘사",
+            "vi": "Colors and Descriptions",
+            "zh": "颜色和描述"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 5,
+          "chapterTitle": {
+            "es": "Family and Relationships",
+            "ja": "家族と人間関係",
+            "ko": "가족과 관계",
+            "vi": "Family and Relationships",
+            "zh": "家庭和人际关系"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 6,
+          "chapterTitle": {
+            "es": "Daily Activities and Routines",
+            "ja": "日常の活動とルーティン",
+            "ko": "일상 활동과 루틴",
+            "vi": "Daily Activities and Routines",
+            "zh": "日常活动和例行公事"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 7,
+          "chapterTitle": {
+            "es": "Food and Drinks",
+            "ja": "食べ物と飲み物",
+            "ko": "음식과 음료",
+            "vi": "Food and Drinks",
+            "zh": "食物和饮料"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 8,
+          "chapterTitle": {
+            "es": "Places and Directions",
+            "ja": "場所と方向",
+            "ko": "장소와 방향",
+            "vi": "Places and Directions",
+            "zh": "地点和方向"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 9,
+          "chapterTitle": {
+            "es": "Weather and Seasons",
+            "ja": "天気と季節",
+            "ko": "날씨와 계절",
+            "vi": "Weather and Seasons",
+            "zh": "天气和季节"
+          }
+        },
+        {
+          "languageLearn": "en",
+          "languageLearnName": "English",
+          "chapterNumber": 10,
+          "chapterTitle": {
+            "es": "Time and Schedules",
+            "ja": "時間とスケジュール",
+            "ko": "시간과 일정",
+            "vi": "Time and Schedules",
+            "zh": "时间和日程安排"
+          }
+        }
+      ]
+    },
     "vi": {
       "code": "vi",
       "name": "Vietnamese",
@@ -2759,6 +2997,7 @@
           "chapterTitle": {
             "es": "The English Alphabet and Sounds",
             "ja": "英語のアルファベットと音声",
+            "ko": "영어 알파벳과 발음",
             "vi": "The English Alphabet and Sounds",
             "zh": "英语字母表和发音"
           }
@@ -2770,6 +3009,7 @@
           "chapterTitle": {
             "es": "Basic Greetings and Introductions",
             "ja": "基本的な挨拶と自己紹介",
+            "ko": "기본 인사와 자기소개",
             "vi": "Basic Greetings and Introductions",
             "zh": "基础问候和自我介绍"
           }
@@ -2781,6 +3021,7 @@
           "chapterTitle": {
             "es": "Numbers and Counting",
             "ja": "数字と数え方",
+            "ko": "숫자와 셈하기",
             "vi": "Numbers and Counting",
             "zh": "数字和计数"
           }
@@ -2792,6 +3033,7 @@
           "chapterTitle": {
             "es": "Colors and Descriptions",
             "ja": "色と描写",
+            "ko": "색깔과 묘사",
             "vi": "Colors and Descriptions",
             "zh": "颜色和描述"
           }
@@ -2803,6 +3045,7 @@
           "chapterTitle": {
             "es": "Family and Relationships",
             "ja": "家族と人間関係",
+            "ko": "가족과 관계",
             "vi": "Family and Relationships",
             "zh": "家庭和人际关系"
           }
@@ -2814,6 +3057,7 @@
           "chapterTitle": {
             "es": "Daily Activities and Routines",
             "ja": "日常の活動とルーティン",
+            "ko": "일상 활동과 루틴",
             "vi": "Daily Activities and Routines",
             "zh": "日常活动和例行公事"
           }
@@ -2825,6 +3069,7 @@
           "chapterTitle": {
             "es": "Food and Drinks",
             "ja": "食べ物と飲み物",
+            "ko": "음식과 음료",
             "vi": "Food and Drinks",
             "zh": "食物和饮料"
           }
@@ -2836,6 +3081,7 @@
           "chapterTitle": {
             "es": "Places and Directions",
             "ja": "場所と方向",
+            "ko": "장소와 방향",
             "vi": "Places and Directions",
             "zh": "地点和方向"
           }
@@ -2847,6 +3093,7 @@
           "chapterTitle": {
             "es": "Weather and Seasons",
             "ja": "天気と季節",
+            "ko": "날씨와 계절",
             "vi": "Weather and Seasons",
             "zh": "天气和季节"
           }
@@ -2858,6 +3105,7 @@
           "chapterTitle": {
             "es": "Time and Schedules",
             "ja": "時間とスケジュール",
+            "ko": "시간과 일정",
             "vi": "Time and Schedules",
             "zh": "时间和日程安排"
           }
@@ -3086,6 +3334,7 @@
           "chapterTitle": {
             "es": "The English Alphabet and Sounds",
             "ja": "英語のアルファベットと音声",
+            "ko": "영어 알파벳과 발음",
             "vi": "The English Alphabet and Sounds",
             "zh": "英语字母表和发音"
           }
@@ -3097,6 +3346,7 @@
           "chapterTitle": {
             "es": "Basic Greetings and Introductions",
             "ja": "基本的な挨拶と自己紹介",
+            "ko": "기본 인사와 자기소개",
             "vi": "Basic Greetings and Introductions",
             "zh": "基础问候和自我介绍"
           }
@@ -3108,6 +3358,7 @@
           "chapterTitle": {
             "es": "Numbers and Counting",
             "ja": "数字と数え方",
+            "ko": "숫자와 셈하기",
             "vi": "Numbers and Counting",
             "zh": "数字和计数"
           }
@@ -3119,6 +3370,7 @@
           "chapterTitle": {
             "es": "Colors and Descriptions",
             "ja": "色と描写",
+            "ko": "색깔과 묘사",
             "vi": "Colors and Descriptions",
             "zh": "颜色和描述"
           }
@@ -3130,6 +3382,7 @@
           "chapterTitle": {
             "es": "Family and Relationships",
             "ja": "家族と人間関係",
+            "ko": "가족과 관계",
             "vi": "Family and Relationships",
             "zh": "家庭和人际关系"
           }
@@ -3141,6 +3394,7 @@
           "chapterTitle": {
             "es": "Daily Activities and Routines",
             "ja": "日常の活動とルーティン",
+            "ko": "일상 활동과 루틴",
             "vi": "Daily Activities and Routines",
             "zh": "日常活动和例行公事"
           }
@@ -3152,6 +3406,7 @@
           "chapterTitle": {
             "es": "Food and Drinks",
             "ja": "食べ物と飲み物",
+            "ko": "음식과 음료",
             "vi": "Food and Drinks",
             "zh": "食物和饮料"
           }
@@ -3163,6 +3418,7 @@
           "chapterTitle": {
             "es": "Places and Directions",
             "ja": "場所と方向",
+            "ko": "장소와 방향",
             "vi": "Places and Directions",
             "zh": "地点和方向"
           }
@@ -3174,6 +3430,7 @@
           "chapterTitle": {
             "es": "Weather and Seasons",
             "ja": "天気と季節",
+            "ko": "날씨와 계절",
             "vi": "Weather and Seasons",
             "zh": "天气和季节"
           }
@@ -3185,6 +3442,7 @@
           "chapterTitle": {
             "es": "Time and Schedules",
             "ja": "時間とスケジュール",
+            "ko": "시간과 일정",
             "vi": "Time and Schedules",
             "zh": "时间和日程安排"
           }

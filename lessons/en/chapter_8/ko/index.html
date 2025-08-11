@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8: 장소와 방향</title>
+    <style>
+        /* Global Styles & Reset */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-bg-color: #FDF9E5; /* Cream background */
+            --heading-text-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white-color: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-bg-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Container for overall lesson content */
+        .container {
+            max-width: 600px; /* Optimal reading width */
+            margin: 0 auto;
+            padding: 15px;
+            background-color: var(--white-color);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--heading-text-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2em; /* ~32px */
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        h2 {
+            font-size: 1.6em; /* ~26px */
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 1.3em; /* ~21px */
+            margin-top: 25px;
+            color: var(--primary-color);
+        }
+
+        /* Lesson Header Specifics */
+        .chapter-title {
+            margin: 0;
+            padding: 20px 0;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            background-color: var(--primary-color); /* Fallback for image */
+            color: var(--white-color);
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px; /* Placeholder visual height */
+            text-align: center;
+            padding: 10px;
+        }
+        /* Example of text-based visual for header image */
+        .lesson-header-image::before {
+            content: "🗺️ 길 찾기 🗺️";
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        /* Sections */
+        section {
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+
+        /* Card-like sections */
+        .section-card {
+            background-color: var(--secondary-bg-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-card p {
+            margin-bottom: 10px;
+        }
+
+        /* List styles */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        ul li {
+            background-color: var(--white-color);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        ul li strong {
+            color: var(--heading-text-color);
+            font-size: 1.1em;
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 50%;
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            flex-shrink: 0; /* Prevent shrinking in flex container */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4697; /* Slightly darker purple on hover */
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Examples */
+        .example-box {
+            background-color: #F8F8F8; /* Light gray for examples */
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example-box p {
+            margin: 5px 0;
+        }
+
+        .example-box .english-sentence {
+            font-weight: bold;
+            color: var(--heading-text-color);
+        }
+
+        .example-box .korean-translation {
+            font-size: 0.9em;
+            color: var(--body-text-color);
+        }
+
+        /* Practice Section */
+        .practice-section {
+            background-color: var(--secondary-bg-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px dashed var(--primary-color);
+        }
+
+        .practice-section h3 {
+            text-align: center;
+            color: var(--heading-text-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .practice-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        .practice-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .practice-question {
+            font-weight: bold;
+            color: var(--heading-text-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .practice-question span {
+            margin-right: 10px;
+        }
+
+        .answer-reveal {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            display: block;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .answer-reveal:hover {
+            background-color: #6a4697;
+        }
+
+        .answer {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e6e6fa; /* Light purple for answer */
+            border-radius: 5px;
+            border: 1px solid var(--primary-color);
+            font-size: 0.95em;
+            color: var(--heading-text-color);
+        }
+
+        /* Summary Section */
+        .summary-section {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .summary-section h2 {
+            color: var(--white-color);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .summary-section ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .summary-section ul li {
+            color: var(--white-color);
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            font-size: 0.95em;
+        }
+
+        /* Responsive Adjustments (Mobile-first, so these are minimal or for larger screens if any) */
+        @media (min-width: 601px) {
+            .container {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 8: Places and Directions</h1>
+        <div class="lesson-header">
+            <!-- The img tag is included as per requirements, but content is text-based due to "no external image URLs" -->
+            <img src="../header.webp" alt="Chapter 8 Header" class="lesson-header-image">
+        </div>
+
+        <p>안녕하세요! 여러분의 영어 선생님입니다. 이번 챕터에서는 일상생활에서 가장 많이 쓰이는 장소 표현과 길을 묻고 답하는 방법에 대해 배워볼 거예요. 쉽고 재미있게 익혀볼까요? 🗺️</p>
+
+        <section class="section-card">
+            <h2>🏠 흔히 가는 장소들 (Common Places)</h2>
+            <p>우리가 자주 방문하는 장소들을 영어로 어떻게 말하는지 알아봅시다. 듣기 아이콘(🔊)을 눌러 발음을 연습해 보세요!</p>
+            <ul>
+                <li>
+                    <div>
+                        <strong>School</strong> <span class="pronunciation">[스쿨]</span>
+                        <p class="korean-translation">학교</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="School">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <strong>Home</strong> <span class="pronunciation">[홈]</span>
+                        <p class="korean-translation">집</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="Home">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <strong>Work</strong> <span class="pronunciation">[워크]</span>
+                        <p class="korean-translation">직장, 일</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="Work">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <strong>Store</strong> <span class="pronunciation">[스토어]</span>
+                        <p class="korean-translation">가게, 상점</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="Store">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <strong>Park</strong> <span class="pronunciation">[파크]</span>
+                        <p class="korean-translation">공원</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="Park">🔊</button>
+                </li>
+            </ul>
+
+            <h3>예시 문장 (Example Sentences)</h3>
+            <div class="example-box">
+                <p class="english-sentence">I go to <strong>school</strong> every day.</p>
+                <p class="korean-translation">저는 매일 <strong>학교</strong>에 가요.</p>
+            </div>
+            <div class="example-box">
+                <p class="english-sentence">Let's meet at my <strong>home</strong>.</p>
+                <p class="korean-translation">우리 집에서 만나요.</p>
+            </div>
+            <div class="example-box">
+                <p class="english-sentence">He is at <strong>work</strong> now.</p>
+                <p class="korean-translation">그는 지금 <strong>직장</strong>에 있어요.</p>
+            </div>
+            <div class="example-box">
+                <p class="english-sentence">I need to go to the <strong>store</strong>.</p>
+                <p class="korean-translation"><strong>가게</strong>에 가야 해요.</p>
+            </div>
+            <div class="example-box">
+                <p class="english-sentence">The children are playing in the <strong>park</strong>.</p>
+                <p class="korean-translation">아이들이 <strong>공원</strong>에서 놀고 있어요.</p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>📍 전치사: 위치 표현 (Prepositions: Expressing Location)</h2>
+            <p>어떤 장소가 어디에 있는지 정확하게 말하기 위해서는 전치사(Prepositions)를 알아야 해요. 대표적인 위치 전치사들을 살펴볼까요?</p>
+
+            <h3>1. In (안에, ~에서)</h3>
+            <p>'In'은 넓은 공간, 건물 내부, 도시나 국가 등 '안'에 있을 때 사용해요.</p>
+            <div class="example-box">
+                <p class="english-sentence">The book is <strong>in</strong> the bag.</p>
+                <p class="korean-translation">책이 가방 <strong>안에</strong> 있어요.</p>
+            </div>
+            <div class="example-box">
+                <p class="english-sentence">I live <strong>in</strong> Seoul.</p>
+                <p class="korean-translation">저는 서울 <strong>에</strong> 살아요.</p>
+            </div>
+
+            <h3>2. On (위에, ~에 붙어)</h3>
+            <p>'On'은 표면 '위'에 붙어 있거나, 길, 층을 나타낼 때 사용해요.</p>
+            <div class="example-box">
+                <p class="english-sentence">The phone is <strong>on</strong> the table.</p>
+                <p class="korean-translation">전화기가 테이블 <strong>위에</strong> 있어요.</p>
+            </div>
+            <div class="example-box">
+                <p class="english-sentence">The cafe is <strong>on</strong> the second floor.</p>
+                <p class="korean-translation">그 카페는 2층 <strong>에</strong> 있어요.</p>
+            </div>
+
+            <h3>3. At (~에, ~에서)</h3>
+            <p>'At'은 특정한 지점, 장소, 행사를 나타낼 때 사용해요. 'in'보다 더 구체적인 위치를 말할 때 쓰여요.</p>
+            <div class="example-box">
+                <p class="english-sentence">She is <strong>at</strong> the bus stop.</p>
+                <p class="korean-translation">그녀는 버스 정류장 <strong>에</strong> 있어요.</p>
+            </div>
+            <div class="example-box">
+                <p class="english-sentence">Let's meet <strong>at</strong> the park entrance.</p>
+                <p class="korean-translation">공원 입구 <strong>에서</strong> 만나요.</p>
+            </div>
+
+            <h3>4. Near (근처에)</h3>
+            <p>'Near'은 어떤 장소와 가까이 있을 때 사용해요.</p>
+            <div class="example-box">
+                <p class="english-sentence">The post office is <strong>near</strong> the bank.</p>
+                <p class="korean-translation">우체국은 은행 <strong>근처에</strong> 있어요.</p>
+            </div>
+
+            <h3>5. Far from (~로부터 멀리)</h3>
+            <p>'Far from'은 어떤 장소로부터 멀리 떨어져 있을 때 사용해요.</p>
+            <div class="example-box">
+                <p class="english-sentence">My house is <strong>far from</strong> my work.</p>
+                <p class="korean-translation">우리 집은 직장<strong>으로부터 멀리</strong> 떨어져 있어요.</p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>❓ "어디에 있어요?" (Where is...?)</h2>
+            <p>특정 장소의 위치를 물을 때는 <strong>"Where is...?"</strong>를 사용합니다. 대답할 때는 <strong>"It's..."</strong> 또는 <strong>"The [장소] is..."</strong> 뒤에 전치사를 붙여 설명할 수 있어요.</p>
+
+            <h3>질문과 답변 (Questions and Answers)</h3>
+            <div class="example-box">
+                <p class="english-sentence">A: <strong>Where is</strong> the library?</p>
+                <p class="korean-translation">A: 도서관이 <strong>어디에 있어요</strong>?</p>
+                <p class="english-sentence">B: <strong>It's</strong> on Main Street.</p>
+                <p class="korean-translation">B: 메인 스트리트<strong>에 있어요</strong>.</p>
+            </div>
+            <div class="example-box">
+                <p class="english-sentence">A: <strong>Where is</strong> the restroom?</p>
+                <p class="korean-translation">A: 화장실이 <strong>어디에 있어요</strong>?</p>
+                <p class="english-sentence">B: <strong>It's</strong> near the entrance.</p>
+                <p class="korean-translation">B: 입구 <strong>근처에 있어요</strong>.</p>
+            </div>
+        </section>
+
+        <section class="section-card">
+            <h2>➡️ 기본적인 길 안내 (Basic Directions)</h2>
+            <p>누군가에게 길을 알려주거나, 길을 물었을 때 이해해야 할 기본적인 방향 표현이에요.</p>
+            <ul>
+                <li>
+                    <div>
+                        <strong>Left</strong> <span class="pronunciation">[레프트]</span>
+                        <p class="korean-translation">왼쪽</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="Left">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <strong>Right</strong> <span class="pronunciation">[라이트]</span>
+                        <p class="korean-translation">오른쪽</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="Right">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <strong>Straight</strong> <span class="pronunciation">[스트레이트]</span>
+                        <p class="korean-translation">직진</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="Straight">🔊</button>
+                </li>
+                <li>
+                    <div>
+                        <strong>Turn</strong> <span class="pronunciation">[턴]</span>
+                        <p class="korean-translation">돌다, 회전하다</p>
+                    </div>
+                    <button class="audio-icon" data-audio-text="Turn">🔊</button>
+                </li>
+            </ul>
+
+            <h3>길 안내 예시 (Direction Examples)</h3>
+            <div class="example-box">
+                <p class="english-sentence">Go <strong>straight</strong> for two blocks.</p>
+                <p class="korean-translation">두 블록 <strong>직진하세요</strong>.</p>
+            </div>
+            <div class="example-box">
+                <p class="english-sentence"><strong>Turn left</strong> at the next corner.</p>
+                <p class="korean-translation">다음 코너에서 <strong>왼쪽으로 도세요</strong>.</p>
+            </div>
+            <div class="example-box">
+                <p class="english-sentence">The bus stop is <strong>on your right</strong>.</p>
+                <p class="korean-translation">버스 정류장은 <strong>오른쪽에</strong> 있습니다.</p>
+            </div>
+            <div class="example-box">
+                <p class="english-sentence">Cross the street and <strong>turn right</strong>.</p>
+                <p class="korean-translation">길을 건너서 <strong>오른쪽으로 도세요</strong>.</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h3>📝 연습 시간 (Practice Time)</h3>
+            <p>배운 내용을 복습해 봅시다! 질문을 읽고 스스로 답해본 후, 정답을 확인해 보세요.</p>
+
+            <div class="practice-item">
+                <p class="practice-question">1. 다음 중 '학교'를 뜻하는 영어 단어는 무엇일까요?</p>
+                <p>(A) Home (B) Store (C) School</p>
+                <div class="answer-reveal">정답 확인하기</div>
+                <div class="answer" style="display: none;">정답: (C) School</div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">2. 테이블 '위에' 있는 물건을 표현할 때 쓰는 전치사는 무엇일까요?</p>
+                <p>(A) in (B) on (C) at</p>
+                <div class="answer-reveal">정답 확인하기</div>
+                <div class="answer" style="display: none;">정답: (B) on</div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">3. "도서관이 어디에 있어요?"를 영어로 말해보세요.</p>
+                <div class="answer-reveal">정답 확인하기</div>
+                <div class="answer" style="display: none;">정답: Where is the library?</div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">4. "Turn left"의 뜻은 무엇일까요?</p>
+                <div class="answer-reveal">정답 확인하기</div>
+                <div class="answer" style="display: none;">정답: 왼쪽으로 도세요.</div>
+            </div>
+
+            <div class="practice-item">
+                <p class="practice-question">5. "My house is far from my work." 문장을 한국어로 번역하세요.</p>
+                <div class="answer-reveal">정답 확인하기</div>
+                <div class="answer" style="display: none;">정답: 우리 집은 직장으로부터 멀리 떨어져 있어요.</div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ 요약 (Summary)</h2>
+            <p>이번 챕터에서는 장소와 방향을 영어로 표현하는 데 필수적인 내용들을 학습했습니다. 주요 내용을 다시 한번 정리해 볼까요?</p>
+            <ul>
+                <li>✔️ <strong>주요 장소:</strong> school (학교), home (집), work (직장), store (가게), park (공원)</li>
+                <li>✔️ <strong>위치 전치사:</strong>
+                    <ul>
+                        <li><strong>in:</strong> 넓은 공간/내부 (~안에)</li>
+                        <li><strong>on:</strong> 표면 위/길/층 (~위에)</li>
+                        <li><strong>at:</strong> 특정 지점 (~에)</li>
+                        <li><strong>near:</strong> 가까이 (~근처에)</li>
+                        <li><strong>far from:</strong> 멀리 (~로부터 멀리)</li>
+                    </ul>
+                </li>
+                <li>✔️ <strong>위치 묻고 답하기:</strong>
+                    <ul>
+                        <li><strong>질문:</strong> Where is...? (어디에 있어요?)</li>
+                        <li><strong>답변:</strong> It's... (그것은 ~에 있어요)</li>
+                    </ul>
+                </li>
+                <li>✔️ <strong>기본 방향:</strong> left (왼쪽), right (오른쪽), straight (직진), turn (돌다)</li>
+            </ul>
+            <p>이 표현들을 익히면 여행 중이거나, 길을 안내받을 때 훨씬 더 자신감을 가질 수 있을 거예요! 꾸준히 연습하여 여러분의 것으로 만드세요! 👍</p>
+        </section>
+
+    </div>
+
+    <!-- This script is for demonstration only to simulate answer reveal.
+         In a real mobile app, this would be handled by native UI logic. -->
+    <script>
+        document.querySelectorAll('.answer-reveal').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                if (answer.style.display === 'none') {
+                    answer.style.display = 'block';
+                    button.textContent = '정답 숨기기';
+                } else {
+                    answer.style.display = 'none';
+                    button.textContent = '정답 확인하기';
+                }
+            });
+        });
+        // Note: The audio-icon click handlers will be injected by the mobile frontend,
+        // so no JavaScript for them is included here as per instructions.
+    </script>
+</body>
+</html>

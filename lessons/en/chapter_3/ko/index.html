@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Numbers and Counting</title>
+    <style>
+        /* Global Styles & Mobile-First Foundation */
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Nanum Gothic', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            font-size: 16px; /* Minimum body text size */
+            -webkit-text-size-adjust: 100%; /* Prevent font boosting on mobile */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: var(--white);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            min-height: 100vh; /* Ensure content fills screen height */
+        }
+
+        h1, h2, h3 {
+            color: var(--heading-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 22px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        h3 {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            padding: 8px 0;
+            border-bottom: 1px dotted var(--border-color);
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        em {
+            font-style: normal;
+            color: var(--primary-color);
+        }
+
+        /* Lesson Header Specific Styles */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Interactive Elements & Buttons */
+        .practice-section {
+            background-color: var(--secondary-color);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice-section p {
+            font-size: 17px;
+            margin-bottom: 15px;
+            color: var(--heading-color);
+        }
+
+        .practice-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            display: block;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            min-height: 44px; /* Ensure touch-friendly size */
+            display: flex; /* For vertical centering */
+            align-items: center; /* For vertical centering */
+            justify-content: center; /* For horizontal centering */
+        }
+
+        .practice-button:hover {
+            background-color: #6a449f; /* Darker shade for hover */
+            transform: translateY(-2px);
+        }
+
+        .practice-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .audio-icon {
+            background: none;
+            border: none;
+            font-size: 24px; /* Larger icon for visibility */
+            cursor: pointer;
+            color: var(--primary-color);
+            padding: 10px; /* Padding for touch target */
+            min-width: 44px; /* Ensure minimum width */
+            min-height: 44px; /* Ensure minimum height */
+            display: inline-flex; /* Use inline-flex for alignment */
+            align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
+            border-radius: 50%; /* Make it round */
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            vertical-align: middle; /* Align with text */
+            margin-left: 5px; /* Space from text */
+        }
+
+        .audio-icon:hover {
+            background-color: rgba(139, 95, 191, 0.1); /* Light purple background on hover */
+            transform: scale(1.05);
+        }
+
+        .audio-icon:active {
+            transform: scale(0.95);
+        }
+
+        /* Specific content formatting */
+        .number-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .number-item {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .number-item strong {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .number-item span {
+            font-size: 15px;
+            color: var(--body-text-color);
+        }
+
+        .number-item .pronunciation {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .example-block {
+            background-color: var(--secondary-color);
+            border-left: 5px solid var(--primary-color);
+            padding: 12px 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-block p {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .example-block strong {
+            color: var(--heading-color);
+        }
+
+        .note {
+            background-color: #fff3cd; /* A light yellow for notes */
+            border-left: 5px solid #ffc107; /* A matching yellow border */
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            color: #856404; /* Darker text for readability */
+            font-size: 14px;
+        }
+
+        .summary-section {
+            background-color: var(--secondary-color);
+            border-top: 2px solid var(--border-color);
+            padding: 20px 0;
+            margin-top: 30px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .summary-section h2 {
+            border-bottom: none;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .summary-section ul {
+            list-style-type: '👉 ';
+            text-align: left;
+            padding-left: 25px;
+        }
+
+        .summary-section ul li {
+            padding: 5px 0;
+            border-bottom: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 3: Numbers and Counting</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 3 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>1. 숫자 세기: 1부터 20까지 🔢</h2>
+            <p>가장 기본적인 영어 숫자 1부터 20까지 배워볼까요? 일상생활에서 정말 많이 사용된답니다!</p>
+
+            <div class="number-list">
+                <div class="number-item">
+                    <strong>1</strong>
+                    <span>One</span>
+                    <span class="pronunciation">발음: [원]</span>
+                    <button class="audio-icon" data-audio-text="One">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>2</strong>
+                    <span>Two</span>
+                    <span class="pronunciation">발음: [투]</span>
+                    <button class="audio-icon" data-audio-text="Two">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>3</strong>
+                    <span>Three</span>
+                    <span class="pronunciation">발음: [쓰리]</span>
+                    <button class="audio-icon" data-audio-text="Three">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>4</strong>
+                    <span>Four</span>
+                    <span class="pronunciation">발음: [포어]</span>
+                    <button class="audio-icon" data-audio-text="Four">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>5</strong>
+                    <span>Five</span>
+                    <span class="pronunciation">발음: [파이브]</span>
+                    <button class="audio-icon" data-audio-text="Five">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>6</strong>
+                    <span>Six</span>
+                    <span class="pronunciation">발음: [식스]</span>
+                    <button class="audio-icon" data-audio-text="Six">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>7</strong>
+                    <span>Seven</span>
+                    <span class="pronunciation">발음: [세븐]</span>
+                    <button class="audio-icon" data-audio-text="Seven">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>8</strong>
+                    <span>Eight</span>
+                    <span class="pronunciation">발음: [에잇]</span>
+                    <button class="audio-icon" data-audio-text="Eight">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>9</strong>
+                    <span>Nine</span>
+                    <span class="pronunciation">발음: [나인]</span>
+                    <button class="audio-icon" data-audio-text="Nine">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>10</strong>
+                    <span>Ten</span>
+                    <span class="pronunciation">발음: [텐]</span>
+                    <button class="audio-icon" data-audio-text="Ten">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>11</strong>
+                    <span>Eleven</span>
+                    <span class="pronunciation">발음: [일레븐]</span>
+                    <button class="audio-icon" data-audio-text="Eleven">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>12</strong>
+                    <span>Twelve</span>
+                    <span class="pronunciation">발음: [트웰브]</span>
+                    <button class="audio-icon" data-audio-text="Twelve">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>13</strong>
+                    <span>Thirteen</span>
+                    <span class="pronunciation">발음: [써틴]</span>
+                    <button class="audio-icon" data-audio-text="Thirteen">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>14</strong>
+                    <span>Fourteen</span>
+                    <span class="pronunciation">발음: [포틴]</span>
+                    <button class="audio-icon" data-audio-text="Fourteen">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>15</strong>
+                    <span>Fifteen</span>
+                    <span class="pronunciation">발음: [피프틴]</span>
+                    <button class="audio-icon" data-audio-text="Fifteen">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>16</strong>
+                    <span>Sixteen</span>
+                    <span class="pronunciation">발음: [식스틴]</span>
+                    <button class="audio-icon" data-audio-text="Sixteen">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>17</strong>
+                    <span>Seventeen</span>
+                    <span class="pronunciation">발음: [세븐틴]</span>
+                    <button class="audio-icon" data-audio-text="Seventeen">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>18</strong>
+                    <span>Eighteen</span>
+                    <span class="pronunciation">발음: [에이틴]</span>
+                    <button class="audio-icon" data-audio-text="Eighteen">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>19</strong>
+                    <span>Nineteen</span>
+                    <span class="pronunciation">발음: [나인틴]</span>
+                    <button class="audio-icon" data-audio-text="Nineteen">🔊</button>
+                </div>
+                <div class="number-item">
+                    <strong>20</strong>
+                    <span>Twenty</span>
+                    <span class="pronunciation">발음: [트웬티]</span>
+                    <button class="audio-icon" data-audio-text="Twenty">🔊</button>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <p><strong>연습:</strong> 다음 숫자를 영어로 소리 내어 말해보세요. 🗣️</p>
+                <button class="practice-button audio-icon" data-audio-text="What number is this? Five.">이 숫자는 무엇일까요? 5</button>
+                <button class="practice-button audio-icon" data-audio-text="What number is this? Thirteen.">이 숫자는 무엇일까요? 13</button>
+                <button class="practice-button audio-icon" data-audio-text="What number is this? Eighteen.">이 숫자는 무엇일까요? 18</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 사물 세기 🍎📚</h2>
+            <p>숫자를 알면 주변의 사물들을 셀 수 있어요. 셀 수 있는 명사 앞에는 숫자를 쓰고, 여러 개일 때는 명사에 <strong>-s</strong>를 붙여 복수형으로 만들어요.</p>
+
+            <div class="example-block">
+                <p><strong>One apple</strong> <button class="audio-icon" data-audio-text="One apple">🔊</button> - 사과 한 개</p>
+                <p><strong>Two apples</strong> <button class="audio-icon" data-audio-text="Two apples">🔊</button> - 사과 두 개</p>
+            </div>
+            <div class="example-block">
+                <p><strong>One book</strong> <button class="audio-icon" data-audio-text="One book">🔊</button> - 책 한 권</p>
+                <p><strong>Three books</strong> <button class="audio-icon" data-audio-text="Three books">🔊</button> - 책 세 권</p>
+            </div>
+
+            <div class="practice-section">
+                <p><strong>연습:</strong> 그림을 보고 영어로 몇 개인지 말해보세요. 🖼️</p>
+                <p>🍎🍎🍎🍎 <button class="practice-button audio-icon" data-audio-text="Four apples">사과 몇 개?</button></p>
+                <p>✏️✏️✏️✏️✏️ <button class="practice-button audio-icon" data-audio-text="Five pencils">연필 몇 자루?</button></p>
+                <p>🐱🐱 <button class="practice-button audio-icon" data-audio-text="Two cats">고양이 몇 마리?</button></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. 나이 묻고 답하기 🎂</h2>
+            <p>상대방의 나이를 묻고 답하는 기본적인 표현을 배워볼게요. 나이를 말할 때는 'years old'를 붙입니다.</p>
+
+            <h3>나이 묻기:</h3>
+            <div class="example-block">
+                <p><strong>How old are you?</strong> <button class="audio-icon" data-audio-text="How old are you?">🔊</button></p>
+                <p><em>(하우 올드 알 유?)</em> - 몇 살이세요?</p>
+            </div>
+
+            <h3>나이 답하기:</h3>
+            <div class="example-block">
+                <p><strong>I'm [숫자] years old.</strong> <button class="audio-icon" data-audio-text="I'm ten years old.">🔊</button></p>
+                <p><em>(아임 [숫자] 이어스 올드.)</em> - 저는 [숫자]살이에요.</p>
+                <p>예시: <strong>I'm 20 years old.</strong> <button class="audio-icon" data-audio-text="I'm twenty years old.">🔊</button> (저는 20살이에요.)</p>
+            </div>
+
+            <div class="note">
+                <strong>문화 팁:</strong> 나이를 묻는 것은 한국에서는 흔하지만, 영어권 문화에서는 친한 사이가 아니면 개인적인 질문으로 여겨질 수 있으니 주의하는 것이 좋아요. 특히 처음 만나는 사람이나 비즈니스 관계에서는 나이보다는 다른 주제로 대화하는 것이 일반적입니다.
+            </div>
+
+            <div class="practice-section">
+                <p><strong>연습:</strong> 다음 질문에 나이에 맞춰 영어로 답해보세요. 👤</p>
+                <p>Q: How old are you?</p>
+                <button class="practice-button audio-icon" data-audio-text="I'm eighteen years old.">A: 저는 18살이에요.</button>
+                <button class="practice-button audio-icon" data-audio-text="I'm twenty years old.">A: 저는 20살이에요.</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. 전화번호와 주소 말하기 📞🏠</h2>
+            <p>전화번호와 주소는 숫자로 이루어져 있어서 영어로 말하는 방법을 아는 것이 중요해요.</p>
+
+            <h3>전화번호 말하기:</h3>
+            <p>전화번호는 숫자를 <strong>하나씩 끊어서</strong> 말합니다. '0'은 'zero' 또는 'oh(오)'라고 말해요.</p>
+            <div class="example-block">
+                <p>전화번호: <strong>010-1234-5678</strong></p>
+                <p>영어: <strong>Oh one oh, one two three four, five six seven eight.</strong> <button class="audio-icon" data-audio-text="Oh one oh, one two three four, five six seven eight.">🔊</button></p>
+                <p><em>(오 원 오, 원 투 쓰리 포, 파이브 식스 세븐 에잇.)</em></p>
+            </div>
+
+            <h3>주소 말하기:</h3>
+            <p>주소는 나라마다 표기 방식이 다르지만, 영어권에서는 보통 <strong>작은 단위(번지)에서 큰 단위(국가) 순</strong>으로 말합니다. 한국 주소를 영어로 말할 때는 일반적으로 도로명 주소를 사용해요.</p>
+            <div class="example-block">
+                <p>한국 주소: <strong>서울시 강남구 테헤란로 123, ABC빌딩 4층</strong></p>
+                <p>영어: <strong>4F, ABC Building, 123 Teheran-ro, Gangnam-gu, Seoul, Korea.</strong> <button class="audio-icon" data-audio-text="4F, ABC Building, 123 Teheran-ro, Gangnam-gu, Seoul, Korea.">🔊</button></p>
+            </div>
+
+            <div class="note">
+                <strong>문화 팁:</strong> 개인 정보 보호를 위해 낯선 사람에게는 전화번호나 정확한 주소를 바로 알려주지 않는 것이 일반적입니다.
+            </div>
+
+            <div class="practice-section">
+                <p><strong>연습:</strong> 다음 전화번호를 영어로 하나씩 말해보세요. 📱</p>
+                <button class="practice-button audio-icon" data-audio-text="Seven eight nine, zero one two, three four five six.">789-012-3456</button>
+                <button class="practice-button audio-icon" data-audio-text="Two zero three, five five five, seven seven seven seven.">203-555-7777</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. 기초 수학 용어 ➕➖🟰</h2>
+            <p>간단한 덧셈과 뺄셈을 영어로 표현하는 방법을 알아볼게요.</p>
+
+            <ul>
+                <li><strong>Plus</strong> <button class="audio-icon" data-audio-text="Plus">🔊</button> (플러스): 더하기 (+)</li>
+                <li><strong>Minus</strong> <button class="audio-icon" data-audio-text="Minus">🔊</button> (마이너스): 빼기 (-)</li>
+                <li><strong>Equals</strong> <button class="audio-icon" data-audio-text="Equals">🔊</button> (이퀄스): ~와 같다, ~은 (~이다) (=)</li>
+            </ul>
+
+            <div class="example-block">
+                <p><strong>Two plus two equals four.</strong> <button class="audio-icon" data-audio-text="Two plus two equals four.">🔊</button></p>
+                <p><em>(투 플러스 투 이퀄스 포.)</em> - 2 더하기 2는 4입니다.</p>
+            </div>
+            <div class="example-block">
+                <p><strong>Ten minus three equals seven.</strong> <button class="audio-icon" data-audio-text="Ten minus three equals seven.">🔊</button></p>
+                <p><em>(텐 마이너스 쓰리 이퀄스 세븐.)</em> - 10 빼기 3은 7입니다.</p>
+            </div>
+
+            <div class="practice-section">
+                <p><strong>연습:</strong> 다음 문제를 영어로 말해보세요. 💡</p>
+                <button class="practice-button audio-icon" data-audio-text="Three plus five equals eight.">3 + 5 = ?</button>
+                <button class="practice-button audio-icon" data-audio-text="Eight minus four equals four.">8 - 4 = ?</button>
+                <button class="practice-button audio-icon" data-audio-text="Six plus two equals eight.">6 + 2 = ?</button>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>✨ 핵심 요약 ✨</h2>
+            <ul>
+                <li><strong>숫자 1-20:</strong> 기본 숫자를 익혔습니다. 큰 소리로 반복 연습하세요!</li>
+                <li><strong>사물 세기:</strong> <strong>one [명사]</strong>, <strong>[숫자] [명사]-s</strong> 형태로 말합니다.</li>
+                <li><strong>나이 묻고 답하기:</strong> "How old are you?", "I'm [숫자] years old."</li>
+                <li><strong>전화번호/주소:</strong> 전화번호는 숫자를 하나씩, 주소는 작은 단위에서 큰 단위로 말하는 연습을 했습니다.</li>
+                <li><strong>기초 수학:</strong> <strong>plus, minus, equals</strong>를 사용하여 간단한 계산을 표현할 수 있습니다.</li>
+            </ul>
+            <p>숫자와 관련된 표현은 일상생활에서 가장 자주 사용되는 것들이니, 오늘 배운 내용들을 꾸준히 복습하고 실제 대화에 활용해보세요!</p>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6: Daily Activities and Routines</title>
+    <style>
+        /* Google Fonts - Noto Sans KR for Korean, Roboto for English */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #8B5FBF; /* Purple */
+            --secondary-color: #FDF9E5; /* Cream background */
+            --heading-color: #2C3E50; /* Dark blue */
+            --body-text-color: #666666; /* Medium gray */
+            --border-color: #E0E0E0; /* Light gray */
+            --white-color: #FFFFFF;
+        }
+
+        /* Base Styles */
+        body {
+            font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+            color: var(--body-text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px; /* Minimum font size for body text */
+        }
+
+        /* Ensure proper box model for all elements */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            font-family: 'Noto Sans KR', 'Roboto', sans-serif;
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        h3 {
+            font-size: 20px;
+            padding: 5px 0;
+        }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 16px;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        /* Chapter Header specific styles */
+        .chapter-title {
+            color: var(--heading-color);
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+            padding: 0 20px; /* Add padding for smaller screens */
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px; /* Limits width on larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        section {
+            background-color: var(--white-color);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .lesson-intro, .lesson-summary {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .lesson-summary ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lesson-summary li {
+            margin-bottom: 10px;
+            font-size: 17px;
+            color: var(--heading-color);
+            font-weight: 700;
+        }
+
+        /* Vocabulary and Example Boxes */
+        .vocab-item {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .vocab-item p {
+            margin: 5px 0;
+        }
+
+        .example-box {
+            background-color: #EBE0F7; /* Lighter shade of primary for examples */
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        .example-box p {
+            margin: 5px 0;
+            font-size: 17px;
+        }
+
+        .example-full-routine p {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Interactive Elements */
+        .audio-icon {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border: none;
+            border-radius: 50%; /* Circle shape */
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .audio-icon:hover {
+            background-color: #6a469a; /* Slightly darker primary */
+            transform: scale(1.05);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: var(--secondary-color);
+            border: 2px dashed var(--primary-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .practice-section h4 {
+            color: var(--heading-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .practice-section p {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .practice-section strong {
+            color: var(--primary-color);
+        }
+
+        /* Pronunciation Guide */
+        .pronunciation-guide {
+            font-size: 0.9em;
+            color: #888;
+            margin-left: 5px;
+            font-style: italic;
+        }
+
+        /* Cultural Note */
+        .cultural-note {
+            background-color: #F7E0EB; /* A light pink/purple for distinction */
+            border-left: 5px solid var(--primary-color);
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            body {
+                font-size: 18px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            section {
+                margin: 30px auto;
+                max-width: 800px;
+                padding: 30px;
+            }
+
+            .lesson-header {
+                padding: 0 30px;
+            }
+
+            .vocab-item {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .vocab-item p {
+                margin: 0;
+            }
+
+            .audio-icon {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="chapter-title">Chapter 6: Daily Activities and Routines</h1>
+    <div class="lesson-header">
+        <img src="../header.webp" alt="Chapter 6 Header" class="lesson-header-image">
+    </div>
+
+    <section class="lesson-intro">
+        <h2>👋 안녕하세요! 오늘의 주제는 '일상 활동과 루틴'입니다!</h2>
+        <p>우리 매일 무엇을 하고 사는지 영어로 어떻게 표현하는지 배워볼 거예요. 아주 기본적인 동사와 시간 표현을 익히고, 나만의 하루 일과를 영어로 말해봅시다!</p>
+        <p>오늘 배울 내용:</p>
+        <ul>
+            <li>✨ 자주 쓰는 동사: eat, drink, sleep 등</li>
+            <li>✨ 현재 시제 기본: I eat... / I don't eat...</li>
+            <li>✨ 일상 루틴 어휘</li>
+            <li>✨ 시간 표현: in the morning, at 7 AM 등</li>
+        </ul>
+    </section>
+
+    <!-- Section 1: Common Verbs -->
+    <section class="lesson-section">
+        <h3>1. 기본적인 동사 익히기</h3>
+        <p>우리 일상에서 가장 많이 쓰는 동사들을 알아볼까요?</p>
+
+        <div class="vocab-item">
+            <p><strong>eat</strong> <span class="pronunciation-guide">(이t)</span></p>
+            <button class="audio-icon" data-audio-text="eat">🔊</button>
+            <p>먹다 🍎</p>
+        </div>
+        <div class="vocab-item">
+            <p><strong>drink</strong> <span class="pronunciation-guide">(드링크)</span></p>
+            <button class="audio-icon" data-audio-text="drink">🔊</button>
+            <p>마시다 ☕</p>
+        </div>
+        <div class="vocab-item">
+            <p><strong>sleep</strong> <span class="pronunciation-guide">(슬리p)</span></p>
+            <button class="audio-icon" data-audio-text="sleep">🔊</button>
+            <p>자다 😴</p>
+        </div>
+        <div class="vocab-item">
+            <p><strong>work</strong> <span class="pronunciation-guide">(워r크)</span></p>
+            <button class="audio-icon" data-audio-text="work">🔊</button>
+            <p>일하다 🧑‍💻</p>
+        </div>
+        <div class="vocab-item">
+            <p><strong>study</strong> <span class="pronunciation-guide">(스터디)</span></p>
+            <button class="audio-icon" data-audio-text="study">🔊</button>
+            <p>공부하다 📚</p>
+        </div>
+        <div class="vocab-item">
+            <p><strong>play</strong> <span class="pronunciation-guide">(플레이)</span></p>
+            <button class="audio-icon" data-audio-text="play">🔊</button>
+            <p>놀다/운동하다 🎮⚽</p>
+        </div>
+
+        <div class="practice-section">
+            <h4>✨ 동사 매칭 연습</h4>
+            <p>아래 영어 단어의 뜻으로 맞는 한국어를 골라보세요.</p>
+            <p>1. <strong>sleep</strong> <br/> (A) 공부하다 (B) 자다 (C) 일하다 <br/> 정답: (B) 자다</p>
+            <p>2. <strong>work</strong> <br/> (A) 놀다 (B) 마시다 (C) 일하다 <br/> 정답: (C) 일하다</p>
+        </div>
+    </section>
+
+    <!-- Section 2: Present Simple Basics (I eat... / I don't eat...) -->
+    <section class="lesson-section">
+        <h3>2. 현재 시제 (Present Simple) 기본</h3>
+        <p>매일 반복되는 일이나 습관을 말할 때 사용하는 시제예요. 가장 기본적인 영어 문법이죠!</p>
+
+        <h4>긍정문: I + 동사 원형</h4>
+        <p>'나는 ~한다'고 말할 때 사용해요.</p>
+        <div class="example-box">
+            <p>I <strong>study</strong> English.</p>
+            <p>나는 영어를 공부해요.</p>
+            <button class="audio-icon" data-audio-text="I study English">🔊</button>
+        </div>
+        <div class="example-box">
+            <p>I <strong>work</strong> at home.</p>
+            <p>나는 집에서 일해요.</p>
+            <button class="audio-icon" data-audio-text="I work at home">🔊</button>
+        </div>
+
+        <h4>부정문: I don't + 동사 원형</h4>
+        <p>'나는 ~하지 않는다'고 말할 때는 <strong>don't</strong> (do not의 줄임말)를 사용해요.</p>
+        <div class="example-box">
+            <p>I <strong>don't eat</strong> meat.</p>
+            <p>나는 고기를 먹지 않아요.</p>
+            <button class="audio-icon" data-audio-text="I don't eat meat">🔊</button>
+        </div>
+        <div class="example-box">
+            <p>I <strong>don't play</strong> games.</p>
+            <p>나는 게임을 하지 않아요.</p>
+            <button class="audio-icon" data-audio-text="I don't play games">🔊</button>
+        </div>
+
+        <div class="practice-section">
+            <h4>✨ 문장 만들기 연습</h4>
+            <p>아래 단어들을 이용해서 '나는 ~해요' 문장을 만들어 보세요.</p>
+            <p>1. <strong>sleep</strong> at 11 PM <br/> 정답: I <strong>sleep</strong> at 11 PM.</p>
+            <p>2. <strong>drink</strong> coffee (부정문) <br/> 정답: I <strong>don't drink</strong> coffee.</p>
+        </div>
+    </section>
+
+    <!-- Section 3: Daily Routine Vocabulary -->
+    <section class="lesson-section">
+        <h3>3. 일상 루틴 어휘</h3>
+        <p>하루 일과를 나타내는 표현들을 배워볼까요? ⏰</p>
+        <ul>
+            <li>
+                <p><strong>wake up</strong> <span class="pronunciation-guide">(웨잌 업)</span></p>
+                <button class="audio-icon" data-audio-text="wake up">🔊</button>
+                <p>잠에서 깨다 ☀️</p>
+            </li>
+            <li>
+                <p><strong>get up</strong> <span class="pronunciation-guide">(겟 업)</span></p>
+                <button class="audio-icon" data-audio-text="get up">🔊</button>
+                <p>일어나다 ⬆️</p>
+            </li>
+            <li>
+                <p><strong>take a shower</strong> <span class="pronunciation-guide">(테잌 어 샤워r)</span></p>
+                <button class="audio-icon" data-audio-text="take a shower">🔊</button>
+                <p>샤워하다 🚿</p>
+            </li>
+            <li>
+                <p><strong>get dressed</strong> <span class="pronunciation-guide">(겟 드레스트)</span></p>
+                <button class="audio-icon" data-audio-text="get dressed">🔊</button>
+                <p>옷을 입다 👕</p>
+            </li>
+            <li>
+                <p><strong>have breakfast/lunch/dinner</strong> <span class="pronunciation-guide">(해브 브렠퍼스트/런ㅊ/디너r)</span></p>
+                <button class="audio-icon" data-audio-text="have breakfast">🔊</button>
+                <p>아침/점심/저녁을 먹다 🍳🥪🍝</p>
+            </li>
+            <li>
+                <p><strong>go to work/school</strong> <span class="pronunciation-guide">(고 투 워r크/스쿨)</span></p>
+                <button class="audio-icon" data-audio-text="go to work">🔊</button>
+                <p>직장/학교에 가다 🏢🏫</p>
+            </li>
+            <li>
+                <p><strong>finish work/school</strong> <span class="pronunciation-guide">(피니쉬 워r크/스쿨)</span></p>
+                <button class="audio-icon" data-audio-text="finish work">🔊</button>
+                <p>일/학교를 마치다 📝✅</p>
+            </li>
+            <li>
+                <p><strong>go home</strong> <span class="pronunciation-guide">(고 호움)</span></p>
+                <button class="audio-icon" data-audio-text="go home">🔊</button>
+                <p>집에 가다 🏡</p>
+            </li>
+            <li>
+                <p><strong>go to bed</strong> <span class="pronunciation-guide">(고 투 베d)</span></p>
+                <button class="audio-icon" data-audio-text="go to bed">🔊</button>
+                <p>잠자리에 들다 🛌🌙</p>
+            </li>
+        </ul>
+
+        <div class="practice-section">
+            <h4>✨ 루틴 문장 완성하기</h4>
+            <p>빈칸에 알맞은 루틴 어휘를 채워보세요.</p>
+            <p>1. I ____ at 7 AM. (잠에서 깨다) <br/> 정답: <strong>wake up</strong></p>
+            <p>2. I ____ at 1 PM. (점심을 먹다) <br/> 정답: <strong>have lunch</strong></p>
+        </div>
+    </section>
+
+    <!-- Section 4: Time Expressions -->
+    <section class="lesson-section">
+        <h3>4. 시간 표현 익히기</h3>
+        <p>어떤 활동을 언제 하는지 말할 때 쓰는 표현들이에요.</p>
+        <ul>
+            <li>
+                <p><strong>in the morning</strong> <span class="pronunciation-guide">(인 더 모r닝)</span></p>
+                <button class="audio-icon" data-audio-text="in the morning">🔊</button>
+                <p>아침에 🌅</p>
+            </li>
+            <li>
+                <p><strong>in the afternoon</strong> <span class="pronunciation-guide">(인 디 애프터눈)</span></p>
+                <button class="audio-icon" data-audio-text="in the afternoon">🔊</button>
+                <p>오후에 ☀️</p>
+            </li>
+            <li>
+                <p><strong>in the evening</strong> <span class="pronunciation-guide">(인 디 이브닝)</span></p>
+                <button class="audio-icon" data-audio-text="in the evening">🔊</button>
+                <p>저녁에 🌆</p>
+            </li>
+            <li>
+                <p><strong>at night</strong> <span class="pronunciation-guide">(앳 나이t)</span></p>
+                <button class="audio-icon" data-audio-text="at night">🔊</button>
+                <p>밤에 🌃 (구체적 시간이 아닌 '밤에'라는 시간대)</p>
+            </li>
+            <li>
+                <p><strong>at [시간] (AM/PM)</strong> <span class="pronunciation-guide">(앳 [시간])</span></p>
+                <button class="audio-icon" data-audio-text="at 7 AM">🔊</button>
+                <p>~시에 (예: at 7 AM, at 6 PM) 🕰️</p>
+            </li>
+        </ul>
+
+        <div class="example-box">
+            <p>I eat breakfast <strong>in the morning</strong>.</p>
+            <p>나는 아침에 아침을 먹어요.</p>
+            <button class="audio-icon" data-audio-text="I eat breakfast in the morning">🔊</button>
+        </div>
+        <div class="example-box">
+            <p>I go to work <strong>at 9 AM</strong>.</p>
+            <p>나는 오전 9시에 출근해요.</p>
+            <button class="audio-icon" data-audio-text="I go to work at 9 AM">🔊</button>
+        </div>
+
+        <div class="practice-section">
+            <h4>✨ 시간 표현 채우기</h4>
+            <p>괄호 안의 의미에 맞는 시간 표현을 넣어보세요.</p>
+            <p>1. I study English _____. (밤에) <br/> 정답: <strong>at night</strong></p>
+            <p>2. I have dinner _____. (저녁에) <br/> 정답: <strong>in the evening</strong></p>
+        </div>
+    </section>
+
+    <!-- Putting it all together -->
+    <section class="lesson-section">
+        <h3>🌟 나의 하루 일과 말하기</h3>
+        <p>이제 배운 것들을 모두 활용해서 하루 일과를 말해볼까요? 여러분의 하루에 맞춰 문장을 바꿔보세요!</p>
+        <div class="example-box example-full-routine">
+            <p>I <strong>wake up</strong> <strong>at 7 AM</strong>.</p>
+            <p>I <strong>have breakfast</strong> <strong>in the morning</strong>.</p>
+            <p>I <strong>go to work</strong> <strong>at 9 AM</strong>.</p>
+            <p>I <strong>have lunch</strong> <strong>in the afternoon</strong>.</p>
+            <p>I <strong>finish work</strong> <strong>at 6 PM</strong>.</p>
+            <p>I <strong>go home</strong> and <strong>exercise</strong> <strong>in the evening</strong>.</p>
+            <p>I <strong>have dinner</strong> <strong>at 7 PM</strong>.</p>
+            <p>I <strong>read a book</strong> <strong>at night</strong> and <strong>go to bed</strong> <strong>at 11 PM</strong>.</p>
+            <button class="audio-icon" data-audio-text="I wake up at 7 AM. I have breakfast in the morning. I go to work at 9 AM. I have lunch in the afternoon. I finish work at 6 PM. I go home and exercise in the evening. I have dinner at 7 PM. I read a book at night and go to bed at 11 PM.">🔊 전체 듣기</button>
+        </div>
+    </section>
+
+    <!-- Cultural Note -->
+    <section class="lesson-section cultural-note">
+        <h3>🌍 문화 노트: 한국과 서양의 일상</h3>
+        <p>한국은 아침 일찍부터 밤늦게까지 학업이나 일에 집중하는 문화가 강하죠. 특히 야근이나 학원 스케줄이 잦아요. 📚🌃</p>
+        <p>반면, 서양에서는 "work-life balance"를 중요하게 생각하며, 저녁 5시나 6시 이후로는 개인 시간을 보내는 경우가 더 흔해요. 🕒 가족이나 친구와 시간을 보내거나 다양한 취미 활동을 즐기는 문화가 발달해 있답니다. 같은 '일과'라도 문화권에 따라 그 모습이 많이 다를 수 있어요!</p>
+    </section>
+
+    <!-- Summary -->
+    <section class="lesson-summary">
+        <h3>✨ 오늘 배운 내용 요약</h3>
+        <ul>
+            <li>✔️ 기본 동사: <strong>eat, drink, sleep, work, study, play</strong> 등</li>
+            <li>✔️ 현재 시제 긍정: <strong>I + 동사</strong> (나는 ~해요)</li>
+            <li>✔️ 현재 시제 부정: <strong>I don't + 동사</strong> (나는 ~하지 않아요)</li>
+            <li>✔️ 일상 루틴 표현: <strong>wake up, have breakfast, go to work, go to bed</strong> 등</li>
+            <li>✔️ 시간 표현: <strong>in the morning/afternoon/evening, at night, at [시간]</strong></li>
+        </ul>
+        <p>이제 여러분의 하루를 영어로 이야기할 수 있게 되었어요! 매일매일 연습해 보세요! 😊</p>
+    </section>
+
+</body>
+</html>

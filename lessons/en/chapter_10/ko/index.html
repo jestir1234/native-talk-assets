@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Time and Schedules</title>
+    <style>
+        /* Base Styles & Mobile-First */
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum 16px for body text */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 5px;
+            margin-top: 25px;
+        }
+
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+
+        /* Specific Header Structure */
+        .chapter-title {
+            margin-top: 20px; /* Added margin for consistency */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode arrow */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        /* Examples and Pronunciation */
+        .example {
+            background-color: #F8F8F8;
+            border-left: 4px solid #8B5FBF; /* Primary: Purple */
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .example strong {
+            color: #2C3E50; /* Dark blue for emphasis */
+        }
+
+        .pronunciation {
+            font-size: 0.9em;
+            color: #8B5FBF; /* Primary: Purple */
+            margin-left: 5px;
+            font-style: italic;
+        }
+
+        /* Interactive Elements - Audio Icons */
+        .audio-icon {
+            background: none;
+            border: none;
+            color: #8B5FBF; /* Primary: Purple */
+            font-size: 28px; /* Larger icon for tapping */
+            cursor: pointer;
+            padding: 10px; /* Padding for larger touch area */
+            min-width: 44px; /* Minimum tap target size */
+            min-height: 44px; /* Minimum tap target size */
+            display: inline-flex; /* Use flex to center icon */
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .audio-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Practice Sections */
+        .practice-section {
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            border: 2px dashed #8B5FBF; /* Primary: Purple */
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .practice-section h3 {
+            color: #8B5FBF; /* Primary: Purple */
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .practice-question {
+            margin-bottom: 15px;
+            font-weight: bold;
+            color: #2C3E50; /* Dark blue */
+        }
+
+        .practice-answer {
+            color: #666666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .toggle-answer {
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            min-width: 120px; /* Ensures tap target is wide enough */
+            min-height: 44px;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-answer:hover {
+            background-color: #6F4A9A; /* Slightly darker purple on hover */
+        }
+
+        /* Cultural Notes */
+        .cultural-note {
+            background-color: #FFF2CC; /* A light yellow for notes */
+            border-left: 4px solid #FFD700; /* Gold for emphasis */
+            padding: 10px 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 0.95em;
+            color: #666666;
+        }
+
+        .cultural-note strong {
+            color: #2C3E50;
+        }
+
+        /* Summary */
+        .summary-section {
+            background-color: #F8F8F8;
+            padding: 20px;
+            margin-top: 30px;
+            border-top: 2px solid #E0E0E0; /* Light gray border */
+            border-radius: 8px;
+        }
+
+        .summary-section h2 {
+            text-align: center;
+            color: #8B5FBF; /* Primary: Purple */
+            border-bottom: none;
+            margin-bottom: 15px;
+        }
+
+        .summary-section ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .summary-section li {
+            padding-left: 0;
+            margin-bottom: 8px;
+        }
+
+        .summary-section li::before {
+            content: none; /* Remove default arrow for summary list */
+        }
+
+
+        /* Responsive Adjustments (optional, as mobile-first covers small screens) */
+        @media (min-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 10: 시간과 일정</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 10 Header" class="lesson-header-image">
+        </div>
+
+        <section>
+            <h2>✨ 환영합니다!</h2>
+            <p>안녕하세요! 오늘은 영어로 시간을 묻고 답하는 방법, 요일, 월, 그리고 약속을 잡는 법까지, 일상생활에 필수적인 <strong>시간과 일정</strong>에 대해 배워볼 거예요. 모바일 화면에 최적화된 쉽고 재미있는 구성으로 함께 학습해봐요! 준비되셨나요? 🚀</p>
+        </section>
+
+        <section>
+            <h2>1. 시간 말하기: "몇 시예요?" "… 시예요."</h2>
+            <p>가장 먼저 시간을 묻고 답하는 방법을 배워볼게요.</p>
+
+            <h3>🕒 "지금 몇 시예요?"</h3>
+            <ul>
+                <li><strong>What time is it?</strong> <span class="pronunciation">[왓 타임 이즈 잇?]</span>
+                    <button class="audio-icon" data-audio-text="What time is it?">🔊</button>
+                    <br> (지금 몇 시예요?)
+                </li>
+                <li><strong>Do you have the time?</strong> <span class="pronunciation">[두 유 해브 더 타임?]</span>
+                    <button class="audio-icon" data-audio-text="Do you have the time?">🔊</button>
+                    <br> (시간 좀 알려주실 수 있나요?)</li>
+            </ul>
+
+            <h3>⏰ "… 시예요."</h3>
+            <p>시간을 답할 때는 보통 <strong>It's [시간]</strong> 형식으로 말해요.</p>
+            <ul>
+                <li><strong>정각 (O'clock)</strong><br>
+                    <div class="example">
+                        <strong>It's seven o'clock.</strong> <span class="pronunciation">[이츠 세븐 오클락]</span>
+                        <button class="audio-icon" data-audio-text="It's seven o'clock.">🔊</button>
+                        <br> (7시예요.)
+                    </div>
+                    <div class="example">
+                        <strong>It's ten o'clock.</strong> <span class="pronunciation">[이츠 텐 오클락]</span>
+                        <button class="audio-icon" data-audio-text="It's ten o'clock.">🔊</button>
+                        <br> (10시예요.)
+                    </div>
+                    <p>숫자 + <strong>o'clock</strong>은 정각을 나타낼 때 사용해요.</p>
+                </li>
+                <li><strong>분 단위로 말하기</strong><br>
+                    <p>분을 먼저 말하고 시를 말하는 방법과, 시를 먼저 말하고 분을 말하는 두 가지 방법이 있어요. 보통은 시-분 순으로 말하는 것이 더 일반적입니다.</p>
+                    <div class="example">
+                        <strong>It's five thirty.</strong> <span class="pronunciation">[이츠 파이브 써티]</span>
+                        <button class="audio-icon" data-audio-text="It's five thirty.">🔊</button>
+                        <br> (5시 30분이에요.) - <em>가장 흔한 방법</em>
+                    </div>
+                    <div class="example">
+                        <strong>It's eight fifteen.</strong> <span class="pronunciation">[이츠 에이트 피프틴]</span>
+                        <button class="audio-icon" data-audio-text="It's eight fifteen.">🔊</button>
+                        <br> (8시 15분이에요.)
+                    </div>
+                    <p>또 다른 방법은 분 + <strong>past/to</strong> + 시 입니다. 30분까지는 'past'를, 30분 이후부터 다음 시간까지는 'to'를 사용해요.</p>
+                    <div class="example">
+                        <strong>It's a quarter past three.</strong> <span class="pronunciation">[이츠 어 쿼터 패스트 쓰리]</span>
+                        <button class="audio-icon" data-audio-text="It's a quarter past three.">🔊</button>
+                        <br> (3시 15분이에요.) - <em>15분은 'a quarter'</em>
+                    </div>
+                    <div class="example">
+                        <strong>It's half past four.</strong> <span class="pronunciation">[이츠 해프 패스트 포]</span>
+                        <button class="audio-icon" data-audio-text="It's half past four.">🔊</button>
+                        <br> (4시 30분이에요.) - <em>30분은 'half'</em>
+                    </div>
+                    <div class="example">
+                        <strong>It's twenty to five.</strong> <span class="pronunciation">[이츠 트웬티 투 파이브]</span>
+                        <button class="audio-icon" data-audio-text="It's twenty to five.">🔊</button>
+                        <br> (5시 20분 전이에요. = 4시 40분)
+                    </div>
+                </li>
+            </ul>
+
+            <div class="cultural-note">
+                <strong>💡 AM/PM 알아두기!</strong><br>
+                영어권에서는 24시제보다는 12시제를 주로 사용하며 <strong>AM</strong> (오전, 자정부터 정오까지)과 <strong>PM</strong> (오후, 정오부터 자정까지)을 붙여 사용해요.
+                <ul>
+                    <li>3 AM <button class="audio-icon" data-audio-text="3 AM">🔊</button> (오전 3시)</li>
+                    <li>7 PM <button class="audio-icon" data-audio-text="7 PM">🔊</button> (오후 7시)</li>
+                </ul>
+            </div>
+
+            <h3>💡 연습 시간!</h3>
+            <div class="practice-section">
+                <h3>시간 말하기</h3>
+                <p>주어진 시간을 영어로 말해보세요!</p>
+                <div class="practice-question">1. 9:00 AM</div>
+                <button class="toggle-answer" data-answer="It's nine o'clock AM." data-audio="It's nine o'clock AM.">정답 보기</button>
+                <div class="practice-answer" style="display:none;">It's nine o'clock AM. / It's nine AM. <button class="audio-icon" data-audio-text="It's nine o'clock AM.">🔊</button></div>
+
+                <div class="practice-question">2. 2:45 PM</div>
+                <button class="toggle-answer" data-answer="It's two forty-five PM. / It's a quarter to three PM.">정답 보기</button>
+                <div class="practice-answer" style="display:none;">It's two forty-five PM. / It's a quarter to three PM. <button class="audio-icon" data-audio-text="It's two forty-five PM.">🔊</button></div>
+
+                <div class="practice-question">3. 6:30 PM</div>
+                <button class="toggle-answer" data-answer="It's six thirty PM. / It's half past six PM.">정답 보기</button>
+                <div class="practice-answer" style="display:none;">It's six thirty PM. / It's half past six PM. <button class="audio-icon" data-audio-text="It's six thirty PM.">🔊</button></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 요일: Monday, Tuesday, etc.</h2>
+            <p>일주일의 요일을 배워볼까요? 요일은 항상 <strong>대문자</strong>로 시작해야 해요.</p>
+            <ul>
+                <li><strong>Monday</strong> <span class="pronunciation">[먼데이]</span> <button class="audio-icon" data-audio-text="Monday">🔊</button> (월요일)</li>
+                <li><strong>Tuesday</strong> <span class="pronunciation">[튜즈데이]</span> <button class="audio-icon" data-audio-text="Tuesday">🔊</button> (화요일)</li>
+                <li><strong>Wednesday</strong> <span class="pronunciation">[웬즈데이]</span> <button class="audio-icon" data-audio-text="Wednesday">🔊</button> (수요일)</li>
+                <li><strong>Thursday</strong> <span class="pronunciation">[떨즈데이]</span> <button class="audio-icon" data-audio-text="Thursday">🔊</button> (목요일)</li>
+                <li><strong>Friday</strong> <span class="pronunciation">[프라이데이]</span> <button class="audio-icon" data-audio-text="Friday">🔊</button> (금요일)</li>
+                <li><strong>Saturday</strong> <span class="pronunciation">[새터데이]</span> <button class="audio-icon" data-audio-text="Saturday">🔊</button> (토요일)</li>
+                <li><strong>Sunday</strong> <span class="pronunciation">[선데이]</span> <button class="audio-icon" data-audio-text="Sunday">🔊</button> (일요일)</li>
+            </ul>
+            <p>요일 앞에 특정 요일을 나타낼 때는 보통 전치사 <strong>on</strong>을 사용해요.</p>
+            <div class="example">
+                <strong>I have a meeting on Monday.</strong> <span class="pronunciation">[아이 해브 어 미팅 온 먼데이]</span>
+                <button class="audio-icon" data-audio-text="I have a meeting on Monday.">🔊</button>
+                <br> (저는 월요일에 회의가 있어요.)
+            </div>
+            <div class="example">
+                <strong>Let's meet on Friday.</strong> <span class="pronunciation">[렛츠 밋 온 프라이데이]</span>
+                <button class="audio-icon" data-audio-text="Let's meet on Friday.">🔊</button>
+                <br> (금요일에 만나요.)
+            </div>
+
+            <h3>💡 연습 시간!</h3>
+            <div class="practice-section">
+                <h3>요일 정렬하기</h3>
+                <p>다음 요일을 올바른 순서로 나열해 보세요.</p>
+                <p style="font-weight: bold; color: #2C3E50;">Tuesday, Sunday, Thursday, Monday, Saturday, Wednesday, Friday</p>
+                <button class="toggle-answer" data-answer="Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday">정답 보기</button>
+                <div class="practice-answer" style="display:none;">Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday <button class="audio-icon" data-audio-text="Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.">🔊</button></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. 월: Months of the Year</h2>
+            <p>1년 열두 달을 영어로 배워볼까요? 월도 요일처럼 항상 <strong>대문자</strong>로 시작해야 해요.</p>
+            <ul>
+                <li><strong>January</strong> <span class="pronunciation">[재뉴어리]</span> <button class="audio-icon" data-audio-text="January">🔊</button> (1월)</li>
+                <li><strong>February</strong> <span class="pronunciation">[페브루어리]</span> <button class="audio-icon" data-audio-text="February">🔊</button> (2월)</li>
+                <li><strong>March</strong> <span class="pronunciation">[마치]</span> <button class="audio-icon" data-audio-text="March">🔊</button> (3월)</li>
+                <li><strong>April</strong> <span class="pronunciation">[에이프럴]</span> <button class="audio-icon" data-audio-text="April">🔊</button> (4월)</li>
+                <li><strong>May</strong> <span class="pronunciation">[메이]</span> <button class="audio-icon" data-audio-text="May">🔊</button> (5월)</li>
+                <li><strong>June</strong> <span class="pronunciation">[준]</span> <button class="audio-icon" data-audio-text="June">🔊</button> (6월)</li>
+                <li><strong>July</strong> <span class="pronunciation">[줄라이]</span> <button class="audio-icon" data-audio-text="July">🔊</button> (7월)</li>
+                <li><strong>August</strong> <span class="pronunciation">[어거스트]</span> <button class="audio-icon" data-audio-text="August">🔊</button> (8월)</li>
+                <li><strong>September</strong> <span class="pronunciation">[셉템버]</span> <button class="audio-icon" data-audio-text="September">🔊</button> (9월)</li>
+                <li><strong>October</strong> <span class="pronunciation">[옥토버]</span> <button class="audio-icon" data-audio-text="October">🔊</button> (10월)</li>
+                <li><strong>November</strong> <span class="pronunciation">[노벰버]</span> <button class="audio-icon" data-audio-text="November">🔊</button> (11월)</li>
+                <li><strong>December</strong> <span class="pronunciation">[디셈버]</span> <button class="audio-icon" data-audio-text="December">🔊</button> (12월)</li>
+            </ul>
+            <p>월 앞에 특정 월을 나타낼 때는 보통 전치사 <strong>in</strong>을 사용해요.</p>
+            <div class="example">
+                <strong>My birthday is in August.</strong> <span class="pronunciation">[마이 벌쓰데이 이즈 인 어거스트]</span>
+                <button class="audio-icon" data-audio-text="My birthday is in August.">🔊</button>
+                <br> (제 생일은 8월이에요.)
+            </div>
+            <div class="example">
+                <strong>The festival is in October.</strong> <span class="pronunciation">[더 페스티벌 이즈 인 옥토버]</span>
+                <button class="audio-icon" data-audio-text="The festival is in October.">🔊</button>
+                <br> (축제는 10월이에요.)
+            </div>
+
+            <h3>💡 연습 시간!</h3>
+            <div class="practice-section">
+                <h3>빈칸 채우기</h3>
+                <p>다음 문장의 빈칸에 알맞은 월을 채워보세요.</p>
+                <div class="practice-question">1. Christmas is in _____. (12월)</div>
+                <button class="toggle-answer" data-answer="December">정답 보기</button>
+                <div class="practice-answer" style="display:none;">December <button class="audio-icon" data-audio-text="December">🔊</button></div>
+
+                <div class="practice-question">2. Spring usually starts in _____. (3월)</div>
+                <button class="toggle-answer" data-answer="March">정답 보기</button>
+                <div class="practice-answer" style="display:none;">March <button class="audio-icon" data-audio-text="March">🔊</button></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. "언제예요?" "… 에 있어요."</h2>
+            <p>특정 날짜나 시점을 묻고 답할 때는 <strong>When is...?</strong> 를 사용해요.</p>
+            <ul>
+                <li><strong>When is the meeting?</strong> <span class="pronunciation">[웬 이즈 더 미팅?]</span> <button class="audio-icon" data-audio-text="When is the meeting?">🔊</button> (회의는 언제예요?)</li>
+                <li><strong>When is your appointment?</strong> <span class="pronunciation">[웬 이즈 유어 어포인트먼트?]</span> <button class="audio-icon" data-audio-text="When is your appointment?">🔊</button> (약속은 언제예요?)</li>
+            </ul>
+            <p>답변할 때는 상황에 맞는 전치사를 사용하는 것이 중요해요.</p>
+            <ul>
+                <li><strong>on:</strong> 특정 요일, 특정 날짜 (월 + 일) 앞에 사용</li>
+                <li><strong>in:</strong> 월, 연도 앞에 사용</li>
+                <li><strong>at:</strong> 특정 시간 앞에 사용</li>
+            </ul>
+            <div class="example">
+                <strong>When is the party?</strong> <span class="pronunciation">[웬 이즈 더 파티?]</span>
+                <button class="audio-icon" data-audio-text="When is the party?">🔊</button>
+                <br> (파티는 언제예요?)
+                <br>
+                <strong>It's on Saturday.</strong> <span class="pronunciation">[이츠 온 새터데이]</span>
+                <button class="audio-icon" data-audio-text="It's on Saturday.">🔊</button>
+                <br> (토요일이에요.)
+            </div>
+            <div class="example">
+                <strong>When is her birthday?</strong> <span class="pronunciation">[웬 이즈 허 벌쓰데이?]</span>
+                <button class="audio-icon" data-audio-text="When is her birthday?">🔊</button>
+                <br> (그녀의 생일은 언제예요?)
+                <br>
+                <strong>It's on July 15th.</strong> <span class="pronunciation">[이츠 온 줄라이 피프틴쓰]</span>
+                <button class="audio-icon" data-audio-text="It's on July 15th.">🔊</button>
+                <br> (7월 15일이에요.)
+            </div>
+            <div class="example">
+                <strong>When is the presentation?</strong> <span class="pronunciation">[웬 이즈 더 프리젠테이션?]</span>
+                <button class="audio-icon" data-audio-text="When is the presentation?">🔊</button>
+                <br> (발표는 언제예요?)
+                <br>
+                <strong>It's at 2 PM.</strong> <span class="pronunciation">[이츠 앳 투 피엠]</span>
+                <button class="audio-icon" data-audio-text="It's at 2 PM.">🔊</button>
+                <br> (오후 2시예요.)
+            </div>
+
+            <div class="cultural-note">
+                <strong>💡 날짜 말하는 법</strong><br>
+                날짜는 보통 서수로 표현해요 (first, second, third...). 
+                <br>
+                예: March 1st (March first), May 22nd (May twenty-second).
+                <br>
+                미국식은 월-일-연도 (March 1, 2024), 영국식은 일-월-연도 (1 March, 2024) 순서가 흔해요.
+            </div>
+
+            <h3>💡 연습 시간!</h3>
+            <div class="practice-section">
+                <h3>전치사 채우기</h3>
+                <p>빈칸에 알맞은 전치사 (on, in, at)를 채워보세요.</p>
+                <div class="practice-question">1. The party is _____ Saturday.</div>
+                <button class="toggle-answer" data-answer="on">정답 보기</button>
+                <div class="practice-answer" style="display:none;">on</div>
+
+                <div class="practice-question">2. I will call you _____ 7 o'clock.</div>
+                <button class="toggle-answer" data-answer="at">정답 보기</button>
+                <div class="practice-answer" style="display:none;">at</div>
+
+                <div class="practice-question">3. She was born _____ November.</div>
+                <button class="toggle-answer" data-audio-text="in">정답 보기</button>
+                <div class="practice-answer" style="display:none;">in</div>
+
+                <div class="practice-question">4. My anniversary is _____ May 10th.</div>
+                <button class="toggle-answer" data-audio-text="on">정답 보기</button>
+                <div class="practice-answer" style="display:none;">on</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>5. 약속 잡기: Making Appointments and Schedules</h2>
+            <p>이제 배운 시간과 요일, 월을 활용하여 약속을 잡는 표현을 알아볼까요?</p>
+
+            <h3>🤝 약속 제안하기</h3>
+            <ul>
+                <li><strong>Are you free on [day]?</strong> <span class="pronunciation">[아 유 프리 온 데이?]</span> <button class="audio-icon" data-audio-text="Are you free on [day]?">🔊</button> (___요일에 시간 있으세요?)</li>
+                <li><strong>How about [time/day]?</strong> <span class="pronunciation">[하우 어바웃 타임/데이?]</span> <button class="audio-icon" data-audio-text="How about [time or day]?">🔊</button> (___는 어떠세요?)</li>
+                <li><strong>What time works for you?</strong> <span class="pronunciation">[왓 타임 웍스 포 유?]</span> <button class="audio-icon" data-audio-text="What time works for you?">🔊</button> (몇 시가 편하세요?)</li>
+                <li><strong>Can we meet at [time] on [day]?</strong> <span class="pronunciation">[캔 위 밋 앳 타임 온 데이?]</span> <button class="audio-icon" data-audio-text="Can we meet at [time] on [day]?">🔊</button> (___요일 ___시에 만날 수 있을까요?)</li>
+            </ul>
+
+            <h3>✅ 약속 수락/거절하기</h3>
+            <ul>
+                <li><strong>Sure, that works for me.</strong> <span class="pronunciation">[슈어, 댓 웍스 포 미]</span> <button class="audio-icon" data-audio-text="Sure, that works for me.">🔊</button> (네, 좋아요. 괜찮아요.)</li>
+                <li><strong>Sounds good!</strong> <span class="pronunciation">[사운즈 굿!]</span> <button class="audio-icon" data-audio-text="Sounds good!">🔊</button> (좋아요!)</li>
+                <li><strong>I'm sorry, I'm busy then.</strong> <span class="pronunciation">[아임 쏘리, 아임 비지 덴]</span> <button class="audio-icon" data-audio-text="I'm sorry, I'm busy then.">🔊</button> (죄송해요, 그때 바빠요.)</li>
+                <li><strong>How about another time?</strong> <span class="pronunciation">[하우 어바웃 어나더 타임?]</span> <button class="audio-icon" data-audio-text="How about another time?">🔊</button> (다른 시간은 어떠세요?)</li>
+            </ul>
+
+            <p>간단한 대화 예시를 살펴볼까요?</p>
+            <div class="example">
+                <strong>A: Are you free on Tuesday?</strong> <button class="audio-icon" data-audio-text="Are you free on Tuesday?">🔊</button><br>
+                (화요일에 시간 있으세요?)
+                <br><br>
+                <strong>B: Yes, I am. What time?</strong> <button class="audio-icon" data-audio-text="Yes, I am. What time?">🔊</button><br>
+                (네, 있어요. 몇 시요?)
+                <br><br>
+                <strong>A: How about three o'clock?</strong> <button class="audio-icon" data-audio-text="How about three o'clock?">🔊</button><br>
+                (3시는 어떠세요?)
+                <br><br>
+                <strong>B: Sounds good! See you then.</strong> <button class="audio-icon" data-audio-text="Sounds good! See you then.">🔊</button><br>
+                (좋아요! 그때 봐요.)
+            </div>
+
+            <h3>💡 연습 시간!</h3>
+            <div class="practice-section">
+                <h3>대화 완성하기</h3>
+                <p>다음 대화의 빈칸을 채워보세요.</p>
+                <div class="practice-question">
+                    A: Can we meet ____ 10 AM ____ Wednesday?<br>
+                    B: I'm sorry, I'm busy then. ____ about Thursday?
+                </div>
+                <button class="toggle-answer" data-answer="at / on / How">정답 보기</button>
+                <div class="practice-answer" style="display:none;">at / on / How</div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>🎉 Chapter 10 요약</h2>
+            <ul>
+                <li><strong>시간 말하기:</strong>
+                    "What time is it?"으로 묻고 "It's [시간]"으로 답해요.
+                    정각은 'o'clock', 15분은 'a quarter', 30분은 'half'를 사용할 수 있어요.
+                    오전/오후는 AM/PM을 붙여 말해요.
+                </li>
+                <li><strong>요일:</strong>
+                    Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
+                    항상 대문자로 시작하고 요일 앞에는 전치사 <strong>on</strong>을 써요.
+                </li>
+                <li><strong>월:</strong>
+                    January부터 December까지 열두 달을 익혔어요.
+                    항상 대문자로 시작하고 월 앞에는 전치사 <strong>in</strong>을 써요.
+                </li>
+                <li><strong>"언제예요?":</strong>
+                    "When is...?"로 묻고,
+                    특정 요일/날짜는 <strong>on</strong>, 월/연도는 <strong>in</strong>, 특정 시간은 <strong>at</strong>을 사용해요.
+                </li>
+                <li><strong>약속 잡기:</strong>
+                    "Are you free on...?", "How about...?", "What time works for you?" 등으로 제안하고,
+                    "Sounds good!", "That works for me." 등으로 수락하거나, "I'm busy then."으로 거절할 수 있어요.
+                </li>
+            </ul>
+            <p>이제 영어로 시간과 일정을 능숙하게 이야기하고 약속을 잡을 수 있을 거예요! 다음 챕터에서도 유익한 내용을 배워봐요! 😉</p>
+        </section>
+    </div>
+
+    <script>
+        // JavaScript for toggle-answer buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleButtons = document.querySelectorAll('.toggle-answer');
+
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const answerDiv = this.nextElementSibling; // Get the div right after the button
+                    if (answerDiv && answerDiv.classList.contains('practice-answer')) {
+                        if (answerDiv.style.display === 'none') {
+                            answerDiv.style.display = 'block';
+                            this.textContent = '정답 숨기기';
+                        } else {
+                            answerDiv.style.display = 'none';
+                            this.textContent = '정답 보기';
+                        }
+                    }
+                });
+            });
+
+            // Note: The audio-icon click handlers are explicitly stated to be injected externally
+            // so no JS is added here for audio playback.
+        });
+    </script>
+</body>
+</html>

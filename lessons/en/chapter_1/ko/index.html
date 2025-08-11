@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영어 알파벳과 소리: 챕터 1</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', 'Noto Sans KR', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF; /* White background for overall app feel */
+            color: #666666; /* Medium gray for body text */
+            line-height: 1.6;
+            font-size: 16px; /* Minimum font size for readability */
+            -webkit-text-size-adjust: 100%; /* Prevent text scaling on mobile */
+            -ms-text-size-adjust: 100%;
+        }
+
+        /* Responsive Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Dark blue for headings */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 2em; /* Approx 32px */
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.6em; /* Approx 25.6px */
+            padding-bottom: 5px;
+            border-bottom: 1px solid #E0E0E0; /* Light gray border */
+        }
+
+        h3 {
+            font-size: 1.3em; /* Approx 20.8px */
+            margin-top: 1.2em;
+            color: #8B5FBF; /* Primary color for sub-headings */
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1em;
+        }
+
+        /* Lists */
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 0.8em;
+            padding-left: 1.5em;
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Unicode bullet point */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary color */
+        }
+
+        /* Specific Component Styles */
+        .chapter-title {
+            font-size: 2em;
+            text-align: center;
+            color: #2C3E50;
+            margin: 20px 0;
+            padding: 0 10px; /* Ensure padding on small screens */
+        }
+
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .section-background {
+            background-color: #FDF9E5; /* Secondary cream background */
+            padding: 20px 15px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E0E0E0; /* Light gray border */
+        }
+
+        .example-box {
+            background-color: #FFFFFF; /* White background for examples */
+            border: 1px solid #E0E0E0; /* Light gray border */
+            border-left: 5px solid #8B5FBF; /* Primary color accent */
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .audio-text-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px; /* Space between text and icon */
+            margin-bottom: 8px;
+            flex-wrap: wrap; /* Allow wrapping for long lines */
+        }
+        .audio-text-wrapper .text-part {
+            color: #2C3E50;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .audio-text-wrapper .korean-pronunciation {
+            font-size: 0.9em;
+            color: #8B5FBF;
+            margin-left: 5px;
+        }
+
+        .example-box .example-text { /* For combined text and translation */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .example-box .example-text .english-word {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #2C3E50;
+            margin-right: 10px;
+            margin-bottom: 5px; /* Spacing for wrap */
+        }
+        .example-box .example-text .korean-translation {
+            font-size: 0.9em;
+            color: #666666;
+            flex-grow: 1; /* Allows translation to take available space */
+            text-align: right;
+        }
+
+
+        .practice-section {
+            background-color: #FDF9E5;
+            padding: 20px 15px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 1px solid #E0E0E0;
+        }
+
+        .practice-item {
+            margin-bottom: 15px;
+            padding: 10px 0;
+            border-bottom: 1px dashed #E0E0E0;
+        }
+        .practice-item:last-child {
+            border-bottom: none;
+        }
+        .practice-item p {
+            margin-bottom: 5px;
+        }
+
+        .audio-icon {
+            display: inline-flex; /* Use flexbox for centering icon and text */
+            align-items: center;
+            justify-content: center;
+            background-color: #8B5FBF; /* Primary color */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Circle shape */
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            font-size: 1.2em; /* Icon size */
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-left: 10px; /* Space from text */
+            flex-shrink: 0; /* Prevent shrinking when text is long */
+        }
+        .audio-icon:hover {
+            background-color: #6B499E; /* Darker shade on hover */
+            transform: scale(1.05);
+        }
+        .audio-icon-small {
+            width: 36px;
+            height: 36px;
+            font-size: 1em;
+            margin-left: 5px;
+            margin-right: 5px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+
+        /* Table for Alphabet */
+        .alphabet-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .alphabet-table th, .alphabet-table td {
+            border: 1px solid #E0E0E0;
+            padding: 12px 8px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 1.1em;
+            color: #2C3E50;
+        }
+        .alphabet-table th {
+            background-color: #8B5FBF;
+            color: white;
+            font-weight: bold;
+        }
+        .alphabet-table td:first-child {
+            font-weight: bold;
+        }
+        .alphabet-table .audio-icon {
+            margin: 0; /* Override margin-left for table cells */
+        }
+        /* Column widths for better mobile layout */
+        .alphabet-table .letter-column {
+            width: 25%;
+        }
+        .alphabet-table .pronunciation-column {
+            width: 50%;
+        }
+        .alphabet-table .audio-column {
+            width: 25%;
+        }
+
+        /* Grid for multiple choice options */
+        .choice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Flexible columns */
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .choice-button {
+            background-color: #FFFFFF;
+            border: 1px solid #E0E0E0;
+            color: #2C3E50;
+            padding: 15px 10px;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-height: 44px; /* Ensure tap target size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .choice-button:hover {
+            background-color: #F0F0F0;
+            border-color: #8B5FBF;
+        }
+        .choice-button.correct {
+            background-color: #e6ffe6; /* Light green */
+            border-color: #4CAF50; /* Green */
+            color: #2C3E50;
+            font-weight: bold;
+        }
+        .choice-button.incorrect {
+            background-color: #ffe6e6; /* Light red */
+            border-color: #F44336; /* Red */
+            color: #2C3E50;
+        }
+
+        /* Summary Section */
+        .summary-box {
+            background-color: #FDF9E5;
+            padding: 20px 15px;
+            margin: 30px 0;
+            border-radius: 12px;
+            border: 1px solid #8B5FBF; /* Primary color border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .summary-box h2 {
+            text-align: center;
+            color: #8B5FBF;
+            border-bottom: none;
+            margin-top: 0;
+            padding-bottom: 0;
+        }
+        .summary-box ul {
+            list-style: disc; /* Use regular disc for summary */
+            padding-left: 20px;
+        }
+        .summary-box li::before {
+            content: none; /* Remove custom bullet */
+        }
+        .summary-box li {
+            margin-bottom: 0.5em;
+            padding-left: 0;
+            color: #666666;
+        }
+
+        /* Responsive adjustments for larger screens */
+        @media (min-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            .container {
+                padding: 0 25px;
+            }
+            .section-background, .practice-section, .summary-box {
+                padding: 30px 25px;
+            }
+            .example-box {
+                padding: 20px;
+            }
+            .audio-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 1.3em;
+            }
+            .audio-icon-small {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1em;
+            }
+            .alphabet-table th, .alphabet-table td {
+                padding: 15px 10px;
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 1: The English Alphabet and Sounds</h1>
+        <div class="lesson-header">
+            <img src="../header.webp" alt="Chapter 1 Header" class="lesson-header-image">
+        </div>
+
+        <section class="section-background">
+            <h2>🎉 환영합니다! 영어의 첫걸음, 알파벳 배우기</h2>
+            <p>안녕하세요! 영어 학습의 여정을 시작하신 것을 환영합니다! 이 첫 번째 챕터에서는 영어의 기본 중의 기본인 알파벳 26자와 각 글자가 내는 소리에 대해 배울 거예요.</p>
+            <p>영어는 소리와 글자가 아주 밀접하게 연결되어 있어요. 알파벳을 익히고 그 소리를 이해하는 것은 영어를 읽고, 쓰고, 말하는 데 가장 중요한 첫 단계랍니다. 즐겁게 시작해 볼까요? 💪</p>
+        </section>
+
+        <section>
+            <h2>1. 영어 알파벳 26자 (The 26 English Letters)</h2>
+            <p>영어 알파벳은 총 26개의 글자로 이루어져 있어요. 각 글자는 대문자(Capital letter)와 소문자(Small letter) 두 가지 형태를 가지고 있답니다. 글자의 이름과 함께 어떻게 발음하는지 들어보세요!</p>
+
+            <div class="section-background">
+                <table class="alphabet-table">
+                    <thead>
+                        <tr>
+                            <th class="letter-column">글자 (Letter)</th>
+                            <th class="pronunciation-column">발음 (Pronunciation)</th>
+                            <th class="audio-column">듣기</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>A a</td><td>에이</td><td><button class="audio-icon audio-icon-small" data-audio-text="A">🔊</button></td></tr>
+                        <tr><td>B b</td><td>비이</td><td><button class="audio-icon audio-icon-small" data-audio-text="B">🔊</button></td></tr>
+                        <tr><td>C c</td><td>씨이</td><td><button class="audio-icon audio-icon-small" data-audio-text="C">🔊</button></td></tr>
+                        <tr><td>D d</td><td>디이</td><td><button class="audio-icon audio-icon-small" data-audio-text="D">🔊</button></td></tr>
+                        <tr><td>E e</td><td>이이</td><td><button class="audio-icon audio-icon-small" data-audio-text="E">🔊</button></td></tr>
+                        <tr><td>F f</td><td>에프</td><td><button class="audio-icon audio-icon-small" data-audio-text="F">🔊</button></td></tr>
+                        <tr><td>G g</td><td>쥐이</td><td><button class="audio-icon audio-icon-small" data-audio-text="G">🔊</button></td></tr>
+                        <tr><td>H h</td><td>에이치</td><td><button class="audio-icon audio-icon-small" data-audio-text="H">🔊</button></td></tr>
+                        <tr><td>I i</td><td>아이</td><td><button class="audio-icon audio-icon-small" data-audio-text="I">🔊</button></td></tr>
+                        <tr><td>J j</td><td>제이</td><td><button class="audio-icon audio-icon-small" data-audio-text="J">🔊</button></td></tr>
+                        <tr><td>K k</td><td>케이</td><td><button class="audio-icon audio-icon-small" data-audio-text="K">🔊</button></td></tr>
+                        <tr><td>L l</td><td>엘</td><td><button class="audio-icon audio-icon-small" data-audio-text="L">🔊</button></td></tr>
+                        <tr><td>M m</td><td>엠</td><td><button class="audio-icon audio-icon-small" data-audio-text="M">🔊</button></td></tr>
+                        <tr><td>N n</td><td>엔</td><td><button class="audio-icon audio-icon-small" data-audio-text="N">🔊</button></td></tr>
+                        <tr><td>O o</td><td>오우</td><td><button class="audio-icon audio-icon-small" data-audio-text="O">🔊</button></td></tr>
+                        <tr><td>P p</td><td>피이</td><td><button class="audio-icon audio-icon-small" data-audio-text="P">🔊</button></td></tr>
+                        <tr><td>Q q</td><td>큐우</td><td><button class="audio-icon audio-icon-small" data-audio-text="Q">🔊</button></td></tr>
+                        <tr><td>R r</td><td>알</td><td><button class="audio-icon audio-icon-small" data-audio-text="R">🔊</button></td></tr>
+                        <tr><td>S s</td><td>에스</td><td><button class="audio-icon audio-icon-small" data-audio-text="S">🔊</button></td></tr>
+                        <tr><td>T t</td><td>티이</td><td><button class="audio-icon audio-icon-small" data-audio-text="T">🔊</button></td></tr>
+                        <tr><td>U u</td><td>유우</td><td><button class="audio-icon audio-icon-small" data-audio-text="U">🔊</button></td></tr>
+                        <tr><td>V v</td><td>뷔이</td><td><button class="audio-icon audio-icon-small" data-audio-text="V">🔊</button></td></tr>
+                        <tr><td>W w</td><td>더블유</td><td><button class="audio-icon audio-icon-small" data-audio-text="W">🔊</button></td></tr>
+                        <tr><td>X x</td><td>엑스</td><td><button class="audio-icon audio-icon-small" data-audio-text="X">🔊</button></td></tr>
+                        <tr><td>Y y</td><td>와이</td><td><button class="audio-icon audio-icon-small" data-audio-text="Y">🔊</button></td></tr>
+                        <tr><td>Z z</td><td>지이 / 제트</td><td><button class="audio-icon audio-icon-small" data-audio-text="Z">🔊</button></td></tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 0.9em; text-align: right; margin-top: 10px;">*Z는 미국에서는 '지이' (Zee), 영국에서는 '제트' (Zed)로 발음해요.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 모음 소리: A, E, I, O, U (Vowel Sounds)</h2>
+            <p>알파벳 26자 중 5개의 글자 A, E, I, O, U는 <strong>모음(Vowels)</strong>이라고 불려요. 모음은 영어 단어의 '뼈대'가 되는 소리로, 단어마다 다양하게 소리가 변할 수 있어요. 여기서는 가장 기본적인 소리들을 살펴볼게요.</p>
+
+            <div class="section-background">
+                <h3>A (애/아, 에이)</h3>
+                <p>가장 흔한 '애' 소리, 또는 알파벳 이름 그대로 '에이' 소리가 나요.</p>
+                <div class="example-box">
+                    <div class="audio-text-wrapper">
+                        <span class="text-part">Apple</span> <span class="korean-pronunciation">[애플]</span>
+                        <button class="audio-icon audio-icon-small" data-audio-text="Apple">🔊</button>
+                    </div>
+                    <span class="korean-translation">사과</span>
+                </div>
+                <div class="example-box">
+                    <div class="audio-text-wrapper">
+                        <span class="text-part">Cat</span> <span class="korean-pronunciation">[캣]</span>
+                        <button class="audio-icon audio-icon-small" data-audio-text="Cat">🔊</button>
+                    </div>
+                    <span class="korean-translation">고양이</span>
+                </div>
+                <div class="example-box">
+                    <div class="audio-text-wrapper">
+                        <span class="text-part">Cake</span> <span class="korean-pronunciation">[케이크]</span>
+                        <button class="audio-icon audio-icon-small" data-audio-text="Cake">🔊</button>
+                    </div>
+                    <span class="korean-translation">케이크</span>
+                </div>
+
+                <h3>E (에, 이이)</h3>
+                <p>주로 '에' 소리가 나며, 알파벳 이름처럼 '이이' 소리가 나기도 해요.</p>
+                <div class="example-box">
+                    <div class="audio-text-wrapper">
+                        <span class="text-part">Egg</span> <span class="korean-pronunciation">[에그]</span>
+                        <button class="audio-icon audio-icon-small" data-audio-text="Egg">🔊</button>
+                    </div>
+                    <span class="korean-translation">달걀</span>
+                </div>
+                <div class="example-box">
+                    <div class="audio-text-wrapper">
+                        <span class="text-part">Red</span> <span class="korean-pronunciation">[레드]</span>
+                        <button class="audio-icon audio-icon-small" data-audio-text="Red">🔊</button>
+                    </div>
+                    <span class="korean-translation">빨간색</span>
+                </div>
+
+                <h3>I (이, 아이)</h3>
+                <p>주로 짧게 '이' 소리, 또는 '아이' 소리가 나요.</p>
+                <div class="example-box">
+                    <div class="audio-text-wrapper">
+                        <span class="text-part">Igloo</span> <span class="korean-pronunciation">[이글루]</span>
+                        <button class="audio-icon audio-icon-small" data-audio-text="Igloo">🔊</button>
+                    </div>
+                    <span class="korean-translation">이글루</span>
+                </div>
+                <div class="example-box">
+                    <div class="audio-text-wrapper">
+                        <span class="text-part">Big</span> <span class="korean-pronunciation">[빅]</span>
+                        <button class="audio-icon audio-icon-small" data-audio-text="Big">🔊</button>
+                    </div>
+                    <span class="korean-translation">큰</span>
+                </div>
+
+                <h3>O (아/오, 오우)</h3>
+                <p>'아' 또는 '오' 소리, 또는 '오우' 소리가 나요.</p>
+                <div class="example-box">
+                    <div class="audio-text-wrapper">
+                        <span class="text-part">Octopus</span> <span class="korean-pronunciation">[악토퍼스]</span>
+                        <button class="audio-icon audio-icon-small" data-audio-text="Octopus">🔊</button>
+                    </div>
+                    <span class="korean-translation">문어</span>
+                </div>
+                <div class="example-box">
+                    <div class="audio-text-wrapper">
+                        <span class="text-part">Dog</span> <span class="korean-pronunciation">[도그]</span>
+                        <button class="audio-icon audio-icon-small" data-audio-text="Dog">🔊</button>
+                    </div>
+                    <span class="korean-translation">개</span>
+                </div>
+
+                <h3>U (어/우, 유우)</h3>
+                <p>'어' 또는 '우' 소리, 또는 '유우' 소리가 나요.</p>
+                <div class="example-box">
+                    <div class="audio-text-wrapper">
+                        <span class="text-part">Umbrella</span> <span class="korean-pronunciation">[엄브렐라]</span>
+                        <button class="audio-icon audio-icon-small" data-audio-text="Umbrella">🔊</button>
+                    </div>
+                    <span class="korean-translation">우산</span>
+                </div>
+                <div class="example-box">
+                    <div class="audio-text-wrapper">
+                        <span class="text-part">Run</span> <span class="korean-pronunciation">[런]</span>
+                        <button class="audio-icon audio-icon-small" data-audio-text="Run">🔊</button>
+                    </div>
+                    <span class="korean-translation">달리다</span>
+                </div>
+            </div>
+            <p><strong>💡 꿀팁:</strong> 영어의 모음은 단어 안에서 소리가 많이 변할 수 있어요. 우선은 가장 흔한 소리들을 익히고, 나중에 더 심화된 규칙들을 배우게 될 거예요!</p>
+        </section>
+
+        <section>
+            <h2>3. 자음 소리와 발음 (Consonant Sounds and Pronunciation)</h2>
+            <p>모음(A, E, I, O, U)을 제외한 나머지 글자들은 모두 <strong>자음(Consonants)</strong>이에요. 자음은 단어의 시작과 끝, 그리고 모음 사이에 붙어서 소리를 만들어줘요. 몇 가지 주요 자음 소리를 알아볼까요?</p>
+
+            <div class="section-background">
+                <ul>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">B</span><span class="korean-pronunciation">[ㅂ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="buh">🔊</button> (like <strong>B</strong>at)
+                        </div>
+                        <p>입술을 붙였다 떼면서 나는 소리예요. <strong>B</strong>at [배트] (박쥐)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">C</span><span class="korean-pronunciation">[ㅋ/ㅆ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="kuh">🔊</button> (like <strong>C</strong>at), <button class="audio-icon audio-icon-small" data-audio-text="ss">🔊</button> (like <strong>C</strong>ity)
+                        </div>
+                        <p>'K' 소리([ㅋ])가 나거나, 'E', 'I', 'Y' 앞에서는 'S' 소리([ㅆ])가 나기도 해요. <strong>C</strong>ar [카] (자동차), <strong>C</strong>ity [시티] (도시)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">D</span><span class="korean-pronunciation">[ㄷ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="duh">🔊</button> (like <strong>D</strong>og)
+                        </div>
+                        <p>혀끝을 윗니 뒤쪽에 대고 소리 내요. <strong>D</strong>og [도그] (개)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">F</span><span class="korean-pronunciation">[ㅍ/프]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="fuh">🔊</button> (like <strong>F</strong>ish)
+                        </div>
+                        <p>윗니를 아랫입술에 살짝 대고 바람을 내보내며 소리 내요. <strong>F</strong>ish [피쉬] (물고기)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">G</span><span class="korean-pronunciation">[ㄱ/ㅈ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="guh">🔊</button> (like <strong>G</strong>o), <button class="audio-icon audio-icon-small" data-audio-text="juh">🔊</button> (like <strong>G</strong>iant)
+                        </div>
+                        <p>'ㄱ' 소리([ㄱ])가 기본이지만, 'E', 'I', 'Y' 앞에서는 'J' 소리([ㅈ])가 나기도 해요. <strong>G</strong>o [고] (가다), <strong>G</strong>iant [자이언트] (거인)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">H</span><span class="korean-pronunciation">[ㅎ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="huh">🔊</button> (like <strong>H</strong>at)
+                        </div>
+                        <p>숨을 '하' 하고 내쉬는 소리예요. <strong>H</strong>at [햇] (모자)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">J</span><span class="korean-pronunciation">[ㅈ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="juh">🔊</button> (like <strong>J</strong>ump)
+                        </div>
+                        <p>혀를 입천장에 대고 '즈' 하는 소리예요. <strong>J</strong>ump [점프] (점프하다)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">K</span><span class="korean-pronunciation">[ㅋ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="kuh">🔊</button> (like <strong>K</strong>ite)
+                        </div>
+                        <p>'C'와 비슷한 '크' 소리예요. <strong>K</strong>ite [카이트] (연)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">L</span><span class="korean-pronunciation>[ㄹ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="luh">🔊</button> (like <strong>L</strong>ion)
+                        </div>
+                        <p>혀끝을 윗니 뒤쪽 잇몸에 대고 소리 내요. <strong>L</strong>ion [라이언] (사자)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">M</span><span class="korean-pronunciation>[ㅁ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="muh">🔊</button> (like <strong>M</strong>om)
+                        </div>
+                        <p>입술을 다물고 '음' 하고 소리 내요. <strong>M</strong>om [맘] (엄마)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">N</span><span class="korean-pronunciation>[ㄴ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="nuh">🔊</button> (like <strong>N</strong>ose)
+                        </div>
+                        <p>혀끝을 윗니 뒤쪽 잇몸에 대고 '느' 소리 내요. <strong>N</strong>ose [노우즈] (코)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">P</span><span class="korean-pronunciation>[ㅍ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="puh">🔊</button> (like <strong>P</strong>en)
+                        </div>
+                        <p>입술을 다물었다가 '프' 하고 바람을 터뜨려요. <strong>P</strong>en [펜] (펜)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">R</span><span class="korean-pronunciation>[ㄹ/르]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="ruh">🔊</button> (like <strong>R</strong>ed)
+                        </div>
+                        <p>혀를 입천장에 닿지 않게 말고 '르' 소리를 내요. <strong>R</strong>ed [레드] (빨간색)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">S</span><span class="korean-pronunciation>[ㅅ/ㅆ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="ss">🔊</button> (like <strong>S</strong>un)
+                        </div>
+                        <p>혀를 이빨 뒤에 대고 바람을 빼며 '스' 소리 내요. <strong>S</strong>un [썬] (태양)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">T</span><span class="korean-pronunciation>[ㅌ]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="tuh">🔊</button> (like <strong>T</strong>op)
+                        </div>
+                        <p>혀끝을 윗니 뒤에 대고 '트' 하고 소리 내요. <strong>T</strong>op [탑] (정상)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">V</span><span class="korean-pronunciation>[ㅂ/브]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="vuh">🔊</button> (like <strong>V</strong>an)
+                        </div>
+                        <p>윗니를 아랫입술에 대고 목에서 울리는 '브' 소리예요. <strong>V</strong>an [밴] (밴)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">W</span><span class="korean-pronunciation>[ㅜ/워]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="wuh">🔊</button> (like <strong>W</strong>ater)
+                        </div>
+                        <p>입술을 둥글게 모았다가 떼면서 '워' 소리 내요. <strong>W</strong>ater [워터] (물)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">X</span><span class="korean-pronunciation>[ㅋ스/즈]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="ks">🔊</button> (like fo<strong>x</strong>), <button class="audio-icon audio-icon-small" data-audio-text="zuh">🔊</button> (like <strong>x</strong>ylophone)
+                        </div>
+                        <p>주로 단어 끝에서 '크스' 소리, 단어 처음에서는 '즈' 소리가 나요. Fo<strong>x</strong> [팍스] (여우), <strong>X</strong>ylophone [자일로폰] (실로폰)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">Y</span><span class="korean-pronunciation>[ㅇ/이]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="yuh">🔊</button> (like <strong>Y</strong>ellow)
+                        </div>
+                        <p>모음처럼 '이' 소리가 나거나, 자음으로 '여' 소리가 나요. <strong>Y</strong>ellow [옐로우] (노란색)</p>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">Z</span><span class="korean-pronunciation>[ㅈ/즈]</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="zuh">🔊</button> (like <strong>Z</strong>oo)
+                        </div>
+                        <p>벌이 윙윙거리는 듯한 '즈' 소리예요. <strong>Z</strong>oo [주] (동물원)</p>
+                    </li>
+                </ul>
+            </div>
+            <p><strong>💡 기억하세요:</strong> 영어 자음 중 일부는 한국어에는 없는 소리들이 있어요. 예를 들어 'F'나 'V' 같은 소리들은 윗니와 아랫입술을 이용해야 정확한 발음을 낼 수 있답니다. 연습이 필요해요! 😊</p>
+        </section>
+
+        <section>
+            <h2>4. 기초 파닉스 & 소리 조합 (Basic Phonics & Sound Combinations)</h2>
+            <p>알파벳 글자들이 단어 안에서 어떻게 소리가 합쳐지는지 배우는 것이 바로 <strong>파닉스(Phonics)</strong>예요. 여기서는 가장 간단한 형태인 '자음-모음-자음 (CVC: Consonant-Vowel-Consonant)' 단어들을 통해 소리 조합의 원리를 익혀볼까요?</p>
+
+            <div class="section-background">
+                <h3>CVC 단어 읽기 연습</h3>
+                <p>각 글자의 소리를 하나씩 낸 다음, 빠르게 이어서 읽어보세요!</p>
+                <ul>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">C-A-T:</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="kuh">🔊</button> <button class="audio-icon audio-icon-small" data-audio-text="a">🔊</button> <button class="audio-icon audio-icon-small" data-audio-text="tuh">🔊</button>
+                        </div>
+                        <div class="example-box">
+                            <div class="example-text">
+                                <span class="english-word">Cat</span> <span class="korean-translation">[캣]</span>
+                                <button class="audio-icon" data-audio-text="Cat">🔊</button>
+                            </div>
+                            <p>뜻: 고양이</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">D-O-G:</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="duh">🔊</button> <button class="audio-icon audio-icon-small" data-audio-text="o">🔊</button> <button class="audio-icon audio-icon-small" data-audio-text="guh">🔊</button>
+                        </div>
+                        <div class="example-box">
+                            <div class="example-text">
+                                <span class="english-word">Dog</span> <span class="korean-translation">[도그]</span>
+                                <button class="audio-icon" data-audio-text="Dog">🔊</button>
+                            </div>
+                            <p>뜻: 개</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">P-I-G:</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="puh">🔊</button> <button class="audio-icon audio-icon-small" data-audio-text="ih">🔊</button> <button class="audio-icon audio-icon-small" data-audio-text="guh">🔊</button>
+                        </div>
+                        <div class="example-box">
+                            <div class="example-text">
+                                <span class="english-word">Pig</span> <span class="korean-translation">[피그]</span>
+                                <button class="audio-icon" data-audio-text="Pig">🔊</button>
+                            </div>
+                            <p>뜻: 돼지</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="audio-text-wrapper">
+                            <span class="text-part">S-U-N:</span>
+                            <button class="audio-icon audio-icon-small" data-audio-text="ss">🔊</button> <button class="audio-icon audio-icon-small" data-audio-text="uh">🔊</button> <button class="audio-icon audio-icon-small" data-audio-text="nuh">🔊</button>
+                        </div>
+                        <div class="example-box">
+                            <div class="example-text">
+                                <span class="english-word">Sun</span> <span class="korean-translation">[썬]</span>
+                                <button class="audio-icon" data-audio-text="Sun">🔊</button>
+                            </div>
+                            <p>뜻: 태양</p>
+                        </div>
+                    </li>
+                </ul>
+                <p><strong>참고:</strong> 위 개별 자음 소리 발음은 이해를 돕기 위한 파닉스식 발음입니다. 실제 문맥에서는 자연스럽게 연결되어 발음됩니다.</p>
+            </div>
+        </section>
+
+        <section class="practice-section">
+            <h2>📝 연습 문제 (Practice Time!)</h2>
+            <p>배운 내용을 바탕으로 간단한 문제를 풀어보세요!</p>
+
+            <div class="practice-item">
+                <h3>문제 1: 알파벳 소리 맞추기</h3>
+                <p>다음 소리를 듣고 어떤 알파벳 대문자인지 맞춰보세요.</p>
+                <div class="audio-text-wrapper" style="justify-content: center; margin-bottom: 20px;">
+                    <span class="text-part" style="font-size: 1.5em; color: #8B5FBF;">들어보세요 👇</span>
+                    <button class="audio-icon" data-audio-text="E">🔊</button>
+                </div>
+                <div class="choice-grid">
+                    <button class="choice-button" data-correct="false">A</button>
+                    <button class="choice-button" data-correct="true">E</button>
+                    <button class="choice-button" data-correct="false">I</button>
+                    <button class="choice-button" data-correct="false">O</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <h3>문제 2: 단어 읽기</h3>
+                <p>다음 단어를 읽어보고, 올바른 뜻을 골라보세요.</p>
+                <div class="audio-text-wrapper" style="justify-content: center; margin-bottom: 20px;">
+                    <span class="text-part" style="font-size: 1.5em; color: #8B5FBF;">단어: CAT</span>
+                    <button class="audio-icon" data-audio-text="Cat">🔊</button>
+                </div>
+                <div class="choice-grid">
+                    <button class="choice-button" data-correct="false">개</button>
+                    <button class="choice-button" data-correct="true">고양이</button>
+                    <button class="choice-button" data-correct="false">새</button>
+                    <button class="choice-button" data-correct="false">물고기</button>
+                </div>
+            </div>
+
+            <div class="practice-item">
+                <h3>문제 3: 글자-소리 연결</h3>
+                <p>다음 중 'F' 소리([프])가 나는 단어는 무엇일까요?</p>
+                <div class="choice-grid">
+                    <button class="choice-button" data-correct="false" data-audio-text="Ball">Ball (공)</button>
+                    <button class="choice-button" data-correct="true" data-audio-text="Fish">Fish (물고기)</button>
+                    <button class="choice-button" data-correct="false" data-audio-text="Dog">Dog (개)</button>
+                    <button class="choice-button" data-correct="false" data-audio-text="Goat">Goat (염소)</button>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 20px; font-weight: bold; color: #8B5FBF;">👍 정답 확인은 탭하세요! (실제 앱에서는 즉시 피드백이 제공됩니다.)</p>
+        </section>
+
+        <section class="summary-box">
+            <h2>✨ 챕터 1 요약 (Summary)</h2>
+            <p>이번 챕터에서는 영어 학습의 가장 중요한 첫 단계를 마쳤어요! 다음 내용들을 기억해주세요:</p>
+            <ul>
+                <li>영어 알파벳은 총 <strong>26개</strong>의 글자로 이루어져 있으며, 각각 대문자와 소문자가 있어요.</li>
+                <li><strong>A, E, I, O, U</strong>는 <strong>모음(Vowels)</strong>이며, 단어의 소리 '뼈대' 역할을 합니다. 단어 안에서 소리가 다양하게 변할 수 있어요.</li>
+                <li>나머지 21개 글자는 <strong>자음(Consonants)</strong>이며, 모음과 결합하여 단어의 소리를 완성해요. 일부 자음은 한국어에 없는 고유한 발음이 있으니 꾸준한 연습이 필요해요.</li>
+                <li><strong>파닉스</strong>는 각 글자의 소리를 조합하여 단어를 읽는 방법을 배우는 과정이에요. 간단한 CVC 단어부터 소리 조합 연습을 시작해 보세요.</li>
+            </ul>
+            <p style="text-align: center; margin-top: 20px;">이 기본기를 바탕으로 다음 챕터에서 더 많은 것을 배워나갈 거예요. 잘하셨습니다! 👏</p>
+        </section>
+
+    </div>
+</body>
+</html>

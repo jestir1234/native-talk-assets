@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2: Basic Greetings and Introductions</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FDF9E5; /* Secondary: Cream background */
+            color: #666666; /* Body Text: Medium gray */
+            line-height: 1.6;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%; /* Prevent font scaling on mobile */
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 600px; /* Max width for desktop/tablet */
+            margin: 0 auto; /* Center content */
+            padding: 20px;
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #2C3E50; /* Text: Dark blue */
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #E0E0E0; /* Borders: Light gray */
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin-top: 30px;
+            color: #8B5FBF; /* Primary: Purple for subheadings */
+        }
+
+        /* Paragraphs */
+        p {
+            margin-bottom: 1em;
+        }
+
+        /* Lists */
+        ul {
+            list-style-type: none; /* Remove default bullet points */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+            padding-left: 1.2em; /* Indent list items */
+            position: relative;
+        }
+
+        li::before {
+            content: '👉'; /* Custom bullet point */
+            position: absolute;
+            left: 0;
+            color: #8B5FBF; /* Primary: Purple */
+        }
+
+        /* Strong/Emphasis */
+        strong {
+            color: #2C3E50; /* Dark blue for strong text */
+        }
+
+        em {
+            font-style: normal; /* Override default italic */
+            color: #8B5FBF; /* Purple for emphasis */
+        }
+
+        /* Audio Icon */
+        .audio-icon {
+            display: inline-flex; /* Use flexbox for centering content */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            background-color: #8B5FBF; /* Primary: Purple */
+            color: white;
+            border: none;
+            border-radius: 50%; /* Circular button */
+            width: 44px; /* Minimum touch target size */
+            height: 44px; /* Minimum touch target size */
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            vertical-align: middle; /* Align with text */
+            margin-left: 8px; /* Space from text */
+            flex-shrink: 0; /* Prevent shrinking in flex containers */
+        }
+
+        .audio-icon:hover {
+            background-color: #6a4691; /* Darker purple on hover */
+            transform: translateY(-2px); /* Slight lift effect */
+        }
+
+        .audio-icon:active {
+            transform: translateY(0); /* Press down effect */
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Special text sections */
+        .example-box, .pronunciation-guide, .cultural-note, .practice-section, .quiz-section, .summary-section {
+            background-color: #FDF9E5; /* Secondary: Cream background (default body, but good to reinforce) */
+            border: 1px solid #E0E0E0; /* Borders: Light gray */
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .example-box {
+            background-color: #fff; /* White background for examples */
+            border-left: 5px solid #8B5FBF; /* Accent border */
+            padding-left: 20px;
+        }
+
+        .example-box p {
+            margin-bottom: 5px;
+        }
+
+        .pronunciation-guide {
+            background-color: #F8F8F8; /* Lighter background for pronunciation */
+            border-left: 5px solid #E0E0E0; /* Match border color */
+            font-style: italic;
+            padding: 10px 15px;
+            margin-top: 10px;
+            color: #666666;
+        }
+
+        .cultural-note {
+            background-color: #FFF3E0; /* A slightly different cream for cultural notes */
+            border-left: 5px solid #F7B801; /* Orange/Gold accent */
+            font-size: 0.95em;
+        }
+        .cultural-note strong {
+            color: #F7B801; /* Orange/Gold */
+        }
+
+        .practice-section, .quiz-section {
+            background-color: #E8F5E9; /* Light green for practice/quiz */
+            border: 1px dashed #A5D6A7; /* Green dashed border */
+            text-align: center;
+        }
+
+        .practice-section h3, .quiz-section h3 {
+            color: #388E3C; /* Darker green for practice/quiz headings */
+        }
+
+        .quiz-option {
+            background-color: white;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 12px;
+            min-height: 44px; /* Ensure touch target size */
+            display: flex; /* Use flex for vertical centering */
+            align-items: center; /* Center text vertically */
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            text-align: left;
+            font-weight: bold;
+            color: #666666;
+            box-sizing: border-box; /* Include padding in height calculation */
+        }
+
+        .quiz-option:hover {
+            background-color: #f0f0f0;
+            border-color: #8B5FBF;
+        }
+
+        .quiz-option.correct {
+            background-color: #D4EDDA; /* Light green for correct */
+            border-color: #28A745; /* Darker green */
+        }
+
+        .quiz-option.incorrect {
+            background-color: #F8D7DA; /* Light red for incorrect */
+            border-color: #DC3545; /* Darker red */
+        }
+
+        .quiz-feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+
+
+        .summary-section {
+            background-color: #EEF2F7; /* Light blue-gray for summary */
+            border-left: 5px solid #8B5FBF; /* Purple accent */
+            padding: 20px;
+        }
+
+        .summary-section h3 {
+            color: #2C3E50;
+        }
+
+        /* Utility classes */
+        .text-center {
+            text-align: center;
+        }
+        .text-bold {
+            font-weight: bold;
+        }
+        .inline-flex {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* Specific header requirements */
+        .lesson-header {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .lesson-header-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto; /* Required for image, but we're faking with div */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto;
+            /* Placeholder styling for the 'image' as per requirements (no external images) */
+            background-color: #8B5FBF; /* Placeholder color */
+            color: white;
+            font-size: 1.5em;
+            padding: 40px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            .audio-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1em;
+            }
+            .example-box, .pronunciation-guide, .cultural-note, .practice-section, .quiz-section, .summary-section {
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="chapter-title">Chapter 2: Basic Greetings and Introductions</h1>
+        <div class="lesson-header">
+            <!-- As per requirements, using a div to represent the header image visually -->
+            <div class="lesson-header-image" alt="Chapter 2 Header">
+                ✨ 기본 인사 & 자기소개 ✨
+            </div>
+        </div>
+
+        <p>안녕하세요! 여러분의 영어 선생님입니다. 😊</p>
+        <p>이번 챕터에서는 영어로 사람들을 만나고 대화의 물꼬를 트는 가장 기본적이면서도 중요한 표현들을 배워볼 거예요. 모바일 화면에 최적화된 쉽고 재미있는 구성으로 함께 익혀봅시다!</p>
+
+        <section>
+            <h2>1. 기본 인사말: Hello, Hi, Good morning/afternoon/evening</h2>
+            <p>가장 먼저 배워볼 표현은 바로 인사입니다. 상황과 시간에 따라 다양하게 사용할 수 있어요.</p>
+
+            <h3>1.1. Hello / Hi</h3>
+            <p>'Hello'는 누구에게나 사용할 수 있는 가장 기본적인 인사말이에요. 'Hi'는 좀 더 캐주얼하고 친한 사이나 가벼운 만남에서 많이 사용됩니다.</p>
+            <ul>
+                <li><strong>Hello!</strong> (헬로우) <span class="audio-icon" data-audio-text="Hello!">🔊</span><br>
+                    <small>어떤 상황에서든 사용할 수 있는 보편적인 인사입니다.</small></li>
+                <li><strong>Hi!</strong> (하이) <span class="audio-icon" data-audio-text="Hi!">🔊</span><br>
+                    <small>친구, 가족, 친한 지인 등 편한 사이에 사용해요.</small></li>
+            </ul>
+
+            <div class="example-box">
+                <p><strong>예시 대화:</strong></p>
+                <p>A: <span class="text-bold">Hello!</span> <span class="audio-icon" data-audio-text="Hello!">🔊</span> (안녕하세요!)</p>
+                <p>B: <span class="text-bold">Hi!</span> <span class="audio-icon" data-audio-text="Hi!">🔊</span> (안녕!)</p>
+            </div>
+
+            <h3>1.2. 시간대별 인사: Good morning/afternoon/evening</h3>
+            <p>하루 중 시간에 맞춰 사용하는 인사말입니다. 'Good'을 붙여 더 정중한 느낌을 줄 수 있어요.</p>
+            <ul>
+                <li><strong>Good morning!</strong> (굿 모닝) <span class="audio-icon" data-audio-text="Good morning!">🔊</span><br>
+                    <small>아침 인사 (대략 정오 이전)</small></li>
+                <li><strong>Good afternoon!</strong> (굿 애프터눈) <span class="audio-icon" data-audio-text="Good afternoon!">🔊</span><br>
+                    <small>오후 인사 (정오부터 저녁까지)</small></li>
+                <li><strong>Good evening!</strong> (굿 이브닝) <span class="audio-icon" data-audio-text="Good evening!">🔊</span><br>
+                    <small>저녁 인사 (해 질 녘부터 밤까지)</small></li>
+            </ul>
+            <p>💡 팁: 잠자리에 들 때의 인사는 'Good night!' (굿 나잇) <span class="audio-icon" data-audio-text="Good night!">🔊</span> 입니다. 이건 헤어질 때 사용하는 인사예요.</p>
+
+            <div class="example-box">
+                <p><strong>예시 대화:</strong></p>
+                <p>A: <span class="text-bold">Good morning, Mr. Kim.</span> <span class="audio-icon" data-audio-text="Good morning, Mr. Kim.">🔊</span> (좋은 아침입니다, 김 선생님.)</p>
+                <p>B: <span class="text-bold">Good morning, Sarah.</span> <span class="audio-icon" data-audio-text="Good morning, Sarah.">🔊</span> (좋은 아침이야, 사라.)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 안부 묻기: How are you?</h2>
+            <p>인사 다음으로 흔하게 이어지는 질문은 상대방의 안부를 묻는 것입니다.</p>
+
+            <h3>2.1. How are you? (어떻게 지내세요?)</h3>
+            <p>상대방의 기분이나 안부를 물을 때 사용하는 가장 일반적인 표현입니다.</p>
+            <ul>
+                <li><strong>How are you?</strong> (하우 아 유?) <span class="audio-icon" data-audio-text="How are you?">🔊</span><br>
+                    <small>가장 흔한 안부 질문.</small></li>
+                <li><strong>How are you doing?</strong> (하우 아 유 두잉?) <span class="audio-icon" data-audio-text="How are you doing?">🔊</span><br>
+                    <small>위와 비슷하며, 더 캐주얼하게 쓰이기도 합니다.</small></li>
+            </ul>
+
+            <div class="pronunciation-guide">
+                🗣️ 팁: 'How are you?'는 빠르게 발음할 때 '하와유?'처럼 들리기도 해요.
+            </div>
+
+            <h3>2.2. 답변하기: I'm fine, thank you. And you?</h3>
+            <p>안부 질문에 답하는 방법과 상대방에게 다시 묻는 방법을 배워볼게요.</p>
+            <ul>
+                <li><strong>I'm fine, thank you.</strong> (아임 파인, 땡큐) <span class="audio-icon" data-audio-text="I'm fine, thank you.">🔊</span><br>
+                    <small>가장 기본적이고 정중한 답변입니다.</small></li>
+                <li><strong>And you?</strong> (앤 유?) <span class="audio-icon" data-audio-text="And you?">🔊</span><br>
+                    <small>상대방에게 다시 안부를 물을 때 사용해요.</small></li>
+                <li><strong>I'm good.</strong> (아임 굿) <span class="audio-icon" data-audio-text="I'm good.">🔊</span><br>
+                    <small>더 흔하고 캐주얼한 답변입니다.</small></li>
+                <li><strong>Not bad.</strong> (낫 배드) <span class="audio-icon" data-audio-text="Not bad.">🔊</span><br>
+                    <small>그럭저럭 괜찮다는 의미입니다.</small></li>
+                <li><strong>I'm great!</strong> (아임 그레잇!) <span class="audio-icon" data-audio-text="I'm great!">🔊</span><br>
+                    <small>기분이 아주 좋을 때 사용해요.</small></li>
+            </ul>
+
+            <div class="example-box">
+                <p><strong>예시 대화:</strong></p>
+                <p>A: <span class="text-bold">Hello, Jane! How are you?</span> <span class="audio-icon" data-audio-text="Hello, Jane! How are you?">🔊</span> (안녕하세요, 제인! 잘 지내세요?)</p>
+                <p>B: <span class="text-bold">I'm good, thank you. And you?</span> <span class="audio-icon" data-audio-text="I'm good, thank you. And you?">🔊</span> (잘 지내요, 고마워요. 당신은요?)</p>
+                <p>A: <span class="text-bold">I'm fine, thanks for asking.</span> <span class="audio-icon" data-audio-text="I'm fine, thanks for asking.">🔊</span> (잘 지내요, 물어봐줘서 고마워요.)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. 자기소개: My name is... / I'm...</h2>
+            <p>새로운 사람을 만났을 때 자신을 소개하는 방법을 배워봅시다.</p>
+
+            <h3>3.1. My name is... / I'm... (제 이름은... / 저는...입니다.)</h3>
+            <p>자신의 이름을 말하는 가장 기본적인 표현입니다.</p>
+            <ul>
+                <li><strong>My name is [이름].</strong> (마이 네임 이즈 [이름]) <span class="audio-icon" data-audio-text="My name is [Your Name].">🔊</span><br>
+                    <small>정중하고 완전한 문장입니다. (예: My name is Sarah.)</small></li>
+                <li><strong>I'm [이름].</strong> (아임 [이름]) <span class="audio-icon" data-audio-text="I'm [Your Name].">🔊</span><br>
+                    <small>더 흔하고 간결한 표현입니다. (예: I'm Mike.)</small></li>
+            </ul>
+
+            <h3>3.2. Nice to meet you (만나서 반갑습니다)</h3>
+            <p>새로운 사람을 만났을 때 기쁨을 표현하는 인사말입니다.</p>
+            <ul>
+                <li><strong>Nice to meet you.</strong> (나이스 투 밋 유) <span class="audio-icon" data-audio-text="Nice to meet you.">🔊</span><br>
+                    <small>만나서 반갑다는 표현.</small></li>
+                <li><strong>You too.</strong> (유 투) <span class="audio-icon" data-audio-text="You too.">🔊</span><br>
+                    <small>상대방이 'Nice to meet you'라고 했을 때 짧게 답하는 표현입니다.</small></li>
+                <li><strong>Nice to meet you too.</strong> (나이스 투 밋 유 투) <span class="audio-icon" data-audio-text="Nice to meet you too.">🔊</span><br>
+                    <small>'You too'보다 더 완전한 표현입니다.</small></li>
+            </ul>
+
+            <div class="example-box">
+                <p><strong>예시 대화:</strong></p>
+                <p>A: <span class="text-bold">Hello! My name is Sarah. Nice to meet you.</span> <span class="audio-icon" data-audio-text="Hello! My name is Sarah. Nice to meet you.">🔊</span> (안녕하세요! 제 이름은 사라입니다. 만나서 반갑습니다.)</p>
+                <p>B: <span class="text-bold">Hi Sarah, I'm Mike. Nice to meet you too.</span> <span class="audio-icon" data-audio-text="Hi Sarah, I'm Mike. Nice to meet you too.">🔊</span> (안녕 사라, 나는 마이크야. 나도 만나서 반가워.)</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. 간단한 대화 시작하기 (Basic Conversation Starters)</h2>
+            <p>인사와 자기소개 후 대화를 이어갈 수 있는 몇 가지 기본적인 질문들을 알아봅시다.</p>
+            <ul>
+                <li><strong>What do you do?</strong> (왓 두 유 두?) <span class="audio-icon" data-audio-text="What do you do?">🔊</span><br>
+                    <small>직업을 묻는 질문입니다. "I'm a [직업]." (예: I'm a student.)으로 답할 수 있어요.</small></li>
+                <li><strong>Where are you from?</strong> (웨어 아 유 프롬?) <span class="audio-icon" data-audio-text="Where are you from?">🔊</span><br>
+                    <small>어디 출신인지 묻는 질문입니다. "I'm from [나라/도시]." (예: I'm from Korea.)으로 답할 수 있어요.</small></li>
+                <li><strong>How was your day?</strong> (하우 워즈 유어 데이?) <span class="audio-icon" data-audio-text="How was your day?">🔊</span><br>
+                    <small>하루가 어땠는지 묻는 질문입니다. 저녁에 많이 사용해요.</small></li>
+            </ul>
+
+            <div class="example-box">
+                <p><strong>예시 대화:</strong></p>
+                <p>A: <span class="text-bold">Hi, I'm Minho. Nice to meet you.</span> <span class="audio-icon" data-audio-text="Hi, I'm Minho. Nice to meet you.">🔊</span> (안녕, 민호야. 만나서 반가워.)</p>
+                <p>B: <span class="text-bold">Nice to meet you too, Minho. I'm Jessica. What do you do?</span> <span class="audio-icon" data-audio-text="Nice to meet you too, Minho. I'm Jessica. What do you do?">🔊</span> (나도 만나서 반가워, 민호. 제시카야. 무슨 일 해?)</p>
+                <p>A: <span class="text-bold">I'm a student. And you?</span> <span class="audio-icon" data-audio-text="I'm a student. And you?">🔊</span> (학생이야. 너는?)</p>
+                <p>B: <span class="text-bold">I work at a hospital.</span> <span class="audio-icon" data-audio-text="I work at a hospital.">🔊</span> (병원에서 일해.)</p>
+            </div>
+        </section>
+
+        <section class="cultural-note">
+            <h3>🌍 문화 팁: 편안한 대화 시작하기</h3>
+            <p>영어권 문화에서는 처음 만난 사람과도 가볍게 안부를 묻거나 날씨, 주말 계획 등에 대해 이야기하며 대화를 시작하는 것이 흔합니다. 너무 개인적인 질문을 바로 하기보다는, 가벼운 인사와 함께 상대방에게 관심을 표현하는 것이 좋아요. 미소 짓는 것도 잊지 마세요! 😊</p>
+        </section>
+
+        <section class="practice-section">
+            <h2>✨ 연습 문제: 대화 완성하기</h2>
+            <p>배운 표현들을 활용해서 빈칸을 채워보세요. 정답을 탭(클릭)해보세요!</p>
+            <div style="margin-top: 20px;">
+                <p>A: Hello! My name is Tom. Nice to meet you.</p>
+                <p>B: Hi Tom, I'm Amy. Nice to meet you ______. (나도)</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="too">too</div>
+                    <div class="quiz-option">two</div>
+                    <div class="quiz-option">to</div>
+                </div>
+                <div class="quiz-feedback" id="q1-feedback"></div>
+            </div>
+            <div style="margin-top: 20px;">
+                <p>A: Good ______! How are you doing today? (아침)</p>
+                <p>B: I'm great, thank you. And you?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option" data-correct="morning">morning</div>
+                    <div class="quiz-option">evening</div>
+                    <div class="quiz-option">afternoon</div>
+                </div>
+                <div class="quiz-feedback" id="q2-feedback"></div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2>🌟 요약 (Summary)</h2>
+            <p>오늘 배운 핵심 표현들을 다시 한번 살펴볼까요?</p>
+            <ul>
+                <li><strong>인사:</strong> Hello, Hi, Good morning/afternoon/evening</li>
+                <li><strong>안부 묻기:</strong> How are you? / How are you doing?</li>
+                <li><strong>안부 답변:</strong> I'm fine, thank you. / I'm good. / Not bad.</li>
+                <li><strong>다시 묻기:</strong> And you?</li>
+                <li><strong>자기소개:</strong> My name is... / I'm...</li>
+                <li><strong>만나서 반갑습니다:</strong> Nice to meet you. / Nice to meet you too.</li>
+                <li><strong>대화 시작:</strong> What do you do? / Where are you from? / How was your day?</li>
+            </ul>
+            <p>이 표현들은 영어 대화의 시작점입니다. 꾸준히 연습해서 자신감을 가지고 사용해 보세요!</p>
+            <p class="text-center">👍 다음 챕터에서 만나요! 연습을 잊지 마세요!</p>
+        </section>
+
+    </div>
+
+    <!-- Simple JavaScript for Quiz Feedback (for demonstration, as per instruction no actual JS handlers needed for audio) -->
+    <script>
+        document.querySelectorAll('.quiz-options').forEach(quizBlock => {
+            quizBlock.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', function() {
+                    const isCorrect = this.dataset.correct === this.textContent;
+                    const feedbackElement = quizBlock.nextElementSibling; // Get the feedback div after quiz-options
+
+                    // Reset previous selections in this quiz block
+                    quizBlock.querySelectorAll('.quiz-option').forEach(opt => {
+                        opt.classList.remove('correct', 'incorrect');
+                    });
+
+                    if (isCorrect) {
+                        this.classList.add('correct');
+                        feedbackElement.textContent = '✅ 정답입니다!';
+                        feedbackElement.style.color = '#28A745';
+                    } else {
+                        this.classList.add('incorrect');
+                        feedbackElement.textContent = '❌ 다시 시도해보세요.';
+                        feedbackElement.style.color = '#DC3545';
+                    }
+                });
+            });
+        });
+
+        // Placeholder for audio functionality (will be handled by the native mobile client)
+        document.querySelectorAll('.audio-icon').forEach(icon => {
+            icon.addEventListener('click', () => {
+                const textToSpeak = icon.getAttribute('data-audio-text');
+                console.log(`Audio requested for: "${textToSpeak}"`);
+                // In a real app, this would trigger a native TTS function
+            });
+        });
+    </script>
+</body>
+</html>
