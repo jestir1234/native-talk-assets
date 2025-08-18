@@ -106,7 +106,7 @@ function fixLanguageFileComprehensive(storyId) {
   });
   
   // Write the fixed language file
-  const outputPath = path.join(__dirname, '..', 'stories', storyId, 'lang', 'en-fixed.json');
+  const outputPath = path.join(__dirname, '..', '..', 'stories', storyId, 'lang', 'en-fixed.json');
   fs.writeFileSync(outputPath, JSON.stringify(langData, null, 2), 'utf8');
   console.log(`\nFixed language file written to: ${outputPath}`);
 }
