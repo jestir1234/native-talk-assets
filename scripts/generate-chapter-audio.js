@@ -61,6 +61,15 @@ async function generateChapterAudio(storyId, chapterId, lang = 'en', useOriginal
     const audioMetaPath = path.join(storyPath, 'audio', 'meta.json');
     const audioOutputPath = path.join(storyPath, 'audio', chapterId);
     
+    // Check if chapter already has audio files
+    if (fs.existsSync(audioOutputPath)) {
+        const existingFiles = fs.readdirSync(audioOutputPath).filter(file => file.endsWith('.mp3'));
+        if (existingFiles.length > 0) {
+            console.log(`📁 Chapter ${chapterId} has ${existingFiles.length} existing audio files`);
+            // Don't skip - we'll generate missing files
+        }
+    }
+    
     // Check if files exist
     if (!fs.existsSync(langFilePath)) {
         console.error(`❌ Language file not found: ${langFilePath}`);
@@ -114,13 +123,33 @@ async function generateChapterAudio(storyId, chapterId, lang = 'en', useOriginal
         console.log(`📝 Found ${sentences.length} translated sentences to process`);
     }
     
+    // Check for existing files and filter out already generated ones
+    const existingFiles = fs.existsSync(audioOutputPath) 
+        ? fs.readdirSync(audioOutputPath).filter(file => file.endsWith('.mp3'))
+        : [];
+    
+    const existingNumbers = existingFiles.map(file => parseInt(file.replace('.mp3', '')));
+    const missingNumbers = [];
+    
+    for (let i = 1; i <= sentences.length; i++) {
+        if (!existingNumbers.includes(i)) {
+            missingNumbers.push(i);
+        }
+    }
+    
+    if (missingNumbers.length === 0) {
+        console.log(`⏭️  Skipping chapter ${chapterId} - all ${sentences.length} audio files already exist`);
+        return { skipped: true, existingFiles: sentences.length };
+    }
+    
+    console.log(`📝 Found ${sentences.length} sentences total, ${missingNumbers.length} missing files to generate`);
+    
     let successCount = 0;
     let errorCount = 0;
     
-    // Process each sentence
-    for (let i = 0; i < sentences.length; i++) {
-        const sentence = sentences[i];
-        const sentenceNumber = i + 1;
+    // Process only missing sentences
+    for (const sentenceNumber of missingNumbers) {
+        const sentence = sentences[sentenceNumber - 1]; // Convert to 0-based index
         
         console.log(`\n🎵 Processing sentence ${sentenceNumber}/${sentences.length}:`);
         console.log(`   Text: ${sentence.substring(0, 50)}${sentence.length > 50 ? '...' : ''}`);
@@ -139,7 +168,7 @@ async function generateChapterAudio(storyId, chapterId, lang = 'en', useOriginal
             successCount++;
             
             // Add delay to avoid rate limiting
-            if (i < sentences.length - 1) {
+            if (sentenceNumber !== missingNumbers[missingNumbers.length - 1]) {
                 console.log(`   ⏳ Waiting 1 second...`);
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
@@ -158,7 +187,63 @@ async function generateChapterAudio(storyId, chapterId, lang = 'en', useOriginal
     return {
         successCount,
         errorCount,
-        outputPath: audioOutputPath
+        outputPath: audioOutputPath,
+        skipped: false
+    };
+}
+
+async function generateAllChapters(storyId, lang = 'en', useOriginalLanguage = true) {
+    console.log(`🎵 Generating audio for ALL chapters in story: ${storyId}`);
+    
+    // Paths
+    const storyPath = path.join(__dirname, '..', 'stories', storyId);
+    const langFilePath = path.join(storyPath, 'lang', `${lang}.json`);
+    
+    // Check if language file exists
+    if (!fs.existsSync(langFilePath)) {
+        console.error(`❌ Language file not found: ${langFilePath}`);
+        return;
+    }
+    
+    // Load language file
+    const langData = JSON.parse(fs.readFileSync(langFilePath, 'utf8'));
+    
+    console.log(`📖 Found ${langData.chapters.length} chapters in story`);
+    
+    let totalSuccess = 0;
+    let totalErrors = 0;
+    let totalSkipped = 0;
+    
+    // Process each chapter
+    for (const chapter of langData.chapters) {
+        console.log(`\n📚 Processing chapter: ${chapter.id} - ${chapter.title}`);
+        
+        const result = await generateChapterAudio(storyId, chapter.id, lang, useOriginalLanguage);
+        
+        if (result.skipped) {
+            totalSkipped++;
+        } else {
+            totalSuccess += result.successCount;
+            totalErrors += result.errorCount;
+        }
+        
+        // Add delay between chapters
+        if (chapter !== langData.chapters[langData.chapters.length - 1]) {
+            console.log(`⏳ Waiting 2 seconds before next chapter...`);
+            await new Promise(resolve => setTimeout(resolve, 2000));
+        }
+    }
+    
+    console.log(`\n🎉 All chapters completed!`);
+    console.log(`📊 Final Summary:`);
+    console.log(`✅ Successfully generated: ${totalSuccess} files`);
+    console.log(`❌ Failed: ${totalErrors} files`);
+    console.log(`⏭️  Skipped chapters: ${totalSkipped}`);
+    
+    return {
+        totalSuccess,
+        totalErrors,
+        totalSkipped
     };
 }
 
@@ -166,30 +251,59 @@ async function generateChapterAudio(storyId, chapterId, lang = 'en', useOriginal
 if (require.main === module) {
     const args = process.argv.slice(2);
     
-    if (args.length < 2) {
-        console.error('Usage: node generate-chapter-audio.js <storyId> <chapterId> [language] [--translated]');
-        console.error('Example: node generate-chapter-audio.js yuta-skipping-day ch1 en');
-        console.error('Example: node generate-chapter-audio.js lotus-bloom ch1 en');
-        console.error('Example: node generate-chapter-audio.js not-that-kind-of-influencer ch1 en');
+    if (args.length < 1) {
+        console.error('Usage: node generate-chapter-audio.js <storyId> [chapterId] [language] [--translated] [--all-chapters]');
+        console.error('');
+        console.error('Single chapter:');
+        console.error('  node generate-chapter-audio.js <storyId> <chapterId> [language] [--translated]');
+        console.error('  Example: node generate-chapter-audio.js yuta-skipping-day ch1 en');
+        console.error('  Example: node generate-chapter-audio.js lotus-bloom ch1 en --translated');
+        console.error('');
+        console.error('All chapters:');
+        console.error('  node generate-chapter-audio.js <storyId> --all-chapters [language] [--translated]');
+        console.error('  Example: node generate-chapter-audio.js dam-rivals --all-chapters ja');
+        console.error('  Example: node generate-chapter-audio.js lotus-bloom --all-chapters en');
         console.error('');
         console.error('Note: By default, generates audio for original language text (keys)');
         console.error('      Use --translated flag to generate audio for translated text (values)');
+        console.error('      Use --all-chapters to process all chapters in the story');
         process.exit(1);
     }
     
     const storyId = args[0];
-    const chapterId = args[1];
-    const lang = args[2] || 'en';
+    const useAllChapters = args.includes('--all-chapters');
     const useOriginalLanguage = !args.includes('--translated');
     
-    generateChapterAudio(storyId, chapterId, lang, useOriginalLanguage)
-        .then(() => {
-            console.log('\n🎉 Audio generation completed!');
-        })
-        .catch(error => {
-            console.error('❌ Error:', error.message);
+    if (useAllChapters) {
+        // Extract language from args (skip --all-chapters and --translated)
+        const lang = args.find(arg => !arg.startsWith('--') && arg !== storyId) || 'en';
+        generateAllChapters(storyId, lang, useOriginalLanguage)
+            .then(() => {
+                console.log('\n🎉 All chapters audio generation completed!');
+            })
+            .catch(error => {
+                console.error('❌ Error:', error.message);
+                process.exit(1);
+            });
+    } else {
+        // Single chapter mode
+        if (args.length < 2) {
+            console.error('❌ Chapter ID required when not using --all-chapters');
             process.exit(1);
-        });
+        }
+        
+        const chapterId = args[1];
+        const lang = args[2] || 'en';
+        
+        generateChapterAudio(storyId, chapterId, lang, useOriginalLanguage)
+            .then(() => {
+                console.log('\n🎉 Audio generation completed!');
+            })
+            .catch(error => {
+                console.error('❌ Error:', error.message);
+                process.exit(1);
+            });
+        }
 }
 
-module.exports = { generateChapterAudio };
+module.exports = { generateChapterAudio, generateAllChapters };

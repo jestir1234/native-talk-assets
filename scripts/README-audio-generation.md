@@ -50,11 +50,16 @@ Create a `meta.json` file in `stories/{storyId}/audio/` with:
 ## Usage
 
 ```bash
+# Single chapter
 node scripts/generate-chapter-audio.js <storyId> <chapterId> [language] [--translated]
+
+# All chapters
+node scripts/generate-chapter-audio.js <storyId> --all-chapters [language] [--translated]
 ```
 
 ### Examples
 
+**Single Chapter:**
 Generate audio for original Japanese text (keys) from yuta-skipping-day chapter 1:
 ```bash
 node scripts/generate-chapter-audio.js yuta-skipping-day ch1 en
@@ -65,14 +70,25 @@ Generate audio for original Vietnamese text (keys) from lotus-bloom chapter 1:
 node scripts/generate-chapter-audio.js lotus-bloom ch1 en
 ```
 
-Generate audio for original Korean text (keys) from not-that-kind-of-influencer chapter 1:
-```bash
-node scripts/generate-chapter-audio.js not-that-kind-of-influencer ch1 en
-```
-
 Generate audio for English translations (values) from lotus-bloom chapter 1:
 ```bash
 node scripts/generate-chapter-audio.js lotus-bloom ch1 en --translated
+```
+
+**All Chapters:**
+Generate audio for all chapters in dam-rivals (original English text):
+```bash
+node scripts/generate-chapter-audio.js dam-rivals --all-chapters ja
+```
+
+Generate audio for all chapters in lotus-bloom (original Vietnamese text):
+```bash
+node scripts/generate-chapter-audio.js lotus-bloom --all-chapters en
+```
+
+Generate audio for all chapters in not-that-kind-of-influencer (original Korean text):
+```bash
+node scripts/generate-chapter-audio.js not-that-kind-of-influencer --all-chapters en
 ```
 
 ## Output
