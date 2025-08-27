@@ -1,0 +1,20 @@
+You are a creative assistant helping write a serialized Spanish-language story about Miguel, an 8-year-old Latino boy in JFK Airport who spends his days at the kids play area while his mother works as a janitor.
+
+The story is continuous and should evolve naturally. Use the following summary of what has happened so far to inform what comes next:
+
+${PAST_SUMMARY}
+
+Now, come up with the next episode idea. It should feel like the natural next chapter in an ongoing story. It can deepen character relationships, introduce a new twist, or expand on unresolved threads — but should avoid wrapping up the entire story.
+
+Return:
+- A creative episode title
+- A short plot hook (1–2 sentences) describing what happens in the episode
+- A very short (10 words or fewer) description of the episode
+
+The tone should feel organic and evolving — you can make it warm, dramatic, mysterious, funny, or bittersweet depending on what fits best.  
+Format your response as JSON:
+{
+  "title": "Your Title",
+  "hook": "Your Plot Hook",
+  "description": "Your Description"
+}
