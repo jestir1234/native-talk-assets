@@ -9,7 +9,16 @@ require('dotenv').config();
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const ELEVENLABS_BASE_URL = 'https://api.elevenlabs.io/v1';
 
-async function callElevenLabsAPI(text, voiceId, modelId) {
+// Audio speed configuration for language learners
+// speaking_rate values:
+// - 0.5 = Very slow (beginner level)
+// - 0.6 = Slow (beginner-intermediate)
+// - 0.75 = Normal (intermediate)
+// - 1.0 = Fast (native speed)
+// - 1.25 = Very fast (advanced)
+const SPEAKING_RATE = 0.6; // Set to slow speed for beginners
+
+async function callElevenLabsAPI(text, voiceId, modelId, speakingRate = 0.5) {
     const url = `${ELEVENLABS_BASE_URL}/text-to-speech/${voiceId}`;
     
     const requestBody = {
@@ -18,7 +27,8 @@ async function callElevenLabsAPI(text, voiceId, modelId) {
         voice_settings: {
             stability: 0.5,
             similarity_boost: 0.75
-        }
+        },
+        speaking_rate: speakingRate
     };
 
     try {
@@ -104,6 +114,7 @@ async function generateChapterAudio(storyId, chapterId, lang = 'en', useOriginal
     console.log(`📖 Found chapter: ${chapter.title}`);
     console.log(`🎤 Voice ID: ${audioMeta.voiceId}`);
     console.log(`🤖 Model ID: ${audioMeta.modelId}`);
+    console.log(`🐌 Speaking rate: ${SPEAKING_RATE} (${SPEAKING_RATE < 0.7 ? 'Slow for beginners' : SPEAKING_RATE < 1.0 ? 'Normal speed' : 'Fast'})`);
     
     // Create output directory
     if (!fs.existsSync(audioOutputPath)) {
@@ -154,8 +165,8 @@ async function generateChapterAudio(storyId, chapterId, lang = 'en', useOriginal
         console.log(`\n🎵 Processing sentence ${sentenceNumber}/${sentences.length}:`);
         console.log(`   Text: ${sentence.substring(0, 50)}${sentence.length > 50 ? '...' : ''}`);
         
-        // Generate audio
-        const audioData = await callElevenLabsAPI(sentence, audioMeta.voiceId, audioMeta.modelId);
+        // Generate audio with slower speed for beginners
+        const audioData = await callElevenLabsAPI(sentence, audioMeta.voiceId, audioMeta.modelId, SPEAKING_RATE);
         
         if (audioData) {
             // Create filename
