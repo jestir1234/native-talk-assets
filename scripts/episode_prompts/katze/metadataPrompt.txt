@@ -1,0 +1,20 @@
+Du bist ein kreativer Assistent, der dabei hilft, eine serielle deutsche Geschichte über Luna, eine 3-jährige schwarze Katze mit magischen Mitternachtssprechfähigkeiten in Berlin, zu schreiben.
+
+Die Geschichte ist kontinuierlich und sollte sich natürlich entwickeln. Verwende die folgende Zusammenfassung dessen, was bisher passiert ist, um zu informieren, was als nächstes kommt:
+
+${PAST_SUMMARY}
+
+Jetzt entwickle die nächste Episodenidee. Sie sollte sich wie das natürliche nächste Kapitel in einer laufenden Geschichte anfühlen. Luna hilft verlorenen Touristen dabei, Hotels, Restaurants und Museen in Berlin zu finden, während sie die Geheimnisse der Stadt entdeckt. Sie kann neue Touristen treffen, verschiedene Berliner Sehenswürdigkeiten erkunden, oder Herausforderungen bei ihrer nächtlichen Reiseführung meistern.
+
+Gib zurück:
+- Einen kreativen Episodentitel
+- Einen kurzen Plot-Hook (1–2 Sätze), der beschreibt, was in der Episode passiert
+- Eine sehr kurze (10 Wörter oder weniger) Beschreibung der Episode
+
+Der Ton sollte sich organisch und entwickelnd anfühlen — du kannst ihn warm, mysteriös, humorvoll oder abenteuerlich machen, je nachdem, was am besten passt.  
+Formatiere deine Antwort als JSON:
+{
+  "title": "Dein Titel",
+  "hook": "Dein Plot-Hook",
+  "description": "Deine Beschreibung"
+}

@@ -13,12 +13,12 @@ if (process.argv.length < 3) {
     console.error('Usage: node scripts/translate-episode.js <story-name> [source-language] [target-language]');
     console.error('Example: node scripts/translate-episode.js still-dead-still-bored en ja');
     console.error('Example: node scripts/translate-episode.js the-barista ja en');
-    console.error('Supported languages: en, ja, ko, zh, es, vi');
+    console.error('Supported languages: en, ja, ko, zh, es, vi, de');
     process.exit(1);
 }
 
 // Validate languages
-const SUPPORTED_LANGUAGES = ['en', 'ja', 'ko', 'zh', 'es', 'vi'];
+const SUPPORTED_LANGUAGES = ['en', 'ja', 'ko', 'zh', 'es', 'vi', 'de'];
 if (!SUPPORTED_LANGUAGES.includes(SOURCE_LANG)) {
     console.error(`❌ Unsupported source language: ${SOURCE_LANG}`);
     console.error('Supported languages:', SUPPORTED_LANGUAGES.join(', '));
@@ -41,7 +41,8 @@ const LANGUAGE_CONFIGS = {
     'ko': { name: 'Korean', code: 'ko' },
     'zh': { name: 'Chinese', code: 'zh' },
     'es': { name: 'Spanish', code: 'es' },
-    'vi': { name: 'Vietnamese', code: 'vi' }
+    'vi': { name: 'Vietnamese', code: 'vi' },
+    'de': { name: 'German', code: 'de' }
 };
 
 const sourceConfig = LANGUAGE_CONFIGS[SOURCE_LANG];
@@ -71,7 +72,8 @@ function parseSentences(text, language) {
         case "en":
         case "es":
         case "vi":
-            // English, Spanish, Vietnamese use similar punctuation
+        case "de":
+            // English, Spanish, Vietnamese, German use similar punctuation
             return text
                 .replace(/\r?\n/g, ' ')  // Replace newlines with spaces
                 .replace(/([.!?…]+)\s+/g, '$1|')  // Add separator after sentence endings

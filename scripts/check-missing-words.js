@@ -8,7 +8,7 @@ const nodejieba = require("nodejieba");
 // Validate arguments
 if (process.argv.length < 4) {
     console.error("Usage: node check-missing-words.js <dictionary.json> <chapters.txt> [missing_words.txt] [language]");
-    console.error("Supported languages: en, ja, ko, zh, es, vi");
+    console.error("Supported languages: en, ja, ko, zh, es, vi, de");
     process.exit(1);
 }
 
@@ -122,6 +122,14 @@ function tokenizeVietnamese(text) {
         .filter(Boolean);
 }
 
+function tokenizeGerman(text) {
+    return text
+        .toLowerCase()
+        .replace(/[^a-zA-Zäöüß0-9\s']/g, "") // Remove punctuation but keep German umlauts and eszett
+        .split(/\s+/)
+        .filter(Boolean);
+}
+
 // Language detection and tokenization
 async function tokenizeText(text, lang) {
     switch (lang.toLowerCase()) {
@@ -137,6 +145,8 @@ async function tokenizeText(text, lang) {
             return tokenizeSpanish(text);
         case "vi":
             return tokenizeVietnamese(text);
+        case "de":
+            return tokenizeGerman(text);
         default:
             console.warn(`⚠️  Unknown language '${lang}', using English tokenization`);
             return tokenizeEnglish(text);
@@ -158,6 +168,8 @@ async function tokenizeTextWithPunctuation(text, lang) {
             return tokenizeSpanishWithPunctuation(text);
         case "vi":
             return tokenizeVietnameseWithPunctuation(text);
+        case "de":
+            return tokenizeGermanWithPunctuation(text);
         default:
             console.warn(`⚠️  Unknown language '${lang}', using English tokenization`);
             return tokenizeEnglishWithPunctuation(text);
@@ -255,6 +267,17 @@ function tokenizeSpanishWithPunctuation(text) {
 function tokenizeVietnameseWithPunctuation(text) {
     return text
         .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
+        .split(/([.!?,;:""''()\s]+)/)
+        .filter(word => word.length > 0)
+        .map(word => word.trim())
+        .filter(word => word.length > 0);
+}
+
+// German tokenization with punctuation preserved
+function tokenizeGermanWithPunctuation(text) {
+    return text
+        .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
+        .toLowerCase()
         .split(/([.!?,;:""''()\s]+)/)
         .filter(word => word.length > 0)
         .map(word => word.trim())

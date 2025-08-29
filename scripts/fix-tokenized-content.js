@@ -19,6 +19,8 @@ async function tokenizeTextWithPunctuation(text, lang) {
             return tokenizeSpanishWithPunctuation(text);
         case "vi":
             return tokenizeVietnameseWithPunctuation(text);
+        case "de":
+            return tokenizeGermanWithPunctuation(text);
         default:
             console.warn(`⚠️  Unknown language '${lang}', using English tokenization`);
             return tokenizeEnglishWithPunctuation(text);
@@ -114,6 +116,17 @@ function tokenizeSpanishWithPunctuation(text) {
 
 // Vietnamese tokenization with punctuation preserved
 function tokenizeVietnameseWithPunctuation(text) {
+    return text
+        .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
+        .toLowerCase()
+        .split(/([.!?,;:""''()\s]+)/)
+        .filter(word => word.length > 0)
+        .map(word => word.trim())
+        .filter(word => word.length > 0);
+}
+
+// German tokenization with punctuation preserved
+function tokenizeGermanWithPunctuation(text) {
     return text
         .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
         .toLowerCase()

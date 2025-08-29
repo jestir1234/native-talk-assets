@@ -18,7 +18,8 @@ const sourceLangToDictMap = {
     'ko': 'korean',
     'zh': 'chinese',
     'es': 'spanish',
-    'vi': 'vietnamese'
+    'vi': 'vietnamese',
+    'de': 'german'
 }
 
 // Validate arguments
@@ -28,7 +29,7 @@ if (process.argv.length < 3) {
     console.error('Example: node scripts/generate-episode.js for-rent ja en --serialized');
     console.error('Example: node scripts/generate-episode.js for-rent en ja --init');
     console.error('Example: node scripts/generate-episode.js waves-and-hoops en ja --episodes');
-    console.error('Supported languages: en, ja, ko, zh, es, vi');
+    console.error('Supported languages: en, ja, ko, zh, es, vi, de');
     console.error('Use --serialized flag for stories that maintain continuity across episodes');
     console.error('Use --init flag to use initialization prompts for new stories');
     console.error('Use --episodes flag to use episode-specific prompts from /episodes/ directory');
@@ -36,7 +37,7 @@ if (process.argv.length < 3) {
 }
 
 // Validate languages
-const SUPPORTED_LANGUAGES = ['en', 'ja', 'ko', 'zh', 'es', 'vi'];
+const SUPPORTED_LANGUAGES = ['en', 'ja', 'ko', 'zh', 'es', 'vi', 'de'];
 if (!SUPPORTED_LANGUAGES.includes(SOURCE_LANG)) {
     console.error(`❌ Unsupported source language: ${SOURCE_LANG}`);
     console.error('Supported languages:', SUPPORTED_LANGUAGES.join(', '));
@@ -59,7 +60,8 @@ const LANGUAGE_DIRS = {
     'ko': 'korean',
     'zh': 'chinese',
     'es': 'spanish',
-    'vi': 'vietnamese'
+    'vi': 'vietnamese',
+    'de': 'german'
 };
 
 const MASTER_DICT_PATH = path.resolve(__dirname, `../dictionaries/${LANGUAGE_DIRS[SOURCE_LANG]}/${TARGET_LANG}-v1.json`);
