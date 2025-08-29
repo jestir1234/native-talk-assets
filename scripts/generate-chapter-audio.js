@@ -16,7 +16,7 @@ const ELEVENLABS_BASE_URL = 'https://api.elevenlabs.io/v1';
 // - 0.75 = Normal (intermediate)
 // - 1.0 = Fast (native speed)
 // - 1.25 = Very fast (advanced)
-const SPEAKING_RATE = 0.6; // Set to slow speed for beginners
+const SPEAKING_RATE = 0.5; // Set to slow speed for beginners
 
 async function callElevenLabsAPI(text, voiceId, modelId, speakingRate = 0.5) {
     const url = `${ELEVENLABS_BASE_URL}/text-to-speech/${voiceId}`;
