@@ -88,6 +88,14 @@
         "translatedLanguages": ["en"],
         "ongoingSeries": true,
         "hasAudio": true
+     },
+     {
+        "id": "sakana-to-tsuki",
+        "language": "japanese",
+        "translatedLanguages": ["en"],
+        "ongoingSeries": false,
+        "hasAudio": true,
+        "isChildrenStory": true
      }
     ]
 }
