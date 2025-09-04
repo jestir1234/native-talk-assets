@@ -126,9 +126,15 @@ async function generateChapterAudio(storyId, chapterId, lang = 'en', useOriginal
     // Get sentences based on useOriginalLanguage parameter
     let sentences;
     if (useOriginalLanguage) {
-        // Use the keys (original language text)
-        sentences = Object.keys(chapter.sentences);
-        console.log(`📝 Found ${sentences.length} original language sentences to process`);
+        // For Japanese, use the values (hiragana readings) instead of keys (kanji)
+        // For other languages, use the keys (original language text)
+        if (lang === 'ja') {
+            sentences = Object.values(chapter.sentences);
+            console.log(`📝 Found ${sentences.length} Japanese hiragana sentences to process`);
+        } else {
+            sentences = Object.keys(chapter.sentences);
+            console.log(`📝 Found ${sentences.length} original language sentences to process`);
+        }
     } else {
         // Use the values (translated text)
         sentences = Object.values(chapter.sentences);
