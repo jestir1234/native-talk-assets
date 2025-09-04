@@ -4,90 +4,104 @@
         "id": "yuta-skipping-day",
         "language": "japanese",
         "translatedLanguages": ["en", "zh", "es", "ko", "vi"],
-        "hasAudio": true
+        "hasAudio": true,
+        "difficulty": 2
     },
     {
         "id": "dam-rivals",
         "language": "english",
         "translatedLanguages": ["ja", "zh", "vi", "es"],
-        "hasAudio": true
+        "hasAudio": true,
+        "difficulty": 2
     },
     {
         "id": "still-dead-still-bored",
         "language": "english",
         "translatedLanguages": ["ja"],
-        "updatedWeekly": true
+        "updatedWeekly": true,
+        "difficulty": 5
      },
      {
         "id": "the-barista",
         "language": "english",
         "translatedLanguages": ["ja", "es"],
-        "updatedWeekly": true
+        "updatedWeekly": true,
+        "difficulty": 3
      },
      {
         "id": "for-rent",
         "language": "japanese",
         "translatedLanguages": ["en", "vi"],
-        "updatedWeekly": true
+        "updatedWeekly": true,
+        "difficulty": 4
      },
      {
         "id": "taipei-blues",
         "language": "chinese",
         "translatedLanguages": ["en", "ja"],
-        "ongoingSeries": true
+        "ongoingSeries": true,
+        "difficulty": 3
      },
      {
         "id": "waves-and-hoops",
         "language": "japanese",
         "translatedLanguages": ["en", "vi", "zh", "es"],
-        "hasAudio": true
+        "hasAudio": true,
+        "difficulty": 6
      },
      {
         "id": "lotus-bloom",
         "language": "vietnamese",
         "translatedLanguages": ["en"],
-        "ongoingSeries": true
+        "ongoingSeries": true,
+        "difficulty": 3
      },
      {
         "id": "not-that-kind-of-influencer",
         "language": "korean",
         "translatedLanguages": ["en", "ja", "vi"],
         "ongoingSeries": true,
-        "hasAudio": true
+        "hasAudio": true,
+        "difficulty": 2
      },
      {
         "id": "lost-subway",
         "language": "korean",
         "translatedLanguages": ["en"],
-        "ongoingSeries": true
+        "ongoingSeries": true,
+        "difficulty": 2
      },
      {
         "id": "el-nino-de-la-terminal",
         "language": "spanish",
         "translatedLanguages": ["en"],
         "ongoingSeries": true,
-        "hasAudio": true
+        "hasAudio": true,
+        "difficulty": 2
      },
      {
         "id": "katze",
         "language": "german",
         "translatedLanguages": ["en"],
         "ongoingSeries": true,
-        "hasAudio": true
+        "hasAudio": true,
+        "difficulty": 2
      },
      {
         "id": "kitsune",
         "language": "japanese",
         "translatedLanguages": ["en"],
         "ongoingSeries": true,
-        "hasAudio": true
+        "hasAudio": true,
+        "difficulty": 2
      },
      {
         "id": "suenos",
         "language": "spanish",
         "translatedLanguages": ["en"],
         "ongoingSeries": true,
-        "hasAudio": true
+        "hasAudio": true,
+        "difficulty": 3
      },
      {
         "id": "sakana-to-tsuki",
@@ -95,7 +109,8 @@
         "translatedLanguages": ["en"],
         "ongoingSeries": false,
         "hasAudio": true,
-        "isChildrenStory": true
+        "isChildrenStory": true,
+        "difficulty": 0
      }
     ]
 }

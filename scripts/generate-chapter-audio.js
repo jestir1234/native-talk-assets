@@ -104,10 +104,11 @@ async function generateChapterAudio(storyId, chapterId, lang = 'en', useOriginal
     // Load audio meta
     const audioMeta = JSON.parse(fs.readFileSync(audioMetaPath, 'utf8'));
     
-    // Find the chapter
-    const chapter = langData.chapters.find(ch => ch.id === chapterId);
+    // Find the chapter/page (support both structures)
+    const chaptersOrPages = langData.chapters || langData.pages;
+    const chapter = chaptersOrPages.find(ch => ch.id === chapterId);
     if (!chapter) {
-        console.error(`❌ Chapter ${chapterId} not found in language file`);
+        console.error(`❌ Chapter/Page ${chapterId} not found in language file`);
         return;
     }
     
@@ -219,15 +220,19 @@ async function generateAllChapters(storyId, lang = 'en', useOriginalLanguage = t
     // Load language file
     const langData = JSON.parse(fs.readFileSync(langFilePath, 'utf8'));
     
-    console.log(`📖 Found ${langData.chapters.length} chapters in story`);
+    // Support both chapters and pages structures
+    const chaptersOrPages = langData.chapters || langData.pages;
+    const structureType = langData.chapters ? 'chapters' : 'pages';
+    
+    console.log(`📖 Found ${chaptersOrPages.length} ${structureType} in story`);
     
     let totalSuccess = 0;
     let totalErrors = 0;
     let totalSkipped = 0;
     
-    // Process each chapter
-    for (const chapter of langData.chapters) {
-        console.log(`\n📚 Processing chapter: ${chapter.id} - ${chapter.title}`);
+    // Process each chapter/page
+    for (const chapter of chaptersOrPages) {
+        console.log(`\n📚 Processing ${structureType.slice(0, -1)}: ${chapter.id} - ${chapter.title}`);
         
         const result = await generateChapterAudio(storyId, chapter.id, lang, useOriginalLanguage);
         
@@ -238,18 +243,18 @@ async function generateAllChapters(storyId, lang = 'en', useOriginalLanguage = t
             totalErrors += result.errorCount;
         }
         
-        // Add delay between chapters
-        if (chapter !== langData.chapters[langData.chapters.length - 1]) {
-            console.log(`⏳ Waiting 2 seconds before next chapter...`);
+        // Add delay between chapters/pages
+        if (chapter !== chaptersOrPages[chaptersOrPages.length - 1]) {
+            console.log(`⏳ Waiting 2 seconds before next ${structureType.slice(0, -1)}...`);
             await new Promise(resolve => setTimeout(resolve, 2000));
         }
     }
     
-    console.log(`\n🎉 All chapters completed!`);
+    console.log(`\n🎉 All ${structureType} completed!`);
     console.log(`📊 Final Summary:`);
     console.log(`✅ Successfully generated: ${totalSuccess} files`);
     console.log(`❌ Failed: ${totalErrors} files`);
-    console.log(`⏭️  Skipped chapters: ${totalSkipped}`);
+    console.log(`⏭️  Skipped ${structureType}: ${totalSkipped}`);
     
     return {
         totalSuccess,
@@ -265,19 +270,22 @@ if (require.main === module) {
     if (args.length < 1) {
         console.error('Usage: node generate-chapter-audio.js <storyId> [chapterId] [language] [--translated] [--all-chapters]');
         console.error('');
-        console.error('Single chapter:');
+        console.error('Single chapter/page:');
         console.error('  node generate-chapter-audio.js <storyId> <chapterId> [language] [--translated]');
         console.error('  Example: node generate-chapter-audio.js yuta-skipping-day ch1 en');
+        console.error('  Example: node generate-chapter-audio.js sakana-to-tsuki 1 ja');
         console.error('  Example: node generate-chapter-audio.js lotus-bloom ch1 en --translated');
         console.error('');
-        console.error('All chapters:');
+        console.error('All chapters/pages:');
         console.error('  node generate-chapter-audio.js <storyId> --all-chapters [language] [--translated]');
         console.error('  Example: node generate-chapter-audio.js dam-rivals --all-chapters ja');
+        console.error('  Example: node generate-chapter-audio.js sakana-to-tsuki --all-chapters ja');
         console.error('  Example: node generate-chapter-audio.js lotus-bloom --all-chapters en');
         console.error('');
         console.error('Note: By default, generates audio for original language text (keys)');
         console.error('      Use --translated flag to generate audio for translated text (values)');
-        console.error('      Use --all-chapters to process all chapters in the story');
+        console.error('      Use --all-chapters to process all chapters/pages in the story');
+        console.error('      Supports both "chapters" and "pages" structures in language files');
         process.exit(1);
     }
     

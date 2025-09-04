@@ -27,15 +27,20 @@ async function fixAudioVolume(storyId, chapterId = null, volumeBoost = 3) {
             return;
         }
     } else {
-        // Process all chapters
+        // Process all chapters/pages
         const chapters = fs.readdirSync(audioPath)
             .filter(item => fs.statSync(path.join(audioPath, item)).isDirectory())
-            .filter(item => item.startsWith('ch'));
+            .filter(item => item.startsWith('ch') || /^\d+$/.test(item)); // Support both 'ch1' format and numeric '1' format
         
-        chaptersToProcess = chapters.sort();
+        chaptersToProcess = chapters.sort((a, b) => {
+            // Sort numerically for numeric IDs, alphabetically for 'ch' IDs
+            const aNum = parseInt(a.replace('ch', ''));
+            const bNum = parseInt(b.replace('ch', ''));
+            return aNum - bNum;
+        });
     }
     
-    console.log(`📁 Found ${chaptersToProcess.length} chapters to process`);
+    console.log(`📁 Found ${chaptersToProcess.length} chapters/pages to process`);
     
     let totalProcessed = 0;
     let totalSkipped = 0;
