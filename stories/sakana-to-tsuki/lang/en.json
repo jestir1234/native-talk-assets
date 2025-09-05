@@ -4,100 +4,107 @@
   "pages": [
     {
       "id": "1",
-      "title": "The Lonely Fish",
-      "description": "A lonely fish looks up at the moon through the water",
+      "title": "さびしいさかな",
+      "description": "A lonely fish looks up at the moon on the water's surface.",
       "sentences": {
-        "海の中に、一匹の魚が住んでいました。": "In the ocean, there lived a fish.",
-        "その魚は、とても寂しかったです。": "That fish was very lonely.",
-        "毎晩、月を見上げては、月に行きたいと思っていました。": "Every night, looking up at the moon, he wished he could go to the moon."
+        "海の中に、一ぴきのさかながすんでいました。": "In the ocean, there lived a fish.",
+        "そのさかなは、とてもさびしかった。": "That fish was very lonely.",
+        "まいばん、月を見上げては、いつか月に行きたいと思っていました。": "Every night, looking up at the moon, he wished he could go to the moon."
       }
     },
     {
       "id": "2",
-      "title": "The Fish's Dream",
-      "description": "The fish dreams of reaching the moon and decides to ask for help",
+      "title": "さかなのゆめ",
+      "description": "The fish dreams of visiting the moon and decides to ask someone for advice.",
       "sentences": {
-        "「月は、どうやって行けるのだろう？」": "How can I get to the moon?",
-        "魚は考えました。": "The fish wondered.",
-        "「誰かに聞いてみよう！」": "Let me ask someone!"
+        "「月へは、どうやって行けるのだろう？」": "How can I get to the moon?",
+        "さかなはかんがえました。": "The fish wondered.",
+        "「だれかにきいてみよう！」": "Let me ask someone!"
       }
     },
     {
       "id": "3",
-      "title": "Meeting the Whale",
-      "description": "The fish asks the wise whale for advice",
+      "title": "くじらとの出会い",
+      "description": "The fish asks a big whale for advice.",
       "sentences": {
-        "大きなクジラに会いました。": "He met a big whale.",
-        "「クジラさん、月に行くにはどうすればいいですか？」": "Mr. Whale, how can I get to the moon?",
-        "クジラは深く考えてから言いました。": "The whale thought deeply and then said."
+        "おおきなくじらに会いました。": "He met a big whale.",
+        "「くじらさん、月に行くにはどうしたらいいの？」": "Mr. Whale, how can I get to the moon?",
+        "くじらはふかくかんがえてから言いました。": "The whale thought deeply and then said."
       }
     },
     {
       "id": "4",
-      "title": "The Whale's Advice",
-      "description": "The whale gives philosophical advice about dreams",
+      "title": "くじらのアドバイス",
+      "description": "The whale teaches the fish about dreams.",
       "sentences": {
-        "「月は遠い場所にあるけれど、夢を持つことは大切だよ。」": "The moon is far away, but it's important to have dreams.",
-        "魚は、少し元気になりました。": "The fish felt a little better."
+        "「月はとおいけれど、夢をもつことは大切だよ。」": "The moon is far away, but it's important to have dreams.",
+        "さかなは、すこし元気になりました。": "The fish felt a little better."
       }
     },
     {
       "id": "5",
-      "title": "Meeting the Turtle",
-      "description": "The fish asks the patient turtle for advice",
+      "title": "かめとの出会い",
+      "description": "The fish asks a turtle for advice.",
       "sentences": {
-        "次に、カメに会いました。": "Next, he met a turtle.",
-        "「カメさん、月に行く方法を知っていますか？」": "Mr. Turtle, do you know how to get to the moon?",
-        "カメはゆっくりと答えました。": "The turtle answered slowly."
+        "つぎに、かめに会いました。": "Next, he met a turtle.",
+        "「かめさん、月に行くほうほうをしっていますか？」": "Mr. Turtle, do you know how to get to the moon?",
+        "かめはゆっくりとこたえました。": "The turtle answered slowly."
       }
     },
     {
       "id": "6",
-      "title": "The Turtle's Wisdom",
-      "description": "The turtle shares ancient wisdom about patience",
+      "title": "かめのちえ",
+      "description": "The turtle teaches the fish about patience.",
       "sentences": {
-        "「急ぐ必要はないよ。": "There's no need to rush.",
-        "ゆっくりと進むことが大切だ。」": "It's important to move slowly."
+        "「いそぐひつようはないよ。": "There's no need to rush.",
+        "ゆっくりすすむことがたいせつだ。」": "It's important to move slowly."
       }
     },
     {
       "id": "7",
-      "title": "Meeting the Crab",
-      "description": "The fish asks the clever crab for practical advice",
+      "title": "かにとの出会い",
+      "description": "The fish asks a crab for advice.",
       "sentences": {
-        "最後に、カニに会いました。": "Finally, he met a crab.",
-        "「カニさん、月に行くにはどうすればいいですか？」": "Mr. Crab, how can I get to the moon?",
-        "カニは鋏をカチカチ鳴らしながら考えました。": "The crab thought while clicking his claws."
+        "さいごに、かにに会いました。": "Finally, he met a crab.",
+        "「かにさん、月に行くにはどうすればいいの？」": "Mr. Crab, how can I get to the moon?",
+        "かにははさみをカチカチならしながらかんがえました。": "The crab thought while clicking his claws."
       }
     },
     {
       "id": "8",
-      "title": "The Crab's Solution",
-      "description": "The crab offers a practical but impossible solution",
+      "title": "かにのこたえ",
+      "description": "The crab gives a difficult answer.",
       "sentences": {
-        "「月に行くには、空を飛ばなければならないよ。": "To go to the moon, you have to fly through the sky.",
-        "でも、魚は空を飛べないね。」": "But fish can't fly."
+        "「月に行くには、そらをとばなければならないよ。": "To go to the moon, you have to fly through the sky.",
+        "でも、さかなはそらをとべないね。」": "But fish can't fly."
       }
     },
     {
       "id": "9",
-      "title": "The Fish's Realization",
-      "description": "The fish realizes something important about his quest",
+      "title": "さかなの気づき",
+      "description": "The fish realizes a significant lesson.",
       "sentences": {
-        "魚は、少し悲しくなりました。": "The fish became a little sad.",
-        "でも、友達ができて、寂しくなくなりました。": "But he made friends and wasn't lonely anymore.",
-        "月に行けなくても、海の中は楽しい場所でした。": "Even if he couldn't go to the moon, the ocean was a fun place."
+        "さかなは、すこしかなしくなりました。": "The fish became a little sad.",
+        "でも、ともだちができて、もうさびしくありませんでした。": "But he made friends and wasn't lonely anymore.",
+        "月に行けなくても、海の中はたのしい場所でした。": "Even if he couldn't go to the moon, the ocean was a fun place."
       }
     },
     {
       "id": "10",
-      "title": "The Moon's Reflection",
-      "description": "The fish realizes the moon is always with him through its reflection",
+      "title": "さかなのゆめ",
+      "description": "The fish has a new dream.",
       "sentences": {
-        "今、魚は新しい夢を持っています。": "Now the fish has a new dream.",
-        "「海の中を探検して、もっと友達を作ろう！」": "Let me explore the ocean and make more friends!",
-        "水に映る月が微笑んでいる。": "The moon smiles in the water's reflection.",
-        "魚は気づきました。": "The fish realized.",
+        "いま、さかなは新しい夢をもっています。": "Now the fish has a new dream.",
+        "「海の中をたんけんして、もっとともだちを作ろう！」": "Let me explore the ocean and make more friends!"
+      }
+    },
+    {
+      "id": "11",
+      "title": "月のひかり",
+      "description": "The fish realizes the moon is always with him.",
+      "sentences": {
+        "水にうつる月がほほえんでいました。": "The moon smiled in the water's reflection.",
+        "さかなは気づきました。": "The fish realized.",
         "月は、いつも自分のそばにいるのだと。": "The moon is always with him."
       }
     }
