@@ -1,24 +1,56 @@
-// Usage: node scripts/check-missing-words.js <dictionary.json> <chapters.txt> [missing_words.txt] [language]
+// Usage: node scripts/check-missing-words.js <dictionary.json> <chapters.txt> [missing_words.txt] [language] [--structure]
 
 const fs = require("fs");
 const path = require("path");
 const kuromoji = require("kuromoji");
 const nodejieba = require("nodejieba");
 
+// Parse command line arguments
+const args = process.argv.slice(2);
+const useStructure = args.includes('--structure');
+
+// Remove --structure flag from args for normal processing
+const filteredArgs = args.filter(arg => arg !== '--structure');
+
 // Validate arguments
-if (process.argv.length < 4) {
-    console.error("Usage: node check-missing-words.js <dictionary.json> <chapters.txt> [missing_words.txt] [language]");
+if (filteredArgs.length < 3) {
+    console.error("Usage: node check-missing-words.js <dictionary.json> <input_file> [missing_words.txt] [language] [--structure]");
     console.error("Supported languages: en, ja, ko, zh, es, vi, de");
+    console.error("Use --structure flag to process structure.json instead of story.txt");
     process.exit(1);
 }
 
-const dictionaryPath = path.resolve(process.argv[2]);
-const chapterTextPath = path.resolve(process.argv[3]);
-const outputPath = path.resolve(process.argv[4] || "missing_words.txt");
-const language = process.argv[5] || "en";
+const dictionaryPath = path.resolve(filteredArgs[0]);
+const inputPath = path.resolve(filteredArgs[1]);
+const outputPath = path.resolve(filteredArgs[2] || "missing_words.txt");
+const language = filteredArgs[3] || "en";
 
 // Also save tokenized text to a temporary file
 const tokenizedOutputPath = path.resolve(__dirname, './tokenized_text.txt');
+
+// Function to extract tokenized content from structure.json
+function extractTokenizedContentFromStructure(structurePath) {
+    try {
+        const structureData = JSON.parse(fs.readFileSync(structurePath, 'utf-8'));
+        const allTokens = [];
+        
+        // Handle both 'pages' and 'chapters' structures
+        const pagesOrChapters = structureData.pages || structureData.chapters || [];
+        
+        for (const page of pagesOrChapters) {
+            if (page.content) {
+                // Split by | and filter out empty tokens
+                const tokens = page.content.split('|').filter(token => token.trim().length > 0);
+                allTokens.push(...tokens);
+            }
+        }
+        
+        return allTokens;
+    } catch (error) {
+        console.error(`❌ Error reading structure.json: ${error.message}`);
+        process.exit(1);
+    }
+}
 
 // Language-specific tokenization functions
 function tokenizeEnglish(text) {
@@ -286,15 +318,32 @@ function tokenizeGermanWithPunctuation(text) {
 
 // Main function
 async function main() {
-    // Load files
+    // Load dictionary
     const dictionary = JSON.parse(fs.readFileSync(dictionaryPath, "utf-8"));
-    const text = fs.readFileSync(chapterTextPath, "utf-8");
-
-    // Tokenize for missing words check (without punctuation)
-    const words = await tokenizeText(text, language);
-
-    // Tokenize for content preservation (with punctuation)
-    const wordsWithPunctuation = await tokenizeTextWithPunctuation(text, language);
+    
+    let words, wordsWithPunctuation;
+    
+    if (useStructure) {
+        // Extract tokenized content from structure.json
+        console.log(`📖 Processing structure.json file: ${inputPath}`);
+        const tokens = extractTokenizedContentFromStructure(inputPath);
+        
+        // For structure.json, the tokens are already tokenized, so we use them directly
+        words = tokens;
+        wordsWithPunctuation = tokens; // Same for both since they're already tokenized
+        
+        console.log(`📊 Extracted ${tokens.length} tokens from structure.json`);
+    } else {
+        // Load and tokenize text file as usual
+        console.log(`📖 Processing text file: ${inputPath}`);
+        const text = fs.readFileSync(inputPath, "utf-8");
+        
+        // Tokenize for missing words check (without punctuation)
+        words = await tokenizeText(text, language);
+        
+        // Tokenize for content preservation (with punctuation)
+        wordsWithPunctuation = await tokenizeTextWithPunctuation(text, language);
+    }
 
     // Normalize dictionary keys based on language
     let dictKeys;
@@ -305,7 +354,7 @@ async function main() {
         dictKeys = Object.keys(dictionary);
     }
 
-    // Check for missing words (using words without punctuation)
+    // Check for missing words
     const uniqueWords = [...new Set(words)];
     const missingWords = uniqueWords.filter((word) => !dictKeys.includes(word));
 
@@ -316,7 +365,7 @@ async function main() {
     console.log(`📊 Total unique words: ${uniqueWords.length}`);
     console.log(`📊 Missing words: ${missingWords.length}`);
 
-    // Save tokenized text with punctuation to temporary file
+    // Save tokenized text to temporary file
     fs.writeFileSync(tokenizedOutputPath, wordsWithPunctuation.join("|"), "utf-8");
     console.log(`✅ Tokenized text saved to: ${tokenizedOutputPath}`);
 }

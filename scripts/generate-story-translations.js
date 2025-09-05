@@ -68,7 +68,16 @@ if (!fs.existsSync(MASTER_DICT_PATH)) {
 try {
     // Step 1: Check for missing words using check-missing-words.js
     console.log(`🔍 Checking for missing ${SOURCE_LANG} words...`);
-    execSync(`node scripts/check-missing-words.js ${MASTER_DICT_PATH} ${STORY_FILE_PATH} ${MISSING_WORDS_PATH} ${SOURCE_LANG}`, { stdio: 'inherit' });
+    
+    // Check if the input file is a structure.json file
+    const isStructureFile = STORY_FILE_PATH.endsWith('structure.json');
+    const structureFlag = isStructureFile ? ' --structure' : '';
+    
+    if (isStructureFile) {
+        console.log(`📖 Detected structure.json file, using --structure flag`);
+    }
+    
+    execSync(`node scripts/check-missing-words.js ${MASTER_DICT_PATH} ${STORY_FILE_PATH} ${MISSING_WORDS_PATH} ${SOURCE_LANG}${structureFlag}`, { stdio: 'inherit' });
 
     // Step 2: Run generate-dictionary.js with the correct language pair
     console.log(`📚 Generating new dictionary entries (${SOURCE_LANG} → ${TARGET_LANG})...`);
