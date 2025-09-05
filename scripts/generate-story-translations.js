@@ -30,7 +30,18 @@ if (!supportedLanguages.includes(SOURCE_LANG) || !supportedLanguages.includes(TA
 }
 
 // Derived paths
-const MASTER_DICT_PATH = `dictionaries/${SOURCE_LANG}/${TARGET_LANG}-v1.json`;
+// Map language codes to directory names
+const langDirMap = {
+    'ja': 'japanese',
+    'en': 'english', 
+    'ko': 'korean',
+    'zh': 'chinese',
+    'es': 'spanish',
+    'vi': 'vietnamese',
+    'de': 'german'
+};
+
+const MASTER_DICT_PATH = `dictionaries/${langDirMap[SOURCE_LANG] || SOURCE_LANG}/${TARGET_LANG}-v1.json`;
 const NEW_DICT_PATH = `scripts/dictionary_entries_output_${TARGET_LANG}.json`;
 const MISSING_WORDS_PATH = 'scripts/missing_words.txt';
 
