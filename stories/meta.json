@@ -124,7 +124,16 @@
      {
         "id": "magic-slippers",
         "language": "japanese",
-        "translatedLanguages": ["en"],
+        "translatedLanguages": ["en", "es", "zh"],
+        "ongoingSeries": false,
+        "hasAudio": true,
+        "isChildrenStory": true,
+        "difficulty": 0
+     },
+     {
+        "id": "skelly",
+        "language": "english",
+        "translatedLanguages": ["ja"],
         "ongoingSeries": false,
         "hasAudio": true,
         "isChildrenStory": true,

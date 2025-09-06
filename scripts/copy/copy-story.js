@@ -124,7 +124,8 @@ async function copyStory(sourcePath, targetPath, targetLanguage) {
                 const targetData = fs.readFileSync(targetPath, 'utf8');
                 existingTranslations = JSON.parse(targetData);
                 console.log(`📁 Found existing translations at: ${targetPath}`);
-                console.log(`📊 Existing translations: ${existingTranslations.chapters?.length || 0} chapters`);
+                const existingContentKey = existingTranslations.pages ? 'pages' : 'chapters';
+                console.log(`📊 Existing translations: ${existingTranslations[existingContentKey]?.length || 0} ${existingContentKey}`);
             } catch (error) {
                 console.log(`⚠️  Found target file but couldn't parse it, starting fresh: ${targetPath}`);
             }
@@ -164,97 +165,105 @@ async function copyStory(sourcePath, targetPath, targetLanguage) {
             console.log(`✅ Description already translated: "${translatedDescription}"`);
         }
 
+        // Determine if this is a children's story (pages) or regular story (chapters)
+        const isChildrenStory = story.pages && !story.chapters;
+        const contentKey = isChildrenStory ? 'pages' : 'chapters';
+        const contentArray = story[contentKey];
+        
+        console.log(`\n📖 Story type: ${isChildrenStory ? 'Children\'s story (pages)' : 'Regular story (chapters)'}`);
+        
         // Create the translated story structure
         translatedStory = {
             title: translatedTitle || story.title,
             description: translatedDescription || story.description,
-            chapters: existingTranslations?.chapters || []
+            [contentKey]: existingTranslations?.[contentKey] || []
         };
         
-        // Loop through chapters and translate their titles and descriptions
-        console.log(`\n📖 Processing ${story.chapters.length} chapters...`);
+        // Loop through content (chapters or pages) and translate their titles and descriptions
+        console.log(`\n📖 Processing ${contentArray.length} ${isChildrenStory ? 'pages' : 'chapters'}...`);
         
-        for (let i = 0; i < story.chapters.length; i++) {
-            const chapter = story.chapters[i];
-            console.log(`\n📝 Chapter ${i + 1}/${story.chapters.length}: "${chapter.title}"`);
+        for (let i = 0; i < contentArray.length; i++) {
+            const content = contentArray[i];
+            const contentType = isChildrenStory ? 'Page' : 'Chapter';
+            console.log(`\n📝 ${contentType} ${i + 1}/${contentArray.length}: "${content.title}"`);
             
-            // Check if this chapter already exists in translations
-            const existingChapter = existingTranslations?.chapters?.find(c => c.id === chapter.id);
+            // Check if this content already exists in translations
+            const existingContent = existingTranslations?.[contentKey]?.find(c => c.id === content.id);
             
-            if (existingChapter) {
-                // Check if the chapter content has changed
-                const sourceSentenceKeys = Object.keys(chapter.sentences);
-                const existingSentenceKeys = Object.keys(existingChapter.sentences);
+            if (existingContent) {
+                // Check if the content has changed
+                const sourceSentenceKeys = Object.keys(content.sentences);
+                const existingSentenceKeys = Object.keys(existingContent.sentences);
                 
                 // Check if all sentences exist and match
                 const allSentencesExist = sourceSentenceKeys.every(key => 
-                    existingChapter.sentences[key] && 
-                    existingChapter.sentences[key] !== key // Make sure it's actually translated, not just the original
+                    existingContent.sentences[key] && 
+                    existingContent.sentences[key] !== key // Make sure it's actually translated, not just the original
                 );
                 
                 if (allSentencesExist && 
-                    existingChapter.title !== chapter.title && 
-                    existingChapter.description !== chapter.description) {
-                    console.log(`  ✅ Chapter already fully translated, skipping...`);
-                    translatedStory.chapters[i] = existingChapter;
+                    existingContent.title !== content.title && 
+                    existingContent.description !== content.description) {
+                    console.log(`  ✅ ${contentType} already fully translated, skipping...`);
+                    translatedStory[contentKey][i] = existingContent;
                     continue;
                 } else {
-                    console.log(`  🔄 Chapter exists but needs updates, re-translating...`);
+                    console.log(`  🔄 ${contentType} exists but needs updates, re-translating...`);
                 }
             }
             
-            // Extract chapter title and description
-            const chapterTitle = chapter.title;
-            const chapterDescription = chapter.description;
+            // Extract content title and description
+            const contentTitle = content.title;
+            const contentDescription = content.description;
             
-            console.log(`  Title: "${chapterTitle}"`);
-            console.log(`  Description: "${chapterDescription}"`);
+            console.log(`  Title: "${contentTitle}"`);
+            console.log(`  Description: "${contentDescription}"`);
             
             // Check if title and description need translation
-            let translatedChapterTitle = existingChapter?.title;
-            let translatedChapterDescription = existingChapter?.description;
+            let translatedContentTitle = existingContent?.title;
+            let translatedContentDescription = existingContent?.description;
             
-            if (!translatedChapterTitle || translatedChapterTitle === chapterTitle) {
-                const newTranslatedTitle = await translateWithGemini(chapterTitle, targetLanguage);
+            if (!translatedContentTitle || translatedContentTitle === contentTitle) {
+                const newTranslatedTitle = await translateWithGemini(contentTitle, targetLanguage);
                 if (newTranslatedTitle) {
-                    translatedChapterTitle = newTranslatedTitle;
-                    console.log(`  ✅ Chapter Title translated: "${chapterTitle}" → "${translatedChapterTitle}"`);
+                    translatedContentTitle = newTranslatedTitle;
+                    console.log(`  ✅ ${contentType} Title translated: "${contentTitle}" → "${translatedContentTitle}"`);
                 }
             } else {
-                console.log(`  ✅ Chapter Title already translated: "${translatedChapterTitle}"`);
+                console.log(`  ✅ ${contentType} Title already translated: "${translatedContentTitle}"`);
             }
             
-            if (!translatedChapterDescription || translatedChapterDescription === chapterDescription) {
-                const newTranslatedDescription = await translateWithGemini(chapterDescription, targetLanguage);
+            if (!translatedContentDescription || translatedContentDescription === contentDescription) {
+                const newTranslatedDescription = await translateWithGemini(contentDescription, targetLanguage);
                 if (newTranslatedDescription) {
-                    translatedChapterDescription = newTranslatedDescription;
-                    console.log(`  ✅ Chapter Description translated: "${chapterDescription}" → "${translatedChapterDescription}"`);
+                    translatedContentDescription = newTranslatedDescription;
+                    console.log(`  ✅ ${contentType} Description translated: "${contentDescription}" → "${translatedContentDescription}"`);
                 }
             } else {
-                console.log(`  ✅ Chapter Description already translated: "${translatedChapterDescription}"`);
+                console.log(`  ✅ ${contentType} Description already translated: "${translatedContentDescription}"`);
             }
             
-            // Create translated chapter structure
-            const translatedChapter = {
-                id: chapter.id,
-                title: translatedChapterTitle || chapter.title,
-                description: translatedChapterDescription || chapter.description,
-                sentences: existingChapter?.sentences || {}
+            // Create translated content structure
+            const translatedContent = {
+                id: content.id,
+                title: translatedContentTitle || content.title,
+                description: translatedContentDescription || content.description,
+                sentences: existingContent?.sentences || {}
             };
             
-            // Add delay between chapters
-            if (i + 1 < story.chapters.length) {
-                console.log(`  ⏳ Waiting ${DELAY_BETWEEN_CHAPTERS}ms before next chapter...`);
+            // Add delay between content items
+            if (i + 1 < contentArray.length) {
+                console.log(`  ⏳ Waiting ${DELAY_BETWEEN_CHAPTERS}ms before next ${isChildrenStory ? 'page' : 'chapter'}...`);
                 await sleep(DELAY_BETWEEN_CHAPTERS);
             }
             
             // Extract and translate sentence keys
-            const sentenceKeys = Object.keys(chapter.sentences);
+            const sentenceKeys = Object.keys(content.sentences);
             console.log(`  📝 Processing ${sentenceKeys.length} sentences in batches of 50...`);
             
             // Filter out sentences that are already translated
             const untranslatedSentences = sentenceKeys.filter(key => {
-                const existingTranslation = existingChapter?.sentences?.[key];
+                const existingTranslation = existingContent?.sentences?.[key];
                 return !existingTranslation || existingTranslation === key;
             });
             
@@ -289,15 +298,15 @@ async function copyStory(sourcePath, targetPath, targetLanguage) {
                             console.log(`      ... and ${Object.keys(translations).length - 3} more`);
                         }
                         
-                        // Apply translations to the chapter sentences
+                        // Apply translations to the content sentences
                         for (const [original, translated] of Object.entries(translations)) {
-                            translatedChapter.sentences[original] = translated;
+                            translatedContent.sentences[original] = translated;
                         }
                     } else {
                         console.log(`    ❌ Failed to translate batch ${batchNumber}`);
                         // Keep original sentences if translation fails
                         batch.forEach(key => {
-                            translatedChapter.sentences[key] = chapter.sentences[key];
+                            translatedContent.sentences[key] = content.sentences[key];
                         });
                     }
                     
@@ -309,8 +318,8 @@ async function copyStory(sourcePath, targetPath, targetLanguage) {
                 }
             }
             
-            // Add the translated chapter to the story
-            translatedStory.chapters[i] = translatedChapter;
+            // Add the translated content to the story
+            translatedStory[contentKey][i] = translatedContent;
         }
 
         // Ensure target directory exists
@@ -326,7 +335,7 @@ async function copyStory(sourcePath, targetPath, targetLanguage) {
         console.log(`Source: ${sourcePath}`);
         console.log(`Target: ${targetPath}`);
         console.log(`Target Language: ${targetLanguage}`);
-        console.log(`Chapters: ${translatedStory.chapters.length}`);
+        console.log(`${isChildrenStory ? 'Pages' : 'Chapters'}: ${translatedStory[contentKey].length}`);
         console.log(`Translated Title: "${translatedStory.title}"`);
         console.log(`Translated Description: "${translatedStory.description}"`);
         
