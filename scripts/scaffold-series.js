@@ -3,12 +3,15 @@
 const fs = require('fs');
 const path = require('path');
 
-// Get series ID from command line argument
-const seriesId = process.argv[2];
+// Parse command line arguments
+const args = process.argv.slice(2);
+const seriesId = args[0];
+const isChildrenStory = args.includes('--children');
 
 if (!seriesId) {
-  console.error('Usage: node scaffold-series.js <series-id>');
+  console.error('Usage: node scaffold-series.js <series-id> [--children]');
   console.error('Example: node scaffold-series.js shanghai-blues');
+  console.error('Example: node scaffold-series.js my-children-story --children');
   process.exit(1);
 }
 
@@ -18,16 +21,24 @@ if (!/^[a-z0-9-]+$/.test(seriesId)) {
   process.exit(1);
 }
 
-console.log(`Scaffolding series: ${seriesId}`);
+console.log(`Scaffolding ${isChildrenStory ? 'children\'s story' : 'series'}: ${seriesId}`);
 
-// Create directories
+// Create directories based on story type
 const directories = [
-  `scripts/episode_prompts/${seriesId}`,
-  `scripts/episode_prompts/${seriesId}/init`,
   `stories/${seriesId}`,
-  `stories/${seriesId}/lang`,
-  `stories/${seriesId}/episodes`
+  `stories/${seriesId}/lang`
 ];
+
+// Add story-type specific directories
+if (isChildrenStory) {
+  directories.push(`stories/${seriesId}/audio`);
+} else {
+  directories.push(
+    `scripts/episode_prompts/${seriesId}`,
+    `scripts/episode_prompts/${seriesId}/init`,
+    `stories/${seriesId}/episodes`
+  );
+}
 
 directories.forEach(dir => {
   if (!fs.existsSync(dir)) {
@@ -145,38 +156,18 @@ const metaJsonTemplate = {
 const structureJsonTemplate = {
   "id": seriesId,
   "coverImage": `https://cdn.native-talk.com/stories/${seriesId}/cover.webp`,
-  "chapters": []
+  [isChildrenStory ? "pages" : "chapters"]: []
 };
 
 // Template for en.json
 const enJsonTemplate = {
   "title": seriesId,
   "description": "[FILL IN]",
-  "chapters": []
+  [isChildrenStory ? "pages" : "chapters"]: []
 };
 
-// Create files
+// Create files based on story type
 const files = [
-  {
-    path: `scripts/episode_prompts/${seriesId}/basePrompt.txt`,
-    content: basePromptTemplate
-  },
-  {
-    path: `scripts/episode_prompts/${seriesId}/imagePrompt.txt`,
-    content: imagePromptTemplate
-  },
-  {
-    path: `scripts/episode_prompts/${seriesId}/metadataPrompt.txt`,
-    content: metadataPromptTemplate
-  },
-  {
-    path: `scripts/episode_prompts/${seriesId}/init/basePrompt.txt`,
-    content: initBasePromptTemplate
-  },
-  {
-    path: `scripts/episode_prompts/${seriesId}/init/metadataPrompt.txt`,
-    content: initMetadataPromptTemplate
-  },
   {
     path: `stories/${seriesId}/meta.json`,
     content: JSON.stringify(metaJsonTemplate, null, 2)
@@ -191,6 +182,45 @@ const files = [
   }
 ];
 
+// Add story-type specific files
+if (isChildrenStory) {
+  // Add audio meta.json for children stories
+  files.push({
+    path: `stories/${seriesId}/audio/meta.json`,
+    content: JSON.stringify({}, null, 2)
+  });
+  
+  // Add story.txt for children stories
+  files.push({
+    path: `stories/${seriesId}/story.txt`,
+    content: "[FILL IN - Write your children's story here]"
+  });
+} else {
+  // Add episode prompt files for regular series
+  files.push(
+    {
+      path: `scripts/episode_prompts/${seriesId}/basePrompt.txt`,
+      content: basePromptTemplate
+    },
+    {
+      path: `scripts/episode_prompts/${seriesId}/imagePrompt.txt`,
+      content: imagePromptTemplate
+    },
+    {
+      path: `scripts/episode_prompts/${seriesId}/metadataPrompt.txt`,
+      content: metadataPromptTemplate
+    },
+    {
+      path: `scripts/episode_prompts/${seriesId}/init/basePrompt.txt`,
+      content: initBasePromptTemplate
+    },
+    {
+      path: `scripts/episode_prompts/${seriesId}/init/metadataPrompt.txt`,
+      content: initMetadataPromptTemplate
+    }
+  );
+}
+
 files.forEach(file => {
   if (!fs.existsSync(file.path)) {
     fs.writeFileSync(file.path, file.content);
@@ -200,9 +230,17 @@ files.forEach(file => {
   }
 });
 
-console.log(`\n✅ Series '${seriesId}' scaffolded successfully!`);
+console.log(`\n✅ ${isChildrenStory ? 'Children\'s story' : 'Series'} '${seriesId}' scaffolded successfully!`);
 console.log(`\nNext steps:`);
-console.log(`1. Edit the prompt templates in scripts/episode_prompts/${seriesId}/`);
-console.log(`2. Update the protagonist details in stories/${seriesId}/meta.json`);
-console.log(`3. Add your first episode content to stories/${seriesId}/episodes/`);
-console.log(`4. Create cover and episode images in stories/${seriesId}/`); 
+
+if (isChildrenStory) {
+  console.log(`1. Write your children's story in stories/${seriesId}/story.txt`);
+  console.log(`2. Update the story details in stories/${seriesId}/lang/en.json`);
+  console.log(`3. Create cover and page images in stories/${seriesId}/`);
+  console.log(`4. Add audio files to stories/${seriesId}/audio/`);
+} else {
+  console.log(`1. Edit the prompt templates in scripts/episode_prompts/${seriesId}/`);
+  console.log(`2. Update the protagonist details in stories/${seriesId}/meta.json`);
+  console.log(`3. Add your first episode content to stories/${seriesId}/episodes/`);
+  console.log(`4. Create cover and episode images in stories/${seriesId}/`);
+} 
