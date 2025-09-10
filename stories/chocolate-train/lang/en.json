@@ -3,54 +3,84 @@
   "description": "A magical story about a chocolate train that arrives at the station, filled with delicious treats in each wagon. As children enjoy the sweets, the train gradually disappears until only the chocolate locomotive remains.",
   "pages": [
     {
-      "id": 1,
-      "text": "Un día llegó a la estación un tren hecho de chocolate.",
-      "translation": "One day a train made of chocolate arrived at the station."
+      "id": "1",
+      "title": "The Chocolate Train Arrives",
+      "description": "A magical chocolate train arrives at the station",
+      "sentences": {
+        "Un día llegó a la estación un tren hecho de chocolate.": "One day a train made of chocolate arrived at the station."
+      }
     },
     {
-      "id": 2,
-      "text": "En el primer vagón había churros calientes, y los niños se los comieron.",
-      "translation": "In the first wagon there were hot churros, and the children ate them."
+      "id": "2",
+      "title": "Hot Churros",
+      "description": "Children enjoy hot churros from the first wagon",
+      "sentences": {
+        "En el primer vagón había churros calientes, y los niños se los comieron.": "In the first wagon there were hot churros, and the children ate them."
+      }
     },
     {
-      "id": 3,
-      "text": "En el segundo vagón había tazas de chocolate, y los niños las bebieron.",
-      "translation": "In the second wagon there were cups of hot chocolate, and the children drank them."
+      "id": "3",
+      "title": "Hot Chocolate",
+      "description": "Children drink hot chocolate from the second wagon",
+      "sentences": {
+        "En el segundo vagón había tazas de chocolate, y los niños las bebieron.": "In the second wagon there were cups of hot chocolate, and the children drank them."
+      }
     },
     {
-      "id": 4,
-      "text": "En el tercer vagón había tabletas de turrón, y los niños las partieron y probaron.",
-      "translation": "In the third wagon there were nougat bars, and the children broke them and tasted them."
+      "id": "4",
+      "title": "Nougat Bars",
+      "description": "Children break and taste nougat bars from the third wagon",
+      "sentences": {
+        "En el tercer vagón había tabletas de turrón, y los niños las partieron y probaron.": "In the third wagon there were nougat bars, and the children broke them and tasted them."
+      }
     },
     {
-      "id": 5,
-      "text": "En el cuarto vagón había galletas dulces, y los niños las compartieron.",
-      "translation": "In the fourth wagon there were sweet cookies, and the children shared them."
+      "id": "5",
+      "title": "Sweet Cookies",
+      "description": "Children share sweet cookies from the fourth wagon",
+      "sentences": {
+        "En el cuarto vagón había galletas dulces, y los niños las compartieron.": "In the fourth wagon there were sweet cookies, and the children shared them."
+      }
     },
     {
-      "id": 6,
-      "text": "En el quinto vagón había bizcochos suaves, y los niños los mordieron felices.",
-      "translation": "In the fifth wagon there were soft cakes, and the children bit into them happily."
+      "id": "6",
+      "title": "Soft Cakes",
+      "description": "Children happily bite into soft cakes from the fifth wagon",
+      "sentences": {
+        "En el quinto vagón había bizcochos suaves, y los niños los mordieron felices.": "In the fifth wagon there were soft cakes, and the children bit into them happily."
+      }
     },
     {
-      "id": 7,
-      "text": "En el sexto vagón había caramelos de colores, y los niños los guardaron en los bolsillos.",
-      "translation": "In the sixth wagon there were colorful candies, and the children kept them in their pockets."
+      "id": "7",
+      "title": "Colorful Candies",
+      "description": "Children keep colorful candies in their pockets from the sixth wagon",
+      "sentences": {
+        "En el sexto vagón había caramelos de colores, y los niños los guardaron en los bolsillos.": "In the sixth wagon there were colorful candies, and the children kept them in their pockets."
+      }
     },
     {
-      "id": 8,
-      "text": "Cada vagón se quedaba vacío, y el tren era un poco más corto.",
-      "translation": "Each wagon became empty, and the train grew a little shorter."
+      "id": "8",
+      "title": "Empty Wagons",
+      "description": "Each wagon becomes empty and the train gets shorter",
+      "sentences": {
+        "Cada vagón se quedaba vacío, y el tren era un poco más corto.": "Each wagon became empty, and the train grew a little shorter."
+      }
     },
     {
-      "id": 9,
-      "text": "Al final solo quedó la locomotora de chocolate.",
-      "translation": "In the end only the chocolate locomotive remained."
+      "id": "9",
+      "title": "Only the Locomotive",
+      "description": "Only the chocolate locomotive remains",
+      "sentences": {
+        "Al final solo quedó la locomotora de chocolate.": "In the end only the chocolate locomotive remained."
+      }
     },
     {
-      "id": 10,
-      "text": "Con un silbido dulce, la locomotora soltó vapor de cacao y desapareció en el cielo.",
-      "translation": "With a sweet whistle, the locomotive released cocoa steam and disappeared into the sky."
+      "id": "10",
+      "title": "The Train Disappears",
+      "description": "The locomotive releases cocoa steam and disappears into the sky",
+      "sentences": {
+        "Con un silbido dulce, la locomotora soltó vapor de cacao y desapareció en el cielo.": "With a sweet whistle, the locomotive released cocoa steam and disappeared into the sky."
+      }
     }
   ]
 }
