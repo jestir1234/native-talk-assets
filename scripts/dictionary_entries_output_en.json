@@ -1,237 +1,302 @@
 {
-  "Un": {
-    "reading": "/un/",
-    "meaning": "a, an, one",
-    "type": "indefinite article, numeral"
-  },
-  "estación": {
-    "reading": "/es.taˈsjon/",
-    "meaning": "station, season",
+  "밤이": {
+    "reading": "bami",
+    "meaning": "night (subject)",
     "type": "noun"
   },
-  "tren": {
-    "reading": "/tɾen/",
-    "meaning": "train",
-    "type": "noun"
+  "되자": {
+    "reading": "doeja",
+    "meaning": "as soon as it became / when it became",
+    "type": "verb (conjunctive form)"
   },
-  "chocolate": {
-    "reading": "/tʃo.koˈla.te/",
-    "meaning": "chocolate",
-    "type": "noun"
-  },
-  ".": {
-    "reading": "/pun.to/",
-    "meaning": "period, full stop",
-    "type": "punctuation"
-  },
-  "En": {
-    "reading": "/en/",
-    "meaning": "in, on, at",
-    "type": "preposition"
-  },
-  "primer": {
-    "reading": "/pɾiˈmeɾ/",
-    "meaning": "first (masculine singular apocopated form)",
-    "type": "adjective"
-  },
-  "vagón": {
-    "reading": "/baˈɣon/",
-    "meaning": "car (of a train), wagon",
-    "type": "noun"
-  },
-  "churros": {
-    "reading": "/ˈtʃu.ros/",
-    "meaning": "churros (fried-dough pastry)",
-    "type": "noun (plural)"
-  },
-  "calientes": {
-    "reading": "/kaˈljen.tes/",
-    "meaning": "hot, warm",
-    "type": "adjective (plural)"
-  },
-  ",": {
-    "reading": "/ko.ma/",
+  ",,": {
+    "reading": "comma",
     "meaning": "comma",
     "type": "punctuation"
   },
-  "comieron": {
-    "reading": "/koˈmje.ɾon/",
-    "meaning": "they ate (past tense of 'comer')",
-    "type": "verb (preterite, 3rd person plural)"
-  },
-  "tazas": {
-    "reading": "/ˈta.sas/",
-    "meaning": "cups",
-    "type": "noun (plural)"
-  },
-  "bebieron": {
-    "reading": "/beˈβje.ɾon/",
-    "meaning": "they drank (past tense of 'beber')",
-    "type": "verb (preterite, 3rd person plural)"
-  },
-  "tercer": {
-    "reading": "/teɾˈseɾ/",
-    "meaning": "third (masculine singular apocopated form)",
-    "type": "adjective"
-  },
-  "tabletas": {
-    "reading": "/taˈβle.tas/",
-    "meaning": "tablets, bars (e.g., of chocolate)",
-    "type": "noun (plural)"
-  },
-  "turrón": {
-    "reading": "/tuˈron/",
-    "meaning": "nougat (Spanish confectionery)",
+  "호랑이": {
+    "reading": "horangi",
+    "meaning": "tiger",
     "type": "noun"
   },
-  "partieron": {
-    "reading": "/paɾˈtje.ɾon/",
-    "meaning": "they split/cut/departed (past tense of 'partir')",
-    "type": "verb (preterite, 3rd person plural)"
-  },
-  "probaron": {
-    "reading": "/pɾoˈβa.ɾon/",
-    "meaning": "they tried, they tasted (past tense of 'probar')",
-    "type": "verb (preterite, 3rd person plural)"
-  },
-  "cuarto": {
-    "reading": "/ˈkwaɾ.to/",
-    "meaning": "fourth; room, quarter",
-    "type": "adjective, noun"
-  },
-  "galletas": {
-    "reading": "/ɡaˈʎe.tas/",
-    "meaning": "cookies, crackers, biscuits",
-    "type": "noun (plural)"
-  },
-  "dulces": {
-    "reading": "/ˈdul.ses/",
-    "meaning": "sweet (plural); candies, sweets (plural noun)",
-    "type": "adjective (plural), noun (plural)"
-  },
-  "compartieron": {
-    "reading": "/kom.paɾˈtje.ɾon/",
-    "meaning": "they shared (past tense of 'compartir')",
-    "type": "verb (preterite, 3rd person plural)"
-  },
-  "quinto": {
-    "reading": "/ˈkin.to/",
-    "meaning": "fifth",
-    "type": "adjective"
-  },
-  "bizcochos": {
-    "reading": "/bisˈko.tʃos/",
-    "meaning": "sponge cakes, biscuits (plural)",
-    "type": "noun (plural)"
-  },
-  "suaves": {
-    "reading": "/ˈswa.βes/",
-    "meaning": "soft, smooth, gentle",
-    "type": "adjective (plural)"
-  },
-  "mordieron": {
-    "reading": "/moɾˈðje.ɾon/",
-    "meaning": "they bit (past tense of 'morder')",
-    "type": "verb (preterite, 3rd person plural)"
-  },
-  "felices": {
-    "reading": "/feˈli.ses/",
-    "meaning": "happy",
-    "type": "adjective (plural)"
-  },
-  "sexto": {
-    "reading": "/ˈseks.to/",
-    "meaning": "sixth",
-    "type": "adjective"
-  },
-  "caramelos": {
-    "reading": "/ka.ɾaˈme.los/",
-    "meaning": "candies, sweets, caramels",
-    "type": "noun (plural)"
-  },
-  "guardaron": {
-    "reading": "/ɡwaɾˈða.ɾon/",
-    "meaning": "they kept, they saved, they put away (past tense of 'guardar')",
-    "type": "verb (preterite, 3rd person plural)"
-  },
-  "bolsillos": {
-    "reading": "/bolˈsi.ʎos/",
-    "meaning": "pockets",
-    "type": "noun (plural)"
-  },
-  "Cada": {
-    "reading": "/ˈka.ða/",
-    "meaning": "each, every",
-    "type": "adjective"
-  },
-  "vacío": {
-    "reading": "/baˈsi.o/",
-    "meaning": "empty",
-    "type": "adjective"
-  },
-  "corto": {
-    "reading": "/ˈkoɾ.to/",
-    "meaning": "short",
-    "type": "adjective"
-  },
-  "Al": {
-    "reading": "/al/",
-    "meaning": "to the (contraction of 'a' + 'el')",
-    "type": "preposition + article (contraction)"
-  },
-  "final": {
-    "reading": "/fiˈnal/",
-    "meaning": "end, final",
-    "type": "noun, adjective"
-  },
-  "quedó": {
-    "reading": "/keˈðo/",
-    "meaning": "he/she/it remained, stayed (past tense of 'quedar')",
-    "type": "verb (preterite, 3rd person singular)"
-  },
-  "locomotora": {
-    "reading": "/lo.ko.moˈto.ɾa/",
-    "meaning": "locomotive, engine",
+  "산": {
+    "reading": "san",
+    "meaning": "mountain",
     "type": "noun"
   },
-  "Con": {
-    "reading": "/kon/",
-    "meaning": "with",
-    "type": "preposition"
+  "에서": {
+    "reading": "eseo",
+    "meaning": "from, in, at (location particle)",
+    "type": "particle"
   },
-  "silbido": {
-    "reading": "/silˈβi.ðo/",
-    "meaning": "whistle",
-    "type": "noun"
+  "나왔어요": {
+    "reading": "nawasseoyo",
+    "meaning": "came out",
+    "type": "verb"
   },
-  "dulce": {
-    "reading": "/ˈdul.se/",
-    "meaning": "sweet",
+  ".": {
+    "reading": "period",
+    "meaning": "period",
+    "type": "punctuation"
+  },
+  "하얀": {
+    "reading": "hayan",
+    "meaning": "white",
     "type": "adjective"
   },
-  "soltó": {
-    "reading": "/solˈto/",
-    "meaning": "he/she/it released, let go (past tense of 'soltar')",
-    "type": "verb (preterite, 3rd person singular)"
-  },
-  "vapor": {
-    "reading": "/baˈpoɾ/",
-    "meaning": "steam, vapor",
+  "달빛": {
+    "reading": "dalbit",
+    "meaning": "moonlight",
     "type": "noun"
   },
-  "cacao": {
-    "reading": "/kaˈka.o/",
-    "meaning": "cocoa",
+  "비추었어요": {
+    "reading": "bichueosseoyo",
+    "meaning": "shone on, illuminated",
+    "type": "verb"
+  },
+  "솔나무": {
+    "reading": "solnamu",
+    "meaning": "pine tree",
     "type": "noun"
   },
-  "desapareció": {
-    "reading": "/de.sa.pa.ɾeˈsjo/",
-    "meaning": "he/she/it disappeared (past tense of 'desaparecer')",
-    "type": "verb (preterite, 3rd person singular)"
-  },
-  "cielo": {
-    "reading": "/ˈsje.lo/",
-    "meaning": "sky, heaven",
+  "숲": {
+    "reading": "sup",
+    "meaning": "forest, woods",
     "type": "noun"
+  },
+  "지나며": {
+    "reading": "jinamyeo",
+    "meaning": "while passing, as it passed",
+    "type": "verb (conjunctive form)"
+  },
+  "바람": {
+    "reading": "baram",
+    "meaning": "wind",
+    "type": "noun"
+  },
+  "를": {
+    "reading": "reul",
+    "meaning": "object particle",
+    "type": "particle"
+  },
+  "들었어요": {
+    "reading": "deureosseoyo",
+    "meaning": "heard / lifted / entered (polite past)",
+    "type": "verb"
+  },
+  "발자국": {
+    "reading": "baljaguk",
+    "meaning": "footprint",
+    "type": "noun"
+  },
+  "은": {
+    "reading": "eun",
+    "meaning": "topic particle",
+    "type": "particle"
+  },
+  "반짝반짝": {
+    "reading": "banjjakbanjjak",
+    "meaning": "sparklingly, twinklingly",
+    "type": "adverb"
+  },
+  "별": {
+    "reading": "byeol",
+    "meaning": "star",
+    "type": "noun"
+  },
+  "처럼": {
+    "reading": "cheoreom",
+    "meaning": "like, as",
+    "type": "particle"
+  },
+  "빛났어요": {
+    "reading": "bitnasseoyo",
+    "meaning": "shone, glittered",
+    "type": "verb"
+  },
+  "냇가": {
+    "reading": "naetga",
+    "meaning": "streambank, waterside",
+    "type": "noun"
+  },
+  "다가가자": {
+    "reading": "dagagaja",
+    "meaning": "as soon as it approached, when it approached",
+    "type": "verb (conjunctive form)"
+  },
+  "달": {
+    "reading": "dal",
+    "meaning": "moon",
+    "type": "noun"
+  },
+  "물": {
+    "reading": "mul",
+    "meaning": "water",
+    "type": "noun"
+  },
+  "흔들렸어요": {
+    "reading": "heundeullyeosseoyo",
+    "meaning": "was shaken, swayed",
+    "type": "verb"
+  },
+  "물결": {
+    "reading": "mulgyeoul",
+    "meaning": "ripple, wave",
+    "type": "noun"
+  },
+  "춤추듯": {
+    "reading": "chumchudeut",
+    "meaning": "as if dancing, like dancing",
+    "type": "adverbial phrase"
+  },
+  "반짝였어요": {
+    "reading": "banjjagyeosseoyo",
+    "meaning": "sparkled, twinkled",
+    "type": "verb"
+  },
+  "연못": {
+    "reading": "yeonmot",
+    "meaning": "pond",
+    "type": "noun"
+  },
+  "흰": {
+    "reading": "huin",
+    "meaning": "white",
+    "type": "adjective"
+  },
+  "학": {
+    "reading": "hak",
+    "meaning": "crane (bird)",
+    "type": "noun"
+  },
+  "보았어요": {
+    "reading": "boasseoyo",
+    "meaning": "saw",
+    "type": "verb"
+  },
+  "들은": {
+    "reading": "deureun",
+    "meaning": "that which was heard/held/entered",
+    "type": "verb (adnominal form)"
+  },
+  "날개": {
+    "reading": "nalgae",
+    "meaning": "wing",
+    "type": "noun"
+  },
+  "펴고": {
+    "reading": "pyeogo",
+    "meaning": "spread and, opening and",
+    "type": "verb (conjunctive form)"
+  },
+  "날아올랐어요": {
+    "reading": "naraollasseoyo",
+    "meaning": "flew up",
+    "type": "verb"
+  },
+  "마을": {
+    "reading": "maeul",
+    "meaning": "village",
+    "type": "noun"
+  },
+  "로": {
+    "reading": "ro",
+    "meaning": "to, toward (direction particle)",
+    "type": "particle"
+  },
+  "내려가": {
+    "reading": "naeryeoga",
+    "meaning": "went down and, descended and",
+    "type": "verb (conjunctive form)"
+  },
+  "걸었어요": {
+    "reading": "georeosseoyo",
+    "meaning": "walked",
+    "type": "verb"
+  },
+  "아이": {
+    "reading": "ai",
+    "meaning": "child",
+    "type": "noun"
+  },
+  "깊이": {
+    "reading": "gipi",
+    "meaning": "deeply",
+    "type": "adverb"
+  },
+  "잠들었고": {
+    "reading": "jamdeureotgo",
+    "meaning": "fell asleep and",
+    "type": "verb (conjunctive form)"
+  },
+  "흘렀어요": {
+    "reading": "heulleosseoyo",
+    "meaning": "flowed",
+    "type": "verb"
+  },
+  "등불": {
+    "reading": "deungbul",
+    "meaning": "lantern, lamp",
+    "type": "noun"
+  },
+  "끄고": {
+    "reading": "kkeugo",
+    "meaning": "turned off and, extinguished and",
+    "type": "verb (conjunctive form)"
+  },
+  "기도": {
+    "reading": "gido",
+    "meaning": "prayer",
+    "type": "noun"
+  },
+  "드렸어요": {
+    "reading": "deuryeosseoyo",
+    "meaning": "offered, gave (honorific)",
+    "type": "verb"
+  },
+  "지켜보며": {
+    "reading": "jikyeobomyeo",
+    "meaning": "while watching over, observing",
+    "type": "verb (conjunctive form)"
+  },
+  "고개": {
+    "reading": "gogae",
+    "meaning": "head",
+    "type": "noun"
+  },
+  "끄덕였어요": {
+    "reading": "kkeudeogyeosseoyo",
+    "meaning": "nodded",
+    "type": "verb"
+  },
+  "올려다보았어요": {
+    "reading": "ollyeodaboasseoyo",
+    "meaning": "looked up",
+    "type": "verb"
+  },
+  "크게": {
+    "reading": "keuge",
+    "meaning": "loudly, greatly, largely",
+    "type": "adverb"
+  },
+  "웃는": {
+    "reading": "utneun",
+    "meaning": "laughing (present adnominal form)",
+    "type": "verb (adnominal form)"
+  },
+  "환하게": {
+    "reading": "hwanhage",
+    "meaning": "brightly, radiantly",
+    "type": "adverb"
+  },
+  "사라져": {
+    "reading": "sarajyeo",
+    "meaning": "disappeared and",
+    "type": "verb (conjunctive form)"
+  },
+  "잠들었어요": {
+    "reading": "jamdeureosseoyo",
+    "meaning": "fell asleep",
+    "type": "verb"
   }
 }
