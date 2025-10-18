@@ -9931,7 +9931,7 @@
   },
   "The": {
     "reading": "ザ",
-    "meaning": "その、あの",
+    "meaning": "定冠詞",
     "type": "冠詞"
   },
   "howled": {
@@ -10146,7 +10146,7 @@
   },
   "One": {
     "reading": "ワン",
-    "meaning": "一つ、一人",
+    "meaning": "一つ、ある一つの",
     "type": "数詞"
   },
   "giggled": {
@@ -10473,5 +10473,310 @@
     "reading": "フットプリント",
     "meaning": "足跡、足 (絵文字)",
     "type": "絵文字"
+  },
+  "Finn": {
+    "reading": "フィン",
+    "meaning": "フィン (人名)",
+    "type": "固有名詞"
+  },
+  "clouds": {
+    "reading": "クラウズ",
+    "meaning": "雲 (複数形)",
+    "type": "名詞"
+  },
+  "drift": {
+    "reading": "ドリフト",
+    "meaning": "漂う、流れる",
+    "type": "動詞"
+  },
+  "lazily": {
+    "reading": "レイジリー",
+    "meaning": "怠惰に、のんびりと",
+    "type": "副詞"
+  },
+  "imagined": {
+    "reading": "イマジンド",
+    "meaning": "想像した (imagineの過去形)",
+    "type": "動詞"
+  },
+  "ship": {
+    "reading": "シップ",
+    "meaning": "船",
+    "type": "名詞"
+  },
+  "sailing": {
+    "reading": "セイリング",
+    "meaning": "航海、帆走 (現在分詞/動名詞)",
+    "type": "動名詞"
+  },
+  "lands": {
+    "reading": "ランズ",
+    "meaning": "土地、国々 (複数形)",
+    "type": "名詞"
+  },
+  "boat": {
+    "reading": "ボート",
+    "meaning": "ボート、小舟",
+    "type": "名詞"
+  },
+  "map": {
+    "reading": "マップ",
+    "meaning": "地図",
+    "type": "名詞"
+  },
+  "grandfather": {
+    "reading": "グランドファーザー",
+    "meaning": "祖父",
+    "type": "名詞"
+  },
+  "Every": {
+    "reading": "エブリー",
+    "meaning": "あらゆる、毎",
+    "type": "形容詞"
+  },
+  "adventure": {
+    "reading": "アドベンチャー",
+    "meaning": "冒険",
+    "type": "名詞"
+  },
+  "starts": {
+    "reading": "スターツ",
+    "meaning": "始まる (startの三人称単数現在形)",
+    "type": "動詞"
+  },
+  "grandfather's": {
+    "reading": "グランドファーザーズ",
+    "meaning": "祖父の",
+    "type": "名詞 (所有格)"
+  },
+  "pond": {
+    "reading": "ポンド",
+    "meaning": "池",
+    "type": "名詞"
+  },
+  "push": {
+    "reading": "プッシュ",
+    "meaning": "押す",
+    "type": "動詞"
+  },
+  "bobbed": {
+    "reading": "ボブド",
+    "meaning": "上下に揺れた、浮かんだ (bobの過去形)",
+    "type": "動詞"
+  },
+  "twice": {
+    "reading": "トワイス",
+    "meaning": "二度、二回",
+    "type": "副詞"
+  },
+  "shimmer": {
+    "reading": "シマー",
+    "meaning": "ちらちら光る、きらめく",
+    "type": "動詞"
+  },
+  "unfolded": {
+    "reading": "アンフォールディド",
+    "meaning": "広げた、展開した (unfoldの過去形)",
+    "type": "動詞"
+  },
+  "itself": {
+    "reading": "イットセルフ",
+    "meaning": "それ自身",
+    "type": "代名詞"
+  },
+  "billowing": {
+    "reading": "ビローイング",
+    "meaning": "膨らむ、波打つ (現在分詞/形容詞)",
+    "type": "形容詞"
+  },
+  "sails": {
+    "reading": "セイルズ",
+    "meaning": "帆 (複数形)",
+    "type": "名詞"
+  },
+  "Come": {
+    "reading": "カム",
+    "meaning": "来る (命令形/原形)",
+    "type": "動詞"
+  },
+  "aboard": {
+    "reading": "アボード",
+    "meaning": "乗船して、船上で",
+    "type": "副詞"
+  },
+  "Heart": {
+    "reading": "ハート",
+    "meaning": "心臓、心",
+    "type": "名詞"
+  },
+  "pounding": {
+    "reading": "パウンディング",
+    "meaning": "脈打つ、ドキドキする (現在分詞/形容詞)",
+    "type": "形容詞"
+  },
+  "deck": {
+    "reading": "デッキ",
+    "meaning": "甲板、デッキ",
+    "type": "名詞"
+  },
+  "rose": {
+    "reading": "ローズ",
+    "meaning": "上がった、上昇した (riseの過去形)",
+    "type": "動詞"
+  },
+  "below": {
+    "reading": "ビロー",
+    "meaning": "下に、下方へ",
+    "type": "副詞"
+  },
+  "smaller": {
+    "reading": "スモーラー",
+    "meaning": "より小さい (smallの比較級)",
+    "type": "形容詞"
+  },
+  "Through": {
+    "reading": "スルー",
+    "meaning": "〜を通り抜けて、〜を介して",
+    "type": "前置詞"
+  },
+  "extraordinary": {
+    "reading": "エクストラオーディナリー",
+    "meaning": "並外れた",
+    "type": "形容詞"
+  },
+  "covered": {
+    "reading": "カバード",
+    "meaning": "覆われた (coverの過去分詞/形容詞)",
+    "type": "形容詞"
+  },
+  "waterfalls": {
+    "reading": "ウォーターフォールズ",
+    "meaning": "滝 (複数形)",
+    "type": "名詞"
+  },
+  "When": {
+    "reading": "ホエン",
+    "meaning": "いつ、〜するとき",
+    "type": "接続詞"
+  },
+  "landed": {
+    "reading": "ランディド",
+    "meaning": "着陸した、上陸した (landの過去形)",
+    "type": "動詞"
+  },
+  "sparkled": {
+    "reading": "スパークルド",
+    "meaning": "輝いた、きらめいた (sparkleの過去形)",
+    "type": "動詞"
+  },
+  "starlight": {
+    "reading": "スターライト",
+    "meaning": "星明り",
+    "type": "名詞"
+  },
+  "Friendly": {
+    "reading": "フレンドリー",
+    "meaning": "友好的な、親しみやすい",
+    "type": "形容詞"
+  },
+  "circled": {
+    "reading": "サークルド",
+    "meaning": "旋回した、囲んだ (circleの過去形)",
+    "type": "動詞"
+  },
+  "singing": {
+    "reading": "シンギング",
+    "meaning": "歌うこと、歌っている (現在分詞/動名詞)",
+    "type": "動名詞"
+  },
+  "songs": {
+    "reading": "ソングズ",
+    "meaning": "歌 (複数形)",
+    "type": "名詞"
+  },
+  "fox": {
+    "reading": "フォックス",
+    "meaning": "キツネ",
+    "type": "名詞"
+  },
+  "shimmered": {
+    "reading": "シマード",
+    "meaning": "ちらちら光った、きらめいた (shimmerの過去形)",
+    "type": "動詞"
+  },
+  "dew": {
+    "reading": "デュー",
+    "meaning": "露",
+    "type": "名詞"
+  },
+  "Welcome": {
+    "reading": "ウェルカム",
+    "meaning": "歓迎する、ようこそ",
+    "type": "動詞"
+  },
+  "traveler": {
+    "reading": "トラベラー",
+    "meaning": "旅行者、旅人",
+    "type": "名詞"
+  },
+  "moves": {
+    "reading": "ムーブズ",
+    "meaning": "動く、移動する (moveの三人称単数現在形)",
+    "type": "動詞"
+  },
+  "wherever": {
+    "reading": "ホエアエバー",
+    "meaning": "〜するところはどこでも、どこへでも",
+    "type": "接続詞"
+  },
+  "needs": {
+    "reading": "ニーズ",
+    "meaning": "必要とする (needの三人称単数現在形)",
+    "type": "動詞"
+  },
+  "Together": {
+    "reading": "トゥゲザー",
+    "meaning": "一緒に",
+    "type": "副詞"
+  },
+  "horizon": {
+    "reading": "ホライズン",
+    "meaning": "地平線、水平線",
+    "type": "名詞"
+  },
+  "sunsets": {
+    "reading": "サンセッツ",
+    "meaning": "日没、夕焼け (複数形)",
+    "type": "名詞"
+  },
+  "mountain": {
+    "reading": "マウンテン",
+    "meaning": "山",
+    "type": "名詞"
+  },
+  "peaks": {
+    "reading": "ピークス",
+    "meaning": "頂上、山頂 (複数形)",
+    "type": "名詞"
+  },
+  "vanished": {
+    "reading": "バニッシュド",
+    "meaning": "消えた、姿を消した (vanishの過去形)",
+    "type": "動詞"
+  },
+  "Some": {
+    "reading": "サム",
+    "meaning": "いくつかの、一部の",
+    "type": "形容詞"
+  },
+  "can't": {
+    "reading": "キャント",
+    "meaning": "〜できない",
+    "type": "助動詞"
+  },
+  "sailed": {
+    "reading": "セイルド",
+    "meaning": "航海した、帆走した (sailの過去形)",
+    "type": "動詞"
   }
 }
