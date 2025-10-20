@@ -2,178 +2,233 @@
     "AVAILABLE_STORIES": [
     {
         "id": "yuta-skipping-day",
+        "title": "Yuta's Skipping Day",
         "language": "japanese",
         "translatedLanguages": ["en", "zh", "es", "ko", "vi"],
         "hasAudio": true,
-        "difficulty": 2
+        "difficulty": 2,
+        "dateAdded": "2025-10-20"
     },
     {
         "id": "dam-rivals",
+        "title": "Dam Rivals",
         "language": "english",
         "translatedLanguages": ["ja", "zh", "vi", "es"],
         "hasAudio": true,
-        "difficulty": 2
+        "difficulty": 2,
+        "dateAdded": "2025-10-20"
     },
     {
         "id": "still-dead-still-bored",
+        "title": "Still Dead Still Bored",
         "language": "english",
         "translatedLanguages": ["ja"],
         "updatedWeekly": true,
-        "difficulty": 5
+        "difficulty": 5,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "the-barista",
+        "title": "The Barista",
         "language": "english",
         "translatedLanguages": ["ja", "es"],
         "updatedWeekly": true,
-        "difficulty": 3
+        "difficulty": 3,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "for-rent",
+        "title": "For Rent",
         "language": "japanese",
         "translatedLanguages": ["en", "vi"],
         "updatedWeekly": true,
-        "difficulty": 4
+        "difficulty": 4,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "taipei-blues",
+        "title": "Taipei Blues",
         "language": "chinese",
         "translatedLanguages": ["en", "ja"],
         "ongoingSeries": true,
-        "difficulty": 3
+        "difficulty": 3,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "waves-and-hoops",
+        "title": "Waves and Hoops",
         "language": "japanese",
         "translatedLanguages": ["en", "vi", "zh", "es"],
         "hasAudio": true,
-        "difficulty": 6
+        "difficulty": 6,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "lotus-bloom",
+        "title": "Lotus Bloom",
         "language": "vietnamese",
         "translatedLanguages": ["en"],
         "ongoingSeries": true,
-        "difficulty": 3
+        "difficulty": 3,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "not-that-kind-of-influencer",
+        "title": "Not That Kind of Influencer",
         "language": "korean",
         "translatedLanguages": ["en", "ja", "vi"],
         "ongoingSeries": true,
         "hasAudio": true,
-        "difficulty": 2
+        "difficulty": 2,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "lost-subway",
+        "title": "Lost Subway",
         "language": "korean",
         "translatedLanguages": ["en"],
         "ongoingSeries": true,
-        "difficulty": 2
+        "difficulty": 2,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "el-nino-de-la-terminal",
+        "title": "El Niño de la Terminal",
         "language": "spanish",
         "translatedLanguages": ["en"],
         "ongoingSeries": true,
         "hasAudio": true,
-        "difficulty": 2
+        "difficulty": 2,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "katze",
+        "title": "Katze",
         "language": "german",
         "translatedLanguages": ["en"],
         "ongoingSeries": true,
         "hasAudio": true,
-        "difficulty": 2
+        "difficulty": 2,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "kitsune",
+        "title": "狐",
         "language": "japanese",
         "translatedLanguages": ["en"],
         "ongoingSeries": true,
         "hasAudio": true,
-        "difficulty": 2
+        "difficulty": 2,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "suenos",
+        "title": "Suenos",
         "language": "spanish",
         "translatedLanguages": ["en"],
         "ongoingSeries": true,
         "hasAudio": true,
-        "difficulty": 3
+        "difficulty": 3,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "sakana-to-tsuki",
+        "title": "鮭と月",
         "language": "japanese",
-        "translatedLanguages": ["en", "zh", "es", "ko", "vi"],
+        "translatedLanguages": ["en", "zh", "es", "ko", "vi", "fr"],
         "ongoingSeries": false,
         "hasAudio": true,
         "isChildrenStory": true,
-        "difficulty": 0
+        "difficulty": 0,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "pancake-bear",
+        "title": "パンケーキやさん",
         "language": "japanese",
         "translatedLanguages": ["en", "zh", "es"],
         "ongoingSeries": false,
         "hasAudio": true,
         "isChildrenStory": true,
-        "difficulty": 0
+        "difficulty": 0,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "magic-slippers",
+        "title": "魔法のスリッパ",
         "language": "japanese",
         "translatedLanguages": ["en", "es", "zh", "vi"],
         "ongoingSeries": false,
         "hasAudio": true,
         "isChildrenStory": true,
-        "difficulty": 0
+        "difficulty": 0,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "skelly",
+        "title": "Skelly",
         "language": "english",
         "translatedLanguages": ["ja", "es", "zh", "ko", "vi"],
         "ongoingSeries": false,
         "hasAudio": true,
         "isChildrenStory": true,
-        "difficulty": 0
+        "difficulty": 0,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "chocolate-train",
+        "title": "El Tren de Chocolate",
         "language": "spanish",
         "translatedLanguages": ["en"],
         "ongoingSeries": false,
         "hasAudio": true,
         "isChildrenStory": true,
-        "difficulty": 0
+        "difficulty": 0,
+        "dateAdded": "2025-10-20"
      },
      {
         "id": "moonlight-tiger",
+        "title": "달빛 호랑이",
         "language": "korean",
         "translatedLanguages": ["en", "vi", "ja", "es"],
         "ongoingSeries": false,
         "hasAudio": true,
         "isChildrenStory": true,
-        "difficulty": 0
+        "difficulty": 0,
+        "dateAdded": "2025-10-20"
      },
      {
       "id": "finn",
+      "title": "Finn",
       "language": "english",
       "translatedLanguages": ["ja", "es", "zh", "vi"],
       "ongoingSeries": false,
       "hasAudio": true,
       "isChildrenStory": true,
-      "difficulty": 0
+      "difficulty": 0,
+      "dateAdded": "2025-10-20"
      },
      {
       "id": "mekong",
+      "title": "Cuộc phiêu lưu trên sông Mê Kông",
       "language": "vietnamese",
       "translatedLanguages": ["en", "vi", "ja"],
       "ongoingSeries": false,
       "hasAudio": true,
       "isChildrenStory": true,
-      "difficulty": 0
+      "difficulty": 0,
+      "dateAdded": "2025-10-20"
+     },
+     {
+      "id": "boku-no-ki",
+      "title": "ボクの木",
+      "language": "japanese",
+      "translatedLanguages": ["en", "vi", "zh", "es", "fr"],
+      "ongoingSeries": false,
+      "hasAudio": true,
+      "isChildrenStory": true,
+      "difficulty": 0,
+      "dateAdded": "2025-10-21"
      }
     ]
 }
