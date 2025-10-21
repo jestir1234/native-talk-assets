@@ -12,8 +12,8 @@ const args = process.argv.slice(2);
 if (args.length < 3) {
     console.error('Usage: node generate-story-translations.js <source-language> <target-language> <story-file-path>');
     console.error('Example: node generate-story-translations.js ja en stories/sakana-to-tsuki/story.txt');
-    console.error('Supported source languages: en, ja, ko, zh, es, vi, de');
-    console.error('Supported target languages: en, ja, ko, zh, es, vi, de');
+    console.error('Supported source languages: en, ja, ko, zh, es, vi, de, fr');
+    console.error('Supported target languages: en, ja, ko, zh, es, vi, de, fr');
     process.exit(1);
 }
 
@@ -23,7 +23,7 @@ const TARGET_LANG = args[1];
 const STORY_FILE_PATH = args[2];
 
 // Validate language codes
-const supportedLanguages = ['en', 'ja', 'ko', 'zh', 'es', 'vi', 'de'];
+const supportedLanguages = ['en', 'ja', 'ko', 'zh', 'es', 'vi', 'de', 'fr'];
 if (!supportedLanguages.includes(SOURCE_LANG) || !supportedLanguages.includes(TARGET_LANG)) {
     console.error('❌ Unsupported language pair. Supported languages:', supportedLanguages.join(', '));
     process.exit(1);
@@ -38,7 +38,8 @@ const langDirMap = {
     'zh': 'chinese',
     'es': 'spanish',
     'vi': 'vietnamese',
-    'de': 'german'
+    'de': 'german',
+    'fr': 'french'
 };
 
 const MASTER_DICT_PATH = `dictionaries/${langDirMap[SOURCE_LANG] || SOURCE_LANG}/${TARGET_LANG}-v1.json`;

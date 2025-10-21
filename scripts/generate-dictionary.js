@@ -66,6 +66,12 @@ const languageConfigs = {
         readingField: 'reading',
         meaningField: 'meaning',
         typeField: 'type'
+    },
+    'fr': {
+        name: 'French',
+        readingField: 'reading',
+        meaningField: 'meaning',
+        typeField: 'type'
     }
 };
 
