@@ -21,6 +21,8 @@ async function tokenizeTextWithPunctuation(text, lang) {
             return tokenizeVietnameseWithPunctuation(text);
         case "de":
             return tokenizeGermanWithPunctuation(text);
+        case "fr":
+            return tokenizeFrenchWithPunctuation(text);
         default:
             console.warn(`⚠️  Unknown language '${lang}', using English tokenization`);
             return tokenizeEnglishWithPunctuation(text);
@@ -131,6 +133,18 @@ function tokenizeGermanWithPunctuation(text) {
         .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
         .toLowerCase()
         .split(/([.!?,;:""''()\s]+)/)
+        .filter(word => word.length > 0)
+        .map(word => word.trim())
+        .filter(word => word.length > 0);
+}
+
+// French tokenization with punctuation preserved
+// French uses « » for quotation marks
+function tokenizeFrenchWithPunctuation(text) {
+    return text
+        .replace(/\r?\n/g, ' ') // Replace line breaks with spaces
+        .toLowerCase()
+        .split(/([.!?,;:""''«»()\s]+)/)
         .filter(word => word.length > 0)
         .map(word => word.trim())
         .filter(word => word.length > 0);
