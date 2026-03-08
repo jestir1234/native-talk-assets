@@ -1,0 +1,319 @@
+{
+  "id": "battle_baseball_practice_weather_01",
+  "setting": "park-day",
+  "character": "baseball-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "よう、今日も練習か？　最近雨ばっかで外でできねえのがきつかったな。",
+      "vocab": [
+        "練習",
+        "最近",
+        "雨",
+        "外",
+        "きつかった"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to the NPC's complaint about the weather affecting practice.",
+      "responses": {
+        "tier1": {
+          "prompt": "Acknowledge the difficulty.",
+          "answer": "本当 に そう だ ね",
+          "tokens": [
+            "本当",
+            "に",
+            "そう",
+            "だ",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree and mention the impact on training.",
+          "answer": "雨 だ と 外 で の 練習 が できない から 大変 だ ね",
+          "tokens": [
+            "雨",
+            "だ",
+            "と",
+            "外",
+            "で",
+            "の",
+            "練習",
+            "が",
+            "できない",
+            "から",
+            "大変",
+            "だ",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree and ask if they've been doing anything indoors instead.",
+          "answer": "本当 に そう だ ね 雨 ばかり だ と 外 で の 練習 が できない から きつい よな。家 とか で 何か してる の か？",
+          "tokens": [
+            "本当",
+            "に",
+            "そう",
+            "だ",
+            "ね",
+            "雨",
+            "ばかり",
+            "だ",
+            "と",
+            "外",
+            "で",
+            "の",
+            "練習",
+            "が",
+            "できない",
+            "から",
+            "きつい",
+            "よな",
+            "家",
+            "とか",
+            "で",
+            "何か",
+            "してる",
+            "の",
+            "か"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "ああ、室内練習場 で バッティング とか しとる よ。でも やっぱり 外 で の プレー が 一番 だ から な。",
+      "vocab": [
+        "室内練習場",
+        "バッティング",
+        "プレー"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about their preferred position.",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask about their position.",
+          "answer": "ポジション は どこ が 好き な の",
+          "tokens": [
+            "ポジション",
+            "は",
+            "どこ",
+            "が",
+            "好き",
+            "な",
+            "の"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask what position they play and if they like it.",
+          "answer": "君 の ポジション は どこ な の？ それ は 楽しい？",
+          "tokens": [
+            "君",
+            "の",
+            "ポジション",
+            "は",
+            "どこ",
+            "な",
+            "の",
+            "それ",
+            "は",
+            "楽しい"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask what their main position is and why they like playing it.",
+          "answer": "君 の メイン の ポジション は どこ な の？ どうして その ポジション が 好きな の？",
+          "tokens": [
+            "君",
+            "の",
+            "メイン",
+            "の",
+            "ポジション",
+            "は",
+            "どこ",
+            "な",
+            "の",
+            "どうして",
+            "その",
+            "ポジション",
+            "が",
+            "好き",
+            "な",
+            "の"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "俺 は 外野 だ な。ボール を 追いかける の が 好き で。",
+      "vocab": [
+        "外野",
+        "ボール",
+        "追いかける"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about their future dreams.",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask about dreams.",
+          "answer": "夢 は ある の？",
+          "tokens": [
+            "夢",
+            "は",
+            "ある",
+            "の"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask about their dreams for playing baseball.",
+          "answer": "野球 に 関する 夢 と か、何か ある の？",
+          "tokens": [
+            "野球",
+            "に",
+            "関する",
+            "夢",
+            "と",
+            "か",
+            "何か",
+            "ある",
+            "の"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask about their biggest dream related to baseball.",
+          "answer": "君 の 野球 に 関する 一番 大きな 夢 は 何 な の？",
+          "tokens": [
+            "君",
+            "の",
+            "野球",
+            "に",
+            "関する",
+            "一番",
+            "大きな",
+            "夢",
+            "は",
+            "何",
+            "な",
+            "の"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "プロ に なって、甲子園 で 優勝 する こと だ よ！",
+      "vocab": [
+        "プロ",
+        "甲子園",
+        "優勝"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Encourage them and wish them luck.",
+      "responses": {
+        "tier1": {
+          "prompt": "Wish them luck.",
+          "answer": "頑張って ね",
+          "tokens": [
+            "頑張って",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say they can achieve their dream.",
+          "answer": "その 夢 は きっと 叶う と 思う よ",
+          "tokens": [
+            "その",
+            "夢",
+            "は",
+            "きっと",
+            "叶う",
+            "と",
+            "思う",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say they can achieve their dream with hard work and practice.",
+          "answer": "その 夢 は きっと 叶う と 思う よ 練習 を 続ければ",
+          "tokens": [
+            "その",
+            "夢",
+            "は",
+            "きっと",
+            "叶う",
+            "と",
+            "思う",
+            "よ",
+            "練習",
+            "を",
+            "続ければ"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "おう、ありがとう！ また 練習 しよう ぜ。",
+      "vocab": [
+        "ありがとう",
+        "また"
+      ],
+      "next": "node_end"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "sad",
+      "text": "ま、まあ、そういう こと も ある よな。",
+      "result": "The conversation ended poorly.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "また な！",
+      "result": "You had a good conversation about baseball practice and dreams.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    }
+  }
+}
