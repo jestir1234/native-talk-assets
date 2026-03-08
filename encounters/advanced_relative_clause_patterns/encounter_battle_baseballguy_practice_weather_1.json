@@ -1,0 +1,378 @@
+{
+  "id": "battle_baseballguy_practice_weather_1",
+  "setting": "park-day",
+  "character": "baseball-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "よお、来てくれたか。今日も練習きつかったな。",
+      "vocab": [
+        "練習",
+        "きつかった"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to his comment about practice being tough.",
+      "responses": {
+        "tier1": {
+          "prompt": "That sounds rough.",
+          "answer": "大変 だった ね",
+          "tokens": [
+            "大変",
+            "だった",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "That sounds rough. Was it especially tough today?",
+          "answer": "今日 は 特に 大変 だった の か",
+          "tokens": [
+            "今日",
+            "は",
+            "特に",
+            "大変",
+            "だった",
+            "の",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "That sounds rough. Was it especially tough today? Did you work on anything specific?",
+          "answer": "今日 は 特に 大変 だった の か 何か 特定 の こと を 練習 した の か",
+          "tokens": [
+            "今日",
+            "は",
+            "特に",
+            "大変",
+            "だった",
+            "の",
+            "か",
+            "何か",
+            "特定",
+            "の",
+            "こと",
+            "を",
+            "練習",
+            "した",
+            "の",
+            "か"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "ああ、ちょっとな。それにしても、今日の天気、試合に影響出そうで嫌だな。",
+      "vocab": [
+        "天気",
+        "試合",
+        "影響",
+        "嫌"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "React to his concern about the weather affecting the game.",
+      "responses": {
+        "tier1": {
+          "prompt": "Yeah, the weather is important.",
+          "answer": "天気 は 大事だ",
+          "tokens": [
+            "天気",
+            "は",
+            "大事だ"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yeah, the weather is important. When the weather's bad, games get cancelled.",
+          "answer": "天気 は 大事だ 悪天候 だと 試合 が 中止 に なる し",
+          "tokens": [
+            "天気",
+            "は",
+            "大事だ",
+            "悪天候",
+            "だと",
+            "試合",
+            "が",
+            "中止",
+            "に",
+            "なる",
+            "し"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yeah, the weather is important. When the weather's bad, games get cancelled. It makes it hard to practice too.",
+          "answer": "天気 は 大事だ 悪天候 だと 試合 が 中止 に なる し 練習 も し にくい し",
+          "tokens": [
+            "天気",
+            "は",
+            "大事だ",
+            "悪天候",
+            "だと",
+            "試合",
+            "が",
+            "中止",
+            "に",
+            "なる",
+            "し",
+            "練習",
+            "も",
+            "し",
+            "にくい",
+            "し"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "sad",
+      "text": "だよな。せっかく調子上げてきても、天候で台無しになっちまうと、マジでがっかりだぜ。",
+      "vocab": [
+        "調子",
+        "天候",
+        "台無し",
+        "がっかり"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree and express understanding of his frustration.",
+      "responses": {
+        "tier1": {
+          "prompt": "I understand.",
+          "answer": "わかるよ",
+          "tokens": [
+            "わかる",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "I understand. It's frustrating when your hard work is ruined by something you can't control.",
+          "answer": "わかるよ 努力 が 無駄 に なると 悔しい よな",
+          "tokens": [
+            "わかる",
+            "よ",
+            "努力",
+            "が",
+            "無駄",
+            "に",
+            "なると",
+            "悔しい",
+            "よな"
+          ]
+        },
+        "tier3": {
+          "prompt": "I understand. It's frustrating when your hard work is ruined by something you can't control. You want to be able to play regardless of the weather.",
+          "answer": "わかるよ 努力 が 無駄 に なると 悔しい よな 天気 に 関係なく プレー したい もん な",
+          "tokens": [
+            "わかる",
+            "よ",
+            "努力",
+            "が",
+            "無駄",
+            "に",
+            "なると",
+            "悔しい",
+            "よな",
+            "天気",
+            "に",
+            "関係なく",
+            "プレー",
+            "したい",
+            "もん",
+            "な"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "おう！それだよ。だから、どんな天気でも、できる限りの練習をしないとダメなんだよな。",
+      "vocab": [
+        "どんな",
+        "できる",
+        "限りの",
+        "ダメ"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about his position or role on the team.",
+      "responses": {
+        "tier1": {
+          "prompt": "What position do you play?",
+          "answer": "ポジション は 何",
+          "tokens": [
+            "ポジション",
+            "は",
+            "何"
+          ]
+        },
+        "tier2": {
+          "prompt": "What position do you play? I'm curious about your role on the team.",
+          "answer": "ポジション は 何 チーム で どんな 役割 な の か 気になる",
+          "tokens": [
+            "ポジション",
+            "は",
+            "何",
+            "チーム",
+            "で",
+            "どんな",
+            "役割",
+            "な",
+            "の",
+            "か",
+            "気になる"
+          ]
+        },
+        "tier3": {
+          "prompt": "What position do you play? I'm curious about your role on the team. It must be tough to be consistent in that position.",
+          "answer": "ポジション は 何 チーム で どんな 役割 な の か 気になる その ポジション で 一定の プレー を 続ける の は 大変 だろう",
+          "tokens": [
+            "ポジション",
+            "は",
+            "何",
+            "チーム",
+            "で",
+            "どんな",
+            "役割",
+            "な",
+            "の",
+            "か",
+            "気になる",
+            "その",
+            "ポジション",
+            "で",
+            "一定",
+            "の",
+            "プレー",
+            "を",
+            "続ける",
+            "の",
+            "は",
+            "大変",
+            "だろう"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "俺はピッチャーだよ。だから、どんな状況でも投げられるように、日頃から体調管理はしっかりしてるんだ。",
+      "vocab": [
+        "ピッチャー",
+        "状況",
+        "体調管理",
+        "しっかり"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about his dreams or aspirations.",
+      "responses": {
+        "tier1": {
+          "prompt": "What are your dreams?",
+          "answer": "夢 は 何",
+          "tokens": [
+            "夢",
+            "は",
+            "何"
+          ]
+        },
+        "tier2": {
+          "prompt": "What are your dreams? Do you hope to play professionally someday?",
+          "answer": "夢 は 何 将来 プロ で 活躍 したい とか",
+          "tokens": [
+            "夢",
+            "は",
+            "何",
+            "将来",
+            "プロ",
+            "で",
+            "活躍",
+            "したい",
+            "とか"
+          ]
+        },
+        "tier3": {
+          "prompt": "What are your dreams? Do you hope to play professionally someday? I bet you've been dreaming of it since you were little.",
+          "answer": "夢 は 何 将来 プロ で 活躍 したい とか 小さい 頃 から その 夢 を 見て きた ん だろう",
+          "tokens": [
+            "夢",
+            "は",
+            "何",
+            "将来",
+            "プロ",
+            "で",
+            "活躍",
+            "したい",
+            "とか",
+            "小さい",
+            "頃",
+            "から",
+            "その",
+            "夢",
+            "を",
+            "見て",
+            "きた",
+            "ん",
+            "だろう"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "おう！やっぱりプロ野球選手になって、甲子園で活躍するのが夢だよ。そのためにも、毎日の練習を頑張ってるんだ。",
+      "vocab": [
+        "プロ野球選手",
+        "甲子園",
+        "活躍",
+        "毎日の"
+      ],
+      "next": "node_fail"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "sad",
+      "text": "残念だけど、また今度な。お疲れ。",
+      "result": "Conversation ended. Better luck next time!",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    }
+  }
+}
