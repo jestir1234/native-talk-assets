@@ -1,0 +1,364 @@
+{
+  "id": "battle_baseball-guy_relative_clause_1",
+  "setting": "park-day",
+  "character": "baseball-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "お、お疲れ！ Mattさん、今日はいい天気だな。練習にはもってこいだぜ。",
+      "vocab": [
+        "天気",
+        "練習",
+        "もってこい"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You agree the weather is good for practice.",
+      "responses": {
+        "tier1": {
+          "prompt": "Yes, good weather.",
+          "answer": "はい いい 天気 です",
+          "tokens": [
+            "はい",
+            "いい",
+            "天気",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yes, it's great weather for practice.",
+          "answer": "はい 練習 に とても いい 天気 です",
+          "tokens": [
+            "はい",
+            "練習",
+            "に",
+            "とても",
+            "いい",
+            "天気",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yes, it's really great weather for practice today.",
+          "answer": "はい 今日 は 練習 に とても いい 天気 です ね",
+          "tokens": [
+            "はい",
+            "今日",
+            "は",
+            "練習",
+            "に",
+            "とても",
+            "いい",
+            "天気",
+            "です",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "だろ？ 昔は雨ばっかりで、練習ができなくてきつかったな。あの頃の俺は、もっと上手くなりたいって思ってたんだ。",
+      "vocab": [
+        "雨",
+        "練習",
+        "上手く",
+        "思う"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You ask about his dream when he was younger.",
+      "responses": {
+        "tier1": {
+          "prompt": "What was your dream?",
+          "answer": "夢 は 何 です か",
+          "tokens": [
+            "夢",
+            "は",
+            "何",
+            "です",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "When you were younger, what was the dream you had?",
+          "answer": "昔 持って いた 夢 は 何 でした か",
+          "tokens": [
+            "昔",
+            "持って",
+            "いた",
+            "夢",
+            "は",
+            "何",
+            "でした",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "When you were younger, what was the dream that you had, the one you worked hard for?",
+          "answer": "昔 持って いた 夢 で、 一生懸命 やって いた 夢 は 何 でした か",
+          "tokens": [
+            "昔",
+            "持って",
+            "いた",
+            "夢",
+            "で",
+            "一生懸命",
+            "やって",
+            "いた",
+            "夢",
+            "は",
+            "何",
+            "でした",
+            "か"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "プロ野球選手だよ！ あの、甲子園とか出るような。ピッチャーで、チームを勝たせるような、そんな選手になりたかったんだ。",
+      "vocab": [
+        "プロ野球選手",
+        "甲子園",
+        "ピッチャー",
+        "チーム",
+        "勝たせる"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You ask about the position he played.",
+      "responses": {
+        "tier1": {
+          "prompt": "What position did you play?",
+          "answer": "ポジション は 何 です か",
+          "tokens": [
+            "ポジション",
+            "は",
+            "何",
+            "です",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "What position did you play on the team then?",
+          "answer": "その 時 チーム で ポジション は 何 でした か",
+          "tokens": [
+            "その",
+            "時",
+            "チーム",
+            "で",
+            "ポジション",
+            "は",
+            "何",
+            "でした",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "The players who played on the team, what position was it that you played?",
+          "answer": "チーム で やって いた 選手 の 中 で、 あなた の ポジション は 何 でした か",
+          "tokens": [
+            "チーム",
+            "で",
+            "やって",
+            "いた",
+            "選手",
+            "の",
+            "中",
+            "で",
+            "あなた",
+            "の",
+            "ポジション",
+            "は",
+            "何",
+            "でした",
+            "か"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "ピッチャーだよ。打たれると悔しいんだけど、抑えた時の達成感はたまんないんだ。 Mattさんも、何か熱中してることとかある？",
+      "vocab": [
+        "打たれる",
+        "悔しい",
+        "抑える",
+        "達成感",
+        "熱中"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You mention you enjoy playing baseball, a hobby you picked up.",
+      "responses": {
+        "tier1": {
+          "prompt": "I enjoy baseball.",
+          "answer": "野球 が 好き です",
+          "tokens": [
+            "野球",
+            "が",
+            "好き",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "I enjoy playing baseball, it's a hobby I picked up recently.",
+          "answer": "野球 を やる のが 好き です 最近 始めた 趣味 です",
+          "tokens": [
+            "野球",
+            "を",
+            "やる",
+            "の",
+            "が",
+            "好き",
+            "です",
+            "最近",
+            "始めた",
+            "趣味",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "I enjoy playing baseball a lot, it's a hobby that I picked up because I saw people playing.",
+          "answer": "野球 を やる のが 大好き です 人々 が やって いる のを 見て 始めた 趣味 です",
+          "tokens": [
+            "野球",
+            "を",
+            "やる",
+            "の",
+            "が",
+            "大好き",
+            "です",
+            "人々",
+            "が",
+            "やって",
+            "いる",
+            "の",
+            "を",
+            "見て",
+            "始めた",
+            "趣味",
+            "です"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "おお、いいね！ 趣味で野球をやるのは、また違う楽しさがあるよな。俺も、昔はもっと練習ばかりだったから、そういう時間も大事にしたいもんだ。",
+      "vocab": [
+        "趣味",
+        "違う",
+        "楽しさ",
+        "練習",
+        "大事"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You say you want to practice together sometime.",
+      "responses": {
+        "tier1": {
+          "prompt": "Let's practice together.",
+          "answer": "一緒に 練習 し ましょう",
+          "tokens": [
+            "一緒に",
+            "練習",
+            "し",
+            "ましょう"
+          ]
+        },
+        "tier2": {
+          "prompt": "I want to practice together sometime, if you have time.",
+          "answer": "もし 時間 が あれば いつか 一緒に 練習 したい です",
+          "tokens": [
+            "もし",
+            "時間",
+            "が",
+            "あれば",
+            "いつか",
+            "一緒に",
+            "練習",
+            "したい",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "If you have time, I want to practice together sometime when the weather is good.",
+          "answer": "もし 時間 が あれば 天気 が いい 時 に いつか 一緒に 練習 したい です",
+          "tokens": [
+            "もし",
+            "時間",
+            "が",
+            "あれば",
+            "天気",
+            "が",
+            "いい",
+            "時",
+            "に",
+            "いつか",
+            "一緒に",
+            "練習",
+            "したい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "おう、いつでも来いよ！ Mattさん、またな！",
+      "result": "You learned about baseball player dreams and practice. You also practiced relative clauses.",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "angry",
+      "text": "なんだよ、もう帰るのか？ また今度だな。",
+      "result": "You failed to connect with the baseball player.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    }
+  }
+}
