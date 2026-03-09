@@ -1,0 +1,326 @@
+{
+  "id": "battle_demure-lady_relative_clause_1",
+  "setting": "suburb-day",
+  "character": "demure-lady",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "neutral",
+      "text": "こんにちは、Mattさん。今日はいいお天気ですね。",
+      "vocab": [
+        "こんにちは",
+        "天気"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to the greeting and comment about the weather.",
+      "responses": {
+        "tier1": {
+          "prompt": "Hello. Yes, it's nice.",
+          "answer": "こんにちは いい天気 ですね",
+          "tokens": [
+            "こんにちは",
+            "いい",
+            "天気",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Hello. Yes, it's a beautiful day, isn't it?",
+          "answer": "こんにちは 本当に 気持ちのいい 晴れ ですね",
+          "tokens": [
+            "こんにちは",
+            "本当に",
+            "気持ちのいい",
+            "晴れ",
+            "です",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Hello. Yes, it's a beautiful day today, and I'm glad to see you.",
+          "answer": "こんにちは 本当に 気持ちのいい 晴れ の日 ですね お会いできて 嬉しいです",
+          "tokens": [
+            "こんにちは",
+            "本当に",
+            "気持ちのいい",
+            "晴れ",
+            "の",
+            "日",
+            "です",
+            "ね",
+            "お会いできて",
+            "嬉しい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "ありがとうございます。Mattさんはどちらからいらっしゃいましたか？",
+      "vocab": [
+        "ありがとうございます",
+        "いらっしゃいましたか"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Tell her where you are from.",
+      "responses": {
+        "tier1": {
+          "prompt": "I'm from Tokyo.",
+          "answer": "東京 から 来ました",
+          "tokens": [
+            "東京",
+            "から",
+            "来ました"
+          ]
+        },
+        "tier2": {
+          "prompt": "I'm from Tokyo, where the food is delicious.",
+          "answer": "東京 から 来ました 美味しい 食べ物 が 多いところ です",
+          "tokens": [
+            "東京",
+            "から",
+            "来ました",
+            "美味しい",
+            "食べ物",
+            "が",
+            "多い",
+            "ところ",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "I'm from Tokyo, where the food is delicious and many people live.",
+          "answer": "東京 から 来ました 美味しい 食べ物 が 多くて 人々 が たくさん住んでいる ところ です",
+          "tokens": [
+            "東京",
+            "から",
+            "来ました",
+            "美味しい",
+            "食べ物",
+            "が",
+            "多くて",
+            "人々",
+            "が",
+            "たくさん",
+            "住んでいる",
+            "ところ",
+            "です"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "neutral",
+      "text": "まあ、東京ですか。都会は活気がありますね。こちらは静かな町ですので、少し戸惑われるかもしれません。",
+      "vocab": [
+        "都会",
+        "活気",
+        "静か",
+        "町",
+        "戸惑う"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Reassure her that you will adapt.",
+      "responses": {
+        "tier1": {
+          "prompt": "I will get used to it.",
+          "answer": "慣れます",
+          "tokens": [
+            "慣れます"
+          ]
+        },
+        "tier2": {
+          "prompt": "I will get used to it. I like quiet places.",
+          "answer": "慣れます 静かな 場所 が 好きです",
+          "tokens": [
+            "慣れます",
+            "静かな",
+            "場所",
+            "が",
+            "好き",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "I will get used to it. I like quiet places, and I want to learn your customs.",
+          "answer": "慣れます 静かな 場所 が 好きです あなたの 習慣 を 学びたいです",
+          "tokens": [
+            "慣れます",
+            "静かな",
+            "場所",
+            "が",
+            "好き",
+            "です",
+            "あなたの",
+            "習慣",
+            "を",
+            "学びたい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "blushing",
+      "text": "あら、嬉しいです。この町には、昔ながらの風習が残っているところもありますから。",
+      "vocab": [
+        "昔ながら",
+        "風習",
+        "残る"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about old customs.",
+      "responses": {
+        "tier1": {
+          "prompt": "What are they?",
+          "answer": "どのような もの ですか",
+          "tokens": [
+            "どのような",
+            "もの",
+            "です",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of old customs are there?",
+          "answer": "どのような 昔ながら の 風習 が ありますか",
+          "tokens": [
+            "どのような",
+            "昔ながら",
+            "の",
+            "風習",
+            "が",
+            "あります",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "What kind of old customs are there? I want to know about them.",
+          "answer": "どのような 昔ながら の 風習 が ありますか それについて 知りたいです",
+          "tokens": [
+            "どのような",
+            "昔ながら",
+            "の",
+            "風習",
+            "が",
+            "あります",
+            "か",
+            "それについて",
+            "知りたい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "happy",
+      "text": "そうですね…例えば、この地域で昔から食べられている、ある特別な郷土料理があるんですよ。",
+      "vocab": [
+        "地域",
+        "郷土料理"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Express interest in the local food.",
+      "responses": {
+        "tier1": {
+          "prompt": "That sounds interesting.",
+          "answer": "興味深い ですね",
+          "tokens": [
+            "興味深い",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "That sounds interesting. I'd like to try it.",
+          "answer": "興味深い ですね 食べてみたい です",
+          "tokens": [
+            "興味深い",
+            "です",
+            "ね",
+            "食べてみたい",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "That sounds interesting. I'd like to try it sometime if possible.",
+          "answer": "興味深い ですね もし 可能 なら いつか 食べてみたい です",
+          "tokens": [
+            "興味深い",
+            "です",
+            "ね",
+            "もし",
+            "可能",
+            "なら",
+            "いつか",
+            "食べてみたい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "ふふ、そう言っていただけると嬉しいです。人というのは、時代と共に変わっていくものですが、食の記憶は残るものなのですね。",
+      "vocab": [
+        "時代",
+        "食",
+        "記憶",
+        "残る"
+      ],
+      "next": "node_fail"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "neutral",
+      "text": "またお会いできるのを楽しみにしています。",
+      "result": "You ended the conversation.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    }
+  }
+}
