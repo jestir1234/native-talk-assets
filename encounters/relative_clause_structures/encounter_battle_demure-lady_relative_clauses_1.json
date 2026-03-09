@@ -1,0 +1,410 @@
+{
+  "id": "battle_demure-lady_relative_clauses_1",
+  "setting": "suburb-day",
+  "character": "demure-lady",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "こんにちは、Mattさん。今日はとても良いお天気ですね。",
+      "vocab": [
+        "こんにちは",
+        "天気"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You agree about the weather.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree it's good weather.",
+          "answer": "いい天気ですね",
+          "tokens": [
+            "いい",
+            "天気",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree that it's good weather, and it feels nice.",
+          "answer": "ええ、とてもいい天気で気持ちがいいですね",
+          "tokens": [
+            "ええ",
+            "とても",
+            "いい",
+            "天気",
+            "で",
+            "気持ち",
+            "が",
+            "いい",
+            "です",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree that it's good weather, and it feels nice. You hope it stays this way.",
+          "answer": "ええ、とてもいい天気で気持ちがいいですね。このままだといいのですが。",
+          "tokens": [
+            "ええ",
+            "とても",
+            "いい",
+            "天気",
+            "で",
+            "気持ち",
+            "が",
+            "いい",
+            "です",
+            "ね",
+            "この",
+            "まま",
+            "だ",
+            "と",
+            "いい",
+            "の",
+            "ですが"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "neutral",
+      "text": "この辺りはいつも静かで、住みやすいところなんですよ。Mattさんはどちらからいらっしゃいましたか？",
+      "vocab": [
+        "辺り",
+        "静か",
+        "住みやすい",
+        "いらっしゃいました"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You are from a big city.",
+      "responses": {
+        "tier1": {
+          "prompt": "From a big city.",
+          "answer": "大きな街から来ました",
+          "tokens": [
+            "大きな",
+            "街",
+            "から",
+            "来ました"
+          ]
+        },
+        "tier2": {
+          "prompt": "I came from a big city, but it was very noisy.",
+          "answer": "大きな街から来ました、でもとてもうるさかったです",
+          "tokens": [
+            "大きな",
+            "街",
+            "から",
+            "来ました",
+            "でも",
+            "とても",
+            "うるさかっ",
+            "た",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "I came from a big city, but it was very noisy. I prefer it here now.",
+          "answer": "大きな街から来ました、でもとてもうるさかったです。今はここが好きです。",
+          "tokens": [
+            "大きな",
+            "街",
+            "から",
+            "来ました",
+            "でも",
+            "とても",
+            "うるさかっ",
+            "た",
+            "です",
+            "今",
+            "は",
+            "ここ",
+            "が",
+            "好き",
+            "です"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "blushing",
+      "text": "まあ、そうですか。都会は活気があって良いですが、 quietness（静けさ）も大切ですね。以前、私が住んでいたところは、 always（いつも）賑やかでした。",
+      "vocab": [
+        "都会",
+        "活気",
+        "静けさ",
+        "大切",
+        "賑やか"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You ask about the place she used to live.",
+      "responses": {
+        "tier1": {
+          "prompt": "Where did you live?",
+          "answer": "どちらにお住まいでしたか",
+          "tokens": [
+            "どちら",
+            "に",
+            "お住まい",
+            "でした",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "Where did you live before? Was it a noisy place?",
+          "answer": "以前はどちらにお住まいでしたか？うるさいところでしたか？",
+          "tokens": [
+            "以前",
+            "は",
+            "どちら",
+            "に",
+            "お住まい",
+            "でした",
+            "か",
+            "うるさい",
+            "ところ",
+            "でした",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Where did you live before? Was it a noisy place, or a place where many people lived?",
+          "answer": "以前はどちらにお住まいでしたか？うるさいところでしたか、それとも人がたくさん住んでいるところでしたか？",
+          "tokens": [
+            "以前",
+            "は",
+            "どちら",
+            "に",
+            "お住まい",
+            "でした",
+            "か",
+            "うるさい",
+            "ところ",
+            "でした",
+            "か",
+            "それとも",
+            "人",
+            "が",
+            "たくさん",
+            "住ん",
+            "で",
+            "いる",
+            "ところ",
+            "でした",
+            "か"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "sad",
+      "text": "それは…海辺の小さな町でした。いつも人々が訪れて、観光客がとても多いところでした。静かな日々が懐かしいです。",
+      "vocab": [
+        "海辺",
+        "町",
+        "訪れて",
+        "観光客",
+        "懐かしい"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You understand and say that food from that time must be delicious.",
+      "responses": {
+        "tier1": {
+          "prompt": "Food must be good.",
+          "answer": "食べ物は美味しいでしょう",
+          "tokens": [
+            "食べ物",
+            "は",
+            "美味しい",
+            "でしょう"
+          ]
+        },
+        "tier2": {
+          "prompt": "The food from that town must be delicious. What kind of food was there?",
+          "answer": "その町の食べ物は美味しいでしょうね。どんな食べ物がありましたか？",
+          "tokens": [
+            "その",
+            "町",
+            "の",
+            "食べ物",
+            "は",
+            "美味しい",
+            "でしょう",
+            "ね",
+            "どんな",
+            "食べ物",
+            "が",
+            "あり",
+            "まし",
+            "た",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "The food from that town must be delicious. What kind of food was there? Things you ate when you were young?",
+          "answer": "その町の食べ物は美味しいでしょうね。どんな食べ物がありましたか？若い頃に食べたものですか？",
+          "tokens": [
+            "その",
+            "町",
+            "の",
+            "食べ物",
+            "は",
+            "美味しい",
+            "でしょう",
+            "ね",
+            "どんな",
+            "食べ物",
+            "が",
+            "あり",
+            "まし",
+            "た",
+            "か",
+            "若い頃",
+            "に",
+            "食べ",
+            "た",
+            "もの",
+            "です",
+            "か"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "happy",
+      "text": "ええ、そうですね。特に、祖母が作ってくれたお菓子が懐かしくて。時代が変わって、今はあまり見かけなくなりましたが、その頃の味は忘れません。",
+      "vocab": [
+        "祖母",
+        "お菓子",
+        "時代",
+        "見かけ",
+        "味"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You say that times change, but old memories are important.",
+      "responses": {
+        "tier1": {
+          "prompt": "Times change.",
+          "answer": "時代は変わります",
+          "tokens": [
+            "時代",
+            "は",
+            "変わり",
+            "ます"
+          ]
+        },
+        "tier2": {
+          "prompt": "Times change, but memories are important.",
+          "answer": "時代は変わりますが、思い出は大切ですね",
+          "tokens": [
+            "時代",
+            "は",
+            "変わり",
+            "ます",
+            "が",
+            "思い出",
+            "は",
+            "大切",
+            "です",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Times change, but memories are important. The tastes and things that were there are precious.",
+          "answer": "時代は変わりますが、思い出は大切ですね。あったものや味は宝物です。",
+          "tokens": [
+            "時代",
+            "は",
+            "変わり",
+            "ます",
+            "が",
+            "思い出",
+            "は",
+            "大切",
+            "です",
+            "ね",
+            "あっ",
+            "た",
+            "もの",
+            "や",
+            "味",
+            "は",
+            "宝物",
+            "です"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "おっしゃる通りですね。Mattさんも、これからも色々な経験をされて、たくさんの思い出を作ってくださいね。",
+      "vocab": [
+        "おっしゃる",
+        "経験",
+        "思い出",
+        "作って"
+      ],
+      "next": "node_end"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "sad",
+      "text": "まあ…どうもありがとうございました。",
+      "result": "You did not make a good impression.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "happy",
+      "text": "今日はありがとうございました。またお会いできるのを楽しみにしています。",
+      "result": "You made a good impression!",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      }
+    }
+  }
+}
