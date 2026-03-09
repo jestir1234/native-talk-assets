@@ -1,0 +1,409 @@
+{
+  "id": "battle_otaku_relative_clause_1",
+  "setting": "apartment-evening",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "neutral",
+      "text": "やあ、Mattさん！ 今日はどんな日だった？ 俺は家でずっとゲームしてたよ。時間の流れが速すぎて、気づいたらもうこんな時間だ。",
+      "vocab": [
+        "時間",
+        "流",
+        "速",
+        "気",
+        "時間"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You want to agree about time flying.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree that time flies.",
+          "answer": "本当だ ね",
+          "tokens": [
+            "本当",
+            "だ",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree that time flies when you're having fun.",
+          "answer": "ゲーム して いる と 時間 は 速く 流れる ね",
+          "tokens": [
+            "ゲーム",
+            "し",
+            "て",
+            "いる",
+            "と",
+            "時間",
+            "は",
+            "速",
+            "く",
+            "流れる",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree that time flies when you're having fun, and you feel like you just started.",
+          "answer": "ゲーム して いる と 本当に 時間 は 速く 流れる し、つい さっき 始め た ばかり の ような 気 が する よ",
+          "tokens": [
+            "ゲーム",
+            "し",
+            "て",
+            "いる",
+            "と",
+            "本当に",
+            "時間",
+            "は",
+            "速",
+            "く",
+            "流れる",
+            "し",
+            "つい",
+            "さっき",
+            "始め",
+            "た",
+            "ばかり",
+            "の",
+            "ような",
+            "気",
+            "が",
+            "する",
+            "よ"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "わかる！ そういう 時間が溶けるような感覚、たまらないんだよね。 Mattさんは、最近何か面白いゲームとかアニメとかあった？",
+      "vocab": [
+        "溶ける",
+        "感覚",
+        "面白い",
+        "ゲーム",
+        "アニメ"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You haven't played anything new recently.",
+      "responses": {
+        "tier1": {
+          "prompt": "No, nothing new.",
+          "answer": "いや、 特には",
+          "tokens": [
+            "いや",
+            "特",
+            "に",
+            "は"
+          ]
+        },
+        "tier2": {
+          "prompt": "No, nothing new lately. I've been rewatching old anime.",
+          "answer": "いや、 最近 は 特には なく て、 前 の アニメ を 見返し て いる よ",
+          "tokens": [
+            "いや",
+            "最近",
+            "は",
+            "特",
+            "に",
+            "は",
+            "なく",
+            "て",
+            "前",
+            "の",
+            "アニメ",
+            "を",
+            "見返し",
+            "て",
+            "いる",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "No, nothing new lately. I've been rewatching old anime for research.",
+          "answer": "いや、 最近 は 特には なく て、 実 は 研究 の ため に 前 の アニメ を 見返し て いる ん だ",
+          "tokens": [
+            "いや",
+            "最近",
+            "は",
+            "特",
+            "に",
+            "は",
+            "なく",
+            "て",
+            "実",
+            "は",
+            "研究",
+            "の",
+            "ため",
+            "に",
+            "前",
+            "の",
+            "アニメ",
+            "を",
+            "見返し",
+            "て",
+            "いる",
+            "ん",
+            "だ"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "お、研究ね！ わかるわかる。 俺もそういう時あるよ。何か「調査」したいこととかある？ 例えば、コンビニの新商品とか、アニメの最新情報とか。",
+      "vocab": [
+        "研究",
+        "調査",
+        "コンビニ",
+        "新商品",
+        "最新情報"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You're interested in konbini food.",
+      "responses": {
+        "tier1": {
+          "prompt": "Konbini food is interesting.",
+          "answer": "コンビニ の 食べ物 は",
+          "tokens": [
+            "コンビニ",
+            "の",
+            "食べ物",
+            "は"
+          ]
+        },
+        "tier2": {
+          "prompt": "Konbini food is interesting. What's new?",
+          "answer": "コンビニ の 食べ物 は 面白いよ、 何 か 新しい もの は ある？",
+          "tokens": [
+            "コンビニ",
+            "の",
+            "食べ物",
+            "は",
+            "面白い",
+            "よ",
+            "何",
+            "か",
+            "新しい",
+            "もの",
+            "は",
+            "ある",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "Konbini food is interesting. What's new? I want to know what's good for lunch.",
+          "answer": "コンビニ の 食べ物 は 本当に 面白いよ、 何 か 新しい もの は ある？ 昼ご飯 に 何 が いい か 知り たい ん だ",
+          "tokens": [
+            "コンビニ",
+            "の",
+            "食べ物",
+            "は",
+            "本当に",
+            "面白い",
+            "よ",
+            "何",
+            "か",
+            "新しい",
+            "もの",
+            "は",
+            "ある",
+            "？",
+            "昼ご飯",
+            "に",
+            "何",
+            "が",
+            "いい",
+            "か",
+            "知り",
+            "たい",
+            "ん",
+            "だ"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "blushing",
+      "text": "あ、コンビニね！ 今日ちょうど新しいおにぎりが出たんだよ。 明太子クリームチーズ味だって。 ちょっと想像つかないけど、興味ある？",
+      "vocab": [
+        "今日",
+        "新しい",
+        "おにぎり",
+        "味",
+        "想像"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You're curious about the new konbini flavor.",
+      "responses": {
+        "tier1": {
+          "prompt": "Curious about the flavor.",
+          "answer": "どんな 味？",
+          "tokens": [
+            "どんな",
+            "味",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "Curious about the flavor. It sounds interesting.",
+          "answer": "どんな 味？ ちょっと 面白い そう だ ね",
+          "tokens": [
+            "どんな",
+            "味",
+            "？",
+            "ちょっと",
+            "面白い",
+            "そう",
+            "だ",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Curious about the flavor. It sounds interesting. I want to try it.",
+          "answer": "どんな 味？ ちょっと 面白い そう だ ね、 ぜひ 食べ て み たいよ",
+          "tokens": [
+            "どんな",
+            "味",
+            "？",
+            "ちょっと",
+            "面白い",
+            "そう",
+            "だ",
+            "ね",
+            "ぜひ",
+            "食べ",
+            "て",
+            "みたい",
+            "よ"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "いいね、Mattさん！ そういう 探求心、俺も好きだよ。 次にコンビニ行くとき、もしよかったら一緒に新しいの、見に行こうか？",
+      "vocab": [
+        "探求心",
+        "好き",
+        "次",
+        "一緒",
+        "見に行く"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You agree to go to the convenience store together.",
+      "responses": {
+        "tier1": {
+          "prompt": "Let's go.",
+          "answer": "行こうよ！",
+          "tokens": [
+            "行こう",
+            "よ",
+            "！"
+          ]
+        },
+        "tier2": {
+          "prompt": "Sure, let's go. I'm looking forward to it.",
+          "answer": "うん、 行こうよ！ 楽しみ に して いるよ",
+          "tokens": [
+            "うん",
+            "行こう",
+            "よ",
+            "！",
+            "楽しみ",
+            "に",
+            "し",
+            "て",
+            "いる",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Sure, let's go. I'm looking forward to it. It will be fun to pick out snacks together.",
+          "answer": "うん、 行こうよ！ 楽しみ に して いるよ、 一緒 に おやつ を 選ぶ の は 楽しそうだ",
+          "tokens": [
+            "うん",
+            "行こう",
+            "よ",
+            "！",
+            "楽しみ",
+            "に",
+            "し",
+            "て",
+            "いる",
+            "よ",
+            "一緒",
+            "に",
+            "おやつ",
+            "を",
+            "選ぶ",
+            "の",
+            "は",
+            "楽し",
+            "そうだ"
+          ]
+        }
+      },
+      "next": "node_end"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "sad",
+      "text": "あれ？ 喧嘩しちゃったかな？ まあ、また今度誘うよ！",
+      "result": "Conversation failed. You missed an opportunity to bond over konbini snacks.",
+      "rewards": {
+        "xp": 5,
+        "money": 10
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "やった！ それじゃあ、また連絡するね！",
+      "result": "Conversation successful! You've made plans to go konbini snacking with your new otaku friend.",
+      "rewards": {
+        "xp": 20,
+        "money": 50
+      }
+    }
+  }
+}
