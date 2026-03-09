@@ -1,0 +1,415 @@
+{
+  "id": "battle_baseball_weather_relative_clause_7",
+  "setting": "park-day",
+  "character": "baseball-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "お、Mattさん、こんにちは！今日いい天気だな。試合日和だね。",
+      "vocab": [
+        "こんにちは",
+        "試合日和"
+      ],
+      "next": "node_2",
+      "nextOnMaxMeter": "node_extra"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Reply about the weather.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree it's nice.",
+          "answer": "本当 に いい 天気 です ね",
+          "tokens": [
+            "本当",
+            "に",
+            "いい",
+            "天気",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree it's nice and perfect for a game.",
+          "answer": "本当 に いい 天気 です ね 試合 に ぴったり です",
+          "tokens": [
+            "本当",
+            "に",
+            "いい",
+            "天気",
+            "です",
+            "ね",
+            "試合",
+            "に",
+            "ぴったり",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree it's nice and perfect for a game, and that's exactly what you want.",
+          "answer": "本当 に いい 天気 です ね 試合 に ぴったり です まさに これ が 望む ところ です",
+          "tokens": [
+            "本当",
+            "に",
+            "いい",
+            "天気",
+            "です",
+            "ね",
+            "試合",
+            "に",
+            "ぴったり",
+            "です",
+            "まさに",
+            "これ",
+            "が",
+            "望む",
+            "ところ",
+            "です"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "だろ？こんな日は練習も捗るってやつだよ。俺はピッチャーなんだが、こういう日だと球も走りやすいんだ。",
+      "vocab": [
+        "練習",
+        "捗る",
+        "ピッチャー",
+        "球"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about being a pitcher.",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask about the pitcher's role.",
+          "answer": "ピッチャー は どんな ポジション ですか",
+          "tokens": [
+            "ピッチャー",
+            "は",
+            "どんな",
+            "ポジション",
+            "です",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask about the pitcher's role and how they feel about it.",
+          "answer": "ピッチャー は どんな ポジション ですか その ポジション に 対して どう 思いますか",
+          "tokens": [
+            "ピッチャー",
+            "は",
+            "どんな",
+            "ポジション",
+            "です",
+            "か",
+            "その",
+            "ポジション",
+            "に",
+            "対して",
+            "どう",
+            "思います",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask about the pitcher's role, how they feel about it, and if it's hard.",
+          "answer": "ピッチャー は どんな ポジション ですか その ポジション に 対して どう 思いますか 結構 きつい ポジション ですよね",
+          "tokens": [
+            "ピッチャー",
+            "は",
+            "どんな",
+            "ポジション",
+            "です",
+            "か",
+            "その",
+            "ポジション",
+            "に",
+            "対して",
+            "どう",
+            "思います",
+            "か",
+            "結構",
+            "きつい",
+            "ポジション",
+            "です",
+            "よ",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "ああ、きついよ。でも、試合の流れを作る一番大事なポジションだからな。俺は、最後のイニングを締めるクローザーになりたいんだ。",
+      "vocab": [
+        "流れ",
+        "大事",
+        "イニング",
+        "締める",
+        "クローザー"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Comment on his dream.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say that sounds like a great dream.",
+          "answer": "すごい 夢 です ね",
+          "tokens": [
+            "すごい",
+            "夢",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say that sounds like a great dream and wish him luck.",
+          "answer": "すごい 夢 です ね 応援 しています",
+          "tokens": [
+            "すごい",
+            "夢",
+            "です",
+            "ね",
+            "応援",
+            "して",
+            "います"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say that sounds like a great dream and wish him luck, asking if he practices a lot.",
+          "answer": "すごい 夢 です ね 応援 しています たくさん 練習 している んです か",
+          "tokens": [
+            "すごい",
+            "夢",
+            "です",
+            "ね",
+            "応援",
+            "して",
+            "います",
+            "たくさん",
+            "練習",
+            "して",
+            "いる",
+            "ん",
+            "です",
+            "か"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "おう、当然だろ！クローザーは、試合が終わるか終わらないかの瀬戸際でマウンドに上がるんだ。そうなりたいって気持ちが、俺を支えてる。",
+      "vocab": [
+        "当然",
+        "瀬戸際",
+        "マウンド",
+        "気持ち",
+        "支えてる"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about the feeling of pitching in such a situation.",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask what it feels like.",
+          "answer": "どんな 感覚 ですか",
+          "tokens": [
+            "どんな",
+            "感覚",
+            "です",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask what it feels like to be on the mound at such a moment.",
+          "answer": "その 瀬戸際 の マウンド に 立つ と どんな 感覚 ですか",
+          "tokens": [
+            "その",
+            "瀬戸際",
+            "の",
+            "マウンド",
+            "に",
+            "立つ",
+            "と",
+            "どんな",
+            "感覚",
+            "です",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask what it feels like to be on the mound at such a moment and if it's like something from a movie.",
+          "answer": "その 瀬戸際 の マウンド に 立つ と どんな 感覚 ですか まるで 映画 の ワンシーン の よう です か",
+          "tokens": [
+            "その",
+            "瀬戸際",
+            "の",
+            "マウンド",
+            "に",
+            "立つ",
+            "と",
+            "どんな",
+            "感覚",
+            "です",
+            "か",
+            "まるで",
+            "映画",
+            "の",
+            "ワンシーン",
+            "の",
+            "よう",
+            "です",
+            "か"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "はは、映画みたい、か。まあ、そんな感じだよ。プレッシャーは半端ないけど、それを乗り越えた時の達成感は、何物にも代えがたいんだ。Mattさんも、何か目指してるものとか、あるのか？",
+      "vocab": [
+        "プレッシャー",
+        "半端ない",
+        "乗り越えた",
+        "達成感",
+        "代えがたい"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Share your dream.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say you want to be a good game developer.",
+          "answer": "ゲーム開発者 に なりたい です",
+          "tokens": [
+            "ゲーム開発者",
+            "に",
+            "なりたい",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say you want to be a good game developer, and you practice a lot.",
+          "answer": "いい ゲーム開発者 に なりたい です たくさん 練習 しています",
+          "tokens": [
+            "いい",
+            "ゲーム開発者",
+            "に",
+            "なりたい",
+            "です",
+            "たくさん",
+            "練習",
+            "して",
+            "います"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say you want to be a good game developer, and you practice a lot, hoping to make games that people will love.",
+          "answer": "いい ゲーム開発者 に なりたい です たくさん 練習 して みんなに 愛される ゲーム を 作りたい と 思っています",
+          "tokens": [
+            "いい",
+            "ゲーム開発者",
+            "に",
+            "なりたい",
+            "です",
+            "たくさん",
+            "練習",
+            "して",
+            "みんな",
+            "に",
+            "愛される",
+            "ゲーム",
+            "を",
+            "作りたい",
+            "と",
+            "思って",
+            "います"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "おお、ゲーム開発者か！それはまたすごいな。Mattさんも、俺みたいに熱中できるものがあるのは、一番大事なことだよ。お互い、夢に向かって頑張ろうぜ！",
+      "vocab": [
+        "熱中",
+        "一番",
+        "大事",
+        "お互い",
+        "頑張ろう"
+      ],
+      "next": "node_end"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "sad",
+      "text": "あー、残念。また今度な！",
+      "result": "Failed to connect with the baseball guy.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "よっしゃ！ Mattさんと話せてよかったぜ！またな！",
+      "result": "You connected with the baseball guy. You learned about his dreams and the importance of practice.",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      }
+    },
+    "node_extra": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "Mattさんも、野球好き？ この天気だと、ついついボールを投げたくなるんだよな。",
+      "vocab": [
+        "野球",
+        "ついつい",
+        "ボール",
+        "投げたくなる"
+      ],
+      "next": "node_4"
+    }
+  }
+}
