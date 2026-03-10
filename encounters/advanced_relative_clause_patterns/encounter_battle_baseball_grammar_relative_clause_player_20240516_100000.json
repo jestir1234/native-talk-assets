@@ -1,0 +1,315 @@
+{
+  "id": "battle_baseball_grammar_relative_clause_player_20240516_100000",
+  "setting": "park-day",
+  "character": "baseball-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "おう、Mattさん！いい天気だな。こういう日は練習したくなるよな！",
+      "vocab": [
+        "天気",
+        "練習"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to the pleasant weather.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree the weather is nice.",
+          "answer": "本当 に いい 天気 です ね",
+          "tokens": [
+            "本当",
+            "に",
+            "いい",
+            "天気",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree the weather is nice and mention it's good for baseball.",
+          "answer": "本当 に いい 天気 です ね 野球 に ぴったり です",
+          "tokens": [
+            "本当",
+            "に",
+            "いい",
+            "天気",
+            "です",
+            "ね",
+            "野球",
+            "に",
+            "ぴったり",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree the weather is nice and mention it's good for baseball, and express excitement to play.",
+          "answer": "本当 に いい 天気 です ね 野球 に ぴったり です 今 すぐ 試合 を したい です",
+          "tokens": [
+            "本当",
+            "に",
+            "いい",
+            "天気",
+            "です",
+            "ね",
+            "野球",
+            "に",
+            "ぴったり",
+            "です",
+            "今",
+            "すぐ",
+            "試合",
+            "を",
+            "したい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "だよな！俺はピッチャーなんだけど、こういう日だと変化球もよく決まるんだ。君はどこのポジションでやってるんだ？",
+      "vocab": [
+        "ピッチャー",
+        "変化球",
+        "ポジション"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Tell him your position.",
+      "responses": {
+        "tier1": {
+          "prompt": "State your position.",
+          "answer": "私 は キャッチャー です",
+          "tokens": [
+            "私",
+            "は",
+            "キャッチャー",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "State your position and mention you like it.",
+          "answer": "私 は キャッチャー です その ポジション が 大好き です",
+          "tokens": [
+            "私",
+            "は",
+            "キャッチャー",
+            "です",
+            "その",
+            "ポジション",
+            "が",
+            "大好き",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "State your position, mention you like it, and explain why.",
+          "answer": "私 は キャッチャー です その ポジション が 大好き です チーム の 要 だから です",
+          "tokens": [
+            "私",
+            "は",
+            "キャッチャー",
+            "です",
+            "その",
+            "ポジション",
+            "が",
+            "大好き",
+            "です",
+            "チーム",
+            "の",
+            "要",
+            "だ",
+            "から",
+            "です"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "thinking",
+      "text": "キャッチャーか！そりゃ大変だよな。ピッチャー が 投げ やすい よう に リード する のって、すごい技術 が いるもんな。",
+      "vocab": [
+        "大変",
+        "リード",
+        "技術"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Acknowledge the difficulty and the pitcher's role.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree it's tough.",
+          "answer": "本当 に 大変 です",
+          "tokens": [
+            "本当",
+            "に",
+            "大変",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree it's tough and acknowledge the pitcher's effort.",
+          "answer": "本当 に 大変 です ピッチャー の 頑張り は すごい です",
+          "tokens": [
+            "本当",
+            "に",
+            "大変",
+            "です",
+            "ピッチャー",
+            "の",
+            "頑張り",
+            "は",
+            "すごい",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree it's tough, acknowledge the pitcher's effort, and mention the importance of teamwork.",
+          "answer": "本当 に 大変 です ピッチャー の 頑張り は すごい です チーム ワーク が 大事 です",
+          "tokens": [
+            "本当",
+            "に",
+            "大変",
+            "です",
+            "ピッチャー",
+            "の",
+            "頑張り",
+            "は",
+            "すごい",
+            "です",
+            "チーム",
+            "ワーク",
+            "が",
+            "大事",
+            "です"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "そうなんだよ。ピッチャー と キャッチャー が しっかり 連携 できてる チーム は 強い もん な。Mattさんも、いつか プロ に なって、そういう プレイ を したい とか、夢 は ある のか？",
+      "vocab": [
+        "連携",
+        "プロ",
+        "夢"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Talk about your dreams.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say you have a dream.",
+          "answer": "はい 夢 は あります",
+          "tokens": [
+            "はい",
+            "夢",
+            "は",
+            "あります"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say you have a dream and it's to become a pro player.",
+          "answer": "はい 夢 は あります プロ 野球 選手 に なる こと です",
+          "tokens": [
+            "はい",
+            "夢",
+            "は",
+            "あります",
+            "プロ",
+            "野球",
+            "選手",
+            "に",
+            "なる",
+            "こと",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say you have a dream to become a pro player and want to be the best.",
+          "answer": "はい 夢 は あります プロ 野球 選手 に なる こと です 世界一 の 選手 に なりたい です",
+          "tokens": [
+            "はい",
+            "夢",
+            "は",
+            "あります",
+            "プロ",
+            "野球",
+            "選手",
+            "に",
+            "なる",
+            "こと",
+            "です",
+            "世界一",
+            "の",
+            "選手",
+            "に",
+            "なりたい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "お！いいね！ その 意気込み が 大事 だ！ 頑張れよ、Mattさん！",
+      "vocab": [
+        "意気込み",
+        "頑張れ"
+      ],
+      "next": "node_end"
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "また な！",
+      "result": "You had a great conversation with the baseball guy!",
+      "rewards": {
+        "xp": 50,
+        "money": 20
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "annoyed",
+      "text": "なんだよ、もう終わりか？",
+      "result": "You ran out of time and ended the conversation.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    }
+  }
+}
