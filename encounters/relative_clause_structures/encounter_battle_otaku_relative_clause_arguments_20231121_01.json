@@ -1,0 +1,432 @@
+{
+  "id": "battle_otaku_relative_clause_arguments_20231121_01",
+  "setting": "apartment-evening",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "sad",
+      "text": "やあ、Mattさん。あれ、なんか元気ないって？うん、実はちょっとね…。今日一日、ゲームも手につかないんだ。",
+      "vocab": [
+        "元気",
+        "ない",
+        "実は",
+        "手につかない"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You ask what's wrong, noticing he seems a bit down.",
+      "responses": {
+        "tier1": {
+          "prompt": "What happened?",
+          "answer": "何か あった の？",
+          "tokens": [
+            "何か",
+            "あった",
+            "の",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "What's wrong? You seem to be in low spirits.",
+          "answer": "どうした の？ 元気 ない みたい だ けど。",
+          "tokens": [
+            "どうした",
+            "の",
+            "？",
+            "元気",
+            "ない",
+            "みたい",
+            "だ",
+            "けど"
+          ]
+        },
+        "tier3": {
+          "prompt": "Did something happen? Your complexion doesn't look too good.",
+          "answer": "何か あった の？ 顔色 が あまり 良く ない みたい だ けど。",
+          "tokens": [
+            "何か",
+            "あった",
+            "の",
+            "？",
+            "顔色",
+            "が",
+            "あまり",
+            "良く",
+            "ない",
+            "みたい",
+            "だ",
+            "けど",
+            "。"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "sad",
+      "text": "うん、実はさ、最近一緒にゲームしてる友達とちょっと口論になっちゃって…。",
+      "vocab": [
+        "一緒に",
+        "友達",
+        "口論"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You express understanding that an argument with a friend sounds difficult.",
+      "responses": {
+        "tier1": {
+          "prompt": "That must have been tough.",
+          "answer": "それ は 大変 だった ね。",
+          "tokens": [
+            "それ",
+            "は",
+            "大変",
+            "だった",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Arguments with friends are tough, aren't they?",
+          "answer": "友達 と の 口論 は 辛い よ ね。",
+          "tokens": [
+            "友達",
+            "と",
+            "の",
+            "口論",
+            "は",
+            "辛い",
+            "よ",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Arguments with friends don't feel good, do they? Was there some reason?",
+          "answer": "友達 と の 口論 は 気分 が 良く ない よ ね？ 何か 理由 が あった の？",
+          "tokens": [
+            "友達",
+            "と",
+            "の",
+            "口論",
+            "は",
+            "気分",
+            "が",
+            "良く",
+            "ない",
+            "よ",
+            "ね",
+            "？",
+            "何か",
+            "理由",
+            "が",
+            "あった",
+            "の",
+            "？"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "annoyed",
+      "text": "うん…。昨日さ、僕が一生懸命育てたキャラについて、あいつが「弱い」って言ったんだよ。それ で 僕 が 怒っちゃった ん だ。",
+      "vocab": [
+        "一生懸命",
+        "育てた",
+        "キャラ",
+        "弱い"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You confirm that the argument was about the character he raised that his friend called weak.",
+      "responses": {
+        "tier1": {
+          "prompt": "It's the character he called weak, right?",
+          "answer": "彼 が 弱い と 言った キャラ だ ね。",
+          "tokens": [
+            "彼",
+            "が",
+            "弱い",
+            "と",
+            "言った",
+            "キャラ",
+            "だ",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "It's about the character you raised, Matt-san, that he called weak, isn't it?",
+          "answer": "彼 が 弱い と 言った 、 あなた が 育てた キャラ の こと な ん だ ね。",
+          "tokens": [
+            "彼",
+            "が",
+            "弱い",
+            "と",
+            "言った",
+            "、",
+            "あなた",
+            "が",
+            "育てた",
+            "キャラ",
+            "の",
+            "こと",
+            "な",
+            "ん",
+            "だ",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "So you argued over the important character you painstakingly raised that he called weak, didn't you?",
+          "answer": "彼 が 弱い と 言った 、 あなた が 時間 を かけて 育てた 大切 な キャラクター の こと で 喧嘩 に なった ん だ ね。",
+          "tokens": [
+            "彼",
+            "が",
+            "弱い",
+            "と",
+            "言った",
+            "、",
+            "あなた",
+            "が",
+            "時間",
+            "を",
+            "かけて",
+            "育てた",
+            "大切",
+            "な",
+            "キャラクター",
+            "の",
+            "こと",
+            "で",
+            "喧嘩",
+            "に",
+            "なった",
+            "ん",
+            "だ",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "annoyed",
+      "text": "そうそう、その通り！Mattさん、よく分かってるね。なんか、いつも僕が夢中になるものに、彼がちょっと冷たいんだ。",
+      "vocab": [
+        "通り",
+        "夢中",
+        "冷たい"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You suggest he should try explaining his feelings about the things he is passionate about to his friend.",
+      "responses": {
+        "tier1": {
+          "prompt": "How about trying to convey your feelings?",
+          "answer": "気持ち を 伝えて みたら？",
+          "tokens": [
+            "気持ち",
+            "を",
+            "伝えて",
+            "みたら",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "How about trying to convey your feelings about the things you are passionate about?",
+          "answer": "あなた が 夢中 に なって いる もの へ の 気持ち を 伝えて みたら どう か な？",
+          "tokens": [
+            "あなた",
+            "が",
+            "夢中",
+            "に",
+            "なって",
+            "いる",
+            "もの",
+            "へ",
+            "の",
+            "気持ち",
+            "を",
+            "伝えて",
+            "みたら",
+            "どう",
+            "か",
+            "な",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "I think it's important to properly convey your passionate feelings about the things you are enthusiastic about to him.",
+          "answer": "あなた が 夢中 に なって いる もの へ の 熱い 気持ち を 、 彼 に しっかり 伝えて みる の が 大切 だ と 思う よ。",
+          "tokens": [
+            "あなた",
+            "が",
+            "夢中",
+            "に",
+            "なって",
+            "いる",
+            "もの",
+            "へ",
+            "の",
+            "熱い",
+            "気持ち",
+            "を",
+            "、",
+            "彼",
+            "に",
+            "しっかり",
+            "伝えて",
+            "みる",
+            "の",
+            "が",
+            "大切",
+            "だ",
+            "と",
+            "思う",
+            "よ"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "なるほど…。たしかに、いつも僕が一方的に話してるだけかもな…。この前も、僕が予約した限定版フィギュアについて、興味なさそうだったし…。",
+      "vocab": [
+        "一方的",
+        "予約",
+        "限定版",
+        "フィギュア",
+        "興味"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You acknowledge that it's difficult when interests don't align.",
+      "responses": {
+        "tier1": {
+          "prompt": "It's difficult when interests don't align.",
+          "answer": "興味 が 合わない と 難しい よ ね。",
+          "tokens": [
+            "興味",
+            "が",
+            "合わない",
+            "と",
+            "難しい",
+            "よ",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "It's difficult to even talk when your mutual interests don't align, isn't it?",
+          "answer": "お互い の 興味 が 合わない と 、 話す の も 難しい よ ね。",
+          "tokens": [
+            "お互い",
+            "の",
+            "興味",
+            "が",
+            "合わない",
+            "と",
+            "、",
+            "話す",
+            "の",
+            "も",
+            "難しい",
+            "よ",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "It's hard to understand each other when the things you like and are interested in are different, isn't it?",
+          "answer": "お互い が 好きな こと や 興味 を 持って いる こと が 違う と 、 分かり合う の は 難しい もの だ よ ね。",
+          "tokens": [
+            "お互い",
+            "が",
+            "好きな",
+            "こと",
+            "や",
+            "興味",
+            "を",
+            "持って",
+            "いる",
+            "こと",
+            "が",
+            "違う",
+            "と",
+            "、",
+            "分かり合う",
+            "の",
+            "は",
+            "難しい",
+            "もの",
+            "だ",
+            "よ",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "うん…。でも、仲直りしたいんだよ。彼が好きな、新作のラーメン食べに行かないかって誘ってみようかな。コンビニメニューの話、よくしてたし。",
+      "vocab": [
+        "仲直り",
+        "新作",
+        "ラーメン",
+        "誘う"
+      ],
+      "next": "node_end"
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "Mattさん、アドバイスありがとう！ちょっと元気出てきたよ。よし、行ってくる！",
+      "result": "You helped your otaku friend resolve his argument!",
+      "rewards": {
+        "xp": 150,
+        "money": 100
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "sad",
+      "text": "うーん、やっぱり解決策が見つからないなぁ…今日はもうゲームする気にもなれないや。",
+      "result": "Your advice wasn't enough, and your friend remains troubled.",
+      "rewards": {
+        "xp": 50,
+        "money": 20
+      }
+    }
+  }
+}
