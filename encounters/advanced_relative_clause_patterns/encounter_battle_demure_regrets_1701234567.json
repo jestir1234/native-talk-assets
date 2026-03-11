@@ -1,0 +1,411 @@
+{
+  "id": "battle_demure_regrets_1701234567",
+  "setting": "park-day",
+  "character": "demure-lady",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "neutral",
+      "text": "あら、こんにちは。良いお天気ですね。",
+      "vocab": [
+        "こんにちは",
+        "天気"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "How do you respond?",
+      "responses": {
+        "tier1": {
+          "prompt": "Acknowledge the weather.",
+          "answer": "そうですね 天気 が 良い ですね",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "天気",
+            "が",
+            "良い",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Acknowledge the weather and ask about their day.",
+          "answer": "そうですね 天気 が 良い ですね 今日 は どんな ご 予定 ですか",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "天気",
+            "が",
+            "良い",
+            "です",
+            "ね",
+            "今日",
+            "は",
+            "どんな",
+            "ご",
+            "予定",
+            "です",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Acknowledge the weather, ask about their day, and mention it's nice for a walk.",
+          "answer": "そうですね 天気 が 良い ですね 公園 を 散歩 する の に ぴったり ですね",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "天気",
+            "が",
+            "良い",
+            "です",
+            "ね",
+            "公園",
+            "を",
+            "散歩",
+            "する",
+            "の",
+            "に",
+            "ぴったり",
+            "です",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "ええ、本当に。Mattさんはいらっしゃらないのですか？",
+      "vocab": [
+        "本当",
+        "いらっしゃる",
+        "〜ない"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "How do you reply?",
+      "responses": {
+        "tier1": {
+          "prompt": "No, I'm just here.",
+          "answer": "いいえ 今 は ちょっと",
+          "tokens": [
+            "いいえ",
+            "今",
+            "は",
+            "ちょっと"
+          ]
+        },
+        "tier2": {
+          "prompt": "No, I'm just here to enjoy the weather.",
+          "answer": "いいえ 今日 は 天気 が 良い ので 公園 で 少し 休みたい と 思います",
+          "tokens": [
+            "いいえ",
+            "今日",
+            "は",
+            "天気",
+            "が",
+            "良い",
+            "ので",
+            "公園",
+            "で",
+            "少し",
+            "休みたい",
+            "と",
+            "思います"
+          ]
+        },
+        "tier3": {
+          "prompt": "No, I'm just here to enjoy the weather and reflect a little.",
+          "answer": "いいえ 今日 は 天気 が 良い ので 公園 で 少し 休みながら 若い頃 を 思い出し たい と 思います",
+          "tokens": [
+            "いいえ",
+            "今日",
+            "は",
+            "天気",
+            "が",
+            "良い",
+            "ので",
+            "公園",
+            "で",
+            "少し",
+            "休みながら",
+            "若い頃",
+            "を",
+            "思い出し",
+            "たい",
+            "と",
+            "思います"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "thinking",
+      "text": "あら、若い頃のことですか。あの頃は、今のように後悔するようなことは、あまりなかったように思いますね。",
+      "vocab": [
+        "若い頃",
+        "後悔",
+        "〜ような",
+        "こと",
+        "あまり"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "How do you respond to her observation?",
+      "responses": {
+        "tier1": {
+          "prompt": "Why do you think that is?",
+          "answer": "どうして そう 思いますか",
+          "tokens": [
+            "どうして",
+            "そう",
+            "思います",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "Why do you think we had fewer regrets back then?",
+          "answer": "どうして 若い頃 は 後悔 する こと が 少なかった と 思いますか",
+          "tokens": [
+            "どうして",
+            "若い頃",
+            "は",
+            "後悔",
+            "する",
+            "こと",
+            "が",
+            "少なかった",
+            "と",
+            "思います",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Why do you think we had fewer regrets back then? Perhaps we were too busy to think about them?",
+          "answer": "どうして 若い頃 は 後悔 する こと が 少なかった と 思いますか あの頃 は 忙しすぎた のでしょうか",
+          "tokens": [
+            "どうして",
+            "若い頃",
+            "は",
+            "後悔",
+            "する",
+            "こと",
+            "が",
+            "少なかった",
+            "と",
+            "思います",
+            "か",
+            "あの頃",
+            "は",
+            "忙しすぎた",
+            "の",
+            "でしょうか"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "sad",
+      "text": "そうですね、忙しすぎたのかもしれません。あの頃は、将来のことばかり考えて、今を大切にするということを忘れていたような気もします。",
+      "vocab": [
+        "将来",
+        "大切",
+        "忘れる",
+        "〜ような",
+        "気"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What do you say?",
+      "responses": {
+        "tier1": {
+          "prompt": "I understand.",
+          "answer": "わかり ます",
+          "tokens": [
+            "わかり",
+            "ます"
+          ]
+        },
+        "tier2": {
+          "prompt": "I understand. It's easy to get caught up in the future.",
+          "answer": "わかり ます 将来 の こと に 気 が 取れ やすい ですよね",
+          "tokens": [
+            "わかり",
+            "ます",
+            "将来",
+            "の",
+            "こと",
+            "に",
+            "気",
+            "が",
+            "取れ",
+            "やすい",
+            "です",
+            "よ",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "I understand. It's easy to get caught up in the future and forget to appreciate the present.",
+          "answer": "わかり ます 将来 の こと に 気 が 取れ やすい から 今 を 大切 に する の を 忘れ がち です よ ね",
+          "tokens": [
+            "わかり",
+            "ます",
+            "将来",
+            "の",
+            "こと",
+            "に",
+            "気",
+            "が",
+            "取れ",
+            "やすい",
+            "から",
+            "今",
+            "を",
+            "大切",
+            "に",
+            "する",
+            "の",
+            "を",
+            "忘れ",
+            "がち",
+            "です",
+            "よ",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "ええ、そうですね。でも、今、こうしてお話しできていることも、とても幸せなことだと思います。",
+      "vocab": [
+        "話せる",
+        "幸せ",
+        "思う"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "How do you agree?",
+      "responses": {
+        "tier1": {
+          "prompt": "I agree.",
+          "answer": "そう ですね",
+          "tokens": [
+            "そう",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "I agree. It's nice to meet new people.",
+          "answer": "そう ですね 新しい 人 と 出会える の は 嬉しい こと です",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "新しい",
+            "人",
+            "と",
+            "出会える",
+            "の",
+            "は",
+            "嬉しい",
+            "こと",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "I agree. It's nice to meet new people and share thoughts.",
+          "answer": "そう ですね 新しい 人 と 出会って 意見 を 交換 する こと は 素晴らしい です",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "新しい",
+            "人",
+            "と",
+            "出会って",
+            "意見",
+            "を",
+            "交換",
+            "する",
+            "こと",
+            "は",
+            "素晴らしい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "happy",
+      "text": "ええ、本当に。Mattさん、今日は楽しいお話をありがとうございました。",
+      "vocab": [
+        "本当",
+        "楽しい",
+        "話",
+        "ありがとう"
+      ],
+      "next": "node_end"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "annoyed",
+      "text": "まあ、失礼な…。もう結構です。",
+      "result": "You offended the lady. Better luck next time.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "またお話ししましょうね。",
+      "result": "You had a pleasant chat and learned about regrets from the past.",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      }
+    }
+  }
+}
