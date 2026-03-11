@@ -1,0 +1,331 @@
+{
+  "id": "battle_pink-girl_language_advanced_relative_clauses_20240727_1234",
+  "setting": "cafe-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わー！お話しできて嬉しいなー！ねえねえ、Mattさんって、言語の勉強ってしたことある？",
+      "vocab": [
+        "言語",
+        "勉強",
+        "したことある"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to her question about studying languages.",
+      "responses": {
+        "tier1": {
+          "prompt": "Yes, I have.",
+          "answer": "はい 勉強したことあります",
+          "tokens": [
+            "はい",
+            "勉強したことあります"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yes, I've studied a few languages before.",
+          "answer": "はい いくつかの言語を勉強したことあります",
+          "tokens": [
+            "はい",
+            "いくつか",
+            "の",
+            "言語",
+            "を",
+            "勉強したことあります"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yes, I've studied a few languages before, and I really enjoy it.",
+          "answer": "はい いくつかの言語を勉強したことあります そして それはとても楽しいです",
+          "tokens": [
+            "はい",
+            "いくつか",
+            "の",
+            "言語",
+            "を",
+            "勉強したことあります",
+            "そして",
+            "それ",
+            "は",
+            "とても",
+            "楽しい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "えー、すごい！どんな言語？私はね、日本語を話す人たちが使う言葉の面白さに惹かれてるんだ。例えば、「～という」とか「～に関する」みたいな、関係代名詞の応用って、すごく複雑だけど魅力的だよね！",
+      "vocab": [
+        "日本語",
+        "話す人",
+        "言葉",
+        "面白さ",
+        "惹かれてる",
+        "～という",
+        "～に関する",
+        "関係代名詞",
+        "応用",
+        "複雑",
+        "魅力的"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree about the complexity and appeal of Japanese grammar.",
+      "responses": {
+        "tier1": {
+          "prompt": "I agree, it's interesting.",
+          "answer": "うん 興味深いですね",
+          "tokens": [
+            "うん",
+            "興味深い",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "I agree, it's interesting. The way it modifies other words is neat.",
+          "answer": "うん 興味深いですね 他の言葉を修飾する仕方が面白いです",
+          "tokens": [
+            "うん",
+            "興味深い",
+            "です",
+            "ね",
+            "他の",
+            "言葉",
+            "を",
+            "修飾する",
+            "仕方",
+            "が",
+            "面白い",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "I agree, it's interesting. The way it modifies other words is neat, and it's so useful for explaining things.",
+          "answer": "うん 興味深いですね 他の言葉を修飾する仕方が面白いです それは物事を説明するのにとても役立ちます",
+          "tokens": [
+            "うん",
+            "興味深い",
+            "です",
+            "ね",
+            "他の",
+            "言葉",
+            "を",
+            "修飾する",
+            "仕方",
+            "が",
+            "面白い",
+            "です",
+            "それ",
+            "は",
+            "物事",
+            "を",
+            "説明する",
+            "のに",
+            "とても",
+            "役立ちます"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "そうそう！たとえば、Mattさんが「昨日食べた美味しいケーキ」って言いたい時、「昨日食べた美味しいケーキ」みたいに、言葉を繋げていけるでしょ？この「～した～」っていう形、本当に便利で、色んな表現ができるようになるんだよね。",
+      "vocab": [
+        "昨日",
+        "食べた",
+        "美味しい",
+        "ケーキ",
+        "みたい",
+        "言葉",
+        "繋げて",
+        "形",
+        "便利",
+        "色んな",
+        "表現",
+        "できる",
+        "なる"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about another example of this grammatical structure.",
+      "responses": {
+        "tier1": {
+          "prompt": "Another example?",
+          "answer": "他の例は？",
+          "tokens": [
+            "他の",
+            "例",
+            "は",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "Another example, please! I'm curious about how it works.",
+          "answer": "他の例を教えてください どんな風に機能するのか知りたいです",
+          "tokens": [
+            "他の",
+            "例",
+            "を",
+            "教えて",
+            "ください",
+            "どんな",
+            "風",
+            "に",
+            "機能する",
+            "のか",
+            "知りたい",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Another example, please! I'm curious about how it works with adjectives too.",
+          "answer": "他の例を教えてください 形容詞とどう機能するのかも知りたいです",
+          "tokens": [
+            "他の",
+            "例",
+            "を",
+            "教えて",
+            "ください",
+            "形容詞",
+            "と",
+            "どう",
+            "機能する",
+            "のか",
+            "も",
+            "知りたい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "thinking",
+      "text": "そうだなぁ… Mattさんのお友達の「いつも笑顔で優しい人」とか？「～な～」っていうのも、そういう関係代名詞みたいな働きをしてるんだよ。だから、言語って本当に奥が深いよね～！",
+      "vocab": [
+        "友達",
+        "いつも",
+        "笑顔",
+        "優しい",
+        "人",
+        "～な～",
+        "働き",
+        "奥が深い"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Express your agreement and desire to learn more.",
+      "responses": {
+        "tier1": {
+          "prompt": "I want to learn more.",
+          "answer": "もっと学びたいです",
+          "tokens": [
+            "もっと",
+            "学びたい",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "I want to learn more! It's so fascinating.",
+          "answer": "もっと学びたいです とても魅力的です",
+          "tokens": [
+            "もっと",
+            "学びたい",
+            "です",
+            "とても",
+            "魅力的",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "I want to learn more! It's so fascinating, and I'm excited to practice these structures.",
+          "answer": "もっと学びたいです とても魅力的です これらの構造を練習するのが楽しみです",
+          "tokens": [
+            "もっと",
+            "学びたい",
+            "です",
+            "とても",
+            "魅力的",
+            "です",
+            "これら",
+            "の",
+            "構造",
+            "を",
+            "練習する",
+            "の",
+            "が",
+            "楽しみ",
+            "です"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ふふ、嬉しい！Mattさんとお話ししてたら、私ももっと日本語が上手になりたいなって思ったよ！これからもいっぱいお話ししようね！",
+      "vocab": [
+        "嬉しい",
+        "お話し",
+        "上手",
+        "思った",
+        "これからも",
+        "いっぱい"
+      ],
+      "next": "node_end"
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "またすぐ会おうね！Mattさんとお話しできて本当に楽しかったよ！",
+      "result": "You had a great conversation about advanced relative clauses in Japanese!",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "えーん、もうお話しできないの？残念…また今度ね。",
+      "result": "The conversation ended early. Keep practicing!",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    }
+  }
+}
