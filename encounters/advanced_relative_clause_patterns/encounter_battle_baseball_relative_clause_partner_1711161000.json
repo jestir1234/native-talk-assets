@@ -1,0 +1,330 @@
+{
+  "id": "battle_baseball_relative_clause_partner_1711161000",
+  "setting": "park-day",
+  "character": "baseball-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "よう、Mattさん。ちょっと休憩中だよ。きつかったな、今日の練習。",
+      "vocab": [
+        "休憩",
+        "練習"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Reply to his comment about practice being tough.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say practice was tough.",
+          "answer": "練習は厳しかったね",
+          "tokens": [
+            "練習",
+            "は",
+            "厳しかった",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say practice was tough, but it's for a good reason.",
+          "answer": "練習は厳しかったけど、でもそれは意味がある",
+          "tokens": [
+            "練習",
+            "は",
+            "厳しかった",
+            "けど",
+            "でも",
+            "それ",
+            "は",
+            "意味",
+            "が",
+            "ある"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say practice was tough, but it's for a good reason, and you understand why.",
+          "answer": "練習は厳しかったけど、でもそれは意味がある、なぜなら君が理解しているからだ",
+          "tokens": [
+            "練習",
+            "は",
+            "厳しかった",
+            "けど",
+            "でも",
+            "それ",
+            "は",
+            "意味",
+            "が",
+            "ある",
+            "なぜなら",
+            "君",
+            "が",
+            "理解",
+            "を",
+            "している",
+            "からだ"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "そうか、Mattさんもそう思うんだな。俺は、勝つために必要なことだと思ってるよ。",
+      "vocab": [
+        "勝つ",
+        "必要"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about the dreams he has for the team.",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask about team dreams.",
+          "answer": "チームの夢は何",
+          "tokens": [
+            "チーム",
+            "の",
+            "夢",
+            "は",
+            "何"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask about the dreams he has for the team, the ones he's working towards.",
+          "answer": "君が目指しているチームの夢は何",
+          "tokens": [
+            "君",
+            "が",
+            "目指している",
+            "チーム",
+            "の",
+            "夢",
+            "は",
+            "何"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask about the dreams he has for the team, the ones he's working towards, and why those dreams are important.",
+          "answer": "君が目指しているチームの夢は何、そしてなぜその夢は君にとって重要なのか",
+          "tokens": [
+            "君",
+            "が",
+            "目指している",
+            "チーム",
+            "の",
+            "夢",
+            "は",
+            "何",
+            "そして",
+            "なぜ",
+            "その",
+            "夢",
+            "は",
+            "君",
+            "に",
+            "とって",
+            "重要",
+            "な",
+            "のか"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "thinking",
+      "text": "夢、か。まあ、優勝だよ。優勝するために、ピッチャーが頑張って、バッターが打って、みんなで力を合わせる。そういうチームになりたいね。",
+      "vocab": [
+        "優勝",
+        "ピッチャー",
+        "バッター",
+        "力"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree and mention the importance of teamwork.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree about teamwork.",
+          "answer": "チームワークは大事だね",
+          "tokens": [
+            "チームワーク",
+            "は",
+            "大事",
+            "だね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree that teamwork is important, especially for a team aiming to win.",
+          "answer": "チームワークは大事だね、特に勝つことを目指すチームにとっては",
+          "tokens": [
+            "チームワーク",
+            "は",
+            "大事",
+            "だね",
+            "特に",
+            "勝つ",
+            "こと",
+            "を",
+            "目指す",
+            "チーム",
+            "に",
+            "とって",
+            "は"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree that teamwork is important, especially for a team aiming to win, because each player's contribution is necessary.",
+          "answer": "チームワークは大事だね、特に勝つことを目指すチームにとっては、なぜなら各選手の貢献が必要だからだ",
+          "tokens": [
+            "チームワーク",
+            "は",
+            "大事",
+            "だね",
+            "特に",
+            "勝つ",
+            "こと",
+            "を",
+            "目指す",
+            "チーム",
+            "に",
+            "とって",
+            "は",
+            "なぜなら",
+            "各選手",
+            "の",
+            "貢献",
+            "が",
+            "必要",
+            "だからだ"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "おう、よくわかってるじゃないか！ その通りだよ。ポジションに関係なく、みんなが自分の役割を果たすことが大事なんだ。",
+      "vocab": [
+        "ポジション",
+        "関係なく",
+        "役割"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about the player positions he finds most crucial.",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask about crucial positions.",
+          "answer": "どのポジションが一番大事",
+          "tokens": [
+            "どの",
+            "ポジション",
+            "が",
+            "一番",
+            "大事"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask about the player positions he finds most crucial for winning the game.",
+          "answer": "試合に勝つために君が一番重要だと思うポジションはどれ",
+          "tokens": [
+            "試合",
+            "に",
+            "勝つ",
+            "ために",
+            "君",
+            "が",
+            "一番",
+            "重要",
+            "だと",
+            "思う",
+            "ポジション",
+            "は",
+            "どれ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask about the player positions he finds most crucial for winning the game, and why he thinks so.",
+          "answer": "試合に勝つために君が一番重要だと思うポジションはどれ、そしてなぜそう思うのか",
+          "tokens": [
+            "試合",
+            "に",
+            "勝つ",
+            "ために",
+            "君",
+            "が",
+            "一番",
+            "重要",
+            "だと",
+            "思う",
+            "ポジション",
+            "は",
+            "どれ",
+            "そして",
+            "なぜ",
+            "そう",
+            "思う",
+            "のか"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "annoyed",
+      "text": "うーん、難しい質問だな。ピッチャーは当然大事だけど、どんなに良いピッチャーがいても、打てなかったら勝てない。だから、全部大事だよ、結局。",
+      "vocab": [
+        "当然",
+        "結局"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "お疲れ、Mattさん。また話そうぜ。",
+      "result": "You had a good conversation with the baseball guy.",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "angry",
+      "text": "なんだよ、もう終わりか？ しょうがねえな。",
+      "result": "The baseball guy seemed disappointed.",
+      "rewards": {
+        "xp": 20,
+        "money": 10
+      }
+    }
+  }
+}
