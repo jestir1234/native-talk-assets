@@ -1,0 +1,383 @@
+{
+  "id": "battle_baseball_food_relative_clause_1701734567",
+  "setting": "downtown-evening",
+  "character": "baseball-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "おう、マッハさん、こないだはありがとうな！駅前で新しいラーメン屋見つけたんだけど、行ったことあるか？",
+      "vocab": [
+        "駅前",
+        "新しい",
+        "ラーメン屋",
+        "見つけた"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to the question about the new ramen shop.",
+      "responses": {
+        "tier1": {
+          "prompt": "You haven't been there.",
+          "answer": "まだ行ってない",
+          "tokens": [
+            "まだ",
+            "行ってない"
+          ]
+        },
+        "tier2": {
+          "prompt": "You haven't been there, but it looks interesting.",
+          "answer": "まだ行ってないけど、気になる",
+          "tokens": [
+            "まだ",
+            "行ってない",
+            "けど",
+            "気になる"
+          ]
+        },
+        "tier3": {
+          "prompt": "You haven't been there, but it looks interesting and you want to try it.",
+          "answer": "まだ行ってないけど、すごく気になるから今度行ってみる",
+          "tokens": [
+            "まだ",
+            "行ってない",
+            "けど",
+            "すごく",
+            "気になる",
+            "から",
+            "今度",
+            "行ってみる"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "そうか！俺もまだなんだよ。この前テレビでやってたんだけど、この辺で評判の店らしいぜ。つけ麺が美味いんだってな。",
+      "vocab": [
+        "評判",
+        "店",
+        "つけ麺",
+        "美味い"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about the ramen shop's reputation.",
+      "responses": {
+        "tier1": {
+          "prompt": "What kind of reputation does it have?",
+          "answer": "どんな評判",
+          "tokens": [
+            "どんな",
+            "評判"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of reputation does the shop have? Is it good?",
+          "answer": "その店はどんな評判なの？良いの？",
+          "tokens": [
+            "その",
+            "店",
+            "は",
+            "どんな",
+            "評判",
+            "なの",
+            "？",
+            "良い",
+            "の",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "What kind of reputation does that shop have? I heard it's good, is it really that delicious?",
+          "answer": "その店はどんな評判なの？美味しいって聞いたけど、本当にそんなに美味しいの？",
+          "tokens": [
+            "その",
+            "店",
+            "は",
+            "どんな",
+            "評判",
+            "なの",
+            "？",
+            "美味しい",
+            "って",
+            "聞いた",
+            "けど",
+            "、",
+            "本当に",
+            "そんなに",
+            "美味しい",
+            "の",
+            "？"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "thinking",
+      "text": "あー、テレビでやってたのは、この辺で一番人気がある店って言ってたな。俺たちがよく行く練習場から近いんだよ。",
+      "vocab": [
+        "一番人気",
+        "練習場",
+        "近い"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask if he practices nearby.",
+      "responses": {
+        "tier1": {
+          "prompt": "You practice nearby?",
+          "answer": "近くで練習する？",
+          "tokens": [
+            "近く",
+            "で",
+            "練習",
+            "する",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "You practice nearby? How often do you go?",
+          "answer": "近くで練習する？どれくらいの頻度で行くの？",
+          "tokens": [
+            "近く",
+            "で",
+            "練習",
+            "する",
+            "？",
+            "どれくらい",
+            "の",
+            "頻度",
+            "で",
+            "行く",
+            "の",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "You practice nearby? How often do you go? Is it for baseball?",
+          "answer": "近くで練習する？どれくらいの頻度で行くの？野球の練習？",
+          "tokens": [
+            "近く",
+            "で",
+            "練習",
+            "する",
+            "？",
+            "どれくらい",
+            "の",
+            "頻度",
+            "で",
+            "行く",
+            "の",
+            "？",
+            "野球",
+            "の",
+            "練習",
+            "？"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "おう、そうだよ。俺、ピッチャーやってるんだ。この前、雨で試合が中止になったから、その日はずっと練習してたんだ。",
+      "vocab": [
+        "ピッチャー",
+        "雨",
+        "試合",
+        "中止",
+        "ずっと"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to him practicing due to a canceled game.",
+      "responses": {
+        "tier1": {
+          "prompt": "Oh, that's tough.",
+          "answer": "それはきつかったね",
+          "tokens": [
+            "それは",
+            "きつかった",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Oh, that's tough. Was the weather really bad that day?",
+          "answer": "それはきつかったね。その日、天気は本当にひどかったの？",
+          "tokens": [
+            "それは",
+            "きつかった",
+            "ね",
+            "。",
+            "その",
+            "日",
+            "、",
+            "天気",
+            "は",
+            "本当に",
+            "ひどかった",
+            "の",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "Oh, that's tough. Was the weather really bad that day? Did you have to practice for a long time?",
+          "answer": "それはきつかったね。その日、天気は本当にひどかったの？ずいぶん長く練習したの？",
+          "tokens": [
+            "それは",
+            "きつかった",
+            "ね",
+            "。",
+            "その",
+            "日",
+            "、",
+            "天気",
+            "は",
+            "本当に",
+            "ひどかった",
+            "の",
+            "？",
+            "ずいぶん",
+            "長く",
+            "練習",
+            "した",
+            "の",
+            "？"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "annoyed",
+      "text": "ああ、もう。外野の練習場が水浸しだったからな。それでも、俺たちの夢のためには、やるしかないんだよ。",
+      "vocab": [
+        "外野",
+        "水浸し",
+        "夢"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about his dream.",
+      "responses": {
+        "tier1": {
+          "prompt": "What is your dream?",
+          "answer": "夢は何？",
+          "tokens": [
+            "夢",
+            "は",
+            "何",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "What is your dream? Is it to be a professional player?",
+          "answer": "夢は何？プロ選手になること？",
+          "tokens": [
+            "夢",
+            "は",
+            "何",
+            "？",
+            "プロ",
+            "選手",
+            "に",
+            "なる",
+            "こと",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "What is your dream? Is it to be a professional player? Do you have a specific goal?",
+          "answer": "夢は何？プロ選手になること？何か具体的な目標があるの？",
+          "tokens": [
+            "夢",
+            "は",
+            "何",
+            "？",
+            "プロ",
+            "選手",
+            "に",
+            "なる",
+            "こと",
+            "？",
+            "何か",
+            "具体的",
+            "な",
+            "目標",
+            "が",
+            "ある",
+            "の",
+            "？"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "おう！いつかは甲子園に出て、メジャーリーグで活躍することだ！そのために、毎日練習してるんだ。お疲れ！",
+      "vocab": [
+        "甲子園",
+        "メジャーリーグ",
+        "活躍",
+        "毎日",
+        "お疲れ"
+      ],
+      "next": "node_end"
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "またな！",
+      "result": "You learned about local food and baseball dreams. (+10 XP)",
+      "rewards": {
+        "xp": 10,
+        "money": 0
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "annoyed",
+      "text": "なんだ、もう行くのか？",
+      "result": "You failed to connect. (-5 XP)",
+      "rewards": {
+        "xp": -5,
+        "money": 0
+      }
+    }
+  }
+}
