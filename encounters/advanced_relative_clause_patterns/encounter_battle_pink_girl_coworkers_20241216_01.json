@@ -1,0 +1,211 @@
+{
+  "id": "battle_pink_girl_coworkers_20241216_01",
+  "setting": "work-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "Mattさん、こんにちは！今日は忙しいですか？",
+      "vocab": [
+        "忙しい",
+        "今日"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to her greeting",
+      "responses": {
+        "tier1": {
+          "prompt": "Short response",
+          "answer": "はい 忙しい です",
+          "tokens": [
+            "はい",
+            "忙しい",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "A bit longer response",
+          "answer": "はい ちょっと 忙しい です けど",
+          "tokens": [
+            "はい",
+            "ちょっと",
+            "忙しい",
+            "です",
+            "けど",
+            "大変",
+            "な"
+          ]
+        },
+        "tier3": {
+          "prompt": "Longer response with opinion",
+          "answer": "はい 私も ちょっと 忙しい です けど 大変 だと思い ます",
+          "tokens": [
+            "はい",
+            "私も",
+            "ちょっと",
+            "忙しい",
+            "です",
+            "けど",
+            "大変",
+            "だと思い",
+            "ます",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "そうですか。私も今日はプレゼンがあるので、少し緊張しています。",
+      "vocab": [
+        "プレゼン",
+        "緊張"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to her about the presentation",
+      "responses": {
+        "tier1": {
+          "prompt": "Encourage her",
+          "answer": "大丈夫 です よ",
+          "tokens": [
+            "大丈夫",
+            "です",
+            "よ",
+            "きっと"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask about the presentation",
+          "answer": "プレゼン どう ですか 緊張 し て います か",
+          "tokens": [
+            "プレゼン",
+            "どう",
+            "ですか",
+            "緊張",
+            "し",
+            "て",
+            "います",
+            "か",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Longer response with advice",
+          "answer": "大丈夫 です よ きっと うまく いき ます から 自信 を 持っ て",
+          "tokens": [
+            "大丈夫",
+            "です",
+            "よ",
+            "きっと",
+            "うまく",
+            "いき",
+            "ます",
+            "から",
+            "自信",
+            "を",
+            "持っ",
+            "て",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "ありがとう、Mattさん。そう言ってもらえると嬉しいです。",
+      "vocab": [
+        "ありがとう",
+        "嬉しい"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to her gratitude",
+      "responses": {
+        "tier1": {
+          "prompt": "Short response",
+          "answer": "いいえ どういたしまして",
+          "tokens": [
+            "いいえ",
+            "どういたしまして",
+            "また",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "A bit longer response",
+          "answer": "いいえ どういたしまして 役に立てた なら",
+          "tokens": [
+            "いいえ",
+            "どういたしまして",
+            "役に立てた",
+            "なら",
+            "嬉しい",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Longer response with compliment",
+          "answer": "いいえ どういたしまして 役に立てた なら 嬉しい です よ これからも 頑張ってください",
+          "tokens": [
+            "いいえ",
+            "どういたしまして",
+            "役に立てた",
+            "なら",
+            "嬉しい",
+            "です",
+            "よ",
+            "これからも",
+            "頑張って",
+            "ください",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_end"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "残念でしたね。また頑張りましょう。",
+      "result": "The conversation ended early.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "ありがとう、Mattさん。またね！",
+      "result": "You had a nice conversation with the pink girl.",
+      "rewards": {
+        "xp": 100,
+        "money": 10
+      }
+    }
+  }
+}
