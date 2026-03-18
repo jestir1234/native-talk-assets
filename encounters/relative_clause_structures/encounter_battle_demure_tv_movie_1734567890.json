@@ -1,0 +1,174 @@
+{
+  "id": "battle_demure_tv_movie_1734567890",
+  "setting": "suburb-day",
+  "character": "demure-lady",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "neutral",
+      "text": "Mattさん、こんにちは。私は昨日、面白い映画を見ました。",
+      "vocab": [
+        "映画",
+        "面白い",
+        "昨日"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to the lady's comment about the movie",
+      "responses": {
+        "tier1": {
+          "prompt": "That sounds interesting.",
+          "answer": "それは面白そうですね",
+          "tokens": [
+            "それは",
+            "面白そう",
+            "ですね"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of movie was it? Was it a romantic comedy?",
+          "answer": "どんな映画 だったんですか ロマンチックコメディでしたか",
+          "tokens": [
+            "どんな",
+            "映画",
+            "だったんですか",
+            "ロマンチックコメディ",
+            "でしたか"
+          ]
+        },
+        "tier3": {
+          "prompt": "I also like watching movies. Do you have a favorite director or actor? Maybe someone like Takeshi Kitano or Toshirô Mifune?",
+          "answer": "私は映画を見るのが好きです 好きな監督や俳優はいますか 北野武や三船敏郎みたいな人ですか",
+          "tokens": [
+            "私は",
+            "映画",
+            "見るのが",
+            "好きです",
+            "好きな",
+            "監督",
+            "や",
+            "俳優",
+            "は",
+            "いますか",
+            "北野武",
+            "や",
+            "三船敏郎",
+            "みたいな",
+            "人",
+            "ですか"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "そうですね、北野武さんの映画は面白いですよね。",
+      "vocab": [
+        "そうですね",
+        "映画"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Talk about watching TV",
+      "responses": {
+        "tier1": {
+          "prompt": "I also like watching TV.",
+          "answer": "私はテレビを見るのも好きです",
+          "tokens": [
+            "私は",
+            "テレビ",
+            "見るのも",
+            "好きです"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of TV shows do you usually watch? Do you like drama series?",
+          "answer": "どんなテレビ番組をよく見ますか ドラマシリーズは好きですか",
+          "tokens": [
+            "どんな",
+            "テレビ番組",
+            "を",
+            "よく",
+            "見ますか",
+            "ドラマシリーズ",
+            "は",
+            "好きですか"
+          ]
+        },
+        "tier3": {
+          "prompt": "I think TV shows can be very entertaining. Have you watched any good TV series recently? Maybe something with a relative clause, like 'the person who plays the lead role is my favorite actor'?",
+          "answer": "テレビ番組はとても面白いと思います 最近いいテレビシリーズを見ましたか 主役を演じる人が好きな俳優みたいな人ですか",
+          "tokens": [
+            "テレビ番組",
+            "は",
+            "とても",
+            "面白い",
+            "と思います",
+            "最近",
+            "いい",
+            "テレビシリーズ",
+            "を見ましたか",
+            "主役",
+            "を",
+            "演じる",
+            "人",
+            "が",
+            "好きな",
+            "俳優",
+            "みたいな",
+            "人",
+            "ですか"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "neutral",
+      "text": "Mattさん、映画やテレビ番組について話すのは楽しいですね。",
+      "vocab": [
+        "映画",
+        "テレビ番組",
+        "楽しい"
+      ],
+      "next": "node_end"
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "ありがとうございました。",
+      "result": "You had a nice conversation with the demure lady.",
+      "rewards": {
+        "xp": 100,
+        "money": 10
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "sad",
+      "text": "すみません、もう少し話しましょう。",
+      "result": "You failed to impress the demure lady.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    }
+  }
+}
