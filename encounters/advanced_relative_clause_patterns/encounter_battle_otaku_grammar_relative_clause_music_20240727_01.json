@@ -1,0 +1,353 @@
+{
+  "id": "battle_otaku_grammar_relative_clause_music_20240727_01",
+  "setting": "apartment-evening",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "やあ！ Mattさん、こんにちは。今日は何してた？ 僕はね、新しいアニメのライブ映像をずっと見てたんだ。",
+      "vocab": [
+        "ライブ",
+        "映像",
+        "アニメ"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask him what kind of concert it was.",
+      "responses": {
+        "tier1": {
+          "prompt": "What kind of concert?",
+          "answer": "どんな コンサート",
+          "tokens": [
+            "どんな",
+            "コンサート"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of concert was it?",
+          "answer": "どんな コンサート だった の",
+          "tokens": [
+            "どんな",
+            "コンサート",
+            "だった",
+            "の"
+          ]
+        },
+        "tier3": {
+          "prompt": "What kind of concert was it? I'm curious.",
+          "answer": "どんな コンサート だった の か 気になる",
+          "tokens": [
+            "どんな",
+            "コンサート",
+            "だった",
+            "の",
+            "か",
+            "気になる"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "ああ、それはね、僕がずっと応援してる声優さんのソロライブなんだよ。その声優さんが歌ってる曲、全部すごいんだ。",
+      "vocab": [
+        "応援",
+        "声優",
+        "ソロ",
+        "曲"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask him what makes the songs amazing.",
+      "responses": {
+        "tier1": {
+          "prompt": "What makes them amazing?",
+          "answer": "何が すごいの",
+          "tokens": [
+            "何が",
+            "すごい",
+            "の"
+          ]
+        },
+        "tier2": {
+          "prompt": "What makes the songs amazing? Tell me more.",
+          "answer": "曲が 何が すごい の か 教えて",
+          "tokens": [
+            "曲が",
+            "何が",
+            "すごい",
+            "の",
+            "か",
+            "教えて"
+          ]
+        },
+        "tier3": {
+          "prompt": "What exactly makes the songs amazing? I want to know the details.",
+          "answer": "具体的に 曲が 何が すごい の か 詳しく 教えてほしい",
+          "tokens": [
+            "具体的に",
+            "曲が",
+            "何が",
+            "すごい",
+            "の",
+            "か",
+            "詳しく",
+            "教えてほしい"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "まず、作詞作曲してる人がすごいの。その人が作った、この声優さんのために書かれた歌詞とか、メロディーが本当に感動的なんだ。",
+      "vocab": [
+        "作詞作曲",
+        "歌詞",
+        "メロディー",
+        "感動的"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask him about the lyrics written for the voice actor.",
+      "responses": {
+        "tier1": {
+          "prompt": "Lyrics written for him?",
+          "answer": "彼のために 書かれた 歌詞",
+          "tokens": [
+            "彼のために",
+            "書かれた",
+            "歌詞"
+          ]
+        },
+        "tier2": {
+          "prompt": "Tell me about the lyrics that were written specifically for that voice actor.",
+          "answer": "その 声優さんのために 書かれた 歌詞について 教えて",
+          "tokens": [
+            "その",
+            "声優さんのために",
+            "書かれた",
+            "歌詞",
+            "について",
+            "教えて"
+          ]
+        },
+        "tier3": {
+          "prompt": "Tell me about the lyrics that were written specifically for that voice actor. I'd like to hear about the specific points.",
+          "answer": "その 声優さんのために 書かれた 歌詞について 具体的な 点を 教えてほしい",
+          "tokens": [
+            "その",
+            "声優さんのために",
+            "書かれた",
+            "歌詞",
+            "について",
+            "具体的な",
+            "点を",
+            "教えてほしい"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "うんうん。例えば、「君へのエール」っていう曲があるんだけど、これはまさにその声優さんが、ファンのみんなに向けて歌ってるっていうのが伝わってくるんだよ。ライブでは、その歌詞を聴いて泣いてる人もいたな。",
+      "vocab": [
+        "エール",
+        "ファン",
+        "伝わってくる",
+        "泣いてる"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask him if he has listened to other songs by the same lyricist.",
+      "responses": {
+        "tier1": {
+          "prompt": "Other songs by the same lyricist?",
+          "answer": "同じ 歌詞の 人の 曲",
+          "tokens": [
+            "同じ",
+            "歌詞の",
+            "人",
+            "の",
+            "曲"
+          ]
+        },
+        "tier2": {
+          "prompt": "Have you listened to other songs by the person who wrote those lyrics?",
+          "answer": "その 歌詞を 書いた 人の 他の 曲を 聞いた こと ある",
+          "tokens": [
+            "その",
+            "歌詞を",
+            "書いた",
+            "人",
+            "の",
+            "他の",
+            "曲",
+            "を",
+            "聞いた",
+            "こと",
+            "ある"
+          ]
+        },
+        "tier3": {
+          "prompt": "Have you listened to other songs by the person who wrote those lyrics? I'm curious about their other works.",
+          "answer": "その 歌詞を 書いた 人の 他の 曲を 聞いた こと ある？ 他の 作品も 気になる",
+          "tokens": [
+            "その",
+            "歌詞を",
+            "書いた",
+            "人",
+            "の",
+            "他の",
+            "曲",
+            "を",
+            "聞いた",
+            "こと",
+            "ある",
+            "？",
+            "他の",
+            "作品も",
+            "気になる"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "もちろんだよ！ その作詞家さんは、他にも色んなアニメの主題歌とか、ゲームのBGMとかも手がけてるんだ。だから、彼の作った曲っていうのは、どれもクオリティが高いんだよ。",
+      "vocab": [
+        "主題歌",
+        "BGM",
+        "手がけてる",
+        "クオリティ"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask him to recommend a song that the same lyricist wrote for another anime.",
+      "responses": {
+        "tier1": {
+          "prompt": "Recommend a song.",
+          "answer": "曲を おすすめ して",
+          "tokens": [
+            "曲",
+            "を",
+            "おすすめ",
+            "して"
+          ]
+        },
+        "tier2": {
+          "prompt": "Recommend a song that the same lyricist wrote for another anime.",
+          "answer": "同じ 作詞家が 書いた 別のアニメの 曲を おすすめ して ほしい",
+          "tokens": [
+            "同じ",
+            "作詞家",
+            "が",
+            "書いた",
+            "別",
+            "の",
+            "アニメ",
+            "の",
+            "曲",
+            "を",
+            "おすすめ",
+            "して",
+            "ほしい"
+          ]
+        },
+        "tier3": {
+          "prompt": "Could you recommend a song that the same lyricist wrote for another anime? I'm curious about their other works.",
+          "answer": "同じ 作詞家が 書いた 別のアニメの 曲を おすすめ して ほしいな 他の 作品も 聞いてみたい",
+          "tokens": [
+            "同じ",
+            "作詞家",
+            "が",
+            "書いた",
+            "別",
+            "の",
+            "アニメ",
+            "の",
+            "曲",
+            "を",
+            "おすすめ",
+            "して",
+            "ほしい",
+            "な",
+            "他の",
+            "作品",
+            "も",
+            "聞いてみたい"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "うん！ じゃあ、アニメ「星空のセレナーデ」のオープニング曲、「Cosmic Dreamer」はどうかな？ あれも彼の作詞で、すごく壮大で感動的なんだよ。ライブ映像、また今度一緒に見ようよ！",
+      "vocab": [
+        "星空",
+        "セレナーデ",
+        "オープニング",
+        "Cosmic",
+        "Dreamer",
+        "壮大"
+      ],
+      "next": "node_end"
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "楽しかった！ またいつでも声かけてね！",
+      "result": "You learned about advanced relative clause patterns through music concert discussions!",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "annoyed",
+      "text": "えー、もう？ ちょっと話しただけなのに。",
+      "result": "You failed to connect with the otaku guy. Try again!",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    }
+  }
+}
