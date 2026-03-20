@@ -1,0 +1,312 @@
+{
+  "id": "battle_pinkgirl_streetfood_grammar_1701234567",
+  "setting": "downtown-evening",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わーい！路上で美味しいもの食べ歩きするのって、最高だよね！Mattさん、好きな屋台とかある？",
+      "vocab": [
+        "路上",
+        "美味しい",
+        "食べ歩き",
+        "最高",
+        "屋台"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about street food preferences.",
+      "responses": {
+        "tier1": {
+          "prompt": "What kind of food do you like?",
+          "answer": "どんな食べ物が好き？",
+          "tokens": [
+            "どんな",
+            "食べ物",
+            "が",
+            "好き",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of street food do you like from the stalls?",
+          "answer": "屋台でどんな食べ物が好きなの？",
+          "tokens": [
+            "屋台",
+            "で",
+            "どんな",
+            "食べ物",
+            "が",
+            "好き",
+            "な",
+            "の",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "I like street food that's easy to eat while walking.",
+          "answer": "歩きながらでも食べやすい屋台の食べ物が好きだよ。",
+          "tokens": [
+            "歩きながら",
+            "でも",
+            "食べやすい",
+            "屋台",
+            "の",
+            "食べ物",
+            "が",
+            "好き",
+            "だよ",
+            "。"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "あは、わかるー！片手で持てて、パクパクいけちゃうやつね！そういう、～（～する）～な食べ物って、なんだか特別感があっていいよね。",
+      "vocab": [
+        "片手",
+        "持てる",
+        "特別感"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Describe street food.",
+      "responses": {
+        "tier1": {
+          "prompt": "That's tasty.",
+          "answer": "美味しいね。",
+          "tokens": [
+            "美味しい",
+            "ね",
+            "。"
+          ]
+        },
+        "tier2": {
+          "prompt": "Street food that looks delicious is the best.",
+          "answer": "美味しそうな屋台の食べ物が一番だよ。",
+          "tokens": [
+            "美味しそう",
+            "な",
+            "屋台",
+            "の",
+            "食べ物",
+            "が",
+            "一番",
+            "だよ",
+            "。"
+          ]
+        },
+        "tier3": {
+          "prompt": "I think street food that smells good is really appealing.",
+          "answer": "いい匂いがする屋台の食べ物は、すごくそそられると思うんだ。",
+          "tokens": [
+            "いい",
+            "匂い",
+            "が",
+            "する",
+            "屋台",
+            "の",
+            "食べ物",
+            "は",
+            "、",
+            "すごく",
+            "そそられる",
+            "と",
+            "思う",
+            "んだ",
+            "。"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わかるー！「～（～）～」匂いがするだけで、もうお腹空いちゃう！例えば、たこ焼きとか、焼きそばとか、あの湯気が出てる感じとか、たまらないよね～！",
+      "vocab": [
+        "湯気",
+        "たまらない"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about favorite street foods.",
+      "responses": {
+        "tier1": {
+          "prompt": "What do you like?",
+          "answer": "何が好き？",
+          "tokens": [
+            "何",
+            "が",
+            "好き",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of street food that's popular right now do you like?",
+          "answer": "今流行ってる屋台の食べ物で何が好き？",
+          "tokens": [
+            "今",
+            "流行ってる",
+            "屋台",
+            "の",
+            "食べ物",
+            "で",
+            "何",
+            "が",
+            "好き",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "I like the sweet crepe that's popular with young people these days.",
+          "answer": "最近若者の間で流行ってる、甘いクレープが好きかな。",
+          "tokens": [
+            "最近",
+            "若者",
+            "の",
+            "間",
+            "で",
+            "流行ってる",
+            "、",
+            "甘い",
+            "クレープ",
+            "が",
+            "好き",
+            "かな",
+            "。"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "クレープ！いいよね～！私も、～（～）～クレープって、見た目も可愛くて好き！Mattさんは、一人で食べ歩きする？それとも、誰かと一緒に行くのが好き？",
+      "vocab": [
+        "見た目",
+        "可愛い"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Express preference for eating with someone.",
+      "responses": {
+        "tier1": {
+          "prompt": "With someone.",
+          "answer": "誰かと。",
+          "tokens": [
+            "誰か",
+            "と",
+            "。"
+          ]
+        },
+        "tier2": {
+          "prompt": "I prefer eating with someone, like you.",
+          "answer": "Mattさんとみたいに、誰かと一緒に行くのが好きだよ。",
+          "tokens": [
+            "Matt",
+            "さん",
+            "と",
+            "みたい",
+            "に",
+            "、",
+            "誰か",
+            "と",
+            "一緒",
+            "に",
+            "行く",
+            "の",
+            "が",
+            "好き",
+            "だよ",
+            "。"
+          ]
+        },
+        "tier3": {
+          "prompt": "I like going with someone because we can talk about what we ate and share our enjoyment.",
+          "answer": "誰かと一緒だと、食べたものについて話したり、美味しさを共有したりできるから好きなんだ。",
+          "tokens": [
+            "誰か",
+            "と",
+            "一緒",
+            "だと",
+            "、",
+            "食べた",
+            "もの",
+            "について",
+            "話したり",
+            "、",
+            "美味しさ",
+            "を",
+            "共有",
+            "したり",
+            "できる",
+            "から",
+            "好き",
+            "な",
+            "んだ",
+            "。"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "えへへ、嬉しい！じゃあ今度、Mattさんと一緒に、美味しい屋台巡りとかしよっか！「～（～）～」屋台とか、絶対楽しいと思うんだ！",
+      "vocab": [
+        "屋台巡り",
+        "絶対"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "今日はMattさんとお話できて、とっても楽しかった！またね！",
+      "result": "You had a great conversation about street food and made plans to go together!",
+      "rewards": {
+        "xp": 50,
+        "money": 25
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "annoyed",
+      "text": "あれー？Mattさん、もう行っちゃうの？残念だなあ。",
+      "result": "The conversation ended abruptly.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    }
+  }
+}
