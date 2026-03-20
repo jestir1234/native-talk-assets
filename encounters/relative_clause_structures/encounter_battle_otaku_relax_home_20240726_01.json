@@ -1,0 +1,389 @@
+{
+  "id": "battle_otaku_relax_home_20240726_01",
+  "setting": "apartment-evening",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "やあ、Mattさん！ 今日は家でゆっくりしてたんだ。こういう日も、たまにはいいよね。",
+      "vocab": [
+        "ゆっくり",
+        "たまに"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree with the NPC and say it's good to relax at home.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree and say it's good.",
+          "answer": "そうだね いいね",
+          "tokens": [
+            "そうだね",
+            "いい",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree, say it's good to relax at home.",
+          "answer": "そうだね 家で ゆっくり するのは いいね",
+          "tokens": [
+            "そうだね",
+            "家",
+            "で",
+            "ゆっくり",
+            "する",
+            "の",
+            "は",
+            "いい",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree, say it's really good to relax at home after a busy week.",
+          "answer": "そうだね 忙しい 一週間 の 後に 家で ゆっくり するのは 本当に いいね",
+          "tokens": [
+            "そうだね",
+            "忙しい",
+            "一週間",
+            "の",
+            "後",
+            "に",
+            "家",
+            "で",
+            "ゆっくり",
+            "する",
+            "の",
+            "は",
+            "本当に",
+            "いい",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "でしょ？ ずっと 部屋にいると、時間の感覚がなくなっちゃうんだ。ゲームしてると、あっという間に夜だよ。",
+      "vocab": [
+        "時間",
+        "感覚",
+        "ゲーム"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask if time flies when playing games.",
+      "responses": {
+        "tier1": {
+          "prompt": "Time flies?",
+          "answer": "時間 溶ける",
+          "tokens": [
+            "時間",
+            "溶ける"
+          ]
+        },
+        "tier2": {
+          "prompt": "Does time melt away when you play games?",
+          "answer": "ゲーム してると 時間 が 溶ける の？",
+          "tokens": [
+            "ゲーム",
+            "してると",
+            "時間",
+            "が",
+            "溶ける",
+            "の",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "It sounds like time just melts away when you're really focused on playing games, right?",
+          "answer": "ゲーム に 夢中 に なって ると 本当に 時間 が 溶けて いく みたいだね",
+          "tokens": [
+            "ゲーム",
+            "に",
+            "夢中",
+            "に",
+            "なって",
+            "ると",
+            "本当に",
+            "時間",
+            "が",
+            "溶けて",
+            "いく",
+            "みたい",
+            "だね"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "そうそう！ だから、ついつい夜更かししちゃうんだよね。それに、コンビ二で買った新しいお菓子とか、そういう小さな楽しみもあるし。",
+      "vocab": [
+        "ついつい",
+        "夜更かし",
+        "コンビ二",
+        "お菓子"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about the new snacks from the convenience store.",
+      "responses": {
+        "tier1": {
+          "prompt": "New snacks?",
+          "answer": "お菓子 何",
+          "tokens": [
+            "お菓子",
+            "何"
+          ]
+        },
+        "tier2": {
+          "prompt": "What new snacks did you get from the convenience store?",
+          "answer": "コンビニで 買った 新しい お菓子 は 何？",
+          "tokens": [
+            "コンビニ",
+            "で",
+            "買った",
+            "新しい",
+            "お菓子",
+            "は",
+            "何",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "It sounds like you enjoy those little pleasures, like new snacks from the convenience store, when you're relaxing at home.",
+          "answer": "家で ゆっくり してる時 コンビニで 買った 新しい お菓子 とか、そういう 小さな 楽しみも いいもの だね",
+          "tokens": [
+            "家",
+            "で",
+            "ゆっくり",
+            "してる",
+            "時",
+            "コンビニ",
+            "で",
+            "買った",
+            "新しい",
+            "お菓子",
+            "とか",
+            "そういう",
+            "小さな",
+            "楽しみ",
+            "も",
+            "いいもの",
+            "だね"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "そうなんだよ。あと、アニメをまた見返したりもするかな。研究のため、だよ、もちろん！",
+      "vocab": [
+        "アニメ",
+        "見返す",
+        "研究"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask which anime he's rewatching for research.",
+      "responses": {
+        "tier1": {
+          "prompt": "Which anime?",
+          "answer": "アニメ 何",
+          "tokens": [
+            "アニメ",
+            "何"
+          ]
+        },
+        "tier2": {
+          "prompt": "Which anime are you rewatching for research, Matt-san?",
+          "answer": "研究 のために 見返してる アニメ は 何？",
+          "tokens": [
+            "研究",
+            "の",
+            "ため",
+            "に",
+            "見返してる",
+            "アニメ",
+            "は",
+            "何",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "It's interesting that you rewatch anime for research. Which series are you currently studying, and what makes it worthy of research?",
+          "answer": "研究 のために アニメ を 見返すって 面白いね 今 どんな シリーズ を 研究 してるの？ どういう 点が 研究 対象 に なるの？",
+          "tokens": [
+            "研究",
+            "の",
+            "ため",
+            "に",
+            "アニメ",
+            "を",
+            "見返す",
+            "って",
+            "面白い",
+            "ね",
+            "今",
+            "どんな",
+            "シリーズ",
+            "を",
+            "研究",
+            "してる",
+            "の",
+            "？",
+            "どういう",
+            "点",
+            "が",
+            "研究",
+            "対象",
+            "に",
+            "なる",
+            "の",
+            "？"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "うーん、それは秘密かな。でも、キャラクターの心情描写がすごいんだ。そういうのが、家でリラックスしてる時にじっくり見たいんだよね。",
+      "vocab": [
+        "秘密",
+        "心情描写",
+        "じっくり"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "Mattさんも、家でどんな風にリラックスしてる？ 何かおすすめとかある？",
+      "vocab": [
+        "おすすめ"
+      ],
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Tell the NPC that you like to relax by watching movies at home.",
+      "responses": {
+        "tier1": {
+          "prompt": "I watch movies.",
+          "answer": "映画 見る",
+          "tokens": [
+            "映画",
+            "見る"
+          ]
+        },
+        "tier2": {
+          "prompt": "I like to relax at home by watching movies.",
+          "answer": "家で 映画 を 見る のが 好き",
+          "tokens": [
+            "家",
+            "で",
+            "映画",
+            "を",
+            "見る",
+            "の",
+            "が",
+            "好き"
+          ]
+        },
+        "tier3": {
+          "prompt": "When I relax at home, I really enjoy watching movies. It's a great way to unwind.",
+          "answer": "家で ゆっくり する 時は 映画 を 見る のが 本当に 好きだよ リラックス するのに とても いい 方法だ",
+          "tokens": [
+            "家",
+            "で",
+            "ゆっくり",
+            "する",
+            "時",
+            "は",
+            "映画",
+            "を",
+            "見る",
+            "の",
+            "が",
+            "本当に",
+            "好き",
+            "だよ",
+            "リラックス",
+            "する",
+            "のに",
+            "とても",
+            "いい",
+            "方法",
+            "だ"
+          ]
+        }
+      },
+      "next": "node_12"
+    },
+    "node_12": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "映画もいいね！ 個人的には、アクションとかSFが好きかな。でも、たまにはほのぼのしたやつもいいよね。また今度、おすすめの映画とか話そうよ！",
+      "vocab": [
+        "アクション",
+        "SF",
+        "ほのぼの"
+      ],
+      "next": "node_end_happy"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "annoyed",
+      "text": "あー、もう！ 話が全然進まないじゃん。まあ、いいや。また今度ね。",
+      "result": "The conversation ended abruptly. You didn't connect well with the otaku-guy.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end_happy": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "うん、また話そうね！ 今日は楽しかったよ、Mattさん！",
+      "result": "You had a fun conversation about relaxing at home and shared your interests. The otaku-guy seems to have enjoyed your company!",
+      "rewards": {
+        "xp": 50,
+        "money": 100
+      }
+    }
+  }
+}
