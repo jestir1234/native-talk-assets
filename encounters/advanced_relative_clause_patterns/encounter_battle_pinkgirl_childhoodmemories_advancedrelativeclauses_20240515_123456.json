@@ -1,0 +1,352 @@
+{
+  "id": "battle_pinkgirl_childhoodmemories_advancedrelativeclauses_20240515_123456",
+  "setting": "park-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わー！お天気すごくいいね！ねぇ、Mattさん、子供の頃ってどんなことして遊んでた？私はね、お庭で虫取りするのが大好きだったんだ！",
+      "vocab": [
+        "天気",
+        "子供",
+        "遊ぶ",
+        "庭",
+        "虫取り",
+        "大好き"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What were you like as a child?",
+      "responses": {
+        "tier1": {
+          "prompt": "Tell me a little about yourself.",
+          "answer": "私は静かな子供でした。",
+          "tokens": [
+            "私",
+            "は",
+            "静か",
+            "な",
+            "子供",
+            "でした"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of things did you enjoy doing?",
+          "answer": "私は本を読むのが好きで、お母さんが読んでくれた絵本は今でも覚えています。",
+          "tokens": [
+            "私",
+            "は",
+            "本",
+            "読む",
+            "の",
+            "好き",
+            "お母さん",
+            "読む",
+            "絵本",
+            "今",
+            "覚える"
+          ]
+        },
+        "tier3": {
+          "prompt": "Can you describe a specific memory about something your mother read to you?",
+          "answer": "母が読んでくれた、動物がたくさん出てくる話で、その話に出てくるウサギのキャラクターがとっても可愛かったんです。",
+          "tokens": [
+            "母",
+            "読む",
+            "動物",
+            "たくさん",
+            "出てくる",
+            "話",
+            "その",
+            "話",
+            "出てくる",
+            "ウサギ",
+            "キャラクター",
+            "とっても",
+            "可愛い",
+            "かった"
+          ]
+        }
+      },
+      "next": "node_3",
+      "grammar": [
+        "relative clause: noun + particle + relative clause phrase + noun"
+      ]
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "へぇ！動物がたくさん出てくるお話、いいね！私も小さい頃、お母さんが作ってくれたお弁当がとっても美味しかったんだ〜！",
+      "vocab": [
+        "動物",
+        "話",
+        "作る",
+        "お弁当",
+        "美味しい"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What was special about the bento?",
+      "responses": {
+        "tier1": {
+          "prompt": "Was it tasty?",
+          "answer": "はい、とても美味しかったです。",
+          "tokens": [
+            "はい",
+            "とても",
+            "美味しい",
+            "です",
+            "た"
+          ]
+        },
+        "tier2": {
+          "prompt": "What did it look like?",
+          "answer": "あの、可愛くデコレーションされた、お星さまの形をしたおにぎりが入っていたお弁当なんです。",
+          "tokens": [
+            "あの",
+            "可愛く",
+            "デコレーション",
+            "する",
+            "お",
+            "星さま",
+            "形",
+            "する",
+            "おにぎり",
+            "入る",
+            "お弁当",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "What made it so special to you?",
+          "answer": "母が私のために、一つ一つ心を込めて作ってくれた、そんな温かい気持ちが伝わってくるお弁当だったんです。",
+          "tokens": [
+            "母",
+            "私",
+            "ため",
+            "一つ一つ",
+            "心",
+            "込める",
+            "作る",
+            "そんな",
+            "温かい",
+            "気持ち",
+            "伝わる",
+            "お弁当",
+            "です"
+          ]
+        }
+      },
+      "next": "node_5",
+      "grammar": [
+        "relative clause: noun + particle + relative clause phrase + noun"
+      ]
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "わあ、Mattさんのお母さんもすごい！そういう愛情がこもったものって、本当に美味しく感じるよね〜！私、そういう話を聞くと、なんだかキュンとしちゃうんだ。",
+      "vocab": [
+        "愛情",
+        "こもる",
+        "美味しい",
+        "感じる",
+        "話",
+        "キュン",
+        "する"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What kind of crafts do you like?",
+      "responses": {
+        "tier1": {
+          "prompt": "I like crafts too.",
+          "answer": "私も手作りのものが好きです。",
+          "tokens": [
+            "私",
+            "も",
+            "手作り",
+            "の",
+            "もの",
+            "好き",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of crafts do you do?",
+          "answer": "私は、キラキラしたステッカーをたくさん集めて、ノートに貼ってデコレーションするのが趣味なんだ。",
+          "tokens": [
+            "私",
+            "は",
+            "キラキラ",
+            "ステッカー",
+            "たくさん",
+            "集める",
+            "ノート",
+            "貼る",
+            "デコレーション",
+            "する",
+            "趣味",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Can you describe your favorite kind of sticker?",
+          "answer": "特に、動物の形をした、キラキラしたホログラムのステッカーが大好きで、それを貼ると、どんなものも可愛くなるんだ。",
+          "tokens": [
+            "特に",
+            "動物",
+            "形",
+            "する",
+            "キラキラ",
+            "ホログラム",
+            "ステッカー",
+            "大好き",
+            "それ",
+            "貼る",
+            "どんな",
+            "もの",
+            "可愛く",
+            "なる"
+          ]
+        }
+      },
+      "next": "node_7",
+      "grammar": [
+        "relative clause: noun + particle + relative clause phrase + noun"
+      ]
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わー！ステッカーデコレーション！それ、すごく可愛いよね！私もそういう、キラキラしたものとか、フワフワしたものとか、見てるだけで元気になっちゃうんだ！",
+      "vocab": [
+        "ステッカー",
+        "デコレーション",
+        "可愛い",
+        "キラキラ",
+        "フワフワ",
+        "見る",
+        "元気"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What's your dream?",
+      "responses": {
+        "tier1": {
+          "prompt": "What do you want to do?",
+          "answer": "将来、カフェを開きたいです。",
+          "tokens": [
+            "将来",
+            "カフェ",
+            "開く",
+            "たい",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of cafe would you like?",
+          "answer": "可愛い雑貨がたくさん置いてあって、みんながリラックスできるような、居心地の良いカフェにしたいんです。",
+          "tokens": [
+            "可愛い",
+            "雑貨",
+            "たくさん",
+            "置く",
+            "みんな",
+            "リラックス",
+            "する",
+            "ような",
+            "居心地",
+            "良い",
+            "カフェ",
+            "する"
+          ]
+        },
+        "tier3": {
+          "prompt": "What would make it the most special?",
+          "answer": "手作りのスイーツをたくさん並べて、自分でデザインした可愛い内装で、訪れる人みんなが笑顔になれるような、そんなカフェを目指したいな。",
+          "tokens": [
+            "手作り",
+            "スイーツ",
+            "たくさん",
+            "並べる",
+            "自分",
+            "デザイン",
+            "する",
+            "可愛い",
+            "内装",
+            "訪れる",
+            "人",
+            "みんな",
+            "笑顔",
+            "なる",
+            "そんな",
+            "カフェ",
+            "目指す"
+          ]
+        }
+      },
+      "next": "node_9",
+      "grammar": [
+        "relative clause: noun + particle + relative clause phrase + noun"
+      ]
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わ〜！Mattさん、素敵な夢だね！私が作った可愛い雑貨も置いてもらいたいな！いつでも応援してるよ！",
+      "vocab": [
+        "素敵",
+        "夢",
+        "雑貨",
+        "置く",
+        "応援",
+        "する"
+      ],
+      "next": "node_end"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "え〜、もう行っちゃうの？また今度、お話しようね！",
+      "result": "You ended the conversation.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "今日はいっぱいお話できて楽しかった！Mattさん、ありがとう！またね！",
+      "result": "You had a great conversation and learned about childhood memories and dreams!",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      }
+    }
+  }
+}
