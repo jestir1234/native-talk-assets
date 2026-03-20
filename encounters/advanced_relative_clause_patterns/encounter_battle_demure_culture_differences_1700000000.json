@@ -1,0 +1,468 @@
+{
+  "id": "battle_demure_culture_differences_1700000000",
+  "setting": "park-day",
+  "character": "demure-lady",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "こんにちは、Mattさん。今日はお天気も良くて、過ごしやすい日ですね。",
+      "vocab": [
+        "こんにちは",
+        "天気",
+        "良くて",
+        "過ごしやすい",
+        "日"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to the greeting and the comment about the weather.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree about the weather.",
+          "answer": "本当ですね 天気は素晴らしいです",
+          "tokens": [
+            "本当",
+            "です",
+            "ね",
+            "天気",
+            "は",
+            "素晴らしい",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree about the weather and mention it's nice for a walk.",
+          "answer": "本当ですね 今日は散歩にぴったりな天気ですね",
+          "tokens": [
+            "本当",
+            "です",
+            "ね",
+            "今日",
+            "は",
+            "散歩",
+            "に",
+            "ぴったり",
+            "な",
+            "天気",
+            "です",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree enthusiastically about the weather and say it makes one feel cheerful.",
+          "answer": "本当ですね こんなに気持ちの良い天気だと、心が晴れやかになりますね",
+          "tokens": [
+            "本当",
+            "です",
+            "ね",
+            "こんなに",
+            "気持ち",
+            "の",
+            "良い",
+            "天気",
+            "だと",
+            "、",
+            "心",
+            "が",
+            "晴れやか",
+            "に",
+            "なります",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "happy",
+      "text": "ええ、そうですね。Mattさんはどちらからいらっしゃったのですか？",
+      "vocab": [
+        "どちら",
+        "いらっしゃった",
+        "のですか"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Say you are from America.",
+      "responses": {
+        "tier1": {
+          "prompt": "State you are from America.",
+          "answer": "私はアメリカから来ました",
+          "tokens": [
+            "私",
+            "は",
+            "アメリカ",
+            "から",
+            "来ました"
+          ]
+        },
+        "tier2": {
+          "prompt": "State you are from America and have been living here for a while.",
+          "answer": "私はアメリカから来ましたが、こちらに住んでしばらく経ちます",
+          "tokens": [
+            "私",
+            "は",
+            "アメリカ",
+            "から",
+            "来ました",
+            "が",
+            "、",
+            "こちら",
+            "に",
+            "住んで",
+            "しばらく",
+            "経ちます"
+          ]
+        },
+        "tier3": {
+          "prompt": "State you are from America and have been living here for a while, and still find some things new.",
+          "answer": "私はアメリカから来ました。こちらに住んでしばらく経ちますが、まだ新しい発見がたくさんあります",
+          "tokens": [
+            "私",
+            "は",
+            "アメリカ",
+            "から",
+            "来ました",
+            "。",
+            "こちら",
+            "に",
+            "住んで",
+            "しばらく",
+            "経ちますが",
+            "、",
+            "まだ",
+            "新しい",
+            "発見",
+            "が",
+            "たくさん",
+            "あります"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "thinking",
+      "text": "まあ、アメリカでいらっしゃいますか。文化の違いは、興味深いものがありますが、時々戸惑うこともありますね。",
+      "vocab": [
+        "文化",
+        "違い",
+        "興味深い",
+        "時々",
+        "戸惑う"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask what cultural differences she has found most interesting.",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask about cultural differences.",
+          "answer": "文化の違いについて教えてください",
+          "tokens": [
+            "文化",
+            "の",
+            "違い",
+            "について",
+            "教えて",
+            "ください"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask what cultural differences she finds interesting.",
+          "answer": "どのような文化の違いが一番興味深いですか",
+          "tokens": [
+            "どのような",
+            "文化",
+            "の",
+            "違い",
+            "が",
+            "一番",
+            "興味深い",
+            "です",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask what cultural differences she has found most interesting, especially regarding daily customs.",
+          "answer": "どのような文化の違いが一番興味深いとお感じになりますか、特に日々の習慣について",
+          "tokens": [
+            "どのような",
+            "文化",
+            "の",
+            "違い",
+            "が",
+            "一番",
+            "興味深い",
+            "と",
+            "お感じ",
+            "に",
+            "なります",
+            "か",
+            "、",
+            "特に",
+            "日々",
+            "の",
+            "習慣",
+            "について"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "そうですね...例えば、日本では「空気を読む」ということがとても大切にされていますね。言葉にしなくても、相手の気持ちを察する、という習慣です。",
+      "vocab": [
+        "空気を読む",
+        "大切",
+        "言葉",
+        "相手",
+        "気持ち",
+        "察する",
+        "習慣"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Express that you understand and find that concept fascinating.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say it sounds interesting.",
+          "answer": "それは面白いですね",
+          "tokens": [
+            "それ",
+            "は",
+            "面白い",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say you understand and find the concept fascinating, especially the idea of sensing feelings without words.",
+          "answer": "なるほど、言葉にしなくても気持ちを察するという考えは、とても興味深いですね",
+          "tokens": [
+            "なるほど",
+            "、",
+            "言葉",
+            "に",
+            "しなくても",
+            "気持ち",
+            "を",
+            "察する",
+            "という",
+            "考え",
+            "は",
+            "、",
+            "とても",
+            "興味深い",
+            "です",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say you understand and find the concept fascinating, as it requires a deep level of social awareness and empathy, which is different from direct communication styles you are used to.",
+          "answer": "なるほど、言葉にしなくても相手の気持ちを察するという習慣は、直接的なコミュニケーションに慣れている私にとって、社会的な配慮と共感を必要とする深く魅力的な考え方だと感じます",
+          "tokens": [
+            "なるほど",
+            "、",
+            "言葉",
+            "に",
+            "しなくても",
+            "相手",
+            "の",
+            "気持ち",
+            "を",
+            "察する",
+            "という",
+            "習慣",
+            "は",
+            "、",
+            "直接的",
+            "な",
+            "コミュニケーション",
+            "に",
+            "慣れている",
+            "私",
+            "にとって",
+            "、",
+            "社会的",
+            "な",
+            "配慮",
+            "と",
+            "共感",
+            "を",
+            "必要",
+            "と",
+            "する",
+            "深く",
+            "魅力",
+            "的",
+            "な",
+            "考え方",
+            "だと",
+            "感じます"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "happy",
+      "text": "ええ、そのように感じていただけて嬉しいです。時代と共に、人々の考え方も少しずつ変わってきていますが、大切なものは変わらないと信じたいですね。",
+      "vocab": [
+        "時代",
+        "人々",
+        "考え方",
+        "少しずつ",
+        "変わって",
+        "大切",
+        "信じたい"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree with her sentiment about important things remaining constant.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree with her.",
+          "answer": "私もそう思います",
+          "tokens": [
+            "私",
+            "も",
+            "そう",
+            "思います"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree with her sentiment about important things remaining constant despite societal changes.",
+          "answer": "時代と共に変わることもありますが、大切なことは変わらないというお考えに私も賛成です",
+          "tokens": [
+            "時代",
+            "と",
+            "共に",
+            "変わる",
+            "ことも",
+            "ありますが",
+            "、",
+            "大切",
+            "な",
+            "こと",
+            "は",
+            "変わらない",
+            "という",
+            "お考え",
+            "に",
+            "私",
+            "も",
+            "賛成",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree with her sentiment that even though people and ways of thinking change with the times, the core values and important aspects should remain constant.",
+          "answer": "時代と共に人々の考え方が変化しても、本来大切であるべき核となる価値観や事柄は、変わらずに受け継がれていくべきだと私も同じように感じております",
+          "tokens": [
+            "時代",
+            "と",
+            "共に",
+            "人々",
+            "の",
+            "考え方",
+            "が",
+            "変化",
+            "しても",
+            "、",
+            "本来",
+            "大切",
+            "で",
+            "ある",
+            "べき",
+            "核",
+            "と",
+            "なる",
+            "価値観",
+            "や",
+            "事柄",
+            "は",
+            "、",
+            "変わらず",
+            "に",
+            "受け継がれて",
+            "いく",
+            "べき",
+            "だと",
+            "私",
+            "も",
+            "同じ",
+            "よう",
+            "に",
+            "感じて",
+            "おります"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "happy",
+      "text": "ありがとうございます。Mattさんのお話を聞けて、とても嬉しいです。またお会いできるのを楽しみにしていますね。",
+      "vocab": [
+        "ありがとう",
+        "嬉しい",
+        "会える",
+        "楽しみ"
+      ],
+      "next": "node_end"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "sad",
+      "text": "あら...残念です。また今度、お話しさせてくださいね。",
+      "result": "Conversation failed. Try again to deepen your understanding.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "happy",
+      "text": "今日はどうもありがとうございました。どうぞお気をつけて。",
+      "result": "Conversation succeeded! You gained valuable insights into cultural differences.",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      }
+    }
+  }
+}
