@@ -18,7 +18,11 @@
         "過ごしやすい",
         "日"
       ],
-      "next": "node_2"
+      "next": "node_2",
+      "audio": {
+        "key": "battle_demure_culture_differences_1700000000-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_culture_differences_1700000000-dialogue-audio1.mp3"
+      }
     },
     "node_2": {
       "type": "build_sentence",
@@ -91,7 +95,11 @@
         "いらっしゃった",
         "のですか"
       ],
-      "next": "node_4"
+      "next": "node_4",
+      "audio": {
+        "key": "battle_demure_culture_differences_1700000000-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_culture_differences_1700000000-dialogue-audio2.mp3"
+      }
     },
     "node_4": {
       "type": "build_sentence",
@@ -166,7 +174,11 @@
         "時々",
         "戸惑う"
       ],
-      "next": "node_6"
+      "next": "node_6",
+      "audio": {
+        "key": "battle_demure_culture_differences_1700000000-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_culture_differences_1700000000-dialogue-audio3.mp3"
+      }
     },
     "node_6": {
       "type": "build_sentence",
@@ -241,7 +253,11 @@
         "察する",
         "習慣"
       ],
-      "next": "node_8"
+      "next": "node_8",
+      "audio": {
+        "key": "battle_demure_culture_differences_1700000000-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_culture_differences_1700000000-dialogue-audio4.mp3"
+      }
     },
     "node_8": {
       "type": "build_sentence",
@@ -342,7 +358,11 @@
         "大切",
         "信じたい"
       ],
-      "next": "node_10"
+      "next": "node_10",
+      "audio": {
+        "key": "battle_demure_culture_differences_1700000000-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_culture_differences_1700000000-dialogue-audio5.mp3"
+      }
     },
     "node_10": {
       "type": "build_sentence",
@@ -440,7 +460,11 @@
         "会える",
         "楽しみ"
       ],
-      "next": "node_end"
+      "next": "node_end",
+      "audio": {
+        "key": "battle_demure_culture_differences_1700000000-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_culture_differences_1700000000-dialogue-audio6.mp3"
+      }
     },
     "node_fail": {
       "type": "end",
@@ -462,6 +486,10 @@
       "rewards": {
         "xp": 100,
         "money": 50
+      },
+      "audio": {
+        "key": "battle_demure_culture_differences_1700000000-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_culture_differences_1700000000-dialogue-audio7.mp3"
       }
     }
   }

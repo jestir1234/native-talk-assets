@@ -17,7 +17,11 @@
         "会える",
         "日"
       ],
-      "next": "node_2"
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio1.mp3"
+      }
     },
     "node_2": {
       "type": "build_sentence",
@@ -75,7 +79,11 @@
         "優しそう",
         "慣れちゃう"
       ],
-      "next": "node_4"
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio2.mp3"
+      }
     },
     "node_4": {
       "type": "build_sentence",
@@ -132,7 +140,11 @@
         "笑顔",
         "素敵"
       ],
-      "next": "node_6"
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio3.mp3"
+      }
     },
     "node_6": {
       "type": "build_sentence",
@@ -201,7 +213,11 @@
         "アクセサリー",
         "趣味"
       ],
-      "next": "node_8"
+      "next": "node_8",
+      "audio": {
+        "key": "battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio4.mp3"
+      }
     },
     "node_8": {
       "type": "build_sentence",
@@ -281,7 +297,11 @@
         "一つ",
         "集める"
       ],
-      "next": "node_10"
+      "next": "node_10",
+      "audio": {
+        "key": "battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio5.mp3"
+      }
     },
     "node_10": {
       "type": "build_sentence",
@@ -355,7 +375,11 @@
         "使ってた",
         "小物"
       ],
-      "next": "node_12"
+      "next": "node_12",
+      "audio": {
+        "key": "battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio6.mp3"
+      }
     },
     "node_12": {
       "type": "end",
@@ -366,6 +390,10 @@
       "rewards": {
         "xp": 100,
         "money": 50
+      },
+      "audio": {
+        "key": "battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_relative-clause_meeting_1711387200-dialogue-audio7.mp3"
       }
     },
     "node_fail": {

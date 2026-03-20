@@ -18,7 +18,11 @@
         "最高",
         "屋台"
       ],
-      "next": "node_2"
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pinkgirl_streetfood_grammar_1701234567-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_streetfood_grammar_1701234567-dialogue-audio1.mp3"
+      }
     },
     "node_2": {
       "type": "build_sentence",
@@ -80,7 +84,11 @@
         "持てる",
         "特別感"
       ],
-      "next": "node_4"
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pinkgirl_streetfood_grammar_1701234567-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_streetfood_grammar_1701234567-dialogue-audio2.mp3"
+      }
     },
     "node_4": {
       "type": "build_sentence",
@@ -144,7 +152,11 @@
         "湯気",
         "たまらない"
       ],
-      "next": "node_6"
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pinkgirl_streetfood_grammar_1701234567-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_streetfood_grammar_1701234567-dialogue-audio3.mp3"
+      }
     },
     "node_6": {
       "type": "build_sentence",
@@ -208,7 +220,11 @@
         "見た目",
         "可愛い"
       ],
-      "next": "node_8"
+      "next": "node_8",
+      "audio": {
+        "key": "battle_pinkgirl_streetfood_grammar_1701234567-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_streetfood_grammar_1701234567-dialogue-audio4.mp3"
+      }
     },
     "node_8": {
       "type": "build_sentence",
@@ -284,7 +300,11 @@
         "屋台巡り",
         "絶対"
       ],
-      "next": "node_10"
+      "next": "node_10",
+      "audio": {
+        "key": "battle_pinkgirl_streetfood_grammar_1701234567-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_streetfood_grammar_1701234567-dialogue-audio5.mp3"
+      }
     },
     "node_10": {
       "type": "end",
@@ -295,6 +315,10 @@
       "rewards": {
         "xp": 50,
         "money": 25
+      },
+      "audio": {
+        "key": "battle_pinkgirl_streetfood_grammar_1701234567-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_streetfood_grammar_1701234567-dialogue-audio6.mp3"
       }
     },
     "node_fail": {

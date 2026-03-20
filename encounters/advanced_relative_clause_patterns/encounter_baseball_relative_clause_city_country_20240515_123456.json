@@ -16,7 +16,11 @@
         "練習",
         "気持ちいい"
       ],
-      "next": "node_2"
+      "next": "node_2",
+      "audio": {
+        "key": "baseball_relative_clause_city_country_20240515_123456-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/baseball_relative_clause_city_country_20240515_123456-dialogue-audio1.mp3"
+      }
     },
     "node_2": {
       "type": "build_sentence",
@@ -90,7 +94,11 @@
         "広い",
         "最高"
       ],
-      "next": "node_4"
+      "next": "node_4",
+      "audio": {
+        "key": "baseball_relative_clause_city_country_20240515_123456-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/baseball_relative_clause_city_country_20240515_123456-dialogue-audio2.mp3"
+      }
     },
     "node_4": {
       "type": "build_sentence",
@@ -179,7 +187,11 @@
         "あぜ道",
         "キャッチボール"
       ],
-      "next": "node_6"
+      "next": "node_6",
+      "audio": {
+        "key": "baseball_relative_clause_city_country_20240515_123456-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/baseball_relative_clause_city_country_20240515_123456-dialogue-audio3.mp3"
+      }
     },
     "node_6": {
       "type": "build_sentence",
@@ -248,7 +260,11 @@
         "チーム",
         "育った"
       ],
-      "next": "node_8"
+      "next": "node_8",
+      "audio": {
+        "key": "baseball_relative_clause_city_country_20240515_123456-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/baseball_relative_clause_city_country_20240515_123456-dialogue-audio4.mp3"
+      }
     },
     "node_8": {
       "type": "build_sentence",
@@ -318,7 +334,11 @@
         "勝て",
         "楽しかった"
       ],
-      "next": "node_10"
+      "next": "node_10",
+      "audio": {
+        "key": "baseball_relative_clause_city_country_20240515_123456-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/baseball_relative_clause_city_country_20240515_123456-dialogue-audio5.mp3"
+      }
     },
     "node_10": {
       "type": "build_sentence",
@@ -377,6 +397,10 @@
       "rewards": {
         "xp": 50,
         "money": 10
+      },
+      "audio": {
+        "key": "baseball_relative_clause_city_country_20240515_123456-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/baseball_relative_clause_city_country_20240515_123456-dialogue-audio6.mp3"
       }
     }
   }

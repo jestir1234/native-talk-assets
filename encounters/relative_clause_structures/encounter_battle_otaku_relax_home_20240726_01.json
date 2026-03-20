@@ -15,7 +15,11 @@
         "ゆっくり",
         "たまに"
       ],
-      "next": "node_2"
+      "next": "node_2",
+      "audio": {
+        "key": "battle_otaku_relax_home_20240726_01-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relax_home_20240726_01-dialogue-audio1.mp3"
+      }
     },
     "node_2": {
       "type": "build_sentence",
@@ -80,7 +84,11 @@
         "感覚",
         "ゲーム"
       ],
-      "next": "node_4"
+      "next": "node_4",
+      "audio": {
+        "key": "battle_otaku_relax_home_20240726_01-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relax_home_20240726_01-dialogue-audio2.mp3"
+      }
     },
     "node_4": {
       "type": "build_sentence",
@@ -141,7 +149,11 @@
         "コンビ二",
         "お菓子"
       ],
-      "next": "node_6"
+      "next": "node_6",
+      "audio": {
+        "key": "battle_otaku_relax_home_20240726_01-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relax_home_20240726_01-dialogue-audio3.mp3"
+      }
     },
     "node_6": {
       "type": "build_sentence",
@@ -206,7 +218,11 @@
         "見返す",
         "研究"
       ],
-      "next": "node_8"
+      "next": "node_8",
+      "audio": {
+        "key": "battle_otaku_relax_home_20240726_01-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relax_home_20240726_01-dialogue-audio4.mp3"
+      }
     },
     "node_8": {
       "type": "build_sentence",
@@ -282,7 +298,11 @@
         "心情描写",
         "じっくり"
       ],
-      "next": "node_10"
+      "next": "node_10",
+      "audio": {
+        "key": "battle_otaku_relax_home_20240726_01-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relax_home_20240726_01-dialogue-audio5.mp3"
+      }
     },
     "node_10": {
       "type": "dialogue",
@@ -292,7 +312,11 @@
       "vocab": [
         "おすすめ"
       ],
-      "next": "node_11"
+      "next": "node_11",
+      "audio": {
+        "key": "battle_otaku_relax_home_20240726_01-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relax_home_20240726_01-dialogue-audio6.mp3"
+      }
     },
     "node_11": {
       "type": "build_sentence",
@@ -361,7 +385,11 @@
         "SF",
         "ほのぼの"
       ],
-      "next": "node_end_happy"
+      "next": "node_end_happy",
+      "audio": {
+        "key": "battle_otaku_relax_home_20240726_01-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relax_home_20240726_01-dialogue-audio7.mp3"
+      }
     },
     "node_fail": {
       "type": "end",
@@ -383,6 +411,10 @@
       "rewards": {
         "xp": 50,
         "money": 100
+      },
+      "audio": {
+        "key": "battle_otaku_relax_home_20240726_01-dialogue-audio8.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relax_home_20240726_01-dialogue-audio8.mp3"
       }
     }
   }
