@@ -1,0 +1,417 @@
+{
+  "id": "battle_demure_changingjobs_1701234567",
+  "setting": "cafe-day",
+  "character": "demure-lady",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "こんにちは、Mattさん。今日は天気が良いですね。このカフェは落ち着いていて、いい場所ですね。",
+      "vocab": [
+        "こんにちは",
+        "天気",
+        "良い",
+        "カフェ",
+        "落ち着く"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You agree and ask about her day.",
+      "responses": {
+        "tier1": {
+          "prompt": "Yes, it's nice. What about you?",
+          "answer": "ええ、いいですね。そちらは？",
+          "tokens": [
+            "ええ",
+            "いい",
+            "です",
+            "ね",
+            "そちら",
+            "は"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yes, it's nice. What about you? Have you been here before?",
+          "answer": "ええ、いいですね。そちらは？このカフェにはよくいらっしゃるのですか？",
+          "tokens": [
+            "ええ",
+            "いい",
+            "です",
+            "ね",
+            "そちら",
+            "は",
+            "この",
+            "カフェ",
+            "に",
+            "は",
+            "よく",
+            "いらっしゃる",
+            "の",
+            "です",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yes, it's nice. What about you? Have you been here before? I've never seen you here.",
+          "answer": "ええ、いいですね。そちらは？このカフェにはよくいらっしゃるのですか？私はMattさんをここで見たことがないのですが。",
+          "tokens": [
+            "ええ",
+            "いい",
+            "です",
+            "ね",
+            "そちら",
+            "は",
+            "この",
+            "カフェ",
+            "に",
+            "は",
+            "よく",
+            "いらっしゃる",
+            "の",
+            "です",
+            "か",
+            "私",
+            "は",
+            "Matt",
+            "さん",
+            "を",
+            "ここ",
+            "で",
+            "見た",
+            "こと",
+            "が",
+            "ない",
+            "の",
+            "です",
+            "が"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "thinking",
+      "text": "あら、そうですか。最近、新しい仕事を始めたばかりで、まだこの辺りのことに慣れていないのです。以前は、別の地域で働いておりました。",
+      "vocab": [
+        "最近",
+        "新しい",
+        "仕事",
+        "始めた",
+        "慣れる",
+        "以前",
+        "地域",
+        "働いておりました"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You ask about her old job.",
+      "responses": {
+        "tier1": {
+          "prompt": "What was your old job?",
+          "answer": "前の仕事は何でしたか？",
+          "tokens": [
+            "前",
+            "の",
+            "仕事",
+            "は",
+            "何",
+            "でした",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "What was your old job? Was it interesting?",
+          "answer": "前の仕事は何でしたか？面白い仕事でしたか？",
+          "tokens": [
+            "前",
+            "の",
+            "仕事",
+            "は",
+            "何",
+            "でした",
+            "か",
+            "面白い",
+            "仕事",
+            "でした",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "What was your old job? Was it interesting? I'm curious about the kind of work you did.",
+          "answer": "前の仕事は何でしたか？面白い仕事でしたか？どんなお仕事だったのか、気になります。",
+          "tokens": [
+            "前",
+            "の",
+            "仕事",
+            "は",
+            "何",
+            "でした",
+            "か",
+            "面白い",
+            "仕事",
+            "でした",
+            "か",
+            "どんな",
+            "お仕事",
+            "だった",
+            "の",
+            "か",
+            "気",
+            "に",
+            "なり",
+            "ます"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "以前は、昔ながらのお菓子を作る仕事をしておりました。材料の調達から、一つ一つ手作りするのです。あの頃は、お客様の笑顔を見るのが嬉しかったですね。",
+      "vocab": [
+        "昔ながら",
+        "お菓子",
+        "作る",
+        "仕事",
+        "材料",
+        "調達",
+        "一つ一つ",
+        "手作り",
+        "お客様",
+        "笑顔",
+        "嬉しい"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You express that it sounds like a wonderful job and ask if she misses it.",
+      "responses": {
+        "tier1": {
+          "prompt": "That sounds nice. Do you miss it?",
+          "answer": "素敵ですね。懐かしいですか？",
+          "tokens": [
+            "素敵",
+            "です",
+            "ね",
+            "懐かしい",
+            "です",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "That sounds nice. Do you miss it? It must have been fulfilling.",
+          "answer": "素敵ですね。懐かしいですか？やりがいのある仕事だったでしょうね。",
+          "tokens": [
+            "素敵",
+            "です",
+            "ね",
+            "懐かしい",
+            "です",
+            "か",
+            "やりがい",
+            "の",
+            "ある",
+            "仕事",
+            "だった",
+            "でしょう",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "That sounds nice. Do you miss it? It must have been fulfilling. Creating things with your own hands is special.",
+          "answer": "素敵ですね。懐かしいですか？やりがいのある仕事だったでしょうね。自分の手で何かを生み出すのは、特別なことだと思います。",
+          "tokens": [
+            "素敵",
+            "です",
+            "ね",
+            "懐かしい",
+            "です",
+            "か",
+            "やりがい",
+            "の",
+            "ある",
+            "仕事",
+            "だった",
+            "でしょう",
+            "ね",
+            "自分",
+            "の",
+            "手",
+            "で",
+            "何か",
+            "を",
+            "生み出す",
+            "の",
+            "は",
+            "特別",
+            "な",
+            "こと",
+            "だと",
+            "思い",
+            "ます"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "sad",
+      "text": "そうですね、少しだけ。でも、人は変わっていくものですから。新しい環境で、また新しいことを学んでいきたいと思っています。Mattさんも、何か新しいことに挑戦されていますか？",
+      "vocab": [
+        "少し",
+        "人",
+        "変わる",
+        "新しい",
+        "環境",
+        "学ぶ",
+        "挑戦"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You explain that you are learning Japanese for this game.",
+      "responses": {
+        "tier1": {
+          "prompt": "I'm learning Japanese for this game.",
+          "answer": "このゲームのために日本語を勉強しています。",
+          "tokens": [
+            "この",
+            "ゲーム",
+            "の",
+            "ため",
+            "に",
+            "日本語",
+            "を",
+            "勉強",
+            "し",
+            "て",
+            "い",
+            "ます"
+          ]
+        },
+        "tier2": {
+          "prompt": "I'm learning Japanese for this game. It's difficult but rewarding.",
+          "answer": "このゲームのために日本語を勉強しています。難しいですが、やりがいがあります。",
+          "tokens": [
+            "この",
+            "ゲーム",
+            "の",
+            "ため",
+            "に",
+            "日本語",
+            "を",
+            "勉強",
+            "し",
+            "て",
+            "い",
+            "ます",
+            "難しい",
+            "です",
+            "が",
+            "やりがい",
+            "が",
+            "あり",
+            "ます"
+          ]
+        },
+        "tier3": {
+          "prompt": "I'm learning Japanese for this game. It's difficult but rewarding, and I want to communicate with people like you.",
+          "answer": "このゲームのために日本語を勉強しています。難しいですが、やりがいがありますし、あなたのような方々とコミュニケーションを取りたいと思っています。",
+          "tokens": [
+            "この",
+            "ゲーム",
+            "の",
+            "ため",
+            "に",
+            "日本語",
+            "を",
+            "勉強",
+            "し",
+            "て",
+            "い",
+            "ます",
+            "難しい",
+            "です",
+            "が",
+            "やりがい",
+            "が",
+            "あり",
+            "ます",
+            "し",
+            "あなた",
+            "の",
+            "よう",
+            "な",
+            "方々",
+            "と",
+            "コミュニケーション",
+            "を",
+            "取り",
+            "たい",
+            "と",
+            "思い",
+            "ます"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "happy",
+      "text": "まあ、それは素晴らしいですね！私も、Mattさんが日本語を学んでくださることを嬉しく思います。このように、お話しできる機会は大切ですね。",
+      "vocab": [
+        "素晴らしい",
+        "嬉しい",
+        "思う",
+        "お話し",
+        "機会",
+        "大切"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "今日は楽しいお話ができて、嬉しかったです。またお会いできると良いですね。さようなら。",
+      "result": "You had a pleasant conversation about jobs and learning Japanese. You gained XP and money.",
+      "rewards": {
+        "xp": 50,
+        "money": 25
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "annoyed",
+      "text": "あら、もうお帰りですか？もう少しお話したかったですのに。",
+      "result": "The conversation ended abruptly. You gained no XP or money.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    }
+  }
+}
