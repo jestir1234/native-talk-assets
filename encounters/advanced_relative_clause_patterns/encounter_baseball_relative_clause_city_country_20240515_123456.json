@@ -1,0 +1,383 @@
+{
+  "id": "baseball_relative_clause_city_country_20240515_123456",
+  "setting": "park-day",
+  "character": "baseball-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "おう、Mattさん。いい天気だな。こういう日は外で練習するのが一番きつくて気持ちいいんだよな。",
+      "vocab": [
+        "天気",
+        "練習",
+        "気持ちいい"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to his comment about practicing in good weather.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree with him.",
+          "answer": "そうですね",
+          "tokens": [
+            "そう",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree and say it makes you feel good too.",
+          "answer": "そうですね 体が動いて気持ちいいです",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "体",
+            "が",
+            "動い",
+            "て",
+            "気持ちいい",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree and say that practicing in good weather, which is the best for baseball, makes you feel good.",
+          "answer": "そうですね 野球にとって一番いいこういう天気の日に練習するのは体が動いて気持ちいいです",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "野球",
+            "にとって",
+            "一番",
+            "いい",
+            "こう",
+            "いう",
+            "天気",
+            "の",
+            "日",
+            "に",
+            "練習",
+            "する",
+            "の",
+            "は",
+            "体",
+            "が",
+            "動い",
+            "て",
+            "気持ちいい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "だろ？ やっぱり、都会で狭いところでやるより、こういう広い場所でやるのが最高だぜ。Mattさんはどっちが好き？",
+      "vocab": [
+        "都会",
+        "狭い",
+        "広い",
+        "最高"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Answer his question about whether you prefer the city or the countryside.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say you prefer the city.",
+          "answer": "都会の方が好きです",
+          "tokens": [
+            "都会",
+            "の",
+            "方",
+            "が",
+            "好き",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say you prefer the city because there are many things to do.",
+          "answer": "都会の方が好きです 色々できることが多いからです",
+          "tokens": [
+            "都会",
+            "の",
+            "方",
+            "が",
+            "好き",
+            "です",
+            "色々",
+            "できる",
+            "こと",
+            "が",
+            "多い",
+            "から",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say you prefer the city, which has many facilities, because there are many things to do and it's convenient.",
+          "answer": "色々できることが多くて便利な都会の方が好きです 色々できることが多くて便利な施設が多いからです",
+          "tokens": [
+            "色々",
+            "できる",
+            "こと",
+            "が",
+            "多く",
+            "て",
+            "便利",
+            "な",
+            "都会",
+            "の",
+            "方",
+            "が",
+            "好き",
+            "です",
+            "色々",
+            "できる",
+            "こと",
+            "が",
+            "多く",
+            "て",
+            "便利",
+            "な",
+            "施設",
+            "が",
+            "多い",
+            "から",
+            "です"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "thinking",
+      "text": "ふーん。俺は逆だな。田舎の、空が広くて、野球ができる場所がたくさんあるところが良いんだ。子供の頃、よく田んぼのあぜ道でキャッチボールをしたもんだ。",
+      "vocab": [
+        "田舎",
+        "空",
+        "広い",
+        "場所",
+        "子供の頃",
+        "田んぼ",
+        "あぜ道",
+        "キャッチボール"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to his childhood memory.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say that sounds nice.",
+          "answer": "いいですね",
+          "tokens": [
+            "いい",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say that sounds nice, and ask if he has many such memories.",
+          "answer": "いいですね そういう思い出がたくさんありますか",
+          "tokens": [
+            "いい",
+            "です",
+            "ね",
+            "そういう",
+            "思い出",
+            "が",
+            "たくさん",
+            "あり",
+            "ます",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say that sounds nice, and ask if he has many such memories of playing baseball in the countryside.",
+          "answer": "いいですね 田舎で野球をしたそういった思い出がたくさんありますか",
+          "tokens": [
+            "いい",
+            "です",
+            "ね",
+            "田舎",
+            "で",
+            "野球",
+            "を",
+            "し",
+            "た",
+            "そう",
+            "いった",
+            "思い出",
+            "が",
+            "たくさん",
+            "あり",
+            "ます",
+            "か"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "ああ、たくさんな！ やっぱり、地域に根差したチームっていうか、そういうところで育ったからな。Mattさんは、どんなチームでプレイしてたんだ？",
+      "vocab": [
+        "地域",
+        "根差した",
+        "チーム",
+        "育った"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Answer what kind of team you played on.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say you played on a city team.",
+          "answer": "街のチームでした",
+          "tokens": [
+            "街",
+            "の",
+            "チーム",
+            "でした"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say you played on a city team, which was very competitive.",
+          "answer": "街のチームでした とても競争が激しいチームでした",
+          "tokens": [
+            "街",
+            "の",
+            "チーム",
+            "でした",
+            "とても",
+            "競争",
+            "が",
+            "激しい",
+            "チーム",
+            "でした"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say you played on a city team, which was very competitive and had players from all over the city.",
+          "answer": "街のチームでした とても競争が激しいチームで色々な街から選手が集まっていました",
+          "tokens": [
+            "街",
+            "の",
+            "チーム",
+            "でした",
+            "とても",
+            "競争",
+            "が",
+            "激しい",
+            "チーム",
+            "で",
+            "色々",
+            "な",
+            "街",
+            "から",
+            "選手",
+            "が",
+            "集まっ",
+            "て",
+            "いました"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "annoyed",
+      "text": "へぇ、街のチームか。都会のチームって、なんだかんだで勝てなかったりするんだよな。俺たちの田舎のチームは、全然勝てなかったけど、楽しかったな。",
+      "vocab": [
+        "勝て",
+        "楽しかった"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to his comment about his team not winning but having fun.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say that sounds good.",
+          "answer": "いいですね",
+          "tokens": [
+            "いい",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say that sounds good, and that fun is important too.",
+          "answer": "いいですね 楽しさも大事ですよね",
+          "tokens": [
+            "いい",
+            "です",
+            "ね",
+            "楽しさ",
+            "も",
+            "大事",
+            "です",
+            "よね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say that sounds good, and that fun is important too, even if you don't win.",
+          "answer": "いいですね 勝てなくても楽しさも大事ですよね",
+          "tokens": [
+            "いい",
+            "です",
+            "ね",
+            "勝て",
+            "なく",
+            "ても",
+            "楽しさ",
+            "も",
+            "大事",
+            "です",
+            "よね"
+          ]
+        }
+      },
+      "next": "node_fail"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "sad",
+      "text": "ま、そういうことだ。またな、Mattさん。",
+      "result": "You ended the conversation. Try to engage more next time!",
+      "rewards": {
+        "xp": 50,
+        "money": 10
+      }
+    }
+  }
+}
