@@ -1,0 +1,383 @@
+{
+  "id": "battle_pink-girl_relative-clause_meeting_1711387200",
+  "setting": "cafe-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わー！こんにちは！元気？ 今日は新しい人と会える日なんだ！",
+      "vocab": [
+        "こんにちは",
+        "元気",
+        "会える",
+        "日"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to her excitement.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say you're happy to meet her.",
+          "answer": "会えて嬉しいです",
+          "tokens": [
+            "会えて",
+            "嬉しい",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say you're happy to meet her and you're looking forward to it.",
+          "answer": "会えて嬉しいです 楽しみです",
+          "tokens": [
+            "会えて",
+            "嬉しい",
+            "です",
+            "楽しみ",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say you're happy to meet her and you're really looking forward to the conversation.",
+          "answer": "会えて嬉しいです お話するのをとても楽しみにしていました",
+          "tokens": [
+            "会えて",
+            "嬉しい",
+            "です",
+            "お話",
+            "する",
+            "の",
+            "を",
+            "とても",
+            "楽しみ",
+            "に",
+            "して",
+            "いました"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "わーい！嬉しい！ 私、人見知りなんだけど、Mattさんみたいな、優しそうな人にはすぐ慣れちゃうんだよね！",
+      "vocab": [
+        "人見知り",
+        "優しそう",
+        "慣れちゃう"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask her what kind of people she finds easy to talk to.",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask what kind of people.",
+          "answer": "どんな人？",
+          "tokens": [
+            "どんな",
+            "人",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask what kind of people she easily talks to.",
+          "answer": "どんな人だったら話しやすい？",
+          "tokens": [
+            "どんな",
+            "人",
+            "だったら",
+            "話しやすい",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask what kind of people she finds easy to talk to and likes chatting with.",
+          "answer": "どんな人だったら話しやすいし、おしゃべりするのが好き？",
+          "tokens": [
+            "どんな",
+            "人",
+            "だったら",
+            "話しやすい",
+            "し",
+            "おしゃべり",
+            "する",
+            "の",
+            "が",
+            "好き",
+            "？"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "んー、そうだなあ。話していて、キラキラしてる人かな！あと、笑顔が可愛い人！Mattさんも、今日すごく笑顔が素敵だよ！",
+      "vocab": [
+        "キラキラ",
+        "笑顔",
+        "素敵"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Compliment her back and ask what she likes to do.",
+      "responses": {
+        "tier1": {
+          "prompt": "You're cute too.",
+          "answer": "君も可愛いね",
+          "tokens": [
+            "君",
+            "も",
+            "可愛い",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "You're cute too. What do you like to do?",
+          "answer": "君も可愛いね 趣味はなに？",
+          "tokens": [
+            "君",
+            "も",
+            "可愛い",
+            "ね",
+            "趣味",
+            "は",
+            "なに",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "You're cute too. What kind of things do you like to do in your free time?",
+          "answer": "君も可愛いね 趣味はなに？ どんなことするのが好きなの？",
+          "tokens": [
+            "君",
+            "も",
+            "可愛い",
+            "ね",
+            "趣味",
+            "は",
+            "なに",
+            "？",
+            "どんな",
+            "こと",
+            "する",
+            "の",
+            "が",
+            "好き",
+            "な",
+            "の",
+            "？"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "thinking",
+      "text": "趣味かあ。私はね、可愛いシールを集めたり、手作りのアクセサリーを作ったりするのが好きなんだ！ Mattさんは、どんな趣味があるの？",
+      "vocab": [
+        "シール",
+        "集めたり",
+        "手作り",
+        "アクセサリー",
+        "趣味"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Tell her you like collecting things and ask if she has a favorite collection.",
+      "responses": {
+        "tier1": {
+          "prompt": "I like collecting things too.",
+          "answer": "僕も集めるのが好きだよ",
+          "tokens": [
+            "僕",
+            "も",
+            "集める",
+            "の",
+            "が",
+            "好き",
+            "だよ"
+          ]
+        },
+        "tier2": {
+          "prompt": "I like collecting things too. Do you have a favorite collection?",
+          "answer": "僕も集めるのが好きだよ 好きなコレクションはある？",
+          "tokens": [
+            "僕",
+            "も",
+            "集める",
+            "の",
+            "が",
+            "好き",
+            "だよ",
+            "好き",
+            "な",
+            "コレクション",
+            "は",
+            "ある",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "I like collecting things too. Do you have a favorite collection, like one you're really proud of?",
+          "answer": "僕も集めるのが好きだよ 好きなコレクションはある？ 特に自慢できるようなのは？",
+          "tokens": [
+            "僕",
+            "も",
+            "集める",
+            "の",
+            "が",
+            "好き",
+            "だよ",
+            "好き",
+            "な",
+            "コレクション",
+            "は",
+            "ある",
+            "？",
+            "特に",
+            "自慢",
+            "できる",
+            "ような",
+            "の",
+            "は",
+            "？"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "うーん、自慢できるのは、私がデザインしたオリジナルシールかな！世界に一つだけなんだよ！ Mattさんは、どんなものを集めるのが好き？",
+      "vocab": [
+        "デザイン",
+        "オリジナル",
+        "世界",
+        "一つ",
+        "集める"
+      ],
+      "next": "node_10"
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Tell her you collect vintage toys and ask if she likes old things.",
+      "responses": {
+        "tier1": {
+          "prompt": "I collect vintage toys.",
+          "answer": "ビンテージのおもちゃを集めるよ",
+          "tokens": [
+            "ビンテージ",
+            "の",
+            "おもちゃ",
+            "を",
+            "集める",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "I collect vintage toys. Do you like old things?",
+          "answer": "ビンテージのおもちゃを集めるよ 古いものも好き？",
+          "tokens": [
+            "ビンテージ",
+            "の",
+            "おもちゃ",
+            "を",
+            "集める",
+            "よ",
+            "古い",
+            "もの",
+            "も",
+            "好き",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "I collect vintage toys. Do you like old things? Like things with a lot of history.",
+          "answer": "ビンテージのおもちゃを集めるよ 古いものも好き？ 歴史があるものとか。",
+          "tokens": [
+            "ビンテージ",
+            "の",
+            "おもちゃ",
+            "を",
+            "集める",
+            "よ",
+            "古い",
+            "もの",
+            "も",
+            "好き",
+            "？",
+            "歴史",
+            "が",
+            "ある",
+            "もの",
+            "とか",
+            "。"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ビンテージのおもちゃ！すごい！ 歴史があるものって、なんだかロマンチックだよね。私も、おばあちゃんが昔使ってた可愛い小物とか、そういうのが好きだよ！",
+      "vocab": [
+        "ロマンチック",
+        "おばあちゃん",
+        "昔",
+        "使ってた",
+        "小物"
+      ],
+      "next": "node_12"
+    },
+    "node_12": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "今日、Mattさんと会えて本当に楽しかった！またすぐ会いたいな！",
+      "result": "You had a fun chat and made a new friend!",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "あれ？もう行っちゃうの？ちょっと残念… またね！",
+      "result": "The conversation ended prematurely.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    }
+  }
+}
