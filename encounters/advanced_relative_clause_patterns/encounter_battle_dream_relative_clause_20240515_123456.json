@@ -1,0 +1,471 @@
+{
+  "id": "battle_dream_relative_clause_20240515_123456",
+  "setting": "park-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わー！お散歩日和だね！Mattさんは今日、どんな夢を追いかけてるの？",
+      "vocab": [
+        "散歩",
+        "日和",
+        "夢",
+        "追いかける"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_dream_relative_clause_20240515_123456-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_dream_relative_clause_20240515_123456-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Reply about your dream.",
+      "responses": {
+        "tier1": {
+          "prompt": "My dream is...",
+          "answer": "私の夢は",
+          "tokens": [
+            "私",
+            "の",
+            "夢",
+            "は"
+          ]
+        },
+        "tier2": {
+          "prompt": "My dream is to become a baker.",
+          "answer": "私の夢はパン屋さんになることです",
+          "tokens": [
+            "私",
+            "の",
+            "夢",
+            "は",
+            "パン屋",
+            "さん",
+            "に",
+            "なる",
+            "こと",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "My dream is to become a baker who makes delicious bread for everyone.",
+          "answer": "私の夢はみんなにおいしいパンを作ってくれるパン屋さんになることです",
+          "tokens": [
+            "私",
+            "の",
+            "夢",
+            "は",
+            "みんな",
+            "に",
+            "おいしい",
+            "パン",
+            "を",
+            "作ってくれる",
+            "パン屋",
+            "さん",
+            "に",
+            "なる",
+            "こと",
+            "です"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "パン屋さん！素敵！みんながおいしいって喜んでくれるパンを作る人って、本当にすごいと思うな。Mattさんが作るパン、どんな味かな？",
+      "vocab": [
+        "素敵",
+        "喜ぶ",
+        "味"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_dream_relative_clause_20240515_123456-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_dream_relative_clause_20240515_123456-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Talk about the kind of bread you'd make.",
+      "responses": {
+        "tier1": {
+          "prompt": "I'd make sweet bread.",
+          "answer": "甘いパンを作ります",
+          "tokens": [
+            "甘い",
+            "パン",
+            "を",
+            "作ります"
+          ]
+        },
+        "tier2": {
+          "prompt": "I'd make sweet bread that reminds people of happy memories.",
+          "answer": "みんなの思い出を呼び起こすような甘いパンを作ります",
+          "tokens": [
+            "みんな",
+            "の",
+            "思い出",
+            "を",
+            "呼び起こす",
+            "ような",
+            "甘い",
+            "パン",
+            "を",
+            "作ります"
+          ]
+        },
+        "tier3": {
+          "prompt": "I'd make sweet bread that reminds people of happy memories, like the taste of summer festivals.",
+          "answer": "夏祭りの味みたいな、みんなの思い出を呼び起こすような甘いパンを作ります",
+          "tokens": [
+            "夏祭り",
+            "の",
+            "味",
+            "みたい",
+            "な",
+            "、",
+            "みんな",
+            "の",
+            "思い出",
+            "を",
+            "呼び起こす",
+            "ような",
+            "甘い",
+            "パン",
+            "を",
+            "作ります"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "夏祭りの味…！想像しただけでワクワクしちゃう！そういう、人を幸せにするパンを作るっていう夢、すごく応援したいな。Mattさんみたいな、優しい人が作るパンなら、きっとみんな大好きになるよ！",
+      "vocab": [
+        "想像",
+        "応援",
+        "優しい"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_dream_relative_clause_20240515_123456-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_dream_relative_clause_20240515_123456-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Express your feelings about their support.",
+      "responses": {
+        "tier1": {
+          "prompt": "Thank you for your support.",
+          "answer": "応援ありがとう",
+          "tokens": [
+            "応援",
+            "ありがとう"
+          ]
+        },
+        "tier2": {
+          "prompt": "Thank you for your support. It makes me happy.",
+          "answer": "応援ありがとう、嬉しいです",
+          "tokens": [
+            "応援",
+            "ありがとう",
+            "、",
+            "嬉しい",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Thank you for your support. Your words make me even more motivated.",
+          "answer": "応援ありがとう、その言葉でさらにやる気が出ました",
+          "tokens": [
+            "応援",
+            "ありがとう",
+            "、",
+            "その",
+            "言葉",
+            "で",
+            "さらに",
+            "やる気",
+            "が",
+            "出ました"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "えへへ、よかった！Mattさんが夢に向かって頑張ってる姿、キラキラしてて素敵だよ！私も、Mattさんみたいに、何かを一生懸命追いかけてる人って、とっても魅力的に見えるんだ。",
+      "vocab": [
+        "キラキラ",
+        "素敵",
+        "一生懸命",
+        "魅力的"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_dream_relative_clause_20240515_123456-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_dream_relative_clause_20240515_123456-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about her hobbies or interests.",
+      "responses": {
+        "tier1": {
+          "prompt": "What are your hobbies?",
+          "answer": "趣味は何ですか",
+          "tokens": [
+            "趣味",
+            "は",
+            "何",
+            "です",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "What are your hobbies? I'm curious.",
+          "answer": "趣味は何ですか、気になります",
+          "tokens": [
+            "趣味",
+            "は",
+            "何",
+            "です",
+            "か",
+            "、",
+            "気",
+            "に",
+            "なります"
+          ]
+        },
+        "tier3": {
+          "prompt": "What are your hobbies? I'm curious to know what makes you shine.",
+          "answer": "趣味は何ですか、Mattさんが輝く理由が知りたいです",
+          "tokens": [
+            "趣味",
+            "は",
+            "何",
+            "です",
+            "か",
+            "、",
+            "Matt",
+            "さん",
+            "が",
+            "輝く",
+            "理由",
+            "が",
+            "知りたい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "thinking",
+      "text": "私の趣味？うーん、かわいいステッカー集めたり、手作りの小物を作ったりするのが好きなんだ！貼ったり飾ったりしてるだけで、なんだか元気が出るんだよね。Mattさんは、犬派？猫派？",
+      "vocab": [
+        "ステッカー",
+        "手作り",
+        "小物",
+        "元気",
+        "犬派",
+        "猫派"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_dream_relative_clause_20240515_123456-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_dream_relative_clause_20240515_123456-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Answer the dog vs cat question.",
+      "responses": {
+        "tier1": {
+          "prompt": "I'm a dog person.",
+          "answer": "犬派です",
+          "tokens": [
+            "犬派",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "I'm a dog person. They seem energetic.",
+          "answer": "犬派です、元気そうでいいなと思います",
+          "tokens": [
+            "犬派",
+            "です",
+            "、",
+            "元気",
+            "そう",
+            "で",
+            "いい",
+            "な",
+            "と",
+            "思います"
+          ]
+        },
+        "tier3": {
+          "prompt": "I'm a dog person. I like how they're always happy to see you.",
+          "answer": "犬派です、いつも嬉しそうに迎えてくれるのが好きです",
+          "tokens": [
+            "犬派",
+            "です",
+            "、",
+            "いつも",
+            "嬉しそう",
+            "に",
+            "迎えてくれる",
+            "の",
+            "が",
+            "好き",
+            "です"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わー、犬派なんだね！狗狗もかわいいけど、猫ちゃんもふわふわで癒されるんだよね〜。あ、そうだ！ Mattさんは、将来どんな人になりたい？",
+      "vocab": [
+        "狗狗",
+        "猫ちゃん",
+        "ふわふわ",
+        "癒される",
+        "将来",
+        "人"
+      ],
+      "next": "node_12",
+      "audio": {
+        "key": "battle_dream_relative_clause_20240515_123456-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_dream_relative_clause_20240515_123456-dialogue-audio6.mp3"
+      }
+    },
+    "node_12": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Describe your future self.",
+      "responses": {
+        "tier1": {
+          "prompt": "I want to be kind.",
+          "answer": "優しい人になりたい",
+          "tokens": [
+            "優しい",
+            "人",
+            "に",
+            "なりたい"
+          ]
+        },
+        "tier2": {
+          "prompt": "I want to be a kind person who helps others.",
+          "answer": "誰かを助ける優しい人になりたいです",
+          "tokens": [
+            "誰か",
+            "を",
+            "助ける",
+            "優しい",
+            "人",
+            "に",
+            "なりたい",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "I want to be a kind person who helps others, and who is also passionate about their dreams.",
+          "answer": "誰かを助ける優しい人になって、自分の夢にも情熱を燃やせる人になりたいです",
+          "tokens": [
+            "誰か",
+            "を",
+            "助ける",
+            "優しい",
+            "人",
+            "に",
+            "なって",
+            "、",
+            "自分",
+            "の",
+            "夢",
+            "にも",
+            "情熱",
+            "を",
+            "燃やせる",
+            "人",
+            "に",
+            "なりたい",
+            "です"
+          ]
+        }
+      },
+      "next": "node_13"
+    },
+    "node_13": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "Mattさんらしい、素敵な夢だね！人を助けるっていうのも、夢に情熱を燃やすっていうのも、どっちもMattさんにぴったりだと思う！これからも、そのキラキラした夢を追いかけて、Mattさんらしく輝いてね！",
+      "vocab": [
+        "らしい",
+        "ぴったり",
+        "輝いて"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_dream_relative_clause_20240515_123456-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_dream_relative_clause_20240515_123456-dialogue-audio7.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "あれ？もう行っちゃうの？ またお話ししようね…！",
+      "result": "Conversation ended sadly.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "Mattさん、今日はたくさんお話しできて楽しかったよ！またね！",
+      "result": "You had a great conversation about dreams and future aspirations!",
+      "rewards": {
+        "xp": 50,
+        "money": 25
+      },
+      "audio": {
+        "key": "battle_dream_relative_clause_20240515_123456-dialogue-audio8.mp3",
+        "url": "https://assets.native-talk.com/battle_dream_relative_clause_20240515_123456-dialogue-audio8.mp3"
+      }
+    }
+  }
+}
