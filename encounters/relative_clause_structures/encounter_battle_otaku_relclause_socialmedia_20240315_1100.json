@@ -1,0 +1,396 @@
+{
+  "id": "battle_otaku_relclause_socialmedia_20240315_1100",
+  "setting": "apartment-evening",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "やあ、Mattさん！ 今日はなんかすごいアニメの情報見つけちゃったんだよ！",
+      "vocab": [
+        "すごい",
+        "アニメ",
+        "情報",
+        "見つけちゃった"
+      ],
+      "next": "node_2",
+      "nextOnMaxMeter": "node_5",
+      "audio": {
+        "key": "battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What do you want to say?",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask what it is.",
+          "answer": "何",
+          "tokens": [
+            "何"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask what kind of information it is.",
+          "answer": "どんな情報",
+          "tokens": [
+            "どんな",
+            "情報"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask what amazing information you found.",
+          "answer": "どんなすごい情報",
+          "tokens": [
+            "どんな",
+            "すごい",
+            "情報"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "それがさ、最近話題のSNSで、すごく面白い投稿があったんだ。それで、その投稿に書かれていたことが、今まで知らなかったキャラクター設定でさ！",
+      "vocab": [
+        "最近",
+        "話題",
+        "SNS",
+        "投稿",
+        "面白い",
+        "キャラクター",
+        "設定"
+      ],
+      "next": "node_4",
+      "nextOnMaxMeter": "node_5",
+      "audio": {
+        "key": "battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What do you want to say?",
+      "responses": {
+        "tier1": {
+          "prompt": "That sounds interesting.",
+          "answer": "面白そう",
+          "tokens": [
+            "面白そう"
+          ]
+        },
+        "tier2": {
+          "prompt": "That sounds interesting. Where did you see it?",
+          "answer": "面白そう。どこで見たの",
+          "tokens": [
+            "面白そう",
+            "どこ",
+            "で",
+            "見た",
+            "の"
+          ]
+        },
+        "tier3": {
+          "prompt": "That sounds interesting. The post you saw on social media, was it about character settings?",
+          "answer": "面白そう。SNSで見た投稿はキャラクター設定についてだったの",
+          "tokens": [
+            "面白そう",
+            "SNS",
+            "で",
+            "見た",
+            "投稿",
+            "は",
+            "キャラクター",
+            "設定",
+            "について",
+            "だった",
+            "の"
+          ]
+        }
+      },
+      "next": "node_6"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "Mattさんのために、この情報、全部教えちゃうよ！",
+      "vocab": [
+        "ため",
+        "全部",
+        "教えちゃう"
+      ],
+      "next": "node_end_success"
+    },
+    "node_6": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "うん！そうだよ。SNSって、そういう情報が集まる場所なんだよね。例えば、誰かが書いたブログの記事とか、誰かがシェアした動画とか、そういうのが全部、私たちが見たいものに繋がってるんだ。",
+      "vocab": [
+        "そう",
+        "場所",
+        "例えば",
+        "誰か",
+        "書いた",
+        "ブログ",
+        "記事",
+        "シェアした",
+        "動画",
+        "全部",
+        "見たい",
+        "繋がってる"
+      ],
+      "next": "node_7",
+      "nextOnMaxMeter": "node_5",
+      "audio": {
+        "key": "battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio3.mp3"
+      }
+    },
+    "node_7": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What do you want to say?",
+      "responses": {
+        "tier1": {
+          "prompt": "That's true.",
+          "answer": "確かに",
+          "tokens": [
+            "確かに"
+          ]
+        },
+        "tier2": {
+          "prompt": "That's true. So you can find things you like.",
+          "answer": "確かに。好きなものが見つかるんだね",
+          "tokens": [
+            "確かに",
+            "好き",
+            "な",
+            "もの",
+            "が",
+            "見つかる",
+            "ん",
+            "だね"
+          ]
+        },
+        "tier3": {
+          "prompt": "That's true. The posts that people make on social media are useful for finding new things.",
+          "answer": "確かに。SNSで人がする投稿は、新しいものを見つけるのに役立つね",
+          "tokens": [
+            "確かに",
+            "SNS",
+            "で",
+            "人",
+            "が",
+            "する",
+            "投稿",
+            "は",
+            "新しい",
+            "もの",
+            "を",
+            "見つける",
+            "のに",
+            "役立つ",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "そうなんだよ！ だから、Mattさんも、いつも見てるサイトとか、フォローしてるアカウントとか、そういうのがMattさんの趣味に合ったものを見つけるのに役立ってるでしょ？",
+      "vocab": [
+        "サイト",
+        "フォロー",
+        "アカウント",
+        "趣味",
+        "役立ってる"
+      ],
+      "next": "node_9",
+      "nextOnMaxMeter": "node_5",
+      "audio": {
+        "key": "battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio4.mp3"
+      }
+    },
+    "node_9": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What do you want to say?",
+      "responses": {
+        "tier1": {
+          "prompt": "Yes, I think so.",
+          "answer": "うん、そう思う",
+          "tokens": [
+            "うん",
+            "そう",
+            "思う"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yes, I think so. It's easy to find what I like.",
+          "answer": "うん、そう思う。好きなものが簡単に見つかるよ",
+          "tokens": [
+            "うん",
+            "そう",
+            "思う",
+            "好き",
+            "な",
+            "もの",
+            "が",
+            "簡単",
+            "に",
+            "見つかる",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yes, I think so. The things that people recommend on social media are very useful for me.",
+          "answer": "うん、そう思う。SNSで人が勧めるものは、私にとってすごく役立つよ",
+          "tokens": [
+            "うん",
+            "そう",
+            "思う",
+            "SNS",
+            "で",
+            "人",
+            "が",
+            "勧める",
+            "もの",
+            "は",
+            "私",
+            "にとって",
+            "すごく",
+            "役立つ",
+            "よ"
+          ]
+        }
+      },
+      "next": "node_10",
+      "nextOnMaxMeter": "node_5"
+    },
+    "node_10": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "でしょー！ だから、SNSの投稿とか、そういうのを「～な投稿」とか「～という投稿」みたいに言うと、より具体的になるんだよ。例えば、「面白いキャラ設定について書かれている投稿」とかね。",
+      "vocab": [
+        "投稿",
+        "キャラ",
+        "設定",
+        "書かれている",
+        "具体的に"
+      ],
+      "next": "node_11",
+      "nextOnMaxMeter": "node_5",
+      "audio": {
+        "key": "battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio5.mp3"
+      }
+    },
+    "node_11": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What do you want to say?",
+      "responses": {
+        "tier1": {
+          "prompt": "I see.",
+          "answer": "なるほど",
+          "tokens": [
+            "なるほど"
+          ]
+        },
+        "tier2": {
+          "prompt": "I see. That's a useful way to describe it.",
+          "answer": "なるほど。そういう言い方は便利だね",
+          "tokens": [
+            "なるほど",
+            "そう",
+            "いう",
+            "言い方",
+            "は",
+            "便利",
+            "だね"
+          ]
+        },
+        "tier3": {
+          "prompt": "I see. The posts about anime characters that you found are very interesting.",
+          "answer": "なるほど。見つけたアニメのキャラについて書かれている投稿は、とても面白いよ",
+          "tokens": [
+            "なるほど",
+            "見つけた",
+            "アニメ",
+            "の",
+            "キャラ",
+            "について",
+            "書かれている",
+            "投稿",
+            "は",
+            "とても",
+            "面白い",
+            "よ"
+          ]
+        }
+      },
+      "next": "node_12"
+    },
+    "node_12": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "そうそう！ Mattさん、理解早いね！ これで、もっと色んな情報を見つけられるようになるよ！",
+      "vocab": [
+        "理解",
+        "早い",
+        "色んな",
+        "情報",
+        "見つけられる"
+      ],
+      "next": "node_end_success",
+      "audio": {
+        "key": "battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "annoyed",
+      "text": "あー、もう！ Mattさん、全然わかってないじゃん！ もういいよ！",
+      "result": "The conversation ended poorly. You failed to connect.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end_success": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "Mattさん、今日はありがとう！ また今度、面白い情報あったら教えるね！",
+      "result": "You successfully deepened your connection with the otaku guy!",
+      "rewards": {
+        "xp": 50,
+        "money": 10
+      },
+      "audio": {
+        "key": "battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_relclause_socialmedia_20240315_1100-dialogue-audio7.mp3"
+      }
+    }
+  }
+}
