@@ -1,0 +1,330 @@
+{
+  "id": "battle_baseball_relative_clause_tv_20240515_123456",
+  "setting": "park-day",
+  "character": "baseball-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "おう、Mattさん。なんか疲れてんな。練習でもあったのか？",
+      "vocab": [
+        "疲れてんな",
+        "練習"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_baseball_relative_clause_tv_20240515_123456-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_baseball_relative_clause_tv_20240515_123456-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond by saying you're tired from watching TV.",
+      "responses": {
+        "tier1": {
+          "prompt": "You're tired from watching TV.",
+          "answer": "テレビを 見る ので 疲れました",
+          "tokens": [
+            "テレビ",
+            "を",
+            "見る",
+            "ので",
+            "疲れました"
+          ]
+        },
+        "tier2": {
+          "prompt": "You're tired from watching a movie that was too long.",
+          "answer": "長すぎる 映画 を 見る ので 疲れました",
+          "tokens": [
+            "長すぎる",
+            "映画",
+            "を",
+            "見る",
+            "ので",
+            "疲れました"
+          ]
+        },
+        "tier3": {
+          "prompt": "I watched a drama with a really sad ending, so I got tired.",
+          "answer": "すごく 悲しい 終わり 方 を する ドラマ を 見た ので 疲れました",
+          "tokens": [
+            "すごく",
+            "悲しい",
+            "終わり",
+            "方",
+            "を",
+            "する",
+            "ドラマ",
+            "を",
+            "見た",
+            "ので",
+            "疲れました"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "thinking",
+      "text": "へえ、テレビか。俺もたまに見るけど、最近はあんまり時間ないんだよな。なんか、面白い番組でもあったのか？",
+      "vocab": [
+        "面白い",
+        "番組",
+        "時間"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_baseball_relative_clause_tv_20240515_123456-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_baseball_relative_clause_tv_20240515_123456-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Talk about a drama you're watching.",
+      "responses": {
+        "tier1": {
+          "prompt": "I'm watching a drama.",
+          "answer": "ドラマ を 見ています",
+          "tokens": [
+            "ドラマ",
+            "を",
+            "見ています"
+          ]
+        },
+        "tier2": {
+          "prompt": "I'm watching a drama that's popular among my friends.",
+          "answer": "友達 の 間 で 人気 が ある ドラマ を 見ています",
+          "tokens": [
+            "友達",
+            "の",
+            "間",
+            "で",
+            "人気",
+            "が",
+            "ある",
+            "ドラマ",
+            "を",
+            "見ています"
+          ]
+        },
+        "tier3": {
+          "prompt": "I'm watching a drama that the main character, who is a baseball player, is struggling in.",
+          "answer": "主人公 が 野球選手 で 苦労 している ドラマ を 見ています",
+          "tokens": [
+            "主人公",
+            "が",
+            "野球選手",
+            "で",
+            "苦労",
+            "している",
+            "ドラマ",
+            "を",
+            "見ています"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "おお、野球選手の話か！ それは面白そうだ。どんなところが気になってるんだ？",
+      "vocab": [
+        "野球選手",
+        "話",
+        "気になってる"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_baseball_relative_clause_tv_20240515_123456-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_baseball_relative_clause_tv_20240515_123456-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Explain that you like the part where the player overcomes difficulties.",
+      "responses": {
+        "tier1": {
+          "prompt": "I like when he overcomes difficulties.",
+          "answer": "苦労 を 乗り越える ところ が 好きです",
+          "tokens": [
+            "苦労",
+            "を",
+            "乗り越える",
+            "ところ",
+            "が",
+            "好きです"
+          ]
+        },
+        "tier2": {
+          "prompt": "I like the parts where the player, who is a rookie, overcomes difficulties.",
+          "answer": "新人 の 選手 が 苦労 を 乗り越える ところ が 好きです",
+          "tokens": [
+            "新人",
+            "の",
+            "選手",
+            "が",
+            "苦労",
+            "を",
+            "乗り越える",
+            "ところ",
+            "が",
+            "好きです"
+          ]
+        },
+        "tier3": {
+          "prompt": "I like the parts where the player, who is struggling to adjust to the team, overcomes difficulties and grows.",
+          "answer": "チーム に なじめず 苦労 している 選手 が 困難 を 乗り越えて 成長 していく ところ が 好きです",
+          "tokens": [
+            "チーム",
+            "に",
+            "なじめず",
+            "苦労",
+            "している",
+            "選手",
+            "が",
+            "困難",
+            "を",
+            "乗り越えて",
+            "成長",
+            "していく",
+            "ところ",
+            "が",
+            "好きです"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "なるほどな。そういう、頑張ってる姿を見るのは、こっちまで力が入るよな。俺も、そういう試合を見ると、もっと練習しなきゃって思うんだ。",
+      "vocab": [
+        "頑張ってる",
+        "姿",
+        "力",
+        "試合"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_baseball_relative_clause_tv_20240515_123456-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_baseball_relative_clause_tv_20240515_123456-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree and say it's important to keep practicing.",
+      "responses": {
+        "tier1": {
+          "prompt": "It's important to keep practicing.",
+          "answer": "練習 を 続ける こと は 大切 です",
+          "tokens": [
+            "練習",
+            "を",
+            "続ける",
+            "こと",
+            "は",
+            "大切",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "It's important to keep practicing so you don't regret it later.",
+          "answer": "後 で 後悔 しない ように 練習 を 続ける こと は 大切 です",
+          "tokens": [
+            "後",
+            "で",
+            "後悔",
+            "しない",
+            "ように",
+            "練習",
+            "を",
+            "続ける",
+            "こと",
+            "は",
+            "大切",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "It's important to keep practicing, aiming for the championship that the players in the drama are aiming for.",
+          "answer": "ドラマ の 選手 たち が 目指す 優勝 を 目指して 練習 を 続ける こと は 大切 です",
+          "tokens": [
+            "ドラマ",
+            "の",
+            "選手",
+            "たち",
+            "が",
+            "目指す",
+            "優勝",
+            "を",
+            "目指して",
+            "練習",
+            "を",
+            "続ける",
+            "こと",
+            "は",
+            "大切",
+            "です"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "おう、その通りだ！ Mattさん、話がわかるな。俺も、もっと頑張るぜ！",
+      "vocab": [
+        "通り",
+        "わかる",
+        "頑張る"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_baseball_relative_clause_tv_20240515_123456-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_baseball_relative_clause_tv_20240515_123456-dialogue-audio5.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "annoyed",
+      "text": "なんだよ、もう終わりか？ つまんねぇな。",
+      "result": "You ended the conversation abruptly.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "おう、またな！ 頑張ろうぜ！",
+      "result": "You had a good conversation about sports and TV.",
+      "rewards": {
+        "xp": 50,
+        "money": 20
+      },
+      "audio": {
+        "key": "battle_baseball_relative_clause_tv_20240515_123456-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_baseball_relative_clause_tv_20240515_123456-dialogue-audio6.mp3"
+      }
+    }
+  }
+}
