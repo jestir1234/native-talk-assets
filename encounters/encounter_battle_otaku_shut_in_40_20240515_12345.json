@@ -1,0 +1,413 @@
+{
+  "id": "battle_otaku_shut_in_40_20240515_12345",
+  "setting": "apartment-night",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "neutral",
+      "text": "やあ、いらっしゃい！ Mattさん、ちょうどアニメ見てたんだ。あれ、もうこんな時間？ 時間が溶けていくね〜。",
+      "vocab": [
+        "やあ",
+        "いらっしゃい",
+        "アニメ",
+        "時間",
+        "溶ける"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_otaku_shut_in_40_20240515_12345-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_shut_in_40_20240515_12345-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to his comment about time melting.",
+      "responses": {
+        "tier1": {
+          "prompt": "Yeah, time flies when you're having fun.",
+          "answer": "楽しい 時は 早く過ぎる ね",
+          "tokens": [
+            "楽しい",
+            "時",
+            "は",
+            "早く",
+            "過ぎる",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Time really melts away when you're engrossed in something.",
+          "answer": "何かに 夢中 に なると 本当に 時間が 溶けて しまう ね",
+          "tokens": [
+            "何かに",
+            "夢中",
+            "に",
+            "なると",
+            "本当に",
+            "時間",
+            "が",
+            "溶けて",
+            "しまう",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "It's like time loses all meaning when you're really into a game or anime. Especially when I'm doing research for my blog.",
+          "answer": "ゲームとか アニメに 没頭 していると 本当に 時間の 感覚が なくなるんだよ。特に ブログの 研究のためだと、つい 夢中 に なっちゃうんだ。",
+          "tokens": [
+            "ゲーム",
+            "とか",
+            "アニメ",
+            "に",
+            "没頭",
+            "して",
+            "いる",
+            "と",
+            "本当に",
+            "時間",
+            "の",
+            "感覚",
+            "が",
+            "なくなる",
+            "んだ",
+            "よ",
+            "特に",
+            "ブログ",
+            "の",
+            "研究",
+            "のため",
+            "だと",
+            "つい",
+            "夢中",
+            "に",
+            "なっちゃう",
+            "んだ"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "ブログの研究！ それいいなあ！ わかるよ、俺も「資料集め」って言って、深夜までアニメ見返したり、漫画読んだりしてるもん。誰にも 責 められない しね、家だから。",
+      "vocab": [
+        "ブログ",
+        "研究",
+        "資料",
+        "集め",
+        "深夜",
+        "見返す",
+        "漫画",
+        "責める"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_otaku_shut_in_40_20240515_12345-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_shut_in_40_20240515_12345-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree with him about not being blamed for staying home.",
+      "responses": {
+        "tier1": {
+          "prompt": "Yeah, it's convenient.",
+          "answer": "便利だ ね",
+          "tokens": [
+            "便利",
+            "だ",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "That's true, no one can blame you when you're at home doing your own thing.",
+          "answer": "確かに 家に いれば 誰にも 咎められる ことは ないよね",
+          "tokens": [
+            "確かに",
+            "家",
+            "に",
+            "いれば",
+            "誰",
+            "にも",
+            "咎められる",
+            "こと",
+            "は",
+            "ない",
+            "よね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Exactly! It's like a personal paradise where you can do whatever you want without anyone judging you. You can even order konbini food without any hassle.",
+          "answer": "そうだよ！ 誰にも 文句を 言われずに 自分の 好きな ことができる 個人的な 楽園 みたいだ。コンビニの 食べ物だって 気軽に 頼めるし。",
+          "tokens": [
+            "そう",
+            "だよ",
+            "誰",
+            "にも",
+            "文句",
+            "を",
+            "言われずに",
+            "自分",
+            "の",
+            "好き",
+            "な",
+            "こと",
+            "が",
+            "できる",
+            "個人的",
+            "な",
+            "楽園",
+            "みたい",
+            "だ",
+            "コンビニ",
+            "の",
+            "食べ物",
+            "だって",
+            "気軽",
+            "に",
+            "頼める",
+            "し"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "コンビニ！ あー、わかるわかる。あの、新商品とか出るとつい買っちゃうんだよね。今日の夜ご飯、おにぎりとカップ麺にしようかなって思ってるんだ。",
+      "vocab": [
+        "コンビニ",
+        "新商品",
+        "つい",
+        "買っちゃう",
+        "夜ご飯",
+        "おにぎり",
+        "カップ麺"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_otaku_shut_in_40_20240515_12345-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_shut_in_40_20240515_12345-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask him if he ever goes out, maybe to conventions or something.",
+      "responses": {
+        "tier1": {
+          "prompt": "Do you ever go out?",
+          "answer": "外に 出かける ことは ある の？",
+          "tokens": [
+            "外",
+            "に",
+            "出かける",
+            "こと",
+            "は",
+            "ある",
+            "の",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "Don't you ever go out for things like conventions?",
+          "answer": "コミケとか イベントには 行かない の？",
+          "tokens": [
+            "コミケ",
+            "とか",
+            "イベント",
+            "には",
+            "行かない",
+            "の",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "Even though you stay home a lot, don't you ever go out for things like conventions or maybe meet up with friends online?",
+          "answer": "家で 過ごす ことが多い けど、コミケとか、友達と オンラインで 会うとか、外に 出かける ことも ある の？",
+          "tokens": [
+            "家",
+            "で",
+            "過ごす",
+            "こと",
+            "が",
+            "多い",
+            "けど",
+            "コミケ",
+            "とか",
+            "友達",
+            "と",
+            "オンライン",
+            "で",
+            "会う",
+            "とか",
+            "外",
+            "に",
+            "出かける",
+            "こと",
+            "も",
+            "ある",
+            "の",
+            "？"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "うーん、昔はイベントとか行ってたけどね。最近は…ほら、電車も混んでるし、行くのも一苦労で。それに、友達もそれぞれ忙しいみたいで。LINEはするけど、なかなか会えないかな。",
+      "vocab": [
+        "昔",
+        "イベント",
+        "電車",
+        "混む",
+        "一苦労",
+        "LINE"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_otaku_shut_in_40_20240515_12345-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_shut_in_40_20240515_12345-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask him if he's ever been on a date.",
+      "responses": {
+        "tier1": {
+          "prompt": "Have you ever been on a date?",
+          "answer": "デートは したこと ある？",
+          "tokens": [
+            "デート",
+            "は",
+            "した",
+            "こと",
+            "ある",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "It's tough to meet people when you're busy with hobbies. Have you ever been on a date?",
+          "answer": "趣味が 忙しいと 人に 会うのも 大変だね。デートは したこと ある？",
+          "tokens": [
+            "趣味",
+            "が",
+            "忙しい",
+            "と",
+            "人",
+            "に",
+            "会う",
+            "の",
+            "も",
+            "大変",
+            "だ",
+            "ね",
+            "デート",
+            "は",
+            "した",
+            "こと",
+            "ある",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "I understand. It's hard to find time for relationships when you're so focused on your interests. Speaking of relationships, have you ever been on a date?",
+          "answer": "わかるよ。 自分の 好きな ことに 没頭 していると、恋愛に 時間を 割くのは 難しいよね。そういえば、デートは したこと ある？",
+          "tokens": [
+            "わかる",
+            "よ",
+            "自分",
+            "の",
+            "好き",
+            "な",
+            "こと",
+            "に",
+            "没頭",
+            "して",
+            "いる",
+            "と",
+            "恋愛",
+            "に",
+            "時間",
+            "を",
+            "割く",
+            "の",
+            "は",
+            "難しい",
+            "よね",
+            "そう",
+            "いえば",
+            "デート",
+            "は",
+            "した",
+            "こと",
+            "ある",
+            "？"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "blushing",
+      "text": "えっ！？ デート？ う、うーん…昔、うどん屋さんの子にちょっと憧れてたことは…ある、かな？ でも、話しかける勇気もなくって…。",
+      "vocab": [
+        "デート",
+        "昔",
+        "うどん屋",
+        "憧れる",
+        "話しかける",
+        "勇気"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_otaku_shut_in_40_20240515_12345-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_shut_in_40_20240515_12345-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "ま、でも、Mattさんとこうやって話せて嬉しいよ！ またいつでも来てね！",
+      "result": "You learned about the otaku guy's quiet life and his past crush on a udon shop worker. You gained some XP and money.",
+      "rewards": {
+        "xp": 50,
+        "money": 20
+      },
+      "audio": {
+        "key": "battle_otaku_shut_in_40_20240515_12345-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_shut_in_40_20240515_12345-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "annoyed",
+      "text": "あー、もう！ 話しかけてくるなら、ちゃんと返事してよ！ もういいや。",
+      "result": "You failed to connect with the otaku guy. You leave with no rewards.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    }
+  },
+  "topic": "Being a shut in at age 40"
+}
