@@ -1,0 +1,532 @@
+{
+  "id": "baseball_education_system_1717216800",
+  "setting": "park-day",
+  "character": "baseball-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "おう、Mattさん、こんにちは。今日はいい天気だな。絶好の野球日和だぜ。",
+      "vocab": [
+        "こんにちは",
+        "天気",
+        "絶好",
+        "野球日和"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "baseball_education_system_1717216800-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/baseball_education_system_1717216800-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to his greeting.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree it's good weather.",
+          "answer": "本当ですね、いい天気です。",
+          "tokens": [
+            "本当",
+            "です",
+            "ね",
+            "いい",
+            "天気",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree it's good weather and ask if he likes baseball.",
+          "answer": "本当ですね、いい天気です。野球がお好きなんですか？",
+          "tokens": [
+            "本当",
+            "です",
+            "ね",
+            "いい",
+            "天気",
+            "です",
+            "野球",
+            "が",
+            "お好き",
+            "なん",
+            "です",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree it's good weather and ask if he likes baseball, as it's perfect for playing.",
+          "answer": "本当ですね、いい天気です。野球がお好きなんですか？こんな日はピッチャーの練習にもってこいですよね。",
+          "tokens": [
+            "本当",
+            "です",
+            "ね",
+            "いい",
+            "天気",
+            "です",
+            "野球",
+            "が",
+            "お好き",
+            "なん",
+            "です",
+            "か",
+            "こんな",
+            "日",
+            "は",
+            "ピッチャー",
+            "の",
+            "練習",
+            "に",
+            "もってこい",
+            "です",
+            "よね"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "当たり前だろ！俺はピッチャーなんだ。子供の頃からずっと野球一筋だよ。Mattさんはどう？",
+      "vocab": [
+        "当たり前",
+        "ピッチャー",
+        "子供の頃",
+        "ずっと",
+        "野球",
+        "一筋"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "baseball_education_system_1717216800-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/baseball_education_system_1717216800-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Talk about yourself.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say you're a student.",
+          "answer": "私は学生です。",
+          "tokens": [
+            "私",
+            "は",
+            "学生",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say you're a student and that you like learning.",
+          "answer": "私は学生で、勉強することが好きです。",
+          "tokens": [
+            "私",
+            "は",
+            "学生",
+            "で",
+            "勉強",
+            "する",
+            "こと",
+            "が",
+            "好き",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say you're a student and that you like learning, especially about different education systems.",
+          "answer": "私は学生で、勉強することが好きです。特に、色々な国の教育システムについて学ぶのが好きなんです。",
+          "tokens": [
+            "私",
+            "は",
+            "学生",
+            "で",
+            "勉強",
+            "する",
+            "こと",
+            "が",
+            "好き",
+            "です",
+            "特に",
+            "色々",
+            "な",
+            "国",
+            "の",
+            "教育",
+            "システム",
+            "について",
+            "学ぶ",
+            "の",
+            "が",
+            "好き",
+            "なん",
+            "です"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "thinking",
+      "text": "教育システムねえ。俺はそういうの、あんまり詳しくないんだよな。でも、勉強って大事だよな。俺たちが大学で受ける教育の質は、将来のキャリアに影響するだろうし。",
+      "vocab": [
+        "教育",
+        "システム",
+        "詳しい",
+        "勉強",
+        "大事",
+        "大学",
+        "教育",
+        "質",
+        "将来",
+        "キャリア",
+        "影響"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "baseball_education_system_1717216800-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/baseball_education_system_1717216800-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree about the importance of education for future careers.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree it's important.",
+          "answer": "そうですね、大事だと思います。",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "大事",
+            "だ",
+            "と",
+            "思い",
+            "ます"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree it's important and mention that the curriculum affects learning.",
+          "answer": "そうですね、大事だと思います。カリキュラムが学習に影響を与えますからね。",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "大事",
+            "だ",
+            "と",
+            "思い",
+            "ます",
+            "カリキュラム",
+            "が",
+            "学習",
+            "に",
+            "影響",
+            "を",
+            "与え",
+            "ます",
+            "から",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree it's important and mention that the curriculum affects learning, just like team strategy affects game outcomes.",
+          "answer": "そうですね、大事だと思います。カリキュラムが学習に影響を与えるのと同様に、チームの戦略が試合結果に影響を与えますからね。",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "大事",
+            "だ",
+            "と",
+            "思い",
+            "ます",
+            "カリキュラム",
+            "が",
+            "学習",
+            "に",
+            "影響",
+            "を",
+            "与える",
+            "の",
+            "と",
+            "同様",
+            "に",
+            "チーム",
+            "の",
+            "戦略",
+            "が",
+            "試合",
+            "結果",
+            "に",
+            "影響",
+            "を",
+            "与え",
+            "ます",
+            "から",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "なるほどな！確かに、俺たちが子供の頃に受けた教育は、今の俺たちの考え方に影響してるもんな。どんな教育システムで育ったかが、その人の基礎を作るんだな。",
+      "vocab": [
+        "なるほど",
+        "子供の頃",
+        "受ける",
+        "教育",
+        "考え方",
+        "影響",
+        "教育",
+        "システム",
+        "育つ",
+        "基礎",
+        "作る"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "baseball_education_system_1717216800-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/baseball_education_system_1717216800-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Elaborate on how early education shapes individuals.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say that's true.",
+          "answer": "その通りですね。",
+          "tokens": [
+            "その",
+            "通り",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say that's true and that early education is crucial.",
+          "answer": "その通りですね。幼児教育は非常に重要だと思います。",
+          "tokens": [
+            "その",
+            "通り",
+            "です",
+            "ね",
+            "幼児教育",
+            "は",
+            "非常に",
+            "重要",
+            "だ",
+            "と",
+            "思い",
+            "ます"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say that's true and that early education is crucial, affecting one's personality and future path.",
+          "answer": "その通りですね。幼児教育は非常に重要だと思います。それが人格形成や将来の進路に影響を与えるからです。",
+          "tokens": [
+            "その",
+            "通り",
+            "です",
+            "ね",
+            "幼児教育",
+            "は",
+            "非常に",
+            "重要",
+            "だ",
+            "と",
+            "思い",
+            "ます",
+            "それ",
+            "が",
+            "人格",
+            "形成",
+            "や",
+            "将来",
+            "の",
+            "進路",
+            "に",
+            "影響",
+            "を",
+            "与える",
+            "から",
+            "です"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "annoyed",
+      "text": "うーん、人格形成か…。確かに、俺みたいに熱血漢になるか、クールな奴になるかってのも、小さい頃の経験で決まるのかもしれんな。教育ってのは、そういうところもカバーしてるんだな。",
+      "vocab": [
+        "人格",
+        "形成",
+        "熱血漢",
+        "クール",
+        "小さい頃",
+        "経験",
+        "決まる",
+        "教育",
+        "カバー",
+        "してる"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "baseball_education_system_1717216800-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/baseball_education_system_1717216800-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree and reflect on how different education systems can cater to different personalities.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree it's interesting.",
+          "answer": "面白いですね。",
+          "tokens": [
+            "面白い",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree it's interesting and mention that different systems might suit different people.",
+          "answer": "面白いですね。色々な教育システムがあってもいいと思います。",
+          "tokens": [
+            "面白い",
+            "です",
+            "ね",
+            "色々",
+            "な",
+            "教育",
+            "システム",
+            "が",
+            "あっ",
+            "て",
+            "も",
+            "いい",
+            "と",
+            "思い",
+            "ます"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree it's interesting and mention that different systems might suit different people, like how different training methods suit different athletes.",
+          "answer": "面白いですね。色々な教育システムがあってもいいと思います。選手ごとにトレーニング方法が違うように、人それぞれに合った教育があるべきだと思います。",
+          "tokens": [
+            "面白い",
+            "です",
+            "ね",
+            "色々",
+            "な",
+            "教育",
+            "システム",
+            "が",
+            "あっ",
+            "て",
+            "も",
+            "いい",
+            "と",
+            "思い",
+            "ます",
+            "選手",
+            "ごと",
+            "に",
+            "トレーニング",
+            "方法",
+            "が",
+            "違う",
+            "よう",
+            "に",
+            "人",
+            "それぞれ",
+            "に",
+            "あっ",
+            "た",
+            "教育",
+            "が",
+            "ある",
+            "べき",
+            "だ",
+            "と",
+            "思い",
+            "ます"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "お、Mattさん、いいこと言うな！そうだよな。無理やり型にはめるんじゃなくて、その人に合ったやり方を見つけるのが一番だ。教育も、野球も、結局はそういうことだよな。",
+      "vocab": [
+        "いいこと",
+        "言う",
+        "無理やり",
+        "型",
+        "はめる",
+        "その人",
+        "合う",
+        "やり方",
+        "見つける",
+        "一番",
+        "教育",
+        "野球",
+        "結局"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "baseball_education_system_1717216800-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/baseball_education_system_1717216800-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "annoyed",
+      "text": "なんだ、Mattさん。話にならんな。もういい、練習に戻るぜ。",
+      "result": "Conversation failed. The baseball guy seemed annoyed and left.",
+      "rewards": {
+        "xp": 5,
+        "money": 10
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "今日の話、面白かったぜ、Mattさん！またな！",
+      "result": "Conversation successful. You discussed education systems and their impact.",
+      "rewards": {
+        "xp": 20,
+        "money": 50
+      },
+      "audio": {
+        "key": "baseball_education_system_1717216800-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/baseball_education_system_1717216800-dialogue-audio7.mp3"
+      }
+    }
+  }
+}
