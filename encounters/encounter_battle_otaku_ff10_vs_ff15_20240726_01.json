@@ -1,0 +1,407 @@
+{
+  "id": "battle_otaku_ff10_vs_ff15_20240726_01",
+  "setting": "apartment-evening",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "やあ、Mattさん！ 今日はFF10とFF15の話をしようよ。どっちがすごいかって、結構、論争になるんだよね〜。",
+      "vocab": [
+        "論争",
+        "すごい"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You want to start by asking about the general feel of the games.",
+      "responses": {
+        "tier1": {
+          "prompt": "What's the core difference?",
+          "answer": "基本的には何が違うの？",
+          "tokens": [
+            "基本",
+            "に",
+            "は",
+            "何",
+            "が",
+            "違う",
+            "の"
+          ]
+        },
+        "tier2": {
+          "prompt": "What's the main difference in terms of gameplay and story?",
+          "answer": "ゲームプレイとかストーリーとか、根本的な違いは何かな？",
+          "tokens": [
+            "ゲームプレイ",
+            "とか",
+            "ストーリー",
+            "とか",
+            "根本的",
+            "な",
+            "違い",
+            "は",
+            "何",
+            "かな"
+          ]
+        },
+        "tier3": {
+          "prompt": "What do you think is the fundamental difference between FF10 and FF15, both in terms of their worlds and their gameplay mechanics?",
+          "answer": "FF10とFF15の根本的な違いは、世界観とかゲームプレイの仕組みとか、どういうところにあると思う？",
+          "tokens": [
+            "FF10",
+            "と",
+            "FF15",
+            "の",
+            "根本的",
+            "な",
+            "違い",
+            "は",
+            "世界観",
+            "とか",
+            "ゲームプレイ",
+            "の",
+            "仕組み",
+            "とか",
+            "どういう",
+            "ところ",
+            "に",
+            "ある",
+            "と",
+            "思う"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "おお、いい質問だね！ FF10は、なんていうか、王道ファンタジーっていう感じかな。ストーリーがしっかりしてて、感動的だよ。でも、FF15はもっとオープンワールドで、自由度が高いんだ。仲間との旅っていうのが、すごくリアルに描かれててさ。",
+      "vocab": [
+        "王道",
+        "ファンタジー",
+        "感動的",
+        "オープンワールド",
+        "自由度",
+        "仲間"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You want to express a preference for the story-driven experience of FF10.",
+      "responses": {
+        "tier1": {
+          "prompt": "I liked FF10's story.",
+          "answer": "FF10のストーリーは好きだよ。",
+          "tokens": [
+            "FF10",
+            "の",
+            "ストーリー",
+            "は",
+            "好き",
+            "だよ"
+          ]
+        },
+        "tier2": {
+          "prompt": "I personally prefer FF10 because I really got invested in the characters and the story.",
+          "answer": "私は個人的にはFF10の方が好きだな、キャラクターとかストーリーにすごい感情移入できたから。",
+          "tokens": [
+            "私",
+            "は",
+            "個人的",
+            "には",
+            "FF10",
+            "の",
+            "方",
+            "が",
+            "好き",
+            "だな",
+            "キャラクター",
+            "とか",
+            "ストーリー",
+            "に",
+            "すごい",
+            "感情移入",
+            "できた",
+            "から"
+          ]
+        },
+        "tier3": {
+          "prompt": "While FF15's open world is cool, I personally prefer FF10 because I was really able to become emotionally invested in the characters and the unfolding story.",
+          "answer": "FF15のオープンワールドもすごいんだけど、私は個人的にはFF10の方が好きで、キャラクターや展開していくストーリーにすごい感情移入できたんだ。",
+          "tokens": [
+            "FF15",
+            "の",
+            "オープンワールド",
+            "も",
+            "すごい",
+            "ん",
+            "だけど",
+            "私",
+            "は",
+            "個人的",
+            "には",
+            "FF10",
+            "の",
+            "方",
+            "が",
+            "好き",
+            "で",
+            "キャラクター",
+            "や",
+            "展開",
+            "して",
+            "いく",
+            "ストーリー",
+            "に",
+            "すごい",
+            "感情移入",
+            "できた",
+            "ん",
+            "だ"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "わかるわかる！ あの感動はヤバかったよね。でもさ、FF15の戦闘も爽快で、ドライブとかも楽しかったんだよ。あと、あの、なんていうか、移動中の会話とかも、リアルで良かったんだ。",
+      "vocab": [
+        "感動",
+        "ヤバい",
+        "戦闘",
+        "爽快",
+        "ドライブ",
+        "移動中",
+        "会話",
+        "リアル"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You want to agree about the travel conversations but express a slight complaint about the overall pacing.",
+      "responses": {
+        "tier1": {
+          "prompt": "The conversations were good.",
+          "answer": "会話は良かったね。",
+          "tokens": [
+            "会話",
+            "は",
+            "良かった",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "The conversations during travel were good, but the overall pacing felt a bit off.",
+          "answer": "移動中の会話は良かったけど、全体的なテンポは少し気になったかな。",
+          "tokens": [
+            "移動中",
+            "の",
+            "会話",
+            "は",
+            "良かった",
+            "けど",
+            "全体的",
+            "な",
+            "テンポ",
+            "は",
+            "少し",
+            "気になった",
+            "かな"
+          ]
+        },
+        "tier3": {
+          "prompt": "I agree the conversations during travel were really good and added to the realism, but I did have a slight complaint about the overall pacing of the game sometimes feeling a bit uneven.",
+          "answer": "移動中の会話はすごく良かったし、リアルさが増してて同意だけど、ゲーム全体のテンポは時々少し不安定に感じたっていう文句はあったかな。",
+          "tokens": [
+            "移動中",
+            "の",
+            "会話",
+            "は",
+            "すごく",
+            "良かった",
+            "し",
+            "リアルさ",
+            "が",
+            "増して",
+            "て",
+            "同意",
+            "だけど",
+            "ゲーム",
+            "全体",
+            "の",
+            "テンポ",
+            "は",
+            "時々",
+            "少し",
+            "不安定",
+            "に",
+            "感じた",
+            "って",
+            "いう",
+            "文句",
+            "は",
+            "あった",
+            "かな"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "あー、わかる。そういう文句はあったかもね。でもさ、あの、なんていうか、グラフィックとか、魔法のエフェクトとか、すごく綺麗だったじゃん？ 映像的な満足感は高かったと思うんだ。",
+      "vocab": [
+        "文句",
+        "グラフィック",
+        "魔法",
+        "エフェクト",
+        "綺麗",
+        "映像的",
+        "満足感"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You agree about the graphics but want to pivot back to the emotional connection in FF10.",
+      "responses": {
+        "tier1": {
+          "prompt": "The graphics were great.",
+          "answer": "グラフィックはすごかったね。",
+          "tokens": [
+            "グラフィック",
+            "は",
+            "すごかった",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yeah, the graphics were amazing, but for me, the emotional impact of FF10's story was still stronger.",
+          "answer": "うん、グラフィックはすごかったけど、私にとってはFF10のストーリーの感情的なインパクトの方がやっぱり強かったんだ。",
+          "tokens": [
+            "うん",
+            "グラフィック",
+            "は",
+            "すごかった",
+            "けど",
+            "私",
+            "に",
+            "とって",
+            "は",
+            "FF10",
+            "の",
+            "ストーリー",
+            "の",
+            "感情的",
+            "な",
+            "インパクト",
+            "の",
+            "方",
+            "が",
+            "やっぱり",
+            "強かった",
+            "ん",
+            "だ"
+          ]
+        },
+        "tier3": {
+          "prompt": "I agree the graphics and effects were stunning, but for me, the emotional connection and impact that FF10's story had on me was ultimately more profound.",
+          "answer": "グラフィックとかエフェクトは本当にすごかったことに同意するけど、私にとってはFF10のストーリーが私に与えた感情的な繋がりとインパクトの方が、結局はより深かったんだ。",
+          "tokens": [
+            "グラフィック",
+            "とか",
+            "エフェクト",
+            "は",
+            "本当に",
+            "すごかった",
+            "こと",
+            "に",
+            "同意",
+            "する",
+            "けど",
+            "私",
+            "に",
+            "とって",
+            "は",
+            "FF10",
+            "の",
+            "ストーリー",
+            "が",
+            "私",
+            "に",
+            "与えた",
+            "感情的",
+            "な",
+            "繋がり",
+            "と",
+            "インパクト",
+            "の",
+            "方",
+            "が",
+            "結局",
+            "は",
+            "より",
+            "深かった",
+            "ん",
+            "だ"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "なるほどね！ どっちもそれぞれの良さがあるってことだね。FF10は、まさに伝説だなって思うし、FF15は新しい挑戦だったなって感じるよ。Mattさん、色々話してくれてありがとう！",
+      "vocab": [
+        "伝説",
+        "挑戦",
+        "感じる"
+      ],
+      "next": "node_end"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "annoyed",
+      "text": "うーん、なんか話がかみ合わないね。まあ、また今度、ゆっくり話そうか。",
+      "result": "The conversation failed. You didn't connect well with the otaku-guy.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "またいつでも話しかけてね！",
+      "result": "You had a great discussion about Final Fantasy with the otaku-guy!",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      }
+    }
+  },
+  "topic": "Final fantasy 10 vs final fantasy 15"
+}
