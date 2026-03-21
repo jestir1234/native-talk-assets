@@ -1,0 +1,325 @@
+{
+  "id": "battle_pinkgirl_loveyou_20240516_173000",
+  "setting": "park-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わーい！Mattさん、こんにちは！ 今日はなんだか、とっても元気いっぱいなんだ！ Mattさんはどう？",
+      "vocab": [
+        "元気いっぱい",
+        "こんにちは",
+        "なんだか"
+      ],
+      "next": "node_2"
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to the NPC's greeting and ask how they are.",
+      "responses": {
+        "tier1": {
+          "prompt": "I'm good too. How are you?",
+          "answer": "私も元気だよ あなたは？",
+          "tokens": [
+            "私",
+            "も",
+            "元気",
+            "だよ",
+            "あなた",
+            "は"
+          ]
+        },
+        "tier2": {
+          "prompt": "I'm also doing great! What have you been up to today?",
+          "answer": "私もとっても元気だよ 今日はなにしてるの？",
+          "tokens": [
+            "私",
+            "も",
+            "とっても",
+            "元気",
+            "だよ",
+            "今日",
+            "は",
+            "なにしてる",
+            "の"
+          ]
+        },
+        "tier3": {
+          "prompt": "I'm feeling really energetic today too! It's nice to see you looking so cheerful. What's on your mind?",
+          "answer": "私も今日、すごく元気なんだ！ あなたがそんなに楽しそうなのを見るのは嬉しいよ。何か考えてることある？",
+          "tokens": [
+            "私",
+            "も",
+            "今日",
+            "すごく",
+            "元気",
+            "なんだ",
+            "あなた",
+            "が",
+            "そんなに",
+            "楽しそう",
+            "な",
+            "の",
+            "を",
+            "見る",
+            "の",
+            "は",
+            "嬉しい",
+            "よ",
+            "何か",
+            "考えてる",
+            "こと",
+            "ある"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "えへへ、嬉しいな！ 今日はね、新しいシール帳に貼るシールを探しに来たんだ！ キラキラしたやつ、可愛いんだよね～！ Mattさんは、どんなものが好き？",
+      "vocab": [
+        "シール帳",
+        "探す",
+        "キラキラ",
+        "可愛い"
+      ],
+      "next": "node_4"
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Tell the NPC that you like cute things too.",
+      "responses": {
+        "tier1": {
+          "prompt": "I like cute things too.",
+          "answer": "僕も可愛いものが好きだよ。",
+          "tokens": [
+            "僕",
+            "も",
+            "可愛い",
+            "もの",
+            "が",
+            "好き",
+            "だよ"
+          ]
+        },
+        "tier2": {
+          "prompt": "I think cute things are wonderful. Especially if they're handmade.",
+          "answer": "可愛いものは素敵だと思うよ。特に手作りのやつはね。",
+          "tokens": [
+            "可愛い",
+            "もの",
+            "は",
+            "素敵",
+            "だ",
+            "と",
+            "思う",
+            "よ",
+            "特に",
+            "手作り",
+            "の",
+            "やつ",
+            "は",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "I really love cute things! Looking at them makes me feel happy. I even collect little trinkets.",
+          "answer": "僕、可愛いものがすごく大好きなんだ！ 見てるだけで幸せな気持ちになれるよ。小さな飾り物とかも集めてるんだ。",
+          "tokens": [
+            "僕",
+            "可愛い",
+            "もの",
+            "が",
+            "すごく",
+            "大好き",
+            "なんだ",
+            "見てる",
+            "だけ",
+            "で",
+            "幸せ",
+            "な",
+            "気持ち",
+            "に",
+            "なれる",
+            "よ",
+            "小さな",
+            "飾り物",
+            "とか",
+            "も",
+            "集めてる",
+            "んだ"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "わー、嬉しい！ Mattさんも可愛いもの好きなんだね！ じゃあ、もしかして… Mattさんは私のこと、可愛いって思ってくれてるのかな？",
+      "vocab": [
+        "嬉しい",
+        "もしかして",
+        "思ってる"
+      ],
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Affirm that you find her very cute.",
+      "responses": {
+        "tier1": {
+          "prompt": "Yes, you're cute.",
+          "answer": "うん、君は可愛いよ。",
+          "tokens": [
+            "うん",
+            "君",
+            "は",
+            "可愛い",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "You are very cute, I always think so.",
+          "answer": "君はとても可愛いよ、いつもそう思ってる。",
+          "tokens": [
+            "君",
+            "は",
+            "とても",
+            "可愛い",
+            "よ",
+            "いつも",
+            "そう",
+            "思ってる"
+          ]
+        },
+        "tier3": {
+          "prompt": "Of course! You're incredibly cute. Seeing your smile makes my heart flutter.",
+          "answer": "もちろん！君はすごく可愛いよ。君の笑顔を見てると、ドキドキしちゃうんだ。",
+          "tokens": [
+            "もちろん",
+            "君",
+            "は",
+            "すごく",
+            "可愛い",
+            "よ",
+            "君",
+            "の",
+            "笑顔",
+            "を",
+            "見てる",
+            "と",
+            "ドキドキ",
+            "しちゃう",
+            "んだ"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "えええ！？ Mattさん、ありがとう！ ドキドキしちゃう…！ じゃあ、じゃあ、その… 私のこと、好き？",
+      "vocab": [
+        "ありがとう",
+        "ドキドキ",
+        "好き"
+      ],
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Confess your love for her.",
+      "responses": {
+        "tier1": {
+          "prompt": "I love you.",
+          "answer": "君を愛してる。",
+          "tokens": [
+            "君",
+            "を",
+            "愛してる"
+          ]
+        },
+        "tier2": {
+          "prompt": "I love you very much, you know.",
+          "answer": "君のこと、すごく愛してるんだよ。",
+          "tokens": [
+            "君",
+            "の",
+            "こと",
+            "すごく",
+            "愛してる",
+            "んだ",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yes, I love you deeply. You're the only one for me.",
+          "answer": "はい、君のことを心から愛してる。君だけなんだ。",
+          "tokens": [
+            "はい",
+            "君",
+            "の",
+            "こと",
+            "を",
+            "心から",
+            "愛してる",
+            "君",
+            "だけ",
+            "なんだ"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "Mattさん…！ 私もだよ…！",
+      "vocab": [
+        "私も",
+        "だよ"
+      ],
+      "next": "node_end_success"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "そっか…、残念だなあ。",
+      "result": "The NPC seems disappointed.",
+      "rewards": {
+        "xp": 5,
+        "money": 0
+      }
+    },
+    "node_end_success": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "やったー！ Mattさん、大好き！",
+      "result": "The NPC is overjoyed!",
+      "rewards": {
+        "xp": 20,
+        "money": 50
+      }
+    }
+  },
+  "topic": "Do you love me?"
+}
