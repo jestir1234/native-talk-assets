@@ -1,0 +1,406 @@
+{
+  "id": "battle_baseball_cooking_disasters_1706314034",
+  "setting": "apartment-evening",
+  "character": "baseball-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "neutral",
+      "text": "おう、Mattさん、こんにちは。今日はちょっと、料理の話でもしようかなって。",
+      "vocab": [
+        "料理",
+        "話"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_baseball_cooking_disasters_1706314034-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_baseball_cooking_disasters_1706314034-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What do you want to talk about?",
+      "responses": {
+        "tier1": {
+          "prompt": "About cooking disasters?",
+          "answer": "料理の失敗について",
+          "tokens": [
+            "料理",
+            "の",
+            "失敗",
+            "について"
+          ]
+        },
+        "tier2": {
+          "prompt": "You want to talk about cooking disasters? I've had some too.",
+          "answer": "料理の失敗について話したいですか？私もいくつか経験しましたよ。",
+          "tokens": [
+            "料理",
+            "の",
+            "失敗",
+            "について",
+            "話したい",
+            "です",
+            "か",
+            "？",
+            "私",
+            "も",
+            "いくつか",
+            "経験",
+            "しました",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "You want to talk about cooking disasters? I've had some too. What kind of disasters have you experienced?",
+          "answer": "料理の失敗について話したいですか？私もいくつか経験しましたよ。どんな失敗を経験しましたか？",
+          "tokens": [
+            "料理",
+            "の",
+            "失敗",
+            "について",
+            "話したい",
+            "です",
+            "か",
+            "？",
+            "私",
+            "も",
+            "いくつか",
+            "経験",
+            "しました",
+            "よ",
+            "どんな",
+            "失敗",
+            "を",
+            "経験",
+            "しました",
+            "か",
+            "？"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "thinking",
+      "text": "んー、俺か。一番きつかったのは、カレー作ろうとして、水を入れすぎたことだな。なんだ、あれ。",
+      "vocab": [
+        "きつかった",
+        "カレー",
+        "水",
+        "入れすぎた"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_baseball_cooking_disasters_1706314034-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_baseball_cooking_disasters_1706314034-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What happened when you added too much water to the curry?",
+      "responses": {
+        "tier1": {
+          "prompt": "It was like soup?",
+          "answer": "スープみたいになった？",
+          "tokens": [
+            "スープ",
+            "みたい",
+            "に",
+            "なった",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "It became like soup, right? What did you do then?",
+          "answer": "スープみたいになったんですね。それでどうしたんですか？",
+          "tokens": [
+            "スープ",
+            "みたい",
+            "に",
+            "なった",
+            "ん",
+            "です",
+            "ね",
+            "。",
+            "それで",
+            "どう",
+            "した",
+            "ん",
+            "です",
+            "か",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "It became like soup, right? What did you do then? Did you try to thicken it?",
+          "answer": "スープみたいになったんですね。それでどうしたんですか？とろみをつけようとしましたか？",
+          "tokens": [
+            "スープ",
+            "みたい",
+            "に",
+            "なった",
+            "ん",
+            "です",
+            "ね",
+            "。",
+            "それで",
+            "どう",
+            "した",
+            "ん",
+            "です",
+            "か",
+            "？",
+            "とろみ",
+            "を",
+            "つけよう",
+            "と",
+            "しました",
+            "か",
+            "？"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "annoyed",
+      "text": "いや、もう、どうしようもなかったよ。結局、捨てたんだ。あれは、あの日の俺が作った、一番まずい料理だったな。",
+      "vocab": [
+        "どうしようもなかった",
+        "結局",
+        "捨てた",
+        "まずい"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_baseball_cooking_disasters_1706314034-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_baseball_cooking_disasters_1706314034-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "That's too bad. Did you ever try cooking it again?",
+      "responses": {
+        "tier1": {
+          "prompt": "Did you try cooking it again?",
+          "answer": "もう一度料理しましたか？",
+          "tokens": [
+            "もう一度",
+            "料理",
+            "しました",
+            "か",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "That's too bad. Did you ever try cooking it again? Or did you learn from that experience?",
+          "answer": "それは残念でしたね。もう一度料理しましたか？それとも、その経験から学びましたか？",
+          "tokens": [
+            "それ",
+            "は",
+            "残念",
+            "でした",
+            "ね",
+            "。",
+            "もう一度",
+            "料理",
+            "しました",
+            "か",
+            "？",
+            "それ",
+            "とも",
+            "、",
+            "その",
+            "経験",
+            "から",
+            "学び",
+            "ました",
+            "か",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "That's too bad. Did you ever try cooking it again? Or did you learn from that experience? What's the most important thing you learned about cooking?",
+          "answer": "それは残念でしたね。もう一度料理しましたか？それとも、その経験から学びましたか？料理で一番大事だと学んだことは何ですか？",
+          "tokens": [
+            "それ",
+            "は",
+            "残念",
+            "でした",
+            "ね",
+            "。",
+            "もう一度",
+            "料理",
+            "しました",
+            "か",
+            "？",
+            "それ",
+            "とも",
+            "、",
+            "その",
+            "経験",
+            "から",
+            "学び",
+            "ました",
+            "か",
+            "？",
+            "料理",
+            "で",
+            "一番",
+            "大事",
+            "だと",
+            "学んだ",
+            "こと",
+            "は",
+            "何",
+            "です",
+            "か",
+            "？"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "ふふ、それからだよ。レシピをちゃんと読むようになったのは。まあ、今でもたまにやらかすけどな。お前は、何か失敗談とかある？",
+      "vocab": [
+        "レシピ",
+        "ちゃんと",
+        "読む",
+        "やらかす",
+        "失敗談"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_baseball_cooking_disasters_1706314034-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_baseball_cooking_disasters_1706314034-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Do you have any funny cooking disaster stories?",
+      "responses": {
+        "tier1": {
+          "prompt": "My disaster was burning toast.",
+          "answer": "私の失敗はパンを焦がしたこと。",
+          "tokens": [
+            "私",
+            "の",
+            "失敗",
+            "は",
+            "パン",
+            "を",
+            "焦がした",
+            "こと"
+          ]
+        },
+        "tier2": {
+          "prompt": "My disaster was burning toast. It was so smoky.",
+          "answer": "私の失敗はパンを焦がしたこと。とても煙が出ました。",
+          "tokens": [
+            "私",
+            "の",
+            "失敗",
+            "は",
+            "パン",
+            "を",
+            "焦がした",
+            "こと",
+            "。",
+            "とても",
+            "煙",
+            "が",
+            "出ました"
+          ]
+        },
+        "tier3": {
+          "prompt": "My disaster was burning toast. It was so smoky. I even set off the smoke alarm.",
+          "answer": "私の失敗はパンを焦がしたこと。とても煙が出ました。煙探知機まで作動してしまいました。",
+          "tokens": [
+            "私",
+            "の",
+            "失敗",
+            "は",
+            "パン",
+            "を",
+            "焦がした",
+            "こと",
+            "。",
+            "とても",
+            "煙",
+            "が",
+            "出ました",
+            "。",
+            "煙",
+            "探知機",
+            "まで",
+            "作動",
+            "して",
+            "しまい",
+            "ました"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "baseball-guy",
+      "expression": "happy",
+      "text": "あはは、それはきつかったな！煙探知機まで鳴っちゃったら、もう、試合どころじゃないよな！",
+      "vocab": [
+        "きつかった",
+        "煙探知機",
+        "試合",
+        "どころじゃない"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_baseball_cooking_disasters_1706314034-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_baseball_cooking_disasters_1706314034-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "smile",
+      "text": "まあ、そういう失敗談があるから、また頑張ろうって思えるんだよな。お疲れさん！",
+      "result": "You talked about cooking disasters and learned about the importance of following recipes.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      },
+      "audio": {
+        "key": "battle_baseball_cooking_disasters_1706314034-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_baseball_cooking_disasters_1706314034-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "baseball-guy",
+      "expression": "annoyed",
+      "text": "なんだ、もう終わりか？まあ、また今度だな。お疲れ。",
+      "result": "You failed to connect with the baseball player over cooking disasters.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    }
+  }
+}
