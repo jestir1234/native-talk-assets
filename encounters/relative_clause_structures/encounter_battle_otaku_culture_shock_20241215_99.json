@@ -1,0 +1,205 @@
+{
+  "id": "battle_otaku_culture_shock_20241215_99",
+  "setting": "apartment-evening",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "neutral",
+      "text": "最近、文化の違いで驚いたことがあるんだよ。",
+      "vocab": [
+        "文化",
+        "違い",
+        "驚い"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_otaku_culture_shock_20241215_99-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_culture_shock_20241215_99-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "The player responds to the otaku-guy's statement about being surprised by cultural differences.",
+      "responses": {
+        "tier1": {
+          "prompt": "A short response to show interest.",
+          "answer": "それは どんな こと ですか",
+          "tokens": [
+            "それは",
+            "どんな",
+            "こと",
+            "ですか"
+          ]
+        },
+        "tier2": {
+          "prompt": "A medium response to ask for more information.",
+          "answer": "具体的には どんな 文化 の 違い に 驚い ました か",
+          "tokens": [
+            "具体的には",
+            "どんな",
+            "文化",
+            "の",
+            "違い",
+            "に",
+            "驚い",
+            "ました",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "A long response to show empathy and curiosity.",
+          "answer": "私も 文化 の 違い で 驚い た ことが あります それは 日本 の 習慣 と 関係 が ある と思い ます",
+          "tokens": [
+            "私も",
+            "文化",
+            "の",
+            "違い",
+            "で",
+            "驚い",
+            "た",
+            "ことが",
+            "あります",
+            "それは",
+            "日本",
+            "の",
+            "習慣",
+            "と",
+            "関係",
+            "が",
+            "ある",
+            "と思い",
+            "ます"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "そうそう、例えば外国人が日本のコンビニの品ぞろえに驚くそうだよ。",
+      "vocab": [
+        "外国人",
+        "コンビニ",
+        "品ぞろえ"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_otaku_culture_shock_20241215_99-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_culture_shock_20241215_99-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "The player responds to the otaku-guy's example about foreigners being surprised by Japanese convenience store products.",
+      "responses": {
+        "tier1": {
+          "prompt": "A short response to show agreement.",
+          "answer": "それは 面白い ですね",
+          "tokens": [
+            "それは",
+            "面白い",
+            "ですね"
+          ]
+        },
+        "tier2": {
+          "prompt": "A medium response to ask for more examples.",
+          "answer": "他に どんな 文化 ショック が あります か 例えば アニメ や ゲーム 関連 で",
+          "tokens": [
+            "他に",
+            "どんな",
+            "文化",
+            "ショック",
+            "が",
+            "あります",
+            "か",
+            "例えば",
+            "アニメ",
+            "や",
+            "ゲーム",
+            "関連",
+            "で"
+          ]
+        },
+        "tier3": {
+          "prompt": "A long response to share a personal experience and relate to the topic.",
+          "answer": "私も アニメ や ゲーム で 文化 の 違い を 感じ た ことが あります 例えば 日本 の ゲームセンター は 世界 と 違います ね",
+          "tokens": [
+            "私も",
+            "アニメ",
+            "や",
+            "ゲーム",
+            "で",
+            "文化",
+            "の",
+            "違い",
+            "を",
+            "感じ",
+            "た",
+            "ことが",
+            "あります",
+            "例えば",
+            "日本",
+            "の",
+            "ゲームセンター",
+            "は",
+            "世界",
+            "と",
+            "違います",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "うん、ゲームセンターは楽しいよね！機会があれば一緒に行ってみたいね、Mattさん。",
+      "vocab": [
+        "ゲームセンター",
+        "楽しい"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_otaku_culture_shock_20241215_99-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_culture_shock_20241215_99-dialogue-audio3.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "sad",
+      "text": "また話そうね。",
+      "result": "The conversation ended due to a lack of engagement.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "じゃあ、またね！",
+      "result": "The conversation was successful!",
+      "rewards": {
+        "xp": 100,
+        "money": 10
+      },
+      "audio": {
+        "key": "battle_otaku_culture_shock_20241215_99-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_culture_shock_20241215_99-dialogue-audio4.mp3"
+      }
+    }
+  }
+}
