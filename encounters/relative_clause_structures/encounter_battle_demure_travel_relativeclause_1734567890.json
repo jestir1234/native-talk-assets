@@ -1,0 +1,476 @@
+{
+  "id": "battle_demure_travel_relativeclause_1734567890",
+  "setting": "park-day",
+  "character": "demure-lady",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "こんにちは、Mattさん。今日は良いお天気ですね。",
+      "vocab": [
+        "こんにちは",
+        "良い",
+        "天気"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_demure_travel_relativeclause_1734567890-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_travel_relativeclause_1734567890-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to her greeting and comment on the weather.",
+      "responses": {
+        "tier1": {
+          "prompt": "A simple agreement.",
+          "answer": "はい、本当に良い天気ですね",
+          "tokens": [
+            "はい",
+            "本当",
+            "に",
+            "良い",
+            "天気",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree and mention it's perfect for outdoor activities.",
+          "answer": "はい、本当にお散歩にぴったりな天気ですね",
+          "tokens": [
+            "はい",
+            "本当",
+            "に",
+            "お散歩",
+            "に",
+            "ぴったり",
+            "な",
+            "天気",
+            "です",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree enthusiastically and wonder if she has plans.",
+          "answer": "はい、本当にお散歩にぴったりな天気ですね、何かご予定はありますか",
+          "tokens": [
+            "はい",
+            "本当",
+            "に",
+            "お散歩",
+            "に",
+            "ぴったり",
+            "な",
+            "天気",
+            "です",
+            "ね",
+            "何か",
+            "ご予定",
+            "は",
+            "あります",
+            "か"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "shy",
+      "text": "いいえ、特にありません。Mattさんは、最近、海外に行かれましたか？",
+      "vocab": [
+        "最近",
+        "海外",
+        "行かれました"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_demure_travel_relativeclause_1734567890-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_travel_relativeclause_1734567890-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Answer that you went to France last year.",
+      "responses": {
+        "tier1": {
+          "prompt": "Yes, I went last year.",
+          "answer": "はい、去年行きました",
+          "tokens": [
+            "はい",
+            "去年",
+            "行き",
+            "ました"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yes, I went to France last year.",
+          "answer": "はい、去年フランスに行きました",
+          "tokens": [
+            "はい",
+            "去年",
+            "フランス",
+            "に",
+            "行き",
+            "ました"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yes, I went to France last year, and it was a wonderful experience.",
+          "answer": "はい、去年フランスに行きました、とても素晴らしい経験でした",
+          "tokens": [
+            "はい",
+            "去年",
+            "フランス",
+            "に",
+            "行き",
+            "ました",
+            "とても",
+            "素晴らしい",
+            "経験",
+            "でした"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "happy",
+      "text": "まあ、フランスですか！ 素敵ですね。私が以前訪ねた国は、イタリアでした。",
+      "vocab": [
+        "素敵",
+        "以前",
+        "訪ねた",
+        "国",
+        "イタリア"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_demure_travel_relativeclause_1734567890-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_travel_relativeclause_1734567890-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about the trip to Italy, specifically what she saw.",
+      "responses": {
+        "tier1": {
+          "prompt": "What did you see?",
+          "answer": "何を見ましたか",
+          "tokens": [
+            "何",
+            "を",
+            "見",
+            "ました",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "What did you see in Italy?",
+          "answer": "イタリアで何を見ましたか",
+          "tokens": [
+            "イタリア",
+            "で",
+            "何",
+            "を",
+            "見",
+            "ました",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "What did you see in Italy, and what was most memorable?",
+          "answer": "イタリアで何を見ましたか、一番印象に残っていることは何ですか",
+          "tokens": [
+            "イタリア",
+            "で",
+            "何",
+            "を",
+            "見",
+            "ました",
+            "か",
+            "一番",
+            "印象",
+            "に",
+            "残って",
+            "いる",
+            "こと",
+            "は",
+            "何",
+            "です",
+            "か"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "thinking",
+      "text": "そうですね、ローマのコロッセオは、とても大きくて驚きました。あの、昔の建物は、今とはまた違う趣がありますね。",
+      "vocab": [
+        "ローマ",
+        "コロッセオ",
+        "大きい",
+        "驚きました",
+        "昔",
+        "建物",
+        "趣"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_demure_travel_relativeclause_1734567890-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_travel_relativeclause_1734567890-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree and say old buildings have a special atmosphere.",
+      "responses": {
+        "tier1": {
+          "prompt": "I agree.",
+          "answer": "そうですね",
+          "tokens": [
+            "そう",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yes, old buildings have a special atmosphere.",
+          "answer": "ええ、古い建物は特別な雰囲気がありますね",
+          "tokens": [
+            "ええ",
+            "古い",
+            "建物",
+            "は",
+            "特別",
+            "な",
+            "雰囲気",
+            "が",
+            "あり",
+            "ます",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yes, old buildings have a special atmosphere, much like the foods from our childhood.",
+          "answer": "ええ、古い建物は特別な雰囲気がありますね、まるで子供の頃に食べた食べ物みたいに",
+          "tokens": [
+            "ええ",
+            "古い",
+            "建物",
+            "は",
+            "特別",
+            "な",
+            "雰囲気",
+            "が",
+            "あり",
+            "ます",
+            "ね",
+            "まるで",
+            "子供",
+            "の",
+            "頃",
+            "に",
+            "食べ",
+            "た",
+            "食べ物",
+            "みたい",
+            "に"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "おっしゃる通りです。昔のものは、なんだか心が落ち着きますね。Mattさんは、いつ頃から日本にいらっしゃるのですか？",
+      "vocab": [
+        "おっしゃる",
+        "通り",
+        "昔",
+        "心",
+        "落ち着き",
+        "いつ頃"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_demure_travel_relativeclause_1734567890-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_travel_relativeclause_1734567890-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Say you've been here for about five years.",
+      "responses": {
+        "tier1": {
+          "prompt": "About five years.",
+          "answer": "五年くらいです",
+          "tokens": [
+            "五年",
+            "くらい",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "I've been here for about five years.",
+          "answer": "五年くらい日本にいます",
+          "tokens": [
+            "五年",
+            "くらい",
+            "日本",
+            "に",
+            "い",
+            "ます"
+          ]
+        },
+        "tier3": {
+          "prompt": "I've been here for about five years, and I find Japan to be a very interesting country.",
+          "answer": "五年くらい日本にいます、日本はとても面白い国だと思います",
+          "tokens": [
+            "五年",
+            "くらい",
+            "日本",
+            "に",
+            "い",
+            "ます",
+            "日本",
+            "は",
+            "とても",
+            "面白い",
+            "国",
+            "だ",
+            "と",
+            "思い",
+            "ます"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "neutral",
+      "text": "そうですか。もうそんなに経つのですね。お隣で、最近引っ越してこられた方もいらっしゃいますよ。",
+      "vocab": [
+        "経つ",
+        "お隣",
+        "最近",
+        "引っ越して",
+        "来られた"
+      ],
+      "next": "node_12",
+      "audio": {
+        "key": "battle_demure_travel_relativeclause_1734567890-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_travel_relativeclause_1734567890-dialogue-audio6.mp3"
+      }
+    },
+    "node_12": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask if the new neighbor is from abroad too.",
+      "responses": {
+        "tier1": {
+          "prompt": "From abroad?",
+          "answer": "海外からですか",
+          "tokens": [
+            "海外",
+            "から",
+            "です",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "Are they from abroad too?",
+          "answer": "その方も海外からですか",
+          "tokens": [
+            "その",
+            "方",
+            "も",
+            "海外",
+            "から",
+            "です",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Are they from abroad too? It seems many people are traveling these days.",
+          "answer": "その方も海外からですか、最近は旅行する方が多いようですね",
+          "tokens": [
+            "その",
+            "方",
+            "も",
+            "海外",
+            "から",
+            "です",
+            "か",
+            "最近",
+            "は",
+            "旅行",
+            "する",
+            "方",
+            "が",
+            "多い",
+            "よう",
+            "です",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_13"
+    },
+    "node_13": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "sad",
+      "text": "いいえ、同じ市内からですよ。でも、人の流れが変わるのは、世の常ですね。都会は特に、人が変わりますね。",
+      "vocab": [
+        "同じ",
+        "市内",
+        "流れ",
+        "変わる",
+        "世の常",
+        "都会",
+        "特に"
+      ],
+      "next": "node_fail",
+      "audio": {
+        "key": "battle_demure_travel_relativeclause_1734567890-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_travel_relativeclause_1734567890-dialogue-audio7.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "annoyed",
+      "text": "まあ、お話が途切れてしまいましたね。また、お会いしましょう。",
+      "result": "Conversation ended abruptly. You didn't build a strong connection.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      },
+      "audio": {
+        "key": "battle_demure_travel_relativeclause_1734567890-dialogue-audio8.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_travel_relativeclause_1734567890-dialogue-audio8.mp3"
+      }
+    }
+  }
+}
