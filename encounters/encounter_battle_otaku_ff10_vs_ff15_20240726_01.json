@@ -15,7 +15,11 @@
         "論争",
         "すごい"
       ],
-      "next": "node_2"
+      "next": "node_2",
+      "audio": {
+        "key": "battle_otaku_ff10_vs_ff15_20240726_01-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_ff10_vs_ff15_20240726_01-dialogue-audio1.mp3"
+      }
     },
     "node_2": {
       "type": "build_sentence",
@@ -93,7 +97,11 @@
         "自由度",
         "仲間"
       ],
-      "next": "node_4"
+      "next": "node_4",
+      "audio": {
+        "key": "battle_otaku_ff10_vs_ff15_20240726_01-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_ff10_vs_ff15_20240726_01-dialogue-audio2.mp3"
+      }
     },
     "node_4": {
       "type": "build_sentence",
@@ -189,7 +197,11 @@
         "会話",
         "リアル"
       ],
-      "next": "node_6"
+      "next": "node_6",
+      "audio": {
+        "key": "battle_otaku_ff10_vs_ff15_20240726_01-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_ff10_vs_ff15_20240726_01-dialogue-audio3.mp3"
+      }
     },
     "node_6": {
       "type": "build_sentence",
@@ -277,7 +289,11 @@
         "映像的",
         "満足感"
       ],
-      "next": "node_8"
+      "next": "node_8",
+      "audio": {
+        "key": "battle_otaku_ff10_vs_ff15_20240726_01-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_ff10_vs_ff15_20240726_01-dialogue-audio4.mp3"
+      }
     },
     "node_8": {
       "type": "build_sentence",
@@ -378,7 +394,11 @@
         "挑戦",
         "感じる"
       ],
-      "next": "node_end"
+      "next": "node_end",
+      "audio": {
+        "key": "battle_otaku_ff10_vs_ff15_20240726_01-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_ff10_vs_ff15_20240726_01-dialogue-audio5.mp3"
+      }
     },
     "node_fail": {
       "type": "end",
@@ -400,6 +420,10 @@
       "rewards": {
         "xp": 100,
         "money": 50
+      },
+      "audio": {
+        "key": "battle_otaku_ff10_vs_ff15_20240726_01-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_ff10_vs_ff15_20240726_01-dialogue-audio6.mp3"
       }
     }
   },
