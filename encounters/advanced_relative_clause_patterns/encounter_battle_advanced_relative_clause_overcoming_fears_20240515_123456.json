@@ -1,0 +1,402 @@
+{
+  "id": "battle_advanced_relative_clause_overcoming_fears_20240515_123456",
+  "setting": "park-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わーい！マシューさん、こんにちは！今日はお天気も良くて、お散歩日和だね！",
+      "vocab": [
+        "わーい",
+        "こんにちは",
+        "お天気",
+        "お散歩"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_advanced_relative_clause_overcoming_fears_20240515_123456-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_advanced_relative_clause_overcoming_fears_20240515_123456-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond enthusiastically to her greeting.",
+      "responses": {
+        "tier1": {
+          "prompt": "Great weather!",
+          "answer": "いい天気 です ね",
+          "tokens": [
+            "いい",
+            "天気",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yes, it's a perfect day for a walk, isn't it?",
+          "answer": "はい 本当に お散歩 に ぴったりの 日 です ね",
+          "tokens": [
+            "はい",
+            "本当に",
+            "お散歩",
+            "に",
+            "ぴったり",
+            "の",
+            "日",
+            "です",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yes, it's a perfect day for a walk, isn't it? I'm really happy about it!",
+          "answer": "はい 本当に お散歩 に ぴったりの 日 です ね これから 楽しみ です",
+          "tokens": [
+            "はい",
+            "本当に",
+            "お散歩",
+            "に",
+            "ぴったり",
+            "の",
+            "日",
+            "です",
+            "ね",
+            "これ",
+            "から",
+            "楽しみ",
+            "です"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "うんうん！ねぇ、マシューさんって、怖いものとかある？私は高いところがちょっと苦手なんだ〜。",
+      "vocab": [
+        "怖い",
+        "高い",
+        "苦手"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_advanced_relative_clause_overcoming_fears_20240515_123456-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_advanced_relative_clause_overcoming_fears_20240515_123456-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Tell her you're afraid of heights too.",
+      "responses": {
+        "tier1": {
+          "prompt": "Me too.",
+          "answer": "僕 も です",
+          "tokens": [
+            "僕",
+            "も",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "Me too. I get really scared when I'm up high.",
+          "answer": "僕 も です 高い ところ は 本当に 怖い です",
+          "tokens": [
+            "僕",
+            "も",
+            "です",
+            "高い",
+            "ところ",
+            "は",
+            "本当に",
+            "怖い",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Me too. I get really scared when I'm up high. It's like my legs are glued to the ground!",
+          "answer": "僕 も です 高い ところ は 本当に 怖い です 足 が 地面 に くっついて しまう みたい",
+          "tokens": [
+            "僕",
+            "も",
+            "です",
+            "高い",
+            "ところ",
+            "は",
+            "本当に",
+            "怖い",
+            "です",
+            "足",
+            "が",
+            "地面",
+            "に",
+            "くっついて",
+            "しまう",
+            "みたい"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "thinking",
+      "text": "やっぱり！高いところから景色が見える建物とか、ちょっと勇気がいるよね。でも、その「勇気がいる」って気持ちを乗り越えた時の達成感って、すごいと思わない？",
+      "vocab": [
+        "景色",
+        "建物",
+        "勇気",
+        "乗り越える",
+        "達成感"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_advanced_relative_clause_overcoming_fears_20240515_123456-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_advanced_relative_clause_overcoming_fears_20240515_123456-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree and say overcoming fear leads to growth.",
+      "responses": {
+        "tier1": {
+          "prompt": "I agree.",
+          "answer": "そう です ね",
+          "tokens": [
+            "そう",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "I agree. It's like you become a stronger person.",
+          "answer": "そう です ね 自分が 強くなった ような 気 が します",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "自分",
+            "が",
+            "強く",
+            "なった",
+            "ような",
+            "気",
+            "が",
+            "します"
+          ]
+        },
+        "tier3": {
+          "prompt": "I agree. It's like you become a stronger person. The things that used to be scary aren't so scary anymore.",
+          "answer": "そう です ね 自分が 強くなった ような 気 が します 前 は 怖かった こと が もう 怖く なくなり ます",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "自分",
+            "が",
+            "強く",
+            "なった",
+            "ような",
+            "気",
+            "が",
+            "します",
+            "前",
+            "は",
+            "怖かった",
+            "こと",
+            "が",
+            "もう",
+            "怖く",
+            "なく",
+            "なり",
+            "ます"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わかるー！私も、前は虫とか全然ダメだったんだけど、クラフトで色んな素材を使ってるうちに、平気になったんだ！あの、キラキラしたシールとか、使うの楽しいもんね！",
+      "vocab": [
+        "虫",
+        "クラフト",
+        "素材",
+        "平気",
+        "キラキラ",
+        "シール"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_advanced_relative_clause_overcoming_fears_20240515_123456-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_advanced_relative_clause_overcoming_fears_20240515_123456-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask her about the crafts she enjoys.",
+      "responses": {
+        "tier1": {
+          "prompt": "What kind of crafts?",
+          "answer": "どんな クラフト ですか",
+          "tokens": [
+            "どんな",
+            "クラフト",
+            "です",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of crafts do you do? I like making things too.",
+          "answer": "どんな クラフト を するんですか 僕 も 物作り が 好き です",
+          "tokens": [
+            "どんな",
+            "クラフト",
+            "を",
+            "する",
+            "んです",
+            "か",
+            "僕",
+            "も",
+            "物作り",
+            "が",
+            "好き",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "What kind of crafts do you do? I like making things too. Maybe I can learn from you!",
+          "answer": "どんな クラフト を するんですか 僕 も 物作り が 好き です マシューさん が 教えて くれる かな",
+          "tokens": [
+            "どんな",
+            "クラフト",
+            "を",
+            "する",
+            "んです",
+            "か",
+            "僕",
+            "も",
+            "物作り",
+            "が",
+            "好き",
+            "です",
+            "マシュー",
+            "さん",
+            "が",
+            "教えて",
+            "くれる",
+            "かな"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "えへへ、教えちゃう！マシューさんに教えられるなんて、ドキドキしちゃうなぁ。ね、今度一緒にかわいいシールを貼って、自分だけのオリジナルノートを作らない？",
+      "vocab": [
+        "教える",
+        "ドキドキ",
+        "オリジナル",
+        "ノート",
+        "作る"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_advanced_relative_clause_overcoming_fears_20240515_123456-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_advanced_relative_clause_overcoming_fears_20240515_123456-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Enthusiastically agree to her suggestion.",
+      "responses": {
+        "tier1": {
+          "prompt": "Sounds fun!",
+          "answer": "楽しそう です ね",
+          "tokens": [
+            "楽しそう",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Sounds fun! I'd love to make one with you.",
+          "answer": "楽しそう です ね ぜひ 一緒に 作りたい です",
+          "tokens": [
+            "楽しそう",
+            "です",
+            "ね",
+            "ぜひ",
+            "一緒に",
+            "作りたい",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Sounds fun! I'd love to make one with you. I've always wanted to try making my own notebook.",
+          "answer": "楽しそう です ね ぜひ 一緒に 作りたい です 自分 の ノート を 作って みたかった ん です",
+          "tokens": [
+            "楽しそう",
+            "です",
+            "ね",
+            "ぜひ",
+            "一緒に",
+            "作りたい",
+            "です",
+            "自分",
+            "の",
+            "ノート",
+            "を",
+            "作って",
+            "みたかった",
+            "ん",
+            "です"
+          ]
+        }
+      },
+      "next": "node_end_success"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "えー、もう行っちゃうの？また遊ぼうね！",
+      "result": "You didn't connect well. Try again!",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end_success": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "やったー！マシューさんと一緒なら、どんな怖いことも乗り越えられそう！またすぐに会おうね！",
+      "result": "You connected well! You've made a new friend.",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      },
+      "audio": {
+        "key": "battle_advanced_relative_clause_overcoming_fears_20240515_123456-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_advanced_relative_clause_overcoming_fears_20240515_123456-dialogue-audio6.mp3"
+      }
+    }
+  }
+}
