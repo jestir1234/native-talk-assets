@@ -1,0 +1,252 @@
+{
+  "id": "battle_pink_girl_remote_work_20230916_123456",
+  "setting": "work-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "Mattさん、こんにちは！リモートワークって楽しいよね。",
+      "vocab": [
+        "リモートワーク",
+        "楽しい"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pink_girl_remote_work_20230916_123456-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_girl_remote_work_20230916_123456-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree that remote work is fun",
+      "responses": {
+        "tier1": {
+          "prompt": "That's fun.",
+          "answer": "それ は 楽しい",
+          "tokens": [
+            "それ",
+            "は",
+            "楽しい"
+          ]
+        },
+        "tier2": {
+          "prompt": "I think remote work is fun because I can work from home.",
+          "answer": "リモートワーク は 家 で 仕事 が できる から 楽しい と 思う",
+          "tokens": [
+            "リモートワーク",
+            "は",
+            "家",
+            "で",
+            "仕事",
+            "が",
+            "できる",
+            "から",
+            "楽しい",
+            "と",
+            "思う"
+          ]
+        },
+        "tier3": {
+          "prompt": "I've been working remotely for a few months now, and I really enjoy the flexibility it offers, such as being able to work from anywhere and having more control over my schedule.",
+          "answer": "私 は リモートワーク を 数ヶ月 やってる けど 場所 を 選ばず に 仕事 が できて スケジュール も コントロール できる から 本当に 楽しい",
+          "tokens": [
+            "私",
+            "は",
+            "リモートワーク",
+            "を",
+            "数ヶ月",
+            "やってる",
+            "けど",
+            "場所",
+            "を",
+            "選ばず",
+            "に",
+            "仕事",
+            "が",
+            "できて",
+            "スケジュール",
+            "も",
+            "コントロール",
+            "できる",
+            "から",
+            "本当に",
+            "楽しい"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "そうだよね！私は今カフェで働いているけど、気分転換になるよ。",
+      "vocab": [
+        "気分転換"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pink_girl_remote_work_20230916_123456-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_girl_remote_work_20230916_123456-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about her favorite cafe",
+      "responses": {
+        "tier1": {
+          "prompt": "Where is your favorite cafe?",
+          "answer": "どこ が 好き な カフェ",
+          "tokens": [
+            "どこ",
+            "が",
+            "好き",
+            "な",
+            "カフェ"
+          ]
+        },
+        "tier2": {
+          "prompt": "What's your favorite cafe like? Is it cozy?",
+          "answer": "好き な カフェ は どんな 感じ コーヒーショップ みたい な 雰囲気",
+          "tokens": [
+            "好き",
+            "な",
+            "カフェ",
+            "は",
+            "どんな",
+            "感じ",
+            "コーヒーショップ",
+            "みたい",
+            "な",
+            "雰囲気"
+          ]
+        },
+        "tier3": {
+          "prompt": "I've been meaning to try out that new cafe downtown; have you been there, and do you think it's a good spot to work remotely?",
+          "answer": "最近 下町 に できた あの カフェ に 行ってない リモートワーク する 場所 として どう かな",
+          "tokens": [
+            "最近",
+            "下町",
+            "に",
+            "できた",
+            "あの",
+            "カフェ",
+            "に",
+            "行ってない",
+            "リモートワーク",
+            "する",
+            "場所",
+            "として",
+            "どう",
+            "かな"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "Mattさん、まだ行ってないの？今度一緒に行こうね！",
+      "vocab": [
+        "一緒"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pink_girl_remote_work_20230916_123456-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_girl_remote_work_20230916_123456-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree to go together",
+      "responses": {
+        "tier1": {
+          "prompt": "I'd like that.",
+          "answer": "そう したい",
+          "tokens": [
+            "そう",
+            "したい"
+          ]
+        },
+        "tier2": {
+          "prompt": "That sounds like fun! What time were you thinking?",
+          "answer": "それ は 楽しそう 何時 くらい に しようか",
+          "tokens": [
+            "それ",
+            "は",
+            "楽しそう",
+            "何時",
+            "くらい",
+            "に",
+            "しようか"
+          ]
+        },
+        "tier3": {
+          "prompt": "I'd love to go with you; how about we plan to meet there next weekend, and we can discuss our favorite hobbies, like stickers and crafts?",
+          "answer": "私 も 一緒 に 行く のは 楽しみ 来週末 に そこで 会う のは どう シール とか クラフト とか 好き な 話 も できるし",
+          "tokens": [
+            "私",
+            "も",
+            "一緒",
+            "に",
+            "行く",
+            "のは",
+            "楽しみ",
+            "来週末",
+            "に",
+            "そこで",
+            "会う",
+            "のは",
+            "どう",
+            "シール",
+            "とか",
+            "クラフト",
+            "とか",
+            "好き",
+            "な",
+            "話",
+            "も",
+            "できるし"
+          ]
+        }
+      },
+      "next": "node_end"
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "楽しみにしてるね！またね、Mattさん！",
+      "result": "You had a nice conversation with the pink girl about remote work and cafes.",
+      "rewards": {
+        "xp": 100,
+        "money": 0
+      },
+      "audio": {
+        "key": "battle_pink_girl_remote_work_20230916_123456-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_girl_remote_work_20230916_123456-dialogue-audio4.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "残念！また話そうね。",
+      "result": "You ran out of energy and couldn't keep the conversation going.",
+      "rewards": {
+        "xp": 10,
+        "money": 0
+      }
+    }
+  }
+}
