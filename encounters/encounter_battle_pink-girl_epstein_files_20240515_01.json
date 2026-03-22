@@ -1,0 +1,321 @@
+{
+  "id": "battle_pink-girl_epstein_files_20240515_01",
+  "setting": "downtown-evening",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "あ、Veerさん！こんなところで会うなんて、びっくり！元気だった？",
+      "vocab": [
+        "Veerさん",
+        "びっくり",
+        "元気"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pink-girl_epstein_files_20240515_01-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_epstein_files_20240515_01-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "How do you respond?",
+      "responses": {
+        "tier1": {
+          "prompt": "Yes, I'm fine.",
+          "answer": "うん 元気だよ",
+          "tokens": [
+            "うん",
+            "元気",
+            "だよ"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yes, I'm fine. And you?",
+          "answer": "うん 元気だよ Veerさんは どう？",
+          "tokens": [
+            "うん",
+            "元気",
+            "だよ",
+            "Veerさんは",
+            "どう",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yes, I'm fine! It's been a while, so it's nice to see you. How are you doing?",
+          "answer": "うん 元気だよ 久しぶりだから 会えて嬉しいよ Veerさんは どう？",
+          "tokens": [
+            "うん",
+            "元気",
+            "だよ",
+            "久しぶり",
+            "だから",
+            "会えて",
+            "嬉しい",
+            "よ",
+            "Veerさんは",
+            "どう",
+            "？"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "私も元気だよ～！ちょうど今、新しいステッカーを見に行ってたとこ！めっちゃ可愛いのがたくさんあって、迷っちゃうんだよね！",
+      "vocab": [
+        "ステッカー",
+        "可愛い",
+        "迷っちゃう"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pink-girl_epstein_files_20240515_01-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_epstein_files_20240515_01-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about her hobbies.",
+      "responses": {
+        "tier1": {
+          "prompt": "You like stickers?",
+          "answer": "ステッカー 好き？",
+          "tokens": [
+            "ステッカー",
+            "好き",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "You like stickers? That's cute!",
+          "answer": "ステッカー 好きなの？ 可愛いね！",
+          "tokens": [
+            "ステッカー",
+            "好き",
+            "なの",
+            "？",
+            "可愛い",
+            "ね",
+            "！"
+          ]
+        },
+        "tier3": {
+          "prompt": "You like stickers? That's so cute! What kind of stickers do you like?",
+          "answer": "ステッカー 好きなの？ すごく可愛いね！どんな ステッカーが 好きなの？",
+          "tokens": [
+            "ステッカー",
+            "好き",
+            "なの",
+            "？",
+            "すごく",
+            "可愛い",
+            "ね",
+            "！",
+            "どんな",
+            "ステッカー",
+            "が",
+            "好き",
+            "な",
+            "の",
+            "？"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "うん！キラキラしてたり、動物とか、手帳に貼る用とか！Veerさんは、何か趣味とかあるの？",
+      "vocab": [
+        "キラキラ",
+        "動物",
+        "手帳",
+        "趣味"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pink-girl_epstein_files_20240515_01-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_epstein_files_20240515_01-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Tell her about your hobby.",
+      "responses": {
+        "tier1": {
+          "prompt": "I like crafting.",
+          "answer": "クラフト 好きだよ",
+          "tokens": [
+            "クラフト",
+            "好き",
+            "だよ"
+          ]
+        },
+        "tier2": {
+          "prompt": "I like crafting, especially making things.",
+          "answer": "クラフト 好きだよ 色々 作るのが 好き",
+          "tokens": [
+            "クラフト",
+            "好き",
+            "だよ",
+            "色々",
+            "作る",
+            "の",
+            "が",
+            "好き"
+          ]
+        },
+        "tier3": {
+          "prompt": "I like crafting, especially making things with my hands. It's fun to create something new.",
+          "answer": "クラフト 好きだよ 手を 動かして 色々 作るのが 楽しいんだ 新しいものを作るのが 好き",
+          "tokens": [
+            "クラフト",
+            "好き",
+            "だよ",
+            "手",
+            "を",
+            "動かす",
+            "て",
+            "色々",
+            "作る",
+            "の",
+            "が",
+            "楽しい",
+            "んだ",
+            "新しい",
+            "もの",
+            "を",
+            "作る",
+            "の",
+            "が",
+            "好き"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "へぇ～！クラフトかぁ！楽しそう！どんなものを作るの？私も何か一緒に作りたいな！",
+      "vocab": [
+        "へぇ～",
+        "楽しそう",
+        "一緒に"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_pink-girl_epstein_files_20240515_01-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_epstein_files_20240515_01-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Suggest making something together.",
+      "responses": {
+        "tier1": {
+          "prompt": "Let's make stickers!",
+          "answer": "ステッカー 作ろう！",
+          "tokens": [
+            "ステッカー",
+            "作ろう",
+            "！"
+          ]
+        },
+        "tier2": {
+          "prompt": "Let's make stickers together! It will be fun.",
+          "answer": "一緒に ステッカー 作ろうよ 楽しいよ",
+          "tokens": [
+            "一緒に",
+            "ステッカー",
+            "作ろう",
+            "よ",
+            "楽しい",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Let's make stickers together! We can use my craft supplies. It will be super fun!",
+          "answer": "一緒に ステッカー 作ろうよ 私の クラフト 用品 使ってね とっても 楽しいよ",
+          "tokens": [
+            "一緒に",
+            "ステッカー",
+            "作ろう",
+            "よ",
+            "私",
+            "の",
+            "クラフト",
+            "用品",
+            "使って",
+            "ね",
+            "とっても",
+            "楽しい",
+            "よ"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わーい！いいね！じゃあ、今度私の家で一緒に作ろうよ！楽しみにしてるね！",
+      "vocab": [
+        "わーい",
+        "いいね",
+        "家",
+        "楽しみ"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_pink-girl_epstein_files_20240515_01-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_epstein_files_20240515_01-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "今日は話せて嬉しかったよ！またね！",
+      "result": "You successfully bonded with the pink-girl!",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      },
+      "audio": {
+        "key": "battle_pink-girl_epstein_files_20240515_01-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_epstein_files_20240515_01-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "あれ？もう行っちゃうの？残念…。",
+      "result": "The conversation ended prematurely.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    }
+  },
+  "topic": "Epstein files"
+}
