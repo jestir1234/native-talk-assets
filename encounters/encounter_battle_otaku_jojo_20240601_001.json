@@ -1,0 +1,378 @@
+{
+  "id": "battle_otaku_jojo_20240601_001",
+  "setting": "apartment-evening",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "やあ！ Veerさん、こんにちは！ 今日は『ジョジョの奇妙な冒険』について語り合おうぜ！",
+      "vocab": [
+        "ジョジョ",
+        "奇妙",
+        "冒険",
+        "語り合おう"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_otaku_jojo_20240601_001-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_jojo_20240601_001-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You are excited to talk about JoJo.",
+      "responses": {
+        "tier1": {
+          "prompt": "Express excitement.",
+          "answer": "はい、いいですね",
+          "tokens": [
+            "はい",
+            "いい",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Express excitement and ask about their favorite part.",
+          "answer": "はい、いいですね！ どの辺りが一番好きですか？",
+          "tokens": [
+            "はい",
+            "いい",
+            "です",
+            "ね",
+            "どの",
+            "辺り",
+            "一番",
+            "好き",
+            "です",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Express excitement and ask about their favorite part, mentioning you're a big fan too.",
+          "answer": "はい、いいですね！ どの辺りが一番好きですか？ 私も大ファンなんですよ！",
+          "tokens": [
+            "はい",
+            "いい",
+            "です",
+            "ね",
+            "どの",
+            "辺り",
+            "一番",
+            "好き",
+            "です",
+            "か",
+            "私",
+            "も",
+            "大ファン",
+            "なん",
+            "です",
+            "よ"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "おお、嬉しいな！ 私の一番好きなのは、やっぱり仗助のスタンドかな。「クレイジー・ダイヤモンド」！ 直せるって、便利すぎるでしょ！",
+      "vocab": [
+        "仗助",
+        "スタンド",
+        "クレイジー・ダイヤモンド",
+        "直せる",
+        "便利"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_otaku_jojo_20240601_001-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_jojo_20240601_001-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You agree about Crazy Diamond and want to talk about its ability.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree about Crazy Diamond.",
+          "answer": "確かに、便利ですね",
+          "tokens": [
+            "確か",
+            "に",
+            "便利",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree about Crazy Diamond and ask how it works.",
+          "answer": "確かに、便利ですね。あの能力は、どういう仕組みなんですか？",
+          "tokens": [
+            "確か",
+            "に",
+            "便利",
+            "です",
+            "ね",
+            "あの",
+            "能力",
+            "どう",
+            "いう",
+            "仕組み",
+            "です",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree about Crazy Diamond and ask how it works, mentioning it's like mending things.",
+          "answer": "確かに、便利ですね。あの能力は、どういう仕組みなんですか？ 物を元通りにする感じですよね？",
+          "tokens": [
+            "確か",
+            "に",
+            "便利",
+            "です",
+            "ね",
+            "あの",
+            "能力",
+            "どう",
+            "いう",
+            "仕組み",
+            "です",
+            "か",
+            "物",
+            "元通り",
+            "する",
+            "感じ",
+            "です",
+            "よ",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "うんうん！ その通り！ 壊れたものを元に戻すだけじゃなくて、例えば「このリンゴは不良品だった」って直せば、美味しいリンゴに戻るんだぜ。発想がすごいよな。",
+      "vocab": [
+        "通り",
+        "壊れた",
+        "戻す",
+        "不良品",
+        "発想"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_otaku_jojo_20240601_001-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_jojo_20240601_001-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You're impressed and want to talk about other JoJo characters.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say it's amazing.",
+          "answer": "すごいですね",
+          "tokens": [
+            "すごい",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say it's amazing and ask about other characters.",
+          "answer": "すごいですね。他のキャラクターだと、誰が一番好きですか？",
+          "tokens": [
+            "すごい",
+            "です",
+            "ね",
+            "他",
+            "キャラクター",
+            "誰",
+            "一番",
+            "好き",
+            "です",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say it's amazing and ask about other characters, maybe mentioning a specific one you like.",
+          "answer": "すごいですね。他のキャラクターだと、誰が一番好きですか？ 私は、承太郎がかっこいいと思います。",
+          "tokens": [
+            "すごい",
+            "です",
+            "ね",
+            "他",
+            "キャラクター",
+            "誰",
+            "一番",
+            "好き",
+            "です",
+            "か",
+            "私",
+            "承太郎",
+            "かっこいい",
+            "と",
+            "思い",
+            "ます"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "承太郎！ やはりスターダストクルセイダーズは外せないよな！ 「オラオラオラ！」のラッシュは何度見ても燃える！",
+      "vocab": [
+        "スターダストクルセイダーズ",
+        "外せない",
+        "オラオラ",
+        "ラッシュ",
+        "燃える"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_otaku_jojo_20240601_001-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_jojo_20240601_001-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You love Jotaro's battles and want to talk about JoJo's unique art style.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree about Jotaro's battles.",
+          "answer": "あのバトルは熱いですね",
+          "tokens": [
+            "あの",
+            "バトル",
+            "熱い",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree about Jotaro's battles and mention the art style.",
+          "answer": "あのバトルは熱いですね。でも、ジョジョの絵柄も独特で好きなんですよ。",
+          "tokens": [
+            "あの",
+            "バトル",
+            "熱い",
+            "です",
+            "ね",
+            "でも",
+            "ジョジョ",
+            "絵柄",
+            "独特",
+            "好き",
+            "です",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree about Jotaro's battles and mention the art style, asking if he agrees.",
+          "answer": "あのバトルは熱いですね。でも、ジョジョの絵柄も独特で好きなんですよ。Veerさんもそう思いませんか？",
+          "tokens": [
+            "あの",
+            "バトル",
+            "熱い",
+            "です",
+            "ね",
+            "でも",
+            "ジョジョ",
+            "絵柄",
+            "独特",
+            "好き",
+            "です",
+            "よ",
+            "Veer",
+            "さん",
+            "も",
+            "そう",
+            "思い",
+            "ません",
+            "か"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "ああ！ それはわかる！ あの、なんていうか、イタリアのファッション雑誌みたいな、あの独特のタッチ！ それがまた「奇妙」さを際立たせてるんだよな！",
+      "vocab": [
+        "わかる",
+        "イタリア",
+        "ファッション雑誌",
+        "独特",
+        "タッチ",
+        "際立たせてる"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_otaku_jojo_20240601_001-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_jojo_20240601_001-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "いやー、Veerさんとジョジョの話ができるなんて、最高だぜ！ また今度、続きを語り合おうな！",
+      "vocab": [
+        "最高",
+        "続き",
+        "語り合おう"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_otaku_jojo_20240601_001-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_jojo_20240601_001-dialogue-audio6.mp3"
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "またな！",
+      "result": "You had a great time talking about JoJo!",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      },
+      "audio": {
+        "key": "battle_otaku_jojo_20240601_001-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_jojo_20240601_001-dialogue-audio7.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "annoyed",
+      "text": "えー、もう終わり？ 残念だぜ。",
+      "result": "The conversation ended too soon.",
+      "rewards": {
+        "xp": 1,
+        "money": 0
+      }
+    }
+  },
+  "topic": "Jojo's bizzare adventure"
+}
