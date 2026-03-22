@@ -1,0 +1,172 @@
+{
+  "id": "battle_demure_city_countryside_1734567890",
+  "setting": "suburb-day",
+  "character": "demure-lady",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "neutral",
+      "text": "Veerさん、こんにちは。私は町から来ました。",
+      "vocab": [
+        "町",
+        "来ました"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_demure_city_countryside_1734567890-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_city_countryside_1734567890-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to the lady's introduction",
+      "responses": {
+        "tier1": {
+          "prompt": "Short greeting",
+          "answer": "こんにちは どこから 来ました ですか",
+          "tokens": [
+            "こんにちは",
+            "どこから",
+            "来ました",
+            "ですか"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask about her hometown",
+          "answer": "あなたは どこから 来ましたか 町は どうですか",
+          "tokens": [
+            "あなたは",
+            "どこから",
+            "来ましたか",
+            "町は",
+            "どうですか"
+          ]
+        },
+        "tier3": {
+          "prompt": "Discuss the differences between city and countryside",
+          "answer": "町と 地方は どちらが いいと 思いますか 私は 町が 好きです",
+          "tokens": [
+            "町と",
+            "地方は",
+            "どちらが",
+            "いいと",
+            "思いますか",
+            "私は",
+            "町が",
+            "好きです"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "そうですね。私は町が好きです。Veerさんは？",
+      "vocab": [
+        "そうですね",
+        "好きです"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_demure_city_countryside_1734567890-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_city_countryside_1734567890-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Share your preference",
+      "responses": {
+        "tier1": {
+          "prompt": "Short response",
+          "answer": "私は 地方が 好きです なぜなら 自然が",
+          "tokens": [
+            "私は",
+            "地方が",
+            "好きです",
+            "なぜなら",
+            "自然が"
+          ]
+        },
+        "tier2": {
+          "prompt": "Explain your preference",
+          "answer": "私は 地方が 好きです なぜなら 自然が たくさん あります",
+          "tokens": [
+            "私は",
+            "地方が",
+            "好きです",
+            "なぜなら",
+            "自然が",
+            "たくさん",
+            "あります"
+          ]
+        },
+        "tier3": {
+          "prompt": "Discuss the pros and cons of each",
+          "answer": "町は 便利ですが 地方は 自然が たくさん あります 私は 両方を 楽しみたいです",
+          "tokens": [
+            "町は",
+            "便利ですが",
+            "地方は",
+            "自然が",
+            "たくさん",
+            "あります",
+            "私は",
+            "両方を",
+            "楽しみたいです"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "neutral",
+      "text": "なるほど。確かに両方を楽しむのはいいですね。",
+      "vocab": [
+        "なるほど",
+        "いいですね"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_demure_city_countryside_1734567890-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_city_countryside_1734567890-dialogue-audio3.mp3"
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "ありがとうございました。",
+      "result": "You had a nice conversation with the lady.",
+      "rewards": {
+        "xp": 100,
+        "money": 0
+      },
+      "audio": {
+        "key": "battle_demure_city_countryside_1734567890-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_city_countryside_1734567890-dialogue-audio4.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "sad",
+      "text": "残念でしたね。また話しましょう。",
+      "result": "You didn't quite connect with the lady.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    }
+  },
+  "topic": "City vs Countryside"
+}
