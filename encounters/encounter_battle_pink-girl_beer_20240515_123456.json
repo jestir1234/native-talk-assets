@@ -1,0 +1,315 @@
+{
+  "id": "battle_pink-girl_beer_20240515_123456",
+  "setting": "cafe-evening",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "あ！こんにちは、Mattさん！ 今日はなんか、ビールが飲みたいな〜って気分なんだ！ Mattさんはビール好き？",
+      "vocab": [
+        "こんにちは",
+        "ビール",
+        "好き",
+        "気分"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pink-girl_beer_20240515_123456-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_beer_20240515_123456-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You are asked if you like beer.",
+      "responses": {
+        "tier1": {
+          "prompt": "Yes, I do.",
+          "answer": "うん 好きだよ",
+          "tokens": [
+            "うん",
+            "好き",
+            "だよ"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yeah, I like it a lot! Especially the craft ones.",
+          "answer": "うん 大好きだよ 特に クラフトビール が",
+          "tokens": [
+            "うん",
+            "大好き",
+            "だよ",
+            "特に",
+            "クラフトビール",
+            "が"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yes, I really like it! Especially craft beers. The rich flavor is amazing.",
+          "answer": "うん 大好きだよ 特に クラフトビール の 豊かな風味がたまらないんだ",
+          "tokens": [
+            "うん",
+            "大好き",
+            "だよ",
+            "特に",
+            "クラフトビール",
+            "の",
+            "豊か",
+            "な",
+            "風味",
+            "が",
+            "たまらない",
+            "んだ"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "わーい！ Mattさんも好きなんですね！ 嬉しいな〜！ 日本のビールだと、どれが一番好きですか？ 私はね〜、ちょっとフルーティーなやつとか、苦すぎないのがいいんだ〜。",
+      "vocab": [
+        "嬉しい",
+        "日本",
+        "一番",
+        "フルーティー",
+        "苦い"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pink-girl_beer_20240515_123456-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_beer_20240515_123456-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You're asked about your favorite Japanese beer.",
+      "responses": {
+        "tier1": {
+          "prompt": "I like [beer name].",
+          "answer": "[ビール名] が 好きです",
+          "tokens": [
+            "[ビール名]",
+            "が",
+            "好き",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "I like [beer name] because it's refreshing.",
+          "answer": "[ビール名] は スッキリ していて 好きなんです",
+          "tokens": [
+            "[ビール名]",
+            "は",
+            "スッキリ",
+            "して",
+            "いて",
+            "好き",
+            "なんです"
+          ]
+        },
+        "tier3": {
+          "prompt": "My favorite Japanese beer is [beer name]. It has a really smooth taste and goes well with snacks.",
+          "answer": "私の一番好きな 日本のビール は [ビール名] です とても 飲みやすくて おつまみにも 合うんです",
+          "tokens": [
+            "私",
+            "の",
+            "一番",
+            "好き",
+            "な",
+            "日本",
+            "の",
+            "ビール",
+            "は",
+            "[ビール名]",
+            "です",
+            "とても",
+            "飲みやすい",
+            "くて",
+            "おつまみ",
+            "にも",
+            "合う",
+            "んです"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "へぇ〜、[ビール名]！ 名前、聞いたことあるかも！ Mattさんが好きなら、きっと美味しいんだろうな〜！ 今度、一緒に飲みたいな〜！",
+      "vocab": [
+        "名前",
+        "聞く",
+        "美味しい",
+        "今度",
+        "一緒"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pink-girl_beer_20240515_123456-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_beer_20240515_123456-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You're asked if you'd like to drink together sometime.",
+      "responses": {
+        "tier1": {
+          "prompt": "Sure, I'd love to!",
+          "answer": "うん ぜひ！",
+          "tokens": [
+            "うん",
+            "ぜひ",
+            "！"
+          ]
+        },
+        "tier2": {
+          "prompt": "That sounds great! When are you free?",
+          "answer": "いいですね いつか 予定が 合えば",
+          "tokens": [
+            "いい",
+            "です",
+            "ね",
+            "いつか",
+            "予定",
+            "が",
+            "合え",
+            "ば"
+          ]
+        },
+        "tier3": {
+          "prompt": "That sounds great! I'd love to go with you sometime when we're both free.",
+          "answer": "すごく いいです ぜひ 一緒に 行きたいです お互い 予定が 合う時",
+          "tokens": [
+            "すごく",
+            "いい",
+            "です",
+            "ぜひ",
+            "一緒",
+            "に",
+            "行きたい",
+            "です",
+            "お互い",
+            "予定",
+            "が",
+            "合う",
+            "時"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "やったー！ 楽しみにしてるね！ Mattさんの好きなビール、一緒に飲めるなんて、夢みたい！",
+      "vocab": [
+        "楽しみ",
+        "夢",
+        "みたい"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_pink-girl_beer_20240515_123456-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_beer_20240515_123456-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You express excitement about drinking together.",
+      "responses": {
+        "tier1": {
+          "prompt": "Me too!",
+          "answer": "私も！",
+          "tokens": [
+            "私",
+            "も",
+            "！"
+          ]
+        },
+        "tier2": {
+          "prompt": "I'm really looking forward to it!",
+          "answer": "私も すごく 楽しみに しています",
+          "tokens": [
+            "私",
+            "も",
+            "すごく",
+            "楽しみ",
+            "に",
+            "して",
+            "います"
+          ]
+        },
+        "tier3": {
+          "prompt": "I'm really looking forward to it! It feels like a dream to drink your favorite beer with you.",
+          "answer": "私も すごく 楽しみに しています Mattさんの 好きなビール を 一緒に 飲めるなんて 夢のようです",
+          "tokens": [
+            "私",
+            "も",
+            "すごく",
+            "楽しみ",
+            "に",
+            "して",
+            "います",
+            "Mattさん",
+            "の",
+            "好き",
+            "な",
+            "ビール",
+            "を",
+            "一緒",
+            "に",
+            "飲める",
+            "なんて",
+            "夢",
+            "の",
+            "よう",
+            "です"
+          ]
+        }
+      },
+      "next": "node_end"
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ふふ、私もだよ！ 今日は話せて嬉しかった！ またね〜！",
+      "result": "You and the pink-girl agree to go drinking together!",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      },
+      "audio": {
+        "key": "battle_pink-girl_beer_20240515_123456-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_beer_20240515_123456-dialogue-audio5.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "え〜、もう行っちゃうの？ 残念だな〜。",
+      "result": "The conversation ended prematurely.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    }
+  },
+  "topic": "Favorite Japanese beer"
+}
