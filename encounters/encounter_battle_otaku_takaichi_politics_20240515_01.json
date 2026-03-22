@@ -1,0 +1,377 @@
+{
+  "id": "battle_otaku_takaichi_politics_20240515_01",
+  "setting": "apartment-night",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "やあ Mattさん！ 今日は何の話する？ そうだな、最近の政治とかどう？ 例えば、高市早苗さんって、アメリカの言いなりなのかな〜って、ふと思ったんだよね。",
+      "vocab": [
+        "最近",
+        "政治",
+        "高市早苗",
+        "アメリカ",
+        "言いなり"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_otaku_takaichi_politics_20240515_01-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_takaichi_politics_20240515_01-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to the otaku-guy's question about Prime Minister Takaichi possibly following America's lead.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree with his thought.",
+          "answer": "そう思うよ",
+          "tokens": [
+            "そう",
+            "思う",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree and add that it's hard to tell.",
+          "answer": "そう思うけど、本当のところは分からないね",
+          "tokens": [
+            "そう",
+            "思う",
+            "けど",
+            "本当",
+            "の",
+            "ところ",
+            "は",
+            "分からない",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree, but wonder if she has her own ideas too.",
+          "answer": "そう思うけど、彼女自身の考えもあるんじゃないかな",
+          "tokens": [
+            "そう",
+            "思う",
+            "けど",
+            "彼女",
+            "自身",
+            "の",
+            "考え",
+            "も",
+            "ある",
+            "の",
+            "じゃ",
+            "ない",
+            "かな"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "うんうん、そうだよね！ 難しい問題だ。でも、やっぱり日本のことは日本が決めるべきだっていう意見もあるじゃない？",
+      "vocab": [
+        "難しい",
+        "問題",
+        "日本",
+        "決める",
+        "意見"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_otaku_takaichi_politics_20240515_01-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_takaichi_politics_20240515_01-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to the otaku-guy's statement about Japan deciding for itself.",
+      "responses": {
+        "tier1": {
+          "prompt": "That's right.",
+          "answer": "そうだね",
+          "tokens": [
+            "そう",
+            "だね"
+          ]
+        },
+        "tier2": {
+          "prompt": "That's right, it's important for sovereignty.",
+          "answer": "そうだね、主権にとって大事だ",
+          "tokens": [
+            "そう",
+            "だね",
+            "主権",
+            "に",
+            "とって",
+            "大事",
+            "だ"
+          ]
+        },
+        "tier3": {
+          "prompt": "That's right. Every country should act based on its own national interests.",
+          "answer": "そうだね、各国は自国の国益に基づいて行動すべきだよ",
+          "tokens": [
+            "そう",
+            "だね",
+            "各国",
+            "は",
+            "自国",
+            "の",
+            "国益",
+            "に",
+            "基づいて",
+            "行動",
+            "すべき",
+            "だよ"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "うん、わかる！ いやー、でもさ、外交って本当に複雑だよな〜。まあ、僕みたいなオタクには、コンビニメイトとアニメ鑑賞が一番落ち着くけどね。研究だよ、研究！",
+      "vocab": [
+        "外交",
+        "複雑",
+        "オタク",
+        "コンビニメイト",
+        "鑑賞"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_otaku_takaichi_politics_20240515_01-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_takaichi_politics_20240515_01-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask him about what he's researching.",
+      "responses": {
+        "tier1": {
+          "prompt": "Research what?",
+          "answer": "何の、研究？",
+          "tokens": [
+            "何",
+            "の",
+            "研究"
+          ]
+        },
+        "tier2": {
+          "prompt": "What are you researching? Is it about that topic?",
+          "answer": "何の、研究？ その話について？",
+          "tokens": [
+            "何",
+            "の",
+            "研究",
+            "その",
+            "話",
+            "について"
+          ]
+        },
+        "tier3": {
+          "prompt": "What are you researching? Is it related to international politics or something else?",
+          "answer": "何の、研究？ 国際政治のこととか？ それとも、別のこと？",
+          "tokens": [
+            "何",
+            "の",
+            "研究",
+            "国際政治",
+            "の",
+            "こと",
+            "とか",
+            "それ",
+            "と",
+            "も",
+            "別",
+            "の",
+            "こと"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "あはは！ Mattさん、鋭いね！ まあ、どっちもだよ。最近、新しいアニメで国際関係がテーマのがあってさ。それで、現実の政治とも比べてみたくて。タイムパフォーマンスってやつ？",
+      "vocab": [
+        "鋭い",
+        "新しい",
+        "アニメ",
+        "国際関係",
+        "テーマ"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_otaku_takaichi_politics_20240515_01-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_takaichi_politics_20240515_01-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to his mention of 'time performance'.",
+      "responses": {
+        "tier1": {
+          "prompt": "Time performance?",
+          "answer": "タイムパフォーマンス？",
+          "tokens": [
+            "タイムパフォーマンス"
+          ]
+        },
+        "tier2": {
+          "prompt": "Time performance? You mean like how much you get out of your time?",
+          "answer": "タイムパフォーマンス？ 時間の使い方のこと？",
+          "tokens": [
+            "タイムパフォーマンス",
+            "時間",
+            "の",
+            "使い方",
+            "の",
+            "こと"
+          ]
+        },
+        "tier3": {
+          "prompt": "Time performance? Like when you're gaming and time just melts away, you want to maximize that feeling?",
+          "answer": "タイムパフォーマンス？ ゲームしてると時間が溶けるみたいに、その感覚を最大化したいってこと？",
+          "tokens": [
+            "タイムパフォーマンス",
+            "ゲーム",
+            "して",
+            "いる",
+            "と",
+            "時間",
+            "が",
+            "溶ける",
+            "みたい",
+            "に",
+            "その",
+            "感覚",
+            "を",
+            "最大化",
+            "したい",
+            "って",
+            "こと"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "そうそう、Mattさん、わかってる〜！ まさにそんな感じ！ アニメもゲームも、一度始めると時間の感覚なくなるんだよね。あー、また見たいアニメ溜まってきたな。",
+      "vocab": [
+        "まさに",
+        "感覚",
+        "溜まる",
+        "アニメ",
+        "ゲーム"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_otaku_takaichi_politics_20240515_01-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_takaichi_politics_20240515_01-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Suggest watching something together.",
+      "responses": {
+        "tier1": {
+          "prompt": "Let's watch something together.",
+          "answer": "一緒に、見ようよ",
+          "tokens": [
+            "一緒",
+            "に",
+            "見",
+            "よう",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "We could watch something together sometime, if you want.",
+          "answer": "もしよかったら、いつか一緒に、見ようよ",
+          "tokens": [
+            "もし",
+            "よかったら",
+            "いつか",
+            "一緒",
+            "に",
+            "見",
+            "よう",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "If you're not busy, we could watch that new anime together sometime, I'm curious too.",
+          "answer": "もし、忙しくなかったら、今度その新しいアニメ、一緒に見ない？ 僕も気になるんだ",
+          "tokens": [
+            "もし",
+            "忙しく",
+            "なかったら",
+            "今度",
+            "その",
+            "新しい",
+            "アニメ",
+            "一緒",
+            "に",
+            "見",
+            "ない",
+            "僕",
+            "も",
+            "気になる",
+            "んだ"
+          ]
+        }
+      },
+      "next": "node_end_success"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "annoyed",
+      "text": "えー、もう終わり？ まだ話したいこといっぱいあったのに。まあ、また今度ね！",
+      "result": "The conversation ended abruptly.",
+      "rewards": {
+        "xp": 5,
+        "money": 10
+      }
+    },
+    "node_end_success": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "やったー！ Mattさんとアニメ鑑賞！ 最高だよ！ また今度、色々語り合おうね！",
+      "result": "You successfully bonded over anime and politics research!",
+      "rewards": {
+        "xp": 20,
+        "money": 50
+      },
+      "audio": {
+        "key": "battle_otaku_takaichi_politics_20240515_01-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_takaichi_politics_20240515_01-dialogue-audio6.mp3"
+      }
+    }
+  },
+  "topic": "Is prime minister sanae takaichi just following America's direction?"
+}
