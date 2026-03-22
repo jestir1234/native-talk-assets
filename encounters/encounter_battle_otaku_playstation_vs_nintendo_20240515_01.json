@@ -1,0 +1,334 @@
+{
+  "id": "battle_otaku_playstation_vs_nintendo_20240515_01",
+  "setting": "apartment-night",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "neutral",
+      "text": "やあ！ Mattさん、いらっしゃい！ 今日は何の話をしようかな。そういえば、最近ゲーム機で悩んでるんだよね。",
+      "vocab": [
+        "ゲーム機",
+        "悩んでる",
+        "話"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about his dilemma.",
+      "responses": {
+        "tier1": {
+          "prompt": "What are you thinking about?",
+          "answer": "何について考えてるんだ？",
+          "tokens": [
+            "何",
+            "について",
+            "考えてる",
+            "んだ"
+          ]
+        },
+        "tier2": {
+          "prompt": "What is this dilemma you're thinking about?",
+          "answer": "それはどんな悩みについて考えてるんだ？",
+          "tokens": [
+            "それ",
+            "は",
+            "どんな",
+            "悩み",
+            "について",
+            "考えてる",
+            "んだ"
+          ]
+        },
+        "tier3": {
+          "prompt": "What specific dilemma are you thinking about right now?",
+          "answer": "今、どんな悩みについて考えてるんだ？",
+          "tokens": [
+            "今",
+            "どんな",
+            "悩み",
+            "について",
+            "考えてる",
+            "んだ"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "うん、実はさ、PlayStationかNintendoかっていう、永遠のテーマでさ。どっちも捨てがたいんだよね。",
+      "vocab": [
+        "永遠",
+        "テーマ",
+        "捨てがたい"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask him why he's torn.",
+      "responses": {
+        "tier1": {
+          "prompt": "Why are you so torn?",
+          "answer": "なんでそんなに悩んでるの？",
+          "tokens": [
+            "なんで",
+            "そんなに",
+            "悩んでる",
+            "の"
+          ]
+        },
+        "tier2": {
+          "prompt": "Why are you so torn between the two?",
+          "answer": "なんでその二つでそんなに悩んでるの？",
+          "tokens": [
+            "なんで",
+            "その",
+            "二つ",
+            "で",
+            "そんなに",
+            "悩んでる",
+            "の"
+          ]
+        },
+        "tier3": {
+          "prompt": "Could you tell me why you are so torn between those two options?",
+          "answer": "その二つでなんでそんなに悩んでるのか、教えてくれる？",
+          "tokens": [
+            "その",
+            "二つ",
+            "で",
+            "なんで",
+            "そんなに",
+            "悩んでる",
+            "の",
+            "か",
+            "教えて",
+            "くれる"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "だよなー！ PlayStationだと、やっぱりグラフィックがすごいし、AAAタイトルが豊富なんだよ。まるで映画みたい！",
+      "vocab": [
+        "グラフィック",
+        "豊富",
+        "映画"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree and mention Nintendo.",
+      "responses": {
+        "tier1": {
+          "prompt": "That's true, but Nintendo has its own charm.",
+          "answer": "確かに。でも任天堂にも良さがあるよ。",
+          "tokens": [
+            "確かに",
+            "でも",
+            "任天堂",
+            "に",
+            "も",
+            "良さ",
+            "が",
+            "ある",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "That's true. But Nintendo has its own unique charm too.",
+          "answer": "確かに。でも任天堂にも独自の良さがあるよ。",
+          "tokens": [
+            "確かに",
+            "でも",
+            "任天堂",
+            "に",
+            "も",
+            "独自",
+            "の",
+            "良さ",
+            "が",
+            "ある",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "That's true. But Nintendo also has its own unique charm, especially with its exclusive games.",
+          "answer": "確かに。でも任天堂にも独自の良さがあるよ。特に、あの独占タイトルとかね。",
+          "tokens": [
+            "確かに",
+            "でも",
+            "任天堂",
+            "に",
+            "も",
+            "独自",
+            "の",
+            "良さ",
+            "が",
+            "ある",
+            "よ",
+            "特に",
+            "あの",
+            "独占",
+            "タイトル",
+            "とかね"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "ああ、わかる！ Nintendoはやっぱり、マリオとかゼルダとか、あの独特の世界観がたまらないんだよ。家族で遊ぶにもぴったりだし。",
+      "vocab": [
+        "独特",
+        "世界観",
+        "家族"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask him which he leans towards.",
+      "responses": {
+        "tier1": {
+          "prompt": "So which one do you lean towards?",
+          "answer": "で、どっちに傾いてるの？",
+          "tokens": [
+            "で",
+            "どっち",
+            "に",
+            "傾いてる",
+            "の"
+          ]
+        },
+        "tier2": {
+          "prompt": "So, between the two, which one are you currently leaning towards?",
+          "answer": "で、その二つで、どっちに今傾いてるの？",
+          "tokens": [
+            "で",
+            "その",
+            "二つ",
+            "で",
+            "どっち",
+            "に",
+            "今",
+            "傾いてる",
+            "の"
+          ]
+        },
+        "tier3": {
+          "prompt": "So, between the PlayStation and Nintendo, which one are you currently leaning towards buying?",
+          "answer": "で、PlayStationとNintendoで、どっちに今傾いてるの？",
+          "tokens": [
+            "で",
+            "PlayStation",
+            "と",
+            "Nintendo",
+            "で",
+            "どっち",
+            "に",
+            "今",
+            "傾いてる",
+            "の"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "うーん、それがさ、どっちも欲しいんだよね。最近のゲームって、ほんとすごいから。今度出る新作も気になるし。",
+      "vocab": [
+        "欲しい",
+        "新作",
+        "気になる"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "でも、こうやってMattさんと話してたら、どっちの魅力も再確認できたよ。ありがとう！",
+      "vocab": [
+        "魅力",
+        "再確認"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio6.mp3"
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "うん、またいつでもゲームの話しようね！",
+      "result": "You helped the otaku-guy reflect on his gaming choices. He seems happy!",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      },
+      "audio": {
+        "key": "battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_playstation_vs_nintendo_20240515_01-dialogue-audio7.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "annoyed",
+      "text": "あれ？ 話聞く気ない？...",
+      "result": "The otaku-guy seems disappointed. Try again!",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    }
+  },
+  "topic": "PlayStation vs Nintendo"
+}
