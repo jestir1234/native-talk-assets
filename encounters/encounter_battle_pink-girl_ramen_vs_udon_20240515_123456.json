@@ -1,0 +1,407 @@
+{
+  "id": "battle_pink-girl_ramen_vs_udon_20240515_123456",
+  "setting": "downtown-evening",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わーい！今日はマットさん（Mattさん）と遊べるんだ！嬉しいな〜！ねえねえ、ラーメンと、うどん、どっちが好き？",
+      "vocab": [
+        "遊べる",
+        "嬉しい",
+        "ラーメン",
+        "うどん",
+        "好き"
+      ],
+      "next": "node_2",
+      "nextOnMaxMeter": "node_5_happy",
+      "audio": {
+        "key": "battle_pink-girl_ramen_vs_udon_20240515_123456-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_ramen_vs_udon_20240515_123456-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Answer the question: Ramen or Udon?",
+      "responses": {
+        "tier1": {
+          "prompt": "Ramen!",
+          "answer": "ラーメン が 好き です",
+          "tokens": [
+            "ラーメン",
+            "が",
+            "好き",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "I like ramen, it's so delicious and hot!",
+          "answer": "ラーメン が 好き です とっても 美味しい そして 熱い",
+          "tokens": [
+            "ラーメン",
+            "が",
+            "好き",
+            "です",
+            "とっても",
+            "美味しい",
+            "そして",
+            "熱い"
+          ]
+        },
+        "tier3": {
+          "prompt": "I like ramen because the broth is rich and the noodles are chewy, it's the best!",
+          "answer": "ラーメン が 好き です スープ が 濃厚 で 麺 が もちもち していて 最高 です",
+          "tokens": [
+            "ラーメン",
+            "が",
+            "好き",
+            "です",
+            "スープ",
+            "が",
+            "濃厚",
+            "で",
+            "麺",
+            "が",
+            "もちもち",
+            "していて",
+            "最高",
+            "です"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "やっぱりラーメン派なんだね！美味しいスープに、あのツルツル〜って喉越しがいいよね！あ〜、なんか急にお腹空いてきちゃった！",
+      "vocab": [
+        "やっぱり",
+        "派",
+        "美味しい",
+        "スープ",
+        "喉越し",
+        "空いてきた"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pink-girl_ramen_vs_udon_20240515_123456-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_ramen_vs_udon_20240515_123456-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask her what she wants to eat.",
+      "responses": {
+        "tier1": {
+          "prompt": "What do you want to eat?",
+          "answer": "何 が 食べたい です か",
+          "tokens": [
+            "何",
+            "が",
+            "食べたい",
+            "です",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "What do you want to eat? I'm hungry too!",
+          "answer": "何 が 食べたい です か 私 も お腹 が 空いた",
+          "tokens": [
+            "何",
+            "が",
+            "食べたい",
+            "です",
+            "か",
+            "私",
+            "も",
+            "お腹",
+            "が",
+            "空いた"
+          ]
+        },
+        "tier3": {
+          "prompt": "What do you want to eat? I could go for some ramen or maybe udon!",
+          "answer": "何 が 食べたい です か ラーメン でも うどん でも いい です よ",
+          "tokens": [
+            "何",
+            "が",
+            "食べたい",
+            "です",
+            "か",
+            "ラーメン",
+            "でも",
+            "うどん",
+            "でも",
+            "いい",
+            "です",
+            "よ"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "thinking",
+      "text": "うーん、どっちも捨てがたいなぁ。でも、今日はなんか、あったかいお出汁のうどんが食べたい気分かも！",
+      "vocab": [
+        "捨てがたい",
+        "あったかい",
+        "お出汁",
+        "気分"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pink-girl_ramen_vs_udon_20240515_123456-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_ramen_vs_udon_20240515_123456-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Agree and suggest going to an udon shop.",
+      "responses": {
+        "tier1": {
+          "prompt": "Udon sounds good!",
+          "answer": "うどん が いい です ね",
+          "tokens": [
+            "うどん",
+            "が",
+            "いい",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Udon sounds good! Let's go to an udon shop!",
+          "answer": "うどん が いい です ね うどん屋 さん に 行き ましょう",
+          "tokens": [
+            "うどん",
+            "が",
+            "いい",
+            "です",
+            "ね",
+            "うどん屋",
+            "さん",
+            "に",
+            "行き",
+            "ましょう"
+          ]
+        },
+        "tier3": {
+          "prompt": "Udon sounds good! I know a great udon shop nearby, let's go!",
+          "answer": "うどん が いい です ね 近所 に 美味しい うどん屋 さん が あります よ 行き ましょう",
+          "tokens": [
+            "うどん",
+            "が",
+            "いい",
+            "です",
+            "ね",
+            "近所",
+            "に",
+            "美味しい",
+            "うどん屋",
+            "さん",
+            "が",
+            "あります",
+            "よ",
+            "行き",
+            "ましょう"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "やったー！ Mattさん（Mattさん）と一緒なら、うどんもきっと美味しいんだろうな〜！",
+      "vocab": [
+        "一緒",
+        "きっと",
+        "美味しい",
+        "だろう"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_pink-girl_ramen_vs_udon_20240515_123456-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_ramen_vs_udon_20240515_123456-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Express excitement for the meal.",
+      "responses": {
+        "tier1": {
+          "prompt": "I'm looking forward to it!",
+          "answer": "楽しみ です",
+          "tokens": [
+            "楽しみ",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "I'm looking forward to eating with you!",
+          "answer": "Mattさん（Mattさん）と 一緒 に 食べる の が 楽しみ です",
+          "tokens": [
+            "Mattさん",
+            "と",
+            "一緒",
+            "に",
+            "食べる",
+            "の",
+            "が",
+            "楽しみ",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "I'm looking forward to eating with you, I'm so hungry!",
+          "answer": "Mattさん（Mattさん）と 一緒 に 食べる の が 楽しみ です お腹 が ペコペコ です",
+          "tokens": [
+            "Mattさん",
+            "と",
+            "一緒",
+            "に",
+            "食べる",
+            "の",
+            "が",
+            "楽しみ",
+            "です",
+            "お腹",
+            "が",
+            "ペコペコ",
+            "です"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "ふふ、嬉しい！早く行こうね！",
+      "vocab": [
+        "嬉しい",
+        "早く",
+        "行こう"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_pink-girl_ramen_vs_udon_20240515_123456-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_ramen_vs_udon_20240515_123456-dialogue-audio5.mp3"
+      }
+    },
+    "node_5_happy": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わーい！ Mattさん（Mattさん）、ありがとう！",
+      "vocab": [
+        "ありがとう"
+      ],
+      "next": "node_10_followup"
+    },
+    "node_10_followup": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask her what kind of udon she likes.",
+      "responses": {
+        "tier1": {
+          "prompt": "What kind of udon do you like?",
+          "answer": "どんな うどん が 好き です か",
+          "tokens": [
+            "どんな",
+            "うどん",
+            "が",
+            "好き",
+            "です",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of udon do you like? I like kitsune udon!",
+          "answer": "どんな うどん が 好き です か 私は きつねうどん が 好き です",
+          "tokens": [
+            "どんな",
+            "うどん",
+            "が",
+            "好き",
+            "です",
+            "か",
+            "私",
+            "は",
+            "きつねうどん",
+            "が",
+            "好き",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "What kind of udon do you like? I like warm udon with lots of toppings!",
+          "answer": "どんな うどん が 好き です か 温かい うどんで 具 が たくさん 乗っている の が 好き です",
+          "tokens": [
+            "どんな",
+            "うどん",
+            "が",
+            "好き",
+            "です",
+            "か",
+            "温かい",
+            "うどん",
+            "で",
+            "具",
+            "が",
+            "たくさん",
+            "乗っている",
+            "の",
+            "が",
+            "好き",
+            "です"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "あれ？もう行っちゃうの？また遊ぼうね…！",
+      "result": "Matt (Matt) was too quiet and the conversation ended. Try to be more engaging next time!",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ふふ、楽しみ！",
+      "result": "Matt (Matt) and the pink-girl agreed to go eat udon!",
+      "rewards": {
+        "xp": 50,
+        "money": 50
+      },
+      "audio": {
+        "key": "battle_pink-girl_ramen_vs_udon_20240515_123456-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_pink-girl_ramen_vs_udon_20240515_123456-dialogue-audio6.mp3"
+      }
+    }
+  },
+  "topic": "Ramen vs Udon"
+}
