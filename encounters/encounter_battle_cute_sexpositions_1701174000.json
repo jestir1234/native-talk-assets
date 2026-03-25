@@ -1,0 +1,311 @@
+{
+  "id": "battle_cute_sexpositions_1701174000",
+  "setting": "apartment-evening",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "やっほー、Mattさん！ 今日はお部屋でまったりしてるんだ♪",
+      "vocab": [
+        "やっほー",
+        "部屋",
+        "まったり"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_cute_sexpositions_1701174000-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_cute_sexpositions_1701174000-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "How do you feel about staying in tonight?",
+      "responses": {
+        "tier1": {
+          "prompt": "You're happy to relax.",
+          "answer": "嬉しいよ",
+          "tokens": [
+            "嬉しい",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "You're happy to relax and you're comfortable.",
+          "answer": "嬉しいよ くつろいでいるよ",
+          "tokens": [
+            "嬉しい",
+            "よ",
+            "くつろいでいる",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "You're happy to relax and you're comfortable at home, it's the best!",
+          "answer": "嬉しいよ くつろいでいるよ 家で これが一番だね",
+          "tokens": [
+            "嬉しい",
+            "よ",
+            "くつろいでいる",
+            "よ",
+            "家",
+            "で",
+            "これ",
+            "が",
+            "一番",
+            "だね"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "そうだね〜、なんか今日はいろんなこと考えちゃって。Mattさんは、どんな体勢が好き？",
+      "vocab": [
+        "体勢",
+        "好き"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_cute_sexpositions_1701174000-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_cute_sexpositions_1701174000-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to the question about favorite positions.",
+      "responses": {
+        "tier1": {
+          "prompt": "You like comfortable positions.",
+          "answer": "楽なのが好き",
+          "tokens": [
+            "楽",
+            "な",
+            "の",
+            "が",
+            "好き"
+          ]
+        },
+        "tier2": {
+          "prompt": "You like comfortable positions, especially ones that are intimate.",
+          "answer": "楽なのが好き 親密なのが好き",
+          "tokens": [
+            "楽",
+            "な",
+            "の",
+            "が",
+            "好き",
+            "親密",
+            "な",
+            "の",
+            "が",
+            "好き"
+          ]
+        },
+        "tier3": {
+          "prompt": "You like comfortable positions, especially ones that are intimate and we can be close.",
+          "answer": "楽なのが好き 親密なのが好き 近くにいられるのが好き",
+          "tokens": [
+            "楽",
+            "な",
+            "の",
+            "が",
+            "好き",
+            "親密",
+            "な",
+            "の",
+            "が",
+            "好き",
+            "近く",
+            "に",
+            "いられる",
+            "の",
+            "が",
+            "好き"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "へぇ〜、Mattさん、そういうのも気にするんだ！ 私はね、ぎゅーってくっつけたり、見つめ合ったりできるのが好きだな〜。",
+      "vocab": [
+        "ぎゅー",
+        "くっつく",
+        "見つめ合う"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_cute_sexpositions_1701174000-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_cute_sexpositions_1701174000-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about her preferences further.",
+      "responses": {
+        "tier1": {
+          "prompt": "What else do you like?",
+          "answer": "他には？",
+          "tokens": [
+            "他",
+            "に",
+            "は",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "What else do you like? Maybe something more adventurous?",
+          "answer": "他には？ もっと冒険的なのは？",
+          "tokens": [
+            "他",
+            "に",
+            "は",
+            "？",
+            "もっと",
+            "冒険的",
+            "な",
+            "の",
+            "は",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "What else do you like? Maybe something more adventurous, like on the floor?",
+          "answer": "他には？ もっと冒険的なのは？ 例えば床とか？",
+          "tokens": [
+            "他",
+            "に",
+            "は",
+            "？",
+            "もっと",
+            "冒険的",
+            "な",
+            "の",
+            "は",
+            "？",
+            "例えば",
+            "床",
+            "とか",
+            "？"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "え〜！ Mattさん、積極的だね！ うーん、そうだな〜。なんか、ちょっと変わった体勢も試してみたいかも。",
+      "vocab": [
+        "積極的",
+        "変わった",
+        "試してみたい"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_cute_sexpositions_1701174000-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_cute_sexpositions_1701174000-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Suggest trying something new together.",
+      "responses": {
+        "tier1": {
+          "prompt": "Let's try together.",
+          "answer": "一緒に試そう",
+          "tokens": [
+            "一緒に",
+            "試そう"
+          ]
+        },
+        "tier2": {
+          "prompt": "Let's try together, I'll help you.",
+          "answer": "一緒に試そう 手伝うよ",
+          "tokens": [
+            "一緒に",
+            "試そう",
+            "手伝う",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Let's try together, I'll help you and we can find our favorites.",
+          "answer": "一緒に試そう 手伝うよ お互いの好きなの 見つけよう",
+          "tokens": [
+            "一緒に",
+            "試そう",
+            "手伝う",
+            "よ",
+            "お互い",
+            "の",
+            "好き",
+            "な",
+            "の",
+            "見つけよう"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "わぁ、Mattさん、ドキドキしちゃう！ うん、いいよ！ 今日はMattさんと、特別な夜にしちゃおっかな♪",
+      "vocab": [
+        "ドキドキ",
+        "特別",
+        "夜"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_cute_sexpositions_1701174000-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_cute_sexpositions_1701174000-dialogue-audio5.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "うーん、Mattさん、ちょっと残念だな…また今度、お話ししようね。",
+      "result": "Conversation ended unfavorably. Try again!",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ふふ、Mattさんとのお話、とっても楽しかった！ またすぐ会いたいな♪",
+      "result": "Conversation ended successfully. You made a connection!",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      },
+      "audio": {
+        "key": "battle_cute_sexpositions_1701174000-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_cute_sexpositions_1701174000-dialogue-audio6.mp3"
+      }
+    }
+  },
+  "topic": "What sex positions do you like?"
+}
