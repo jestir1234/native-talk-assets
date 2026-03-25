@@ -1,0 +1,370 @@
+{
+  "id": "battle_confession_love_pinkgirl_20240601_123456",
+  "setting": "park-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "Mattさん、こんにちは！ 今日はね、すっごくいい天気だから、公園でまったりしようと思って！",
+      "vocab": [
+        "天気",
+        "公園",
+        "まったり"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_confession_love_pinkgirl_20240601_123456-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_love_pinkgirl_20240601_123456-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to her cheerful greeting about the nice weather and park.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree about the weather.",
+          "answer": "本当に いい 天気 だね",
+          "tokens": [
+            "本当に",
+            "いい",
+            "天気",
+            "だね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree about the weather and suggest doing something fun.",
+          "answer": "本当 に いい 天気 だから 公園 で 何か 楽しい こと しよう よ",
+          "tokens": [
+            "本当に",
+            "いい",
+            "天気",
+            "だから",
+            "公園",
+            "で",
+            "何か",
+            "楽しい",
+            "こと",
+            "しよう",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree enthusiastically about the weather and suggest a fun activity, mentioning how good it is to be outside.",
+          "answer": "本当 に いい 天気 だね 公園 で 何か 楽しい こと しよう よ 外 で 遊ぶ のは 最高 だ ね",
+          "tokens": [
+            "本当に",
+            "いい",
+            "天気",
+            "だね",
+            "公園",
+            "で",
+            "何か",
+            "楽しい",
+            "こと",
+            "しよう",
+            "よ",
+            "外",
+            "で",
+            "遊ぶ",
+            "の",
+            "は",
+            "最高",
+            "だ",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "うん！ Mattさんとなら、どこでも楽しいけどね！ なんかね、今日、Mattさんに話したいことがあったんだ。",
+      "vocab": [
+        "どこでも",
+        "話したい"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_confession_love_pinkgirl_20240601_123456-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_love_pinkgirl_20240601_123456-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She seems to have something important to say. Ask what it is.",
+      "responses": {
+        "tier1": {
+          "prompt": "What is it?",
+          "answer": "何？",
+          "tokens": [
+            "何？"
+          ]
+        },
+        "tier2": {
+          "prompt": "What do you want to tell me?",
+          "answer": "私に 何を 話したい の？",
+          "tokens": [
+            "私に",
+            "何",
+            "を",
+            "話したい",
+            "の？"
+          ]
+        },
+        "tier3": {
+          "prompt": "You said you want to tell me something. What is it, I'm curious!",
+          "answer": "話したい こと が あるって、 何？ すごく 気 に なる！",
+          "tokens": [
+            "話したい",
+            "こと",
+            "が",
+            "あるって",
+            "何？",
+            "すごく",
+            "気",
+            "に",
+            "なる！"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "あのね… Mattさん、私、Mattさんのこと… 好きになっちゃったみたい…！",
+      "vocab": [
+        "好き",
+        "みたい"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_confession_love_pinkgirl_20240601_123456-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_love_pinkgirl_20240601_123456-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She's confessed! React to her confession.",
+      "responses": {
+        "tier1": {
+          "prompt": "What?!",
+          "answer": "えっ！",
+          "tokens": [
+            "えっ！"
+          ]
+        },
+        "tier2": {
+          "prompt": "You… like me?",
+          "answer": "私 の こと… 好き？",
+          "tokens": [
+            "私",
+            "の",
+            "こと",
+            "…",
+            "好き？"
+          ]
+        },
+        "tier3": {
+          "prompt": "You like me? That's surprising, but also… I think I like you too!",
+          "answer": "私の こと 好き？ びっくりだけど… 私も 好きかも！",
+          "tokens": [
+            "私",
+            "の",
+            "こと",
+            "好き？",
+            "びっくり",
+            "だけど",
+            "…",
+            "私も",
+            "好き",
+            "かも！"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ほんと！？ やったー！ Mattさんも、私のこと好きなら、これから、もっといっぱいデートしてほしいな！",
+      "vocab": [
+        "デート",
+        "いっぱい"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_confession_love_pinkgirl_20240601_123456-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_love_pinkgirl_20240601_123456-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She wants to go on dates. Agree to more dates.",
+      "responses": {
+        "tier1": {
+          "prompt": "Let's go on dates!",
+          "answer": "デート しよう！",
+          "tokens": [
+            "デート",
+            "しよう！"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yes, I want to go on many dates with you too!",
+          "answer": "うん、 私も 君と たくさん デート したい！",
+          "tokens": [
+            "うん",
+            "私",
+            "も",
+            "君",
+            "と",
+            "たくさん",
+            "デート",
+            "したい！"
+          ]
+        },
+        "tier3": {
+          "prompt": "Of course! I want to go on many, many dates with you, my favorite person!",
+          "answer": "もちろんだよ！ 大好きな 君と たくさん たくさん デート したいな！",
+          "tokens": [
+            "もちろん",
+            "だ",
+            "よ！",
+            "大好き",
+            "な",
+            "君",
+            "と",
+            "たくさん",
+            "たくさん",
+            "デート",
+            "したい",
+            "な！"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "うふふ、嬉しい！ じゃあ、今日のデートは、まず何する？",
+      "vocab": [
+        "嬉しい",
+        "今日"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_confession_love_pinkgirl_20240601_123456-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_love_pinkgirl_20240601_123456-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Suggest something for your date.",
+      "responses": {
+        "tier1": {
+          "prompt": "Let's get some ice cream.",
+          "answer": "アイスクリーム 食べよう",
+          "tokens": [
+            "アイスクリーム",
+            "食べよう"
+          ]
+        },
+        "tier2": {
+          "prompt": "How about we get some ice cream and then walk around the park?",
+          "answer": "アイスクリーム を 買って 公園 を 散歩 する のは どう？",
+          "tokens": [
+            "アイスクリーム",
+            "を",
+            "買って",
+            "公園",
+            "を",
+            "散歩",
+            "する",
+            "の",
+            "は",
+            "どう？"
+          ]
+        },
+        "tier3": {
+          "prompt": "Let's get some delicious ice cream and then take lots of cute photos around the park!",
+          "answer": "美味しい アイスクリーム を 買って 公園 の 周り で たくさん 可愛い 写真 を 撮ろう！",
+          "tokens": [
+            "美味しい",
+            "アイスクリーム",
+            "を",
+            "買って",
+            "公園",
+            "の",
+            "周り",
+            "で",
+            "たくさん",
+            "可愛い",
+            "写真",
+            "を",
+            "撮ろう！"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わーい！ アイスクリームも写真も大好き！ Mattさんと一緒なら、何でも楽しいね！",
+      "vocab": [
+        "大好き",
+        "楽しい"
+      ],
+      "next": "node_end_success",
+      "audio": {
+        "key": "battle_confession_love_pinkgirl_20240601_123456-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_love_pinkgirl_20240601_123456-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "そっか… ちょっと残念だけど、また今度ね！",
+      "result": "You didn't quite connect with her.",
+      "rewards": {
+        "xp": 5,
+        "money": 10
+      }
+    },
+    "node_end_success": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "今日、Mattさんに気持ちを伝えられて、本当に良かった！ これから、よろしくね！",
+      "result": "She's happy you reciprocated her feelings!",
+      "rewards": {
+        "xp": 50,
+        "money": 100
+      },
+      "audio": {
+        "key": "battle_confession_love_pinkgirl_20240601_123456-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_love_pinkgirl_20240601_123456-dialogue-audio7.mp3"
+      }
+    }
+  },
+  "topic": "Confessing her love to you"
+}
