@@ -1,0 +1,305 @@
+{
+  "id": "battle_confession_pink_girl_1702704000",
+  "setting": "park-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ねえ、Mattさん！今日はお天気も良くて、なんだか気分がいいな！Mattさんは元気？",
+      "vocab": [
+        "天気",
+        "気分",
+        "元気"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_confession_pink_girl_1702704000-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_pink_girl_1702704000-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Reply to her asking how she is.",
+      "responses": {
+        "tier1": {
+          "prompt": "I'm good too!",
+          "answer": "私も元気だよ",
+          "tokens": [
+            "私",
+            "も",
+            "元気",
+            "だよ"
+          ]
+        },
+        "tier2": {
+          "prompt": "I'm good too! And you look cute today.",
+          "answer": "私も元気だよ、今日かわいいね",
+          "tokens": [
+            "私",
+            "も",
+            "元気",
+            "だよ",
+            "今日",
+            "かわいい",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "I'm good too! And you look cute today, as usual. You always have such a nice vibe.",
+          "answer": "私も元気だよ、今日いつも通りかわいいね、いつもいい雰囲気持ってるね",
+          "tokens": [
+            "私",
+            "も",
+            "元気",
+            "だよ",
+            "今日",
+            "いつも",
+            "通り",
+            "かわいい",
+            "ね",
+            "いつも",
+            "いい",
+            "雰囲気",
+            "持ってる",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "えへへ、ありがとう！Mattさんにそう言われると、なんかドキドキしちゃうな…。あのね、今日、Mattさんに言いたいことがあって、勇気を出して声かけたんだ。",
+      "vocab": [
+        "ドキドキ",
+        "勇気",
+        "声かけ"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_confession_pink_girl_1702704000-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_pink_girl_1702704000-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "React to her saying she has something to tell you.",
+      "responses": {
+        "tier1": {
+          "prompt": "What is it?",
+          "answer": "何かな？",
+          "tokens": [
+            "何",
+            "かな"
+          ]
+        },
+        "tier2": {
+          "prompt": "What is it? I'm curious.",
+          "answer": "何かな？気になるな",
+          "tokens": [
+            "何",
+            "かな",
+            "気",
+            "になる",
+            "な"
+          ]
+        },
+        "tier3": {
+          "prompt": "What is it? I'm really curious! Is it about that cute sticker collection?",
+          "answer": "何かな？すごく気になる！あの可愛いシール集まりのことかな？",
+          "tokens": [
+            "何",
+            "かな",
+            "すごく",
+            "気",
+            "になる",
+            "あの",
+            "可愛い",
+            "シール",
+            "集まり",
+            "の",
+            "こと",
+            "かな"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "shy",
+      "text": "ううん、シールも大好きだけど…それは、もっと、こう…Mattさんのことなんだ。あのね、Mattさんのこと、ずっと友達として見てたんだけど、最近、なんか違う気持ちになっちゃったんだ。",
+      "vocab": [
+        "友達",
+        "最近",
+        "気持ち"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_confession_pink_girl_1702704000-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_pink_girl_1702704000-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to her changing feelings.",
+      "responses": {
+        "tier1": {
+          "prompt": "Different feelings?",
+          "answer": "違う気持ち？",
+          "tokens": [
+            "違う",
+            "気持ち"
+          ]
+        },
+        "tier2": {
+          "prompt": "Different feelings? What kind of feelings?",
+          "answer": "違う気持ち？どんな気持ち？",
+          "tokens": [
+            "違う",
+            "気持ち",
+            "どんな",
+            "気持ち"
+          ]
+        },
+        "tier3": {
+          "prompt": "Different feelings? What kind of feelings? Are you serious?",
+          "answer": "違う気持ち？どんな気持ち？本気？",
+          "tokens": [
+            "違う",
+            "気持ち",
+            "どんな",
+            "気持ち",
+            "本気"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "うん、本気だよ。Mattさんの、優しいところとか、一生懸命なところとか、あと、時々見せるちょっと照れた顔とか、全部がすごく好きになっちゃったの。あのね、Mattさんのこと、恋愛対象として意識してるんだ。つまり…Mattさんのことが、好きです！",
+      "vocab": [
+        "優しい",
+        "一生懸命",
+        "恋愛",
+        "意識"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_confession_pink_girl_1702704000-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_pink_girl_1702704000-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "React to her confession.",
+      "responses": {
+        "tier1": {
+          "prompt": "I like you too!",
+          "answer": "僕も好きだよ！",
+          "tokens": [
+            "僕",
+            "も",
+            "好き",
+            "だよ"
+          ]
+        },
+        "tier2": {
+          "prompt": "I like you too! Thank you for telling me.",
+          "answer": "僕も好きだよ！伝えてくれてありがとう",
+          "tokens": [
+            "僕",
+            "も",
+            "好き",
+            "だよ",
+            "伝え",
+            "て",
+            "くれ",
+            "て",
+            "ありがとう"
+          ]
+        },
+        "tier3": {
+          "prompt": "I like you too! Thank you for telling me. I've been wanting to say this for a while.",
+          "answer": "僕も好きだよ！伝えてくれてありがとう、ずっと言いたかったんだ",
+          "tokens": [
+            "僕",
+            "も",
+            "好き",
+            "だよ",
+            "伝え",
+            "て",
+            "くれ",
+            "て",
+            "ありがとう",
+            "ずっと",
+            "言いたかった",
+            "ん",
+            "だ"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ええーっ！本当！？嬉しい！私、Mattさんみたいな彼氏がいたら、毎日すごく楽しいだろうなってずっと思ってたんだ！",
+      "vocab": [
+        "本当",
+        "嬉しい",
+        "毎日",
+        "彼氏",
+        "楽しい"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_confession_pink_girl_1702704000-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_pink_girl_1702704000-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "やったー！Mattさんとお付き合いできるなんて、夢みたい！これからよろしくね！",
+      "result": "You successfully confessed your love and started a relationship!",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      },
+      "audio": {
+        "key": "battle_confession_pink_girl_1702704000-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_confession_pink_girl_1702704000-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "そ、そっか…。そっか…。残念だけど、また今度ね。",
+      "result": "You failed to confess your love.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    }
+  },
+  "topic": "Confessing her love to you"
+}
