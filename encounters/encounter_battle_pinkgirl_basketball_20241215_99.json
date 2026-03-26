@@ -1,0 +1,211 @@
+{
+  "id": "battle_pinkgirl_basketball_20241215_99",
+  "setting": "cafe-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "Mattさん、こんにちは！バスケが好き？",
+      "vocab": [
+        "バスケ",
+        "好き"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pinkgirl_basketball_20241215_99-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_basketball_20241215_99-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to her question about basketball.",
+      "responses": {
+        "tier1": {
+          "prompt": "Short answer.",
+          "answer": "はい 好き です バスケ",
+          "tokens": [
+            "はい",
+            "好き",
+            "です",
+            "バスケ"
+          ]
+        },
+        "tier2": {
+          "prompt": "A bit longer answer.",
+          "answer": "はい 好き です ジョーダン より レブロン",
+          "tokens": [
+            "はい",
+            "好き",
+            "です",
+            "ジョーダン",
+            "より",
+            "レブロン"
+          ]
+        },
+        "tier3": {
+          "prompt": "Longer answer with your opinion.",
+          "answer": "はい 好き です ジョーダン より レブロン の方 上手",
+          "tokens": [
+            "はい",
+            "好き",
+            "です",
+            "ジョーダン",
+            "より",
+            "レブロン",
+            "の方",
+            "上手"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "そう？私はレブロンが好き！かっこいいよね。",
+      "vocab": [
+        "かっこいい"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pinkgirl_basketball_20241215_99-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_basketball_20241215_99-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to her comment about LeBron.",
+      "responses": {
+        "tier1": {
+          "prompt": "Short agreement.",
+          "answer": "そう ですね",
+          "tokens": [
+            "そう",
+            "ですね"
+          ]
+        },
+        "tier2": {
+          "prompt": "A bit longer comment.",
+          "answer": "そう ですね かっこいい です よね",
+          "tokens": [
+            "そう",
+            "ですね",
+            "かっこいい",
+            "です",
+            "よね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Longer comment with your opinion.",
+          "answer": "そう ですね かっこいい です よね ジョーダン も いい",
+          "tokens": [
+            "そう",
+            "ですね",
+            "かっこいい",
+            "です",
+            "よね",
+            "ジョーダン",
+            "も",
+            "いい"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "Mattさん、面白いね！もっと話そう。",
+      "vocab": [
+        "面白い"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pinkgirl_basketball_20241215_99-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_basketball_20241215_99-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to her invitation to keep talking.",
+      "responses": {
+        "tier1": {
+          "prompt": "Short agreement.",
+          "answer": "いい です よ",
+          "tokens": [
+            "いい",
+            "です",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "A bit longer comment.",
+          "answer": "いい です よ もっと 話し ましょう",
+          "tokens": [
+            "いい",
+            "です",
+            "よ",
+            "もっと",
+            "話し",
+            "ましょう"
+          ]
+        },
+        "tier3": {
+          "prompt": "Longer comment with a question.",
+          "answer": "いい です よ もっと 話し ましょう あなた の 好き な スポーツ",
+          "tokens": [
+            "いい",
+            "です",
+            "よ",
+            "もっと",
+            "話し",
+            "ましょう",
+            "あなた",
+            "の",
+            "好き",
+            "な",
+            "スポーツ"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "楽しかったね！またね。",
+      "result": "You had a fun conversation with the pink girl.",
+      "rewards": {
+        "xp": 100,
+        "money": 10
+      },
+      "audio": {
+        "key": "battle_pinkgirl_basketball_20241215_99-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_basketball_20241215_99-dialogue-audio4.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "残念ね。またね。",
+      "result": "You failed to impress the pink girl.",
+      "rewards": {
+        "xp": 10,
+        "money": 0
+      }
+    }
+  },
+  "topic": "Who is the goat? LeBron or Jordan?"
+}
