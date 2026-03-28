@@ -1,0 +1,332 @@
+{
+  "id": "battle_demure_lady_safety_1719801830",
+  "setting": "suburb-day",
+  "character": "demure-lady",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "Mattさん、こんにちは。今日も良いお天気ですね。ところで、最近、日本の安全についてどう思われますか？",
+      "vocab": [
+        "こんにちは",
+        "天気",
+        "安全",
+        "思う"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_demure_lady_safety_1719801830-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_lady_safety_1719801830-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You've been asked your opinion on safety in Japan. How do you reply?",
+      "responses": {
+        "tier1": {
+          "prompt": "Just say it's safe.",
+          "answer": "日本は安全です",
+          "tokens": [
+            "日本",
+            "は",
+            "安全",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say it's generally safe, but there are some issues.",
+          "answer": "日本は一般的に安全ですが、いくつか問題もあります",
+          "tokens": [
+            "日本",
+            "は",
+            "一般的に",
+            "安全",
+            "です",
+            "が",
+            "いくつか",
+            "問題",
+            "も",
+            "あります"
+          ]
+        },
+        "tier3": {
+          "prompt": "It's generally safe, but I've heard about some specific crimes that worry me.",
+          "answer": "日本は一般的に安全ですが、心配になる特定の犯罪について聞きました",
+          "tokens": [
+            "日本",
+            "は",
+            "一般的に",
+            "安全",
+            "です",
+            "が",
+            "心配",
+            "に",
+            "なる",
+            "特定",
+            "の",
+            "犯罪",
+            "について",
+            "聞きました"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "thinking",
+      "text": "そうですね。確かに、世界的に見ても、日本はとても安全な国だと思います。でも、時々、痛ましいニュースを見ることもありますね。",
+      "vocab": [
+        "世界的に",
+        "国",
+        "時々",
+        "痛ましい",
+        "ニュース"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_demure_lady_safety_1719801830-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_lady_safety_1719801830-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She mentioned unfortunate news. What kind of news concerns you?",
+      "responses": {
+        "tier1": {
+          "prompt": "What kind of news?",
+          "answer": "どんなニュースですか",
+          "tokens": [
+            "どんな",
+            "ニュース",
+            "です",
+            "か"
+          ]
+        },
+        "tier2": {
+          "prompt": "I'm worried about news regarding hit-and-runs.",
+          "answer": "ひき逃げに関するニュースが心配です",
+          "tokens": [
+            "ひき逃げ",
+            "に",
+            "関する",
+            "ニュース",
+            "が",
+            "心配",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "I'm concerned about news concerning hit-and-runs and the lack of immediate arrests.",
+          "answer": "ひき逃げや、すぐに逮捕されないことに関するニュースが心配です",
+          "tokens": [
+            "ひき逃げ",
+            "や",
+            "すぐ",
+            "に",
+            "逮捕",
+            "され",
+            "ない",
+            "こと",
+            "に",
+            "関する",
+            "ニュース",
+            "が",
+            "心配",
+            "です"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "sad",
+      "text": "ひき逃げですか…。それは、本当に悲しいことですね。加害者がすぐに逮捕されることを願うばかりです。犯罪は、本当に、あってはならないことですよね。",
+      "vocab": [
+        "悲しい",
+        "加害者",
+        "願う",
+        "犯罪",
+        "あってはならない"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_demure_lady_safety_1719801830-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_lady_safety_1719801830-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She agrees that crime is unacceptable. How do you elaborate on your concern?",
+      "responses": {
+        "tier1": {
+          "prompt": "It's unforgivable.",
+          "answer": "許せません",
+          "tokens": [
+            "許せ",
+            "ません"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yes, that kind of crime is truly unforgivable.",
+          "answer": "ええ、そのような犯罪は本当に許せません",
+          "tokens": [
+            "ええ",
+            "そんな",
+            "ような",
+            "犯罪",
+            "は",
+            "本当に",
+            "許せ",
+            "ません"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yes, that kind of crime is truly unforgivable. It shakes the sense of safety.",
+          "answer": "ええ、そのような犯罪は本当に許せません。安全な気持ちが揺らぎます",
+          "tokens": [
+            "ええ",
+            "そんな",
+            "ような",
+            "犯罪",
+            "は",
+            "本当に",
+            "許せ",
+            "ません",
+            "安全",
+            "な",
+            "気持ち",
+            "が",
+            "揺らぎ",
+            "ます"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "thinking",
+      "text": "おっしゃる通りです。地域の方々がお互いを気遣い、見守ることが大切なのですね。昔は、もっとご近所付き合いも濃やかだったように思います。",
+      "vocab": [
+        "おっしゃる",
+        "地域",
+        "お互い",
+        "気遣い",
+        "昔"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_demure_lady_safety_1719801830-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_lady_safety_1719801830-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She's talking about community spirit. What do you say about that?",
+      "responses": {
+        "tier1": {
+          "prompt": "I agree.",
+          "answer": "そうですね",
+          "tokens": [
+            "そう",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "I think it's important to help each other.",
+          "answer": "お互いに助け合うことは大切だと思います",
+          "tokens": [
+            "お互い",
+            "に",
+            "助け合う",
+            "こと",
+            "は",
+            "大切",
+            "だ",
+            "と",
+            "思います"
+          ]
+        },
+        "tier3": {
+          "prompt": "I think it's important for everyone to look out for each other in the neighborhood.",
+          "answer": "近所で皆がお互いに見守り合うことは大切だと思います",
+          "tokens": [
+            "近所",
+            "で",
+            "皆",
+            "が",
+            "お互い",
+            "に",
+            "見守り合う",
+            "こと",
+            "は",
+            "大切",
+            "だ",
+            "と",
+            "思います"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "ありがとうございます、Mattさん。そう言っていただけて嬉しいです。時代は変わりますが、大切な心は変わらないでほしいですね。",
+      "vocab": [
+        "ありがとうございます",
+        "嬉しい",
+        "時代",
+        "変わる",
+        "大切"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_demure_lady_safety_1719801830-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_lady_safety_1719801830-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "happy",
+      "text": "お話しできて楽しかったです。どうぞお気をつけて。",
+      "result": "You had a pleasant chat about safety and community with the demure lady.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      },
+      "audio": {
+        "key": "battle_demure_lady_safety_1719801830-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_lady_safety_1719801830-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "annoyed",
+      "text": "まあ、残念ですわ。",
+      "result": "The demure lady seems disappointed.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    }
+  },
+  "topic": "Safety in Japan"
+}
