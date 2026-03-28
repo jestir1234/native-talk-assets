@@ -1,0 +1,206 @@
+{
+  "id": "battle_otaku_society_20241216_01",
+  "setting": "apartment-evening",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "neutral",
+      "text": "最近、政治家の脱税問題でニュースになってるよね。",
+      "vocab": [
+        "脱税",
+        "政治家"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_otaku_society_20241216_01-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_society_20241216_01-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to the guy's comment about politicians.",
+      "responses": {
+        "tier1": {
+          "prompt": "A short reaction.",
+          "answer": "それ は 問題 だ ね",
+          "tokens": [
+            "それ",
+            "は",
+            "問題",
+            "だ",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Share your opinion on the issue.",
+          "answer": "政治家 が 脱税 する のは 許せない 逮捕 される べき だ",
+          "tokens": [
+            "政治家",
+            "が",
+            "脱税",
+            "する",
+            "のは",
+            "許せない",
+            "逮捕",
+            "される",
+            "べき",
+            "だ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Discuss the impact on society.",
+          "answer": "政治家 が 脱税 すると 国民 が 政治家 に 信頼 を 失う 万引き も 増える かもしれない",
+          "tokens": [
+            "政治家",
+            "が",
+            "脱税",
+            "すると",
+            "国民",
+            "が",
+            "政治家",
+            "に",
+            "信頼",
+            "を",
+            "失う",
+            "万引き",
+            "も",
+            "増える",
+            "かもしれない"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "うん、ほんとにそう思う。俺もニュース見て驚いたよ。",
+      "vocab": [
+        "ニュース",
+        "驚い"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_otaku_society_20241216_01-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_society_20241216_01-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Talk about your daily life.",
+      "responses": {
+        "tier1": {
+          "prompt": "A short statement.",
+          "answer": "僕 は アニメ 見る の が 好き だ よ",
+          "tokens": [
+            "僕",
+            "は",
+            "アニメ",
+            "見る",
+            "の",
+            "が",
+            "好き",
+            "だ",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "Share a hobby.",
+          "answer": "アニメ や ゲーム が 好き で よく 家 で 見る んだ 友達 とも 話す",
+          "tokens": [
+            "アニメ",
+            "や",
+            "ゲーム",
+            "が",
+            "好き",
+            "で",
+            "よく",
+            "家",
+            "で",
+            "見る",
+            "んだ",
+            "友達",
+            "とも",
+            "話す"
+          ]
+        },
+        "tier3": {
+          "prompt": "Discuss your favorite activities.",
+          "answer": "アニメ や ゲーム が 好き で 週末 は よく 友達 と ゲーセン に 行く んだ 時間 が 溶ける ように 感じる",
+          "tokens": [
+            "アニメ",
+            "や",
+            "ゲーム",
+            "が",
+            "好き",
+            "で",
+            "週末",
+            "は",
+            "よく",
+            "友達",
+            "と",
+            "ゲーセン",
+            "に",
+            "行く",
+            "んだ",
+            "時間",
+            "が",
+            "溶ける",
+            "ように",
+            "感じる"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "それいいね！俺もゲーセン好きなんだ。次は一緒に行こうよ。",
+      "vocab": [
+        "ゲーセン"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_otaku_society_20241216_01-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_society_20241216_01-dialogue-audio3.mp3"
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "またね、Mattさん。",
+      "result": "You had a nice conversation with the otaku guy.",
+      "rewards": {
+        "xp": 100,
+        "money": 500
+      },
+      "audio": {
+        "key": "battle_otaku_society_20241216_01-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_society_20241216_01-dialogue-audio4.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "sad",
+      "text": "残念だね、Mattさん。また話そう。",
+      "result": "The conversation ended early.",
+      "rewards": {
+        "xp": 20,
+        "money": 100
+      }
+    }
+  },
+  "topic": "State of Japanese society"
+}
