@@ -1,0 +1,317 @@
+{
+  "id": "battle_pinkgirl_stressfulwork_20240310_123456",
+  "setting": "work-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "annoyed",
+      "text": "うぅ…今日の仕事、マジで大変だったよぉ…。Mattさんもお疲れ様！",
+      "vocab": [
+        "今日",
+        "仕事",
+        "マジ",
+        "大変",
+        "お疲れ様"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "NPC is complaining about work. Respond empathetically.",
+      "responses": {
+        "tier1": {
+          "prompt": "That sounds tough.",
+          "answer": "大変 だった ね",
+          "tokens": [
+            "大変",
+            "だった",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "That sounds tough. Were you busy?",
+          "answer": "本当 に 大変 だった ね 仕事 が 山積み だった",
+          "tokens": [
+            "本当",
+            "に",
+            "大変",
+            "だった",
+            "ね",
+            "仕事",
+            "が",
+            "山積み",
+            "だった"
+          ]
+        },
+        "tier3": {
+          "prompt": "That sounds tough. Were you busy? I hope you can relax now.",
+          "answer": "本当 に 大変 だった ね 仕事 が 山積み だった けど 今 は ゆっくり できる と いい ね",
+          "tokens": [
+            "本当",
+            "に",
+            "大変",
+            "だった",
+            "ね",
+            "仕事",
+            "が",
+            "山積み",
+            "だった",
+            "けど",
+            "今",
+            "は",
+            "ゆっくり",
+            "できる",
+            "と",
+            "いい",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "うん！でも、Mattさんの声聞いたら元気出た！ありがとう！",
+      "vocab": [
+        "うん",
+        "声",
+        "元気",
+        "出た",
+        "ありがとう"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "thinking",
+      "text": "そういえば、Mattさんは猫派？犬派？わたしはどっちも好きだけど、やっぱり猫ちゃんかなぁ。",
+      "vocab": [
+        "そういえば",
+        "猫派",
+        "犬派",
+        "どっち",
+        "やっぱり",
+        "猫ちゃん"
+      ],
+      "next": "node_5",
+      "audio": {
+        "key": "battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio3.mp3"
+      }
+    },
+    "node_5": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Answer the question about pets.",
+      "responses": {
+        "tier1": {
+          "prompt": "I'm a dog person.",
+          "answer": "犬派 だ よ",
+          "tokens": [
+            "犬派",
+            "だ",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "I'm a dog person. I like their energy.",
+          "answer": "犬派 だ よ 元気な ところ が 好き",
+          "tokens": [
+            "犬派",
+            "だ",
+            "よ",
+            "元気",
+            "な",
+            "ところ",
+            "が",
+            "好き"
+          ]
+        },
+        "tier3": {
+          "prompt": "I'm a dog person. I like their energy and loyalty.",
+          "answer": "犬派 だ よ 元気な ところ が 好き だし 忠実な ところ も 好き",
+          "tokens": [
+            "犬派",
+            "だ",
+            "よ",
+            "元気",
+            "な",
+            "ところ",
+            "が",
+            "好き",
+            "だし",
+            "忠実",
+            "な",
+            "ところ",
+            "も",
+            "好き"
+          ]
+        }
+      },
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "わぁ、犬派なんだね！ワンちゃん、可愛いもんね。わたしの推しは猫ちゃんなんだけど、 Mattさんはどんな子が好き？",
+      "vocab": [
+        "わぁ",
+        "ワンちゃん",
+        "可愛い",
+        "推し",
+        "猫ちゃん",
+        "どんな子"
+      ],
+      "next": "node_7",
+      "audio": {
+        "key": "battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio4.mp3"
+      }
+    },
+    "node_7": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Describe the kind of cat you like.",
+      "responses": {
+        "tier1": {
+          "prompt": "I like fluffy cats.",
+          "answer": "ふわふわ の 猫 が 好き",
+          "tokens": [
+            "ふわふわ",
+            "の",
+            "猫",
+            "が",
+            "好き"
+          ]
+        },
+        "tier2": {
+          "prompt": "I like fluffy cats, especially calicos.",
+          "answer": "ふわふわ の 猫 が 好き 特に 三毛猫 が 好き だな",
+          "tokens": [
+            "ふわふわ",
+            "の",
+            "猫",
+            "が",
+            "好き",
+            "特に",
+            "三毛猫",
+            "が",
+            "好き",
+            "だな"
+          ]
+        },
+        "tier3": {
+          "prompt": "I like fluffy cats, especially calicos. They look so elegant.",
+          "answer": "ふわふわ の 猫 が 好き 特に 三毛猫 が 好き だな 優雅な 感じ が する よ ね",
+          "tokens": [
+            "ふわふわ",
+            "の",
+            "猫",
+            "が",
+            "好き",
+            "特に",
+            "三毛猫",
+            "が",
+            "好き",
+            "だな",
+            "優雅",
+            "な",
+            "感じ",
+            "が",
+            "する",
+            "よ",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_8"
+    },
+    "node_8": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "三毛猫！わかる〜！あの柄、本当に可愛いよね！なんか、今日話してたら元気出てきたよ。Mattさん、ありがとう！",
+      "vocab": [
+        "三毛猫",
+        "わかる",
+        "柄",
+        "可愛い",
+        "今日",
+        "話",
+        "元気",
+        "出た",
+        "ありがとう"
+      ],
+      "next": "node_9",
+      "audio": {
+        "key": "battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio5.mp3"
+      }
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "よし、明日からも頑張れそう！ Mattさんも、またいつでも話しかけてね！",
+      "vocab": [
+        "よし",
+        "明日",
+        "頑張れ",
+        "そう",
+        "また",
+        "いつでも",
+        "話しかけて"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "あれ？もしかして、もう帰っちゃう？またね…！",
+      "result": "The conversation ended prematurely.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ふふ、今日は楽しかった！またね！",
+      "result": "You built a connection with Pink Girl!",
+      "rewards": {
+        "xp": 50,
+        "money": 100
+      },
+      "audio": {
+        "key": "battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_stressfulwork_20240310_123456-dialogue-audio7.mp3"
+      }
+    }
+  },
+  "topic": "Stressful Workdays"
+}
