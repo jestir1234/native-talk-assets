@@ -1,0 +1,216 @@
+{
+  "id": "battle_pink_girl_restaurant_20241215_99",
+  "setting": "cafe-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "Leaさん、こんにちは！おなかがすいてるね。",
+      "vocab": [
+        "おなか",
+        "すく"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pink_girl_restaurant_20241215_99-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_girl_restaurant_20241215_99-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Tell her you're a little hungry too.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say you're a little hungry.",
+          "answer": "少し すいてる",
+          "tokens": [
+            "少し",
+            "すいてる"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say you're a little hungry and want to go eat.",
+          "answer": "少し すいてる 食べたい",
+          "tokens": [
+            "少し",
+            "すいてる",
+            "食べたい"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say you're a little hungry and want to go eat something delicious.",
+          "answer": "少し すいてる 美味しいもの 食べたい",
+          "tokens": [
+            "少し",
+            "すいてる",
+            "美味しいもの",
+            "食べたい"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "そう！私も美味しいランチを食べたいな。",
+      "vocab": [
+        "ランチ"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pink_girl_restaurant_20241215_99-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_girl_restaurant_20241215_99-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask her about her favorite restaurant.",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask about her favorite restaurant.",
+          "answer": "好きな 料理店 は",
+          "tokens": [
+            "好きな",
+            "料理店",
+            "は"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask about her favorite restaurant and what she likes to eat there.",
+          "answer": "好きな 料理店 は なんですか 食べる",
+          "tokens": [
+            "好きな",
+            "料理店",
+            "は",
+            "なんですか",
+            "食べる"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask about her favorite restaurant, what she likes to eat there, and why she likes it.",
+          "answer": "好きな 料理店 は なんですか 食べる ものが 好き",
+          "tokens": [
+            "好きな",
+            "料理店",
+            "は",
+            "なんですか",
+            "食べる",
+            "ものが",
+            "好き"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "私の好きな料理店はカフェハルです。",
+      "vocab": [
+        "カフェ"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pink_girl_restaurant_20241215_99-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_girl_restaurant_20241215_99-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask her what she likes to eat at Cafe Haru.",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask about her favorite food at Cafe Haru.",
+          "answer": "カフェハルで 好きな 食べ物 は",
+          "tokens": [
+            "カフェハルで",
+            "好きな",
+            "食べ物",
+            "は"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask about her favorite food at Cafe Haru and why she likes it.",
+          "answer": "カフェハルで 好きな 食べ物 は なんですか 好き",
+          "tokens": [
+            "カフェハルで",
+            "好きな",
+            "食べ物",
+            "は",
+            "なんですか",
+            "好き"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask about her favorite food at Cafe Haru, why she likes it, and if it's cute.",
+          "answer": "カフェハルで 好きな 食べ物 は なんですか 好き かわいい",
+          "tokens": [
+            "カフェハルで",
+            "好きな",
+            "食べ物",
+            "は",
+            "なんですか",
+            "好き",
+            "かわいい"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "パンケーキが好き！ハートの形のがかわいいよね。",
+      "vocab": [
+        "パンケーキ",
+        "かわいい"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_pink_girl_restaurant_20241215_99-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_girl_restaurant_20241215_99-dialogue-audio4.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "残念！また話そうね。",
+      "result": "The conversation ended.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      },
+      "next": null
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "またランチしようね！",
+      "result": "You had a nice conversation about food.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      },
+      "next": null,
+      "audio": {
+        "key": "battle_pink_girl_restaurant_20241215_99-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_girl_restaurant_20241215_99-dialogue-audio5.mp3"
+      }
+    }
+  },
+  "topic": "Favorite Restaurants"
+}
