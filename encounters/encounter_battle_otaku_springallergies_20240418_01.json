@@ -1,0 +1,407 @@
+{
+  "id": "battle_otaku_springallergies_20240418_01",
+  "setting": "apartment-day",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "あー、なんか鼻がむずむずするんだよな…。春は花粉の季節だから、仕方ないんだけどさ。",
+      "vocab": [
+        "鼻",
+        "むずむず",
+        "花粉",
+        "季節"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_otaku_springallergies_20240418_01-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_springallergies_20240418_01-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "He's talking about his allergies. How do you respond?",
+      "responses": {
+        "tier1": {
+          "prompt": "Acknowledge his discomfort.",
+          "answer": "それは大変だね",
+          "tokens": [
+            "それ",
+            "は",
+            "大変",
+            "だ",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Acknowledge his discomfort and ask if he's going outside much.",
+          "answer": "それは大変だね、外にあまり出ないの？",
+          "tokens": [
+            "それ",
+            "は",
+            "大変",
+            "だ",
+            "ね",
+            "外",
+            "に",
+            "あまり",
+            "出ない",
+            "の"
+          ]
+        },
+        "tier3": {
+          "prompt": "Acknowledge his discomfort and ask if he's going outside much, maybe mentioning you're staying in too.",
+          "answer": "それは大変だね、外にあまり出ないの？ 僕は家でアニメ見てるから大丈夫だけど。",
+          "tokens": [
+            "それ",
+            "は",
+            "大変",
+            "だ",
+            "ね",
+            "外",
+            "に",
+            "あまり",
+            "出ない",
+            "の",
+            "僕",
+            "は",
+            "家",
+            "で",
+            "アニメ",
+            "見てる",
+            "から",
+            "大丈夫",
+            "だけど"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "うん、そうだね。基本、外出はコンビ二くらいかな。なんか、ゲームしてると時間が溶けるんだよね。",
+      "vocab": [
+        "外出",
+        "コンビ二",
+        "ゲーム",
+        "時間",
+        "溶ける"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_otaku_springallergies_20240418_01-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_springallergies_20240418_01-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "He mentioned time melting away. How do you agree or relate?",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree that time flies when gaming.",
+          "answer": "ゲームは時間が溶けるよね",
+          "tokens": [
+            "ゲーム",
+            "は",
+            "時間",
+            "が",
+            "溶ける",
+            "よね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree and ask what kind of games he plays.",
+          "answer": "ゲームは時間が溶けるよね、どんなゲームしてるの？",
+          "tokens": [
+            "ゲーム",
+            "は",
+            "時間",
+            "が",
+            "溶ける",
+            "よね",
+            "どんな",
+            "ゲーム",
+            "してる",
+            "の"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree and ask what games he plays, maybe mentioning you also get lost in games.",
+          "answer": "ゲームは時間が溶けるよね、どんなゲームしてるの？ 僕も集中しちゃうんだ。",
+          "tokens": [
+            "ゲーム",
+            "は",
+            "時間",
+            "が",
+            "溶ける",
+            "よね",
+            "どんな",
+            "ゲーム",
+            "してる",
+            "の",
+            "僕",
+            "も",
+            "集中",
+            "しちゃう",
+            "ん",
+            "だ"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "お、いい質問だね！ 今はちょっと、昔のアニメのRPGをリメイクしたやつを研究してるんだ。資料集めのために、である！",
+      "vocab": [
+        "質問",
+        "昔",
+        "アニメ",
+        "RPG",
+        "リメイク",
+        "研究",
+        "資料集め"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_otaku_springallergies_20240418_01-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_springallergies_20240418_01-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "He's using 'research' as an excuse. What do you say?",
+      "responses": {
+        "tier1": {
+          "prompt": "Play along with his 'research' excuse.",
+          "answer": "研究、頑張ってね",
+          "tokens": [
+            "研究",
+            "頑張って",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Play along with his 'research' excuse and ask if it's fun.",
+          "answer": "研究、頑張ってね、楽しそう",
+          "tokens": [
+            "研究",
+            "頑張って",
+            "ね",
+            "楽しそう"
+          ]
+        },
+        "tier3": {
+          "prompt": "Play along with his 'research' excuse, ask if it's fun, and maybe mention you like old anime too.",
+          "answer": "研究、頑張ってね、楽しそう、僕も昔のアニメ好きだよ",
+          "tokens": [
+            "研究",
+            "頑張って",
+            "ね",
+            "楽しそう",
+            "僕",
+            "も",
+            "昔",
+            "の",
+            "アニメ",
+            "好き",
+            "だよ"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "blushing",
+      "text": "へへ、ありがとう。でも、本当は…まあ、いいや。そういえば、LINEしてる？ 最近、友だちから可愛いスタンプもらったんだ。",
+      "vocab": [
+        "本当",
+        "LINE",
+        "友だち",
+        "可愛い",
+        "スタンプ"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_otaku_springallergies_20240418_01-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_springallergies_20240418_01-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "He's asking about LINE and stickers. How do you respond?",
+      "responses": {
+        "tier1": {
+          "prompt": "Say you use LINE.",
+          "answer": "LINEは使ってるよ",
+          "tokens": [
+            "LINE",
+            "は",
+            "使ってる",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say you use LINE and ask about the stickers.",
+          "answer": "LINEは使ってるよ、どんなスタンプ？",
+          "tokens": [
+            "LINE",
+            "は",
+            "使ってる",
+            "よ",
+            "どんな",
+            "スタンプ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say you use LINE, ask about the stickers, and mention you like cute ones too.",
+          "answer": "LINEは使ってるよ、どんなスタンプ？ 僕も可愛いスタンプ好きだな。",
+          "tokens": [
+            "LINE",
+            "は",
+            "使ってる",
+            "よ",
+            "どんな",
+            "スタンプ",
+            "僕",
+            "も",
+            "可愛い",
+            "スタンプ",
+            "好き",
+            "だな"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "おお、いいね！ 今度、見せてあげるよ。あ、でも、春だし、花粉症ひどいから、あんまり外で会うのは無理かな。",
+      "vocab": [
+        "見せる",
+        "春",
+        "花粉症",
+        "ひどい",
+        "外",
+        "会う",
+        "無理"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_otaku_springallergies_20240418_01-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_springallergies_20240418_01-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "He's saying he can't meet outside because of allergies. How do you suggest meeting indoors?",
+      "responses": {
+        "tier1": {
+          "prompt": "Suggest meeting indoors.",
+          "answer": "じゃあ、家で会おう",
+          "tokens": [
+            "じゃあ",
+            "家",
+            "で",
+            "会おう"
+          ]
+        },
+        "tier2": {
+          "prompt": "Suggest meeting indoors and ask if he's free.",
+          "answer": "じゃあ、家で会おう、いつか空いてる？",
+          "tokens": [
+            "じゃあ",
+            "家",
+            "で",
+            "会おう",
+            "いつか",
+            "空いてる"
+          ]
+        },
+        "tier3": {
+          "prompt": "Suggest meeting indoors, ask if he's free, and mention you can watch anime together.",
+          "answer": "じゃあ、家で会おう、いつか空いてる？ 一緒にアニメ見てもいいよ。",
+          "tokens": [
+            "じゃあ",
+            "家",
+            "で",
+            "会おう",
+            "いつか",
+            "空いてる",
+            "一緒",
+            "に",
+            "アニメ",
+            "見ても",
+            "いい",
+            "よ"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "ほんと！？ それは嬉しいな！ ありがとう！ よし、じゃあ、その時が来たらLINEするよ！",
+      "vocab": [
+        "嬉しい",
+        "ありがとう",
+        "よし",
+        "時",
+        "LINE",
+        "する"
+      ],
+      "next": "node_end_success",
+      "audio": {
+        "key": "battle_otaku_springallergies_20240418_01-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_springallergies_20240418_01-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "annoyed",
+      "text": "あー、もういいや。なんか話が合わないな。また今度。",
+      "result": "Conversation failed. He seems a little put off.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end_success": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "うん、楽しみにしてるよ！",
+      "result": "Conversation successful! You've made plans to meet up.",
+      "rewards": {
+        "xp": 50,
+        "money": 20
+      },
+      "audio": {
+        "key": "battle_otaku_springallergies_20240418_01-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_springallergies_20240418_01-dialogue-audio7.mp3"
+      }
+    }
+  },
+  "topic": "Spring allergies"
+}
