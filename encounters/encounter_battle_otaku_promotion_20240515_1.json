@@ -1,0 +1,286 @@
+{
+  "id": "battle_otaku_promotion_20240515_1",
+  "setting": "work-day",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "やあ！今日、なんかすごいことがあったんだよ！もしかしたら、俺、昇進するかもしれないんだ！",
+      "vocab": [
+        "すごい",
+        "昇進"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_otaku_promotion_20240515_1-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_promotion_20240515_1-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "React to the news of a potential promotion.",
+      "responses": {
+        "tier1": {
+          "prompt": "Congratulate him.",
+          "answer": "おめでとう。",
+          "tokens": [
+            "おめでとう"
+          ]
+        },
+        "tier2": {
+          "prompt": "Congratulate him and ask if he's happy.",
+          "answer": "おめでとう。嬉しい？",
+          "tokens": [
+            "おめでとう",
+            "嬉しい",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "Congratulate him and ask if he's happy about this potential promotion.",
+          "answer": "おめでとう。この昇進、嬉しい？",
+          "tokens": [
+            "おめでとう",
+            "この",
+            "昇進",
+            "嬉しい",
+            "？"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "うん！すごく嬉しいよ！これまでずっと頑張ってきたから、認めてもらえたんだって思うと、もう、感無量だよ！",
+      "vocab": [
+        "頑張る",
+        "認める",
+        "感無量"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_otaku_promotion_20240515_1-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_promotion_20240515_1-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about the new responsibilities.",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask about the new position.",
+          "answer": "新しい役職は？",
+          "tokens": [
+            "新しい",
+            "役職",
+            "は"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask about his new position and what he'll be doing.",
+          "answer": "新しい役職は何？何をするの？",
+          "tokens": [
+            "新しい",
+            "役職",
+            "は",
+            "何",
+            "何",
+            "する",
+            "の"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask about his new position, what he'll be doing, and if he's ready.",
+          "answer": "新しい役職は何？何をするの？準備できてる？",
+          "tokens": [
+            "新しい",
+            "役職",
+            "は",
+            "何",
+            "何",
+            "する",
+            "の",
+            "準備",
+            "できてる",
+            "？"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "えっとね、新しい部署のリーダーになるんだ。チームをまとめるって、ちょっとプレッシャーだけど、やりがいもありそうだよね。ゲームの戦略を考えるみたいで、ワクワクするよ。",
+      "vocab": [
+        "部署",
+        "リーダー",
+        "まとめる",
+        "プレッシャー",
+        "やりがい",
+        "戦略"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_otaku_promotion_20240515_1-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_promotion_20240515_1-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Offer encouragement and compare it to gaming.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say it sounds like fun.",
+          "answer": "楽しそう。",
+          "tokens": [
+            "楽しそう"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say it sounds like fun and that he'll do great.",
+          "answer": "楽しそう。きっとうまくやるよ。",
+          "tokens": [
+            "楽しそう",
+            "きっと",
+            "うまく",
+            "やる",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say it sounds like fun, that he'll do great, and that it's like a strategy game.",
+          "answer": "楽しそう。きっとうまくやるよ。戦略ゲームみたいだね。",
+          "tokens": [
+            "楽しそう",
+            "きっと",
+            "うまく",
+            "やる",
+            "よ",
+            "戦略",
+            "ゲーム",
+            "みたい",
+            "だね"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "そうなんだよ！まるで新しいRPGの始まりみたいだ！レベルアップして、新しいスキルを覚える感じ！あー、でも、残業とか増えるのかな…？",
+      "vocab": [
+        "RPG",
+        "レベルアップ",
+        "スキル",
+        "残業"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_otaku_promotion_20240515_1-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_promotion_20240515_1-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Reassure him about work-life balance.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say it won't be too bad.",
+          "answer": "大丈夫だよ。",
+          "tokens": [
+            "大丈夫",
+            "だよ"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say it won't be too bad, and he can manage it.",
+          "answer": "大丈夫だよ。きっとやりくりできるよ。",
+          "tokens": [
+            "大丈夫",
+            "だよ",
+            "きっと",
+            "やりくり",
+            "できる",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say it won't be too bad, he can manage it, and he can still make time for hobbies.",
+          "answer": "大丈夫だよ。きっとやりくりできるよ。趣味の時間も作れるよ。",
+          "tokens": [
+            "大丈夫",
+            "だよ",
+            "きっと",
+            "やりくり",
+            "できる",
+            "よ",
+            "趣味",
+            "時間",
+            "も",
+            "作れる",
+            "よ"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "ほんと？ありがとう！なんか元気出てきたよ！よし、この調子で頑張るぞー！",
+      "vocab": [
+        "調子",
+        "元気"
+      ],
+      "next": "node_end_success",
+      "audio": {
+        "key": "battle_otaku_promotion_20240515_1-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_promotion_20240515_1-dialogue-audio5.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "sad",
+      "text": "あー、残念。まあ、また次があるさ。",
+      "result": "You failed to connect with the otaku-guy.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end_success": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "やったー！また色々話そうね！",
+      "result": "You successfully cheered up the otaku-guy about his promotion!",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      },
+      "audio": {
+        "key": "battle_otaku_promotion_20240515_1-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_promotion_20240515_1-dialogue-audio6.mp3"
+      }
+    }
+  },
+  "topic": "Getting a Promotion"
+}
