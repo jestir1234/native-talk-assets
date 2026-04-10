@@ -1,0 +1,373 @@
+{
+  "id": "battle_otaku_war_gas_20240515_100",
+  "setting": "apartment-evening",
+  "character": "otaku-guy",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "やあ、なんか最近、ニュースでアメリカとイランの争いの話ばっかりだけど、あれってさ、結局俺たちの生活にどう影響してくるんだろ？特にガソリン代とか、マジで気になるんだよね。",
+      "vocab": [
+        "最近",
+        "ニュース",
+        "アメリカ",
+        "イラン",
+        "争い",
+        "影響",
+        "ガソリン代",
+        "気になる"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_otaku_war_gas_20240515_100-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_war_gas_20240515_100-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "You're responding to his concern about gas prices and the war.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree that it affects you.",
+          "answer": "うん、それ、すごくわかるよ",
+          "tokens": [
+            "うん",
+            "それ",
+            "すごく",
+            "わかる",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "You understand. You think it's because oil comes from that region, right?",
+          "answer": "わかるよ。だって、原油ってその地域からたくさん来るんでしょ？",
+          "tokens": [
+            "わかる",
+            "よ",
+            "だって",
+            "原油",
+            "って",
+            "その",
+            "地域",
+            "から",
+            "たくさん",
+            "来る",
+            "んでしょ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yeah, I get it. It's because a lot of crude oil comes from that region, right? If there's conflict there, it's natural for prices to go up, I guess.",
+          "answer": "わかるよ。だって、原油ってその地域からたくさん来るんでしょ？そこで争いがあったら、値段が上がるのも自然なことだよね。",
+          "tokens": [
+            "わかる",
+            "よ",
+            "だって",
+            "原油",
+            "って",
+            "その",
+            "地域",
+            "から",
+            "たくさん",
+            "来る",
+            "んでしょ",
+            "そこで",
+            "争い",
+            "が",
+            "あったら",
+            "値段",
+            "が",
+            "上がる",
+            "の",
+            "も",
+            "自然",
+            "な",
+            "こと",
+            "だ",
+            "よね"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "そうそう、まさにそれ！　俺、コンビニでエナジードリンク買うときとか、なんか値段上がってる気がしてさ。「あー、これはアレの影響だな」って、一人で納得したりしてるんだよ。",
+      "vocab": [
+        "コンビニ",
+        "エナジードリンク",
+        "値段",
+        "上がる",
+        "影響",
+        "納得"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_otaku_war_gas_20240515_100-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_war_gas_20240515_100-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "He's talking about his personal experience with rising prices.",
+      "responses": {
+        "tier1": {
+          "prompt": "That's relatable.",
+          "answer": "なんか、すごく relatable だね",
+          "tokens": [
+            "なんか",
+            "すごく",
+            "relatable",
+            "だ",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yeah, I get that feeling. It makes you think about the global situation even when you're just buying something small.",
+          "answer": "うん、その気持ち、わかるなあ。ちょっとしたものを買うときでも、世界の状況を考えさせられるよね。",
+          "tokens": [
+            "うん",
+            "その",
+            "気持ち",
+            "わかる",
+            "なあ",
+            "ちょっとした",
+            "もの",
+            "を",
+            "買う",
+            "とき",
+            "でも",
+            "世界",
+            "の",
+            "状況",
+            "を",
+            "考えさせられる",
+            "よ",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yeah, I get that feeling. It makes you think about the global situation even when you're just buying something small. It's like, \"Oh, this is what they mean by global economy.\"",
+          "answer": "うん、その気持ち、わかるなあ。ちょっとしたものを買うときでも、世界の状況を考えさせられるよね。「あ、これがグローバル経済ってやつか」って、ふと思うよ。",
+          "tokens": [
+            "うん",
+            "その",
+            "気持ち",
+            "わかる",
+            "なあ",
+            "ちょっとした",
+            "もの",
+            "を",
+            "買う",
+            "とき",
+            "でも",
+            "世界",
+            "の",
+            "状況",
+            "を",
+            "考えさせられる",
+            "よ",
+            "ね",
+            "あ",
+            "これ",
+            "が",
+            "グローバル経済",
+            "って",
+            "やつ",
+            "か",
+            "って",
+            "ふ",
+            "と",
+            "思う",
+            "よ"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "thinking",
+      "text": "グローバル経済かー。なんか、そういうのって、アニメの壮大なストーリーとか、ゲームの裏設定みたいで、ちょっとワクワクするけど、実際は大変だよね。俺、昔、インディーズゲームのクラウドファンディングとかやったことあるけど、あれも世界中の人と繋がる感じがして面白かったな。",
+      "vocab": [
+        "グローバル経済",
+        "アニメ",
+        "壮大",
+        "ストーリー",
+        "ゲーム",
+        "裏設定",
+        "ワクワク",
+        "インディーズゲーム",
+        "クラウドファンディング",
+        "世界中",
+        "繋がる"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_otaku_war_gas_20240515_100-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_war_gas_20240515_100-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "He's reminiscing about crowdfunding and connecting with people globally.",
+      "responses": {
+        "tier1": {
+          "prompt": "That sounds interesting.",
+          "answer": "それは、面白そうだな",
+          "tokens": [
+            "それ",
+            "は",
+            "面白そう",
+            "だ",
+            "な"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yeah, that's a good point. Connecting with people online from all over the world feels like a different kind of battle or collaboration.",
+          "answer": "うん、それはいい点だね。世界中の人とネットで繋がるのって、また違う種類のバトルとか協力みたいに感じるよ。",
+          "tokens": [
+            "うん",
+            "それ",
+            "は",
+            "いい",
+            "点",
+            "だ",
+            "ね",
+            "世界中",
+            "の",
+            "人",
+            "と",
+            "ネット",
+            "で",
+            "繋がる",
+            "の",
+            "って",
+            "また",
+            "違う",
+            "種類",
+            "の",
+            "バトル",
+            "とか",
+            "協力",
+            "みたい",
+            "に",
+            "感じる",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yeah, that's a good point. Connecting with people online from all over the world feels like a different kind of battle or collaboration. It's like, even with the war and gas prices, there are still ways to connect and create things together.",
+          "answer": "うん、それはいい点だね。世界中の人とネットで繋がるのって、また違う種類のバトルとか協力みたいに感じるよ。紛争とかガソリン代とかあっても、こうやって繋がって一緒に何かを作る方法って、まだあるんだね。",
+          "tokens": [
+            "うん",
+            "それ",
+            "は",
+            "いい",
+            "点",
+            "だ",
+            "ね",
+            "世界中",
+            "の",
+            "人",
+            "と",
+            "ネット",
+            "で",
+            "繋がる",
+            "の",
+            "って",
+            "また",
+            "違う",
+            "種類",
+            "の",
+            "バトル",
+            "とか",
+            "協力",
+            "みたい",
+            "に",
+            "感じる",
+            "よ",
+            "紛争",
+            "とか",
+            "ガソリン代",
+            "とか",
+            "あっ",
+            "ても",
+            "こう",
+            "やって",
+            "繋がっ",
+            "て",
+            "一緒",
+            "に",
+            "何か",
+            "を",
+            "作る",
+            "方法",
+            "って",
+            "まだ",
+            "ある",
+            "んだ",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "otaku-guy",
+      "expression": "happy",
+      "text": "おお、なんか、そういう風に考えてくれると嬉しいな！　俺、こういう話って、友達と話すより、なんかこう、LINEとかで、じっくり話したいタイプなんだよね。でも、こういう国際情勢の話って、なかなか切り出しにくいから、今日はありがとう！",
+      "vocab": [
+        "嬉しい",
+        "友達",
+        "LINE",
+        "じっくり",
+        "国際情勢",
+        "切り出しにくい",
+        "ありがとう"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_otaku_war_gas_20240515_100-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_war_gas_20240515_100-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "smile",
+      "text": "またなんか面白いことあったら、話すよ！",
+      "result": "You discussed the impact of international conflict on gas prices and the potential for global connection.",
+      "rewards": {
+        "xp": 50,
+        "money": 20
+      },
+      "audio": {
+        "key": "battle_otaku_war_gas_20240515_100-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_otaku_war_gas_20240515_100-dialogue-audio5.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "otaku-guy",
+      "expression": "annoyed",
+      "text": "あー、なんか話が合わないな。もういいや。",
+      "result": "The conversation ended abruptly.",
+      "rewards": {
+        "xp": 5,
+        "money": 0
+      }
+    }
+  },
+  "topic": "US and Iran war and it's effect on gas prices in Japan"
+}
