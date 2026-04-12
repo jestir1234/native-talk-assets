@@ -1,0 +1,319 @@
+{
+  "id": "battle_pink_past_worker_20240515_01",
+  "setting": "downtown-evening",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "ねぇ、今日の夜ご飯、何にするか決まった？ 私、なんか甘いものがすっごく食べたい気分なんだ～！",
+      "vocab": [
+        "夜ご飯",
+        "決まった",
+        "甘いもの",
+        "気分"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pink_past_worker_20240515_01-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_past_worker_20240515_01-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask what she's craving.",
+      "responses": {
+        "tier1": {
+          "prompt": "What are you craving?",
+          "answer": "何 食べたい？",
+          "tokens": [
+            "何",
+            "食べたい",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "What kind of sweet thing are you craving?",
+          "answer": "どんな 甘いもの 食べたい 気分？",
+          "tokens": [
+            "どんな",
+            "甘いもの",
+            "食べたい",
+            "気分",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "Oh really? What kind of sweet thing are you craving tonight?",
+          "answer": "そうなの？ 今夜は どんな 甘いもの 食べたい 気分？",
+          "tokens": [
+            "そうなの",
+            "？",
+            "今夜",
+            "は",
+            "どんな",
+            "甘いもの",
+            "食べたい",
+            "気分",
+            "？"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "うーん、そうだなあ。なんか、昔の自分を思い出しちゃった！ ちょっと、昔はね、風俗嬢 してたんだ。だから、なんかこう、ちょっと大人っぽいスイーツとか、そういうのが欲しくなっちゃうのかな？",
+      "vocab": [
+        "昔",
+        "自分",
+        "思い出",
+        "風俗嬢",
+        "大人っぽい",
+        "スイーツ"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pink_past_worker_20240515_01-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_past_worker_20240515_01-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Express sympathy and ask if it was tough.",
+      "responses": {
+        "tier1": {
+          "prompt": "That sounds tough.",
+          "answer": "大変 だった ね。",
+          "tokens": [
+            "大変",
+            "だった",
+            "ね",
+            "。"
+          ]
+        },
+        "tier2": {
+          "prompt": "That sounds tough. Were you lonely?",
+          "answer": "大変 だった ね。 寂しい 時期 でも あった？",
+          "tokens": [
+            "大変",
+            "だった",
+            "ね",
+            "。",
+            "寂しい",
+            "時期",
+            "でも",
+            "あった",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "That sounds really tough. Was that a lonely period for you? Were there many difficult things?",
+          "answer": "本当に 大変 だった ね。 寂しい 時期 でも あった？ 辛い ことも たくさん あった？",
+          "tokens": [
+            "本当に",
+            "大変",
+            "だった",
+            "ね",
+            "。",
+            "寂しい",
+            "時期",
+            "でも",
+            "あった",
+            "？",
+            "辛い",
+            "こと",
+            "も",
+            "たくさん",
+            "あった",
+            "？"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "うん、寂しい時もあったけど、色々あったから、今の私があるんだと思う！ 人との出会いって、本当に不思議だよね。あの頃は、毎日がキラキラしてたな～って、たまに思い出すよ。",
+      "vocab": [
+        "寂しい",
+        "色々",
+        "出会い",
+        "不思議",
+        "毎日",
+        "キラキラ"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pink_past_worker_20240515_01-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_past_worker_20240515_01-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask if she has any regrets about her past.",
+      "responses": {
+        "tier1": {
+          "prompt": "Any regrets?",
+          "answer": "後悔 ある？",
+          "tokens": [
+            "後悔",
+            "ある",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "Do you have any regrets about the past?",
+          "answer": "過去に 対して 後悔 ある？",
+          "tokens": [
+            "過去",
+            "に",
+            "対して",
+            "後悔",
+            "ある",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "Do you have any regrets about the past? Or maybe some good memories too?",
+          "answer": "過去に 対して 後悔 ある？ それとも 良い 思い出も ある？",
+          "tokens": [
+            "過去",
+            "に",
+            "対して",
+            "後悔",
+            "ある",
+            "？",
+            "それとも",
+            "良い",
+            "思い出",
+            "も",
+            "ある",
+            "？"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "後悔？ うーん、ないかな！ 辛かったこともあったけど、それも私の一部だし、色んな経験をしたからこそ、今の私があるんだって思ってるんだ！ あの頃、お客さんと色々話したり、街を歩いてる人たちを見てるのも好きだったな。",
+      "vocab": [
+        "後悔",
+        "一部",
+        "経験",
+        "経験",
+        "お客さん",
+        "街",
+        "歩く",
+        "人"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_pink_past_worker_20240515_01-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_past_worker_20240515_01-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask about her hobbies back then.",
+      "responses": {
+        "tier1": {
+          "prompt": "What did you like to do?",
+          "answer": "何 してた？",
+          "tokens": [
+            "何",
+            "してた",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "What did you like to do back then?",
+          "answer": "あの頃 何 してた？",
+          "tokens": [
+            "あの頃",
+            "何",
+            "してた",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "What did you like to do back then? Did you have any hobbies?",
+          "answer": "あの頃 何 してた？ 趣味とか あった？",
+          "tokens": [
+            "あの頃",
+            "何",
+            "してた",
+            "？",
+            "趣味",
+            "とか",
+            "あった",
+            "？"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "趣味？ そうだな～、私、昔からシール集めとか、手作りの小物を作るのが好きだったんだ！ 今も、部屋に飾ってるんだよ。キラキラしたものが好きなのは、昔も今も変わらないかな！",
+      "vocab": [
+        "趣味",
+        "シール",
+        "集め",
+        "手作り",
+        "小物",
+        "部屋",
+        "飾る"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_pink_past_worker_20240515_01-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_past_worker_20240515_01-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "なんか、色々話しちゃったけど、楽しかったよ！ またね！",
+      "result": "Conversation ended with the pink girl. You learned about her past.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      },
+      "audio": {
+        "key": "battle_pink_past_worker_20240515_01-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_pink_past_worker_20240515_01-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "annoyed",
+      "text": "もう、全然話聞いてくれないんだから！",
+      "result": "The pink girl got annoyed and ended the conversation.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    }
+  },
+  "topic": "Pink girl talks about her past as a sex worker"
+}
