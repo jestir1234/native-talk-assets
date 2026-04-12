@@ -1,0 +1,281 @@
+{
+  "id": "battle_pinkgirl_soapland_confession_20240515_1200",
+  "setting": "apartment-evening",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "shy",
+      "text": "あのね、ちょっと、言いにくいことがあるんだけど…聞いてくれる？",
+      "vocab": [
+        "言いにくい",
+        "聞く"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pinkgirl_soapland_confession_20240515_1200-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_soapland_confession_20240515_1200-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Encourage her to tell you what's on her mind.",
+      "responses": {
+        "tier1": {
+          "prompt": "What is it?",
+          "answer": "どうした の",
+          "tokens": [
+            "どうした",
+            "の"
+          ]
+        },
+        "tier2": {
+          "prompt": "What is it? You can tell me anything.",
+          "answer": "どうした の 何でも 話して ほしい",
+          "tokens": [
+            "どうした",
+            "の",
+            "何でも",
+            "話して",
+            "ほしい"
+          ]
+        },
+        "tier3": {
+          "prompt": "What is it? You can tell me anything. I'm listening carefully.",
+          "answer": "どうした の 何でも 話して ほしい ちゃんと 聞いてるから",
+          "tokens": [
+            "どうした",
+            "の",
+            "何でも",
+            "話して",
+            "ほしい",
+            "ちゃんと",
+            "聞いてる",
+            "から"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "実はね…私、働いてるところ、ちょっと変わってて…。えっと、**風俗嬢** なんだ。",
+      "vocab": [
+        "風俗嬢",
+        "働いてる",
+        "変わってる"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pinkgirl_soapland_confession_20240515_1200-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_soapland_confession_20240515_1200-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "React to her confession. She's nervous, so try to be understanding.",
+      "responses": {
+        "tier1": {
+          "prompt": "I see...",
+          "answer": "そう なんだ",
+          "tokens": [
+            "そう",
+            "なんだ"
+          ]
+        },
+        "tier2": {
+          "prompt": "I see... That must be difficult.",
+          "answer": "そう なんだ 大変 だった ね",
+          "tokens": [
+            "そう",
+            "なんだ",
+            "大変",
+            "だった",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "I see... That must be difficult. But it's your job, right?",
+          "answer": "そう なんだ 大変 だった ね でも 仕事 なんでしょ",
+          "tokens": [
+            "そう",
+            "なんだ",
+            "大変",
+            "だった",
+            "ね",
+            "でも",
+            "仕事",
+            "なんでしょ"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "shy",
+      "text": "うぅ、ありがとう…。うち、**ソープランド** なんだ。それで、色んなサービスあるんだけど…まあ、**壷洗い** とか、そういうのも…。",
+      "vocab": [
+        "ソープランド",
+        "壷洗い",
+        "サービス"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pinkgirl_soapland_confession_20240515_1200-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_soapland_confession_20240515_1200-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Acknowledge the specifics she mentioned, showing you're listening.",
+      "responses": {
+        "tier1": {
+          "prompt": "So, soapland...",
+          "answer": "ソープランド なんだ",
+          "tokens": [
+            "ソープランド",
+            "なんだ"
+          ]
+        },
+        "tier2": {
+          "prompt": "So, soapland... and壷洗い too?",
+          "answer": "ソープランド なんだ 壷洗い も する の",
+          "tokens": [
+            "ソープランド",
+            "なんだ",
+            "壷洗い",
+            "も",
+            "する",
+            "の"
+          ]
+        },
+        "tier3": {
+          "prompt": "So, soapland... and壷洗い too? It sounds like hard work.",
+          "answer": "ソープランド なんだ 壷洗い も する の 大変 そう だね",
+          "tokens": [
+            "ソープランド",
+            "なんだ",
+            "壷洗い",
+            "も",
+            "する",
+            "の",
+            "大変",
+            "そう",
+            "だね"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "そう、そうなんだ…。でもね、私、あなたと会ってる時が一番楽しくて！だから、これからも、デートしたいなって思ってるんだけど…。",
+      "vocab": [
+        "デート",
+        "楽しい",
+        "思ってる"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_pinkgirl_soapland_confession_20240515_1200-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_soapland_confession_20240515_1200-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She's asking if you're okay with continuing the relationship.",
+      "responses": {
+        "tier1": {
+          "prompt": "Continue dating?",
+          "answer": "デート 続けたい",
+          "tokens": [
+            "デート",
+            "続けたい"
+          ]
+        },
+        "tier2": {
+          "prompt": "Yes, I want to continue dating you.",
+          "answer": "うん デート 続けたい よ",
+          "tokens": [
+            "うん",
+            "デート",
+            "続けたい",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Yes, I want to continue dating you. I really like you.",
+          "answer": "うん デート 続けたい よ あなた が 大好き だから",
+          "tokens": [
+            "うん",
+            "デート",
+            "続けたい",
+            "よ",
+            "あなた",
+            "が",
+            "大好き",
+            "だから"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ほんと！？やったー！もう、あなたってば、最高！えへへ、なんか、ドキドキしちゃった。でも、これからも、いっぱい**イキ**ましょね！",
+      "vocab": [
+        "イキ",
+        "最高",
+        "ドキドキ"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_pinkgirl_soapland_confession_20240515_1200-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_soapland_confession_20240515_1200-dialogue-audio5.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "そっか…。残念だよ。",
+      "result": "You failed to comfort her.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "これからも、よろしくね！",
+      "result": "She's happy you accepted her. Your relationship deepens.",
+      "rewards": {
+        "xp": 100,
+        "money": 0
+      },
+      "audio": {
+        "key": "battle_pinkgirl_soapland_confession_20240515_1200-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_soapland_confession_20240515_1200-dialogue-audio6.mp3"
+      }
+    }
+  },
+  "topic": "Pink Girl confessing to the user that she works at a soapland. She still wants to keep dating and wants to know how the user feels about it"
+}
