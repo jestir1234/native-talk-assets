@@ -1,0 +1,386 @@
+{
+  "id": "battle_pinkgirl_bodycount_20240515_123456",
+  "setting": "apartment-evening",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "ねぇねぇ、ちょっと聞いてもいい？ 最近、なんかドキドキすることが多くて… それって、もしかして、恋かな？",
+      "vocab": [
+        "ドキドキ",
+        "恋"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pinkgirl_bodycount_20240515_123456-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_bodycount_20240515_123456-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She's asking if you think she might be in love.",
+      "responses": {
+        "tier1": {
+          "prompt": "You think she's blushing.",
+          "answer": "顔 赤い ね",
+          "tokens": [
+            "顔",
+            "赤い",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "You ask if she's thinking about someone specific.",
+          "answer": "特定 の 人 の こと を 考えて いる の",
+          "tokens": [
+            "特定",
+            "の",
+            "人",
+            "の",
+            "こと",
+            "を",
+            "考えて",
+            "いる",
+            "の"
+          ]
+        },
+        "tier3": {
+          "prompt": "You suggest it's probably love, and ask if she's ever felt this way before.",
+          "answer": "きっと 恋 だと 思う よ こんな 気持ち は 前にも 感じた こと ある",
+          "tokens": [
+            "きっと",
+            "恋",
+            "だ",
+            "と",
+            "思う",
+            "よ",
+            "こんな",
+            "気持ち",
+            "は",
+            "前",
+            "にも",
+            "感じた",
+            "こと",
+            "ある"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "うふふ、バレちゃったかも！ 最近、色んなこと考えてて… 特に、過去のこととか！",
+      "vocab": [
+        "バレた",
+        "過去"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pinkgirl_bodycount_20240515_123456-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_bodycount_20240515_123456-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She's hinting at her past. You could ask about how many people she's been with.",
+      "responses": {
+        "tier1": {
+          "prompt": "You ask about her past experiences.",
+          "answer": "過去 の 話",
+          "tokens": [
+            "過去",
+            "の",
+            "話"
+          ]
+        },
+        "tier2": {
+          "prompt": "You directly ask how many people she's been with.",
+          "answer": "これ まで 何 人 と 付き合った こと ある",
+          "tokens": [
+            "これ",
+            "まで",
+            "何",
+            "人",
+            "と",
+            "付き合った",
+            "こと",
+            "ある"
+          ]
+        },
+        "tier3": {
+          "prompt": "You ask if she's thinking about past relationships, and how many partners she's had.",
+          "answer": "昔 の 恋人 の こと を 思い出し て いる の かな それで 今 まで 何 人 と 体 の 関係 を 持った こと が ある",
+          "tokens": [
+            "昔",
+            "の",
+            "恋人",
+            "の",
+            "こと",
+            "を",
+            "思い出し",
+            "て",
+            "いる",
+            "の",
+            "かな",
+            "それ",
+            "で",
+            "今まで",
+            "何",
+            "人",
+            "と",
+            "体",
+            "の",
+            "関係",
+            "を",
+            "持った",
+            "こと",
+            "が",
+            "ある"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "thinking",
+      "text": "えぇ〜、そんなこと聞くんだ！ うーん、あんまり数えてないけど…",
+      "vocab": [
+        "数える"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pinkgirl_bodycount_20240515_123456-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_bodycount_20240515_123456-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She's hesitant. You can prompt her to give you a number.",
+      "responses": {
+        "tier1": {
+          "prompt": "Just give me a number.",
+          "answer": "数字 を 教えて",
+          "tokens": [
+            "数字",
+            "を",
+            "教えて"
+          ]
+        },
+        "tier2": {
+          "prompt": "I want to know the approximate number.",
+          "answer": "大体 の 数 を 教えて ほしい な",
+          "tokens": [
+            "大体",
+            "の",
+            "数",
+            "を",
+            "教えて",
+            "ほしい",
+            "な"
+          ]
+        },
+        "tier3": {
+          "prompt": "It's okay, just tell me the rough number, even if you didn't count precisely.",
+          "answer": "大丈夫だよ 大体 で いい から 数 を 教えて くれる",
+          "tokens": [
+            "大丈夫",
+            "だよ",
+            "大体",
+            "で",
+            "いい",
+            "から",
+            "数",
+            "を",
+            "教えて",
+            "くれる"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "shy",
+      "text": "もぉ〜！ じゃあ、ちょっとだけ… ３人？ いや、４人かな？",
+      "vocab": [
+        "人"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_pinkgirl_bodycount_20240515_123456-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_bodycount_20240515_123456-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She's given a tentative answer. You can express your reaction.",
+      "responses": {
+        "tier1": {
+          "prompt": "That's quite a few.",
+          "answer": "結構 多い ね",
+          "tokens": [
+            "結構",
+            "多い",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Four people is a good number, not too many.",
+          "answer": "４人 なら 多い とは 思わない よ",
+          "tokens": [
+            "４人",
+            "なら",
+            "多い",
+            "と",
+            "は",
+            "思わない",
+            "よ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Four people is a decent number, it means you've had some experience. Does that make you happy?",
+          "answer": "４人 なら 経験 が あるって こと だもんね それで 幸せ な の",
+          "tokens": [
+            "４人",
+            "なら",
+            "経験",
+            "が",
+            "ある",
+            "って",
+            "こと",
+            "だもんね",
+            "それ",
+            "で",
+            "幸せ",
+            "な",
+            "の"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "うん！ なんか、色んな経験をしたから、今の私があるんだなって思うと、ちょっと自信がつくんだ！",
+      "vocab": [
+        "経験",
+        "自信"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_pinkgirl_bodycount_20240515_123456-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_bodycount_20240515_123456-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She feels more confident because of her past experiences. You can encourage her and compliment her.",
+      "responses": {
+        "tier1": {
+          "prompt": "You're great!",
+          "answer": "君 は 素晴らしい",
+          "tokens": [
+            "君",
+            "は",
+            "素晴らしい"
+          ]
+        },
+        "tier2": {
+          "prompt": "You are a wonderful person, and your experiences have made you who you are.",
+          "answer": "君 は 素敵な 人 だし 経験 が 君 を 作って いる から",
+          "tokens": [
+            "君",
+            "は",
+            "素敵",
+            "な",
+            "人",
+            "だし",
+            "経験",
+            "が",
+            "君",
+            "を",
+            "作って",
+            "いる",
+            "から"
+          ]
+        },
+        "tier3": {
+          "prompt": "You are a wonderful person, and your experiences have shaped you into who you are today. I think you're amazing.",
+          "answer": "君 は 素敵な 人 だし 過去 の 経験 が 今 の 君 を 作って いる ん だと 思うよ 本当に 素晴らしい と 思う",
+          "tokens": [
+            "君",
+            "は",
+            "素敵",
+            "な",
+            "人",
+            "だし",
+            "過去",
+            "の",
+            "経験",
+            "が",
+            "今",
+            "の",
+            "君",
+            "を",
+            "作って",
+            "いる",
+            "ん",
+            "だ",
+            "と",
+            "思う",
+            "よ",
+            "本当に",
+            "素晴らしい",
+            "と",
+            "思う"
+          ]
+        }
+      },
+      "next": "node_end"
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "わぁ、ありがとう！ そう言ってもらえると、もっと元気が出るよ！",
+      "result": "You complimented her and she feels great!",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      },
+      "audio": {
+        "key": "battle_pinkgirl_bodycount_20240515_123456-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_bodycount_20240515_123456-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "あれ…？ なんか、話が合わなかったみたい…",
+      "result": "She seems a bit disappointed.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    }
+  },
+  "topic": "Body count. How many people she has had sex with"
+}
