@@ -1,0 +1,413 @@
+{
+  "id": "battle_pinkgirl_threesome_20240515_123456",
+  "setting": "apartment-night",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ねぇねぇ！今日ね、すっごく可愛いステッカー見つけちゃったんだ！見てくれる？",
+      "vocab": [
+        "可愛い",
+        "ステッカー",
+        "見つける"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pinkgirl_threesome_20240515_123456-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_threesome_20240515_123456-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "React to her finding stickers.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say you want to see.",
+          "answer": "見たいな",
+          "tokens": [
+            "見たい",
+            "な"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say you really want to see them!",
+          "answer": "すごく見たいな",
+          "tokens": [
+            "すごく",
+            "見たい",
+            "な"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say you really want to see them, and ask what kind they are.",
+          "answer": "すごく見たいな！どんなの？",
+          "tokens": [
+            "すごく",
+            "見たい",
+            "な",
+            "！",
+            "どんな",
+            "の",
+            "？"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "えへへ、ありがとう！キラキラしててね、猫ちゃんの絵が描いてあるの！もう、たまらない可愛さで！",
+      "vocab": [
+        "キラキラ",
+        "猫ちゃん",
+        "絵",
+        "描いて",
+        "たまらない"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pinkgirl_threesome_20240515_123456-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_threesome_20240515_123456-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Comment on the stickers and her taste.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say they sound cute.",
+          "answer": "可愛いね",
+          "tokens": [
+            "可愛い",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say they sound super cute, just like you.",
+          "answer": "すっごく可愛いね！",
+          "tokens": [
+            "すっごく",
+            "可愛い",
+            "ね",
+            "！"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say they sound super cute, and that her taste is always the best.",
+          "answer": "すっごく可愛いね！センスいいなあ！",
+          "tokens": [
+            "すっごく",
+            "可愛い",
+            "ね",
+            "！",
+            "センス",
+            "いい",
+            "な",
+            "あ",
+            "！"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "えー！もう！褒めても何も出ないよ？…でも、嬉しいな。ふふ。",
+      "vocab": [
+        "褒める",
+        "嬉しい"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pinkgirl_threesome_20240515_123456-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_threesome_20240515_123456-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Ask a casual question.",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask about her day.",
+          "answer": "今日はどうだった？",
+          "tokens": [
+            "今日",
+            "は",
+            "どう",
+            "だった",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask what she did today, and if she was happy.",
+          "answer": "今日は何してたの？楽しかった？",
+          "tokens": [
+            "今日",
+            "は",
+            "何",
+            "して",
+            "た",
+            "の",
+            "？",
+            "楽しかった",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask what she did today, if she was happy, and if anything exciting happened.",
+          "answer": "今日は何してたの？楽しかった？何か面白いことあった？",
+          "tokens": [
+            "今日",
+            "は",
+            "何",
+            "して",
+            "た",
+            "の",
+            "？",
+            "楽しかった",
+            "？",
+            "何か",
+            "面白い",
+            "こと",
+            "あった",
+            "？"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "thinking",
+      "text": "うーん、今日はね、お部屋でクラフトして、それからちょっとお散歩したかな。でも、なんか、もっと…こう、ドキドキすることがしたい気分なんだよね。",
+      "vocab": [
+        "部屋",
+        "クラフト",
+        "散歩",
+        "ドキドキ",
+        "気分"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_pinkgirl_threesome_20240515_123456-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_threesome_20240515_123456-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Suggest something exciting.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say 'like what?'.",
+          "answer": "どんなこと？",
+          "tokens": [
+            "どんな",
+            "こと",
+            "？"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say 'like what?', and hint at something more intimate.",
+          "answer": "どんなこと？もっと、えっと…",
+          "tokens": [
+            "どんな",
+            "こと",
+            "？",
+            "もっと",
+            "、",
+            "えっと",
+            "…"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say 'like what?', and hint that you have a specific idea for something exciting and intimate.",
+          "answer": "どんなこと？僕、君としたい、もっと…熱いこと、あるんだけど…？",
+          "tokens": [
+            "どんな",
+            "こと",
+            "？",
+            "僕",
+            "、",
+            "君",
+            "と",
+            "したい",
+            "、",
+            "もっと",
+            "…",
+            "熱い",
+            "こと",
+            "、",
+            "ある",
+            "ん",
+            "だけど",
+            "…",
+            "？"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "えぇっ！？ 熱いこと…？ なんか、そういうの、ちょっと恥ずかしいけど…でも、興味あるかも…？",
+      "vocab": [
+        "恥ずかしい",
+        "興味"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_pinkgirl_threesome_20240515_123456-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_threesome_20240515_123456-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Propose a threesome in a playful way.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say 'Let's try something new together'.",
+          "answer": "一緒に新しいことしよう",
+          "tokens": [
+            "一緒",
+            "に",
+            "新しい",
+            "こと",
+            "しよう"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say 'Let's try something new together, maybe with a friend?'.",
+          "answer": "一緒に新しいことしようよ。友達も一緒に？",
+          "tokens": [
+            "一緒",
+            "に",
+            "新しい",
+            "こと",
+            "しよう",
+            "よ",
+            "。",
+            "友達",
+            "も",
+            "一緒",
+            "に",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say 'Let's try something new together, maybe with a friend? I was thinking of someone specific too...'.",
+          "answer": "一緒に新しいことしようよ。友達も一緒に？僕、君ともう一人、誘いたいなって思ってるんだけど…どうかな？",
+          "tokens": [
+            "一緒",
+            "に",
+            "新しい",
+            "こと",
+            "しよう",
+            "よ",
+            "。",
+            "友達",
+            "も",
+            "一緒",
+            "に",
+            "？",
+            "僕",
+            "、",
+            "君",
+            "と",
+            "もう",
+            "一人",
+            "、",
+            "誘い",
+            "たい",
+            "なって",
+            "思っ",
+            "てる",
+            "ん",
+            "だけど",
+            "…",
+            "どう",
+            "かな",
+            "？"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "embarrassed",
+      "text": "えええ！？ ３人で…！？ なんか、想像すると、顔が熱くなるけど…でも、君がそうしたいなら…私も、ちょっと…考えてみる…かな…？",
+      "vocab": [
+        "想像",
+        "熱",
+        "考える"
+      ],
+      "next": "node_12",
+      "audio": {
+        "key": "battle_pinkgirl_threesome_20240515_123456-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_threesome_20240515_123456-dialogue-audio6.mp3"
+      }
+    },
+    "node_12": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ふふ、なんか、ドキドキしてきた！よし、決まり！今日は、一緒に…特別な夜にしちゃおう！",
+      "vocab": [
+        "ドキドキ",
+        "決まり",
+        "特別",
+        "夜"
+      ],
+      "next": "node_success",
+      "audio": {
+        "key": "battle_pinkgirl_threesome_20240515_123456-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_threesome_20240515_123456-dialogue-audio7.mp3"
+      }
+    },
+    "node_success": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "やったー！どんな夜になるか、楽しみだな！",
+      "result": "You successfully proposed a threesome!",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      },
+      "audio": {
+        "key": "battle_pinkgirl_threesome_20240515_123456-dialogue-audio8.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_threesome_20240515_123456-dialogue-audio8.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "うーん、なんだか、ちょっと残念だな…。",
+      "result": "The conversation ended poorly.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    }
+  },
+  "topic": "Asking her if she would have a threesome with you"
+}
