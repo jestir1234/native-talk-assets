@@ -1,0 +1,366 @@
+{
+  "id": "battle_pinkgirl_difficultdecisions_20240515_1",
+  "setting": "cafe-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "thinking",
+      "text": "うーん、どっちにしようかなぁ… 決められないなぁ。",
+      "vocab": [
+        "どっち",
+        "決められない"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She's having trouble deciding. How do you respond?",
+      "responses": {
+        "tier1": {
+          "prompt": "What's up?",
+          "answer": "どうした の",
+          "tokens": [
+            "どうした",
+            "の"
+          ]
+        },
+        "tier2": {
+          "prompt": "What's up? Are you having trouble deciding on something?",
+          "answer": "どうした の 何か 迷ってる の",
+          "tokens": [
+            "どうした",
+            "の",
+            "何か",
+            "迷ってる",
+            "の"
+          ]
+        },
+        "tier3": {
+          "prompt": "What's up? Are you having trouble deciding on something? If you want, I can help you decide.",
+          "answer": "どうした の 何か 迷ってる の もし よかったら 決めるの 手伝おうか",
+          "tokens": [
+            "どうした",
+            "の",
+            "何か",
+            "迷ってる",
+            "の",
+            "もし",
+            "よかったら",
+            "決めるの",
+            "手伝おうか"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わぁ、ありがとう！ 実はね、新しいシールを買うか、それとも前から欲しかった手帳を買うかで迷ってるんだ！ どっちも可愛くて捨てられないの！",
+      "vocab": [
+        "新しい",
+        "シール",
+        "手帳",
+        "買おう",
+        "迷ってる"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She's torn between cute stickers and a planner. What do you suggest?",
+      "responses": {
+        "tier1": {
+          "prompt": "Both sound good!",
+          "answer": "どっちも いいね",
+          "tokens": [
+            "どっちも",
+            "いいね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Both sound good! Stickers are fun, but a planner is useful.",
+          "answer": "どっちも いいね シール 楽しいけど 手帳 便利だもんね",
+          "tokens": [
+            "どっちも",
+            "いいね",
+            "シール",
+            "楽しい",
+            "けど",
+            "手帳",
+            "便利",
+            "だもんね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Both sound good! Stickers are fun, but a planner is useful. Maybe you can get both eventually?",
+          "answer": "どっちも いいね シール 楽しいけど 手帳 便利だもんね どうしても 欲しかったら どっちも 買っちゃいなよ",
+          "tokens": [
+            "どっちも",
+            "いいね",
+            "シール",
+            "楽しい",
+            "けど",
+            "手帳",
+            "便利",
+            "だもんね",
+            "どうしても",
+            "欲しかったら",
+            "どっちも",
+            "買っちゃいなよ"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "えー！ どっちも買っちゃう！？ それは… ちょっと罪悪感あるけど、でも、そう言われると欲しくなっちゃうなぁ！",
+      "vocab": [
+        "罪悪感",
+        "欲しくなっちゃう"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She's tempted but feels a little guilty. What do you say to reassure her?",
+      "responses": {
+        "tier1": {
+          "prompt": "It's okay!",
+          "answer": "大丈夫 だよ",
+          "tokens": [
+            "大丈夫",
+            "だよ"
+          ]
+        },
+        "tier2": {
+          "prompt": "It's okay! You work hard, so you deserve it.",
+          "answer": "大丈夫 だよ 頑張ってるから ご褒美 だよ",
+          "tokens": [
+            "大丈夫",
+            "だよ",
+            "頑張ってる",
+            "から",
+            "ご褒美",
+            "だよ"
+          ]
+        },
+        "tier3": {
+          "prompt": "It's okay! You work hard, so you deserve it. You can use them to make your life more fun!",
+          "answer": "大丈夫 だよ 頑張ってるから ご褒美 だよ それで 生活 もっと 楽しく なるよ",
+          "tokens": [
+            "大丈夫",
+            "だよ",
+            "頑張ってる",
+            "から",
+            "ご褒美",
+            "だよ",
+            "それで",
+            "生活",
+            "もっと",
+            "楽しく",
+            "なるよ"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "そっか！ ご褒美かぁ！ そう考えたら、どっちも欲しくなっちゃった！よし、今日は両方買っちゃおうかな！",
+      "vocab": [
+        "ご褒美",
+        "両方",
+        "買っちゃおう"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She's decided to buy both! How do you react to her exciting decision?",
+      "responses": {
+        "tier1": {
+          "prompt": "Great choice!",
+          "answer": "いい 選択だね",
+          "tokens": [
+            "いい",
+            "選択",
+            "だね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Great choice! You'll be so happy with them.",
+          "answer": "いい 選択だね きっと 幸せに なるよ",
+          "tokens": [
+            "いい",
+            "選択",
+            "だね",
+            "きっと",
+            "幸せ",
+            "に",
+            "なるよ"
+          ]
+        },
+        "tier3": {
+          "prompt": "Great choice! You'll be so happy with them. I can't wait to see what cute things you make with them!",
+          "answer": "いい 選択だね きっと 幸せに なるよ どんな 可愛い もの 作るのか 楽しみだな",
+          "tokens": [
+            "いい",
+            "選択",
+            "だね",
+            "きっと",
+            "幸せ",
+            "に",
+            "なるよ",
+            "どんな",
+            "可愛い",
+            "もの",
+            "作るのか",
+            "楽しみ",
+            "だな"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "ふふ、ありがとう！ きっと、もっともっと楽しくなるよ！ 次は、どこ行こうか？",
+      "vocab": [
+        "もっと",
+        "楽しく",
+        "次",
+        "どこ"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "She's excited about the future. What's your idea for your next destination?",
+      "responses": {
+        "tier1": {
+          "prompt": "How about the park?",
+          "answer": "公園は どう",
+          "tokens": [
+            "公園",
+            "は",
+            "どう"
+          ]
+        },
+        "tier2": {
+          "prompt": "How about the park? We can sit and people-watch.",
+          "answer": "公園は どう 座って 人観察しよ",
+          "tokens": [
+            "公園",
+            "は",
+            "どう",
+            "座って",
+            "人観察",
+            "しよ"
+          ]
+        },
+        "tier3": {
+          "prompt": "How about the park? We can sit and people-watch. It's nice when the weather is good.",
+          "answer": "公園は どう 座って 人観察しよ 天気が いい 時は 気持ち いいよ",
+          "tokens": [
+            "公園",
+            "は",
+            "どう",
+            "座って",
+            "人観察",
+            "しよ",
+            "天気",
+            "が",
+            "いい",
+            "時は",
+            "気持ち",
+            "いい",
+            "よ"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "公園！ いいね！ お天気だったら、最高だね！ そうしよっか！",
+      "vocab": [
+        "公園",
+        "最高",
+        "そうしよ"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio6.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "あれ？ もう行っちゃうの？ また遊ぼうね…。",
+      "result": "You couldn't help her decide, and she seems a little disappointed. Maybe next time.",
+      "rewards": {
+        "xp": 5,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わーい！ 今日はすごく楽しかった！ ありがとうね！",
+      "result": "You helped her make a difficult decision and planned a fun outing. A successful encounter!",
+      "rewards": {
+        "xp": 50,
+        "money": 100
+      },
+      "audio": {
+        "key": "battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_difficultdecisions_20240515_1-dialogue-audio7.mp3"
+      }
+    }
+  },
+  "topic": "Difficult Decisions"
+}
