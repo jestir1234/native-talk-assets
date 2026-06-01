@@ -1,0 +1,357 @@
+{
+  "id": "battle_pinkgirl_ocarina_triple_1701100000",
+  "setting": "park-day",
+  "character": "pink-girl",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "わー！見て見て！このトリプルオカリナ、すごく可愛いんだよ〜！",
+      "vocab": [
+        "トリプル",
+        "オカリナ",
+        "可愛い"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Respond to her excitement about the triple ocarina.",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree it's cute.",
+          "answer": "本当だ 可愛いね",
+          "tokens": [
+            "本当",
+            "だ",
+            "可愛い",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask if she likes music.",
+          "answer": "音楽 好き なの？",
+          "tokens": [
+            "音楽",
+            "好き",
+            "な",
+            "の",
+            "？"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say it looks difficult but cute, and ask if she can play it.",
+          "answer": "難しそうだけど可愛いね 吹けるの？",
+          "tokens": [
+            "難しそう",
+            "だけど",
+            "可愛い",
+            "ね",
+            "吹ける",
+            "の",
+            "？"
+          ]
+        }
+      },
+      "next": "node_3"
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "えへへ、ありがとう！うん、音楽は大好き！特にこのオカリナ、色んな音が出せるんだって！",
+      "vocab": [
+        "音楽",
+        "大好き",
+        "色んな",
+        "音",
+        "出せる"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "thinking",
+      "text": "でも、 actually、まだ練習中なんだ。ちゃんと吹けるようになるか、ちょっと心配で…。",
+      "vocab": [
+        "actually",
+        "練習中",
+        "ちゃんと",
+        "心配"
+      ],
+      "next": "node_5",
+      "audio": {
+        "key": "battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio3.mp3"
+      }
+    },
+    "node_5": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Encourage her and offer to listen.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say you'll cheer for her.",
+          "answer": "応援 してるね",
+          "tokens": [
+            "応援",
+            "して",
+            "る",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say she'll be fine and you want to hear her play.",
+          "answer": "大丈夫だよ ぜひ聴きたいな",
+          "tokens": [
+            "大丈夫",
+            "だよ",
+            "ぜひ",
+            "聴きたい",
+            "な"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say she can do it, and when she's good, you'd love to hear her play a cute song.",
+          "answer": "きっとできるよ 上手になったら可愛い曲聴きたいな",
+          "tokens": [
+            "きっと",
+            "できる",
+            "よ",
+            "上手",
+            "に",
+            "なった",
+            "ら",
+            "可愛い",
+            "曲",
+            "聴きたい",
+            "な"
+          ]
+        }
+      },
+      "next": "node_6"
+    },
+    "node_6": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "blushing",
+      "text": "ほんと！？ありがとう！頑張るね！そしたら、一番上手く吹けた曲、一番に聴かせてあげる！",
+      "vocab": [
+        "頑張る",
+        "一番",
+        "上手く",
+        "吹けた",
+        "曲",
+        "聴かせて"
+      ],
+      "next": "node_7",
+      "audio": {
+        "key": "battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio4.mp3"
+      }
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ふふ、なんか、ドキドキしてきた！〇〇（プレイヤー名）も、何か楽器とか得意なのある？",
+      "vocab": [
+        "ドキドキ",
+        "楽器",
+        "得意"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio5.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Answer her question about your musical talents.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say you're not good at instruments.",
+          "answer": "楽器は 苦手だよ",
+          "tokens": [
+            "楽器",
+            "は",
+            "苦手",
+            "だよ"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say you're okay with singing, but not instruments.",
+          "answer": "歌うのはまあまあだけど楽器はね",
+          "tokens": [
+            "歌う",
+            "の",
+            "は",
+            "まあまあ",
+            "だけど",
+            "楽器",
+            "は",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say you're not good at instruments, but you enjoy listening to music.",
+          "answer": "楽器は全然ダメだけど音楽聴くのは好きだよ",
+          "tokens": [
+            "楽器",
+            "は",
+            "全然",
+            "ダメ",
+            "だけど",
+            "音楽",
+            "聴く",
+            "の",
+            "は",
+            "好き",
+            "だよ"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "smile",
+      "text": "そっかー。でも、音楽を聴くのも素敵だよね！私も色んな曲を聴くのが好き！",
+      "vocab": [
+        "素敵",
+        "色んな",
+        "曲",
+        "聴く"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio6.mp3"
+      }
+    },
+    "node_10": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "あ！そうだ！今度、公園でオカリナの練習するから、もしよかったら聴きに来てほしいな！",
+      "vocab": [
+        "今度",
+        "公園",
+        "練習",
+        "もし",
+        "よかったら",
+        "聴きに来て"
+      ],
+      "next": "node_11",
+      "audio": {
+        "key": "battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio7.mp3"
+      }
+    },
+    "node_11": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "Accept her invitation.",
+      "responses": {
+        "tier1": {
+          "prompt": "Say yes.",
+          "answer": "行くよ",
+          "tokens": [
+            "行く",
+            "よ"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say you'll definitely go and look forward to it.",
+          "answer": "絶対行くよ 楽しみにしてるね",
+          "tokens": [
+            "絶対",
+            "行く",
+            "よ",
+            "楽しみ",
+            "に",
+            "して",
+            "る",
+            "ね"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say you'll be there and will listen carefully to her practice.",
+          "answer": "もちろん行くよ 練習ちゃんと聴いてるからね",
+          "tokens": [
+            "もちろん",
+            "行く",
+            "よ",
+            "練習",
+            "ちゃんと",
+            "聴いて",
+            "る",
+            "から",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_12"
+    },
+    "node_12": {
+      "type": "dialogue",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "やったー！嬉しい！じゃあ、またね！",
+      "vocab": [
+        "やった",
+        "嬉しい",
+        "またね"
+      ],
+      "next": "node_end",
+      "audio": {
+        "key": "battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio8.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio8.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "sad",
+      "text": "あらら、残念…。また今度ね！",
+      "result": "Conversation failed. You didn't connect well enough.",
+      "rewards": {
+        "xp": 0,
+        "money": 0
+      }
+    },
+    "node_end": {
+      "type": "end",
+      "speaker": "pink-girl",
+      "expression": "happy",
+      "text": "ふふ、楽しかった！ありがとう！",
+      "result": "You had a wonderful time talking about music and ocarinas!",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      },
+      "audio": {
+        "key": "battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio9.mp3",
+        "url": "https://assets.native-talk.com/battle_pinkgirl_ocarina_triple_1701100000-dialogue-audio9.mp3"
+      }
+    }
+  },
+  "topic": "Triple ocarina"
+}
