@@ -1,0 +1,377 @@
+{
+  "id": "battle_demure_jazz_1718968072",
+  "setting": "cafe-evening",
+  "character": "demure-lady",
+  "minLevel": 1,
+  "entryNode": "node_1",
+  "failNode": "node_fail",
+  "nodes": {
+    "node_1": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "neutral",
+      "text": "こんばんは。こんな時間にカフェにいらっしゃるなんて、珍しいですね。",
+      "vocab": [
+        "こんばんは",
+        "カフェ",
+        "珍しい"
+      ],
+      "next": "node_2",
+      "audio": {
+        "key": "battle_demure_jazz_1718968072-dialogue-audio1.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_jazz_1718968072-dialogue-audio1.mp3"
+      }
+    },
+    "node_2": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "How do you respond?",
+      "responses": {
+        "tier1": {
+          "prompt": "Just say hello.",
+          "answer": "こんにちは",
+          "tokens": [
+            "こんにちは"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say hello and explain you're meeting someone.",
+          "answer": "こんにちは 友達を 待っています",
+          "tokens": [
+            "こんにちは",
+            "友達",
+            "を",
+            "待っています"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say hello, explain you're meeting a friend, and ask if it's okay to sit.",
+          "answer": "こんにちは 友達を 待っています ここに 座っても いいですか",
+          "tokens": [
+            "こんにちは",
+            "友達",
+            "を",
+            "待っています",
+            "ここ",
+            "に",
+            "座って",
+            "も",
+            "いい",
+            "です",
+            "か"
+          ]
+        }
+      },
+      "next": "node_3",
+      "grammar": [
+        "connectiveCategory:conjunction",
+        "connectiveCategory:conjunction",
+        "connectiveCategory:conjunction"
+      ]
+    },
+    "node_3": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "ええ、もちろんですわ。どうぞ、お掛けください。何かお飲み物はいかがですか？",
+      "vocab": [
+        "もちろん",
+        "どうぞ",
+        "お掛けください",
+        "お飲み物"
+      ],
+      "next": "node_4",
+      "audio": {
+        "key": "battle_demure_jazz_1718968072-dialogue-audio2.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_jazz_1718968072-dialogue-audio2.mp3"
+      }
+    },
+    "node_4": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "How do you reply?",
+      "responses": {
+        "tier1": {
+          "prompt": "Say no thank you.",
+          "answer": "いいえ 結構です",
+          "tokens": [
+            "いいえ",
+            "結構",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say no thank you, but ask what she's drinking.",
+          "answer": "いいえ 結構です それは 何ですか",
+          "tokens": [
+            "いいえ",
+            "結構",
+            "です",
+            "それ",
+            "は",
+            "何",
+            "です",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say no thank you, but ask what she's drinking and compliment it.",
+          "answer": "いいえ 結構です それは とても 美味しそうですね",
+          "tokens": [
+            "いいえ",
+            "結構",
+            "です",
+            "それ",
+            "は",
+            "とても",
+            "美味しそう",
+            "です",
+            "ね"
+          ]
+        }
+      },
+      "next": "node_5"
+    },
+    "node_5": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "thinking",
+      "text": "これはハーブティーですよ。お口に合いますかしら。ところで、ジャズはお好きですか？",
+      "vocab": [
+        "ハーブティー",
+        "お口",
+        "合います",
+        "ジャズ"
+      ],
+      "next": "node_6",
+      "audio": {
+        "key": "battle_demure_jazz_1718968072-dialogue-audio3.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_jazz_1718968072-dialogue-audio3.mp3"
+      }
+    },
+    "node_6": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What do you say about jazz?",
+      "responses": {
+        "tier1": {
+          "prompt": "Say yes, you like it.",
+          "answer": "はい 好きです",
+          "tokens": [
+            "はい",
+            "好き",
+            "です"
+          ]
+        },
+        "tier2": {
+          "prompt": "Say yes, you like it very much.",
+          "answer": "はい とても 好きです",
+          "tokens": [
+            "はい",
+            "とても",
+            "好き",
+            "です"
+          ]
+        },
+        "tier3": {
+          "prompt": "Say yes, you like it very much, especially the old songs.",
+          "answer": "はい とても 好きです 特に 古い曲が",
+          "tokens": [
+            "はい",
+            "とても",
+            "好き",
+            "です",
+            "特に",
+            "古い",
+            "曲",
+            "が"
+          ]
+        }
+      },
+      "next": "node_7"
+    },
+    "node_7": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "happy",
+      "text": "あら、そうですか。私も昔はよく聴いておりましたの。あの頃は、音楽も今とは少し違った雰囲気でしたね。",
+      "vocab": [
+        "昔",
+        "よく",
+        "聴いておりました",
+        "雰囲気"
+      ],
+      "next": "node_8",
+      "audio": {
+        "key": "battle_demure_jazz_1718968072-dialogue-audio4.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_jazz_1718968072-dialogue-audio4.mp3"
+      }
+    },
+    "node_8": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What do you say about the past?",
+      "responses": {
+        "tier1": {
+          "prompt": "Ask about old songs.",
+          "answer": "昔の 曲は どんな",
+          "tokens": [
+            "昔",
+            "の",
+            "曲",
+            "は",
+            "どんな"
+          ]
+        },
+        "tier2": {
+          "prompt": "Ask what kind of old songs she liked.",
+          "answer": "昔の どんな 曲が 好きでしたか",
+          "tokens": [
+            "昔",
+            "の",
+            "どんな",
+            "曲",
+            "が",
+            "好き",
+            "でした",
+            "か"
+          ]
+        },
+        "tier3": {
+          "prompt": "Ask what kind of old songs she liked and if they were calm.",
+          "answer": "昔の どんな 曲が 好きでしたか 落ち着いた 曲でしたか",
+          "tokens": [
+            "昔",
+            "の",
+            "どんな",
+            "曲",
+            "が",
+            "好き",
+            "でした",
+            "か",
+            "落ち着いた",
+            "曲",
+            "でした",
+            "か"
+          ]
+        }
+      },
+      "next": "node_9"
+    },
+    "node_9": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "ええ、そうですね。しっとりとしたバラードなどが多かったように思います。時代が変わっても、良いものは良い、ということでしょうか。",
+      "vocab": [
+        "しっとり",
+        "バラード",
+        "時代",
+        "変わって",
+        "良い"
+      ],
+      "next": "node_10",
+      "audio": {
+        "key": "battle_demure_jazz_1718968072-dialogue-audio5.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_jazz_1718968072-dialogue-audio5.mp3"
+      }
+    },
+    "node_10": {
+      "type": "build_sentence",
+      "speaker": "player",
+      "prompt": "What do you say about people changing?",
+      "responses": {
+        "tier1": {
+          "prompt": "Agree with her.",
+          "answer": "そうですね",
+          "tokens": [
+            "そう",
+            "です",
+            "ね"
+          ]
+        },
+        "tier2": {
+          "prompt": "Agree and say people change, but some things stay the same.",
+          "answer": "そうですね 人は 変わりますが 心は 変わらない",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "人",
+            "は",
+            "変わります",
+            "が",
+            "心",
+            "は",
+            "変わらない"
+          ]
+        },
+        "tier3": {
+          "prompt": "Agree and say people change, but the important things, like family, stay the same.",
+          "answer": "そうですね 人は 変わりますが 大切な 家族は 永遠です",
+          "tokens": [
+            "そう",
+            "です",
+            "ね",
+            "人",
+            "は",
+            "変わります",
+            "が",
+            "大切",
+            "な",
+            "家族",
+            "は",
+            "永遠",
+            "です"
+          ]
+        }
+      },
+      "next": "node_11"
+    },
+    "node_11": {
+      "type": "dialogue",
+      "speaker": "demure-lady",
+      "expression": "blushing",
+      "text": "まあ、なんて素敵なことをおっしゃるのでしょう。あなたのその優しいお人柄が、きっと周りの方々にも伝わっていらっしゃるのでしょうね。",
+      "vocab": [
+        "素敵",
+        "おっしゃる",
+        "優しい",
+        "お人柄",
+        "周り"
+      ],
+      "next": "node_12",
+      "audio": {
+        "key": "battle_demure_jazz_1718968072-dialogue-audio6.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_jazz_1718968072-dialogue-audio6.mp3"
+      }
+    },
+    "node_12": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "smile",
+      "text": "楽しいお話、ありがとうございました。またいつでもお声がけくださいね。",
+      "result": "You had a pleasant conversation about jazz and the passage of time. The lady was touched by your kindness.",
+      "rewards": {
+        "xp": 100,
+        "money": 50
+      },
+      "audio": {
+        "key": "battle_demure_jazz_1718968072-dialogue-audio7.mp3",
+        "url": "https://assets.native-talk.com/battle_demure_jazz_1718968072-dialogue-audio7.mp3"
+      }
+    },
+    "node_fail": {
+      "type": "end",
+      "speaker": "demure-lady",
+      "expression": "sad",
+      "text": "まあ、もうお帰りになるのですか。残念ですわ。",
+      "result": "The conversation ended abruptly, leaving the lady a bit disappointed.",
+      "rewards": {
+        "xp": 10,
+        "money": 5
+      }
+    }
+  },
+  "topic": "Do you like jazz?"
+}
